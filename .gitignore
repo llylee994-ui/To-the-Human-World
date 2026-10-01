@@ -1,0 +1,23 @@
+# Maker 本地绑定 / 预览 / 构建产物（机器相关，不入库）
+.maker-mcp/
+.tmp/
+.build/
+dist/
+
+# Maker AI dev-kit（本地开发辅助资料，不入库）
+CLAUDE.md
+AGENTS.md
+urhox-libs/
+engine-docs/
+examples/
+templates/
+schemas/
+skills/
+tools/
+.emmylua/
+
+# 编辑器与系统文件
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
