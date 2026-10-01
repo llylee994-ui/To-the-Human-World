@@ -54,3 +54,5 @@ templates/
 tools/
 urhox-libs/
 # <<< TapTap Maker AI dev kit (local only) <<<
+# 本地截图（视觉验收产物，不入库）
+screenshots/
