@@ -28,6 +28,8 @@
 
 使用 **TapTap Maker**（UrhoX 引擎 / Lua 脚本）开发，工程已绑定 Maker 项目「寄往人间」。
 
+- **目标平台**：移动端竖屏优先（TapTap 发布），PC 窗口作为开发期验证环境
+- **设计分辨率**：1080 × 1920，UI 用 Yoga Flexbox 百分比布局自适应，最外层套 `SafeAreaView` 避开刘海与 TapTap 胶囊
 - 引擎：UrhoX —— Lua 脚本 + NanoVG 矢量绘图 + Yoga Flexbox 布局（`urhox-libs/UI` 提供 45 个控件）
 - 入口：`scripts/main.lua`（实现 `Start()` / `Stop()`），起手模板为 `templates/scaffold-2d.lua`
 - 模块引用：`require "systems.Potion"` 对应 `scripts/systems/Potion.lua`
@@ -35,6 +37,8 @@
 - 存档：`File` API（项目 + 用户双重隔离）+ `cjson`
 - 远端构建 / 提交：Maker MCP（`maker_build_current_directory`）
 - 本地窗口预览：`taptap-maker preview run --target-dir "D:\To the Human World"`
+
+> 屏幕方向在**首次生成测试二维码时写入且之后不可修改**，因此首次生成二维码必须在方向最终确认后进行。
 
 代码目录（`scripts/README.md` 有各目录与设计文档模块的对应表）：
 
@@ -52,7 +56,8 @@ assets/            美术、字体、音频资源
 docs/              设计文档与开发计划
 ```
 
-> 开发顺序与每阶段的验收标准见 [开发计划与验收标准](docs/寄往人间_开发计划与验收标准.md)。
+> 开发顺序、排期与每阶段的验收标准见 [开发计划与验收标准](docs/寄往人间_开发计划与验收标准.md)。
+> 排期基线：10.02～10.18 开发，10.18 代码冻结并上传送审，10.21 平台截止。
 
 ---
 
