@@ -1,0 +1,26 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "project_id": "m_h4x3",
+  "author": {
+    "id": "1983130124"
+  },
+  "entry": "main.lua",
+  "version": "1.0.0",
+  "taptap_publish": {
+    "title": "寄往人间",
+    "description": "",
+    "category": "casual",
+    "screen_orientation": "landscape",
+    "collection_type": "sce",
+    "trial_note": "",
+    "app_platforms": "1,2",
+    "app_id": 955210,
+    "developer_id": 461896,
+    "miniapp_id": "tapmca7lcvvpxacp5s"
+  },
+  "assets": {
+    "icon": "",
+    "screenshots": [],
+    "promotional_image": ""
+  }
+}
