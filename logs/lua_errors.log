@@ -1,0 +1,7 @@
+Lua Errors: 4 | Dir: D:\To the Human World\scripts | Time: 2026-10-02 15:03:49
+EmmyLua Types: D:\To the Human World\.emmylua
+---
+ERROR | DebugPanel.lua:241:19 | Undefined field `SetText`. [undefined-field]
+ERROR | DebugPanel.lua:251:26 | Undefined field `SetText`. [undefined-field]
+ERROR | DebugPanel.lua:255:19 | Undefined field `SetText`. [undefined-field]
+ERROR | main.lua:167:15 | Undefined field `SetText`. [undefined-field]

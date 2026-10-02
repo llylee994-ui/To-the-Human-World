@@ -1,0 +1,22 @@
+Lua Diagnostics | Errors: 4 | Warnings: 12 | EmmyLua Types: D:\To the Human World\.emmylua
+Info: 0 | Hints: 3 | Total: 19 | Time: 2026-10-02 15:03:49 | Dir: D:\To the Human World\scripts
+---
+ERROR | DebugPanel.lua:241:19 | Undefined field `SetText`. [undefined-field]
+ERROR | DebugPanel.lua:251:26 | Undefined field `SetText`. [undefined-field]
+ERROR | DebugPanel.lua:255:19 | Undefined field `SetText`. [undefined-field]
+ERROR | main.lua:167:15 | Undefined field `SetText`. [undefined-field]
+WARN  | EventBus.lua:92:8 | Unnecessary `if` statement: this condition is always truthy [unnecessary-if]
+WARN  | EventBus.lua:125:8 | Unnecessary `if` statement: this condition is always truthy [unnecessary-if]
+WARN  | GameFlow.lua:30:16 | Missing required fields in type `GameFlowState`: `canSalvage`, `day`, `deliveredOrders`, `mainStoryStage`, `phase` [missing-fields]
+WARN  | GameFlow.lua:54:5 | Cannot assign `number` to `integer`. [assign-type-mismatch]
+WARN  | GameFlow.lua:59:5 | Cannot assign `number` to `integer`. [assign-type-mismatch]
+WARN  | init.lua:61:16 | Unnecessary `if` statement: this condition is always truthy [unnecessary-if]
+WARN  | init.lua:89:16 | Unnecessary `if` statement: this condition is always truthy [unnecessary-if]
+WARN  | init.lua:124:20 | Impossible `if` statement: this condition is always falsy [unnecessary-if]
+WARN  | DebugPanel.lua:68:5 | Unnecessary assert: this expression is always truthy [unnecessary-assert]
+WARN  | DebugPanel.lua:35:7 | Cannot assign `nil` to `fun() -> table?`. [assign-type-mismatch]
+WARN  | DebugPanel.lua:265:5 | Cannot assign `number` to `integer`. [assign-type-mismatch]
+WARN  | main.lua:17:22 | Cannot resolve module `data.init`. [unresolved-require]
+HINT  | SelfTest.lua:151:59 | payload is never used, if this is intentional, prefix it with an underscore: _payload [unused]
+HINT  | main.lua:207:24 | eventType is never used, if this is intentional, prefix it with an underscore: _eventType [unused]
+HINT  | main.lua:191:23 | eventType is never used, if this is intentional, prefix it with an underscore: _eventType [unused]
