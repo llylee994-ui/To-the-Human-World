@@ -20,18 +20,19 @@ local deps_ = nil
 
 ---@type Widget|nil
 local panel_ = nil
----@type Widget|nil
+---@type Label|nil
 local dayLabel_ = nil
----@type Widget|nil
+---@type Label|nil
 local worldStateLabel_ = nil
----@type Widget|nil
+---@type Label|nil
 local logLabel_ = nil
 
 local logLines_ = {}
 local visible_ = false
+---@type number
 local sinceRefresh_ = 0
 
----@type fun(): table|nil
+---@type (fun(): table|nil)?
 local worldStateProvider_ = nil
 
 -- ============================================================================
@@ -150,9 +151,9 @@ function DebugPanel.Attach(root, deps)
 
     root:AddChild(panel_)
 
-    dayLabel_ = panel_:FindById("debugDayLabel") --[[@as Widget?]]
-    worldStateLabel_ = panel_:FindById("debugWorldStateLabel") --[[@as Widget?]]
-    logLabel_ = logScroll:FindById("debugLogLabel") --[[@as Widget?]]
+    dayLabel_ = panel_:FindById("debugDayLabel") --[[@as Label?]]
+    worldStateLabel_ = panel_:FindById("debugWorldStateLabel") --[[@as Label?]]
+    logLabel_ = logScroll:FindById("debugLogLabel") --[[@as Label?]]
 
     -- 自动记录所有事件，便于在不打断游戏的情况下观察模块间的通信
     EventBus.OnAny(function(eventName, payload)

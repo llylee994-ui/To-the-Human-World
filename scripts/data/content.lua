@@ -19,6 +19,7 @@ Data.npcs = require "data.npcs"
 Data.letters = require "data.letters"
 
 -- 原料 mods 允许出现的键。写错键名不会报错，只会静默失效，所以在这里卡住。
+---@type table<string, boolean?>
 local ALLOWED_MOD_KEYS = {
     intensity = true,
     duration = true,
@@ -34,7 +35,7 @@ local REQUIRED_SLOT_KEYS = { "mainWord", "auxWord", "ingredient", "specialItem" 
 local effectsById_ = {}
 ---@type table<string, table>
 local wordsById_ = {}
----@type table<string, table>
+---@type table<string, table?>
 local wordsByText_ = {}
 ---@type table<string, table>
 local ingredientsById_ = {}
@@ -50,7 +51,7 @@ local lettersById_ = {}
 -- ============================================================================
 
 ---@param list table[]
----@param index table<string, table>
+---@param index table<string, table?>
 ---@param errors string[]
 ---@param tableName string
 local function IndexById(list, index, errors, tableName)

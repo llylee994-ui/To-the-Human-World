@@ -14,7 +14,7 @@ local UI = require("urhox-libs/UI")
 local EventBus = require "core.EventBus"
 local SaveSystem = require "core.SaveSystem"
 local GameFlow = require "core.GameFlow"
-local Data = require "data.init"
+local Data = require "data.content"
 local DebugPanel = require "debug.DebugPanel"
 local SelfTest = require "debug.SelfTest"
 
@@ -22,7 +22,7 @@ local TITLE = "寄往人间"
 
 ---@type Widget|nil
 local uiRoot_ = nil
----@type Widget|nil
+---@type Label|nil
 local dayLabel_ = nil
 local uiFrameCount_ = 0
 local uiLayoutChecked_ = false
@@ -153,7 +153,7 @@ function CreateUI()
     end)
 
     uiRoot_ = root
-    dayLabel_ = root:FindById("dayLabel") --[[@as Widget?]]
+    dayLabel_ = root:FindById("dayLabel") --[[@as Label?]]
 
     UI.SetRoot(root)
     RefreshHeader()
@@ -186,9 +186,9 @@ function SubscribeToEvents()
     end, 0, "main")
 end
 
----@param eventType string
+---@param _eventType string
 ---@param eventData UpdateEventData
-function HandleUpdate(eventType, eventData)
+function HandleUpdate(_eventType, eventData)
     local timeStep = eventData:GetFloat("TimeStep")
     DebugPanel.Update(timeStep)
 
@@ -202,9 +202,9 @@ function HandleUpdate(eventType, eventData)
     end
 end
 
----@param eventType string
+---@param _eventType string
 ---@param eventData KeyDownEventData
-function HandleKeyDown(eventType, eventData)
+function HandleKeyDown(_eventType, eventData)
     local key = eventData:GetInt("Key")
 
     if key == KEY_Z then

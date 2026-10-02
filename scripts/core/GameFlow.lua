@@ -26,9 +26,7 @@ local PHASE = {
 ---@field mainStoryStage string 主线阶段标记
 ---@field deliveredOrders integer 累计发货订单数
 
----@type GameFlowState
-local state_ = {}
-
+---@return GameFlowState
 local function DefaultState()
     return {
         day = 1,
@@ -39,7 +37,8 @@ local function DefaultState()
     }
 end
 
-state_ = DefaultState()
+---@type GameFlowState
+local state_ = DefaultState()
 
 -- ============================================================================
 -- 初始化 / 序列化
@@ -51,13 +50,13 @@ function GameFlow.Init(saved)
     local defaults = DefaultState()
     local loaded = saved or {}
 
-    state_.day = type(loaded.day) == "number" and loaded.day or defaults.day
+    state_.day = type(loaded.day) == "number" and math.floor(loaded.day) or defaults.day
     state_.phase = type(loaded.phase) == "string" and loaded.phase or defaults.phase
     state_.canSalvage = type(loaded.canSalvage) == "boolean" and loaded.canSalvage or defaults.canSalvage
     state_.mainStoryStage = type(loaded.mainStoryStage) == "string" and loaded.mainStoryStage
         or defaults.mainStoryStage
-    state_.deliveredOrders = type(loaded.deliveredOrders) == "number" and loaded.deliveredOrders
-        or defaults.deliveredOrders
+    state_.deliveredOrders = type(loaded.deliveredOrders) == "number"
+        and math.floor(loaded.deliveredOrders) or defaults.deliveredOrders
 
     print(string.format(
         "[GameFlow] 初始化完成：第 %d 天，时段 %s，主线阶段 %s",

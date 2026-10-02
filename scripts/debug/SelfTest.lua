@@ -148,7 +148,7 @@ local function TestGameFlow(eventBus, gameFlow)
     local dayStartCount, dayEndCount = 0, 0
     local endedDay = nil
 
-    local idStart = eventBus.On("DayStarted", function(_, payload)
+    local idStart = eventBus.On("DayStarted", function(_, _payload)
         dayStartCount = dayStartCount + 1
     end, 0, "SelfTest/GameFlow")
 

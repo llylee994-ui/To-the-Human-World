@@ -16,7 +16,7 @@
 
 local EventBus = {}
 
----@type table<string, EventListener[]>
+---@type table<string, EventListener[]?>
 local registry_ = {}
 
 ---@type EventListener[]
