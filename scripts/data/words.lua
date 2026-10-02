@@ -10,6 +10,9 @@
 --                行为类 / 记忆类 / 关系类 / 睡眠类 / 欲望类）
 --   effects      携带的效果标签 -> 权重。权重越高，合成后在魔药里占比越大
 --   reusable     被用于炼制后是否可重复使用；false 表示消耗掉
+--   attributeProfileId  时间属性配置引用（data/stage1.lua 的 attributeProfiles）。
+--                只有作为主词被炼制的词条才需要它；未配置的主词在时间换算时报
+--                CONFIG_MISSING，不套用别的词的样板（见 scripts/data/填写说明.md）
 --
 -- 在信件正文里用 {{词}} 标记可剪位置，例如「我最近真的很{{累}}。」
 -- 同一个词可以在多封信里出现，玩家剪到的是不同来源的同一个词。
@@ -21,6 +24,7 @@ return {
         displayText = "睡觉",
         category = "睡眠类",
         reusable = true,
+        attributeProfileId = "sleep_basic",
         effects = { sleep = 1.0 },
     },
     {
@@ -63,6 +67,7 @@ return {
         displayText = "累",
         category = "身体类",
         reusable = true,
+        attributeProfileId = "tired_basic",
         effects = { calm = 0.6, sleep = 0.6 },
     },
     {

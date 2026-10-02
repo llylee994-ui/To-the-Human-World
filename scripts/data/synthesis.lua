@@ -16,6 +16,21 @@
 --   7. 按 sideEffectRules 判定是否附加副作用标签
 --   8. 稳定性低于 unstableThreshold 时标记为「可能炼制失败」
 --
+-- 已冻结的边界语义（B0 §3.2 要求写清的三处，2026-10-02 由内容方确认）：
+--   a) 第 2 步「已存在于主轴」指**当前已合并的标签集**，包括此前辅助词并入的标签：
+--      主词无标签 T、辅1 引入 T、辅2 也带 T 时，辅2 同样获得 sameTagBonus。
+--   b) 第 7 步副作用追加的标签**按加法叠加**（标签已存在时 weight += addTags 值），
+--      不替换、不取最大值；追加值不再受第 5 步强度缩放；同一规则即使超出阈值倍数
+--      也只触发一次。第 7 步新增或改变权重的标签，按最终权重**重新套用同一张区间表定级**。
+--    c) intensityTiers 为**闭区间上界**语义：weight ≤ max 命中首个区间，超区间只看首个命中；
+--      超过最后一个边界（> 99）按配置覆盖错误处理，不自造第五档。
+--      标签最终权重因负修正被压到 ≤ 0 时，该标签从结果中移除（视为不产生该效果）。
+--      mods 单项允许范围 -4 ~ +4（有限数），超出报 CONFIG_INVALID；
+--      缩放系数 (1 + intensity×intensityScale) < 0 视为配置无效，= 0 时标签全部移除。
+--   其余：原料没有 duration 修正时按加法单位元 0 处理（缺单个键 ≠ 缺整个必填配置）；
+--   时间换算只读主词的 attributeProfileId，未配置 profile 的主词报 CONFIG_MISSING，
+--   不把任何一个词的样板自动套给其他词。
+--
 -- 数值全部是待调平衡的占位值，阶段 1 试玩后统一校准。
 -- ============================================================================
 
@@ -39,9 +54,10 @@ return {
     -- 强度修正对最终权重的换算系数：乘以 (1 + intensity * intensityScale)
     intensityScale = 0.25,
 
-    -- 副作用规则：原料 sideEffect 累计达到 minSideEffect 时附加标签
+    -- 副作用规则：原料 sideEffect 累计达到 minSideEffect 时附加标签。
+    -- id 用于 PotionResult.sideEffects 记录命中规则；同一规则只触发一次。
     sideEffectRules = {
-        { minSideEffect = 2, addTags = { dream = 0.4 }, note = "药效过于浓烈，夜里容易多梦" },
+        { id = "se_dream", minSideEffect = 2, addTags = { dream = 0.4 }, note = "药效过于浓烈，夜里容易多梦" },
     },
 
     -- 稳定性低于该值时，炼药标记为「可能失败」（阶段 1 先只做提示）
