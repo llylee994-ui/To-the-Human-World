@@ -10,6 +10,7 @@
 -- ============================================================================
 
 local EventBus = require "core.EventBus"
+local U = require "core.StateUtil"
 
 local GameFlow = {}
 
@@ -45,24 +46,29 @@ local state_ = DefaultState()
 -- ============================================================================
 
 --- 初始化。传 saved 则从存档恢复，缺字段按默认值补齐（不因存档字段缺失而崩溃）。
----@param saved? table SaveSystem.Load 的返回值
+---@param saved? table 仅 gameFlow 子表；非法类型不安装，缺字段才补默认。
+---@return table Result
 function GameFlow.Init(saved)
-    local defaults = DefaultState()
-    local loaded = saved or {}
-
-    state_.day = type(loaded.day) == "number" and math.floor(loaded.day) or defaults.day
-    state_.phase = type(loaded.phase) == "string" and loaded.phase or defaults.phase
-    state_.canSalvage = type(loaded.canSalvage) == "boolean" and loaded.canSalvage or defaults.canSalvage
-    state_.mainStoryStage = type(loaded.mainStoryStage) == "string" and loaded.mainStoryStage
-        or defaults.mainStoryStage
-    state_.deliveredOrders = type(loaded.deliveredOrders) == "number"
-        and math.floor(loaded.deliveredOrders) or defaults.deliveredOrders
-
-    print(string.format(
-        "[GameFlow] 初始化完成：第 %d 天，时段 %s，主线阶段 %s",
-        state_.day, state_.phase, state_.mainStoryStage
-    ))
+    local result = GameFlow.ValidateSnapshot(saved)
+    if result.ok then state_ = U.Copy(result.value) end
+    return result
 end
+
+function GameFlow.ValidateSnapshot(saved)
+    if saved == nil then return U.Ok(DefaultState()) end
+    local valid = U.Keys(saved, {day=true,phase=true,canSalvage=true,mainStoryStage=true,deliveredOrders=true}, "gameFlow")
+    if not valid.ok then return valid end
+    local candidate = DefaultState()
+    for k, v in pairs(saved) do candidate[k] = v end
+    if not U.Integer(candidate.day, 1) or not U.Integer(candidate.deliveredOrders)
+        or (candidate.phase ~= PHASE.DAY and candidate.phase ~= PHASE.ENDED)
+        or type(candidate.canSalvage) ~= "boolean" or not U.String(candidate.mainStoryStage) then
+        return U.Fail("FLOW_INVALID", "gameFlow", "天数、时段、布尔值或主线字段非法")
+    end
+    return U.Ok(candidate)
+end
+
+GameFlow.Restore = GameFlow.Init
 
 --- 导出为存档数据。
 ---@return table
@@ -75,6 +81,7 @@ function GameFlow.Serialize()
         deliveredOrders = state_.deliveredOrders,
     }
 end
+GameFlow.GetSnapshot = GameFlow.Serialize
 
 -- ============================================================================
 -- 查询

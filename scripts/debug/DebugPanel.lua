@@ -29,6 +29,7 @@ local logLabel_ = nil
 
 local logLines_ = {}
 local visible_ = false
+local testSlot_ = nil
 ---@type number
 local sinceRefresh_ = 0
 
@@ -63,11 +64,10 @@ end
 
 --- 构建调试面板并挂到根控件上。
 ---@param root Widget UI 根控件
----@param deps { gameFlow: table, saveSystem: table, saveProvider: fun(): table }
+---@param deps table 统一协调器的回调
 ---@return Widget 面板控件
 function DebugPanel.Attach(root, deps)
-    assert(root, "DebugPanel.Attach: 需要 UI 根控件")
-    assert(type(deps) == "table" and deps.gameFlow and deps.saveSystem, "DebugPanel.Attach: deps 缺少 gameFlow 或 saveSystem")
+    assert(deps.gameFlow and deps.save and deps.load, "DebugPanel.Attach: 缺少统一存取回调")
     deps_ = deps
 
     local logScroll = UI.ScrollView {
@@ -98,6 +98,7 @@ function DebugPanel.Attach(root, deps)
         pointerEvents = "auto",
         children = {
             UI.Label {
+                id = "debugTitleLabel",
                 text = "调试面板（Z 键开关）",
                 fontSize = 13,
                 fontColor = { 255, 220, 140, 255 },
@@ -126,22 +127,24 @@ function DebugPanel.Attach(root, deps)
                         text = "结束当天",
                         variant = "primary",
                         onClick = function()
-                            deps_.gameFlow.NextDay()
+                            local result = deps_.nextDay()
+                            if not result.ok then DebugPanel.Log(result.error.message) end
                         end,
                     },
                     UI.Button {
                         id = "debugSaveButton",
                         text = "保存",
                         onClick = function()
-                            deps_.saveSystem.Save(nil, deps_.saveProvider())
+                            local ok, err = deps_.save(testSlot_)
+                            DebugPanel.Log(ok and "保存成功" or ("保存未完成：" .. err.message))
+                            DebugPanel.Refresh()
                         end,
                     },
                     UI.Button {
                         id = "debugLoadButton",
                         text = "读取",
                         onClick = function()
-                            local data = deps_.saveSystem.Load(nil)
-                            DebugPanel.Log(data and "读取存档成功" or "读取存档失败（已回落默认值）")
+                            DebugPanel.LoadProgress(testSlot_)
                         end,
                     },
                 },
@@ -172,6 +175,32 @@ function DebugPanel.Attach(root, deps)
     DebugPanel.Refresh()
     print("[DebugPanel] 已挂载，按 Z 键开关")
     return panel_
+end
+
+function DebugPanel.DescribeStatus(status)
+    local labels = {new="没有存档（新游戏）",loaded="读取成功",migrated="已迁移到内存，尚未另存",
+        corrupt="存档损坏，已保留当前状态",unsupported="存档版本过新",migration_required="存档需要迁移或补齐恢复器",
+        config_error="内容配置错误，已禁用推进和保存",recovery_required="提交结果待核对，已禁用推进和保存"}
+    return (labels[status.status] or status.status) .. (status.error and ("：" .. status.error.message) or "")
+end
+
+function DebugPanel.LoadProgress(slotName)
+    assert(deps_, "调试面板尚未挂载")
+    local data, status = deps_.load(slotName)
+    DebugPanel.Log(DebugPanel.DescribeStatus(status))
+    DebugPanel.Refresh()
+    return data, status
+end
+
+-- F8 或显式 B1 诊断入口须在安装测试状态前绑定；检查失败也保留，按钮继续使用测试槽。
+-- 普通启动未进入上述入口时仍使用默认玩家槽。
+function DebugPanel.SetTestSlot(slot)
+    assert(type(slot) == "string" and slot:match("^b1_[%w_]+$"), "只允许 B1 隔离槽")
+    testSlot_ = slot
+    if panel_ then
+        local title = panel_:FindById("debugTitleLabel") --[[@as Label?]]
+        if title then title:SetText("B1 隔离检查 · " .. slot) end
+    end
 end
 
 ---@param provider fun(): table|nil
@@ -236,6 +265,10 @@ function DebugPanel.Refresh()
     end
     if not deps_ then
         return
+    end
+    for _, id in ipairs({"debugNextDayButton", "debugSaveButton"}) do
+        local button = panel_:FindById(id) --[[@as Button?]]
+        if button then button:SetDisabled(not deps_.canMutate()) end
     end
 
     if dayLabel_ then

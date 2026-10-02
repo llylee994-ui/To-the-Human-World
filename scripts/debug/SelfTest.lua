@@ -96,6 +96,7 @@ end
 ---@param gameFlow table
 local function TestSaveSystem(saveSystem, gameFlow)
     local slot = "selftest"
+    saveSystem.Delete(slot) -- 清除上次中断留下的专用测试槽，不触碰玩家槽。
 
     -- 1. 嵌套表往返
     local original = {
@@ -118,6 +119,7 @@ local function TestSaveSystem(saveSystem, gameFlow)
         partialOk and ("实际 day=" .. tostring(gameFlow.GetDay())) or "Init 抛异常")
 
     -- 3. 版本号过新：回落 nil
+    saveSystem.Delete(slot) -- 新协议仍优先于旧 JSON；此处独立验证旧文件兼容路径。
     local file = File("save_" .. slot .. ".json", FILE_WRITE)
     if file:IsOpen() then
         file:WriteString('{"schema":999,"data":{"day":1}}')
@@ -225,10 +227,19 @@ function SelfTest.RunAll(eventBus, gameFlow, saveSystem)
     print("========== 阶段 0 自检开始 ==========")
 
     TestEventBus(eventBus)
-    TestSaveSystem(saveSystem, gameFlow)
+    local saveChecksRan, saveCheckError = pcall(TestSaveSystem, saveSystem, gameFlow)
+    if not saveChecksRan then
+        Check("B3 存档自检执行异常", false,
+            type(saveCheckError) == "table" and saveCheckError.message or tostring(saveCheckError))
+    end
     TestGameFlow(eventBus, gameFlow)
 
     print(string.format("========== 阶段 0 自检结束：通过 %d，失败 %d ==========", passed_, failed_))
+end
+
+--- 仅由显式调试操作触发，普通启动不注入文件故障。
+function SelfTest.RunB1(context)
+    return require("debug.SaveSystemTest").RunRecovery(context)
 end
 
 return SelfTest

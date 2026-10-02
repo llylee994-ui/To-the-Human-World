@@ -14,7 +14,10 @@ local UI = require("urhox-libs/UI")
 local EventBus = require "core.EventBus"
 local SaveSystem = require "core.SaveSystem"
 local GameFlow = require "core.GameFlow"
+local GameState = require "core.GameState"
+local Economy = require "systems.Economy"
 local Data = require "data.content"
+local StateUtil = require "core.StateUtil"
 local DebugPanel = require "debug.DebugPanel"
 local SelfTest = require "debug.SelfTest"
 
@@ -26,6 +29,12 @@ local uiRoot_ = nil
 local dayLabel_ = nil
 local uiFrameCount_ = 0
 local uiLayoutChecked_ = false
+---@type table
+local gameState_ = {}
+local startupStatus_ = ""
+local ledgerStatus_ = ""
+---@type string
+local b1Request_ = require "debug.B1RunRequest"
 
 -- ============================================================================
 -- 生命周期
@@ -37,19 +46,44 @@ function Start()
     InitUI()
 
     -- 内容配置校验：配置写错时在这里一次性列出来，不让错误流到运行时
-    Data.Load()
+    local dataReady, dataErrors = Data.Load()
+    local dataError
+    if not dataReady then
+        dataError = StateUtil.Error("CONFIG_INVALID", "Data.Load", table.concat(dataErrors, "；"))
+    else
+        local initial = Economy.InitialSnapshot()
+        if not initial.ok then
+            dataReady, dataError = false, initial.error
+        else
+            dataReady, dataErrors = Data.ValidateStage1()
+            if not dataReady then dataError = StateUtil.Error("CONFIG_INVALID", "Data.ValidateStage1", table.concat(dataErrors, "；")) end
+        end
+    end
+    if dataReady then ledgerStatus_ = "\n首单配置已校验；完整模块恢复器就绪后启用账本"
+    else ledgerStatus_ = "" end
 
     -- 阶段 0 自检（B2 / B3 / B4）。会改动 GameFlow 状态，必须在正式载入存档之前跑。
     SelfTest.RunAll(EventBus, GameFlow, SaveSystem)
+    GameFlow.Init(nil)
+    gameState_ = GameState.New({gameFlow=GameFlow,saveSystem=SaveSystem,eventBus=EventBus,dataReady=dataReady,dataError=dataError})
 
-    -- 载入存档；没有存档或存档不合格时按新游戏开始
-    local saved = SaveSystem.Load(nil)
-    GameFlow.Init(saved)
+    -- 仅无存档时新开局；配置/读档失败保留诊断并锁定写入和推进。
+    local _, status = LoadProgress(nil)
+    startupStatus_ = DebugPanel.DescribeStatus(status)
+    startupStatus_ = startupStatus_ .. ledgerStatus_
 
     CreateUI()
     SubscribeToEvents()
+    DebugPanel.Log(startupStatus_)
+    if status.status ~= "loaded" and status.status ~= "new" then DebugPanel.SetVisible(true) end
 
     print(string.format("=== %s 启动完成（第 %d 天）===", TITLE, GameFlow.GetDay()))
+end
+
+function LoadProgress(slotName)
+    local data, status = gameState_.Load(slotName)
+    RefreshHeader()
+    return data, status
 end
 
 function Stop()
@@ -122,8 +156,21 @@ function CreateUI()
                         marginTop = 12,
                     },
                     UI.Label {
+                        id = "saveStatusLabel",
+                        text = startupStatus_,
+                        fontSize = 12,
+                        fontColor = { 230, 195, 145, 255 },
+                        width = "100%",
+                        textAlign = "center",
+                    },
+                    UI.Button {
+                        id = "debugToggleButton",
+                        text = "调试面板",
+                        onClick = function() DebugPanel.Toggle() end,
+                    },
+                    UI.Label {
                         id = "hintLabel",
-                        text = "按 Z 打开调试面板",
+                        text = "F6 检查 · F7 写测试档 · F8 读测试档",
                         fontSize = 12,
                         fontColor = { 130, 140, 165, 200 },
                         position = "absolute",
@@ -140,12 +187,14 @@ function CreateUI()
     -- 调试面板挂到 SafeAreaView 下，先入树再 SetRoot，避免根控件设定后补挂导致首帧不渲染
     DebugPanel.Attach(root, {
         gameFlow = GameFlow,
-        saveSystem = SaveSystem,
-        saveProvider = function()
-            return {
-                gameFlow = GameFlow.Serialize(),
-            }
+        save = function(slot)
+            local ok, err = gameState_.Save(slot)
+            RefreshHeader()
+            return ok, err
         end,
+        load = LoadProgress,
+        nextDay = function() return gameState_.NextDay() end,
+        canMutate = function() return gameState_.CanMutate() end,
     })
     DebugPanel.SetWorldStateProvider(function()
         -- 阶段 1 接入 WorldState 后改读真实世界状态
@@ -165,6 +214,10 @@ function RefreshHeader()
         return
     end
     dayLabel_:SetText(string.format("第 %d 天 · 时段 %s", GameFlow.GetDay(), GameFlow.GetPhase()))
+    if uiRoot_ then
+        local statusLabel = uiRoot_:FindById("saveStatusLabel") --[[@as Label?]]
+        if statusLabel then statusLabel:SetText(DebugPanel.DescribeStatus(gameState_.GetStatus()) .. ledgerStatus_) end
+    end
 end
 
 -- ============================================================================
@@ -184,12 +237,36 @@ function SubscribeToEvents()
     EventBus.On("PhaseChanged", function()
         RefreshHeader()
     end, 0, "main")
+    EventBus.On("SaveLoaded", function()
+        RefreshHeader()
+        DebugPanel.Refresh()
+    end, 0, "main")
+end
+
+-- 先绑定隔离槽再运行检查；中途失败也保留该槽，防止已安装的测试进度写入玩家槽。
+---@param writeFixture boolean
+---@return boolean
+local function RunB1RestartCheck(writeFixture)
+    DebugPanel.SetTestSlot("b1_restart_flow")
+    DebugPanel.SetVisible(true)
+    local ok, err = pcall(function()
+        local tests = require "debug.SaveSystemTest"
+        if writeFixture then
+            assert(RunB1Checks(), "B1 专项检查失败")
+            tests.WriteRestartFixture()
+        end
+        tests.ReadRestartFixture(DebugPanel.LoadProgress)
+    end)
+    if not ok then DebugPanel.Log("B1 隔离检查未完成：" .. tostring(err)) end
+    RefreshHeader()
+    DebugPanel.Refresh()
+    return ok
 end
 
 ---@param _eventType string
 ---@param eventData UpdateEventData
 function HandleUpdate(_eventType, eventData)
-    local timeStep = eventData:GetFloat("TimeStep")
+    local timeStep = eventData["TimeStep"]:GetFloat()
     DebugPanel.Update(timeStep)
 
     -- 首帧布局完成后做一次界面自检（B1），只跑一次
@@ -198,6 +275,16 @@ function HandleUpdate(_eventType, eventData)
         if uiFrameCount_ == 30 then
             uiLayoutChecked_ = true
             SelfTest.CheckUILayout(uiRoot_)
+            if b1Request_ == "write" then
+                RunB1RestartCheck(true)
+            elseif b1Request_ == "read" then
+                RunB1RestartCheck(false)
+            elseif b1Request_ == "error" then
+                SaveSystem.Save("b1_error_ui", {gameFlow=GameFlow.Serialize(),unknownBusiness={}})
+                DebugPanel.SetVisible(true)
+                DebugPanel.SetTestSlot("b1_error_ui")
+                DebugPanel.LoadProgress("b1_error_ui")
+            end
         end
     end
 end
@@ -205,9 +292,36 @@ end
 ---@param _eventType string
 ---@param eventData KeyDownEventData
 function HandleKeyDown(_eventType, eventData)
-    local key = eventData:GetInt("Key")
+    local key = eventData["Key"]:GetInt()
 
     if key == KEY_Z then
         DebugPanel.Toggle()
+    elseif key == KEY_F6 then
+        DebugPanel.SetVisible(true)
+        RunB1Checks()
+    elseif key == KEY_F7 then
+        require("debug.SaveSystemTest").WriteRestartFixture()
+    elseif key == KEY_F8 then
+        RunB1RestartCheck(false)
     end
+end
+
+---@return boolean
+function RunB1Checks()
+    DebugPanel.SetVisible(true)
+    local result = gameState_.WithPreservedState(function()
+        return SelfTest.RunB1({
+            gameFlow = GameFlow, saveSystem = SaveSystem,
+            loadStartup = LoadProgress, loadDebug = DebugPanel.LoadProgress,
+            refresh = function() RefreshHeader(); DebugPanel.Refresh() end,
+            getTexts = function()
+                if not uiRoot_ or not dayLabel_ then return {header="",panel=""} end
+                local panelDay = uiRoot_:FindById("debugDayLabel") --[[@as Label?]]
+                return { header = dayLabel_:GetText(), panel = panelDay and panelDay:GetText() or "" }
+            end,
+        })
+    end)
+    RefreshHeader()
+    DebugPanel.Refresh()
+    return result
 end
