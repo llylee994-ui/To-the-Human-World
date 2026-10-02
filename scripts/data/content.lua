@@ -1220,7 +1220,6 @@ function Data.ValidateStage1()
 
     -- 事实规则与事实表
     local factIds = {}
-    local factImportant = {}
     if type(Data.directRules) ~= "table" or #Data.directRules == 0 then
         errors[#errors + 1] = "[C3] followup.lua directRules 为空"
     else
@@ -1262,9 +1261,6 @@ function Data.ValidateStage1()
                         end
                         if factIds[fact.id] == nil then
                             factIds[fact.id] = true
-                            factImportant[fact.id] = fact.important == true
-                        elseif fact.important == true then
-                            factImportant[fact.id] = true
                         end
                     end
                 end
@@ -1370,7 +1366,7 @@ function Data.ValidateStage1()
         end
     end
 
-    -- 模板：片段清单完整（无孤儿）、重要事实必须有片段覆盖
+    -- 模板：片段清单完整（无孤儿片段）
     if type(Data.followupTemplates) == "table" then
         for i = 1, #Data.followupTemplates do
             local tpl = Data.followupTemplates[i]
@@ -1391,20 +1387,45 @@ function Data.ValidateStage1()
                     errors[#errors + 1] = string.format("[C3] 片段 %s 属于模板 %s，但没有列入任何片段清单（孤儿片段）", tostring(frag.id), tostring(tpl.id))
                 end
             end
-            local covered = {}
-            for j = 1, #Data.fragments do
-                local frag = Data.fragments[j]
-                if frag.templateId == tpl.id and type(frag.coversFacts) == "table" then
-                    for k = 1, #frag.coversFacts do
-                        covered[frag.coversFacts[k]] = true
+        end
+    end
+
+    -- 重要事实覆盖：按「订单信 → 规则集的事实」对「订单信 → 模板的片段」配对检查。
+    -- 每封订单只对自己的规则集事实负责，不跨订单要求（新增信件时不牵连既有模板）。
+    for i = 1, #Data.letters do
+        ---@type table
+        local letter = Data.letters[i]
+        if letter.kind == "order"
+            and type(letter.followupTemplateId) == "string"
+            and type(letter.directRuleSetId) == "string" then
+            local tpl = followupTemplatesById_[letter.followupTemplateId]
+            local rules = directRulesBySet_[letter.directRuleSetId]
+            if tpl and rules then
+                local covered = {}
+                for j = 1, #Data.fragments do
+                    local frag = Data.fragments[j]
+                    if frag.templateId == tpl.id and type(frag.coversFacts) == "table" then
+                        for k = 1, #frag.coversFacts do
+                            covered[frag.coversFacts[k]] = true
+                        end
                     end
                 end
-            end
-            for factId, important in pairs(factImportant) do
-                if important and not covered[factId] then
-                    errors[#errors + 1] = string.format(
-                        "[C3] 模板 %s：重要事实 %s 没有任何片段 covers，发货时会报 CONTENT_UNCOVERED", tostring(tpl.id), factId
-                    )
+                local reported = {}
+                for r = 1, #rules do
+                    local facts = rules[r].facts
+                    if type(facts) == "table" then
+                        for f = 1, #facts do
+                            local fact = facts[f]
+                            if type(fact) == "table" and fact.important == true
+                                and fact.id ~= nil and not covered[fact.id] and not reported[fact.id] then
+                                reported[fact.id] = true
+                                errors[#errors + 1] = string.format(
+                                    "[C3] 订单 %s 的模板 %s：重要事实 %s 没有任何片段 covers，发货时会报 CONTENT_UNCOVERED",
+                                    tostring(letter.id), tostring(tpl.id), tostring(fact.id)
+                                )
+                            end
+                        end
+                    end
                 end
             end
         end
