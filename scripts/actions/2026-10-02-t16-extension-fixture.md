@@ -76,4 +76,9 @@ scripts/
 
 ## 提交与远端验证
 
-- 提交：见文末「推送结果同步」；推送使用 `git push github main`，不触发 Maker 构建。
+- 内容包提交：`f523ffa`（5 个文件，363 插入 / 20 删除），标题「feat(data): 交付 T16/A12
+  技术扩展测试包（新增订单信与词定义，含重复词夹具）」；暂存使用显式文件清单。
+- 已执行 `git push github main`：`56cbd2c..f523ffa`；推送后 `git ls-remote github refs/heads/main`
+  返回与本地 HEAD 一致的完整 SHA（本节随后续提交同步，不把记录自身的哈希写入正文）。
+- 未触发 Maker 提交/远端构建；未改动程序文件（`main.lua`、`core/`、`systems/`、`debug/`）；
+  `.tmp/` 下的验证脚本按忽略规则不入库。
