@@ -72,4 +72,10 @@ scripts/data/
 
 ## 提交与远端验证
 
-- 提交：见文末「推送结果同步」；推送使用 `git push github main`，不触发 Maker 构建。
+- 内容包提交：`cc4f9940d54f07fecbcf6bb09444662eeb4f8b4c`（15 个文件，2568 插入 / 45 删除），标题
+  「feat(data): 交付首单内容包 C1~C3（开局账本、首单数值、事实与回信、校验与填写说明）」；
+  暂存使用显式文件清单，未用 `git add .`。
+- 已执行 `git push github main`：`5ebe269..cc4f994`；推送后 `git ls-remote github refs/heads/main`
+  返回与本地 HEAD 一致的 SHA。
+- 未触发 Maker 提交/远端构建；未改动 `main.lua`、`core/`、`systems/` 等程序文件；
+  `.tmp/` 下的本地复算脚本按忽略规则不入库。
