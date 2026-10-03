@@ -45,4 +45,6 @@ docs/actions/  本记录
 
 ## 提交与远端验证
 
-- 提交与推送：见文末「推送结果同步」；`git push github main`。
+- 提交：`908096b`（19 个文件），标题「feat(content): 词条层第一批——happy 整族整理（首单快乐→笑，word_happy 退役）」。
+- 已执行 `git push github main`：`877a5f0..908096b`，远端 SHA 已核对。未触发 Maker 提交/构建（内容侧批次由对应负责人按既有流程同步）。
+- 三份验算 JSON 为脚本重新导出，可复现：`python -B -X utf8 docs/验证/check_single_use_content.py --export "docs/文案/前三单词卡与组合验算_v01.json"` 与 `python -B -X utf8 docs/验证/check_delivery_budget.py --export-word-ledger "docs/文案/词卡逐张供应账_v01.json" --export-omission-summary "docs/文案/漏单词源与资金验算_v01.json"`。
