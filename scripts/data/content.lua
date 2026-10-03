@@ -1398,8 +1398,8 @@ function Data.ValidateStage1()
         if letter.kind == "order"
             and type(letter.followupTemplateId) == "string"
             and type(letter.directRuleSetId) == "string" then
-            local tpl = followupTemplatesById_[letter.followupTemplateId]
-            local rules = directRulesBySet_[letter.directRuleSetId]
+            local tpl = followupTemplatesById_[letter.followupTemplateId --[[@as string]]] --[[@as table|nil]]
+            local rules = directRulesBySet_[letter.directRuleSetId --[[@as string]]] --[[@as table[]|nil]]
             if tpl and rules then
                 local covered = {}
                 for j = 1, #Data.fragments do

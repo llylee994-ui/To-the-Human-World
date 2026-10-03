@@ -35,6 +35,8 @@ local startupStatus_ = ""
 local ledgerStatus_ = ""
 ---@type string
 local b1Request_ = require "debug.B1RunRequest"
+---@type string
+local b2Request_ = require "debug.B2RunRequest"
 
 -- ============================================================================
 -- 生命周期
@@ -168,6 +170,11 @@ function CreateUI()
                         text = "调试面板",
                         onClick = function() DebugPanel.Toggle() end,
                     },
+                    UI.Button {
+                        id = "b2CheckButton",
+                        text = "B2 信件检查",
+                        onClick = function() RunB2Checks() end,
+                    },
                     UI.Label {
                         id = "hintLabel",
                         text = "F6 检查 · F7 写测试档 · F8 读测试档",
@@ -275,6 +282,7 @@ function HandleUpdate(_eventType, eventData)
         if uiFrameCount_ == 30 then
             uiLayoutChecked_ = true
             SelfTest.CheckUILayout(uiRoot_)
+            if b2Request_ == "check" then RunB2Checks() end
             if b1Request_ == "write" then
                 RunB1RestartCheck(true)
             elseif b1Request_ == "read" then
@@ -324,4 +332,27 @@ function RunB1Checks()
     RefreshHeader()
     DebugPanel.Refresh()
     return result
+end
+
+-- 必须先绑定测试槽。B2 内部用真实模块+显式夹具，不给生产 v1 安装假恢复器。
+---@return boolean
+function RunB2Checks()
+    DebugPanel.SetTestSlot("b2_debug_flow")
+    DebugPanel.SetVisible(true)
+    local ok,result=pcall(function()
+        return gameState_.WithPreservedState(function()
+            return SelfTest.RunB2({buttons=function()
+                local buttons={}
+                for _, id in ipairs({"debugNextDayButton","debugSaveButton","debugLoadButton"}) do
+                    local button=assert(uiRoot_):FindById(id)
+                    if button then buttons[#buttons+1]=button end
+                end
+                return buttons
+            end})
+        end)
+    end)
+    RefreshHeader(); DebugPanel.Refresh()
+    DebugPanel.Log(ok and result and "B2 模块与隔离联调检查通过；正式 v2 尚未启用" or "B2 检查未完成：" .. tostring(result))
+    if not ok then print("[B2] entry ERROR " .. tostring(result)) end
+    return ok and result == true
 end

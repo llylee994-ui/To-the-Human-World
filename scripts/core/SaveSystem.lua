@@ -71,10 +71,14 @@ function SaveSystem.New(storage)
         return nil, nil
     end
     function api.GetSchemaVersion() return 1 end
+    ---@param slot? string
+    ---@return table|nil data
+    ---@return table status
     function api.Load(slot)
         local ok, raw, marker = pcall(function() return readCurrent(paths(slot)) end)
         if not ok then return nil, {status="corrupt",error=U.Error("SAVE_READ_FAILED", "file", tostring(raw))} end
         if not raw then return nil, {status="new",schema=1} end
+        if type(raw) ~= "string" then return nil,{status="corrupt",error=U.Error("SAVE_DECODE_FAILED","file","文件未返回文本")} end
         local decoded, env = pcall(cjson.decode, raw)
         if not decoded or type(env) ~= "table" or not U.Integer(env.schema, 1) or type(env.data) ~= "table" then
             return nil, {status="corrupt",error=U.Error("SAVE_DECODE_FAILED", "envelope", "文件损坏或结构不完整")}

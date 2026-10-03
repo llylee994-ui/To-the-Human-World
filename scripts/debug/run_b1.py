@@ -14,7 +14,7 @@ sys.path.insert(0, str(ROOT / ".tmp" / "b1-python"))
 from lupa.lua54 import LuaRuntime, lua_type
 
 
-def main():
+def main(argv=None, entrypoint=None):
     parser = argparse.ArgumentParser(description=__doc__)
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument("--config-failure", choices=("load", "c1", "stage1"))
@@ -22,7 +22,7 @@ def main():
         "existing", "missing", "flow_missing", "v2_corrupt",
         "auto_write", "auto_read", "auto_read_flow_missing", "auto_read_v2_corrupt",
     ))
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
     lua = LuaRuntime(unpack_returned_tuples=True)
     lua.execute("package.path = ... .. '/scripts/?.lua;' .. package.path", ROOT.as_posix())
 
@@ -123,6 +123,12 @@ def main():
             ''')
             assert not list(storage.glob("save_slot1*")), "configuration failure must not write default slot"
             return 0
+        if entrypoint:
+            if "." not in entrypoint:
+                return 0 if lua.eval(entrypoint)() else 1
+            test_module = lua.eval("require")(entrypoint)
+            if isinstance(test_module, tuple): test_module = test_module[0]
+            return 0 if test_module.Run() else 1
         result = lua.eval("RunB1Checks")()
         print("[B1 runner] Lua", lua.eval("_VERSION"), "File/UI=TEST ADAPTERS result=", result)
         return 0 if result else 1
