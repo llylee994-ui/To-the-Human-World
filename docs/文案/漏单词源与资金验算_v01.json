@@ -1,0 +1,4292 @@
+{
+  "scope": "formal words single-use at story-v0.3-r3; future supply/rewards/schema remain manuscript-only, not runtime-verified",
+  "inputs": 3036,
+  "omission_matrix": {
+    "归案+学徒": {
+      "standard": {
+        "combinations": 253,
+        "both_by_day11": 91,
+        "at_least_one_by_day11": 217,
+        "minimum_day6": 711,
+        "minimum_day11": 1026,
+        "minimum_available_definitions": 22,
+        "minimum_available_categories": 7,
+        "minimum_available_cards": 52,
+        "worst": [
+          {
+            "omitted": [
+              "N03",
+              "N04"
+            ],
+            "blocked": [
+              "N03",
+              "N04",
+              "N11",
+              "N12",
+              "N19",
+              "N20"
+            ],
+            "day11": 1026,
+            "day6": 711,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N11",
+              "N12",
+              "N19",
+              "N20"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:1",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:2",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:3",
+                "wordId": "word_reassured"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:4",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:1",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:2",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:3",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:1",
+                "wordId": "word_warm"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:2",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:3",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:1",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:2",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:4",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:4",
+                "wordId": "word_bread"
+              }
+            ],
+            "available_word_count": 26,
+            "available_category_count": 8,
+            "available_card_count": 52
+          },
+          {
+            "omitted": [
+              "N03",
+              "N05"
+            ],
+            "blocked": [
+              "N03",
+              "N05",
+              "N11",
+              "N13",
+              "N19",
+              "N21"
+            ],
+            "day11": 1026,
+            "day6": 711,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N11",
+              "N13",
+              "N19",
+              "N21"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:1",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:2",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:3",
+                "wordId": "word_reassured"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:3",
+                "wordId": "word_lookup"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:1",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:2",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:3",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:1",
+                "wordId": "word_brave"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:2",
+                "wordId": "word_promise"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:3",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:1",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:2",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:4",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:3",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:4",
+                "wordId": "word_promise"
+              }
+            ],
+            "available_word_count": 25,
+            "available_category_count": 8,
+            "available_card_count": 53
+          },
+          {
+            "omitted": [
+              "N04",
+              "N05"
+            ],
+            "blocked": [
+              "N04",
+              "N05",
+              "N12",
+              "N13",
+              "N20",
+              "N21"
+            ],
+            "day11": 1026,
+            "day6": 711,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N12",
+              "N13",
+              "N20",
+              "N21"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:4",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:3",
+                "wordId": "word_lookup"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:1",
+                "wordId": "word_warm"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:2",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:3",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:1",
+                "wordId": "word_brave"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:2",
+                "wordId": "word_promise"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:3",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:4",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:3",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:4",
+                "wordId": "word_promise"
+              }
+            ],
+            "available_word_count": 26,
+            "available_category_count": 8,
+            "available_card_count": 52
+          }
+        ]
+      },
+      "nonminimal": {
+        "combinations": 253,
+        "both_by_day11": 91,
+        "at_least_one_by_day11": 217,
+        "minimum_day6": 626,
+        "minimum_day11": 906,
+        "minimum_available_definitions": 22,
+        "minimum_available_categories": 7,
+        "minimum_available_cards": 52,
+        "worst": [
+          {
+            "omitted": [
+              "N03",
+              "N04"
+            ],
+            "blocked": [
+              "N03",
+              "N04",
+              "N11",
+              "N12",
+              "N19",
+              "N20"
+            ],
+            "day11": 906,
+            "day6": 626,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N11",
+              "N12",
+              "N19",
+              "N20"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:1",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:2",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:3",
+                "wordId": "word_reassured"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:4",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:1",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:2",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:3",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:1",
+                "wordId": "word_warm"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:2",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:3",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:1",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:2",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:4",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:4",
+                "wordId": "word_bread"
+              }
+            ],
+            "available_word_count": 26,
+            "available_category_count": 8,
+            "available_card_count": 52
+          },
+          {
+            "omitted": [
+              "N03",
+              "N05"
+            ],
+            "blocked": [
+              "N03",
+              "N05",
+              "N11",
+              "N13",
+              "N19",
+              "N21"
+            ],
+            "day11": 906,
+            "day6": 626,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N11",
+              "N13",
+              "N19",
+              "N21"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:1",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:2",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:3",
+                "wordId": "word_reassured"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:3",
+                "wordId": "word_lookup"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:1",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:2",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:3",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:1",
+                "wordId": "word_brave"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:2",
+                "wordId": "word_promise"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:3",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:1",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:2",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:4",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:3",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:4",
+                "wordId": "word_promise"
+              }
+            ],
+            "available_word_count": 25,
+            "available_category_count": 8,
+            "available_card_count": 53
+          },
+          {
+            "omitted": [
+              "N04",
+              "N05"
+            ],
+            "blocked": [
+              "N04",
+              "N05",
+              "N12",
+              "N13",
+              "N20",
+              "N21"
+            ],
+            "day11": 906,
+            "day6": 626,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N12",
+              "N13",
+              "N20",
+              "N21"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:4",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:3",
+                "wordId": "word_lookup"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:1",
+                "wordId": "word_warm"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:2",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:3",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:1",
+                "wordId": "word_brave"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:2",
+                "wordId": "word_promise"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:3",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:4",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:3",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:4",
+                "wordId": "word_promise"
+              }
+            ],
+            "available_word_count": 26,
+            "available_category_count": 8,
+            "available_card_count": 52
+          }
+        ]
+      }
+    },
+    "逃脱+学徒": {
+      "standard": {
+        "combinations": 253,
+        "both_by_day11": 91,
+        "at_least_one_by_day11": 217,
+        "minimum_day6": 711,
+        "minimum_day11": 1026,
+        "minimum_available_definitions": 22,
+        "minimum_available_categories": 7,
+        "minimum_available_cards": 54,
+        "worst": [
+          {
+            "omitted": [
+              "N03",
+              "N04"
+            ],
+            "blocked": [
+              "N03",
+              "N04",
+              "N11",
+              "N12",
+              "N19",
+              "N20"
+            ],
+            "day11": 1026,
+            "day6": 711,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N11",
+              "N12",
+              "N19",
+              "N20"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:1",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:2",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:3",
+                "wordId": "word_reassured"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:4",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:1",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:2",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:3",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:1",
+                "wordId": "word_warm"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:2",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:3",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:1",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:2",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:4",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:4",
+                "wordId": "word_bread"
+              }
+            ],
+            "available_word_count": 26,
+            "available_category_count": 8,
+            "available_card_count": 54
+          },
+          {
+            "omitted": [
+              "N03",
+              "N05"
+            ],
+            "blocked": [
+              "N03",
+              "N05",
+              "N11",
+              "N13",
+              "N19",
+              "N21"
+            ],
+            "day11": 1026,
+            "day6": 711,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N11",
+              "N13",
+              "N19",
+              "N21"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:1",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:2",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:3",
+                "wordId": "word_reassured"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:3",
+                "wordId": "word_lookup"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:1",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:2",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:3",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:1",
+                "wordId": "word_brave"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:2",
+                "wordId": "word_promise"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:3",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:1",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:2",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:4",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:3",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:4",
+                "wordId": "word_promise"
+              }
+            ],
+            "available_word_count": 25,
+            "available_category_count": 8,
+            "available_card_count": 55
+          },
+          {
+            "omitted": [
+              "N04",
+              "N05"
+            ],
+            "blocked": [
+              "N04",
+              "N05",
+              "N12",
+              "N13",
+              "N20",
+              "N21"
+            ],
+            "day11": 1026,
+            "day6": 711,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N12",
+              "N13",
+              "N20",
+              "N21"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:4",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:3",
+                "wordId": "word_lookup"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:1",
+                "wordId": "word_warm"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:2",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:3",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:1",
+                "wordId": "word_brave"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:2",
+                "wordId": "word_promise"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:3",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:4",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:3",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:4",
+                "wordId": "word_promise"
+              }
+            ],
+            "available_word_count": 26,
+            "available_category_count": 8,
+            "available_card_count": 54
+          }
+        ]
+      },
+      "nonminimal": {
+        "combinations": 253,
+        "both_by_day11": 91,
+        "at_least_one_by_day11": 217,
+        "minimum_day6": 626,
+        "minimum_day11": 906,
+        "minimum_available_definitions": 22,
+        "minimum_available_categories": 7,
+        "minimum_available_cards": 54,
+        "worst": [
+          {
+            "omitted": [
+              "N03",
+              "N04"
+            ],
+            "blocked": [
+              "N03",
+              "N04",
+              "N11",
+              "N12",
+              "N19",
+              "N20"
+            ],
+            "day11": 906,
+            "day6": 626,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N11",
+              "N12",
+              "N19",
+              "N20"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:1",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:2",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:3",
+                "wordId": "word_reassured"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:4",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:1",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:2",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:3",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:1",
+                "wordId": "word_warm"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:2",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:3",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:1",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:2",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:4",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:4",
+                "wordId": "word_bread"
+              }
+            ],
+            "available_word_count": 26,
+            "available_category_count": 8,
+            "available_card_count": 54
+          },
+          {
+            "omitted": [
+              "N03",
+              "N05"
+            ],
+            "blocked": [
+              "N03",
+              "N05",
+              "N11",
+              "N13",
+              "N19",
+              "N21"
+            ],
+            "day11": 906,
+            "day6": 626,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N11",
+              "N13",
+              "N19",
+              "N21"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:1",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:2",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:3",
+                "wordId": "word_reassured"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:3",
+                "wordId": "word_lookup"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:1",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:2",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:3",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:1",
+                "wordId": "word_brave"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:2",
+                "wordId": "word_promise"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:3",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:1",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:2",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:4",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:3",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:4",
+                "wordId": "word_promise"
+              }
+            ],
+            "available_word_count": 25,
+            "available_category_count": 8,
+            "available_card_count": 55
+          },
+          {
+            "omitted": [
+              "N04",
+              "N05"
+            ],
+            "blocked": [
+              "N04",
+              "N05",
+              "N12",
+              "N13",
+              "N20",
+              "N21"
+            ],
+            "day11": 906,
+            "day6": 626,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N12",
+              "N13",
+              "N20",
+              "N21"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:4",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:3",
+                "wordId": "word_lookup"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:1",
+                "wordId": "word_warm"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:2",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:3",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:1",
+                "wordId": "word_brave"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:2",
+                "wordId": "word_promise"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:3",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:4",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:3",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:4",
+                "wordId": "word_promise"
+              }
+            ],
+            "available_word_count": 26,
+            "available_category_count": 8,
+            "available_card_count": 54
+          }
+        ]
+      }
+    },
+    "未解+学徒": {
+      "standard": {
+        "combinations": 253,
+        "both_by_day11": 91,
+        "at_least_one_by_day11": 217,
+        "minimum_day6": 711,
+        "minimum_day11": 1026,
+        "minimum_available_definitions": 22,
+        "minimum_available_categories": 7,
+        "minimum_available_cards": 54,
+        "worst": [
+          {
+            "omitted": [
+              "N03",
+              "N04"
+            ],
+            "blocked": [
+              "N03",
+              "N04",
+              "N11",
+              "N12",
+              "N19",
+              "N20"
+            ],
+            "day11": 1026,
+            "day6": 711,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N11",
+              "N12",
+              "N19",
+              "N20"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:1",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:2",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:3",
+                "wordId": "word_reassured"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:4",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:1",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:2",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:3",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:1",
+                "wordId": "word_warm"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:2",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:3",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:1",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:2",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:4",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:4",
+                "wordId": "word_bread"
+              }
+            ],
+            "available_word_count": 26,
+            "available_category_count": 8,
+            "available_card_count": 54
+          },
+          {
+            "omitted": [
+              "N03",
+              "N05"
+            ],
+            "blocked": [
+              "N03",
+              "N05",
+              "N11",
+              "N13",
+              "N19",
+              "N21"
+            ],
+            "day11": 1026,
+            "day6": 711,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N11",
+              "N13",
+              "N19",
+              "N21"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:1",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:2",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:3",
+                "wordId": "word_reassured"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:3",
+                "wordId": "word_lookup"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:1",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:2",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:3",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:1",
+                "wordId": "word_brave"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:2",
+                "wordId": "word_promise"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:3",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:1",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:2",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:4",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:3",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:4",
+                "wordId": "word_promise"
+              }
+            ],
+            "available_word_count": 25,
+            "available_category_count": 8,
+            "available_card_count": 55
+          },
+          {
+            "omitted": [
+              "N04",
+              "N05"
+            ],
+            "blocked": [
+              "N04",
+              "N05",
+              "N12",
+              "N13",
+              "N20",
+              "N21"
+            ],
+            "day11": 1026,
+            "day6": 711,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N12",
+              "N13",
+              "N20",
+              "N21"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:4",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:3",
+                "wordId": "word_lookup"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:1",
+                "wordId": "word_warm"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:2",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:3",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:1",
+                "wordId": "word_brave"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:2",
+                "wordId": "word_promise"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:3",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:4",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:3",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:4",
+                "wordId": "word_promise"
+              }
+            ],
+            "available_word_count": 26,
+            "available_category_count": 8,
+            "available_card_count": 54
+          }
+        ]
+      },
+      "nonminimal": {
+        "combinations": 253,
+        "both_by_day11": 91,
+        "at_least_one_by_day11": 217,
+        "minimum_day6": 626,
+        "minimum_day11": 906,
+        "minimum_available_definitions": 22,
+        "minimum_available_categories": 7,
+        "minimum_available_cards": 54,
+        "worst": [
+          {
+            "omitted": [
+              "N03",
+              "N04"
+            ],
+            "blocked": [
+              "N03",
+              "N04",
+              "N11",
+              "N12",
+              "N19",
+              "N20"
+            ],
+            "day11": 906,
+            "day6": 626,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N11",
+              "N12",
+              "N19",
+              "N20"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:1",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:2",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:3",
+                "wordId": "word_reassured"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:4",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:1",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:2",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:3",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:1",
+                "wordId": "word_warm"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:2",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:3",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:1",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:2",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:4",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:4",
+                "wordId": "word_bread"
+              }
+            ],
+            "available_word_count": 26,
+            "available_category_count": 8,
+            "available_card_count": 54
+          },
+          {
+            "omitted": [
+              "N03",
+              "N05"
+            ],
+            "blocked": [
+              "N03",
+              "N05",
+              "N11",
+              "N13",
+              "N19",
+              "N21"
+            ],
+            "day11": 906,
+            "day6": 626,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N11",
+              "N13",
+              "N19",
+              "N21"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:1",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:2",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n03",
+                "spanId": "body:3",
+                "wordId": "word_reassured"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:3",
+                "wordId": "word_lookup"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:1",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:2",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:3",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:1",
+                "wordId": "word_brave"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:2",
+                "wordId": "word_promise"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:3",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:1",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:2",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:4",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:3",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:4",
+                "wordId": "word_promise"
+              }
+            ],
+            "available_word_count": 25,
+            "available_category_count": 8,
+            "available_card_count": 55
+          },
+          {
+            "omitted": [
+              "N04",
+              "N05"
+            ],
+            "blocked": [
+              "N04",
+              "N05",
+              "N12",
+              "N13",
+              "N20",
+              "N21"
+            ],
+            "day11": 906,
+            "day6": 626,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N12",
+              "N13",
+              "N20",
+              "N21"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n04",
+                "spanId": "body:4",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n05",
+                "spanId": "body:3",
+                "wordId": "word_lookup"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:1",
+                "wordId": "word_warm"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:2",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:3",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:1",
+                "wordId": "word_brave"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:2",
+                "wordId": "word_promise"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:3",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:4",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:3",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:4",
+                "wordId": "word_promise"
+              }
+            ],
+            "available_word_count": 26,
+            "available_category_count": 8,
+            "available_card_count": 54
+          }
+        ]
+      }
+    }
+  },
+  "omission_matrix_already_read": {
+    "归案+学徒": {
+      "standard": {
+        "combinations": 253,
+        "both_by_day11": 91,
+        "at_least_one_by_day11": 217,
+        "minimum_day6": 711,
+        "minimum_day11": 1026,
+        "minimum_available_definitions": 28,
+        "minimum_available_categories": 8,
+        "minimum_available_cards": 59,
+        "worst": [
+          {
+            "omitted": [
+              "N03",
+              "N04"
+            ],
+            "blocked": [
+              "N03",
+              "N04",
+              "N11",
+              "N12",
+              "N19",
+              "N20"
+            ],
+            "day11": 1026,
+            "day6": 711,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N11",
+              "N12",
+              "N19",
+              "N20"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:1",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:2",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:3",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:1",
+                "wordId": "word_warm"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:2",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:3",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:1",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:2",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:4",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:4",
+                "wordId": "word_bread"
+              }
+            ],
+            "available_word_count": 29,
+            "available_category_count": 8,
+            "available_card_count": 59
+          },
+          {
+            "omitted": [
+              "N03",
+              "N05"
+            ],
+            "blocked": [
+              "N03",
+              "N05",
+              "N11",
+              "N13",
+              "N19",
+              "N21"
+            ],
+            "day11": 1026,
+            "day6": 711,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N11",
+              "N13",
+              "N19",
+              "N21"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:1",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:2",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:3",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:1",
+                "wordId": "word_brave"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:2",
+                "wordId": "word_promise"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:3",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:1",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:2",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:4",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:3",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:4",
+                "wordId": "word_promise"
+              }
+            ],
+            "available_word_count": 29,
+            "available_category_count": 8,
+            "available_card_count": 59
+          },
+          {
+            "omitted": [
+              "N04",
+              "N05"
+            ],
+            "blocked": [
+              "N04",
+              "N05",
+              "N12",
+              "N13",
+              "N20",
+              "N21"
+            ],
+            "day11": 1026,
+            "day6": 711,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N12",
+              "N13",
+              "N20",
+              "N21"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:1",
+                "wordId": "word_warm"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:2",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:3",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:1",
+                "wordId": "word_brave"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:2",
+                "wordId": "word_promise"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:3",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:4",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:3",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:4",
+                "wordId": "word_promise"
+              }
+            ],
+            "available_word_count": 28,
+            "available_category_count": 8,
+            "available_card_count": 59
+          }
+        ]
+      },
+      "nonminimal": {
+        "combinations": 253,
+        "both_by_day11": 91,
+        "at_least_one_by_day11": 217,
+        "minimum_day6": 626,
+        "minimum_day11": 906,
+        "minimum_available_definitions": 28,
+        "minimum_available_categories": 8,
+        "minimum_available_cards": 59,
+        "worst": [
+          {
+            "omitted": [
+              "N03",
+              "N04"
+            ],
+            "blocked": [
+              "N03",
+              "N04",
+              "N11",
+              "N12",
+              "N19",
+              "N20"
+            ],
+            "day11": 906,
+            "day6": 626,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N11",
+              "N12",
+              "N19",
+              "N20"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:1",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:2",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:3",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:1",
+                "wordId": "word_warm"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:2",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:3",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:1",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:2",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:4",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:4",
+                "wordId": "word_bread"
+              }
+            ],
+            "available_word_count": 29,
+            "available_category_count": 8,
+            "available_card_count": 59
+          },
+          {
+            "omitted": [
+              "N03",
+              "N05"
+            ],
+            "blocked": [
+              "N03",
+              "N05",
+              "N11",
+              "N13",
+              "N19",
+              "N21"
+            ],
+            "day11": 906,
+            "day6": 626,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N11",
+              "N13",
+              "N19",
+              "N21"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:1",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:2",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:3",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:1",
+                "wordId": "word_brave"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:2",
+                "wordId": "word_promise"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:3",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:1",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:2",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:4",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:3",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:4",
+                "wordId": "word_promise"
+              }
+            ],
+            "available_word_count": 29,
+            "available_category_count": 8,
+            "available_card_count": 59
+          },
+          {
+            "omitted": [
+              "N04",
+              "N05"
+            ],
+            "blocked": [
+              "N04",
+              "N05",
+              "N12",
+              "N13",
+              "N20",
+              "N21"
+            ],
+            "day11": 906,
+            "day6": 626,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N12",
+              "N13",
+              "N20",
+              "N21"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:1",
+                "wordId": "word_warm"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:2",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:3",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:1",
+                "wordId": "word_brave"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:2",
+                "wordId": "word_promise"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:3",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:4",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:3",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:4",
+                "wordId": "word_promise"
+              }
+            ],
+            "available_word_count": 28,
+            "available_category_count": 8,
+            "available_card_count": 59
+          }
+        ]
+      }
+    },
+    "逃脱+学徒": {
+      "standard": {
+        "combinations": 253,
+        "both_by_day11": 91,
+        "at_least_one_by_day11": 217,
+        "minimum_day6": 711,
+        "minimum_day11": 1026,
+        "minimum_available_definitions": 28,
+        "minimum_available_categories": 8,
+        "minimum_available_cards": 61,
+        "worst": [
+          {
+            "omitted": [
+              "N03",
+              "N04"
+            ],
+            "blocked": [
+              "N03",
+              "N04",
+              "N11",
+              "N12",
+              "N19",
+              "N20"
+            ],
+            "day11": 1026,
+            "day6": 711,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N11",
+              "N12",
+              "N19",
+              "N20"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:1",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:2",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:3",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:1",
+                "wordId": "word_warm"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:2",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:3",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:1",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:2",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:4",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:4",
+                "wordId": "word_bread"
+              }
+            ],
+            "available_word_count": 29,
+            "available_category_count": 8,
+            "available_card_count": 61
+          },
+          {
+            "omitted": [
+              "N03",
+              "N05"
+            ],
+            "blocked": [
+              "N03",
+              "N05",
+              "N11",
+              "N13",
+              "N19",
+              "N21"
+            ],
+            "day11": 1026,
+            "day6": 711,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N11",
+              "N13",
+              "N19",
+              "N21"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:1",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:2",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:3",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:1",
+                "wordId": "word_brave"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:2",
+                "wordId": "word_promise"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:3",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:1",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:2",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:4",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:3",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:4",
+                "wordId": "word_promise"
+              }
+            ],
+            "available_word_count": 29,
+            "available_category_count": 8,
+            "available_card_count": 61
+          },
+          {
+            "omitted": [
+              "N04",
+              "N05"
+            ],
+            "blocked": [
+              "N04",
+              "N05",
+              "N12",
+              "N13",
+              "N20",
+              "N21"
+            ],
+            "day11": 1026,
+            "day6": 711,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N12",
+              "N13",
+              "N20",
+              "N21"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:1",
+                "wordId": "word_warm"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:2",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:3",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:1",
+                "wordId": "word_brave"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:2",
+                "wordId": "word_promise"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:3",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:4",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:3",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:4",
+                "wordId": "word_promise"
+              }
+            ],
+            "available_word_count": 28,
+            "available_category_count": 8,
+            "available_card_count": 61
+          }
+        ]
+      },
+      "nonminimal": {
+        "combinations": 253,
+        "both_by_day11": 91,
+        "at_least_one_by_day11": 217,
+        "minimum_day6": 626,
+        "minimum_day11": 906,
+        "minimum_available_definitions": 28,
+        "minimum_available_categories": 8,
+        "minimum_available_cards": 61,
+        "worst": [
+          {
+            "omitted": [
+              "N03",
+              "N04"
+            ],
+            "blocked": [
+              "N03",
+              "N04",
+              "N11",
+              "N12",
+              "N19",
+              "N20"
+            ],
+            "day11": 906,
+            "day6": 626,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N11",
+              "N12",
+              "N19",
+              "N20"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:1",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:2",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:3",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:1",
+                "wordId": "word_warm"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:2",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:3",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:1",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:2",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:4",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:4",
+                "wordId": "word_bread"
+              }
+            ],
+            "available_word_count": 29,
+            "available_category_count": 8,
+            "available_card_count": 61
+          },
+          {
+            "omitted": [
+              "N03",
+              "N05"
+            ],
+            "blocked": [
+              "N03",
+              "N05",
+              "N11",
+              "N13",
+              "N19",
+              "N21"
+            ],
+            "day11": 906,
+            "day6": 626,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N11",
+              "N13",
+              "N19",
+              "N21"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:1",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:2",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:3",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:1",
+                "wordId": "word_brave"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:2",
+                "wordId": "word_promise"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:3",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:1",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:2",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:4",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:3",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:4",
+                "wordId": "word_promise"
+              }
+            ],
+            "available_word_count": 29,
+            "available_category_count": 8,
+            "available_card_count": 61
+          },
+          {
+            "omitted": [
+              "N04",
+              "N05"
+            ],
+            "blocked": [
+              "N04",
+              "N05",
+              "N12",
+              "N13",
+              "N20",
+              "N21"
+            ],
+            "day11": 906,
+            "day6": 626,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N12",
+              "N13",
+              "N20",
+              "N21"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:1",
+                "wordId": "word_warm"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:2",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:3",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:1",
+                "wordId": "word_brave"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:2",
+                "wordId": "word_promise"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:3",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:4",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:3",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:4",
+                "wordId": "word_promise"
+              }
+            ],
+            "available_word_count": 28,
+            "available_category_count": 8,
+            "available_card_count": 61
+          }
+        ]
+      }
+    },
+    "未解+学徒": {
+      "standard": {
+        "combinations": 253,
+        "both_by_day11": 91,
+        "at_least_one_by_day11": 217,
+        "minimum_day6": 711,
+        "minimum_day11": 1026,
+        "minimum_available_definitions": 28,
+        "minimum_available_categories": 8,
+        "minimum_available_cards": 61,
+        "worst": [
+          {
+            "omitted": [
+              "N03",
+              "N04"
+            ],
+            "blocked": [
+              "N03",
+              "N04",
+              "N11",
+              "N12",
+              "N19",
+              "N20"
+            ],
+            "day11": 1026,
+            "day6": 711,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N11",
+              "N12",
+              "N19",
+              "N20"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:1",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:2",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:3",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:1",
+                "wordId": "word_warm"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:2",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:3",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:1",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:2",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:4",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:4",
+                "wordId": "word_bread"
+              }
+            ],
+            "available_word_count": 29,
+            "available_category_count": 8,
+            "available_card_count": 61
+          },
+          {
+            "omitted": [
+              "N03",
+              "N05"
+            ],
+            "blocked": [
+              "N03",
+              "N05",
+              "N11",
+              "N13",
+              "N19",
+              "N21"
+            ],
+            "day11": 1026,
+            "day6": 711,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N11",
+              "N13",
+              "N19",
+              "N21"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:1",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:2",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:3",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:1",
+                "wordId": "word_brave"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:2",
+                "wordId": "word_promise"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:3",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:1",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:2",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:4",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:3",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:4",
+                "wordId": "word_promise"
+              }
+            ],
+            "available_word_count": 29,
+            "available_category_count": 8,
+            "available_card_count": 61
+          },
+          {
+            "omitted": [
+              "N04",
+              "N05"
+            ],
+            "blocked": [
+              "N04",
+              "N05",
+              "N12",
+              "N13",
+              "N20",
+              "N21"
+            ],
+            "day11": 1026,
+            "day6": 711,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N12",
+              "N13",
+              "N20",
+              "N21"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:1",
+                "wordId": "word_warm"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:2",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:3",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:1",
+                "wordId": "word_brave"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:2",
+                "wordId": "word_promise"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:3",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:4",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:3",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:4",
+                "wordId": "word_promise"
+              }
+            ],
+            "available_word_count": 28,
+            "available_category_count": 8,
+            "available_card_count": 61
+          }
+        ]
+      },
+      "nonminimal": {
+        "combinations": 253,
+        "both_by_day11": 91,
+        "at_least_one_by_day11": 217,
+        "minimum_day6": 626,
+        "minimum_day11": 906,
+        "minimum_available_definitions": 28,
+        "minimum_available_categories": 8,
+        "minimum_available_cards": 61,
+        "worst": [
+          {
+            "omitted": [
+              "N03",
+              "N04"
+            ],
+            "blocked": [
+              "N03",
+              "N04",
+              "N11",
+              "N12",
+              "N19",
+              "N20"
+            ],
+            "day11": 906,
+            "day6": 626,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N11",
+              "N12",
+              "N19",
+              "N20"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:1",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:2",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:3",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:1",
+                "wordId": "word_warm"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:2",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:3",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:1",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:2",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:4",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:4",
+                "wordId": "word_bread"
+              }
+            ],
+            "available_word_count": 29,
+            "available_category_count": 8,
+            "available_card_count": 61
+          },
+          {
+            "omitted": [
+              "N03",
+              "N05"
+            ],
+            "blocked": [
+              "N03",
+              "N05",
+              "N11",
+              "N13",
+              "N19",
+              "N21"
+            ],
+            "day11": 906,
+            "day6": 626,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N11",
+              "N13",
+              "N19",
+              "N21"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:1",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:2",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n11",
+                "spanId": "body:3",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:1",
+                "wordId": "word_brave"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:2",
+                "wordId": "word_promise"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:3",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:1",
+                "wordId": "word_happy"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:2",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n19",
+                "spanId": "body:4",
+                "wordId": "word_afraid"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:3",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:4",
+                "wordId": "word_promise"
+              }
+            ],
+            "available_word_count": 29,
+            "available_category_count": 8,
+            "available_card_count": 61
+          },
+          {
+            "omitted": [
+              "N04",
+              "N05"
+            ],
+            "blocked": [
+              "N04",
+              "N05",
+              "N12",
+              "N13",
+              "N20",
+              "N21"
+            ],
+            "day11": 906,
+            "day6": 626,
+            "ticket_day": 6,
+            "blocked_dependents": [
+              "N12",
+              "N13",
+              "N20",
+              "N21"
+            ],
+            "lost_source_cards": [
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:1",
+                "wordId": "word_warm"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:2",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n12",
+                "spanId": "body:3",
+                "wordId": "word_smile"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:1",
+                "wordId": "word_brave"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:2",
+                "wordId": "word_promise"
+              },
+              {
+                "letterId": "letter_n13",
+                "spanId": "body:3",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:1",
+                "wordId": "word_sad"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:2",
+                "wordId": "word_missing"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:3",
+                "wordId": "word_jealous"
+              },
+              {
+                "letterId": "letter_n20",
+                "spanId": "body:4",
+                "wordId": "word_bread"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:1",
+                "wordId": "word_rational"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:2",
+                "wordId": "word_doubt"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:3",
+                "wordId": "word_curious"
+              },
+              {
+                "letterId": "letter_n21",
+                "spanId": "body:4",
+                "wordId": "word_promise"
+              }
+            ],
+            "available_word_count": 28,
+            "available_category_count": 8,
+            "available_card_count": 61
+          }
+        ]
+      }
+    }
+  }
+}

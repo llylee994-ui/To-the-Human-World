@@ -263,7 +263,7 @@ class Audit:
         assert self.equipment["kit_copper_cauldron"]["price"] == 120
         assert self.equipment["kit_copper_cauldron"]["slots"]["ingredient"] == 2
         assert self.equipment["kit_copper_cauldron"]["slots"]["auxWord"] == 3
-        assert all(word["reusable"] is True for word in self.words.values())
+        assert all(word["reusable"] is False for word in self.words.values()), "Formal words must explicitly be single-use"
         assert len(self.words) == 30 and len(ORDINARY) == 23
         assert sum(HOME.values()) == 480
         # Cross-check the proposed content input against the delivered manuscript.
@@ -459,13 +459,27 @@ class Audit:
         for omitted in itertools.combinations([order.id for order in ORDINARY], 2):
             result = self.simulate(route, recipe, omitted, read_omitted=read_omitted)
             assert result["ticket_day"] is not None
+            received_letters = {token["letterId"] for token in result["word_tokens"].values()}
+            lost = []
+            for id in result["blocked"]:
+                letter_id = id if id.startswith("letter_") else "letter_" + id.lower()
+                if letter_id not in received_letters:
+                    lost.extend({"letterId": letter_id, "spanId": f"body:{index}", "wordId": "word_" + word}
+                                for index, word in enumerate(self.sources[id], 1))
             results.append({"omitted": omitted, "blocked": result["blocked"], "day11": result["day11"],
-                            "day6": result["ledger"][5]["closing"], "ticket_day": result["ticket_day"]})
+                            "day6": result["ledger"][5]["closing"], "ticket_day": result["ticket_day"],
+                            "blocked_dependents": sorted(set(result["blocked"]) - set(omitted)),
+                            "lost_source_cards": lost, "available_word_count": result["word_count"],
+                            "available_category_count": len(result["categories"]),
+                            "available_card_count": sum(token["available"] for token in result["word_tokens"].values())})
         minimum = min(row["day11"] for row in results)
         by_day = {order.id: order.day for order in ORDINARY}
         return {"combinations": len(results), "both_by_day11": sum(all(by_day[id] <= 11 for id in row["omitted"]) for row in results),
                 "at_least_one_by_day11": sum(any(by_day[id] <= 11 for id in row["omitted"]) for row in results),
                 "minimum_day6": min(row["day6"] for row in results), "minimum_day11": minimum,
+                "minimum_available_definitions": min(row["available_word_count"] for row in results),
+                "minimum_available_categories": min(row["available_category_count"] for row in results),
+                "minimum_available_cards": min(row["available_card_count"] for row in results),
                 "worst": [row for row in results if row["day11"] == minimum], "all_results": results}
 
     def report(self):
@@ -506,7 +520,7 @@ class Audit:
         assert len(minimal["completed"]) == 3 and minimal["word_count"] == 11
         assert len(minimal["historical_word_ids"]) == 14 and minimal["ending"] == 270
         assert len([token for token in minimal["word_tokens"].values() if not token["available"]]) == 3
-        return {"scope": "single-use proposal; current words remain reusable; future supply/rewards/schema not runtime-verified",
+        return {"scope": "formal words single-use at story-v0.3-r3; future supply/rewards/schema remain manuscript-only, not runtime-verified",
                 "first_three": minimal,
                 "routes": routes, "omission_matrix": matrix, "omission_matrix_already_read": read_matrix,
                 "mainline_source_contract": {
@@ -524,17 +538,24 @@ def main():
     parser.add_argument("--json", action="store_true", help="Print all ledgers and all 253 combinations per route/recipe")
     parser.add_argument("--ledger", action="store_true", help="Print standard and nonminimal daily ledger")
     parser.add_argument("--export-word-ledger", type=Path, help="Write first-three and three normal-route token ledgers")
+    parser.add_argument("--export-omission-summary", type=Path, help="Write minima, lost word sources and worst dependency closures")
     args = parser.parse_args()
     report = Audit().report()
+    if args.export_omission_summary:
+        payload = {"scope": report["scope"], "inputs": 3036}
+        for mode in ("omission_matrix", "omission_matrix_already_read"):
+            payload[mode] = {name: {recipe: {key: value for key, value in matrix.items() if key != "all_results"}
+                                   for recipe, matrix in recipes.items()} for name, recipes in report[mode].items()}
+        args.export_omission_summary.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     if args.export_word_ledger:
-        payload = {"scope": report["scope"], "first_three": report["first_three"],
+        payload = {"scope": report["scope"], "retention_witness": report["retention_witness"], "first_three": report["first_three"],
                    "routes": {name: result["standard"] for name, result in report["routes"].items()}}
         args.export_word_ledger.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     if args.json:
         print(json.dumps(report, ensure_ascii=False, indent=2))
         return
     print("PASS: pure-content arithmetic; future shop/mainline/identity are NOT runtime-verified.")
-    print("Single-use draft ledger: first three use sleep / steady_hands / smile; 14 acquired definitions, 11 retained, 270 coins. Current data still reusable=true.")
+    print("Single-use draft ledger: first three use sleep / steady_hands / smile; 14 acquired definitions, 11 retained, 270 coins. Current formal data reusable=false (story-v0.3-r3); this ledger does not verify B5 saves.")
     print("253 omitted pairs x 3 routes x 2 recipes x 2 receipt modes = 3036 omission inputs; 20 ordinary + 10 mainline own-body sources matched; 4 information letters grant no words.")
     for name, result in report["routes"].items():
         print(name, "orders=30", "retained words", result["standard"]["word_count"], "categories", len(result["standard"]["categories"]), "standard", result["standard"]["ending"],

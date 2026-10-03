@@ -1,5 +1,31 @@
 {
-  "scope": "single-use proposal; current words remain reusable; future supply/rewards/schema not runtime-verified",
+  "scope": "formal words single-use at story-v0.3-r3; future supply/rewards/schema remain manuscript-only, not runtime-verified",
+  "retention_witness": {
+    "word_ids": [
+      "word_dream",
+      "word_quiet",
+      "word_happy",
+      "word_forget",
+      "word_tired",
+      "word_bread",
+      "word_promise",
+      "word_lookup",
+      "word_steady_hands",
+      "word_homecoming",
+      "word_wait",
+      "word_hungry"
+    ],
+    "categories": [
+      "关系类",
+      "情绪类",
+      "时间类",
+      "物件类",
+      "睡眠类",
+      "行为类",
+      "记忆类",
+      "身体类"
+    ]
+  },
   "first_three": {
     "completed": [
       "N01",
