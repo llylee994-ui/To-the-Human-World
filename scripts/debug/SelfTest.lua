@@ -246,4 +246,9 @@ function SelfTest.RunB2(context)
     return require("debug.LetterFlowTest").Run(context)
 end
 
+-- 纯计算专项，显式调用；不向正常启动挂入测试状态。
+function SelfTest.RunB3()
+    return require("debug.PotionTest").Run()
+end
+
 return SelfTest
