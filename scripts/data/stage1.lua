@@ -30,14 +30,14 @@ local SLEEP_RESIDUAL_POINTS = {
     { hoursAfterEnd = 4, ratio = 0.0 },
 }
 
-return {
+local stage1 = {
     -- ========================================================================
     -- C1：内容版本与开局账本
     -- ========================================================================
 
     -- 整包内容修订标识：与 synthesis.version（计算规则）、存档 schema（文件结构）分开。
     -- 任何会改变已保存基准/待确认解释的改动都必须递增本串；基准与待确认记录均保存它。
-    contentVersion = "stage1-b0v0.2-r1",
+    contentVersion = "story-v0.3-r1",
 
     -- 开局账本（已接受调试初值；完整经济表与商店在阶段 2/3，本批只验证初始化与恢复）
     initialEconomy = {
@@ -469,3 +469,9 @@ return {
         },
     },
 }
+
+for _, profile in ipairs(require "data.word_profiles") do
+    stage1.attributeProfiles[#stage1.attributeProfiles + 1] = profile
+end
+
+return stage1

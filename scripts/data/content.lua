@@ -33,6 +33,16 @@ Data.orderRatings = followup.orderRatings
 Data.attributeProfiles = Data.stage1.attributeProfiles
 Data.contentVersion = Data.stage1.contentVersion
 
+-- 正式普通订单包沿用相同字段；只在内容入口汇总，不引入新的剧情执行逻辑。
+local ordinaryOrders = require "data.ordinary_orders"
+for _, field in ipairs({ "npcs", "letters", "directRules", "fragments", "followupTemplates", "orderRatings", "factExclusionGroups" }) do
+    for _, entry in ipairs(ordinaryOrders[field]) do
+        Data[field][#Data[field] + 1] = entry
+    end
+end
+-- 供文案/程序复算的示例，不是 Potion 的配方白名单或查找表。
+Data.recipes = require "data.recipes"
+
 -- 原料 mods 允许出现的键。写错键名不会报错，只会静默失效，所以在这里卡住。
 ---@type table<string, boolean?>
 local ALLOWED_MOD_KEYS = {

@@ -29,6 +29,43 @@ return {
     --   fx_restless_dreams                       零碎多梦（副作用标签 dream=0.4 触发）
     -- ========================================================================
     directRules = {
+        -- 喜悦梦境 / 理性梦境；遗忘排除，组合覆盖普通母亲梦。
+        {
+            ruleSetId = "rules_pa_01",
+            when = {
+                { value = 0.8, op = "gte", path = "sleep", source = "potion.effects" },
+                { value = 0.6, op = "gte", path = "dream", source = "potion.effects" },
+                { value = 0.6, op = "gte", path = "happy", source = "potion.effects" },
+            },
+            priority = 30,
+            id = "rule_pa_fish_choir",
+            changes = {},
+            facts = {
+                { subjectId = "npc_passerby_a", id = "fx_pa_fish_choir", value = true, important = true, objectId = "mem_mother" },
+            },
+            unless = {
+                { value = 0.6, op = "gte", path = "forget", source = "potion.effects" },
+            },
+        },
+        {
+            ruleSetId = "rules_pa_01",
+            when = {
+                { value = 0.8, op = "gte", path = "sleep", source = "potion.effects" },
+                { value = 0.6, op = "gte", path = "dream", source = "potion.effects" },
+                { value = 0.6, op = "gte", path = "reason", source = "potion.effects" },
+                { source = "potion.effects", path = "happy", op = "lte", value = 0.6 },
+                { source = "potion.effects", path = "happy", op = "ne", value = 0.6 },
+            },
+            priority = 30,
+            id = "rule_pa_dream_ledger",
+            changes = {},
+            facts = {
+                { subjectId = "npc_passerby_a", id = "fx_pa_dream_ledger", value = true, important = true, objectId = "mem_mother" },
+            },
+            unless = {
+                { value = 0.6, op = "gte", path = "forget", source = "potion.effects" },
+            },
+        },
         {
             id = "rule_pa_rest_ok",
             ruleSetId = "rules_pa_01",
@@ -132,6 +169,28 @@ return {
     -- ========================================================================
     fragments = {
         {
+            coversFacts = { "fx_pa_fish_choir", "fx_dreamt_mother" },
+            templateId = "tpl_pa_01",
+            text = "娘还在梦里当起了码头合唱团的指挥，指挥的是一排鱼，唱得比酒馆还齐。我醒来高兴，讲给妹妹听。她说下次挑一条会唱的回来，我说那可得另算工钱。",
+            kind = "combination",
+            priority = 60,
+            id = "frag_pa_fish_choir",
+            exclusiveGroup = "pa_dream_outcome",
+            overrides = { "frag_pa_dream_mother" },
+            requiresFacts = { "fx_pa_fish_choir", "fx_dreamt_mother" },
+        },
+        {
+            coversFacts = { "fx_pa_dream_ledger", "fx_dreamt_mother" },
+            templateId = "tpl_pa_01",
+            text = "我梦见娘拿着账本，叫我查梦里的搬货工钱。每算清一笔，箱子就多出一条腿。娘看得直乐，我醒来也乐了：账目得按规矩来，梦里那些箱子却不肯。",
+            kind = "combination",
+            priority = 60,
+            id = "frag_pa_dream_ledger",
+            exclusiveGroup = "pa_dream_outcome",
+            overrides = { "frag_pa_dream_mother" },
+            requiresFacts = { "fx_pa_dream_ledger", "fx_dreamt_mother" },
+        },
+        {
             id = "frag_pa_work_recovered",
             templateId = "tpl_pa_01",
             kind = "key",
@@ -208,7 +267,7 @@ return {
             excludesFacts = { "fx_dreamt_mother", "fx_dreamt_figure_unclear" },
             coversFacts = { "fx_restless_dreams" },
             overrides = {},
-            text = "夜里做了些零碎的梦，醒来记不清内容，倒也不碍事。",
+            text = "夜里梦见码头的鱼排队领工钱，最小那条还嫌少。醒来想不起别的，倒记得该给妹妹讲这个笑话。不碍上工。",
         },
         {
             id = "frag_pa_generic",
@@ -230,10 +289,12 @@ return {
         {
             id = "tpl_pa_01",
             letterId = "letter_pa_01_followup",
-            opening = "店主，还是我，又请面包坊的伙计替我写几句。",
-            closing = "明天还要早起上工，就写到这里吧。\n\n路人甲",
+            opening = "店主，还是我，埃利亚斯，又请晨炉面包坊的卢卡替我写几句。",
+            closing = "明天还要早起上工，就写到这里吧。\n\n埃利亚斯·沃德",
             baseFragmentIds = { "frag_pa_work_recovered" },
             fragmentIds = {
+                "frag_pa_fish_choir",
+                "frag_pa_dream_ledger",
                 "frag_pa_sleep_only",
                 "frag_pa_dream_mother",
                 "frag_pa_forget_song",

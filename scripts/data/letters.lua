@@ -52,7 +52,7 @@ return {
         title = "码头来的第一封信",
 
         selfIntro = [[
-写信的人叫路人甲，在灰港码头搬货，住在铁锚巷。
+写信的人叫埃利亚斯·沃德，在灰港码头搬货，住在铁锚巷。
 他说自己不认识字，这封信是托面包坊的伙计代写的，写得不顺的地方请多见谅。
 他家里还有一个妹妹，在面包坊帮工，两个人租了铁锚巷二楼的一间小屋。]],
 
@@ -73,7 +73,7 @@ return {
 
 地址写在下面了。谢谢你看完。
 
-路人甲]],
+埃利亚斯·沃德]],
 
         address = "灰港 铁锚巷 12 号 二楼",
 
@@ -120,7 +120,7 @@ return {
         kind = "direct_followup",
         cuttable = false,
         bottleType = "normal",
-        title = "路人甲的回信",
+        title = "埃利亚斯·沃德的回信",
         address = "灰港 铁锚巷 12 号 二楼",
         attachments = {},
         followupTemplateId = "tpl_pa_01",
