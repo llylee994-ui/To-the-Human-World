@@ -251,4 +251,8 @@ function SelfTest.RunB3()
     return require("debug.PotionTest").Run()
 end
 
+function SelfTest.RunB4()
+    return require("debug.NarrativeTest").Run()
+end
+
 return SelfTest

@@ -1,4 +1,4 @@
--- B2 仅测试：扩展定义、其余业务模块替身绝不装入生产 main。
+-- B2 仅测试：使用真实 B4 来信筛选；剩余订单/世界替身绝不装入生产 main。
 local U = require "core.StateUtil"
 local F = {}
 function F.Content(extension)
@@ -51,20 +51,10 @@ function F.Setup(content,saveSystem,slot)
     end
     local calls=0
     local save={Load=Save.Load,Save=function(... ) calls=calls+1; return Save.Save(...) end}
-    -- 仅技术适配器：只允许 dayMin/dayMax；遇到其他条件明确拒绝，不忽略。
-    local narrative={FindAvailable=function(live)
-        local result={}
-        for _, d in ipairs(content.letters) do
-            if d.kind=="order" then
-                for key in pairs(d.appearCondition or {}) do
-                    if key~="dayMin" and key~="dayMax" then return U.Fail("CONFIG_INVALID","test.appearCondition","技术适配器不支持此条件") end
-                end
-                local condition=d.appearCondition or {}
-                if live.gameFlow.day >= (condition.dayMin or 1) and (condition.dayMax==nil or live.gameFlow.day<=condition.dayMax) then result[#result+1]=d.id end
-            end
-        end
-        return U.Ok(result)
-    end}
+    local narrative=require("systems.Narrative").New(content)
+    initial.live.narrative=narrative.InitialSnapshot().value
+    assert(narrative.Restore(initial.live.narrative).ok)
+    adapters.narrative=narrative
     local options={gameFlow=Flow,saveSystem=save,eventBus=EventBus,targetSchema=2,dataReady=true,contentVersion=content.contentVersion,
         synthesisVersion=content.synthesis.version,economy=economy,letters=letters,wordTokens=words,adapters=adapters,initialState=initial,narrative=narrative}
     local state=require("core.GameState").New(options)

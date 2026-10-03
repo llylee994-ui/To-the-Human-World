@@ -1,7 +1,8 @@
--- B3 只提供 ResolveRecipe / Evaluate。接单、基准保存、确认/重置与评分在 B4/B5。
+-- B3 配方/字面计算与 B4 事实评分；接单、基准保存、确认/重置仍由 B5 接入。
 local U = require "core.StateUtil"
 local G = require "systems.CalculationGuard"
 local Potion = require "systems.Potion"
+local Story = require "systems.StoryRules"
 local Order = {}
 
 function Order.New(content)
@@ -147,10 +148,54 @@ function Order.New(content)
             return {canShip=#failures==0,checks=checks,failures=failures}
         end)
     end
+    -- facts 来自已通过字面检查的 WorldState.Simulate；本函数不发货、不改变报酬。
+    -- ratingConfig 为 ratingSetId，或该评分集的完整规则数组；不读取 sampleCases.expect。
+    function api.Rate(facts,ratingConfig)
+        return G.Run(function()
+            local index,_,definitions=Story.Facts(facts,content)
+            local rules={}
+            G.Required(content.orderRatings,U.Array,"orderRatings")
+            if type(ratingConfig)=="string" then
+                for _,rule in ipairs(content.orderRatings) do if rule.ratingSetId==ratingConfig then rules[#rules+1]=rule end end
+            else
+                G.Pure(ratingConfig,"ratingConfig","CONFIG_INVALID")
+                G.Array(ratingConfig,"ratingConfig","CONFIG_INVALID")
+                G.Need(#ratingConfig>0,"RATING_UNCOVERED","ratingConfig","评分规则为空")
+                G.Need(type(ratingConfig[1])=="table","CONFIG_INVALID","ratingConfig","评分规则须为对象")
+                local setId=ratingConfig[1].ratingSetId
+                for _,rule in ipairs(content.orderRatings) do if rule.ratingSetId==setId then rules[#rules+1]=rule end end
+                G.Need(U.Equal(rules,ratingConfig),"CONFIG_INVALID","ratingConfig","须传入配置中的完整评分集")
+            end
+            G.Need(#rules>0,"RATING_UNCOVERED","ratingConfig","没有配置评分规则")
+            local matches,ids={},{}
+            for _,rule in ipairs(rules) do
+                G.Pure(rule,"orderRatings","CONFIG_INVALID")
+                G.Keys(rule,{id=true,ratingSetId=true,priority=true,stars=true,desc=true,requiresFacts=true,excludesFacts=true,feedback=true},"orderRatings","CONFIG_INVALID")
+                G.Need(U.String(rule.id) and not ids[rule.id],"CONFIG_INVALID","orderRatings.id","评分规则 ID 无效或重复")
+                ids[rule.id]=true
+                G.Need(U.Integer(rule.stars,1) and rule.stars<=3 and G.Finite(rule.priority),"CONFIG_INVALID","orderRatings","评分只能是一至三星且须声明优先级")
+                if Story.Matches(rule,index,definitions,"orderRatings." .. rule.id) then matches[#matches+1]=rule end
+            end
+            table.sort(matches,function(a,b)
+                if a.stars~=b.stars then return a.stars>b.stars end
+                if a.priority~=b.priority then return a.priority>b.priority end
+                return a.id<b.id
+            end)
+            G.Need(#matches>0,"RATING_UNCOVERED","orderRatings","没有事实兼容的评分规则")
+            local rule=matches[1]
+            if not rule then error(U.Error("RATING_UNCOVERED","orderRatings","没有评分覆盖"),0) end
+            if type(rule.feedback)~="string" or rule.feedback=="" then error(U.Error("RATING_UNCOVERED","orderRatings." .. rule.id .. ".feedback","没有配置评分反馈"),0) end
+            G.Need(#rule.requiresFacts>0,"FILL_SOURCE_MISSING","orderRatings." .. rule.id,"反馈没有事实来源")
+            -- 当前 RatingRule 无 bindings 字段；含占位符即缺来源，不能自动降星。
+            G.Need(not rule.feedback:find("{{",1,true) and not rule.feedback:find("}}",1,true),"FILL_SOURCE_MISSING","orderRatings.feedback","评分反馈存在无来源占位符")
+            return {stars=rule.stars,feedback=rule.feedback,ruleId=rule.id,factIds=U.Copy(rule.requiresFacts)}
+        end)
+    end
     return api
 end
 
 local live=Order.New(require "data.content")
 Order.ResolveRecipe=live.ResolveRecipe
 Order.Evaluate=live.Evaluate
+Order.Rate=live.Rate
 return Order
