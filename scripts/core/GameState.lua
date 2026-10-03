@@ -5,10 +5,22 @@ local GameState = {}
 local BLOCKS = {"gameFlow","letters","wordTokens","economy","world","narrative","orders","currentOrder"}
 
 function GameState.New(options)
-    local api, last, envelope = {}, {status="new"}, nil
+    local api, last = {}, {status="new"}
+    ---@type table<string,any>|nil
+    local envelope
     local locked = options.dataReady == false
     local targetSchema = options.targetSchema or 1
     local flow, save = options.gameFlow, options.saveSystem
+    ---@type boolean
+    local busy=false
+    ---@type string|nil
+    local activeSlot
+    local letters = options.letters or (options.adapters and options.adapters.letters)
+    local words = options.wordTokens or (options.adapters and options.adapters.wordTokens)
+    local schemaOptions = {contentVersion=options.contentVersion,synthesisVersion=options.synthesisVersion,economy=options.economy}
+    if letters and words and type(letters.ResolveSource)=="function" and type(words.PlanCut)=="function" then
+        schemaOptions.letters, schemaOptions.wordTokens = letters, words
+    end
     local function fail(status, err)
         last = {status=status,error=err}; locked = true
         return nil, U.Copy(last)
@@ -31,11 +43,11 @@ function GameState.New(options)
         local candidate = U.Copy(initial)
         if type(candidate.live) ~= "table" then return U.Fail("MIGRATION_REQUIRED", "initialState.live", "缺少完整初态") end
         candidate.live.gameFlow = valid.value.gameFlow
-        return Schema.ValidateV2(candidate, options)
+        return Schema.ValidateV2(candidate, schemaOptions)
     end
     local function prepare(data, schema)
         if schema == 1 then return validateV1(data) end
-        local valid = Schema.ValidateV2(data, options)
+        local valid = Schema.ValidateV2(data, schemaOptions)
         if not valid.ok then return valid end
         for _, key in ipairs(BLOCKS) do
             local adapter = options.adapters and options.adapters[key]
@@ -71,7 +83,7 @@ function GameState.New(options)
         end
         return U.Ok(data)
     end
-    function api.CanMutate() return not locked and options.dataReady ~= false end
+    function api.CanMutate() return not locked and not busy and options.dataReady ~= false end
     function api.GetStatus() return U.Copy(last) end
     function api.GetSnapshot()
         if targetSchema == 1 then return {gameFlow=flow.Serialize()} end
@@ -84,6 +96,7 @@ function GameState.New(options)
         return result
     end
     function api.Load(slot)
+        if busy then return nil,{status="busy",error=U.Error("COMMAND_BUSY","GameState","候选提交期间禁止嵌套操作")} end
         if options.dataReady == false then
             return fail("config_error", options.dataError or U.Error("CONFIG_INVALID", "Data.Load", "内容校验失败，禁止写入和推进"))
         end
@@ -105,11 +118,14 @@ function GameState.New(options)
         local prepared, checked = pcall(prepare, data, schema)
         if not prepared then return fail("corrupt", U.Error("VALIDATOR_FAILED", "data", tostring(checked))) end
         if not checked.ok then return fail(checked.error.code == "RESTORER_MISSING" and "migration_required" or "corrupt", checked.error) end
+        busy=true
         ---@type boolean, any
         local installed, applied = pcall(install, checked.value, schema)
+        busy=false
         if not installed then return fail("corrupt", U.Error("RESTORE_FAILED", "data", tostring(applied))) end
         if not applied.ok then return fail("corrupt", applied.error) end
         envelope = U.Copy(checked.value)
+        activeSlot = slot
         locked = false
         last = {status=migrated and "migrated" or status.status,schema=schema}
         options.eventBus.Emit("SaveLoaded", U.Copy(last))
@@ -133,15 +149,99 @@ function GameState.New(options)
     end
     function api.NextDay()
         if not api.CanMutate() then return U.Fail("STATE_LOCKED", "GameState", "当前禁止推进") end
+        if targetSchema==2 and envelope and envelope.currentOrder~=false and envelope.currentOrder.phase~="accepted" then
+            return U.Fail("ORDER_LOCKED","currentOrder.phase","已建立炼药基准或待确认，禁止跨天")
+        end
         flow.NextDay()
         return U.Ok(flow.Serialize())
     end
+    -- B2 命令仅用于完整 v2；value={letterInstanceId,tokenId?,source?,changed,revision,notificationErrors?}。
+    -- options.narrative.FindAvailable(liveSnapshot, conditions) -> Result<letterId[]>，B4 接真实筛选器。
+    local function command(kind,request)
+        if busy then return U.Fail("COMMAND_BUSY","GameState","候选提交期间禁止嵌套操作") end
+        if not api.CanMutate() then return U.Fail("STATE_LOCKED","GameState","请先排除配置、读档或提交错误") end
+        if targetSchema ~= 2 then return U.Fail("V2_REQUIRED","schema","完整 v2 尚未启用，不能保存信件或词条") end
+        if not envelope or not schemaOptions.letters or not schemaOptions.wordTokens then return U.Fail("RESTORER_MISSING","letters/wordTokens","真实信件和词条恢复器尚未接入") end
+        busy = true
+        local called,result = pcall(function()
+            local valid = U.Validate(request)
+            if not valid.ok then return valid end
+            local allowed = kind=="receive" and {letterId=true} or kind=="read" and {letterInstanceId=true} or {letterInstanceId=true,spanId=true}
+            valid = U.Keys(request,allowed,"request")
+            if not valid.ok then return valid end
+            local current = api.GetSnapshot()
+            valid = prepare(current,2)
+            if not valid.ok then return valid end
+            if current.currentOrder ~= false and current.currentOrder.phase ~= "accepted" then
+                return U.Fail("ORDER_LOCKED","currentOrder.phase","已建立炼药基准或待确认，禁止改变信件和词条",{phase=current.currentOrder.phase})
+            end
+            local candidate, planned, token = U.Copy(current), nil, nil
+            if kind=="receive" then planned=letters.PlanReceive(current.live.letters,request.letterId)
+            elseif kind=="read" then planned=letters.PlanMarkRead(current.live.letters,request.letterInstanceId)
+            else planned=letters.PlanMarkCut(current.live.letters,request.letterInstanceId,request.spanId) end
+            if not planned.ok then return planned end
+            if kind=="cut" then
+                token=words.PlanCut(current.live.wordTokens,planned.value.source)
+                if not token.ok then return token end
+                candidate.live.wordTokens=token.value.state
+            end
+            local value = {letterInstanceId=planned.value.instanceId,changed=planned.value.changed,revision=current.revision}
+            if token then value.tokenId=token.value.tokenId; value.source=U.Copy(token.value.source) end
+            if not value.changed then return U.Ok(value) end
+            if kind=="receive" then
+                if current.live.gameFlow.canSalvage ~= true or current.live.gameFlow.phase ~= "day" then return U.Fail("SALVAGE_DISABLED","gameFlow","当前不能打捞") end
+                if not options.narrative or type(options.narrative.FindAvailable) ~= "function" then return U.Fail("RESTORER_MISSING","Narrative.FindAvailable","可用信件筛选尚未接入") end
+                local available = options.narrative.FindAvailable(U.Copy(current.live),U.Copy(options.conditions))
+                if type(available)~="table" or not available.ok then return type(available)=="table" and available or U.Fail("VALIDATOR_FAILED","Narrative.FindAvailable","筛选器未返回 Result") end
+                if not U.Array(available.value) then return U.Fail("VALIDATOR_FAILED","Narrative.FindAvailable","可用信列表须为稠密数组") end
+                local found=false
+                for _, id in ipairs(available.value) do if id==request.letterId then found=true end end
+                if not found then return U.Fail("LETTER_NOT_AVAILABLE","letterId","该信尚未满足出现条件") end
+            end
+            candidate.live.letters=planned.value.state
+            candidate.revision=current.revision+1
+            if not U.Integer(candidate.revision) then return U.Fail("STATE_INVALID","revision","版本计数溢出") end
+            valid=prepare(candidate,2)
+            if not valid.ok then return valid end
+            local saved,ok,err=pcall(save.Save,activeSlot,candidate,2)
+            if not saved then
+                local reason=type(ok)=="table" and ok or U.Error("SAVE_UNEXPECTED","save",tostring(ok))
+                fail("recovery_required",reason)
+                return {ok=false,error=reason}
+            end
+            if not ok then return {ok=false,error=err} end
+            local installed,applied=pcall(install,valid.value,2)
+            if not installed or not applied.ok then
+                local reason=U.Error("COMMIT_RECOVERY_REQUIRED","restore","完整候选已提交，安装失败；必须读取同一存档对账",{committed=true,slot=activeSlot or "slot1"})
+                fail("recovery_required",reason)
+                return {ok=false,error=reason}
+            end
+            envelope=U.Copy(valid.value)
+            last={status="loaded",schema=2}
+            value.revision=candidate.revision
+            local events=kind=="receive" and {"LetterReceived"} or kind=="read" and {"LetterRead"} or {"WordCut","WordStored"}
+            local notifications={}
+            for _, name in ipairs(events) do
+                local notified,problem=pcall(options.eventBus.Emit,name,U.Copy(value))
+                if not notified then notifications[#notifications+1]=U.Error("EVENT_FAILED",name,tostring(problem)) end
+            end
+            if #notifications>0 then value.notificationErrors=notifications end
+            return U.Ok(value)
+        end)
+        busy=false
+        if not called then return U.Fail("COMMAND_FAILED","GameState",tostring(result)) end
+        return result
+    end
+    function api.ReceiveLetter(request) return command("receive",request) end
+    function api.ReadLetter(request) return command("read",request) end
+    function api.CutWord(request) return command("cut",request) end
     -- 仅调试专项使用：连同协调器的锁定/状态一起恢复，不能让测试解锁真实坏档。
     function api.WithPreservedState(callback)
-        local before, oldEnvelope, oldLast, oldLocked = api.GetSnapshot(), U.Copy(envelope), U.Copy(last), locked
+        local before, oldEnvelope, oldLast, oldLocked, oldSlot = api.GetSnapshot(), U.Copy(envelope), U.Copy(last), locked, activeSlot
         local called, result = pcall(callback)
         local restored = install(before, targetSchema)
         envelope, last, locked = oldEnvelope, oldLast, oldLocked
+        activeSlot=oldSlot
         if not restored.ok then locked = true; error(restored.error, 0) end
         if not called then error(result, 0) end
         return result

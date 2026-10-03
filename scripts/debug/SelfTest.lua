@@ -242,4 +242,8 @@ function SelfTest.RunB1(context)
     return require("debug.SaveSystemTest").RunRecovery(context)
 end
 
+function SelfTest.RunB2(context)
+    return require("debug.LetterFlowTest").Run(context)
+end
+
 return SelfTest

@@ -39,7 +39,32 @@ local function rating(t, path)
     need(U.Integer(t.stars, 1) and t.stars <= 3 and U.String(t.feedback) and U.String(t.ruleId), path)
     ids(t.factIds, path .. ".factIds")
 end
-local function live(s, path, economy)
+-- 实际 B2 恢复器在结构层之后检查配置与双向来源；B1 无模块时保留结构层检查。
+function Schema.ValidateLetterTokens(letters,tokens,options)
+    local l = options.letters.ValidateSnapshot(letters)
+    if not l.ok then return l end
+    local w = options.wordTokens.ValidateSnapshot(tokens)
+    if not w.ok then return w end
+    local sources = {}
+    for id, token in pairs(tokens.byId) do
+        local item = letters.byId[token.sourceLetterInstanceId]
+        local source = options.letters.ResolveSource(letters,token.sourceLetterInstanceId,token.sourceSpanId)
+        if not source.ok then return source end
+        if not item.cutSpans[token.sourceSpanId] or source.value.wordId ~= token.wordId or source.value.sourceNpcId ~= token.sourceNpcId then
+            return U.Fail("SOURCE_INVALID","wordTokens.byId." .. id,"词实例与信件缺口不一致")
+        end
+        local key = #token.sourceLetterInstanceId .. ":" .. token.sourceLetterInstanceId .. token.sourceSpanId
+        if sources[key] then return U.Fail("SOURCE_INVALID","wordTokens.byId","同一位置产生多个词实例") end
+        sources[key]=true
+    end
+    for id, item in pairs(letters.byId) do
+        for span in pairs(item.cutSpans) do
+            if not sources[#id .. ":" .. id .. span] then return U.Fail("SOURCE_INVALID","letters.byId." .. id .. ".cutSpans." .. span,"剪裁缺口没有词实例") end
+        end
+    end
+    return U.Ok({letters=U.Copy(letters),wordTokens=U.Copy(tokens)})
+end
+local function live(s, path, options)
     object(s, "gameFlow letters wordTokens economy world narrative orders", path)
     need(Flow.ValidateSnapshot(s.gameFlow).ok, path .. ".gameFlow")
     object(s.gameFlow, "day phase canSalvage mainStoryStage deliveredOrders", path .. ".gameFlow")
@@ -65,7 +90,7 @@ local function live(s, path, economy)
         local key = token.sourceLetterInstanceId .. ":" .. token.sourceSpanId
         need(not sources[key], path .. ".tokens", "重复词条来源"); sources[key] = true
     end
-    local ledger = economy.ValidateSnapshot(s.economy)
+    local ledger = options.economy.ValidateSnapshot(s.economy)
     if not ledger.ok then error(ledger.error, 0) end
     object(s.world, "npcs flags", path .. ".world"); map(s.world.npcs, path .. ".npcs"); map(s.world.flags, path .. ".flags")
     object(s.narrative, "unlockedLetterIds delayedQueue resolvedEventIds", path .. ".narrative")
@@ -96,6 +121,11 @@ local function live(s, path, economy)
     end
     for id in pairs(s.letters.directArchive) do need(s.orders.confirmedById[id] ~= nil, path .. ".directArchive", "孤立归档") end
     need(count == s.gameFlow.deliveredOrders, path .. ".deliveredOrders", "发货数与确认记录不一致")
+    if options.letters or options.wordTokens then
+        need(options.letters and options.wordTokens,path,"信件与词条恢复器必须一起提供")
+        local joined = Schema.ValidateLetterTokens(s.letters,s.wordTokens,options)
+        if not joined.ok then error(joined.error,0) end
+    end
     -- 已确认明细与世界字段语义留给 Order/World/Narrative 恢复器，不在结构层猜测。
 end
 
@@ -106,7 +136,7 @@ function Schema.ValidateV2(data, options)
         object(data, "contentVersion revision nextOrderSerial live currentOrder", "data")
         need(U.String(data.contentVersion) and U.Integer(data.revision) and U.Integer(data.nextOrderSerial, 1), "data")
         if data.contentVersion ~= options.contentVersion then error(U.Error("CONTENT_VERSION_MISMATCH", "contentVersion", "内容版本不相容"), 0) end
-        live(data.live, "live", options.economy)
+        live(data.live, "live", options)
         if data.currentOrder == false then return end
         local order = data.currentOrder
         object(order, "orderId letterInstanceId phase baseline recipe pending", "currentOrder")
@@ -121,7 +151,7 @@ function Schema.ValidateV2(data, options)
         local base = order.baseline
         object(base, "id revision contentVersion live", "baseline")
         need(U.String(base.id) and base.revision == data.revision and base.contentVersion == data.contentVersion, "baseline", "基准过期或版本不相容")
-        live(base.live, "baseline.live", options.economy)
+        live(base.live, "baseline.live", options)
         need(U.Equal(base.live, data.live), "baseline.live", "试做期间正式状态偏离基准")
         local recipe = order.recipe
         if recipe ~= false then
@@ -134,7 +164,7 @@ function Schema.ValidateV2(data, options)
         local p = order.pending
         object(p, "transactionId status contentVersion synthesisVersion potion requirementResult facts worldChanges followup rating consumption reward candidateLive", "pending")
         need(U.String(p.transactionId) and p.status == "pending" and p.contentVersion == data.contentVersion, "pending")
-        if not U.String(options.synthesisVersion) or p.synthesisVersion ~= options.synthesisVersion then
+        if not (U.String(options.synthesisVersion) or U.Integer(options.synthesisVersion,1)) or p.synthesisVersion ~= options.synthesisVersion then
             error(U.Error("SYNTHESIS_VERSION_MISMATCH", "pending.synthesisVersion", "计算规则版本不相容"), 0)
         end
         object(p.potion, "synthesisVersion contentVersion effects intensityByEffect mods durationHours onsetDelayHours recoveryAfterEndHours residuals stability unstable sideEffects trace", "potion")
@@ -161,7 +191,7 @@ function Schema.ValidateV2(data, options)
         object(p.consumption, "ingredients consumedTokenIds specialItemIds", "consumption")
         quantities(p.consumption.ingredients, "consumption.ingredients"); ids(p.consumption.consumedTokenIds, "consumption.consumedTokenIds"); ids(p.consumption.specialItemIds, "consumption.specialItemIds")
         object(p.reward, "currency", "reward"); need(U.Integer(p.reward.currency), "reward.currency")
-        live(p.candidateLive, "candidateLive", options.economy)
+        live(p.candidateLive, "candidateLive", options)
         local confirmed = p.candidateLive.orders.confirmedById[order.orderId]
         need(confirmed and confirmed.transactionId == p.transactionId and U.Equal(confirmed.recipe, recipe), "candidateLive.confirmedById")
         for _, key in ipairs({"contentVersion","synthesisVersion","potion","requirementResult","facts","worldChanges","followup","rating","consumption","reward"}) do
