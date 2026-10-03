@@ -25,7 +25,7 @@
 return {
     {
         id = "npc_passerby_a",
-        name = "路人甲",
+        name = "埃利亚斯·沃德",
         occupation = "码头搬运工",
         family = "与妹妹两人同住（妹妹在面包坊帮工）；母亲已故，兄妹俩相依为命",
         background = "在灰港码头搬了十几年货，肩膀常年有旧伤。不识字，信是托人代写的。",

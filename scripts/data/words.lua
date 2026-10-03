@@ -1,13 +1,14 @@
 -- ============================================================================
 -- 词条表
 --
--- 玩家不能自己写字，只能从信件里「剪」下词。本表是全部可剪词的词库。
+-- 玩家只能从已收到的信件里「剪」词。本表定义 30 个词；定义存在不授予来源实例。
+-- 本批正式信件提供 14 种词，其余 16 种待后续投放，不能自动加入库存。
 --
 -- 字段：
 --   id           唯一标识，全项目引用它
 --   displayText  显示文本，必须与信件正文里 {{}} 标记的内容完全一致
---   category     词条分类，供词条库存界面分组（身体类 / 情绪类 / 感知类 /
---                行为类 / 记忆类 / 关系类 / 睡眠类 / 欲望类）
+--   category     词条分类，供词条库存界面分组（身体类 / 情绪类 /
+--                行为类 / 记忆类 / 关系类 / 睡眠类 / 物件类 / 时间类）
 --   effects      携带的效果标签 -> 权重。权重越高，合成后在魔药里占比越大
 --   reusable     被用于炼制后是否可重复使用；false 表示消耗掉
 --   attributeProfileId  时间属性配置引用（data/stage1.lua 的 attributeProfiles）。
@@ -29,6 +30,7 @@ return {
     },
     {
         id = "word_dream",
+        attributeProfileId = "dream_basic",
         displayText = "梦",
         category = "睡眠类",
         reusable = true,
@@ -36,6 +38,7 @@ return {
     },
     {
         id = "word_quiet",
+        attributeProfileId = "daytime_basic",
         displayText = "安静",
         category = "情绪类",
         reusable = true,
@@ -43,6 +46,7 @@ return {
     },
     {
         id = "word_happy",
+        attributeProfileId = "daytime_basic",
         displayText = "快乐",
         category = "情绪类",
         reusable = true,
@@ -50,6 +54,7 @@ return {
     },
     {
         id = "word_brave",
+        attributeProfileId = "daytime_basic",
         displayText = "勇敢",
         category = "情绪类",
         reusable = true,
@@ -57,6 +62,7 @@ return {
     },
     {
         id = "word_forget",
+        attributeProfileId = "daytime_basic",
         displayText = "忘记",
         category = "记忆类",
         reusable = true,
@@ -72,9 +78,208 @@ return {
     },
     {
         id = "word_hungry",
+        attributeProfileId = "daytime_basic",
         displayText = "饿",
         category = "身体类",
         reusable = true,
         effects = { appetite = 1.0 },
+    },
+    {
+        id = "word_bread",
+        displayText = "面包",
+        category = "物件类",
+        reusable = true,
+        attributeProfileId = "daytime_basic",
+        effects = { appetite = 1 },
+        desc = "唤起食欲，不凭空烤出面包；来源 N01",
+    },
+    {
+        id = "word_promise",
+        displayText = "答应",
+        category = "关系类",
+        reusable = true,
+        attributeProfileId = "daytime_basic",
+        effects = { recall = 1 },
+        desc = "唤起本单声明的旧承诺；来源 N01",
+    },
+    {
+        id = "word_lookup",
+        displayText = "抬头",
+        category = "行为类",
+        reusable = true,
+        attributeProfileId = "daytime_basic",
+        effects = { brave = 1 },
+        desc = "面对眼前的人时敢抬头；来源 N01",
+    },
+    {
+        id = "word_steady_hands",
+        displayText = "手稳",
+        category = "身体类",
+        reusable = true,
+        attributeProfileId = "daytime_basic",
+        effects = { steady = 1 },
+        desc = "手不抖但心里仍可紧张；来源 N01",
+    },
+    {
+        id = "word_homecoming",
+        displayText = "回家",
+        category = "关系类",
+        reusable = true,
+        attributeProfileId = "daytime_basic",
+        effects = { recall = 0.6, dream = 0.4 },
+        desc = "唤起家的记忆，不召回或传送他人；来源 N02",
+    },
+    {
+        id = "word_smile",
+        displayText = "笑",
+        category = "行为类",
+        reusable = true,
+        attributeProfileId = "daytime_basic",
+        effects = { happy = 1 },
+        desc = "轻快愉悦，不自动修复关系；来源 N02",
+    },
+    {
+        id = "word_soup",
+        displayText = "汤",
+        category = "物件类",
+        reusable = true,
+        attributeProfileId = "daytime_basic",
+        effects = { appetite = 1 },
+        desc = "唤起食欲，不凭空生出汤；来源 N02",
+    },
+    {
+        id = "word_wait",
+        displayText = "等",
+        category = "时间类",
+        reusable = true,
+        attributeProfileId = "daytime_basic",
+        effects = { calm = 1 },
+        desc = "降低急切，不改日程、票据期限或药效时长；来源 N02",
+    },
+    {
+        id = "word_angry",
+        displayText = "生气",
+        category = "情绪类",
+        reusable = true,
+        attributeProfileId = "daytime_basic",
+        effects = { anger = 1 },
+        desc = "表达不满，可能讨回工钱也可能冒犯；来源待后续订单",
+    },
+    {
+        id = "word_sad",
+        displayText = "难过",
+        category = "情绪类",
+        reusable = true,
+        attributeProfileId = "daytime_basic",
+        effects = { sadness = 1 },
+        desc = "允许失落被表达，不等同困倦；来源待后续订单",
+    },
+    {
+        id = "word_confused",
+        displayText = "茫然",
+        category = "情绪类",
+        reusable = true,
+        attributeProfileId = "daytime_basic",
+        effects = { confusion = 1 },
+        desc = "难以组织行动，不等同失忆；来源待后续订单",
+    },
+    {
+        id = "word_rational",
+        displayText = "理性",
+        category = "行为类",
+        reusable = true,
+        attributeProfileId = "daytime_basic",
+        effects = { reason = 1 },
+        desc = "只核对已有信息，不创造线索；来源待后续订单",
+    },
+    {
+        id = "word_relaxed",
+        displayText = "放松",
+        category = "身体类",
+        reusable = true,
+        attributeProfileId = "daytime_basic",
+        effects = { relax = 1 },
+        desc = "缓解紧绷但不压低行动欲望；来源待后续订单",
+    },
+    {
+        id = "word_afraid",
+        displayText = "害怕",
+        category = "情绪类",
+        reusable = true,
+        attributeProfileId = "daytime_basic",
+        effects = { fear = 1 },
+        desc = "对风险的感受增强；来源待后续订单",
+    },
+    {
+        id = "word_reassured",
+        displayText = "安心",
+        category = "情绪类",
+        reusable = true,
+        attributeProfileId = "daytime_basic",
+        effects = { safety = 1 },
+        desc = "感到安心不等于环境安全；来源待后续订单",
+    },
+    {
+        id = "word_missing",
+        displayText = "想念",
+        category = "记忆类",
+        reusable = true,
+        attributeProfileId = "daytime_basic",
+        effects = { recall = 0.6, dream = 0.4 },
+        desc = "只唤起人物已声明的关系记忆；来源待后续订单",
+    },
+    {
+        id = "word_trusting",
+        displayText = "信任",
+        category = "关系类",
+        reusable = true,
+        attributeProfileId = "daytime_basic",
+        effects = { trust = 1 },
+        desc = "只对本单声明对象生效；来源待后续订单",
+    },
+    {
+        id = "word_doubt",
+        displayText = "怀疑",
+        category = "关系类",
+        reusable = true,
+        attributeProfileId = "daytime_basic",
+        effects = { suspicion = 1 },
+        desc = "要求核对，不自动否定对方；来源待后续订单",
+    },
+    {
+        id = "word_jealous",
+        displayText = "嫉妒",
+        category = "情绪类",
+        reusable = true,
+        attributeProfileId = "daytime_basic",
+        effects = { envy = 1 },
+        desc = "强化比较心，不自动成为坏人；来源待后续订单",
+    },
+    {
+        id = "word_curious",
+        displayText = "好奇",
+        category = "行为类",
+        reusable = true,
+        attributeProfileId = "daytime_basic",
+        effects = { curiosity = 1 },
+        desc = "更想探究未知事物；来源待后续订单",
+    },
+    {
+        id = "word_aching",
+        displayText = "疼",
+        category = "身体类",
+        reusable = true,
+        attributeProfileId = "pain_basic",
+        effects = { pain = 1 },
+        desc = "增强痛感，不治伤；来源待后续订单",
+    },
+    {
+        id = "word_warm",
+        displayText = "温暖",
+        category = "身体类",
+        reusable = true,
+        attributeProfileId = "warmth_basic",
+        effects = { warmth = 1 },
+        desc = "身体暖和，不是火焰或天气控制；来源待后续订单",
     },
 }
