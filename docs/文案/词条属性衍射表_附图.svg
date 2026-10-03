@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="960" viewBox="0 0 1040 960" font-family="Microsoft YaHei, PingFang SC, Noto Sans SC, sans-serif">
+  <rect width="1040" height="960" fill="#faf8f3"/>
+
+  <text x="40" y="52" font-size="28" font-weight="bold" fill="#33312c">《寄往人间》属性层：6 类 22 项</text>
+  <text x="40" y="80" font-size="15" fill="#7d776b">来源 scripts/data/effects.lua ｜ 合成、订单判定、评分、时间属性（profile）都按这一层工作</text>
+  <text x="40" y="102" font-size="15" fill="#7d776b">本轮重做的是「词条层」与「文本层」；属性层这一层不动</text>
+
+  <!-- 睡眠类 -->
+  <g transform="translate(40,110)">
+    <rect width="450" height="150" rx="14" fill="#ffffff" stroke="#ddd7ca"/>
+    <rect width="8" height="150" rx="4" fill="#6b7f9e"/>
+    <text x="26" y="38" font-size="20" font-weight="bold" fill="#33312c">睡眠类</text>
+    <text x="96" y="38" font-size="14" fill="#9a9488">2 项</text>
+    <text x="26" y="76" font-size="16" fill="#403e39">睡眠</text><text x="86" y="76" font-size="13" fill="#9a9488">sleep</text>
+    <text x="26" y="112" font-size="16" fill="#403e39">梦境</text><text x="86" y="112" font-size="13" fill="#9a9488">dream</text>
+  </g>
+
+  <!-- 情绪类 -->
+  <g transform="translate(550,110)">
+    <rect width="450" height="150" rx="14" fill="#ffffff" stroke="#ddd7ca"/>
+    <rect width="8" height="150" rx="4" fill="#b06a5f"/>
+    <text x="26" y="38" font-size="20" font-weight="bold" fill="#33312c">情绪类</text>
+    <text x="96" y="38" font-size="14" fill="#9a9488">9 项 · 最大一类</text>
+    <text x="26" y="72" font-size="15" fill="#403e39">镇静 calm</text><text x="176" y="72" font-size="15" fill="#403e39">愉悦 happy</text><text x="326" y="72" font-size="15" fill="#403e39">勇气 brave</text>
+    <text x="26" y="104" font-size="15" fill="#403e39">愤怒 anger</text><text x="176" y="104" font-size="15" fill="#403e39">悲伤 sadness</text><text x="326" y="104" font-size="15" fill="#403e39">茫然 confusion</text>
+    <text x="26" y="136" font-size="15" fill="#403e39">恐惧 fear</text><text x="176" y="136" font-size="15" fill="#403e39">安心 safety</text><text x="326" y="136" font-size="15" fill="#403e39">嫉妒 envy</text>
+  </g>
+
+  <!-- 记忆类 -->
+  <g transform="translate(40,278)">
+    <rect width="450" height="150" rx="14" fill="#ffffff" stroke="#ddd7ca"/>
+    <rect width="8" height="150" rx="4" fill="#8a7bb0"/>
+    <text x="26" y="38" font-size="20" font-weight="bold" fill="#33312c">记忆类</text>
+    <text x="96" y="38" font-size="14" fill="#9a9488">2 项</text>
+    <text x="26" y="76" font-size="16" fill="#403e39">遗忘</text><text x="86" y="76" font-size="13" fill="#9a9488">forget</text>
+    <text x="26" y="112" font-size="16" fill="#403e39">忆起</text><text x="86" y="112" font-size="13" fill="#9a9488">recall</text>
+  </g>
+
+  <!-- 身体类 -->
+  <g transform="translate(550,278)">
+    <rect width="450" height="150" rx="14" fill="#ffffff" stroke="#ddd7ca"/>
+    <rect width="8" height="150" rx="4" fill="#7a9e6b"/>
+    <text x="26" y="38" font-size="20" font-weight="bold" fill="#33312c">身体类</text>
+    <text x="96" y="38" font-size="14" fill="#9a9488">5 项</text>
+    <text x="26" y="72" font-size="15" fill="#403e39">食欲 appetite</text><text x="186" y="72" font-size="15" fill="#403e39">稳手 steady</text><text x="326" y="72" font-size="15" fill="#403e39">放松 relax</text>
+    <text x="26" y="104" font-size="15" fill="#403e39">痛感 pain</text><text x="186" y="104" font-size="15" fill="#403e39">温暖 warmth</text>
+    <text x="26" y="134" font-size="12.5" fill="#a08a5f">注：稳手是「属性」；作为可剪词条的「手稳」在词条层，要改掉</text>
+  </g>
+
+  <!-- 关系类 -->
+  <g transform="translate(40,446)">
+    <rect width="450" height="150" rx="14" fill="#ffffff" stroke="#ddd7ca"/>
+    <rect width="8" height="150" rx="4" fill="#b0945f"/>
+    <text x="26" y="38" font-size="20" font-weight="bold" fill="#33312c">关系类</text>
+    <text x="96" y="38" font-size="14" fill="#9a9488">2 项</text>
+    <text x="26" y="76" font-size="16" fill="#403e39">信任</text><text x="86" y="76" font-size="13" fill="#9a9488">trust</text>
+    <text x="26" y="112" font-size="16" fill="#403e39">怀疑</text><text x="86" y="112" font-size="13" fill="#9a9488">suspicion</text>
+    <text x="216" y="112" font-size="12.5" fill="#a08a5f">两项都只对本单指定对象生效</text>
+  </g>
+
+  <!-- 行为类 -->
+  <g transform="translate(550,446)">
+    <rect width="450" height="150" rx="14" fill="#ffffff" stroke="#ddd7ca"/>
+    <rect width="8" height="150" rx="4" fill="#5f9ea0"/>
+    <text x="26" y="38" font-size="20" font-weight="bold" fill="#33312c">行为类</text>
+    <text x="96" y="38" font-size="14" fill="#9a9488">2 项</text>
+    <text x="26" y="76" font-size="16" fill="#403e39">理性</text><text x="86" y="76" font-size="13" fill="#9a9488">reason</text>
+    <text x="26" y="112" font-size="16" fill="#403e39">好奇</text><text x="86" y="112" font-size="13" fill="#9a9488">curiosity</text>
+    <text x="216" y="112" font-size="12.5" fill="#a08a5f">只整理已有信息，不生成真相</text>
+  </g>
+
+  <!-- 三层示意 -->
+  <text x="40" y="652" font-size="20" font-weight="bold" fill="#33312c">三层怎么接：文本 → 词条 → 属性（一个词可以"衍射"到多个属性）</text>
+
+  <text x="40" y="686" font-size="13" fill="#9a9488">文本层（信里自然写的字）</text>
+  <text x="420" y="686" font-size="13" fill="#9a9488">词条层（剪下来的字）</text>
+  <text x="640" y="686" font-size="13" fill="#9a9488">属性层（6 类 22 项）</text>
+
+  <g transform="translate(40,698)">
+    <rect width="340" height="54" rx="10" fill="#fff7ea" stroke="#e3d6bb"/>
+    <text x="18" y="33" font-size="16" fill="#403e39">「钟楼又只剩下灰」</text>
+    <rect x="380" width="180" height="54" rx="10" fill="#eef3f6" stroke="#c8d6de"/>
+    <text x="398" y="33" font-size="16" fill="#403e39">「灰」</text>
+    <rect x="600" width="360" height="54" rx="10" fill="#f4eef7" stroke="#d9cbe3"/>
+    <text x="618" y="33" font-size="16" fill="#403e39">悲伤 sadness 1.0</text>
+    <text x="352" y="34" font-size="18" fill="#9a9488">→</text>
+    <text x="578" y="34" font-size="18" fill="#9a9488">→</text>
+  </g>
+
+  <g transform="translate(40,764)">
+    <rect width="340" height="54" rx="10" fill="#fff7ea" stroke="#e3d6bb"/>
+    <text x="18" y="33" font-size="16" fill="#403e39">「他掰了半块给我」</text>
+    <rect x="380" width="180" height="54" rx="10" fill="#eef3f6" stroke="#c8d6de"/>
+    <text x="398" y="33" font-size="16" fill="#403e39">「半块」</text>
+    <rect x="600" width="360" height="54" rx="10" fill="#f4eef7" stroke="#d9cbe3"/>
+    <text x="618" y="33" font-size="16" fill="#403e39">嫉妒 envy 1.0</text>
+    <text x="352" y="34" font-size="18" fill="#9a9488">→</text>
+    <text x="578" y="34" font-size="18" fill="#9a9488">→</text>
+  </g>
+
+  <g transform="translate(40,830)">
+    <rect width="340" height="54" rx="10" fill="#fff7ea" stroke="#e3d6bb"/>
+    <text x="18" y="33" font-size="16" fill="#403e39">「汤还温着」</text>
+    <rect x="380" width="180" height="54" rx="10" fill="#eef3f6" stroke="#c8d6de"/>
+    <text x="398" y="33" font-size="16" fill="#403e39">「汤」</text>
+    <rect x="600" width="360" height="54" rx="10" fill="#f4eef7" stroke="#d9cbe3"/>
+    <text x="618" y="33" font-size="16" fill="#403e39">食欲 appetite 0.6 ＋ 温暖 warmth 0.4</text>
+    <text x="352" y="34" font-size="18" fill="#9a9488">→</text>
+    <text x="578" y="34" font-size="18" fill="#9a9488">→</text>
+    <text x="618" y="51" font-size="12" fill="#a08a5f">一词两项属性，就是"衍射"</text>
+  </g>
+</svg>
