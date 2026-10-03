@@ -52,4 +52,5 @@ scripts/
 - 已核对实际 GitHub origin、当前 fengyycon、空暂存区并 fetch；远端 main 新增 `f76de64`，提交说明为 N01 修复、r2 内容及 N02 变体契约。主计划已补充先复核该交付的提示，不在这次计划推送中合入或宣告验收。
 - Maker 状态正常；前次提交已返回不可重试的 branch_not_allowed，当前仍是 fengyycon。本轮不重复调用同一必失败的构建，不迁移 main 或重写远端；Maker 尚未同步。
 - 暂存精确为七份计划/规则文档，49 个本地链接的目标均已跟踪或属于本批提交；`git diff --cached --check` 通过。170 份非本轮改写文件的字节哈希保持不变；本机未提交状态继续保留在工作区。
-- GitHub 提交/推送结果：待核对。
+- GitHub 文档提交 `8538083`，推送 `origin HEAD:refs/heads/fengyycon` 成功，远端由 `cbabddd` 前进到该提交。本发布回执另作一份文档提交同步，最终远端 SHA 在交付消息核对。
+- 计划及相关规则已交付 GitHub；未提交程序、正式配置或队友 docs 修改。Maker 未同步，不宣称双端完成。下一步先核对远端 r2 内容，再按 W-P/W-T 分工实施。
