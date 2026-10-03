@@ -69,7 +69,10 @@ def run():
     def read_bytes(filename):
         return (ROOT / 'scripts/data' / filename).read_bytes().replace(b'\r\n', b'\n')
     old_letters = subprocess.check_output(['git', 'show', '8589b0a:scripts/data/letters.lua'], cwd=ROOT).replace(b'\r\n', b'\n')
-    assert read_bytes('letters.lua') == old_letters.replace('没个{{快乐}}样子'.encode(), '没个{{笑}}模样'.encode()), 'letters.lua 仅允许首单 body:2 快乐→笑'
+    # 2026-10-03：首单只允许两处改动——「快乐→笑」（词条层第一批）与妹妹段的文本优先重写。
+    OLD_SISTER = '我妹妹在面包坊帮工，回来总说身上全是面粉味。她老嫌我脸上没个{{快乐}}样子，可我也说不上到底哪里不好。'
+    NEW_SISTER = '我妹妹在面包坊帮工，回来总说身上全是面粉味；她有时捎一块烤硬的面包边给我垫垫，有时又嫌我脸上没个{{笑}}模样。她说得对，这阵子我连话都懒得多说，哪还笑得出来。'
+    assert read_bytes('letters.lua') == old_letters.replace(OLD_SISTER.encode(), NEW_SISTER.encode()), 'letters.lua 仅允许首单妹妹段的重写（含快乐→笑）'
     old_recipes = subprocess.check_output(['git', 'show', '8589b0a:scripts/data/recipes.lua'], cwd=ROOT).replace(b'\r\n', b'\n')
     assert read_bytes('recipes.lua') == old_recipes.replace(b'"word_happy"', b'"word_smile"'), 'recipes.lua 仅允许 word_happy→word_smile'
     frozen = ['ordinary_orders.lua', 'word_profiles.lua',
