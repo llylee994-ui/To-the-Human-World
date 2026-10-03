@@ -97,6 +97,7 @@
 - 开工和提交前核对当前分支、工作区差异及 `git remote -v`。本轮协作使用 `fengyycon`。
 - 约定的远端用途是：`github` 指向 GitHub，`origin` 指向 Maker。以本机实际配置为准，不能仅凭名称推送。
 - 日常 GitHub 推送与 Maker 提交构建分开处理。Maker 构建按工程 `AGENTS.md` 的 `maker_build_current_directory` 流程执行。
+- 组长于 2026-10-03 确认：以后只说“提交”“推送”或“提交推送”时，默认同步 Maker 和 GitHub；明确只要一端时按当次要求执行。先由 Maker 官方流程提交、推送并构建，再用 `git push github main` 将同一提交同步到已核对的 GitHub 仓库。分别验证两端结果；任一端失败时说明具体状态，不能只完成一端就报告全部完成。
 - 本地检查和预览不等于授权提交、推送或远端构建；按明确的交付请求执行相应操作。
 - **不新建 Maker 项目，不重跑 `taptap-maker init`**，以免改写 GitHub 远端。
 - 遵守 `.gitignore`；不强制提交引擎资料、本地绑定、缓存或构建产物。凭证不写入代码、聊天或提交内容。
