@@ -2,7 +2,7 @@
 
 ## 状态与背景
 
-- 状态：In Progress（代码复核、回归与文档同步完成；提交和远端核对待完成）。
+- 状态：Completed（B2 第一层复核、回归、文档同步与实现提交推送完成；不表示完整 B2 或阶段 1 验收完成）。
 - 来源：用户要求复核 [B2 实施记录](2026-10-02-b2-implementation.md)，有问题记录，无问题提交推送，并说明下一步及文案是否可以并行开写。
 - 基线：本地 `fengyycon`，HEAD `cf4f1d3`；2026-10-03 已 fetch，较 `origin/fengyycon` 领先 3、落后 0。
 - 本轮结论：在 B2 第一层“模块与隔离联调”的范围内，未发现阻止本次提交的问题。实际复跑与证据边界见下文；这不是完整 B2 或阶段 1 验收通过。
@@ -60,11 +60,11 @@ scripts/
 | 同一 B1 runner 的 `--debug-isolation` 八个场景，分别执行 | 8/8，均退出 0 | existing、missing、flow_missing、v2_corrupt、auto_write、auto_read、auto_read_flow_missing、auto_read_v2_corrupt；默认槽保持原字节或不存在 |
 | 上述运行中的阶段 0 逻辑自检 | 11/11 | 不含窗口布局检查，不写成历史 12 项实机自检 |
 | `logs/lua_diagnostics.log` | 历史记录：2026-10-02 23:19:38，Errors 0 / Warnings 0 | 本轮未改 Lua，未重跑 LSP；不能称本轮新诊断 |
-| `git diff --check`（复核前） | 通过；只有 Git 行尾转换提示 | 待文档更新及暂存后再检查本批差异 |
+| `git diff --check`（复核前）及 `git diff --cached --check`（提交前） | 均通过；只有 Git 行尾转换提示 | 已检查包含新文件的完整暂存差异 |
 | 文档更新后的 `git -c core.safecrlf=false diff --check` | 通过 | 无空白错误 |
 | 三份更新文档的相对链接检查 | 22 个链接，0 个失效 | Python 按文档所在目录解析本地路径 |
 | 原图及无关文件 SHA256 | 与本轮基线相同 | 主页 v03 原图、未跟踪 `docs/actions/2026-10-02-minimal-maker-local-preview.md` 均保留 |
-| 提交、推送、远端核对 | Pending | 完成后回填实际结果 |
+| 提交、推送、远端核对 | 实现提交 `b071c76` 已推送，`ls-remote` 与本地完整 SHA 一致 | `origin/fengyycon`；发布回执见下文 |
 
 已有测试临时目录在沙箱下访问受限，本轮按正常本机权限运行上述隔离测试；没有更改 ACL 或依赖。
 
@@ -110,4 +110,8 @@ scripts/
 
 ## 发布回执
 
-待完成。实际 GitHub 远端为 `origin`，不改远端名称；只推 `fengyycon`，不推 main 或 Maker。
+- 实现与交接提交：`b071c767f1e50a0940606177c038ca7ee742bdee`（`feat: 实现 B2 信件词条与原子保存并补齐交接`）。
+- 已执行 `git push origin HEAD:refs/heads/fengyycon`，成功；随后 `git ls-remote --heads origin refs/heads/fengyycon` 返回上述完整 SHA，与本地一致。
+- 提交范围 24 个 `scripts/` 文件，保留已有实现与其历史行动记录；没有提交无关 `docs/actions/`、本地引擎资料、凭证或生成日志。
+- 实现提交推送后的工作区仅剩原有未跟踪 `docs/actions/`。本发布回执以独立文档提交随同推送，最终分支 HEAD 以交付消息为准。
+- 实际 GitHub 远端为 `origin`，未改远端名称；只推 `fengyycon`，未推 main 或 Maker，未启动预览。
