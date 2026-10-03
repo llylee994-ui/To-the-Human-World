@@ -43,4 +43,6 @@ docs/actions/2026-10-03-style-baseline-word-layer-and-swap-attempt.md  [新增] 
 
 ## 提交与远端验证
 
-- 提交与推送：见文末「推送结果同步」；`git push github main`。
+- 基准批次提交：`db05036`（8 个文件，519 插入 / 18 删除），标题「docs(文案): 文风基准、词条属性衍射表提案与附图、两封润色样板」。
+- 已执行 `git push github main`：`c455fe5..db05036`。未触发 Maker 提交/构建（本批为文案基准与样板，Maker 侧同步由对应负责人按既有流程处理）。
+- 预演用的 `scripts/data` 改动（`letters.lua` 首信换词、`stage1.lua` 版本）已回退，未进入提交；`.gitignore` 追加 `__pycache__/`、`*.pyc`（跑检查脚本的必然产物）。
