@@ -1,5 +1,5 @@
 -- 正式普通订单：字面合规后解析事实，确认才提交人物状态与评价。
--- when 与 unless 各自为全满足；严格小于使用 lte + ne，避免边界缝隙。
+-- when 全部满足；unless 任一满足即排除。严格小于使用 lte + ne，避免边界缝隙。
 
 return {
     followupTemplates = {
@@ -211,7 +211,7 @@ return {
         {
             kind = "single",
             priority = 20,
-            text = "那次焦面包惹出的笑声，连同当时许的承诺，已经想不清了。认字和卖面包的手艺还在。",
+            text = "那次焦面包惹出的笑声，连同当时许的承诺，已经想不清了。交班时，我把价牌收进抽屉，又把明天要用的纸袋数了一遍。",
             overrides = {},
             templateId = "tpl_n01",
             id = "frag_n01_market_memory_faded",
@@ -331,7 +331,7 @@ return {
         {
             kind = "single",
             priority = 20,
-            text = "我想起他小时候听见勺子响就搬椅子，椅子比人还大。旧日饭桌记清了，不代表两年前的话也跟着回来。",
+            text = "我想起他小时候听见勺子响就搬椅子，椅子比人还大。如今他一坐下，膝盖就快抵到桌沿了。",
             overrides = {},
             templateId = "tpl_n02",
             id = "frag_n02_home_recalled",
@@ -371,7 +371,7 @@ return {
         {
             kind = "combination",
             priority = 50,
-            text = "饭后我忽然好奇那只缺耳瓷猫为何总显得不高兴，把它转向空碗，又转向窗外。我一点也不急，研究半天，发现只是脸画歪了。瓷猫没有动，是我动的。",
+            text = "饭后我忽然好奇那只缺耳瓷猫为何总显得不高兴，把它转向空碗，又转向窗外。我一点也不急，研究半天，发现只是脸画歪了。我拿针比了比，还是放下了。缝衣裳的针，补不好它这张脸。",
             overrides = {},
             templateId = "tpl_n02",
             id = "frag_n02_porcelain_cat",
@@ -381,7 +381,7 @@ return {
         {
             kind = "combination",
             priority = 50,
-            text = "今天身上暖，汤又香，我把空碗抱在手里多坐了一会儿，像捧着一只安静的小猫。没有多炖出汤，也没有真长出猫。就是舍不得那点暖意。",
+            text = "今天身上暖，汤又香，我把空碗抱在手里多坐了一会儿，像捧着一只安静的小猫。抱到碗沿都干了，才想起它不用哄睡。",
             overrides = {},
             templateId = "tpl_n02",
             id = "frag_n02_warm_bowl",
@@ -507,10 +507,6 @@ return {
         {
             priority = 20,
             ruleSetId = "rules_n01",
-            unless = {
-                { path = "recall", value = 0.6, op = "gte", source = "potion.effects" },
-                { path = "forget", value = 0.6, op = "gte", source = "potion.effects" },
-            },
             facts = {
                 { value = true, id = "n01_action_dulled", important = true, subjectId = "npc_luca" },
             },
@@ -518,6 +514,24 @@ return {
             when = {
                 { path = "steady", value = 0.8, op = "gte", source = "potion.effects" },
                 { path = "calm", value = 2.2, op = "gte", source = "potion.effects" },
+                { path = "recall", value = 0.6, op = "lte", source = "potion.effects" },
+                { path = "recall", value = 0.6, op = "ne", source = "potion.effects" },
+            },
+            changes = {},
+        },
+        {
+            priority = 20,
+            ruleSetId = "rules_n01",
+            facts = {
+                { value = true, id = "n01_action_dulled", important = true, subjectId = "npc_luca" },
+            },
+            id = "rule_n01_action_dulled_recalled",
+            when = {
+                { path = "steady", value = 0.8, op = "gte", source = "potion.effects" },
+                { path = "calm", value = 2.2, op = "gte", source = "potion.effects" },
+                { path = "recall", value = 0.6, op = "gte", source = "potion.effects" },
+                { path = "forget", value = 0.6, op = "lte", source = "potion.effects" },
+                { path = "forget", value = 0.6, op = "ne", source = "potion.effects" },
             },
             changes = {},
         },
@@ -561,7 +575,6 @@ return {
             ruleSetId = "rules_n01",
             unless = {
                 { path = "recall", value = 0.6, op = "gte", source = "potion.effects" },
-                { path = "forget", value = 0.6, op = "gte", source = "potion.effects" },
             },
             facts = {
                 { value = true, id = "n01_missed_promise_unaware", important = true, subjectId = "npc_luca" },
@@ -582,7 +595,6 @@ return {
             ruleSetId = "rules_n01",
             unless = {
                 { path = "recall", value = 0.6, op = "gte", source = "potion.effects" },
-                { path = "forget", value = 0.6, op = "gte", source = "potion.effects" },
             },
             facts = {
                 { value = true, id = "n01_hurt_customer_noticed", important = true, subjectId = "npc_luca" },
@@ -912,7 +924,7 @@ return {
 
 给别人写信时，我总劝人把头抬起来。轮到自己，却连{{抬头}}看看对方都难。一有人问价，手就开始抖，零钱越数越乱。
 
-能不能让我{{手稳}}一点？一小时内不再发抖，维持两到四小时就够了。心里还会害怕也没关系，至少别再把找回去的铜币撒到地上。
+能不能让我{{手稳}}一点？撑过明天柜台前那阵忙乱就好。心里还会害怕也没关系，至少别再把找回去的铜币撒到地上。
 
 下午我还要看烤炉，不能用叫人睡着的办法。要是睡意也跟着来，我就不敢喝。
 
@@ -971,7 +983,7 @@ return {
 
 邻居说，孩子回来了，过去的事能忘记就忘记。我没接话，只把多余的一把椅子搬进去了。
 
-请让我喝下一小时内轻快起来，维持两到四小时，够我们把晚饭吃完。我会醒着等他，不能给我带睡意。
+我想在他敲门前，心里先轻快一点，够我们慢慢把晚饭吃完。锅还得有人看着，可别让我打瞌睡。
 
 要是吃饭的时候能{{等}}他把话说完，不急着问他挣多少、几时回来，就更好了。
 

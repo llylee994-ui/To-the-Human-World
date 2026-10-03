@@ -1,6 +1,6 @@
 -- 25 份试做参考；不用于合成查表，不赠词，不限制投料。
 -- requiresFutureSources=true 表示需要后续订单提供词，当前不能据此宣称玩家已能熬制。
--- expect 为文案纸面模型的结果；实际运行尚待 Potion/Narrative 接入。
+-- expect 为内容侧预期；B3/B4 已实现，需用正式模块核对，不能只依赖纸面模型。
 
 return {
     {
