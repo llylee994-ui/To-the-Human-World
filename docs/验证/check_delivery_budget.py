@@ -158,7 +158,7 @@ ORDINARY = [
     Order("N01", 2, "卢卡", "steady_hands", "steady"),
     Order("N02", 4, "诺拉", "smile", "happy"),
     Order("N03", 2, "艾莉", "reassured", "safety"),
-    Order("N04", 3, "奥托", "happy", "happy"),
+    Order("N04", 3, "奥托", "smile", "happy"),
     Order("N05", 4, "塞西莉亚", "rational", "reason"),
     Order("N06", 5, "莱昂", "steady_hands", "steady"),
     Order("N07", 6, "贝娅", "angry", "anger"),
@@ -173,10 +173,10 @@ ORDINARY = [
     Order("N16", 14, "马丁", "steady_hands", "steady", "N08"),
     Order("N17", 15, "阿涅丝", "relaxed", "relax", "N09"),
     Order("N18", 16, "雅各布", "trusting", "trust", "N10"),
-    Order("N19", 16, "艾莉", "happy", "happy", "N11"),
+    Order("N19", 16, "艾莉", "smile", "happy", "N11"),
     Order("N20", 17, "奥托", "sad", "sadness", "N12"),
     Order("N21", 17, "塞西莉亚", "rational", "reason", "N13"),
-    Order("N22", 18, "莱昂", "happy", "happy", "N14"),
+    Order("N22", 18, "莱昂", "smile", "happy", "N14"),
 ]
 MAIN = [
     Order("M02", 3, "玛拉", "quiet", "calm", ordinary=False),
@@ -201,7 +201,7 @@ ROUTES = {
 # Initial fourteen are extracted from the actual three configured letter bodies.
 NEW_SOURCES = {
     "N03": ("afraid", "curious", "reassured"),
-    "N04": ("sad", "missing", "jealous", "happy"),
+    "N04": ("sad", "missing", "jealous", "smile"),
     "N05": ("rational", "doubt", "lookup"),
     "N06": ("aching", "steady_hands", "warm"),
     "N07": ("promise", "angry", "brave"),
@@ -216,10 +216,10 @@ NEW_SOURCES = {
     "N16": ("steady_hands", "relaxed", "wait"),
     "N17": ("relaxed", "promise", "soup"),
     "N18": ("trusting", "doubt", "jealous"),
-    "N19": ("happy", "smile", "jealous", "afraid"),
+    "N19": ("smile", "smile", "jealous", "afraid"),
     "N20": ("sad", "missing", "jealous", "bread"),
     "N21": ("rational", "doubt", "curious", "promise"),
-    "N22": ("happy", "smile", "missing", "aching"),
+    "N22": ("smile", "smile", "missing", "aching"),
 }
 HOME = {"窗帘": 60, "床铺": 100, "壁炉": 140, "书架": 180}
 HOME_DAYS = {9: "窗帘", 12: "床铺", 15: "壁炉", 18: "书架"}
@@ -264,7 +264,7 @@ class Audit:
         assert self.equipment["kit_copper_cauldron"]["slots"]["ingredient"] == 2
         assert self.equipment["kit_copper_cauldron"]["slots"]["auxWord"] == 3
         assert all(word["reusable"] is False for word in self.words.values()), "Formal words must explicitly be single-use"
-        assert len(self.words) == 30 and len(ORDINARY) == 23
+        assert len(self.words) == 29 and len(ORDINARY) == 23  # 2026-10-03 词条层第一批：word_happy 退役（happy 由 word_smile 承担）
         assert sum(HOME.values()) == 480
         # Cross-check the proposed content input against the delivered manuscript.
         manuscript = (ROOT / "docs/文案/普通订单/普通订单正文包_N03-N22_v01.md").read_text(encoding="utf-8-sig")
@@ -402,7 +402,9 @@ class Audit:
                 used = []
                 for role, word in [("main", order.main)] + [("aux", word) for word in order.aux]:
                     candidates = [id for id in gained if tokens[id]["wordId"] == "word_" + word and tokens[id]["available"]]
-                    assert len(candidates) == 1, (order.id, role, word, "missing own-source card")
+                    # 一封信可以有同一词的多处可剪位置（如 N19/N22 的两处「笑」）；
+                    # 这里只要求本信至少提供一张该词的卡，按正文顺序取第一张。
+                    assert len(candidates) >= 1, (order.id, role, word, "missing own-source card")
                     token_id = candidates[0]
                     assert token_id not in {row["tokenId"] for row in used}
                     used.append({"role": role, "tokenId": token_id})
@@ -491,7 +493,7 @@ class Audit:
             stress_home = self.simulate(route, "nonminimal", homes=True)
             assert len(apprentice["completed"]) == 30
             assert apprentice["word_count"] >= 12 and len(apprentice["categories"]) >= 5
-            assert len(apprentice["historical_word_ids"]) == 30
+            assert len(apprentice["historical_word_ids"]) == 29
             routes[name] = {"standard": normal, "apprentice": apprentice,
                             "nonminimal": stress, "nonminimal_home": stress_home}
         matrix = {name: {recipe: self.omission_matrix(route, recipe) for recipe in RECIPES} for name, route in ROUTES.items()}
@@ -500,7 +502,8 @@ class Audit:
             for recipe in RECIPES:
                 assert matrix[name][recipe]["minimum_day11"] == read_matrix[name][recipe]["minimum_day11"]
         # Retained witness after the whole route, not historical collection.
-        witness_ids = ["dream", "quiet", "happy", "forget", "tired", "bread", "promise", "lookup", "steady_hands", "homecoming", "wait", "hungry"]
+        # 2026-10-03：happy 退役后由 smile 承担（笑在多封信有来源，留存不断）。
+        witness_ids = ["dream", "quiet", "smile", "forget", "tired", "bread", "promise", "lookup", "steady_hands", "homecoming", "wait", "hungry"]
         for result in routes.values():
             assert {"word_" + id for id in witness_ids} <= set(result["standard"]["word_ids"])
         witness_categories = sorted({self.words["word_" + id]["category"] for id in witness_ids})
@@ -518,9 +521,9 @@ class Audit:
                 assert len(self.simulate(route, recipe)["completed"]) == 30
         minimal = self.simulate(ROUTES["归案+学徒"], first_three=True)
         assert len(minimal["completed"]) == 3 and minimal["word_count"] == 11
-        assert len(minimal["historical_word_ids"]) == 14 and minimal["ending"] == 270
+        assert len(minimal["historical_word_ids"]) == 13 and minimal["ending"] == 270
         assert len([token for token in minimal["word_tokens"].values() if not token["available"]]) == 3
-        return {"scope": "formal words single-use at story-v0.3-r3; future supply/rewards/schema remain manuscript-only, not runtime-verified",
+        return {"scope": "formal words single-use at story-v0.4-r1; future supply/rewards/schema remain manuscript-only, not runtime-verified",
                 "first_three": minimal,
                 "routes": routes, "omission_matrix": matrix, "omission_matrix_already_read": read_matrix,
                 "mainline_source_contract": {
@@ -555,7 +558,7 @@ def main():
         print(json.dumps(report, ensure_ascii=False, indent=2))
         return
     print("PASS: pure-content arithmetic; future shop/mainline/identity are NOT runtime-verified.")
-    print("Single-use draft ledger: first three use sleep / steady_hands / smile; 14 acquired definitions, 11 retained, 270 coins. Current formal data reusable=false (story-v0.3-r3); this ledger does not verify B5 saves.")
+    print("Single-use draft ledger: first three use sleep / steady_hands / smile; 13 acquired definitions (14 cards), 11 retained, 270 coins. Current formal data reusable=false (story-v0.4-r1); this ledger does not verify B5 saves.")
     print("253 omitted pairs x 3 routes x 2 recipes x 2 receipt modes = 3036 omission inputs; 20 ordinary + 10 mainline own-body sources matched; 4 information letters grant no words.")
     for name, result in report["routes"].items():
         print(name, "orders=30", "retained words", result["standard"]["word_count"], "categories", len(result["standard"]["categories"]), "standard", result["standard"]["ending"],

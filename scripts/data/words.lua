@@ -45,14 +45,6 @@ return {
         effects = { calm = 1.0 },
     },
     {
-        id = "word_happy",
-        attributeProfileId = "daytime_basic",
-        displayText = "快乐",
-        category = "情绪类",
-        reusable = false,
-        effects = { happy = 1.0 },
-    },
-    {
         id = "word_brave",
         attributeProfileId = "daytime_basic",
         displayText = "勇敢",

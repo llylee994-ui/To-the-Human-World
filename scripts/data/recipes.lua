@@ -152,7 +152,7 @@ return {
         },
         id = "recipe_n01_parade",
         recipe = {
-            auxWordIds = { "word_happy", "word_bread" },
+            auxWordIds = { "word_smile", "word_bread" },
             ingredients = {
                 { quantity = 1, ingredientId = "ing_night_dew" },
                 { quantity = 1, ingredientId = "ing_sea_salt" },
@@ -540,7 +540,7 @@ return {
         recipe = {
             equipmentId = "kit_old_cauldron",
             mainWordId = "word_sleep",
-            auxWordIds = { "word_dream", "word_happy" },
+            auxWordIds = { "word_dream", "word_smile" },
             ingredients = {
                 { ingredientId = "ing_night_dew", quantity = 1 },
                 { ingredientId = "ing_sea_salt", quantity = 1 },

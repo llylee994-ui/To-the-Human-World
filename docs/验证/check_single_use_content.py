@@ -35,7 +35,7 @@ def run():
     data = lua.execute('local D=require "data.content"; local ok,e=D.Load(); assert(ok,table.concat(e or {},"\\n")); ok,e=D.ValidateStage1(); assert(ok,table.concat(e or {},"\\n")); return D')
     words = plain(data.words)
     validate_policy(words)
-    assert len(words) == 30 and data.contentVersion == 'story-v0.3-r3'
+    assert len(words) == 29 and data.contentVersion == 'story-v0.4-r1'
     # Guard future additions too; demonstrate rejection without changing real data.
     for accidental in (True, None):
         try:
@@ -49,17 +49,30 @@ def run():
             raise AssertionError('new reusable or missing-policy word was accepted')
     previous_words = lua.execute(subprocess.check_output(['git', 'show', '8589b0a:scripts/data/words.lua'], cwd=ROOT, text=True, encoding='utf-8'))
     before = plain(previous_words)
-    assert [word['id'] for word in before] == [word['id'] for word in words]
-    for old, new in zip(before, words):
-        assert old['reusable'] is True and new['reusable'] is False
-        assert {k: v for k, v in old.items() if k != 'reusable'} == {k: v for k, v in new.items() if k != 'reusable'}
+    before_by_id = {word['id']: word for word in before}
+    # 2026-10-03 词条层第一批：word_happy 退役（happy 由 word_smile 承担）；
+    # 其余词只允许 reusable true→false，其它字段保持逐字一致。
+    assert set(before_by_id) - {word['id'] for word in words} == {'word_happy'}
+    assert [word['id'] for word in before if word['id'] != 'word_happy'] == [word['id'] for word in words]
+    for word in words:
+        old = before_by_id[word['id']]
+        assert old['reusable'] is True and word['reusable'] is False
+        assert {k: v for k, v in old.items() if k != 'reusable'} == {k: v for k, v in word.items() if k != 'reusable'}
     old_stage = subprocess.check_output(['git', 'show', '8589b0a:scripts/data/stage1.lua'], cwd=ROOT, text=True, encoding='utf-8')
-    # 2026-10-03 一致性修订：recipePolicy 注释同步一次性规则（纯注释，不改任何数值/字段/结构）。
-    # 语义内容仍必须与 r3 一致：整行注释忽略，其余代码与数据行保持逐字符比对。
+    # 2026-10-03：一致性修订（注释）与词条层第一批（contentVersion r3→r4-r1）之外的
+    # 代码与数据行必须与 r2 基线逐字符一致；整行注释忽略。
     def without_line_comments(text):
         return '\n'.join(line for line in text.splitlines() if not line.lstrip().startswith('--'))
-    assert without_line_comments(old_stage.replace('story-v0.3-r2', 'story-v0.3-r3')) == without_line_comments((ROOT / 'scripts/data/stage1.lua').read_text(encoding='utf-8'))
-    frozen = ['letters.lua', 'ordinary_orders.lua', 'recipes.lua', 'word_profiles.lua',
+    assert without_line_comments(old_stage.replace('story-v0.3-r2', 'story-v0.4-r1')) == without_line_comments((ROOT / 'scripts/data/stage1.lua').read_text(encoding='utf-8'))
+    # 2026-10-03 词条层第一批：letters.lua 与 recipes.lua 是仅有的两份允许带定向改动的文件
+    # （首单 body:2 快乐→笑；两条作者配方的 word_happy→word_smile），其余文件仍逐字节冻结。
+    def read_bytes(filename):
+        return (ROOT / 'scripts/data' / filename).read_bytes().replace(b'\r\n', b'\n')
+    old_letters = subprocess.check_output(['git', 'show', '8589b0a:scripts/data/letters.lua'], cwd=ROOT).replace(b'\r\n', b'\n')
+    assert read_bytes('letters.lua') == old_letters.replace('没个{{快乐}}样子'.encode(), '没个{{笑}}模样'.encode()), 'letters.lua 仅允许首单 body:2 快乐→笑'
+    old_recipes = subprocess.check_output(['git', 'show', '8589b0a:scripts/data/recipes.lua'], cwd=ROOT).replace(b'\r\n', b'\n')
+    assert read_bytes('recipes.lua') == old_recipes.replace(b'"word_happy"', b'"word_smile"'), 'recipes.lua 仅允许 word_happy→word_smile'
+    frozen = ['ordinary_orders.lua', 'word_profiles.lua',
               'synthesis.lua', 'ingredients.lua', 'equipment.lua', 'effects.lua', 'npcs.lua', 'followup.lua']
     for filename in frozen:
         old = subprocess.check_output(['git', 'show', f'8589b0a:scripts/data/{filename}'], cwd=ROOT)
@@ -180,6 +193,6 @@ if __name__ == '__main__':
     report = run()
     if args.export:
         args.export.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    print(f"PASS: {report['version']}; 30 formal words explicitly single-use; future true/nil rejected; frozen definitions/sources/rules unchanged.")
-    print(f"Real-module candidate A→A→A: 14 acquired, 3 consumed, 11 available, 270 coins, 3/3/3 stars. {report['reachableCombinations']}/64 combinations have continuous word supply.")
+    print(f"PASS: {report['version']}; 29 formal words explicitly single-use (word_happy retired, happy 由「笑」承担); future true/nil rejected; frozen definitions/sources/rules unchanged.")
+    print(f"Real-module candidate A→A→A: 14 cards / 13 definitions acquired, 3 consumed, 11 available, 270 coins, 3/3/3 stars. {report['reachableCombinations']}/64 combinations have continuous word supply.")
     print('Old baseline gate: CONTENT_VERSION_MISMATCH. B5 transactions, saves and engine UI remain unverified.')
