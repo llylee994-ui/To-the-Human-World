@@ -2,7 +2,7 @@
 
 ## 状态与背景
 
-- 状态：In Progress。
+- 状态：Completed（两份计划及评估记录已提交并推送 GitHub；Maker 提交被分支限制阻断，未完成双端同步）。
 - 用户要求：把本机和队友的具体实施计划分别写成两份，提交推送。
 - 基线：`fengyycon@d750c81`，已合入 `origin/main@6c7f558`；本机 B5 仍未提交，内容联调有已知阻断。结论依据 [v0.3 评估](2026-10-03-story-v03-integration-review.md)。
 - 本轮只写和交付计划及评估依据，不执行计划中的修复、界面、剧情配置或实机测试。不将未验收 B5 程序混入文档提交，保留原有工作区修改和 `docs/actions/`。
@@ -44,5 +44,7 @@ scripts/
 
 - Maker 官方流程已调用，结果 `failure_stage=code_submit`、`classification=branch_not_allowed`、`committed=no`、`remote_build_status=not_started`。Maker 只接受 main，而本机在 fengyycon；工具在提交/推送前停止。这不是沙箱拒绝或服务故障。
 - Maker 工具调用过程中自动将 origin 改为其认证远端；检查发现后已恢复调用前的 GitHub URL。未记录认证 URL 或令牌，未重跑 init，未切换或合并 main。
-- GitHub：准备仅提交本轮四份文档并推送 fengyycon。提交/推送回执待核对。
+- `git diff --cached --check` 通过，暂存恰为上述四份文档。
+- GitHub：文档提交 `d0b3aad`，`git push origin HEAD:refs/heads/fengyycon` 成功，远端从 `084f307` 前进到 `d0b3aad`，包含上轮已完成的 main 合并。未提交本机 B5 及无关 docs/actions。
+- 本条发布回执以单独文档提交同步；最终远端 SHA 在交付消息中核对，避免文档引用自身尚未形成的提交 SHA。
 - Maker 的 main 迁移和程序发布不包含在此次文档交付中；本轮不宣称双端同步完成。
