@@ -163,7 +163,7 @@ assert calculations == 160
 
 # core.quotepath may escape Chinese names; use NUL output.
 changed = set()
-for args in (['git', 'diff', '--name-only', '-z'], ['git', 'diff', '--cached', '--name-only', '-z'], ['git', 'ls-files', '--others', '--exclude-standard', '-z']):
+for args in (['git', 'diff', 'f76de64', '--name-only', '-z'], ['git', 'diff', '--cached', '--name-only', '-z'], ['git', 'ls-files', '--others', '--exclude-standard', '-z']):
     changed.update(subprocess.check_output(args, cwd=ROOT).decode('utf-8').strip('\0').split('\0'))
 links = 0
 for path in changed:

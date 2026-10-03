@@ -3,7 +3,7 @@
 
 Run: python docs/验证/check_delivery_budget.py [--json] [--ledger]
 Reads actual Lua literals for money, inventory, prices, slots, words and profiles.
-Schedule, future supply and rewards are the proposed T4-T6 content contract.
+Schedule, single-use word cards, future supply and rewards are proposed content.
 This is arithmetic evidence, not a Potion/Order/Identity integration test.
 """
 from __future__ import annotations
@@ -156,7 +156,7 @@ class Order:
 ORDINARY = [
     Order("letter_pa_01", 1, "埃利亚斯", "sleep", "sleep"),
     Order("N01", 2, "卢卡", "steady_hands", "steady"),
-    Order("N02", 4, "诺拉", "happy", "happy"),
+    Order("N02", 4, "诺拉", "smile", "happy"),
     Order("N03", 2, "艾莉", "reassured", "safety"),
     Order("N04", 3, "奥托", "happy", "happy"),
     Order("N05", 4, "塞西莉亚", "rational", "reason"),
@@ -356,10 +356,12 @@ class Audit:
         return {"duration": duration, "onset": onset, "stability": mods["stability"],
                 "unstable": mods["stability"] < self.synthesis["unstableThreshold"]}
 
-    def simulate(self, route, recipe_name="standard", omitted=(), homes=False, read_omitted=False):
+    def simulate(self, route, recipe_name="standard", omitted=(), homes=False, read_omitted=False, first_three=False):
         recipe = RECIPES[recipe_name]
         orders = sorted(ORDINARY + self.main_order_defs + [self.pair_order_defs[id] for id in route], key=lambda order: (order.day, order.id))
-        assert len(orders) == 30
+        if first_three:
+            orders = [order for order in orders if order.id in {"letter_pa_01", "N01", "N02"}]
+        assert len(orders) == (3 if first_three else 30)
         # A missed first letter blocks its continuations. Missing one cannot
         # silently fabricate the previous-confirmed fact for a later order.
         blocked = set(omitted)
@@ -367,7 +369,7 @@ class Audit:
             if order.previous in blocked:
                 blocked.add(order.id)
         currency, inventory = self.initial["currency"], dict(self.initial["ingredients"])
-        received, completed, ledger, source_inventory = set(), set(), [], {}
+        received, completed, ledger, tokens, word_ledger = set(), set(), [], {}, []
         for day in range(1, 19):
             opening, purchased, rewards, delivered = currency, Counter(), 0, []
             shelf = {id: 6 for id in self.ingredients}  # New proposal: reset daily, no carry.
@@ -381,18 +383,29 @@ class Audit:
                 if order.id in omitted and not read_omitted:
                     continue
                 received.update("word_" + word for word in self.sources.get(order.id, ()))
-                for word in self.sources.get(order.id, ()):
-                    source_inventory.setdefault("word_" + word, []).append(order.id)
+                gained = []
+                letter_id = order.id if order.id.startswith("letter_") else "letter_" + order.id.lower()
+                for index, word in enumerate(self.sources.get(order.id, ()), 1):
+                    token_id = f"draft:{letter_id}:body:{index}"
+                    assert token_id not in tokens
+                    tokens[token_id] = {"wordId": "word_" + word, "letterId": letter_id,
+                                        "spanId": f"body:{index}", "available": True,
+                                        "consumedByOrderId": None}
+                    gained.append(token_id)
                 # "Miss an order" means no confirmation/reward/material spend;
                 # an already received letter can still be read and clipped.
                 if order.id in omitted:
+                    word_ledger.append({"orderId": order.id, "gained": gained, "used": [], "omitted": True})
                     continue
-                # N02's own smile is happy=1, same profile and pure-happy
-                # three-star path. Use it if both earlier happy letters missed.
-                if order.id == "N02" and "word_happy" not in received:
-                    order = replace(order, main="smile")
-                assert "word_" + order.main in received
-                assert all("word_" + id in received for id in order.aux)
+                # Explicit manuscript route: use this letter's own main/aux cards.
+                # This is a published input selection, not an automatic runtime policy.
+                used = []
+                for role, word in [("main", order.main)] + [("aux", word) for word in order.aux]:
+                    candidates = [id for id in gained if tokens[id]["wordId"] == "word_" + word and tokens[id]["available"]]
+                    assert len(candidates) == 1, (order.id, role, word, "missing own-source card")
+                    token_id = candidates[0]
+                    assert token_id not in {row["tokenId"] for row in used}
+                    used.append({"role": role, "tokenId": token_id})
                 self.recipe_check(order, recipe)
                 # Buy each missing unit before mixing; today's later rewards
                 # cannot fund this order's materials. No free shop replenishment.
@@ -412,6 +425,13 @@ class Audit:
                 rewards += 80
                 completed.add(order.id)
                 delivered.append(order.id)
+                for selected in used:
+                    token = tokens[selected["tokenId"]]
+                    assert token["available"] and token["consumedByOrderId"] is None
+                    token["available"], token["consumedByOrderId"] = False, "draft-order:" + letter_id
+                counts = Counter(token["wordId"] for token in tokens.values() if token["available"])
+                word_ledger.append({"orderId": order.id, "gained": gained, "used": used,
+                                    "available_counts_after_confirm": dict(counts), "omitted": False})
             home = HOME_DAYS.get(day) if homes else None
             if home:
                 assert currency >= HOME[home]
@@ -421,12 +441,18 @@ class Audit:
             ledger.append({"day": day, "orders": delivered, "opening": opening, "reward": rewards,
                            "purchases": dict(purchased), "materials": spending, "home": home,
                            "home_cost": HOME.get(home, 0), "closing": currency, "inventory": dict(inventory)})
-        categories = sorted({self.words[id]["category"] for id in received})
+        source_inventory = {}
+        for id, token in tokens.items():
+            if token["available"]:
+                source_inventory.setdefault(token["wordId"], []).append(id)
+        available_ids = set(source_inventory)
+        categories = sorted({self.words[id]["category"] for id in available_ids})
         ticket = next((row["day"] for row in ledger if 6 <= row["day"] <= 11 and row["closing"] >= 300), None)
         return {"completed": sorted(completed), "blocked": sorted(blocked), "ledger": ledger,
                 "day11": ledger[10]["closing"], "ending": currency, "ticket_day": ticket,
-                "word_ids": sorted(received), "word_count": len(received), "categories": categories,
-                "word_inventory_sources": source_inventory}
+                "word_ids": sorted(available_ids), "word_count": len(available_ids), "categories": categories,
+                "historical_word_ids": sorted(received), "word_inventory_sources": source_inventory,
+                "word_tokens": tokens, "word_ledger": word_ledger}
 
     def omission_matrix(self, route, recipe, read_omitted=False):
         results = []
@@ -450,7 +476,8 @@ class Audit:
             stress = self.simulate(route, "nonminimal")
             stress_home = self.simulate(route, "nonminimal", homes=True)
             assert len(apprentice["completed"]) == 30
-            assert apprentice["word_count"] == 30 and len(apprentice["categories"]) == 8
+            assert apprentice["word_count"] >= 12 and len(apprentice["categories"]) >= 5
+            assert len(apprentice["historical_word_ids"]) == 30
             routes[name] = {"standard": normal, "apprentice": apprentice,
                             "nonminimal": stress, "nonminimal_home": stress_home}
         matrix = {name: {recipe: self.omission_matrix(route, recipe) for recipe in RECIPES} for name, route in ROUTES.items()}
@@ -458,10 +485,10 @@ class Audit:
         for name in ROUTES:
             for recipe in RECIPES:
                 assert matrix[name][recipe]["minimum_day11"] == read_matrix[name][recipe]["minimum_day11"]
-        # Current actual-source witness: twelve distinct IDs over eight categories.
-        witness_ids = ["sleep", "dream", "quiet", "happy", "forget", "tired", "bread", "promise", "lookup", "steady_hands", "homecoming", "wait"]
-        actual_ids = {"word_" + word for source in ("letter_pa_01", "N01", "N02") for word in self.sources[source]}
-        assert {"word_" + id for id in witness_ids} <= actual_ids
+        # Retained witness after the whole route, not historical collection.
+        witness_ids = ["dream", "quiet", "happy", "forget", "tired", "bread", "promise", "lookup", "steady_hands", "homecoming", "wait", "hungry"]
+        for result in routes.values():
+            assert {"word_" + id for id in witness_ids} <= set(result["standard"]["word_ids"])
         witness_categories = sorted({self.words["word_" + id]["category"] for id in witness_ids})
         assert len(set(witness_ids)) == 12 and len(witness_categories) >= 5
         for result in routes.values():
@@ -475,7 +502,12 @@ class Audit:
         for route in itertools.product(("G01A", "G01B"), ("G02A", "G02B"), ("G03A", "G03B")):
             for recipe in RECIPES:
                 assert len(self.simulate(route, recipe)["completed"]) == 30
-        return {"scope": "pure-content arithmetic; future supply/rewards/schema not runtime-verified",
+        minimal = self.simulate(ROUTES["归案+学徒"], first_three=True)
+        assert len(minimal["completed"]) == 3 and minimal["word_count"] == 11
+        assert len(minimal["historical_word_ids"]) == 14 and minimal["ending"] == 270
+        assert len([token for token in minimal["word_tokens"].values() if not token["available"]]) == 3
+        return {"scope": "single-use proposal; current words remain reusable; future supply/rewards/schema not runtime-verified",
+                "first_three": minimal,
                 "routes": routes, "omission_matrix": matrix, "omission_matrix_already_read": read_matrix,
                 "mainline_source_contract": {
                     order.id: {"body_word_ids": ["word_" + word for word in self.sources[order.id]],
@@ -491,15 +523,21 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--json", action="store_true", help="Print all ledgers and all 253 combinations per route/recipe")
     parser.add_argument("--ledger", action="store_true", help="Print standard and nonminimal daily ledger")
+    parser.add_argument("--export-word-ledger", type=Path, help="Write first-three and three normal-route token ledgers")
     args = parser.parse_args()
     report = Audit().report()
+    if args.export_word_ledger:
+        payload = {"scope": report["scope"], "first_three": report["first_three"],
+                   "routes": {name: result["standard"] for name, result in report["routes"].items()}}
+        args.export_word_ledger.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     if args.json:
         print(json.dumps(report, ensure_ascii=False, indent=2))
         return
     print("PASS: pure-content arithmetic; future shop/mainline/identity are NOT runtime-verified.")
+    print("Single-use draft ledger: first three use sleep / steady_hands / smile; 14 acquired definitions, 11 retained, 270 coins. Current data still reusable=true.")
     print("253 omitted pairs x 3 routes x 2 recipes x 2 receipt modes = 3036 omission inputs; 20 ordinary + 10 mainline own-body sources matched; 4 information letters grant no words.")
     for name, result in report["routes"].items():
-        print(name, "orders=30, words=30, categories=8", "standard", result["standard"]["ending"],
+        print(name, "orders=30", "retained words", result["standard"]["word_count"], "categories", len(result["standard"]["categories"]), "standard", result["standard"]["ending"],
               "home", result["apprentice"]["ending"], "nonminimal", result["nonminimal"]["ending"],
               "nonminimal+home", result["nonminimal_home"]["ending"], "ticket D", result["standard"]["ticket_day"])
     for recipe, matrix in report["omission_matrix"]["归案+学徒"].items():
