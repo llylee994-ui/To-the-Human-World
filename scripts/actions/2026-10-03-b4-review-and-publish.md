@@ -2,7 +2,7 @@
 
 ## 状态与背景
 
-- 状态：In Progress（复核与回归完成，提交推送待完成）。
+- 状态：Completed（B4 复核、回归、文档同步及实现提交推送完成；不等同 B5 整单或实机验收）。
 - 用户要求：复核 [B4 实施记录](2026-10-03-b4-implementation.md)，有问题记录，无问题提交推送，并说明下一步。
 - 基线：`fengyycon@5c6a319`；本轮 fetch 后与 GitHub `origin/fengyycon` 一致。
 - 结论：在 B4 纯计算、模块恢复和隔离联合验证范围内，未发现阻止本批提交的问题。未将尚未实施的 B5 订单事务或实机验收算作完成。
@@ -46,11 +46,11 @@ WorldState 拥有人物状态，Narrative 拥有剧情状态，Order.Rate 只做
 | `python -X utf8 scripts/debug/run_b1.py` | 130/130，退出 0 | 存档及账本回归 |
 | runner 内阶段 0 逻辑自检 | 11/11 | 不含窗口布局 |
 | 已有 LSP 诊断 | 2026-10-03 12:59:07，0 Error / 0 Warning | 沿用实施期证据；本轮不改程序，未重跑 LSP |
-| `git -c core.safecrlf=false diff --check` | 通过 | 提交前补查新增文件的完整暂存差异 |
+| `git -c core.safecrlf=false diff --check`、`git diff --cached --check` | 均通过 | 包含全部新增文件的完整暂存差异已检查 |
 | `git diff --numstat -- scripts/data docs scripts/main.lua` | 空 | 内容、设计文档与正式入口未改 |
 | 四份相关文档本地链接 | 36 个，0 个失效 | 按文件所在目录解析 |
 | 原待提交文件 SHA256 比较 | 本轮只改变 README 与双人计划 | 程序、原实施记录及无关未跟踪文档保留原字节 |
-| 暂存与发布核对 | Pending | 提交前后完成 |
+| 暂存与实现推送 | 14 个相关 `scripts/` 文件，`85cbed9` 推送成功 | 无关 `docs/actions/` 未加入提交 |
 
 本轮测试使用 Lua 5.4 与 File/cjson/UI 适配器；按正常本机权限运行既有隔离 runner，未更改 ACL 或依赖。单独 R2 八场景及三种启动配置门禁未重跑，沿用之前记录；不列为本轮通过。
 
@@ -80,4 +80,7 @@ B5 闭环后立即进入 B6：用简单按钮完成一单试玩，再进入 B7 �
 
 ## 发布回执
 
-Pending。仅推送 GitHub `origin/fengyycon`。
+- 实现提交 `85cbed9`（`feat: 实现 B4 人物后果回信与评分`）。
+- `git push origin HEAD:refs/heads/fengyycon` 成功，远端从 `5c6a319` 前进到 `85cbed9`。
+- 实现推送后，工作区仅剩原未跟踪 `docs/actions/`。本回执单独作为文档提交随同推送，最终远端 SHA 见交付消息。
+- 仅推送 GitHub `origin/fengyycon`，未推 main 或 Maker，未启动预览。
