@@ -54,7 +54,11 @@ def run():
         assert old['reusable'] is True and new['reusable'] is False
         assert {k: v for k, v in old.items() if k != 'reusable'} == {k: v for k, v in new.items() if k != 'reusable'}
     old_stage = subprocess.check_output(['git', 'show', '8589b0a:scripts/data/stage1.lua'], cwd=ROOT, text=True, encoding='utf-8')
-    assert old_stage.replace('story-v0.3-r2', 'story-v0.3-r3') == (ROOT / 'scripts/data/stage1.lua').read_text(encoding='utf-8')
+    # 2026-10-03 一致性修订：recipePolicy 注释同步一次性规则（纯注释，不改任何数值/字段/结构）。
+    # 语义内容仍必须与 r3 一致：整行注释忽略，其余代码与数据行保持逐字符比对。
+    def without_line_comments(text):
+        return '\n'.join(line for line in text.splitlines() if not line.lstrip().startswith('--'))
+    assert without_line_comments(old_stage.replace('story-v0.3-r2', 'story-v0.3-r3')) == without_line_comments((ROOT / 'scripts/data/stage1.lua').read_text(encoding='utf-8'))
     frozen = ['letters.lua', 'ordinary_orders.lua', 'recipes.lua', 'word_profiles.lua',
               'synthesis.lua', 'ingredients.lua', 'equipment.lua', 'effects.lua', 'npcs.lua', 'followup.lua']
     for filename in frozen:

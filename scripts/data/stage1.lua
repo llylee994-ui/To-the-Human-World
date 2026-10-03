@@ -71,7 +71,8 @@ local stage1 = {
         -- 同定义词条副本：不允许。不同 tokenId 但同一 wordId 视为重复投料，返回
         -- DUPLICATE_NOT_ALLOWED。理由：词条是「语义」，同一词义只应出现一次；
         -- 首信各词目前只有一个实例，本策略先用技术夹具验证。
-        -- 注意：reusable=true 只表示跨次炼制可复用，与重复占槽无关；同一 tokenId 跨槽始终非法。
+        -- 注意：正式词已全部一次性（reusable=false，见填写说明 §4.2）：确认并保存成功才消耗，
+        -- 预览与本单重置不扣卡。消耗策略与重复占槽无关，同一 tokenId 跨槽始终非法。
         repeatWordDefinition = false,
     },
 
