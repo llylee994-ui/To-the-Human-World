@@ -2,7 +2,7 @@
 
 ## 状态与范围
 
-In Progress。用户要求复核 `2026-10-04-b6-uncertain-recovery.md`，无阻断则提交推送。开工 fengyycon@aef9558；工作区包含累计未提交 B5/B6／一次性词卡、隔离持久预览及原生故障验收程序。队友正在编辑的 docs 文案保留，不纳入本批程序提交。
+Completed（本轮复核与发布；不代表 B6 全部验收结束）。用户要求复核 `2026-10-04-b6-uncertain-recovery.md`，无阻断则提交推送。开工 fengyycon@aef9558；工作区包含累计未提交 B5/B6／一次性词卡、隔离持久预览及原生故障验收程序。队友正在编辑的 docs 文案保留，不纳入本批程序提交。
 
 遵循 code-review-skill、action-document、project-control-report 和项目 Maker 提交流程。发布范围为 scripts 中本批程序、必要依赖、检查工具与交接记录；排除 logs、原生存档、本机 .mpv 工具副本、访问凭证与引擎开发资料。不因提交更改玩法、内容参数或重启已停止预览。
 
@@ -45,3 +45,11 @@ In Progress。用户要求复核 `2026-10-04-b6-uncertain-recovery.md`，无阻�
 - 程序提交 `121c7ac` 已由 Maker 官方入口成功提交并推送至 Maker main，67个 scripts 文件；首次远端构建未启动，原因是本机绑定缺少 user_id。
 - 已通过官方 CLI `apps --json` 查询并精确匹配既有 project_id，从官方返回读取 user_id，仅写入被忽略的本机 `.maker-mcp/config.json`，写前备份；没有猜测身份、没有重新 init、没有切换项目或服务环境。
 - GitHub main 另有 `5e7a69b` PR合并提交，源码树与共同基线一致；首次原子推送被拒绝，未强推。已在 main 提交目录无冲突合并该历史，等待官方工具生成合并提交后重新推送。运行代码／配置未再变化，原测试证据仍适用。
+
+## 最终发布回执与后续
+
+- 本批业务程序提交 `121c7ac`，整合 GitHub 历史后的提交 `5ef18f2e1e420b6eda0f0b27b0fdb0d4442e3670` 已由官方流程推送至 Maker main；远端构建成功、预览刷新 HTTP 200。
+- GitHub 原子推送成功：main 从 `5e7a69b`、fengyycon 从 `b5ac511` 同步到 `5ef18f2`；没有强推、没有重写队友历史。此回执作为后续文档提交一并同步，最终提交号以本轮交付报告为准。
+- 构建返回的日志 watcher 状态已检查：consecutiveFailures=0、lastError=null、lastWrittenLogs=0；尚未生成 runtime.log。构建成功不等于产生新的实际操作／存档恢复证据，本轮不据此宣称手机或官方环境退出恢复通过。
+- 原开发目录对齐已发布提交前已逐文件核对：除本轮行动记录更新外，没有出现并行新增程序改动。未发布文案采用独立备份和 Git stash 保留，更新后恢复，不纳入本批发布；不删除备份或 stash。
+- 下一步：继续 B6 窗口验收，补同一主词条至少三种结果、不同星级与字面失败的实际操作对照；官方持久环境／手机实机退出恢复仍单独留证。队友继续新稿字段与配置交付，未定稿内容不在本轮硬编码接入。
