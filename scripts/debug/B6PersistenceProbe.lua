@@ -6,7 +6,8 @@ local Probe = {}
 ---@param state table
 function Probe.Run(slot, state)
     if slot ~= "b6_persist_20261004_a" and slot ~= "b6_fault_20261004_a"
-        and slot ~= "b6_uncertain_20261004_a" then return end
+        and slot ~= "b6_uncertain_20261004_a" and slot ~= "b6_outcomes_20261004_a" then return end
+    if slot == "b6_outcomes_20261004_a" then require("debug.SaveJsonTest").Run() end
     local before = state.GetSnapshot()
     if before.currentOrder ~= false then return end
     local ids = {}
