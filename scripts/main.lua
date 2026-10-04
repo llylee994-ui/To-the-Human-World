@@ -4,10 +4,7 @@
 -- 结构基于 templates/scaffold-2d.lua（纯 UI / NanoVG，无 Scene 与 Viewport）。
 -- 开发阶段划分与验收标准见 docs/寄往人间_开发计划与验收标准.md
 --
--- 当前进度：阶段 0（工程骨架）
---   main.lua + core/{EventBus, SaveSystem, GameFlow} + debug/{DebugPanel, SelfTest}
---   + data/ 样板配置
---   阶段 1 起在此之上接入 Letter / WordToken / Potion / Order / WorldState / Narrative
+-- B6：真实首单模块、v2 存档与文字按钮玩法界面。
 -- ============================================================================
 
 local UI = require("urhox-libs/UI")
@@ -15,11 +12,17 @@ local EventBus = require "core.EventBus"
 local SaveSystem = require "core.SaveSystem"
 local GameFlow = require "core.GameFlow"
 local GameState = require "core.GameState"
+local GameSession = require "core.GameSession"
 local Economy = require "systems.Economy"
 local Data = require "data.content"
 local StateUtil = require "core.StateUtil"
 local DebugPanel = require "debug.DebugPanel"
 local SelfTest = require "debug.SelfTest"
+local PlayView = require "ui.PlayView"
+---@type table|nil
+local playView_
+---@type integer|nil
+local playListener_
 
 local TITLE = "寄往人间"
 
@@ -31,12 +34,18 @@ local uiFrameCount_ = 0
 local uiLayoutChecked_ = false
 ---@type table
 local gameState_ = {}
+---@type table
+local session_ = {}
+---@type table
+local legacyDebugState_ = {}
 local startupStatus_ = ""
 local ledgerStatus_ = ""
 ---@type string
 local b1Request_ = require "debug.B1RunRequest"
 ---@type string
 local b2Request_ = require "debug.B2RunRequest"
+---@type string
+local b6Request_ = require "debug.B6RunRequest"
 
 -- ============================================================================
 -- 生命周期
@@ -61,16 +70,25 @@ function Start()
             if not dataReady then dataError = StateUtil.Error("CONFIG_INVALID", "Data.ValidateStage1", table.concat(dataErrors, "；")) end
         end
     end
-    if dataReady then ledgerStatus_ = "\n首单配置已校验；完整模块恢复器就绪后启用账本"
+    if dataReady then ledgerStatus_ = ""
     else ledgerStatus_ = "" end
 
     -- 阶段 0 自检（B2 / B3 / B4）。会改动 GameFlow 状态，必须在正式载入存档之前跑。
     SelfTest.RunAll(EventBus, GameFlow, SaveSystem)
     GameFlow.Init(nil)
-    gameState_ = GameState.New({gameFlow=GameFlow,saveSystem=SaveSystem,eventBus=EventBus,dataReady=dataReady,dataError=dataError})
+    legacyDebugState_ = GameState.New({gameFlow=GameFlow,saveSystem=SaveSystem,eventBus=EventBus,dataReady=dataReady,dataError=dataError})
+    local sessionSave = SaveSystem
+    if b6Request_ == "b6_uncertain_20261004_a" then
+        sessionSave = require("debug.B6UncertainStorage").New(SaveSystem, b6Request_)
+    end
+    session_ = GameSession.New(Data,{gameFlow=GameFlow,saveSystem=sessionSave,eventBus=EventBus,dataReady=dataReady,dataError=dataError})
+    gameState_ = session_.state
 
     -- 仅无存档时新开局；配置/读档失败保留诊断并锁定写入和推进。
-    local _, status = LoadProgress(nil)
+    assert(b6Request_ == "off" or (b6Request_:match("^b6_[%w_]+$") and #b6Request_ <= 64), "非法 B6 验收槽")
+    assert(b6Request_ == "off" or (b1Request_ == "off" and b2Request_ == "off"), "B6 验收不能与 B1/B2 自动检查混用")
+    local _, status = LoadProgress(b6Request_ ~= "off" and b6Request_ or nil)
+    if b6Request_ ~= "off" then ledgerStatus_ = " · B6 验收槽 " .. b6Request_ end
     startupStatus_ = DebugPanel.DescribeStatus(status)
     startupStatus_ = startupStatus_ .. ledgerStatus_
 
@@ -88,7 +106,12 @@ function LoadProgress(slotName)
     return data, status
 end
 
+-- B6 通过公共协调器/订单接口操作；不暴露任何模块的私有状态。
+function GetGameSession() return session_ end
+
 function Stop()
+    if playListener_ then EventBus.Off("",playListener_); playListener_=nil end
+    playView_=nil
     UI.Shutdown()
     print("=== " .. TITLE .. " 已退出 ===")
 end
@@ -132,21 +155,21 @@ function CreateUI()
                 id = "mainPanel",
                 width = "100%",
                 height = "100%",
-                justifyContent = "center",
-                alignItems = "center",
-                gap = 10,
-                padding = 24,
+                justifyContent = "flex-start",
+                alignItems = "stretch",
+                gap = 6,
+                padding = 12,
                 children = {
                     UI.Label {
                         id = "titleLabel",
                         text = TITLE,
-                        fontSize = 28,
+                        fontSize = 22,
                         fontWeight = "bold",
                         fontColor = { 235, 225, 200, 255 },
                     },
                     UI.Label {
                         id = "subtitleLabel",
-                        text = "海边魔药铺 · 阶段 0 工程骨架",
+                        text = "海边魔药铺",
                         fontSize = 13,
                         fontColor = { 150, 165, 190, 220 },
                     },
@@ -155,7 +178,7 @@ function CreateUI()
                         text = "",
                         fontSize = 15,
                         fontColor = { 200, 215, 240, 255 },
-                        marginTop = 12,
+                        marginTop = 0,
                     },
                     UI.Label {
                         id = "saveStatusLabel",
@@ -164,6 +187,7 @@ function CreateUI()
                         fontColor = { 230, 195, 145, 255 },
                         width = "100%",
                         textAlign = "center",
+                        whiteSpace = "normal",
                     },
                     UI.Button {
                         id = "debugToggleButton",
@@ -177,6 +201,7 @@ function CreateUI()
                     },
                     UI.Label {
                         id = "hintLabel",
+                        visible = false,
                         text = "F6 检查 · F7 写测试档 · F8 读测试档",
                         fontSize = 12,
                         fontColor = { 130, 140, 165, 200 },
@@ -191,6 +216,9 @@ function CreateUI()
         },
     }
 
+    playView_=PlayView.New(session_,Data,function() return gameState_==session_.state end)
+    assert(root:FindById("mainPanel")):AddChild(playView_.root)
+
     -- 调试面板挂到 SafeAreaView 下，先入树再 SetRoot，避免根控件设定后补挂导致首帧不渲染
     DebugPanel.Attach(root, {
         gameFlow = GameFlow,
@@ -203,9 +231,9 @@ function CreateUI()
         nextDay = function() return gameState_.NextDay() end,
         canMutate = function() return gameState_.CanMutate() end,
     })
+    if b6Request_ ~= "off" then DebugPanel.SetTestSlot(b6Request_) end
     DebugPanel.SetWorldStateProvider(function()
-        -- 阶段 1 接入 WorldState 后改读真实世界状态
-        return {}
+        return session_.modules.world.GetSnapshot()
     end)
 
     uiRoot_ = root
@@ -217,6 +245,7 @@ end
 
 --- 刷新主界面顶部信息。
 function RefreshHeader()
+    if playView_ then playView_.Refresh() end
     if not dayLabel_ then
         return
     end
@@ -234,6 +263,9 @@ end
 function SubscribeToEvents()
     SubscribeToEvent("Update", "HandleUpdate")
     SubscribeToEvent("KeyDown", "HandleKeyDown")
+    playListener_=EventBus.OnAny(function()
+        RefreshHeader()
+    end,"B6/play")
 
     -- 跨天时刷新主界面信息
     EventBus.On("DayStarted", function()
@@ -256,6 +288,8 @@ end
 local function RunB1RestartCheck(writeFixture)
     DebugPanel.SetTestSlot("b1_restart_flow")
     DebugPanel.SetVisible(true)
+    -- 旧调试流程档有非零发货计数却没有订单明细；只能在专用 v1 协调器内读写。
+    gameState_=legacyDebugState_
     local ok, err = pcall(function()
         local tests = require "debug.SaveSystemTest"
         if writeFixture then
@@ -275,6 +309,7 @@ end
 function HandleUpdate(_eventType, eventData)
     local timeStep = eventData["TimeStep"]:GetFloat()
     DebugPanel.Update(timeStep)
+    if playView_ then playView_.Update() end
 
     -- 首帧布局完成后做一次界面自检（B1），只跑一次
     if not uiLayoutChecked_ then
@@ -282,6 +317,7 @@ function HandleUpdate(_eventType, eventData)
         if uiFrameCount_ == 30 then
             uiLayoutChecked_ = true
             SelfTest.CheckUILayout(uiRoot_)
+            if b6Request_ ~= "off" then require("debug.B6Evidence").Print(b6Request_, session_.state, uiRoot_) end
             if b2Request_ == "check" then RunB2Checks() end
             if b1Request_ == "write" then
                 RunB1RestartCheck(true)
@@ -291,6 +327,7 @@ function HandleUpdate(_eventType, eventData)
                 SaveSystem.Save("b1_error_ui", {gameFlow=GameFlow.Serialize(),unknownBusiness={}})
                 DebugPanel.SetVisible(true)
                 DebugPanel.SetTestSlot("b1_error_ui")
+                gameState_=legacyDebugState_
                 DebugPanel.LoadProgress("b1_error_ui")
             end
         end
@@ -317,8 +354,11 @@ end
 ---@return boolean
 function RunB1Checks()
     DebugPanel.SetVisible(true)
-    local result = gameState_.WithPreservedState(function()
-        return SelfTest.RunB1({
+    local previous=gameState_
+    local result = previous.WithPreservedState(function()
+        gameState_=legacyDebugState_
+        ---@type boolean, any
+        local called,value=pcall(SelfTest.RunB1,{
             gameFlow = GameFlow, saveSystem = SaveSystem,
             loadStartup = LoadProgress, loadDebug = DebugPanel.LoadProgress,
             refresh = function() RefreshHeader(); DebugPanel.Refresh() end,
@@ -328,19 +368,26 @@ function RunB1Checks()
                 return { header = dayLabel_:GetText(), panel = panelDay and panelDay:GetText() or "" }
             end,
         })
+        gameState_=previous
+        if not called then error(tostring(value),0) end
+        return value
     end)
     RefreshHeader()
     DebugPanel.Refresh()
     return result
 end
 
--- 必须先绑定测试槽。B2 内部用真实模块+显式夹具，不给生产 v1 安装假恢复器。
+-- 必须先绑定测试槽。B2 内部用真实模块+显式夹具，不给生产 v2 安装假恢复器。
 ---@return boolean
 function RunB2Checks()
     DebugPanel.SetTestSlot("b2_debug_flow")
     DebugPanel.SetVisible(true)
+    local previous=gameState_
     local ok,result=pcall(function()
-        return gameState_.WithPreservedState(function()
+        return previous.WithPreservedState(function()
+            -- v2 跨天会自动保存；必须在任何真实按钮回调之前绑定隔离协调器的活动槽。
+            gameState_=legacyDebugState_
+            LoadProgress("b2_debug_flow")
             return SelfTest.RunB2({buttons=function()
                 local buttons={}
                 for _, id in ipairs({"debugNextDayButton","debugSaveButton","debugLoadButton"}) do
@@ -351,8 +398,10 @@ function RunB2Checks()
             end})
         end)
     end)
+    -- 即使检查失败，后续调试按钮也不能回到生产默认槽。
+    gameState_=legacyDebugState_
     RefreshHeader(); DebugPanel.Refresh()
-    DebugPanel.Log(ok and result and "B2 模块与隔离联调检查通过；正式 v2 尚未启用" or "B2 检查未完成：" .. tostring(result))
+    DebugPanel.Log(ok and result and "B2 模块与隔离联调检查通过" or "B2 检查未完成：" .. tostring(result))
     if not ok then print("[B2] entry ERROR " .. tostring(result)) end
     return ok and result == true
 end

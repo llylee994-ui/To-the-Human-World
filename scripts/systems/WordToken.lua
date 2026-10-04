@@ -90,6 +90,35 @@ function WordToken.New(content)
         end
         return U.Ok(inventory)
     end
+    -- 只读投影：cards 保留全部历史来源；groups 的剩余张数仅数 available 实例。
+    -- 返回具体 tokenId，由玩家选择来源；这里不替 UI 自动选卡或执行结局判定。
+    function api.GetInventoryView()
+        local inventory=api.GetInventory()
+        if not inventory.ok then return inventory end
+        local view={cards=inventory.value,groups={},availableCount=0,availableDefinitionCount=0,availableCategoryCount=0}
+        local groups,categories={},{}
+        for _,card in ipairs(inventory.value) do
+            local id=card.definition.id
+            local group=groups[id]
+            if not group then
+                group={wordId=id,definition=U.Copy(card.definition),collectedCount=0,availableCount=0,availableTokenIds={}}
+                groups[id]=group; view.groups[#view.groups+1]=group
+            end
+            group.collectedCount=group.collectedCount+1
+            if card.available then
+                group.availableCount=group.availableCount+1
+                group.availableTokenIds[#group.availableTokenIds+1]=card.tokenId
+                view.availableCount=view.availableCount+1
+                categories[card.definition.category]=true
+            end
+        end
+        table.sort(view.groups,function(a,b) return a.wordId<b.wordId end)
+        for _,group in ipairs(view.groups) do
+            if group.availableCount>0 then view.availableDefinitionCount=view.availableDefinitionCount+1 end
+        end
+        for _ in pairs(categories) do view.availableCategoryCount=view.availableCategoryCount+1 end
+        return U.Ok(view)
+    end
     -- value={orderId,recipe(词引用投影),main={tokenId,definition,source},aux=[同型]}。
     -- 完整 RecipeRequest 的设备/槽数/同定义策略留给 B3，不放开同一实例重复引用。
     function api.ResolveRecipe(s,recipe)

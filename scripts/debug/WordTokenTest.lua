@@ -52,5 +52,28 @@ function Tests.Run(check)
     check("T10 tampered resolved denied",fresh.PlanConsumption(cut.value.state,tampered).ok,false)
     local bad=U.Copy(cut.value.state); bad.byId[cut.value.tokenId].consumedByOrderId=nil
     check("T9 false mandatory",fresh.Restore(bad).ok,false)
+    -- 同名两张独立一次性卡：只扣指定来源；历史不能冒充可用库存。
+    local pair=U.Copy(c.value.state)
+    local one={orderId="b2_pair",mainTokenId=a.value.tokenId,auxTokenIds={}}
+    local used=fresh.PlanConsumption(pair,fresh.ResolveRecipe(pair,one).value).value
+    check("W05 consume one keeps other",used.state.byId[c.value.tokenId].available,true)
+    assert(fresh.Restore(used.state).ok)
+    local view=fresh.GetInventoryView().value
+    check("W05 collected cards retained",#view.cards,2)
+    check("W05 available cards only",view.availableCount,1)
+    check("W05 available definitions",view.availableDefinitionCount,1)
+    check("W05 available categories",view.availableCategoryCount,1)
+    check("W05 group collected",view.groups[1].collectedCount,2)
+    check("W05 group available ids",U.Equal(view.groups[1].availableTokenIds,{c.value.tokenId}),true)
+    view.groups[1].availableTokenIds[1]="tampered"
+    check("W05 view isolated",U.Equal(fresh.GetInventoryView().value.groups[1].availableTokenIds,{c.value.tokenId}),true)
+    local again=fresh.PlanCut(used.state,source).value
+    check("W05 recut cannot revive",U.Equal(again.state,used.state),true)
+    check("W05 recut keeps token",again.tokenId,a.value.tokenId)
+    one.mainTokenId=c.value.tokenId
+    local exhausted=fresh.PlanConsumption(used.state,fresh.ResolveRecipe(used.state,one).value).value
+    assert(fresh.Restore(exhausted.state).ok)
+    view=fresh.GetInventoryView().value
+    check("W05 exhausted history not counted",U.Equal({view.availableCount,view.availableDefinitionCount,view.availableCategoryCount,#view.cards},{0,0,0,2}),true)
 end
 return Tests

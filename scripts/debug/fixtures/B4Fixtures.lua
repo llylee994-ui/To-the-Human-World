@@ -3,6 +3,7 @@ local U=require "core.StateUtil"
 local F={}
 local B3=require "debug.fixtures.B3Fixtures"
 F.Must=B3.Must
+F.ById=B3.ById
 function F.Content()
     local content=B3.Content()
     local data=require "data.content"
@@ -15,7 +16,8 @@ function F.Setup(content)
     x.narrative=require("systems.Narrative").New(x.content)
     x.initialWorld=F.Must(x.world.InitialSnapshot())
     F.Must(x.world.Restore(x.initialWorld)); F.Must(x.narrative.Restore(F.Must(x.narrative.InitialSnapshot())))
-    x.context={letterId=x.content.letters[1].id,orderId="b3_order",day=1}
+    x.definition=F.ById(x.content.letters,"letter_pa_01")
+    x.context={letterId=x.definition.id,orderId="b3_order",day=1}
     function x.Simulate(id)
         local potion=x.Calculate(id)
         return x.world.Simulate(x.initialWorld,potion,x.context),potion
@@ -28,7 +30,7 @@ function F.Setup(content)
         local simulated,potion=x.Simulate(id)
         local result=F.Must(simulated)
         result.followup=F.Must(x.Resolve(result,potion))
-        result.rating=F.Must(x.order.Rate(result.facts,x.content.letters[1].ratingSetId))
+        result.rating=F.Must(x.order.Rate(result.facts,x.definition.ratingSetId))
         return result,potion
     end
     return x
@@ -56,11 +58,11 @@ function F.Envelope(x,id)
     local result=F.Must(x.world.Simulate(order.baseline.live.world,potion,context))
     context.world=result.world; context.potion=potion
     local p=order.pending
-    p.potion=potion; p.requirementResult=F.Must(x.order.Evaluate(x.content.letters[1].requirement,potion))
+    p.potion=potion; p.requirementResult=F.Must(x.order.Evaluate(x.definition.requirement,potion))
     p.facts=result.facts; p.worldChanges=result.worldChanges
     p.followup=F.Must(x.narrative.ResolveDirect(result.facts,context))
-    p.rating=F.Must(x.order.Rate(result.facts,x.content.letters[1].ratingSetId))
-    p.reward=U.Copy(x.content.letters[1].reward); p.consumption.ingredients=U.Copy(request.ingredients)
+    p.rating=F.Must(x.order.Rate(result.facts,x.definition.ratingSetId))
+    p.reward=U.Copy(x.definition.reward); p.consumption.ingredients=U.Copy(request.ingredients)
     p.candidateLive.world=U.Copy(result.world)
     p.candidateLive.economy=F.Must(x.economy.PlanSettlement(base.live.economy,request.ingredients,{},p.reward)).state
     local record=U.Copy(p); record.candidateLive=nil; record.status=nil

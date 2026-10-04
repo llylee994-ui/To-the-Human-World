@@ -1,6 +1,10 @@
 -- B3 技术基准：真实收到/阅读/剪词、真实账本，接单记录仅为纯计算输入，不冒充 B5 接单。
 local U=require "core.StateUtil"
 local F={}
+function F.ById(items,id)
+    for _,item in ipairs(items) do if item.id==id then return item end end
+    error("测试夹具缺少配置 ID: " .. tostring(id),0)
+end
 function F.Must(result)
     if not result.ok then error(result.error.code .. " @ " .. result.error.path .. ": " .. result.error.message,0) end
     return result.value
@@ -37,7 +41,7 @@ function F.Setup(content)
     end
     local ledger=F.Must(economy.InitialSnapshot())
     F.Must(letters.Restore(letterState)); F.Must(words.Restore(wordState)); F.Must(economy.Restore(ledger))
-    local first=content.letters[1]
+    local first=F.ById(content.letters,"letter_pa_01")
     local baseline={id=content.stage1.baseline.id,revision=0,contentVersion=content.contentVersion,
         live={letters=letterState,wordTokens=wordState,economy=ledger,
             orders={acceptedById={b3_order={letterInstanceId="letter:" .. first.id,letterId=first.id,acceptedDay=1}},confirmedById={}}}}

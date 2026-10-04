@@ -255,4 +255,8 @@ function SelfTest.RunB4()
     return require("debug.NarrativeTest").Run()
 end
 
+function SelfTest.RunB5()
+    return require("debug.OrderFlowTest").Run()
+end
+
 return SelfTest

@@ -5,10 +5,11 @@ local Schema = {}
 local function need(ok, path, message)
     if not ok then error(U.Error("STATE_INVALID", path, message or "字段类型或关联不合法"), 0) end
 end
-local function object(t, fields, path)
+local function object(t, fields, path, optional)
     need(type(t) == "table", path)
     local allowed = {}
     for name in fields:gmatch("%S+") do allowed[name] = true; need(t[name] ~= nil, path .. "." .. name, "缺少字段") end
+    for name in (optional or ""):gmatch("%S+") do allowed[name]=true end
     local valid = U.Keys(t, allowed, path)
     if not valid.ok then error(valid.error, 0) end
 end
@@ -108,7 +109,7 @@ local function live(s, path, options)
         need(s.letters.byId[order.letterInstanceId] and U.String(order.letterId) and U.Integer(order.acceptedDay, 1), path .. ".orders." .. id)
     end
     for id, record in pairs(s.orders.confirmedById) do
-        object(record, "transactionId contentVersion synthesisVersion potion requirementResult facts worldChanges followup rating consumption reward letterInstanceId recipe", path .. ".confirmedById." .. id)
+        object(record, "transactionId contentVersion synthesisVersion potion requirementResult facts worldChanges followup rating consumption reward letterInstanceId recipe", path .. ".confirmedById." .. id, "deliveryDay")
         need(U.String(record.transactionId) and s.orders.acceptedById[id] and record.letterInstanceId == s.orders.acceptedById[id].letterInstanceId, path .. ".confirmedById." .. id)
         need(type(record.followup) == "table", path .. ".confirmedById.followup")
         rating(record.rating, path .. ".confirmedById.rating")
@@ -139,7 +140,7 @@ function Schema.ValidateV2(data, options)
         live(data.live, "live", options)
         if data.currentOrder == false then return end
         local order = data.currentOrder
-        object(order, "orderId letterInstanceId phase baseline recipe pending", "currentOrder")
+        object(order, "orderId letterInstanceId phase baseline recipe pending", "currentOrder", "nextAttemptSerial lastResetTransactionId")
         need(U.String(order.orderId) and U.String(order.letterInstanceId) and data.live.orders.acceptedById[order.orderId], "currentOrder")
         need(data.live.orders.acceptedById[order.orderId].letterInstanceId == order.letterInstanceId, "currentOrder.letterInstanceId")
         need(not data.live.orders.confirmedById[order.orderId], "currentOrder", "当前订单已确认")

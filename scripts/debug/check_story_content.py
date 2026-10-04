@@ -4,6 +4,7 @@ Run: python scripts/debug/check_story_content.py
 Uses the same isolated lupa installation as run_b1.py. No engine/UI evidence.
 """
 from pathlib import Path
+import copy
 import itertools
 import math
 import sys
@@ -22,6 +23,19 @@ def plain(value):
     if keys and set(keys) == set(range(1, len(keys) + 1)):
         return [plain(value[i]) for i in range(1, len(keys) + 1)]
     return {k: plain(value[k]) for k in keys}
+
+
+def condition_matches(condition, effects):
+    if condition['source'] != 'potion.effects':
+        raise ValueError(f"Paper model does not support source: {condition['source']}")
+    value, target = effects.get(condition['path'], 0), condition['value']
+    return {'eq': value == target, 'ne': value != target,
+            'gte': value >= target, 'lte': value <= target}[condition['op']]
+
+
+def rule_matches(rule, effects):
+    return (all(condition_matches(c, effects) for c in rule['when'])
+            and not any(condition_matches(c, effects) for c in rule.get('unless', [])))
 
 
 class ContentContract(unittest.TestCase):
@@ -53,7 +67,8 @@ class ContentContract(unittest.TestCase):
         for entry in recipe['ingredients']:
             ingredient = self.ingredients[entry['ingredientId']]
             for _ in range(entry['quantity']):
-                merge(ingredient.get('addTags', {}))
+                for tag, weight in ingredient.get('addTags', {}).items():
+                    effects[tag] = effects.get(tag, 0) + weight * cfg['auxWeight']
                 for key, value in ingredient['mods'].items():
                     mods[key] += value
         effects = {k: v * (1 + mods['intensity'] * cfg['intensityScale']) for k, v in effects.items()}
@@ -84,13 +99,7 @@ class ContentContract(unittest.TestCase):
         return True
 
     def consequences(self, letter, effects):
-        def matches(conditions):
-            for c in conditions:
-                self.assertEqual(c['source'], 'potion.effects')
-                value, target = effects.get(c['path'], 0), c['value']
-                if not {'eq': value == target, 'ne': value != target, 'gte': value >= target, 'lte': value <= target}[c['op']]: return False
-            return True
-        matched = [r for r in self.rules if r['ruleSetId'] == letter['directRuleSetId'] and matches(r['when']) and not (r.get('unless') and matches(r['unless']))]
+        matched = [r for r in self.rules if r['ruleSetId'] == letter['directRuleSetId'] and rule_matches(r, effects)]
         facts = {f['id'] for r in matched for f in r['facts']}
         important = {f['id'] for r in matched for f in r['facts'] if f['important']}
         def accepts(row):
@@ -114,6 +123,51 @@ class ContentContract(unittest.TestCase):
             self.assertLessEqual(len(set(group['factIds']) & facts), 1, (group['id'], facts))
         return facts, rating['stars'], {f['id'] for f in fragments}, rating['id']
 
+    def test_when_all_unless_any_and_empty_lists(self):
+        conditions = [dict(source='potion.effects', path=tag, op='gte', value=.6)
+                      for tag in ['recall', 'forget']]
+        for recall, forget in itertools.product([0, .6], repeat=2):
+            effects = dict(recall=recall, forget=forget)
+            self.assertEqual(rule_matches(dict(when=conditions), effects), recall >= .6 and forget >= .6)
+            self.assertEqual(rule_matches(dict(when=[], unless=conditions), effects), not (recall >= .6 or forget >= .6))
+            for selected in [conditions, []]:
+                runtime_all, runtime_any, _ = self.lua.execute('''
+                    local conditions,effects=...
+                    return require("systems.StoryRules").Conditions(conditions,
+                        {potion={effects=effects}},require("data.content"),"technical.conditions")
+                ''', self.lua.table_from(selected, recursive=True), self.lua.table_from(effects))
+                self.assertEqual(runtime_all, all(condition_matches(c, effects) for c in selected))
+                self.assertEqual(runtime_any, any(condition_matches(c, effects) for c in selected))
+        self.assertTrue(rule_matches(dict(when=[], unless=[]), {}))
+        self.assertTrue(rule_matches(dict(when=[]), {}))
+
+    def test_ingredient_add_tags_matches_real_potion(self):
+        # Only modify isolated copies; both recipes exercise a tag already present on the main word.
+        original = self.ingredients
+        self.ingredients = copy.deepcopy(original)
+        try:
+            self.ingredients['ing_sea_salt']['addTags'] = {'sleep': .5}
+            for quantity in [1, 2]:
+                recipe = dict(mainWordId='word_sleep', auxWordIds=[],
+                              ingredients=[dict(ingredientId='ing_sea_salt', quantity=quantity)])
+                paper = self.brew(recipe)
+                actual = self.lua.execute('''
+                    local F=require "debug.fixtures.B3Fixtures"
+                    local c=F.Content()
+                    for _,item in ipairs(c.ingredients) do
+                        if item.id=="ing_sea_salt" then item.addTags={sleep=0.5} end
+                    end
+                    local x=F.Setup(c)
+                    local r=require("core.StateUtil").Copy(x.Sample("A").recipe)
+                    r.ingredients={{ingredientId="ing_sea_salt",quantity=...}}
+                    return F.Must(require("systems.Potion").Calculate(F.Must(x.order.ResolveRecipe(x.Request(r),x.baseline)),c))
+                ''', quantity)
+                self.assertAlmostEqual(paper[0]['sleep'], 1 + quantity * .5 * self.content.synthesis.auxWeight)
+                self.assertAlmostEqual(paper[0]['sleep'], actual.effects.sleep)
+                self.assertEqual(paper[1:3], (actual.durationHours, actual.onsetDelayHours))
+        finally:
+            self.ingredients = original
+
     def test_original_first_order_golden_cases(self):
         letter = plain(self.content.GetLetter('letter_pa_01'))
         for case in plain(self.content.stage1.sampleCases):
@@ -134,8 +188,12 @@ class ContentContract(unittest.TestCase):
 
     def test_reference_recipes_and_available_sources(self):
         import re
-        sources = {w for letter in plain(self.content.letters) if letter['kind'] == 'order' for w in re.findall(r'\{\{(.*?)\}\}', letter['body'])}
-        self.assertEqual(len(sources), 14)
+        source_cards = [(letter['id'], w) for letter in plain(self.content.letters)
+                        if letter['kind'] == 'order' for w in re.findall(r'\{\{(.*?)\}\}', letter['body'])]
+        sources = {w for _, w in source_cards}
+        self.assertEqual(len(source_cards), 14)
+        self.assertEqual(len(sources), 13)
+        self.assertEqual([lid for lid, w in source_cards if w == '笑'], ['letter_pa_01', 'letter_n02'])
         self.assertTrue(self.content.recipes)
         for case in plain(self.content.recipes):
             with self.subTest(recipe=case['id']):
@@ -169,7 +227,7 @@ class ContentContract(unittest.TestCase):
                                     self.consequences(letter, brewed[0])
                                     count += 1
         self.assertGreater(count, 1000)
-        print(f'Paper combinations: {count} compliant results covered across 30 main words / 3 orders (NOT a Potion/Narrative runtime test)')
+        print(f'Paper combinations: {count} compliant results covered across {len(self.words)} main words / 3 orders (NOT a Potion/Narrative runtime test)')
 
     def test_exact_threshold_partition_has_no_gap(self):
         for lid, axis in [('letter_n01', 'steady'), ('letter_n02', 'happy')]:
@@ -191,7 +249,9 @@ class ContentContract(unittest.TestCase):
 
     def test_new_words_have_distinct_meaning_and_explicit_time(self):
         words = plain(self.content.words)
-        self.assertEqual(len(words), 30)
+        self.assertEqual(len(words), 29)
+        self.assertNotIn('word_happy', self.words)
+        self.assertEqual(self.words['word_smile']['effects'], {'happy': 1})
         by_text = {w['displayText']: w for w in words}
         for text, tag in [('生气', 'anger'), ('难过', 'sadness'), ('茫然', 'confusion'),
                           ('理性', 'reason'), ('放松', 'relax'), ('手稳', 'steady')]:

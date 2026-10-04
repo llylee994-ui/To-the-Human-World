@@ -1,4 +1,4 @@
--- B3 配方/字面计算与 B4 事实评分；接单、基准保存、确认/重置仍由 B5 接入。
+-- B3 配方/字面计算与 B4 评分；B5 生命周期由 OrderLifecycle 经 GameState 提交。
 local U = require "core.StateUtil"
 local G = require "systems.CalculationGuard"
 local Potion = require "systems.Potion"
@@ -191,6 +191,7 @@ function Order.New(content)
             return {stars=rule.stars,feedback=rule.feedback,ruleId=rule.id,factIds=U.Copy(rule.requiresFacts)}
         end)
     end
+    require("systems.OrderLifecycle").Attach(api,content)
     return api
 end
 

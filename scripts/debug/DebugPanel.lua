@@ -195,11 +195,11 @@ end
 -- F8 或显式 B1 诊断入口须在安装测试状态前绑定；检查失败也保留，按钮继续使用测试槽。
 -- 普通启动未进入上述入口时仍使用默认玩家槽。
 function DebugPanel.SetTestSlot(slot)
-    assert(type(slot) == "string" and (slot:match("^b1_[%w_]+$") or slot:match("^b2_[%w_]+$")), "只允许 B1/B2 隔离槽")
+    assert(type(slot) == "string" and (slot:match("^b1_[%w_]+$") or slot:match("^b2_[%w_]+$") or slot:match("^b6_[%w_]+$")), "只允许 B1/B2/B6 隔离槽")
     testSlot_ = slot
     if panel_ then
         local title = panel_:FindById("debugTitleLabel") --[[@as Label?]]
-        if title then title:SetText((slot:match("^b2_") and "B2" or "B1") .. " 隔离检查 · " .. slot) end
+        if title then title:SetText(slot:sub(1,2):upper() .. " 隔离检查 · " .. slot) end
     end
 end
 

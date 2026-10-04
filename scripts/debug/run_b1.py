@@ -16,6 +16,7 @@ from lupa.lua54 import LuaRuntime, lua_type
 
 def main(argv=None, entrypoint=None):
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--b6-acceptance', action='store_true', help='Check real entry binds every debug operation to a B6 slot')
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument("--config-failure", choices=("load", "c1", "stage1"))
     mode.add_argument("--debug-isolation", choices=(
@@ -76,11 +77,17 @@ def main(argv=None, entrypoint=None):
         g.print = lambda *args: print(*args, flush=True)
         g.B1_CONFIG_FAILURE = args.config_failure
         g.B1_ISOLATION_SCENARIO = args.debug_isolation
+        g.B6_ACCEPTANCE_CHECK = args.b6_acceptance
+        if args.b6_acceptance:
+            (storage / 'save_slot1.json').write_text('B6 default-slot canary', encoding='utf-8')
         lua.execute('''
             package.preload["urhox-libs/UI"] = function() return require "debug.fixtures.HeadlessUI" end
             graphics = {}
             function SubscribeToEvent(...) end
             KEY_Z, KEY_F6, KEY_F7, KEY_F8 = 1, 2, 3, 4 -- 仅替身枚举
+            if B6_ACCEPTANCE_CHECK then
+                package.loaded["debug.B6RunRequest"] = "b6_acceptance_test"
+            end
             if B1_ISOLATION_SCENARIO then
                 B1_ISOLATION_CONTEXT = require("debug.DebugIsolationTest").Prepare(B1_ISOLATION_SCENARIO, true)
             end
@@ -97,6 +104,27 @@ def main(argv=None, entrypoint=None):
             require "main"
             Start()
         ''')
+        if args.b6_acceptance:
+            lua.execute('''
+                local session = GetGameSession()
+                local state = session.state
+                assert(state.GetStatus().status == "new")
+                local before = state.GetSnapshot().live.gameFlow.day
+                assert(state.NextDay().ok)
+                local root = require("urhox-libs/UI").root
+                root:FindById("debugSaveButton"):GetProps().onClick()
+                root:FindById("debugLoadButton"):GetProps().onClick()
+                assert(state.GetStatus().status == "loaded")
+                assert(state.GetSnapshot().live.gameFlow.day == before + 1)
+                assert(state.ReloadCurrent())
+                assert(root:FindById("debugTitleLabel"):GetText():find("b6_acceptance_test",1,true))
+                print("[B6 entry] PASS startup + NextDay + debug save/load + reload bind same slot")
+            ''')
+            assert (storage / 'save_slot1.json').read_text(encoding='utf-8') == 'B6 default-slot canary'
+            assert not list(storage.glob('save_slot1_*.json')), 'must not create default-slot snapshots'
+            assert list(storage.glob('save_b6_acceptance_test_*.commit')), 'B6 must write real SaveSystem commits'
+            print('[B6 entry] PASS default slot unchanged; isolated File/UI adapters, not V13')
+            return 0
         if args.debug_isolation:
             lua.execute('''
                 require("debug.DebugIsolationTest").Run(B1_ISOLATION_CONTEXT,

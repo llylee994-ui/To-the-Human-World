@@ -5,7 +5,9 @@ local GameState = {}
 local BLOCKS = {"gameFlow","letters","wordTokens","economy","world","narrative","orders","currentOrder"}
 
 function GameState.New(options)
-    local api, last = {}, {status="new"}
+    local api={}
+    ---@type table
+    local last={status="new"}
     ---@type table<string,any>|nil
     local envelope
     local locked = options.dataReady == false
@@ -60,6 +62,10 @@ function GameState.New(options)
             if not called or type(checked) ~= "table" then return U.Fail("VALIDATOR_FAILED", key, "模块校验器异常") end
             if not checked.ok then return checked end
         end
+        if options.order then
+            local audited=options.order.ValidateEnvelope(data)
+            if not audited.ok then return audited end
+        end
         return valid
     end
     local function install(data, schema)
@@ -97,6 +103,12 @@ function GameState.New(options)
     end
     function api.Load(slot)
         if busy then return nil,{status="busy",error=U.Error("COMMAND_BUSY","GameState","候选提交期间禁止嵌套操作")} end
+        if last.status=="recovery_required" and (slot or "slot1")~=(activeSlot or "slot1") then
+            return nil,{status="recovery_required",error=U.Error("RECOVERY_SLOT_MISMATCH","slot","须读取提交结果不确定的同一存档槽对账")}
+        end
+        if envelope and envelope.currentOrder and envelope.currentOrder.phase~="accepted" and (slot or "slot1")~=(activeSlot or "slot1") then
+            return nil,{status="locked",error=U.Error("ORDER_LOCKED","slot","已有本单基准，只能重新读取同一存档槽")}
+        end
         if options.dataReady == false then
             return fail("config_error", options.dataError or U.Error("CONFIG_INVALID", "Data.Load", "内容校验失败，禁止写入和推进"))
         end
@@ -117,7 +129,11 @@ function GameState.New(options)
         ---@type boolean, any
         local prepared, checked = pcall(prepare, data, schema)
         if not prepared then return fail("corrupt", U.Error("VALIDATOR_FAILED", "data", tostring(checked))) end
-        if not checked.ok then return fail(checked.error.code == "RESTORER_MISSING" and "migration_required" or "corrupt", checked.error) end
+        if not checked.ok then
+            local code=checked.error.code
+            local migration=code=="RESTORER_MISSING" or code=="CONTENT_VERSION_MISMATCH" or code=="SYNTHESIS_VERSION_MISMATCH"
+            return fail(migration and "migration_required" or "corrupt",checked.error)
+        end
         busy=true
         ---@type boolean, any
         local installed, applied = pcall(install, checked.value, schema)
@@ -128,29 +144,118 @@ function GameState.New(options)
         activeSlot = slot
         locked = false
         last = {status=migrated and "migrated" or status.status,schema=schema}
-        options.eventBus.Emit("SaveLoaded", U.Copy(last))
+        busy=true
+        local notified,problem=pcall(options.eventBus.Emit,"SaveLoaded",U.Copy(last))
+        busy=false
+        if not notified then last.notificationError=U.Error("EVENT_FAILED","SaveLoaded",tostring(problem)) end
         return U.Copy(checked.value), U.Copy(last)
     end
+    -- 恢复按钮必须对账当前槽，不能把省略参数的 Load（默认 slot1）当作重载。
+    function api.ReloadCurrent() return api.Load(activeSlot) end
     function api.Save(slot)
         if not api.CanMutate() then return false, U.Error("STATE_LOCKED", "GameState", "请先排除配置或读档错误") end
-        local candidate = api.GetSnapshot()
-        -- 保存现有快照不制造一次业务变更。B5 提交候选时负责推进 revision/基准。
-        local checked = prepare(candidate, targetSchema)
-        if not checked.ok then return false, checked.error end
-        local called, ok, err = pcall(save.Save, slot, candidate, targetSchema)
-        if not called then
-            local reason = type(ok) == "table" and ok or U.Error("SAVE_UNEXPECTED", "save", tostring(ok))
-            fail("recovery_required", reason)
-            return false, reason -- code 明确表示未知结果；所有推进已锁住，必须读档对账。
+        busy=true
+        ---@return boolean, table?
+        local function saveSnapshot()
+            local candidate=api.GetSnapshot()
+            local checked=prepare(candidate,targetSchema)
+            if not checked.ok then return false,checked.error end
+            local called,ok,err=pcall(save.Save,slot,candidate,targetSchema)
+            if not called then
+                local reason=type(ok)=="table" and ok or U.Error("SAVE_UNEXPECTED","save",tostring(ok))
+                activeSlot=slot; fail("recovery_required",reason)
+                return false,reason
+            end
+            if not ok then return false,err end
+            envelope=U.Copy(candidate)
+            return true,nil
         end
-        if not ok then return false, err end
-        envelope = U.Copy(candidate)
-        return true
+        local ran,result,problem=pcall(saveSnapshot)
+        busy=false
+        if not ran then return false,U.Error("SAVE_FAILED","GameState",tostring(result)) end
+        return result,problem
+    end
+    local function commit(candidate,value,events)
+        local valid=prepare(candidate,2)
+        if not valid.ok then return valid end
+        local called,ok,err=pcall(save.Save,activeSlot,valid.value,2)
+        if not called then
+            local reason=type(ok)=="table" and ok or U.Error("SAVE_UNEXPECTED","save",tostring(ok))
+            fail("recovery_required",reason)
+            return {ok=false,error=reason}
+        end
+        if not ok then return {ok=false,error=err} end
+        local applied,result=pcall(install,valid.value,2)
+        if not applied or not result.ok then
+            local reason=U.Error("COMMIT_RECOVERY_REQUIRED","restore","存档已提交但安装失败，必须读取同一存档对账",{committed=true,slot=activeSlot or "slot1"})
+            fail("recovery_required",reason)
+            return {ok=false,error=reason}
+        end
+        envelope=U.Copy(valid.value); last={status="loaded",schema=2}
+        value=U.Copy(value); value.revision=candidate.revision
+        local errors={}
+        for _,event in ipairs(events or {}) do
+            local name=type(event)=="table" and event.name or event
+            local payload=type(event)=="table" and U.Copy(event.payload) or U.Copy(value)
+            payload.revision=candidate.revision
+            local notified,problem=pcall(options.eventBus.Emit,name,payload)
+            if not notified then errors[#errors+1]=U.Error("EVENT_FAILED",name,tostring(problem)) end
+        end
+        if #errors>0 then value.notificationErrors=errors end
+        return U.Ok(value)
+    end
+    function api.CheckAction(name)
+        local enabled,code,message=true,"",""
+        local phase=envelope and envelope.currentOrder and envelope.currentOrder.phase or "idle"
+        if not api.CanMutate() then enabled,code,message=false,"STATE_LOCKED","请先读取存档排除配置或提交错误"
+        elseif name=="CancelBrew" then
+            local order=envelope and envelope.currentOrder
+            if not order then enabled,code,message=false,"INVALID_ORDER_STATE","请先接单"
+            elseif order.nextAttemptSerial~=1 or order.lastResetTransactionId~=false or phase=="pending" then
+                enabled,code,message=false,"ORDER_LOCKED","已有后续记录，只能确认或按原基准重置，不能返回剪词准备"
+            end
+        elseif phase=="brewing" or phase=="pending" then
+            local allowed={GetView=true,Save=true,BeginBrew=true,Preview=phase=="brewing",Confirm=phase=="pending",Reset=true}
+            if not allowed[name] then enabled,code,message=false,"ORDER_LOCKED","先确认或重置当前订单，不能改变首次投料基准" end
+        elseif name=="Shop" or name=="ClaimAttachment" then enabled,code,message=false,"NOT_IMPLEMENTED","该操作尚未接入"
+        elseif (name=="Confirm" or name=="Reset" or name=="Preview") or (name=="BeginBrew" and phase=="idle") or (name=="Accept" and phase~="idle") then
+            enabled,code,message=false,"INVALID_ORDER_STATE","当前阶段不支持此操作"
+        end
+        return {enabled=enabled,reasonCode=code,message=message}
+    end
+    function api.OrderCommand(kind,request)
+        if busy then return U.Fail("COMMAND_BUSY","GameState","候选提交期间禁止嵌套命令") end
+        if not api.CanMutate() then return U.Fail("STATE_LOCKED","GameState","请先排除配置或提交错误") end
+        if targetSchema~=2 or not options.order then return U.Fail("RESTORER_MISSING","Order","订单恢复器未接入") end
+        busy=true
+        local called,result=pcall(function()
+            local current=api.GetSnapshot()
+            local planned=options.order.PlanCommand(kind,current,request)
+            if not planned.ok then return planned end
+            if not planned.value.changed then return U.Ok(planned.value.value) end
+            return commit(planned.value.data,planned.value.value,planned.value.events)
+        end)
+        busy=false
+        if not called then return U.Fail("COMMAND_FAILED","Order",type(result)=="table" and result.message or tostring(result)) end
+        return result
     end
     function api.NextDay()
         if not api.CanMutate() then return U.Fail("STATE_LOCKED", "GameState", "当前禁止推进") end
         if targetSchema==2 and envelope and envelope.currentOrder~=false and envelope.currentOrder.phase~="accepted" then
             return U.Fail("ORDER_LOCKED","currentOrder.phase","已建立炼药基准或待确认，禁止跨天")
+        end
+        if targetSchema==2 then
+            busy=true
+            local called,result=pcall(function()
+                local candidate=api.GetSnapshot()
+                local before=candidate.live.gameFlow.day
+                candidate.live.gameFlow.day=before+1; candidate.live.gameFlow.phase="day"; candidate.live.gameFlow.canSalvage=true
+                candidate.revision=candidate.revision+1
+                return commit(candidate,{day=before+1},{{name="DayEnded",payload={day=before}},{name="DayStarted",payload={day=before+1}}})
+            end)
+            busy=false
+            if not called then return U.Fail("COMMAND_FAILED","NextDay",tostring(result)) end
+            return result
         end
         flow.NextDay()
         return U.Ok(flow.Serialize())
@@ -235,6 +340,15 @@ function GameState.New(options)
     function api.ReceiveLetter(request) return command("receive",request) end
     function api.ReadLetter(request) return command("read",request) end
     function api.CutWord(request) return command("cut",request) end
+    -- 尚无商店/领附件实现；即使未来 UI 接错入口，也不允许绕过本单门禁。
+    function api.Shop(_request)
+        local action=api.CheckAction("Shop")
+        return U.Fail(action.reasonCode,"Shop",action.message)
+    end
+    function api.ClaimAttachment(_request)
+        local action=api.CheckAction("ClaimAttachment")
+        return U.Fail(action.reasonCode,"ClaimAttachment",action.message)
+    end
     -- 仅调试专项使用：连同协调器的锁定/状态一起恢复，不能让测试解锁真实坏档。
     function api.WithPreservedState(callback)
         local before, oldEnvelope, oldLast, oldLocked, oldSlot = api.GetSnapshot(), U.Copy(envelope), U.Copy(last), locked, activeSlot

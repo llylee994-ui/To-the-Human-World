@@ -11,7 +11,7 @@ local function samples(check)
         if sample.expect.canShip then
             local simulated=F.Must(result)
             local followup=F.Must(x.Resolve(simulated,potion))
-            local rating=F.Must(x.order.Rate(simulated.facts,x.content.letters[1].ratingSetId))
+            local rating=F.Must(x.order.Rate(simulated.facts,x.definition.ratingSetId))
             check(sample.id .. " facts",F.Ids(simulated.facts),F.Sorted(sample.expect.facts))
             check(sample.id .. " fragments",F.Sorted(followup.fragmentIds),F.Sorted(sample.expect.followupFragments))
             check(sample.id .. " stars",rating.stars,sample.expect.rating.stars)
@@ -20,7 +20,7 @@ local function samples(check)
             check(sample.id .. " nonempty feedback",U.String(rating.feedback),true)
             check(sample.id .. " deterministic world",F.Must(x.Simulate(sample.id)),simulated)
             check(sample.id .. " deterministic letter",F.Must(x.Resolve(simulated,potion)),followup)
-            check(sample.id .. " deterministic rating",F.Must(x.order.Rate(simulated.facts,x.content.letters[1].ratingSetId)),rating)
+            check(sample.id .. " deterministic rating",F.Must(x.order.Rate(simulated.facts,x.definition.ratingSetId)),rating)
             check(sample.id .. " world JSON roundtrip",F.Must(x.world.ValidateSnapshot(cjson.decode(cjson.encode(simulated.world)))),simulated.world)
             check(sample.id .. " result JSON roundtrip",cjson.decode(cjson.encode({simulated,followup,rating})),{simulated,followup,rating})
             check(sample.id .. " sleep candidate",simulated.world.npcs.npc_passerby_a.sleepState,"improved")
@@ -38,12 +38,12 @@ local function samples(check)
                 check("D explicit distress",followup.renderedText:find("心里都像压着块石头",1,true)~=nil,true)
                 check("D persistent memory",simulated.world.npcs.npc_passerby_a.memories.mem_mother.state,"faded")
             end
-            check(sample.id .. " reward unchanged",x.content.letters[1].reward.currency,80)
+            check(sample.id .. " reward unchanged",x.definition.reward.currency,80)
         else
             check(sample.id .. " refuses consequences",result.error.code,"INVALID_ORDER_STATE")
             local context=U.Copy(x.context); context.world=x.initialWorld; context.potion=potion
             check(sample.id .. " refuses direct letter",x.narrative.ResolveDirect({},context).error.code,"INVALID_ORDER_STATE")
-            check(sample.id .. " no invented rating",x.order.Rate({},x.content.letters[1].ratingSetId).error.code,"RATING_UNCOVERED")
+            check(sample.id .. " no invented rating",x.order.Rate({},x.definition.ratingSetId).error.code,"RATING_UNCOVERED")
         end
     end
     check("all samples preserve formal state and stock",{world=x.world.GetSnapshot(),narrative=x.narrative.GetSnapshot(),baseline=x.baseline},before)
@@ -58,23 +58,23 @@ local function narrativeEdges(check)
         local result,potion=fresh.Simulate(id or "A")
         local resolved=fresh.Resolve(F.Must(result),potion)
         check(name,resolved.ok,false)
-        check(name .. " code",resolved.error.code,code)
+        check(name .. " code",resolved.error and resolved.error.code,code)
     end
-    altered("important fact uncovered",function(c) c.fragments[1].coversFacts={} end,"A","CONTENT_UNCOVERED")
-    altered("unbound placeholder",function(c) c.fragments[4].bindings=nil end,"C","FILL_SOURCE_MISSING")
-    altered("binding missing source",function(c) c.fragments[4].bindings.songTitle.path="npc_passerby_a.memories.mem_mother.missing" end,"C","FILL_SOURCE_MISSING")
-    altered("base incompatible",function(c) c.fragments[1].requiresFacts={"fx_self_distressed"} end,"A","CONTENT_UNCOVERED")
-    altered("fragment invents fact",function(c) c.fragments[2].coversFacts={"fx_dreamt_mother"} end,"A","NARRATIVE_CONFLICT")
-    altered("override cycle",function(c) c.fragments[2].overrides={"frag_pa_generic"}; c.fragments[7].overrides={"frag_pa_sleep_only"} end,"A","NARRATIVE_CONFLICT")
-    altered("unknown template field",function(c) c.followupTemplates[1].surprise=true end,"A","CONFIG_INVALID")
-    altered("unknown fragment kind",function(c) c.fragments[2].kind="random" end,"A","CONFIG_INVALID")
-    altered("unknown required fact",function(c) c.fragments[2].requiresFacts={"invented"} end,"A","CONFIG_INVALID")
+    altered("important fact uncovered",function(c) F.ById(c.fragments,"frag_pa_work_recovered").coversFacts={} end,"A","CONTENT_UNCOVERED")
+    altered("unbound placeholder",function(c) F.ById(c.fragments,"frag_pa_forget_song").bindings=nil end,"C","FILL_SOURCE_MISSING")
+    altered("binding missing source",function(c) F.ById(c.fragments,"frag_pa_forget_song").bindings.songTitle.path="npc_passerby_a.memories.mem_mother.missing" end,"C","FILL_SOURCE_MISSING")
+    altered("base incompatible",function(c) F.ById(c.fragments,"frag_pa_work_recovered").requiresFacts={"fx_self_distressed"} end,"A","CONTENT_UNCOVERED")
+    altered("fragment invents fact",function(c) F.ById(c.fragments,"frag_pa_sleep_only").coversFacts={"fx_dreamt_mother"} end,"A","NARRATIVE_CONFLICT")
+    altered("override cycle",function(c) F.ById(c.fragments,"frag_pa_sleep_only").overrides={"frag_pa_generic"}; F.ById(c.fragments,"frag_pa_generic").overrides={"frag_pa_sleep_only"} end,"A","NARRATIVE_CONFLICT")
+    altered("unknown template field",function(c) F.ById(c.followupTemplates,"tpl_pa_01").surprise=true end,"A","CONFIG_INVALID")
+    altered("unknown fragment kind",function(c) F.ById(c.fragments,"frag_pa_sleep_only").kind="random" end,"A","CONFIG_INVALID")
+    altered("unknown required fact",function(c) F.ById(c.fragments,"frag_pa_sleep_only").requiresFacts={"invented"} end,"A","CONFIG_INVALID")
     -- 技术兜底文本仍来源于现有配置；修改的仅为调试副本。
     local c=F.Content()
-    c.fragments[4].bindings.songTitle.path="npc_passerby_a.memories.mem_mother.missing"
-    c.fragments[7].requiresFacts={"fx_mother_memory_faded"}
-    c.fragments[7].coversFacts={"fx_mother_memory_faded"}
-    c.fragments[7].text="技术兜底：已发生记忆变淡。"
+    F.ById(c.fragments,"frag_pa_forget_song").bindings.songTitle.path="npc_passerby_a.memories.mem_mother.missing"
+    F.ById(c.fragments,"frag_pa_generic").requiresFacts={"fx_mother_memory_faded"}
+    F.ById(c.fragments,"frag_pa_generic").coversFacts={"fx_mother_memory_faded"}
+    F.ById(c.fragments,"frag_pa_generic").text="技术兜底：已发生记忆变淡。"
     local fallback=F.Setup(c).Joint("C")
     check("compatible fallback covers important fact",fallback.followup.fragmentIds,{"frag_pa_work_recovered","frag_pa_generic"})
     check("fallback has no invented song",fallback.followup.renderedText:find("摇橹调",1,true)==nil,true)
@@ -84,12 +84,12 @@ local function narrativeEdges(check)
     tampered=U.Copy(d); tampered.facts[1].inputs={}
     check("fact input evidence required",x.Resolve(tampered,p).error.code,"FILL_SOURCE_MISSING")
     -- 互斥组依 priority/ID，渲染档次不更改同组的取舍规则。
-    c=F.Content(); c.fragments[2].exclusiveGroup="technical"; c.fragments[7].exclusiveGroup="technical"
-    c.fragments[7].priority=99; c.followupTemplates[1].fragmentIds[#c.followupTemplates[1].fragmentIds+1]="frag_pa_generic"; c.followupTemplates[1].fallbackFragmentIds={}
+    c=F.Content(); F.ById(c.fragments,"frag_pa_sleep_only").exclusiveGroup="technical"; F.ById(c.fragments,"frag_pa_generic").exclusiveGroup="technical"
+    F.ById(c.fragments,"frag_pa_generic").priority=99; F.ById(c.followupTemplates,"tpl_pa_01").fragmentIds[#F.ById(c.followupTemplates,"tpl_pa_01").fragmentIds+1]="frag_pa_generic"; F.ById(c.followupTemplates,"tpl_pa_01").fallbackFragmentIds={}
     local grouped=F.Setup(c).Joint("A")
     check("exclusive group highest priority",grouped.followup.fragmentIds,{"frag_pa_work_recovered","frag_pa_generic"})
-    c=F.Content(); c.fragments[2].requiresFacts={"fx_sleep_improved"}; c.fragments[2].excludesFacts={}
-    c.fragments[2].overrides={"frag_pa_dream_mother"}
+    c=F.Content(); F.ById(c.fragments,"frag_pa_sleep_only").requiresFacts={"fx_sleep_improved"}; F.ById(c.fragments,"frag_pa_sleep_only").excludesFacts={}
+    F.ById(c.fragments,"frag_pa_sleep_only").overrides={"frag_pa_dream_mother"}
     local overridden=F.Setup(c)
     local result,potion=overridden.Simulate("B")
     check("overrides cannot hide important fact",overridden.Resolve(F.Must(result),potion).error.code,"CONTENT_UNCOVERED")
@@ -141,6 +141,10 @@ end
 
 local function scheduling(check)
     local content=F.Content()
+    -- Only this technical scheduling scenario delays other orders; production content is untouched.
+    for _,letter in ipairs(content.letters) do
+        if letter.kind=="order" and letter.id~="letter_pa_01" then letter.appearCondition={dayMin=99} end
+    end
     local n=require("systems.Narrative").New(content)
     local live={gameFlow={day=1,phase="day",canSalvage=true,mainStoryStage="intro",deliveredOrders=0},
         letters=F.Must(require("systems.Letter").New(content).InitialSnapshot()),
@@ -148,7 +152,7 @@ local function scheduling(check)
     local before=U.Copy(live)
     check("real day1 scheduler",F.Must(n.FindAvailable(live)),{"letter_pa_01"})
     check("scheduler pure and no cross day",live,before)
-    content.letters[1].appearCondition={dayMin=2,dayMax=3}
+    F.ById(content.letters,"letter_pa_01").appearCondition={dayMin=2,dayMax=3}
     check("day too early",F.Must(n.FindAvailable(live)),{})
     live.gameFlow.day=2; check("day min inclusive",F.Must(n.FindAvailable(live)),{"letter_pa_01"})
     live.gameFlow.day=3; check("day max inclusive",F.Must(n.FindAvailable(live)),{"letter_pa_01"})
@@ -156,7 +160,7 @@ local function scheduling(check)
     live.gameFlow.day=2
     live.letters=F.Must(require("systems.Letter").New(content).PlanReceive(live.letters,"letter_pa_01")).state
     check("already received never requeued",F.Must(n.FindAvailable(live)),{})
-    content.letters[1].appearCondition.afterLetter="letter_pa_01"
+    F.ById(content.letters,"letter_pa_01").appearCondition.afterLetter="letter_pa_01"
     check("unsupported condition refused even if received",n.FindAvailable(live).error.code,"CONFIG_INVALID")
 end
 
@@ -173,7 +177,7 @@ local function envelopeCompatibility(check)
         check(id .. " baseline world restorable",x.world.Restore(restored.currentOrder.baseline.live.world).ok,true)
         check(id .. " reset snapshot retains memories",x.world.GetSnapshot(),x.initialWorld)
         check(id .. " candidate narrative restorable",x.narrative.Restore(restored.currentOrder.pending.candidateLive.narrative).ok,true)
-        check(id .. " fixed reward",restored.currentOrder.pending.reward,x.content.letters[1].reward)
+        check(id .. " fixed reward",restored.currentOrder.pending.reward,x.definition.reward)
     end
 end
 
@@ -187,6 +191,21 @@ local function defaultFiles()
     return files
 end
 
+local function reorderedContent(check)
+    local c=F.Content()
+    for _,key in ipairs({"letters","npcs","directRules","fragments","followupTemplates","orderRatings"}) do
+        local reversed={}
+        for i=#c[key],1,-1 do reversed[#reversed+1]=c[key][i] end
+        c[key]=reversed
+    end
+    local original,reordered=F.Setup(),F.Setup(c)
+    for _,id in ipairs({"A","B","C","D"}) do
+        check("configuration order independent " .. id,reordered.Joint(id),original.Joint(id))
+    end
+    local ok,message=pcall(F.ById,c.directRules,"technical_missing_id")
+    check("missing fixture id fails explicitly",not ok and tostring(message):find("technical_missing_id",1,true)~=nil,true)
+end
+
 function T.Run()
     local check,finish=F.Checks()
     local bus,save=require "core.EventBus",require "core.SaveSystem"
@@ -195,7 +214,7 @@ function T.Run()
     local events,writes=0,0
     bus.Emit=function() events=events+1; return 0 end
     save.Save=function() writes=writes+1; return false,U.Error("TEST_WRITE_FORBIDDEN","B4","纯计算不可保存") end
-    local ok,err=pcall(function() samples(check); require("debug.WorldStateTest").Run(check); narrativeEdges(check); ratingEdges(check); scheduling(check); envelopeCompatibility(check) end)
+    local ok,err=pcall(function() samples(check); require("debug.WorldStateTest").Run(check); narrativeEdges(check); ratingEdges(check); scheduling(check); envelopeCompatibility(check); reorderedContent(check) end)
     bus.Emit,save.Save=oldEmit,oldSave
     if not ok then print("[B4] ERROR " .. (type(err)=="table" and cjson.encode(err) or tostring(err))); check("runtime",false,true) end
     check("no events",events,0); check("no save calls",writes,0)
