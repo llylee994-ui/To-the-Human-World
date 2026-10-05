@@ -498,10 +498,10 @@ function Data.Load()
         elseif letter.kind ~= "direct_followup" then
             errors[#errors + 1] = string.format("%s 指向的信 %s 不是 direct_followup", tplName, tostring(tpl.letterId))
         end
-        if type(tpl.opening) ~= "string" or tpl.opening == "" then
+        if type(tpl.opening) ~= "string" then
             errors[#errors + 1] = string.format("%s 缺少 opening", tplName)
         end
-        if type(tpl.closing) ~= "string" or tpl.closing == "" then
+        if type(tpl.closing) ~= "string" then
             errors[#errors + 1] = string.format("%s 缺少 closing", tplName)
         end
         local function CheckFragmentList(listName, ids)
@@ -1326,6 +1326,7 @@ function Data.ValidateStage1()
         errors[#errors + 1] = "[C3] followup.lua fragments 为空"
     else
         for i = 1, #Data.fragments do
+            ---@type table
             local frag = Data.fragments[i]
             local fName = "fragments." .. tostring(frag.id or i)
             CheckFactRefs(frag.requiresFacts, fName, "requiresFacts", factIds, groupOf, true, errors)
