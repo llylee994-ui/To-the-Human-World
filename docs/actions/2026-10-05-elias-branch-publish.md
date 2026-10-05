@@ -2,7 +2,7 @@
 
 ## 状态与情况
 
-- 进行中。用户已授权“提交推送分支”，目标为既有 GitHub `fengyycon`；起点 `558aa099e2bb8b965ba5c9b33684960dde7ef8d1`，与远端分支一致。
+- Blocked（本地提交完成，推送等待目的地确认）。用户已授权“提交推送分支”，目标为既有 GitHub `fengyycon`；起点 `558aa099e2bb8b965ba5c9b33684960dde7ef8d1`，与远端分支一致。
 - 按项目规则先调用 Maker 官方提交入口，因 `branch_not_allowed` 在提交前停止，没有提交、推送或构建。本轮按用户明确的分支交付范围推送 GitHub，不切换、合并或发布 main。
 - 保留队友主线设计文档与未跟踪的本地预览记录，不纳入提交。
 
@@ -32,4 +32,7 @@
 - 首次受限网络无法连接本机代理；受审执行后 `git ls-remote --heads github fengyycon` 成功，远端为上述起点。
 - `python -X utf8 -B scripts/debug/check_elias_copy.py`：3 项通过，含首信全文、既有六词来源、七版实际后续、十组旧稿存档恢复及伪造拒绝。
 - Lua 未新增修改；沿用此前接入记录的 B2 212／B4 339／B5 373／Story 1265 项通过及完整 LSP 0 Error／0 Warning／0 Hint，不声称本轮重跑这些检查。
-- 提交与远端回执待核对。
+- 暂存范围为本线程明确的 16 个文件，`git diff --cached --check` 通过；队友主线设计文件和本地预览记录未暂存。
+- 内容提交 `968cc9a` 已在本地 fengyycon 生成。
+- `git push github HEAD:refs/heads/fengyycon` 被自动审批在执行前拒绝：尚未明确确认具体内容可发送到该 GitHub 目的地。没有远端推送回执，也没有尝试改路径绕过拒绝。
+- 已向用户说明发送范围与 GitHub `llylee994-ui/To-the-Human-World` 的 fengyycon 目的地，等待确认后继续推送。本文件的阻塞回执另作本地记录提交。
