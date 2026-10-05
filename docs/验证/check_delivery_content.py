@@ -165,7 +165,17 @@ assert calculations == 160
 changed = set()
 for args in (['git', 'diff', 'f76de64', '--name-only', '-z'], ['git', 'diff', '--cached', '--name-only', '-z'], ['git', 'ls-files', '--others', '--exclude-standard', '-z']):
     changed.update(subprocess.check_output(args, cwd=ROOT).decode('utf-8').strip('\0').split('\0'))
+def is_local_artifact(path):
+    # logs/ and other .gitignore'd evidence files are local-only by design;
+    # records may link them without failing the link check.
+    try:
+        rel = path.resolve().relative_to(ROOT.resolve()).as_posix()
+    except ValueError:
+        return False
+    return subprocess.run(['git', 'check-ignore', '-q', '--', rel], cwd=ROOT, capture_output=True).returncode == 0
+
 links = 0
+local_artifacts = 0
 for path in changed:
     if not path.endswith('.md'):
         continue
@@ -175,7 +185,12 @@ for path in changed:
         if not target or re.match(r'[a-z]+://', target):
             continue
         target = re.sub(r':\d+$', '', target)
-        assert (file.parent / target).exists(), (path, target)
+        link_path = file.parent / target
+        if not link_path.exists():
+            if is_local_artifact(link_path):
+                local_artifacts += 1
+                continue
+            raise AssertionError((path, target))
         links += 1
 for file in (ROOT / 'docs/文案').rglob('*.md'):
     if file not in (ordinary_file,) and file.name not in {'主线正文与后续包_v02.md', '身份结局正文_v01.md'}:
@@ -185,6 +200,11 @@ for file in (ROOT / 'docs/文案').rglob('*.md'):
         if mark == '词':  # author legend; bounded order bodies were checked above / by Audit
             continue
         assert mark in {word['displayText'] for word in model.words.values()}, (file, mark)
+# 文风基准 R11：加粗不可剪——bold spans never contain cut marks
+for file in (ROOT / 'docs/文案').rglob('*.md'):
+    text = file.read_text(encoding='utf-8')
+    for bold in re.finditer(r'\*\*(.+?)\*\*', text, re.S):
+        assert '{{' not in bold.group(1), (file, bold.group(1)[:40])
 print(f'PASS: 20 packets, 60 core choices, 14 complete memory variants, 20 fun gates; {boundary_count} author boundaries.')
 print(f'PASS: {calculations} actual Lua Potion/Order.Evaluate inputs; manuscript sources only, NOT world/rating/inventory integration.')
-print(f'PASS: {links} local links in changed Markdown files.')
+print(f'PASS: {links} local links in changed Markdown files ({local_artifacts} gitignored local-evidence links skipped).')
