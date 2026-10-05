@@ -63,12 +63,12 @@ function Narrative.New(content)
             if template~=nil then G.Need(U.Equal(template,configured),"CONFIG_INVALID","template","模板与订单配置不一致") end
             template=configured
             G.Pure(template,"template","CONFIG_INVALID")
-            G.Keys(template,{id=true,letterId=true,opening=true,closing=true,baseFragmentIds=true,fragmentIds=true,fallbackFragmentIds=true},"template","CONFIG_INVALID")
+            G.Keys(template,{id=true,letterId=true,opening=true,closing=true,baseFragmentIds=true,fragmentIds=true,fallbackFragmentIds=true,legacy=true},"template","CONFIG_INVALID")
             local followup=G.Known(content,"letters",template.letterId,"template.letterId")
             G.Need(followup.kind=="direct_followup" and followup.cuttable==false and followup.senderId==letter.senderId and followup.followupTemplateId==template.id,"CONFIG_INVALID","template.letterId","直接回信关联错误")
             local sources={world=context.world,potion=context.potion,context=context,facts=values}
-            local opening=R.Render(template.opening,nil,sources,content,"template.opening")
-            local closing=R.Render(template.closing,nil,sources,content,"template.closing")
+            local opening=template.opening=="" and "" or R.Render(template.opening,nil,sources,content,"template.opening")
+            local closing=template.closing=="" and "" or R.Render(template.closing,nil,sources,content,"template.closing")
             local baseIds=R.Ids(template.baseFragmentIds,"template.baseFragmentIds")
             R.Ids(template.fragmentIds,"template.fragmentIds"); R.Ids(template.fallbackFragmentIds,"template.fallbackFragmentIds")
             local all,seen={},{ }
@@ -178,14 +178,15 @@ function Narrative.New(content)
                 for _,id in ipairs(template.fallbackFragmentIds) do if rendered[id] then fallbackUsed=true end end
                 G.Need(fallbackUsed,"FILL_SOURCE_MISSING","fragments","来源缺失且无可用兜底")
             end
-            local fragmentIds,texts={},{opening}
+            local fragmentIds,texts={},{}
+            if opening~="" then texts[#texts+1]=opening end
             local function append(id)
                 if rendered[id] then fragmentIds[#fragmentIds+1]=id; texts[#texts+1]=rendered[id] end
             end
             for _,id in ipairs(template.baseFragmentIds) do append(id) end
             for _,f in ipairs(selected) do if not baseIds[f.id] then append(f.id) end end
             G.Need(#fragmentIds>0,"CONTENT_UNCOVERED","fragments","回信没有可用片段")
-            texts[#texts+1]=closing
+            if closing~="" then texts[#texts+1]=closing end
             return {letterId=template.letterId,fragmentIds=fragmentIds,bindings=bindings,renderedText=table.concat(texts,"\n\n")}
         end)
     end
