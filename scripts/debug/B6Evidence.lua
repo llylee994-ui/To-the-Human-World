@@ -15,7 +15,7 @@ function Evidence.Print(slot, state, root)
             end
         end
     end
-    print("[B6Evidence] " .. cjson.encode({slot=slot, status=state.GetStatus(),
+    print("[B6Evidence] " .. require("core.SaveJson").Encode({slot=slot, status=state.GetStatus(),
         snapshot=state.GetSnapshot(), layouts=layouts}))
     require("debug.B6PersistenceProbe").Run(slot, state)
     require("debug.B6FaultEvidence").Attach(slot, state, root)

@@ -63,9 +63,11 @@ def write_record(path, value):
 mode = sys.argv[1]
 PREFIX = 'b6-fault-'
 if mode == 'collect' and len(sys.argv) == 4:
-    assert sys.argv[3] == 'b6_uncertain_20261004_a', 'Unknown additional evidence slot'
+    prefixes = {'b6_uncertain_20261004_a': 'b6-uncertain-',
+                'b6_outcomes_20261004_a': 'b6-outcomes-'}
+    assert sys.argv[3] in prefixes, 'Unknown additional evidence slot'
     SLOT = sys.argv[3]
-    PREFIX = 'b6-uncertain-'
+    PREFIX = prefixes[SLOT]
 if mode == 'restore':
     record = json.loads(LOCK.read_text(encoding='utf-8'))
     assert record['active'], 'No active fault'

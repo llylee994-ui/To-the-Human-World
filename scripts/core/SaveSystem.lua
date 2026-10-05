@@ -1,6 +1,7 @@
 -- 双快照 + 双提交记录。只按完整提交记录选代，不按时间选快照。
 -- 兼容旧 save_<slot>.json；默认 payload schema 仍为 1。
 local U = require "core.StateUtil"
+local Json = require "core.SaveJson"
 local SaveSystem = {}
 local function digest(s)
     local n = 0
@@ -79,7 +80,7 @@ function SaveSystem.New(storage)
         if not ok then return nil, {status="corrupt",error=U.Error("SAVE_READ_FAILED", "file", tostring(raw))} end
         if not raw then return nil, {status="new",schema=1} end
         if type(raw) ~= "string" then return nil,{status="corrupt",error=U.Error("SAVE_DECODE_FAILED","file","文件未返回文本")} end
-        local decoded, env = pcall(cjson.decode, raw)
+        local decoded, env = pcall(Json.Decode, raw)
         if not decoded or type(env) ~= "table" or not U.Integer(env.schema, 1) or type(env.data) ~= "table" then
             return nil, {status="corrupt",error=U.Error("SAVE_DECODE_FAILED", "envelope", "文件损坏或结构不完整")}
         end
@@ -99,9 +100,9 @@ function SaveSystem.New(storage)
         if type(data) ~= "table" or (schema ~= nil and schema ~= 1 and schema ~= 2) then
             return false, U.Error("SAVE_VALUE_INVALID", "data", "非法数据或结构版本")
         end
-        local encoded, raw = pcall(cjson.encode, {schema=schema or 1,data=data})
+        local encoded, raw = pcall(Json.Encode, {schema=schema or 1,data=data})
         if not encoded then return false, U.Error("SAVE_ENCODE_FAILED", "encode", tostring(raw)) end
-        local roundtrip, parsed = pcall(cjson.decode, raw)
+        local roundtrip, parsed = pcall(Json.Decode, raw)
         if not roundtrip or not U.Equal(parsed, {schema=schema or 1,data=data}) then
             return false, U.Error("SAVE_ENCODE_FAILED", "encode", "编码往返不一致")
         end
