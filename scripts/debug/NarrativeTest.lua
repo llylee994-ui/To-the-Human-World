@@ -30,12 +30,12 @@ local function samples(check)
                 check(sample.id .. " potion basis " .. fact.id,fact.inputs.potionEffects,potion.effects)
             end
             if sample.id=="C" then
-                check("C uses real song title",followup.renderedText:find("摇橹调",1,true)~=nil,true)
-                check("C stores binding value",followup.bindings.frag_pa_forget_song.songTitle,"摇橹调")
+                check("C approved incomplete song",followup.renderedText:find("后半截怎么也记不起词",1,true)~=nil,true)
+                check("C has no invented song title",next(followup.bindings.frag_pa_forget_song),nil)
                 check("C persistent memory",simulated.world.npcs.npc_passerby_a.memories.mem_mother.state,"faded")
             elseif sample.id=="D" then
                 check("D no full mother recognition",followup.renderedText:find("夜里还梦见了我娘",1,true)==nil,true)
-                check("D explicit distress",followup.renderedText:find("心里都像压着块石头",1,true)~=nil,true)
+                check("D explicit distress",followup.renderedText:find("心里慌得厉害",1,true)~=nil,true)
                 check("D persistent memory",simulated.world.npcs.npc_passerby_a.memories.mem_mother.state,"faded")
             end
             check(sample.id .. " reward unchanged",x.definition.reward.currency,80)
@@ -51,6 +51,12 @@ local function samples(check)
 end
 
 local function narrativeEdges(check)
+    -- 绑定机制仍须验证；确认稿不再点名歌名，故只在测试副本中注入占位符。
+    local function missingSong(content)
+        local frag=F.ById(content.fragments,"frag_pa_forget_song")
+        frag.text="{{songTitle}}"
+        frag.bindings={songTitle={source="world.npcs",path="npc_passerby_a.memories.mem_mother.missing"}}
+    end
     local x=F.Setup()
     local function altered(name,edit,id,code)
         local content=F.Content(); edit(content)
@@ -60,10 +66,10 @@ local function narrativeEdges(check)
         check(name,resolved.ok,false)
         check(name .. " code",resolved.error and resolved.error.code,code)
     end
-    altered("important fact uncovered",function(c) F.ById(c.fragments,"frag_pa_work_recovered").coversFacts={} end,"A","CONTENT_UNCOVERED")
-    altered("unbound placeholder",function(c) F.ById(c.fragments,"frag_pa_forget_song").bindings=nil end,"C","FILL_SOURCE_MISSING")
-    altered("binding missing source",function(c) F.ById(c.fragments,"frag_pa_forget_song").bindings.songTitle.path="npc_passerby_a.memories.mem_mother.missing" end,"C","FILL_SOURCE_MISSING")
-    altered("base incompatible",function(c) F.ById(c.fragments,"frag_pa_work_recovered").requiresFacts={"fx_self_distressed"} end,"A","CONTENT_UNCOVERED")
+    altered("important fact uncovered",function(c) F.ById(c.fragments,"frag_pa_sleep_only").coversFacts={}; F.ById(c.followupTemplates,"tpl_pa_01").fallbackFragmentIds={} end,"A","CONTENT_UNCOVERED")
+    altered("unbound placeholder",function(c) missingSong(c); F.ById(c.fragments,"frag_pa_forget_song").bindings=nil end,"C","FILL_SOURCE_MISSING")
+    altered("binding missing source",function(c) missingSong(c) end,"C","FILL_SOURCE_MISSING")
+    altered("base incompatible",function(c) F.ById(c.fragments,"frag_pa_work_recovered").requiresFacts={"fx_self_distressed"}; local tpl=F.ById(c.followupTemplates,"tpl_pa_01"); tpl.baseFragmentIds={"frag_pa_work_recovered"}; tpl.fallbackFragmentIds={"frag_pa_generic"} end,"A","CONTENT_UNCOVERED")
     altered("fragment invents fact",function(c) F.ById(c.fragments,"frag_pa_sleep_only").coversFacts={"fx_dreamt_mother"} end,"A","NARRATIVE_CONFLICT")
     altered("override cycle",function(c) F.ById(c.fragments,"frag_pa_sleep_only").overrides={"frag_pa_generic"}; F.ById(c.fragments,"frag_pa_generic").overrides={"frag_pa_sleep_only"} end,"A","NARRATIVE_CONFLICT")
     altered("unknown template field",function(c) F.ById(c.followupTemplates,"tpl_pa_01").surprise=true end,"A","CONFIG_INVALID")
@@ -71,12 +77,13 @@ local function narrativeEdges(check)
     altered("unknown required fact",function(c) F.ById(c.fragments,"frag_pa_sleep_only").requiresFacts={"invented"} end,"A","CONFIG_INVALID")
     -- 技术兜底文本仍来源于现有配置；修改的仅为调试副本。
     local c=F.Content()
-    F.ById(c.fragments,"frag_pa_forget_song").bindings.songTitle.path="npc_passerby_a.memories.mem_mother.missing"
+    missingSong(c)
     F.ById(c.fragments,"frag_pa_generic").requiresFacts={"fx_mother_memory_faded"}
-    F.ById(c.fragments,"frag_pa_generic").coversFacts={"fx_mother_memory_faded"}
+    F.ById(c.fragments,"frag_pa_generic").coversFacts={"fx_sleep_improved","fx_morning_work_ok","fx_mother_memory_faded"}
     F.ById(c.fragments,"frag_pa_generic").text="技术兜底：已发生记忆变淡。"
+    F.ById(c.followupTemplates,"tpl_pa_01").fallbackFragmentIds={"frag_pa_generic"}
     local fallback=F.Setup(c).Joint("C")
-    check("compatible fallback covers important fact",fallback.followup.fragmentIds,{"frag_pa_work_recovered","frag_pa_generic"})
+    check("compatible fallback covers important fact",fallback.followup.fragmentIds,{"frag_pa_generic"})
     check("fallback has no invented song",fallback.followup.renderedText:find("摇橹调",1,true)==nil,true)
     local d=F.Must(x.Simulate("D")); local p=x.Calculate("D")
     local tampered=U.Copy(d); tampered.facts[1].sourceRuleId="ghost"
@@ -86,8 +93,9 @@ local function narrativeEdges(check)
     -- 互斥组依 priority/ID，渲染档次不更改同组的取舍规则。
     c=F.Content(); F.ById(c.fragments,"frag_pa_sleep_only").exclusiveGroup="technical"; F.ById(c.fragments,"frag_pa_generic").exclusiveGroup="technical"
     F.ById(c.fragments,"frag_pa_generic").priority=99; F.ById(c.followupTemplates,"tpl_pa_01").fragmentIds[#F.ById(c.followupTemplates,"tpl_pa_01").fragmentIds+1]="frag_pa_generic"; F.ById(c.followupTemplates,"tpl_pa_01").fallbackFragmentIds={}
+    F.ById(c.fragments,"frag_pa_generic").coversFacts={"fx_sleep_improved","fx_morning_work_ok"}
     local grouped=F.Setup(c).Joint("A")
-    check("exclusive group highest priority",grouped.followup.fragmentIds,{"frag_pa_work_recovered","frag_pa_generic"})
+    check("exclusive group highest priority",grouped.followup.fragmentIds,{"frag_pa_generic"})
     c=F.Content(); F.ById(c.fragments,"frag_pa_sleep_only").requiresFacts={"fx_sleep_improved"}; F.ById(c.fragments,"frag_pa_sleep_only").excludesFacts={}
     F.ById(c.fragments,"frag_pa_sleep_only").overrides={"frag_pa_dream_mother"}
     local overridden=F.Setup(c)

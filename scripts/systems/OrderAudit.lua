@@ -78,7 +78,19 @@ function Audit.New(content,orderApi)
         local allowed={}
         for _,list in ipairs({template.baseFragmentIds,template.fragmentIds,template.fallbackFragmentIds}) do for _,id in ipairs(list) do allowed[id]=true end end
         for i,id in ipairs(template.baseFragmentIds) do same(f.fragmentIds[i],id,"followup.baseFragments") end
-        local rendered={template.opening}; local covered,groups,bindings={},{},{}
+        local rendered={}; local covered,groups,bindings={},{},{}
+        if template.opening~="" then rendered[#rendered+1]=template.opening end
+        -- 旧文案只作为严格比对来源；不重写存档，也不放过未知历史正文。
+        ---@type {opening:string,closing:string,baseFragmentIds:string[],fragments:table<string,table?>}|nil
+        local legacy=template.legacy
+        local legacyValid=type(legacy)=="table"
+        local legacyRendered,legacyBindings={},{}
+        if legacy and legacyValid then
+            legacyRendered[1]=legacy.opening
+            for i,id in ipairs(legacy.baseFragmentIds) do
+                if f.fragmentIds[i]~=id then legacyValid=false end
+            end
+        end
         local expanded=U.Copy(context); expanded.world=after; expanded.potion=record.potion
         local sources={world=after,potion=record.potion,context=expanded,facts=values}
         for _,id in ipairs(f.fragmentIds) do
@@ -93,11 +105,23 @@ function Audit.New(content,orderApi)
             for _,factId in ipairs(fragment.coversFacts) do G.Need(index[factId]~=nil,"NARRATIVE_CONFLICT","followup","文本声称未发生事实"); covered[factId]=true end
             local text,filled=R.Render(fragment.text,fragment.bindings,sources,content,"followup." .. id)
             rendered[#rendered+1]=text; bindings[id]=filled
+            if legacy and legacyValid then
+                local old=legacy.fragments[id]
+                if old then
+                    local oldText,oldBindings=R.Render(old.text,old.bindings,sources,content,"followup.legacy." .. id)
+                    legacyRendered[#legacyRendered+1]=oldText; legacyBindings[id]=oldBindings
+                else legacyValid=false end
+            end
         end
         for id,fact in pairs(index) do G.Need(not fact.important or covered[id],"CONTENT_UNCOVERED","followup","重要事实未表达") end
-        rendered[#rendered+1]=template.closing
-        same(f.bindings,bindings,"followup.bindings")
-        same(f.renderedText,table.concat(rendered,"\n\n"),"followup.renderedText")
+        if template.closing~="" then rendered[#rendered+1]=template.closing end
+        if legacy and legacyValid then legacyRendered[#legacyRendered+1]=legacy.closing end
+        local matchesLegacy=legacyValid and U.Equal(f.bindings,legacyBindings)
+            and f.renderedText==table.concat(legacyRendered,"\n\n")
+        if not matchesLegacy then
+            same(f.bindings,bindings,"followup.bindings")
+            same(f.renderedText,table.concat(rendered,"\n\n"),"followup.renderedText")
+        end
         local matches={}
         for _,rule in ipairs(content.orderRatings) do
             if rule.ratingSetId==definition.ratingSetId and R.Matches(rule,index,definitions,"rating") then matches[#matches+1]=rule end
