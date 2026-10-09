@@ -2,6 +2,8 @@
 local U=require "core.StateUtil"
 local M={}
 function M.New(session,content,enabled)
+    ---@class PlayModel
+    ---@field selectedResult string|false 已确认订单 ID；false 表示当前待确认结果。
     local api={
         page="mail" --[[@as string]],
         selectedLetter=false --[[@as string|false]],

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>寄往人间 · 排版室</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<svg class="symbols" aria-hidden="true"><defs>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5M4 15v5h16v-5"/></symbol>
+<symbol id="i-down" viewBox="0 0 24 24"><path d="M12 3v13m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+<symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="i-hide" viewBox="0 0 24 24"><path d="m3 3 18 18M9 5.5c7-2 13 6.5 13 6.5s-1 2-3 4M6 7c-3 2-4 5-4 5s4 7 10 7c2 0 3-.5 4-1"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0v4M12 14v3"/></symbol>
+<symbol id="i-unlock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0M12 14v3"/></symbol>
+<symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7"/></symbol>
+<symbol id="i-undo" viewBox="0 0 24 24"><path d="m8 4-5 5 5 5M3 9h10a7 7 0 0 1 0 14"/></symbol>
+<symbol id="i-redo" viewBox="0 0 24 24"><path d="m16 4 5 5-5 5M21 9H11a7 7 0 0 0 0 14"/></symbol>
+<symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M15 8V3H3v13h5"/></symbol>
+<symbol id="i-group" viewBox="0 0 24 24"><path d="M4 8V4h4m8 0h4v4m0 8v4h-4m-8 0H4v-4"/><rect x="8" y="8" width="8" height="8" rx="1"/></symbol>
+<symbol id="i-page" viewBox="0 0 24 24"><path d="M5 3h9l5 5v13H5ZM14 3v6h5M8 13h8m-8 4h5"/></symbol>
+<symbol id="i-fit" viewBox="0 0 24 24"><path d="M3 8V3h5m8 0h5v5m0 8v5h-5m-8 0H3v-5"/><rect x="8" y="7" width="8" height="10" rx="1"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+</defs></svg>
+<header class="topbar">
+  <div class="brand"><span class="brand-mark">寄</span><div><strong>寄往人间</strong><span>排版室 <small>v0.1</small></span></div></div>
+  <div class="project-title">把想象，安放在画面里。</div>
+  <div class="top-actions"><button id="help" class="quiet">使用说明</button><button id="import"><svg><use href="#i-upload"/></svg>导入项目</button><button id="export"><svg><use href="#i-down"/></svg>导出项目</button><button id="preview" class="primary"><svg><use href="#i-eye"/></svg>预览</button></div>
+</header>
+<main class="studio">
+  <aside class="library panel">
+    <section class="pages-section"><div class="section-heading"><h2>页面 <span id="page-count">01</span></h2><button id="new-page" class="icon" title="新建页面" aria-label="新建页面"><svg><use href="#i-plus"/></svg></button></div><div id="pages" class="page-list"></div></section>
+    <section class="assets-section"><div class="section-heading"><h2>素材库 <span id="asset-count">0</span></h2><span class="subtle">所有页面共用</span></div><button id="upload" class="upload-button"><svg><use href="#i-upload"/></svg>上传图片</button><input id="asset-search" type="search" placeholder="搜索素材名称" aria-label="搜索素材"><div id="assets" class="asset-grid"></div><div id="assets-empty" class="empty-library"><span class="empty-illustration">＋</span><strong>从一张素材开始</strong><p>上传 PNG、WebP 或 JPG<br>保留透明背景，点击放入画布</p></div><p class="library-note">素材可反复使用。删除画布物件会保留原图。</p></section>
+  </aside>
+  <section class="workspace">
+    <div class="canvas-bar"><div class="page-heading"><button id="rename-page" title="重命名当前页"><strong id="current-name">主页</strong><span>⌄</span></button><span class="subtle">1080 × 1920</span></div><div class="edit-actions"><button id="undo" class="icon" title="撤销 Ctrl+Z" aria-label="撤销"><svg><use href="#i-undo"/></svg></button><button id="redo" class="icon" title="重做 Ctrl+Shift+Z" aria-label="重做"><svg><use href="#i-redo"/></svg></button><span class="divider"></span><button id="duplicate" class="icon" title="复制 Ctrl+D" aria-label="复制选中图层"><svg><use href="#i-copy"/></svg></button><button id="group" class="icon" title="成组 / 解组 Ctrl+G" aria-label="成组或解组"><svg><use href="#i-group"/></svg></button><button id="delete" class="icon" title="删除 Delete" aria-label="删除选中图层"><svg><use href="#i-trash"/></svg></button></div></div>
+    <div id="connection-banner" class="banner" hidden><span id="banner-text"></span><button id="acquire">取得编辑权</button><button id="recover" hidden>载入最新版本</button><button id="save-draft" hidden>下载未保存布局</button></div>
+    <div id="viewport" class="viewport"><div id="stage-shell" class="stage-shell"><svg id="canvas" xmlns="http://www.w3.org/2000/svg" aria-label="页面画布"><g id="artwork"></g><g id="selection"></g></svg><div id="canvas-empty" class="canvas-empty"><span class="empty-page-icon">✧</span><h1>这一页，由你来安排</h1><p>点击左侧素材，把它放进画面。<br>拖动位置，拉动边角缩放，上方圆点旋转。</p><button id="empty-upload">上传第一张图片</button></div></div></div>
+    <footer class="canvas-footer"><span id="selection-label">点击物件开始排版</span><div class="zoom-controls"><button id="zoom-out" class="icon" aria-label="缩小画布">−</button><span id="zoom-label">适合</span><button id="zoom-in" class="icon" aria-label="放大画布">＋</button><button id="fit" class="icon" title="适合窗口" aria-label="画布适合窗口"><svg><use href="#i-fit"/></svg></button></div></footer>
+  </section>
+  <aside class="layers-panel panel"><div class="section-heading"><h2>图层 <span id="layer-count">0</span></h2><span class="subtle">上层在前</span></div><p class="layer-hint">拖动排列 · Shift 多选</p><div id="layers" class="layer-list"></div><div id="layers-empty" class="empty-layers"><svg><use href="#i-group"/></svg><p>画面里的每个物件<br>都会出现在这里</p></div><div class="selection-info"><span class="subtle">画布操作</span><p>拖动 · 移动位置<br>边角 · 等比缩放<br>圆点 · 自由旋转</p><span class="subtle">物件与阴影可多选成组，一起调整。</span></div><button id="release" class="quiet release">释放本页编辑权</button></aside>
+</main>
+<footer class="statusbar"><span id="save-status" role="status"><i></i>正在载入…</span><span>本机保存 <span class="status-dot">·</span> <span id="window-status">页面独立 · 素材共享</span></span></footer>
+<div id="toast" role="status" hidden></div>
+<input id="image-input" type="file" accept="image/png,image/jpeg,image/webp" multiple hidden><input id="project-input" type="file" accept=".zip" hidden>
+<dialog id="name-dialog"><form method="dialog"><span class="eyebrow">页面管理</span><h2 id="name-title">新建页面</h2><label for="name-input">页面名称</label><input id="name-input" maxlength="80" required autocomplete="off"><div class="dialog-actions"><button value="cancel" formnovalidate>取消</button><button value="ok" class="primary">确定</button></div></form></dialog>
+<dialog id="help-dialog"><div class="dialog-heading"><h2>在排版室里</h2><button class="icon close-dialog" aria-label="关闭说明"><svg><use href="#i-close"/></svg></button></div><div class="help-content"><p><b>1. 上传素材，点击添加。</b> 同一张图片可放到多个页面，原图始终保存在素材库。</p><p><b>2. 在画布直接调整。</b> 拖动物件移动，拖边角等比缩放，拖上方圆点旋转；按 Shift 旋转可吸附到 15°。</p><p><b>3. 在右侧整理图层。</b> 上面的图层显示在前面；眼睛控制隐藏，锁控制编辑。Shift 多选后成组，物件和阴影一起移动。</p><p><b>4. 自动保存到本机。</b> 等左下角显示“已保存”再关窗口。导出项目 ZIP 可备份全部图片与页面。</p><p><b>5. 多窗口一起用。</b> 同页只有一个编辑窗口，其他窗口实时查看；点“释放本页编辑权”交给另一窗口。不同页面可同时编辑。</p><div class="shortcuts"><span>撤销 <kbd>Ctrl Z</kbd></span><span>重做 <kbd>Ctrl Shift Z</kbd></span><span>复制 <kbd>Ctrl D</kbd></span><span>成组 / 解组 <kbd>Ctrl G</kbd></span><span>删除 <kbd>Delete</kbd></span><span>微调 <kbd>方向键</kbd></span></div><p class="subtle">浏览器中关闭页面会释放编辑权，异常关闭最长约 18 秒后释放。撤销只作用于本窗口连续编辑期间；切页或重新接管会清空旧撤销记录。导入会替换当前项目，并在本机自动保留导入前的完整备份。</p></div></dialog>
+<dialog id="preview-dialog"><div class="preview-header"><div><strong id="preview-name">页面预览</strong><span class="subtle"> 居中裁切检查</span></div><div><select id="preview-ratio" aria-label="预览手机比例"><option value="original">原始画布</option><option value="0.5625">手机 9:16</option><option value="0.461538">手机 9:19.5</option><option value="0.45">手机 9:20</option></select><button id="preview-download">保存预览 PNG</button><button class="icon close-dialog" aria-label="关闭预览"><svg><use href="#i-close"/></svg></button></div></div><div id="preview-stage"></div></dialog>
+<script type="module" src="/app.js"></script>
+</body></html>
