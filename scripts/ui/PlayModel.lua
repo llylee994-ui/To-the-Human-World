@@ -76,11 +76,15 @@ function M.New(session,content,enabled)
         if not active() then return api.Notify(fail("STATE_LOCKED","当前为隔离调试模式")) end
         local result=session.order.Accept({letterInstanceId=api.selectedLetter})
         if result.ok then api.page="brew" end
-        return api.Notify(result,"接单成功。首次投料将保存本单基准，请先剪好要用的词。")
+        return api.Notify(result,"接单成功。首次投料前，请先剪好要用的词并补齐原料。")
     end
     function api.NextDay()
         if not active() then return api.Notify(fail("STATE_LOCKED","当前为隔离调试模式")) end
         return api.Notify(session.state.NextDay(),"已进入新的一天。")
+    end
+    function api.Buy(ingredientId)
+        if not active() then return api.Notify(fail("STATE_LOCKED","当前为隔离调试模式")) end
+        return api.Notify(session.state.Shop({ingredientId=ingredientId,quantity=1}),"原料已购入并保存。")
     end
     function api.Reload()
         if not active() then return api.Notify(fail("STATE_LOCKED","当前为隔离调试模式")) end

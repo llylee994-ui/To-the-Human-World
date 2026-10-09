@@ -101,7 +101,8 @@ function Start()
 end
 
 function LoadProgress(slotName)
-    local data, status = gameState_.Load(slotName)
+    -- v02使用独立试玩槽，保留旧slot1；显式验收槽仍优先。
+    local data, status = gameState_.Load(slotName or Data.saveSlotId)
     RefreshHeader()
     return data, status
 end

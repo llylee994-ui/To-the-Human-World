@@ -217,7 +217,7 @@ function GameState.New(options)
         elseif phase=="brewing" or phase=="pending" then
             local allowed={GetView=true,Save=true,BeginBrew=true,Preview=phase=="brewing",Confirm=phase=="pending",Reset=true}
             if not allowed[name] then enabled,code,message=false,"ORDER_LOCKED","先确认或重置当前订单，不能改变首次投料基准" end
-        elseif name=="Shop" or name=="ClaimAttachment" then enabled,code,message=false,"NOT_IMPLEMENTED","该操作尚未接入"
+        elseif name=="ClaimAttachment" or (name=="Shop" and options.shopEnabled~=true) then enabled,code,message=false,"NOT_IMPLEMENTED","该操作尚未接入"
         elseif (name=="Confirm" or name=="Reset" or name=="Preview") or (name=="BeginBrew" and phase=="idle") or (name=="Accept" and phase~="idle") then
             enabled,code,message=false,"INVALID_ORDER_STATE","当前阶段不支持此操作"
         end
@@ -340,10 +340,26 @@ function GameState.New(options)
     function api.ReceiveLetter(request) return command("receive",request) end
     function api.ReadLetter(request) return command("read",request) end
     function api.CutWord(request) return command("cut",request) end
-    -- 尚无商店/领附件实现；即使未来 UI 接错入口，也不允许绕过本单门禁。
-    function api.Shop(_request)
+    -- 购买与订单沿用同一个完整存档提交协议，基准建立后禁止购物。
+    function api.Shop(request)
         local action=api.CheckAction("Shop")
-        return U.Fail(action.reasonCode,"Shop",action.message)
+        if not action.enabled then return U.Fail(action.reasonCode,"Shop",action.message) end
+        if targetSchema~=2 or not options.economy or not options.economy.PlanPurchase then return U.Fail("NOT_IMPLEMENTED","Shop","商店账本尚未接入") end
+        busy=true
+        local called,result=pcall(function()
+            local current=api.GetSnapshot()
+            local valid=prepare(current,2)
+            if not valid.ok then return valid end
+            local planned=options.economy.PlanPurchase(current.live.economy,request,current.live.gameFlow)
+            if not planned.ok then return planned end
+            local candidate=U.Copy(current)
+            candidate.live.economy=planned.value.state
+            candidate.revision=candidate.revision+1
+            return commit(candidate,{ingredientId=planned.value.ingredientId,quantity=planned.value.quantity,cost=planned.value.cost},{"IngredientPurchased"})
+        end)
+        busy=false
+        if not called then return U.Fail("COMMAND_FAILED","Shop",tostring(result)) end
+        return result
     end
     function api.ClaimAttachment(_request)
         local action=api.CheckAction("ClaimAttachment")

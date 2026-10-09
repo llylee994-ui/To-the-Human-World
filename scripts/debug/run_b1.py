@@ -17,6 +17,7 @@ from lupa.lua54 import LuaRuntime, lua_type
 def main(argv=None, entrypoint=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--b6-acceptance', action='store_true', help='Check real entry binds every debug operation to a B6 slot')
+    parser.add_argument('--numeric-v02-startup', action='store_true', help='Check default trial startup protects old slot1')
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument("--config-failure", choices=("load", "c1", "stage1"))
     mode.add_argument("--debug-isolation", choices=(
@@ -80,6 +81,8 @@ def main(argv=None, entrypoint=None):
         g.B6_ACCEPTANCE_CHECK = args.b6_acceptance
         if args.b6_acceptance:
             (storage / 'save_slot1.json').write_text('B6 default-slot canary', encoding='utf-8')
+        if args.numeric_v02_startup:
+            (storage / 'save_slot1.json').write_text('old progress canary', encoding='utf-8')
         lua.execute('''
             package.preload["urhox-libs/UI"] = function() return require "debug.fixtures.HeadlessUI" end
             graphics = {}
@@ -104,6 +107,20 @@ def main(argv=None, entrypoint=None):
             require "main"
             Start()
         ''')
+        if args.numeric_v02_startup:
+            lua.execute('''
+                local state = GetGameSession().state
+                assert(state.GetStatus().status == "new")
+                assert(state.NextDay().ok)
+                assert(state.ReloadCurrent())
+                assert(state.GetStatus().status == "loaded")
+                assert(state.GetSnapshot().live.gameFlow.day == 2)
+            ''')
+            assert (storage / 'save_slot1.json').read_text(encoding='utf-8') == 'old progress canary'
+            assert not list(storage.glob('save_slot1_*.json'))
+            assert list(storage.glob('save_numeric_v02_trial_*.commit'))
+            print('[NumericV02 startup] PASS real main default slot + save/reload; old progress unchanged; File/UI adapters')
+            return 0
         if args.b6_acceptance:
             lua.execute('''
                 local session = GetGameSession()

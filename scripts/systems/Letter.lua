@@ -27,6 +27,7 @@ function Letter.New(content)
                 return U.Fail("CONFIG_INVALID", "letters." .. id .. "." .. key, "文本须为有效 UTF-8 字符串")
             end
         end
+        if d.cutWordIds~=nil and not U.Array(d.cutWordIds) then return U.Fail("CONFIG_INVALID","letters." .. id .. ".cutWordIds","剪词映射须为稠密数组") end
         local cursor = 1
         while cursor <= #d.body do
             local first = d.body:find("{{", cursor, true)
@@ -38,12 +39,18 @@ function Letter.New(content)
             if not last then return U.Fail("CONFIG_INVALID", "letters." .. id .. ".body", "词标记未闭合") end
             local text = d.body:sub(first+2,last-1)
             if text == "" or text:find("[{}]") or not d.cuttable then return U.Fail("CONFIG_INVALID", "letters." .. id .. ".body", "空、嵌套或不可剪文本中的标记") end
-            local word = content.GetWordByText(text)
+            local word --[[@as table?]]
+            if d.cutWordIds then
+                for _,candidate in ipairs(content.words) do
+                    if candidate.id==d.cutWordIds[#spans+1] and candidate.displayText==text then word=candidate; break end
+                end
+            else word = content.GetWordByText(text) end
             if not word then return U.Fail("UNKNOWN_ID", "letters." .. id .. ".body", "标记没有对应词定义", {text=text,position=#spans+1}) end
             local span = {kind="word",spanId="body:" .. (#spans+1),wordId=word.id,text=text,cut=false}
             spans[#spans+1], segments[#segments+1] = U.Copy(span), span
             cursor = last+2
         end
+        if d.cutWordIds and #d.cutWordIds~=#spans then return U.Fail("CONFIG_INVALID","letters." .. id .. ".cutWordIds","剪词映射与正文位置数不符") end
         return U.Ok({letterId=id,kind=d.kind,cuttable=d.cuttable,selfIntro=d.selfIntro,address=d.address,segments=segments,spans=spans})
     end
     function api.InitialSnapshot()

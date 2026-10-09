@@ -24,7 +24,7 @@ function View.New(session,content,enabled)
         local gate=model.Action(name)
         button(parent,id,title,click,gate.enabled,gate.message)
     end
-    for _,tab in ipairs({{"mail","来信"},{"words","词卡"},{"brew","炼药"},{"result","后续"}}) do
+    for _,tab in ipairs({{"mail","来信"},{"words","词卡"},{"brew","炼药"},{"result","后续"},{"shop","补货"}}) do
         button(nav,"tab_" .. tab[1],tab[2],function() model.Navigate(tab[1]); scroll:ScrollToTop() end)
     end
     local function find(list,id) for _,item in ipairs(list) do if item.id==id then return item end end end
@@ -135,8 +135,8 @@ function View.New(session,content,enabled)
         local kit=find(content.equipment,draft.equipmentId)
         if not kit then text(body,"没有可用设备"); return end
         text(body,string.format("%s · 主词 %d / 辅词 %d / 原料 %d / 特殊 %d 槽",kit.name,kit.slots.mainWord,kit.slots.auxWord,kit.slots.ingredient,kit.slots.specialItem),14)
-        text(body,"首次投料前请先剪好词。还未生成过待确认后续时，可以返回剪词准备。确认后才消耗；重置可取回本次试用的词和材料。",14)
-        action(body,"cancelBrew","返回剪词准备","CancelBrew",function() model.CancelBrew(); scroll:ScrollToTop() end)
+        text(body,"首次投料前请先剪好词并补齐原料。还未生成过待确认后续时，可以返回准备、剪词或补货。确认后才消耗；重置可取回本次试用的词和材料。",14)
+        action(body,"cancelBrew","返回准备（剪词／补货）","CancelBrew",function() model.CancelBrew(); scroll:ScrollToTop() end)
         for _,item in ipairs(content.equipment) do if data.live.economy.ownedEquipmentIds[item.id] and item.id~=draft.equipmentId then
             button(body,"equipment_" .. item.id,"换用 " .. item.name,function() model.Edit("equipment",item.id) end)
         end end
@@ -197,6 +197,23 @@ function View.New(session,content,enabled)
         end
     end
     local api={root=root,model=model}
+    local function shop(data)
+        text(body,"原料补货",20)
+        if not content.shop then text(body,"当前内容包未配置商店。");return end
+        text(body,string.format("每种原料每日供应 %d 份，次日补齐。",content.shop.dailyStockPerIngredient))
+        local gate=model.Action("Shop")
+        for _,ingredient in ipairs(content.ingredients) do
+            local sold=0
+            for _,p in ipairs(data.live.economy.shopPurchases) do
+                if p.day==data.live.gameFlow.day and p.ingredientId==ingredient.id then sold=sold+p.quantity end
+            end
+            local left=content.shop.dailyStockPerIngredient-sold
+            text(body,string.format("%s · 库存 %d · 今日可购 %d",ingredient.name,data.live.economy.ingredients[ingredient.id] or 0,left))
+            local allowed=gate.enabled and left>0 and data.live.economy.currency>=ingredient.price
+            local reason=not gate.enabled and gate.message or left<=0 and "今日已售完，明天再来。" or "金币不足。"
+            button(body,"buy_"..ingredient.id,string.format("购买一份 · %d 金币",ingredient.price),function() model.Buy(ingredient.id) end,allowed,reason)
+        end
+    end
     function api.Update()
         if not model.dirty then return end
         model.dirty=false
@@ -218,6 +235,7 @@ function View.New(session,content,enabled)
         elseif model.page=="words" then inventory(data,false)
         elseif model.page=="brew" then brew(data)
         elseif model.page=="result" then results(data)
+        elseif model.page=="shop" then shop(data)
         else mail(data) end
     end
     function api.Refresh() model.dirty=true end

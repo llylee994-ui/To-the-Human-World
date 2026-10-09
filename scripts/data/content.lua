@@ -16,15 +16,16 @@
 local Data = {}
 
 Data.effects = require "data.effects"
-Data.words = require "data.words"
+local numericV02 = require "data.numeric_v02"
+Data.words = numericV02.words
 Data.ingredients = require "data.ingredients"
 Data.equipment = require "data.equipment"
 Data.synthesis = require "data.synthesis"
-Data.npcs = require "data.npcs"
-Data.letters = require "data.letters"
+Data.npcs = numericV02.npcs
+Data.letters = numericV02.letters
 Data.stage1 = require "data.stage1"
 
-local followup = require "data.followup"
+local followup = numericV02
 Data.directRules = followup.directRules
 Data.factExclusionGroups = followup.factExclusionGroups
 Data.fragments = followup.fragments
@@ -33,15 +34,15 @@ Data.orderRatings = followup.orderRatings
 Data.attributeProfiles = Data.stage1.attributeProfiles
 Data.contentVersion = Data.stage1.contentVersion
 
--- 正式普通订单包沿用相同字段；只在内容入口汇总，不引入新的剧情执行逻辑。
-local ordinaryOrders = require "data.ordinary_orders"
-for _, field in ipairs({ "npcs", "letters", "directRules", "fragments", "followupTemplates", "orderRatings", "factExclusionGroups" }) do
-    for _, entry in ipairs(ordinaryOrders[field]) do
-        Data[field][#Data[field] + 1] = entry
-    end
-end
 -- 供文案/程序复算的示例，不是 Potion 的配方白名单或查找表。
-Data.recipes = require "data.recipes"
+Data.recipes = numericV02.recipes
+
+-- v02试用包替换旧故事配置；系统仍只通过本入口读取。
+Data.contentVersion = "story-numeric-v02-r1"
+Data.stage1.contentVersion = Data.contentVersion
+Data.stage1.sampleCases = numericV02.sampleCases
+Data.shop = { dailyStockPerIngredient = 6 }
+Data.saveSlotId = "numeric_v02_trial"
 
 -- 原料 mods 允许出现的键。写错键名不会报错，只会静默失效，所以在这里卡住。
 ---@type table<string, boolean?>
@@ -133,7 +134,7 @@ end
 local effectsById_ = {}
 ---@type table<string, table>
 local wordsById_ = {}
----@type table<string, table?>
+---@type table<string, table|false>
 local wordsByText_ = {}
 ---@type table<string, table>
 local ingredientsById_ = {}
@@ -267,15 +268,12 @@ function Data.Load()
 
     loaded_ = true
 
-    -- 词条的显示文本必须唯一，否则信里的 {{词}} 无法确定指向哪一条
+    -- 同字不同定义须由信件的cutWordIds按位置辨别；无映射的旧标记仍要求字面唯一。
     for i = 1, #Data.words do
         local word = Data.words[i]
         if type(word.displayText) == "string" and word.displayText ~= "" then
-            if wordsByText_[word.displayText] then
-                errors[#errors + 1] = string.format(
-                    "words.lua 里 displayText 重复：「%s」（%s 与 %s）",
-                    word.displayText, wordsByText_[word.displayText].id, word.id
-                )
+            if wordsByText_[word.displayText] ~= nil then
+                wordsByText_[word.displayText] = false
             else
                 wordsByText_[word.displayText] = word
             end
@@ -378,11 +376,27 @@ function Data.Load()
                 local cutCount = 0
                 for marked in string.gmatch(letter.body, "{{(.-)}}") do
                     cutCount = cutCount + 1
-                    if not wordsByText_[marked] then
+                    local mapped = letter.cutWordIds
+                    local word = mapped and type(mapped) == "table" and wordsById_[mapped[cutCount]] or nil
+                    if mapped ~= nil and (not word or word.displayText ~= marked) then
+                        errors[#errors + 1] = string.format("%s 的 cutWordIds 第 %d 位与正文不对应", letterName, cutCount)
+                    elseif mapped == nil and not wordsByText_[marked] then
                         errors[#errors + 1] = string.format(
                             "%s 正文里标记了「%s」，但 words.lua 里没有 displayText 为「%s」的词条",
                             letterName, marked, marked
                         )
+                    end
+                end
+                if letter.cutWordIds ~= nil then
+                    local ids = letter.cutWordIds
+                    if type(ids) ~= "table" or #ids ~= cutCount then
+                        errors[#errors + 1] = string.format("%s 的 cutWordIds 数量与正文标记不对应", letterName)
+                    else
+                        for key in pairs(ids) do
+                            if type(key) ~= "number" or key % 1 ~= 0 or key < 1 or key > cutCount then
+                                errors[#errors + 1] = string.format("%s 的 cutWordIds 必须为稠密数组", letterName)
+                            end
+                        end
                     end
                 end
                 if letter.cuttable == true and cutCount == 0 then
@@ -587,7 +601,7 @@ end
 ---@param text string
 ---@return table|nil
 function Data.GetWordByText(text)
-    return wordsByText_[text]
+    return wordsByText_[text] or nil
 end
 
 ---@param id string

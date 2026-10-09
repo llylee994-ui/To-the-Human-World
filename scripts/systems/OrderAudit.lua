@@ -188,19 +188,33 @@ function Audit.New(content,orderApi)
             same(data.nextOrderSerial,maxSerial+1,"nextOrderSerial")
             same(acceptedCount,maxSerial,"orders.serials") -- 不按坏档中的巨大序号循环。
             table.sort(history,function(a,b) return serial(a)<serial(b) end)
-            -- 阶段 1 尚无购物/附件收益：账本必须等于初始账本加全部已确认订单。
+            -- 账本重放包含购买与已确认订单；购买不能借用之后的订单报酬。
             local replay=U.Copy(data.live)
             replay.world=G.Value(world.InitialSnapshot()); replay.economy=G.Value(economy.InitialSnapshot())
             replay.orders.confirmedById={}; replay.letters.directArchive={}; replay.gameFlow.deliveredOrders=0
             replay.narrative=G.Value(narrative.InitialSnapshot())
             for _,token in pairs(replay.wordTokens.byId) do token.available=true; token.consumedByOrderId=false end
+            local purchases=data.live.economy.shopPurchases or {}
+            local purchaseIndex=1
             local lastDay=1
+            local function replayPurchases(delivered,untilDay)
+                while purchaseIndex<=#purchases and purchases[purchaseIndex].afterDeliveredOrders==delivered do
+                    local p=purchases[purchaseIndex]
+                    G.Need(p.day>=lastDay and p.day<=untilDay,"STATE_INVALID","shopPurchases.day","购买时间不属于对应发货进度")
+                    local planned=G.Value(economy.PlanPurchase(replay.economy,{ingredientId=p.ingredientId,quantity=p.quantity},{day=p.day,deliveredOrders=delivered}))
+                    same(planned.state.shopPurchases[#planned.state.shopPurchases],p,"shopPurchases")
+                    replay.economy=planned.state; purchaseIndex=purchaseIndex+1
+                end
+            end
             for _,id in ipairs(history) do
                 local record=confirmed[id]
                 G.Need(U.Integer(record.deliveryDay,lastDay) and record.deliveryDay<=data.live.gameFlow.day,"STATE_INVALID","record.deliveryDay","历史确认天数错误")
+                replayPurchases(replay.gameFlow.deliveredOrders,record.deliveryDay)
                 lastDay=record.deliveryDay; replay.gameFlow.day=record.deliveryDay
                 replay=auditRecord(record,replay,id,record.deliveryDay)
             end
+            replayPurchases(replay.gameFlow.deliveredOrders,data.live.gameFlow.day)
+            G.Need(purchaseIndex==#purchases+1,"STATE_INVALID","shopPurchases","购买记录借用了未来发货数")
             for _,key in ipairs({"world","economy","wordTokens"}) do same(data.live[key],replay[key],"live." .. key) end
             -- 解锁是已声明订单集合；其保存可包含已领取项。阶段条件由实际查询复核。
             if data.currentOrder then

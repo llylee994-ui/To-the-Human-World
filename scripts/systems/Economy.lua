@@ -13,11 +13,30 @@ function Economy.New(content)
     function api.ValidateSnapshot(s)
         local valid = U.Validate(s)
         if not valid.ok then return valid end
-        valid = U.Keys(s, {currency=true,ingredients=true,specialItems=true,ownedEquipmentIds=true}, "economy")
+        valid = U.Keys(s, {currency=true,ingredients=true,specialItems=true,ownedEquipmentIds=true,shopPurchases=content.shop~=nil}, "economy")
         if not valid.ok then return valid end
         if not U.Integer(s.currency) or type(s.ingredients) ~= "table" or type(s.specialItems) ~= "table"
             or type(s.ownedEquipmentIds) ~= "table" then
             return U.Fail("ECONOMY_INVALID", "economy", "金币/份数须为非负整数，设备须为集合")
+        end
+        if content.shop then
+            if not U.Integer(content.shop.dailyStockPerIngredient,1) then return U.Fail("CONFIG_INVALID","shop","每日限购量须为正整数") end
+            if not U.Array(s.shopPurchases) then return U.Fail("ECONOMY_INVALID","shopPurchases","缺少购买记录") end
+            local day,delivered,stock=1,0,{}
+            for _,p in ipairs(s.shopPurchases) do
+                local fields=U.Keys(p,{day=true,afterDeliveredOrders=true,ingredientId=true,quantity=true,unitPrice=true},"shopPurchases")
+                if not fields.ok then return fields end
+                if not U.Integer(p.day,day) or not U.Integer(p.afterDeliveredOrders,delivered) or not U.Integer(p.quantity,1) then
+                    return U.Fail("ECONOMY_INVALID","shopPurchases","购买时序或份数错误")
+                end
+                local definition
+                for _,v in ipairs(content.ingredients) do if v.id==p.ingredientId then definition=v end end
+                if not definition or not U.Integer(definition.price,1) or p.unitPrice~=definition.price then return U.Fail("ECONOMY_INVALID","shopPurchases","购买原料或单价错误") end
+                if p.day~=day then stock={} end
+                day,delivered=p.day,p.afterDeliveredOrders
+                stock[p.ingredientId]=(stock[p.ingredientId] or 0)+p.quantity
+                if stock[p.ingredientId]>content.shop.dailyStockPerIngredient then return U.Fail("ECONOMY_INVALID","shopPurchases","超过当日限购量") end
+            end
         end
         for id, qty in pairs(s.ingredients) do
             if not known(content.ingredients, id) or not U.Integer(qty) then
@@ -80,6 +99,7 @@ function Economy.New(content)
         if not pure.ok then return U.Fail("CONFIG_INVALID", path, "开局账本包含不可保存的值", pure.error) end
         initial = U.Copy(initial)
         initial.ownedEquipmentIds = { [stage.initialEquipmentId] = true }
+        if content.shop then initial.shopPurchases={} end
         return api.ValidateSnapshot(initial)
     end
     function api.Restore(s)
@@ -89,6 +109,36 @@ function Economy.New(content)
     end
     ---@return table|nil
     function api.GetSnapshot() return state and U.Copy(state) or nil end
+    -- 只做购买候选；协调器校验门禁、保存成功后才安装。购买记录供OrderAudit逐单重放。
+    function api.PlanPurchase(base,request,context)
+        if not content.shop then return U.Fail("NOT_IMPLEMENTED","shop","该内容包未配置商店") end
+        local valid=api.ValidateSnapshot(base)
+        if not valid.ok then return valid end
+        valid=U.Keys(request,{ingredientId=true,quantity=true},"shop.request")
+        if not valid.ok then return valid end
+        if not U.String(request.ingredientId) or not U.Integer(request.quantity,1) then return U.Fail("INVALID_REQUEST","shop.request","请选择原料和正整数份数") end
+        local definition
+        for _,v in ipairs(content.ingredients) do if v.id==request.ingredientId then definition=v end end
+        if not definition then return U.Fail("UNKNOWN_ID","ingredientId","未知原料") end
+        if not U.Integer(definition.price,1) then return U.Fail("CONFIG_INVALID","ingredient.price","原料售价须为正整数") end
+        if type(context)~="table" or not U.Integer(context.day,1) or not U.Integer(context.deliveredOrders) then return U.Fail("INVALID_REQUEST","shop.context","购买须使用正式天数和发货计数") end
+        local spent=0
+        for _,p in ipairs(base.shopPurchases) do
+            if p.day>context.day or p.afterDeliveredOrders>context.deliveredOrders then return U.Fail("ECONOMY_INVALID","shopPurchases","购买记录超出当前进度") end
+            if p.day==context.day and p.ingredientId==request.ingredientId then spent=spent+p.quantity end
+        end
+        if spent+request.quantity>content.shop.dailyStockPerIngredient then return U.Fail("SHOP_STOCK_SHORT","quantity","超过当日剩余供货量") end
+        local cost=definition.price*request.quantity
+        if not U.Integer(cost,1) then return U.Fail("INVALID_REQUEST","quantity","购买金额溢出") end
+        if base.currency<cost then return U.Fail("CURRENCY_SHORT","currency","金币不足") end
+        local candidate=U.Copy(base)
+        candidate.currency=base.currency-cost
+        candidate.ingredients[definition.id]=(candidate.ingredients[definition.id] or 0)+request.quantity
+        candidate.shopPurchases[#candidate.shopPurchases+1]={day=context.day,afterDeliveredOrders=context.deliveredOrders,ingredientId=definition.id,quantity=request.quantity,unitPrice=definition.price}
+        valid=api.ValidateSnapshot(candidate)
+        if not valid.ok then return valid end
+        return U.Ok({state=valid.value,cost=cost,ingredientId=definition.id,quantity=request.quantity})
+    end
     function api.PlanSettlement(base, ingredientUses, specialUses, reward)
         local valid = api.ValidateSnapshot(base)
         if not valid.ok then return valid end
