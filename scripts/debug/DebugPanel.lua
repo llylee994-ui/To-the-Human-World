@@ -99,9 +99,16 @@ function DebugPanel.Attach(root, deps)
         children = {
             UI.Label {
                 id = "debugTitleLabel",
-                text = "调试面板（Z 键开关）",
+                text = "开发调试面板",
                 fontSize = 13,
                 fontColor = { 255, 220, 140, 255 },
+            },
+            UI.Button {
+                id = "debugCloseButton",
+                text = "关闭开发面板",
+                width = "100%",
+                minHeight = 48,
+                onClick = function() DebugPanel.SetVisible(false) end,
             },
             UI.Label {
                 id = "debugDayLabel",

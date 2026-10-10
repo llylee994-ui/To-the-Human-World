@@ -46,6 +46,8 @@ local b1Request_ = require "debug.B1RunRequest"
 local b2Request_ = require "debug.B2RunRequest"
 ---@type string
 local b6Request_ = require "debug.B6RunRequest"
+local developerMode_ = require "debug.DeveloperMode"
+    or b1Request_ ~= "off" or b2Request_ ~= "off" or b6Request_ ~= "off"
 
 -- ============================================================================
 -- 生命周期
@@ -74,7 +76,7 @@ function Start()
     else ledgerStatus_ = "" end
 
     -- 阶段 0 自检（B2 / B3 / B4）。会改动 GameFlow 状态，必须在正式载入存档之前跑。
-    SelfTest.RunAll(EventBus, GameFlow, SaveSystem)
+    if developerMode_ then SelfTest.RunAll(EventBus, GameFlow, SaveSystem) end
     GameFlow.Init(nil)
     legacyDebugState_ = GameState.New({gameFlow=GameFlow,saveSystem=SaveSystem,eventBus=EventBus,dataReady=dataReady,dataError=dataError})
     local sessionSave = SaveSystem
@@ -95,7 +97,7 @@ function Start()
     CreateUI()
     SubscribeToEvents()
     DebugPanel.Log(startupStatus_)
-    if status.status ~= "loaded" and status.status ~= "new" then DebugPanel.SetVisible(true) end
+    if developerMode_ and status.status ~= "loaded" and status.status ~= "new" then DebugPanel.SetVisible(true) end
 
     print(string.format("=== %s 启动完成（第 %d 天）===", TITLE, GameFlow.GetDay()))
 end
@@ -149,6 +151,7 @@ function CreateUI()
     -- 全部界面最外层套 SafeAreaView，避开刘海与 TapTap 胶囊（见开发计划 1.3）
     local root = UI.SafeAreaView {
         id = "safeArea",
+        backgroundColor = {25, 44, 48, 255},
         width = "100%",
         height = "100%",
         children = {
@@ -176,6 +179,7 @@ function CreateUI()
                     },
                     UI.Label {
                         id = "dayLabel",
+                        visible = developerMode_,
                         text = "",
                         fontSize = 15,
                         fontColor = { 200, 215, 240, 255 },
@@ -183,22 +187,13 @@ function CreateUI()
                     },
                     UI.Label {
                         id = "saveStatusLabel",
+                        visible = developerMode_,
                         text = startupStatus_,
                         fontSize = 12,
                         fontColor = { 230, 195, 145, 255 },
                         width = "100%",
                         textAlign = "center",
                         whiteSpace = "normal",
-                    },
-                    UI.Button {
-                        id = "debugToggleButton",
-                        text = "调试面板",
-                        onClick = function() DebugPanel.Toggle() end,
-                    },
-                    UI.Button {
-                        id = "b2CheckButton",
-                        text = "B2 信件检查",
-                        onClick = function() RunB2Checks() end,
                     },
                     UI.Label {
                         id = "hintLabel",
@@ -221,6 +216,10 @@ function CreateUI()
     assert(root:FindById("mainPanel")):AddChild(playView_.root)
 
     -- 调试面板挂到 SafeAreaView 下，先入树再 SetRoot，避免根控件设定后补挂导致首帧不渲染
+    if developerMode_ then
+    local mainPanel = assert(root:FindById("mainPanel"))
+    mainPanel:AddChild(UI.Button {id="debugToggleButton",text="开发工具",minHeight=48,onClick=function() DebugPanel.Toggle() end})
+    mainPanel:AddChild(UI.Button {id="b2CheckButton",text="B2 信件检查",minHeight=48,onClick=function() RunB2Checks() end})
     DebugPanel.Attach(root, {
         gameFlow = GameFlow,
         save = function(slot)
@@ -236,6 +235,7 @@ function CreateUI()
     DebugPanel.SetWorldStateProvider(function()
         return session_.modules.world.GetSnapshot()
     end)
+    end
 
     uiRoot_ = root
     dayLabel_ = root:FindById("dayLabel") --[[@as Label?]]
@@ -263,7 +263,7 @@ end
 
 function SubscribeToEvents()
     SubscribeToEvent("Update", "HandleUpdate")
-    SubscribeToEvent("KeyDown", "HandleKeyDown")
+    if developerMode_ then SubscribeToEvent("KeyDown", "HandleKeyDown") end
     playListener_=EventBus.OnAny(function()
         RefreshHeader()
     end,"B6/play")
@@ -313,7 +313,7 @@ function HandleUpdate(_eventType, eventData)
     if playView_ then playView_.Update() end
 
     -- 首帧布局完成后做一次界面自检（B1），只跑一次
-    if not uiLayoutChecked_ then
+    if developerMode_ and not uiLayoutChecked_ then
         uiFrameCount_ = uiFrameCount_ + 1
         if uiFrameCount_ == 30 then
             uiLayoutChecked_ = true
@@ -338,6 +338,7 @@ end
 ---@param _eventType string
 ---@param eventData KeyDownEventData
 function HandleKeyDown(_eventType, eventData)
+    if not developerMode_ then return end
     local key = eventData["Key"]:GetInt()
 
     if key == KEY_Z then
@@ -354,6 +355,7 @@ end
 
 ---@return boolean
 function RunB1Checks()
+    if not developerMode_ then return false end
     DebugPanel.SetVisible(true)
     local previous=gameState_
     local result = previous.WithPreservedState(function()
@@ -381,6 +383,7 @@ end
 -- 必须先绑定测试槽。B2 内部用真实模块+显式夹具，不给生产 v2 安装假恢复器。
 ---@return boolean
 function RunB2Checks()
+    if not developerMode_ then return false end
     DebugPanel.SetTestSlot("b2_debug_flow")
     DebugPanel.SetVisible(true)
     local previous=gameState_

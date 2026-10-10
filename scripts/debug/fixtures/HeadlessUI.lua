@@ -35,4 +35,5 @@ UI.Label, UI.Panel, UI.Button, UI.ScrollView, UI.SafeAreaView = widget, widget, 
 function UI.Init(_) end
 function UI.Shutdown() end
 function UI.SetRoot(root) UI.root = root end
+function UI.GetRoot() return UI.root end
 return UI

@@ -4,10 +4,12 @@ local M={}
 function M.New(session,content,enabled)
     ---@class PlayModel
     ---@field selectedResult string|false 已确认订单 ID；false 表示当前待确认结果。
+    ---@field letterEdited boolean 当前信纸可局部刷新。
     local api={
         page="mail" --[[@as string]],
         selectedLetter=false --[[@as string|false]],
         selectedResult=false --[[@as string|false]],
+        letterEdited=false,
         message="",dirty=true --[[@as boolean]],
         failure=nil --[[@as table?]],
         trialPotion=nil --[[@as table?]],
@@ -72,7 +74,10 @@ function M.New(session,content,enabled)
     end
     function api.Cut(spanId)
         if not active() then return api.Notify(fail("STATE_LOCKED","当前为隔离调试模式")) end
-        return api.Notify(session.state.CutWord({letterInstanceId=api.selectedLetter,spanId=spanId}),"词卡已收入库存；原信保留缺口。")
+        local result=session.state.CutWord({letterInstanceId=api.selectedLetter,spanId=spanId})
+        -- 失败时信纸仍在原位置，玩家可原地重试；状态锁定由View统一处理。
+        api.letterEdited=true
+        return api.Notify(result,"词卡已收好，信纸上留下了剪痕。")
     end
     function api.Accept()
         if not active() then return api.Notify(fail("STATE_LOCKED","当前为隔离调试模式")) end
@@ -159,6 +164,23 @@ function M.New(session,content,enabled)
         draft=nextDraft
         api.failure=nil; api.trialPotion=nil
         return api.Notify(U.Ok(U.Copy(draft)),"试用投料尚未消耗；确认结果并保存成功后才扣除。")
+    end
+    -- 选词只编辑试用配方；首次有效投料仍经 Edit 建立基准。
+    function api.SelectToken(tokenId)
+        local current=api.GetDraft()
+        if current.mainTokenId==tokenId then return api.Notify(fail("DUPLICATE_TOKEN","这张词卡已在药槽中，点击槽内卡片可取出。")) end
+        for _,id in ipairs(current.auxTokenIds) do
+            if id==tokenId then return api.Notify(fail("DUPLICATE_TOKEN","这张词卡已在药槽中，点击槽内卡片可取出。")) end
+        end
+        return api.Edit(current.mainTokenId and "aux" or "main",tokenId)
+    end
+    function api.RemoveToken(tokenId)
+        local current=api.GetDraft()
+        if current.mainTokenId==tokenId then return api.Edit("removeMain") end
+        for _,id in ipairs(current.auxTokenIds) do
+            if id==tokenId then return api.Edit("removeAux",tokenId) end
+        end
+        return api.Notify(fail("INVALID_REQUEST","这张词卡不在当前药槽中。"))
     end
     function api.CancelBrew()
         local data=api.Refresh(); local order=data and data.currentOrder

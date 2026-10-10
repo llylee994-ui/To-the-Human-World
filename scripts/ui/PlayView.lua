@@ -1,31 +1,39 @@
--- B6 普通按钮与文字界面。只投影保存结果；不计算剧情、消耗或奖励。
+-- 移动端玩家界面。只投影保存结果；不计算剧情、消耗或奖励。
 local UI=require "urhox-libs/UI"
 local Model=require "ui.PlayModel"
 local View={}
 function View.New(session,content,enabled)
     local model=Model.New(session,content,enabled)
     local root=UI.Panel {id="playPanel",width="100%",flexGrow=1,flexShrink=1,flexBasis=0,gap=8}
-    local heading=UI.Label {id="playLedger",width="100%",fontSize=16,whiteSpace="normal"}
-    local nav=UI.Panel {width="100%",flexDirection="row",flexWrap="wrap",gap=6}
-    local message=UI.Label {id="playMessage",width="100%",fontSize=14,whiteSpace="normal",fontColor={245,205,150,255}}
+    local heading=UI.Label {id="playLedger",width="100%",fontSize=15,whiteSpace="normal",fontColor={239,226,198,255}}
+    local nav=UI.Panel {width="100%",flexDirection="row",gap=5,flexShrink=0,paddingTop=6}
+    local message=UI.Label {id="playMessage",width="100%",minHeight=40,fontSize=13,whiteSpace="normal",fontColor={245,205,150,255},flexShrink=0}
+    -- 提示换行也不能挤动信纸；长错误信息可在固定提示区内滚动阅读。
+    local messageArea=UI.ScrollView {id="playMessageArea",width="100%",height=52,flexShrink=0,scrollY=true,children={message}}
     local scroll=UI.ScrollView {id="playScroll",width="100%",flexGrow=1,flexShrink=1,flexBasis=0,scrollY=true}
     -- 滚动内容按父级内宽拉伸，留出滚动条；长文字不能压缩进可视高度。
-    local body=UI.Panel {alignSelf="stretch",gap=10,padding=8,paddingRight=20,flexShrink=0}
+    local body=UI.Panel {alignSelf="stretch",gap=12,padding=16,paddingRight=24,flexShrink=0,backgroundColor={239,230,207,255},borderRadius=12}
+    ---@type table|nil
+    local letterCache
     scroll:AddChild(body)
-    root:AddChild(heading); root:AddChild(nav); root:AddChild(message); root:AddChild(scroll)
+    root:AddChild(heading); root:AddChild(messageArea); root:AddChild(scroll); root:AddChild(nav)
     local function text(parent,value,size,id)
-        parent:AddChild(UI.Label {id=id,text=value or "",alignSelf="stretch",fontSize=size or 16,whiteSpace="normal",lineHeight=1.5,flexShrink=0})
+        local label=UI.Label {id=id,text=value or "",alignSelf="stretch",fontSize=size or 16,whiteSpace="normal",lineHeight=1.6,flexShrink=0,fontColor={55,53,45,255}}
+        parent:AddChild(label)
+        return label
     end
-    local function button(parent,id,title,click,allowed,reason)
-        parent:AddChild(UI.Button {id=id,text=title,minHeight=44,disabled=allowed==false,fontSize=15,onClick=click})
+    local function button(parent,id,title,click,allowed,reason,compact)
+        local control=UI.Button {id=id,text=title,width=not compact and "100%" or nil,flexGrow=compact and 1 or 0,flexBasis=compact and 0 or nil,minWidth=0,minHeight=48,flexShrink=0,disabled=allowed==false,fontSize=compact and 13 or 15,onClick=click,backgroundColor={52,83,84,255},textColor={250,242,219,255},borderRadius=8}
+        parent:AddChild(control)
         if allowed==false and reason and reason~="" then text(parent,reason,13) end
+        return control
     end
     local function action(parent,id,title,name,click)
         local gate=model.Action(name)
         button(parent,id,title,click,gate.enabled,gate.message)
     end
     for _,tab in ipairs({{"mail","来信"},{"words","词卡"},{"brew","炼药"},{"result","后续"},{"shop","补货"}}) do
-        button(nav,"tab_" .. tab[1],tab[2],function() model.Navigate(tab[1]); scroll:ScrollToTop() end)
+        button(nav,"tab_" .. tab[1],tab[2],function() model.Navigate(tab[1]); scroll:ScrollToTop() end,true,nil,true)
     end
     local function find(list,id) for _,item in ipairs(list) do if item.id==id then return item end end end
     local function source(card,data)
@@ -72,6 +80,15 @@ function View.New(session,content,enabled)
         end
         if #data.live.letters.bottleQueue==0 then text(body,"先打捞一封来信，再阅读并剪下要用的词。") end
     end
+    local function paperText(view)
+        local parts={}
+        for _,segment in ipairs(view.segments) do
+            -- 与原标记词保持相同的全角字符数，留下剪口而不是说明文字。
+            parts[#parts+1]=segment.cut and "〔" .. string.rep("　",utf8.len(segment.text) or 1) .. "〕"
+                or (segment.kind=="word" and "【" .. segment.text .. "】" or segment.text)
+        end
+        return table.concat(parts)
+    end
     local function letter(data)
         if not model.selectedLetter then mail(data); return end
         local result=session.modules.letters.GetView(model.selectedLetter)
@@ -79,16 +96,13 @@ function View.New(session,content,enabled)
         local view=result.value
         local definition=content.GetLetter(view.letterId)
         text(body,definition.title,20); text(body,view.selfIntro)
-        local parts={}
-        for _,segment in ipairs(view.segments) do
-            parts[#parts+1]=segment.cut and "〔　缺口　〕" or (segment.kind=="word" and "【" .. segment.text .. "】" or segment.text)
-        end
-        text(body,table.concat(parts)); text(body,"寄往：" .. view.address)
+        letterCache={id=model.selectedLetter,label=text(body,paperText(view),18,"letterPaper"),buttons={}}
+        text(body,"寄往：" .. view.address)
         requirements(definition)
         text(body,"剪下标记词",18)
         local gate=model.Action("CutWord")
         for _,span in ipairs(view.spans) do
-            button(body,"cut_" .. span.spanId,span.cut and span.text .. " · 已剪" or "剪下「" .. span.text .. "」",
+            letterCache.buttons[span.spanId]=button(body,"cut_" .. span.spanId,span.cut and span.text .. " · 已剪" or "剪下「" .. span.text .. "」",
                 function() model.Cut(span.spanId) end,gate.enabled and span.canCut,not span.cut and gate.message or nil)
         end
         ---@type string|nil
@@ -107,17 +121,23 @@ function View.New(session,content,enabled)
         local view=result.value
         text(body,string.format("可用 %d 张 · %d 种 / %d 类",view.availableCount,view.availableDefinitionCount,view.availableCategoryCount),18)
         if view.availableCount==0 then text(body,"没有可用词卡。可返回来信查看尚未剪下的词；已消耗的卡不能再次投入。") end
+        local selected={}
+        if selecting then
+            local draft=model.GetDraft()
+            if draft.mainTokenId then selected[draft.mainTokenId]=true end
+            for _,id in ipairs(draft.auxTokenIds) do selected[id]=true end
+        end
         for _,group in ipairs(view.groups) do
             text(body,string.format("%s · %s：剩 %d 张，曾收集 %d 张",group.definition.displayText,group.definition.category,group.availableCount,group.collectedCount),17,"wordGroup_" .. group.wordId)
             for _,card in ipairs(view.cards) do if card.definition.id==group.wordId then
                 local used=not card.available and card.consumedByOrderId:match("^order:(%d+)$")
-                text(body,source(card,data) .. (card.available and " · 可用" or " · 已用于第" .. (used or "？") .. "单"),13)
+                local sheet=UI.Panel {width="100%",padding=10,gap=6,backgroundColor={250,245,228,255},borderColor={193,173,135,255},borderWidth=1,borderRadius=8,flexShrink=0}
+                body:AddChild(sheet)
                 if selecting and card.available then
-                    local row=UI.Panel {width="100%",flexDirection="row",flexWrap="wrap",gap=6}
-                    button(row,"main_" .. card.tokenId,"用作主词",function() model.Edit("main",card.tokenId) end)
-                    button(row,"aux_" .. card.tokenId,"用作辅词",function() model.Edit("aux",card.tokenId) end)
-                    body:AddChild(row)
-                end
+                    button(sheet,"card_" .. card.tokenId,card.definition.displayText,
+                        function() model.SelectToken(card.tokenId) end,not selected[card.tokenId])
+                else text(sheet,card.definition.displayText,20) end
+                text(sheet,source(card,data) .. (not card.available and " · 已用于第" .. (used or "？") .. "单" or selected[card.tokenId] and " · 已在药槽中" or " · 可用"),13)
             end end
         end
     end
@@ -135,32 +155,46 @@ function View.New(session,content,enabled)
         local kit=find(content.equipment,draft.equipmentId)
         if not kit then text(body,"没有可用设备"); return end
         text(body,string.format("%s · 主词 %d / 辅词 %d / 原料 %d / 特殊 %d 槽",kit.name,kit.slots.mainWord,kit.slots.auxWord,kit.slots.ingredient,kit.slots.specialItem),14)
-        text(body,"首次投料前请先剪好词并补齐原料。还未生成过待确认后续时，可以返回准备、剪词或补货。确认后才消耗；重置可取回本次试用的词和材料。",14)
+        text(body,"点词卡投入，点药槽里的卡取出。取出主词会保留辅词，下一张优先补主词。确认结果后才消耗。",14)
         action(body,"cancelBrew","返回准备（剪词／补货）","CancelBrew",function() model.CancelBrew(); scroll:ScrollToTop() end)
         for _,item in ipairs(content.equipment) do if data.live.economy.ownedEquipmentIds[item.id] and item.id~=draft.equipmentId then
             button(body,"equipment_" .. item.id,"换用 " .. item.name,function() model.Edit("equipment",item.id) end)
         end end
-        text(body,"主词：" .. cardName(draft.mainTokenId,data))
-        if draft.mainTokenId then button(body,"removeMain","移出主词",function() model.Edit("removeMain") end) end
-        for _,id in ipairs(draft.auxTokenIds) do button(body,"remove_" .. id,"移出辅词「" .. cardName(id,data) .. "」",function() model.Edit("removeAux",id) end) end
+        local slots=UI.Panel {width="100%",flexDirection="row",gap=8,flexShrink=0}
+        body:AddChild(slots)
+        local function slot(title)
+            local panel=UI.Panel {flexGrow=1,flexBasis=0,minWidth=0,gap=6,flexShrink=0}
+            slots:AddChild(panel); text(panel,title,14)
+            return panel
+        end
+        button(slot("主词槽"),"slot_main",draft.mainTokenId and cardName(draft.mainTokenId,data) or "待放主词",
+            function() model.RemoveToken(draft.mainTokenId) end,draft.mainTokenId~=false)
+        for index=1,kit.slots.auxWord do
+            local id=draft.auxTokenIds[index]
+            button(slot("辅词槽 " .. index),"slot_aux_" .. index,id and cardName(id,data) or "空辅词槽",
+                function() model.RemoveToken(id) end,id~=nil)
+        end
+        text(body,"可选词卡",18)
+        inventory(data,true)
         text(body,"原料（每份占一槽）",18)
         for _,item in ipairs(content.ingredients) do
             local selected=0; for _,line in ipairs(draft.ingredients) do if line.ingredientId==item.id then selected=line.quantity end end
             text(body,string.format("%s · 库存 %d · 已放 %d",item.name,data.live.economy.ingredients[item.id] or 0,selected),14)
             local row=UI.Panel {width="100%",flexDirection="row",gap=6}
-            button(row,"add_" .. item.id,"放入一份",function() model.Edit("ingredient",item.id,1) end)
-            button(row,"minus_" .. item.id,"移出一份",function() model.Edit("ingredient",item.id,-1) end,selected>0)
+            button(row,"add_" .. item.id,"＋ 放入",function() model.Edit("ingredient",item.id,1) end,true,nil,true)
+            button(row,"minus_" .. item.id,"－ 取出",function() model.Edit("ingredient",item.id,-1) end,selected>0,nil,true)
             body:AddChild(row)
         end
         text(body,"特殊物品槽：当前没有可投入的物品。",14)
         button(body,"clearDraft","移出全部投料",function() model.Edit("clear") end)
-        action(body,"previewOrder","炼药并发货，查看待确认后续","Preview",function() model.Preview(); scroll:ScrollToTop() end)
+        local previewGate=model.Action("Preview")
+        button(body,"previewOrder","炼药并发货",function() model.Preview(); scroll:ScrollToTop() end,
+            previewGate.enabled and not not draft.mainTokenId,not draft.mainTokenId and "先放入一张主词卡。" or previewGate.message)
         if model.failure then for _,failure in ipairs(model.failure.failures) do text(body,failure.message,14) end end
         if model.trialPotion then
             text(body,"本次试做药效（未发货，未消耗）",18)
             potionDetails(model.trialPotion,"trialEffect_")
         end
-        inventory(data,true)
     end
     local function results(data)
         local pending=data.currentOrder and data.currentOrder.pending
@@ -217,6 +251,27 @@ function View.New(session,content,enabled)
     function api.Update()
         if not model.dirty then return end
         model.dirty=false
+        message:SetText(model.message)
+        -- 剪词只更新当前信纸和按钮，保留ScrollView与内容树的布局位置。
+        if model.letterEdited and model.page=="letter" and letterCache and letterCache.id==model.selectedLetter
+            and session.state.CanMutate() and model.Action("GetView").enabled then
+            model.letterEdited=false
+            local current=session.modules.letters.GetView(model.selectedLetter)
+            if current.ok then
+                letterCache.label:SetText(paperText(current.value))
+                local gate=model.Action("CutWord")
+                for _,span in ipairs(current.value.spans) do
+                    local control=letterCache.buttons[span.spanId]
+                    if control then
+                        control:SetText(span.cut and span.text .. " · 已剪" or "剪下「" .. span.text .. "」")
+                        control:SetDisabled(not (gate.enabled and span.canCut))
+                    end
+                end
+                return
+            end
+        end
+        model.letterEdited=false
+        letterCache=nil
         -- 在 Update 中重建，避免点击回调/事务通知期间销毁正在派发事件的控件。
         for i=body:GetNumChildren(),1,-1 do
             local child=body:GetChildAt(i)
