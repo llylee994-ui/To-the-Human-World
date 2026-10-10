@@ -63,3 +63,6 @@ logs/
 # Python 检查脚本缓存（docs/验证/*.py）
 __pycache__/
 *.pyc
+**/.story-backups/
+**/.story-editor.lock
+scripts/story-editor/.local/
