@@ -188,6 +188,7 @@ function DebugPanel.DescribeStatus(status)
     local labels = {new="没有存档（新游戏）",loaded="读取成功",migrated="已迁移到内存，尚未另存",
         corrupt="存档损坏，已保留当前状态",unsupported="存档版本过新",migration_required="存档需要迁移或补齐恢复器",
         config_error="内容配置错误，已禁用推进和保存",recovery_required="提交结果待核对，已禁用推进和保存"}
+    if status.status=="migrated" and status.schema==3 then labels.migrated="已升级并保存到原存档槽" end
     return (labels[status.status] or status.status) .. (status.error and ("：" .. status.error.message) or "")
 end
 

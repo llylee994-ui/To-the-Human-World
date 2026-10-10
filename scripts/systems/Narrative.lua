@@ -197,7 +197,9 @@ function Narrative.New(content)
             G.Pure(live,"live")
             G.Keys(live,{gameFlow=true,letters=true,wordTokens=true,economy=true,world=true,narrative=true,orders=true},"live")
             if conditions~=nil then G.Need(type(conditions)=="table" and next(conditions)==nil,"CONFIG_INVALID","conditions","未声明额外调度条件") end
-            G.Value(require("core.GameFlow").ValidateSnapshot(live.gameFlow))
+            local flow=require "core.GameFlow"
+            if live.gameFlow.salvageUsedToday~=nil then flow=flow.New((content.gameplay or require("data.gameplay")).salvageDailyLimit) end
+            G.Value(flow.ValidateSnapshot(live.gameFlow))
             G.Value(letterApi.ValidateSnapshot(live.letters))
             -- 当前支持的 dayMin/dayMax 不读取世界字段；未知世界条件在下方明确拒绝。
             -- 完整 LiveState 的模块恢复校验仍由 GameState/B5 负责。

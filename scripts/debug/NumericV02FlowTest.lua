@@ -10,6 +10,7 @@ local function advance(x,day)
 end
 local function collect(x,id,only)
     advance(x,Data.GetLetter(id).appearCondition.dayMin)
+    if x.state.GetSnapshot().journal and not x.state.GetSnapshot().live.gameFlow.canSalvage then must(x.state.NextDay()) end
     local instance=must(x.state.ReceiveLetter({letterId=id})).letterInstanceId
     must(x.state.ReadLetter({letterInstanceId=instance}))
     x.tokens=x.tokens or {}
@@ -31,15 +32,22 @@ end
 local function attempt(x,case,instance,reset)
     buyMissing(x,case.recipe)
     local oid=must(x.order.Accept({letterInstanceId=instance})).orderId
-    local baseline=must(x.order.BeginBrew({orderId=oid})).baselineId
+    local v3=x.state.GetSnapshot().journal~=nil
+    local baseline=false
+    if not v3 then baseline=must(x.order.BeginBrew({orderId=oid})).baselineId end
     local recipe=case.recipe
     local aux={};for _,wid in ipairs(recipe.auxWordIds) do aux[#aux+1]=assert(x.tokens[wid],wid) end
     local req={orderId=oid,baselineId=baseline,equipmentId=recipe.equipmentId,mainTokenId=assert(x.tokens[recipe.mainWordId]),
         auxTokenIds=aux,ingredients=U.Copy(recipe.ingredients),specialItemIds={}}
+    if v3 then
+        req.baselineId=nil
+        must(x.order.UpdateDraft({orderId=oid,draft=require("systems.RecipeDraft").Project(req)}))
+    end
     local before=x.state.GetSnapshot()
     local function preview()
         local v=must(x.order.Preview(req));assert(v.phase=="pending")
         local pending=x.state.GetSnapshot().currentOrder.pending
+        if v3 then baseline=x.state.GetSnapshot().currentOrder.baseline.id end
         assert(U.Equal(x.state.GetSnapshot().live,before.live),"试做不得消耗真实卡、金币和原料")
         assert(#pending.facts==1 and pending.facts[1].id==case.expect.facts[1],"只出现唯一正确结果事实")
         assert(#pending.followup.fragmentIds==1 and pending.followup.fragmentIds[1]=="frag_"..case.expect.facts[1])
@@ -55,6 +63,7 @@ local function attempt(x,case,instance,reset)
         must(x.order.Reset({orderId=oid,baselineId=baseline,transactionId=value.transactionId}))
         assert(U.Equal(x.state.GetSnapshot().live,before.live),"重置完整回到原基准")
         local stale=value.transactionId
+        if v3 then must(x.order.UpdateDraft({orderId=oid,draft=require("systems.RecipeDraft").Project(req)})) end
         value,pending=preview()
         assert(not x.order.Confirm({orderId=oid,transactionId=stale}).ok,"过期尝试不可确认")
     end
@@ -76,10 +85,10 @@ local function attempt(x,case,instance,reset)
     loaded,status=x.Reload();assert(loaded,cjson.encode(status))
     assert(U.Equal(x.state.GetSnapshot(),after),"确认后真实重放对账一致")
 end
-function T.Run()
+function T.RunSchema(schema)
     local count=0
     for _,case in ipairs(cases) do
-        local x=F.New(Data)
+        local x=F.New(Data,{targetSchema=schema})
         local letters,only={},{}
         for _,s in ipairs(case.sources) do letters[s.letterId]=true;only[s.wordId]=true end
         letters[case.letterId]=true
@@ -92,7 +101,7 @@ function T.Run()
         print("[NumericV02Flow] PASS "..case.id.." → "..case.expect.facts[1])
     end
     -- 同一真实存档依次完成11单，58单见证各自独立，不能据此赠送副卡。
-    local x=F.New(Data)
+    local x=F.New(Data,{targetSchema=schema})
     local firstByLetter={}
     for _,case in ipairs(cases) do firstByLetter[case.letterId]=firstByLetter[case.letterId] or case end
     local ids={};for id in pairs(firstByLetter) do ids[#ids+1]=id end
@@ -114,7 +123,8 @@ function T.Run()
         if p.afterDeliveredOrders>0 then p.day=1;break end
     end
     assert(not x.order.ValidateEnvelope(forged).ok,"已发货后的采购不能伪造为首日购买")
-    print("[NumericV02Flow] PASS "..count.." registration flows; real 11-order chain, 61 cards, consumed11, purchases124, balance146")
+    print("[NumericV02Flow] schema="..schema.." PASS "..count.." registration flows; real 11-order chain, 61 cards, consumed11, purchases124, balance146")
     return true
 end
+function T.Run() return T.RunSchema(2) end
 return T

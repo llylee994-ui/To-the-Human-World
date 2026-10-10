@@ -2,7 +2,8 @@
 local U=require "core.StateUtil"
 local F={}
 F.Must=require("debug.fixtures.B4Fixtures").Must
-function F.New(content)
+function F.New(content,options)
+    options=options or {targetSchema=2} -- 既有回归夹具显式保留旧事务协议。
     content=content or require("debug.fixtures.B4Fixtures").Content()
     ---@type table<string, any>
     local x={content=content,files={},events={},writes=0,fault=false,lastSnapshot=false}
@@ -39,7 +40,7 @@ function F.New(content)
         return 0
     end}
     function x.Reload()
-        local session=require("core.GameSession").New(content,{saveSystem=x.save,eventBus=x.bus})
+        local session=require("core.GameSession").New(content,{saveSystem=x.save,eventBus=x.bus,targetSchema=options.targetSchema})
         local loaded,status=session.state.Load("b5_flow")
         x.session=session; x.state=session.state; x.order=session.order; x.modules=session.modules
         return loaded,status

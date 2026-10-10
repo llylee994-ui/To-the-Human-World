@@ -175,4 +175,36 @@ function GameFlow.Reset()
     EventBus.Emit("DayStarted", { day = state_.day })
 end
 
+-- schema 3 会话独立流程；旧全局模块只留给显式 schema 1/2 调试夹具。
+function GameFlow.New(dailyLimit)
+    local api={}
+    ---@type table
+    local state=U.Copy(DefaultState())
+    state.salvageUsedToday=0
+    function api.ValidateSnapshot(snapshot)
+        if not U.Integer(dailyLimit,1) then return U.Fail("CONFIG_INVALID","gameplay.salvageDailyLimit","每日捕捞上限须为正整数") end
+        if snapshot==nil then
+            local initial=U.Copy(DefaultState()); initial.salvageUsedToday=0
+            return U.Ok(initial)
+        end
+        local valid=U.Keys(snapshot,{day=true,phase=true,canSalvage=true,mainStoryStage=true,deliveredOrders=true,salvageUsedToday=true},"gameFlow")
+        if not valid.ok then return valid end
+        if not U.Integer(snapshot.salvageUsedToday) then return U.Fail("STATE_INVALID","salvageUsedToday","捕捞计数须为非负整数") end
+        local old=U.Copy(snapshot); old.salvageUsedToday=nil
+        valid=GameFlow.ValidateSnapshot(old)
+        if not valid.ok then return valid end
+        if snapshot.canSalvage~=(snapshot.phase=="day" and snapshot.salvageUsedToday<dailyLimit) then return U.Fail("STATE_INVALID","canSalvage","捕捞开关须由时段和次数推导") end
+        return U.Ok(U.Copy(snapshot))
+    end
+    function api.Restore(snapshot) local result=api.ValidateSnapshot(snapshot); if result.ok then state=result.value end; return result end
+    function api.GetSnapshot() return U.Copy(state) end
+    api.Serialize=api.GetSnapshot
+    function api.GetDay() return state.day end
+    function api.GetPhase() return state.phase end
+    function api.CanSalvage() return state.canSalvage end
+    function api.GetMainStoryStage() return state.mainStoryStage end
+    function api.GetDeliveredOrders() return state.deliveredOrders end
+    api.Restore(nil)
+    return api
+end
 return GameFlow

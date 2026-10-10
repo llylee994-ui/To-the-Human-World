@@ -24,10 +24,16 @@ function M.New(session,content,enabled)
     function api.Notify(result,message)
         api.dirty=true
         if not result.ok then
-            if result.error.code=="SAVE_WRITE_FAILED" then
+            if result.error.code=="SAVE_WRITE_FAILED" or result.error.code=="SAVE_ENCODE_FAILED" then
                 print("[PlaySaveFailure] " .. cjson.encode(result.error))
                 api.message="保存失败，本次操作未生效。请检查存储空间或写入权限，再重试。"
-            else api.message=result.error.message .. "（" .. result.error.code .. "）" end
+            elseif result.error.code=="SAVE_COMMIT_UNCERTAIN" or result.error.code=="COMMIT_RECOVERY_REQUIRED" then
+                print("[PlayRecoveryRequired] "..cjson.encode(result.error))
+                api.message="本次保存结果需要核对，请重新读取原存档；核对前暂时不能继续操作。"
+            else
+                print("[PlayActionFailure] " .. cjson.encode(result.error))
+                api.message=result.error.message
+            end
         elseif result.value and result.value.notificationErrors then api.message="进度已保存，部分通知失败；请重新读取进度核对。"
         else api.message=message or "" end
         return result
@@ -43,7 +49,8 @@ function M.New(session,content,enabled)
             draft={equipmentId=false,mainTokenId=false,auxTokenIds={},ingredients={},specialItemIds={}}
             api.failure=nil; api.trialPotion=nil
         end
-        if order and order.recipe then draft=U.Copy(order.recipe) end
+        if order and order.draft then draft=U.Copy(order.draft)
+        elseif order and order.recipe then draft=U.Copy(order.recipe) end
         if not draft.equipmentId then
             for _,equipment in ipairs(content.equipment) do
                 if data.live.economy.ownedEquipmentIds[equipment.id] then draft.equipmentId=equipment.id; break end
@@ -83,7 +90,7 @@ function M.New(session,content,enabled)
         if not active() then return api.Notify(fail("STATE_LOCKED","当前为隔离调试模式")) end
         local result=session.order.Accept({letterInstanceId=api.selectedLetter})
         if result.ok then api.page="brew" end
-        return api.Notify(result,"接单成功。首次投料前，请先剪好要用的词并补齐原料。")
+        return api.Notify(result,"接单成功。选料期间可继续剪词、采购；开始熬制后等待发货或重置。")
     end
     function api.NextDay()
         if not active() then return api.Notify(fail("STATE_LOCKED","当前为隔离调试模式")) end
@@ -135,6 +142,11 @@ function M.New(session,content,enabled)
         elseif kind=="clear" then
             nextDraft.mainTokenId=false; nextDraft.auxTokenIds={}; nextDraft.ingredients={}; nextDraft.specialItemIds={}
         else return api.Notify(fail("INVALID_REQUEST","未知投料操作")) end
+        if order.draft then
+            local result=session.order.UpdateDraft({orderId=order.orderId,draft=nextDraft})
+            if result.ok then draft=U.Copy(nextDraft); api.failure=nil; api.trialPotion=nil end
+            return api.Notify(result,"选料已保存，尚未消耗；开始熬制才冻结本次状态。")
+        end
         local kit=equipment(nextDraft.equipmentId)
         if not kit then return api.Notify(fail("CONFIG_MISSING","没有可用设备")) end
         local total=0
@@ -184,6 +196,7 @@ function M.New(session,content,enabled)
     end
     function api.CancelBrew()
         local data=api.Refresh(); local order=data and data.currentOrder
+        if order and order.draft then api.ReturnHome(); return U.Ok({phase=order.phase}) end
         if not active() or not order then return api.Notify(fail("INVALID_ORDER_STATE","没有可返回准备的订单")) end
         local result=session.order.CancelBrew({orderId=order.orderId})
         if result.ok then
@@ -196,7 +209,10 @@ function M.New(session,content,enabled)
     function api.Preview()
         local data=api.Refresh()
         if not active() or not data or not data.currentOrder or not draft.mainTokenId then return api.Notify(fail("INVALID_REQUEST","请先接单并投入主词")) end
-        local result=session.order.Preview(U.Copy(draft))
+        local request=U.Copy(draft)
+        request.orderId=data.currentOrder.orderId
+        if data.currentOrder.draft then request.baselineId=nil end
+        local result=session.order.Preview(request)
         api.trialPotion=result.ok and result.value.potion and U.Copy(result.value.potion) or nil
         if result.ok and result.value.phase=="pending" then api.page="result"; api.selectedResult=false
         elseif result.ok and result.value.requirementResult then
@@ -217,11 +233,29 @@ function M.New(session,content,enabled)
             else api.page="brew"; draft={equipmentId=draft.equipmentId,mainTokenId=false,auxTokenIds={},ingredients={},specialItemIds={},orderId=order.orderId,baselineId=order.baseline.id} end
             api.failure=nil; api.trialPotion=nil
         end
-        return api.Notify(result,confirm and "已正式确认，词卡和原料已消耗，报酬已到账。" or "已回到首次投料基准；此前剪词与已确认订单保留。")
+        return api.Notify(result,confirm and "已发货，词卡和原料已消耗，报酬已到账。" or "本次试做已记入历史，正式资源保留；可重新剪词、采购和选料。")
+    end
+    function api.Drop(kind,id)
+        if kind=="word" then return api.SelectToken(id) end
+        if kind=="ingredient" then return api.Edit("ingredient",id,1) end
+        return api.Notify(fail("INVALID_REQUEST","未知投料类型"))
+    end
+    function api.TakeOut(kind,id)
+        if kind=="word" then return api.RemoveToken(id) end
+        if kind=="ingredient" then return api.Edit("ingredient",id,-1) end
+        return api.Notify(fail("INVALID_REQUEST","未知取出类型"))
+    end
+    function api.ReturnHome() api.page="home"; api.dirty=true end
+    function api.OpenAttempt(transactionId)
+        local result=session.queries.GetAttempt(transactionId)
+        if result.ok then api.selectedAttempt=transactionId; api.page="journal"; api.dirty=true end
+        return result
     end
     api.Refresh()
     local initial=session.state.GetSnapshot()
     if initial and initial.currentOrder and initial.currentOrder.phase=="pending" then api.page="result" end
+    local status=session.state.GetStatus()
+    if status.migrationNotice then api.message=status.migrationNotice end
     return api
 end
 return M

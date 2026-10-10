@@ -79,7 +79,7 @@ def main(argv=None, entrypoint=None):
         g.B1_CONFIG_FAILURE = args.config_failure
         g.B1_ISOLATION_SCENARIO = args.debug_isolation
         g.B6_ACCEPTANCE_CHECK = args.b6_acceptance
-        g.DEVELOPMENT_CHECK = not args.numeric_v02_startup and entrypoint != 'debug.MobileFrontendTest'
+        g.DEVELOPMENT_CHECK = not args.numeric_v02_startup and entrypoint not in ('debug.MobileFrontendTest', 'debug.LandscapeEntryTest')
         if args.b6_acceptance:
             (storage / 'save_slot1.json').write_text('B6 default-slot canary', encoding='utf-8')
         if args.numeric_v02_startup:

@@ -86,7 +86,7 @@ function SaveSystem.New(storage)
         end
         local valid = U.Validate(env)
         if not valid.ok then return nil, {status="corrupt",error=valid.error} end
-        if env.schema > 2 then return nil, {status="unsupported",schema=env.schema,error=U.Error("SAVE_UNSUPPORTED", "schema", "存档来自更高版本")} end
+        if env.schema > 3 then return nil, {status="unsupported",schema=env.schema,error=U.Error("SAVE_UNSUPPORTED", "schema", "存档来自更高版本")} end
         for k in pairs(env) do
             if k ~= "schema" and k ~= "data" then return nil, {status="unsupported",error=U.Error("UNKNOWN_FIELD", k, "未知存档字段")} end
         end
@@ -97,7 +97,7 @@ function SaveSystem.New(storage)
     function api.Save(slot, data, schema)
         local valid = U.Validate(data)
         if not valid.ok then return false, valid.error end
-        if type(data) ~= "table" or (schema ~= nil and schema ~= 1 and schema ~= 2) then
+        if type(data) ~= "table" or (schema ~= nil and schema ~= 1 and schema ~= 2 and schema ~= 3) then
             return false, U.Error("SAVE_VALUE_INVALID", "data", "非法数据或结构版本")
         end
         local encoded, raw = pcall(Json.Encode, {schema=schema or 1,data=data})

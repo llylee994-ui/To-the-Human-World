@@ -111,7 +111,7 @@ local function oldVersions(check)
         local x=F.New(old); x.Prepare(); x.Pending("D")
         if phase=="confirmed" then W.Must(x.Confirm()) end
         local originalFiles=U.Copy(x.files); local events=#x.events
-        local fresh=require("core.GameSession").New(testContent(),{saveSystem=x.save,eventBus=x.bus})
+        local fresh=require("core.GameSession").New(testContent(),{saveSystem=x.save,eventBus=x.bus,targetSchema=2})
         local before=fresh.state.GetSnapshot()
         local data,status=fresh.state.Load("b5_flow")
         check(phase .. " old reusable refused",data,nil)

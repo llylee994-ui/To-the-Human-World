@@ -19,7 +19,7 @@ function GameState.New(options)
     local activeSlot
     local letters = options.letters or (options.adapters and options.adapters.letters)
     local words = options.wordTokens or (options.adapters and options.adapters.wordTokens)
-    local schemaOptions = {contentVersion=options.contentVersion,synthesisVersion=options.synthesisVersion,economy=options.economy}
+    local schemaOptions = {contentVersion=options.contentVersion,synthesisVersion=options.synthesisVersion,economy=options.economy,salvageDailyLimit=options.salvageDailyLimit}
     if letters and words and type(letters.ResolveSource)=="function" and type(words.PlanCut)=="function" then
         schemaOptions.letters, schemaOptions.wordTokens = letters, words
     end
@@ -49,7 +49,8 @@ function GameState.New(options)
     end
     local function prepare(data, schema)
         if schema == 1 then return validateV1(data) end
-        local valid = Schema.ValidateV2(data, schemaOptions)
+        local valid
+        if schema==3 then valid=Schema.ValidateV3(data,schemaOptions) else valid=Schema.ValidateV2(data,schemaOptions) end
         if not valid.ok then return valid end
         for _, key in ipairs(BLOCKS) do
             local adapter = options.adapters and options.adapters[key]
@@ -112,13 +113,18 @@ function GameState.New(options)
         if options.dataReady == false then
             return fail("config_error", options.dataError or U.Error("CONFIG_INVALID", "Data.Load", "内容校验失败，禁止写入和推进"))
         end
+        activeSlot=slot -- 首次读取失败也必须记住该槽，恢复按钮不能退到 slot1。
         local data, status = save.Load(slot)
         if status.status ~= "loaded" and status.status ~= "new" then return fail(status.status, status.error) end
         local schema, migrated = status.schema, false
         if status.status == "new" then
             if targetSchema == 1 then data = {gameFlow=flow.ValidateSnapshot(nil).value}
-            elseif options.initialState then data = U.Copy(options.initialState); schema = 2
+            elseif options.initialState then data = U.Copy(options.initialState); schema = targetSchema
             else return fail("migration_required", U.Error("CONFIG_MISSING", "initialState", "缺少完整开局配置")) end
+        elseif targetSchema==3 and (schema==1 or schema==2) then
+            local result=require("core.SaveMigrations").ToV3(data,schema,options.content,options.salvageDailyLimit,options.initialState)
+            if not result.ok then return fail("migration_required",result.error) end
+            data,schema,migrated=result.value,3,true
         elseif schema == 1 and targetSchema == 2 then
             local result = api.MigrateV1(data, options.initialState)
             if not result.ok then return fail("migration_required", result.error) end
@@ -134,16 +140,28 @@ function GameState.New(options)
             local migration=code=="RESTORER_MISSING" or code=="CONTENT_VERSION_MISMATCH" or code=="SYNTHESIS_VERSION_MISMATCH"
             return fail(migration and "migration_required" or "corrupt",checked.error)
         end
+        if migrated and targetSchema==3 then
+            activeSlot=slot -- 失败后重试仍绑定本次迁移槽，不退回默认槽。
+            busy=true
+            local called,saved,problem=pcall(save.Save,slot,checked.value,3)
+            busy=false
+            if not called then
+                activeSlot=slot
+                return fail("recovery_required",type(saved)=="table" and saved or U.Error("SAVE_UNEXPECTED","migration",tostring(saved)))
+            end
+            if not saved then return fail("migration_required",problem) end
+        end
         busy=true
         ---@type boolean, any
         local installed, applied = pcall(install, checked.value, schema)
         busy=false
-        if not installed then return fail("corrupt", U.Error("RESTORE_FAILED", "data", tostring(applied))) end
-        if not applied.ok then return fail("corrupt", applied.error) end
+        if not installed then return fail(migrated and "recovery_required" or "corrupt", U.Error("RESTORE_FAILED", "data", tostring(applied))) end
+        if not applied.ok then return fail(migrated and "recovery_required" or "corrupt", applied.error) end
         envelope = U.Copy(checked.value)
         activeSlot = slot
         locked = false
         last = {status=migrated and "migrated" or status.status,schema=schema}
+        if migrated and schema==3 then last.migrationNotice="旧档已升级；无正文的旧试做不补历史，旧选料需重选，今日捕捞额度保守用尽，明日恢复。" end
         busy=true
         local notified,problem=pcall(options.eventBus.Emit,"SaveLoaded",U.Copy(last))
         busy=false
@@ -176,22 +194,22 @@ function GameState.New(options)
         return result,problem
     end
     local function commit(candidate,value,events)
-        local valid=prepare(candidate,2)
+        local valid=prepare(candidate,targetSchema)
         if not valid.ok then return valid end
-        local called,ok,err=pcall(save.Save,activeSlot,valid.value,2)
+        local called,ok,err=pcall(save.Save,activeSlot,valid.value,targetSchema)
         if not called then
             local reason=type(ok)=="table" and ok or U.Error("SAVE_UNEXPECTED","save",tostring(ok))
             fail("recovery_required",reason)
             return {ok=false,error=reason}
         end
         if not ok then return {ok=false,error=err} end
-        local applied,result=pcall(install,valid.value,2)
+        local applied,result=pcall(install,valid.value,targetSchema)
         if not applied or not result.ok then
             local reason=U.Error("COMMIT_RECOVERY_REQUIRED","restore","存档已提交但安装失败，必须读取同一存档对账",{committed=true,slot=activeSlot or "slot1"})
             fail("recovery_required",reason)
             return {ok=false,error=reason}
         end
-        envelope=U.Copy(valid.value); last={status="loaded",schema=2}
+        envelope=U.Copy(valid.value); last={status="loaded",schema=targetSchema}
         value=U.Copy(value); value.revision=candidate.revision
         local errors={}
         for _,event in ipairs(events or {}) do
@@ -208,6 +226,16 @@ function GameState.New(options)
         local enabled,code,message=true,"",""
         local phase=envelope and envelope.currentOrder and envelope.currentOrder.phase or "idle"
         if not api.CanMutate() then enabled,code,message=false,"STATE_LOCKED","请先读取存档排除配置或提交错误"
+        elseif targetSchema==3 then
+            local order=envelope and envelope.currentOrder
+            if phase=="pending" and not ({GetView=true,Save=true,Preview=true,Confirm=true,Reset=true})[name] then
+                enabled,code,message=false,"ORDER_LOCKED","请先发货或重置本次结果"
+            elseif name=="BeginBrew" or name=="CancelBrew" then enabled,code,message=false,"DEPRECATED_COMMAND","返回桌前仅导航；选料请更新草稿"
+            elseif name=="ClaimAttachment" or (name=="Shop" and options.shopEnabled~=true) then enabled,code,message=false,"NOT_IMPLEMENTED","操作尚未接入"
+            elseif name=="NextDay" and order and not require("systems.RecipeDraft").IsEmpty(order.draft) then enabled,code,message=false,"DRAFT_NOT_EMPTY","请先清空投料再跨天"
+            elseif (name=="Confirm" and phase~="pending") or ((name=="Preview" or name=="UpdateDraft" or name=="Reset") and phase=="idle") or (name=="Accept" and phase~="idle") then
+                enabled,code,message=false,"INVALID_ORDER_STATE","当前阶段不支持此操作"
+            end
         elseif name=="CancelBrew" then
             local order=envelope and envelope.currentOrder
             if not order then enabled,code,message=false,"INVALID_ORDER_STATE","请先接单"
@@ -226,7 +254,7 @@ function GameState.New(options)
     function api.OrderCommand(kind,request)
         if busy then return U.Fail("COMMAND_BUSY","GameState","候选提交期间禁止嵌套命令") end
         if not api.CanMutate() then return U.Fail("STATE_LOCKED","GameState","请先排除配置或提交错误") end
-        if targetSchema~=2 or not options.order then return U.Fail("RESTORER_MISSING","Order","订单恢复器未接入") end
+        if targetSchema<2 or not options.order then return U.Fail("RESTORER_MISSING","Order","订单恢复器未接入") end
         busy=true
         local called,result=pcall(function()
             local current=api.GetSnapshot()
@@ -241,15 +269,19 @@ function GameState.New(options)
     end
     function api.NextDay()
         if not api.CanMutate() then return U.Fail("STATE_LOCKED", "GameState", "当前禁止推进") end
-        if targetSchema==2 and envelope and envelope.currentOrder~=false and envelope.currentOrder.phase~="accepted" then
+        if targetSchema>=2 and envelope and envelope.currentOrder~=false and envelope.currentOrder.phase~="accepted" then
             return U.Fail("ORDER_LOCKED","currentOrder.phase","已建立炼药基准或待确认，禁止跨天")
         end
-        if targetSchema==2 then
+        if targetSchema==3 and envelope and envelope.currentOrder and not require("systems.RecipeDraft").IsEmpty(envelope.currentOrder.draft) then
+            return U.Fail("DRAFT_NOT_EMPTY","draft","请先清空投料再跨天")
+        end
+        if targetSchema>=2 then
             busy=true
             local called,result=pcall(function()
                 local candidate=api.GetSnapshot()
                 local before=candidate.live.gameFlow.day
                 candidate.live.gameFlow.day=before+1; candidate.live.gameFlow.phase="day"; candidate.live.gameFlow.canSalvage=true
+                if targetSchema==3 then candidate.live.gameFlow.salvageUsedToday=0 end
                 candidate.revision=candidate.revision+1
                 return commit(candidate,{day=before+1},{{name="DayEnded",payload={day=before}},{name="DayStarted",payload={day=before+1}}})
             end)
@@ -265,7 +297,7 @@ function GameState.New(options)
     local function command(kind,request)
         if busy then return U.Fail("COMMAND_BUSY","GameState","候选提交期间禁止嵌套操作") end
         if not api.CanMutate() then return U.Fail("STATE_LOCKED","GameState","请先排除配置、读档或提交错误") end
-        if targetSchema ~= 2 then return U.Fail("V2_REQUIRED","schema","完整 v2 尚未启用，不能保存信件或词条") end
+        if targetSchema < 2 then return U.Fail("V2_REQUIRED","schema","完整 v2 尚未启用，不能保存信件或词条") end
         if not envelope or not schemaOptions.letters or not schemaOptions.wordTokens then return U.Fail("RESTORER_MISSING","letters/wordTokens","真实信件和词条恢复器尚未接入") end
         busy = true
         local called,result = pcall(function()
@@ -275,7 +307,7 @@ function GameState.New(options)
             valid = U.Keys(request,allowed,"request")
             if not valid.ok then return valid end
             local current = api.GetSnapshot()
-            valid = prepare(current,2)
+            valid = prepare(current,targetSchema)
             if not valid.ok then return valid end
             if current.currentOrder ~= false and current.currentOrder.phase ~= "accepted" then
                 return U.Fail("ORDER_LOCKED","currentOrder.phase","已建立炼药基准或待确认，禁止改变信件和词条",{phase=current.currentOrder.phase})
@@ -303,26 +335,30 @@ function GameState.New(options)
                 for _, id in ipairs(available.value) do if id==request.letterId then found=true end end
                 if not found then return U.Fail("LETTER_NOT_AVAILABLE","letterId","该信尚未满足出现条件") end
             end
+            if kind=="receive" and targetSchema==3 then
+                candidate.live.gameFlow.salvageUsedToday=current.live.gameFlow.salvageUsedToday+1
+                candidate.live.gameFlow.canSalvage=candidate.live.gameFlow.salvageUsedToday<options.salvageDailyLimit and candidate.live.gameFlow.phase=="day"
+            end
             candidate.live.letters=planned.value.state
             candidate.revision=current.revision+1
             if not U.Integer(candidate.revision) then return U.Fail("STATE_INVALID","revision","版本计数溢出") end
-            valid=prepare(candidate,2)
+            valid=prepare(candidate,targetSchema)
             if not valid.ok then return valid end
-            local saved,ok,err=pcall(save.Save,activeSlot,candidate,2)
+            local saved,ok,err=pcall(save.Save,activeSlot,candidate,targetSchema)
             if not saved then
                 local reason=type(ok)=="table" and ok or U.Error("SAVE_UNEXPECTED","save",tostring(ok))
                 fail("recovery_required",reason)
                 return {ok=false,error=reason}
             end
             if not ok then return {ok=false,error=err} end
-            local installed,applied=pcall(install,valid.value,2)
+            local installed,applied=pcall(install,valid.value,targetSchema)
             if not installed or not applied.ok then
                 local reason=U.Error("COMMIT_RECOVERY_REQUIRED","restore","完整候选已提交，安装失败；必须读取同一存档对账",{committed=true,slot=activeSlot or "slot1"})
                 fail("recovery_required",reason)
                 return {ok=false,error=reason}
             end
             envelope=U.Copy(valid.value)
-            last={status="loaded",schema=2}
+            last={status="loaded",schema=targetSchema}
             value.revision=candidate.revision
             local events=kind=="receive" and {"LetterReceived"} or kind=="read" and {"LetterRead"} or {"WordCut","WordStored"}
             local notifications={}
@@ -344,11 +380,11 @@ function GameState.New(options)
     function api.Shop(request)
         local action=api.CheckAction("Shop")
         if not action.enabled then return U.Fail(action.reasonCode,"Shop",action.message) end
-        if targetSchema~=2 or not options.economy or not options.economy.PlanPurchase then return U.Fail("NOT_IMPLEMENTED","Shop","商店账本尚未接入") end
+        if targetSchema<2 or not options.economy or not options.economy.PlanPurchase then return U.Fail("NOT_IMPLEMENTED","Shop","商店账本尚未接入") end
         busy=true
         local called,result=pcall(function()
             local current=api.GetSnapshot()
-            local valid=prepare(current,2)
+            local valid=prepare(current,targetSchema)
             if not valid.ok then return valid end
             local planned=options.economy.PlanPurchase(current.live.economy,request,current.live.gameFlow)
             if not planned.ok then return planned end

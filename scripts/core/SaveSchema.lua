@@ -205,4 +205,35 @@ function Schema.ValidateV2(data, options)
     if not ok then return {ok=false,error=type(err) == "table" and err or U.Error("STATE_INVALID", "data", tostring(err))} end
     return U.Ok(U.Copy(data))
 end
+function Schema.ValidateV3(data,options)
+    local valid=U.Validate(data)
+    if not valid.ok then return valid end
+    local ok,err=pcall(function()
+        object(data,"contentVersion revision nextOrderSerial live currentOrder journal","data")
+        local flow=Flow.New(options.salvageDailyLimit)
+        local function checkFlow(l)
+            local result=flow.ValidateSnapshot(l.gameFlow)
+            if not result.ok then error(result.error,0) end
+        end
+        checkFlow(data.live)
+        local order=data.currentOrder
+        if order then
+            object(order,"orderId letterInstanceId phase baseline recipe pending nextAttemptSerial lastResetTransactionId draft","currentOrder")
+            need(order.phase=="accepted" or order.phase=="pending","currentOrder.phase")
+            if order.phase=="pending" then
+                checkFlow(order.baseline.live); checkFlow(order.pending.candidateLive)
+                need(U.Equal(order.baseline.live,data.live),"baseline.live")
+                need(order.baseline.id==order.recipe.baselineId,"baseline.id")
+                need(U.Equal(order.pending.candidateLive.gameFlow,{day=data.live.gameFlow.day,phase=data.live.gameFlow.phase,
+                    canSalvage=data.live.gameFlow.canSalvage,mainStoryStage=data.live.gameFlow.mainStoryStage,
+                    salvageUsedToday=data.live.gameFlow.salvageUsedToday,deliveredOrders=data.live.gameFlow.deliveredOrders+1}),"candidateLive.gameFlow")
+            end
+        end
+        local old=require("core.SchemaProjection").V2(data)
+        local legacy=Schema.ValidateV2(old,options)
+        if not legacy.ok then error(legacy.error,0) end
+    end)
+    if not ok then return {ok=false,error=type(err)=="table" and err or U.Error("STATE_INVALID","data",tostring(err))} end
+    return U.Ok(U.Copy(data))
+end
 return Schema

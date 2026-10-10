@@ -40,6 +40,8 @@ local session_ = {}
 local legacyDebugState_ = {}
 local startupStatus_ = ""
 local ledgerStatus_ = ""
+local dismissedPlayerError_ = false
+local observedPlayerStatus_ = ""
 ---@type string
 local b1Request_ = require "debug.B1RunRequest"
 ---@type string
@@ -83,7 +85,8 @@ function Start()
     if b6Request_ == "b6_uncertain_20261004_a" then
         sessionSave = require("debug.B6UncertainStorage").New(SaveSystem, b6Request_)
     end
-    session_ = GameSession.New(Data,{gameFlow=GameFlow,saveSystem=sessionSave,eventBus=EventBus,dataReady=dataReady,dataError=dataError})
+    session_ = GameSession.New(Data,{gameFlow=GameFlow,saveSystem=sessionSave,eventBus=EventBus,dataReady=dataReady,dataError=dataError,
+        targetSchema=b6Request_~="off" and 2 or 3}) -- 仅显式旧 B6 验收入口保留 schema 2。
     gameState_ = session_.state
 
     -- 仅无存档时新开局；配置/读档失败保留诊断并锁定写入和推进。
@@ -99,7 +102,7 @@ function Start()
     DebugPanel.Log(startupStatus_)
     if developerMode_ and status.status ~= "loaded" and status.status ~= "new" then DebugPanel.SetVisible(true) end
 
-    print(string.format("=== %s 启动完成（第 %d 天）===", TITLE, GameFlow.GetDay()))
+    print(string.format("=== %s 启动完成（第 %d 天）===", TITLE, session_.modules.gameFlow.GetDay()))
 end
 
 function LoadProgress(slotName)
@@ -214,6 +217,20 @@ function CreateUI()
 
     playView_=PlayView.New(session_,Data,function() return gameState_==session_.state end)
     assert(root:FindById("mainPanel")):AddChild(playView_.root)
+    -- 正式错误提示由入口拥有；关闭仅收起提示，协调器保持锁定，可同槽重试。
+    if not developerMode_ then
+        local panel=assert(root:FindById("mainPanel"))
+        panel:AddChild(UI.Panel {id="playerSaveError",width="100%",flexDirection="column",gap=12,visible=false,children={
+            UI.Label {text="进度暂时无法读取或保存。原存档已保留，请重新读取后继续。",whiteSpace="normal",width="100%",fontSize=18},
+            UI.Button {id="playerSaveErrorClose",text="关闭提示",minHeight=48,onClick=function() dismissedPlayerError_=true; RefreshHeader() end},
+        }})
+        panel:AddChild(UI.Button {id="playerSaveRetry",text="重新读取原存档",minHeight=48,visible=false,onClick=function()
+            dismissedPlayerError_=false
+            local _,status=gameState_.ReloadCurrent()
+            if status.error then print("[PlayerRecovery] "..cjson.encode(status.error)) end
+            RefreshHeader()
+        end})
+    end
 
     -- 调试面板挂到 SafeAreaView 下，先入树再 SetRoot，避免根控件设定后补挂导致首帧不渲染
     if developerMode_ then
@@ -250,8 +267,21 @@ function RefreshHeader()
     if not dayLabel_ then
         return
     end
-    dayLabel_:SetText(string.format("第 %d 天 · 时段 %s", GameFlow.GetDay(), GameFlow.GetPhase()))
+    ---@type table
+    local flow=gameState_==legacyDebugState_ and GameFlow or session_.modules.gameFlow
+    dayLabel_:SetText(string.format("第 %d 天 · 时段 %s", flow.GetDay(), flow.GetPhase()))
     if uiRoot_ then
+        if not developerMode_ then
+            local status=gameState_.GetStatus()
+            observedPlayerStatus_=status.status
+            local locked=status.status~="new" and status.status~="loaded" and status.status~="migrated"
+            if not locked then dismissedPlayerError_=false end
+            local errorPanel=uiRoot_:FindById("playerSaveError")
+            local retry=uiRoot_:FindById("playerSaveRetry")
+            if errorPanel then errorPanel:SetVisible(locked and not dismissedPlayerError_) end
+            if retry then retry:SetVisible(locked) end
+            if playView_ then playView_.root:SetVisible(not locked) end
+        end
         local statusLabel = uiRoot_:FindById("saveStatusLabel") --[[@as Label?]]
         if statusLabel then statusLabel:SetText(DebugPanel.DescribeStatus(gameState_.GetStatus()) .. ledgerStatus_) end
     end
@@ -308,6 +338,7 @@ end
 ---@param _eventType string
 ---@param eventData UpdateEventData
 function HandleUpdate(_eventType, eventData)
+    if not developerMode_ and observedPlayerStatus_~=gameState_.GetStatus().status then RefreshHeader() end
     local timeStep = eventData["TimeStep"]:GetFloat()
     DebugPanel.Update(timeStep)
     if playView_ then playView_.Update() end
