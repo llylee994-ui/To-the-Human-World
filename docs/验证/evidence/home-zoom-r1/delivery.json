@@ -1,0 +1,93 @@
+{
+  "version": "C-HOME-ZOOM-20261011-r1-v01",
+  "baselineVersion": "C-HOME-ENTRY-20261010-r3-v02",
+  "baselineCommit": "0136ebda0b692d010aad740894f3386fd9aa0dc2",
+  "projectRevision": 201,
+  "pageRevision": 189,
+  "parameters": {
+    "startScale": 1,
+    "targetScale": 1.15,
+    "durationSeconds": 0.45,
+    "easing": "smoothstep t*t*(3-2*t)",
+    "anchorDesign": [
+      600,
+      540
+    ],
+    "anchorNormalized": [
+      0.3125,
+      0.5
+    ],
+    "gapCancelSeconds": 0.25
+  },
+  "destination": "existing seaside renderer in Panels.lua",
+  "officialSeasideArtIntegrated": false,
+  "visualsAndHotspotsPreserved": true,
+  "assetsUnchanged": true,
+  "onlyTrigger": "home.net",
+  "checks": {
+    "zoomStateAssertions": 383,
+    "homeEntryAssertions": 303,
+    "hitFeedbackAssertions": 210706,
+    "nativePlayback": "UNVERIFIED: preview not alive; no start permitted",
+    "osMouse": "UNVERIFIED",
+    "phone": "UNVERIFIED",
+    "offlineFrames": 20,
+    "offlineAspectRatios": [
+      "16:9",
+      "19.5:9",
+      "20:9",
+      "4:3"
+    ]
+  },
+  "interruptionPolicy": "cancel on observed focus loss/minimize, fit change, dt or elapsed gap > .25s, or root destruction; reset scale/blocker; no deferred navigation",
+  "changedFileSha256": {
+    "scripts/ui/landscape/AppView.lua": "95113c2b69b1b45db5afd68a32d93437a061122737a4508eb2965729189aa19c",
+    "scripts/ui/landscape/HomeView.lua": "874777165ec7184e7a36bc31c79ae9bbd0b06e05b299c6f16bfd5c38a2637bcd",
+    "scripts/ui/landscape/HomeZoom.lua": "6ab022d3ec3d6eb7c73c4a148e44055740e5ec961e20635c3e936cfbb6dadf2b",
+    "scripts/ui/landscape/tests/HomeEntryTest.lua": "0a0bd876f3e1074d1966e11e41b7192457f3052462728406c4c1cffa61cfbf48",
+    "scripts/ui/landscape/tests/HomeZoomTest.lua": "377e8d02d0b093ff9bf0af21ebba2605e4532b1fb7fffe6fbfe1e024dc4856bb",
+    "scripts/ui/landscape/tests/ZoomTestHost.lua": "d56dd822cb6da21a11bba262ab2c3fb390e9a5a0f003f0924a503834c5e8b3db",
+    "scripts/ui/landscape/tests/run_home_zoom.py": "c646b6f6def498543d2d601f3c5008e8ad7b771b22a0eb6bd542122d4a33c87d",
+    "scripts/ui/landscape/tests/export_zoom_evidence.py": "793c076988b62c268a71fe4a574b1cf8685eaeafc9b673dae00492541bf365c7",
+    "scripts/ui/landscape/tests/verify_zoom_delivery.py": "502954b302008569e55c0d7177a1898049ab8b17fd9b69ea07a8d54905f82828",
+    "scripts/actions/2026-10-11-home-zoom-r1.md": "1c90c8dc20b6c3fbc9fbd11c8010bcdd604fe0ab8e92bc02f7c29ab17b63cace"
+  },
+  "evidenceSha256": {
+    "hit-feedback.log": "2c80e3c870992facf47a4dcc03c73b89f61fca29843537b68b4414d0c25b856a",
+    "home-entry.log": "25d13c4a183569506ba3ba6b3295bc437aae8eacf43362b2bafa6b037e97301d",
+    "lsp-sandbox-failed.log": "adfece0e15ae01ed48aaf114df3b47cb4014f8af34c96c4a0ac70614103a4ea7",
+    "lsp-service.log": "474218adc14c3f0ef472ed2811fb7cc851c9f423004b9a898742fba389e7e1aa",
+    "lua-diagnostics.log": "0fa6c3df78d247f6b8aa0af192d8efb2d5c43901e480f09efa5a525ca8408fcd",
+    "lua-errors.log": "96cd5f84dde954f36dcc81ac274bacee1d1f80f5c3109d12a78f19bd613bc9fc",
+    "offline-1024-before-end.png": "60f158724283642dcd9224d4413861d6d134a59f277ffe8490081decfef06533",
+    "offline-1024-middle.png": "81fcf28f7834ef0129ea16be9a1a50046c54f9c6d1b7972cad8aec5f63395cfb",
+    "offline-1024-returned.png": "7a945f9d047b707a114d13ac7e2334fde904d6cd37176cfac3385ef757a95c17",
+    "offline-1024-seaside.png": "da130034c162caf8aa09f29c1c39d4e8e51ac77be1f4f2179ff236ea2675dd8b",
+    "offline-1024-start.png": "69e1a12acb91bf76c1bd89460fadd19d70b8b8d92c4dff94d388f0736540f211",
+    "offline-1280-before-end.png": "6ea93227a552638344172da3dd1e678756efe8550fa8f7f89f886dfa3d582517",
+    "offline-1280-middle.png": "6ef26f43edb0279282d8bd3223070df49759d53364a367cc963eb091ea5aea8b",
+    "offline-1280-returned.png": "f8208151dce6a0a499640f1a5f94d679563a5076829796092c30640f2d337520",
+    "offline-1280-seaside.png": "5b6f05e04bb58719cd134d301a9bc5e47dbaafb61cdf8cff08bac9eb2c9fef27",
+    "offline-1280-start.png": "e12263843450144b99b5c7ef6a85e71c2acd1a9bd9086a056519214987291bfc",
+    "offline-1560-before-end.png": "18ba3e127de242adac3f1d636a181be15a664da4988c6dbd17b7ef40c3b62b75",
+    "offline-1560-middle.png": "a2baf70346387e3f08d820a4029b5b1f0071a97a5fa6a92e7d8ceeb3f4d60c79",
+    "offline-1560-returned.png": "222f5f18b75ccb769c4c719d9c92f209736e99f016908f8b2fa70afde2682732",
+    "offline-1560-seaside.png": "00728ce44eabe183c502421f05d33a54e6e10e79b568711a910da6ac4e3c9fdb",
+    "offline-1560-start.png": "3e9161ca0a46c16d3da2e63857cec56a149d689eef8aeec5d62ae8e56855ccd7",
+    "offline-1600-before-end.png": "402cb9dc1ddbf709606b263af3ecb2ddb0eb386eb8ed393f7bc95de01914453e",
+    "offline-1600-middle.png": "ee825a70d5f1189bbf4d704f56a8a3d0e0f3e863bc3a43a2f2b71937833cbb72",
+    "offline-1600-returned.png": "6eb854d5ccea99ac5108043e65ef439fb5e5590614a64b2fbd4daaf8a0693ba8",
+    "offline-1600-seaside.png": "e4813d78833406e5a83185470854848b49f51da93c734db7bdec6f536a4f7c1a",
+    "offline-1600-start.png": "b53fa9e9c5b00a8b2b79434cb35117579a972086fcfc90a308e79eb8172d04d6",
+    "offline-export.log": "a462d058aa5d47c7779ee3bab4fd7b30207af4ab8bf0f3dd709fa0ed1ac80882",
+    "offline-sequence-1024.png": "d24b535a0480d0e0e5ce2ea910e404388ec36204ffc59ee507e316262db605d3",
+    "offline-sequence-1280.png": "c2125e2bcb039403a2fb68c9e23c240007b1ff5847777c56e43e826f905a86aa",
+    "offline-sequence-1560.png": "439f30aaf5a3d40fd83cf512aaa97b15196b56f13cfe622cc3f5949ae7d95f8c",
+    "offline-sequence-1600.png": "5184bca1b28ec549ef28e707b4c96f664015f65f6fd8ac6fbd561d423eead929",
+    "offline-timeline.json": "db02bf625c03c3169c6e81845bb486fa0ad0d0c12aa0c4674a8f7b46e31bd29b",
+    "preview-status-final.json": "7fc19273a6e3f8b5aedfac7e929132273ff565df227cc372d9e4e7fc8b8bec76",
+    "preview-status.json": "7fc19273a6e3f8b5aedfac7e929132273ff565df227cc372d9e4e7fc8b8bec76",
+    "zoom-test.log": "214cc1eb28840bc10222a62b7ff5ee19cda44f191b8b89f510a81bc31e95fc43"
+  },
+  "commitPolicy": "baseline v02 committed locally; current zoom work uncommitted; no push/build/binding change"
+}

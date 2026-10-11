@@ -13,12 +13,17 @@ local function must(r) assert(r.ok,cjson.encode(r.error)); return r.value end
 local function trace(value) print("[HomeEntry] "..value) end
 function T.Run()
     package.loaded["debug.DeveloperMode"]=false
+    local zoomHost=require("ui.landscape.tests.ZoomTestHost").New()
     local x=F.New(Data,{targetSchema=3})
     local view=View.New(x.session,Data)
     local function control(id) return assert(view.root:FindById(id),"control missing: "..id) end
     local function click(id,force)
         local b=control(id); check(force or not b:GetProps().disabled,"button disabled: "..id)
+        if id=="home.net" then zoomHost.Bind(view.root) end
         b:GetProps().onClick(); view.Update()
+        if id=="home.net" then
+            for _=1,28 do if view.zoom.active then zoomHost.Step(view,1/60) end end
+        end
     end
     local function capture(name)
         local export=rawget(_G,"HOME_EVIDENCE")

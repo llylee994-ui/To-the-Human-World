@@ -2,6 +2,7 @@ local UI=require "urhox-libs/UI"
 local Model=require "ui.PlayModel"
 local Home=require "ui.landscape.HomeView"
 local Panels=require "ui.landscape.Panels"
+local Zoom=require "ui.landscape.HomeZoom"
 local A={}
 local side={words="left",journal="right"}
 local titles={letters="来信抽屉",reader="阅读信件",words="词条栏",journal="故事记录",attempt="试做记录",shop="商队商店",case="案件板",day="结束当天",result="试做结果"}
@@ -31,26 +32,51 @@ function A.New(session,content,enabled)
     local ctx={root=root,model=model,session=session,content=content,
         scene="home" --[[@as string]],panel=false --[[@as string|false]],stack={},
         storyId=false --[[@as string|false]],readerCache=false --[[@as table|false]],choosingLetter=false --[[@as boolean]],
-        panelNotice=false --[[@as Label|false]]}
-    local home=Home.New(function(target) ctx.Open(target) end,developer); stage:AddChild(home.root); ctx.home=home
+        panelNotice=false --[[@as Label|false]],zoom=Zoom.New(),destroyed=false --[[@as boolean]]}
+    local home=Home.New(function(target,id)
+        if id=="home.net" then ctx.BeginHomeZoom() else ctx.Open(target) end
+    end,developer); stage:AddChild(home.root); ctx.home=home
     home.SetInspect(require("ui.landscape.DevChecks").hotspots)
     local scene=UI.Panel {id="functionalScene",position="absolute",left=0,top=0,width="100%",height="100%",visible=false,backgroundColor={238,228,203,255}}
     stage:AddChild(scene)
     local overlay=UI.Panel {id="overlayHost",position="absolute",left=0,top=0,width="100%",height="100%",pointerEvents="box-none"}
     root:AddChild(overlay)
+    -- Stable topmost blocker: blocks HUD and all room inputs without rebuilding the tree.
+    local zoomBlocker=UI.Panel {id="homeZoomBlocker",position="absolute",left=0,top=0,width="100%",height="100%",
+        zIndex=1000,visible=false,pointerEvents="box-only",onClick=function() end}
+    root:AddChild(zoomBlocker)
+    function ctx.CancelHomeZoom(reason)
+        ctx.zoom.Reset(reason);home.SetZoom(1);home.SetBlocked(false);zoomBlocker:SetVisible(false)
+    end
+    function ctx.BeginHomeZoom()
+        if ctx.destroyed or ctx.scene~="home" or (ctx.panel and not side[ctx.panel]) then return false end
+        if not ctx.zoom.Start(home.Fit(),GetTime():GetElapsedTime()) then return false end
+        home.SetBlocked(true);zoomBlocker:SetVisible(true)
+        if ctx.panel then ctx.panel=false;ctx.stack={};model.dirty=true end
+        return true
+    end
+    local destroyRoot=root.Destroy
+    function root:Destroy()
+        ctx.destroyed=true;ctx.CancelHomeZoom("destroyed");destroyRoot(self)
+    end
     function ctx.Navigate(target)
+        if ctx.destroyed then return end
+        ctx.CancelHomeZoom("navigate")
         ctx.scene=target; ctx.panel=false; ctx.stack={}; ctx.readerCache=false; ctx.choosingLetter=false
         if target=="home" then model.ReturnHome() else model.Navigate(target) end
         model.dirty=true
     end
     function ctx.Push(kind)
+        if ctx.destroyed or ctx.zoom.active then return end
         ctx.stack[#ctx.stack+1]=ctx.panel or false; ctx.panel=kind; ctx.readerCache=false; model.dirty=true
     end
     function ctx.Close()
+        if ctx.destroyed or ctx.zoom.active then return end
         ctx.panel=table.remove(ctx.stack) or false; ctx.readerCache=false
         model.Navigate(ctx.panel=="reader" and "letter" or ctx.scene)
     end
     function ctx.Read(id)
+        if ctx.destroyed or ctx.zoom.active then return end
         local result=model.Read(id)
         if result.ok then ctx.Push("reader"); ctx.choosingLetter=false end
         return result
@@ -66,6 +92,7 @@ function A.New(session,content,enabled)
         else ctx.panel="letters"; ctx.stack={}; ctx.choosingLetter=true; model.dirty=true end
     end
     function ctx.Open(kind)
+        if ctx.destroyed or ctx.zoom.active then return end
         if kind=="paper" then ctx.OpenPaper(); return end
         if kind=="home" or kind=="brew" or kind=="seaside" then ctx.Navigate(kind); return end
         ctx.panel=kind; ctx.stack={}; ctx.readerCache=false; ctx.choosingLetter=false; model.dirty=true
@@ -77,6 +104,7 @@ function A.New(session,content,enabled)
     hud:AddChild(UI.Button {id="nextDay",text="结束当天",width=108,minHeight=44,fontSize=15,onClick=function() ctx.Open("day") end})
     if developer then
         hud:AddChild(UI.Button {id="toggleHomeHotspots",text="热区检查",width=98,minHeight=44,onClick=function()
+            if ctx.zoom.active then return end
             home.SetInspect(not home.inspect); model.dirty=true
         end})
     end
@@ -106,6 +134,15 @@ function A.New(session,content,enabled)
         assert(Panels.Renderers[kind])(ctx,body)
     end
     function ctx.Update()
+        if ctx.destroyed then return end
+        -- main already calls this every Update. Advance BEFORE the business dirty guard.
+        if ctx.zoom.active then
+            local clock=GetTime()
+            local result=ctx.zoom.Update(clock:GetTimeStep(),home.Fit(),input:HasFocus() and not input:IsMinimized(),clock:GetElapsedTime())
+            home.SetZoom(ctx.zoom.scale)
+            if result=="complete" then ctx.Navigate("seaside")
+            elseif result=="cancelled" then ctx.CancelHomeZoom(ctx.zoom.reason) end
+        end
         if nativeProbe then nativeProbe(ctx) end
         if not model.dirty then return end
         model.dirty=false

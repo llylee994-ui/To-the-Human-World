@@ -1,0 +1,249 @@
+2026-10-11 20:40:08,155 - 30664 - WARNING - .luarc.json 不存在: D:\taptap\To-the-Human-World\scripts\.emmyrc.json
+2026-10-11 20:40:08,296 - 30664 - INFO - 使用 LSP: C:\Users\YINGYI\.taptap-maker\lua-lsp-venv\Lib\site-packages\maker_lua_lsp\bin\emmylua_ls.exe
+2026-10-11 20:40:08,297 - 30664 - INFO - 监视目录: D:\taptap\To-the-Human-World\scripts
+2026-10-11 20:40:08,298 - 30664 - INFO - EmmyLua 类型: D:\taptap\To-the-Human-World\.emmylua
+2026-10-11 20:40:08,298 - 30664 - INFO - 
+============================================================
+2026-10-11 20:40:08,301 - 30664 - INFO -  Lua LSP 服务器 v0.22.2 - EmmyLuaLS (持续监视模式)
+2026-10-11 20:40:08,301 - 30664 - INFO - ============================================================
+2026-10-11 20:40:08,302 - 30664 - INFO - 监视目录: D:\taptap\To-the-Human-World\scripts
+2026-10-11 20:40:08,302 - 30664 - INFO - EmmyLua:  D:\taptap\To-the-Human-World\.emmylua
+2026-10-11 20:40:08,302 - 30664 - INFO - 完整报告: D:\taptap\To-the-Human-World\logs\home-zoom-r1-lsp-final\lua_diagnostics.log
+2026-10-11 20:40:08,303 - 30664 - INFO - 错误报告: D:\taptap\To-the-Human-World\logs\home-zoom-r1-lsp-final\lua_errors.log
+2026-10-11 20:40:08,303 - 30664 - INFO - ============================================================
+
+2026-10-11 20:40:08,303 - 30664 - INFO - 正在启动 Lua LSP 服务器...
+2026-10-11 20:40:08,303 - 30664 - INFO - LSP 启动参数: C:\Users\YINGYI\.taptap-maker\lua-lsp-venv\Lib\site-packages\maker_lua_lsp\bin\emmylua_ls.exe --communication stdio --log-level warn --log-path none --resources-path none
+2026-10-11 20:40:08,319 - 30664 - INFO - emmylua_ls 进程已启动
+2026-10-11 20:40:10,822 - 30664 - INFO - LSP 连接已初始化（配置通过 workspace/configuration 注入）
+2026-10-11 20:40:10,822 - 30664 - INFO - 
+============================================================
+2026-10-11 20:40:10,823 - 30664 - INFO - 🔍 等待 EmmyLua 工作区诊断...
+2026-10-11 20:40:10,827 - 30664 - INFO - ============================================================
+2026-10-11 20:40:10,828 - 30664 - INFO - workspace/configuration 请求: items=[{"scopeUri": "file:///D:/taptap/To-the-Human-World/scripts", "section": "emmylua"}]
+2026-10-11 20:40:10,828 - 30664 - INFO - emmylua_ls: init logger success with file: file:///C:/Users/YINGYI/AppData/Local/emmylua_ls/logs/D_taptap_To-the-Human-World_scripts.log
+2026-10-11 20:40:10,836 - 30664 - INFO - workspace/configuration 已响应 override 配置 (1 items)
+2026-10-11 20:40:10,837 - 30664 - INFO - workspace/configuration payload: {"runtime": {"version": "Lua5.4", "requireLikeFunction": ["tolua"], "special": {"tolua": "require"}}, "workspace": {"library": ["D:\\taptap\\To-the-Human-World\\.emmylua"], "packages": ["D:\\taptap\\To-the-Human-World\\urhox-libs"]}, "diagnostics": {"enable": true, "globals": ["tolua"], "severity": {"missing-parameter": "error", "param-type-mismatch": "error", "assign-type-mismatch": "error", "return-type-mismatch": "error", "type-not-found": "error", "undefined-doc-param": "error", "circle-doc-
+2026-10-11 20:40:15,837 - 30664 - INFO - 
+============================================================
+诊断摘要
+============================================================
+检查文件数: 0
+错误: 0 | 警告: 0 | 信息: 0 | 提示: 0
+============================================================
+
+2026-10-11 20:40:15,842 - 30664 - INFO - ✓ 初始诊断同步完成
+2026-10-11 20:40:15,846 - 30664 - INFO - 文件监视器已启动 (block=True, observer.alive=True, handler=(<class 'watchdog.events.FileSystemEventHandler'>,))
+2026-10-11 20:40:27,296 - 30664 - INFO - client/registerCapability: ['**/*.lua', '**/.editorconfig', '**/.emmyrc.json', '**/.emmyrc.lua', '**/.luarc.json']
+2026-10-11 20:40:27,317 - 30664 - INFO - ✓ B6Evidence.lua - 没有问题
+2026-10-11 20:40:27,336 - 30664 - INFO - ✓ gameplay.lua - 没有问题
+2026-10-11 20:40:27,355 - 30664 - INFO - ✓ PlayView.lua - 没有问题
+2026-10-11 20:40:27,375 - 30664 - INFO - ✓ B6NativeSaveProbe.lua - 没有问题
+2026-10-11 20:40:27,378 - 30664 - INFO - ✓ recipes.lua - 没有问题
+2026-10-11 20:40:27,381 - 30664 - INFO - ✓ SaveJsonTest.lua - 没有问题
+2026-10-11 20:40:27,383 - 30664 - INFO - ✓ ZoomTestHost.lua - 没有问题
+2026-10-11 20:40:27,384 - 30664 - INFO - ✓ CalculationGuard.lua - 没有问题
+2026-10-11 20:40:27,386 - 30664 - INFO - ✓ B3Fixtures.lua - 没有问题
+2026-10-11 20:40:27,387 - 30664 - INFO - ✓ DebugIsolationTest.lua - 没有问题
+2026-10-11 20:40:27,389 - 30664 - INFO - ✓ B2Check.lua - 没有问题
+2026-10-11 20:40:27,390 - 30664 - INFO - ✓ SingleUseFixtures.lua - 没有问题
+2026-10-11 20:40:27,392 - 30664 - INFO - ✓ WordTokenTest.lua - 没有问题
+2026-10-11 20:40:27,394 - 30664 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-11 20:40:27,394 - 30664 - INFO - 📄 NativeProbe.lua - 1 warning
+2026-10-11 20:40:27,395 - 30664 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-11 20:40:27,396 - 30664 - INFO - NativeProbe.lua:9:8: 警告: Impossible `if` statement: this condition is always falsy
+2026-10-11 20:40:27,397 - 30664 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-11 20:40:27,398 - 30664 - INFO - 📄 B2Fixtures.lua - 1 warning
+2026-10-11 20:40:27,398 - 30664 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-11 20:40:27,399 - 30664 - INFO - B2Fixtures.lua:80:72: 警告: content.fragments[1] may be nil
+2026-10-11 20:40:27,400 - 30664 - INFO - ✓ GameSession.lua - 没有问题
+2026-10-11 20:40:27,402 - 30664 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-11 20:40:27,402 - 30664 - INFO - 📄 NumericV02ShopTest.lua - 1 warning, 1 other
+2026-10-11 20:40:27,403 - 30664 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-11 20:40:27,403 - 30664 - INFO - NumericV02ShopTest.lua:8:11: 提示: before is never used, if this is intentional, prefix it with an underscore: _before
+2026-10-11 20:40:27,404 - 30664 - INFO - NumericV02ShopTest.lua:41:12: 警告: lockedView.root:FindById("buy_ing_sea_salt") may be nil
+2026-10-11 20:40:27,405 - 30664 - INFO - ✓ SaveSystem.lua - 没有问题
+2026-10-11 20:40:27,406 - 30664 - INFO - ✓ BrewPreparationTest.lua - 没有问题
+2026-10-11 20:40:27,408 - 30664 - INFO - ✓ letters.lua - 没有问题
+2026-10-11 20:40:27,410 - 30664 - INFO - ✓ followup.lua - 没有问题
+2026-10-11 20:40:27,413 - 30664 - INFO - ✓ ingredients.lua - 没有问题
+2026-10-11 20:40:27,414 - 30664 - INFO - ✓ OrderRecoveryTest.lua - 没有问题
+2026-10-11 20:40:27,417 - 30664 - INFO - ✓ PotionTest.lua - 没有问题
+2026-10-11 20:40:27,420 - 30664 - INFO - ✓ WorldStateTest.lua - 没有问题
+2026-10-11 20:40:27,422 - 30664 - INFO - ✓ ordinary_orders.lua - 没有问题
+2026-10-11 20:40:27,424 - 30664 - INFO - ✓ OrderFlowTest.lua - 没有问题
+2026-10-11 20:40:27,425 - 30664 - INFO - ✓ StoryRules.lua - 没有问题
+2026-10-11 20:40:27,427 - 30664 - INFO - ✓ B4Fixtures.lua - 没有问题
+2026-10-11 20:40:27,429 - 30664 - INFO - ✓ RecipeDraft.lua - 没有问题
+2026-10-11 20:40:27,431 - 30664 - INFO - ✓ Letter.lua - 没有问题
+2026-10-11 20:40:27,434 - 30664 - INFO - ✓ npcs.lua - 没有问题
+2026-10-11 20:40:27,437 - 30664 - INFO - ✓ DeveloperMode.lua - 没有问题
+2026-10-11 20:40:27,439 - 30664 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-11 20:40:27,440 - 30664 - INFO - 📄 AppView.lua - 9 warnings
+2026-10-11 20:40:27,441 - 30664 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-11 20:40:27,441 - 30664 - INFO - AppView.lua:63:12: 警告: Impossible `if` statement: this condition is always falsy
+2026-10-11 20:40:27,442 - 30664 - INFO - AppView.lua:70:12: 警告: Impossible `if` statement: this condition is always falsy
+2026-10-11 20:40:27,443 - 30664 - INFO - AppView.lua:74:12: 警告: Impossible `if` statement: this condition is always falsy
+2026-10-11 20:40:27,444 - 30664 - INFO - AppView.lua:79:12: 警告: Impossible `if` statement: this condition is always falsy
+2026-10-11 20:40:27,445 - 30664 - INFO - AppView.lua:95:12: 警告: Impossible `if` statement: this condition is always falsy
+2026-10-11 20:40:27,446 - 30664 - INFO - AppView.lua:107:16: 警告: Impossible `if` statement: this condition is always falsy
+2026-10-11 20:40:27,447 - 30664 - INFO - AppView.lua:137:12: 警告: Impossible `if` statement: this condition is always falsy
+2026-10-11 20:40:27,447 - 30664 - INFO - AppView.lua:139:12: 警告: Impossible `if` statement: this condition is always falsy
+2026-10-11 20:40:27,448 - 30664 - INFO - AppView.lua:146:12: 警告: Impossible `if` statement: this condition is always falsy
+2026-10-11 20:40:27,450 - 30664 - INFO - ✓ B2RunRequest.lua - 没有问题
+2026-10-11 20:40:27,453 - 30664 - INFO - ✓ EconomyTest.lua - 没有问题
+2026-10-11 20:40:27,455 - 30664 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-11 20:40:27,456 - 30664 - INFO - 📄 NumericV02FlowTest.lua - 11 warnings
+2026-10-11 20:40:27,457 - 30664 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-11 20:40:27,457 - 30664 - INFO - NumericV02FlowTest.lua:99:24: 警告: Impossible assert: this expression is always falsy; prefer `error()`
+2026-10-11 20:40:27,458 - 30664 - INFO - NumericV02FlowTest.lua:12:15: 警告: Data.GetLetter(id) may be nil
+2026-10-11 20:40:27,459 - 30664 - INFO - NumericV02FlowTest.lua:56:49: 警告: Data.GetLetter(case.letterId) may be nil
+2026-10-11 20:40:27,460 - 30664 - INFO - NumericV02FlowTest.lua:71:47: 警告: pending may be nil
+2026-10-11 20:40:27,460 - 30664 - INFO - NumericV02FlowTest.lua:74:13: 警告: pending may be nil
+2026-10-11 20:40:27,461 - 30664 - INFO - NumericV02FlowTest.lua:79:70: 警告: pending may be nil
+2026-10-11 20:40:27,462 - 30664 - INFO - NumericV02FlowTest.lua:96:44: 警告: Data.GetLetter(a) may be nil
+2026-10-11 20:40:27,462 - 30664 - INFO - NumericV02FlowTest.lua:96:85: 警告: Data.GetLetter(b) may be nil
+2026-10-11 20:40:27,462 - 30664 - INFO - NumericV02FlowTest.lua:108:40: 警告: Data.GetLetter(a) may be nil
+2026-10-11 20:40:27,463 - 30664 - INFO - NumericV02FlowTest.lua:108:81: 警告: Data.GetLetter(b) may be nil
+2026-10-11 20:40:27,463 - 30664 - INFO - NumericV02FlowTest.lua:119:73: 警告: Cannot assign `number` to `integer`. 
+2026-10-11 20:40:27,466 - 30664 - INFO - ✓ MobileFrontendTest.lua - 没有问题
+2026-10-11 20:40:27,468 - 30664 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-11 20:40:27,472 - 30664 - INFO - 📄 HomeZoom.lua - 7 warnings
+2026-10-11 20:40:27,473 - 30664 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-11 20:40:27,475 - 30664 - INFO - HomeZoom.lua:20:12: 警告: Unnecessary `if` statement: this condition is always truthy
+2026-10-11 20:40:27,477 - 30664 - INFO - HomeZoom.lua:32:12: 警告: Impossible `if` statement: this condition is always falsy
+2026-10-11 20:40:27,478 - 30664 - INFO - HomeZoom.lua:5:11: 警告: Cannot assign `number` to `integer`. 
+2026-10-11 20:40:27,479 - 30664 - INFO - HomeZoom.lua:22:29: 警告: Cannot assign `string` to `boolean`. 
+2026-10-11 20:40:27,479 - 30664 - INFO - HomeZoom.lua:23:82: 警告: Cannot assign `string` to `boolean`. 
+2026-10-11 20:40:27,479 - 30664 - INFO - HomeZoom.lua:26:65: 警告: Cannot assign `string` to `boolean`. 
+2026-10-11 20:40:27,480 - 30664 - INFO - HomeZoom.lua:30:28: 警告: Cannot assign `number` to `integer`. 
+2026-10-11 20:40:27,481 - 30664 - INFO - ✓ B1Fixtures.lua - 没有问题
+2026-10-11 20:40:27,483 - 30664 - INFO - ✓ SaveSystemTest.lua - 没有问题
+2026-10-11 20:40:27,484 - 30664 - INFO - ✓ Economy.lua - 没有问题
+2026-10-11 20:40:27,486 - 30664 - INFO - ✓ NarrativeTest.lua - 没有问题
+2026-10-11 20:40:27,487 - 30664 - INFO - ✓ Panels.lua - 没有问题
+2026-10-11 20:40:27,489 - 30664 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-11 20:40:27,489 - 30664 - INFO - 📄 HomeZoomTest.lua - 3 warnings, 3 other
+2026-10-11 20:40:27,489 - 30664 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-11 20:40:27,490 - 30664 - INFO - HomeZoomTest.lua:73:12: 警告: Impossible `if` statement: this condition is always falsy
+2026-10-11 20:40:27,490 - 30664 - INFO - HomeZoomTest.lua:25:53: 警告: r may be nil
+2026-10-11 20:40:27,490 - 30664 - INFO - HomeZoomTest.lua:25:58: 警告: r may be nil
+2026-10-11 20:40:27,490 - 30664 - INFO - HomeZoomTest.lua:62:44: 提示: Prefer use local alias variable 'previous'
+2026-10-11 20:40:27,491 - 30664 - INFO - HomeZoomTest.lua:62:73: 提示: Prefer use local alias variable 'previous'
+2026-10-11 20:40:27,491 - 30664 - INFO - HomeZoomTest.lua:63:23: 提示: Prefer use local alias variable 'room'
+2026-10-11 20:40:27,493 - 30664 - INFO - ✓ OrderTrial.lua - 没有问题
+2026-10-11 20:40:27,494 - 30664 - INFO - ✓ LetterFlowTest.lua - 没有问题
+2026-10-11 20:40:27,496 - 30664 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-11 20:40:27,496 - 30664 - INFO - 📄 StoryContentFlowTest.lua - 1 warning
+2026-10-11 20:40:27,496 - 30664 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-11 20:40:27,497 - 30664 - INFO - StoryContentFlowTest.lua:186:12: 警告: Impossible `if` statement: this condition is always falsy
+2026-10-11 20:40:27,498 - 30664 - INFO - ✓ Potion.lua - 没有问题
+2026-10-11 20:40:27,500 - 30664 - INFO - ✓ Order.lua - 没有问题
+2026-10-11 20:40:27,501 - 30664 - INFO - ✓ Narrative.lua - 没有问题
+2026-10-11 20:40:27,503 - 30664 - INFO - ✓ LandscapeFlowTest.lua - 没有问题
+2026-10-11 20:40:27,504 - 30664 - INFO - ✓ equipment.lua - 没有问题
+2026-10-11 20:40:27,505 - 30664 - INFO - ✓ SchemaProjection.lua - 没有问题
+2026-10-11 20:40:27,507 - 30664 - INFO - ✓ GameState.lua - 没有问题
+2026-10-11 20:40:27,508 - 30664 - INFO - ✓ B6PersistenceProbe.lua - 没有问题
+2026-10-11 20:40:27,510 - 30664 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-11 20:40:27,510 - 30664 - INFO - 📄 NumericV02RuntimeTest.lua - 1 warning
+2026-10-11 20:40:27,510 - 30664 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-11 20:40:27,511 - 30664 - INFO - NumericV02RuntimeTest.lua:60:37: 警告: Data.GetLetter("letter_n02") may be nil
+2026-10-11 20:40:27,512 - 30664 - INFO - ✓ NumericV02Cases.lua - 没有问题
+2026-10-11 20:40:27,513 - 30664 - INFO - ✓ B1RunRequest.lua - 没有问题
+2026-10-11 20:40:27,514 - 30664 - INFO - ✓ extension_test.lua - 没有问题
+2026-10-11 20:40:27,515 - 30664 - INFO - ✓ StateUtil.lua - 没有问题
+2026-10-11 20:40:27,517 - 30664 - INFO - ✓ LayoutManifest.lua - 没有问题
+2026-10-11 20:40:27,518 - 30664 - INFO - ✓ SaveJson.lua - 没有问题
+2026-10-11 20:40:27,519 - 30664 - INFO - ✓ LandscapeEntryTest.lua - 没有问题
+2026-10-11 20:40:27,520 - 30664 - INFO - ✓ SelfTest.lua - 没有问题
+2026-10-11 20:40:27,522 - 30664 - INFO - ✓ HitFeedbackProbe.lua - 没有问题
+2026-10-11 20:40:27,523 - 30664 - INFO - ✓ B6RunRequest.lua - 没有问题
+2026-10-11 20:40:27,525 - 30664 - INFO - ✓ effects.lua - 没有问题
+2026-10-11 20:40:27,527 - 30664 - INFO - ✓ HeadlessUI.lua - 没有问题
+2026-10-11 20:40:27,528 - 30664 - INFO - ✓ synthesis.lua - 没有问题
+2026-10-11 20:40:27,529 - 30664 - INFO - ✓ word_profiles.lua - 没有问题
+2026-10-11 20:40:27,531 - 30664 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-11 20:40:27,531 - 30664 - INFO - 📄 HomeEntryTest.lua - 1 warning
+2026-10-11 20:40:27,531 - 30664 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-11 20:40:27,532 - 30664 - INFO - HomeEntryTest.lua:25:30: 警告: Impossible `if` statement: this condition is always falsy
+2026-10-11 20:40:27,533 - 30664 - INFO - ✓ stage1.lua - 没有问题
+2026-10-11 20:40:27,534 - 30664 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-11 20:40:27,534 - 30664 - INFO - 📄 HomeView.lua - 1 warning, 2 other
+2026-10-11 20:40:27,534 - 30664 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-11 20:40:27,535 - 30664 - INFO - HomeView.lua:79:21: 提示: Implicit self is never used, if this is intentional, please use '.' instead of ':' to define the method
+2026-10-11 20:40:27,535 - 30664 - INFO - HomeView.lua:42:17: 提示: Implicit self is never used, if this is intentional, please use '.' instead of ':' to define the method
+2026-10-11 20:40:27,535 - 30664 - INFO - HomeView.lua:75:20: 警告: Impossible `if` statement: this condition is always falsy
+2026-10-11 20:40:27,537 - 30664 - INFO - ✓ LayoutGeometry.lua - 没有问题
+2026-10-11 20:40:27,538 - 30664 - INFO - ✓ PlayModel.lua - 没有问题
+2026-10-11 20:40:27,539 - 30664 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-11 20:40:27,540 - 30664 - INFO - 📄 SaveV3MigrationTest.lua - 1 warning
+2026-10-11 20:40:27,540 - 30664 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-11 20:40:27,540 - 30664 - INFO - SaveV3MigrationTest.lua:88:27: 警告: status may be nil
+2026-10-11 20:40:27,542 - 30664 - INFO - ✓ LetterTest.lua - 没有问题
+2026-10-11 20:40:27,543 - 30664 - INFO - ✓ WordToken.lua - 没有问题
+2026-10-11 20:40:27,545 - 30664 - INFO - ✓ DebugPanel.lua - 没有问题
+2026-10-11 20:40:27,546 - 30664 - INFO - ✓ WorldState.lua - 没有问题
+2026-10-11 20:40:27,548 - 30664 - INFO - ✓ BrewJournal.lua - 没有问题
+2026-10-11 20:40:27,549 - 30664 - INFO - ✓ PlayFlowTest.lua - 没有问题
+2026-10-11 20:40:27,550 - 30664 - INFO - ✓ OrderTest.lua - 没有问题
+2026-10-11 20:40:27,552 - 30664 - INFO - ✓ SingleUseWordTest.lua - 没有问题
+2026-10-11 20:40:27,553 - 30664 - INFO - ✓ SaveSchema.lua - 没有问题
+2026-10-11 20:40:27,554 - 30664 - INFO - ✓ OrderAudit.lua - 没有问题
+2026-10-11 20:40:27,556 - 30664 - INFO - ✓ DevChecks.lua - 没有问题
+2026-10-11 20:40:27,557 - 30664 - INFO - ✓ LandscapeNumericFlowTest.lua - 没有问题
+2026-10-11 20:40:27,560 - 30664 - INFO - ✓ CaseBoardProjection.lua - 没有问题
+2026-10-11 20:40:27,562 - 30664 - INFO - ✓ words.lua - 没有问题
+2026-10-11 20:40:27,564 - 30664 - INFO - ✓ B6UncertainStorage.lua - 没有问题
+2026-10-11 20:40:27,566 - 30664 - INFO - ✓ SaveMigrations.lua - 没有问题
+2026-10-11 20:40:27,569 - 30664 - INFO - ✓ EventBus.lua - 没有问题
+2026-10-11 20:40:27,571 - 30664 - INFO - ✓ B6FaultEvidence.lua - 没有问题
+2026-10-11 20:40:27,573 - 30664 - INFO - ✓ GameFlow.lua - 没有问题
+2026-10-11 20:40:27,575 - 30664 - INFO - ✓ B5Fixtures.lua - 没有问题
+2026-10-11 20:40:27,578 - 30664 - INFO - ✓ PlayQueries.lua - 没有问题
+2026-10-11 20:40:27,580 - 30664 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-11 20:40:27,580 - 30664 - INFO - 📄 HitFeedbackTest.lua - 3 warnings
+2026-10-11 20:40:27,580 - 30664 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-11 20:40:27,581 - 30664 - INFO - HitFeedbackTest.lua:46:14: 警告: Missing required fields in type `NVGContextWrapper`: `Dispose`, `GetBlockEvents`, `GetCategory`, `GetTypeName`, `GetType`, `HasSubscribedToEvent`, `SendEvent`, `SetBlockEvents`, `category`, `delete`, `typeName`, `type`
+2026-10-11 20:40:27,581 - 30664 - INFO - HitFeedbackTest.lua:74:26: 警告: Cannot assign `number` to `integer`. 
+2026-10-11 20:40:27,581 - 30664 - INFO - HitFeedbackTest.lua:74:44: 警告: Cannot assign `number` to `integer`. 
+2026-10-11 20:40:27,584 - 30664 - INFO - ✓ OrderLifecycle.lua - 没有问题
+2026-10-11 20:40:27,585 - 30664 - INFO - ✓ main.lua - 没有问题
+2026-10-11 20:40:27,586 - 30664 - INFO - ✓ content.lua - 没有问题
+2026-10-11 20:40:27,589 - 30664 - INFO - ✓ numeric_v02.lua - 没有问题
+2026-10-11 20:42:08,192 - 30664 - INFO - 检测到文件变化: D:\taptap\To-the-Human-World\scripts\ui\landscape\HomeZoom.lua
+2026-10-11 20:42:08,572 - 30664 - INFO - 检测到文件变化: D:\taptap\To-the-Human-World\scripts\ui\landscape\HomeView.lua
+2026-10-11 20:42:08,774 - 30664 - INFO - ✓ HomeZoom.lua - 没有问题
+2026-10-11 20:42:08,941 - 30664 - INFO - 检测到文件变化: D:\taptap\To-the-Human-World\scripts\ui\landscape\AppView.lua
+2026-10-11 20:42:09,140 - 30664 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-11 20:42:09,141 - 30664 - INFO - 📄 HomeView.lua - 2 other
+2026-10-11 20:42:09,141 - 30664 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-11 20:42:09,141 - 30664 - INFO - HomeView.lua:79:21: 提示: Implicit self is never used, if this is intentional, please use '.' instead of ':' to define the method
+2026-10-11 20:42:09,142 - 30664 - INFO - HomeView.lua:42:17: 提示: Implicit self is never used, if this is intentional, please use '.' instead of ':' to define the method
+2026-10-11 20:42:09,228 - 30664 - INFO - 检测到文件变化: D:\taptap\To-the-Human-World\scripts\ui\landscape\tests\HomeZoomTest.lua
+2026-10-11 20:42:09,547 - 30664 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-11 20:42:09,548 - 30664 - INFO - 📄 AppView.lua - 1 warning
+2026-10-11 20:42:09,548 - 30664 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-11 20:42:09,548 - 30664 - INFO - AppView.lua:146:12: 警告: Impossible `if` statement: this condition is always falsy
+2026-10-11 20:42:09,810 - 30664 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-11 20:42:09,810 - 30664 - INFO - 📄 HomeZoomTest.lua - 3 other
+2026-10-11 20:42:09,810 - 30664 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-11 20:42:09,810 - 30664 - INFO - HomeZoomTest.lua:62:44: 提示: Prefer use local alias variable 'previous'
+2026-10-11 20:42:09,811 - 30664 - INFO - HomeZoomTest.lua:62:73: 提示: Prefer use local alias variable 'previous'
+2026-10-11 20:42:09,811 - 30664 - INFO - HomeZoomTest.lua:63:23: 提示: Prefer use local alias variable 'room'
