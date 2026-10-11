@@ -18,8 +18,8 @@ function H.New(onOpen,developer)
         nvgSave(vg)
         nvgTranslate(vg,fit.x+layer.x*fit.scale,fit.y+layer.y*fit.scale)
         nvgRotate(vg,math.rad(layer.rotation)); nvgScale(vg,fit.scale,fit.scale)
-        for i,region in ipairs(object.regions) do
-            local r=Geometry.Region(layer,region,fit,i==1 and object.minTouch or 0)
+        for i in ipairs(object.regions) do
+            local r=Geometry.ObjectRegion(layer,object,fit,i)
             nvgSave(vg); nvgTranslate(vg,r.x,r.y); nvgRotate(vg,math.rad(r.rotation))
             nvgBeginPath(vg)
             if r.kind=="ellipse" then nvgEllipse(vg,0,0,r.w/2,r.h/2) else nvgRect(vg,-r.w/2,-r.h/2,r.w,r.h) end
@@ -55,7 +55,9 @@ function H.New(onOpen,developer)
                 nvgRestore(vg)
             end
         end end
-        for _,object in ipairs(Manifest.objects) do if api.inspect or api.pressed==object.id then outline(vg,object,fit) end end
+        if developer and api.inspect then
+            for _,object in ipairs(Manifest.objects) do outline(vg,object,fit) end
+        end
         nvgRestore(vg)
     end
     for _,object in ipairs(Manifest.objects) do

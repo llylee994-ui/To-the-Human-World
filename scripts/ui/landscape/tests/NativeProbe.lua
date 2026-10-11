@@ -6,6 +6,9 @@ local Geometry=require "ui.landscape.LayoutGeometry"
 local U=require "core.StateUtil"
 local N={}
 function N.New()
+    if require("ui.landscape.DevChecks").hitFeedback then
+        return require("ui.landscape.tests.HitFeedbackProbe").New()
+    end
     local frame,index,phase=0,1,"open"
     local snapshot,stopped=nil,false
     local function tap(x,y)

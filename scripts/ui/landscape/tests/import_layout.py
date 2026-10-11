@@ -48,7 +48,8 @@ def main(source):
     def ellipse(cx, cy, w, h, rotation=0): return dict(kind='ellipse', cx=cx, cy=cy, w=w, h=h, rotation=rotation)
     objects = [
         dict(id='home.drawer', label='来信抽屉', layer=1, target='letters', minTouch=44,
-             regions=[ellipse(.581, .840, .040, .048), ellipse(.684, .944, .045, .053)]),
+             regions=[dict(ellipse(.581, .840, .050, .060), minTouch=55, keepInsideCanvas=True),
+                      dict(ellipse(.684, .944, .05625, .06625), minTouch=55, keepInsideCanvas=True)]),
         dict(id='home.journal', label='故事记录', layer=1, target='journal', minTouch=44,
              regions=[ellipse(.809, .782, .147, .125, -12)]),
         dict(id='home.tray', label='分类词条', layer=2, target='words', minTouch=40,
@@ -64,7 +65,7 @@ def main(source):
         dict(id='home.stove', label='炼药工作区', layer=11, target='brew', minTouch=44,
              regions=[ellipse(.50, .478, .56, .423), rect(.50, .744, .17, .16)]),
     ]
-    manifest = dict(version='C-HOME-ENTRY-20261010-r3-v01', projectRevision=201, pageRevision=189,
+    manifest = dict(version='C-HOME-ENTRY-20261010-r3-v02', projectRevision=201, pageRevision=189,
                     sourceSha256=hashlib.sha256(raw).hexdigest(), sourcePageId=page['id'], width=1920, height=1080,
                     background=page['background'], layers=layers, objects=objects)
     (ROOT / 'scripts/ui/landscape/LayoutManifest.lua').write_text(
@@ -77,6 +78,8 @@ def main(source):
 ---@field w number
 ---@field h number
 ---@field rotation number
+---@field minTouch? number
+---@field keepInsideCanvas? boolean
 ---@class HomeLayer
 ---@field id string
 ---@field assetId string

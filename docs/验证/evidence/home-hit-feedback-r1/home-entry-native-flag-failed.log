@@ -1,0 +1,50 @@
+[Data] 校验通过：效果 22 / 词条 61 / 原料 4 / 设备 2 / 人物 11 / 信件 22 / 时间属性 6 / 规则 196 / 片段 58 / 评分 58
+[Data] 首单包校验通过：C1 开局账本 / C2 首单数值 / C3 事实与回信；contentVersion = story-numeric-v02-r1
+========== 阶段 0 自检开始 ==========
+[SelfTest] PASS  B2 两个监听者都收到事件
+[SelfTest] PASS  B2 高优先级先收到
+[SelfTest] PASS  B2 同优先级按注册顺序
+[SelfTest] PASS  B2 退订生效
+[SelfTest] PASS  B3 存档往返一致
+[SelfTest] PASS  B3 字段缺失不崩溃且补齐默认值
+[SelfTest] PASS  B3 版本号过新时回落默认值
+[SelfTest] PASS  B3 内容损坏时回落默认值
+[SelfTest] PASS  B4 跨天后天数 +1
+[SelfTest] PASS  B4 派发 DayEnded 且带当天编号
+[SelfTest] PASS  B4 派发 DayStarted
+========== 阶段 0 自检结束：通过 11，失败 0 ==========
+Traceback (most recent call last):
+  File "D:\taptap\To-the-Human-World\scripts\ui\landscape\tests\run_home_entry.py", line 9, in <module>
+    raise SystemExit(run('ui.landscape.tests.HomeEntryTest'))
+                     ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\taptap\To-the-Human-World\scripts\debug\content_test_runtime.py", line 33, in run
+    return run_b1.main([], entrypoint)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "D:\taptap\To-the-Human-World\scripts\debug\run_b1.py", line 87, in main
+    lua.execute('''
+    ~~~~~~~~~~~^^^^
+        package.preload["urhox-libs/UI"] = function() return require "debug.fixtures.HeadlessUI" end
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<21 lines>...
+        Start()
+        ^^^^^^^
+    ''')
+    ^^^^
+  File "lupa/lua54.pyx", line 441, in lupa.lua54.LuaRuntime.execute
+  File "lupa/lua54.pyx", line 1872, in lupa.lua54.run_lua
+  File "lupa/lua54.pyx", line 1886, in lupa.lua54.call_lua
+  File "lupa/lua54.pyx", line 1913, in lupa.lua54.execute_lua_call
+  File "lupa/lua54.pyx", line 1794, in lupa.lua54.raise_lua_error
+lupa.lua54.LuaError: .\urhox-libs/UI/Core/PointerEvent.lua:78: attempt to perform bitwise operation on a nil value (global 'MOUSEB_LEFT')
+stack traceback:
+	.\urhox-libs/UI/Core/PointerEvent.lua:78: in main chunk
+	[C]: in function 'require'
+	.\urhox-libs/UI/Core/UI.lua:8: in main chunk
+	[C]: in function 'require'
+	...e-Human-World/scripts/ui\landscape\tests\NativeProbe.lua:3: in main chunk
+	[C]: in function 'require'
+	...ptap/To-the-Human-World/scripts/ui\landscape\AppView.lua:18: in function 'ui.landscape.AppView.New'
+	(...tail calls...)
+	D:/taptap/To-the-Human-World/scripts/main.lua:218: in function 'CreateUI'
+	D:/taptap/To-the-Human-World/scripts/main.lua:100: in function 'Start'
+	[string "<python>"]:24: in main chunk

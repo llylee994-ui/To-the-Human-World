@@ -1,0 +1,80 @@
+{
+  "version": "C-HOME-ENTRY-20261010-r3-v02",
+  "task": "C-HOME-HITFIX-20261011-r1",
+  "baselineCommit": "6c7cccf38c0265172527361d4a3277a67eabb3c1",
+  "projectRevision": 201,
+  "pageRevision": 189,
+  "imagesByteIdentical": true,
+  "visualTransformsUnchanged": true,
+  "otherObjectRegionsUnchanged": true,
+  "changedFileSha256": {
+    "scripts/ui/landscape/HomeView.lua": "49cd7a0ad4ca9b4aa8a04d741d9ddac5f6c17f44645c3ab24ded16d05b9607c7",
+    "scripts/ui/landscape/LayoutGeometry.lua": "f3a606059830f4edcfcda47273ff6fbc4305916775bb4ef51c7abdcdef39af33",
+    "scripts/ui/landscape/LayoutManifest.lua": "58191586f3f4d648de56ec978527eb0dcb0a38b0dedc9d9efe319e32ca0153ad",
+    "scripts/ui/landscape/DevChecks.lua": "0e1ec9dbcd07907e77afa3e9bbcac73453039080bf2c208f14728e8157897161",
+    "scripts/ui/landscape/tests/import_layout.py": "4912ffb248a7f0d0e5ce4495076fb3c6aa7c28205ec6b1fa0ab5fac9a45838f4",
+    "scripts/ui/landscape/tests/NativeProbe.lua": "d616624a5ab2d7d150d77cf6e0464bb76443e16da57aa0d3e9afd3fb4488a011",
+    "scripts/ui/landscape/tests/HitFeedbackProbe.lua": "eacbd18ba5bab5a84994dc5da041eb06423bc492eed6cae70d054cd2df87162d",
+    "scripts/ui/landscape/tests/HitFeedbackTest.lua": "993d57cd4a460664e069dc9261439e376b3344cd1af5c15f57bf3d01bf92c220",
+    "scripts/ui/landscape/tests/run_hit_feedback.py": "9a2e2c619c786483fa48855c0e2e3156cf6ee051d882a7aad4aded038e70c2e1",
+    "scripts/ui/landscape/tests/capture_hit_feedback.ps1": "459488fd10f79081e36524edfe3b04a276143b4614ac78c426d86173cdef7519",
+    "scripts/ui/landscape/tests/verify_hit_delivery.py": "0e671446d87509f3dc084dc19b093d1d0a824064b0ffa2cdb978b72455f9f3f2",
+    "assets/image/home-entry-r3/source-manifest.json": "802f9cce6fb0689f3305106ebc4be87da3d52bc9e4ee896faad28d314a21fe15",
+    "scripts/actions/2026-10-11-home-hit-feedback-r1.md": "c01e4c8836a9a5b27ad66d20f441c68731c9962297ecb8c3470c69bd32cb10b2"
+  },
+  "screenshots": {
+    "debug-16x9.png": "eae79a36210cccb35c6fe0c0f76c3a13d174083001e8dfcec9813515c2c638b2",
+    "debug-19_5x9.png": "553856a3e04129668635a729b751aaeee3031a3ee7946ee4883b18d5b220a9c9",
+    "debug-20x9.png": "a9a97253a87758a83f298513a05f58200cc314030086f07a2cd9c499b785d5b7",
+    "debug-4x3.png": "67178486aabe6398ebaa3e0512ce4000640437f32648dea081d603c0a0d3eb8c",
+    "debug-small-800x360.png": "c7f6dae4b4b27a4d409f49d1d6a7a2aa4de94736932c2e10b6bb5894bf446e1d",
+    "final-player-home.png": "e22b125bcf659a1ae56c2b3910afa16e92c9d4cd9cfb0d307396950b60688808",
+    "pressed-drawer-second.png": "e22b125bcf659a1ae56c2b3910afa16e92c9d4cd9cfb0d307396950b60688808",
+    "pressed-home.caseFile.png": "e22b125bcf659a1ae56c2b3910afa16e92c9d4cd9cfb0d307396950b60688808",
+    "pressed-home.drawer.png": "e22b125bcf659a1ae56c2b3910afa16e92c9d4cd9cfb0d307396950b60688808",
+    "pressed-home.journal.png": "e22b125bcf659a1ae56c2b3910afa16e92c9d4cd9cfb0d307396950b60688808",
+    "pressed-home.letterPaper.png": "e22b125bcf659a1ae56c2b3910afa16e92c9d4cd9cfb0d307396950b60688808",
+    "pressed-home.merchantShip.png": "e22b125bcf659a1ae56c2b3910afa16e92c9d4cd9cfb0d307396950b60688808",
+    "pressed-home.net.png": "e22b125bcf659a1ae56c2b3910afa16e92c9d4cd9cfb0d307396950b60688808",
+    "pressed-home.stove.png": "e22b125bcf659a1ae56c2b3910afa16e92c9d4cd9cfb0d307396950b60688808",
+    "pressed-home.tray.png": "e22b125bcf659a1ae56c2b3910afa16e92c9d4cd9cfb0d307396950b60688808"
+  },
+  "normalHeldCaptureCount": 9,
+  "capturesWithinPointerDownHold": true,
+  "normalHeldFramesByteIdentical": true,
+  "runtimeSources": {
+    "normal": {
+      "session": "6a279c51-bf25-42ed-93c3-79501b28473d",
+      "reload": 1,
+      "renderCodeSha256": {
+        "scripts/ui/landscape/HomeView.lua": "49cd7a0ad4ca9b4aa8a04d741d9ddac5f6c17f44645c3ab24ded16d05b9607c7",
+        "scripts/ui/landscape/LayoutGeometry.lua": "f3a606059830f4edcfcda47273ff6fbc4305916775bb4ef51c7abdcdef39af33",
+        "scripts/ui/landscape/LayoutManifest.lua": "58191586f3f4d648de56ec978527eb0dcb0a38b0dedc9d9efe319e32ca0153ad"
+      },
+      "devFlags": "-- Developer-only inspection. Keep false for normal player entry.\nreturn {hotspots=false,nativeProbe=true,hitFeedback=true}\n"
+    },
+    "debug": {
+      "session": "6a279c51-bf25-42ed-93c3-79501b28473d",
+      "reload": 2,
+      "renderCodeSha256": {
+        "scripts/ui/landscape/HomeView.lua": "49cd7a0ad4ca9b4aa8a04d741d9ddac5f6c17f44645c3ab24ded16d05b9607c7",
+        "scripts/ui/landscape/LayoutGeometry.lua": "f3a606059830f4edcfcda47273ff6fbc4305916775bb4ef51c7abdcdef39af33",
+        "scripts/ui/landscape/LayoutManifest.lua": "58191586f3f4d648de56ec978527eb0dcb0a38b0dedc9d9efe319e32ca0153ad"
+      },
+      "devFlags": "-- Developer-only inspection. Keep false for normal player entry.\nreturn {hotspots=true,nativeProbe=true,hitFeedback=true}\n"
+    },
+    "final": {
+      "session": "6a279c51-bf25-42ed-93c3-79501b28473d",
+      "reload": 3,
+      "renderCodeSha256": {
+        "scripts/ui/landscape/HomeView.lua": "49cd7a0ad4ca9b4aa8a04d741d9ddac5f6c17f44645c3ab24ded16d05b9607c7",
+        "scripts/ui/landscape/LayoutGeometry.lua": "f3a606059830f4edcfcda47273ff6fbc4305916775bb4ef51c7abdcdef39af33",
+        "scripts/ui/landscape/LayoutManifest.lua": "58191586f3f4d648de56ec978527eb0dcb0a38b0dedc9d9efe319e32ca0153ad"
+      },
+      "devFlags": "-- Developer-only inspection. Keep false for normal player entry.\nreturn {hotspots=false,nativeProbe=false,hitFeedback=false}\n"
+    }
+  },
+  "osMouseTested": false,
+  "phoneTested": false,
+  "scope": "v01 locally committed; v02 remains uncommitted; no push/remote build/app rebinding"
+}

@@ -21,11 +21,36 @@ function G.ToLocal(layer,fit,x,y)
 end
 ---@param minTouch number|nil
 function G.Region(layer,region,fit,minTouch)
-    -- Only enlarge the primary subject; secondary components keep precise geometry.
+    -- The caller supplies the minimum for this specific region.
     local minimum=(minTouch or 0)/math.max(.00001,fit.scale)
     return {x=(region.cx-.5)*layer.width,y=(region.cy-.5)*layer.height,
         w=math.max(region.w*layer.width,minimum),h=math.max(region.h*layer.height,minimum),
         rotation=region.rotation or 0,kind=region.kind}
+end
+function G.ObjectRegion(layer,object,fit,index)
+    local region=object.regions[index]
+    -- Existing objects protect only their primary subject. Extra regions opt in.
+    local minimum=region.minTouch or (index==1 and object.minTouch or 0)
+    local r=G.Region(layer,region,fit,minimum)
+    if region.keepInsideCanvas and fit.scale>0 then
+        -- Move only the effective hit region inward when its minimum would be clipped.
+        -- Visual transforms and the source region center remain unchanged.
+        local a=math.rad(layer.rotation+r.rotation)
+        local c,s=math.cos(a),math.sin(a)
+        local ex,ey
+        if r.kind=="ellipse" then
+            ex=math.sqrt((r.w*c)^2+(r.h*s)^2)/2
+            ey=math.sqrt((r.w*s)^2+(r.h*c)^2)/2
+        else
+            ex=(math.abs(r.w*c)+math.abs(r.h*s))/2
+            ey=(math.abs(r.w*s)+math.abs(r.h*c))/2
+        end
+        local x,y=G.Rotate(r.x,r.y,layer.rotation)
+        x=math.max(ex,math.min(fit.w/fit.scale-ex,layer.x+x))
+        y=math.max(ey,math.min(fit.h/fit.scale-ey,layer.y+y))
+        r.x,r.y=G.Rotate(x-layer.x,y-layer.y,-layer.rotation)
+    end
+    return r
 end
 function G.InRegion(x,y,r)
     local dx,dy=G.Rotate(x-r.x,y-r.y,-r.rotation)
@@ -37,8 +62,8 @@ function G.HitObject(manifest,object,fit,x,y)
     local layer=manifest.layers[object.layer]
     if not layer.visible then return false end
     local lx,ly=G.ToLocal(layer,fit,x,y)
-    for i,region in ipairs(object.regions) do
-        if G.InRegion(lx,ly,G.Region(layer,region,fit,i==1 and object.minTouch or 0)) then return true end
+    for i in ipairs(object.regions) do
+        if G.InRegion(lx,ly,G.ObjectRegion(layer,object,fit,i)) then return true end
     end
     return false
 end

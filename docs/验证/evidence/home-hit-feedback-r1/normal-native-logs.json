@@ -1,0 +1,1982 @@
+﻿[
+    {
+        "cursor":  1,
+        "text":  "[2026-10-11 13_56_34_381][0] INFO: DownloadManager initialized\r"
+    },
+    {
+        "cursor":  2,
+        "text":  "[2026-10-11 13_56_34_545][0] INFO: a couple of Subsystems registered finish.\r"
+    },
+    {
+        "cursor":  3,
+        "text":  "[2026-10-11 13_56_34_546][0] INFO: Engine construct finish.\r"
+    },
+    {
+        "cursor":  4,
+        "text":  "[2026-10-11 13_56_34_553][0] INFO: Opened log file C:/Users/YINGYI/.taptap-maker/runtime/runtime-55daebeb-793b-4258-9b0e-9ca63cd33351/logs/game/urhox_runtime-2026-10-11 13_56_34_553.log\r"
+    },
+    {
+        "cursor":  5,
+        "text":  "[2026-10-11 13_56_34_553][0] INFO: =======Git Info=======\r"
+    },
+    {
+        "cursor":  6,
+        "text":  "[2026-10-11 13_56_34_553][0] INFO: UrhoX: ci/runtime-engine-res-version, bf3316fd2; BuildTime: 2026-09-24_01_10_12\r"
+    },
+    {
+        "cursor":  7,
+        "text":  "[2026-10-11 13_56_34_553][0] INFO: Engine-res tag: maker_validate_window.0923\r"
+    },
+    {
+        "cursor":  8,
+        "text":  "[2026-10-11 13_56_34_553][0] INFO: Binary version: 1032014\r"
+    },
+    {
+        "cursor":  9,
+        "text":  "[2026-10-11 13_56_34_555][0] INFO: ======================\r"
+    },
+    {
+        "cursor":  10,
+        "text":  "[2026-10-11 13_56_34_556][0] INFO: Engine initialize begin.\r"
+    },
+    {
+        "cursor":  11,
+        "text":  "[2026-10-11 13_56_34_556][0] INFO: Rendering pipeline: forward\r"
+    },
+    {
+        "cursor":  12,
+        "text":  "[2026-10-11 13_56_34_556][0] INFO: enable MSAA\r"
+    },
+    {
+        "cursor":  13,
+        "text":  "[2026-10-11 13_56_34_566][0] INFO: Created 9 worker threads\r"
+    },
+    {
+        "cursor":  14,
+        "text":  "[2026-10-11 13_56_34_566][0] INFO: Engine resourcePrefixPath: C:/Users/YINGYI/.taptap-maker/runtime/runtime-55daebeb-793b-4258-9b0e-9ca63cd33351/, resource: Res\r"
+    },
+    {
+        "cursor":  15,
+        "text":  "[2026-10-11 13_56_34_567][0] INFO: Added resource path C:/Users/YINGYI/.taptap-maker/runtime/runtime-55daebeb-793b-4258-9b0e-9ca63cd33351/Res/\r"
+    },
+    {
+        "cursor":  16,
+        "text":  "[2026-10-11 13_56_34_567][0] INFO: Now resource dir: \r"
+    },
+    {
+        "cursor":  17,
+        "text":  "[2026-10-11 13_56_34_567][0] INFO: 0 - C:/Users/YINGYI/.taptap-maker/runtime/runtime-55daebeb-793b-4258-9b0e-9ca63cd33351/Res/\r"
+    },
+    {
+        "cursor":  18,
+        "text":  "[2026-10-11 13_56_34_567][0] INFO: AddPackageFile \u0027C:/Users/YINGYI/.taptap-maker/runtime/runtime-55daebeb-793b-4258-9b0e-9ca63cd33351/Autoload/CoreData.pak\u0027 to cache\r"
+    },
+    {
+        "cursor":  19,
+        "text":  "[2026-10-11 13_56_34_568][0] INFO: PackageFile::Open, C:/Users/YINGYI/.taptap-maker/runtime/runtime-55daebeb-793b-4258-9b0e-9ca63cd33351/Autoload/CoreData.pak, 0\r"
+    },
+    {
+        "cursor":  20,
+        "text":  "[2026-10-11 13_56_34_569][0] INFO: UZSD package opened: C:/Users/YINGYI/.taptap-maker/runtime/runtime-55daebeb-793b-4258-9b0e-9ca63cd33351/Autoload/CoreData.pak, 123 entries (122 unique blocks), decompressed 67663 -\u003e 150195 bytes, dict 5609 bytes\r"
+    },
+    {
+        "cursor":  21,
+        "text":  "[2026-10-11 13_56_34_569][0] INFO: Added resource package CoreData\r"
+    },
+    {
+        "cursor":  22,
+        "text":  "[2026-10-11 13_56_34_569][0] INFO: AddPackageFile \u0027C:/Users/YINGYI/.taptap-maker/runtime/runtime-55daebeb-793b-4258-9b0e-9ca63cd33351/Autoload/Data.pak\u0027 to cache\r"
+    },
+    {
+        "cursor":  23,
+        "text":  "[2026-10-11 13_56_34_570][0] INFO: PackageFile::Open, C:/Users/YINGYI/.taptap-maker/runtime/runtime-55daebeb-793b-4258-9b0e-9ca63cd33351/Autoload/Data.pak, 0\r"
+    },
+    {
+        "cursor":  24,
+        "text":  "[2026-10-11 13_56_34_639][0] INFO: UZSD package opened: C:/Users/YINGYI/.taptap-maker/runtime/runtime-55daebeb-793b-4258-9b0e-9ca63cd33351/Autoload/Data.pak, 1379 entries (1294 unique blocks), decompressed 6819986 -\u003e 17399499 bytes, dict 65536 bytes\r"
+    },
+    {
+        "cursor":  25,
+        "text":  "[2026-10-11 13_56_34_639][0] INFO: Added resource package Data\r"
+    },
+    {
+        "cursor":  26,
+        "text":  "[2026-10-11 13_56_34_639][0] INFO: AddPackageFile \u0027C:/Users/YINGYI/.taptap-maker/runtime/runtime-55daebeb-793b-4258-9b0e-9ca63cd33351/Autoload/Res.pak\u0027 to cache\r"
+    },
+    {
+        "cursor":  27,
+        "text":  "[2026-10-11 13_56_34_639][0] INFO: PackageFile::Open, C:/Users/YINGYI/.taptap-maker/runtime/runtime-55daebeb-793b-4258-9b0e-9ca63cd33351/Autoload/Res.pak, 0\r"
+    },
+    {
+        "cursor":  28,
+        "text":  "[2026-10-11 13_56_34_727][0] INFO: UZSD package opened: C:/Users/YINGYI/.taptap-maker/runtime/runtime-55daebeb-793b-4258-9b0e-9ca63cd33351/Autoload/Res.pak, 482 entries (477 unique blocks), decompressed 28111087 -\u003e 50712062 bytes, dict 5614 bytes\r"
+    },
+    {
+        "cursor":  29,
+        "text":  "[2026-10-11 13_56_34_727][0] INFO: Added resource package Res\r"
+    },
+    {
+        "cursor":  30,
+        "text":  "[2026-10-11 13_56_35_760][0] INFO: computeShaderSupport 1,caps-\u003esupported:4,aps-\u003esupported \u0026 BGFX_CAPS_INDEX32:4096\r"
+    },
+    {
+        "cursor":  31,
+        "text":  "[2026-10-11 13_56_35_760][0] INFO: Detected 4 GPUs\r"
+    },
+    {
+        "cursor":  32,
+        "text":  "[2026-10-11 13_56_35_760][0] INFO: GPU 0 Name: NVIDIA GeForce RTX 4060 Laptop GPU\r"
+    },
+    {
+        "cursor":  33,
+        "text":  "[2026-10-11 13_56_35_760][0] INFO: GPU 1 Name: Intel(R) Iris(R) Xe Graphics\r"
+    },
+    {
+        "cursor":  34,
+        "text":  "[2026-10-11 13_56_35_760][0] INFO: GPU 2 Name: NVIDIA GeForce RTX 4060 Laptop GPU\r"
+    },
+    {
+        "cursor":  35,
+        "text":  "[2026-10-11 13_56_35_760][0] INFO: GPU 3 Name: Microsoft Basic Render Driver\r"
+    },
+    {
+        "cursor":  36,
+        "text":  "[2026-10-11 13_56_35_760][0] INFO: Selected GPU name: NVIDIA GeForce RTX 4060 Laptop GPU\r"
+    },
+    {
+        "cursor":  37,
+        "text":  "[2026-10-11 13_56_35_760][0] INFO: Renderer Type: Direct3D 11\r"
+    },
+    {
+        "cursor":  38,
+        "text":  "[2026-10-11 13_56_35_825][0] ERROR: Could not find resource Cube/Day/DaySpecularHDR.dds\r"
+    },
+    {
+        "cursor":  39,
+        "text":  "[2026-10-11 13_56_35_994][0] ERROR: Can not load themis_x64.dll.\r"
+    },
+    {
+        "cursor":  40,
+        "text":  "[2026-10-11 13_56_35_760][0] INFO: CheckFeatureSupport =\u003e CpuInstance=1, _R32I=1, _R32U=1, _R32F=1, _RGBA16F=1, _RGBA32F=1, MaxTextureSizeLimit=16384\r"
+    },
+    {
+        "cursor":  41,
+        "text":  "[2026-10-11 13_56_35_824][0] INFO: Graphics mode: 1280x720 (logic=1280x720, dpr=1) windowed resizable highDPI monitor 0\r"
+    },
+    {
+        "cursor":  42,
+        "text":  "[2026-10-11 13_56_35_824][0] INFO: Initialized input\r"
+    },
+    {
+        "cursor":  43,
+        "text":  "[2026-10-11 13_56_35_824][0] INFO: Initialized user interface\r"
+    },
+    {
+        "cursor":  44,
+        "text":  "[2026-10-11 13_56_35_827][0] INFO: Initialized renderer\r"
+    },
+    {
+        "cursor":  45,
+        "text":  "[2026-10-11 13_56_35_988][0] INFO: Set audio mode 44100 Hz stereo interpolated\r"
+    },
+    {
+        "cursor":  46,
+        "text":  "[2026-10-11 13_56_35_988][0] INFO: Initialized graphics \u0026 audio output.\r"
+    },
+    {
+        "cursor":  47,
+        "text":  "[2026-10-11 13_56_35_988][0] INFO: Initialized engine\r"
+    },
+    {
+        "cursor":  48,
+        "text":  "[2026-10-11 13_56_35_988][0] INFO: LogUploader: auto-upload disabled (no SLS URL), UploadLogPack still available on demand\r"
+    },
+    {
+        "cursor":  49,
+        "text":  "[2026-10-11 13_56_35_991][0] INFO: Device Max Storage Block Binding Range: 16\r"
+    },
+    {
+        "cursor":  50,
+        "text":  "[2026-10-11 13_56_35_994][0] INFO: PackageFile::Open, C:/Users/YINGYI/.taptap-maker/runtime/runtime-55daebeb-793b-4258-9b0e-9ca63cd33351/Res/shadercache_runtime/shadercache_dx11.pak, 0\r"
+    },
+    {
+        "cursor":  51,
+        "text":  "[2026-10-11 13_56_36_204][0] INFO: UZSD MemoryLess package opened: C:/Users/YINGYI/.taptap-maker/runtime/runtime-55daebeb-793b-4258-9b0e-9ca63cd33351/Res/shadercache_runtime/shadercache_dx11.pak, 55257 entries (16693 unique blocks), compressed 28269272 bytes, dict 65536 bytes\r"
+    },
+    {
+        "cursor":  52,
+        "text":  "[2026-10-11 13_56_36_204][0] INFO: Added resource package shadercache_runtime\r"
+    },
+    {
+        "cursor":  53,
+        "text":  "[2026-10-11 13_56_36_236][0] INFO: Loaded shader cache package: C:/Users/YINGYI/.taptap-maker/runtime/runtime-55daebeb-793b-4258-9b0e-9ca63cd33351/Res/shadercache_runtime/shadercache_dx11.pak\r"
+    },
+    {
+        "cursor":  54,
+        "text":  "[2026-10-11 13_56_36_237][0] INFO: Custom Lua require system installed (module cache active)\r"
+    },
+    {
+        "cursor":  55,
+        "text":  "[2026-10-11 13_56_36_246][0] INFO: Lua 5.4: Generational GC enabled.\r"
+    },
+    {
+        "cursor":  56,
+        "text":  "[2026-10-11 13_56_36_246][0] INFO: Lua official log file initialized: C:/Users/YINGYI/.taptap-maker/runtime/runtime-55daebeb-793b-4258-9b0e-9ca63cd33351/logs/lua/lua-2026-10-11 13_56_36_246.log\r"
+    },
+    {
+        "cursor":  57,
+        "text":  "[2026-10-11 13_56_36_246][0] INFO: Lua infinite loop detection enabled.\r"
+    },
+    {
+        "cursor":  58,
+        "text":  "[2026-10-11 13_56_36_246][0] INFO: LobbyBridge Lua API registered\r"
+    },
+    {
+        "cursor":  59,
+        "text":  "[2026-10-11 13_56_36_247][0] INFO: Localization: auto-selected \u0027zh_CN\u0027 from [en, zh_CN]\r"
+    },
+    {
+        "cursor":  60,
+        "text":  "[2026-10-11 13_56_36_247][0] INFO: BootstrapManager: Localization initialized, language=zh_CN\r"
+    },
+    {
+        "cursor":  61,
+        "text":  "[2026-10-11 13_56_36_247][0] INFO: BootstrapManager: using custom game path: C:/WINDOWS/TEMP/maker-cache-HKbRJs/\r"
+    },
+    {
+        "cursor":  62,
+        "text":  "[2026-10-11 13_56_36_247][0] INFO: LoadingUI::Show()\r"
+    },
+    {
+        "cursor":  63,
+        "text":  "[2026-10-11 13_56_36_248][0] INFO: BootstrapPipeline: starting with 5 steps, total weight 1.00\r"
+    },
+    {
+        "cursor":  64,
+        "text":  "[2026-10-11 13_56_36_248][0] INFO: BootstrapPipeline: executing step [1/5] \u0027LoadVersion\u0027\r"
+    },
+    {
+        "cursor":  65,
+        "text":  "[2026-10-11 13_56_36_248][0] INFO: [Bootstrap/LoadVersion] Starting...\r"
+    },
+    {
+        "cursor":  66,
+        "text":  "[2026-10-11 13_56_36_248][0] INFO: [Bootstrap/LoadVersion] No local assets at C:/WINDOWS/TEMP/maker-cache-HKbRJs/\u003cgame\u003e/assets, marking for full package download\r"
+    },
+    {
+        "cursor":  67,
+        "text":  "[2026-10-11 13_56_36_248][0] INFO: [Bootstrap/LoadVersion] No local cache, marking for full package download\r"
+    },
+    {
+        "cursor":  68,
+        "text":  "[2026-10-11 13_56_36_248][0] INFO: [Bootstrap/LoadVersion] Downloading [local-preview]/latest.json\r"
+    },
+    {
+        "cursor":  69,
+        "text":  "[2026-10-11 13_56_36_249][0] INFO: HttpManager initialized (Native with libhv HttpClient)\r"
+    },
+    {
+        "cursor":  70,
+        "text":  "[2026-10-11 13_56_36_256][1] INFO: [Bootstrap/LoadVersion] Version: 1.0.1, Manifest (client): 58bc543b\r"
+    },
+    {
+        "cursor":  71,
+        "text":  "[2026-10-11 13_56_36_256][1] INFO: [Bootstrap/LoadVersion] Completed successfully (7 ms)\r"
+    },
+    {
+        "cursor":  72,
+        "text":  "[2026-10-11 13_56_36_256][1] INFO: BootstrapPipeline: step \u0027LoadVersion\u0027 completed successfully\r"
+    },
+    {
+        "cursor":  73,
+        "text":  "[2026-10-11 13_56_36_256][1] INFO: BootstrapPipeline: executing step [2/5] \u0027LoadProjectManifest\u0027\r"
+    },
+    {
+        "cursor":  74,
+        "text":  "[2026-10-11 13_56_36_256][1] INFO: [Bootstrap/LoadProjectManifest] Starting...\r"
+    },
+    {
+        "cursor":  75,
+        "text":  "[2026-10-11 13_56_36_256][1] INFO: Manifest Lua API registered successfully\r"
+    },
+    {
+        "cursor":  76,
+        "text":  "[2026-10-11 13_56_36_256][1] INFO: [Bootstrap/LoadProjectManifest] Loading manifest from [local-preview]/1.0.1/manifest-58bc543b.json\r"
+    },
+    {
+        "cursor":  77,
+        "text":  "[2026-10-11 13_56_36_256][1] INFO: Shader::BeginLoad: /Shaders/BLGL/UI.glsl\r"
+    },
+    {
+        "cursor":  78,
+        "text":  "[2026-10-11 13_56_36_256][1] INFO: Shader::EndLoad\r"
+    },
+    {
+        "cursor":  79,
+        "text":  "[2026-10-11 13_56_36_257][1] INFO: Loaded vertex shader UI(DIFFMAP GAMMA_IN_SHADERING MIXCOLOR VERTEXCOLOR)\r"
+    },
+    {
+        "cursor":  80,
+        "text":  "[2026-10-11 13_56_36_257][1] INFO: Loaded pixel shader UI(DIFFMAP GAMMA_IN_SHADERING MIXCOLOR OPACITY VERTEXCOLOR)\r"
+    },
+    {
+        "cursor":  81,
+        "text":  "[2026-10-11 13_56_36_257][1] INFO: Loaded vertex shader UI(DIFFMAP)\r"
+    },
+    {
+        "cursor":  82,
+        "text":  "[2026-10-11 13_56_36_257][1] INFO: Loaded pixel shader UI(DIFFMAP OPACITY)\r"
+    },
+    {
+        "cursor":  83,
+        "text":  "[2026-10-11 13_56_36_257][1] INFO: BXLOG:C:\\actions-runner\\_work\\urhox\\urhox\\engine\\Source\\ThirdParty\\bgfx-all\\bgfx\\src\\dxgi.cpp (492): LOG Display Width: 1280, Height: 720, RefreshRate: 60001/1000\r"
+    },
+    {
+        "cursor":  84,
+        "text":  "\r"
+    },
+    {
+        "cursor":  85,
+        "text":  "[2026-10-11 13_56_36_311][5] INFO: ManifestData: loaded 262 files, 2 sources, 0 paks, entry=main.lua\r"
+    },
+    {
+        "cursor":  86,
+        "text":  "[2026-10-11 13_56_36_311][5] INFO: [Bootstrap/LoadProjectManifest] Added builtin source engine-startup: https://.../src/engine-startup/ (tag=stable, priority=1000000)\r"
+    },
+    {
+        "cursor":  87,
+        "text":  "[2026-10-11 13_56_36_311][5] INFO: [Bootstrap/LoadProjectManifest] Merged builtin source engine-res: https://\u003cengine-res\u003e/ (tag=maker_validate_window.0923, priority=1000001)\r"
+    },
+    {
+        "cursor":  88,
+        "text":  "[2026-10-11 13_56_36_311][5] INFO: [Bootstrap/LoadProjectManifest] Added builtin source urhox-libs: https://.../src/urhox-libs/ (tag=stable, priority=1000002)\r"
+    },
+    {
+        "cursor":  89,
+        "text":  "[2026-10-11 13_56_36_311][5] INFO: ManifestResolver: loaded game manifest with 262 files, 0 paks\r"
+    },
+    {
+        "cursor":  90,
+        "text":  "[2026-10-11 13_56_36_311][5] INFO: [Bootstrap/LoadProjectManifest] Loaded manifest with 262 files, entry: main.lua\r"
+    },
+    {
+        "cursor":  91,
+        "text":  "[2026-10-11 13_56_36_312][5] INFO: [Bootstrap/LoadProjectManifest] Completed successfully (56 ms)\r"
+    },
+    {
+        "cursor":  92,
+        "text":  "[2026-10-11 13_56_36_312][5] INFO: BootstrapPipeline: step \u0027LoadProjectManifest\u0027 completed successfully\r"
+    },
+    {
+        "cursor":  93,
+        "text":  "[2026-10-11 13_56_36_312][5] INFO: BootstrapPipeline: executing step [3/5] \u0027LoadSourceManifests\u0027\r"
+    },
+    {
+        "cursor":  94,
+        "text":  "[2026-10-11 13_56_36_312][5] INFO: [Bootstrap/LoadSourceManifests] Starting...\r"
+    },
+    {
+        "cursor":  95,
+        "text":  "[2026-10-11 13_56_36_312][5] INFO: [Bootstrap/LoadSourceManifests] Found source: engine-startup (https://.../src/engine-startup/, stable)\r"
+    },
+    {
+        "cursor":  96,
+        "text":  "[2026-10-11 13_56_36_312][5] INFO: [Bootstrap/LoadSourceManifests] Loading source [1/1]: engine-startup\r"
+    },
+    {
+        "cursor":  97,
+        "text":  "[2026-10-11 13_56_36_312][5] INFO: [Bootstrap/LoadSourceManifests] No local cache for engine-startup, marking for full package download\r"
+    },
+    {
+        "cursor":  98,
+        "text":  "[2026-10-11 13_56_36_312][5] INFO: [Bootstrap/LoadSourceManifests] Downloading: https://.../src/engine-startup/stable.json\r"
+    },
+    {
+        "cursor":  99,
+        "text":  "[2026-10-11 13_56_37_388][69] INFO: [Bootstrap/LoadSourceManifests] Downloading manifest for engine-startup\r"
+    },
+    {
+        "cursor":  100,
+        "text":  "[2026-10-11 13_56_37_640][84] INFO: ManifestData: loaded 8 files, 1 sources, 0 paks, entry=engine-startup/main.lua\r"
+    },
+    {
+        "cursor":  101,
+        "text":  "[2026-10-11 13_56_37_640][84] INFO: ManifestResolver: loaded source manifest \u0027engine-startup\u0027 with 8 files, 0 paks\r"
+    },
+    {
+        "cursor":  102,
+        "text":  "[2026-10-11 13_56_37_640][84] INFO: [Bootstrap/LoadSourceManifests] Loaded engine-startup manifest with 8 files\r"
+    },
+    {
+        "cursor":  103,
+        "text":  "[2026-10-11 13_56_37_640][84] INFO: [Bootstrap/LoadSourceManifests] Completed successfully (1329 ms)\r"
+    },
+    {
+        "cursor":  104,
+        "text":  "[2026-10-11 13_56_37_640][84] INFO: BootstrapPipeline: step \u0027LoadSourceManifests\u0027 completed successfully\r"
+    },
+    {
+        "cursor":  105,
+        "text":  "[2026-10-11 13_56_37_640][84] INFO: BootstrapPipeline: executing step [4/5] \u0027InitializeResource\u0027\r"
+    },
+    {
+        "cursor":  106,
+        "text":  "[2026-10-11 13_56_37_640][84] INFO: [Bootstrap/InitializeResource] Starting...\r"
+    },
+    {
+        "cursor":  107,
+        "text":  "[2026-10-11 13_56_37_640][84] INFO: [Bootstrap/InitializeResource] ManifestResolver registered to DownloadManager\r"
+    },
+    {
+        "cursor":  108,
+        "text":  "[2026-10-11 13_56_37_640][84] INFO: Added resource path C:/WINDOWS/TEMP/maker-cache-HKbRJs/\r"
+    },
+    {
+        "cursor":  109,
+        "text":  "[2026-10-11 13_56_37_640][84] INFO: Now resource dir: \r"
+    },
+    {
+        "cursor":  110,
+        "text":  "[2026-10-11 13_56_37_640][84] INFO: 0 - C:/WINDOWS/TEMP/maker-cache-HKbRJs/\r"
+    },
+    {
+        "cursor":  111,
+        "text":  "[2026-10-11 13_56_37_640][84] INFO: 1 - C:/Users/YINGYI/.taptap-maker/runtime/runtime-55daebeb-793b-4258-9b0e-9ca63cd33351/Res/\r"
+    },
+    {
+        "cursor":  112,
+        "text":  "[2026-10-11 13_56_37_640][84] INFO: [Bootstrap/InitializeResource] Resource system initialized\r"
+    },
+    {
+        "cursor":  113,
+        "text":  "[2026-10-11 13_56_37_640][84] INFO: [Bootstrap/InitializeResource] Completed successfully (0 ms)\r"
+    },
+    {
+        "cursor":  114,
+        "text":  "[2026-10-11 13_56_37_640][84] INFO: BootstrapPipeline: step \u0027InitializeResource\u0027 completed successfully\r"
+    },
+    {
+        "cursor":  115,
+        "text":  "[2026-10-11 13_56_37_640][84] INFO: BootstrapPipeline: executing step [5/5] \u0027Startup\u0027\r"
+    },
+    {
+        "cursor":  116,
+        "text":  "[2026-10-11 13_56_37_640][84] INFO: [Bootstrap/Startup] Starting...\r"
+    },
+    {
+        "cursor":  117,
+        "text":  "[2026-10-11 13_56_37_640][84] INFO: [Bootstrap/Startup] Found engine-startup manifest with 8 files\r"
+    },
+    {
+        "cursor":  118,
+        "text":  "[2026-10-11 13_56_37_640][84] INFO: [Bootstrap/Startup] Downloading 6 startup resources\r"
+    },
+    {
+        "cursor":  119,
+        "text":  "[2026-10-11 13_56_37_640][84] WARNING: DownloadManager: cannot resolve \u0027uuid://-73mcwx1QB6NyLrwJxv8Kg\u0027, skipping\r"
+    },
+    {
+        "cursor":  120,
+        "text":  "[2026-10-11 13_56_37_640][84] WARNING: DownloadManager: cannot resolve \u0027uuid://u05oYbz5RtecsyHB9-bmKQ\u0027, skipping\r"
+    },
+    {
+        "cursor":  121,
+        "text":  "[2026-10-11 13_56_38_887][158] INFO: DownloadManager: group completed, success=true, completed=4, failed=0\r"
+    },
+    {
+        "cursor":  122,
+        "text":  "[2026-10-11 13_56_38_887][158] INFO: [Bootstrap/Startup] Entry script: engine-startup/main.lua -\u003e .../src/engine-startup/assets/AlK2YdWhzuyHYnv6NgG9x35x-e4be3f39.lua\r"
+    },
+    {
+        "cursor":  123,
+        "text":  "[2026-10-11 13_56_38_887][158] INFO: Custom Lua require system installed (module cache active)\r"
+    },
+    {
+        "cursor":  124,
+        "text":  "[2026-10-11 13_56_38_894][158] INFO: Lua 5.4: Generational GC enabled.\r"
+    },
+    {
+        "cursor":  125,
+        "text":  "[2026-10-11 13_56_38_894][158] INFO: Lua official log file initialized: C:/Users/YINGYI/.taptap-maker/runtime/runtime-55daebeb-793b-4258-9b0e-9ca63cd33351/logs/lua/lua-2026-10-11 13_56_38_894.log\r"
+    },
+    {
+        "cursor":  126,
+        "text":  "[2026-10-11 13_56_38_894][158] INFO: Lua infinite loop detection enabled.\r"
+    },
+    {
+        "cursor":  127,
+        "text":  "[2026-10-11 13_56_38_894][158] INFO: Manifest Lua API registered successfully\r"
+    },
+    {
+        "cursor":  128,
+        "text":  "[2026-10-11 13_56_38_895][158] INFO: [BootstrapLuaAPI] Registered successfully\r"
+    },
+    {
+        "cursor":  129,
+        "text":  "[2026-10-11 13_56_38_895][158] INFO: [Bootstrap/Startup] Startup Lua VM created\r"
+    },
+    {
+        "cursor":  130,
+        "text":  "[2026-10-11 13_56_38_895][158] INFO: Loaded Lua script .../src/engine-startup/assets/AlK2YdWhzuyHYnv6NgG9x35x-e4be3f39.lua\r"
+    },
+    {
+        "cursor":  131,
+        "text":  "[2026-10-11 13_56_38_895][158] INFO: Executed Lua script .../src/engine-startup/assets/AlK2YdWhzuyHYnv6NgG9x35x-e4be3f39.lua\r"
+    },
+    {
+        "cursor":  132,
+        "text":  "[2026-10-11 13_56_38_895][158] INFO: Localization::SetUserPrefPath: \u0027C:/WINDOWS/TEMP/maker-cache-HKbRJs/\u003cgame\u003e/savedata/\u0027\r"
+    },
+    {
+        "cursor":  133,
+        "text":  "[2026-10-11 13_56_38_895][158] INFO: Localization: auto-selected \u0027zh_CN\u0027 from [en, zh_CN]\r"
+    },
+    {
+        "cursor":  134,
+        "text":  "[2026-10-11 13_56_38_896][158] INFO: Loaded Lua script engine-startup/loading_ui.lua\r"
+    },
+    {
+        "cursor":  135,
+        "text":  "[2026-10-11 13_56_38_911][158] INFO: LoadingUI::Hide()\r"
+    },
+    {
+        "cursor":  136,
+        "text":  "[2026-10-11 13_56_38_911][158] INFO: [Bootstrap/Startup] Pipeline reconfigured by Lua script\r"
+    },
+    {
+        "cursor":  137,
+        "text":  "[2026-10-11 13_56_38_911][158] INFO: [Bootstrap/Startup] Completed successfully (1271 ms)\r"
+    },
+    {
+        "cursor":  138,
+        "text":  "[2026-10-11 13_56_38_911][158] INFO: BootstrapPipeline: step \u0027Startup\u0027 completed successfully\r"
+    },
+    {
+        "cursor":  139,
+        "text":  "[2026-10-11 13_56_38_911][158] INFO: BootstrapPipeline: executing step [6/16] \u0027UpdateProjectInfo\u0027\r"
+    },
+    {
+        "cursor":  140,
+        "text":  "[2026-10-11 13_56_38_911][158] INFO: [Bootstrap/UpdateProjectInfo] Starting...\r"
+    },
+    {
+        "cursor":  141,
+        "text":  "[2026-10-11 13_56_38_911][158] INFO: [Bootstrap/UpdateProjectInfo] Downloading project.json from [local-preview]/project.json (will overwrite if exists)\r"
+    },
+    {
+        "cursor":  142,
+        "text":  "[2026-10-11 13_56_38_911][158] INFO: Shader::BeginLoad: /Shaders/BLGL/NanoVGFill.glsl\r"
+    },
+    {
+        "cursor":  143,
+        "text":  "[2026-10-11 13_56_38_911][158] INFO: Shader::EndLoad\r"
+    },
+    {
+        "cursor":  144,
+        "text":  "[2026-10-11 13_56_38_911][158] INFO: Loaded vertex shader NanoVGFill()\r"
+    },
+    {
+        "cursor":  145,
+        "text":  "[2026-10-11 13_56_38_911][158] INFO: Loaded pixel shader NanoVGFill()\r"
+    },
+    {
+        "cursor":  146,
+        "text":  "[2026-10-11 13_56_38_948][161] INFO: [Bootstrap/UpdateProjectInfo] project.json downloaded successfully\r"
+    },
+    {
+        "cursor":  147,
+        "text":  "[2026-10-11 13_56_38_962][161] INFO: [Bootstrap/UpdateProjectInfo] No existing title, fetching minigame data for project: m_h4x3\r"
+    },
+    {
+        "cursor":  148,
+        "text":  "[2026-10-11 13_56_41_685][323] INFO: [Bootstrap/UpdateProjectInfo] Minigame data response: status=200\r"
+    },
+    {
+        "cursor":  149,
+        "text":  "[2026-10-11 13_56_41_685][323] WARNING: [Bootstrap/UpdateProjectInfo] Minigame data has no entry for project: m_h4x3\r"
+    },
+    {
+        "cursor":  150,
+        "text":  "[2026-10-11 13_56_41_685][323] INFO: [Bootstrap/UpdateProjectInfo] Completed successfully (2774 ms)\r"
+    },
+    {
+        "cursor":  151,
+        "text":  "[2026-10-11 13_56_41_685][323] INFO: BootstrapPipeline: step \u0027UpdateProjectInfo\u0027 completed successfully\r"
+    },
+    {
+        "cursor":  152,
+        "text":  "[2026-10-11 13_56_41_685][323] INFO: BootstrapPipeline: executing step [7/16] \u0027LoadSourceManifests\u0027\r"
+    },
+    {
+        "cursor":  153,
+        "text":  "[2026-10-11 13_56_41_685][323] INFO: [Bootstrap/LoadSourceManifests] Starting...\r"
+    },
+    {
+        "cursor":  154,
+        "text":  "[2026-10-11 13_56_41_685][323] INFO: [Bootstrap/LoadSourceManifests] Found source: engine-res (https://\u003cengine-res\u003e/, maker_validate_window.0923)\r"
+    },
+    {
+        "cursor":  155,
+        "text":  "[2026-10-11 13_56_41_685][323] INFO: [Bootstrap/LoadSourceManifests] Found source: official-res (https://\u003cofficial-res\u003e/, stable)\r"
+    },
+    {
+        "cursor":  156,
+        "text":  "[2026-10-11 13_56_41_685][323] INFO: [Bootstrap/LoadSourceManifests] Found source: urhox-libs (https://.../src/urhox-libs/, stable)\r"
+    },
+    {
+        "cursor":  157,
+        "text":  "[2026-10-11 13_56_41_685][323] INFO: [Bootstrap/LoadSourceManifests] Loading source [1/3]: official-res\r"
+    },
+    {
+        "cursor":  158,
+        "text":  "[lua] [i18n] loadConfig: uuid=\u0027Q4M3GntfTmiNZCdTeiz5Kg\u0027 engine=\u0027Q4M3GntfTmiNZCdTeiz5Kg\u0027 match=true"
+    },
+    {
+        "cursor":  159,
+        "text":  "[lua] [i18n] loadConfig: engine fallback, support_langs=\u0027zh_CN\u0027"
+    },
+    {
+        "cursor":  160,
+        "text":  "[lua] [i18n] PreloadI18nStep: resolved=\u0027zh_CN\u0027"
+    },
+    {
+        "cursor":  161,
+        "text":  "[2026-10-11 13_56_41_685][323] INFO: [Bootstrap/LoadSourceManifests] No local cache for official-res, marking for full package download\r"
+    },
+    {
+        "cursor":  162,
+        "text":  "[2026-10-11 13_56_41_685][323] INFO: [Bootstrap/LoadSourceManifests] Downloading: https://\u003cofficial-res\u003e/stable.json\r"
+    },
+    {
+        "cursor":  163,
+        "text":  "[2026-10-11 13_56_42_141][350] INFO: [Bootstrap/LoadSourceManifests] Downloading manifest for official-res\r"
+    },
+    {
+        "cursor":  164,
+        "text":  "[2026-10-11 13_56_44_893][503] INFO: ManifestData: loaded 38888 files, 1 sources, 3 paks, entry=\r"
+    },
+    {
+        "cursor":  165,
+        "text":  "[2026-10-11 13_56_45_054][503] INFO: ManifestResolver: loaded source manifest \u0027official-res\u0027 with 38888 files, 3 paks\r"
+    },
+    {
+        "cursor":  166,
+        "text":  "[2026-10-11 13_56_45_054][503] INFO: [Bootstrap/LoadSourceManifests] Loaded official-res manifest with 38888 files\r"
+    },
+    {
+        "cursor":  167,
+        "text":  "[2026-10-11 13_56_45_054][503] INFO: [Bootstrap/LoadSourceManifests] Loading source [2/3]: engine-res\r"
+    },
+    {
+        "cursor":  168,
+        "text":  "[2026-10-11 13_56_45_054][503] INFO: [Bootstrap/LoadSourceManifests] No local cache for engine-res, marking for full package download\r"
+    },
+    {
+        "cursor":  169,
+        "text":  "[2026-10-11 13_56_45_054][503] INFO: [Bootstrap/LoadSourceManifests] Downloading: https://\u003cengine-res\u003e/maker_validate_window.0923.json\r"
+    },
+    {
+        "cursor":  170,
+        "text":  "[2026-10-11 13_56_45_749][545] INFO: [Bootstrap/LoadSourceManifests] Downloading manifest for engine-res\r"
+    },
+    {
+        "cursor":  171,
+        "text":  "[2026-10-11 13_56_46_240][574] INFO: ManifestData: loaded 1094 files, 0 sources, 0 paks, entry=\r"
+    },
+    {
+        "cursor":  172,
+        "text":  "[2026-10-11 13_56_46_244][574] INFO: ManifestResolver: loaded source manifest \u0027engine-res\u0027 with 1094 files, 0 paks\r"
+    },
+    {
+        "cursor":  173,
+        "text":  "[2026-10-11 13_56_46_244][574] INFO: [Bootstrap/LoadSourceManifests] Loaded engine-res manifest with 1094 files\r"
+    },
+    {
+        "cursor":  174,
+        "text":  "[2026-10-11 13_56_46_244][574] INFO: [Bootstrap/LoadSourceManifests] Loading source [3/3]: urhox-libs\r"
+    },
+    {
+        "cursor":  175,
+        "text":  "[2026-10-11 13_56_46_245][574] INFO: [Bootstrap/LoadSourceManifests] No local cache for urhox-libs, marking for full package download\r"
+    },
+    {
+        "cursor":  176,
+        "text":  "[2026-10-11 13_56_46_245][574] INFO: [Bootstrap/LoadSourceManifests] Downloading: https://.../src/urhox-libs/stable.json\r"
+    },
+    {
+        "cursor":  177,
+        "text":  "[2026-10-11 13_56_47_810][667] INFO: [Bootstrap/LoadSourceManifests] Downloading manifest for urhox-libs\r"
+    },
+    {
+        "cursor":  178,
+        "text":  "[2026-10-11 13_56_48_148][687] INFO: ManifestData: loaded 159 files, 0 sources, 0 paks, entry=\r"
+    },
+    {
+        "cursor":  179,
+        "text":  "[2026-10-11 13_56_48_149][687] INFO: ManifestResolver: loaded source manifest \u0027urhox-libs\u0027 with 159 files, 0 paks\r"
+    },
+    {
+        "cursor":  180,
+        "text":  "[2026-10-11 13_56_48_149][687] INFO: [Bootstrap/LoadSourceManifests] Loaded urhox-libs manifest with 159 files\r"
+    },
+    {
+        "cursor":  181,
+        "text":  "[2026-10-11 13_56_48_149][687] INFO: [Bootstrap/LoadSourceManifests] Completed successfully (6464 ms)\r"
+    },
+    {
+        "cursor":  182,
+        "text":  "[2026-10-11 13_56_48_149][687] INFO: BootstrapPipeline: step \u0027LoadSourceManifests\u0027 completed successfully\r"
+    },
+    {
+        "cursor":  183,
+        "text":  "[2026-10-11 13_56_48_149][687] INFO: BootstrapPipeline: executing step [8/16] \u0027ClearShaderCache\u0027\r"
+    },
+    {
+        "cursor":  184,
+        "text":  "[2026-10-11 13_56_48_149][687] INFO: [Bootstrap/ClearShaderCache] Starting...\r"
+    },
+    {
+        "cursor":  185,
+        "text":  "[2026-10-11 13_56_48_150][687] INFO: [Bootstrap/ClearShaderCache] shader group unchanged\r"
+    },
+    {
+        "cursor":  186,
+        "text":  "[2026-10-11 13_56_48_150][687] INFO: [Bootstrap/ClearShaderCache] Completed successfully (1 ms)\r"
+    },
+    {
+        "cursor":  187,
+        "text":  "[2026-10-11 13_56_48_150][687] INFO: BootstrapPipeline: step \u0027ClearShaderCache\u0027 completed successfully\r"
+    },
+    {
+        "cursor":  188,
+        "text":  "[2026-10-11 13_56_48_150][687] INFO: BootstrapPipeline: executing step [9/16] \u0027PreloadI18nStep\u0027\r"
+    },
+    {
+        "cursor":  189,
+        "text":  "[2026-10-11 13_56_48_151][687] INFO: [Bootstrap/PreloadI18nStep] Starting...\r"
+    },
+    {
+        "cursor":  190,
+        "text":  "[2026-10-11 13_56_48_414][703]INFO[i18n] loadConfig: uuid=\u0027Q4M3GntfTmiNZCdTeiz5Kg\u0027 engine=\u0027Q4M3GntfTmiNZCdTeiz5Kg\u0027 match=true\r"
+    },
+    {
+        "cursor":  191,
+        "text":  "[2026-10-11 13_56_48_415][703]INFO[i18n] loadConfig: engine fallback, support_langs=\u0027zh_CN\u0027\r"
+    },
+    {
+        "cursor":  192,
+        "text":  "[2026-10-11 13_56_48_415][703]INFO[i18n] PreloadI18nStep: resolved=\u0027zh_CN\u0027\r"
+    },
+    {
+        "cursor":  193,
+        "text":  "[2026-10-11 13_56_48_720][721] INFO: DownloadManager: group completed, success=true, completed=2, failed=0\r"
+    },
+    {
+        "cursor":  194,
+        "text":  "[2026-10-11 13_56_48_720][721] INFO: [Bootstrap/PreloadI18nStep] Completed successfully (570 ms)\r"
+    },
+    {
+        "cursor":  195,
+        "text":  "[2026-10-11 13_56_48_720][721] INFO: BootstrapPipeline: step \u0027PreloadI18nStep\u0027 completed successfully\r"
+    },
+    {
+        "cursor":  196,
+        "text":  "[2026-10-11 13_56_48_720][721] INFO: BootstrapPipeline: executing step [10/16] \u0027DownloadInitialPackage\u0027\r"
+    },
+    {
+        "cursor":  197,
+        "text":  "[2026-10-11 13_56_48_720][721] INFO: [Bootstrap/DownloadInitialPackage] Starting...\r"
+    },
+    {
+        "cursor":  198,
+        "text":  "[2026-10-11 13_56_48_720][721] INFO: [Bootstrap/DownloadPackage] Starting parallel download of 2 packages\r"
+    },
+    {
+        "cursor":  199,
+        "text":  "[2026-10-11 13_56_48_720][721] INFO: [Bootstrap/DownloadPackage] Downloading: https://\u003cengine-res\u003e/1.32.12/assets@windows.7z\r"
+    },
+    {
+        "cursor":  200,
+        "text":  "[2026-10-11 13_56_48_723][721] INFO: [Bootstrap/DownloadPackage] Downloading: https://.../src/urhox-libs/1.0.29/assets@windows.7z\r"
+    },
+    {
+        "cursor":  201,
+        "text":  "[2026-10-11 13_56_49_311][756] INFO: [Bootstrap/DownloadPackage] Downloaded urhox-libs, dispatching background extraction\r"
+    },
+    {
+        "cursor":  202,
+        "text":  "[2026-10-11 13_56_49_355][758] INFO: [Bootstrap/DownloadPackage] [urhox-libs] Archive contains 159 files\r"
+    },
+    {
+        "cursor":  203,
+        "text":  "[2026-10-11 13_57_01_491][1477] INFO: [Bootstrap/DownloadPackage] Downloaded engine-res, dispatching background extraction\r"
+    },
+    {
+        "cursor":  204,
+        "text":  "[2026-10-11 13_57_01_525][1479] INFO: [Bootstrap/DownloadPackage] [engine-res] Archive contains 1048 files\r"
+    },
+    {
+        "cursor":  205,
+        "text":  "[2026-10-11 13_57_04_178][1637] INFO: [Bootstrap/DownloadPackage] Extracted package for engine-res\r"
+    },
+    {
+        "cursor":  206,
+        "text":  "[2026-10-11 13_57_04_180][1637] INFO: [Bootstrap/DownloadPackage] Extracted package for urhox-libs\r"
+    },
+    {
+        "cursor":  207,
+        "text":  "[2026-10-11 13_57_04_180][1637] INFO: [Bootstrap/DownloadInitialPackage] Completed successfully (15459 ms)\r"
+    },
+    {
+        "cursor":  208,
+        "text":  "[2026-10-11 13_57_04_180][1637] INFO: BootstrapPipeline: step \u0027DownloadInitialPackage\u0027 completed successfully\r"
+    },
+    {
+        "cursor":  209,
+        "text":  "[2026-10-11 13_57_04_180][1637] INFO: BootstrapPipeline: executing step [11/16] \u0027LoadPreloadResources\u0027\r"
+    },
+    {
+        "cursor":  210,
+        "text":  "[2026-10-11 13_57_04_180][1637] INFO: [Bootstrap/LoadPreloadResources] Starting...\r"
+    },
+    {
+        "cursor":  211,
+        "text":  "[2026-10-11 13_57_04_180][1637] INFO: DownloadWhilePlayingManager: loaded 14 render blocking exts\r"
+    },
+    {
+        "cursor":  212,
+        "text":  "[2026-10-11 13_57_04_180][1637] INFO: [Bootstrap/LoadPreloadResources] Loaded RenderBlockingTypes.json\r"
+    },
+    {
+        "cursor":  213,
+        "text":  "[2026-10-11 13_57_04_182][1637] INFO: ManifestResolver: Ԥ���� 1163 ���ļ� (manifest �ܼ� 40212)\r"
+    },
+    {
+        "cursor":  214,
+        "text":  "[2026-10-11 13_57_04_182][1637] INFO: [Bootstrap/LoadPreloadResources] Found 1164 preload files\r"
+    },
+    {
+        "cursor":  215,
+        "text":  "[2026-10-11 13_57_04_212][1637] INFO: [Bootstrap/LoadPreloadResources] Need to download 117 files (31.2MB)\r"
+    },
+    {
+        "cursor":  216,
+        "text":  "[2026-10-11 13_57_28_521][3081] INFO: DownloadManager: group completed, success=true, completed=117, failed=0\r"
+    },
+    {
+        "cursor":  217,
+        "text":  "[2026-10-11 13_57_28_521][3081] INFO: [Bootstrap/LoadPreloadResources] Completed successfully (24342 ms)\r"
+    },
+    {
+        "cursor":  218,
+        "text":  "[2026-10-11 13_57_28_521][3081] INFO: BootstrapPipeline: step \u0027LoadPreloadResources\u0027 completed successfully\r"
+    },
+    {
+        "cursor":  219,
+        "text":  "[2026-10-11 13_57_28_521][3081] INFO: BootstrapPipeline: executing step [12/16] \u0027Cleanup\u0027\r"
+    },
+    {
+        "cursor":  220,
+        "text":  "[2026-10-11 13_57_28_521][3081] INFO: [Bootstrap/Cleanup] Starting...\r"
+    },
+    {
+        "cursor":  221,
+        "text":  "[2026-10-11 13_57_28_567][3081] INFO: [Bootstrap/Cleanup] Total target files: 40212\r"
+    },
+    {
+        "cursor":  222,
+        "text":  "[2026-10-11 13_57_28_567][3081] INFO: [Bootstrap/Cleanup] Scanning: C:/WINDOWS/TEMP/maker-cache-HKbRJs/\u003cgame\u003e/assets/\r"
+    },
+    {
+        "cursor":  223,
+        "text":  "[2026-10-11 13_57_28_568][3081] INFO: [Bootstrap/Cleanup] Scanning: C:/WINDOWS/TEMP/maker-cache-HKbRJs/.../src/engine-startup/assets/\r"
+    },
+    {
+        "cursor":  224,
+        "text":  "[2026-10-11 13_57_28_568][3081] INFO: [Bootstrap/Cleanup] Scanning: C:/WINDOWS/TEMP/maker-cache-HKbRJs/\u003cofficial-res\u003e/assets/\r"
+    },
+    {
+        "cursor":  225,
+        "text":  "[2026-10-11 13_57_28_568][3081] INFO: [Bootstrap/Cleanup] Scanning: C:/WINDOWS/TEMP/maker-cache-HKbRJs/\u003cengine-res\u003e/assets/\r"
+    },
+    {
+        "cursor":  226,
+        "text":  "[2026-10-11 13_57_28_622][3081] INFO: [Bootstrap/Cleanup] Scanning: C:/WINDOWS/TEMP/maker-cache-HKbRJs/.../src/urhox-libs/assets/\r"
+    },
+    {
+        "cursor":  227,
+        "text":  "[2026-10-11 13_57_28_623][3081] INFO: [Bootstrap/Cleanup] Completed successfully (102 ms)\r"
+    },
+    {
+        "cursor":  228,
+        "text":  "[2026-10-11 13_57_28_623][3081] INFO: BootstrapPipeline: step \u0027Cleanup\u0027 completed successfully\r"
+    },
+    {
+        "cursor":  229,
+        "text":  "[2026-10-11 13_57_28_623][3081] INFO: BootstrapPipeline: skipping step \u0027RecordProjectSize\u0027\r"
+    },
+    {
+        "cursor":  230,
+        "text":  "[2026-10-11 13_57_28_623][3081] INFO: BootstrapPipeline: executing step [14/16] \u0027CleanupOtherProjects\u0027\r"
+    },
+    {
+        "cursor":  231,
+        "text":  "[2026-10-11 13_57_28_623][3081] INFO: [Bootstrap/CleanupOtherProjects] Starting...\r"
+    },
+    {
+        "cursor":  232,
+        "text":  "[2026-10-11 13_57_28_623][3081] INFO: [Bootstrap/CleanupOtherProjects] Completed successfully (0 ms)\r"
+    },
+    {
+        "cursor":  233,
+        "text":  "[2026-10-11 13_57_28_623][3081] INFO: BootstrapPipeline: step \u0027CleanupOtherProjects\u0027 completed successfully\r"
+    },
+    {
+        "cursor":  234,
+        "text":  "[2026-10-11 13_57_28_623][3081] INFO: BootstrapPipeline: executing step [15/16] \u0027Ready\u0027\r"
+    },
+    {
+        "cursor":  235,
+        "text":  "[2026-10-11 13_57_28_623][3081] INFO: [Bootstrap/Ready] Starting...\r"
+    },
+    {
+        "cursor":  236,
+        "text":  "[2026-10-11 13_57_28_624][3081] INFO: [Bootstrap/Ready] Project ID: m_h4x3\r"
+    },
+    {
+        "cursor":  237,
+        "text":  "[2026-10-11 13_57_28_624][3081] INFO: [Bootstrap/Ready] Multiplayer mode: false, max_players: 0\r"
+    },
+    {
+        "cursor":  238,
+        "text":  "[2026-10-11 13_57_28_624][3082] INFO: [Bootstrap/Ready] Completed successfully (1 ms)\r"
+    },
+    {
+        "cursor":  239,
+        "text":  "[2026-10-11 13_57_28_624][3082] INFO: BootstrapPipeline: step \u0027Ready\u0027 completed successfully\r"
+    },
+    {
+        "cursor":  240,
+        "text":  "[2026-10-11 13_57_28_642][3083] INFO: BootstrapPipeline: executing step [16/16] \u0027FadeOutLoading\u0027\r"
+    },
+    {
+        "cursor":  241,
+        "text":  "[2026-10-11 13_57_28_642][3083] INFO: [Bootstrap/FadeOutLoading] Starting...\r"
+    },
+    {
+        "cursor":  242,
+        "text":  "[2026-10-11 13_57_28_995][3104] INFO: [Bootstrap/FadeOutLoading] Completed successfully (352 ms)\r"
+    },
+    {
+        "cursor":  243,
+        "text":  "[2026-10-11 13_57_28_995][3104] INFO: BootstrapPipeline: step \u0027FadeOutLoading\u0027 completed successfully\r"
+    },
+    {
+        "cursor":  244,
+        "text":  "[2026-10-11 13_57_29_011][3105] INFO: BootstrapPipeline: completed successfully\r"
+    },
+    {
+        "cursor":  245,
+        "text":  "[2026-10-11 13_57_29_011][3105] INFO: BootstrapManager: pipeline completed successfully\r"
+    },
+    {
+        "cursor":  246,
+        "text":  "[2026-10-11 13_57_29_011][3105] INFO: BootstrapManager: resolving entry script: main.lua\r"
+    },
+    {
+        "cursor":  247,
+        "text":  "[2026-10-11 13_57_29_022][3105] INFO: Removed resource package shadercache_runtime\r"
+    },
+    {
+        "cursor":  248,
+        "text":  "[2026-10-11 13_57_29_039][3105] INFO: PackageFile::Open, C:/WINDOWS/TEMP/maker-cache-HKbRJs/\u003cengine-res\u003e/assets/FYMm4bwqCU0_6rl0pC101U-6-d189d71c.pak, 0\r"
+    },
+    {
+        "cursor":  249,
+        "text":  "[2026-10-11 13_57_29_179][3105] INFO: UZSD MemoryLess package opened: C:/WINDOWS/TEMP/maker-cache-HKbRJs/\u003cengine-res\u003e/assets/FYMm4bwqCU0_6rl0pC101U-6-d189d71c.pak, 55257 entries (16693 unique blocks), compressed 28269272 bytes, dict 65536 bytes\r"
+    },
+    {
+        "cursor":  250,
+        "text":  "[2026-10-11 13_57_29_179][3105] INFO: Added resource package shadercache_runtime\r"
+    },
+    {
+        "cursor":  251,
+        "text":  "[2026-10-11 13_57_29_216][3105] INFO: Loaded shader cache package: C:/WINDOWS/TEMP/maker-cache-HKbRJs/\u003cengine-res\u003e/assets/FYMm4bwqCU0_6rl0pC101U-6-d189d71c.pak\r"
+    },
+    {
+        "cursor":  252,
+        "text":  "[2026-10-11 13_57_29_218][3105] INFO: RuntimeRetargeterCache: Loaded 5 body types, 210 animation mappings\r"
+    },
+    {
+        "cursor":  253,
+        "text":  "[2026-10-11 13_57_29_219][3105] INFO: Loaded Lua script LuaScripts/Utilities/EnginePreview.lua\r"
+    },
+    {
+        "cursor":  254,
+        "text":  "[2026-10-11 13_57_29_219][3105][Script] IsNetworkMode:    false\r"
+    },
+    {
+        "cursor":  255,
+        "text":  "[2026-10-11 13_57_29_225][3105] INFO: Loaded Lua script urhox-libs/Engine/init.lua\r"
+    },
+    {
+        "cursor":  256,
+        "text":  "[2026-10-11 13_57_29_226][3105] INFO: Loaded Lua script urhox-libs/Engine/InputExtensions.lua\r"
+    },
+    {
+        "cursor":  257,
+        "text":  "[2026-10-11 13_57_29_227][3105] INFO: Loaded Lua script urhox-libs/Engine/ResourceCacheExtensions.lua\r"
+    },
+    {
+        "cursor":  258,
+        "text":  "[2026-10-11 13_57_29_230][3105] INFO: Loaded Lua script urhox-libs/Engine/i18n.lua\r"
+    },
+    {
+        "cursor":  259,
+        "text":  "[2026-10-11 13_57_29_231][3105] INFO: [i18n] loadConfig: uuid=\u0027Q4M3GntfTmiNZCdTeiz5Kg\u0027 engine=\u0027Q4M3GntfTmiNZCdTeiz5Kg\u0027 match=true\r"
+    },
+    {
+        "cursor":  260,
+        "text":  "[2026-10-11 13_57_29_231][3105] INFO: [i18n] loadConfig: engine fallback, support_langs=\u0027zh_CN\u0027\r"
+    },
+    {
+        "cursor":  261,
+        "text":  "[2026-10-11 13_57_29_231][3105] INFO: [i18n] GetLanguage: resolved=\u0027zh_CN\u0027\r"
+    },
+    {
+        "cursor":  262,
+        "text":  "[2026-10-11 13_57_29_231][3105] INFO: [i18n] SetLanguage: actualLang=\u0027zh_CN\u0027 explicit=nil\r"
+    },
+    {
+        "cursor":  263,
+        "text":  "[2026-10-11 13_57_29_231][3105] INFO: [i18n] SetVariantTag: priority=2000, tag=\u0027\u0027\r"
+    },
+    {
+        "cursor":  264,
+        "text":  "[2026-10-11 13_57_29_231][3105] INFO: SetVariantTag: priority=2000, tag=\u0027\u0027\r"
+    },
+    {
+        "cursor":  265,
+        "text":  "[2026-10-11 13_57_29_235][3105] INFO: [i18n] init: lang=\u0027zh_CN\u0027 translations=true hooks=true\r"
+    },
+    {
+        "cursor":  266,
+        "text":  "[2026-10-11 13_57_29_236][3105] INFO: Loaded Lua script LuaScripts/Utilities/Previews/InputAdaptor.lua\r"
+    },
+    {
+        "cursor":  267,
+        "text":  "[2026-10-11 13_57_29_236][3105][Script] [InputAdaptor] Loading input event adaptor...\r"
+    },
+    {
+        "cursor":  268,
+        "text":  "[2026-10-11 13_57_29_236][3105][Script] [InputAdaptor] Hooked SubscribeToEvent for event mapping.\r"
+    },
+    {
+        "cursor":  269,
+        "text":  "[2026-10-11 13_57_29_236][3105][Script] [InputAdaptor] Platform: Windows, isTouchPlatform: false\r"
+    },
+    {
+        "cursor":  270,
+        "text":  "[2026-10-11 13_57_29_236][3105][Script] [InputAdaptor] Hooked Input methods for touch emulation fallback.\r"
+    },
+    {
+        "cursor":  271,
+        "text":  "[2026-10-11 13_57_29_236][3105] INFO: Loaded Lua script LuaScripts/Utilities/Previews/Scene.lua\r"
+    },
+    {
+        "cursor":  272,
+        "text":  "[2026-10-11 13_57_29_237][3105] INFO: Loaded Lua script LuaScripts/Utilities/Previews/SceneGuard.lua\r"
+    },
+    {
+        "cursor":  273,
+        "text":  "[2026-10-11 13_57_29_238][3105] INFO: Loaded Lua script LuaScripts/Utilities/Previews/UIGuard.lua\r"
+    },
+    {
+        "cursor":  274,
+        "text":  "[2026-10-11 13_57_29_239][3105] INFO: Loaded Lua script LuaScripts/Utilities/Previews/RewardVideoAd.lua\r"
+    },
+    {
+        "cursor":  275,
+        "text":  "[2026-10-11 13_57_29_240][3105] INFO: Loaded Lua script LuaScripts/Utilities/Previews/UserInfo.lua\r"
+    },
+    {
+        "cursor":  276,
+        "text":  "[2026-10-11 13_57_29_241][3105][Script] Check Transition.lua SimpleGrid.lua\r"
+    },
+    {
+        "cursor":  277,
+        "text":  "[2026-10-11 13_57_29_242][3105] INFO: Loaded Lua script LuaScripts/Utilities/Previews/Isolation_Client.lua\r"
+    },
+    {
+        "cursor":  278,
+        "text":  "[2026-10-11 13_57_29_243][3105] INFO: Loaded Lua script LuaScripts/Utilities/Previews/Isolation_Common.lua\r"
+    },
+    {
+        "cursor":  279,
+        "text":  "[2026-10-11 13_57_29_245][3105] INFO: Loaded Lua script LuaScripts/Utilities/Previews/UrlWhitelist.lua\r"
+    },
+    {
+        "cursor":  280,
+        "text":  "[2026-10-11 13_57_29_246][3105] INFO: [Preview/Isolation_Client] Loaded client URL whitelist from LuaScripts/Utilities/Previews/ClientUrlWhitelist.json (0 urls, 2 domains)\r"
+    },
+    {
+        "cursor":  281,
+        "text":  "[2026-10-11 13_57_29_247][3105] WARNING: userId is 0, savedata will not be per-user isolated\r"
+    },
+    {
+        "cursor":  282,
+        "text":  "[2026-10-11 13_57_29_250][3105] INFO: Executed Lua script LuaScripts/Utilities/EnginePreview.lua\r"
+    },
+    {
+        "cursor":  283,
+        "text":  "[2026-10-11 13_57_29_252][3105] INFO: Loaded Lua script main.lua\r"
+    },
+    {
+        "cursor":  284,
+        "text":  "[2026-10-11 13_57_29_254][3105] INFO: Loaded Lua script urhox-libs/UI/init.lua\r"
+    },
+    {
+        "cursor":  285,
+        "text":  "[2026-10-11 13_57_29_260][3105] INFO: Loaded Lua script urhox-libs/UI/Core/UI.lua\r"
+    },
+    {
+        "cursor":  286,
+        "text":  "[2026-10-11 13_57_29_262][3105] INFO: Loaded Lua script urhox-libs/UI/Core/Theme.lua\r"
+    },
+    {
+        "cursor":  287,
+        "text":  "[2026-10-11 13_57_29_263][3105] INFO: Loaded Lua script urhox-libs/UI/Core/ImageCache.lua\r"
+    },
+    {
+        "cursor":  288,
+        "text":  "[2026-10-11 13_57_29_265][3105] INFO: Loaded Lua script urhox-libs/UI/Core/PointerEvent.lua\r"
+    },
+    {
+        "cursor":  289,
+        "text":  "[2026-10-11 13_57_29_267][3105] INFO: Loaded Lua script urhox-libs/UI/Core/Input.lua\r"
+    },
+    {
+        "cursor":  290,
+        "text":  "[2026-10-11 13_57_29_270][3105] INFO: Loaded Lua script urhox-libs/UI/Core/InputAdapter.lua\r"
+    },
+    {
+        "cursor":  291,
+        "text":  "[2026-10-11 13_57_29_274][3105] INFO: Loaded Lua script urhox-libs/UI/Core/Gesture.lua\r"
+    },
+    {
+        "cursor":  292,
+        "text":  "[2026-10-11 13_57_29_275][3105] INFO: Loaded Lua script urhox-libs/UI/Core/GestureEvent.lua\r"
+    },
+    {
+        "cursor":  293,
+        "text":  "[2026-10-11 13_57_29_286][3105] INFO: Loaded Lua script urhox-libs/UI/Core/Widget.lua\r"
+    },
+    {
+        "cursor":  294,
+        "text":  "[2026-10-11 13_57_29_289][3105] INFO: Loaded Lua script urhox-libs/UI/Core/Style.lua\r"
+    },
+    {
+        "cursor":  295,
+        "text":  "[2026-10-11 13_57_29_292][3105] INFO: Loaded Lua script urhox-libs/UI/Core/Transition.lua\r"
+    },
+    {
+        "cursor":  296,
+        "text":  "[2026-10-11 13_57_29_302][3105] INFO: Loaded Lua script urhox-libs/UI/Core/UILoader.lua\r"
+    },
+    {
+        "cursor":  297,
+        "text":  "[2026-10-11 13_57_29_304][3105] INFO: Loaded Lua script urhox-libs/UI/Core/UISerializer.lua\r"
+    },
+    {
+        "cursor":  298,
+        "text":  "[2026-10-11 13_57_29_306][3105] INFO: Loaded Lua script urhox-libs/UI/Core/UIInspector/init.lua\r"
+    },
+    {
+        "cursor":  299,
+        "text":  "[2026-10-11 13_57_29_308][3105] INFO: Loaded Lua script urhox-libs/UI/Core/UIInspector/Context.lua\r"
+    },
+    {
+        "cursor":  300,
+        "text":  "[2026-10-11 13_57_29_311][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/ColorPicker.lua\r"
+    },
+    {
+        "cursor":  301,
+        "text":  "[2026-10-11 13_57_29_314][3105] INFO: Loaded Lua script urhox-libs/UI/Core/UIInspector/Schema.lua\r"
+    },
+    {
+        "cursor":  302,
+        "text":  "[2026-10-11 13_57_29_316][3105] INFO: Loaded Lua script urhox-libs/UI/Core/UIInspector/Selection.lua\r"
+    },
+    {
+        "cursor":  303,
+        "text":  "[2026-10-11 13_57_29_318][3105] INFO: Loaded Lua script urhox-libs/UI/Core/UIInspector/Overlay.lua\r"
+    },
+    {
+        "cursor":  304,
+        "text":  "[2026-10-11 13_57_29_319][3105] INFO: Loaded Lua script urhox-libs/UI/Core/UIInspector/Report.lua\r"
+    },
+    {
+        "cursor":  305,
+        "text":  "[2026-10-11 13_57_29_321][3105] INFO: Loaded Lua script urhox-libs/UI/Core/UIInspector/QuickTweak.lua\r"
+    },
+    {
+        "cursor":  306,
+        "text":  "[2026-10-11 13_57_29_322][3105] INFO: Loaded Lua script urhox-libs/UI/Core/UIInspector/EditTool.lua\r"
+    },
+    {
+        "cursor":  307,
+        "text":  "[2026-10-11 13_57_29_326][3105] INFO: Loaded Lua script urhox-libs/UI/Core/UIInspector/Panel.lua\r"
+    },
+    {
+        "cursor":  308,
+        "text":  "[2026-10-11 13_57_29_327][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/Panel.lua\r"
+    },
+    {
+        "cursor":  309,
+        "text":  "[2026-10-11 13_57_29_330][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/Label.lua\r"
+    },
+    {
+        "cursor":  310,
+        "text":  "[2026-10-11 13_57_29_332][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/Button.lua\r"
+    },
+    {
+        "cursor":  311,
+        "text":  "[2026-10-11 13_57_29_336][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/TextField.lua\r"
+    },
+    {
+        "cursor":  312,
+        "text":  "[2026-10-11 13_57_29_337][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/EditMenu.lua\r"
+    },
+    {
+        "cursor":  313,
+        "text":  "[2026-10-11 13_57_29_338][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/Checkbox.lua\r"
+    },
+    {
+        "cursor":  314,
+        "text":  "[2026-10-11 13_57_29_340][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/Toggle.lua\r"
+    },
+    {
+        "cursor":  315,
+        "text":  "[2026-10-11 13_57_29_341][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/Slider.lua\r"
+    },
+    {
+        "cursor":  316,
+        "text":  "[2026-10-11 13_57_29_342][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/ProgressBar.lua\r"
+    },
+    {
+        "cursor":  317,
+        "text":  "[2026-10-11 13_57_29_343][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/ScrollView.lua\r"
+    },
+    {
+        "cursor":  318,
+        "text":  "[2026-10-11 13_57_29_346][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/Dropdown.lua\r"
+    },
+    {
+        "cursor":  319,
+        "text":  "[2026-10-11 13_57_29_348][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/Modal.lua\r"
+    },
+    {
+        "cursor":  320,
+        "text":  "[2026-10-11 13_57_29_350][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/Toast.lua\r"
+    },
+    {
+        "cursor":  321,
+        "text":  "[2026-10-11 13_57_29_352][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/Tabs.lua\r"
+    },
+    {
+        "cursor":  322,
+        "text":  "[2026-10-11 13_57_29_353][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/Tooltip.lua\r"
+    },
+    {
+        "cursor":  323,
+        "text":  "[2026-10-11 13_57_29_355][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/Badge.lua\r"
+    },
+    {
+        "cursor":  324,
+        "text":  "[2026-10-11 13_57_29_356][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/Avatar.lua\r"
+    },
+    {
+        "cursor":  325,
+        "text":  "[2026-10-11 13_57_29_358][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/Card.lua\r"
+    },
+    {
+        "cursor":  326,
+        "text":  "[2026-10-11 13_57_29_359][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/List.lua\r"
+    },
+    {
+        "cursor":  327,
+        "text":  "[2026-10-11 13_57_29_361][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/Divider.lua\r"
+    },
+    {
+        "cursor":  328,
+        "text":  "[2026-10-11 13_57_29_362][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/Skeleton.lua\r"
+    },
+    {
+        "cursor":  329,
+        "text":  "[2026-10-11 13_57_29_364][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/Chip.lua\r"
+    },
+    {
+        "cursor":  330,
+        "text":  "[2026-10-11 13_57_29_366][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/Accordion.lua\r"
+    },
+    {
+        "cursor":  331,
+        "text":  "[2026-10-11 13_57_29_368][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/Stepper.lua\r"
+    },
+    {
+        "cursor":  332,
+        "text":  "[2026-10-11 13_57_29_369][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/Rating.lua\r"
+    },
+    {
+        "cursor":  333,
+        "text":  "[2026-10-11 13_57_29_370][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/Breadcrumb.lua\r"
+    },
+    {
+        "cursor":  334,
+        "text":  "[2026-10-11 13_57_29_372][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/Pagination.lua\r"
+    },
+    {
+        "cursor":  335,
+        "text":  "[2026-10-11 13_57_29_373][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/Alert.lua\r"
+    },
+    {
+        "cursor":  336,
+        "text":  "[2026-10-11 13_57_29_375][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/Timeline.lua\r"
+    },
+    {
+        "cursor":  337,
+        "text":  "[2026-10-11 13_57_29_377][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/Menu.lua\r"
+    },
+    {
+        "cursor":  338,
+        "text":  "[2026-10-11 13_57_29_379][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/Tree.lua\r"
+    },
+    {
+        "cursor":  339,
+        "text":  "[2026-10-11 13_57_29_381][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/DatePicker.lua\r"
+    },
+    {
+        "cursor":  340,
+        "text":  "[2026-10-11 13_57_29_383][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/TimePicker.lua\r"
+    },
+    {
+        "cursor":  341,
+        "text":  "[2026-10-11 13_57_29_385][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/Table.lua\r"
+    },
+    {
+        "cursor":  342,
+        "text":  "[2026-10-11 13_57_29_386][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/Carousel.lua\r"
+    },
+    {
+        "cursor":  343,
+        "text":  "[2026-10-11 13_57_29_388][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/Drawer.lua\r"
+    },
+    {
+        "cursor":  344,
+        "text":  "[2026-10-11 13_57_29_389][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/Popover.lua\r"
+    },
+    {
+        "cursor":  345,
+        "text":  "[2026-10-11 13_57_29_391][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/Calendar.lua\r"
+    },
+    {
+        "cursor":  346,
+        "text":  "[2026-10-11 13_57_29_393][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/FileUpload.lua\r"
+    },
+    {
+        "cursor":  347,
+        "text":  "[2026-10-11 13_57_29_397][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/RichText.lua\r"
+    },
+    {
+        "cursor":  348,
+        "text":  "[2026-10-11 13_57_29_400][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/SafeAreaView.lua\r"
+    },
+    {
+        "cursor":  349,
+        "text":  "[2026-10-11 13_57_29_402][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/SimpleGrid.lua\r"
+    },
+    {
+        "cursor":  350,
+        "text":  "[2026-10-11 13_57_29_404][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/Spine.lua\r"
+    },
+    {
+        "cursor":  351,
+        "text":  "[2026-10-11 13_57_29_405][3105] INFO: Loaded Lua script urhox-libs/Sprite/SpriteSheet.lua\r"
+    },
+    {
+        "cursor":  352,
+        "text":  "[2026-10-11 13_57_29_407][3105] INFO: Loaded Lua script urhox-libs/UI/Widgets/Sprite.lua\r"
+    },
+    {
+        "cursor":  353,
+        "text":  "[2026-10-11 13_57_29_408][3105] INFO: Loaded Lua script urhox-libs/Sprite/SpriteAnimator.lua\r"
+    },
+    {
+        "cursor":  354,
+        "text":  "[2026-10-11 13_57_29_409][3105] INFO: Loaded Lua script urhox-libs/UI/Components/VirtualList.lua\r"
+    },
+    {
+        "cursor":  355,
+        "text":  "[2026-10-11 13_57_29_412][3105] INFO: Loaded Lua script urhox-libs/UI/Components/DragDropContext.lua\r"
+    },
+    {
+        "cursor":  356,
+        "text":  "[2026-10-11 13_57_29_414][3105] INFO: Loaded Lua script urhox-libs/UI/Components/ItemSlot.lua\r"
+    },
+    {
+        "cursor":  357,
+        "text":  "[2026-10-11 13_57_29_415][3105] INFO: Loaded Lua script urhox-libs/UI/Components/InventoryManager.lua\r"
+    },
+    {
+        "cursor":  358,
+        "text":  "[2026-10-11 13_57_29_416][3105] INFO: Loaded Lua script urhox-libs/UI/Components/SkillTree.lua\r"
+    },
+    {
+        "cursor":  359,
+        "text":  "[2026-10-11 13_57_29_417][3105] INFO: Loaded Lua script urhox-libs/UI/Components/ChatWindow.lua\r"
+    },
+    {
+        "cursor":  360,
+        "text":  "[2026-10-11 13_57_29_419][3105] INFO: Loaded Lua script urhox-libs/UI/Components/ItemTooltip.lua\r"
+    },
+    {
+        "cursor":  361,
+        "text":  "[2026-10-11 13_57_29_420][3105] INFO: Loaded Lua script core/EventBus.lua\r"
+    },
+    {
+        "cursor":  362,
+        "text":  "[2026-10-11 13_57_29_420][3105] INFO: Loaded Lua script core/SaveSystem.lua\r"
+    },
+    {
+        "cursor":  363,
+        "text":  "[2026-10-11 13_57_29_421][3105] INFO: Loaded Lua script core/StateUtil.lua\r"
+    },
+    {
+        "cursor":  364,
+        "text":  "[2026-10-11 13_57_29_421][3105] INFO: Loaded Lua script core/SaveJson.lua\r"
+    },
+    {
+        "cursor":  365,
+        "text":  "[2026-10-11 13_57_29_422][3105] INFO: Loaded Lua script core/GameFlow.lua\r"
+    },
+    {
+        "cursor":  366,
+        "text":  "[2026-10-11 13_57_29_423][3105] INFO: Loaded Lua script core/GameState.lua\r"
+    },
+    {
+        "cursor":  367,
+        "text":  "[2026-10-11 13_57_29_424][3105] INFO: Loaded Lua script core/SaveSchema.lua\r"
+    },
+    {
+        "cursor":  368,
+        "text":  "[2026-10-11 13_57_29_425][3105] INFO: Loaded Lua script core/GameSession.lua\r"
+    },
+    {
+        "cursor":  369,
+        "text":  "[2026-10-11 13_57_29_426][3105] INFO: Loaded Lua script systems/CalculationGuard.lua\r"
+    },
+    {
+        "cursor":  370,
+        "text":  "[2026-10-11 13_57_29_426][3105] INFO: Loaded Lua script systems/Economy.lua\r"
+    },
+    {
+        "cursor":  371,
+        "text":  "[2026-10-11 13_57_29_428][3105] INFO: Loaded Lua script data/content.lua\r"
+    },
+    {
+        "cursor":  372,
+        "text":  "[lua] [2026-10-11 13_57_29_451][3105][Script] [Data] 校验通过：效果 22 / 词条 61 / 原料 4 / 设备 2 / 人物 11 / 信件 22 / 时间属性 6 / 规则 196 / 片段 58 / 评分 58\n"
+    },
+    {
+        "cursor":  373,
+        "text":  "[lua] [2026-10-11 13_57_29_455][3105][Script] [Data] 首单包校验通过：C1 开局账本 / C2 首单数值 / C3 事实与回信；contentVersion = story-numeric-v02-r1\n"
+    },
+    {
+        "cursor":  374,
+        "text":  "[2026-10-11 13_57_29_429][3105] INFO: Loaded Lua script data/effects.lua\r"
+    },
+    {
+        "cursor":  375,
+        "text":  "[2026-10-11 13_57_29_433][3105] INFO: Loaded Lua script data/numeric_v02.lua\r"
+    },
+    {
+        "cursor":  376,
+        "text":  "[2026-10-11 13_57_29_437][3105] INFO: Loaded Lua script data/ingredients.lua\r"
+    },
+    {
+        "cursor":  377,
+        "text":  "[2026-10-11 13_57_29_438][3105] INFO: Loaded Lua script data/equipment.lua\r"
+    },
+    {
+        "cursor":  378,
+        "text":  "[2026-10-11 13_57_29_438][3105] INFO: Loaded Lua script data/synthesis.lua\r"
+    },
+    {
+        "cursor":  379,
+        "text":  "[2026-10-11 13_57_29_439][3105] INFO: Loaded Lua script data/stage1.lua\r"
+    },
+    {
+        "cursor":  380,
+        "text":  "[2026-10-11 13_57_29_440][3105] INFO: Loaded Lua script data/word_profiles.lua\r"
+    },
+    {
+        "cursor":  381,
+        "text":  "[2026-10-11 13_57_29_440][3105] INFO: Loaded Lua script debug/DebugPanel.lua\r"
+    },
+    {
+        "cursor":  382,
+        "text":  "[2026-10-11 13_57_29_441][3105] INFO: Loaded Lua script debug/SelfTest.lua\r"
+    },
+    {
+        "cursor":  383,
+        "text":  "[2026-10-11 13_57_29_442][3105] INFO: Loaded Lua script ui/PlayView.lua\r"
+    },
+    {
+        "cursor":  384,
+        "text":  "[2026-10-11 13_57_29_442][3105] INFO: Loaded Lua script ui/landscape/AppView.lua\r"
+    },
+    {
+        "cursor":  385,
+        "text":  "[2026-10-11 13_57_29_443][3105] INFO: Loaded Lua script ui/PlayModel.lua\r"
+    },
+    {
+        "cursor":  386,
+        "text":  "[2026-10-11 13_57_29_445][3105] INFO: Loaded Lua script ui/landscape/HomeView.lua\r"
+    },
+    {
+        "cursor":  387,
+        "text":  "[2026-10-11 13_57_29_446][3105] INFO: Loaded Lua script ui/landscape/LayoutManifest.lua\r"
+    },
+    {
+        "cursor":  388,
+        "text":  "[2026-10-11 13_57_29_446][3105] INFO: Loaded Lua script ui/landscape/LayoutGeometry.lua\r"
+    },
+    {
+        "cursor":  389,
+        "text":  "[2026-10-11 13_57_29_447][3105] INFO: Loaded Lua script ui/landscape/Panels.lua\r"
+    },
+    {
+        "cursor":  390,
+        "text":  "[2026-10-11 13_57_29_448][3105] INFO: Loaded Lua script debug/B1RunRequest.lua\r"
+    },
+    {
+        "cursor":  391,
+        "text":  "[2026-10-11 13_57_29_448][3105] INFO: Loaded Lua script debug/B2RunRequest.lua\r"
+    },
+    {
+        "cursor":  392,
+        "text":  "[2026-10-11 13_57_29_448][3105] INFO: Loaded Lua script debug/B6RunRequest.lua\r"
+    },
+    {
+        "cursor":  393,
+        "text":  "[2026-10-11 13_57_29_448][3105] INFO: Loaded Lua script debug/DeveloperMode.lua\r"
+    },
+    {
+        "cursor":  394,
+        "text":  "[2026-10-11 13_57_29_448][3105] INFO: Executed Lua script main.lua\r"
+    },
+    {
+        "cursor":  395,
+        "text":  "[2026-10-11 13_57_29_450][3105] INFO: Loaded Lua script urhox-libs/UI/Theme/DefaultDark.lua\r"
+    },
+    {
+        "cursor":  396,
+        "text":  "[2026-10-11 13_57_29_451][3105][Script] [Data] 校验通过：效果 22 / 词条 61 / 原料 4 / 设备 2 / 人物 11 / 信件 22 / 时间属性 6 / 规则 196 / 片段 58 / 评分 58\r"
+    },
+    {
+        "cursor":  397,
+        "text":  "[2026-10-11 13_57_29_455][3105][Script] [Data] 首单包校验通过：C1 开局账本 / C2 首单数值 / C3 事实与回信；contentVersion = story-numeric-v02-r1\r"
+    },
+    {
+        "cursor":  398,
+        "text":  "[2026-10-11 13_57_29_456][3105] INFO: Loaded Lua script data/gameplay.lua\r"
+    },
+    {
+        "cursor":  399,
+        "text":  "[2026-10-11 13_57_29_457][3105] INFO: Loaded Lua script systems/Letter.lua\r"
+    },
+    {
+        "cursor":  400,
+        "text":  "[2026-10-11 13_57_29_458][3105] INFO: Loaded Lua script systems/WordToken.lua\r"
+    },
+    {
+        "cursor":  401,
+        "text":  "[2026-10-11 13_57_29_459][3105] INFO: Loaded Lua script systems/WorldState.lua\r"
+    },
+    {
+        "cursor":  402,
+        "text":  "[2026-10-11 13_57_29_460][3105] INFO: Loaded Lua script systems/StoryRules.lua\r"
+    },
+    {
+        "cursor":  403,
+        "text":  "[2026-10-11 13_57_29_462][3105] INFO: Loaded Lua script systems/Narrative.lua\r"
+    },
+    {
+        "cursor":  404,
+        "text":  "[2026-10-11 13_57_29_464][3105] INFO: Loaded Lua script systems/Order.lua\r"
+    },
+    {
+        "cursor":  405,
+        "text":  "[2026-10-11 13_57_29_465][3105] INFO: Loaded Lua script systems/Potion.lua\r"
+    },
+    {
+        "cursor":  406,
+        "text":  "[2026-10-11 13_57_29_468][3105] INFO: Loaded Lua script systems/OrderLifecycle.lua\r"
+    },
+    {
+        "cursor":  407,
+        "text":  "[2026-10-11 13_57_29_471][3105] INFO: Loaded Lua script systems/OrderAudit.lua\r"
+    },
+    {
+        "cursor":  408,
+        "text":  "[2026-10-11 13_57_29_480][3105] INFO: Loaded Lua script systems/OrderTrial.lua\r"
+    },
+    {
+        "cursor":  409,
+        "text":  "[2026-10-11 13_57_29_481][3105] INFO: Loaded Lua script systems/RecipeDraft.lua\r"
+    },
+    {
+        "cursor":  410,
+        "text":  "[2026-10-11 13_57_29_482][3105] INFO: Loaded Lua script systems/BrewJournal.lua\r"
+    },
+    {
+        "cursor":  411,
+        "text":  "[2026-10-11 13_57_29_483][3105] INFO: Loaded Lua script core/SchemaProjection.lua\r"
+    },
+    {
+        "cursor":  412,
+        "text":  "[2026-10-11 13_57_29_487][3105] INFO: Loaded Lua script systems/PlayQueries.lua\r"
+    },
+    {
+        "cursor":  413,
+        "text":  "[2026-10-11 13_57_29_494][3105] INFO: Loaded Lua script ui/landscape/DevChecks.lua\r"
+    },
+    {
+        "cursor":  414,
+        "text":  "[2026-10-11 13_57_29_495][3105] INFO: Loaded Lua script ui/landscape/tests/NativeProbe.lua\r"
+    },
+    {
+        "cursor":  415,
+        "text":  "[2026-10-11 13_57_29_497][3105] INFO: Loaded Lua script ui/landscape/tests/HitFeedbackProbe.lua\r"
+    },
+    {
+        "cursor":  416,
+        "text":  "[2026-10-11 13_57_29_508][3105][Script] [UI] Root widget pointerEvents auto-set to \"box-none\" (prevents root from blocking game input). Set pointerEvents explicitly to suppress this message.\r"
+    },
+    {
+        "cursor":  417,
+        "text":  "[2026-10-11 13_57_29_509][3105][Script] === 寄往人间 启动完成（第 1 天）===\r"
+    },
+    {
+        "cursor":  418,
+        "text":  "[2026-10-11 13_57_29_509][3105] INFO: UrhoXRuntime: Game started successfully\r"
+    },
+    {
+        "cursor":  419,
+        "text":  "[2026-10-11 13_57_29_618][3112] INFO: DownloadWhilePlaying: downloaded \u0027image/home-entry-r3/merchant-ship.png\u0027\r"
+    },
+    {
+        "cursor":  420,
+        "text":  "[2026-10-11 13_57_29_623][3112] INFO: DownloadWhilePlaying: downloaded \u0027image/home-entry-r3/lily-vase.png\u0027\r"
+    },
+    {
+        "cursor":  421,
+        "text":  "[lua] [2026-10-11 13_57_29_509][3105][Script] === 寄往人间 启动完成（第 1 天）===\n"
+    },
+    {
+        "cursor":  422,
+        "text":  "[lua] [2026-10-11 13_57_49_507][4292][Script] [HitFeedback] CAPTURE pressed-home.drawer\n"
+    },
+    {
+        "cursor":  423,
+        "text":  "[lua] [2026-10-11 13_57_55_019][4620][Script] [HitFeedback] PASS pressed-home.drawer -\u003e letters -\u003e home (one open, no saved change)\n"
+    },
+    {
+        "cursor":  424,
+        "text":  "[lua] [2026-10-11 13_57_55_525][4650][Script] [HitFeedback] CAPTURE pressed-home.journal\n"
+    },
+    {
+        "cursor":  425,
+        "text":  "[lua] [2026-10-11 13_58_01_043][4978][Script] [HitFeedback] PASS pressed-home.journal -\u003e journal -\u003e home (one open, no saved change)\n"
+    },
+    {
+        "cursor":  426,
+        "text":  "[lua] [2026-10-11 13_58_01_550][5008][Script] [HitFeedback] CAPTURE pressed-home.tray\n"
+    },
+    {
+        "cursor":  427,
+        "text":  "[lua] [2026-10-11 13_58_07_066][5336][Script] [HitFeedback] PASS pressed-home.tray -\u003e words -\u003e home (one open, no saved change)\n"
+    },
+    {
+        "cursor":  428,
+        "text":  "[lua] [2026-10-11 13_58_07_572][5366][Script] [HitFeedback] CAPTURE pressed-home.net\n"
+    },
+    {
+        "cursor":  429,
+        "text":  "[lua] [2026-10-11 13_58_13_093][5694][Script] [HitFeedback] PASS pressed-home.net -\u003e seaside -\u003e home (one open, no saved change)\n"
+    },
+    {
+        "cursor":  430,
+        "text":  "[lua] [2026-10-11 13_58_13_595][5724][Script] [HitFeedback] CAPTURE pressed-home.caseFile\n"
+    },
+    {
+        "cursor":  431,
+        "text":  "[lua] [2026-10-11 13_58_19_108][6051][Script] [HitFeedback] PASS pressed-home.caseFile -\u003e case -\u003e home (one open, no saved change)\n"
+    },
+    {
+        "cursor":  432,
+        "text":  "[lua] [2026-10-11 13_58_19_613][6081][Script] [HitFeedback] CAPTURE pressed-home.merchantShip\n"
+    },
+    {
+        "cursor":  433,
+        "text":  "[lua] [2026-10-11 13_58_25_122][6408][Script] [HitFeedback] PASS pressed-home.merchantShip -\u003e shop -\u003e home (one open, no saved change)\n"
+    },
+    {
+        "cursor":  434,
+        "text":  "[lua] [2026-10-11 13_58_25_625][6438][Script] [HitFeedback] CAPTURE pressed-home.letterPaper\n"
+    },
+    {
+        "cursor":  435,
+        "text":  "[lua] [2026-10-11 13_58_31_133][6765][Script] [HitFeedback] PASS pressed-home.letterPaper -\u003e paper -\u003e home (one open, no saved change)\n"
+    },
+    {
+        "cursor":  436,
+        "text":  "[lua] [2026-10-11 13_58_31_636][6795][Script] [HitFeedback] CAPTURE pressed-home.stove\n"
+    },
+    {
+        "cursor":  437,
+        "text":  "[lua] [2026-10-11 13_58_37_147][7123][Script] [HitFeedback] PASS pressed-home.stove -\u003e brew -\u003e home (one open, no saved change)\n"
+    },
+    {
+        "cursor":  438,
+        "text":  "[lua] [2026-10-11 13_58_37_650][7153][Script] [HitFeedback] CAPTURE pressed-drawer-second\n"
+    },
+    {
+        "cursor":  439,
+        "text":  "[lua] [2026-10-11 13_58_43_157][7480][Script] [HitFeedback] PASS pressed-drawer-second -\u003e letters -\u003e home (one open, no saved change)\n"
+    },
+    {
+        "cursor":  440,
+        "text":  "[lua] [2026-10-11 13_58_43_662][7510][Script] [HitFeedback] EDGE drawer1-left\n"
+    },
+    {
+        "cursor":  441,
+        "text":  "[lua] [2026-10-11 13_58_44_424][7555][Script] [HitFeedback] PASS drawer1-left -\u003e letters -\u003e home (one open, no saved change)\n"
+    },
+    {
+        "cursor":  442,
+        "text":  "[lua] [2026-10-11 13_58_44_929][7585][Script] [HitFeedback] EDGE drawer1-right\n"
+    },
+    {
+        "cursor":  443,
+        "text":  "[lua] [2026-10-11 13_58_45_686][7630][Script] [HitFeedback] PASS drawer1-right -\u003e letters -\u003e home (one open, no saved change)\n"
+    },
+    {
+        "cursor":  444,
+        "text":  "[lua] [2026-10-11 13_58_46_189][7660][Script] [HitFeedback] EDGE drawer1-top\n"
+    },
+    {
+        "cursor":  445,
+        "text":  "[lua] [2026-10-11 13_58_46_947][7705][Script] [HitFeedback] PASS drawer1-top -\u003e letters -\u003e home (one open, no saved change)\n"
+    },
+    {
+        "cursor":  446,
+        "text":  "[lua] [2026-10-11 13_58_47_452][7735][Script] [HitFeedback] EDGE drawer1-bottom\n"
+    },
+    {
+        "cursor":  447,
+        "text":  "[lua] [2026-10-11 13_58_48_203][7780][Script] [HitFeedback] PASS drawer1-bottom -\u003e letters -\u003e home (one open, no saved change)\n"
+    },
+    {
+        "cursor":  448,
+        "text":  "[lua] [2026-10-11 13_58_48_706][7810][Script] [HitFeedback] EDGE drawer2-left\n"
+    },
+    {
+        "cursor":  449,
+        "text":  "[lua] [2026-10-11 13_58_49_465][7855][Script] [HitFeedback] PASS drawer2-left -\u003e letters -\u003e home (one open, no saved change)\n"
+    },
+    {
+        "cursor":  450,
+        "text":  "[2026-10-11 13_57_29_629][3112] INFO: DownloadWhilePlaying: downloaded \u0027image/home-entry-r3/net.png\u0027\r"
+    },
+    {
+        "cursor":  451,
+        "text":  "[2026-10-11 13_57_29_634][3112] INFO: DownloadWhilePlaying: downloaded \u0027image/home-entry-r3/tray.png\u0027\r"
+    },
+    {
+        "cursor":  452,
+        "text":  "[2026-10-11 13_57_29_642][3112] INFO: DownloadWhilePlaying: downloaded \u0027image/home-entry-r3/case-file.png\u0027\r"
+    },
+    {
+        "cursor":  453,
+        "text":  "[2026-10-11 13_57_29_649][3112] INFO: DownloadWhilePlaying: downloaded \u0027image/home-entry-r3/letter-paper.png\u0027\r"
+    },
+    {
+        "cursor":  454,
+        "text":  "[2026-10-11 13_57_29_654][3112] INFO: DownloadWhilePlaying: downloaded \u0027image/home-entry-r3/amber-jar.png\u0027\r"
+    },
+    {
+        "cursor":  455,
+        "text":  "[2026-10-11 13_57_29_727][3117] INFO: DownloadWhilePlaying: downloaded \u0027image/home-entry-r3/background.png\u0027\r"
+    },
+    {
+        "cursor":  456,
+        "text":  "[2026-10-11 13_57_29_748][3118] INFO: DownloadWhilePlaying: downloaded \u0027image/home-entry-r3/stove.png\u0027\r"
+    },
+    {
+        "cursor":  457,
+        "text":  "[2026-10-11 13_57_29_765][3119] INFO: DownloadWhilePlaying: downloaded \u0027image/home-entry-r3/herb-jar.png\u0027\r"
+    },
+    {
+        "cursor":  458,
+        "text":  "[2026-10-11 13_57_29_768][3119] INFO: DownloadWhilePlaying: downloaded \u0027image/home-entry-r3/glass-bottle.png\u0027\r"
+    },
+    {
+        "cursor":  459,
+        "text":  "[2026-10-11 13_57_49_507][4292][Script] [HitFeedback] CAPTURE pressed-home.drawer\r"
+    },
+    {
+        "cursor":  460,
+        "text":  "[2026-10-11 13_57_55_019][4620][Script] [HitFeedback] PASS pressed-home.drawer -\u003e letters -\u003e home (one open, no saved change)\r"
+    },
+    {
+        "cursor":  461,
+        "text":  "[2026-10-11 13_57_55_525][4650][Script] [HitFeedback] CAPTURE pressed-home.journal\r"
+    },
+    {
+        "cursor":  462,
+        "text":  "[2026-10-11 13_58_01_043][4978][Script] [HitFeedback] PASS pressed-home.journal -\u003e journal -\u003e home (one open, no saved change)\r"
+    },
+    {
+        "cursor":  463,
+        "text":  "[2026-10-11 13_58_01_550][5008][Script] [HitFeedback] CAPTURE pressed-home.tray\r"
+    },
+    {
+        "cursor":  464,
+        "text":  "[2026-10-11 13_58_07_066][5336][Script] [HitFeedback] PASS pressed-home.tray -\u003e words -\u003e home (one open, no saved change)\r"
+    },
+    {
+        "cursor":  465,
+        "text":  "[2026-10-11 13_58_07_572][5366][Script] [HitFeedback] CAPTURE pressed-home.net\r"
+    },
+    {
+        "cursor":  466,
+        "text":  "[2026-10-11 13_58_13_093][5694][Script] [HitFeedback] PASS pressed-home.net -\u003e seaside -\u003e home (one open, no saved change)\r"
+    },
+    {
+        "cursor":  467,
+        "text":  "[2026-10-11 13_58_13_595][5724][Script] [HitFeedback] CAPTURE pressed-home.caseFile\r"
+    },
+    {
+        "cursor":  468,
+        "text":  "[2026-10-11 13_58_18_608][6021] INFO: Loaded Lua script systems/CaseBoardProjection.lua\r"
+    },
+    {
+        "cursor":  469,
+        "text":  "[2026-10-11 13_58_19_108][6051][Script] [HitFeedback] PASS pressed-home.caseFile -\u003e case -\u003e home (one open, no saved change)\r"
+    },
+    {
+        "cursor":  470,
+        "text":  "[2026-10-11 13_58_19_613][6081][Script] [HitFeedback] CAPTURE pressed-home.merchantShip\r"
+    },
+    {
+        "cursor":  471,
+        "text":  "[2026-10-11 13_58_24_632][6379][Script] [Layout Warning] Overflow in \u0027Panel\u0027: children=1136x670, container=1178x662. Consider: flexShrink=1 on children, or increase container size.\r"
+    },
+    {
+        "cursor":  472,
+        "text":  "[2026-10-11 13_58_25_122][6408][Script] [HitFeedback] PASS pressed-home.merchantShip -\u003e shop -\u003e home (one open, no saved change)\r"
+    },
+    {
+        "cursor":  473,
+        "text":  "[2026-10-11 13_58_25_625][6438][Script] [HitFeedback] CAPTURE pressed-home.letterPaper\r"
+    },
+    {
+        "cursor":  474,
+        "text":  "[2026-10-11 13_58_31_133][6765][Script] [HitFeedback] PASS pressed-home.letterPaper -\u003e paper -\u003e home (one open, no saved change)\r"
+    },
+    {
+        "cursor":  475,
+        "text":  "[2026-10-11 13_58_31_636][6795][Script] [HitFeedback] CAPTURE pressed-home.stove\r"
+    },
+    {
+        "cursor":  476,
+        "text":  "[2026-10-11 13_58_37_147][7123][Script] [HitFeedback] PASS pressed-home.stove -\u003e brew -\u003e home (one open, no saved change)\r"
+    },
+    {
+        "cursor":  477,
+        "text":  "[2026-10-11 13_58_37_650][7153][Script] [HitFeedback] CAPTURE pressed-drawer-second\r"
+    },
+    {
+        "cursor":  478,
+        "text":  "[2026-10-11 13_58_43_157][7480][Script] [HitFeedback] PASS pressed-drawer-second -\u003e letters -\u003e home (one open, no saved change)\r"
+    },
+    {
+        "cursor":  479,
+        "text":  "[2026-10-11 13_58_43_662][7510][Script] [HitFeedback] EDGE drawer1-left\r"
+    },
+    {
+        "cursor":  480,
+        "text":  "[2026-10-11 13_58_44_424][7555][Script] [HitFeedback] PASS drawer1-left -\u003e letters -\u003e home (one open, no saved change)\r"
+    },
+    {
+        "cursor":  481,
+        "text":  "[2026-10-11 13_58_44_929][7585][Script] [HitFeedback] EDGE drawer1-right\r"
+    },
+    {
+        "cursor":  482,
+        "text":  "[2026-10-11 13_58_45_686][7630][Script] [HitFeedback] PASS drawer1-right -\u003e letters -\u003e home (one open, no saved change)\r"
+    },
+    {
+        "cursor":  483,
+        "text":  "[2026-10-11 13_58_46_189][7660][Script] [HitFeedback] EDGE drawer1-top\r"
+    },
+    {
+        "cursor":  484,
+        "text":  "[2026-10-11 13_58_46_947][7705][Script] [HitFeedback] PASS drawer1-top -\u003e letters -\u003e home (one open, no saved change)\r"
+    },
+    {
+        "cursor":  485,
+        "text":  "[2026-10-11 13_58_47_452][7735][Script] [HitFeedback] EDGE drawer1-bottom\r"
+    },
+    {
+        "cursor":  486,
+        "text":  "[2026-10-11 13_58_48_203][7780][Script] [HitFeedback] PASS drawer1-bottom -\u003e letters -\u003e home (one open, no saved change)\r"
+    },
+    {
+        "cursor":  487,
+        "text":  "[2026-10-11 13_58_48_706][7810][Script] [HitFeedback] EDGE drawer2-left\r"
+    },
+    {
+        "cursor":  488,
+        "text":  "[2026-10-11 13_58_49_465][7855][Script] [HitFeedback] PASS drawer2-left -\u003e letters -\u003e home (one open, no saved change)\r"
+    },
+    {
+        "cursor":  489,
+        "text":  "[lua] [2026-10-11 13_58_49_970][7885][Script] [HitFeedback] EDGE drawer2-right\n"
+    },
+    {
+        "cursor":  490,
+        "text":  "[lua] [2026-10-11 13_58_50_726][7930][Script] [HitFeedback] PASS drawer2-right -\u003e letters -\u003e home (one open, no saved change)\n"
+    },
+    {
+        "cursor":  491,
+        "text":  "[lua] [2026-10-11 13_58_51_232][7960][Script] [HitFeedback] EDGE drawer2-top\n"
+    },
+    {
+        "cursor":  492,
+        "text":  "[lua] [2026-10-11 13_58_51_986][8005][Script] [HitFeedback] PASS drawer2-top -\u003e letters -\u003e home (one open, no saved change)\n"
+    },
+    {
+        "cursor":  493,
+        "text":  "[lua] [2026-10-11 13_58_52_489][8035][Script] [HitFeedback] EDGE drawer2-bottom\n"
+    },
+    {
+        "cursor":  494,
+        "text":  "[lua] [2026-10-11 13_58_53_247][8080][Script] [HitFeedback] PASS drawer2-bottom -\u003e letters -\u003e home (one open, no saved change)\n"
+    },
+    {
+        "cursor":  495,
+        "text":  "[lua] [2026-10-11 13_58_53_753][8110][Script] [HitFeedback] PASS normal held frames and single navigation; both handles/edges; unchanged saved state; OS mouse/device NOT verified\n"
+    }
+]

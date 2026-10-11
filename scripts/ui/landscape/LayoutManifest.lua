@@ -7,6 +7,8 @@
 ---@field w number
 ---@field h number
 ---@field rotation number
+---@field minTouch? number
+---@field keepInsideCanvas? boolean
 ---@class HomeLayer
 ---@field id string
 ---@field assetId string
@@ -29,7 +31,7 @@
 ---@field regions HomeRegion[]
 ---@type {version:string,projectRevision:integer,pageRevision:integer,sourceSha256:string,sourcePageId:string,width:number,height:number,background:string,layers:HomeLayer[],objects:HomeObject[]}
 local manifest={
-    ["version"]="C-HOME-ENTRY-20261010-r3-v01",
+    ["version"]="C-HOME-ENTRY-20261010-r3-v02",
     ["projectRevision"]=201,
     ["pageRevision"]=189,
     ["sourceSha256"]="e4ccb82e4c8b64c0abb8a3c1a005d04b82aa7b0123ec89eec58c1996a50c8ce6",
@@ -205,17 +207,21 @@ local manifest={
                     ["kind"]="ellipse",
                     ["cx"]=0.581,
                     ["cy"]=0.84,
-                    ["w"]=0.04,
-                    ["h"]=0.048,
-                    ["rotation"]=0
+                    ["w"]=0.05,
+                    ["h"]=0.06,
+                    ["rotation"]=0,
+                    ["minTouch"]=55,
+                    ["keepInsideCanvas"]=true
                 },
                 {
                     ["kind"]="ellipse",
                     ["cx"]=0.684,
                     ["cy"]=0.944,
-                    ["w"]=0.045,
-                    ["h"]=0.053,
-                    ["rotation"]=0
+                    ["w"]=0.05625,
+                    ["h"]=0.06625,
+                    ["rotation"]=0,
+                    ["minTouch"]=55,
+                    ["keepInsideCanvas"]=true
                 }
             }
         },
