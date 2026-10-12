@@ -1,4 +1,4 @@
--- Generated from project 201 / home 189. Visual transforms are unmodified.
+-- Derived from project 201 / home 189; foreground art changed, object transforms retained.
 -- Regions describe subjects; art bounds, glow, shadows and water are not buttons.
 ---@class HomeRegion
 ---@field kind string
@@ -31,7 +31,7 @@
 ---@field regions HomeRegion[]
 ---@type {version:string,projectRevision:integer,pageRevision:integer,sourceSha256:string,sourcePageId:string,width:number,height:number,background:string,layers:HomeLayer[],objects:HomeObject[]}
 local manifest={
-    ["version"]="C-HOME-ENTRY-20261010-r3-v02",
+    ["version"]="C-HOME-MISTY-HARBOR-20261012-r1",
     ["projectRevision"]=201,
     ["pageRevision"]=189,
     ["sourceSha256"]="e4ccb82e4c8b64c0abb8a3c1a005d04b82aa7b0123ec89eec58c1996a50c8ce6",
@@ -43,7 +43,7 @@ local manifest={
         {
             ["id"]="840c676b-bc62-40f0-8153-117123dfa3fe",
             ["assetId"]="04aafbb3-5e8f-4372-ad91-640a9db10e56",
-            ["name"]="BG06_横屏主页_清理背景_v01.png",
+            ["name"]="雾港主页_透明前景_v01.png",
             ["x"]=960.8184920675325,
             ["y"]=537.779105777511,
             ["width"]=1918.7545694015616,
@@ -51,8 +51,8 @@ local manifest={
             ["rotation"]=0,
             ["visible"]=true,
             ["key"]="background",
-            ["path"]="image/home-entry-r3/background.png",
-            ["sha256"]="1de5de32c77e4e897c97a790c1add0b1b688d390562be464d6932fef12216055"
+            ["path"]="image/misty-harbor-r1/home-foreground.png",
+            ["sha256"]="52d529c420633852842eb77b5bb6b608aa3e5e6faf5ef63625a1c69b089b539a"
         },
         {
             ["id"]="1cab15b8-150f-4cb1-a598-92b066b15596",
@@ -99,7 +99,7 @@ local manifest={
         {
             ["id"]="e9d3a968-9083-4e05-a38a-30ed70f9f597",
             ["assetId"]="0035d23c-eb18-42a2-a3b3-b1e48f530440",
-            ["name"]="H18_商船组合层_透明_自动提取_v03.png",
+            ["name"]="雾港商船_柔和倒影_v01.png",
             ["x"]=525.007477472717,
             ["y"]=343.6879927742784,
             ["width"]=219.1996383999011,
@@ -107,8 +107,8 @@ local manifest={
             ["rotation"]=0,
             ["visible"]=true,
             ["key"]="merchant-ship",
-            ["path"]="image/home-entry-r3/merchant-ship.png",
-            ["sha256"]="bc261c32e3839fb72d365ae394963c0417dced57f48b1f1dd0381df2561f16be"
+            ["path"]="image/misty-harbor-r1/merchant-ship-muted.png",
+            ["sha256"]="13220a898ea397b9381194d39573bc61f49e9b72929e01f6e20b56b4fba0d493"
         },
         {
             ["id"]="610751d0-87ba-4f40-b613-02092de4f75c",

@@ -154,7 +154,9 @@ function CreateUI()
     -- 全部界面最外层套 SafeAreaView，避开刘海与 TapTap 胶囊（见开发计划 1.3）
     local root = UI.SafeAreaView {
         id = "safeArea",
-        backgroundColor = {25, 44, 48, 255},
+        backgroundColor = {48, 42, 34, 255},
+        backgroundImage = require("ui.landscape.SeaArt").background,
+        backgroundFit = "cover",
         width = "100%",
         height = "100%",
         children = {

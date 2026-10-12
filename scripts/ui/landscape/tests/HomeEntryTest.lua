@@ -21,7 +21,9 @@ function T.Run()
         local b=control(id); check(force or not b:GetProps().disabled,"button disabled: "..id)
         if id=="home.net" then zoomHost.Bind(view.root) end
         b:GetProps().onClick(); view.Update()
-        if id=="home.net" then
+        if id=="startSalvage" then
+            for _=1,150 do if view.salvage.active then zoomHost.Step(view,1/60) end end
+        elseif id=="home.net" then
             for _=1,28 do if view.zoom.active then zoomHost.Step(view,1/60) end end
         end
     end

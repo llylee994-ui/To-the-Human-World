@@ -1,0 +1,44 @@
+{
+  "generator": "built-in image_gen",
+  "remoteMapping": null,
+  "scope": "new local art versions; no remote build",
+  "files": [
+    {
+      "path": "assets\\image\\misty-harbor-r1\\sea-calm.png",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "alpha": null,
+      "sha256": "3b83aa68c34c5d00d3c85dfaf15259482f4c5930098687e4a7e4816c55ce7b18"
+    },
+    {
+      "path": "assets\\image\\misty-harbor-r1\\home-foreground.png",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "52d529c420633852842eb77b5bb6b608aa3e5e6faf5ef63625a1c69b089b539a"
+    },
+    {
+      "path": "assets\\image\\misty-harbor-r1\\dock-foreground.png",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "a43cb9d75d69416be570e4f176f86a22977f1d929203251247440e71f613dea4"
+    }
+  ],
+  "finalGeneration": "exec-4f86da89-dbc0-4e94-a18f-9f4d93a38a78.png"
+}
