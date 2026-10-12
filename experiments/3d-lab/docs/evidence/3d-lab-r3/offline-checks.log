@@ -1,0 +1,77 @@
+[syntax] 60 Lua files compiled under Lua 5.4
+[Data] 校验通过：效果 22 / 词条 61 / 原料 4 / 设备 2 / 人物 11 / 信件 22 / 时间属性 6 / 规则 196 / 片段 58 / 评分 58
+[Data] 首单包校验通过：C1 开局账本 / C2 首单数值 / C3 事实与回信；contentVersion = story-numeric-v02-r1
+[D3-LAB] schema=3 storage=memory slot=d3_lab_r3 content=story-numeric-v02-r1
+[PASS] single real schema 3 session 
+[PASS] navigation and projections never mutate 
+[PASS] real shop products and balance {"enabled": true, "message": "", "items": [{"remainingToday": 6, "ingredientId": "ing_sea_salt", "name": "海盐", "ownedQuantity": 3, "price": 5}, {"remainingToday": 6, "ingredientId": "ing_night_dew", "name": "夜露", "ownedQuantity": 3, "price": 12}, {"remainingToday": 6, "ingredientId": "ing_ashen_herb", "name": "灰烬草", "ownedQuantity": 3, "price": 20}, {"remainingToday": 6, "ingredientId": "ing_dried_petal", "name": "干花瓣", "ownedQuantity": 3, "price": 15}], "reasonCode": "", "currency": 30}
+[PASS] real purchase charges configured price {"value": {"quantity": 1, "ingredientId": "ing_sea_salt", "cost": 5, "revision": 1}, "ok": true}
+[PlayActionFailure] {"path": "ingredientId", "message": "未知原料", "code": "UNKNOWN_ID", "details": {}}
+[PASS] failed unknown purchase changes nothing UNKNOWN_ID
+[PlayActionFailure] {"path": "quantity", "message": "超过当日剩余供货量", "code": "SHOP_STOCK_SHORT", "details": {}}
+[PASS] real stock or affordability rejection is atomic SHOP_STOCK_SHORT
+[PlayActionFailure] {"path": "currency", "message": "金币不足", "code": "CURRENCY_SHORT", "details": {}}
+[PASS] insufficient funds failure is atomic CURRENCY_SHORT
+[PASS] test setup via real Receive only {"value": {"changed": true, "revision": 7, "letterInstanceId": "letter:letter_pa_01"}, "ok": true}
+[PASS] receive spends exactly one salvage 
+[PASS] real Read 
+[PASS] real body and requirement available 
+[PASS] real Cut creates one card {"value": {"changed": true, "tokenId": "token:19:letter:letter_pa_01:6:body:1", "revision": 9, "source": {"sourceLetterInstanceId": "letter:letter_pa_01", "sourceSpanId": "body:1", "wordId": "word_candidate_elias_sleep_alt", "sourceNpcId": "npc_passerby_a"}, "letterInstanceId": "letter:letter_pa_01"}, "ok": true}
+[PASS] repeat cut same span never duplicates {"value": {"changed": false, "tokenId": "token:19:letter:letter_pa_01:6:body:1", "revision": 9, "source": {"sourceLetterInstanceId": "letter:letter_pa_01", "sourceSpanId": "body:1", "wordId": "word_candidate_elias_sleep_alt", "sourceNpcId": "npc_passerby_a"}, "letterInstanceId": "letter:letter_pa_01"}, "ok": true}
+[PASS] reopen retains exact cut gap 
+[PASS] same-session SaveSystem reload 
+[PASS] memory commit retains cut after reload 
+[PASS] formal slot rejected 
+[PASS] all storage operations restricted to lab memory 145
+[PASS] stable manifest ID: home.net 
+[PASS] stable manifest ID: home.stove 
+[PASS] stable manifest ID: home.merchantShip 
+[PASS] stable manifest ID: home.letterPaper 
+[PASS] stable manifest ID: home.drawer 
+[PASS] Home unobstructed ray: home.net 
+[PASS] Home unobstructed ray: home.stove 
+[PASS] Home unobstructed ray: home.merchantShip 
+[PASS] Home unobstructed ray: home.letterPaper 
+[PASS] Home unobstructed ray: home.drawer 
+[PASS] UI consumed input rejected 
+[PASS] native mesh occlusion hook vetoes proxy 
+[PASS] modal blocks world input 
+[PASS] drag blocks world input 
+[PASS] net picking starts route 
+[PASS] duplicate transition input rejected 
+[PASS] Home to Seaside passes actual door 
+[PASS] same ship pick opens real shop 
+[PASS] Seaside return through same door 
+[PASS] stove pick starts Brew route 
+[PASS] Brew reached 
+[PASS] independent pot rim accepts interior 
+[PASS] pot body is not drop zone 
+[PASS] Brew return reached 
+[PASS] camera clearance sampled with near-clip margin 1416
+[PASS] all camera/panel operations preserve business 
+[PASS] occluded object cannot be picked through wall 
+[PASS] Home projection 1.778 home.net 
+[PASS] Home projection 1.778 home.stove 
+[PASS] Home projection 1.778 home.merchantShip 
+[PASS] Home projection 1.778 home.letterPaper 
+[PASS] Home projection 1.778 home.drawer 
+[PASS] Home projection 2.333 home.net 
+[PASS] Home projection 2.333 home.stove 
+[PASS] Home projection 2.333 home.merchantShip 
+[PASS] Home projection 2.333 home.letterPaper 
+[PASS] Home projection 2.333 home.drawer 
+[PASS] Home projection 1.333 home.net 
+[PASS] Home projection 1.333 home.stove 
+[PASS] Home projection 1.333 home.merchantShip 
+[PASS] Home projection 1.333 home.letterPaper 
+[PASS] Home projection 1.333 home.drawer 
+[PASS] aspect test is mathematical, not rendered acceptance [{"x": 0.24064284899490357, "y": 0.5341802740436965, "id": "home.net", "aspect": 1.7777777777777777}, {"x": 0.6656058986874491, "y": 0.5008111301477538, "id": "home.stove", "aspect": 1.7777777777777777}, {"x": 0.36379056001483046, "y": 0.3907344141794018, "id": "home.merchantShip", "aspect": 1.7777777777777777}, {"x": 0.5407126820124691, "y": 0.5836320766682926, "id": "home.letterPaper", "aspect": 1.7777777777777777}, {"x": 0.5471933025448117, "y": 0.6759386631413328, "id": "home.drawer", "aspect": 1.7777777777777777}, {"x": 0.3023945516151647, "y": 0.5341802740436965, "id": "home.net", "aspect": 2.3333333333333335}, {"x": 0.6261759228094851, "y": 0.5008111301477538, "id": "home.stove", "aspect": 2.3333333333333335}, {"x": 0.39622137905891847, "y": 0.3907344141794018, "id": "home.merchantShip", "aspect": 2.3333333333333335}, {"x": 0.5310191862952146, "y": 0.5836320766682926, "id": "home.letterPaper", "aspect": 2.3333333333333335}, {"x": 0.5359568019389042, "y": 0.6759386631413328, "id": "home.drawer", "aspect": 2.3333333333333335}, {"x": 0.24064284899490357, "y": 0.5256352055327724, "id": "home.net", "aspect": 1.3333333333333333}, {"x": 0.6656058986874491, "y": 0.5006083476108154, "id": "home.stove", "aspect": 1.3333333333333333}, {"x": 0.36379056001483046, "y": 0.41805081063455135, "id": "home.merchantShip", "aspect": 1.3333333333333333}, {"x": 0.5407126820124691, "y": 0.5627240575012195, "id": "home.letterPaper", "aspect": 1.3333333333333333}, {"x": 0.5471933025448117, "y": 0.6319539973559996, "id": "home.drawer", "aspect": 1.3333333333333333}]
+[PASS] real letter list callback wired 
+[PASS] reader body requirement and gap rendered as text 
+[PASS] later brewing UI excluded from minimal reader 
+[PASS] already cut UI disabled 
+[PASS] cut updates existing reader without rebuilding scroll 
+[PASS] close changes state, blocker survives event until Update 
+[PASS] shop panel uses real sold-out balance 
+[PASS] panel open/close does not settle or receive 
+[PASS] scene geometry count 146
