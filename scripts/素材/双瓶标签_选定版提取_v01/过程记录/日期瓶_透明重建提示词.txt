@@ -1,0 +1,15 @@
+Use case: background-extraction.
+The input is a LOSSLESS 80x170 pixel crop of an APPROVED date-bottle design. Treat it as the exact EDIT TARGET, not inspiration. Extract ONLY this same bottle into a genuinely transparent RGBA PNG. No creative redesign. Preserve the exact slender upright rectangular silhouette, width-to-height ratio, short narrow neck, small flat natural cork, thin greenish glass edges and original warm painterly style. Preserve the precise DAY lettering made of tiny pale pebbles near the upper interior and the THREE existing loose pebbles at the bottom. Maintain the same positions, relative sizes, geometry, lighting direction and level of ornament. No newly invented writing, number, object, support or decoration.
+
+CRITICAL: the original is a flattened picture, with a brown wooden wall visible through the glass. Remove ALL that baked wooden wall, plant silhouettes, dark background boards, seams and reflected room features, both outside AND INSIDE the bottle. Reconstruct ONLY the glass contribution that is necessary to make this exact approved bottle usable as an independent layer.
+- Outside the bottle is actual alpha=0 transparency, including holes around neck and cork.
+- Broad empty glass interior is genuinely low-opacity translucent glass, approximately alpha 10–35 of 255, with a delicate slightly green/amber optical tint, NOT an opaque pale, white, gray, black or brown fill.
+- Preserve the slim glass wall thickness, subtle darker rim shading, warm edge reflection and the existing small highlights as variable semitransparent detail.
+- Cork, pebble letters and three bottom pebbles remain tangible and mostly opaque.
+- The empty center below DAY remains clear for future numbers, with its own very faint glass tint rather than being erased to a hard-edged empty cutout.
+- A light or dark background composited behind this layer must show naturally THROUGH the bottle, without the original wooden-wall pattern surviving.
+- Do not draw checkerboard squares. Transparency must be in the alpha channel, not an illustrated background.
+- Do not make frosted milk glass. Do not turn the bottle into a thick bulky jar, expand the shoulders, widen the neck, make the cork taller, change the pebble type/count, move DAY, add label art, liquid, sparkles, rope, shelf or coins.
+- No digits or placeholders anywhere.
+
+Output one isolated complete bottle, upright, as large as useful without inventing intricate new detail. Keep just a small transparent safety margin so cork, thin edge and bottle bottom are all intact. Match the original aspect ratio. Any enlarged resolution is only a transparent reconstruction of this low-resolution input, not a newly designed asset.

@@ -1,0 +1,63 @@
+{
+  "task": "B-HOME-CUTOUT-20261010",
+  "version": "r2",
+  "status": "partial-not-approved-for-layer-handoff",
+  "source": {
+    "file": "源图_主页细修_v01.png",
+    "dimensions": [1672, 941],
+    "sha256": "DD86B3AF3EF96CD6C54AC8E4B916379959D970FB68D63CD6DA6FDB878509D3BF"
+  },
+  "delivered": [
+    {
+      "file": "BG_主页干净背景_v01.png",
+      "kind": "opaque clean-background candidate",
+      "dimensions": [1672, 941],
+      "source_position": [0, 0],
+      "layer": "background",
+      "verification": "Visual source comparison: seven named objects are removed; generated repaint makes this a review candidate, not a pixel-identical base."
+    }
+  ],
+  "rejected_process_outputs": [
+    {
+      "file": "过程稿/H18_商船_自动提取_不采用.png",
+      "reason": "RGBA exists, but tool enlarged and redrew the distant source sailboat; cannot replay at source size."
+    },
+    {
+      "file": "过程稿/H06_捞网_自动提取_不采用.png",
+      "reason": "RGBA exists, but tool enlarged and redesigned the net; mesh/source scale is not faithful."
+    },
+    {
+      "file": "过程稿/H10_托盘组合_自动提取_不采用.png",
+      "reason": "RGBA exists, but tool enlarged and materially changed the tray, slips, flowers, and scissors."
+    },
+    {
+      "file": "过程稿/H14_日历底座_自动提取_不采用.png",
+      "reason": "RGBA exists and the page is blank, but tool enlarged and redrew the calendar; not source-scale extraction."
+    },
+    {
+      "file": "过程稿/H09_炼药炉_含蒸汽_自动提取_不采用.png",
+      "reason": "Superseded by the user decision to remove steam; also enlarged and redrawn relative to the source."
+    },
+    {
+      "file": "过程稿/H09_炼药炉_无蒸汽_自动提取_不采用.png",
+      "reason": "RGBA exists and steam is absent, but the cauldron is enlarged and materially redrawn; cannot replay at source size."
+    },
+    {
+      "file": "过程稿/H17_黄色档案袋_自动提取_不采用.png",
+      "reason": "RGBA exists, but the yellow case file is enlarged and materially redrawn; cannot replay at source size."
+    }
+  ],
+  "undelivered_required_layers": [
+    "H18 sailboat", "H06 fishing net", "H10 tray composite", "H20 handwritten letter",
+    "H09 cauldron composite without steam", "H17 yellow case file", "H14 calendar base"
+  ],
+  "replay_preview": null,
+  "root_discovery_copies": [
+    "参考_横屏主页细修_原图_v01.png", "BG06_横屏主页_清理背景_v01.png",
+    "H06_捞网_透明_自动提取_v02.png", "H10_词条托盘组合_透明_自动提取_v04.png",
+    "H14_日历底座_透明_自动提取_v04.png", "H17_黄色档案袋_透明_自动提取_v08.png",
+    "H18_商船组合层_透明_自动提取_v03.png", "H09_炼药炉_草药熬制_透明_v04.png"
+    , "H09_炼药炉_纤巧草药熬制_透明_v05.png", "H20_中央信纸_手写字迹_透明_v01.png"
+  ],
+  "note": "No source coordinates are published for rejected cutouts, and no replay preview was produced, to avoid implying valid source-aligned layers."
+}
