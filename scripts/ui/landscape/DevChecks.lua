@@ -1,2 +1,2 @@
 -- Developer-only inspection. Keep false for normal player entry.
-return {hotspots=false,nativeProbe=false,hitFeedback=false,yawProbe=false,yawProbeAuto=false}
+return {hotspots=false,nativeProbe=false,hitFeedback=false,yawProbe=false,yawProbeAuto=false,stoveYawAuto=false}

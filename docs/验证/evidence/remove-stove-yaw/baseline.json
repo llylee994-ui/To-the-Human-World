@@ -1,0 +1,20 @@
+{
+  "head": "c59c59044218e6be626edb86f66dc950f6943bd2",
+  "files": {
+    "scripts/ui/landscape/AppView.lua": "d783950bd8031bceec5738a47126df111a5c2bf639e135ad60c36c8f3ac7030d",
+    "scripts/ui/landscape/DevChecks.lua": "a5bc36ffb06a5137b53126b61914bb83562db940a0e8bba9bf74c35195b00dba",
+    "scripts/ui/landscape/tests/StoveYawEntryTest.lua": "1e3cc23f456a20905a96ff6ed1978bfe5bae4a2234bf67579d508da3fe0c82e3",
+    "scripts/ui/landscape/tests/StoveYawNativeProbe.lua": "21543c19fa409cbeb8a079b129a9b100b2d93b2c4011fd990ef372e435f79bff",
+    "scripts/ui/landscape/tests/run_stove_yaw.py": "fd494b9e4581c1765b08101f346f8a7915fa4582fce6806abff9c91b30dfb9ad",
+    "scripts/actions/2026-10-12-stove-yaw-entry.md": "8b1e2c29d7409100f27df277545188c733792b59861cef85aa422dc20cf26b6f"
+  },
+  "protected": {
+    "scripts/ui/landscape/HomeView.lua": "874777165ec7184e7a36bc31c79ae9bbd0b06e05b299c6f16bfd5c38a2637bcd",
+    "scripts/ui/landscape/HomeZoom.lua": "6ab022d3ec3d6eb7c73c4a148e44055740e5ec961e20635c3e936cfbb6dadf2b",
+    "scripts/ui/landscape/LayoutGeometry.lua": "f3a606059830f4edcfcda47273ff6fbc4305916775bb4ef51c7abdcdef39af33",
+    "scripts/ui/landscape/LayoutManifest.lua": "58191586f3f4d648de56ec978527eb0dcb0a38b0dedc9d9efe319e32ca0153ad",
+    "scripts/ui/PlayModel.lua": "d75787e020b59c23c88f43e50acce611aa44ab9d190e7934839e5833963b395f",
+    "scripts/ui/landscape/HomeYawScene.lua": "b8b0c50fcb241411e654003f4f4169e92c7fcf0cf96a9ecf12438c3fc8c523b4",
+    "scripts/ui/landscape/HomeYawProbe.lua": "71c22a27b98572533ae5305b691a1baa0fd9adfa52ad2441845d64a62f9151df"
+  }
+}
