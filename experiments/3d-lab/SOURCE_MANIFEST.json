@@ -1,0 +1,1606 @@
+{
+  "artifact": "D3-LAB-20261012-r3-v01",
+  "export_utc": "2026-10-12T05:21:12.920162+00:00",
+  "remote_base": "d1b2d06cb31948a33b1e8d7bfbadb858550255af",
+  "formal_head_at_initial_snapshot": "c59c59044218e6be626edb86f66dc950f6943bd2",
+  "source_is_dirty_worktree_snapshot_not_git_commit": true,
+  "source": "Existing isolated Lab files only; no newly changed formal 2D files were read/copied for this export.",
+  "copied_files": [
+    {
+      "path": "scripts/core/EventBus.lua",
+      "lab_source": "scripts/core/EventBus.lua",
+      "bytes": 5845,
+      "sha256": "f53bce9dfe7c18ea854d50f7413b339bf32904acfc469bde7044d4231a35f92a",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/core/GameFlow.lua",
+      "lab_source": "scripts/core/GameFlow.lua",
+      "bytes": 7736,
+      "sha256": "2c483fa0880fab20f7109e8db3369efe7fbdb0d69d469450134de5bc5b6b0eb4",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/core/GameSession.lua",
+      "lab_source": "scripts/core/GameSession.lua",
+      "bytes": 2543,
+      "sha256": "3fa6ab2a5fa1ecf5419f5e6b1c15ab6ca7644bd6af93e8a9ee0d7ae9627a0f33",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/core/GameState.lua",
+      "lab_source": "scripts/core/GameState.lua",
+      "bytes": 27083,
+      "sha256": "f49dfbc15c161070dec3902742d1e737d472f01a37d8335742b703fd5765c978",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/core/SaveJson.lua",
+      "lab_source": "scripts/core/SaveJson.lua",
+      "bytes": 3057,
+      "sha256": "407249e9959bb17b1099d1338302a5e3ad7ef04165d219f25afcd8909518a880",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/core/SaveMigrations.lua",
+      "lab_source": "scripts/core/SaveMigrations.lua",
+      "bytes": 2270,
+      "sha256": "01e8f797485f25105299d6f0ce273b06de454abef3b3834a602bb0700e41ae43",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/core/SaveSchema.lua",
+      "lab_source": "scripts/core/SaveSchema.lua",
+      "bytes": 17422,
+      "sha256": "b67a2822b37e92831a6caf89955266123885dfce6d656985cf69574b95bf5d98",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/core/SaveSystem.lua",
+      "lab_source": "scripts/core/SaveSystem.lua",
+      "bytes": 8166,
+      "sha256": "cb1b2a2a160d5cf6819f6ce081dcd9eed434eb572264983c7da048a6f1043eb4",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/core/SchemaProjection.lua",
+      "lab_source": "scripts/core/SchemaProjection.lua",
+      "bytes": 957,
+      "sha256": "f41bec1d9e99eddd29932237babc84b76340c9d5b0786d21acd1e5cc3b8a7abf",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/core/StateUtil.lua",
+      "lab_source": "scripts/core/StateUtil.lua",
+      "bytes": 2972,
+      "sha256": "87b7818d2c4fce1325c1db6bc8b2e6b27ac48aec66f59d162d99e0d105cb336e",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/data/content.lua",
+      "lab_source": "scripts/data/content.lua",
+      "bytes": 75281,
+      "sha256": "31321c3836b3a927b798e012e4caff7ed48d773410f24e5fbc67ce71e4b514b5",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/data/effects.lua",
+      "lab_source": "scripts/data/effects.lua",
+      "bytes": 3815,
+      "sha256": "a88c061d34a5b3b91ac6c51392f482b0de70f9a6ea77007ff4759b80ebb9c540",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/data/equipment.lua",
+      "lab_source": "scripts/data/equipment.lua",
+      "bytes": 1596,
+      "sha256": "05543c85f8fa6ef50cd9fdb037f38aa14d99512deab81aa8f279af6c3e797c29",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/data/extension_test.lua",
+      "lab_source": "scripts/data/extension_test.lua",
+      "bytes": 8918,
+      "sha256": "7395aac16f27c7dfe04253339a5bd54a2b6a2aa3a3f7b05cb34d53cbb2d8b5d3",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/data/followup.lua",
+      "lab_source": "scripts/data/followup.lua",
+      "bytes": 26049,
+      "sha256": "f26732ee4227d1c720ad724e101e4a90a05b37ec8be222b8c0bed3bafb7300aa",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/data/gameplay.lua",
+      "lab_source": "scripts/data/gameplay.lua",
+      "bytes": 132,
+      "sha256": "e6325f44002ab0c19bd808378a1343a7db679acfca5f5b242f2ec4a015c3e53d",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/data/ingredients.lua",
+      "lab_source": "scripts/data/ingredients.lua",
+      "bytes": 2012,
+      "sha256": "5a9c9a756ff8dd6fda44dba54e4101fb7cb99fc762e82606e55f5c10b69ed0d8",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/data/letters.lua",
+      "lab_source": "scripts/data/letters.lua",
+      "bytes": 7592,
+      "sha256": "0920255a04e3d0a4ef26f7445befe845b2651b6db1833d7818e5aef40840b2b7",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/data/npcs.lua",
+      "lab_source": "scripts/data/npcs.lua",
+      "bytes": 3662,
+      "sha256": "10e1cd5556ed7c74c28815e5fed034f038f56bf18c97637d0fb2304a8481278b",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/data/numeric_v02.lua",
+      "lab_source": "scripts/data/numeric_v02.lua",
+      "bytes": 722007,
+      "sha256": "2a3c99a732b902fac65b03311640e47a70cce1c13bf54406b88be707e739c886",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/data/ordinary_orders.lua",
+      "lab_source": "scripts/data/ordinary_orders.lua",
+      "bytes": 50512,
+      "sha256": "d6124a6c9069ea7baf7cd1b2757bbf68bd15fe6f67ca4994712fa6453ccbebd0",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/data/recipes.lua",
+      "lab_source": "scripts/data/recipes.lua",
+      "bytes": 19103,
+      "sha256": "303718e3d720f24b6a0a2b169bf5ae58650b49974ead1a8e36b06a2947f4b499",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/data/stage1.lua",
+      "lab_source": "scripts/data/stage1.lua",
+      "bytes": 22115,
+      "sha256": "70c396a2a6a40d29ad39a6a547f60567d222ab0a4febdee14554d97a33033132",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/data/synthesis.lua",
+      "lab_source": "scripts/data/synthesis.lua",
+      "bytes": 3818,
+      "sha256": "0b36bbc69e584655d5f574ea977b397fe840b4ea0a0a41bbac94505234582dee",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/data/word_profiles.lua",
+      "lab_source": "scripts/data/word_profiles.lua",
+      "bytes": 3155,
+      "sha256": "c3d0a31814ccb3c409c9a56fcacbf52e4873706ade52eb33eceec51a24245dde",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/data/words.lua",
+      "lab_source": "scripts/data/words.lua",
+      "bytes": 9541,
+      "sha256": "f84ad8e6408af4129efbfd3ad75125d5f734a2cf92231cb3f21cdaf52746b873",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/lab/Bootstrap.lua",
+      "lab_source": "scripts/lab/Bootstrap.lua",
+      "bytes": 999,
+      "sha256": "4d53eec8dc35f416c5958fd06105e57d31337ef57acc317f75102f26f3739fde",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/lab/CameraRig.lua",
+      "lab_source": "scripts/lab/CameraRig.lua",
+      "bytes": 2438,
+      "sha256": "359c89c8efd71c8295ba7c8b4c0ca666d640e413c271a97cfb5ae6bcb241f019",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/lab/Hud.lua",
+      "lab_source": "scripts/lab/Hud.lua",
+      "bytes": 7424,
+      "sha256": "2d8bcaf79781bfad563b308188284631bc287c9241dfcce834757bd03bd9786e",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/lab/Interaction.lua",
+      "lab_source": "scripts/lab/Interaction.lua",
+      "bytes": 3661,
+      "sha256": "bd4846d2ae4a511e4a6ed578e3a0161ceec36de1c18786bbe51e241db79daa47",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/lab/MemoryStorage.lua",
+      "lab_source": "scripts/lab/MemoryStorage.lua",
+      "bytes": 1170,
+      "sha256": "f63f87fbccc3aaff3640d0b154aa7c3ddd3ad881de421d11ae9564664ea683ec",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/lab/NativeQA.lua",
+      "lab_source": "scripts/lab/NativeQA.lua",
+      "bytes": 9322,
+      "sha256": "d9d3a74bf05030dc45be345023a6e35372d0b6fef0deed3f7307edcd117e65dc",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/lab/QAConfig.lua",
+      "lab_source": "scripts/lab/QAConfig.lua",
+      "bytes": 99,
+      "sha256": "31e02fb5aff5ac52a6d39097226ecab15eea19dd61cfc9b70e3bd720b734d611",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/lab/SceneView.lua",
+      "lab_source": "scripts/lab/SceneView.lua",
+      "bytes": 5420,
+      "sha256": "f0f88cb7cd6e3d1dfd3f818e96ab0d0ef9a2760707c3c46490dbc6459ebc9abe",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/lab/Spatial.lua",
+      "lab_source": "scripts/lab/Spatial.lua",
+      "bytes": 1901,
+      "sha256": "339e5505cebc7c3711e970a16eebc70b123c67a95455eea9150ea79c0cbc49d0",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/lab/tests/Checks.lua",
+      "lab_source": "scripts/lab/tests/Checks.lua",
+      "bytes": 10493,
+      "sha256": "29831fb7aa399bb36547b29ed6f6e632630a181f76e36a91118c6994dcee4291",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/lab/tests/HeadlessUI.lua",
+      "lab_source": "scripts/lab/tests/HeadlessUI.lua",
+      "bytes": 1746,
+      "sha256": "31ae416f2fd58058766364081aec9cdfcb20954322c8f3b58de4a60ffbad376f",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/lab/World.lua",
+      "lab_source": "scripts/lab/World.lua",
+      "bytes": 5788,
+      "sha256": "06d39581cf474d9326607ec0dcd5d982dceb6efc19119c998250c4c9b0d6232d",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/main.lua",
+      "lab_source": "scripts/main.lua",
+      "bytes": 1934,
+      "sha256": "c348b8804781b2d9bf1b606ee6dfe7a4b1638ccd06a59c2359845e3d38163f67",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/systems/BrewJournal.lua",
+      "lab_source": "scripts/systems/BrewJournal.lua",
+      "bytes": 9264,
+      "sha256": "69da411b9869af81c40f944b6fec5b166a1584d3f0faa2fbee6b51bbde72e960",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/systems/CalculationGuard.lua",
+      "lab_source": "scripts/systems/CalculationGuard.lua",
+      "bytes": 2452,
+      "sha256": "4bf700587c59567216b5d3a2d858d6abdb1f99f1c5984fbed1ac7320a30af514",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/systems/CaseBoardProjection.lua",
+      "lab_source": "scripts/systems/CaseBoardProjection.lua",
+      "bytes": 239,
+      "sha256": "eea82e94beba0f1c7f98a9aa9b173f9da3410580b9916495827abdf88cbe90b7",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/systems/Economy.lua",
+      "lab_source": "scripts/systems/Economy.lua",
+      "bytes": 12823,
+      "sha256": "2c06697f099ace07facd4f7c4f035ae3898c5145fc0c78f5fb2799cdfb22ee7b",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/systems/Letter.lua",
+      "lab_source": "scripts/systems/Letter.lua",
+      "bytes": 14360,
+      "sha256": "a1cf42f86fa72a4a40e52059d4d9f98bd38a65ad52a329ccc22896889579476f",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/systems/Narrative.lua",
+      "lab_source": "scripts/systems/Narrative.lua",
+      "bytes": 15635,
+      "sha256": "fa605094d07db107e6c1e7e25fe14c5c9fa17c485e00140ac8c60cc3de0829db",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/systems/Order.lua",
+      "lab_source": "scripts/systems/Order.lua",
+      "bytes": 15707,
+      "sha256": "be2944ec7650ab051f7ac2a71823ea1fe0292340c8b6848b136d7e0705494856",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/systems/OrderAudit.lua",
+      "lab_source": "scripts/systems/OrderAudit.lua",
+      "bytes": 17343,
+      "sha256": "22828caef710319e3eb959afe6648bc5c37a153b9d8a4ad5f649f115c20d6817",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/systems/OrderLifecycle.lua",
+      "lab_source": "scripts/systems/OrderLifecycle.lua",
+      "bytes": 17290,
+      "sha256": "5fe1da2555da9380f97d4f606e0c20505a319ecd1f2188dacc8ca4d7d37c8eb2",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/systems/OrderTrial.lua",
+      "lab_source": "scripts/systems/OrderTrial.lua",
+      "bytes": 11319,
+      "sha256": "ef4bb679396fe194a1c3bfd22d4fd0ff9b014b491db00b5ceac09d03d1c8cb12",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/systems/PlayQueries.lua",
+      "lab_source": "scripts/systems/PlayQueries.lua",
+      "bytes": 8874,
+      "sha256": "4e49e5d4456d66efb42976e32c35ce49d10798fc830f0d702c08e223d7b28b4e",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/systems/Potion.lua",
+      "lab_source": "scripts/systems/Potion.lua",
+      "bytes": 20940,
+      "sha256": "b5409bc71d75e61559d66252fcb27d5be28b643cc23f5e592075be11a879b2bf",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/systems/RecipeDraft.lua",
+      "lab_source": "scripts/systems/RecipeDraft.lua",
+      "bytes": 3278,
+      "sha256": "e0c3d3ec4560d221cfb89109a467aedd58f61e8b8645a5b7f992545503718c5f",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/systems/StoryRules.lua",
+      "lab_source": "scripts/systems/StoryRules.lua",
+      "bytes": 8185,
+      "sha256": "fd82030a80c43af20c1dbd442ff89a77c138cdb0391522f26af14f05a2cbf7d4",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/systems/WordToken.lua",
+      "lab_source": "scripts/systems/WordToken.lua",
+      "bytes": 10030,
+      "sha256": "09370a5d87002137e7ac19cc9771910bfee7fbe6f8884837c7c852879c504bcd",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/systems/WorldState.lua",
+      "lab_source": "scripts/systems/WorldState.lua",
+      "bytes": 9677,
+      "sha256": "38ae49b262976686239c3c3d6f1007d3de75464c0cc2c025569121e5c5ef6c1f",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/ui/landscape/LayoutManifest.lua",
+      "lab_source": "scripts/ui/landscape/LayoutManifest.lua",
+      "bytes": 13873,
+      "sha256": "58191586f3f4d648de56ec978527eb0dcb0a38b0dedc9d9efe319e32ca0153ad",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/ui/landscape/Panels.lua",
+      "lab_source": "scripts/ui/landscape/Panels.lua",
+      "bytes": 16188,
+      "sha256": "b885a9abede83b18403d648a33e2e1452272b5fd8e6dceff847215f6a47cdee9",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "scripts/ui/PlayModel.lua",
+      "lab_source": "scripts/ui/PlayModel.lua",
+      "bytes": 15883,
+      "sha256": "d75787e020b59c23c88f43e50acce611aa44ab9d190e7934839e5833963b395f",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/Sprite/SpriteAnimator.lua",
+      "lab_source": "urhox-libs/Sprite/SpriteAnimator.lua",
+      "bytes": 15638,
+      "sha256": "a63b2854ea0fb976d59978babfd26923c79303112df3d98e3d248a4479f15c0e",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/Sprite/SpriteSheet.lua",
+      "lab_source": "urhox-libs/Sprite/SpriteSheet.lua",
+      "bytes": 22385,
+      "sha256": "c49b537026e63170506033cec029d45fc720b586b9e8736381f3012d4294d053",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Components/ChatWindow.lua",
+      "lab_source": "urhox-libs/UI/Components/ChatWindow.lua",
+      "bytes": 13593,
+      "sha256": "4e629ae5258f71e364060c688560282eb1ec20537a7a1c622beae76b89f31cd3",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Components/DragDropContext.lua",
+      "lab_source": "urhox-libs/UI/Components/DragDropContext.lua",
+      "bytes": 8748,
+      "sha256": "bc6820d8a4b1a6e6f39ab6e2704eec2a3f62da98029c07ae344fc4747bfe8fc0",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Components/InventoryManager.lua",
+      "lab_source": "urhox-libs/UI/Components/InventoryManager.lua",
+      "bytes": 8681,
+      "sha256": "deaebd09ba497a3a03a1fd456340c058b5d066b66aa73154cb2171d4edbbd752",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Components/ItemSlot.lua",
+      "lab_source": "urhox-libs/UI/Components/ItemSlot.lua",
+      "bytes": 9039,
+      "sha256": "5e94f034686d8a849edd0bd06dd664acb7ddc91f6bdc614901257a59543995d2",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Components/ItemTooltip.lua",
+      "lab_source": "urhox-libs/UI/Components/ItemTooltip.lua",
+      "bytes": 10799,
+      "sha256": "ac7904da1318cd50f5a2ff7cacfc2c0e988fb625648f67a511b445367e92ef3f",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Components/SkillTree.lua",
+      "lab_source": "urhox-libs/UI/Components/SkillTree.lua",
+      "bytes": 20021,
+      "sha256": "2d08017fb535569881468eafd71d13834672e8cabf2dbd3b6b984fce2afced23",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Components/VirtualList.lua",
+      "lab_source": "urhox-libs/UI/Components/VirtualList.lua",
+      "bytes": 13707,
+      "sha256": "0d64174af8e4df408d835a454b80240d1df5a1d60688826fcac7007f16b80e5d",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Core/Gesture.lua",
+      "lab_source": "urhox-libs/UI/Core/Gesture.lua",
+      "bytes": 18344,
+      "sha256": "5ac07eaf16c13cca115fc929105122ebb7b86ff3036a7e1657a5755b2122f006",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Core/GestureEvent.lua",
+      "lab_source": "urhox-libs/UI/Core/GestureEvent.lua",
+      "bytes": 7194,
+      "sha256": "901ebce018ab618cb21d87dca8d6aee7e80350dad1009068d54e4148a3fea7a9",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Core/ImageCache.lua",
+      "lab_source": "urhox-libs/UI/Core/ImageCache.lua",
+      "bytes": 4091,
+      "sha256": "3773f2704b7d7b51bb9e6f224e372a0d0dade625c6339964e30e1332ec8389e8",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Core/Input.lua",
+      "lab_source": "urhox-libs/UI/Core/Input.lua",
+      "bytes": 8140,
+      "sha256": "2f83e6dee292c5d0d0a41d10861cf4d0b8d00a921f2009778471824a2b1027d7",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Core/InputAdapter.lua",
+      "lab_source": "urhox-libs/UI/Core/InputAdapter.lua",
+      "bytes": 10954,
+      "sha256": "2878bc47003faaa09a2249ca8520520d33061ac284ea42e20bc82185bd9973f7",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Core/PointerEvent.lua",
+      "lab_source": "urhox-libs/UI/Core/PointerEvent.lua",
+      "bytes": 8027,
+      "sha256": "753d6557be63d7c00cc9f5c8b5219a27acd41ef67021e86918dbe097a44af2ae",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Core/Style.lua",
+      "lab_source": "urhox-libs/UI/Core/Style.lua",
+      "bytes": 13760,
+      "sha256": "7ace494a67f881d98886e58d1219aef3a482a7cb22dcd4a13798d9ef6ca086bd",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Core/Theme.lua",
+      "lab_source": "urhox-libs/UI/Core/Theme.lua",
+      "bytes": 15809,
+      "sha256": "311c3fb128a90a838a7e951baa3968bf720f030721adbc3bbec7bcd9896bc2a4",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Core/Transition.lua",
+      "lab_source": "urhox-libs/UI/Core/Transition.lua",
+      "bytes": 21756,
+      "sha256": "208fae3334d2ef24cbbf2b298009512b632dd902c540b79e391a34f50ae826d5",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Core/UI.lua",
+      "lab_source": "urhox-libs/UI/Core/UI.lua",
+      "bytes": 106748,
+      "sha256": "71f48aaa663adbce0b3b12c7d0753da4c7642383dcb03ec965bc9c3c829865e5",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Core/UILoader.lua",
+      "lab_source": "urhox-libs/UI/Core/UILoader.lua",
+      "bytes": 16595,
+      "sha256": "9bb93883e134058220702d490c7b07375d5d4f471e58b6dd4a135ad522e11447",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Core/UISerializer.lua",
+      "lab_source": "urhox-libs/UI/Core/UISerializer.lua",
+      "bytes": 3492,
+      "sha256": "3f71dc2d3135f38a2e1ad115af01220ca9e9d87b1e14dcef861b090fc449c9cd",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Core/Widget.lua",
+      "lab_source": "urhox-libs/UI/Core/Widget.lua",
+      "bytes": 181166,
+      "sha256": "aa4f6e9b667f0681ccb9c0df4a7e727c1ac204afb5f8fb4ec6eeb57f62e4128d",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/init.lua",
+      "lab_source": "urhox-libs/UI/init.lua",
+      "bytes": 9911,
+      "sha256": "41a44475e29a1172bca0f415f1608ae5e8260e4d7337fa72ea6bdc5caa13c58c",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Accordion.lua",
+      "lab_source": "urhox-libs/UI/Widgets/Accordion.lua",
+      "bytes": 29530,
+      "sha256": "b76e98997625df81f9bbd9605d2ba6e8f2e1e184d2bf8316fdfb22b118835ee5",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Alert.lua",
+      "lab_source": "urhox-libs/UI/Widgets/Alert.lua",
+      "bytes": 24033,
+      "sha256": "f765eb91dd88a4bf39fdaf8d02bb9d2aa8dc5fde57a50650ca696f59e429405d",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Avatar.lua",
+      "lab_source": "urhox-libs/UI/Widgets/Avatar.lua",
+      "bytes": 17037,
+      "sha256": "5c8b4549f2e71d83f3d9237619bdbf4825294b2b167aecd55f6c4e49d09a8ba5",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Badge.lua",
+      "lab_source": "urhox-libs/UI/Widgets/Badge.lua",
+      "bytes": 15371,
+      "sha256": "5ad14a1c5743a64a7de5a69c38d44cbd4384ef5b8bbc9c28be94f0236dce6f8f",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Breadcrumb.lua",
+      "lab_source": "urhox-libs/UI/Widgets/Breadcrumb.lua",
+      "bytes": 15784,
+      "sha256": "a65997f91ddf1a62a45b04564a540fe45318076eba60edd44f2282acc7b12399",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Button.lua",
+      "lab_source": "urhox-libs/UI/Widgets/Button.lua",
+      "bytes": 34676,
+      "sha256": "4841a1871db8ef78c557b2ee65d0c5f3c3fe877bc92f82feb7842d67c7bac6ef",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Calendar.lua",
+      "lab_source": "urhox-libs/UI/Widgets/Calendar.lua",
+      "bytes": 23469,
+      "sha256": "f8040644b377d871c2bfefa4290190bc4646e2751b5dabdfb40606dd0f1a26bb",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Card.lua",
+      "lab_source": "urhox-libs/UI/Widgets/Card.lua",
+      "bytes": 20239,
+      "sha256": "e3ec549b58b10315b9d9dd3337dac54e512b6aaad06e2759a95f9edaec6644ea",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Carousel.lua",
+      "lab_source": "urhox-libs/UI/Widgets/Carousel.lua",
+      "bytes": 26945,
+      "sha256": "4be5570de303758b559f17a4e297cf4703fc6874a326c6df6a1ba50c23330aa6",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Checkbox.lua",
+      "lab_source": "urhox-libs/UI/Widgets/Checkbox.lua",
+      "bytes": 9308,
+      "sha256": "926907a27b2af85040f57d67673b55c816b2c877a04f66ca491031d56f147543",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Chip.lua",
+      "lab_source": "urhox-libs/UI/Widgets/Chip.lua",
+      "bytes": 23780,
+      "sha256": "18cd5cd933ba7f9cb77ab83f2636ae85bcc434002e5114ac2924cebec40df1a0",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/ColorPicker.lua",
+      "lab_source": "urhox-libs/UI/Widgets/ColorPicker.lua",
+      "bytes": 43873,
+      "sha256": "f0bb51c44397bad1a09d8ece02e7bfaac1adcc9760504cb9fc15aadb16608f90",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/DatePicker.lua",
+      "lab_source": "urhox-libs/UI/Widgets/DatePicker.lua",
+      "bytes": 47545,
+      "sha256": "cfff3a75e979c29b7b9a713289ccb831d6166d567492f1a14a8b53801dc8c255",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Divider.lua",
+      "lab_source": "urhox-libs/UI/Widgets/Divider.lua",
+      "bytes": 11128,
+      "sha256": "9c5f755897e79b712157e3881f0bbec2a60232b379fedfce4ba14af13b14bb73",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Drawer.lua",
+      "lab_source": "urhox-libs/UI/Widgets/Drawer.lua",
+      "bytes": 25242,
+      "sha256": "111e08a503c7ec64bb09519deea2e3abac22606d0997ed029768f01173847ac0",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Dropdown.lua",
+      "lab_source": "urhox-libs/UI/Widgets/Dropdown.lua",
+      "bytes": 35118,
+      "sha256": "c1c607da9bd10bc6b2ed3e57f25bb71a94601f194e20bb06b87cade5c8dc531e",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/EditMenu.lua",
+      "lab_source": "urhox-libs/UI/Widgets/EditMenu.lua",
+      "bytes": 10832,
+      "sha256": "5c4c516fe2e19500bc42a310d07f5d7e928d9b0479c79b9bac8c6df193e67eb8",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/FileUpload.lua",
+      "lab_source": "urhox-libs/UI/Widgets/FileUpload.lua",
+      "bytes": 26164,
+      "sha256": "6cbcb13671e277d70b7242088a89347a63f8a96aa5cbac43a4a8a415648501d9",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Label.lua",
+      "lab_source": "urhox-libs/UI/Widgets/Label.lua",
+      "bytes": 57371,
+      "sha256": "c04904aae6257963685b94b273f23ce343848d92b85252002c653475ed25cc03",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/List.lua",
+      "lab_source": "urhox-libs/UI/Widgets/List.lua",
+      "bytes": 29318,
+      "sha256": "28262cda1dd80ad766933cf433832c7e14a55d7dbb17dce9f285bf2a27c5093e",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Menu.lua",
+      "lab_source": "urhox-libs/UI/Widgets/Menu.lua",
+      "bytes": 33126,
+      "sha256": "c0efe11be927516bc90ca10bf33a0cfbf981891d72fef88951ac9bcf0cb2b152",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Modal.lua",
+      "lab_source": "urhox-libs/UI/Widgets/Modal.lua",
+      "bytes": 32066,
+      "sha256": "627d07f4e86092eb7cf774192ca66cff2c40df44da208f86c2546ea38d966a2a",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Pagination.lua",
+      "lab_source": "urhox-libs/UI/Widgets/Pagination.lua",
+      "bytes": 28202,
+      "sha256": "b3e3275d09e62c2cd26b291150ed7a573d2000955c3e9496de38a5b6f03d1a30",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Panel.lua",
+      "lab_source": "urhox-libs/UI/Widgets/Panel.lua",
+      "bytes": 2597,
+      "sha256": "0519b7b27605210069735a2a07530b7d74fc02ae6cca45e888e59aa09b1f4e26",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Popover.lua",
+      "lab_source": "urhox-libs/UI/Widgets/Popover.lua",
+      "bytes": 20626,
+      "sha256": "1e2de43bd61a9fa7cf500d285f3b276af2b373e62e9d859862e2f03e6c5cfd4e",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/ProgressBar.lua",
+      "lab_source": "urhox-libs/UI/Widgets/ProgressBar.lua",
+      "bytes": 10469,
+      "sha256": "e727d2b25e5e68ac49513ded226c95fcb558515fbe1912cdf2f09aee02487671",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Rating.lua",
+      "lab_source": "urhox-libs/UI/Widgets/Rating.lua",
+      "bytes": 19435,
+      "sha256": "6d9acc9ea984078b5331c561ae15c654c618f3c5fe63f4e6dff0c94d032b01b8",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/RichText.lua",
+      "lab_source": "urhox-libs/UI/Widgets/RichText.lua",
+      "bytes": 30962,
+      "sha256": "c50b75ca28890f40b98cfb1519ab380d79f809f611bf135b77520017d19fe714",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/SafeAreaView.lua",
+      "lab_source": "urhox-libs/UI/Widgets/SafeAreaView.lua",
+      "bytes": 9904,
+      "sha256": "22c0f9a9cc706e57c6c5366598c64bb24b42344780a957dad9c23a7bdf407472",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/ScrollView.lua",
+      "lab_source": "urhox-libs/UI/Widgets/ScrollView.lua",
+      "bytes": 42321,
+      "sha256": "0cc6da4947926cbf8bb642af4099675ea24fa46461c9a294a46d188a39427202",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/SimpleGrid.lua",
+      "lab_source": "urhox-libs/UI/Widgets/SimpleGrid.lua",
+      "bytes": 9274,
+      "sha256": "76c1d7cc0ade7c66142df74741602235efc90a91529312524111d95148dfc6a5",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Skeleton.lua",
+      "lab_source": "urhox-libs/UI/Widgets/Skeleton.lua",
+      "bytes": 17103,
+      "sha256": "77933dbf040df77ecec4f1ba76f10b814ab2591e68416312f53e4e2639c99df5",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Slider.lua",
+      "lab_source": "urhox-libs/UI/Widgets/Slider.lua",
+      "bytes": 14128,
+      "sha256": "d81ba221e18640b3dc02dc8eec48051bc2a9f9c247a6ba1f8a4b7b3dcd0490e8",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Spine.lua",
+      "lab_source": "urhox-libs/UI/Widgets/Spine.lua",
+      "bytes": 13332,
+      "sha256": "90e6cc19ac05ca634352abd05eab0f060b574a5fadc25b258e773a9ce407a393",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Sprite.lua",
+      "lab_source": "urhox-libs/UI/Widgets/Sprite.lua",
+      "bytes": 40512,
+      "sha256": "12ad6180b7c7e25cb040e0c38374b5041f35d79410b4c967c26625014a0b9eda",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Stepper.lua",
+      "lab_source": "urhox-libs/UI/Widgets/Stepper.lua",
+      "bytes": 31708,
+      "sha256": "21531a0e76599576d09bc2c6d121f4237b1ade1437bf0d0d4974b7c24df6c1cb",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Table.lua",
+      "lab_source": "urhox-libs/UI/Widgets/Table.lua",
+      "bytes": 32465,
+      "sha256": "903005134b624b13dc2792f9712385511b12b1a715730ccd7c22de312021ba69",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Tabs.lua",
+      "lab_source": "urhox-libs/UI/Widgets/Tabs.lua",
+      "bytes": 41585,
+      "sha256": "b2920342912ace6ba5242d59cfe149994e907cf4fc8e8a0c818f9a20bc0836ec",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/TextField.lua",
+      "lab_source": "urhox-libs/UI/Widgets/TextField.lua",
+      "bytes": 34663,
+      "sha256": "de85be958d6f1ffc5a4bd5ecb73ebef89056c50b0d8bd1fb1048dc617c49337d",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Timeline.lua",
+      "lab_source": "urhox-libs/UI/Widgets/Timeline.lua",
+      "bytes": 26050,
+      "sha256": "270c2d78a8b55b93755b82df835699ff79e75d34017581fc4c6e1758e882169c",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/TimePicker.lua",
+      "lab_source": "urhox-libs/UI/Widgets/TimePicker.lua",
+      "bytes": 45312,
+      "sha256": "a999f87936cd9ab5b7af716aa1295288a155889eedf4ab4e0aa893fa1b17774e",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Toast.lua",
+      "lab_source": "urhox-libs/UI/Widgets/Toast.lua",
+      "bytes": 25320,
+      "sha256": "749bc261f6da7ec1fac5d02caad2a5ba7f293a3af8f27bbddc4481eee796e78f",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Toggle.lua",
+      "lab_source": "urhox-libs/UI/Widgets/Toggle.lua",
+      "bytes": 9790,
+      "sha256": "645907a30de6b7e9b358709f9888d7142dc5ff5b7b35246fdf93711a3f4af6fe",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Tooltip.lua",
+      "lab_source": "urhox-libs/UI/Widgets/Tooltip.lua",
+      "bytes": 12644,
+      "sha256": "93ef6d997b5a35fe6c10a30e7d92e48327d8fede6fd34bafdb8a1e470dbbdd43",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Tree.lua",
+      "lab_source": "urhox-libs/UI/Widgets/Tree.lua",
+      "bytes": 35607,
+      "sha256": "f43caaf8e3c04dffee68b6801420c83006df78135fe1b9517da8e54918779d19",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "tools/run_checks.py",
+      "lab_source": "tools/run_checks.py",
+      "bytes": 2384,
+      "sha256": "cc39089de91d830d41ec9aadb0737b7fa3994e61a429ed14bf40d92609f2e93b",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "docs/3d-interface-map.md",
+      "lab_source": "docs/3d-interface-map.md",
+      "bytes": 5289,
+      "sha256": "93c2d9b21a6c6c654b63ebab3916b20e60d3298f94eb7909e4edd7da07556143",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "docs/evidence/3d-lab-r3/offline-checks.json",
+      "lab_source": "docs/evidence/3d-lab-r3/offline-checks.json",
+      "bytes": 25555,
+      "sha256": "f63e8adac6691cfaa1042a96416036afdc830806561cf892137985846ba596af",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    },
+    {
+      "path": "docs/evidence/3d-lab-r3/offline-checks.log",
+      "lab_source": "docs/evidence/3d-lab-r3/offline-checks.log",
+      "bytes": 6778,
+      "sha256": "10b241f0fd7fafbcce88f01e9c2b057c3030296f152c6f9096257a8f045685da",
+      "copied_utc": "2026-10-12T05:21:12.920162+00:00"
+    }
+  ],
+  "original_source_provenance": [
+    {
+      "path": "scripts/core/EventBus.lua",
+      "formal_source_relative": "scripts/core/EventBus.lua",
+      "initial_source_sha256": "f53bce9dfe7c18ea854d50f7413b339bf32904acfc469bde7044d4231a35f92a",
+      "initial_copy_utc": "2026-10-11T18:11:40.182223+00:00"
+    },
+    {
+      "path": "scripts/core/GameFlow.lua",
+      "formal_source_relative": "scripts/core/GameFlow.lua",
+      "initial_source_sha256": "2c483fa0880fab20f7109e8db3369efe7fbdb0d69d469450134de5bc5b6b0eb4",
+      "initial_copy_utc": "2026-10-11T18:11:40.207637+00:00"
+    },
+    {
+      "path": "scripts/core/GameSession.lua",
+      "formal_source_relative": "scripts/core/GameSession.lua",
+      "initial_source_sha256": "3fa6ab2a5fa1ecf5419f5e6b1c15ab6ca7644bd6af93e8a9ee0d7ae9627a0f33",
+      "initial_copy_utc": "2026-10-11T18:11:40.210074+00:00"
+    },
+    {
+      "path": "scripts/core/GameState.lua",
+      "formal_source_relative": "scripts/core/GameState.lua",
+      "initial_source_sha256": "f49dfbc15c161070dec3902742d1e737d472f01a37d8335742b703fd5765c978",
+      "initial_copy_utc": "2026-10-11T18:11:40.251618+00:00"
+    },
+    {
+      "path": "scripts/core/SaveJson.lua",
+      "formal_source_relative": "scripts/core/SaveJson.lua",
+      "initial_source_sha256": "407249e9959bb17b1099d1338302a5e3ad7ef04165d219f25afcd8909518a880",
+      "initial_copy_utc": "2026-10-11T18:11:40.256305+00:00"
+    },
+    {
+      "path": "scripts/core/SaveMigrations.lua",
+      "formal_source_relative": "scripts/core/SaveMigrations.lua",
+      "initial_source_sha256": "01e8f797485f25105299d6f0ce273b06de454abef3b3834a602bb0700e41ae43",
+      "initial_copy_utc": "2026-10-11T18:11:40.296927+00:00"
+    },
+    {
+      "path": "scripts/core/SaveSchema.lua",
+      "formal_source_relative": "scripts/core/SaveSchema.lua",
+      "initial_source_sha256": "b67a2822b37e92831a6caf89955266123885dfce6d656985cf69574b95bf5d98",
+      "initial_copy_utc": "2026-10-11T18:11:40.352733+00:00"
+    },
+    {
+      "path": "scripts/core/SaveSystem.lua",
+      "formal_source_relative": "scripts/core/SaveSystem.lua",
+      "initial_source_sha256": "cb1b2a2a160d5cf6819f6ce081dcd9eed434eb572264983c7da048a6f1043eb4",
+      "initial_copy_utc": "2026-10-11T18:11:40.357507+00:00"
+    },
+    {
+      "path": "scripts/core/SchemaProjection.lua",
+      "formal_source_relative": "scripts/core/SchemaProjection.lua",
+      "initial_source_sha256": "f41bec1d9e99eddd29932237babc84b76340c9d5b0786d21acd1e5cc3b8a7abf",
+      "initial_copy_utc": "2026-10-11T18:11:40.381307+00:00"
+    },
+    {
+      "path": "scripts/core/StateUtil.lua",
+      "formal_source_relative": "scripts/core/StateUtil.lua",
+      "initial_source_sha256": "87b7818d2c4fce1325c1db6bc8b2e6b27ac48aec66f59d162d99e0d105cb336e",
+      "initial_copy_utc": "2026-10-11T18:11:40.417845+00:00"
+    },
+    {
+      "path": "scripts/data/content.lua",
+      "formal_source_relative": "scripts/data/content.lua",
+      "initial_source_sha256": "31321c3836b3a927b798e012e4caff7ed48d773410f24e5fbc67ce71e4b514b5",
+      "initial_copy_utc": "2026-10-11T18:11:40.423026+00:00"
+    },
+    {
+      "path": "scripts/data/effects.lua",
+      "formal_source_relative": "scripts/data/effects.lua",
+      "initial_source_sha256": "a88c061d34a5b3b91ac6c51392f482b0de70f9a6ea77007ff4759b80ebb9c540",
+      "initial_copy_utc": "2026-10-11T18:11:40.453376+00:00"
+    },
+    {
+      "path": "scripts/data/equipment.lua",
+      "formal_source_relative": "scripts/data/equipment.lua",
+      "initial_source_sha256": "05543c85f8fa6ef50cd9fdb037f38aa14d99512deab81aa8f279af6c3e797c29",
+      "initial_copy_utc": "2026-10-11T18:11:40.479723+00:00"
+    },
+    {
+      "path": "scripts/data/extension_test.lua",
+      "formal_source_relative": "scripts/data/extension_test.lua",
+      "initial_source_sha256": "7395aac16f27c7dfe04253339a5bd54a2b6a2aa3a3f7b05cb34d53cbb2d8b5d3",
+      "initial_copy_utc": "2026-10-11T18:11:40.496353+00:00"
+    },
+    {
+      "path": "scripts/data/followup.lua",
+      "formal_source_relative": "scripts/data/followup.lua",
+      "initial_source_sha256": "f26732ee4227d1c720ad724e101e4a90a05b37ec8be222b8c0bed3bafb7300aa",
+      "initial_copy_utc": "2026-10-11T18:11:40.516443+00:00"
+    },
+    {
+      "path": "scripts/data/gameplay.lua",
+      "formal_source_relative": "scripts/data/gameplay.lua",
+      "initial_source_sha256": "e6325f44002ab0c19bd808378a1343a7db679acfca5f5b242f2ec4a015c3e53d",
+      "initial_copy_utc": "2026-10-11T18:11:40.543932+00:00"
+    },
+    {
+      "path": "scripts/data/ingredients.lua",
+      "formal_source_relative": "scripts/data/ingredients.lua",
+      "initial_source_sha256": "5a9c9a756ff8dd6fda44dba54e4101fb7cb99fc762e82606e55f5c10b69ed0d8",
+      "initial_copy_utc": "2026-10-11T18:11:40.576273+00:00"
+    },
+    {
+      "path": "scripts/data/letters.lua",
+      "formal_source_relative": "scripts/data/letters.lua",
+      "initial_source_sha256": "0920255a04e3d0a4ef26f7445befe845b2651b6db1833d7818e5aef40840b2b7",
+      "initial_copy_utc": "2026-10-11T18:11:40.599761+00:00"
+    },
+    {
+      "path": "scripts/data/npcs.lua",
+      "formal_source_relative": "scripts/data/npcs.lua",
+      "initial_source_sha256": "10e1cd5556ed7c74c28815e5fed034f038f56bf18c97637d0fb2304a8481278b",
+      "initial_copy_utc": "2026-10-11T18:11:40.621439+00:00"
+    },
+    {
+      "path": "scripts/data/numeric_v02.lua",
+      "formal_source_relative": "scripts/data/numeric_v02.lua",
+      "initial_source_sha256": "2a3c99a732b902fac65b03311640e47a70cce1c13bf54406b88be707e739c886",
+      "initial_copy_utc": "2026-10-11T18:11:40.654916+00:00"
+    },
+    {
+      "path": "scripts/data/ordinary_orders.lua",
+      "formal_source_relative": "scripts/data/ordinary_orders.lua",
+      "initial_source_sha256": "d6124a6c9069ea7baf7cd1b2757bbf68bd15fe6f67ca4994712fa6453ccbebd0",
+      "initial_copy_utc": "2026-10-11T18:11:40.682812+00:00"
+    },
+    {
+      "path": "scripts/data/recipes.lua",
+      "formal_source_relative": "scripts/data/recipes.lua",
+      "initial_source_sha256": "303718e3d720f24b6a0a2b169bf5ae58650b49974ead1a8e36b06a2947f4b499",
+      "initial_copy_utc": "2026-10-11T18:11:40.710913+00:00"
+    },
+    {
+      "path": "scripts/data/stage1.lua",
+      "formal_source_relative": "scripts/data/stage1.lua",
+      "initial_source_sha256": "70c396a2a6a40d29ad39a6a547f60567d222ab0a4febdee14554d97a33033132",
+      "initial_copy_utc": "2026-10-11T18:11:40.761877+00:00"
+    },
+    {
+      "path": "scripts/data/synthesis.lua",
+      "formal_source_relative": "scripts/data/synthesis.lua",
+      "initial_source_sha256": "0b36bbc69e584655d5f574ea977b397fe840b4ea0a0a41bbac94505234582dee",
+      "initial_copy_utc": "2026-10-11T18:11:40.802008+00:00"
+    },
+    {
+      "path": "scripts/data/word_profiles.lua",
+      "formal_source_relative": "scripts/data/word_profiles.lua",
+      "initial_source_sha256": "c3d0a31814ccb3c409c9a56fcacbf52e4873706ade52eb33eceec51a24245dde",
+      "initial_copy_utc": "2026-10-11T18:11:40.818058+00:00"
+    },
+    {
+      "path": "scripts/data/words.lua",
+      "formal_source_relative": "scripts/data/words.lua",
+      "initial_source_sha256": "f84ad8e6408af4129efbfd3ad75125d5f734a2cf92231cb3f21cdaf52746b873",
+      "initial_copy_utc": "2026-10-11T18:11:40.834993+00:00"
+    },
+    {
+      "path": "scripts/lab/tests/HeadlessUI.lua",
+      "formal_source_relative": "scripts/debug/fixtures/HeadlessUI.lua",
+      "initial_source_sha256": "31ae416f2fd58058766364081aec9cdfcb20954322c8f3b58de4a60ffbad376f",
+      "initial_copy_utc": "2026-10-11T18:11:40.862876+00:00"
+    },
+    {
+      "path": "scripts/systems/BrewJournal.lua",
+      "formal_source_relative": "scripts/systems/BrewJournal.lua",
+      "initial_source_sha256": "69da411b9869af81c40f944b6fec5b166a1584d3f0faa2fbee6b51bbde72e960",
+      "initial_copy_utc": "2026-10-11T18:11:40.887190+00:00"
+    },
+    {
+      "path": "scripts/systems/CalculationGuard.lua",
+      "formal_source_relative": "scripts/systems/CalculationGuard.lua",
+      "initial_source_sha256": "4bf700587c59567216b5d3a2d858d6abdb1f99f1c5984fbed1ac7320a30af514",
+      "initial_copy_utc": "2026-10-11T18:11:40.922821+00:00"
+    },
+    {
+      "path": "scripts/systems/CaseBoardProjection.lua",
+      "formal_source_relative": "scripts/systems/CaseBoardProjection.lua",
+      "initial_source_sha256": "eea82e94beba0f1c7f98a9aa9b173f9da3410580b9916495827abdf88cbe90b7",
+      "initial_copy_utc": "2026-10-11T18:11:40.956852+00:00"
+    },
+    {
+      "path": "scripts/systems/Economy.lua",
+      "formal_source_relative": "scripts/systems/Economy.lua",
+      "initial_source_sha256": "2c06697f099ace07facd4f7c4f035ae3898c5145fc0c78f5fb2799cdfb22ee7b",
+      "initial_copy_utc": "2026-10-11T18:11:40.998568+00:00"
+    },
+    {
+      "path": "scripts/systems/Letter.lua",
+      "formal_source_relative": "scripts/systems/Letter.lua",
+      "initial_source_sha256": "a1cf42f86fa72a4a40e52059d4d9f98bd38a65ad52a329ccc22896889579476f",
+      "initial_copy_utc": "2026-10-11T18:11:41.050025+00:00"
+    },
+    {
+      "path": "scripts/systems/Narrative.lua",
+      "formal_source_relative": "scripts/systems/Narrative.lua",
+      "initial_source_sha256": "fa605094d07db107e6c1e7e25fe14c5c9fa17c485e00140ac8c60cc3de0829db",
+      "initial_copy_utc": "2026-10-11T18:11:41.105980+00:00"
+    },
+    {
+      "path": "scripts/systems/Order.lua",
+      "formal_source_relative": "scripts/systems/Order.lua",
+      "initial_source_sha256": "be2944ec7650ab051f7ac2a71823ea1fe0292340c8b6848b136d7e0705494856",
+      "initial_copy_utc": "2026-10-11T18:11:41.138368+00:00"
+    },
+    {
+      "path": "scripts/systems/OrderAudit.lua",
+      "formal_source_relative": "scripts/systems/OrderAudit.lua",
+      "initial_source_sha256": "22828caef710319e3eb959afe6648bc5c37a153b9d8a4ad5f649f115c20d6817",
+      "initial_copy_utc": "2026-10-11T18:11:41.209038+00:00"
+    },
+    {
+      "path": "scripts/systems/OrderLifecycle.lua",
+      "formal_source_relative": "scripts/systems/OrderLifecycle.lua",
+      "initial_source_sha256": "5fe1da2555da9380f97d4f606e0c20505a319ecd1f2188dacc8ca4d7d37c8eb2",
+      "initial_copy_utc": "2026-10-11T18:11:41.273080+00:00"
+    },
+    {
+      "path": "scripts/systems/OrderTrial.lua",
+      "formal_source_relative": "scripts/systems/OrderTrial.lua",
+      "initial_source_sha256": "ef4bb679396fe194a1c3bfd22d4fd0ff9b014b491db00b5ceac09d03d1c8cb12",
+      "initial_copy_utc": "2026-10-11T18:11:41.305857+00:00"
+    },
+    {
+      "path": "scripts/systems/PlayQueries.lua",
+      "formal_source_relative": "scripts/systems/PlayQueries.lua",
+      "initial_source_sha256": "4e49e5d4456d66efb42976e32c35ce49d10798fc830f0d702c08e223d7b28b4e",
+      "initial_copy_utc": "2026-10-11T18:11:41.307940+00:00"
+    },
+    {
+      "path": "scripts/systems/Potion.lua",
+      "formal_source_relative": "scripts/systems/Potion.lua",
+      "initial_source_sha256": "b5409bc71d75e61559d66252fcb27d5be28b643cc23f5e592075be11a879b2bf",
+      "initial_copy_utc": "2026-10-11T18:11:41.335464+00:00"
+    },
+    {
+      "path": "scripts/systems/RecipeDraft.lua",
+      "formal_source_relative": "scripts/systems/RecipeDraft.lua",
+      "initial_source_sha256": "e0c3d3ec4560d221cfb89109a467aedd58f61e8b8645a5b7f992545503718c5f",
+      "initial_copy_utc": "2026-10-11T18:11:41.384876+00:00"
+    },
+    {
+      "path": "scripts/systems/StoryRules.lua",
+      "formal_source_relative": "scripts/systems/StoryRules.lua",
+      "initial_source_sha256": "fd82030a80c43af20c1dbd442ff89a77c138cdb0391522f26af14f05a2cbf7d4",
+      "initial_copy_utc": "2026-10-11T18:11:41.436627+00:00"
+    },
+    {
+      "path": "scripts/systems/WordToken.lua",
+      "formal_source_relative": "scripts/systems/WordToken.lua",
+      "initial_source_sha256": "09370a5d87002137e7ac19cc9771910bfee7fbe6f8884837c7c852879c504bcd",
+      "initial_copy_utc": "2026-10-11T18:11:41.492621+00:00"
+    },
+    {
+      "path": "scripts/systems/WorldState.lua",
+      "formal_source_relative": "scripts/systems/WorldState.lua",
+      "initial_source_sha256": "38ae49b262976686239c3c3d6f1007d3de75464c0cc2c025569121e5c5ef6c1f",
+      "initial_copy_utc": "2026-10-11T18:11:41.540572+00:00"
+    },
+    {
+      "path": "scripts/ui/landscape/LayoutManifest.lua",
+      "formal_source_relative": "scripts/ui/landscape/LayoutManifest.lua",
+      "initial_source_sha256": "58191586f3f4d648de56ec978527eb0dcb0a38b0dedc9d9efe319e32ca0153ad",
+      "initial_copy_utc": "2026-10-11T18:11:41.547380+00:00"
+    },
+    {
+      "path": "scripts/ui/landscape/Panels.lua",
+      "formal_source_relative": "scripts/ui/landscape/Panels.lua",
+      "initial_source_sha256": "4b27af4cdf642eb488a83f72672a75e2308924f496fdf76f98e3c00a4e7e7d88",
+      "initial_copy_utc": "2026-10-11T18:11:41.551952+00:00"
+    },
+    {
+      "path": "scripts/ui/PlayModel.lua",
+      "formal_source_relative": "scripts/ui/PlayModel.lua",
+      "initial_source_sha256": "d75787e020b59c23c88f43e50acce611aa44ab9d190e7934839e5833963b395f",
+      "initial_copy_utc": "2026-10-11T18:11:41.554869+00:00"
+    },
+    {
+      "path": "urhox-libs/Sprite/SpriteAnimator.lua",
+      "formal_source_relative": "urhox-libs/Sprite/SpriteAnimator.lua",
+      "initial_source_sha256": "a63b2854ea0fb976d59978babfd26923c79303112df3d98e3d248a4479f15c0e",
+      "initial_copy_utc": "2026-10-11T18:30:00.416964+00:00"
+    },
+    {
+      "path": "urhox-libs/Sprite/SpriteSheet.lua",
+      "formal_source_relative": "urhox-libs/Sprite/SpriteSheet.lua",
+      "initial_source_sha256": "c49b537026e63170506033cec029d45fc720b586b9e8736381f3012d4294d053",
+      "initial_copy_utc": "2026-10-11T18:30:00.427505+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Components/ChatWindow.lua",
+      "formal_source_relative": "urhox-libs/UI/Components/ChatWindow.lua",
+      "initial_source_sha256": "4e629ae5258f71e364060c688560282eb1ec20537a7a1c622beae76b89f31cd3",
+      "initial_copy_utc": "2026-10-11T18:30:00.441669+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Components/DragDropContext.lua",
+      "formal_source_relative": "urhox-libs/UI/Components/DragDropContext.lua",
+      "initial_source_sha256": "bc6820d8a4b1a6e6f39ab6e2704eec2a3f62da98029c07ae344fc4747bfe8fc0",
+      "initial_copy_utc": "2026-10-11T18:30:00.451446+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Components/InventoryManager.lua",
+      "formal_source_relative": "urhox-libs/UI/Components/InventoryManager.lua",
+      "initial_source_sha256": "deaebd09ba497a3a03a1fd456340c058b5d066b66aa73154cb2171d4edbbd752",
+      "initial_copy_utc": "2026-10-11T18:30:00.459926+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Components/ItemSlot.lua",
+      "formal_source_relative": "urhox-libs/UI/Components/ItemSlot.lua",
+      "initial_source_sha256": "5e94f034686d8a849edd0bd06dd664acb7ddc91f6bdc614901257a59543995d2",
+      "initial_copy_utc": "2026-10-11T18:30:00.469857+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Components/ItemTooltip.lua",
+      "formal_source_relative": "urhox-libs/UI/Components/ItemTooltip.lua",
+      "initial_source_sha256": "ac7904da1318cd50f5a2ff7cacfc2c0e988fb625648f67a511b445367e92ef3f",
+      "initial_copy_utc": "2026-10-11T18:30:00.479986+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Components/SkillTree.lua",
+      "formal_source_relative": "urhox-libs/UI/Components/SkillTree.lua",
+      "initial_source_sha256": "2d08017fb535569881468eafd71d13834672e8cabf2dbd3b6b984fce2afced23",
+      "initial_copy_utc": "2026-10-11T18:30:00.492433+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Components/VirtualList.lua",
+      "formal_source_relative": "urhox-libs/UI/Components/VirtualList.lua",
+      "initial_source_sha256": "0d64174af8e4df408d835a454b80240d1df5a1d60688826fcac7007f16b80e5d",
+      "initial_copy_utc": "2026-10-11T18:30:00.499305+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Core/Gesture.lua",
+      "formal_source_relative": "urhox-libs/UI/Core/Gesture.lua",
+      "initial_source_sha256": "5ac07eaf16c13cca115fc929105122ebb7b86ff3036a7e1657a5755b2122f006",
+      "initial_copy_utc": "2026-10-11T18:30:00.502149+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Core/GestureEvent.lua",
+      "formal_source_relative": "urhox-libs/UI/Core/GestureEvent.lua",
+      "initial_source_sha256": "901ebce018ab618cb21d87dca8d6aee7e80350dad1009068d54e4148a3fea7a9",
+      "initial_copy_utc": "2026-10-11T18:30:00.505054+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Core/ImageCache.lua",
+      "formal_source_relative": "urhox-libs/UI/Core/ImageCache.lua",
+      "initial_source_sha256": "3773f2704b7d7b51bb9e6f224e372a0d0dade625c6339964e30e1332ec8389e8",
+      "initial_copy_utc": "2026-10-11T18:30:00.511825+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Core/Input.lua",
+      "formal_source_relative": "urhox-libs/UI/Core/Input.lua",
+      "initial_source_sha256": "2f83e6dee292c5d0d0a41d10861cf4d0b8d00a921f2009778471824a2b1027d7",
+      "initial_copy_utc": "2026-10-11T18:30:00.517076+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Core/InputAdapter.lua",
+      "formal_source_relative": "urhox-libs/UI/Core/InputAdapter.lua",
+      "initial_source_sha256": "2878bc47003faaa09a2249ca8520520d33061ac284ea42e20bc82185bd9973f7",
+      "initial_copy_utc": "2026-10-11T18:30:00.520869+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Core/PointerEvent.lua",
+      "formal_source_relative": "urhox-libs/UI/Core/PointerEvent.lua",
+      "initial_source_sha256": "753d6557be63d7c00cc9f5c8b5219a27acd41ef67021e86918dbe097a44af2ae",
+      "initial_copy_utc": "2026-10-11T18:30:00.523277+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Core/Style.lua",
+      "formal_source_relative": "urhox-libs/UI/Core/Style.lua",
+      "initial_source_sha256": "7ace494a67f881d98886e58d1219aef3a482a7cb22dcd4a13798d9ef6ca086bd",
+      "initial_copy_utc": "2026-10-11T18:30:00.528712+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Core/Theme.lua",
+      "formal_source_relative": "urhox-libs/UI/Core/Theme.lua",
+      "initial_source_sha256": "311c3fb128a90a838a7e951baa3968bf720f030721adbc3bbec7bcd9896bc2a4",
+      "initial_copy_utc": "2026-10-11T18:30:00.535357+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Core/Transition.lua",
+      "formal_source_relative": "urhox-libs/UI/Core/Transition.lua",
+      "initial_source_sha256": "208fae3334d2ef24cbbf2b298009512b632dd902c540b79e391a34f50ae826d5",
+      "initial_copy_utc": "2026-10-11T18:30:00.545184+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Core/UI.lua",
+      "formal_source_relative": "urhox-libs/UI/Core/UI.lua",
+      "initial_source_sha256": "71f48aaa663adbce0b3b12c7d0753da4c7642383dcb03ec965bc9c3c829865e5",
+      "initial_copy_utc": "2026-10-11T18:30:00.550654+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Core/UILoader.lua",
+      "formal_source_relative": "urhox-libs/UI/Core/UILoader.lua",
+      "initial_source_sha256": "9bb93883e134058220702d490c7b07375d5d4f471e58b6dd4a135ad522e11447",
+      "initial_copy_utc": "2026-10-11T18:30:00.554454+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Core/UISerializer.lua",
+      "formal_source_relative": "urhox-libs/UI/Core/UISerializer.lua",
+      "initial_source_sha256": "3f71dc2d3135f38a2e1ad115af01220ca9e9d87b1e14dcef861b090fc449c9cd",
+      "initial_copy_utc": "2026-10-11T18:30:00.559011+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Core/Widget.lua",
+      "formal_source_relative": "urhox-libs/UI/Core/Widget.lua",
+      "initial_source_sha256": "aa4f6e9b667f0681ccb9c0df4a7e727c1ac204afb5f8fb4ec6eeb57f62e4128d",
+      "initial_copy_utc": "2026-10-11T18:30:00.562358+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/init.lua",
+      "formal_source_relative": "urhox-libs/UI/init.lua",
+      "initial_source_sha256": "41a44475e29a1172bca0f415f1608ae5e8260e4d7337fa72ea6bdc5caa13c58c",
+      "initial_copy_utc": "2026-10-11T18:30:00.565561+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Accordion.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/Accordion.lua",
+      "initial_source_sha256": "b76e98997625df81f9bbd9605d2ba6e8f2e1e184d2bf8316fdfb22b118835ee5",
+      "initial_copy_utc": "2026-10-11T18:30:00.570869+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Alert.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/Alert.lua",
+      "initial_source_sha256": "f765eb91dd88a4bf39fdaf8d02bb9d2aa8dc5fde57a50650ca696f59e429405d",
+      "initial_copy_utc": "2026-10-11T18:30:00.576163+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Avatar.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/Avatar.lua",
+      "initial_source_sha256": "5c8b4549f2e71d83f3d9237619bdbf4825294b2b167aecd55f6c4e49d09a8ba5",
+      "initial_copy_utc": "2026-10-11T18:30:00.579543+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Badge.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/Badge.lua",
+      "initial_source_sha256": "5ad14a1c5743a64a7de5a69c38d44cbd4384ef5b8bbc9c28be94f0236dce6f8f",
+      "initial_copy_utc": "2026-10-11T18:30:00.584753+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Breadcrumb.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/Breadcrumb.lua",
+      "initial_source_sha256": "a65997f91ddf1a62a45b04564a540fe45318076eba60edd44f2282acc7b12399",
+      "initial_copy_utc": "2026-10-11T18:30:00.591020+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Button.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/Button.lua",
+      "initial_source_sha256": "4841a1871db8ef78c557b2ee65d0c5f3c3fe877bc92f82feb7842d67c7bac6ef",
+      "initial_copy_utc": "2026-10-11T18:30:00.597210+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Calendar.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/Calendar.lua",
+      "initial_source_sha256": "f8040644b377d871c2bfefa4290190bc4646e2751b5dabdfb40606dd0f1a26bb",
+      "initial_copy_utc": "2026-10-11T18:30:00.604238+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Card.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/Card.lua",
+      "initial_source_sha256": "e3ec549b58b10315b9d9dd3337dac54e512b6aaad06e2759a95f9edaec6644ea",
+      "initial_copy_utc": "2026-10-11T18:30:00.608409+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Carousel.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/Carousel.lua",
+      "initial_source_sha256": "4be5570de303758b559f17a4e297cf4703fc6874a326c6df6a1ba50c23330aa6",
+      "initial_copy_utc": "2026-10-11T18:30:00.611528+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Checkbox.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/Checkbox.lua",
+      "initial_source_sha256": "926907a27b2af85040f57d67673b55c816b2c877a04f66ca491031d56f147543",
+      "initial_copy_utc": "2026-10-11T18:30:00.614059+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Chip.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/Chip.lua",
+      "initial_source_sha256": "18cd5cd933ba7f9cb77ab83f2636ae85bcc434002e5114ac2924cebec40df1a0",
+      "initial_copy_utc": "2026-10-11T18:30:00.617189+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/ColorPicker.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/ColorPicker.lua",
+      "initial_source_sha256": "f0bb51c44397bad1a09d8ece02e7bfaac1adcc9760504cb9fc15aadb16608f90",
+      "initial_copy_utc": "2026-10-11T18:30:00.620052+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/DatePicker.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/DatePicker.lua",
+      "initial_source_sha256": "cfff3a75e979c29b7b9a713289ccb831d6166d567492f1a14a8b53801dc8c255",
+      "initial_copy_utc": "2026-10-11T18:30:00.625348+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Divider.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/Divider.lua",
+      "initial_source_sha256": "9c5f755897e79b712157e3881f0bbec2a60232b379fedfce4ba14af13b14bb73",
+      "initial_copy_utc": "2026-10-11T18:30:00.628540+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Drawer.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/Drawer.lua",
+      "initial_source_sha256": "111e08a503c7ec64bb09519deea2e3abac22606d0997ed029768f01173847ac0",
+      "initial_copy_utc": "2026-10-11T18:30:00.634870+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Dropdown.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/Dropdown.lua",
+      "initial_source_sha256": "c1c607da9bd10bc6b2ed3e57f25bb71a94601f194e20bb06b87cade5c8dc531e",
+      "initial_copy_utc": "2026-10-11T18:30:00.640618+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/EditMenu.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/EditMenu.lua",
+      "initial_source_sha256": "5c4c516fe2e19500bc42a310d07f5d7e928d9b0479c79b9bac8c6df193e67eb8",
+      "initial_copy_utc": "2026-10-11T18:30:00.646536+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/FileUpload.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/FileUpload.lua",
+      "initial_source_sha256": "6cbcb13671e277d70b7242088a89347a63f8a96aa5cbac43a4a8a415648501d9",
+      "initial_copy_utc": "2026-10-11T18:30:00.652678+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Label.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/Label.lua",
+      "initial_source_sha256": "c04904aae6257963685b94b273f23ce343848d92b85252002c653475ed25cc03",
+      "initial_copy_utc": "2026-10-11T18:30:00.661194+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/List.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/List.lua",
+      "initial_source_sha256": "28262cda1dd80ad766933cf433832c7e14a55d7dbb17dce9f285bf2a27c5093e",
+      "initial_copy_utc": "2026-10-11T18:30:00.670922+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Menu.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/Menu.lua",
+      "initial_source_sha256": "c0efe11be927516bc90ca10bf33a0cfbf981891d72fef88951ac9bcf0cb2b152",
+      "initial_copy_utc": "2026-10-11T18:30:00.680075+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Modal.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/Modal.lua",
+      "initial_source_sha256": "627d07f4e86092eb7cf774192ca66cff2c40df44da208f86c2546ea38d966a2a",
+      "initial_copy_utc": "2026-10-11T18:30:00.687070+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Pagination.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/Pagination.lua",
+      "initial_source_sha256": "b3e3275d09e62c2cd26b291150ed7a573d2000955c3e9496de38a5b6f03d1a30",
+      "initial_copy_utc": "2026-10-11T18:30:00.694127+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Panel.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/Panel.lua",
+      "initial_source_sha256": "0519b7b27605210069735a2a07530b7d74fc02ae6cca45e888e59aa09b1f4e26",
+      "initial_copy_utc": "2026-10-11T18:30:00.705520+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Popover.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/Popover.lua",
+      "initial_source_sha256": "1e2de43bd61a9fa7cf500d285f3b276af2b373e62e9d859862e2f03e6c5cfd4e",
+      "initial_copy_utc": "2026-10-11T18:30:00.714210+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/ProgressBar.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/ProgressBar.lua",
+      "initial_source_sha256": "e727d2b25e5e68ac49513ded226c95fcb558515fbe1912cdf2f09aee02487671",
+      "initial_copy_utc": "2026-10-11T18:30:00.722315+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Rating.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/Rating.lua",
+      "initial_source_sha256": "6d9acc9ea984078b5331c561ae15c654c618f3c5fe63f4e6dff0c94d032b01b8",
+      "initial_copy_utc": "2026-10-11T18:30:00.728866+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/RichText.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/RichText.lua",
+      "initial_source_sha256": "c50b75ca28890f40b98cfb1519ab380d79f809f611bf135b77520017d19fe714",
+      "initial_copy_utc": "2026-10-11T18:30:00.734261+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/SafeAreaView.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/SafeAreaView.lua",
+      "initial_source_sha256": "22c0f9a9cc706e57c6c5366598c64bb24b42344780a957dad9c23a7bdf407472",
+      "initial_copy_utc": "2026-10-11T18:30:00.742968+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/ScrollView.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/ScrollView.lua",
+      "initial_source_sha256": "0cc6da4947926cbf8bb642af4099675ea24fa46461c9a294a46d188a39427202",
+      "initial_copy_utc": "2026-10-11T18:30:00.749750+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/SimpleGrid.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/SimpleGrid.lua",
+      "initial_source_sha256": "76c1d7cc0ade7c66142df74741602235efc90a91529312524111d95148dfc6a5",
+      "initial_copy_utc": "2026-10-11T18:30:00.753964+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Skeleton.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/Skeleton.lua",
+      "initial_source_sha256": "77933dbf040df77ecec4f1ba76f10b814ab2591e68416312f53e4e2639c99df5",
+      "initial_copy_utc": "2026-10-11T18:30:00.767295+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Slider.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/Slider.lua",
+      "initial_source_sha256": "d81ba221e18640b3dc02dc8eec48051bc2a9f9c247a6ba1f8a4b7b3dcd0490e8",
+      "initial_copy_utc": "2026-10-11T18:30:00.778642+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Spine.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/Spine.lua",
+      "initial_source_sha256": "90e6cc19ac05ca634352abd05eab0f060b574a5fadc25b258e773a9ce407a393",
+      "initial_copy_utc": "2026-10-11T18:30:00.790133+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Sprite.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/Sprite.lua",
+      "initial_source_sha256": "12ad6180b7c7e25cb040e0c38374b5041f35d79410b4c967c26625014a0b9eda",
+      "initial_copy_utc": "2026-10-11T18:30:00.799779+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Stepper.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/Stepper.lua",
+      "initial_source_sha256": "21531a0e76599576d09bc2c6d121f4237b1ade1437bf0d0d4974b7c24df6c1cb",
+      "initial_copy_utc": "2026-10-11T18:30:00.813074+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Table.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/Table.lua",
+      "initial_source_sha256": "903005134b624b13dc2792f9712385511b12b1a715730ccd7c22de312021ba69",
+      "initial_copy_utc": "2026-10-11T18:30:00.824424+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Tabs.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/Tabs.lua",
+      "initial_source_sha256": "b2920342912ace6ba5242d59cfe149994e907cf4fc8e8a0c818f9a20bc0836ec",
+      "initial_copy_utc": "2026-10-11T18:30:00.832964+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/TextField.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/TextField.lua",
+      "initial_source_sha256": "de85be958d6f1ffc5a4bd5ecb73ebef89056c50b0d8bd1fb1048dc617c49337d",
+      "initial_copy_utc": "2026-10-11T18:30:00.843892+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Timeline.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/Timeline.lua",
+      "initial_source_sha256": "270c2d78a8b55b93755b82df835699ff79e75d34017581fc4c6e1758e882169c",
+      "initial_copy_utc": "2026-10-11T18:30:00.852091+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/TimePicker.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/TimePicker.lua",
+      "initial_source_sha256": "a999f87936cd9ab5b7af716aa1295288a155889eedf4ab4e0aa893fa1b17774e",
+      "initial_copy_utc": "2026-10-11T18:30:00.860737+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Toast.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/Toast.lua",
+      "initial_source_sha256": "749bc261f6da7ec1fac5d02caad2a5ba7f293a3af8f27bbddc4481eee796e78f",
+      "initial_copy_utc": "2026-10-11T18:30:00.873355+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Toggle.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/Toggle.lua",
+      "initial_source_sha256": "645907a30de6b7e9b358709f9888d7142dc5ff5b7b35246fdf93711a3f4af6fe",
+      "initial_copy_utc": "2026-10-11T18:30:00.881899+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Tooltip.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/Tooltip.lua",
+      "initial_source_sha256": "93ef6d997b5a35fe6c10a30e7d92e48327d8fede6fd34bafdb8a1e470dbbdd43",
+      "initial_copy_utc": "2026-10-11T18:30:00.893576+00:00"
+    },
+    {
+      "path": "urhox-libs/UI/Widgets/Tree.lua",
+      "formal_source_relative": "urhox-libs/UI/Widgets/Tree.lua",
+      "initial_source_sha256": "f43caaf8e3c04dffee68b6801420c83006df78135fe1b9517da8e54918779d19",
+      "initial_copy_utc": "2026-10-11T18:30:00.902108+00:00"
+    }
+  ]
+}
