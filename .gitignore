@@ -60,6 +60,9 @@ screenshots/
 # Lua LSP 诊断输出（本地生成，不入库）
 logs/
 
+# Maker rejects newly submitted raw logs; keep their local copies.
+*.log
+
 # Python 检查脚本缓存（docs/验证/*.py）
 __pycache__/
 *.pyc
