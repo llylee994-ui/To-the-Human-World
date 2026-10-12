@@ -17,6 +17,8 @@ end
 function A.New(session,content,enabled)
     local model=Model.New(session,content,enabled)
     local nativeProbe=require("ui.landscape.DevChecks").nativeProbe and require("ui.landscape.tests.NativeProbe").New() or nil
+    local yawEnabled=require("ui.landscape.DevChecks").yawProbe
+    local yawAuto=yawEnabled and require("ui.landscape.DevChecks").yawProbeAuto and require("ui.landscape.tests.YawNativeProbe").New() or nil
     local developer=(require("debug.DeveloperMode") or require("ui.landscape.DevChecks").hotspots) --[[@as boolean]]
     -- main owns SafeAreaView; fill its mainPanel without shrinking under old headings.
     local root=UI.Panel {id="playPanel",position="absolute",left=0,top=0,width="100%",height="100%",
@@ -32,7 +34,7 @@ function A.New(session,content,enabled)
     local ctx={root=root,model=model,session=session,content=content,
         scene="home" --[[@as string]],panel=false --[[@as string|false]],stack={},
         storyId=false --[[@as string|false]],readerCache=false --[[@as table|false]],choosingLetter=false --[[@as boolean]],
-        panelNotice=false --[[@as Label|false]],zoom=Zoom.New(),destroyed=false --[[@as boolean]]}
+        panelNotice=false --[[@as Label|false]],zoom=Zoom.New(),destroyed=false --[[@as boolean]],yawProbe=false --[[@as table|false]]}
     local home=Home.New(function(target,id)
         if id=="home.net" then ctx.BeginHomeZoom() else ctx.Open(target) end
     end,developer); stage:AddChild(home.root); ctx.home=home
@@ -49,7 +51,7 @@ function A.New(session,content,enabled)
         ctx.zoom.Reset(reason);home.SetZoom(1);home.SetBlocked(false);zoomBlocker:SetVisible(false)
     end
     function ctx.BeginHomeZoom()
-        if ctx.destroyed or ctx.scene~="home" or (ctx.panel and not side[ctx.panel]) then return false end
+        if ctx.destroyed or ctx.yawProbe or ctx.scene~="home" or (ctx.panel and not side[ctx.panel]) then return false end
         if not ctx.zoom.Start(home.Fit(),GetTime():GetElapsedTime()) then return false end
         home.SetBlocked(true);zoomBlocker:SetVisible(true)
         if ctx.panel then ctx.panel=false;ctx.stack={};model.dirty=true end
@@ -57,7 +59,14 @@ function A.New(session,content,enabled)
     end
     local destroyRoot=root.Destroy
     function root:Destroy()
-        ctx.destroyed=true;ctx.CancelHomeZoom("destroyed");destroyRoot(self)
+        ctx.destroyed=true
+        if ctx.yawProbe then ctx.yawProbe.Close() end
+        ctx.CancelHomeZoom("destroyed");destroyRoot(self)
+    end
+    function ctx.OpenYawProbe()
+        if not yawEnabled or ctx.destroyed or ctx.yawProbe or ctx.zoom.active or ctx.panel or ctx.scene~="home" then return false end
+        ctx.yawProbe=require("ui.landscape.HomeYawProbe").New(root,function() ctx.yawProbe=false end)
+        return true
     end
     function ctx.Navigate(target)
         if ctx.destroyed then return end
@@ -102,6 +111,9 @@ function A.New(session,content,enabled)
     local pending=UI.Button {id="resumePending",text="待处理结果",width=114,minHeight=44,visible=false,onClick=function() ctx.Open("result") end}
     hud:AddChild(pending)
     hud:AddChild(UI.Button {id="nextDay",text="结束当天",width=108,minHeight=44,fontSize=15,onClick=function() ctx.Open("day") end})
+    if yawEnabled then
+        hud:AddChild(UI.Button {id="openHomeYawProbe",text="转头验证",width=106,minHeight=44,onClick=ctx.OpenYawProbe})
+    end
     if developer then
         hud:AddChild(UI.Button {id="toggleHomeHotspots",text="热区检查",width=98,minHeight=44,onClick=function()
             if ctx.zoom.active then return end
@@ -135,6 +147,8 @@ function A.New(session,content,enabled)
     end
     function ctx.Update()
         if ctx.destroyed then return end
+        if ctx.yawProbe then ctx.yawProbe.Update() end
+        if yawAuto then yawAuto(ctx) end
         -- main already calls this every Update. Advance BEFORE the business dirty guard.
         if ctx.zoom.active then
             local clock=GetTime()

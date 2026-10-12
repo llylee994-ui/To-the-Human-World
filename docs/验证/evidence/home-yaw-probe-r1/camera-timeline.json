@@ -1,0 +1,6994 @@
+[
+  {
+    "frame": 1,
+    "wall": 14.483001,
+    "t": 0.0,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      0.0,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.179038,
+      0.53978
+    ],
+    "objectsUnchanged": true,
+    "state": "ready"
+  },
+  {
+    "frame": 2,
+    "wall": 26.482,
+    "t": 0.0,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      0.0,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.179038,
+      0.53978
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 3,
+    "wall": 26.497002,
+    "t": 0.016848,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      0.028595,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.178365,
+      0.539674
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 4,
+    "wall": 26.514002,
+    "t": 0.033652,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      0.11301,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.176379,
+      0.539363
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 5,
+    "wall": 26.533001,
+    "t": 0.05035,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      0.2506,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.173157,
+      0.538858
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 6,
+    "wall": 26.547001,
+    "t": 0.067146,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      0.441401,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.168717,
+      0.538164
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 7,
+    "wall": 26.585001,
+    "t": 0.083861,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      0.681865,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.163167,
+      0.537299
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 8,
+    "wall": 26.591002,
+    "t": 0.10517,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      1.05911,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.15456,
+      0.535965
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 9,
+    "wall": 26.607,
+    "t": 0.126481,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      1.512548,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.144375,
+      0.534396
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 10,
+    "wall": 26.625002,
+    "t": 0.143585,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      1.929371,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.13516,
+      0.532987
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 11,
+    "wall": 26.642002,
+    "t": 0.160741,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      2.392942,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.125074,
+      0.531456
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 12,
+    "wall": 26.658001,
+    "t": 0.177432,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      2.886027,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.114527,
+      0.529868
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 13,
+    "wall": 26.682001,
+    "t": 0.194215,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      3.422032,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.103266,
+      0.528187
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 14,
+    "wall": 26.692001,
+    "t": 0.210977,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      3.996039,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.091434,
+      0.526438
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 15,
+    "wall": 26.709002,
+    "t": 0.227595,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      4.601729,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.079196,
+      0.524648
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 16,
+    "wall": 26.725,
+    "t": 0.244237,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      5.243214,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.066497,
+      0.522811
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 17,
+    "wall": 26.741001,
+    "t": 0.260902,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      5.919055,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.0534,
+      0.52094
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 18,
+    "wall": 26.762001,
+    "t": 0.277701,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      6.632634,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.039871,
+      0.519032
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 19,
+    "wall": 26.775002,
+    "t": 0.294507,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999996,
+      7.377364,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.026065,
+      0.517113
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 20,
+    "wall": 26.792002,
+    "t": 0.311424,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      8.156525,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.011946,
+      0.51518
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 21,
+    "wall": 26.810001,
+    "t": 0.328416,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      8.967364,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.997589,
+      0.513246
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 22,
+    "wall": 26.827002,
+    "t": 0.345296,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      9.799162,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.9832,
+      0.51134
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 23,
+    "wall": 26.843,
+    "t": 0.362302,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      10.66204,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.968617,
+      0.509445
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 24,
+    "wall": 26.870001,
+    "t": 0.379393,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      11.552681,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.953913,
+      0.507571
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 25,
+    "wall": 26.878002,
+    "t": 0.396397,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      12.460521,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.93927,
+      0.505743
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 26,
+    "wall": 26.895,
+    "t": 0.413595,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      13.398955,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.924478,
+      0.503937
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 27,
+    "wall": 26.910002,
+    "t": 0.430645,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      14.347826,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.909859,
+      0.502193
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 28,
+    "wall": 26.929001,
+    "t": 0.447787,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      15.318605,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.895233,
+      0.50049
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 29,
+    "wall": 26.947001,
+    "t": 0.464929,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      16.304552,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.880702,
+      0.498842
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 30,
+    "wall": 26.962002,
+    "t": 0.481547,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999996,
+      17.273188,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.866726,
+      0.497299
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 31,
+    "wall": 26.980001,
+    "t": 0.498299,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      18.260912,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.852762,
+      0.4958
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 32,
+    "wall": 26.996002,
+    "t": 0.515287,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      19.272396,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.838746,
+      0.49434
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 33,
+    "wall": 27.013,
+    "t": 0.532282,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      20.292555,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.824884,
+      0.49294
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 34,
+    "wall": 27.030001,
+    "t": 0.549237,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      21.316986,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.811224,
+      0.491605
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 35,
+    "wall": 27.046001,
+    "t": 0.566051,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      22.337759,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.797858,
+      0.490343
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 36,
+    "wall": 27.063002,
+    "t": 0.582668,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      23.34977,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.784832,
+      0.489156
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 37,
+    "wall": 27.079,
+    "t": 0.599285,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      24.363403,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.771998,
+      0.48803
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 38,
+    "wall": 27.097002,
+    "t": 0.616135,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      25.391283,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.759188,
+      0.486949
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 39,
+    "wall": 27.114002,
+    "t": 0.632985,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      26.417665,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.746588,
+      0.485929
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 40,
+    "wall": 27.131001,
+    "t": 0.649956,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      27.448151,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.734119,
+      0.484963
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 41,
+    "wall": 27.148001,
+    "t": 0.667121,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      28.485508,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.721739,
+      0.484047
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 42,
+    "wall": 27.165001,
+    "t": 0.684091,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      29.504438,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.709736,
+      0.483201
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 43,
+    "wall": 27.184002,
+    "t": 0.700864,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      30.503534,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.698106,
+      0.482422
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 44,
+    "wall": 27.199001,
+    "t": 0.717653,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      31.493921,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.686707,
+      0.481697
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 45,
+    "wall": 27.215002,
+    "t": 0.734443,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      32.473099,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.675554,
+      0.481026
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 46,
+    "wall": 27.232,
+    "t": 0.751371,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      33.447338,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.664565,
+      0.480402
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 47,
+    "wall": 27.249001,
+    "t": 0.768298,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      34.406845,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.65384,
+      0.479829
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 48,
+    "wall": 27.267002,
+    "t": 0.785353,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      35.357044,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.643307,
+      0.479302
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 49,
+    "wall": 27.283001,
+    "t": 0.802418,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      36.289486,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.633049,
+      0.478823
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 50,
+    "wall": 27.300001,
+    "t": 0.819354,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      37.195179,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.623156,
+      0.478393
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 51,
+    "wall": 27.317001,
+    "t": 0.836342,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      38.082172,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.613527,
+      0.478006
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 52,
+    "wall": 27.333002,
+    "t": 0.85302,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      38.930515,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.604369,
+      0.477665
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 53,
+    "wall": 27.352001,
+    "t": 0.869747,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      39.757397,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.595487,
+      0.477362
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 54,
+    "wall": 27.368002,
+    "t": 0.886529,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      40.561275,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.58689,
+      0.477093
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 55,
+    "wall": 27.383001,
+    "t": 0.903201,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      41.332829,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.578671,
+      0.476859
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 56,
+    "wall": 27.400002,
+    "t": 0.919933,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      42.078411,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.570756,
+      0.476656
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 57,
+    "wall": 27.416,
+    "t": 0.936665,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      42.793636,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.563186,
+      0.476481
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 58,
+    "wall": 27.433001,
+    "t": 0.953282,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      43.472317,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.55602,
+      0.476334
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 59,
+    "wall": 27.450001,
+    "t": 0.970022,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      44.122581,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.549168,
+      0.476209
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 60,
+    "wall": 27.472002,
+    "t": 0.986823,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      44.73988,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.542676,
+      0.476106
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 61,
+    "wall": 27.484001,
+    "t": 1.003501,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      45.316048,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.536625,
+      0.476023
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 62,
+    "wall": 27.500002,
+    "t": 1.020118,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      45.852276,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.531,
+      0.475958
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 63,
+    "wall": 27.517002,
+    "t": 1.036812,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      46.351391,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.525769,
+      0.475906
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 64,
+    "wall": 27.534,
+    "t": 1.053654,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      46.813095,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.520933,
+      0.475867
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 65,
+    "wall": 27.551001,
+    "t": 1.070419,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      47.229382,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.516576,
+      0.475839
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 66,
+    "wall": 27.570002,
+    "t": 1.087037,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      47.59779,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.512721,
+      0.475819
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 67,
+    "wall": 27.584002,
+    "t": 1.103848,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      47.924076,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.509308,
+      0.475806
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 68,
+    "wall": 27.602001,
+    "t": 1.120659,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      48.202099,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.5064,
+      0.475798
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 69,
+    "wall": 27.619001,
+    "t": 1.137485,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      48.430428,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.504012,
+      0.475794
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 70,
+    "wall": 27.636002,
+    "t": 1.154379,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      48.607765,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.502158,
+      0.475792
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 71,
+    "wall": 27.652,
+    "t": 1.171211,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      48.731121,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.500867,
+      0.475791
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 72,
+    "wall": 27.680002,
+    "t": 1.187977,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      48.799458,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.500153,
+      0.475791
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 73,
+    "wall": 27.685001,
+    "t": 1.2,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      48.81406,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.5,
+      0.475791
+    ],
+    "objectsUnchanged": true,
+    "state": "complete"
+  },
+  {
+    "frame": 74,
+    "wall": 29.486002,
+    "t": 1.2,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      48.81406,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.5,
+      0.475791
+    ],
+    "objectsUnchanged": true,
+    "state": "native-complete"
+  },
+  {
+    "frame": 75,
+    "wall": 29.487001,
+    "t": 0.0,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      0.0,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.179038,
+      0.53978
+    ],
+    "objectsUnchanged": true,
+    "state": "reset"
+  },
+  {
+    "frame": 76,
+    "wall": 31.483002,
+    "t": 0.0,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      0.0,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.179038,
+      0.53978
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 77,
+    "wall": 31.499001,
+    "t": 0.016618,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      0.027825,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.178383,
+      0.539677
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 78,
+    "wall": 31.516001,
+    "t": 0.033398,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      0.111326,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.176419,
+      0.539369
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 79,
+    "wall": 31.534002,
+    "t": 0.050413,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      0.251219,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.173143,
+      0.538855
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 80,
+    "wall": 31.551001,
+    "t": 0.067526,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      0.446307,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.168603,
+      0.538146
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 81,
+    "wall": 31.585001,
+    "t": 0.084429,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      0.690905,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.162959,
+      0.537267
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 82,
+    "wall": 31.593002,
+    "t": 0.104648,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      1.048936,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.154791,
+      0.536
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 83,
+    "wall": 31.607002,
+    "t": 0.124941,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      1.477297,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.14516,
+      0.534517
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 84,
+    "wall": 31.624001,
+    "t": 0.141659,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      1.880154,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.136241,
+      0.533152
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 85,
+    "wall": 31.641001,
+    "t": 0.15835,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      2.325655,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.126528,
+      0.531676
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 86,
+    "wall": 31.661001,
+    "t": 0.17569,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      2.832643,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.11566,
+      0.530038
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 87,
+    "wall": 31.676001,
+    "t": 0.193177,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      3.38774,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.10398,
+      0.528293
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 88,
+    "wall": 31.692001,
+    "t": 0.210015,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      3.962077,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.092128,
+      0.52654
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 89,
+    "wall": 31.709002,
+    "t": 0.226719,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      4.568899,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.079853,
+      0.524743
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 90,
+    "wall": 31.726002,
+    "t": 0.243423,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      5.211028,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.067128,
+      0.522902
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 91,
+    "wall": 31.742001,
+    "t": 0.26004,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      5.883279,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.054087,
+      0.521037
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 92,
+    "wall": 31.762001,
+    "t": 0.276656,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      6.587329,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.040721,
+      0.519151
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 93,
+    "wall": 31.775002,
+    "t": 0.293273,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      7.321645,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.027087,
+      0.517254
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 94,
+    "wall": 31.793001,
+    "t": 0.30989,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      8.084714,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.013233,
+      0.515355
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 95,
+    "wall": 31.810001,
+    "t": 0.326599,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      8.879366,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.999131,
+      0.513452
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 96,
+    "wall": 31.825001,
+    "t": 0.343308,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      9.699889,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.9849,
+      0.511564
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 97,
+    "wall": 31.843002,
+    "t": 0.359926,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      10.540045,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.970659,
+      0.509708
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 98,
+    "wall": 31.860001,
+    "t": 0.376592,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      11.405197,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.956325,
+      0.507876
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 99,
+    "wall": 31.883001,
+    "t": 0.393259,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      12.29141,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.941972,
+      0.506077
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 100,
+    "wall": 31.892002,
+    "t": 0.410013,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      13.201924,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.927555,
+      0.504309
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 101,
+    "wall": 31.909002,
+    "t": 0.426844,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      14.134765,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.913113,
+      0.502577
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 102,
+    "wall": 31.926001,
+    "t": 0.443538,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      15.07647,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.898851,
+      0.500908
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 103,
+    "wall": 31.943001,
+    "t": 0.460236,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      16.033216,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.88467,
+      0.499288
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 104,
+    "wall": 31.963001,
+    "t": 0.476934,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      17.003149,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.870593,
+      0.497722
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 105,
+    "wall": 31.975002,
+    "t": 0.493551,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      17.979889,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.856706,
+      0.496219
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 106,
+    "wall": 31.992001,
+    "t": 0.510168,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      18.966629,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.842953,
+      0.494773
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 107,
+    "wall": 31.992001,
+    "t": 0.0,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      0.0,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.179038,
+      0.53978
+    ],
+    "objectsUnchanged": true,
+    "state": "reset"
+  },
+  {
+    "frame": 108,
+    "wall": 33.494003,
+    "t": 0.0,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      0.0,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.179038,
+      0.53978
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 109,
+    "wall": 33.511002,
+    "t": 0.017396,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      0.030476,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.17832,
+      0.539667
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 110,
+    "wall": 33.527,
+    "t": 0.034435,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      0.118281,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.176255,
+      0.539343
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 111,
+    "wall": 33.544003,
+    "t": 0.051053,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      0.257543,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.172995,
+      0.538832
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 112,
+    "wall": 33.560001,
+    "t": 0.06787,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      0.450776,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.1685,
+      0.53813
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 113,
+    "wall": 33.582001,
+    "t": 0.084745,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      0.695966,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.162843,
+      0.537249
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 114,
+    "wall": 33.594002,
+    "t": 0.101422,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      0.987145,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.156193,
+      0.536217
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 115,
+    "wall": 33.611,
+    "t": 0.118313,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      1.329957,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.148456,
+      0.535023
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 116,
+    "wall": 33.628002,
+    "t": 0.135416,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      1.724542,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.139671,
+      0.533676
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 117,
+    "wall": 33.645,
+    "t": 0.152246,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999996,
+      2.157807,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.130169,
+      0.532228
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 118,
+    "wall": 33.662003,
+    "t": 0.168933,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      2.629856,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.119983,
+      0.530688
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 119,
+    "wall": 33.68,
+    "t": 0.185977,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      3.153983,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.108871,
+      0.529022
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 120,
+    "wall": 33.696003,
+    "t": 0.203407,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      3.732117,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.096846,
+      0.527236
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 121,
+    "wall": 33.714001,
+    "t": 0.220516,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      4.33935,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.084467,
+      0.525417
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 122,
+    "wall": 33.730003,
+    "t": 0.237275,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      4.970683,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.07186,
+      0.523584
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 123,
+    "wall": 33.747002,
+    "t": 0.254546,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      5.657418,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.058437,
+      0.521657
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 124,
+    "wall": 33.765003,
+    "t": 0.272077,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      6.390228,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.044434,
+      0.519673
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 125,
+    "wall": 33.783001,
+    "t": 0.289504,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      7.152512,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.0302,
+      0.517685
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 126,
+    "wall": 33.799,
+    "t": 0.306566,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      7.929854,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.01602,
+      0.515734
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 127,
+    "wall": 33.816002,
+    "t": 0.323186,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      8.714894,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.002024,
+      0.513839
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 128,
+    "wall": 33.832001,
+    "t": 0.339804,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      9.525754,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.987893,
+      0.511958
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 129,
+    "wall": 33.849003,
+    "t": 0.356608,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      10.370452,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.973507,
+      0.510077
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 130,
+    "wall": 33.871002,
+    "t": 0.373744,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      11.255795,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.958777,
+      0.508187
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 131,
+    "wall": 33.883003,
+    "t": 0.390693,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      12.153687,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.944181,
+      0.506352
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 1,
+    "wall": 35.489002,
+    "t": 0.0,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      0.0,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.179038,
+      0.53978
+    ],
+    "objectsUnchanged": true,
+    "state": "ready"
+  },
+  {
+    "frame": 2,
+    "wall": 37.492001,
+    "t": 0.0,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      0.0,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.179038,
+      0.53978
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 3,
+    "wall": 37.506001,
+    "t": 0.016659,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      0.027962,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.178379,
+      0.539677
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 4,
+    "wall": 37.523003,
+    "t": 0.033278,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      0.110542,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.176437,
+      0.539372
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 5,
+    "wall": 37.542004,
+    "t": 0.050182,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      0.248955,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.173195,
+      0.538864
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 6,
+    "wall": 37.557003,
+    "t": 0.067084,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      0.440602,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.168736,
+      0.538166
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 7,
+    "wall": 37.573002,
+    "t": 0.083727,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      0.679749,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.163215,
+      0.537306
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 8,
+    "wall": 37.595001,
+    "t": 0.100538,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999996,
+      0.970526,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.15657,
+      0.536276
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 9,
+    "wall": 37.607002,
+    "t": 0.117343,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      1.309005,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.148926,
+      0.535096
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 10,
+    "wall": 37.623001,
+    "t": 0.133979,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      1.689605,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.140443,
+      0.533794
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 11,
+    "wall": 37.640003,
+    "t": 0.150669,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      2.115386,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.131093,
+      0.532368
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 12,
+    "wall": 37.657001,
+    "t": 0.167618,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      2.59116,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.120812,
+      0.530813
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 13,
+    "wall": 37.674004,
+    "t": 0.184648,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999996,
+      3.111643,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.109761,
+      0.529155
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 14,
+    "wall": 37.692001,
+    "t": 0.201546,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      3.668442,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.098159,
+      0.52743
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 15,
+    "wall": 37.707001,
+    "t": 0.21829,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      4.258197,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.086107,
+      0.525656
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 16,
+    "wall": 37.725002,
+    "t": 0.235225,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      4.891609,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.073425,
+      0.52381
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 17,
+    "wall": 37.745003,
+    "t": 0.252323,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      5.567051,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.060187,
+      0.521907
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 18,
+    "wall": 37.760002,
+    "t": 0.269326,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999996,
+      6.272951,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.046653,
+      0.519985
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 19,
+    "wall": 37.776001,
+    "t": 0.286423,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      7.015407,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.032736,
+      0.518037
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 20,
+    "wall": 37.794003,
+    "t": 0.303847,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      7.803997,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.018293,
+      0.516045
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 21,
+    "wall": 37.811001,
+    "t": 0.321308,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      8.624858,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.003613,
+      0.514053
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 22,
+    "wall": 37.828003,
+    "t": 0.338219,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      9.44734,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.989245,
+      0.512137
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 23,
+    "wall": 37.846001,
+    "t": 0.355214,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      10.299495,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.974703,
+      0.510232
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 24,
+    "wall": 37.868,
+    "t": 0.372423,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      11.186771,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.959913,
+      0.508331
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 25,
+    "wall": 37.879002,
+    "t": 0.389344,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      12.081482,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.945343,
+      0.506496
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 26,
+    "wall": 37.895,
+    "t": 0.406051,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      12.984918,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.930962,
+      0.504724
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 27,
+    "wall": 37.912003,
+    "t": 0.422667,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      13.901693,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.916691,
+      0.503003
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 28,
+    "wall": 37.929001,
+    "t": 0.439302,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999996,
+      14.836111,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.902462,
+      0.501327
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 29,
+    "wall": 37.945004,
+    "t": 0.455946,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      15.786125,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.888303,
+      0.499699
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 30,
+    "wall": 37.962002,
+    "t": 0.472581,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      16.74914,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.874251,
+      0.498125
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 31,
+    "wall": 37.980003,
+    "t": 0.489445,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      17.737574,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.860125,
+      0.496585
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 32,
+    "wall": 37.996002,
+    "t": 0.506374,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      18.740595,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.84608,
+      0.495098
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 33,
+    "wall": 38.013,
+    "t": 0.523328,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      19.754156,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.832166,
+      0.493669
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 34,
+    "wall": 38.030003,
+    "t": 0.540207,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      20.770716,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.818476,
+      0.492308
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 35,
+    "wall": 38.047001,
+    "t": 0.556881,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      21.780573,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.805124,
+      0.491023
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 36,
+    "wall": 38.064003,
+    "t": 0.573583,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      22.796171,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.79193,
+      0.489798
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 37,
+    "wall": 38.104,
+    "t": 0.590269,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      23.813324,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.778937,
+      0.488634
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 38,
+    "wall": 38.109001,
+    "t": 0.612895,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      25.193729,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.761635,
+      0.487152
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 39,
+    "wall": 38.125,
+    "t": 0.635481,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      26.569471,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.74474,
+      0.485783
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 40,
+    "wall": 38.142002,
+    "t": 0.652357,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      27.593618,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.732373,
+      0.484831
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 41,
+    "wall": 38.159,
+    "t": 0.669232,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999996,
+      28.612682,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.720233,
+      0.483939
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 42,
+    "wall": 38.182003,
+    "t": 0.685851,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      29.609701,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.708504,
+      0.483117
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 43,
+    "wall": 38.192001,
+    "t": 0.702772,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      30.616632,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.696798,
+      0.482336
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 44,
+    "wall": 38.210003,
+    "t": 0.720189,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      31.642584,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.685007,
+      0.481592
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 45,
+    "wall": 38.227001,
+    "t": 0.737302,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      32.63863,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.67368,
+      0.480917
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 46,
+    "wall": 38.244003,
+    "t": 0.754045,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      33.599964,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.662853,
+      0.480308
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 47,
+    "wall": 38.261002,
+    "t": 0.771183,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      34.568798,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.652038,
+      0.479737
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 48,
+    "wall": 38.277,
+    "t": 0.788195,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      35.513626,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.641579,
+      0.479219
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 49,
+    "wall": 38.294003,
+    "t": 0.804812,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      36.418736,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.631633,
+      0.47876
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 50,
+    "wall": 38.315002,
+    "t": 0.821429,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      37.30468,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.621964,
+      0.478344
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 51,
+    "wall": 38.329002,
+    "t": 0.838318,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      38.183899,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.612426,
+      0.477963
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 52,
+    "wall": 38.345001,
+    "t": 0.855264,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      39.042877,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.603159,
+      0.477622
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 53,
+    "wall": 38.362003,
+    "t": 0.871937,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      39.863815,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.594347,
+      0.477325
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 54,
+    "wall": 38.379002,
+    "t": 0.888601,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      40.658661,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.585851,
+      0.477062
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 55,
+    "wall": 38.395,
+    "t": 0.905264,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      41.42635,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.577677,
+      0.476833
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 56,
+    "wall": 38.414001,
+    "t": 0.921882,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      42.163311,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.569856,
+      0.476634
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 57,
+    "wall": 38.43,
+    "t": 0.938896,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      42.886612,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.562203,
+      0.47646
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 58,
+    "wall": 38.446003,
+    "t": 0.95591,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      43.576664,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.554919,
+      0.476313
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 59,
+    "wall": 38.462002,
+    "t": 0.972528,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      44.216946,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.548175,
+      0.476193
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 60,
+    "wall": 38.479,
+    "t": 0.98937,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      44.830254,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.541726,
+      0.476092
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 61,
+    "wall": 38.496002,
+    "t": 1.006294,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      45.408859,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.535651,
+      0.476011
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 62,
+    "wall": 38.513,
+    "t": 1.023285,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      45.950047,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.529975,
+      0.475947
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 63,
+    "wall": 38.530003,
+    "t": 1.040326,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      46.451237,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.524723,
+      0.475897
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 64,
+    "wall": 38.546001,
+    "t": 1.057077,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      46.901657,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.520006,
+      0.47586
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 65,
+    "wall": 38.563004,
+    "t": 1.073694,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      47.305527,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.515779,
+      0.475834
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 66,
+    "wall": 38.580002,
+    "t": 1.090312,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      47.66507,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.512017,
+      0.475816
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 67,
+    "wall": 38.603001,
+    "t": 1.107136,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      47.982304,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.508699,
+      0.475804
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 68,
+    "wall": 38.613003,
+    "t": 1.123959,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      48.250866,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.50589,
+      0.475797
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 69,
+    "wall": 38.630001,
+    "t": 1.140576,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      48.466801,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.503632,
+      0.475793
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 70,
+    "wall": 38.647003,
+    "t": 1.157227,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      48.632427,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.5019,
+      0.475792
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 71,
+    "wall": 38.664001,
+    "t": 1.173879,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      48.745682,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.500715,
+      0.475791
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 72,
+    "wall": 38.68,
+    "t": 1.190496,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      48.804924,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.500096,
+      0.475791
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 73,
+    "wall": 38.696003,
+    "t": 1.2,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      48.81406,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.5,
+      0.475791
+    ],
+    "objectsUnchanged": true,
+    "state": "complete"
+  },
+  {
+    "frame": 1,
+    "wall": 42.489002,
+    "t": 0.0,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      0.0,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.179038,
+      0.53978
+    ],
+    "objectsUnchanged": true,
+    "state": "ready"
+  },
+  {
+    "frame": 2,
+    "wall": 44.490002,
+    "t": 0.0,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      0.0,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.179038,
+      0.53978
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 3,
+    "wall": 44.507004,
+    "t": 0.016684,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      0.028045,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.178377,
+      0.539676
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 4,
+    "wall": 44.525002,
+    "t": 0.033475,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      0.111839,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.176407,
+      0.539367
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 5,
+    "wall": 44.542004,
+    "t": 0.050267,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      0.249782,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.173176,
+      0.538861
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 6,
+    "wall": 44.560001,
+    "t": 0.067566,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      0.446832,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.168591,
+      0.538144
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 7,
+    "wall": 44.585003,
+    "t": 0.085095,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      0.701591,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.162714,
+      0.537228
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 8,
+    "wall": 44.593002,
+    "t": 0.102016,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      0.998402,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.155937,
+      0.536178
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 9,
+    "wall": 44.610001,
+    "t": 0.118707,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999996,
+      1.338538,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.148263,
+      0.534994
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 10,
+    "wall": 44.626003,
+    "t": 0.135325,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      1.722344,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.139719,
+      0.533683
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 11,
+    "wall": 44.643002,
+    "t": 0.15212,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      2.154429,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.130242,
+      0.532239
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 12,
+    "wall": 44.660004,
+    "t": 0.168915,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      2.629324,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.119995,
+      0.53069
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 13,
+    "wall": 44.677002,
+    "t": 0.185531,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      3.139757,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.10917,
+      0.529066
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 14,
+    "wall": 44.693001,
+    "t": 0.202188,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      3.690351,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.097706,
+      0.527363
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 15,
+    "wall": 44.710003,
+    "t": 0.218844,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      4.278357,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.085699,
+      0.525597
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 16,
+    "wall": 44.727001,
+    "t": 0.235512,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999996,
+      4.902634,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.073206,
+      0.523779
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 17,
+    "wall": 44.744003,
+    "t": 0.25218,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      5.561256,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.060299,
+      0.521923
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 18,
+    "wall": 44.760002,
+    "t": 0.26912,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      6.264202,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.046819,
+      0.520009
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 19,
+    "wall": 44.779003,
+    "t": 0.286393,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      7.014054,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.032761,
+      0.51804
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 20,
+    "wall": 44.794003,
+    "t": 0.303342,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      7.780726,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.018715,
+      0.516103
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 21,
+    "wall": 44.812,
+    "t": 0.320188,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      8.571323,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.00456,
+      0.51418
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 22,
+    "wall": 44.827003,
+    "t": 0.337033,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      9.388835,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.990256,
+      0.512271
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 23,
+    "wall": 44.845001,
+    "t": 0.353651,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      10.2201,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.976044,
+      0.510406
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 24,
+    "wall": 44.862003,
+    "t": 0.370567,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      11.089921,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.96151,
+      0.508534
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 25,
+    "wall": 44.879002,
+    "t": 0.387483,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      11.982021,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.946946,
+      0.506696
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 26,
+    "wall": 44.900002,
+    "t": 0.0,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      0.0,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.179038,
+      0.53978
+    ],
+    "objectsUnchanged": true,
+    "state": "resized"
+  },
+  {
+    "frame": 27,
+    "wall": 46.504002,
+    "t": 0.0,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      0.0,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.179038,
+      0.53978
+    ],
+    "objectsUnchanged": true,
+    "state": "resized"
+  },
+  {
+    "frame": 28,
+    "wall": 48.489002,
+    "t": 0.0,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      0.0,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.179038,
+      0.53978
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 29,
+    "wall": 48.505001,
+    "t": 0.017379,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      0.03042,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.178321,
+      0.539667
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 30,
+    "wall": 48.524002,
+    "t": 0.034394,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      0.117999,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.176262,
+      0.539344
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 31,
+    "wall": 48.540001,
+    "t": 0.051514,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      0.262141,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.172888,
+      0.538815
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 32,
+    "wall": 48.557003,
+    "t": 0.068869,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      0.463883,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.168196,
+      0.538082
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 33,
+    "wall": 48.574001,
+    "t": 0.085802,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      0.712988,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.162452,
+      0.537188
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 34,
+    "wall": 48.590004,
+    "t": 0.102805,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      1.013415,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.155596,
+      0.536125
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 35,
+    "wall": 48.607002,
+    "t": 0.119807,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      1.362546,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.147725,
+      0.534911
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 36,
+    "wall": 48.627003,
+    "t": 0.136432,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      1.749461,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.13912,
+      0.533592
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 37,
+    "wall": 48.641003,
+    "t": 0.15324,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      2.184757,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.129583,
+      0.532139
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 38,
+    "wall": 48.659004,
+    "t": 0.170527,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      2.677101,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.118973,
+      0.530536
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 39,
+    "wall": 48.675003,
+    "t": 0.187633,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      3.207108,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.107756,
+      0.528855
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 40,
+    "wall": 48.701004,
+    "t": 0.204255,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      3.761318,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.096245,
+      0.527147
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 41,
+    "wall": 48.708004,
+    "t": 0.220877,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999996,
+      4.352575,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.0842,
+      0.525378
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 42,
+    "wall": 48.726002,
+    "t": 0.237739,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      4.988661,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.071505,
+      0.523533
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 43,
+    "wall": 48.742001,
+    "t": 0.254607,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999996,
+      5.659907,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.058389,
+      0.52165
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 44,
+    "wall": 48.760002,
+    "t": 0.271371,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      6.360024,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.045004,
+      0.519753
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 45,
+    "wall": 48.776001,
+    "t": 0.28813,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      7.091225,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.031333,
+      0.517842
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 46,
+    "wall": 48.800003,
+    "t": 0.305304,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      7.871324,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.017076,
+      0.515878
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 47,
+    "wall": 48.811001,
+    "t": 0.322694,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      8.691275,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      1.00244,
+      0.513895
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 48,
+    "wall": 48.827003,
+    "t": 0.33953,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      9.512181,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.988127,
+      0.511989
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 49,
+    "wall": 48.844002,
+    "t": 0.356149,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      10.347061,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.973901,
+      0.510128
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 50,
+    "wall": 48.861004,
+    "t": 0.372853,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      11.209189,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.959544,
+      0.508284
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 51,
+    "wall": 48.877003,
+    "t": 0.389556,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      12.092772,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.945161,
+      0.506474
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 52,
+    "wall": 48.895,
+    "t": 0.406369,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      13.0023,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.930688,
+      0.50469
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 53,
+    "wall": 48.911003,
+    "t": 0.423239,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      13.933529,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.916201,
+      0.502944
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 54,
+    "wall": 48.927002,
+    "t": 0.439913,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      8.0,
+      14.870677,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.901941,
+      0.501266
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 55,
+    "wall": 48.944004,
+    "t": 0.456557,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      15.821238,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.887786,
+      0.49964
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 56,
+    "wall": 48.961002,
+    "t": 0.473523,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      16.804018,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.873459,
+      0.498038
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 57,
+    "wall": 48.977001,
+    "t": 0.490462,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      17.79751,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.859278,
+      0.496494
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 58,
+    "wall": 48.994003,
+    "t": 0.507079,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      18.782515,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.845499,
+      0.495038
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 59,
+    "wall": 49.012001,
+    "t": 0.523854,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      19.785704,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.831737,
+      0.493626
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 60,
+    "wall": 49.029003,
+    "t": 0.540713,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      20.801258,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.818069,
+      0.492268
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 61,
+    "wall": 49.046001,
+    "t": 0.55765,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      21.827198,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.804514,
+      0.490966
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 62,
+    "wall": 49.062004,
+    "t": 0.574502,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      22.852144,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.79121,
+      0.489732
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 63,
+    "wall": 49.079002,
+    "t": 0.591303,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      23.876398,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.778139,
+      0.488564
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 64,
+    "wall": 49.096001,
+    "t": 0.608105,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      24.901522,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.765267,
+      0.487457
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 65,
+    "wall": 49.112003,
+    "t": 0.624766,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      25.917332,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.752707,
+      0.486419
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 66,
+    "wall": 49.130001,
+    "t": 0.641676,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      26.945881,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.740175,
+      0.485427
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 67,
+    "wall": 49.146004,
+    "t": 0.658663,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      27.975071,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.72781,
+      0.484491
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 68,
+    "wall": 49.163002,
+    "t": 0.675476,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      28.988104,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.7158,
+      0.483623
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 69,
+    "wall": 49.181004,
+    "t": 0.692486,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      30.005579,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.703886,
+      0.482804
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 70,
+    "wall": 49.196003,
+    "t": 0.70942,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      31.009529,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.692267,
+      0.482045
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 71,
+    "wall": 49.214001,
+    "t": 0.726327,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      32.001266,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.680914,
+      0.481343
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 72,
+    "wall": 49.230003,
+    "t": 0.743234,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      32.98077,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.669815,
+      0.480695
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 73,
+    "wall": 49.248001,
+    "t": 0.759907,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      33.933128,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.659123,
+      0.480107
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 74,
+    "wall": 49.264004,
+    "t": 0.776752,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      34.880028,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.648584,
+      0.479562
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 75,
+    "wall": 49.281002,
+    "t": 0.793834,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      35.822834,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.638173,
+      0.479058
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 76,
+    "wall": 49.298004,
+    "t": 0.810744,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      36.737286,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.62815,
+      0.478606
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 77,
+    "wall": 49.315002,
+    "t": 0.827523,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      37.62447,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.618488,
+      0.478202
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 78,
+    "wall": 49.333004,
+    "t": 0.844659,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      38.508129,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.608922,
+      0.477831
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 79,
+    "wall": 49.350002,
+    "t": 0.861636,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      39.359531,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.599755,
+      0.477504
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 80,
+    "wall": 49.366001,
+    "t": 0.878303,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      40.170555,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.591064,
+      0.47722
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 81,
+    "wall": 49.382004,
+    "t": 0.894969,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      40.95533,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.582689,
+      0.476971
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 82,
+    "wall": 49.399002,
+    "t": 0.911586,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      41.710144,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.574663,
+      0.476754
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 83,
+    "wall": 49.415001,
+    "t": 0.928245,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      42.437584,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.566952,
+      0.476566
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 84,
+    "wall": 49.432003,
+    "t": 0.94498,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      43.137276,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.559555,
+      0.476404
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 85,
+    "wall": 49.450001,
+    "t": 0.961793,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999996,
+      43.807194,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.55249,
+      0.476268
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 86,
+    "wall": 49.466003,
+    "t": 0.978551,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      44.440464,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.545824,
+      0.476154
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 87,
+    "wall": 49.482002,
+    "t": 0.99519,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      45.033573,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.53959,
+      0.476062
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 88,
+    "wall": 49.500004,
+    "t": 1.012199,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999999,
+      45.601528,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.533629,
+      0.475987
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 89,
+    "wall": 49.525002,
+    "t": 1.029396,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      46.134655,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.52804,
+      0.475927
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 90,
+    "wall": 49.534004,
+    "t": 1.046201,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      46.614071,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.523017,
+      0.475883
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 91,
+    "wall": 49.551003,
+    "t": 1.06282,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      47.04615,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.518494,
+      0.47585
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 92,
+    "wall": 49.568001,
+    "t": 1.079465,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      47.435493,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.514419,
+      0.475827
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 93,
+    "wall": 49.584003,
+    "t": 1.096294,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      47.783344,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.51078,
+      0.475811
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 94,
+    "wall": 49.601002,
+    "t": 1.113114,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      48.083389,
+      -0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.507641,
+      0.475801
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 95,
+    "wall": 49.617001,
+    "t": 1.129879,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      48.333504,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.505026,
+      0.475796
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 96,
+    "wall": 49.635002,
+    "t": 1.146626,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      48.532936,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.50294,
+      0.475793
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 97,
+    "wall": 49.650002,
+    "t": 1.163252,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      48.679539,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.501407,
+      0.475791
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 98,
+    "wall": 49.667004,
+    "t": 1.179973,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999998,
+      48.773727,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.500422,
+      0.475791
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 99,
+    "wall": 49.684002,
+    "t": 1.196697,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      48.812954,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.500012,
+      0.475791
+    ],
+    "objectsUnchanged": true,
+    "state": "playing"
+  },
+  {
+    "frame": 100,
+    "wall": 49.700001,
+    "t": 1.2,
+    "position": [
+      0.0,
+      1.65,
+      0.0
+    ],
+    "rotation": [
+      7.999997,
+      48.81406,
+      0.0
+    ],
+    "fov": 50.0,
+    "aspect": 1.777778,
+    "potScreen": [
+      0.5,
+      0.475791
+    ],
+    "objectsUnchanged": true,
+    "state": "complete"
+  }
+]
