@@ -26,12 +26,15 @@ function S.Render(ctx,overlay)
     local height=720 --[[@as number]]
     local viewport=rawget(UI,"GetViewportSize") --[[@as function?]]
     if viewport then local _,h=viewport();height=h end
+    local safe=ctx.safeInsets or {left=0,top=0,right=0,bottom=0}
+    height=height-safe.top-safe.bottom
     local compact=height<540
     local pad=compact and 12 or 24
     local panel=UI.Panel {id="activePanel",position="absolute",left=0,top=0,width="100%",height="100%",
         backgroundImage=Art.Background,backgroundFit="cover",backgroundColor={72,46,28,255},overflow="hidden",onClick=function() end}
     overlay:AddChild(panel)
-    local header=UI.Panel {id="panelHeader",width="100%",minHeight=64,flexShrink=0,padding={8,pad},gap=10,
+    local header=UI.Panel {id="panelHeader",width="100%",minHeight=64+safe.top,flexShrink=0,
+        paddingTop=8+safe.top,paddingBottom=8,paddingLeft=pad+safe.left,paddingRight=pad+safe.right,gap=10,
         flexDirection="row",alignItems="center",pointerEvents="box-none"}
     ctx.panelHeader=header;panel:AddChild(header)
     header:AddChild(Harbor.Tag {text="商队商店",fontSize=compact and 20 or 24,padding={8,18}})
@@ -72,7 +75,8 @@ function S.Render(ctx,overlay)
     for _,item in ipairs(items) do if item.ingredientId==ctx.shopSelectedId then selected=item;break end end
     ctx.shopSelectedId=selected.ingredientId
     local content=UI.Panel {id="shopContent",width="100%",flexGrow=1,flexShrink=1,flexBasis=0,minHeight=0,
-        flexDirection="row",padding={compact and 4 or 16,pad,pad,pad},gap=compact and 12 or 24,pointerEvents="box-none"}
+        flexDirection="row",paddingTop=compact and 4 or 16,paddingLeft=pad+safe.left,paddingRight=pad+safe.right,
+        paddingBottom=pad+safe.bottom,gap=compact and 12 or 24,pointerEvents="box-none"}
     panel:AddChild(content)
     local goods=UI.Panel {id="shopGoods",flexGrow=3,flexShrink=1,flexBasis=0,minWidth=0,gap=8,pointerEvents="box-none"}
     content:AddChild(goods)

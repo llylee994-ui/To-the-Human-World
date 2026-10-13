@@ -23,6 +23,11 @@ end
 local function clear(parent)
     for i=parent:GetNumChildren(),1,-1 do local child=parent:GetChildAt(i); if child then child:Destroy() end end
 end
+local function setStyle(widget,style)
+    for key,value in pairs(style) do
+        if widget.props[key]~=value then Widget.SetStyle(widget,style);return end
+    end
+end
 local function bodyIn(parent,id)
     local scroll=UI.ScrollView {id=id,width="100%",flexGrow=1,flexShrink=1,flexBasis=0,scrollY=true,showScrollbar=true}
     local body=UI.Panel {alignSelf="stretch",flexShrink=0,padding=18,paddingRight=24,gap=10,pointerEvents="box-none"}
@@ -35,7 +40,8 @@ function A.New(session,content,enabled)
     local yawEnabled=require("ui.landscape.DevChecks").yawProbe
     local yawAuto=yawEnabled and require("ui.landscape.DevChecks").yawProbeAuto and require("ui.landscape.tests.YawNativeProbe").New() or nil
     local developer=(require("debug.DeveloperMode") or require("ui.landscape.DevChecks").hotspots) --[[@as boolean]]
-    -- main owns SafeAreaView; fill its mainPanel without shrinking under old headings.
+    -- The stage fills the viewport; each control group applies its own safe area.
+    -- UpdateChrome extends this surface through main's SafeAreaView insets.
     local root=UI.Panel {id="playPanel",position="absolute",left=0,top=0,width="100%",height="100%",
         backgroundColor={48,42,34,255},pointerEvents="box-none",overflow="hidden"}
     local hud=UI.Panel {id="homeHud",position="absolute",top=8,left=0,width="100%",height=48,flexShrink=0,
@@ -93,6 +99,23 @@ function A.New(session,content,enabled)
     local pending
     function ctx.UpdateChrome()
         if not root.GetAbsoluteLayout then return end
+        local bounds=root:GetAbsoluteLayout()
+        local viewport,safe,menu=HudLayout.ReadHost(UI,bounds)
+        local vw,vh=viewport.w,viewport.h
+        if vw<=0 or vh<=0 then return end
+        local oldViewport,oldSafe=ctx.viewport,ctx.safeInsets
+        local changed=not oldViewport or oldViewport.w~=vw or oldViewport.h~=vh or not oldSafe
+            or oldSafe.left~=safe.left or oldSafe.top~=safe.top or oldSafe.right~=safe.right or oldSafe.bottom~=safe.bottom
+        ctx.safeInsets=safe;ctx.viewport=viewport
+        if changed and ctx.panel then model.dirty=true end
+        local parent=root.parent
+        if parent and parent.GetAbsoluteLayout then
+            local p=parent:GetAbsoluteLayout()
+            local style=root.props
+            if style.left~=-p.x or style.top~=-p.y or style.width~=vw or style.height~=vh then
+                setStyle(root,{left=-p.x,top=-p.y,width=vw,height=vh})
+            end
+        end
         local viewportRoot=UI.GetRoot()
         if viewportRoot and viewportRoot.SetBackgroundImage then
             if ctx.scene=="brew" then
@@ -104,32 +127,33 @@ function A.New(session,content,enabled)
                 if viewportRoot.props.backgroundImage~=background then viewportRoot:SetBackgroundImage(background) end
             end
         end
-        local bounds=root:GetAbsoluteLayout()
-        local vw,vh=bounds.w,bounds.h
-        if UI.GetViewportSize then vw,vh=UI.GetViewportSize() end
-        local hostSdk=rawget(_G,"sdk")
-        local menu=hostSdk and hostSdk.GetNativeExitMenuRect and hostSdk:GetNativeExitMenuRect() or nil
         local required=236+12+108+72+24+(ctx.scene~="home" and 114 or 0)+(pending and pending.props.visible and 122 or 0)
-        local offsets=HudLayout.Compute({x=bounds.x,y=bounds.y+8,w=bounds.w,h=48},{w=vw,h=vh},menu,required)
+        local safeWidth=math.max(0,vw-safe.left-safe.right)
+        local offsets=HudLayout.Compute({x=safe.left,y=safe.top+8,w=safeWidth,h=48},viewport,menu,required)
         local p=hud.props
-        if p.top~=8+offsets.top or p.paddingRight~=offsets.right then
-            if hud.SetStyle then hud:SetStyle({top=8+offsets.top,paddingRight=offsets.right})
-            else p.top=8+offsets.top;p.paddingRight=offsets.right end
+        if p.left~=safe.left or p.width~=safeWidth or p.top~=safe.top+8+offsets.top or p.paddingRight~=offsets.right then
+            setStyle(hud,{left=safe.left,width=safeWidth,top=safe.top+8+offsets.top,paddingRight=offsets.right})
         end
-        local contentTop=64+offsets.top
+        local contentTop=64+safe.top+offsets.top
         if scene.props.paddingTop~=contentTop then
-            if scene.SetStyle then scene:SetStyle({paddingTop=contentTop}) else scene.props.paddingTop=contentTop end
+            setStyle(scene,{paddingTop=contentTop})
         end
+        setStyle(scene,{paddingLeft=safe.left+12,paddingRight=safe.right+12,paddingBottom=safe.bottom+12})
+        seaside.SetInsets(safe)
+        setStyle(assert(salvageBlocker:FindById("skipSalvage")),{right=safe.right+14,bottom=safe.bottom+46})
         if ctx.panelHeader and ctx.panelHeader.GetAbsoluteLayout then
             local header=ctx.panelHeader
             local r=header:GetAbsoluteLayout()
             -- Compute from the unshifted position so a fallback margin cannot
             -- alternate between clearing the capsule and undoing itself.
-            local safe=HudLayout.Compute({x=r.x,y=r.y-(header.props.marginTop or 0),w=r.w,h=r.h},{w=vw,h=vh},menu,250)
-            if header.props.paddingRight~=safe.right or header.props.marginTop~=safe.top then
-                if header.SetStyle then Widget.SetStyle(header,{paddingRight=safe.right,marginTop=safe.top})
-                else header.props.paddingRight=safe.right;header.props.marginTop=safe.top end
+            local shop=ctx.panel=="shop" and not ctx.ticketConfirm
+            local clearance=HudLayout.Compute({x=r.x,y=r.y-(header.props.marginTop or 0),w=r.w,h=r.h},viewport,menu,shop and 450+safe.left or 250)
+            local pad=shop and (vh-safe.top-safe.bottom<540 and 12 or 24) or 16
+            local right=math.max(clearance.right,shop and safe.right+pad or 12)
+            if header.props.paddingRight~=right or header.props.marginTop~=clearance.top then
+                setStyle(header,{paddingRight=right,marginTop=clearance.top})
             end
+            if shop then setStyle(header,{paddingLeft=pad+safe.left,paddingTop=8+safe.top}) end
         end
         local portrait=vw<vh
         if ctx.portrait~=portrait then
@@ -141,7 +165,7 @@ function A.New(session,content,enabled)
         local current=ctx.messages:Current(now)
         notice:SetText(current.text);noticeArea:SetVisible(current.visible and not ctx.panel and not ctx.salvage.active)
         local bottom=ctx.scene=="seaside" and 86 or 12
-        if noticeArea.SetStyle and noticeArea.props.bottom~=bottom then Widget.SetStyle(noticeArea,{bottom=bottom}) end
+        setStyle(noticeArea,{left=14+safe.left,bottom=bottom+safe.bottom})
         if ctx.panelNotice then ctx.panelNotice:SetText(current.text) end
         if ctx.panelNoticeArea then ctx.panelNoticeArea:SetVisible(current.visible) end
     end
@@ -272,10 +296,19 @@ function A.New(session,content,enabled)
         end
         if kind=="shop" then Shop.Render(ctx,overlay);return end
         if kind=="ticketEnding" then TicketView.Ending(ctx,overlay);return end
+        local safe=ctx.safeInsets or {left=0,top=0,right=0,bottom=0}
+        local viewport=ctx.viewport
         local panelProps={id="activePanel",position="absolute",top=location and 0 or "3%",bottom=location and 0 or "3%",
             width=location and "38%" or "92%",minWidth=location and 260 or nil,maxWidth=location and "85%" or nil,
-            backgroundColor={245,236,216,255},borderRadius=8,overflow="hidden",onClick=function() end}
+            backgroundColor={245,236,216,255},borderRadius=8,overflow="hidden",onClick=function() end} --[[@as PanelProps]]
         if location=="right" then panelProps.right=0 else panelProps.left=location and 0 or "4%" end
+        if viewport then
+            panelProps.top=safe.top+(location and 0 or viewport.h*.03)
+            panelProps.bottom=safe.bottom+(location and 0 or viewport.h*.03)
+            if location=="right" then panelProps.right=safe.right
+            else panelProps.left=safe.left+(location and 0 or (viewport.w-safe.left-safe.right)*.04) end
+            if not location then panelProps.width=(viewport.w-safe.left-safe.right)*.92 end
+        end
         local panel=UI.Panel(panelProps)
         overlay:AddChild(panel)
         local bar=UI.Panel {id="panelHeader",width="100%",height=50,flexShrink=0,flexDirection="row",alignItems="center",paddingLeft=16,paddingRight=12,gap=8,pointerEvents="box-none"}

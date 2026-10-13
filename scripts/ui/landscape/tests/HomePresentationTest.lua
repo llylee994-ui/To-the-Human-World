@@ -47,7 +47,8 @@ function T.Run()
     check(not p:Current(2002).persistent, "changed ordinary message clears persistence")
     p:Observe(nil, 0/0)
     check(not p:Current(math.huge).visible, "malformed message and clock stay safe")
-    local b, v = {x=0,y=0,w=1000,h=500}, {w=1000,h=500}
+    -- bounds describe the header row, not the full viewport.
+    local b, v = {x=0,y=0,w=1000,h=48}, {w=1000,h=500}
     local capsule = {left=.86,top=0,right=1,bottom=.12}
     local a = L.Compute(b,v,capsule,800)
     check(a.top==0 and a.right==152, "wide HUD reserves capsule width")
@@ -55,6 +56,8 @@ function T.Run()
     check(a.top==68 and a.right==12, "narrow HUD moves below capsule")
     a = L.Compute({x=100,y=30,w=800,h=400},v,capsule,700)
     check(a.top==0 and a.right==52, "offset safe bounds reserve local overlap")
+    a = L.Compute({x=0,y=0,w=1000,h=64},v,{left=.86,top=.11,right=1,bottom=.15},250)
+    check(a.right==152,"shop header uses its actual height for capsule intersection")
     local cases = {
         false, {left=.86,top=.2,right=1,bottom=.3},
         {left=1.1,top=0,right=1.2,bottom=.1},

@@ -4,6 +4,7 @@ local Harbor=require "ui.landscape.HarborStyle"
 local G=require "ui.landscape.LayoutGeometry"
 local M=require "ui.landscape.SeasideManifest"
 local Backdrop=require "ui.landscape.SceneBackdrop"
+local Widget=require "urhox-libs/UI/Core/Widget"
 local S={}
 local function sprite(vg,path,x,y,w,h,angle,alpha)
     local handle=math.floor(require("urhox-libs/UI/Core/ImageCache").Get(path))
@@ -73,6 +74,13 @@ function S.New(ctx)
     local bar=UI.Panel {id="seasideControls",width="100%",height=76,flexShrink=0,paddingLeft=14,paddingRight=14,
         flexDirection="row",alignItems="center",gap=12,pointerEvents="box-none"}
     root:AddChild(bar)
+    function api.SetInsets(insets)
+        local p=bar.props
+        local height=76+insets.bottom
+        if p.height~=height or p.paddingLeft~=14+insets.left or p.paddingRight~=14+insets.right then
+            Widget.SetStyle(bar,{height=height,paddingLeft=14+insets.left,paddingRight=14+insets.right,paddingBottom=insets.bottom})
+        end
+    end
     local info=Harbor.Paper {flexGrow=1,minWidth=0,pointerEvents="none",gap=4,padding={6,14}}
     local title=UI.Label {text="海边 · 木码头",fontSize=17,fontColor={65,46,28,255},pointerEvents="none"}
     local status=UI.Label {id="salvageStatus",fontSize=14,whiteSpace="normal",fontColor={65,46,28,255},pointerEvents="none"}

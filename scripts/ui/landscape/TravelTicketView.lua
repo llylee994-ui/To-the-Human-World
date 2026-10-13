@@ -53,7 +53,9 @@ function V.Confirm(ctx,overlay)
         end})
 end
 function V.Ending(ctx,overlay)
-    local panel=Harbor.Paper {id="activePanel",position="absolute",left=0,top=0,width="100%",height="100%",padding=24,
+    local safe=ctx.safeInsets or {left=0,top=0,right=0,bottom=0}
+    local panel=Harbor.Paper {id="activePanel",position="absolute",left=0,top=0,width="100%",height="100%",
+        paddingLeft=24+safe.left,paddingRight=24+safe.right,paddingTop=96+safe.top,paddingBottom=24+safe.bottom,
         gap=16,overflow="hidden",onClick=function() end}
     overlay:AddChild(panel)
     local scroll=UI.ScrollView {width="100%",flexGrow=1,flexShrink=1,flexBasis=0,scrollY=true,showScrollbar=true}

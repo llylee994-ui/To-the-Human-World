@@ -1,0 +1,4 @@
+Lua Errors: 0 | Dir: D:\To the Human World\scripts | Time: 2026-10-13 14:37:15
+EmmyLua Types: D:\To the Human World\.emmylua
+---
+✅ No errors

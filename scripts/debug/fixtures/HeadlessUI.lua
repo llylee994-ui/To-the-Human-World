@@ -29,6 +29,9 @@ local function widget(props)
     function w:SetVisible(visible) self.props.visible = visible end
     function w:SetDisabled(disabled) self.props.disabled = disabled end
     function w:GetProps() return self.props end
+    -- Widget.SetStyle can update real props in headless integration tests.
+    -- Only its Yoga side effect is unavailable; this is never layout evidence.
+    function w:ApplyStyleToYoga(_) end
     return w
 end
 UI.Label, UI.Panel, UI.Button, UI.ScrollView, UI.SafeAreaView = widget, widget, widget, widget, widget

@@ -1,0 +1,24 @@
+{
+  "tests": {
+    "MobileSafeArea": 15,
+    "HomePresentation": 33,
+    "HomeHud": 50,
+    "ShopView": 51,
+    "TravelTicket": 46,
+    "SeasideFlow": 89,
+    "HomeZoom": 383,
+    "HomeEntry": 303
+  },
+  "sourceSha256": {
+    "scripts/ui/landscape/AppView.lua": "8305dd8ada8d583875e55b9b24c8a8d945890e4c10d0912341b7cd93f25ab9e2",
+    "scripts/ui/landscape/HudLayout.lua": "48f9b3e9d534a821df7e52cb5e12e50c8123b66dcf7b47720f9a3bea6190f912",
+    "scripts/ui/landscape/ShopView.lua": "a623db527bccf6a02ff3a255846c0024951602b016d2f11c645b422726a071f7",
+    "scripts/ui/landscape/SeasideView.lua": "5fbfc7cb238670fab112bb62e5185c3641fc599c23aa64e480b843424d972bfa",
+    "scripts/ui/landscape/TravelTicketView.lua": "e9412b6f69afab6908464284d4c3fb26e824f180725f3e6589437df822ae06e4"
+  },
+  "luaErrors": 0,
+  "luaWarnings": 72,
+  "nativePreview": "stopped; not restarted",
+  "mobileAcceptance": "pending real device rescan",
+  "offlineEvidence": "12 actual Lua widget trees in CSS; simulated notch and capsule; not native rendering"
+}
