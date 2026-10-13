@@ -1,0 +1,216 @@
+{
+  "collected_utc": "2026-10-12T05:48:42.279705+00:00",
+  "session_id": "46ad119c-c9b7-45e2-9bf7-b00839d91ecc",
+  "reload_id": 1,
+  "state": "running",
+  "native_qa": [
+    {
+      "detail": "",
+      "height": 720,
+      "utc": "2026-10-12T05:48:23Z",
+      "camera": "Home",
+      "writes": 0,
+      "width": 1280,
+      "status": "ENABLED",
+      "panel": false,
+      "name": "explicit QA config; one session; no OS input"
+    },
+    {
+      "detail": "",
+      "height": 720,
+      "utc": "2026-10-12T05:48:31Z",
+      "camera": "Home",
+      "writes": 0,
+      "width": 1280,
+      "status": "BEGIN",
+      "panel": false,
+      "name": "Aspect setup real Receive"
+    },
+    {
+      "detail": "",
+      "height": 720,
+      "utc": "2026-10-12T05:48:31Z",
+      "camera": "Home",
+      "writes": 2,
+      "width": 1280,
+      "status": "PASS",
+      "panel": false,
+      "name": "aspect setup Receive"
+    },
+    {
+      "detail": "",
+      "height": 720,
+      "utc": "2026-10-12T05:48:31Z",
+      "camera": "Home",
+      "writes": 4,
+      "width": 1280,
+      "status": "PASS",
+      "panel": false,
+      "name": "aspect setup Read"
+    },
+    {
+      "detail": "",
+      "height": 720,
+      "utc": "2026-10-12T05:48:34Z",
+      "camera": "Home",
+      "writes": 4,
+      "width": 1280,
+      "status": "BEGIN",
+      "panel": false,
+      "name": "aspect 1280x720"
+    },
+    {
+      "detail": "",
+      "height": 720,
+      "utc": "2026-10-12T05:48:39Z",
+      "camera": "Home",
+      "writes": 4,
+      "width": 1280,
+      "status": "BEGIN",
+      "panel": false,
+      "name": "aspect Home targets"
+    },
+    {
+      "detail": "",
+      "height": 720,
+      "utc": "2026-10-12T05:48:39Z",
+      "camera": "Home",
+      "writes": 4,
+      "width": 1280,
+      "status": "PASS",
+      "panel": false,
+      "name": "exact native dimensions"
+    },
+    {
+      "detail": {
+        "x": 0.14160335063934326,
+        "y": 0.5466136932373047
+      },
+      "height": 720,
+      "utc": "2026-10-12T05:48:39Z",
+      "camera": "Home",
+      "writes": 4,
+      "width": 1280,
+      "status": "PASS",
+      "panel": false,
+      "name": "visible native projected target home.net"
+    },
+    {
+      "detail": "",
+      "height": 720,
+      "utc": "2026-10-12T05:48:39Z",
+      "camera": "Home",
+      "writes": 4,
+      "width": 1280,
+      "status": "PASS",
+      "panel": false,
+      "name": "aspect pick home.net"
+    },
+    {
+      "detail": {
+        "x": 0.6778719425201416,
+        "y": 0.5329954028129578
+      },
+      "height": 720,
+      "utc": "2026-10-12T05:48:39Z",
+      "camera": "Home",
+      "writes": 4,
+      "width": 1280,
+      "status": "PASS",
+      "panel": false,
+      "name": "visible native projected target home.stove"
+    },
+    {
+      "detail": "",
+      "height": 720,
+      "utc": "2026-10-12T05:48:39Z",
+      "camera": "Home",
+      "writes": 4,
+      "width": 1280,
+      "status": "PASS",
+      "panel": false,
+      "name": "aspect pick home.stove"
+    },
+    {
+      "detail": {
+        "x": 0.2901403307914734,
+        "y": 0.33238834142684937
+      },
+      "height": 720,
+      "utc": "2026-10-12T05:48:39Z",
+      "camera": "Home",
+      "writes": 4,
+      "width": 1280,
+      "status": "PASS",
+      "panel": false,
+      "name": "visible native projected target home.merchantShip"
+    },
+    {
+      "detail": "",
+      "height": 720,
+      "utc": "2026-10-12T05:48:39Z",
+      "camera": "Home",
+      "writes": 4,
+      "width": 1280,
+      "status": "PASS",
+      "panel": false,
+      "name": "aspect pick home.merchantShip"
+    },
+    {
+      "detail": {
+        "x": 0.5376257300376892,
+        "y": 0.6782175898551941
+      },
+      "height": 720,
+      "utc": "2026-10-12T05:48:39Z",
+      "camera": "Home",
+      "writes": 4,
+      "width": 1280,
+      "status": "PASS",
+      "panel": false,
+      "name": "visible native projected target home.letterPaper"
+    },
+    {
+      "detail": "[string \"lab/NativeQA\"]:15: aspect pick home.letterPaper: nil",
+      "height": 720,
+      "utc": "2026-10-12T05:48:39Z",
+      "camera": "Home",
+      "writes": 4,
+      "width": 1280,
+      "status": "FAIL",
+      "panel": false,
+      "name": "aspect Home targets"
+    }
+  ],
+  "pass_count": 10,
+  "failures": [
+    {
+      "detail": "[string \"lab/NativeQA\"]:15: aspect pick home.letterPaper: nil",
+      "height": 720,
+      "utc": "2026-10-12T05:48:39Z",
+      "camera": "Home",
+      "writes": 4,
+      "width": 1280,
+      "status": "FAIL",
+      "panel": false,
+      "name": "aspect Home targets"
+    }
+  ],
+  "complete": false,
+  "frame_logs": [
+    "[lua] [2026-10-12 13_48_28_041][731][Script] [D3-LAB frame] camera=Home moving=false frames=287 meanMs=17.42 worstMs=64.44 resolution=1280x720 memoryWrites=0",
+    "[lua] [2026-10-12 13_48_33_045][1019][Script] [D3-LAB frame] camera=Home moving=false frames=288 meanMs=17.37 worstMs=56.37 resolution=1280x720 memoryWrites=4",
+    "[lua] [2026-10-12 13_48_38_048][1310][Script] [D3-LAB frame] camera=Home moving=false frames=291 meanMs=17.19 worstMs=50.25 resolution=1280x720 memoryWrites=4"
+  ],
+  "errors": [
+    "[2026-10-12 13_48_13_989][0] ERROR: Could not find resource Cube/Day/DaySpecularHDR.dds",
+    "[2026-10-12 13_48_14_134][0] ERROR: Can not load themis_x64.dll.",
+    "[2026-10-12 13_48_22_638][444] ERROR: Could not find resource Cube/Day/DaySpecularHDR.dds",
+    "[2026-10-12 13_48_22_639][444] ERROR: Could not find resource Cube/Dusk/DuskSpecularHDR.dds",
+    "[2026-10-12 13_48_22_787][444] ERROR: Could not find resource Textures",
+    "[2026-10-12 13_48_23_170][445] ERROR: Could not find resource <official-res>/assets/DgRecSAR4qVdwosqqNXg2Hhe-73030c7e.ktx"
+  ],
+  "unparsed_qa": [],
+  "redacted_qa_headers": [],
+  "limitations": "Program-driven adapter and actual UI callbacks, not human input or full native UI event dispatch. Continuous still frames do not prove smooth playback."
+}

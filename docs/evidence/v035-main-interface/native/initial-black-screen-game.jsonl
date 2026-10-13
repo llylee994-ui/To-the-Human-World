@@ -1,0 +1,370 @@
+{"t":"2026-10-13 20_22_22_550","f":0,"l":"INFO","m":"Opened log file D:/taptap/To-the-Human-World-3D-Lab/.runtime/logs/game/urhox_runtime-2026-10-13 20_22_22_549.log"}
+{"t":"2026-10-13 20_22_22_550","f":0,"l":"INFO","m":"=======Git Info======="}
+{"t":"2026-10-13 20_22_22_550","f":0,"l":"INFO","m":"UrhoX: ci/runtime-engine-res-version, bf3316fd2; BuildTime: 2026-09-24_01_10_12"}
+{"t":"2026-10-13 20_22_22_550","f":0,"l":"INFO","m":"Engine-res tag: maker_validate_window.0923"}
+{"t":"2026-10-13 20_22_22_550","f":0,"l":"INFO","m":"Binary version: 1032014"}
+{"t":"2026-10-13 20_22_22_550","f":0,"l":"INFO","m":"======================"}
+{"t":"2026-10-13 20_22_22_550","f":0,"l":"INFO","m":"Engine initialize begin."}
+{"t":"2026-10-13 20_22_22_551","f":0,"l":"INFO","m":"Rendering pipeline: forward"}
+{"t":"2026-10-13 20_22_22_551","f":0,"l":"INFO","m":"enable MSAA"}
+{"t":"2026-10-13 20_22_22_569","f":0,"l":"INFO","m":"Created 9 worker threads"}
+{"t":"2026-10-13 20_22_22_570","f":0,"l":"INFO","m":"Engine resourcePrefixPath: D:/taptap/To-the-Human-World-3D-Lab/.runtime/, resource: Res"}
+{"t":"2026-10-13 20_22_22_570","f":0,"l":"INFO","m":"Added resource path D:/taptap/To-the-Human-World-3D-Lab/.runtime/Res/"}
+{"t":"2026-10-13 20_22_22_570","f":0,"l":"INFO","m":"Now resource dir: "}
+{"t":"2026-10-13 20_22_22_570","f":0,"l":"INFO","m":"0 - D:/taptap/To-the-Human-World-3D-Lab/.runtime/Res/"}
+{"t":"2026-10-13 20_22_22_570","f":0,"l":"INFO","m":"AddPackageFile 'D:/taptap/To-the-Human-World-3D-Lab/.runtime/Autoload/CoreData.pak' to cache"}
+{"t":"2026-10-13 20_22_22_570","f":0,"l":"INFO","m":"PackageFile::Open, D:/taptap/To-the-Human-World-3D-Lab/.runtime/Autoload/CoreData.pak, 0"}
+{"t":"2026-10-13 20_22_22_573","f":0,"l":"INFO","m":"UZSD package opened: D:/taptap/To-the-Human-World-3D-Lab/.runtime/Autoload/CoreData.pak, 123 entries (122 unique blocks), decompressed 67663 -> 150195 bytes, dict 5609 bytes"}
+{"t":"2026-10-13 20_22_22_573","f":0,"l":"INFO","m":"Added resource package CoreData"}
+{"t":"2026-10-13 20_22_22_573","f":0,"l":"INFO","m":"AddPackageFile 'D:/taptap/To-the-Human-World-3D-Lab/.runtime/Autoload/Data.pak' to cache"}
+{"t":"2026-10-13 20_22_22_573","f":0,"l":"INFO","m":"PackageFile::Open, D:/taptap/To-the-Human-World-3D-Lab/.runtime/Autoload/Data.pak, 0"}
+{"t":"2026-10-13 20_22_22_641","f":0,"l":"INFO","m":"UZSD package opened: D:/taptap/To-the-Human-World-3D-Lab/.runtime/Autoload/Data.pak, 1379 entries (1294 unique blocks), decompressed 6819986 -> 17399499 bytes, dict 65536 bytes"}
+{"t":"2026-10-13 20_22_22_642","f":0,"l":"INFO","m":"Added resource package Data"}
+{"t":"2026-10-13 20_22_22_642","f":0,"l":"INFO","m":"AddPackageFile 'D:/taptap/To-the-Human-World-3D-Lab/.runtime/Autoload/Res.pak' to cache"}
+{"t":"2026-10-13 20_22_22_642","f":0,"l":"INFO","m":"PackageFile::Open, D:/taptap/To-the-Human-World-3D-Lab/.runtime/Autoload/Res.pak, 0"}
+{"t":"2026-10-13 20_22_22_825","f":0,"l":"INFO","m":"UZSD package opened: D:/taptap/To-the-Human-World-3D-Lab/.runtime/Autoload/Res.pak, 482 entries (477 unique blocks), decompressed 28111087 -> 50712062 bytes, dict 5614 bytes"}
+{"t":"2026-10-13 20_22_22_825","f":0,"l":"INFO","m":"Added resource package Res"}
+{"t":"2026-10-13 20_22_24_528","f":0,"l":"INFO","m":"computeShaderSupport 1,caps->supported:4,aps->supported & BGFX_CAPS_INDEX32:4096"}
+{"t":"2026-10-13 20_22_24_529","f":0,"l":"INFO","m":"Detected 4 GPUs"}
+{"t":"2026-10-13 20_22_24_529","f":0,"l":"INFO","m":"GPU 0 Name: NVIDIA GeForce RTX 4060 Laptop GPU"}
+{"t":"2026-10-13 20_22_24_529","f":0,"l":"INFO","m":"GPU 1 Name: Intel(R) Iris(R) Xe Graphics"}
+{"t":"2026-10-13 20_22_24_529","f":0,"l":"INFO","m":"GPU 2 Name: NVIDIA GeForce RTX 4060 Laptop GPU"}
+{"t":"2026-10-13 20_22_24_529","f":0,"l":"INFO","m":"GPU 3 Name: Microsoft Basic Render Driver"}
+{"t":"2026-10-13 20_22_24_529","f":0,"l":"INFO","m":"Selected GPU name: NVIDIA GeForce RTX 4060 Laptop GPU"}
+{"t":"2026-10-13 20_22_24_529","f":0,"l":"INFO","m":"Renderer Type: Direct3D 11"}
+{"t":"2026-10-13 20_22_24_529","f":0,"l":"INFO","m":"CheckFeatureSupport => CpuInstance=1, _R32I=1, _R32U=1, _R32F=1, _RGBA16F=1, _RGBA32F=1, MaxTextureSizeLimit=16384"}
+{"t":"2026-10-13 20_22_24_861","f":0,"l":"INFO","m":"Graphics mode: 1304x734 (logic=1304x734, dpr=1) windowed resizable highDPI monitor 0"}
+{"t":"2026-10-13 20_22_24_861","f":0,"l":"INFO","m":"Initialized input"}
+{"t":"2026-10-13 20_22_24_861","f":0,"l":"INFO","m":"Initialized user interface"}
+{"t":"2026-10-13 20_22_24_866","f":0,"l":"ERROR","m":"Could not find resource Cube/Day/DaySpecularHDR.dds"}
+{"t":"2026-10-13 20_22_24_885","f":0,"l":"INFO","m":"Initialized renderer"}
+{"t":"2026-10-13 20_22_25_059","f":0,"l":"INFO","m":"Set audio mode 44100 Hz stereo interpolated"}
+{"t":"2026-10-13 20_22_25_059","f":0,"l":"INFO","m":"Initialized graphics & audio output."}
+{"t":"2026-10-13 20_22_25_059","f":0,"l":"INFO","m":"Initialized engine"}
+{"t":"2026-10-13 20_22_25_060","f":0,"l":"INFO","m":"LogUploader: auto-upload disabled (no SLS URL), UploadLogPack still available on demand"}
+{"t":"2026-10-13 20_22_25_082","f":0,"l":"INFO","m":"Device Max Storage Block Binding Range: 16"}
+{"t":"2026-10-13 20_22_25_088","f":0,"l":"ERROR","m":"Can not load themis_x64.dll."}
+{"t":"2026-10-13 20_22_25_088","f":0,"l":"INFO","m":"PackageFile::Open, D:/taptap/To-the-Human-World-3D-Lab/.runtime/Res/shadercache_runtime/shadercache_dx11.pak, 0"}
+{"t":"2026-10-13 20_22_25_271","f":0,"l":"INFO","m":"UZSD MemoryLess package opened: D:/taptap/To-the-Human-World-3D-Lab/.runtime/Res/shadercache_runtime/shadercache_dx11.pak, 55257 entries (16693 unique blocks), compressed 28269272 bytes, dict 65536 bytes"}
+{"t":"2026-10-13 20_22_25_271","f":0,"l":"INFO","m":"Added resource package shadercache_runtime"}
+{"t":"2026-10-13 20_22_25_306","f":0,"l":"INFO","m":"Loaded shader cache package: D:/taptap/To-the-Human-World-3D-Lab/.runtime/Res/shadercache_runtime/shadercache_dx11.pak"}
+{"t":"2026-10-13 20_22_25_309","f":0,"l":"INFO","m":"Custom Lua require system installed (module cache active)"}
+{"t":"2026-10-13 20_22_25_320","f":0,"l":"INFO","m":"Lua 5.4: Generational GC enabled."}
+{"t":"2026-10-13 20_22_25_321","f":0,"l":"INFO","m":"Lua official log file initialized: D:/taptap/To-the-Human-World-3D-Lab/.runtime/logs/lua/lua-2026-10-13 20_22_25_320.log"}
+{"t":"2026-10-13 20_22_25_321","f":0,"l":"INFO","m":"Lua infinite loop detection enabled."}
+{"t":"2026-10-13 20_22_25_321","f":0,"l":"INFO","m":"LobbyBridge Lua API registered"}
+{"t":"2026-10-13 20_22_25_321","f":0,"l":"INFO","m":"Localization: auto-selected 'zh_CN' from [en, zh_CN]"}
+{"t":"2026-10-13 20_22_25_321","f":0,"l":"INFO","m":"BootstrapManager: Localization initialized, language=zh_CN"}
+{"t":"2026-10-13 20_22_25_321","f":0,"l":"INFO","m":"BootstrapManager: using custom game path: D:/taptap/To-the-Human-World-3D-Lab/tools/tmp/maker-cache-wf13yn/"}
+{"t":"2026-10-13 20_22_25_322","f":0,"l":"INFO","m":"LoadingUI::Show()"}
+{"t":"2026-10-13 20_22_25_324","f":0,"l":"INFO","m":"BootstrapPipeline: starting with 5 steps, total weight 1.00"}
+{"t":"2026-10-13 20_22_25_324","f":0,"l":"INFO","m":"BootstrapPipeline: executing step [1/5] 'LoadVersion'"}
+{"t":"2026-10-13 20_22_25_324","f":0,"l":"INFO","m":"[Bootstrap/LoadVersion] Starting..."}
+{"t":"2026-10-13 20_22_25_324","f":0,"l":"INFO","m":"[Bootstrap/LoadVersion] No local assets at D:/taptap/To-the-Human-World-3D-Lab/tools/tmp/maker-cache-wf13yn/<game>/assets, marking for full package download"}
+{"t":"2026-10-13 20_22_25_324","f":0,"l":"INFO","m":"[Bootstrap/LoadVersion] No local cache, marking for full package download"}
+{"t":"2026-10-13 20_22_25_324","f":0,"l":"INFO","m":"[Bootstrap/LoadVersion] Downloading http://127.0.0.1:60173/1bcff1e73d13accdd7ce6c6e431526dd4402badb913fe6d52e7b918084003475/latest.json"}
+{"t":"2026-10-13 20_22_25_325","f":0,"l":"INFO","m":"HttpManager initialized (Native with libhv HttpClient)"}
+{"t":"2026-10-13 20_22_25_330","f":1,"l":"INFO","m":"Shader::BeginLoad: /Shaders/BLGL/UI.glsl"}
+{"t":"2026-10-13 20_22_25_331","f":1,"l":"INFO","m":"Shader::EndLoad"}
+{"t":"2026-10-13 20_22_25_331","f":1,"l":"INFO","m":"Loaded vertex shader UI(DIFFMAP GAMMA_IN_SHADERING MIXCOLOR VERTEXCOLOR)"}
+{"t":"2026-10-13 20_22_25_331","f":1,"l":"INFO","m":"Loaded pixel shader UI(DIFFMAP GAMMA_IN_SHADERING MIXCOLOR OPACITY VERTEXCOLOR)"}
+{"t":"2026-10-13 20_22_25_331","f":1,"l":"INFO","m":"Loaded vertex shader UI(DIFFMAP)"}
+{"t":"2026-10-13 20_22_25_331","f":1,"l":"INFO","m":"Loaded pixel shader UI(DIFFMAP OPACITY)"}
+{"t":"2026-10-13 20_22_25_332","f":1,"l":"INFO","m":"BXLOG:C:\\actions-runner\\_work\\urhox\\urhox\\engine\\Source\\ThirdParty\\bgfx-all\\bgfx\\src\\dxgi.cpp (492): LOG Display Width: 1280, Height: 720, RefreshRate: 60001/1000\n"}
+{"t":"2026-10-13 20_22_25_341","f":3,"l":"INFO","m":"[Bootstrap/LoadVersion] Version: 1.0.0, Manifest (client): cffab408"}
+{"t":"2026-10-13 20_22_25_341","f":3,"l":"INFO","m":"[Bootstrap/LoadVersion] Completed successfully (17 ms)"}
+{"t":"2026-10-13 20_22_25_341","f":3,"l":"INFO","m":"BootstrapPipeline: step 'LoadVersion' completed successfully"}
+{"t":"2026-10-13 20_22_25_341","f":3,"l":"INFO","m":"BootstrapPipeline: executing step [2/5] 'LoadProjectManifest'"}
+{"t":"2026-10-13 20_22_25_341","f":3,"l":"INFO","m":"[Bootstrap/LoadProjectManifest] Starting..."}
+{"t":"2026-10-13 20_22_25_341","f":3,"l":"INFO","m":"Manifest Lua API registered successfully"}
+{"t":"2026-10-13 20_22_25_341","f":3,"l":"INFO","m":"[Bootstrap/LoadProjectManifest] Loading manifest from http://127.0.0.1:60173/1bcff1e73d13accdd7ce6c6e431526dd4402badb913fe6d52e7b918084003475/1.0.0/manifest-cffab408.json"}
+{"t":"2026-10-13 20_22_25_353","f":5,"l":"INFO","m":"ManifestData: loaded 193 files, 2 sources, 0 paks, entry=main.lua"}
+{"t":"2026-10-13 20_22_25_353","f":5,"l":"INFO","m":"[Bootstrap/LoadProjectManifest] Added builtin source engine-startup: https://.../src/engine-startup/ (tag=stable, priority=1000000)"}
+{"t":"2026-10-13 20_22_25_353","f":5,"l":"INFO","m":"[Bootstrap/LoadProjectManifest] Merged builtin source engine-res: https://<engine-res>/ (tag=maker_validate_window.0923, priority=1000001)"}
+{"t":"2026-10-13 20_22_25_353","f":5,"l":"INFO","m":"[Bootstrap/LoadProjectManifest] Added builtin source urhox-libs: https://.../src/urhox-libs/ (tag=stable, priority=1000002)"}
+{"t":"2026-10-13 20_22_25_353","f":5,"l":"INFO","m":"ManifestResolver: loaded game manifest with 193 files, 0 paks"}
+{"t":"2026-10-13 20_22_25_353","f":5,"l":"INFO","m":"[Bootstrap/LoadProjectManifest] Loaded manifest with 193 files, entry: main.lua"}
+{"t":"2026-10-13 20_22_25_353","f":5,"l":"INFO","m":"[Bootstrap/LoadProjectManifest] Completed successfully (12 ms)"}
+{"t":"2026-10-13 20_22_25_353","f":5,"l":"INFO","m":"BootstrapPipeline: step 'LoadProjectManifest' completed successfully"}
+{"t":"2026-10-13 20_22_25_353","f":5,"l":"INFO","m":"BootstrapPipeline: executing step [3/5] 'LoadSourceManifests'"}
+{"t":"2026-10-13 20_22_25_353","f":5,"l":"INFO","m":"[Bootstrap/LoadSourceManifests] Starting..."}
+{"t":"2026-10-13 20_22_25_353","f":5,"l":"INFO","m":"[Bootstrap/LoadSourceManifests] Found source: engine-startup (https://.../src/engine-startup/, stable)"}
+{"t":"2026-10-13 20_22_25_353","f":5,"l":"INFO","m":"[Bootstrap/LoadSourceManifests] Loading source [1/1]: engine-startup"}
+{"t":"2026-10-13 20_22_25_353","f":5,"l":"INFO","m":"[Bootstrap/LoadSourceManifests] No local cache for engine-startup, marking for full package download"}
+{"t":"2026-10-13 20_22_25_353","f":5,"l":"INFO","m":"[Bootstrap/LoadSourceManifests] Downloading: https://.../src/engine-startup/stable.json"}
+{"t":"2026-10-13 20_22_26_574","f":175,"l":"INFO","m":"[Bootstrap/LoadSourceManifests] Downloading manifest for engine-startup"}
+{"t":"2026-10-13 20_22_26_749","f":200,"l":"INFO","m":"ManifestData: loaded 8 files, 1 sources, 0 paks, entry=engine-startup/main.lua"}
+{"t":"2026-10-13 20_22_26_749","f":200,"l":"INFO","m":"ManifestResolver: loaded source manifest 'engine-startup' with 8 files, 0 paks"}
+{"t":"2026-10-13 20_22_26_749","f":200,"l":"INFO","m":"[Bootstrap/LoadSourceManifests] Loaded engine-startup manifest with 8 files"}
+{"t":"2026-10-13 20_22_26_749","f":200,"l":"INFO","m":"[Bootstrap/LoadSourceManifests] Completed successfully (1396 ms)"}
+{"t":"2026-10-13 20_22_26_749","f":200,"l":"INFO","m":"BootstrapPipeline: step 'LoadSourceManifests' completed successfully"}
+{"t":"2026-10-13 20_22_26_749","f":200,"l":"INFO","m":"BootstrapPipeline: executing step [4/5] 'InitializeResource'"}
+{"t":"2026-10-13 20_22_26_749","f":200,"l":"INFO","m":"[Bootstrap/InitializeResource] Starting..."}
+{"t":"2026-10-13 20_22_26_749","f":200,"l":"INFO","m":"[Bootstrap/InitializeResource] ManifestResolver registered to DownloadManager"}
+{"t":"2026-10-13 20_22_26_749","f":200,"l":"INFO","m":"Added resource path D:/taptap/To-the-Human-World-3D-Lab/tools/tmp/maker-cache-wf13yn/"}
+{"t":"2026-10-13 20_22_26_749","f":200,"l":"INFO","m":"Now resource dir: "}
+{"t":"2026-10-13 20_22_26_749","f":200,"l":"INFO","m":"0 - D:/taptap/To-the-Human-World-3D-Lab/tools/tmp/maker-cache-wf13yn/"}
+{"t":"2026-10-13 20_22_26_749","f":200,"l":"INFO","m":"1 - D:/taptap/To-the-Human-World-3D-Lab/.runtime/Res/"}
+{"t":"2026-10-13 20_22_26_749","f":200,"l":"INFO","m":"[Bootstrap/InitializeResource] Resource system initialized"}
+{"t":"2026-10-13 20_22_26_749","f":200,"l":"INFO","m":"[Bootstrap/InitializeResource] Completed successfully (0 ms)"}
+{"t":"2026-10-13 20_22_26_749","f":200,"l":"INFO","m":"BootstrapPipeline: step 'InitializeResource' completed successfully"}
+{"t":"2026-10-13 20_22_26_749","f":200,"l":"INFO","m":"BootstrapPipeline: executing step [5/5] 'Startup'"}
+{"t":"2026-10-13 20_22_26_749","f":200,"l":"INFO","m":"[Bootstrap/Startup] Starting..."}
+{"t":"2026-10-13 20_22_26_749","f":200,"l":"INFO","m":"[Bootstrap/Startup] Found engine-startup manifest with 8 files"}
+{"t":"2026-10-13 20_22_26_749","f":200,"l":"INFO","m":"[Bootstrap/Startup] Downloading 6 startup resources"}
+{"t":"2026-10-13 20_22_26_749","f":200,"l":"WARNING","m":"DownloadManager: cannot resolve 'uuid://-73mcwx1QB6NyLrwJxv8Kg', skipping"}
+{"t":"2026-10-13 20_22_26_749","f":200,"l":"WARNING","m":"DownloadManager: cannot resolve 'uuid://u05oYbz5RtecsyHB9-bmKQ', skipping"}
+{"t":"2026-10-13 20_22_27_665","f":331,"l":"INFO","m":"DownloadManager: group completed, success=true, completed=4, failed=0"}
+{"t":"2026-10-13 20_22_27_665","f":331,"l":"INFO","m":"[Bootstrap/Startup] Entry script: engine-startup/main.lua -> .../src/engine-startup/assets/AlK2YdWhzuyHYnv6NgG9x35x-e4be3f39.lua"}
+{"t":"2026-10-13 20_22_27_665","f":331,"l":"INFO","m":"Custom Lua require system installed (module cache active)"}
+{"t":"2026-10-13 20_22_27_692","f":331,"l":"INFO","m":"Lua 5.4: Generational GC enabled."}
+{"t":"2026-10-13 20_22_27_692","f":331,"l":"INFO","m":"Lua official log file initialized: D:/taptap/To-the-Human-World-3D-Lab/.runtime/logs/lua/lua-2026-10-13 20_22_27_692.log"}
+{"t":"2026-10-13 20_22_27_692","f":331,"l":"INFO","m":"Lua infinite loop detection enabled."}
+{"t":"2026-10-13 20_22_27_692","f":331,"l":"INFO","m":"Manifest Lua API registered successfully"}
+{"t":"2026-10-13 20_22_27_693","f":331,"l":"INFO","m":"[BootstrapLuaAPI] Registered successfully"}
+{"t":"2026-10-13 20_22_27_694","f":331,"l":"INFO","m":"[Bootstrap/Startup] Startup Lua VM created"}
+{"t":"2026-10-13 20_22_27_699","f":331,"l":"INFO","m":"Loaded Lua script .../src/engine-startup/assets/AlK2YdWhzuyHYnv6NgG9x35x-e4be3f39.lua"}
+{"t":"2026-10-13 20_22_27_699","f":331,"l":"INFO","m":"Executed Lua script .../src/engine-startup/assets/AlK2YdWhzuyHYnv6NgG9x35x-e4be3f39.lua"}
+{"t":"2026-10-13 20_22_27_699","f":331,"l":"INFO","m":"Localization::SetUserPrefPath: 'D:/taptap/To-the-Human-World-3D-Lab/tools/tmp/maker-cache-wf13yn/<game>/savedata/'"}
+{"t":"2026-10-13 20_22_27_700","f":331,"l":"INFO","m":"Localization: auto-selected 'zh_CN' from [en, zh_CN]"}
+{"t":"2026-10-13 20_22_27_704","f":331,"l":"INFO","m":"Loaded Lua script engine-startup/loading_ui.lua"}
+{"t":"2026-10-13 20_22_27_739","f":331,"l":"INFO","m":"LoadingUI::Hide()"}
+{"t":"2026-10-13 20_22_27_739","f":331,"l":"INFO","m":"[Bootstrap/Startup] Pipeline reconfigured by Lua script"}
+{"t":"2026-10-13 20_22_27_739","f":331,"l":"INFO","m":"[Bootstrap/Startup] Completed successfully (989 ms)"}
+{"t":"2026-10-13 20_22_27_739","f":331,"l":"INFO","m":"BootstrapPipeline: step 'Startup' completed successfully"}
+{"t":"2026-10-13 20_22_27_739","f":331,"l":"INFO","m":"BootstrapPipeline: executing step [6/16] 'UpdateProjectInfo'"}
+{"t":"2026-10-13 20_22_27_739","f":331,"l":"INFO","m":"[Bootstrap/UpdateProjectInfo] Starting..."}
+{"t":"2026-10-13 20_22_27_739","f":331,"l":"INFO","m":"[Bootstrap/UpdateProjectInfo] Downloading project.json from http://127.0.0.1:60173/1bcff1e73d13accdd7ce6c6e431526dd4402badb913fe6d52e7b918084003475/project.json (will overwrite if exists)"}
+{"t":"2026-10-13 20_22_27_739","f":331,"l":"INFO","m":"Shader::BeginLoad: /Shaders/BLGL/NanoVGFill.glsl"}
+{"t":"2026-10-13 20_22_27_739","f":331,"l":"INFO","m":"Shader::EndLoad"}
+{"t":"2026-10-13 20_22_27_739","f":331,"l":"INFO","m":"Loaded vertex shader NanoVGFill()"}
+{"t":"2026-10-13 20_22_27_739","f":331,"l":"INFO","m":"Loaded pixel shader NanoVGFill()"}
+{"t":"2026-10-13 20_22_27_762","f":335,"l":"INFO","m":"[Bootstrap/UpdateProjectInfo] project.json downloaded successfully"}
+{"t":"2026-10-13 20_22_27_768","f":335,"l":"INFO","m":"[Bootstrap/UpdateProjectInfo] No existing title, fetching minigame data for project: 52356e67-6bfa-415e-862d-8203b5fcffc9"}
+{"t":"2026-10-13 20_22_29_308","f":560,"l":"INFO","m":"[Bootstrap/UpdateProjectInfo] Minigame data response: status=200"}
+{"t":"2026-10-13 20_22_29_308","f":560,"l":"WARNING","m":"[Bootstrap/UpdateProjectInfo] Minigame data has no entry for project: 52356e67-6bfa-415e-862d-8203b5fcffc9"}
+{"t":"2026-10-13 20_22_29_308","f":560,"l":"INFO","m":"[Bootstrap/UpdateProjectInfo] Completed successfully (1570 ms)"}
+{"t":"2026-10-13 20_22_29_308","f":560,"l":"INFO","m":"BootstrapPipeline: step 'UpdateProjectInfo' completed successfully"}
+{"t":"2026-10-13 20_22_29_308","f":560,"l":"INFO","m":"BootstrapPipeline: executing step [7/16] 'LoadSourceManifests'"}
+{"t":"2026-10-13 20_22_29_308","f":560,"l":"INFO","m":"[Bootstrap/LoadSourceManifests] Starting..."}
+{"t":"2026-10-13 20_22_29_308","f":560,"l":"INFO","m":"[Bootstrap/LoadSourceManifests] Found source: engine-res (https://<engine-res>/, maker_validate_window.0923)"}
+{"t":"2026-10-13 20_22_29_308","f":560,"l":"INFO","m":"[Bootstrap/LoadSourceManifests] Found source: official-res (https://<official-res>/, stable)"}
+{"t":"2026-10-13 20_22_29_308","f":560,"l":"INFO","m":"[Bootstrap/LoadSourceManifests] Found source: urhox-libs (https://.../src/urhox-libs/, stable)"}
+{"t":"2026-10-13 20_22_29_308","f":560,"l":"INFO","m":"[Bootstrap/LoadSourceManifests] Loading source [1/3]: official-res"}
+{"t":"2026-10-13 20_22_29_308","f":560,"l":"INFO","m":"[Bootstrap/LoadSourceManifests] No local cache for official-res, marking for full package download"}
+{"t":"2026-10-13 20_22_29_308","f":560,"l":"INFO","m":"[Bootstrap/LoadSourceManifests] Downloading: https://<official-res>/stable.json"}
+{"t":"2026-10-13 20_22_30_080","f":670,"l":"INFO","m":"[Bootstrap/LoadSourceManifests] Downloading manifest for official-res"}
+{"t":"2026-10-13 20_22_50_427","f":3554,"l":"INFO","m":"ManifestData: loaded 38888 files, 1 sources, 3 paks, entry="}
+{"t":"2026-10-13 20_22_50_592","f":3554,"l":"INFO","m":"ManifestResolver: loaded source manifest 'official-res' with 38888 files, 3 paks"}
+{"t":"2026-10-13 20_22_50_592","f":3554,"l":"INFO","m":"[Bootstrap/LoadSourceManifests] Loaded official-res manifest with 38888 files"}
+{"t":"2026-10-13 20_22_50_592","f":3554,"l":"INFO","m":"[Bootstrap/LoadSourceManifests] Loading source [2/3]: engine-res"}
+{"t":"2026-10-13 20_22_50_592","f":3554,"l":"INFO","m":"[Bootstrap/LoadSourceManifests] No local cache for engine-res, marking for full package download"}
+{"t":"2026-10-13 20_22_50_592","f":3554,"l":"INFO","m":"[Bootstrap/LoadSourceManifests] Downloading: https://<engine-res>/maker_validate_window.0923.json"}
+{"t":"2026-10-13 20_22_51_455","f":3682,"l":"INFO","m":"[Bootstrap/LoadSourceManifests] Downloading manifest for engine-res"}
+{"t":"2026-10-13 20_22_51_974","f":3755,"l":"INFO","m":"ManifestData: loaded 1094 files, 0 sources, 0 paks, entry="}
+{"t":"2026-10-13 20_22_51_984","f":3755,"l":"INFO","m":"ManifestResolver: loaded source manifest 'engine-res' with 1094 files, 0 paks"}
+{"t":"2026-10-13 20_22_51_984","f":3755,"l":"INFO","m":"[Bootstrap/LoadSourceManifests] Loaded engine-res manifest with 1094 files"}
+{"t":"2026-10-13 20_22_51_984","f":3755,"l":"INFO","m":"[Bootstrap/LoadSourceManifests] Loading source [3/3]: urhox-libs"}
+{"t":"2026-10-13 20_22_51_985","f":3755,"l":"INFO","m":"[Bootstrap/LoadSourceManifests] No local cache for urhox-libs, marking for full package download"}
+{"t":"2026-10-13 20_22_51_985","f":3755,"l":"INFO","m":"[Bootstrap/LoadSourceManifests] Downloading: https://.../src/urhox-libs/stable.json"}
+{"t":"2026-10-13 20_22_54_283","f":4087,"l":"INFO","m":"[Bootstrap/LoadSourceManifests] Downloading manifest for urhox-libs"}
+{"t":"2026-10-13 20_22_54_447","f":4110,"l":"INFO","m":"ManifestData: loaded 159 files, 0 sources, 0 paks, entry="}
+{"t":"2026-10-13 20_22_54_447","f":4110,"l":"INFO","m":"ManifestResolver: loaded source manifest 'urhox-libs' with 159 files, 0 paks"}
+{"t":"2026-10-13 20_22_54_447","f":4110,"l":"INFO","m":"[Bootstrap/LoadSourceManifests] Loaded urhox-libs manifest with 159 files"}
+{"t":"2026-10-13 20_22_54_447","f":4110,"l":"INFO","m":"[Bootstrap/LoadSourceManifests] Completed successfully (25139 ms)"}
+{"t":"2026-10-13 20_22_54_447","f":4110,"l":"INFO","m":"BootstrapPipeline: step 'LoadSourceManifests' completed successfully"}
+{"t":"2026-10-13 20_22_54_447","f":4110,"l":"INFO","m":"BootstrapPipeline: executing step [8/16] 'ClearShaderCache'"}
+{"t":"2026-10-13 20_22_54_447","f":4110,"l":"INFO","m":"[Bootstrap/ClearShaderCache] Starting..."}
+{"t":"2026-10-13 20_22_54_476","f":4110,"l":"INFO","m":"[Bootstrap/ClearShaderCache] shader group unchanged"}
+{"t":"2026-10-13 20_22_54_476","f":4110,"l":"INFO","m":"[Bootstrap/ClearShaderCache] Completed successfully (29 ms)"}
+{"t":"2026-10-13 20_22_54_477","f":4110,"l":"INFO","m":"BootstrapPipeline: step 'ClearShaderCache' completed successfully"}
+{"t":"2026-10-13 20_22_54_477","f":4110,"l":"INFO","m":"BootstrapPipeline: executing step [9/16] 'PreloadI18nStep'"}
+{"t":"2026-10-13 20_22_54_477","f":4110,"l":"INFO","m":"[Bootstrap/PreloadI18nStep] Starting..."}
+{"t":"2026-10-13 20_22_54_805","f":4161,"l":"INFO","m":"DownloadManager: group completed, success=true, completed=2, failed=0"}
+{"t":"2026-10-13 20_22_54_805","f":4161,"l":"INFO","m":"[Bootstrap/PreloadI18nStep] Completed successfully (329 ms)"}
+{"t":"2026-10-13 20_22_54_805","f":4161,"l":"INFO","m":"BootstrapPipeline: step 'PreloadI18nStep' completed successfully"}
+{"t":"2026-10-13 20_22_54_805","f":4161,"l":"INFO","m":"BootstrapPipeline: executing step [10/16] 'DownloadInitialPackage'"}
+{"t":"2026-10-13 20_22_54_805","f":4161,"l":"INFO","m":"[Bootstrap/DownloadInitialPackage] Starting..."}
+{"t":"2026-10-13 20_22_54_805","f":4161,"l":"INFO","m":"[Bootstrap/DownloadPackage] Starting parallel download of 2 packages"}
+{"t":"2026-10-13 20_22_54_805","f":4161,"l":"INFO","m":"[Bootstrap/DownloadPackage] Downloading: https://<engine-res>/1.32.12/assets@windows.7z"}
+{"t":"2026-10-13 20_22_54_807","f":4161,"l":"INFO","m":"[Bootstrap/DownloadPackage] Downloading: https://.../src/urhox-libs/1.0.29/assets@windows.7z"}
+{"t":"2026-10-13 20_22_58_910","f":4749,"l":"INFO","m":"[Bootstrap/DownloadPackage] Downloaded urhox-libs, dispatching background extraction"}
+{"t":"2026-10-13 20_22_58_944","f":4753,"l":"INFO","m":"[Bootstrap/DownloadPackage] [urhox-libs] Archive contains 159 files"}
+{"t":"2026-10-13 20_24_57_602","f":21723,"l":"INFO","m":"[Bootstrap/DownloadPackage] Downloaded engine-res, dispatching background extraction"}
+{"t":"2026-10-13 20_24_57_628","f":21728,"l":"INFO","m":"[Bootstrap/DownloadPackage] [engine-res] Archive contains 1048 files"}
+{"t":"2026-10-13 20_25_00_152","f":22093,"l":"INFO","m":"[Bootstrap/DownloadPackage] Extracted package for engine-res"}
+{"t":"2026-10-13 20_25_00_152","f":22093,"l":"INFO","m":"[Bootstrap/DownloadPackage] Extracted package for urhox-libs"}
+{"t":"2026-10-13 20_25_00_152","f":22093,"l":"INFO","m":"[Bootstrap/DownloadInitialPackage] Completed successfully (125347 ms)"}
+{"t":"2026-10-13 20_25_00_152","f":22093,"l":"INFO","m":"BootstrapPipeline: step 'DownloadInitialPackage' completed successfully"}
+{"t":"2026-10-13 20_25_00_152","f":22093,"l":"INFO","m":"BootstrapPipeline: executing step [11/16] 'LoadPreloadResources'"}
+{"t":"2026-10-13 20_25_00_152","f":22093,"l":"INFO","m":"[Bootstrap/LoadPreloadResources] Starting..."}
+{"t":"2026-10-13 20_25_00_153","f":22093,"l":"INFO","m":"DownloadWhilePlayingManager: loaded 14 render blocking exts"}
+{"t":"2026-10-13 20_25_00_153","f":22093,"l":"INFO","m":"[Bootstrap/LoadPreloadResources] Loaded RenderBlockingTypes.json"}
+{"t":"2026-10-13 20_25_00_155","f":22093,"l":"INFO","m":"ManifestResolver: 预加载 1194 个文件 (manifest 总计 40131)"}
+{"t":"2026-10-13 20_25_00_155","f":22093,"l":"INFO","m":"[Bootstrap/LoadPreloadResources] Found 1195 preload files"}
+{"t":"2026-10-13 20_25_00_168","f":22093,"l":"INFO","m":"[Bootstrap/LoadPreloadResources] Need to download 148 files (35.7MB)"}
+{"t":"2026-10-13 20_25_33_388","f":26853,"l":"WARNING","m":"UrhoXBootstrapCallbacks: bootstrap progress stalled at 79.9% for 30 seconds, uploading log pack"}
+{"t":"2026-10-13 20_25_33_389","f":26853,"l":"INFO","m":"LogUploader: UploadLogPack starting, 2 files, momentId=(empty), marker=bootstrap_stall"}
+{"t":"2026-10-13 20_25_33_400","f":26853,"l":"INFO","m":"LogUploader: Uploading log pack 'game' (26025 bytes) from D:/taptap/To-the-Human-World-3D-Lab/.runtime/logs/game/urhox_runtime-2026-10-13 20_22_22_549.log"}
+{"t":"2026-10-13 20_25_34_207","f":26970,"l":"INFO","m":"LogUploader: Log pack 'game' uploaded successfully (26025 bytes)"}
+{"t":"2026-10-13 20_25_34_208","f":26970,"l":"INFO","m":"LogUploader: Uploading log pack 'lua' (368 bytes) from D:/taptap/To-the-Human-World-3D-Lab/.runtime/logs/lua/lua-2026-10-13 20_22_27_692.log"}
+{"t":"2026-10-13 20_25_34_354","f":26991,"l":"INFO","m":"LogUploader: Log pack 'lua' uploaded successfully (368 bytes)"}
+{"t":"2026-10-13 20_27_33_775","f":44058,"l":"INFO","m":"DownloadManager: group completed, success=true, completed=148, failed=0"}
+{"t":"2026-10-13 20_27_33_775","f":44058,"l":"INFO","m":"[Bootstrap/LoadPreloadResources] Completed successfully (153623 ms)"}
+{"t":"2026-10-13 20_27_33_775","f":44058,"l":"INFO","m":"BootstrapPipeline: step 'LoadPreloadResources' completed successfully"}
+{"t":"2026-10-13 20_27_33_775","f":44058,"l":"INFO","m":"BootstrapPipeline: executing step [12/16] 'Cleanup'"}
+{"t":"2026-10-13 20_27_33_775","f":44058,"l":"INFO","m":"[Bootstrap/Cleanup] Starting..."}
+{"t":"2026-10-13 20_27_33_824","f":44058,"l":"INFO","m":"[Bootstrap/Cleanup] Total target files: 40131"}
+{"t":"2026-10-13 20_27_33_824","f":44058,"l":"INFO","m":"[Bootstrap/Cleanup] Scanning: D:/taptap/To-the-Human-World-3D-Lab/tools/tmp/maker-cache-wf13yn/<game>/assets/"}
+{"t":"2026-10-13 20_27_33_825","f":44058,"l":"INFO","m":"[Bootstrap/Cleanup] Scanning: D:/taptap/To-the-Human-World-3D-Lab/tools/tmp/maker-cache-wf13yn/.../src/engine-startup/assets/"}
+{"t":"2026-10-13 20_27_33_825","f":44058,"l":"INFO","m":"[Bootstrap/Cleanup] Scanning: D:/taptap/To-the-Human-World-3D-Lab/tools/tmp/maker-cache-wf13yn/<engine-res>/assets/"}
+{"t":"2026-10-13 20_27_33_873","f":44058,"l":"INFO","m":"[Bootstrap/Cleanup] Scanning: D:/taptap/To-the-Human-World-3D-Lab/tools/tmp/maker-cache-wf13yn/.../src/urhox-libs/assets/"}
+{"t":"2026-10-13 20_27_33_874","f":44058,"l":"INFO","m":"[Bootstrap/Cleanup] Completed successfully (99 ms)"}
+{"t":"2026-10-13 20_27_33_874","f":44058,"l":"INFO","m":"BootstrapPipeline: step 'Cleanup' completed successfully"}
+{"t":"2026-10-13 20_27_33_875","f":44058,"l":"INFO","m":"BootstrapPipeline: skipping step 'RecordProjectSize'"}
+{"t":"2026-10-13 20_27_33_875","f":44058,"l":"INFO","m":"BootstrapPipeline: executing step [14/16] 'CleanupOtherProjects'"}
+{"t":"2026-10-13 20_27_33_876","f":44058,"l":"INFO","m":"[Bootstrap/CleanupOtherProjects] Starting..."}
+{"t":"2026-10-13 20_27_33_876","f":44058,"l":"INFO","m":"[Bootstrap/CleanupOtherProjects] Completed successfully (1 ms)"}
+{"t":"2026-10-13 20_27_33_876","f":44058,"l":"INFO","m":"BootstrapPipeline: step 'CleanupOtherProjects' completed successfully"}
+{"t":"2026-10-13 20_27_33_876","f":44058,"l":"INFO","m":"BootstrapPipeline: executing step [15/16] 'Ready'"}
+{"t":"2026-10-13 20_27_33_876","f":44058,"l":"INFO","m":"[Bootstrap/Ready] Starting..."}
+{"t":"2026-10-13 20_27_33_877","f":44058,"l":"INFO","m":"[Bootstrap/Ready] Project ID: 52356e67-6bfa-415e-862d-8203b5fcffc9"}
+{"t":"2026-10-13 20_27_33_877","f":44058,"l":"INFO","m":"[Bootstrap/Ready] settings.json not found, single player mode assumed"}
+{"t":"2026-10-13 20_27_33_881","f":44059,"l":"INFO","m":"[Bootstrap/Ready] Completed successfully (5 ms)"}
+{"t":"2026-10-13 20_27_33_881","f":44059,"l":"INFO","m":"BootstrapPipeline: step 'Ready' completed successfully"}
+{"t":"2026-10-13 20_27_33_883","f":44060,"l":"INFO","m":"BootstrapPipeline: executing step [16/16] 'FadeOutLoading'"}
+{"t":"2026-10-13 20_27_33_883","f":44060,"l":"INFO","m":"[Bootstrap/FadeOutLoading] Starting..."}
+{"t":"2026-10-13 20_27_34_233","f":44114,"l":"INFO","m":"[Bootstrap/FadeOutLoading] Completed successfully (349 ms)"}
+{"t":"2026-10-13 20_27_34_233","f":44114,"l":"INFO","m":"BootstrapPipeline: step 'FadeOutLoading' completed successfully"}
+{"t":"2026-10-13 20_27_34_239","f":44115,"l":"INFO","m":"BootstrapPipeline: completed successfully"}
+{"t":"2026-10-13 20_27_34_239","f":44115,"l":"INFO","m":"BootstrapManager: pipeline completed successfully"}
+{"t":"2026-10-13 20_27_34_240","f":44115,"l":"INFO","m":"BootstrapManager: resolving entry script: main.lua"}
+{"t":"2026-10-13 20_27_34_246","f":44115,"l":"INFO","m":"Removed resource package shadercache_runtime"}
+{"t":"2026-10-13 20_27_34_261","f":44115,"l":"INFO","m":"PackageFile::Open, D:/taptap/To-the-Human-World-3D-Lab/tools/tmp/maker-cache-wf13yn/<engine-res>/assets/FYMm4bwqCU0_6rl0pC101U-6-d189d71c.pak, 0"}
+{"t":"2026-10-13 20_27_34_353","f":44115,"l":"INFO","m":"UZSD MemoryLess package opened: D:/taptap/To-the-Human-World-3D-Lab/tools/tmp/maker-cache-wf13yn/<engine-res>/assets/FYMm4bwqCU0_6rl0pC101U-6-d189d71c.pak, 55257 entries (16693 unique blocks), compressed 28269272 bytes, dict 65536 bytes"}
+{"t":"2026-10-13 20_27_34_353","f":44115,"l":"INFO","m":"Added resource package shadercache_runtime"}
+{"t":"2026-10-13 20_27_34_397","f":44115,"l":"INFO","m":"Loaded shader cache package: D:/taptap/To-the-Human-World-3D-Lab/tools/tmp/maker-cache-wf13yn/<engine-res>/assets/FYMm4bwqCU0_6rl0pC101U-6-d189d71c.pak"}
+{"t":"2026-10-13 20_27_34_397","f":44115,"l":"WARNING","m":"RuntimeRetargeterCache: Cannot load mapping table: uuid://F4ItQUiV0gmvAelLXpk5yrTs"}
+{"t":"2026-10-13 20_27_34_399","f":44115,"l":"INFO","m":"Loaded Lua script LuaScripts/Utilities/EnginePreview.lua"}
+{"t":"2026-10-13 20_27_34_399","f":44115,"l":"RAW","m":"[2026-10-13 20_27_34_399][44115][Script] IsNetworkMode:    false\n"}
+{"t":"2026-10-13 20_27_34_406","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/Engine/init.lua"}
+{"t":"2026-10-13 20_27_34_407","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/Engine/InputExtensions.lua"}
+{"t":"2026-10-13 20_27_34_410","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/Engine/ResourceCacheExtensions.lua"}
+{"t":"2026-10-13 20_27_34_412","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/Engine/i18n.lua"}
+{"t":"2026-10-13 20_27_34_413","f":44115,"l":"INFO","m":"[i18n] loadConfig: uuid='Q4M3GntfTmiNZCdTeiz5Kg' engine='Q4M3GntfTmiNZCdTeiz5Kg' match=true"}
+{"t":"2026-10-13 20_27_34_413","f":44115,"l":"INFO","m":"[i18n] loadConfig: engine fallback, support_langs='zh_CN'"}
+{"t":"2026-10-13 20_27_34_413","f":44115,"l":"INFO","m":"[i18n] GetLanguage: resolved='zh_CN'"}
+{"t":"2026-10-13 20_27_34_413","f":44115,"l":"INFO","m":"[i18n] SetLanguage: actualLang='zh_CN' explicit=nil"}
+{"t":"2026-10-13 20_27_34_413","f":44115,"l":"INFO","m":"[i18n] SetVariantTag: priority=2000, tag=''"}
+{"t":"2026-10-13 20_27_34_413","f":44115,"l":"INFO","m":"SetVariantTag: priority=2000, tag=''"}
+{"t":"2026-10-13 20_27_34_422","f":44115,"l":"INFO","m":"[i18n] init: lang='zh_CN' translations=true hooks=true"}
+{"t":"2026-10-13 20_27_34_424","f":44115,"l":"INFO","m":"Loaded Lua script LuaScripts/Utilities/Previews/InputAdaptor.lua"}
+{"t":"2026-10-13 20_27_34_424","f":44115,"l":"RAW","m":"[2026-10-13 20_27_34_424][44115][Script] [InputAdaptor] Loading input event adaptor...\n"}
+{"t":"2026-10-13 20_27_34_424","f":44115,"l":"RAW","m":"[2026-10-13 20_27_34_424][44115][Script] [InputAdaptor] Hooked SubscribeToEvent for event mapping.\n"}
+{"t":"2026-10-13 20_27_34_424","f":44115,"l":"RAW","m":"[2026-10-13 20_27_34_424][44115][Script] [InputAdaptor] Platform: Windows, isTouchPlatform: false\n"}
+{"t":"2026-10-13 20_27_34_424","f":44115,"l":"RAW","m":"[2026-10-13 20_27_34_424][44115][Script] [InputAdaptor] Hooked Input methods for touch emulation fallback.\n"}
+{"t":"2026-10-13 20_27_34_425","f":44115,"l":"INFO","m":"Loaded Lua script LuaScripts/Utilities/Previews/Scene.lua"}
+{"t":"2026-10-13 20_27_34_426","f":44115,"l":"INFO","m":"Loaded Lua script LuaScripts/Utilities/Previews/SceneGuard.lua"}
+{"t":"2026-10-13 20_27_34_427","f":44115,"l":"INFO","m":"Loaded Lua script LuaScripts/Utilities/Previews/UIGuard.lua"}
+{"t":"2026-10-13 20_27_34_428","f":44115,"l":"INFO","m":"Loaded Lua script LuaScripts/Utilities/Previews/RewardVideoAd.lua"}
+{"t":"2026-10-13 20_27_34_430","f":44115,"l":"INFO","m":"Loaded Lua script LuaScripts/Utilities/Previews/UserInfo.lua"}
+{"t":"2026-10-13 20_27_34_430","f":44115,"l":"RAW","m":"[2026-10-13 20_27_34_430][44115][Script] Check Transition.lua SimpleGrid.lua\n"}
+{"t":"2026-10-13 20_27_34_431","f":44115,"l":"INFO","m":"Loaded Lua script LuaScripts/Utilities/Previews/Isolation_Client.lua"}
+{"t":"2026-10-13 20_27_34_433","f":44115,"l":"INFO","m":"Loaded Lua script LuaScripts/Utilities/Previews/Isolation_Common.lua"}
+{"t":"2026-10-13 20_27_34_437","f":44115,"l":"INFO","m":"Loaded Lua script LuaScripts/Utilities/Previews/UrlWhitelist.lua"}
+{"t":"2026-10-13 20_27_34_439","f":44115,"l":"INFO","m":"[Preview/Isolation_Client] Loaded client URL whitelist from LuaScripts/Utilities/Previews/ClientUrlWhitelist.json (0 urls, 2 domains)"}
+{"t":"2026-10-13 20_27_34_440","f":44115,"l":"WARNING","m":"userId is 0, savedata will not be per-user isolated"}
+{"t":"2026-10-13 20_27_34_443","f":44115,"l":"INFO","m":"Executed Lua script LuaScripts/Utilities/EnginePreview.lua"}
+{"t":"2026-10-13 20_27_34_444","f":44115,"l":"INFO","m":"Loaded Lua script main.lua"}
+{"t":"2026-10-13 20_27_34_446","f":44115,"l":"INFO","m":"Loaded Lua script v035/lab35/NativeHost.lua"}
+{"t":"2026-10-13 20_27_34_448","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/init.lua"}
+{"t":"2026-10-13 20_27_34_457","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Core/UI.lua"}
+{"t":"2026-10-13 20_27_34_459","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Core/Theme.lua"}
+{"t":"2026-10-13 20_27_34_461","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Core/ImageCache.lua"}
+{"t":"2026-10-13 20_27_34_463","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Core/PointerEvent.lua"}
+{"t":"2026-10-13 20_27_34_464","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Core/Input.lua"}
+{"t":"2026-10-13 20_27_34_467","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Core/InputAdapter.lua"}
+{"t":"2026-10-13 20_27_34_471","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Core/Gesture.lua"}
+{"t":"2026-10-13 20_27_34_473","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Core/GestureEvent.lua"}
+{"t":"2026-10-13 20_27_34_482","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Core/Widget.lua"}
+{"t":"2026-10-13 20_27_34_483","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Core/Style.lua"}
+{"t":"2026-10-13 20_27_34_487","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Core/Transition.lua"}
+{"t":"2026-10-13 20_27_34_495","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Core/UILoader.lua"}
+{"t":"2026-10-13 20_27_34_496","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Core/UISerializer.lua"}
+{"t":"2026-10-13 20_27_34_497","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Core/UIInspector/init.lua"}
+{"t":"2026-10-13 20_27_34_497","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Core/UIInspector/Context.lua"}
+{"t":"2026-10-13 20_27_34_501","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/ColorPicker.lua"}
+{"t":"2026-10-13 20_27_34_503","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Core/UIInspector/Schema.lua"}
+{"t":"2026-10-13 20_27_34_504","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Core/UIInspector/Selection.lua"}
+{"t":"2026-10-13 20_27_34_505","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Core/UIInspector/Overlay.lua"}
+{"t":"2026-10-13 20_27_34_506","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Core/UIInspector/Report.lua"}
+{"t":"2026-10-13 20_27_34_508","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Core/UIInspector/QuickTweak.lua"}
+{"t":"2026-10-13 20_27_34_509","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Core/UIInspector/EditTool.lua"}
+{"t":"2026-10-13 20_27_34_512","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Core/UIInspector/Panel.lua"}
+{"t":"2026-10-13 20_27_34_513","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/Panel.lua"}
+{"t":"2026-10-13 20_27_34_514","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/Label.lua"}
+{"t":"2026-10-13 20_27_34_515","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/Button.lua"}
+{"t":"2026-10-13 20_27_34_517","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/TextField.lua"}
+{"t":"2026-10-13 20_27_34_518","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/EditMenu.lua"}
+{"t":"2026-10-13 20_27_34_519","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/Checkbox.lua"}
+{"t":"2026-10-13 20_27_34_520","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/Toggle.lua"}
+{"t":"2026-10-13 20_27_34_521","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/Slider.lua"}
+{"t":"2026-10-13 20_27_34_522","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/ProgressBar.lua"}
+{"t":"2026-10-13 20_27_34_523","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/ScrollView.lua"}
+{"t":"2026-10-13 20_27_34_525","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/Dropdown.lua"}
+{"t":"2026-10-13 20_27_34_526","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/Modal.lua"}
+{"t":"2026-10-13 20_27_34_528","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/Toast.lua"}
+{"t":"2026-10-13 20_27_34_529","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/Tabs.lua"}
+{"t":"2026-10-13 20_27_34_531","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/Tooltip.lua"}
+{"t":"2026-10-13 20_27_34_532","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/Badge.lua"}
+{"t":"2026-10-13 20_27_34_535","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/Avatar.lua"}
+{"t":"2026-10-13 20_27_34_536","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/Card.lua"}
+{"t":"2026-10-13 20_27_34_538","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/List.lua"}
+{"t":"2026-10-13 20_27_34_539","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/Divider.lua"}
+{"t":"2026-10-13 20_27_34_540","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/Skeleton.lua"}
+{"t":"2026-10-13 20_27_34_542","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/Chip.lua"}
+{"t":"2026-10-13 20_27_34_544","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/Accordion.lua"}
+{"t":"2026-10-13 20_27_34_545","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/Stepper.lua"}
+{"t":"2026-10-13 20_27_34_547","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/Rating.lua"}
+{"t":"2026-10-13 20_27_34_548","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/Breadcrumb.lua"}
+{"t":"2026-10-13 20_27_34_549","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/Pagination.lua"}
+{"t":"2026-10-13 20_27_34_550","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/Alert.lua"}
+{"t":"2026-10-13 20_27_34_552","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/Timeline.lua"}
+{"t":"2026-10-13 20_27_34_553","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/Menu.lua"}
+{"t":"2026-10-13 20_27_34_555","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/Tree.lua"}
+{"t":"2026-10-13 20_27_34_556","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/DatePicker.lua"}
+{"t":"2026-10-13 20_27_34_558","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/TimePicker.lua"}
+{"t":"2026-10-13 20_27_34_559","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/Table.lua"}
+{"t":"2026-10-13 20_27_34_561","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/Carousel.lua"}
+{"t":"2026-10-13 20_27_34_562","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/Drawer.lua"}
+{"t":"2026-10-13 20_27_34_563","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/Popover.lua"}
+{"t":"2026-10-13 20_27_34_565","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/Calendar.lua"}
+{"t":"2026-10-13 20_27_34_566","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/FileUpload.lua"}
+{"t":"2026-10-13 20_27_34_567","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/RichText.lua"}
+{"t":"2026-10-13 20_27_34_568","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/SafeAreaView.lua"}
+{"t":"2026-10-13 20_27_34_569","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/SimpleGrid.lua"}
+{"t":"2026-10-13 20_27_34_570","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/Spine.lua"}
+{"t":"2026-10-13 20_27_34_571","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/Sprite/SpriteSheet.lua"}
+{"t":"2026-10-13 20_27_34_572","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Widgets/Sprite.lua"}
+{"t":"2026-10-13 20_27_34_573","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/Sprite/SpriteAnimator.lua"}
+{"t":"2026-10-13 20_27_34_574","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Components/VirtualList.lua"}
+{"t":"2026-10-13 20_27_34_575","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Components/DragDropContext.lua"}
+{"t":"2026-10-13 20_27_34_576","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Components/ItemSlot.lua"}
+{"t":"2026-10-13 20_27_34_576","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Components/InventoryManager.lua"}
+{"t":"2026-10-13 20_27_34_577","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Components/SkillTree.lua"}
+{"t":"2026-10-13 20_27_34_578","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Components/ChatWindow.lua"}
+{"t":"2026-10-13 20_27_34_579","f":44115,"l":"INFO","m":"Loaded Lua script urhox-libs/UI/Components/ItemTooltip.lua"}
+{"t":"2026-10-13 20_27_34_581","f":44115,"l":"INFO","m":"Loaded Lua script v035/lab35/Math3.lua"}
+{"t":"2026-10-13 20_27_34_581","f":44115,"l":"INFO","m":"Loaded Lua script v035/lab35/NativeGeometry.lua"}
+{"t":"2026-10-13 20_27_34_582","f":44115,"l":"INFO","m":"Loaded Lua script v035/core/StateUtil.lua"}
+{"t":"2026-10-13 20_27_34_582","f":44115,"l":"INFO","m":"Executed Lua script main.lua"}
+{"t":"2026-10-13 20_27_34_730","f":44115,"l":"INFO","m":"Loaded Lua script v035/lab35/ProbeAdapter.lua"}
+{"t":"2026-10-13 20_27_34_730","f":44115,"l":"INFO","m":"Loaded Lua script v035/lab35/Ids.lua"}
+{"t":"2026-10-13 20_27_34_733","f":44115,"l":"ERROR","m":"Could not find resource Cube/Day/DaySpecularHDR.dds"}
+{"t":"2026-10-13 20_27_34_734","f":44115,"l":"INFO","m":"Loaded Lua script v035/lab35/MeshContract.lua"}
+{"t":"2026-10-13 20_27_35_191","f":44115,"l":"ERROR","m":"Execute Lua function failed: [string \"v035/lab35/NativeHost\"]:72: native camera does not reproduce cloud anchor projections\nstack traceback:\n\t[C]: in function 'assert'\n\t[string \"v035/lab35/NativeHost\"]:72: in upvalue 'calibrateCamera'\n\t[string \"v035/lab35/NativeHost\"]:176: in function 'Start'"}
+{"t":"2026-10-13 20_27_35_192","f":44115,"l":"INFO","m":"UrhoXRuntime: Game started successfully"}
+{"t":"2026-10-13 20_27_43_612","f":45002,"l":"INFO","m":"Graphics resized: 1920x991 (logic=1920x991, dpr=1.000000)"}
+{"t":"2026-10-13 20_27_43_866","f":45003,"l":"INFO","m":"BXLOG:C:\\actions-runner\\_work\\urhox\\urhox\\engine\\Source\\ThirdParty\\bgfx-all\\bgfx\\src\\dxgi.cpp (747): LOG Resize Display Width: 1920, Height: 1080, RefreshRate: 60001/1000\n"}
+{"t":"2026-10-13 20_27_49_254","f":45367,"l":"INFO","m":"Graphics resized: 1304x734 (logic=1304x734, dpr=1.000000)"}
+{"t":"2026-10-13 20_27_49_725","f":45368,"l":"INFO","m":"BXLOG:C:\\actions-runner\\_work\\urhox\\urhox\\engine\\Source\\ThirdParty\\bgfx-all\\bgfx\\src\\dxgi.cpp (747): LOG Resize Display Width: 1280, Height: 720, RefreshRate: 60001/1000\n"}

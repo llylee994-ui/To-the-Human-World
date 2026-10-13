@@ -1,0 +1,23 @@
+{
+  "timestampUtc": "2026-10-13T13:34:58.709795+00:00",
+  "status": "BLOCKED",
+  "officialFlow": "current c1/library resolved-reference materialization",
+  "preparePart01": "succeeded; signed transfer only, no workspace_path",
+  "destination": "D:\\taptap\\To-the-Human-World-3D-Lab",
+  "python": "3.13.2 Windows",
+  "setxattrAvailable": false,
+  "browserDownloadToolAvailable": false,
+  "newByteTransferAttempted": false,
+  "reason": "Current official helper requires os.setxattr, unavailable in this Windows Python. No updated supported Windows fallback was exposed.",
+  "notDone": [
+    "no helper patch",
+    "no raw URL transfer",
+    "no system browser/input",
+    "no repeated failing transfer"
+  ],
+  "missingParts": [
+    "D3-v035-full-part-05-of-07.zip",
+    "D3-v035-full-part-06-of-07.zip",
+    "D3-v035-full-part-07-of-07.zip"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "localPath": "D:\\taptap\\To-the-Human-World-3D-Lab\\docs\\D3-v035-full-entry-ready-report.md",
+  "libraryResult": {
+    "operation": "create_library_file",
+    "status": "succeeded",
+    "path": "/D3-v035-full-entry-ready-report.md",
+    "file_id": "file_000000001e7c82308f654b0ad0e93f02",
+    "library_file_id": "libfile_871512b779a48191b085b12da3a30355",
+    "file_name": "D3-v035-full-entry-ready-report.md",
+    "current_version_number": 0,
+    "restored_from_version_number": null,
+    "xattrs": [
+      {
+        "name": "user.library-file-version",
+        "value": "0"
+      }
+    ],
+    "directory_id": "libdir_c5d4f2edd6408191a7845dbbdc03151a",
+    "mime_type": "text/markdown",
+    "library_artifact_type": "report",
+    "file_size_bytes": 8888,
+    "external_connectors_accessed": false
+  },
+  "metadataResult": {
+    "chunk_id": "12d045",
+    "wall_time_seconds": 0.871809434,
+    "exit_code": 1,
+    "original_token_count": 254,
+    "output": "Traceback (most recent call last):\r\n  File \"D:\\taptap\\To-the-Human-World-3D-Lab\\tools\\library-v035-ready-20261013\\library_file_transfer.py\", line 303, in <module>\r\n    raise SystemExit(main(sys.argv[1:]))\r\n                     ~~~~^^^^^^^^^^^^^^\r\n  File \"D:\\taptap\\To-the-Human-World-3D-Lab\\tools\\library-v035-ready-20261013\\library_file_transfer.py\", line 288, in main\r\n    materializer.apply_xattrs(\r\n    ~~~~~~~~~~~~~~~~~~~~~~~~~^\r\n        include_library_file_id_xattr(\r\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n    ...<3 lines>...\r\n        args.path,\r\n        ^^^^^^^^^^\r\n    )\r\n    ^\r\n  File \"D:\\taptap\\To-the-Human-World-3D-Lab\\tools\\library-v035-ready-20261013\\library_file_transfer.py\", line 246, in apply_xattrs\r\n    xattr.apply(path)\r\n    ~~~~~~~~~~~^^^^^^\r\n  File \"D:\\taptap\\To-the-Human-World-3D-Lab\\tools\\library-v035-ready-20261013\\library_file_transfer.py\", line 64, in apply\r\n    os.setxattr(path, self.name, encoded_value)\r\n    ^^^^^^^^^^^\r\nAttributeError: module 'os' has no attribute 'setxattr'\r\n"
+  }
+}

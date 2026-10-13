@@ -1,0 +1,25 @@
+# Machine-local binding, runtime and preview state
+/.maker-mcp/
+/.preview-home/
+/.runtime/
+/.emmylua/
+# Temporary downloads, uploader work areas and old independent checkout
+/tools/tmp/
+/tools/library-*/
+/deliverables/github-checkout/
+# Original archives remain locally; unpacked source and runtime assets are versioned
+/D3-*.zip
+/deliverables/*.zip
+# Generated logs and live process sampling remain locally
+*.log
+**/observer.jsonl
+__pycache__/
+*.py[cod]
+# Local secrets and OS/editor state
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+Thumbs.db
+.DS_Store

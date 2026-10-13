@@ -1,0 +1,36 @@
+{
+  "collected_utc": "2026-10-12T05:11:06.912080+00:00",
+  "session_id": "d153d266-b9fd-439c-8972-00b053353170",
+  "reload_id": 0,
+  "state": "running",
+  "native_qa": [],
+  "pass_count": 0,
+  "failures": [],
+  "complete": false,
+  "frame_logs": [
+    "[lua] [2026-10-12 13_09_53_206][1597][Script] [D3-LAB frame] camera=Home moving=false frames=567 meanMs=8.83 worstMs=88.87 resolution=960x540 memoryWrites=0",
+    "[lua] [2026-10-12 13_09_58_210][1892][Script] [D3-LAB frame] camera=Home moving=false frames=295 meanMs=16.96 worstMs=37.81 resolution=960x540 memoryWrites=0",
+    "[lua] [2026-10-12 13_10_03_220][2189][Script] [D3-LAB frame] camera=Home moving=false frames=297 meanMs=16.86 worstMs=18.45 resolution=960x540 memoryWrites=0",
+    "[lua] [2026-10-12 13_10_08_226][2481][Script] [D3-LAB frame] camera=Home moving=false frames=292 meanMs=17.15 worstMs=51.39 resolution=960x540 memoryWrites=0",
+    "[lua] [2026-10-12 13_10_13_237][2775][Script] [D3-LAB frame] camera=Home moving=false frames=294 meanMs=17.04 worstMs=43.35 resolution=960x540 memoryWrites=0",
+    "[lua] [2026-10-12 13_10_18_255][3070][Script] [D3-LAB frame] camera=Home moving=false frames=295 meanMs=17.01 worstMs=40.14 resolution=960x540 memoryWrites=0",
+    "[lua] [2026-10-12 13_10_23_272][3365][Script] [D3-LAB frame] camera=Home moving=false frames=295 meanMs=17.01 worstMs=37.00 resolution=960x540 memoryWrites=0",
+    "[lua] [2026-10-12 13_10_28_276][3656][Script] [D3-LAB frame] camera=Home moving=false frames=291 meanMs=17.19 worstMs=40.88 resolution=960x540 memoryWrites=0",
+    "[lua] [2026-10-12 13_10_33_296][3950][Script] [D3-LAB frame] camera=Home moving=false frames=294 meanMs=17.05 worstMs=38.38 resolution=960x540 memoryWrites=0",
+    "[lua] [2026-10-12 13_10_38_297][4247][Script] [D3-LAB frame] camera=Home moving=false frames=297 meanMs=16.86 worstMs=18.93 resolution=960x540 memoryWrites=0",
+    "[lua] [2026-10-12 13_10_43_310][4541][Script] [D3-LAB frame] camera=Home moving=false frames=294 meanMs=17.05 worstMs=42.88 resolution=960x540 memoryWrites=0",
+    "[lua] [2026-10-12 13_10_48_311][4835][Script] [D3-LAB frame] camera=Home moving=false frames=294 meanMs=17.01 worstMs=40.87 resolution=960x540 memoryWrites=0",
+    "[lua] [2026-10-12 13_10_53_326][5130][Script] [D3-LAB frame] camera=Home moving=false frames=295 meanMs=17.00 worstMs=35.68 resolution=960x540 memoryWrites=0",
+    "[lua] [2026-10-12 13_10_58_328][5422][Script] [D3-LAB frame] camera=Home moving=false frames=292 meanMs=17.13 worstMs=39.46 resolution=960x540 memoryWrites=0",
+    "[lua] [2026-10-12 13_11_03_332][5717][Script] [D3-LAB frame] camera=Home moving=false frames=295 meanMs=16.96 worstMs=39.41 resolution=960x540 memoryWrites=0"
+  ],
+  "errors": [
+    "[2026-10-12 13_09_38_905][0] ERROR: Could not find resource Cube/Day/DaySpecularHDR.dds",
+    "[2026-10-12 13_09_39_172][0] ERROR: Can not load themis_x64.dll.",
+    "[2026-10-12 13_09_48_201][1030] ERROR: Could not find resource Cube/Day/DaySpecularHDR.dds",
+    "[2026-10-12 13_09_48_202][1030] ERROR: Could not find resource Cube/Dusk/DuskSpecularHDR.dds"
+  ],
+  "unparsed_qa": [],
+  "redacted_qa_headers": [],
+  "limitations": "Program-driven adapter and actual UI callbacks, not human input or full native UI event dispatch. Continuous still frames do not prove smooth playback."
+}

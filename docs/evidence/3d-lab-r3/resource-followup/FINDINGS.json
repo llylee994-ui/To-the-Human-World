@@ -1,0 +1,20 @@
+{
+  "utc": "2026-10-12T05:32:27.127682+00:00",
+  "application_fix": {
+    "file": "scripts/lab/SceneView.lua",
+    "detail": "Clone Dusk XML in memory and replace exactly one missing Env Spec Texture reference with official QualityLow DDS, proven loadable by native ResourceProbe. Installed XML and public cache are unchanged.",
+    "native_retest": "in progress"
+  },
+  "remaining": {
+    "DaySpecularHDR.dds": "Requested at engine bootstrap before app Lua, and when Zone is first created. Cannot repair that pre-Lua request through app configuration. QualityLow asset exists.",
+    "themis_x64.dll": "Dynamically loaded engine SDK string is present, not a static PE import, not bundled in the eight-file official runtime archive. Tested local gameplay runs despite load failure. Exact SDK purpose/publishing impact undocumented; no dummy DLL or install."
+  },
+  "privacy": {
+    "original_install_logs": "Four known first-session game/lua logs remain in the original Runtime install directory; no deletion or alteration.",
+    "credential_pattern_scan": "No matches for tested access-token/password/API-key/JWT/Bearer patterns. This is not proof of no sensitive data.",
+    "sensitive_content": "Game logs contain Windows user paths, GPU details and loopback preview URLs with opaque 64-character path segments. Raw logs are not uploaded or committed; exact opaque values are not copied to reports.",
+    "related_User_ResCache": "Metadata only inspected for attribution. User-state/credential file contents not read.",
+    "scope": "Read-only audit of task-owned known logs; unrelated user state cannot be attributed by timestamp alone."
+  },
+  "temporary_probe_removed_from_start": true
+}

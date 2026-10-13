@@ -1,0 +1,54 @@
+{
+  "local_path": "D:\\taptap\\To-the-Human-World-3D-Lab\\REPORT.md",
+  "raw": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Action completed."
+      }
+    ],
+    "structuredContent": {
+      "operation": "replace_library_file",
+      "status": "succeeded",
+      "path": "/REPORT.md",
+      "file_id": "file_00000000b9588207b493f033981fe2da",
+      "library_file_id": "libfile_2b7899edaabc819199c5b25a46bd693c",
+      "file_name": "REPORT.md",
+      "current_version_number": 1,
+      "restored_from_version_number": null,
+      "xattrs": [
+        {
+          "name": "user.library-file-version",
+          "value": "1"
+        }
+      ],
+      "directory_id": "libdir_c5d4f2edd6408191a7845dbbdc03151a",
+      "mime_type": "text/markdown",
+      "library_artifact_type": "other",
+      "file_size_bytes": 10366,
+      "external_connectors_accessed": false
+    },
+    "isError": false
+  },
+  "metadata": {
+    "operation": "replace_library_file",
+    "status": "succeeded",
+    "path": "/REPORT.md",
+    "file_id": "file_00000000b9588207b493f033981fe2da",
+    "library_file_id": "libfile_2b7899edaabc819199c5b25a46bd693c",
+    "file_name": "REPORT.md",
+    "current_version_number": 1,
+    "restored_from_version_number": null,
+    "xattrs": [
+      {
+        "name": "user.library-file-version",
+        "value": "1"
+      }
+    ],
+    "directory_id": "libdir_c5d4f2edd6408191a7845dbbdc03151a",
+    "mime_type": "text/markdown",
+    "library_artifact_type": "other",
+    "file_size_bytes": 10366,
+    "external_connectors_accessed": false
+  }
+}

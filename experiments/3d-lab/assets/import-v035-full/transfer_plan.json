@@ -1,0 +1,23 @@
+{
+  "expectedPartCount": 7,
+  "expectedPartNames": [
+    "D3-v035-full-part-01-of-07.zip",
+    "D3-v035-full-part-02-of-07.zip",
+    "D3-v035-full-part-03-of-07.zip",
+    "D3-v035-full-part-04-of-07.zip",
+    "D3-v035-full-part-05-of-07.zip",
+    "D3-v035-full-part-06-of-07.zip",
+    "D3-v035-full-part-07-of-07.zip"
+  ],
+  "payloadHashManifest": "SHA256.json",
+  "instructions": [
+    "Download all seven ZIPs to the Lab project root.",
+    "Verify the complete part-name set before extracting.",
+    "Use a new empty staging directory experiments/3d-lab/assets/import-v035-full/.",
+    "Each archive contains complementary relative paths. Extract ALL to the same staging directory, preserving meshes/.",
+    "Reject absolute paths, .. path traversal and unexpected overlapping file paths. Do not overwrite unrelated project files.",
+    "Validate every file against SHA256.json from part01; stop if any file is missing or differs.",
+    "No scripts need to be run merely to extract or load the data."
+  ],
+  "completeZipAlternative": "D3-v035-complete-CustomGeometry.zip provides the same payload in one archive; do not combine complete ZIP with partial set."
+}

@@ -1,0 +1,22 @@
+{
+  "collected_utc": "2026-10-12T04:55:00.113489+00:00",
+  "session_id": "9148828c-4727-49f8-9f2b-41b66fcf1d0b",
+  "reload_id": 3,
+  "state": "stopped",
+  "native_qa": [],
+  "pass_count": 0,
+  "failures": [],
+  "complete": false,
+  "frame_logs": [
+    "[lua] [2026-10-12 12_54_35_245][791][Script] [D3-LAB frame] camera=Home moving=false frames=286 meanMs=17.51 worstMs=79.87 resolution=960x540 memoryWrites=0",
+    "[lua] [2026-10-12 12_54_40_252][1087][Script] [D3-LAB frame] camera=Home moving=false frames=296 meanMs=16.91 worstMs=20.22 resolution=960x540 memoryWrites=0"
+  ],
+  "errors": [
+    "[2026-10-12 12_54_19_675][0] ERROR: Could not find resource Cube/Day/DaySpecularHDR.dds",
+    "[2026-10-12 12_54_19_885][0] ERROR: Can not load themis_x64.dll.",
+    "[2026-10-12 12_54_30_207][505] ERROR: Could not find resource Cube/Day/DaySpecularHDR.dds",
+    "[2026-10-12 12_54_30_208][505] ERROR: Could not find resource Cube/Dusk/DuskSpecularHDR.dds"
+  ],
+  "unparsed_qa": [],
+  "limitations": "Program-driven adapter and actual UI callbacks, not human input or full native UI event dispatch. Continuous still frames do not prove smooth playback."
+}

@@ -1,0 +1,127 @@
+{
+  "anchor": {
+    "id": "home.caseFile",
+    "target": "case",
+    "position": [
+      4.162626266479492,
+      -0.2161504626274109,
+      1.8659999370574951
+    ],
+    "screenAnchor": [
+      0.9617416858673096,
+      0.8612588196992874
+    ],
+    "shape": "camera_facing_quad",
+    "renderVisible": false,
+    "status": "candidate anchor, not validated collider",
+    "note": "Independent interaction proxy; target assets absent in probe except stove/ship. Case-file binding is only proposed.",
+    "screenSize": [
+      0.07,
+      0.12
+    ],
+    "proxyMeshId": "proxy_home.caseFile",
+    "visibleMeshIds": [
+      "full_group_044_000"
+    ]
+  },
+  "anchorDistance": 6.211961881440417,
+  "nearestHits": [
+    {
+      "mesh": "full_group_017_000",
+      "distance": 5.924599205554549,
+      "differenceFromProxy": -0.28736267588586806,
+      "material": "full_mat_017",
+      "ownedByCase": false,
+      "hitPoint": [
+        4.1273475089124,
+        -0.48370884622702714,
+        1.9647178590492467
+      ]
+    },
+    {
+      "mesh": "full_group_044_000",
+      "distance": 5.951721367108468,
+      "differenceFromProxy": -0.26024051433194906,
+      "material": "full_mat_044",
+      "ownedByCase": true,
+      "hitPoint": [
+        4.130677225129743,
+        -0.4584558738891147,
+        1.9554005619428163
+      ]
+    },
+    {
+      "mesh": "full_group_012_003",
+      "distance": 6.260270566843315,
+      "differenceFromProxy": 0.048308685402897567,
+      "material": "full_mat_012",
+      "ownedByCase": false,
+      "hitPoint": [
+        4.168556996333186,
+        -0.1711710868599221,
+        1.8494044170498052
+      ]
+    },
+    {
+      "mesh": "full_group_012_002",
+      "distance": 6.266037285153982,
+      "differenceFromProxy": 0.054075403713564896,
+      "material": "full_mat_012",
+      "ownedByCase": false,
+      "hitPoint": [
+        4.169264961125805,
+        -0.16580179585815902,
+        1.8474233718546142
+      ]
+    },
+    {
+      "mesh": "full_group_010_000",
+      "distance": 6.287646329967711,
+      "differenceFromProxy": 0.07568444852729339,
+      "material": "full_mat_010",
+      "ownedByCase": false,
+      "hitPoint": [
+        4.171917846546258,
+        -0.14568199051576602,
+        1.8399999999999999
+      ]
+    },
+    {
+      "mesh": "full_group_021_000",
+      "distance": 9.652401813530721,
+      "differenceFromProxy": 3.440439932090304,
+      "material": "full_mat_021",
+      "ownedByCase": false,
+      "hitPoint": [
+        4.585,
+        2.987183248906014,
+        0.6841029499613365
+      ]
+    },
+    {
+      "mesh": "full_group_009_000",
+      "distance": 9.875601080761216,
+      "differenceFromProxy": 3.663639199320799,
+      "material": "full_mat_009",
+      "ownedByCase": false,
+      "hitPoint": [
+        4.612401585169344,
+        3.1950001999999973,
+        0.6074271333015999
+      ]
+    },
+    {
+      "mesh": "full_group_056_000",
+      "distance": 96.36802272159532,
+      "differenceFromProxy": 90.15606084015491,
+      "material": "full_mat_056",
+      "ownedByCase": false,
+      "hitPoint": [
+        15.230847996315745,
+        83.72658787573991,
+        -29.10538127543107
+      ]
+    }
+  ],
+  "scope": "offline exact source ray, not native octree"
+}

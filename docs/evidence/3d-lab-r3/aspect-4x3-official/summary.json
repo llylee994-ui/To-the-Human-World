@@ -1,0 +1,539 @@
+{
+  "collected_utc": "2026-10-12T04:53:22.199917+00:00",
+  "session_id": "9148828c-4727-49f8-9f2b-41b66fcf1d0b",
+  "reload_id": 2,
+  "state": "running",
+  "native_qa": [
+    {
+      "status": "ENABLED",
+      "detail": "",
+      "height": 630,
+      "writes": 0,
+      "name": "explicit QA config; one session; no OS input",
+      "width": 840,
+      "utc": "2026-10-12T04:50:26Z",
+      "camera": "Home",
+      "panel": false
+    },
+    {
+      "status": "BEGIN",
+      "detail": "",
+      "height": 630,
+      "writes": 0,
+      "name": "Aspect setup real Receive",
+      "width": 840,
+      "utc": "2026-10-12T04:50:34Z",
+      "camera": "Home",
+      "panel": false
+    },
+    {
+      "status": "PASS",
+      "detail": "",
+      "height": 630,
+      "writes": 2,
+      "name": "aspect setup Receive",
+      "width": 840,
+      "utc": "2026-10-12T04:50:34Z",
+      "camera": "Home",
+      "panel": false
+    },
+    {
+      "status": "PASS",
+      "detail": "",
+      "height": 630,
+      "writes": 4,
+      "name": "aspect setup Read",
+      "width": 840,
+      "utc": "2026-10-12T04:50:34Z",
+      "camera": "Home",
+      "panel": false
+    },
+    {
+      "status": "BEGIN",
+      "detail": "",
+      "height": 630,
+      "writes": 4,
+      "name": "aspect 840x630",
+      "width": 840,
+      "utc": "2026-10-12T04:50:37Z",
+      "camera": "Home",
+      "panel": false
+    },
+    {
+      "status": "BEGIN",
+      "detail": "",
+      "height": 630,
+      "writes": 4,
+      "name": "aspect Home targets",
+      "width": 840,
+      "utc": "2026-10-12T04:50:42Z",
+      "camera": "Home",
+      "panel": false
+    },
+    {
+      "status": "PASS",
+      "detail": "",
+      "height": 630,
+      "writes": 4,
+      "name": "exact native dimensions",
+      "width": 840,
+      "utc": "2026-10-12T04:50:42Z",
+      "camera": "Home",
+      "panel": false
+    },
+    {
+      "status": "PASS",
+      "detail": {
+        "x": 0.24064287543296814,
+        "y": 0.5256351828575134
+      },
+      "height": 630,
+      "writes": 4,
+      "name": "visible native projected target home.net",
+      "width": 840,
+      "utc": "2026-10-12T04:50:42Z",
+      "camera": "Home",
+      "panel": false
+    },
+    {
+      "status": "PASS",
+      "detail": "",
+      "height": 630,
+      "writes": 4,
+      "name": "aspect pick home.net",
+      "width": 840,
+      "utc": "2026-10-12T04:50:42Z",
+      "camera": "Home",
+      "panel": false
+    },
+    {
+      "status": "PASS",
+      "detail": {
+        "x": 0.665605902671814,
+        "y": 0.5006083250045776
+      },
+      "height": 630,
+      "writes": 4,
+      "name": "visible native projected target home.stove",
+      "width": 840,
+      "utc": "2026-10-12T04:50:42Z",
+      "camera": "Home",
+      "panel": false
+    },
+    {
+      "status": "PASS",
+      "detail": "",
+      "height": 630,
+      "writes": 4,
+      "name": "aspect pick home.stove",
+      "width": 840,
+      "utc": "2026-10-12T04:50:42Z",
+      "camera": "Home",
+      "panel": false
+    },
+    {
+      "status": "PASS",
+      "detail": {
+        "x": 0.3637905716896057,
+        "y": 0.4180508255958557
+      },
+      "height": 630,
+      "writes": 4,
+      "name": "visible native projected target home.merchantShip",
+      "width": 840,
+      "utc": "2026-10-12T04:50:42Z",
+      "camera": "Home",
+      "panel": false
+    },
+    {
+      "status": "PASS",
+      "detail": "",
+      "height": 630,
+      "writes": 4,
+      "name": "aspect pick home.merchantShip",
+      "width": 840,
+      "utc": "2026-10-12T04:50:42Z",
+      "camera": "Home",
+      "panel": false
+    },
+    {
+      "status": "PASS",
+      "detail": {
+        "x": 0.5407126545906067,
+        "y": 0.5627240538597107
+      },
+      "height": 630,
+      "writes": 4,
+      "name": "visible native projected target home.letterPaper",
+      "width": 840,
+      "utc": "2026-10-12T04:50:42Z",
+      "camera": "Home",
+      "panel": false
+    },
+    {
+      "status": "PASS",
+      "detail": "",
+      "height": 630,
+      "writes": 4,
+      "name": "aspect pick home.letterPaper",
+      "width": 840,
+      "utc": "2026-10-12T04:50:42Z",
+      "camera": "Home",
+      "panel": false
+    },
+    {
+      "status": "PASS",
+      "detail": {
+        "x": 0.5471932888031006,
+        "y": 0.6319539546966553
+      },
+      "height": 630,
+      "writes": 4,
+      "name": "visible native projected target home.drawer",
+      "width": 840,
+      "utc": "2026-10-12T04:50:42Z",
+      "camera": "Home",
+      "panel": false
+    },
+    {
+      "status": "PASS",
+      "detail": "",
+      "height": 630,
+      "writes": 4,
+      "name": "aspect pick home.drawer",
+      "width": 840,
+      "utc": "2026-10-12T04:50:42Z",
+      "camera": "Home",
+      "panel": false
+    },
+    {
+      "status": "PASS",
+      "detail": "",
+      "height": 630,
+      "writes": 4,
+      "name": "native pick home.letterPaper",
+      "width": 840,
+      "utc": "2026-10-12T04:50:42Z",
+      "camera": "Home",
+      "panel": false
+    },
+    {
+      "status": "PASS",
+      "detail": "",
+      "height": 630,
+      "writes": 4,
+      "name": "native pointer home.letterPaper",
+      "width": 840,
+      "utc": "2026-10-12T04:50:42Z",
+      "camera": "Home",
+      "panel": "reader"
+    },
+    {
+      "status": "BEGIN",
+      "detail": "",
+      "height": 630,
+      "writes": 4,
+      "name": "aspect reader scroll",
+      "width": 840,
+      "utc": "2026-10-12T04:50:49Z",
+      "camera": "Home",
+      "panel": "reader"
+    },
+    {
+      "status": "PASS",
+      "detail": 2054.704345703125,
+      "height": 630,
+      "writes": 4,
+      "name": "reader scroll has travel",
+      "width": 840,
+      "utc": "2026-10-12T04:50:49Z",
+      "camera": "Home",
+      "panel": "reader"
+    },
+    {
+      "status": "BEGIN",
+      "detail": "",
+      "height": 630,
+      "writes": 4,
+      "name": "aspect reader close",
+      "width": 840,
+      "utc": "2026-10-12T04:50:54Z",
+      "camera": "Home",
+      "panel": "reader"
+    },
+    {
+      "status": "PASS",
+      "detail": {
+        "x": 0.24064287543296814,
+        "y": 0.5256351828575134
+      },
+      "height": 630,
+      "writes": 4,
+      "name": "visible native projected target home.net",
+      "width": 840,
+      "utc": "2026-10-12T04:50:54Z",
+      "camera": "Home",
+      "panel": false
+    },
+    {
+      "status": "PASS",
+      "detail": "",
+      "height": 630,
+      "writes": 4,
+      "name": "native pick home.net",
+      "width": 840,
+      "utc": "2026-10-12T04:50:54Z",
+      "camera": "Home",
+      "panel": false
+    },
+    {
+      "status": "PASS",
+      "detail": "",
+      "height": 630,
+      "writes": 4,
+      "name": "native pointer home.net",
+      "width": 840,
+      "utc": "2026-10-12T04:50:54Z",
+      "camera": "Home",
+      "panel": false
+    },
+    {
+      "status": "BEGIN",
+      "detail": "",
+      "height": 630,
+      "writes": 4,
+      "name": "aspect Seaside",
+      "width": 840,
+      "utc": "2026-10-12T04:51:04Z",
+      "camera": "Seaside",
+      "panel": false
+    },
+    {
+      "status": "PASS",
+      "detail": "",
+      "height": 630,
+      "writes": 4,
+      "name": "aspect Seaside arrived",
+      "width": 840,
+      "utc": "2026-10-12T04:51:04Z",
+      "camera": "Seaside",
+      "panel": false
+    },
+    {
+      "status": "BEGIN",
+      "detail": "",
+      "height": 630,
+      "writes": 4,
+      "name": "aspect Brew",
+      "width": 840,
+      "utc": "2026-10-12T04:51:14Z",
+      "camera": "Home",
+      "panel": false
+    },
+    {
+      "status": "PASS",
+      "detail": {
+        "x": 0.665605902671814,
+        "y": 0.5006083250045776
+      },
+      "height": 630,
+      "writes": 4,
+      "name": "visible native projected target home.stove",
+      "width": 840,
+      "utc": "2026-10-12T04:51:14Z",
+      "camera": "Home",
+      "panel": false
+    },
+    {
+      "status": "PASS",
+      "detail": "",
+      "height": 630,
+      "writes": 4,
+      "name": "native pick home.stove",
+      "width": 840,
+      "utc": "2026-10-12T04:51:14Z",
+      "camera": "Home",
+      "panel": false
+    },
+    {
+      "status": "PASS",
+      "detail": "",
+      "height": 630,
+      "writes": 4,
+      "name": "native pointer home.stove",
+      "width": 840,
+      "utc": "2026-10-12T04:51:14Z",
+      "camera": "Home",
+      "panel": false
+    },
+    {
+      "status": "BEGIN",
+      "detail": "",
+      "height": 630,
+      "writes": 4,
+      "name": "aspect Brew return",
+      "width": 840,
+      "utc": "2026-10-12T04:51:23Z",
+      "camera": "Brew",
+      "panel": false
+    },
+    {
+      "status": "PASS",
+      "detail": "",
+      "height": 630,
+      "writes": 4,
+      "name": "aspect Brew arrived",
+      "width": 840,
+      "utc": "2026-10-12T04:51:23Z",
+      "camera": "Brew",
+      "panel": false
+    },
+    {
+      "status": "BEGIN",
+      "detail": "",
+      "height": 630,
+      "writes": 4,
+      "name": "Complete",
+      "width": 840,
+      "utc": "2026-10-12T04:51:32Z",
+      "camera": "Home",
+      "panel": false
+    },
+    {
+      "status": "PASS",
+      "detail": "",
+      "height": 630,
+      "writes": 4,
+      "name": "final navigation business invariant",
+      "width": 840,
+      "utc": "2026-10-12T04:51:32Z",
+      "camera": "Home",
+      "panel": false
+    },
+    {
+      "status": "PASS",
+      "detail": "",
+      "height": 630,
+      "writes": 4,
+      "name": "formal save path denied",
+      "width": 840,
+      "utc": "2026-10-12T04:51:32Z",
+      "camera": "Home",
+      "panel": false
+    },
+    {
+      "status": "PASS",
+      "detail": "",
+      "height": 630,
+      "writes": 4,
+      "name": "memory only save_d3_lab_r3_a.commit",
+      "width": 840,
+      "utc": "2026-10-12T04:51:32Z",
+      "camera": "Home",
+      "panel": false
+    },
+    {
+      "status": "PASS",
+      "detail": "",
+      "height": 630,
+      "writes": 4,
+      "name": "memory only save_d3_lab_r3_b.commit",
+      "width": 840,
+      "utc": "2026-10-12T04:51:32Z",
+      "camera": "Home",
+      "panel": false
+    },
+    {
+      "status": "PASS",
+      "detail": "",
+      "height": 630,
+      "writes": 4,
+      "name": "memory only save_d3_lab_r3.json",
+      "width": 840,
+      "utc": "2026-10-12T04:51:32Z",
+      "camera": "Home",
+      "panel": false
+    },
+    {
+      "status": "PASS",
+      "detail": "",
+      "height": 630,
+      "writes": 4,
+      "name": "memory only save_d3_lab_r3_a.json",
+      "width": 840,
+      "utc": "2026-10-12T04:51:32Z",
+      "camera": "Home",
+      "panel": false
+    },
+    {
+      "status": "PASS",
+      "detail": "",
+      "height": 630,
+      "writes": 4,
+      "name": "memory only save_d3_lab_r3_b.json",
+      "width": 840,
+      "utc": "2026-10-12T04:51:32Z",
+      "camera": "Home",
+      "panel": false
+    },
+    {
+      "status": "COMPLETE",
+      "detail": "",
+      "height": 630,
+      "writes": 4,
+      "name": "native program-driven suite; human input not tested",
+      "width": 840,
+      "utc": "2026-10-12T04:51:32Z",
+      "camera": "Home",
+      "panel": false
+    }
+  ],
+  "pass_count": 31,
+  "failures": [],
+  "complete": true,
+  "frame_logs": [
+    "[lua] [2026-10-12 12_50_31_062][801][Script] [D3-LAB frame] camera=Home moving=false frames=285 meanMs=17.58 worstMs=85.69 resolution=840x630 memoryWrites=0",
+    "[lua] [2026-10-12 12_50_36_065][1094][Script] [D3-LAB frame] camera=Home moving=false frames=293 meanMs=17.07 worstMs=33.07 resolution=840x630 memoryWrites=4",
+    "[lua] [2026-10-12 12_50_41_075][1382][Script] [D3-LAB frame] camera=Home moving=false frames=288 meanMs=17.39 worstMs=45.61 resolution=840x630 memoryWrites=4",
+    "[lua] [2026-10-12 12_50_46_089][1673][Script] [D3-LAB frame] camera=Home moving=false frames=291 meanMs=17.23 worstMs=41.72 resolution=840x630 memoryWrites=4",
+    "[lua] [2026-10-12 12_50_51_101][1968][Script] [D3-LAB frame] camera=Home moving=false frames=295 meanMs=16.99 worstMs=37.92 resolution=840x630 memoryWrites=4",
+    "[lua] [2026-10-12 12_50_56_117][2262][Script] [D3-LAB frame] camera=Home moving=true frames=294 meanMs=17.06 worstMs=44.26 resolution=840x630 memoryWrites=4",
+    "[lua] [2026-10-12 12_51_01_127][2555][Script] [D3-LAB frame] camera=Seaside moving=false frames=293 meanMs=17.09 worstMs=49.69 resolution=840x630 memoryWrites=4",
+    "[lua] [2026-10-12 12_51_06_133][2849][Script] [D3-LAB frame] camera=Seaside moving=true frames=294 meanMs=17.02 worstMs=38.94 resolution=840x630 memoryWrites=4",
+    "[lua] [2026-10-12 12_51_11_143][3140][Script] [D3-LAB frame] camera=Home moving=false frames=291 meanMs=17.22 worstMs=47.56 resolution=840x630 memoryWrites=4",
+    "[lua] [2026-10-12 12_51_16_150][3435][Script] [D3-LAB frame] camera=Brew moving=false frames=295 meanMs=16.97 worstMs=26.60 resolution=840x630 memoryWrites=4",
+    "[lua] [2026-10-12 12_51_21_156][3727][Script] [D3-LAB frame] camera=Brew moving=false frames=292 meanMs=17.14 worstMs=40.58 resolution=840x630 memoryWrites=4",
+    "[lua] [2026-10-12 12_51_26_166][4021][Script] [D3-LAB frame] camera=Home moving=false frames=294 meanMs=17.03 worstMs=43.92 resolution=840x630 memoryWrites=4",
+    "[lua] [2026-10-12 12_51_31_180][4314][Script] [D3-LAB frame] camera=Home moving=false frames=293 meanMs=17.12 worstMs=44.26 resolution=840x630 memoryWrites=4",
+    "[lua] [2026-10-12 12_51_36_193][4607][Script] [D3-LAB frame] camera=Home moving=false frames=293 meanMs=17.10 worstMs=40.20 resolution=840x630 memoryWrites=4",
+    "[lua] [2026-10-12 12_51_41_208][4899][Script] [D3-LAB frame] camera=Home moving=false frames=292 meanMs=17.17 worstMs=41.62 resolution=840x630 memoryWrites=4",
+    "[lua] [2026-10-12 12_51_46_219][5192][Script] [D3-LAB frame] camera=Home moving=false frames=293 meanMs=17.10 worstMs=41.64 resolution=840x630 memoryWrites=4",
+    "[lua] [2026-10-12 12_51_51_233][5489][Script] [D3-LAB frame] camera=Home moving=false frames=297 meanMs=16.88 worstMs=19.28 resolution=840x630 memoryWrites=4",
+    "[lua] [2026-10-12 12_51_56_249][5782][Script] [D3-LAB frame] camera=Home moving=false frames=293 meanMs=17.11 worstMs=41.42 resolution=840x630 memoryWrites=4",
+    "[lua] [2026-10-12 12_52_01_259][6076][Script] [D3-LAB frame] camera=Home moving=false frames=294 meanMs=17.04 worstMs=39.01 resolution=840x630 memoryWrites=4",
+    "[lua] [2026-10-12 12_52_06_270][6370][Script] [D3-LAB frame] camera=Home moving=false frames=294 meanMs=17.04 worstMs=42.91 resolution=840x630 memoryWrites=4",
+    "[lua] [2026-10-12 12_52_11_287][6665][Script] [D3-LAB frame] camera=Home moving=false frames=295 meanMs=17.00 worstMs=38.58 resolution=840x630 memoryWrites=4",
+    "[lua] [2026-10-12 12_52_16_297][6955][Script] [D3-LAB frame] camera=Home moving=false frames=290 meanMs=17.27 worstMs=46.68 resolution=840x630 memoryWrites=4",
+    "[lua] [2026-10-12 12_52_21_314][7249][Script] [D3-LAB frame] camera=Home moving=false frames=294 meanMs=17.06 worstMs=43.46 resolution=840x630 memoryWrites=4",
+    "[lua] [2026-10-12 12_52_26_316][7546][Script] [D3-LAB frame] camera=Home moving=false frames=297 meanMs=16.84 worstMs=17.50 resolution=840x630 memoryWrites=4",
+    "[lua] [2026-10-12 12_52_31_331][7839][Script] [D3-LAB frame] camera=Home moving=false frames=293 meanMs=17.11 worstMs=49.81 resolution=840x630 memoryWrites=4",
+    "[lua] [2026-10-12 12_52_36_337][8133][Script] [D3-LAB frame] camera=Home moving=false frames=294 meanMs=17.02 worstMs=38.94 resolution=840x630 memoryWrites=4",
+    "[lua] [2026-10-12 12_52_41_344][8426][Script] [D3-LAB frame] camera=Home moving=false frames=293 meanMs=17.09 worstMs=51.41 resolution=840x630 memoryWrites=4",
+    "[lua] [2026-10-12 12_52_46_345][8717][Script] [D3-LAB frame] camera=Home moving=false frames=291 meanMs=17.18 worstMs=39.79 resolution=840x630 memoryWrites=4",
+    "[lua] [2026-10-12 12_52_51_346][9010][Script] [D3-LAB frame] camera=Home moving=false frames=293 meanMs=17.07 worstMs=49.35 resolution=840x630 memoryWrites=4",
+    "[lua] [2026-10-12 12_52_56_353][9304][Script] [D3-LAB frame] camera=Home moving=false frames=294 meanMs=17.03 worstMs=39.65 resolution=840x630 memoryWrites=4",
+    "[lua] [2026-10-12 12_53_01_368][9601][Script] [D3-LAB frame] camera=Home moving=false frames=297 meanMs=16.88 worstMs=17.83 resolution=840x630 memoryWrites=4",
+    "[lua] [2026-10-12 12_53_06_376][9895][Script] [D3-LAB frame] camera=Home moving=false frames=294 meanMs=17.02 worstMs=46.05 resolution=840x630 memoryWrites=4",
+    "[lua] [2026-10-12 12_53_11_376][10189][Script] [D3-LAB frame] camera=Home moving=false frames=294 meanMs=17.01 worstMs=43.64 resolution=840x630 memoryWrites=4",
+    "[lua] [2026-10-12 12_53_16_393][10480][Script] [D3-LAB frame] camera=Home moving=false frames=291 meanMs=17.24 worstMs=44.76 resolution=840x630 memoryWrites=4",
+    "[lua] [2026-10-12 12_53_21_402][10773][Script] [D3-LAB frame] camera=Home moving=false frames=293 meanMs=17.09 worstMs=51.76 resolution=840x630 memoryWrites=4"
+  ],
+  "errors": [
+    "[2026-10-12 12_50_15_769][0] ERROR: Could not find resource Cube/Day/DaySpecularHDR.dds",
+    "[2026-10-12 12_50_15_942][0] ERROR: Can not load themis_x64.dll.",
+    "[2026-10-12 12_50_26_050][516] ERROR: Could not find resource Cube/Day/DaySpecularHDR.dds",
+    "[2026-10-12 12_50_26_050][516] ERROR: Could not find resource Cube/Dusk/DuskSpecularHDR.dds"
+  ],
+  "unparsed_qa": [],
+  "limitations": "Program-driven adapter and actual UI callbacks, not human input or full native UI event dispatch. Continuous still frames do not prove smooth playback."
+}

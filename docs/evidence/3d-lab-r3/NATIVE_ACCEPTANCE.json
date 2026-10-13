@@ -1,0 +1,71 @@
+{
+  "version": "D3-LAB-20261012-r3-v01",
+  "utc": "2026-10-12T04:57:21.594560+00:00",
+  "business_checks_passed": [
+    "Brew reached no auto brew",
+    "Seaside reached",
+    "UI consumed input blocked",
+    "body and requirement exist",
+    "cut creates exactly one card",
+    "drag input blocked",
+    "explicit Receive spends one",
+    "funds rejection atomic",
+    "modal blocks scene",
+    "native pick home.letterPaper",
+    "native pick home.merchantShip",
+    "native pick home.net",
+    "native pick home.stove",
+    "native pointer home.letterPaper",
+    "native pointer home.merchantShip",
+    "native pointer home.net",
+    "native pointer home.stove",
+    "navigation preserves state",
+    "purchase debits exact price",
+    "reader panel opened",
+    "reopen retains gap",
+    "repeat motion blocked",
+    "return Home",
+    "return preserves business",
+    "same span duplicate safe",
+    "schema3 and no startup writes",
+    "separate rim",
+    "stock rejection atomic",
+    "unknown purchase atomic",
+    "visible native projected target home.letterPaper",
+    "visible native projected target home.merchantShip",
+    "visible native projected target home.net",
+    "visible native projected target home.stove",
+    "wall occlusion blocks"
+  ],
+  "aspects": {
+    "16x9": {
+      "complete": true,
+      "pass_count": 31,
+      "session_id": "9148828c-4727-49f8-9f2b-41b66fcf1d0b",
+      "reload_id": 0
+    },
+    "21x9": {
+      "complete": true,
+      "pass_count": 31,
+      "session_id": "9148828c-4727-49f8-9f2b-41b66fcf1d0b",
+      "reload_id": 1
+    },
+    "4x3": {
+      "complete": true,
+      "pass_count": 31,
+      "session_id": "9148828c-4727-49f8-9f2b-41b66fcf1d0b",
+      "reload_id": 2
+    }
+  },
+  "default_no_automatic_business": true,
+  "formal_binding_sha256": "5f8318d48947e5f45f983d911f3e97d0f870ab4ab4505beea5db392eb7741b6f",
+  "performance": {
+    "mean_window_ms_min": 16.84,
+    "mean_window_ms_max": 17.58,
+    "worst_observed_timestep_ms": 85.69,
+    "windows": 119,
+    "scope": "5-second Update TimeStep aggregates while program-driven QA and own-window capture run; not GPU timing or smoothness proof."
+  },
+  "reference_pixels_viewed": false,
+  "overall": "PARTIAL_ACCEPTANCE_REFERENCE_AND_HUMAN_REVIEW_PENDING"
+}

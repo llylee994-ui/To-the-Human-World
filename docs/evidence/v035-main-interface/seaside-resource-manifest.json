@@ -1,0 +1,32 @@
+{
+  "sha": "1cd0cdbec06487a5c60f109d5fd477198cfc8846",
+  "copiedUtc": "2026-10-13T11:01:12.574098+00:00",
+  "files": [
+    {
+      "path": "assets/image/misty-harbor-r1/sea-calm.png",
+      "bytes": 2383298,
+      "sha256": "3b83aa68c34c5d00d3c85dfaf15259482f4c5930098687e4a7e4816c55ce7b18"
+    },
+    {
+      "path": "assets/image/misty-harbor-r1/dock-foreground.png",
+      "bytes": 548911,
+      "sha256": "a43cb9d75d69416be570e4f176f86a22977f1d929203251247440e71f613dea4"
+    },
+    {
+      "path": "assets/image/misty-harbor-r1/merchant-ship-muted.png",
+      "bytes": 1035489,
+      "sha256": "13220a898ea397b9381194d39573bc61f49e9b72929e01f6e20b56b4fba0d493"
+    },
+    {
+      "path": "assets/image/seaside-r1/bottle.png",
+      "bytes": 1310448,
+      "sha256": "c1a651c0644c967f3032467cce7d3776f9cfb0d480cf14ef1b2632aa33d95fa7"
+    },
+    {
+      "path": "assets/image/seaside-r1/net.png",
+      "bytes": 784956,
+      "sha256": "9eba8ff0ab25f9b1d71ddd02c8a434a2161fcc84182d3e0ea0ac24bf3c648e31"
+    }
+  ],
+  "purpose": "Unchanged pinned-main 2D SeasideView resources; NOT cloud Blender reference"
+}

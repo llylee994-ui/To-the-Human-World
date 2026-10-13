@@ -1,0 +1,25 @@
+{
+  "branch": "3d",
+  "stagedFiles": 2219,
+  "stagedBytes": 1082024539,
+  "fullRuntimeHashes": 150,
+  "pinnedMainModulesUnchanged": 80,
+  "noNestedRepository": true,
+  "credentialPatternFindings": 0,
+  "worktreeMatchesIndex": true,
+  "whitespaceCheckExit": 2,
+  "whitespaceWarnings": 59,
+  "firstWhitespaceWarnings": [
+    "docs/evidence/v035-main-interface/normal-map-engine-reference/PBRDiffNormal.xml:15: trailing whitespace.",
+    "docs/evidence/v035-main-interface/normal-map-engine-reference/PBRDiffNormalAlpha.xml:12: trailing whitespace.",
+    "docs/evidence/v035-main-interface/normal-map-engine-reference/PBRLitSolid.glsl:150: trailing whitespace.",
+    "docs/evidence/v035-main-interface/normal-map-engine-reference/PBRLitSolid.glsl:294: trailing whitespace.",
+    "references/engine/scaffold-3d-scene.lua:7: trailing whitespace.",
+    "references/engine/scaffold-3d-scene.lua:10: trailing whitespace.",
+    "references/engine/scaffold-3d-scene.lua:62: trailing whitespace.",
+    "references/engine/scaffold-3d-scene.lua:65: trailing whitespace."
+  ],
+  "gameTests": "paused by user; not rerun",
+  "push": "not requested; not performed",
+  "whitespaceNote": "CRLF bytes preserved and recognized. Remaining warnings are existing content; no unrelated whitespace rewrite."
+}

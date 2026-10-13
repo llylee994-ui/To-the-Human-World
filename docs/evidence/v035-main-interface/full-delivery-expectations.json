@@ -1,0 +1,85 @@
+{
+  "timestampUtc": "2026-10-13T13:36:52.036452+00:00",
+  "kind": "seven complementary independent ZIPs, no binary concatenation",
+  "expectedFilesAfterExtraction": 170,
+  "parts": [
+    {
+      "name": "D3-v035-full-part-01-of-07.zip",
+      "bytes": 17874896,
+      "sha256": "d533353faa9b58fced991bc89464a3e9137ebbf92c82f9635eed50a548ae971f",
+      "libraryFileId": "libfile_15e01d9a2b648191bff14b3bab795339",
+      "localPath": "D:\\taptap\\To-the-Human-World-3D-Lab\\D3-v035-full-part-01-of-07.zip",
+      "present": true,
+      "verified": true,
+      "actualBytes": 17874896,
+      "actualSha256": "d533353faa9b58fced991bc89464a3e9137ebbf92c82f9635eed50a548ae971f"
+    },
+    {
+      "name": "D3-v035-full-part-02-of-07.zip",
+      "bytes": 18802019,
+      "sha256": "a59b33b56d53911319d9dbd5fceeefcdc73c345f5303469cdbb3724568435dc1",
+      "libraryFileId": "libfile_7041105f4c60819195fe9a6d224f2619",
+      "localPath": "D:\\taptap\\To-the-Human-World-3D-Lab\\D3-v035-full-part-02-of-07.zip",
+      "present": true,
+      "verified": true,
+      "actualBytes": 18802019,
+      "actualSha256": "a59b33b56d53911319d9dbd5fceeefcdc73c345f5303469cdbb3724568435dc1"
+    },
+    {
+      "name": "D3-v035-full-part-03-of-07.zip",
+      "bytes": 18554523,
+      "sha256": "9403a1149d7547b09387249cb5a64345b6dd0d948a98775e54d51e53f26d194e",
+      "libraryFileId": "libfile_c3239d80f5d881919500a4b50df0f64c",
+      "localPath": "D:\\taptap\\To-the-Human-World-3D-Lab\\D3-v035-full-part-03-of-07.zip",
+      "present": true,
+      "verified": true,
+      "actualBytes": 18554523,
+      "actualSha256": "9403a1149d7547b09387249cb5a64345b6dd0d948a98775e54d51e53f26d194e"
+    },
+    {
+      "name": "D3-v035-full-part-04-of-07.zip",
+      "bytes": 18701724,
+      "sha256": "a843f78b305f9cc054cde3d83e252fdcab4a5beb9a11765c85fa256a731dad9c",
+      "libraryFileId": "libfile_51bd8b128b7c81918c973bd19113af24",
+      "localPath": "D:\\taptap\\To-the-Human-World-3D-Lab\\D3-v035-full-part-04-of-07.zip",
+      "present": true,
+      "verified": true,
+      "actualBytes": 18701724,
+      "actualSha256": "a843f78b305f9cc054cde3d83e252fdcab4a5beb9a11765c85fa256a731dad9c"
+    },
+    {
+      "name": "D3-v035-full-part-05-of-07.zip",
+      "bytes": 18404566,
+      "sha256": "9ca1f9eb1ebd2a06a383b05abb5dfa255772f985596b6acd4a4e40d2628142db",
+      "libraryFileId": "libfile_cba573edb7d08191ac7b98755d21349f",
+      "localPath": "D:\\taptap\\To-the-Human-World-3D-Lab\\D3-v035-full-part-05-of-07.zip",
+      "present": true,
+      "actualBytes": 18404566,
+      "actualSha256": "9ca1f9eb1ebd2a06a383b05abb5dfa255772f985596b6acd4a4e40d2628142db",
+      "verified": true
+    },
+    {
+      "name": "D3-v035-full-part-06-of-07.zip",
+      "bytes": 18772275,
+      "sha256": "ff61d682fdb816c6002701f161d6655767ba3b25c264eaa556091bbba4bba354",
+      "libraryFileId": "libfile_3e7a55aead648191af0e1a56594c0221",
+      "localPath": "D:\\taptap\\To-the-Human-World-3D-Lab\\D3-v035-full-part-06-of-07.zip",
+      "present": true,
+      "actualBytes": 18772275,
+      "actualSha256": "ff61d682fdb816c6002701f161d6655767ba3b25c264eaa556091bbba4bba354",
+      "verified": true
+    },
+    {
+      "name": "D3-v035-full-part-07-of-07.zip",
+      "bytes": 9282528,
+      "sha256": "388fa6211cce4e94383fef5b90e6831e403a92669b6a0afe4a4b939eddd3ec38",
+      "libraryFileId": "libfile_e43a5813166c81919a98a7cbe4272e44",
+      "localPath": "D:\\taptap\\To-the-Human-World-3D-Lab\\D3-v035-full-part-07-of-07.zip",
+      "present": true,
+      "actualBytes": 9282528,
+      "actualSha256": "388fa6211cce4e94383fef5b90e6831e403a92669b6a0afe4a4b939eddd3ec38",
+      "verified": true
+    }
+  ],
+  "allSevenVerified": true
+}

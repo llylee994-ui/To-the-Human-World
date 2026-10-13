@@ -1,0 +1,23 @@
+{
+  "sea-calm.png": "3b83aa68c34c5d00d3c85dfaf15259482f4c5930098687e4a7e4816c55ce7b18",
+  "uv_checker.png": "8e6eb8be19c785e9fd58db37ad58ab9a686c3bddeed421051331c6d32b3540e4",
+  "manifest.json": "9ccabe5692c52b1564abdbe38fce8a975190bddf7d36e4153a4bb338b3648c91",
+  "semantic_anchors.json": "8d16509bbaa4b27df9a475653029788b8cd192f98dae1701e2319dd5f23753ba",
+  "uv_checker_preview.png": "66393cff498408ab111ebba98d477e05588814daa9142958bb5797c7f68484df",
+  "validate_probe.py": "c0964912fa8f339f7b6c0d8352443822243a8c94f7bb855342ad847483254d70",
+  "mat_01_basecolor.png": "6298dfbad5ae15f7a5140fcf70767102f64de93fee34f48234a09459b9580776",
+  "add_proxies.py": "ba714ad9e0d59c91c4ca197612ddfeff467547ae34d54fc92bb3ff0b79c14858",
+  "main_constraints.json": "4ea6360e14353bb568b4678bdd16d047fbf749a782efd08819f6a00bdb240aab",
+  "mat_00_basecolor.png": "e165b1d1430eb20561acc39f988af34f30d3cfc267bef10232d8f10a8d25a4fb",
+  "merchant-ship-muted.png": "13220a898ea397b9381194d39573bc61f49e9b72929e01f6e20b56b4fba0d493",
+  "probe.json": "faea79aacf1f0815f3f86da39f7284f0bad4ede916f380df96072bbef9e6b6f0",
+  "schema.json": "ffdc589c52daf5a5dd3c2f6605ce3714e7ae97679a5112850527d4dd2721f320",
+  "validation.json": "7f0cbaaf3894504d3cd2f1fa73769fc9e6dfe414f7b2932e0bc4d2adb403901e",
+  "README.txt": "a4c1e19e2da3c1ed9c1136a5bc1cee593129f972e4ecbc767bc5ad3cd8fa26a8",
+  "export_probe.py": "e6f45afad2c6eaeb032ed2da76b54684f0095ae39755129f873a895f2ebf22cd",
+  "render_checker.py": "69a185c4e4eb16d3a22ca8c276008a0d3277978a9e35833139a5f0aab4ccd29a",
+  "mat_03_basecolor.png": "6c4afc346613dc0daa7965fef6661de1730e161c9ffbe079744a39dffab1e1c2",
+  "probe_preview.png": "412e3b510ca9ab721932778102df9abe9e80fff116abd00e93a275a05f538d81",
+  "mat_02_basecolor.png": "f58cc2af11d6dfed044c0c73355593a0b0ade6a60fbbc4ca302d73fa29603dd1",
+  "remove_degenerates.py": "a23269c91d00d6484f4744cb4f51ef46ddb2d1b77bfc7d64400fcfa73c9d3036"
+}

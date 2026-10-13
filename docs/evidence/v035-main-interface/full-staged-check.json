@@ -1,0 +1,107 @@
+{
+  "timestampUtc": "2026-10-13T15:42:40.958612+00:00",
+  "status": "PASS",
+  "nativeStarted": false,
+  "actualEntryInstalledWithoutStart": true,
+  "entry": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\main.lua",
+  "stageManifestFiles": 253,
+  "compiledLuaFiles": 88,
+  "runtimeResourceFiles": 150,
+  "runtimeResourceBytes": 316959873,
+  "meshFiles": 90,
+  "completeShipGeometry": [
+    {
+      "id": "full_group_057_000",
+      "triangles": 2,
+      "vertices": 4,
+      "sha256": "3fca25f59d0b5dd681d8633a1726d773262c0adf37df837bc84e2c1b5ec572e3"
+    }
+  ],
+  "semanticMappings": [
+    {
+      "id": "home.net",
+      "target": "seaside",
+      "label": "海边捕捞",
+      "visibleMeshIds": [
+        "full_group_019_000",
+        "full_group_022_000"
+      ]
+    },
+    {
+      "id": "home.merchantShip",
+      "target": "shop",
+      "label": "商队商店",
+      "visibleMeshIds": [
+        "full_group_057_000"
+      ]
+    },
+    {
+      "id": "home.letterPaper",
+      "target": "paper",
+      "label": "阅读信件",
+      "visibleMeshIds": [
+        "full_group_002_000",
+        "full_group_002_001",
+        "full_group_036_000"
+      ]
+    },
+    {
+      "id": "home.tray",
+      "target": "words",
+      "label": "分类词条",
+      "visibleMeshIds": [
+        "full_group_033_000",
+        "full_group_037_000",
+        "full_group_038_000"
+      ]
+    },
+    {
+      "id": "home.drawer",
+      "target": "letters",
+      "label": "来信抽屉",
+      "visibleMeshIds": [
+        "full_group_030_000",
+        "full_group_031_000"
+      ]
+    },
+    {
+      "id": "home.journal",
+      "target": "journal",
+      "label": "故事记录",
+      "visibleMeshIds": [
+        "full_group_028_000",
+        "full_group_034_000",
+        "full_group_040_000",
+        "full_group_041_000"
+      ]
+    },
+    {
+      "id": "home.caseFile",
+      "target": "case",
+      "label": "案件板",
+      "visibleMeshIds": [
+        "full_group_044_000"
+      ]
+    },
+    {
+      "id": "home.stove",
+      "target": "brew",
+      "label": "炼药工作区",
+      "visibleMeshIds": [
+        "full_group_029_000",
+        "full_group_032_000",
+        "full_group_035_000",
+        "full_group_042_000"
+      ]
+    }
+  ],
+  "pinnedMainModulesUnchanged": 80,
+  "availableCameraNames": [
+    "Home"
+  ],
+  "limitations": [
+    "Install registration only; Start, native APIs, UI rendering and GPU not run",
+    "Full package supplies Home camera only; separate runtime evidence validates original Brew/Seaside pages",
+    "This offline checker does not run official prepare; see native session evidence for actual prepare results"
+  ]
+}

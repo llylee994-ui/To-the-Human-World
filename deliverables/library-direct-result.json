@@ -1,0 +1,55 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "Action completed."
+    }
+  ],
+  "structuredContent": {
+    "results": [
+      {
+        "operation": "create_library_file",
+        "status": "succeeded",
+        "path": "/REPORT.md",
+        "file_id": "file_0000000095a482078b96b67a69cdd6d5",
+        "library_file_id": "libfile_2b7899edaabc819199c5b25a46bd693c",
+        "file_name": "REPORT.md",
+        "current_version_number": 0,
+        "restored_from_version_number": null,
+        "xattrs": [
+          {
+            "name": "user.library-file-version",
+            "value": "0"
+          }
+        ],
+        "directory_id": "libdir_c5d4f2edd6408191a7845dbbdc03151a",
+        "mime_type": "text/markdown",
+        "library_artifact_type": "other",
+        "file_size_bytes": 9113
+      },
+      {
+        "operation": "create_library_file",
+        "status": "succeeded",
+        "path": "/D3-LAB-20261012-r3-v01-review.zip",
+        "file_id": "file_0000000071548207aa38475097f13677",
+        "library_file_id": "libfile_a96a3b502d5c8191a8fab49a5d70d685",
+        "file_name": "D3-LAB-20261012-r3-v01-review.zip",
+        "current_version_number": 0,
+        "restored_from_version_number": null,
+        "xattrs": [
+          {
+            "name": "user.library-file-version",
+            "value": "0"
+          }
+        ],
+        "directory_id": "libdir_c5d4f2edd6408191a7845dbbdc03151a",
+        "mime_type": "application/zip",
+        "library_artifact_type": "other",
+        "file_size_bytes": 1270907
+      }
+    ],
+    "warnings": [],
+    "external_connectors_accessed": false
+  },
+  "isError": false
+}

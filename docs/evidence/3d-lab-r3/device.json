@@ -1,0 +1,40 @@
+{
+  "timestamp_utc": "2026-10-11T18:33:31.0890352Z",
+  "platform": "Microsoft Windows NT 10.0.26100.0",
+  "processors": [],
+  "graphics": [],
+  "native_lab_run": true,
+  "native_lab_resolution": null,
+  "native_lab_fps": null,
+  "hardware_query_status": "CPU CIM query unavailable. GPU/renderer and native dimensions are independently recorded from actual Runtime logs.",
+  "native_lab_resolutions": [
+    [
+      1304,
+      734
+    ],
+    [
+      960,
+      540
+    ],
+    [
+      1260,
+      540
+    ],
+    [
+      840,
+      630
+    ]
+  ],
+  "native_lab_frame_measurements": {
+    "mean_window_ms_min": 16.84,
+    "mean_window_ms_max": 17.58,
+    "worst_observed_timestep_ms": 85.69,
+    "windows": 119,
+    "scope": "5-second Update TimeStep aggregates while program-driven QA and own-window capture run; not GPU timing or smoothness proof."
+  },
+  "selected_gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "renderer": "Direct3D 11",
+  "hardware_source": "Native Runtime logs; CPU CIM query remains unavailable",
+  "engine": "bf3316fd2 / binary 1032014 / engine-res maker_validate_window.0923",
+  "updated_utc": "2026-10-12T04:57:21.594560+00:00"
+}

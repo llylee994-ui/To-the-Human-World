@@ -1,0 +1,32 @@
+{
+  "utc": "2026-10-12T06:00:48.175102+00:00",
+  "accepted": false,
+  "reason": "User explicitly rejected both original coarse art and Home Art A; retained only as history.",
+  "native_regression": "Paper target was blocked by tray rail; target-height repair exists in this archived source but is not yet natively reverified.",
+  "files": [
+    {
+      "path": "scripts\\lab\\HomeArt.lua",
+      "sha256": "38156477007f8866894dc2d7ab384fc4a41c731892647d84913f5341cbbb770e"
+    },
+    {
+      "path": "scripts\\lab\\ArtTextures.lua",
+      "sha256": "68a27e82bf3d7265a4cb4301bc2e2d5063be364a5d0833cf1f39afa4824bbe07"
+    },
+    {
+      "path": "scripts\\lab\\SceneView.lua",
+      "sha256": "54c2f81301604535b74ae28bb7b9e7caa22b0d096661d1b4135c0a8d340ec6b1"
+    },
+    {
+      "path": "scripts\\lab\\CameraRig.lua",
+      "sha256": "7bdb46ae574df1fbb8b0d0bfefa1b623eec1b80623a566ec10cdbb9780b0e3c4"
+    },
+    {
+      "path": "scripts\\lab\\World.lua",
+      "sha256": "edd5d810a6879d3ec86d902a6232622ff5e8fe98381b0c701ab61e558eb5ae2d"
+    },
+    {
+      "path": "scripts\\lab\\DuskPreset.lua",
+      "sha256": "175e6a49f6d2bf3b504921871aa8cf09b52fff6aa8b2eeb4087074217f236da1"
+    }
+  ]
+}

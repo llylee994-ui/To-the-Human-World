@@ -1,0 +1,6 @@
+{
+  "queryError": "Get-WinEvent: No events were found that match the specified selection criteria.\r\n",
+  "queriedUtc": "2026-10-13T12:43:18.3193622Z",
+  "events": [],
+  "count": 0
+}

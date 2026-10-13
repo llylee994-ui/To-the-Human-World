@@ -1,0 +1,995 @@
+[
+  {
+    "id": "full_mat_000",
+    "sourceMaterial": "Old polished brass",
+    "baseColorFactor": [
+      0.5299999713897705,
+      0.30000001192092896,
+      0.06499999761581421,
+      1.0
+    ],
+    "metallic": 0.7799999713897705,
+    "roughness": 0.25,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": []
+  },
+  {
+    "id": "full_mat_001",
+    "sourceMaterial": "Scissors tempered polished steel",
+    "baseColorFactor": [
+      0.4000000059604645,
+      0.46000000834465027,
+      0.4699999988079071,
+      1.0
+    ],
+    "metallic": 0.8299999833106995,
+    "roughness": 0.25999999046325684,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": []
+  },
+  {
+    "id": "full_mat_002",
+    "sourceMaterial": "Faded sepia letter ink physical print",
+    "baseColorFactor": [
+      0.07500000298023224,
+      0.03799999877810478,
+      0.014999999664723873,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.8999999761581421,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": []
+  },
+  {
+    "id": "full_mat_003",
+    "sourceMaterial": "Old polished brass",
+    "baseColorFactor": [
+      0.5299999713897705,
+      0.30000001192092896,
+      0.06499999761581421,
+      1.0
+    ],
+    "metallic": 0.7799999713897705,
+    "roughness": 0.25,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": []
+  },
+  {
+    "id": "full_mat_004",
+    "sourceMaterial": "Amber glass",
+    "baseColorFactor": [
+      0.75,
+      0.5,
+      0.17000000178813934,
+      0.07
+    ],
+    "metallic": 0.0,
+    "roughness": 0.07000000029802322,
+    "alphaMode": "BLEND",
+    "unlit": false,
+    "doubleSided": true,
+    "notes": [
+      "Approximate tinted alpha glass; no Blender refraction or Fresnel equivalence",
+      "Original shader mix reduced to dominant surface for runtime",
+      "Low-opacity approximation adjusted after JSON reconstruction; no physical refraction"
+    ]
+  },
+  {
+    "id": "full_mat_005",
+    "sourceMaterial": "Sea green blown glass",
+    "baseColorFactor": [
+      0.9100000262260437,
+      0.9700000286102295,
+      0.9300000071525574,
+      0.07
+    ],
+    "metallic": 0.0,
+    "roughness": 0.07000000029802322,
+    "alphaMode": "BLEND",
+    "unlit": false,
+    "doubleSided": true,
+    "notes": [
+      "Approximate tinted alpha glass; no Blender refraction or Fresnel equivalence",
+      "Original shader mix reduced to dominant surface for runtime",
+      "Low-opacity approximation adjusted after JSON reconstruction; no physical refraction"
+    ]
+  },
+  {
+    "id": "full_mat_006",
+    "sourceMaterial": "Blackened iron",
+    "baseColorFactor": [
+      0.024000000208616257,
+      0.017000000923871994,
+      0.012000000104308128,
+      1.0
+    ],
+    "metallic": 0.7300000190734863,
+    "roughness": 0.4300000071525574,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": []
+  },
+  {
+    "id": "full_mat_007",
+    "sourceMaterial": "Terracotta",
+    "baseColorFactor": [
+      1,
+      1,
+      1,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.8299999833106995,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": [],
+    "baseColorTexture": "full_mat_007_basecolor.png",
+    "normalTexture": "full_mat_007_normal.png"
+  },
+  {
+    "id": "full_mat_008",
+    "sourceMaterial": "Worn forest leather",
+    "baseColorFactor": [
+      1,
+      1,
+      1,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.5899999737739563,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": [],
+    "baseColorTexture": "full_mat_008_basecolor.png",
+    "normalTexture": "full_mat_008_normal.png"
+  },
+  {
+    "id": "full_mat_009",
+    "sourceMaterial": "Aged walnut beams",
+    "baseColorFactor": [
+      1,
+      1,
+      1,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.6399999856948853,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": [],
+    "baseColorTexture": "full_mat_009_basecolor.png",
+    "normalTexture": "full_mat_009_normal.png"
+  },
+  {
+    "id": "full_mat_010",
+    "sourceMaterial": "Honey oak | long raised grain",
+    "baseColorFactor": [
+      1,
+      1,
+      1,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.47999998927116394,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": [],
+    "baseColorTexture": "full_mat_010_basecolor.png",
+    "normalTexture": "full_mat_010_normal.png"
+  },
+  {
+    "id": "full_mat_011",
+    "sourceMaterial": "Sage woven stripe",
+    "baseColorFactor": [
+      0.09000000357627869,
+      0.20000000298023224,
+      0.17000000178813934,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.8700000047683716,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": []
+  },
+  {
+    "id": "full_mat_012",
+    "sourceMaterial": "Woven flax linen",
+    "baseColorFactor": [
+      1,
+      1,
+      1,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.8999999761581421,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": [],
+    "baseColorTexture": "full_mat_012_basecolor.png",
+    "normalTexture": "full_mat_012_normal.png"
+  },
+  {
+    "id": "full_mat_013",
+    "sourceMaterial": "Sun bleached dock",
+    "baseColorFactor": [
+      1,
+      1,
+      1,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.6399999856948853,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": [],
+    "baseColorTexture": "full_mat_013_basecolor.png",
+    "normalTexture": "full_mat_013_normal.png"
+  },
+  {
+    "id": "full_mat_014",
+    "sourceMaterial": "Red berries",
+    "baseColorFactor": [
+      0.47999998927116394,
+      0.03700000047683716,
+      0.01600000075995922,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.36000001430511475,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": []
+  },
+  {
+    "id": "full_mat_015",
+    "sourceMaterial": "Dried lavender petals",
+    "baseColorFactor": [
+      0.23999999463558197,
+      0.10999999940395355,
+      0.3499999940395355,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.699999988079071,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": []
+  },
+  {
+    "id": "full_mat_016",
+    "sourceMaterial": "Leaf olive",
+    "baseColorFactor": [
+      0.10999999940395355,
+      0.1899999976158142,
+      0.04399999976158142,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.6000000238418579,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": []
+  },
+  {
+    "id": "full_mat_017",
+    "sourceMaterial": "Twisted hemp",
+    "baseColorFactor": [
+      1,
+      1,
+      1,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.8999999761581421,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": [],
+    "baseColorTexture": "full_mat_017_basecolor.png",
+    "normalTexture": "full_mat_017_normal.png"
+  },
+  {
+    "id": "full_mat_018",
+    "sourceMaterial": "Rich dark oak floor",
+    "baseColorFactor": [
+      1,
+      1,
+      1,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.5699999928474426,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": [],
+    "baseColorTexture": "full_mat_018_basecolor.png",
+    "normalTexture": "full_mat_018_normal.png"
+  },
+  {
+    "id": "full_mat_019",
+    "sourceMaterial": "Sun bleached dock",
+    "baseColorFactor": [
+      1,
+      1,
+      1,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.6399999856948853,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": [],
+    "baseColorTexture": "full_mat_019_basecolor.png",
+    "normalTexture": "full_mat_019_normal.png"
+  },
+  {
+    "id": "full_mat_020",
+    "sourceMaterial": "Golden flame",
+    "baseColorFactor": [
+      0.949999988079071,
+      0.20000000298023224,
+      0.009999999776482582,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.30000001192092896,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": []
+  },
+  {
+    "id": "full_mat_021",
+    "sourceMaterial": "Limewashed warm ivory",
+    "baseColorFactor": [
+      1,
+      1,
+      1,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.8700000047683716,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": [],
+    "baseColorTexture": "full_mat_021_basecolor.png",
+    "normalTexture": "full_mat_021_normal.png"
+  },
+  {
+    "id": "full_mat_022",
+    "sourceMaterial": "Twisted hemp",
+    "baseColorFactor": [
+      1,
+      1,
+      1,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.8999999761581421,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": [],
+    "baseColorTexture": "full_mat_022_basecolor.png",
+    "normalTexture": "full_mat_022_normal.png"
+  },
+  {
+    "id": "full_mat_023",
+    "sourceMaterial": "Leaf sage",
+    "baseColorFactor": [
+      0.20000000298023224,
+      0.27000001072883606,
+      0.09000000357627869,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.6399999856948853,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": []
+  },
+  {
+    "id": "full_mat_024",
+    "sourceMaterial": "Chamomile pollen",
+    "baseColorFactor": [
+      0.8600000143051147,
+      0.46000000834465027,
+      0.03999999910593033,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.6499999761581421,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": []
+  },
+  {
+    "id": "full_mat_025",
+    "sourceMaterial": "Hammered aged copper",
+    "baseColorFactor": [
+      1,
+      1,
+      1,
+      1.0
+    ],
+    "metallic": 0.7200000286102295,
+    "roughness": 0.36000001430511475,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": [],
+    "baseColorTexture": "full_mat_025_basecolor.png",
+    "normalTexture": "full_mat_025_normal.png"
+  },
+  {
+    "id": "full_mat_026",
+    "sourceMaterial": "Handmade ivory paper",
+    "baseColorFactor": [
+      1,
+      1,
+      1,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.8799999952316284,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": [],
+    "baseColorTexture": "full_mat_026_basecolor.png",
+    "normalTexture": "full_mat_026_normal.png"
+  },
+  {
+    "id": "full_mat_027",
+    "sourceMaterial": "Rust rug base",
+    "baseColorFactor": [
+      0.23999999463558197,
+      0.12999999523162842,
+      0.054999999701976776,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.949999988079071,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": []
+  },
+  {
+    "id": "full_mat_028",
+    "sourceMaterial": "Old polished brass",
+    "baseColorFactor": [
+      0.5299999713897705,
+      0.30000001192092896,
+      0.06499999761581421,
+      1.0
+    ],
+    "metallic": 0.7799999713897705,
+    "roughness": 0.25,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": []
+  },
+  {
+    "id": "full_mat_029",
+    "sourceMaterial": "Old polished brass",
+    "baseColorFactor": [
+      0.5299999713897705,
+      0.30000001192092896,
+      0.06499999761581421,
+      1.0
+    ],
+    "metallic": 0.7799999713897705,
+    "roughness": 0.25,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": []
+  },
+  {
+    "id": "full_mat_030",
+    "sourceMaterial": "Old polished brass",
+    "baseColorFactor": [
+      0.5299999713897705,
+      0.30000001192092896,
+      0.06499999761581421,
+      1.0
+    ],
+    "metallic": 0.7799999713897705,
+    "roughness": 0.25,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": []
+  },
+  {
+    "id": "full_mat_031",
+    "sourceMaterial": "Honey oak | long raised grain",
+    "baseColorFactor": [
+      1,
+      1,
+      1,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.47999998927116394,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": [],
+    "baseColorTexture": "full_mat_031_basecolor.png",
+    "normalTexture": "full_mat_031_normal.png"
+  },
+  {
+    "id": "full_mat_032",
+    "sourceMaterial": "Golden flame",
+    "baseColorFactor": [
+      0.949999988079071,
+      0.20000000298023224,
+      0.009999999776482582,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.30000001192092896,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": []
+  },
+  {
+    "id": "full_mat_033",
+    "sourceMaterial": "Handmade ivory paper",
+    "baseColorFactor": [
+      1,
+      1,
+      1,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.8799999952316284,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": [],
+    "baseColorTexture": "full_mat_033_basecolor.png",
+    "normalTexture": "full_mat_033_normal.png"
+  },
+  {
+    "id": "full_mat_034",
+    "sourceMaterial": "Worn forest leather",
+    "baseColorFactor": [
+      1,
+      1,
+      1,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.5899999737739563,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": [],
+    "baseColorTexture": "full_mat_034_basecolor.png",
+    "normalTexture": "full_mat_034_normal.png"
+  },
+  {
+    "id": "full_mat_035",
+    "sourceMaterial": "Hammered aged copper",
+    "baseColorFactor": [
+      1,
+      1,
+      1,
+      1.0
+    ],
+    "metallic": 0.7200000286102295,
+    "roughness": 0.36000001430511475,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": [],
+    "baseColorTexture": "full_mat_035_basecolor.png",
+    "normalTexture": "full_mat_035_normal.png"
+  },
+  {
+    "id": "full_mat_036",
+    "sourceMaterial": "Letter paper with original fictional cursive",
+    "baseColorFactor": [
+      1,
+      1,
+      1,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.8799999952316284,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": [],
+    "baseColorTexture": "full_mat_036_basecolor.png",
+    "normalTexture": "full_mat_036_normal.png"
+  },
+  {
+    "id": "full_mat_037",
+    "sourceMaterial": "Aged walnut beams",
+    "baseColorFactor": [
+      1,
+      1,
+      1,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.6399999856948853,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": [],
+    "baseColorTexture": "full_mat_037_basecolor.png",
+    "normalTexture": "full_mat_037_normal.png"
+  },
+  {
+    "id": "full_mat_038",
+    "sourceMaterial": "Honey oak | long raised grain",
+    "baseColorFactor": [
+      1,
+      1,
+      1,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.47999998927116394,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": [],
+    "baseColorTexture": "full_mat_038_basecolor.png",
+    "normalTexture": "full_mat_038_normal.png"
+  },
+  {
+    "id": "full_mat_039",
+    "sourceMaterial": "Cream glaze",
+    "baseColorFactor": [
+      1,
+      1,
+      1,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.25,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": [],
+    "baseColorTexture": "full_mat_039_basecolor.png",
+    "normalTexture": "full_mat_039_normal.png"
+  },
+  {
+    "id": "full_mat_040",
+    "sourceMaterial": "Handmade ivory paper",
+    "baseColorFactor": [
+      1,
+      1,
+      1,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.8799999952316284,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": [],
+    "baseColorTexture": "full_mat_040_basecolor.png",
+    "normalTexture": "full_mat_040_normal.png"
+  },
+  {
+    "id": "full_mat_041",
+    "sourceMaterial": "Terracotta",
+    "baseColorFactor": [
+      1,
+      1,
+      1,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.8299999833106995,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": [],
+    "baseColorTexture": "full_mat_041_basecolor.png",
+    "normalTexture": "full_mat_041_normal.png"
+  },
+  {
+    "id": "full_mat_042",
+    "sourceMaterial": "Amber glass",
+    "baseColorFactor": [
+      0.75,
+      0.5,
+      0.17000000178813934,
+      0.07
+    ],
+    "metallic": 0.0,
+    "roughness": 0.07000000029802322,
+    "alphaMode": "BLEND",
+    "unlit": false,
+    "doubleSided": true,
+    "notes": [
+      "Approximate tinted alpha glass; no Blender refraction or Fresnel equivalence",
+      "Original shader mix reduced to dominant surface for runtime",
+      "Low-opacity approximation adjusted after JSON reconstruction; no physical refraction"
+    ]
+  },
+  {
+    "id": "full_mat_043",
+    "sourceMaterial": "Pale rose seashell",
+    "baseColorFactor": [
+      0.7799999713897705,
+      0.5199999809265137,
+      0.3799999952316284,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.5199999809265137,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": []
+  },
+  {
+    "id": "full_mat_044",
+    "sourceMaterial": "Handmade ivory paper",
+    "baseColorFactor": [
+      1,
+      1,
+      1,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.8799999952316284,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": [],
+    "baseColorTexture": "full_mat_044_basecolor.png",
+    "normalTexture": "full_mat_044_normal.png"
+  },
+  {
+    "id": "full_mat_045",
+    "sourceMaterial": "Olive herbal infusion",
+    "baseColorFactor": [
+      0.10999999940395355,
+      0.14000000059604645,
+      0.02500000037252903,
+      1.0
+    ],
+    "metallic": 0.18000000715255737,
+    "roughness": 0.15000000596046448,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": []
+  },
+  {
+    "id": "full_mat_046",
+    "sourceMaterial": "Dry fern pale veins",
+    "baseColorFactor": [
+      0.3400000035762787,
+      0.28999999165534973,
+      0.12999999523162842,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.9100000262260437,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": []
+  },
+  {
+    "id": "full_mat_047",
+    "sourceMaterial": "Pressed fern muted umber green",
+    "baseColorFactor": [
+      0.1899999976158142,
+      0.20000000298023224,
+      0.07500000298023224,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.9300000071525574,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": []
+  },
+  {
+    "id": "full_mat_048",
+    "sourceMaterial": "Aged pressed flower petal",
+    "baseColorFactor": [
+      1,
+      1,
+      1,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.9399999976158142,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": [],
+    "baseColorTexture": "full_mat_048_basecolor.png",
+    "normalTexture": "full_mat_048_normal.png"
+  },
+  {
+    "id": "full_mat_049",
+    "sourceMaterial": "Faded sepia ink",
+    "baseColorFactor": [
+      0.1899999976158142,
+      0.0949999988079071,
+      0.03500000014901161,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.949999988079071,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": []
+  },
+  {
+    "id": "full_mat_050",
+    "sourceMaterial": "Leaf sunlit",
+    "baseColorFactor": [
+      0.36000001430511475,
+      0.38999998569488525,
+      0.0949999988079071,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.6000000238418579,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": []
+  },
+  {
+    "id": "full_mat_051",
+    "sourceMaterial": "Dried yarrow and oat gold",
+    "baseColorFactor": [
+      0.5799999833106995,
+      0.3799999952316284,
+      0.14000000059604645,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.8799999952316284,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": []
+  },
+  {
+    "id": "full_mat_052",
+    "sourceMaterial": "Muted mauve foxglove",
+    "baseColorFactor": [
+      0.46000000834465027,
+      0.1899999976158142,
+      0.30000001192092896,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.7799999713897705,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": []
+  },
+  {
+    "id": "full_mat_053",
+    "sourceMaterial": "Tiny cream meadow flowers",
+    "baseColorFactor": [
+      0.7200000286102295,
+      0.6899999976158142,
+      0.49000000953674316,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.800000011920929,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": []
+  },
+  {
+    "id": "full_mat_054",
+    "sourceMaterial": "Spider plant cream variegation",
+    "baseColorFactor": [
+      0.6600000262260437,
+      0.6899999976158142,
+      0.41999998688697815,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.75,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": []
+  },
+  {
+    "id": "full_mat_055",
+    "sourceMaterial": "Macrame natural warm cotton",
+    "baseColorFactor": [
+      0.7599999904632568,
+      0.6499999761581421,
+      0.44999998807907104,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.9100000262260437,
+    "alphaMode": "OPAQUE",
+    "unlit": false,
+    "doubleSided": false,
+    "notes": [],
+    "normalTexture": "full_mat_055_normal.png"
+  },
+  {
+    "id": "full_mat_056",
+    "sourceMaterial": "Hybrid misty harbor original background unlit original pixels",
+    "baseColorFactor": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "metallic": 0,
+    "roughness": 0.6,
+    "alphaMode": "OPAQUE",
+    "unlit": true,
+    "doubleSided": true,
+    "notes": [],
+    "baseColorTexture": "sea-calm.png"
+  },
+  {
+    "id": "full_mat_057",
+    "sourceMaterial": "Hybrid independent merchant boat unlit original pixels",
+    "baseColorFactor": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "metallic": 0,
+    "roughness": 0.6,
+    "alphaMode": "BLEND",
+    "unlit": true,
+    "doubleSided": true,
+    "notes": [],
+    "baseColorTexture": "merchant-ship-muted.png"
+  }
+]

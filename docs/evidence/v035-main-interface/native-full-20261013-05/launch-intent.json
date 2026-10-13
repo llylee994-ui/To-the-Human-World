@@ -1,0 +1,17 @@
+{
+  "utc": "2026-10-13T14:56:36.945084+00:00",
+  "authorization": "One controlled full-scene validation explicitly authorized by parent/user",
+  "command": [
+    "D:\\node.js\\node.exe",
+    "C:\\Users\\YINGYI\\AppData\\Roaming\\npm\\node_modules\\@taptap\\maker\\dist\\maker.js",
+    "preview",
+    "run",
+    "--target-dir",
+    "D:\\taptap\\To-the-Human-World-3D-Lab",
+    "--runtime",
+    "D:\\taptap\\To-the-Human-World-3D-Lab\\.runtime\\UrhoXRuntime.exe",
+    "--duration-ms",
+    "600000",
+    "--json"
+  ]
+}

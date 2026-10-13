@@ -1,0 +1,11 @@
+{
+  "timestampUtc": "2026-10-13T13:38:01.713597+00:00",
+  "package": "D:\\taptap\\To-the-Human-World-3D-Lab\\experiments\\3d-lab\\assets\\import-v035-full",
+  "synthetic": false,
+  "status": "FAIL",
+  "nativePreviewStarted": false,
+  "runtime": "Lua 5.4, real validator/streamer with native backend substitute",
+  "limitation": "No GPU rendering, native performance, camera or human input acceptance",
+  "failure": "Traceback (most recent call last):\n  File \"D:\\taptap\\To-the-Human-World-3D-Lab\\tools\\verify_full_v035.py\", line 118, in <module>\n    assert status['status'] == 'complete', status\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: {'error': '...e-Human-World-3D-Lab/v035/scripts/lab35\\\\MeshContract.lua:5: mesh contract: degenerate triangle', 'status': 'failed', 'total': 60006, 'expected': {'sourceVertices': 2584246, 'expandedVertices': 9628365, 'meshes': 90, 'triangles': 3209455}, 'meshFiles': 2, 'stepCalls': 7, 'emittedVertices': 6672, 'phase': 'validateTriangles', 'committedBatches': 2, 'yields': 393, 'done': 1, 'currentId': 'full_group_002_000'}\n",
+  "offlineSeconds": 5.876904400007334
+}

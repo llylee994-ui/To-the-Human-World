@@ -1,0 +1,115 @@
+{
+  "collected_utc": "2026-10-12T04:41:16.824048+00:00",
+  "session_id": "99526466-a824-4a8a-92f9-72ade7965500",
+  "reload_id": 2,
+  "state": "running",
+  "native_qa": [
+    {
+      "detail": "",
+      "name": "explicit QA config; one session; no OS input",
+      "status": "ENABLED",
+      "utc": "2026-10-12T04:40:51Z",
+      "camera": "Home",
+      "height": 734,
+      "width": 1304,
+      "writes": 0,
+      "panel": false
+    },
+    {
+      "detail": "",
+      "name": "Aspect setup real Receive",
+      "status": "BEGIN",
+      "utc": "2026-10-12T04:40:59Z",
+      "camera": "Home",
+      "height": 734,
+      "width": 1304,
+      "writes": 0,
+      "panel": false
+    },
+    {
+      "detail": "",
+      "name": "aspect setup Receive",
+      "status": "PASS",
+      "utc": "2026-10-12T04:40:59Z",
+      "camera": "Home",
+      "height": 734,
+      "width": 1304,
+      "writes": 2,
+      "panel": false
+    },
+    {
+      "detail": "",
+      "name": "aspect 960x540",
+      "status": "BEGIN",
+      "utc": "2026-10-12T04:41:02Z",
+      "camera": "Home",
+      "height": 734,
+      "width": 1304,
+      "writes": 2,
+      "panel": false
+    },
+    {
+      "detail": "false",
+      "name": "native SetMode full signature",
+      "status": "OBSERVE",
+      "utc": "2026-10-12T04:41:02Z",
+      "camera": "Home",
+      "height": 734,
+      "width": 1304,
+      "writes": 2,
+      "panel": false
+    },
+    {
+      "detail": "",
+      "name": "aspect Home targets",
+      "status": "BEGIN",
+      "utc": "2026-10-12T04:41:07Z",
+      "camera": "Home",
+      "height": 734,
+      "width": 1304,
+      "writes": 2,
+      "panel": false
+    },
+    {
+      "detail": "[string \"lab/NativeQA\"]:15: exact native dimensions: nil",
+      "name": "aspect Home targets",
+      "status": "FAIL",
+      "utc": "2026-10-12T04:41:07Z",
+      "camera": "Home",
+      "height": 734,
+      "width": 1304,
+      "writes": 2,
+      "panel": false
+    }
+  ],
+  "pass_count": 1,
+  "failures": [
+    {
+      "detail": "[string \"lab/NativeQA\"]:15: exact native dimensions: nil",
+      "name": "aspect Home targets",
+      "status": "FAIL",
+      "utc": "2026-10-12T04:41:07Z",
+      "camera": "Home",
+      "height": 734,
+      "width": 1304,
+      "writes": 2,
+      "panel": false
+    }
+  ],
+  "complete": false,
+  "frame_logs": [
+    "[lua] [2026-10-12 12_40_56_299][815][Script] [D3-LAB frame] camera=Home moving=false frames=288 meanMs=17.37 worstMs=62.24 resolution=1304x734 memoryWrites=0",
+    "[lua] [2026-10-12 12_41_01_301][1108][Script] [D3-LAB frame] camera=Home moving=false frames=293 meanMs=17.07 worstMs=38.77 resolution=1304x734 memoryWrites=2",
+    "[lua] [2026-10-12 12_41_06_303][1405][Script] [D3-LAB frame] camera=Home moving=false frames=297 meanMs=16.84 worstMs=17.93 resolution=1304x734 memoryWrites=2",
+    "[lua] [2026-10-12 12_41_11_306][1699][Script] [D3-LAB frame] camera=Home moving=false frames=294 meanMs=17.02 worstMs=39.17 resolution=1304x734 memoryWrites=2",
+    "[lua] [2026-10-12 12_41_16_306][1988][Script] [D3-LAB frame] camera=Home moving=false frames=289 meanMs=17.30 worstMs=46.35 resolution=1304x734 memoryWrites=2"
+  ],
+  "errors": [
+    "[2026-10-12 12_40_40_573][0] ERROR: Could not find resource Cube/Day/DaySpecularHDR.dds",
+    "[2026-10-12 12_40_40_727][0] ERROR: Can not load themis_x64.dll.",
+    "[2026-10-12 12_40_51_315][527] ERROR: Could not find resource Cube/Day/DaySpecularHDR.dds",
+    "[2026-10-12 12_40_51_315][527] ERROR: Could not find resource Cube/Dusk/DuskSpecularHDR.dds"
+  ],
+  "unparsed_qa": [],
+  "limitations": "Program-driven adapter and actual UI callbacks, not human input or full native UI event dispatch. Continuous still frames do not prove smooth playback."
+}

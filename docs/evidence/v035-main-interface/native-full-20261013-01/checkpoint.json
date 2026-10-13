@@ -1,0 +1,20 @@
+{
+  "timestampUtc": "2026-10-13T14:28:17.467133+00:00",
+  "status": "OFFICIAL_STANDALONE_PREPARE_PASS_RUN_PREPARE_PUBLIC_INDEX_FAILED_NO_RUNTIME",
+  "standalonePrepareExitCode": 0,
+  "officialManifestResources": 150,
+  "officialManifestFullMeshes": 90,
+  "runCliPid": 49424,
+  "runCliExitCode": 1,
+  "sessionId": "bf5e180e-ea53-4ae3-b81b-6ea9fa74e4c4",
+  "runtimeStarted": false,
+  "runtimePid": null,
+  "nativeExitCode": null,
+  "nativeMemoryMeasured": false,
+  "screenshots": [],
+  "error": "Local prepare failed; no Runtime was started. Public source index download failed. Error: Public source index download failed. Log: D:\\taptap\\To-the-Human-World-3D-Lab\\.preview-home\\preview\\8399e5e2bbabd5c8205bcd98679af65e37888a7db32a0784f4fcf4dd67214cef\\sessions\\bf5e180e-ea53-4ae3-b81b-6ea9fa74e4c4\\0\\prepare.log Read docs/MAKER_LOCAL_PREVIEW.md and skills/taptap-maker-local/SKILL.md.",
+  "regressionChecks": 157,
+  "navigation": "Missing Brew/Seaside 3D poses now preserve existing main pages; original gameplay routes remain available",
+  "nativeRestarted": false,
+  "next": "Diagnose current-round public source index download failure from run-prepare-failure.log. Retry only official prepare as authorized; no Runtime has been launched in this run attempt. Check NativeObservation panel callback property API before next native attempt."
+}

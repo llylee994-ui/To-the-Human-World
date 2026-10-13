@@ -1,0 +1,111 @@
+{
+  "method": "Original deterministic procedural texture bake; no source image copied or edited",
+  "resolution": 1024,
+  "files": [
+    {
+      "path": "assets/Textures/LabArt/book-normal.png",
+      "bytes": 527138,
+      "sha256": "9379794f8e2f5b3737260215f4d1c8da10b18df60deaf15c45e49cc09140305c"
+    },
+    {
+      "path": "assets/Textures/LabArt/book.png",
+      "bytes": 108994,
+      "sha256": "407e84c1354e89f97f40f51a40f11adabc71fc3408bae80c7a8f730de3d33c8e"
+    },
+    {
+      "path": "assets/Textures/LabArt/botany.png",
+      "bytes": 326111,
+      "sha256": "4d0b8d395b54f372a6cdef694c68ce1d47943d7d327a35fedfa296183aaead4b"
+    },
+    {
+      "path": "assets/Textures/LabArt/ceramic-normal.png",
+      "bytes": 120178,
+      "sha256": "7a5db82b8157d141d328e866c263389763cbfc6748ec88c5df6c3541c89b882c"
+    },
+    {
+      "path": "assets/Textures/LabArt/ceramic.png",
+      "bytes": 313731,
+      "sha256": "41b9922ff37990b7cd6046636ee4f3a480276149b1b34407b3f75eb6573f01c7"
+    },
+    {
+      "path": "assets/Textures/LabArt/copper-normal.png",
+      "bytes": 879671,
+      "sha256": "da78e7a760b95749285011f68b86faa285cf130e075e66ffc816bf899b6426f6"
+    },
+    {
+      "path": "assets/Textures/LabArt/copper.png",
+      "bytes": 426414,
+      "sha256": "6e551c005058a801b0cf2333885ae97a1856a58e1f108adeff4c156413e8d84f"
+    },
+    {
+      "path": "assets/Textures/LabArt/leaf-normal.png",
+      "bytes": 29876,
+      "sha256": "e1f5bff9297fada9e775a9479b87edc4b75e83402b73c07464aeab8a49c068c7"
+    },
+    {
+      "path": "assets/Textures/LabArt/leaf.png",
+      "bytes": 91464,
+      "sha256": "b58f3d53f13ec51cd745ffbb7a26e0bd17aad8d0f1569da0892e01a258a4c245"
+    },
+    {
+      "path": "assets/Textures/LabArt/linen-normal.png",
+      "bytes": 209552,
+      "sha256": "68242bf50f07e0a16edef09a0b1b51de6d6a0e60d864eac06ef83fdd21b56feb"
+    },
+    {
+      "path": "assets/Textures/LabArt/linen.png",
+      "bytes": 314611,
+      "sha256": "462a627cc04ace6a0be2ac7f9d4051309375ff1ba7bf2e9b40b3f9f49367a5f7"
+    },
+    {
+      "path": "assets/Textures/LabArt/paper-normal.png",
+      "bytes": 7266,
+      "sha256": "21e1da4489929b587f2a161571588fd9ed6d1083b034d4fc24a91e911efe1bb9"
+    },
+    {
+      "path": "assets/Textures/LabArt/paper.png",
+      "bytes": 373109,
+      "sha256": "67ae60a51c7ff9c796ad65515e58f1628531ddd128efe9ad0b5eaeef852ab55f"
+    },
+    {
+      "path": "assets/Textures/LabArt/plaster-normal.png",
+      "bytes": 494330,
+      "sha256": "1eb10439407eccf7ef0ea43cdd089d1045f309ac48cd77e25168990af5667b4e"
+    },
+    {
+      "path": "assets/Textures/LabArt/plaster.png",
+      "bytes": 492099,
+      "sha256": "1943cb70ea28a4957ea5d826fb59dffd8195205568f8283ce2687afcd6e675d2"
+    },
+    {
+      "path": "assets/Textures/LabArt/rug-normal.png",
+      "bytes": 245655,
+      "sha256": "393b8d16e7a9d404474285052e771f7da693321c33b9221e259785cb7e0d5fd1"
+    },
+    {
+      "path": "assets/Textures/LabArt/rug.png",
+      "bytes": 317058,
+      "sha256": "dbd6ffbc97d89e8f0d6380d3ad85c11d0d7de7b7ecbfe65c78f700aafacfe03f"
+    },
+    {
+      "path": "assets/Textures/LabArt/sea-normal.png",
+      "bytes": 481314,
+      "sha256": "4178700a7c68f8a32fa6ff4abace1488f9c43b30f14c1cedfff26c42c4509311"
+    },
+    {
+      "path": "assets/Textures/LabArt/sea.png",
+      "bytes": 418902,
+      "sha256": "413f459e7bb3fc4118d23be25280aeffbda1cb0cbe64d1fa8747e4eab848e9e3"
+    },
+    {
+      "path": "assets/Textures/LabArt/wood-normal.png",
+      "bytes": 1210664,
+      "sha256": "2c4a28edaf1738a54ef6c27a13fb22b89b644a02209813982e6d824e1dc13691"
+    },
+    {
+      "path": "assets/Textures/LabArt/wood.png",
+      "bytes": 529011,
+      "sha256": "1bea49fc75fb8a513c821a2c248299205abdb6118bfb5451a9b54761b29a2658"
+    }
+  ]
+}

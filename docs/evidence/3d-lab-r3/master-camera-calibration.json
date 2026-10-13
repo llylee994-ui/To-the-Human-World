@@ -1,0 +1,85 @@
+{
+  "reference": "libfile_6ea7753ee7a48191aa842fadeeb7db67",
+  "reference_rgba_sha256": "477413f9265ed4aca1deb3a3b92c89d758394e0c3de1792c0eb4209d02871061",
+  "method": "Least squares fit of perspective door anchors, fixed 54 degree vertical FOV. Not a claim that this AI-painted reference has physically exact perspective.",
+  "position": [
+    -3.8789259358405346,
+    2.4348460988717653,
+    -1.9294176167226058
+  ],
+  "look": [
+    -0.8690749931449191,
+    1.1824224467214335,
+    3.107668078229262
+  ],
+  "yaw_degrees": 30.859928612961273,
+  "pitch_degrees": 12.048363620458826,
+  "fov": 54,
+  "weighted_squared_error": 0.0022045648233827196,
+  "anchors": [
+    {
+      "world": [
+        -3.75,
+        3.4,
+        3.55
+      ],
+      "reference": [
+        0.179,
+        0.084
+      ],
+      "weight": 1,
+      "projected": [
+        0.16591255457223697,
+        0.07357000047995998
+      ]
+    },
+    {
+      "world": [
+        -1.55,
+        3.4,
+        3.55
+      ],
+      "reference": [
+        0.427,
+        0.106
+      ],
+      "weight": 1,
+      "projected": [
+        0.41950148367855566,
+        0.11658573163856395
+      ]
+    },
+    {
+      "world": [
+        -3.75,
+        0,
+        3.55
+      ],
+      "reference": [
+        0.172,
+        0.776
+      ],
+      "weight": 0.6,
+      "projected": [
+        0.21174777921108812,
+        0.7628421600029056
+      ]
+    },
+    {
+      "world": [
+        -1.55,
+        0,
+        3.55
+      ],
+      "reference": [
+        0.438,
+        0.624
+      ],
+      "weight": 0.22,
+      "projected": [
+        0.42860362960596804,
+        0.6797991621806528
+      ]
+    }
+  ]
+}

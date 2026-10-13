@@ -1,0 +1,198 @@
+{
+  "source_main_sha": "1cd0cdbec06487a5c60f109d5fd477198cfc8846",
+  "asset_library_id": "libfile_f0f734c339f8819184fc10b1aa8f376c",
+  "asset_version": 0,
+  "coordinate_system": "Blender world Z-up; no engine-axis conversion assumed",
+  "home_camera": {
+    "name": "Home composition camera",
+    "matrix_world": [
+      [
+        0.940747857093811,
+        -0.060232941061258316,
+        0.3337146043777466,
+        3.4000000953674316
+      ],
+      [
+        0.33910682797431946,
+        0.16709786653518677,
+        -0.9257887601852417,
+        -6.0
+      ],
+      [
+        -1.9151620733737218e-08,
+        0.9840987324714661,
+        0.17762236297130585,
+        4.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "lens": 34.0,
+    "resolution": [
+      1672,
+      941
+    ]
+  },
+  "interactions": [
+    {
+      "id": "home.net",
+      "label": "海边捕捞",
+      "target": "seaside",
+      "anchor_object": "Landing net wooden hoop",
+      "world_blender_z_up": [
+        -3.9200000762939453,
+        2.109999895095825,
+        2.2799999713897705
+      ],
+      "screen_normalized_top_left": [
+        0.1191338524222374,
+        0.4830790162086487
+      ],
+      "group_scope": "Landing net handle + Landing net wooden hoop + Net diamond weave",
+      "route": "AppView.BeginHomeZoom → Navigate(seaside); keep SeasideView and SalvageController",
+      "status": "candidate anchor, not validated collider"
+    },
+    {
+      "id": "home.merchantShip",
+      "label": "商队商店",
+      "target": "shop",
+      "anchor_object": "Hybrid independent merchant boat",
+      "world_blender_z_up": [
+        -34.831233978271484,
+        57.00932693481445,
+        -1.1139519214630127
+      ],
+      "screen_normalized_top_left": [
+        0.3084999918937683,
+        0.3182299733161926
+      ],
+      "group_scope": "independent image card; alpha-aware or silhouette pick region",
+      "route": "AppView.Open(shop) → Panels.Shop → GetShopView / PlayModel.Buy → state.Shop",
+      "status": "candidate anchor, not validated collider"
+    },
+    {
+      "id": "home.letterPaper",
+      "label": "阅读信件",
+      "target": "paper",
+      "anchor_object": "Letter on linen",
+      "world_blender_z_up": [
+        2.3802332878112793,
+        0.6553279757499695,
+        1.852351427078247
+      ],
+      "screen_normalized_top_left": [
+        0.6780331134796143,
+        0.7291671633720398
+      ],
+      "group_scope": "Letter on linen + Letter actual fictional cursive ink mesh",
+      "route": "AppView.OpenPaper → GetLetters / Read; fallback letter selector",
+      "status": "candidate anchor, not validated collider"
+    },
+    {
+      "id": "home.tray",
+      "label": "分类词条",
+      "target": "words",
+      "anchor_object": "Letter tray bottom",
+      "world_blender_z_up": [
+        1.1264121532440186,
+        1.1645748615264893,
+        1.878999948501587
+      ],
+      "screen_normalized_top_left": [
+        0.5353401303291321,
+        0.6626941859722137
+      ],
+      "group_scope": "Letter tray bottom + Letter tray rim",
+      "route": "AppView.Open(words) → Panels.Words → GetWordTray",
+      "status": "candidate anchor, not validated collider"
+    },
+    {
+      "id": "home.drawer",
+      "label": "来信抽屉",
+      "target": "letters",
+      "anchor_object": "Table drawer",
+      "world_blender_z_up": [
+        1.1858694553375244,
+        -0.1024945005774498,
+        1.3700000047683716
+      ],
+      "screen_normalized_top_left": [
+        0.4882326126098633,
+        0.8699069619178772
+      ],
+      "group_scope": "one visible front drawer + matching inset/pull; final semantic assignment pending",
+      "route": "AppView.Open(letters) → Panels.Letters → GetLetters",
+      "status": "candidate anchor, not validated collider"
+    },
+    {
+      "id": "home.journal",
+      "label": "故事记录",
+      "target": "journal",
+      "anchor_object": "Forest notebook cover",
+      "world_blender_z_up": [
+        3.5793569087982178,
+        0.22859255969524384,
+        1.8769999742507935
+      ],
+      "screen_normalized_top_left": [
+        0.8540950417518616,
+        0.7921898663043976
+      ],
+      "group_scope": "Forest notebook cover + Notebook deckle pages + Notebook leather straps",
+      "route": "AppView.Open(journal) → Panels.Journal → GetJournalStories",
+      "status": "candidate anchor, not validated collider"
+    },
+    {
+      "id": "home.caseFile",
+      "label": "案件板",
+      "target": "case",
+      "anchor_object": "Stack of tied parchment",
+      "world_blender_z_up": [
+        4.162626266479492,
+        -0.2161504626274109,
+        1.8659999370574951
+      ],
+      "screen_normalized_top_left": [
+        0.9617416858673096,
+        0.8612588196992874
+      ],
+      "group_scope": "proposed: right-hand tied parchment stack; not an established named case-file group",
+      "route": "AppView.Open(case) → Panels.Case → GetCaseBoard",
+      "status": "candidate anchor, not validated collider"
+    },
+    {
+      "id": "home.stove",
+      "label": "炼药工作区",
+      "target": "brew",
+      "anchor_object": "Hammered copper cauldron",
+      "world_blender_z_up": [
+        2.087414026260376,
+        1.9288887977600098,
+        2.3572001457214355
+      ],
+      "screen_normalized_top_left": [
+        0.670149028301239,
+        0.544231653213501
+      ],
+      "group_scope": "Hammered copper cauldron + copper legs + flame; existing presentation is cauldron assembly",
+      "route": "AppView.Navigate(brew) → existing Panels.Brew and PlayModel order methods",
+      "status": "candidate anchor, not validated collider"
+    }
+  ],
+  "decorative_scissors": {
+    "object": "V034 scissors assembly on table plane",
+    "business_target": null,
+    "reason": "main has no scissors hotspot. Actual cut requires selected letterInstanceId and spanId from reader UI."
+  },
+  "warnings": [
+    "Do not use card AABB as full interactive surface: transparent ship pixels must not block other hits.",
+    "These are anchor points, not completed collision volumes.",
+    "Case-file mapping is a proposed semantic assignment and requires review.",
+    "Main HomeZoom uses a fixed 1920x1080 anchor (600,540), target scale1.15 duration0.45. Adapt projection only; retain guards and scene transition.",
+    "No exported mesh, no UrhoX runtime validation performed."
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "utc": "2026-10-12T05:45:35.486278+00:00",
+  "task_id": "01a12c24-a725-712b-ba7d-df58430f5098",
+  "branch_pushed": true,
+  "branch": "experiment/3d-lab",
+  "verified_remote_sha": "6d4829df6d3af0b6c2f2d114dd7b32da9d6ab997",
+  "branch_url": "https://github.com/llylee994-ui/To-the-Human-World/tree/experiment/3d-lab/experiments/3d-lab",
+  "home_art_local_changes_not_yet_committed": true,
+  "first_native_home_image_library_id": "libfile_b0c43d58a38c8191be8cba00999f9de4",
+  "first_native_home_image_bytes": 902552,
+  "first_image_utc": "2026-10-12T05:39:33.658Z",
+  "newer_home_frame_directory": "docs/evidence/3d-lab-r3/native/home-art-a-b0",
+  "newer_frames_visually_reviewed": true,
+  "offline_latest": "70 checks PASS / 537 mesh instances",
+  "lsp_latest": "0 errors / 83 warnings / 63 files",
+  "native_regression_after_newest_art": "pending",
+  "QAConfig_enabled": false,
+  "active_preview": {
+    "session_id": "46ad119c-c9b7-45e2-9bf7-b00839d91ecc",
+    "reload_id": 0,
+    "runtime_pid": 27916,
+    "started_at": "2026-10-12T05:43:48.594Z",
+    "state": "running"
+  },
+  "preview_bounded_duration_ms": 600000,
+  "next": "First inspect b0 Home frame. Run targeted native Home picking/camera regression with existing NativeQA (externalSize=true, aspectOnly=true, sizes={{1280,720}}), fix any decoration occlusion, restore QAConfig=false, capture final Home. Then update reference/interface/rendering limitations and commit reviewed art files to the existing authorized 3D branch. No 2D mutation. Do not expand all-scene art before user direction approval.",
+  "remaining": "Net attachment version unresolved; resource warnings remain including Day/Dusk/default Textures/official ktx/themis; do not claim fixed from code changes alone. ZIP splitting paused. Windows Library xattr writeback fails; remote image upload succeeded and receipt preserved.",
+  "visual_review": "Actual b0 native Home seen: smaller stove centered nearer work area; generated wood/copper/linen textures; warm interior; same left door/pier/boat. Bottles translucent, foliage and jars still stylized/simple. Not visual acceptance."
+}

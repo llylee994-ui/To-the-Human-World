@@ -1,0 +1,58 @@
+{
+  "timestampUtc": "2026-10-13T10:42:01.980053+00:00",
+  "repository": "https://github.com/llylee994-ui/To-the-Human-World.git",
+  "ref": "refs/heads/main",
+  "sha": "1cd0cdbec06487a5c60f109d5fd477198cfc8846",
+  "files": [
+    {
+      "path": "scripts/前端接入接口手册.md",
+      "status": "PASS",
+      "size": 31579,
+      "sha256": "465e1c97dd27dbf9b9c01ab536d07ac956714652ca270014dba8cd99c8f82f90"
+    },
+    {
+      "path": "scripts/ui/PlayModel.lua",
+      "status": "PASS",
+      "size": 15696,
+      "sha256": "644722ed449db84e589724a26668ec2e76884ec15e882d38f14e19ec79ab88b1"
+    },
+    {
+      "path": "scripts/ui/landscape/AppView.lua",
+      "status": "PASS",
+      "size": 20924,
+      "sha256": "d391de3b2cb934f71ebd5ebf1bd66e5a17d357d081b7be9f510a34a0ef7d68f0"
+    },
+    {
+      "path": "scripts/ui/landscape/LayoutManifest.lua",
+      "status": "PASS",
+      "size": 13499,
+      "sha256": "3be71bed85902b61d133e3c28b3c0c9226477218c286511da9726c45c4d6e492"
+    },
+    {
+      "path": "scripts/ui/landscape/SalvageController.lua",
+      "status": "PASS",
+      "size": 3942,
+      "sha256": "f059e4e24e37acc33df43e3d15929f827157233a2c8d1799eaa30e25f102475a"
+    },
+    {
+      "path": "scripts/ui/landscape/SeasideView.lua",
+      "status": "PASS",
+      "size": 6564,
+      "sha256": "1e4ac2f77c00beee6463737932f186b821b492ae4482246acfdc79b6c463f341"
+    },
+    {
+      "path": "scripts/core/GameSession.lua",
+      "status": "PASS",
+      "size": 2520,
+      "sha256": "a820e1f856ecc9c2874c707839daf57332666283dbc902b881888e2d890ef530"
+    },
+    {
+      "path": "scripts/core/SaveSystem.lua",
+      "status": "PASS",
+      "size": 8006,
+      "sha256": "71a7b5cf7aa8e366f4f485752e218a75ac8f0209f51cfe509f26ea52546c9386"
+    }
+  ],
+  "snapshotPurpose": "Read-only review snapshot; NOT integrated runtime",
+  "taskId": "01a12c24-a725-712b-ba7d-df58430f5098"
+}

@@ -1,0 +1,18 @@
+{
+  "utc": "2026-10-12T05:50:39.368763+00:00",
+  "library_file_id": "libfile_6ea7753ee7a48191aa842fadeeb7db67",
+  "file_id": "file_00000000b470820ca3b1164a064b3e65",
+  "attachment_name": "image(2).png",
+  "source": "D:\\taptap\\To-the-Human-World-3D-Lab\\references\\local-originals\\主页最新.png",
+  "dimensions": [
+    1672,
+    941
+  ],
+  "rgba_sha256": "477413f9265ed4aca1deb3a3b92c89d758394e0c3de1792c0eb4209d02871061",
+  "expected_rgba_sha256": "477413f9265ed4aca1deb3a3b92c89d758394e0c3de1792c0eb4209d02871061",
+  "match": true,
+  "fingerprint_source": "Parent provided SHA256 after official Library materialization and RGBA decode; local decode independently checked here.",
+  "original_png_sha256": "1179f44d928c03fbddddfad91a54accbb0c515c5f29f85077784ecf5248a3d1d",
+  "original_metadata_preserved": true,
+  "local_master_path": "D:\\taptap\\To-the-Human-World-3D-Lab\\references\\master-20261012\\image(2).png"
+}

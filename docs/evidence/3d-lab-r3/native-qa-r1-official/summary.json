@@ -1,0 +1,735 @@
+{
+  "collected_utc": "2026-10-12T04:57:21.331318+00:00",
+  "session_id": "99526466-a824-4a8a-92f9-72ade7965500",
+  "reload_id": 1,
+  "state": "historical_saved_logs; current process state not queried",
+  "native_qa": [
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:35:44Z",
+      "writes": 0,
+      "width": 1304,
+      "panel": false,
+      "status": "ENABLED",
+      "camera": "Home",
+      "name": "explicit QA config; one session; no OS input",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:35:52Z",
+      "writes": 0,
+      "width": 1304,
+      "panel": false,
+      "status": "BEGIN",
+      "camera": "Home",
+      "name": "Home baseline",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:35:52Z",
+      "writes": 0,
+      "width": 1304,
+      "panel": false,
+      "status": "PASS",
+      "camera": "Home",
+      "name": "schema3 and no startup writes",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:35:52Z",
+      "writes": 0,
+      "width": 1304,
+      "panel": false,
+      "status": "PASS",
+      "camera": "Home",
+      "name": "visible native projected target home.net",
+      "detail": {
+        "y": 0.5341569781303406,
+        "x": 0.24064284563064575
+      }
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:35:52Z",
+      "writes": 0,
+      "width": 1304,
+      "panel": false,
+      "status": "PASS",
+      "camera": "Home",
+      "name": "UI consumed input blocked",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:35:52Z",
+      "writes": 0,
+      "width": 1304,
+      "panel": false,
+      "status": "PASS",
+      "camera": "Home",
+      "name": "drag input blocked",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:35:52Z",
+      "writes": 0,
+      "width": 1304,
+      "panel": false,
+      "status": "PASS",
+      "camera": "Home",
+      "name": "wall occlusion blocks",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:35:59Z",
+      "writes": 0,
+      "width": 1304,
+      "panel": false,
+      "status": "BEGIN",
+      "camera": "Home",
+      "name": "Home to Seaside",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:35:59Z",
+      "writes": 0,
+      "width": 1304,
+      "panel": false,
+      "status": "PASS",
+      "camera": "Home",
+      "name": "visible native projected target home.net",
+      "detail": {
+        "y": 0.5341569781303406,
+        "x": 0.24064284563064575
+      }
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:35:59Z",
+      "writes": 0,
+      "width": 1304,
+      "panel": false,
+      "status": "PASS",
+      "camera": "Home",
+      "name": "native pick home.net",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:35:59Z",
+      "writes": 0,
+      "width": 1304,
+      "panel": false,
+      "status": "PASS",
+      "camera": "Home",
+      "name": "native pointer home.net",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:35:59Z",
+      "writes": 0,
+      "width": 1304,
+      "panel": false,
+      "status": "PASS",
+      "camera": "Home",
+      "name": "repeat motion blocked",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:36:09Z",
+      "writes": 0,
+      "width": 1304,
+      "panel": false,
+      "status": "BEGIN",
+      "camera": "Seaside",
+      "name": "Seaside same ship shop",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:36:09Z",
+      "writes": 0,
+      "width": 1304,
+      "panel": false,
+      "status": "PASS",
+      "camera": "Seaside",
+      "name": "Seaside reached",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:36:09Z",
+      "writes": 0,
+      "width": 1304,
+      "panel": false,
+      "status": "PASS",
+      "camera": "Seaside",
+      "name": "navigation preserves state",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:36:09Z",
+      "writes": 0,
+      "width": 1304,
+      "panel": false,
+      "status": "PASS",
+      "camera": "Seaside",
+      "name": "visible native projected target home.merchantShip",
+      "detail": {
+        "y": 0.4815930426120758,
+        "x": 0.44250553846359253
+      }
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:36:09Z",
+      "writes": 0,
+      "width": 1304,
+      "panel": false,
+      "status": "PASS",
+      "camera": "Seaside",
+      "name": "native pick home.merchantShip",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:36:09Z",
+      "writes": 0,
+      "width": 1304,
+      "panel": "shop",
+      "status": "PASS",
+      "camera": "Seaside",
+      "name": "native pointer home.merchantShip",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:36:16Z",
+      "writes": 0,
+      "width": 1304,
+      "panel": "shop",
+      "status": "BEGIN",
+      "camera": "Seaside",
+      "name": "Buy through real shop button",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:36:16Z",
+      "writes": 2,
+      "width": 1304,
+      "panel": "shop",
+      "status": "PASS",
+      "camera": "Seaside",
+      "name": "purchase debits exact price",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:36:16Z",
+      "writes": 2,
+      "width": 1304,
+      "panel": "shop",
+      "status": "PASS",
+      "camera": "Seaside",
+      "name": "visible native projected target home.merchantShip",
+      "detail": {
+        "y": 0.4815930426120758,
+        "x": 0.44250553846359253
+      }
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:36:16Z",
+      "writes": 2,
+      "width": 1304,
+      "panel": "shop",
+      "status": "PASS",
+      "camera": "Seaside",
+      "name": "modal blocks scene",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:36:23Z",
+      "writes": 2,
+      "width": 1304,
+      "panel": "shop",
+      "status": "BEGIN",
+      "camera": "Seaside",
+      "name": "Atomic real purchase failures",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:36:23Z",
+      "writes": 2,
+      "width": 1304,
+      "panel": "shop",
+      "status": "PASS",
+      "camera": "Seaside",
+      "name": "unknown purchase atomic",
+      "detail": "UNKNOWN_ID"
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:36:23Z",
+      "writes": 12,
+      "width": 1304,
+      "panel": "shop",
+      "status": "PASS",
+      "camera": "Seaside",
+      "name": "stock rejection atomic",
+      "detail": "SHOP_STOCK_SHORT"
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:36:23Z",
+      "writes": 12,
+      "width": 1304,
+      "panel": "shop",
+      "status": "PASS",
+      "camera": "Seaside",
+      "name": "funds rejection atomic",
+      "detail": "CURRENCY_SHORT"
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:36:30Z",
+      "writes": 12,
+      "width": 1304,
+      "panel": "shop",
+      "status": "BEGIN",
+      "camera": "Seaside",
+      "name": "Open explicit salvage",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:36:37Z",
+      "writes": 12,
+      "width": 1304,
+      "panel": "salvage",
+      "status": "BEGIN",
+      "camera": "Seaside",
+      "name": "Real receive setup",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:36:37Z",
+      "writes": 14,
+      "width": 1304,
+      "panel": "salvage",
+      "status": "PASS",
+      "camera": "Seaside",
+      "name": "explicit Receive spends one",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:36:44Z",
+      "writes": 14,
+      "width": 1304,
+      "panel": "salvage",
+      "status": "BEGIN",
+      "camera": "Seaside",
+      "name": "Seaside return",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:36:54Z",
+      "writes": 14,
+      "width": 1304,
+      "panel": false,
+      "status": "BEGIN",
+      "camera": "Home",
+      "name": "Pick paper opens real reader",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:36:54Z",
+      "writes": 14,
+      "width": 1304,
+      "panel": false,
+      "status": "PASS",
+      "camera": "Home",
+      "name": "return Home",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:36:54Z",
+      "writes": 14,
+      "width": 1304,
+      "panel": false,
+      "status": "PASS",
+      "camera": "Home",
+      "name": "return preserves business",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:36:54Z",
+      "writes": 14,
+      "width": 1304,
+      "panel": false,
+      "status": "PASS",
+      "camera": "Home",
+      "name": "visible native projected target home.letterPaper",
+      "detail": {
+        "y": 0.5835750699043274,
+        "x": 0.5407126545906067
+      }
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:36:54Z",
+      "writes": 14,
+      "width": 1304,
+      "panel": false,
+      "status": "PASS",
+      "camera": "Home",
+      "name": "native pick home.letterPaper",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:36:54Z",
+      "writes": 16,
+      "width": 1304,
+      "panel": "reader",
+      "status": "PASS",
+      "camera": "Home",
+      "name": "native pointer home.letterPaper",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:36:54Z",
+      "writes": 16,
+      "width": 1304,
+      "panel": "reader",
+      "status": "PASS",
+      "camera": "Home",
+      "name": "reader panel opened",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:37:01Z",
+      "writes": 16,
+      "width": 1304,
+      "panel": "reader",
+      "status": "BEGIN",
+      "camera": "Home",
+      "name": "Cut real span through UI",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:37:01Z",
+      "writes": 16,
+      "width": 1304,
+      "panel": "reader",
+      "status": "PASS",
+      "camera": "Home",
+      "name": "body and requirement exist",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:37:01Z",
+      "writes": 18,
+      "width": 1304,
+      "panel": "reader",
+      "status": "PASS",
+      "camera": "Home",
+      "name": "cut creates exactly one card",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:37:08Z",
+      "writes": 18,
+      "width": 1304,
+      "panel": "reader",
+      "status": "BEGIN",
+      "camera": "Home",
+      "name": "Repeat cut idempotent",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:37:08Z",
+      "writes": 18,
+      "width": 1304,
+      "panel": "reader",
+      "status": "PASS",
+      "camera": "Home",
+      "name": "same span duplicate safe",
+      "detail": {
+        "unavailable": "Official Maker log redaction truncated result payload. Assertion header is intact."
+      }
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:37:08Z",
+      "writes": 18,
+      "width": 1304,
+      "panel": false,
+      "status": "PASS",
+      "camera": "Home",
+      "name": "visible native projected target home.letterPaper",
+      "detail": {
+        "y": 0.5835750699043274,
+        "x": 0.5407126545906067
+      }
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:37:08Z",
+      "writes": 18,
+      "width": 1304,
+      "panel": false,
+      "status": "PASS",
+      "camera": "Home",
+      "name": "native pick home.letterPaper",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:37:08Z",
+      "writes": 18,
+      "width": 1304,
+      "panel": "reader",
+      "status": "PASS",
+      "camera": "Home",
+      "name": "native pointer home.letterPaper",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:37:08Z",
+      "writes": 18,
+      "width": 1304,
+      "panel": "reader",
+      "status": "PASS",
+      "camera": "Home",
+      "name": "reopen retains gap",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:37:15Z",
+      "writes": 18,
+      "width": 1304,
+      "panel": "reader",
+      "status": "BEGIN",
+      "camera": "Home",
+      "name": "Home to Brew",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:37:15Z",
+      "writes": 18,
+      "width": 1304,
+      "panel": false,
+      "status": "PASS",
+      "camera": "Home",
+      "name": "visible native projected target home.stove",
+      "detail": {
+        "y": 0.5008105635643005,
+        "x": 0.665605902671814
+      }
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:37:15Z",
+      "writes": 18,
+      "width": 1304,
+      "panel": false,
+      "status": "PASS",
+      "camera": "Home",
+      "name": "native pick home.stove",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:37:15Z",
+      "writes": 18,
+      "width": 1304,
+      "panel": false,
+      "status": "PASS",
+      "camera": "Home",
+      "name": "native pointer home.stove",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:37:24Z",
+      "writes": 18,
+      "width": 1304,
+      "panel": false,
+      "status": "BEGIN",
+      "camera": "Brew",
+      "name": "Brew same geometry",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:37:24Z",
+      "writes": 18,
+      "width": 1304,
+      "panel": false,
+      "status": "PASS",
+      "camera": "Brew",
+      "name": "Brew reached no auto brew",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:37:24Z",
+      "writes": 18,
+      "width": 1304,
+      "panel": false,
+      "status": "PASS",
+      "camera": "Brew",
+      "name": "separate rim",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:37:31Z",
+      "writes": 18,
+      "width": 1304,
+      "panel": false,
+      "status": "BEGIN",
+      "camera": "Brew",
+      "name": "Brew return",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:37:40Z",
+      "writes": 18,
+      "width": 1304,
+      "panel": false,
+      "status": "BEGIN",
+      "camera": "Home",
+      "name": "aspect 960x540",
+      "detail": ""
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:37:40Z",
+      "writes": 18,
+      "width": 1304,
+      "panel": false,
+      "status": "FAIL",
+      "camera": "Home",
+      "name": "aspect 960x540",
+      "detail": "[string \"lab/NativeQA\"]:15: native SetMode: nil"
+    }
+  ],
+  "pass_count": 39,
+  "failures": [
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:37:40Z",
+      "writes": 18,
+      "width": 1304,
+      "panel": false,
+      "status": "FAIL",
+      "camera": "Home",
+      "name": "aspect 960x540",
+      "detail": "[string \"lab/NativeQA\"]:15: native SetMode: nil"
+    }
+  ],
+  "complete": false,
+  "frame_logs": [
+    "[lua] [2026-10-12 12_35_49_469][1020][Script] [D3-LAB frame] camera=Home moving=false frames=286 meanMs=17.49 worstMs=71.45 resolution=1304x734 memoryWrites=0",
+    "[lua] [2026-10-12 12_35_54_472][1314][Script] [D3-LAB frame] camera=Home moving=false frames=294 meanMs=17.01 worstMs=41.17 resolution=1304x734 memoryWrites=0",
+    "[lua] [2026-10-12 12_35_59_480][1606][Script] [D3-LAB frame] camera=Home moving=true frames=292 meanMs=17.14 worstMs=42.26 resolution=1304x734 memoryWrites=0",
+    "[lua] [2026-10-12 12_36_04_479][1903][Script] [D3-LAB frame] camera=Seaside moving=false frames=297 meanMs=16.85 worstMs=17.87 resolution=1304x734 memoryWrites=0",
+    "[lua] [2026-10-12 12_36_09_503][2196][Script] [D3-LAB frame] camera=Seaside moving=false frames=293 meanMs=17.12 worstMs=45.36 resolution=1304x734 memoryWrites=0",
+    "[lua] [2026-10-12 12_36_14_501][2488][Script] [D3-LAB frame] camera=Seaside moving=false frames=292 meanMs=17.14 worstMs=48.01 resolution=1304x734 memoryWrites=0",
+    "[lua] [2026-10-12 12_36_19_511][2781][Script] [D3-LAB frame] camera=Seaside moving=false frames=293 meanMs=17.10 worstMs=38.89 resolution=1304x734 memoryWrites=2",
+    "[lua] [2026-10-12 12_36_24_579][3069][Script] [D3-LAB frame] camera=Seaside moving=false frames=288 meanMs=17.38 worstMs=58.38 resolution=1304x734 memoryWrites=12",
+    "[lua] [2026-10-12 12_36_29_595][3363][Script] [D3-LAB frame] camera=Seaside moving=false frames=294 meanMs=17.06 worstMs=47.25 resolution=1304x734 memoryWrites=12",
+    "[lua] [2026-10-12 12_36_34_601][3653][Script] [D3-LAB frame] camera=Seaside moving=false frames=290 meanMs=17.26 worstMs=50.99 resolution=1304x734 memoryWrites=12",
+    "[lua] [2026-10-12 12_36_39_678][3948][Script] [D3-LAB frame] camera=Seaside moving=false frames=295 meanMs=16.95 worstMs=36.89 resolution=1304x734 memoryWrites=14",
+    "[lua] [2026-10-12 12_36_44_609][4240][Script] [D3-LAB frame] camera=Seaside moving=true frames=292 meanMs=17.15 worstMs=47.86 resolution=1304x734 memoryWrites=14",
+    "[lua] [2026-10-12 12_36_49_609][4531][Script] [D3-LAB frame] camera=Home moving=false frames=291 meanMs=17.19 worstMs=50.12 resolution=1304x734 memoryWrites=14",
+    "[lua] [2026-10-12 12_36_54_625][4824][Script] [D3-LAB frame] camera=Home moving=false frames=293 meanMs=17.09 worstMs=43.94 resolution=1304x734 memoryWrites=16",
+    "[lua] [2026-10-12 12_36_59_624][5115][Script] [D3-LAB frame] camera=Home moving=false frames=291 meanMs=17.21 worstMs=46.17 resolution=1304x734 memoryWrites=16",
+    "[lua] [2026-10-12 12_37_04_632][5403][Script] [D3-LAB frame] camera=Home moving=false frames=288 meanMs=17.39 worstMs=40.94 resolution=1304x734 memoryWrites=18",
+    "[lua] [2026-10-12 12_37_09_644][5697][Script] [D3-LAB frame] camera=Home moving=false frames=294 meanMs=17.05 worstMs=40.47 resolution=1304x734 memoryWrites=18",
+    "[lua] [2026-10-12 12_37_14_644][5989][Script] [D3-LAB frame] camera=Home moving=false frames=292 meanMs=17.13 worstMs=45.74 resolution=1304x734 memoryWrites=18",
+    "[lua] [2026-10-12 12_37_19_657][6285][Script] [D3-LAB frame] camera=Brew moving=false frames=296 meanMs=16.93 worstMs=20.69 resolution=1304x734 memoryWrites=18",
+    "[lua] [2026-10-12 12_37_24_672][6577][Script] [D3-LAB frame] camera=Brew moving=false frames=292 meanMs=17.17 worstMs=47.74 resolution=1304x734 memoryWrites=18",
+    "[lua] [2026-10-12 12_37_29_673][6869][Script] [D3-LAB frame] camera=Brew moving=false frames=292 meanMs=17.13 worstMs=45.39 resolution=1304x734 memoryWrites=18",
+    "[lua] [2026-10-12 12_37_34_674][7161][Script] [D3-LAB frame] camera=Home moving=false frames=292 meanMs=17.13 worstMs=40.80 resolution=1304x734 memoryWrites=18",
+    "[lua] [2026-10-12 12_37_39_680][7454][Script] [D3-LAB frame] camera=Home moving=false frames=293 meanMs=17.08 worstMs=40.47 resolution=1304x734 memoryWrites=18",
+    "[lua] [2026-10-12 12_37_44_695][7746][Script] [D3-LAB frame] camera=Home moving=false frames=292 meanMs=17.18 worstMs=41.81 resolution=1304x734 memoryWrites=18",
+    "[lua] [2026-10-12 12_37_49_697][8040][Script] [D3-LAB frame] camera=Home moving=false frames=294 meanMs=17.01 worstMs=40.42 resolution=1304x734 memoryWrites=18",
+    "[lua] [2026-10-12 12_37_54_698][8336][Script] [D3-LAB frame] camera=Home moving=false frames=296 meanMs=16.90 worstMs=21.85 resolution=1304x734 memoryWrites=18",
+    "[lua] [2026-10-12 12_37_59_702][8629][Script] [D3-LAB frame] camera=Home moving=false frames=293 meanMs=17.08 worstMs=46.37 resolution=1304x734 memoryWrites=18",
+    "[lua] [2026-10-12 12_38_04_704][8921][Script] [D3-LAB frame] camera=Home moving=false frames=292 meanMs=17.13 worstMs=46.26 resolution=1304x734 memoryWrites=18",
+    "[lua] [2026-10-12 12_38_09_712][9215][Script] [D3-LAB frame] camera=Home moving=false frames=294 meanMs=17.03 worstMs=41.19 resolution=1304x734 memoryWrites=18",
+    "[lua] [2026-10-12 12_38_14_722][9507][Script] [D3-LAB frame] camera=Home moving=false frames=292 meanMs=17.15 worstMs=52.04 resolution=1304x734 memoryWrites=18",
+    "[lua] [2026-10-12 12_38_19_738][9799][Script] [D3-LAB frame] camera=Home moving=false frames=292 meanMs=17.18 worstMs=44.90 resolution=1304x734 memoryWrites=18",
+    "[lua] [2026-10-12 12_38_24_751][10094][Script] [D3-LAB frame] camera=Home moving=false frames=295 meanMs=16.99 worstMs=34.90 resolution=1304x734 memoryWrites=18"
+  ],
+  "errors": [
+    "[2026-10-12 12_35_30_186][0] ERROR: Could not find resource Cube/Day/DaySpecularHDR.dds",
+    "[2026-10-12 12_35_30_319][0] ERROR: Can not load themis_x64.dll.",
+    "[2026-10-12 12_35_44_440][734] ERROR: Could not find resource Cube/Day/DaySpecularHDR.dds",
+    "[2026-10-12 12_35_44_440][734] ERROR: Could not find resource Cube/Dusk/DuskSpecularHDR.dds"
+  ],
+  "unparsed_qa": [
+    "[lua] [2026-10-12 12_37_08_609][5638][Script] [D3-LAB QA] {\"height\":734,\"utc\":\"2026-10-12T04:37:08Z\",\"writes\":18,\"width\":1304,\"panel\":\"reader\",\"status\":\"PASS\",\"camera\":\"Home\",\"name\":\"same span duplicate safe\",\"detail\":{\"ok\":true,\"value\":{\"source\":{\"wordId\":\"word_candidate_elias_sleep_alt\",\"sourceLetterInstanceId\":\"letter:letter_pa_01\",\"sourceSpanId\":\"body:1\",\"sourceNpcId\":\"npc_passerby_a\"},\"letterInstanceId\":\"letter:letter_pa_01\",\"tokenId\":\"token=<redacted>\n",
+    "[2026-10-12 12_37_08_609][5638][Script] [D3-LAB QA] {\"height\":734,\"utc\":\"2026-10-12T04:37:08Z\",\"writes\":18,\"width\":1304,\"panel\":\"reader\",\"status\":\"PASS\",\"camera\":\"Home\",\"name\":\"same span duplicate safe\",\"detail\":{\"ok\":true,\"value\":{\"source\":{\"wordId\":\"word_candidate_elias_sleep_alt\",\"sourceLetterInstanceId\":\"letter:letter_pa_01\",\"sourceSpanId\":\"body:1\",\"sourceNpcId\":\"npc_passerby_a\"},\"letterInstanceId\":\"letter:letter_pa_01\",\"tokenId\":\"token=<redacted>\r"
+  ],
+  "redacted_qa_headers": [
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:37:08Z",
+      "writes": 18,
+      "width": 1304,
+      "panel": "reader",
+      "status": "PASS",
+      "camera": "Home",
+      "name": "same span duplicate safe",
+      "detail": {
+        "unavailable": "Official Maker log redaction truncated result payload. Assertion header is intact."
+      }
+    },
+    {
+      "height": 734,
+      "utc": "2026-10-12T04:37:08Z",
+      "writes": 18,
+      "width": 1304,
+      "panel": "reader",
+      "status": "PASS",
+      "camera": "Home",
+      "name": "same span duplicate safe",
+      "detail": {
+        "unavailable": "Official Maker log redaction truncated result payload. Assertion header is intact."
+      }
+    }
+  ],
+  "limitations": "Program-driven adapter and actual UI callbacks, not human input or full native UI event dispatch. Continuous still frames do not prove smooth playback."
+}

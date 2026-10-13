@@ -1,0 +1,354 @@
+{
+  "utc": "2026-10-12T05:08:32.622373+00:00",
+  "public_indexes": [
+    {
+      "file": "D:\\taptap\\To-the-Human-World-3D-Lab\\.preview-home\\preview\\8399e5e2bbabd5c8205bcd98679af65e37888a7db32a0784f4fcf4dd67214cef\\public-index-cache\\engine-res-75ae2900.json",
+      "sha256": "170675cd8105700079a2095f3eec7e0747b7a591819e1a794df7144a6a5b1978",
+      "file_count": 1068,
+      "matches": [
+        {
+          "uuid": "A893qfQ2rpYH2VMO8BIlZg7p",
+          "ext": ".dds",
+          "hash": "79149ea8",
+          "size": 16837,
+          "hash@windows": "098f7a89",
+          "size@windows": 33157,
+          "fs_path": "Cube/Night/NightSpecularHDR_QualityLow.dds"
+        },
+        {
+          "uuid": "AM1f-eM8TSLm14H73uUifDGm",
+          "ext": ".dds",
+          "hash": "4f65d731",
+          "size": 16833,
+          "hash@windows": "55090504",
+          "size@windows": 33153,
+          "fs_path": "Cube/Dusk/DuskSpecularHDR_QualityLow.dds"
+        },
+        {
+          "uuid": "BMc--ZGrpJFG5QVr1FvVmhAI",
+          "ext": ".xml",
+          "hash": "ae7334a8",
+          "size": 305,
+          "fs_path": "Cube/Night/NightSpecularHDR_QualityLow.xml"
+        },
+        {
+          "uuid": "CJWiIUZq2sE5946HaLY1_ssF",
+          "ext": ".xml",
+          "hash": "6b3457d2",
+          "size": 3504,
+          "fs_path": "LightGroup/Dusk.xml"
+        },
+        {
+          "uuid": "Cd2zwTyUB45Mf5iE6xVvnXQY",
+          "ext": ".xml",
+          "hash": "3c5c9bce",
+          "size": 304,
+          "fs_path": "Cube/Dusk/DuskSpecularHDR_QualityLow.xml"
+        },
+        {
+          "uuid": "E5iviec-xeblbpCb0Y3_O4si",
+          "ext": ".xml",
+          "hash": "7a41620e",
+          "size": 3404,
+          "fs_path": "LightGroup/Daytime.xml"
+        },
+        {
+          "uuid": "FIx9GVAQijMjRKEg1BYwFJau",
+          "ext": ".xml",
+          "hash": "f3781b33",
+          "size": 309,
+          "fs_path": "Cube/Day/DaySpecularHDR_QualityLow.xml"
+        },
+        {
+          "uuid": "FPvUaaCNLvNLkedNVoQ1sPhw",
+          "ext": ".dds",
+          "hash": "cd152070",
+          "size": 16841,
+          "hash@windows": "64caabe5",
+          "size@windows": 33161,
+          "fs_path": "Cube/Day/DaySpecularHDR_QualityLow.dds"
+        },
+        {
+          "uuid": "HNEOIbV9kVCUxkUDDqh2fp_r",
+          "ext": ".xml",
+          "hash": "7a41620e",
+          "size": 3404,
+          "fs_path": "LightGroup/Day.xml"
+        }
+      ]
+    },
+    {
+      "file": "D:\\taptap\\To-the-Human-World-3D-Lab\\.preview-home\\preview\\8399e5e2bbabd5c8205bcd98679af65e37888a7db32a0784f4fcf4dd67214cef\\public-index-cache\\engine-res-f8c7bb8e.json",
+      "sha256": "9d7933b6dd8717eaeeaaccd71118004b54b6bf3757c437a44a1f2d3f8fcfa5fe",
+      "file_count": 1068,
+      "matches": [
+        {
+          "uuid": "A893qfQ2rpYH2VMO8BIlZg7p",
+          "ext": ".dds",
+          "hash": "79149ea8",
+          "size": 16837,
+          "hash@windows": "098f7a89",
+          "size@windows": 33157,
+          "fs_path": "Cube/Night/NightSpecularHDR_QualityLow.dds"
+        },
+        {
+          "uuid": "AM1f-eM8TSLm14H73uUifDGm",
+          "ext": ".dds",
+          "hash": "4f65d731",
+          "size": 16833,
+          "hash@windows": "55090504",
+          "size@windows": 33153,
+          "fs_path": "Cube/Dusk/DuskSpecularHDR_QualityLow.dds"
+        },
+        {
+          "uuid": "BMc--ZGrpJFG5QVr1FvVmhAI",
+          "ext": ".xml",
+          "hash": "ae7334a8",
+          "size": 305,
+          "fs_path": "Cube/Night/NightSpecularHDR_QualityLow.xml"
+        },
+        {
+          "uuid": "CJWiIUZq2sE5946HaLY1_ssF",
+          "ext": ".xml",
+          "hash": "6b3457d2",
+          "size": 3504,
+          "fs_path": "LightGroup/Dusk.xml"
+        },
+        {
+          "uuid": "Cd2zwTyUB45Mf5iE6xVvnXQY",
+          "ext": ".xml",
+          "hash": "3c5c9bce",
+          "size": 304,
+          "fs_path": "Cube/Dusk/DuskSpecularHDR_QualityLow.xml"
+        },
+        {
+          "uuid": "E5iviec-xeblbpCb0Y3_O4si",
+          "ext": ".xml",
+          "hash": "7a41620e",
+          "size": 3404,
+          "fs_path": "LightGroup/Daytime.xml"
+        },
+        {
+          "uuid": "FIx9GVAQijMjRKEg1BYwFJau",
+          "ext": ".xml",
+          "hash": "f3781b33",
+          "size": 309,
+          "fs_path": "Cube/Day/DaySpecularHDR_QualityLow.xml"
+        },
+        {
+          "uuid": "FPvUaaCNLvNLkedNVoQ1sPhw",
+          "ext": ".dds",
+          "hash": "cd152070",
+          "size": 16841,
+          "hash@windows": "64caabe5",
+          "size@windows": 33161,
+          "fs_path": "Cube/Day/DaySpecularHDR_QualityLow.dds"
+        },
+        {
+          "uuid": "HNEOIbV9kVCUxkUDDqh2fp_r",
+          "ext": ".xml",
+          "hash": "7a41620e",
+          "size": 3404,
+          "fs_path": "LightGroup/Day.xml"
+        }
+      ]
+    }
+  ],
+  "dependencies": {
+    "executable_sha256": "116e3309d52873044d7832ad153cd88c3adcca17289baa22497994234f817ee2",
+    "static_import_dlls": [
+      "USER32.dll",
+      "bcrypt.dll",
+      "shaderc.dll",
+      "dwmapi.dll",
+      "SHELL32.dll",
+      "ADVAPI32.dll",
+      "MFPlat.DLL",
+      "MFReadWrite.dll",
+      "PROPSYS.dll",
+      "KERNEL32.dll",
+      "MSVCP140.dll",
+      "VCRUNTIME140.dll",
+      "VCRUNTIME140_1.dll",
+      "api-ms-win-crt-runtime-l1-1-0.dll",
+      "api-ms-win-crt-heap-l1-1-0.dll",
+      "api-ms-win-crt-string-l1-1-0.dll",
+      "api-ms-win-crt-environment-l1-1-0.dll",
+      "api-ms-win-crt-stdio-l1-1-0.dll",
+      "api-ms-win-crt-filesystem-l1-1-0.dll",
+      "api-ms-win-crt-math-l1-1-0.dll",
+      "api-ms-win-crt-convert-l1-1-0.dll",
+      "api-ms-win-crt-time-l1-1-0.dll",
+      "api-ms-win-crt-utility-l1-1-0.dll",
+      "api-ms-win-crt-locale-l1-1-0.dll",
+      "api-ms-win-crt-conio-l1-1-0.dll",
+      "GDI32.dll",
+      "WINMM.dll",
+      "IMM32.dll",
+      "ole32.dll",
+      "SETUPAPI.dll",
+      "VERSION.dll",
+      "WS2_32.dll",
+      "IPHLPAPI.DLL",
+      "dbghelp.dll"
+    ],
+    "themis_is_static_import": false,
+    "themis_binary_strings": [
+      "themis_x64.dll",
+      "Can not load themis_x64.dll.",
+      "C:\\actions-runner\\_work\\urhox\\urhox\\engine\\Source\\Common\\SDK\\ThemisSDK\\ThemisSDK_Windows.cpp",
+      "init_themis_by_appid",
+      "Can not get function init_themis_by_appid from themis_x64.dll.",
+      "Failed to init themis sdk."
+    ],
+    "shipped_files": [
+      "UrhoXRuntime.exe",
+      "shaderc.dll",
+      "d3dcompiler_47.dll",
+      "Autoload/Data.pak",
+      "Autoload/CoreData.pak",
+      "Autoload/Res.pak",
+      "Res/shadercache_runtime/shadercache_dx11.pak"
+    ],
+    "themis_shipped": false,
+    "installed_themis_exists": false,
+    "lab_themis_exists": false,
+    "scope": "Static dependencies and distribution metadata only. Dynamic feature purpose remains unknown without official documentation."
+  },
+  "first_run_install_logs": [
+    {
+      "path": "C:\\Users\\YINGYI\\.taptap-maker\\runtime\\runtime-55daebeb-793b-4258-9b0e-9ca63cd33351\\logs\\game\\urhox_runtime-2026-10-12 12_20_13_846.log",
+      "bytes": 59269,
+      "modified_utc": "2026-10-12T04:20:58.994781+00:00",
+      "sha256": "52256d83dbed4801cf4e87d83e3960fe940a013a4422cd04748b52956aa250b4",
+      "contains_lab_marker": false,
+      "contains_lab_app_id": true,
+      "contains_lab_path": true,
+      "findings": [],
+      "raw_content_exported": false,
+      "loopback_url_shapes": [
+        {
+          "line": 65,
+          "scope": "loopback_preview_URL",
+          "path_segment_lengths": [
+            64,
+            11
+          ],
+          "query_parameter_names": [],
+          "raw_url_exported": false
+        },
+        {
+          "line": 80,
+          "scope": "loopback_preview_URL",
+          "path_segment_lengths": [
+            64,
+            5,
+            22
+          ],
+          "query_parameter_names": [],
+          "raw_url_exported": false
+        },
+        {
+          "line": 137,
+          "scope": "loopback_preview_URL",
+          "path_segment_lengths": [
+            64,
+            12
+          ],
+          "query_parameter_names": [],
+          "raw_url_exported": false
+        }
+      ],
+      "windows_user_path_present": true,
+      "hardware_identifiers_present": true
+    },
+    {
+      "path": "C:\\Users\\YINGYI\\.taptap-maker\\runtime\\runtime-55daebeb-793b-4258-9b0e-9ca63cd33351\\logs\\game\\urhox_runtime-2026-10-12 12_30_01_610.log",
+      "bytes": 58690,
+      "modified_utc": "2026-10-12T04:30:15.634805+00:00",
+      "sha256": "d51fec73f8eb7c9601200c8f41fcff3f04f0e5708644fcabaac39739b955b521",
+      "contains_lab_marker": false,
+      "contains_lab_app_id": true,
+      "contains_lab_path": true,
+      "findings": [],
+      "raw_content_exported": false,
+      "loopback_url_shapes": [
+        {
+          "line": 65,
+          "scope": "loopback_preview_URL",
+          "path_segment_lengths": [
+            64,
+            11
+          ],
+          "query_parameter_names": [],
+          "raw_url_exported": false
+        },
+        {
+          "line": 80,
+          "scope": "loopback_preview_URL",
+          "path_segment_lengths": [
+            64,
+            5,
+            22
+          ],
+          "query_parameter_names": [],
+          "raw_url_exported": false
+        },
+        {
+          "line": 137,
+          "scope": "loopback_preview_URL",
+          "path_segment_lengths": [
+            64,
+            12
+          ],
+          "query_parameter_names": [],
+          "raw_url_exported": false
+        }
+      ],
+      "windows_user_path_present": true,
+      "hardware_identifiers_present": true
+    },
+    {
+      "path": "C:\\Users\\YINGYI\\.taptap-maker\\runtime\\runtime-55daebeb-793b-4258-9b0e-9ca63cd33351\\logs\\lua\\lua-2026-10-12 12_20_19_484.log",
+      "bytes": 25101,
+      "modified_utc": "2026-10-12T04:29:43.892857+00:00",
+      "sha256": "0bb246a676ddf53418d96708215a732a1a96657ed2ae0f3673d275c2caf699e8",
+      "contains_lab_marker": true,
+      "contains_lab_app_id": false,
+      "contains_lab_path": true,
+      "findings": [],
+      "raw_content_exported": false,
+      "loopback_url_shapes": [],
+      "windows_user_path_present": false,
+      "hardware_identifiers_present": false
+    },
+    {
+      "path": "C:\\Users\\YINGYI\\.taptap-maker\\runtime\\runtime-55daebeb-793b-4258-9b0e-9ca63cd33351\\logs\\lua\\lua-2026-10-12 12_30_04_052.log",
+      "bytes": 1727,
+      "modified_utc": "2026-10-12T04:30:15.512047+00:00",
+      "sha256": "bd307e4106f9ae4410461c35c7447c813d2ee53cd6c61a825c8339b980807ce4",
+      "contains_lab_marker": true,
+      "contains_lab_app_id": false,
+      "contains_lab_path": false,
+      "findings": [],
+      "raw_content_exported": false,
+      "loopback_url_shapes": [],
+      "windows_user_path_present": false,
+      "hardware_identifiers_present": false
+    }
+  ],
+  "related_metadata_only": [
+    {
+      "path": "C:\\Users\\YINGYI\\.taptap-maker\\runtime\\runtime-55daebeb-793b-4258-9b0e-9ca63cd33351\\User\\user_info-e.master.sce.xd.com.json",
+      "bytes": 59,
+      "modified_utc": "2026-10-01T14:18:39.582848+00:00"
+    },
+    {
+      "path": "C:\\Users\\YINGYI\\.taptap-maker\\runtime\\runtime-55daebeb-793b-4258-9b0e-9ca63cd33351\\ResCache\\shadercache_runtime\\dx11\\.cache_version",
+      "bytes": 66,
+      "modified_utc": "2026-10-01T14:18:46.277397+00:00"
+    }
+  ],
+  "privacy_scope": "Only named first-run/reload log files read. User state and login/credential file contents were not read or copied. No deletion or install-directory writes. Pattern scan cannot prove absence of every possible sensitive format. Metadata alone does not attribute other workers files to this task.",
+  "note": "No regex credential matches is not a claim that logs are anonymous. Absolute user paths, hardware details and loopback capability URL paths may be sensitive. Raw logs not exported."
+}

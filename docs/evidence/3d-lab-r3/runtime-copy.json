@@ -1,0 +1,54 @@
+{
+  "copied_utc": "2026-10-12T04:32:48.347179+00:00",
+  "purpose": "Existing Runtime copy only. No installer, account, credential, save, preview-session, User, logs or ResCache copied. Subsequent engine-relative outputs stay within lab.",
+  "files": [
+    {
+      "source": "C:\\Users\\YINGYI\\.taptap-maker\\runtime\\runtime-55daebeb-793b-4258-9b0e-9ca63cd33351\\UrhoXRuntime.exe",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.runtime\\UrhoXRuntime.exe",
+      "sha256": "116e3309d52873044d7832ad153cd88c3adcca17289baa22497994234f817ee2",
+      "bytes": 27601920
+    },
+    {
+      "source": "C:\\Users\\YINGYI\\.taptap-maker\\runtime\\runtime-55daebeb-793b-4258-9b0e-9ca63cd33351\\shaderc.dll",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.runtime\\shaderc.dll",
+      "sha256": "9f3b3edd64a8989c1200893ec130bf76c43499b9e3892d34bc021971014603a0",
+      "bytes": 6666752
+    },
+    {
+      "source": "C:\\Users\\YINGYI\\.taptap-maker\\runtime\\runtime-55daebeb-793b-4258-9b0e-9ca63cd33351\\d3dcompiler_47.dll",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.runtime\\d3dcompiler_47.dll",
+      "sha256": "a05f99734f7c4822fefc12b367af21fd0976ed6608752fb1e1e80b6ece7ecbbb",
+      "bytes": 4741488
+    },
+    {
+      "source": "C:\\Users\\YINGYI\\.taptap-maker\\runtime\\runtime-55daebeb-793b-4258-9b0e-9ca63cd33351\\Autoload\\Data.pak",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.runtime\\Autoload\\Data.pak",
+      "sha256": "dae258d0647a34daca866cc0a499cbfe8a7f03208cf9194aea740307cc3d7445",
+      "bytes": 7036729
+    },
+    {
+      "source": "C:\\Users\\YINGYI\\.taptap-maker\\runtime\\runtime-55daebeb-793b-4258-9b0e-9ca63cd33351\\Autoload\\CoreData.pak",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.runtime\\Autoload\\CoreData.pak",
+      "sha256": "b8f3e14a4867899f8d89b80b7ed64a3ef28a52ce572af4f14603ae9811c20560",
+      "bytes": 80334
+    },
+    {
+      "source": "C:\\Users\\YINGYI\\.taptap-maker\\runtime\\runtime-55daebeb-793b-4258-9b0e-9ca63cd33351\\Autoload\\Res.pak",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.runtime\\Autoload\\Res.pak",
+      "sha256": "302468bfc6f9a991c30b19043153f0ac564a8bf95dd2a45ebd7063227968b42d",
+      "bytes": 28147830
+    },
+    {
+      "source": "C:\\Users\\YINGYI\\.taptap-maker\\runtime\\runtime-55daebeb-793b-4258-9b0e-9ca63cd33351\\Res\\shadercache_runtime\\shadercache_dx11.pak",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.runtime\\Res\\shadercache_runtime\\shadercache_dx11.pak",
+      "sha256": "534d7e462ebd248d95dafca4c1f8fa66197087811973a3a4f9b97a2cdcafedd2",
+      "bytes": 30811781
+    },
+    {
+      "source": "C:\\Users\\YINGYI\\.taptap-maker\\runtime\\runtime-55daebeb-793b-4258-9b0e-9ca63cd33351\\build.json",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.runtime\\build.json",
+      "sha256": "3c89c2e7ca074645b6c5ee67b50f5a1a186f25511c89ef4d3aabafbe7d41982c",
+      "bytes": 956
+    }
+  ]
+}

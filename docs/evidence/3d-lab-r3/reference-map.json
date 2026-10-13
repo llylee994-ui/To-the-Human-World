@@ -1,0 +1,128 @@
+{
+  "time": "2026-10-11T18:41:22.108258+00:00",
+  "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\references\\incoming",
+  "files": [
+    {
+      "transfer_id": "materialize-1",
+      "file_id": "file_00000000c57881f68893b509d6509769",
+      "library_file_id": "libfile_8c9fa304d36c8191b151fc36947444b4",
+      "file_name": "已粘贴的文本.txt",
+      "suggested_path": "已粘贴的文本.txt",
+      "current_version_number": 0,
+      "xattrs": [
+        {
+          "name": "user.library-file-version",
+          "value": "0"
+        }
+      ],
+      "workspace_path": null,
+      "method": "GET",
+      "mime_type": "text/plain",
+      "size_bytes": 15170,
+      "intended_local_path": "D:\\taptap\\To-the-Human-World-3D-Lab\\references\\incoming\\已粘贴的文本.txt",
+      "exists": false,
+      "readable": false,
+      "pixels_viewed": false,
+      "use": "完整任务原文",
+      "status": "FAILED_OFFICIAL_HELPER_XATTR"
+    },
+    {
+      "transfer_id": "materialize-2",
+      "file_id": "file_00000000091081f5ac15f3dbd1a323a8",
+      "library_file_id": "libfile_c2f2699533308191baf7671734681d6e",
+      "file_name": "主页最新.png",
+      "suggested_path": "主页最新.png",
+      "current_version_number": 0,
+      "xattrs": [
+        {
+          "name": "user.library-file-version",
+          "value": "0"
+        }
+      ],
+      "workspace_path": null,
+      "method": "GET",
+      "mime_type": "image/png",
+      "size_bytes": 2588503,
+      "intended_local_path": "D:\\taptap\\To-the-Human-World-3D-Lab\\references\\incoming\\主页最新.png",
+      "exists": false,
+      "readable": false,
+      "pixels_viewed": false,
+      "use": "空间、构图、配色和光照（必须看像素）",
+      "status": "FAILED_OFFICIAL_HELPER_XATTR"
+    },
+    {
+      "transfer_id": "materialize-3",
+      "file_id": "file_00000000039881f5b5c694004bd2e448",
+      "library_file_id": "libfile_a2290d8cb1608191b86d726ef38253d0",
+      "file_name": "H09_炼药炉_纤巧草药熬制_透明_v05.png",
+      "suggested_path": "H09_炼药炉_纤巧草药熬制_透明_v05.png",
+      "current_version_number": 0,
+      "xattrs": [
+        {
+          "name": "user.library-file-version",
+          "value": "0"
+        }
+      ],
+      "workspace_path": null,
+      "method": "GET",
+      "mime_type": "image/png",
+      "size_bytes": 934342,
+      "intended_local_path": "D:\\taptap\\To-the-Human-World-3D-Lab\\references\\incoming\\H09_炼药炉_纤巧草药熬制_透明_v05.png",
+      "exists": false,
+      "readable": false,
+      "pixels_viewed": false,
+      "use": "药炉造型（必须看像素）",
+      "status": "FAILED_OFFICIAL_HELPER_XATTR"
+    },
+    {
+      "transfer_id": "materialize-4",
+      "file_id": "file_00000000f1e481f98ae3961df0cf1809",
+      "library_file_id": "libfile_e2a87568a9e08191a247b61dce0d90c9",
+      "file_name": "H18_商船组合层_透明_自动提取_v03.png",
+      "suggested_path": "H18_商船组合层_透明_自动提取_v03.png",
+      "current_version_number": 0,
+      "xattrs": [
+        {
+          "name": "user.library-file-version",
+          "value": "0"
+        }
+      ],
+      "workspace_path": null,
+      "method": "GET",
+      "mime_type": "image/png",
+      "size_bytes": 1019547,
+      "intended_local_path": "D:\\taptap\\To-the-Human-World-3D-Lab\\references\\incoming\\H18_商船组合层_透明_自动提取_v03.png",
+      "exists": false,
+      "readable": false,
+      "pixels_viewed": false,
+      "use": "同一商船造型（必须看像素）",
+      "status": "FAILED_OFFICIAL_HELPER_XATTR"
+    },
+    {
+      "transfer_id": "materialize-5",
+      "file_id": "file_00000000879081f5abcd4f9673f587b1",
+      "library_file_id": "libfile_a0036c200d78819182d10b71a95e19c8",
+      "file_name": "H06_捞网_透明_自动提取_v02.png",
+      "suggested_path": "H06_捞网_透明_自动提取_v02.png",
+      "current_version_number": 0,
+      "xattrs": [
+        {
+          "name": "user.library-file-version",
+          "value": "0"
+        }
+      ],
+      "workspace_path": null,
+      "method": "GET",
+      "mime_type": "image/png",
+      "size_bytes": 1595089,
+      "intended_local_path": "D:\\taptap\\To-the-Human-World-3D-Lab\\references\\incoming\\H06_捞网_透明_自动提取_v02.png",
+      "exists": false,
+      "readable": false,
+      "pixels_viewed": false,
+      "use": "捞网造型（必须看像素）",
+      "status": "FAILED_OFFICIAL_HELPER_XATTR"
+    }
+  ],
+  "remaining_directory_entries": [],
+  "note": "No readable destination or residual temporary file remained after official helper failures. This is a post-call directory inspection, not an inference from xattr failure alone. Signed transfer URLs deliberately excluded."
+}

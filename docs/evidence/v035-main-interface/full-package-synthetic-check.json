@@ -1,0 +1,25 @@
+{
+  "timestampUtc": "2026-10-13T13:33:37.954233+00:00",
+  "package": "D:\\taptap\\To-the-Human-World-3D-Lab\\docs\\evidence\\v035-main-interface\\synthetic-full-package",
+  "synthetic": true,
+  "status": "PASS",
+  "nativePreviewStarted": false,
+  "runtime": "Lua 5.4, real validator/streamer with native backend substitute",
+  "limitation": "No GPU rendering, native performance, camera or human input acceptance",
+  "stats": {
+    "meshes": 9,
+    "drawables": 9,
+    "expandedVertices": 27,
+    "sourceObjects": 9,
+    "sourceVertices": 27,
+    "retainedGeometryMeshes": 0,
+    "triangles": 9.0
+  },
+  "hashFiles": 11,
+  "meshFiles": 9,
+  "textures": {},
+  "normalTextureDegradations": [],
+  "expandedVertexPayloadBytes": 864,
+  "memoryEstimateNote": "Only position/normal/UV float payload; excludes engine buffers, overhead, textures and shadows",
+  "offlineSeconds": 0.033002100011799484
+}

@@ -1,0 +1,547 @@
+{
+  "meshGeometryUnchanged": [
+    {
+      "id": "full_group_000_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "c0297850c883063bf638aaf32dbfa7d2275171b34098753c3bf2cd63fd896c97",
+      "sourceObjects": 5
+    },
+    {
+      "id": "full_group_001_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "cbc4da700596a279a3b404e7e581dee63482587f3ec11e06562781f484e100b6",
+      "sourceObjects": 1
+    },
+    {
+      "id": "full_group_002_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "9aee2acc2e7346df3b7def30150129841a516af0622c394f17c7fb7902b3d86d",
+      "sourceObjects": 1
+    },
+    {
+      "id": "full_group_002_001",
+      "geometryUnchanged": true,
+      "geometrySha256": "a4c108723f124a5ec2ef5ee372c0815293ab0311d903c17ae9102a0b05c9289f",
+      "sourceObjects": 1
+    },
+    {
+      "id": "full_group_003_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "ff047c5be4aad8276a81d42238fa8a355f21bb12a3fe97ab53e313eada4e4cf2",
+      "sourceObjects": 51
+    },
+    {
+      "id": "full_group_004_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "29c44e4daeaeb927d88737fa2435f89388f1268b4b30306070c53eca15959a12",
+      "sourceObjects": 4
+    },
+    {
+      "id": "full_group_005_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "a0f59e3f6722f65ee507e80f2799d6d7ea44176be54698e5d68ec57d05227d0f",
+      "sourceObjects": 8
+    },
+    {
+      "id": "full_group_006_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "49fa3cb694a6fffe2f747186e8f99024c8d472751a838d1d09b692f06988ce72",
+      "sourceObjects": 227
+    },
+    {
+      "id": "full_group_007_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "2fa22b831fa68ecc301097d03d73c12f804275b5afe74004bf7982dd600306b0",
+      "sourceObjects": 80
+    },
+    {
+      "id": "full_group_008_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "9ccbab62d5d4b6c7d56d816840715be08544dc104c841252d6b9034e7e12e090",
+      "sourceObjects": 6
+    },
+    {
+      "id": "full_group_009_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "c57607bfbf04a6a239a93e887dfaf53c1dfcf801e8b083fe8441a9893334dfd1",
+      "sourceObjects": 92
+    },
+    {
+      "id": "full_group_010_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "700100a88dc593f50c7181c79515dc9e5f4778333a5cfbc3f3b09c64d4598997",
+      "sourceObjects": 19
+    },
+    {
+      "id": "full_group_011_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "310e82daa02b3c850ff36b26bb18a3bdc8e98ba8174e877072ecc6dd3d4fecd7",
+      "sourceObjects": 36
+    },
+    {
+      "id": "full_group_012_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "a4bfbff9ed0b862359aa83f3596b6bf900b531eea367c4327e0ba4dc52000f81",
+      "sourceObjects": 170
+    },
+    {
+      "id": "full_group_012_001",
+      "geometryUnchanged": true,
+      "geometrySha256": "c45945174bde7da308297a538261946de0f09610e22efd1ef15f78abe2329a1f",
+      "sourceObjects": 170
+    },
+    {
+      "id": "full_group_012_002",
+      "geometryUnchanged": true,
+      "geometrySha256": "d970e9c7012c4fec9f021ed03f64f5f6bb07027140890c17699cb0404c801b7e",
+      "sourceObjects": 170
+    },
+    {
+      "id": "full_group_012_003",
+      "geometryUnchanged": true,
+      "geometrySha256": "e18d068e30c6cc1b4b836e6453539d800905bf95ba122eeeda5d8e23fb67659f",
+      "sourceObjects": 170
+    },
+    {
+      "id": "full_group_013_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "081f8e7ac85ca3ee15c807f0a3daeb9a667b7bcdb1ea1f3234ca9bed23a0d265",
+      "sourceObjects": 38
+    },
+    {
+      "id": "full_group_014_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "37488e57d67c33286ce893c2156b238f32a2358b817af42d9b2786ce16def375",
+      "sourceObjects": 18
+    },
+    {
+      "id": "full_group_015_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "a6103d94c9db5ec2f4071584d6d269aca58ade968a0b437844698eff483d7e95",
+      "sourceObjects": 582
+    },
+    {
+      "id": "full_group_016_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "3fb49a80cd4af7c0be704feb0f69fa0b51d230ccf59df7875031ee8b57decb1f",
+      "sourceObjects": 1107
+    },
+    {
+      "id": "full_group_016_001",
+      "geometryUnchanged": true,
+      "geometrySha256": "47f5b95bdf458851e410ca3f684605c190e5ada90ef8c5b1f5a4ff17258f9b05",
+      "sourceObjects": 1107
+    },
+    {
+      "id": "full_group_016_002",
+      "geometryUnchanged": true,
+      "geometrySha256": "7c938f370a628fbacca6a60997c3ad161a7509c778352e2a834cea9c37ce4467",
+      "sourceObjects": 1107
+    },
+    {
+      "id": "full_group_017_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "1b1fe06a68c547e1f6749a42b77788c6ba2d19a4bcb8b4356c80a17f0f6dd20b",
+      "sourceObjects": 253
+    },
+    {
+      "id": "full_group_018_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "4ee5b3ea70621cb9cd874e4f3e55d5782e7c47c81f20e5f71a89b257d4708115",
+      "sourceObjects": 105
+    },
+    {
+      "id": "full_group_019_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "7e8c8726597136a3fc26312f0e3e2473a0efcb7e8acc56a396ba44a733e06844",
+      "sourceObjects": 2
+    },
+    {
+      "id": "full_group_020_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "5e6395f3f2eed5a1fff5f85847d85ec0cdea32f39323f2afa2462e577f68215d",
+      "sourceObjects": 1
+    },
+    {
+      "id": "full_group_021_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "223152dc48246d945c2ff13b72fd0605180bd613e3baca373796d7468f03db5d",
+      "sourceObjects": 5
+    },
+    {
+      "id": "full_group_022_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "0a42d601855606ce899914dc0ba37a5c370d37fe984ed54f454a2b1d8b12a3ac",
+      "sourceObjects": 22
+    },
+    {
+      "id": "full_group_023_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "3f41315c3b6000eb13aa22dde1bb9bade9845570fedf43810c2f5224442e7ca9",
+      "sourceObjects": 361
+    },
+    {
+      "id": "full_group_024_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "2036cba21f5d2f70ed76b4f76e666049b5265de1d4ec1e6c1f914223b3691587",
+      "sourceObjects": 24
+    },
+    {
+      "id": "full_group_025_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "97471d8ac62e95710d8c7655bd6d0ccb59d6794a7240bcec971a1b9fff8db14f",
+      "sourceObjects": 10
+    },
+    {
+      "id": "full_group_026_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "ac3bde3bfab1e371d9f7196a260c2d92eba2b993fd51ed4821c15996fd0dafb4",
+      "sourceObjects": 29
+    },
+    {
+      "id": "full_group_027_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "d57555f337b6250f5f100baba1fbe78681625cb46f1219670ebf4decdd0a86e6",
+      "sourceObjects": 1
+    },
+    {
+      "id": "full_group_028_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "99fdccd24a9037fd9014cdb6904814c49e888926ff226dcd06446d48f82dcaac",
+      "sourceObjects": 18
+    },
+    {
+      "id": "full_group_029_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "864a78e09c4d04b9eabf7e29ed1c738272a0073265fc271dcce84b22146ebbdd",
+      "sourceObjects": 8
+    },
+    {
+      "id": "full_group_030_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "9c2595f753bb4418b68bf385435e685d379d626a727ff42fdf44f947d97b904c",
+      "sourceObjects": 2
+    },
+    {
+      "id": "full_group_031_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "26354622146a48b697488b1b1c517b1d573a750fdf4b814907064f4bbf0a41f9",
+      "sourceObjects": 2
+    },
+    {
+      "id": "full_group_032_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "446348b36b8cb9320161ad4954ae4a5581444025cc1445fea10a5e3b8e27be05",
+      "sourceObjects": 5
+    },
+    {
+      "id": "full_group_033_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "983301bbfc23e88c46edc09888bb27eada2785812ca0f3e69d8c07a570fdee86",
+      "sourceObjects": 5
+    },
+    {
+      "id": "full_group_034_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "69e621393c6b3630f8e0dd8e7008f17814850b77de62cb87995d5d1adf11af14",
+      "sourceObjects": 2
+    },
+    {
+      "id": "full_group_035_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "c39377c5ac9f35ea43438e22d32f6913e391d707aced7e377bd522214424e54a",
+      "sourceObjects": 1
+    },
+    {
+      "id": "full_group_036_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "4c36d0499003dc5fd3019edd4da246ad3baa075f19b41e38e4732b890d453372",
+      "sourceObjects": 1
+    },
+    {
+      "id": "full_group_037_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "84748503de4e50fb01053771fc66c6b06abb87201050ab1c4637123762711612",
+      "sourceObjects": 1
+    },
+    {
+      "id": "full_group_038_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "a3dd416f9ce16a0ec91b0e4fdfb15b350b02bf88d236c4f268ef698e59a294d4",
+      "sourceObjects": 4
+    },
+    {
+      "id": "full_group_039_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "cd99ce0f5d491d5bcfa2b5daa1463eb1ff37ddebf25599089af3246165a72c58",
+      "sourceObjects": 6
+    },
+    {
+      "id": "full_group_040_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "e24f7a3a6093173ff8e5d49ee060d0ac8ea00ac739d99713563bc5a27740d626",
+      "sourceObjects": 1
+    },
+    {
+      "id": "full_group_041_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "dc5ebaf79a69e0d824726aa6b27c0156ebac7a43d39d78f5d44c821abc6802ac",
+      "sourceObjects": 2
+    },
+    {
+      "id": "full_group_042_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "b2acfdcd176c52f4ce79fe8b6ab4b663ea8796460851fdda45db01d02b09c139",
+      "sourceObjects": 10
+    },
+    {
+      "id": "full_group_043_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "c015be8390ec7348beaadbcd507b54abf366de452eb3ddba9af263610e99e613",
+      "sourceObjects": 1
+    },
+    {
+      "id": "full_group_044_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "f09fea648053ac2296e241f76fc12277945fc5a321b685f8fbd9fadc255fd8b4",
+      "sourceObjects": 5
+    },
+    {
+      "id": "full_group_045_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "ba50fbdc0f626d34429dec6b6bff4b8fbb6df198df62c5a98d085ab42dd2151c",
+      "sourceObjects": 1
+    },
+    {
+      "id": "full_group_046_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "de61303d28887d70c923665d668e74e912a843e554165ed139a053542c991c86",
+      "sourceObjects": 5628
+    },
+    {
+      "id": "full_group_046_001",
+      "geometryUnchanged": true,
+      "geometrySha256": "dbe631474477cb9e4b566926c992435f79f2a6c67617cca9be9426acb36565a5",
+      "sourceObjects": 5628
+    },
+    {
+      "id": "full_group_046_002",
+      "geometryUnchanged": true,
+      "geometrySha256": "3cb5bba9e3620033de78e70f660afa58893c061a66a1a33c6240a20b0d1b72a1",
+      "sourceObjects": 5628
+    },
+    {
+      "id": "full_group_046_003",
+      "geometryUnchanged": true,
+      "geometrySha256": "f68d1d0ee75a72cf1f04e5a852ba7d66d2b3402d541d54cebd4ca1bd5074f2cd",
+      "sourceObjects": 5628
+    },
+    {
+      "id": "full_group_046_004",
+      "geometryUnchanged": true,
+      "geometrySha256": "206af46c209166ab8127f1eb8891854d1bd6f3cecbe8e7130596f35e4f8d478a",
+      "sourceObjects": 5628
+    },
+    {
+      "id": "full_group_046_005",
+      "geometryUnchanged": true,
+      "geometrySha256": "06c55ddfb55c726f6e086ab00f048b6d170fc682d4b704003224838738aee11c",
+      "sourceObjects": 5628
+    },
+    {
+      "id": "full_group_046_006",
+      "geometryUnchanged": true,
+      "geometrySha256": "666f7ee059ed1706b52b164d44bc397509961f0b5fedee9ac4b712e8e3f71368",
+      "sourceObjects": 5628
+    },
+    {
+      "id": "full_group_046_007",
+      "geometryUnchanged": true,
+      "geometrySha256": "dbc026cd175b3c134eae47a0439272c5173532a45a39729b05079eb101f59c39",
+      "sourceObjects": 5628
+    },
+    {
+      "id": "full_group_046_008",
+      "geometryUnchanged": true,
+      "geometrySha256": "abe65e3c6dd4ee19758a3a7ec7a4f13be4d6273c245cd619e9116a20c585783c",
+      "sourceObjects": 5628
+    },
+    {
+      "id": "full_group_046_009",
+      "geometryUnchanged": true,
+      "geometrySha256": "d330b52c8631e959dcb15ce21edf70bbd5a8eed48adb75886443fed2075e9b90",
+      "sourceObjects": 5628
+    },
+    {
+      "id": "full_group_046_010",
+      "geometryUnchanged": true,
+      "geometrySha256": "808d4fa842ce199f9afc3d5096bbeb9da2e34b4b7f0c08f0fdf5db99698c4a8b",
+      "sourceObjects": 5628
+    },
+    {
+      "id": "full_group_046_011",
+      "geometryUnchanged": true,
+      "geometrySha256": "54e9bb402fe5fcfef9077ca63e9453e993067baa299cb130e34ec9644fdbdb0e",
+      "sourceObjects": 5628
+    },
+    {
+      "id": "full_group_046_012",
+      "geometryUnchanged": true,
+      "geometrySha256": "75ea6b0832b2726b808d52aea3a737a6ffbf8a3191becda2ddae1c90cd06b2f8",
+      "sourceObjects": 5628
+    },
+    {
+      "id": "full_group_046_013",
+      "geometryUnchanged": true,
+      "geometrySha256": "bff5bbcdf28ca4202b9db940fc631703b99db9748b256e58a996f666fff1c4e5",
+      "sourceObjects": 5628
+    },
+    {
+      "id": "full_group_046_014",
+      "geometryUnchanged": true,
+      "geometrySha256": "b7262a69b60289a825b737e357625c04b99fe0cc3b34868ec52aa4cb377cc4f6",
+      "sourceObjects": 5628
+    },
+    {
+      "id": "full_group_046_015",
+      "geometryUnchanged": true,
+      "geometrySha256": "2ce6a65190c4bc1c6aa4211f3051be70d84d9e51e73031568484f62ebef1aa6a",
+      "sourceObjects": 5628
+    },
+    {
+      "id": "full_group_046_016",
+      "geometryUnchanged": true,
+      "geometrySha256": "07baefde46d5a9f6dd2834bf02de7b6d70f89edb1627c8b50faa47a56343e36c",
+      "sourceObjects": 5628
+    },
+    {
+      "id": "full_group_047_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "a4cf0349b10b9b7a0a8f8b07c1a01ec48090e8df26d3bad802bfc119cc268a11",
+      "sourceObjects": 780
+    },
+    {
+      "id": "full_group_047_001",
+      "geometryUnchanged": true,
+      "geometrySha256": "62640afe77a441197c38a6857e43294e3d80bcb8432d86f8ea520752b652aa07",
+      "sourceObjects": 780
+    },
+    {
+      "id": "full_group_047_002",
+      "geometryUnchanged": true,
+      "geometrySha256": "79dee3464fe7314ab99c644763619670c0b6181b4d398cfa0be6ade8f332ebc8",
+      "sourceObjects": 780
+    },
+    {
+      "id": "full_group_048_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "bc702efa6dbb3db458a7465182f87f79ee7ed08e7a5676a582913a1c9ebee712",
+      "sourceObjects": 33
+    },
+    {
+      "id": "full_group_049_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "9f859e0a856c793d39944483f7fe295f701e1066062e49bbadaf45efd0276738",
+      "sourceObjects": 9
+    },
+    {
+      "id": "full_group_049_001",
+      "geometryUnchanged": true,
+      "geometrySha256": "ee7e1f40a00f6dc68428b5d8848fa62307e78bc89e816b27248188ebb995cb10",
+      "sourceObjects": 9
+    },
+    {
+      "id": "full_group_050_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "1ee0f85e2e8f4a061c7a80e3e223aa982c8518c7ced61f9c6cb393afd7f48dfd",
+      "sourceObjects": 299
+    },
+    {
+      "id": "full_group_051_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "6b8f229dc377dd13f866f15e1673256b070c195c021a7fcbbbf1ed0130def8a5",
+      "sourceObjects": 144
+    },
+    {
+      "id": "full_group_052_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "00ca40987594a52f2c30362727752ea5db5bbeda8e21f90c6e49e03ef589b14c",
+      "sourceObjects": 168
+    },
+    {
+      "id": "full_group_052_001",
+      "geometryUnchanged": true,
+      "geometrySha256": "e7de91716f440562d9359c87004268d850656c50ffe357c7292dd80d0e694676",
+      "sourceObjects": 168
+    },
+    {
+      "id": "full_group_052_002",
+      "geometryUnchanged": true,
+      "geometrySha256": "7a61b14230d11127d128f640c3617e3167e39a50d462e5809a2d8237d269a2c8",
+      "sourceObjects": 168
+    },
+    {
+      "id": "full_group_053_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "f78e644943e1ec78321627b618a8fff0db9498a3ef064fc878dc3ba27fb8cc77",
+      "sourceObjects": 336
+    },
+    {
+      "id": "full_group_053_001",
+      "geometryUnchanged": true,
+      "geometrySha256": "249d8d5e47a955481d2f9afd6305be044fb3be0590133f2cba194b4769f2cf46",
+      "sourceObjects": 336
+    },
+    {
+      "id": "full_group_054_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "f2872270ef1ab0f984b722d2fcd401d8dd788dbf48073bbed33655c8d57f66a4",
+      "sourceObjects": 11
+    },
+    {
+      "id": "full_group_055_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "f63f56530a7a9b9a66d953bcdf23c25e46736f10172b4d60fe3b6f8753fd957c",
+      "sourceObjects": 59
+    },
+    {
+      "id": "full_group_055_001",
+      "geometryUnchanged": true,
+      "geometrySha256": "6a983d90f4f1292bcd51a5b2818e403d0fb2f08712251fcc19bd6b4549f76802",
+      "sourceObjects": 59
+    },
+    {
+      "id": "full_group_055_002",
+      "geometryUnchanged": true,
+      "geometrySha256": "fe8d409c85172b426794964948973e90cb5f24b1831d9978e965730cdbeaf888",
+      "sourceObjects": 59
+    },
+    {
+      "id": "full_group_055_003",
+      "geometryUnchanged": true,
+      "geometrySha256": "080fca9cb61c2dc3e30905fcfae71948dc1a4c68092a6bb964e9805c730c93a5",
+      "sourceObjects": 59
+    },
+    {
+      "id": "full_group_055_004",
+      "geometryUnchanged": true,
+      "geometrySha256": "d6882ee4862560d62374789bade4aa691d910c97b8f77eaacb7ef7450d0fb0e5",
+      "sourceObjects": 59
+    },
+    {
+      "id": "full_group_056_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "c521fa2c61de7d9a963385cae92d05b364d1e0d880fdeadb888f51e6523b847b",
+      "sourceObjects": 1
+    },
+    {
+      "id": "full_group_057_000",
+      "geometryUnchanged": true,
+      "geometrySha256": "cdf11140a1419027b77803aca912b4930d5489d7a0d36572e689df2bbdbfabf8",
+      "sourceObjects": 1
+    }
+  ],
+  "allEightOwnershipListsNonempty": true,
+  "format": "dot-customgeometry-scene-v1",
+  "contractLibraryId": "libfile_2ce51c6065b48191a892d35f0ed2fc6f"
+}

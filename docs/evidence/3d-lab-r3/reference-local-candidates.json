@@ -1,0 +1,51 @@
+{
+  "utc": "2026-10-12T05:11:35.648255+00:00",
+  "files": [
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\素材\\主页最新.png",
+      "file_name": "主页最新.png",
+      "size": 2610396,
+      "size_matches_attachment": false,
+      "width": 1672,
+      "height": 941,
+      "dimensions_match_attachment": true,
+      "sha256": "1179f44d928c03fbddddfad91a54accbb0c515c5f29f85077784ecf5248a3d1d",
+      "modified_utc": "2026-10-11T17:59:45.716955+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\素材\\H09_炼药炉_纤巧草药熬制_透明_v05.png",
+      "file_name": "H09_炼药炉_纤巧草药熬制_透明_v05.png",
+      "size": 958008,
+      "size_matches_attachment": false,
+      "width": 1313,
+      "height": 1198,
+      "dimensions_match_attachment": true,
+      "sha256": "a09c379fe6ac0946076c2e0284afad32a57f60831a425560b2259830d0292898",
+      "modified_utc": "2026-10-10T12:03:40.049793+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\素材\\H18_商船组合层_透明_自动提取_v03.png",
+      "file_name": "H18_商船组合层_透明_自动提取_v03.png",
+      "size": 1043213,
+      "size_matches_attachment": false,
+      "width": 1319,
+      "height": 1192,
+      "dimensions_match_attachment": true,
+      "sha256": "bc261c32e3839fb72d365ae394963c0417dced57f48b1f1dd0381df2561f16be",
+      "modified_utc": "2026-10-10T11:40:59.398543+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\素材\\H06_捞网_透明_自动提取_v02.png",
+      "file_name": "H06_捞网_透明_自动提取_v02.png",
+      "size": 1433453,
+      "size_matches_attachment": false,
+      "width": 1024,
+      "height": 1536,
+      "dimensions_match_attachment": true,
+      "sha256": "88e554c6abbe273e065b7c7f5c6944c0a73d08e4c4655185770ecececfa036f7",
+      "modified_utc": "2026-10-10T11:41:48.491499+00:00"
+    }
+  ],
+  "pixels_viewed": false,
+  "scope": "Only exact attachment filenames inside explicitly authorized formal project material folder. No unrelated folders searched."
+}

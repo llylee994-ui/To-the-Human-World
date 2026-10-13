@@ -1,0 +1,37 @@
+{
+  "timestampUtc": "2026-10-13T10:42:01.980053+00:00",
+  "mainSha": "1cd0cdbec06487a5c60f109d5fd477198cfc8846",
+  "mapping": {
+    "home.drawer": "letters",
+    "home.journal": "journal",
+    "home.tray": "words",
+    "home.net": "seaside",
+    "home.caseFile": "case",
+    "home.merchantShip": "shop",
+    "home.letterPaper": "paper",
+    "home.stove": "brew"
+  },
+  "mainContractRead": true,
+  "saveSystemInjectionConfirmed": true,
+  "v035LibraryId": "libfile_f0f734c339f8819184fc10b1aa8f376c",
+  "expectedBytes": 39841319,
+  "localZipExists": false,
+  "materializationResult": "FAILED_OS_SETXATTR_UNAVAILABLE",
+  "attempts": 2,
+  "errorLog": "tools/library-v035-20261013/materialize-retry.log",
+  "actualV035PixelsViewed": false,
+  "nativeStarted": false,
+  "v035Integrated": false,
+  "nativeVerified": false,
+  "importRoute": "Proposed evaluated mesh JSON + PNG -> CustomGeometry; sample required",
+  "unverified": [
+    "full scene geometry import",
+    "alpha/sorting",
+    "UV orientation",
+    "runtime cost",
+    "new UI binding",
+    "native preview",
+    "mobile",
+    "final appearance"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "utc": "2026-10-12T06:11:50.147469+00:00",
+  "task_id": "01a12c24-a725-712b-ba7d-df58430f5098",
+  "artifact": "D3-LAB-20261012-r3-v01",
+  "master_library_file_id": "libfile_6ea7753ee7a48191aa842fadeeb7db67",
+  "master_local_path": "D:\\taptap\\To-the-Human-World-3D-Lab\\references\\master-20261012\\image(2).png",
+  "master_dimensions": [
+    1672,
+    941
+  ],
+  "master_rgba_sha256": "477413f9265ed4aca1deb3a3b92c89d758394e0c3de1792c0eb4209d02871061",
+  "rgba_match": true,
+  "actual_pixels_viewed": true,
+  "reference_acquisition_blocked": false,
+  "art_status": "In progress, previous coarse and Home Art A rejected; no visual acceptance",
+  "local_implemented": [
+    "Home camera fitted to reference door anchors",
+    "Desk and shelf rotated onto perpendicular right wall",
+    "Door, stove, ship, net and occluders realigned",
+    "Rounded wood geometry, tube details and higher-resolution lathe shapes"
+  ],
+  "native_session": "f9149322-cab2-403b-9b60-68a1c9eb1ce5",
+  "native_last_evidence": {
+    "meshes": 537,
+    "vertices": 20694,
+    "indices": 99636,
+    "uniqueModels": 141,
+    "materials": 28,
+    "generatedTextures": 4,
+    "generatedTextureResolution": 128,
+    "reported_client_size": "1304x734",
+    "state": "stopped before bounded 600s duration",
+    "stop_reason": "diagnosis complete: ambiguous; no persisted native exit code, no crash event/dump, QA disabled; user stop cannot be excluded"
+  },
+  "native_visual_verification": "No current master-layout native frame captured",
+  "new_art_pushed": false,
+  "remote_commit": "6d4829df6d3af0b6c2f2d114dd7b32da9d6ab997",
+  "next": "Await explicit permission to restart only the Lab preview; offline art work may continue independently.",
+  "exit_diagnosis": "docs/evidence/3d-lab-r3/preview-exit-diagnosis/REPORT.md"
+}

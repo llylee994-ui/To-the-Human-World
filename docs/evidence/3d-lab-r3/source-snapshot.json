@@ -1,0 +1,355 @@
+{
+  "head": "c59c59044218e6be626edb86f66dc950f6943bd2",
+  "files": [
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.tmp\\b1-python\\lupa\\__init__.py",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\tools\\vendor\\lupa\\__init__.py",
+      "sha256": "d1f7d659bbbb804e58cf8eadb6480609858db8680177f4bee81992fa55a6eb8d",
+      "size": 3067,
+      "copied_at": "2026-10-11T18:11:40.028092+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.tmp\\b1-python\\lupa\\lua54.cp313-win_amd64.pyd",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\tools\\vendor\\lupa\\lua54.cp313-win_amd64.pyd",
+      "sha256": "de42e8ad6ab95437056786a60c8732c8cc26591a7c6ba73f0b5d7219f7f847f7",
+      "size": 562176,
+      "copied_at": "2026-10-11T18:11:40.131953+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.tmp\\b1-python\\lupa\\version.py",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\tools\\vendor\\lupa\\version.py",
+      "sha256": "b4037d51a33e39bf4d7fba1e660f2f56859898922f49c17d7785c1b95a36836d",
+      "size": 21,
+      "copied_at": "2026-10-11T18:11:40.158877+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\core\\EventBus.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\core\\EventBus.lua",
+      "sha256": "f53bce9dfe7c18ea854d50f7413b339bf32904acfc469bde7044d4231a35f92a",
+      "size": 5845,
+      "copied_at": "2026-10-11T18:11:40.182223+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\core\\GameFlow.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\core\\GameFlow.lua",
+      "sha256": "2c483fa0880fab20f7109e8db3369efe7fbdb0d69d469450134de5bc5b6b0eb4",
+      "size": 7736,
+      "copied_at": "2026-10-11T18:11:40.207637+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\core\\GameSession.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\core\\GameSession.lua",
+      "sha256": "3fa6ab2a5fa1ecf5419f5e6b1c15ab6ca7644bd6af93e8a9ee0d7ae9627a0f33",
+      "size": 2543,
+      "copied_at": "2026-10-11T18:11:40.210074+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\core\\GameState.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\core\\GameState.lua",
+      "sha256": "f49dfbc15c161070dec3902742d1e737d472f01a37d8335742b703fd5765c978",
+      "size": 27083,
+      "copied_at": "2026-10-11T18:11:40.251618+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\core\\SaveJson.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\core\\SaveJson.lua",
+      "sha256": "407249e9959bb17b1099d1338302a5e3ad7ef04165d219f25afcd8909518a880",
+      "size": 3057,
+      "copied_at": "2026-10-11T18:11:40.256305+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\core\\SaveMigrations.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\core\\SaveMigrations.lua",
+      "sha256": "01e8f797485f25105299d6f0ce273b06de454abef3b3834a602bb0700e41ae43",
+      "size": 2270,
+      "copied_at": "2026-10-11T18:11:40.296927+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\core\\SaveSchema.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\core\\SaveSchema.lua",
+      "sha256": "b67a2822b37e92831a6caf89955266123885dfce6d656985cf69574b95bf5d98",
+      "size": 17422,
+      "copied_at": "2026-10-11T18:11:40.352733+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\core\\SaveSystem.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\core\\SaveSystem.lua",
+      "sha256": "cb1b2a2a160d5cf6819f6ce081dcd9eed434eb572264983c7da048a6f1043eb4",
+      "size": 8166,
+      "copied_at": "2026-10-11T18:11:40.357507+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\core\\SchemaProjection.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\core\\SchemaProjection.lua",
+      "sha256": "f41bec1d9e99eddd29932237babc84b76340c9d5b0786d21acd1e5cc3b8a7abf",
+      "size": 957,
+      "copied_at": "2026-10-11T18:11:40.381307+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\core\\StateUtil.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\core\\StateUtil.lua",
+      "sha256": "87b7818d2c4fce1325c1db6bc8b2e6b27ac48aec66f59d162d99e0d105cb336e",
+      "size": 2972,
+      "copied_at": "2026-10-11T18:11:40.417845+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\data\\content.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\data\\content.lua",
+      "sha256": "31321c3836b3a927b798e012e4caff7ed48d773410f24e5fbc67ce71e4b514b5",
+      "size": 75281,
+      "copied_at": "2026-10-11T18:11:40.423026+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\data\\effects.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\data\\effects.lua",
+      "sha256": "a88c061d34a5b3b91ac6c51392f482b0de70f9a6ea77007ff4759b80ebb9c540",
+      "size": 3815,
+      "copied_at": "2026-10-11T18:11:40.453376+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\data\\equipment.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\data\\equipment.lua",
+      "sha256": "05543c85f8fa6ef50cd9fdb037f38aa14d99512deab81aa8f279af6c3e797c29",
+      "size": 1596,
+      "copied_at": "2026-10-11T18:11:40.479723+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\data\\extension_test.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\data\\extension_test.lua",
+      "sha256": "7395aac16f27c7dfe04253339a5bd54a2b6a2aa3a3f7b05cb34d53cbb2d8b5d3",
+      "size": 8918,
+      "copied_at": "2026-10-11T18:11:40.496353+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\data\\followup.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\data\\followup.lua",
+      "sha256": "f26732ee4227d1c720ad724e101e4a90a05b37ec8be222b8c0bed3bafb7300aa",
+      "size": 26049,
+      "copied_at": "2026-10-11T18:11:40.516443+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\data\\gameplay.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\data\\gameplay.lua",
+      "sha256": "e6325f44002ab0c19bd808378a1343a7db679acfca5f5b242f2ec4a015c3e53d",
+      "size": 132,
+      "copied_at": "2026-10-11T18:11:40.543932+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\data\\ingredients.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\data\\ingredients.lua",
+      "sha256": "5a9c9a756ff8dd6fda44dba54e4101fb7cb99fc762e82606e55f5c10b69ed0d8",
+      "size": 2012,
+      "copied_at": "2026-10-11T18:11:40.576273+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\data\\letters.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\data\\letters.lua",
+      "sha256": "0920255a04e3d0a4ef26f7445befe845b2651b6db1833d7818e5aef40840b2b7",
+      "size": 7592,
+      "copied_at": "2026-10-11T18:11:40.599761+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\data\\npcs.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\data\\npcs.lua",
+      "sha256": "10e1cd5556ed7c74c28815e5fed034f038f56bf18c97637d0fb2304a8481278b",
+      "size": 3662,
+      "copied_at": "2026-10-11T18:11:40.621439+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\data\\numeric_v02.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\data\\numeric_v02.lua",
+      "sha256": "2a3c99a732b902fac65b03311640e47a70cce1c13bf54406b88be707e739c886",
+      "size": 722007,
+      "copied_at": "2026-10-11T18:11:40.654916+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\data\\ordinary_orders.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\data\\ordinary_orders.lua",
+      "sha256": "d6124a6c9069ea7baf7cd1b2757bbf68bd15fe6f67ca4994712fa6453ccbebd0",
+      "size": 50512,
+      "copied_at": "2026-10-11T18:11:40.682812+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\data\\recipes.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\data\\recipes.lua",
+      "sha256": "303718e3d720f24b6a0a2b169bf5ae58650b49974ead1a8e36b06a2947f4b499",
+      "size": 19103,
+      "copied_at": "2026-10-11T18:11:40.710913+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\data\\stage1.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\data\\stage1.lua",
+      "sha256": "70c396a2a6a40d29ad39a6a547f60567d222ab0a4febdee14554d97a33033132",
+      "size": 22115,
+      "copied_at": "2026-10-11T18:11:40.761877+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\data\\synthesis.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\data\\synthesis.lua",
+      "sha256": "0b36bbc69e584655d5f574ea977b397fe840b4ea0a0a41bbac94505234582dee",
+      "size": 3818,
+      "copied_at": "2026-10-11T18:11:40.802008+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\data\\word_profiles.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\data\\word_profiles.lua",
+      "sha256": "c3d0a31814ccb3c409c9a56fcacbf52e4873706ade52eb33eceec51a24245dde",
+      "size": 3155,
+      "copied_at": "2026-10-11T18:11:40.818058+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\data\\words.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\data\\words.lua",
+      "sha256": "f84ad8e6408af4129efbfd3ad75125d5f734a2cf92231cb3f21cdaf52746b873",
+      "size": 9541,
+      "copied_at": "2026-10-11T18:11:40.834993+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\debug\\fixtures\\HeadlessUI.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\lab\\tests\\HeadlessUI.lua",
+      "sha256": "31ae416f2fd58058766364081aec9cdfcb20954322c8f3b58de4a60ffbad376f",
+      "size": 1746,
+      "copied_at": "2026-10-11T18:11:40.862876+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\systems\\BrewJournal.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\systems\\BrewJournal.lua",
+      "sha256": "69da411b9869af81c40f944b6fec5b166a1584d3f0faa2fbee6b51bbde72e960",
+      "size": 9264,
+      "copied_at": "2026-10-11T18:11:40.887190+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\systems\\CalculationGuard.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\systems\\CalculationGuard.lua",
+      "sha256": "4bf700587c59567216b5d3a2d858d6abdb1f99f1c5984fbed1ac7320a30af514",
+      "size": 2452,
+      "copied_at": "2026-10-11T18:11:40.922821+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\systems\\CaseBoardProjection.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\systems\\CaseBoardProjection.lua",
+      "sha256": "eea82e94beba0f1c7f98a9aa9b173f9da3410580b9916495827abdf88cbe90b7",
+      "size": 239,
+      "copied_at": "2026-10-11T18:11:40.956852+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\systems\\Economy.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\systems\\Economy.lua",
+      "sha256": "2c06697f099ace07facd4f7c4f035ae3898c5145fc0c78f5fb2799cdfb22ee7b",
+      "size": 12823,
+      "copied_at": "2026-10-11T18:11:40.998568+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\systems\\Letter.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\systems\\Letter.lua",
+      "sha256": "a1cf42f86fa72a4a40e52059d4d9f98bd38a65ad52a329ccc22896889579476f",
+      "size": 14360,
+      "copied_at": "2026-10-11T18:11:41.050025+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\systems\\Narrative.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\systems\\Narrative.lua",
+      "sha256": "fa605094d07db107e6c1e7e25fe14c5c9fa17c485e00140ac8c60cc3de0829db",
+      "size": 15635,
+      "copied_at": "2026-10-11T18:11:41.105980+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\systems\\Order.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\systems\\Order.lua",
+      "sha256": "be2944ec7650ab051f7ac2a71823ea1fe0292340c8b6848b136d7e0705494856",
+      "size": 15707,
+      "copied_at": "2026-10-11T18:11:41.138368+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\systems\\OrderAudit.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\systems\\OrderAudit.lua",
+      "sha256": "22828caef710319e3eb959afe6648bc5c37a153b9d8a4ad5f649f115c20d6817",
+      "size": 17343,
+      "copied_at": "2026-10-11T18:11:41.209038+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\systems\\OrderLifecycle.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\systems\\OrderLifecycle.lua",
+      "sha256": "5fe1da2555da9380f97d4f606e0c20505a319ecd1f2188dacc8ca4d7d37c8eb2",
+      "size": 17290,
+      "copied_at": "2026-10-11T18:11:41.273080+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\systems\\OrderTrial.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\systems\\OrderTrial.lua",
+      "sha256": "ef4bb679396fe194a1c3bfd22d4fd0ff9b014b491db00b5ceac09d03d1c8cb12",
+      "size": 11319,
+      "copied_at": "2026-10-11T18:11:41.305857+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\systems\\PlayQueries.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\systems\\PlayQueries.lua",
+      "sha256": "4e49e5d4456d66efb42976e32c35ce49d10798fc830f0d702c08e223d7b28b4e",
+      "size": 8874,
+      "copied_at": "2026-10-11T18:11:41.307940+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\systems\\Potion.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\systems\\Potion.lua",
+      "sha256": "b5409bc71d75e61559d66252fcb27d5be28b643cc23f5e592075be11a879b2bf",
+      "size": 20940,
+      "copied_at": "2026-10-11T18:11:41.335464+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\systems\\RecipeDraft.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\systems\\RecipeDraft.lua",
+      "sha256": "e0c3d3ec4560d221cfb89109a467aedd58f61e8b8645a5b7f992545503718c5f",
+      "size": 3278,
+      "copied_at": "2026-10-11T18:11:41.384876+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\systems\\StoryRules.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\systems\\StoryRules.lua",
+      "sha256": "fd82030a80c43af20c1dbd442ff89a77c138cdb0391522f26af14f05a2cbf7d4",
+      "size": 8185,
+      "copied_at": "2026-10-11T18:11:41.436627+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\systems\\WordToken.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\systems\\WordToken.lua",
+      "sha256": "09370a5d87002137e7ac19cc9771910bfee7fbe6f8884837c7c852879c504bcd",
+      "size": 10030,
+      "copied_at": "2026-10-11T18:11:41.492621+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\systems\\WorldState.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\systems\\WorldState.lua",
+      "sha256": "38ae49b262976686239c3c3d6f1007d3de75464c0cc2c025569121e5c5ef6c1f",
+      "size": 9677,
+      "copied_at": "2026-10-11T18:11:41.540572+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\ui\\landscape\\LayoutManifest.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\ui\\landscape\\LayoutManifest.lua",
+      "sha256": "58191586f3f4d648de56ec978527eb0dcb0a38b0dedc9d9efe319e32ca0153ad",
+      "size": 13873,
+      "copied_at": "2026-10-11T18:11:41.547380+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\ui\\landscape\\Panels.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\ui\\landscape\\Panels.lua",
+      "sha256": "4b27af4cdf642eb488a83f72672a75e2308924f496fdf76f98e3c00a4e7e7d88",
+      "size": 15997,
+      "copied_at": "2026-10-11T18:11:41.551952+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\scripts\\ui\\PlayModel.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\scripts\\ui\\PlayModel.lua",
+      "sha256": "d75787e020b59c23c88f43e50acce611aa44ab9d190e7934839e5833963b395f",
+      "size": 15883,
+      "copied_at": "2026-10-11T18:11:41.554869+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\templates\\scaffold-3d-scene.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\references\\engine\\scaffold-3d-scene.lua",
+      "sha256": "d450d3f199af264435cef55f1b317b7afe9ca55d99450758ab20688b29407df3",
+      "size": 19075,
+      "copied_at": "2026-10-11T18:11:41.558873+00:00"
+    }
+  ]
+}

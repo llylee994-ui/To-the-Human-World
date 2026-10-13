@@ -1,0 +1,11 @@
+{
+  "time": "2026-10-12T04:54:41.470402+00:00",
+  "source_files_checked": 395,
+  "source_changed_since_copy": [],
+  "intentional_local_changes": [
+    "scripts\\ui\\landscape\\Panels.lua"
+  ],
+  "offline_test_source_mismatches": [],
+  "offline_test_count": 70,
+  "scope": "Only the explicitly copied source/dependency files; does not assert that other workers stopped editing unrelated formal files."
+}

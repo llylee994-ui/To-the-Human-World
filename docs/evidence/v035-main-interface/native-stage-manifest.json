@@ -1,0 +1,1529 @@
+{
+  "timestampUtc": "2026-10-13T15:42:37.160823+00:00",
+  "mode": "complete-v035-scene",
+  "files": [
+    {
+      "path": "scripts/v035/core/EventBus.lua",
+      "source": "v035/scripts/core/EventBus.lua",
+      "bytes": 5671,
+      "sha256": "455cf1717f62a2e7e661be4d90da3f2fc5c759292abdae564ddbe20f852c514f"
+    },
+    {
+      "path": "scripts/v035/core/GameFlow.lua",
+      "source": "v035/scripts/core/GameFlow.lua",
+      "bytes": 7597,
+      "sha256": "9089079367f65a23a20e3c40b7d80708b89fa52b594706a4360e7e18c7ffd2ba"
+    },
+    {
+      "path": "scripts/v035/core/GameSession.lua",
+      "source": "v035/scripts/core/GameSession.lua",
+      "bytes": 2605,
+      "sha256": "380bb4d46836d0577aed38eff72bb79ffd935deabfbc53d763c9d615dd595a41"
+    },
+    {
+      "path": "scripts/v035/core/GameState.lua",
+      "source": "v035/scripts/core/GameState.lua",
+      "bytes": 26699,
+      "sha256": "68fd685363c656ba02936a985314dca1213f580ea60143a234e4b22237c07b2b"
+    },
+    {
+      "path": "scripts/v035/core/SaveJson.lua",
+      "source": "v035/scripts/core/SaveJson.lua",
+      "bytes": 2977,
+      "sha256": "8849c8c4a7d0ac2b1b3f2da5f401f45e652b27cc3a279d1c566107691c815978"
+    },
+    {
+      "path": "scripts/v035/core/SaveMigrations.lua",
+      "source": "v035/scripts/core/SaveMigrations.lua",
+      "bytes": 2305,
+      "sha256": "06eaaee4864d689151d187876751b0536450894b7bbfa2a01eff371dfe64afaa"
+    },
+    {
+      "path": "scripts/v035/core/SaveSchema.lua",
+      "source": "v035/scripts/core/SaveSchema.lua",
+      "bytes": 17230,
+      "sha256": "314fd736c0c1afcd26ae63c4d468f80df5cdcb14b40c7d425d2ca37e751840c8"
+    },
+    {
+      "path": "scripts/v035/core/SaveSystem.lua",
+      "source": "v035/scripts/core/SaveSystem.lua",
+      "bytes": 8016,
+      "sha256": "97be2096aea782f47724a4da4fb1361f000ea8d20d5ca0d8f809b2bb47fb9fd3"
+    },
+    {
+      "path": "scripts/v035/core/SchemaProjection.lua",
+      "source": "v035/scripts/core/SchemaProjection.lua",
+      "bytes": 962,
+      "sha256": "f7b543e396ba75535ef9d091413664d001d79eea819ff95eb8723365f3ae9e6d"
+    },
+    {
+      "path": "scripts/v035/core/StateUtil.lua",
+      "source": "v035/scripts/core/StateUtil.lua",
+      "bytes": 2972,
+      "sha256": "87b7818d2c4fce1325c1db6bc8b2e6b27ac48aec66f59d162d99e0d105cb336e"
+    },
+    {
+      "path": "scripts/v035/data/content.lua",
+      "source": "v035/scripts/data/content.lua",
+      "bytes": 73775,
+      "sha256": "e8839ad9548b445ff9f4175aeb7556eafb7f49af53671b489f57a30aee3491e7"
+    },
+    {
+      "path": "scripts/v035/data/effects.lua",
+      "source": "v035/scripts/data/effects.lua",
+      "bytes": 3741,
+      "sha256": "50905bf0ae9b015ec9adac3bc41d6a083369e7d8b7d9ec0c85dc7cc38efe5723"
+    },
+    {
+      "path": "scripts/v035/data/equipment.lua",
+      "source": "v035/scripts/data/equipment.lua",
+      "bytes": 1558,
+      "sha256": "df657c24642882e08d208ec13e526031dbfe14dee93d14f0646729cb6e4f1357"
+    },
+    {
+      "path": "scripts/v035/data/extension_test.lua",
+      "source": "v035/scripts/data/extension_test.lua",
+      "bytes": 8709,
+      "sha256": "ec68d77744302cf033768aee3ee763227037362f69ac4e11964103fd8f414fee"
+    },
+    {
+      "path": "scripts/v035/data/followup.lua",
+      "source": "v035/scripts/data/followup.lua",
+      "bytes": 26049,
+      "sha256": "f26732ee4227d1c720ad724e101e4a90a05b37ec8be222b8c0bed3bafb7300aa"
+    },
+    {
+      "path": "scripts/v035/data/gameplay.lua",
+      "source": "v035/scripts/data/gameplay.lua",
+      "bytes": 132,
+      "sha256": "e6325f44002ab0c19bd808378a1343a7db679acfca5f5b242f2ec4a015c3e53d"
+    },
+    {
+      "path": "scripts/v035/data/ingredients.lua",
+      "source": "v035/scripts/data/ingredients.lua",
+      "bytes": 1957,
+      "sha256": "8aa23678d86bb6531d39118b374cf294013f3ad9558cf3d53958048b48297429"
+    },
+    {
+      "path": "scripts/v035/data/letters.lua",
+      "source": "v035/scripts/data/letters.lua",
+      "bytes": 7592,
+      "sha256": "0920255a04e3d0a4ef26f7445befe845b2651b6db1833d7818e5aef40840b2b7"
+    },
+    {
+      "path": "scripts/v035/data/npcs.lua",
+      "source": "v035/scripts/data/npcs.lua",
+      "bytes": 3592,
+      "sha256": "b79bd999f0c5fbb75660ede65a32332afb833130405a8abef4d427ae3bcf324a"
+    },
+    {
+      "path": "scripts/v035/data/numeric_v02.lua",
+      "source": "v035/scripts/data/numeric_v02.lua",
+      "bytes": 703871,
+      "sha256": "b2dcd5a6a815fc03652d85355c8ecfcdba739325fa2c5834815f1d266330eb78"
+    },
+    {
+      "path": "scripts/v035/data/ordinary_orders.lua",
+      "source": "v035/scripts/data/ordinary_orders.lua",
+      "bytes": 49431,
+      "sha256": "2a84aac445730e3bc08189da12fb2b5d4e8199cfdb40be52436b3d8214c92780"
+    },
+    {
+      "path": "scripts/v035/data/recipes.lua",
+      "source": "v035/scripts/data/recipes.lua",
+      "bytes": 18522,
+      "sha256": "4b2fc68368a9d5acba92b3d81b25bb69ed06ecb26dd8f97b2a9b99a3c1ee6053"
+    },
+    {
+      "path": "scripts/v035/data/stage1.lua",
+      "source": "v035/scripts/data/stage1.lua",
+      "bytes": 22120,
+      "sha256": "584195a3ca8604870dc6fb6f17c0d91a676e8df842ed134aa6200672009a34e0"
+    },
+    {
+      "path": "scripts/v035/data/synthesis.lua",
+      "source": "v035/scripts/data/synthesis.lua",
+      "bytes": 3753,
+      "sha256": "185172cd8a5c5b782a96b78015d145b09787929bea8baa8889fc9e67dd05a68a"
+    },
+    {
+      "path": "scripts/v035/data/word_profiles.lua",
+      "source": "v035/scripts/data/word_profiles.lua",
+      "bytes": 3082,
+      "sha256": "5cdc3a29a29dcd4d67e7e3e91b2b7efe75283f57bee1af8632597abcebfa7b49"
+    },
+    {
+      "path": "scripts/v035/data/words.lua",
+      "source": "v035/scripts/data/words.lua",
+      "bytes": 9264,
+      "sha256": "36457271dc96565909515c05aac29829f4a9907e5504a9517c3111c69832b2f3"
+    },
+    {
+      "path": "scripts/v035/debug/DeveloperMode.lua",
+      "source": "v035/scripts/debug/DeveloperMode.lua",
+      "bytes": 104,
+      "sha256": "429b4fbfd22c1a0596e01d69790a4736623078eb78be8417dcc59f777355325b"
+    },
+    {
+      "path": "scripts/v035/lab35/AppView.lua",
+      "source": "v035/scripts/lab35/AppView.lua",
+      "bytes": 20779,
+      "sha256": "e0c01f8912fa76fcca4b8007154dc5ddd259d5e0b280d2e679ff80f8f10c3069"
+    },
+    {
+      "path": "scripts/v035/lab35/Bootstrap.lua",
+      "source": "v035/scripts/lab35/Bootstrap.lua",
+      "bytes": 916,
+      "sha256": "51ac618ff6025fa051534fa05ac70721c645eaf79dafdb965f463e073b583dc4"
+    },
+    {
+      "path": "scripts/v035/lab35/Controller.lua",
+      "source": "v035/scripts/lab35/Controller.lua",
+      "bytes": 5757,
+      "sha256": "c7b643036b6cb031f7c22d156ac2cae61b5ffbc734f23cd0bd018bffb3585732"
+    },
+    {
+      "path": "scripts/v035/lab35/HomeView.lua",
+      "source": "v035/scripts/lab35/HomeView.lua",
+      "bytes": 2735,
+      "sha256": "4d3437af41c2a62af57e825886a48267a43c8b7ab74774a989b466e80a99b156"
+    },
+    {
+      "path": "scripts/v035/lab35/Ids.lua",
+      "source": "v035/scripts/lab35/Ids.lua",
+      "bytes": 296,
+      "sha256": "d8d66bd4481143961021fd9f92d4d4a048cae36c7898db2360b12a586907eded"
+    },
+    {
+      "path": "scripts/v035/lab35/Integration.lua",
+      "source": "v035/scripts/lab35/Integration.lua",
+      "bytes": 1678,
+      "sha256": "13e8482632bd835c9c397bafb4d4e9dcf6e796a5cdf14c76efa21d91b908b82a"
+    },
+    {
+      "path": "scripts/v035/lab35/Math3.lua",
+      "source": "v035/scripts/lab35/Math3.lua",
+      "bytes": 1458,
+      "sha256": "1f1fe7e869cccac4156deaa449730f38aa13692e5e8709cffc0e0265ea033078"
+    },
+    {
+      "path": "scripts/v035/lab35/MemoryStorage.lua",
+      "source": "v035/scripts/lab35/MemoryStorage.lua",
+      "bytes": 1060,
+      "sha256": "5c7e1eb84ecfca9504817b71a78cfbda9ff423e9723d011b782c1f87533a1096"
+    },
+    {
+      "path": "scripts/v035/lab35/MeshContract.lua",
+      "source": "v035/scripts/lab35/MeshContract.lua",
+      "bytes": 10121,
+      "sha256": "d3864e5813cd30eb20c1d99b415ee8c8453dc27cff02e499fcd50d847e30b768"
+    },
+    {
+      "path": "scripts/v035/lab35/MeshLoader.lua",
+      "source": "v035/scripts/lab35/MeshLoader.lua",
+      "bytes": 11765,
+      "sha256": "1eadfb76d11c431f7005f755ed699092d8700b8c5e866775907acd8a0e6c02d5"
+    },
+    {
+      "path": "scripts/v035/lab35/NativeGeometry.lua",
+      "source": "v035/scripts/lab35/NativeGeometry.lua",
+      "bytes": 5485,
+      "sha256": "f15594a3c20ade3aba8992ea75bacfe529f646e2b3e7da33806670047550c5e2"
+    },
+    {
+      "path": "scripts/v035/lab35/NativeHost.lua",
+      "source": "v035/scripts/lab35/NativeHost.lua",
+      "bytes": 14267,
+      "sha256": "58c64ac5411d9a6c815ccaeefdf1e91ace09bde3bc4933d01cd87d009aada183"
+    },
+    {
+      "path": "scripts/v035/lab35/Panels.lua",
+      "source": "v035/scripts/lab35/Panels.lua",
+      "bytes": 763,
+      "sha256": "48f920573af1758c891e60add3b2355f223692aad95a34b6b58e4a8a19a7635c"
+    },
+    {
+      "path": "scripts/v035/lab35/Picking.lua",
+      "source": "v035/scripts/lab35/Picking.lua",
+      "bytes": 1133,
+      "sha256": "550c648ea601f37815d80feeef36af17b850029dde9654af5470e165c29db1a5"
+    },
+    {
+      "path": "scripts/v035/lab35/ProbeAdapter.lua",
+      "source": "v035/scripts/lab35/ProbeAdapter.lua",
+      "bytes": 3744,
+      "sha256": "a46b51667e194178ae0ff263bfecadf9b2860ca8723e8cace02f770a3c8fe5dd"
+    },
+    {
+      "path": "scripts/v035/systems/BrewJournal.lua",
+      "source": "v035/scripts/systems/BrewJournal.lua",
+      "bytes": 9284,
+      "sha256": "4ea96a675b90b21a447e9b3cd02bc01b8e854cb3e51799fce623ee09534d3ce2"
+    },
+    {
+      "path": "scripts/v035/systems/CalculationGuard.lua",
+      "source": "v035/scripts/systems/CalculationGuard.lua",
+      "bytes": 2457,
+      "sha256": "9776eed0ca71c55e42e80aef623e7959d4d4f9d3d11df5737ae0216acd773604"
+    },
+    {
+      "path": "scripts/v035/systems/CaseBoardProjection.lua",
+      "source": "v035/scripts/systems/CaseBoardProjection.lua",
+      "bytes": 244,
+      "sha256": "55d3b84fb3fd483e746ea74e7572d818872c0898f9d4fe9d0f242c5ca96e1a02"
+    },
+    {
+      "path": "scripts/v035/systems/Economy.lua",
+      "source": "v035/scripts/systems/Economy.lua",
+      "bytes": 12644,
+      "sha256": "f2aed8f2a85c9c505b63814cb3465031b922a2be9e0093a5ae15776468a57780"
+    },
+    {
+      "path": "scripts/v035/systems/Letter.lua",
+      "source": "v035/scripts/systems/Letter.lua",
+      "bytes": 14142,
+      "sha256": "193fb844a6ff8a31c32c7f9c614d10781bf6e4bf172392307d9f93e7ab43ba03"
+    },
+    {
+      "path": "scripts/v035/systems/Narrative.lua",
+      "source": "v035/scripts/systems/Narrative.lua",
+      "bytes": 15680,
+      "sha256": "9df4c890b9864ba939bda0710720e0db6234d08e01c0c12fe6c726385149c65b"
+    },
+    {
+      "path": "scripts/v035/systems/Order.lua",
+      "source": "v035/scripts/systems/Order.lua",
+      "bytes": 15555,
+      "sha256": "d7d2d722afca72cedb77f206a703b431cd9a1707ddd4f61a0e38f59036b8ac7f"
+    },
+    {
+      "path": "scripts/v035/systems/OrderAudit.lua",
+      "source": "v035/scripts/systems/OrderAudit.lua",
+      "bytes": 17152,
+      "sha256": "a32ff4aa47339fe8ebd7e25bff245122087aeb83c093c2962057e8b919407d5d"
+    },
+    {
+      "path": "scripts/v035/systems/OrderLifecycle.lua",
+      "source": "v035/scripts/systems/OrderLifecycle.lua",
+      "bytes": 17114,
+      "sha256": "29be635a335064b57cc7ced0953d55ca34bd67d6d8795b0f9f2ff1a9ec9c1db9"
+    },
+    {
+      "path": "scripts/v035/systems/OrderTrial.lua",
+      "source": "v035/scripts/systems/OrderTrial.lua",
+      "bytes": 11364,
+      "sha256": "73d6bee9c4c7465c34ed5236aeb45b7f5d67c13657291363431798b7989b7779"
+    },
+    {
+      "path": "scripts/v035/systems/PlayQueries.lua",
+      "source": "v035/scripts/systems/PlayQueries.lua",
+      "bytes": 8904,
+      "sha256": "0c49f79d84f279b307590f3ea6afe90f62119a8ff7ea34c1f28e8fd525d355b6"
+    },
+    {
+      "path": "scripts/v035/systems/Potion.lua",
+      "source": "v035/scripts/systems/Potion.lua",
+      "bytes": 20950,
+      "sha256": "bb5114fd4380e1fc88797ae3f0c5c2c678d8024f0624be6a5d51843bb01b34aa"
+    },
+    {
+      "path": "scripts/v035/systems/RecipeDraft.lua",
+      "source": "v035/scripts/systems/RecipeDraft.lua",
+      "bytes": 3288,
+      "sha256": "37e3cb4e6d1b8d565e77540f71b75e19397860997bd2bfcf8ca199bc4fa3d359"
+    },
+    {
+      "path": "scripts/v035/systems/StoryRules.lua",
+      "source": "v035/scripts/systems/StoryRules.lua",
+      "bytes": 8195,
+      "sha256": "10cac1e3f25e429a144935386401c8e379da9063c599dc393c80bc8da9ca35d6"
+    },
+    {
+      "path": "scripts/v035/systems/WordToken.lua",
+      "source": "v035/scripts/systems/WordToken.lua",
+      "bytes": 9867,
+      "sha256": "08e4b351db9731dfdecd6f8912147161eca30a14e6da39229ef1c19e379ddedd"
+    },
+    {
+      "path": "scripts/v035/systems/WorldState.lua",
+      "source": "v035/scripts/systems/WorldState.lua",
+      "bytes": 9702,
+      "sha256": "1bde80a9e6e8701a87df8d1b22a6c97cdbf6044a22f36a3125317dac65749126"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/AppView.lua",
+      "source": "v035/scripts/ui/landscape/AppView.lua",
+      "bytes": 21019,
+      "sha256": "f524703a35b3c4b7153cb7fe5bca142e4d804830fad985a9f09af7866a3ccb67"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/DevChecks.lua",
+      "source": "v035/scripts/ui/landscape/DevChecks.lua",
+      "bytes": 219,
+      "sha256": "144cf8f7543439e5043250a7357e9ebdca07bf425e2b9ce1b4a6717961cf6033"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/HarborStyle.lua",
+      "source": "v035/scripts/ui/landscape/HarborStyle.lua",
+      "bytes": 2302,
+      "sha256": "72f72b9292913c0298ae8f0ee792ae02ac35d1499d68f145a31ab97cb20a5320"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/HomeView.lua",
+      "source": "v035/scripts/ui/landscape/HomeView.lua",
+      "bytes": 7778,
+      "sha256": "a808194d6b460c297f1d2a8271a1bbb726cf7c19bd5adadacc0161c30a0e057e"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/HomeYawMotion.lua",
+      "source": "v035/scripts/ui/landscape/HomeYawMotion.lua",
+      "bytes": 1142,
+      "sha256": "5c9dbff78275fe5f15f8ab59b05da61c0157b5d05faada43f2d4f6712be41624"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/HomeYawProbe.lua",
+      "source": "v035/scripts/ui/landscape/HomeYawProbe.lua",
+      "bytes": 5014,
+      "sha256": "f666bce31b06f41c2ec9f57f5adbde51b23c7c28c98fd18f95ad6f9bfbf68e4f"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/HomeYawScene.lua",
+      "source": "v035/scripts/ui/landscape/HomeYawScene.lua",
+      "bytes": 7776,
+      "sha256": "1ec5c7067b8412585e7965497f16aa9607572260c3c659973cadba6ec57fb9ec"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/HomeZoom.lua",
+      "source": "v035/scripts/ui/landscape/HomeZoom.lua",
+      "bytes": 1847,
+      "sha256": "6ab022d3ec3d6eb7c73c4a148e44055740e5ec961e20635c3e936cfbb6dadf2b"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/HudLayout.lua",
+      "source": "v035/scripts/ui/landscape/HudLayout.lua",
+      "bytes": 1508,
+      "sha256": "f7ebfb32eb1d872408a97dd2660bbfbfabf11a953842f5ae302b07e22f5e26d4"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/LayoutGeometry.lua",
+      "source": "v035/scripts/ui/landscape/LayoutGeometry.lua",
+      "bytes": 3995,
+      "sha256": "89d54e4410ec1e8452261a0cc88e05181bf8a8f363c588668914033fa6b76e78"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/LayoutManifest.lua",
+      "source": "v035/scripts/ui/landscape/LayoutManifest.lua",
+      "bytes": 13609,
+      "sha256": "cc9093caf7e9104f5bdd4afa9076c49028869aadd32dee8c9c78fb374c7022af"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/MessagePresenter.lua",
+      "source": "v035/scripts/ui/landscape/MessagePresenter.lua",
+      "bytes": 1747,
+      "sha256": "5943ed58fc84e32fb668ddd7b299e205fe5f0d1987e76a591570b53a627d9142"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/Panels.lua",
+      "source": "v035/scripts/ui/landscape/Panels.lua",
+      "bytes": 16235,
+      "sha256": "d9f1b016da2e03c9a61d1dbce9fbc3dfe4d8d6dcb1752cba7086a8017193bded"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/SalvageController.lua",
+      "source": "v035/scripts/ui/landscape/SalvageController.lua",
+      "bytes": 3942,
+      "sha256": "f059e4e24e37acc33df43e3d15929f827157233a2c8d1799eaa30e25f102475a"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/SceneBackdrop.lua",
+      "source": "v035/scripts/ui/landscape/SceneBackdrop.lua",
+      "bytes": 1318,
+      "sha256": "75294122c479a410eea77d5846c8f3028c270bca5db1998109a4abe5366cefc2"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/SeaArt.lua",
+      "source": "v035/scripts/ui/landscape/SeaArt.lua",
+      "bytes": 371,
+      "sha256": "eb7b175274c4515496318f3d9bd97ec6aae1f7d8a23ce2766e4cb9522ac33c5c"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/SeasideManifest.lua",
+      "source": "v035/scripts/ui/landscape/SeasideManifest.lua",
+      "bytes": 678,
+      "sha256": "cba45f64fc73bca9c10cde020ad0099f1792ada2ab9f1e38856295d80b400bb4"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/SeasideView.lua",
+      "source": "v035/scripts/ui/landscape/SeasideView.lua",
+      "bytes": 6584,
+      "sha256": "fdbb365df5af52db4cd8e3f2d30f8d45a6e5a2eea4f8cf0e21eb282350234e9c"
+    },
+    {
+      "path": "scripts/v035/ui/PlayModel.lua",
+      "source": "v035/scripts/ui/PlayModel.lua",
+      "bytes": 15701,
+      "sha256": "66f1d1abc14b69213ffaa3d3b7f4ccb0c3ea43ba5162cb9f5f76e399124b978c"
+    },
+    {
+      "path": "scripts/v035/ui/PlayView.lua",
+      "source": "v035/scripts/ui/PlayView.lua",
+      "bytes": 251,
+      "sha256": "02b0e6e7ea59eb196113bb663fd5209e63266f245a3e0e311416e3ad64904e65"
+    },
+    {
+      "path": "assets/v035-probe/probe.json",
+      "source": "experiments\\3d-lab\\assets\\import-probe-v035\\probe.json",
+      "bytes": 3866464,
+      "sha256": "faea79aacf1f0815f3f86da39f7284f0bad4ede916f380df96072bbef9e6b6f0"
+    },
+    {
+      "path": "assets/v035-probe/uv_checker.png",
+      "source": "experiments\\3d-lab\\assets\\import-probe-v035\\uv_checker.png",
+      "bytes": 60313,
+      "sha256": "8e6eb8be19c785e9fd58db37ad58ab9a686c3bddeed421051331c6d32b3540e4"
+    },
+    {
+      "path": "assets/v035-probe/mat_00_basecolor.png",
+      "source": "experiments\\3d-lab\\assets\\import-probe-v035\\mat_00_basecolor.png",
+      "bytes": 781165,
+      "sha256": "e165b1d1430eb20561acc39f988af34f30d3cfc267bef10232d8f10a8d25a4fb"
+    },
+    {
+      "path": "assets/v035-probe/mat_01_basecolor.png",
+      "source": "experiments\\3d-lab\\assets\\import-probe-v035\\mat_01_basecolor.png",
+      "bytes": 862543,
+      "sha256": "6298dfbad5ae15f7a5140fcf70767102f64de93fee34f48234a09459b9580776"
+    },
+    {
+      "path": "assets/v035-probe/mat_02_basecolor.png",
+      "source": "experiments\\3d-lab\\assets\\import-probe-v035\\mat_02_basecolor.png",
+      "bytes": 63581,
+      "sha256": "f58cc2af11d6dfed044c0c73355593a0b0ade6a60fbbc4ca302d73fa29603dd1"
+    },
+    {
+      "path": "assets/v035-probe/mat_03_basecolor.png",
+      "source": "experiments\\3d-lab\\assets\\import-probe-v035\\mat_03_basecolor.png",
+      "bytes": 832408,
+      "sha256": "6c4afc346613dc0daa7965fef6661de1730e161c9ffbe079744a39dffab1e1c2"
+    },
+    {
+      "path": "assets/v035-probe/sea-calm.png",
+      "source": "experiments\\3d-lab\\assets\\import-probe-v035\\sea-calm.png",
+      "bytes": 2383298,
+      "sha256": "3b83aa68c34c5d00d3c85dfaf15259482f4c5930098687e4a7e4816c55ce7b18"
+    },
+    {
+      "path": "assets/v035-probe/merchant-ship-muted.png",
+      "source": "experiments\\3d-lab\\assets\\import-probe-v035\\merchant-ship-muted.png",
+      "bytes": 1035489,
+      "sha256": "13220a898ea397b9381194d39573bc61f49e9b72929e01f6e20b56b4fba0d493"
+    },
+    {
+      "path": "assets/v035-main-image/misty-harbor-r1/dock-foreground.png",
+      "source": "v035/assets/image/misty-harbor-r1/dock-foreground.png",
+      "bytes": 548911,
+      "sha256": "a43cb9d75d69416be570e4f176f86a22977f1d929203251247440e71f613dea4"
+    },
+    {
+      "path": "assets/v035-main-image/misty-harbor-r1/merchant-ship-muted.png",
+      "source": "v035/assets/image/misty-harbor-r1/merchant-ship-muted.png",
+      "bytes": 1035489,
+      "sha256": "13220a898ea397b9381194d39573bc61f49e9b72929e01f6e20b56b4fba0d493"
+    },
+    {
+      "path": "assets/v035-main-image/misty-harbor-r1/sea-calm.png",
+      "source": "v035/assets/image/misty-harbor-r1/sea-calm.png",
+      "bytes": 2383298,
+      "sha256": "3b83aa68c34c5d00d3c85dfaf15259482f4c5930098687e4a7e4816c55ce7b18"
+    },
+    {
+      "path": "assets/v035-main-image/seaside-r1/bottle.png",
+      "source": "v035/assets/image/seaside-r1/bottle.png",
+      "bytes": 1310448,
+      "sha256": "c1a651c0644c967f3032467cce7d3776f9cfb0d480cf14ef1b2632aa33d95fa7"
+    },
+    {
+      "path": "assets/v035-main-image/seaside-r1/net.png",
+      "source": "v035/assets/image/seaside-r1/net.png",
+      "bytes": 784956,
+      "sha256": "9eba8ff0ab25f9b1d71ddd02c8a434a2161fcc84182d3e0ea0ac24bf3c648e31"
+    },
+    {
+      "path": "scripts/main.lua",
+      "source": "explicit full scene entry; historical probe entry preserved",
+      "bytes": 226,
+      "sha256": "526533710e458b5e65a10ddfdf1803779307fda2bc8f1aaaedc127228db2fa4f"
+    },
+    {
+      "path": "scripts/v035/lab35/CameraCalibration.lua",
+      "source": "v035/scripts/lab35/CameraCalibration.lua",
+      "bytes": 3052,
+      "sha256": "e444738f7c385f0f73cc745942d88ac4c4588e855140e27a618bfdb3805f2970"
+    },
+    {
+      "path": "scripts/v035/lab35/CameraMath.lua",
+      "source": "v035/scripts/lab35/CameraMath.lua",
+      "bytes": 1223,
+      "sha256": "ef43dc0adb52d62f991ad80da1549223a9ae2cf7bcdacbf0047692fdceacc076"
+    },
+    {
+      "path": "scripts/v035/lab35/FrameStats.lua",
+      "source": "v035/scripts/lab35/FrameStats.lua",
+      "bytes": 727,
+      "sha256": "59d723439574e46112df7b3d6f8cae220eb752bbd20472e10ac345bd8830dcee"
+    },
+    {
+      "path": "scripts/v035/lab35/FullSceneHost.lua",
+      "source": "v035/scripts/lab35/FullSceneHost.lua",
+      "bytes": 10763,
+      "sha256": "3e359e79cc870aa1295275afcba3825029e5f195e4b7239a52374ae5199b3584"
+    },
+    {
+      "path": "scripts/v035/lab35/LoadStatus.lua",
+      "source": "v035/scripts/lab35/LoadStatus.lua",
+      "bytes": 2355,
+      "sha256": "20b05053f895f4a2b0aaf59e53c5b0f24ac210701bdc3043ebfbdc442f5e374b"
+    },
+    {
+      "path": "scripts/v035/lab35/ResourceReader.lua",
+      "source": "v035/scripts/lab35/ResourceReader.lua",
+      "bytes": 1061,
+      "sha256": "aebb927ebd54f93d49bd3a47db8bb62a4565401a3d92df2645a3a2ad22cda429"
+    },
+    {
+      "path": "scripts/v035/lab35/ScenePackage.lua",
+      "source": "v035/scripts/lab35/ScenePackage.lua",
+      "bytes": 1966,
+      "sha256": "fb11b788e6e181d270087e03819b47d49333bb309714e4e084a938d245b2816f"
+    },
+    {
+      "path": "assets/v035-full/camera_projection_reference.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/camera_projection_reference.json",
+      "bytes": 5369,
+      "sha256": "39752f7cc8513a6187f8c4f257dd338570ba63113954bc793b5d101b2d1b0cf3"
+    },
+    {
+      "path": "assets/v035-full/full_mat_007_basecolor.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_007_basecolor.png",
+      "bytes": 1985314,
+      "sha256": "270a736272a444fb0d267e4ca3f87b11eb155857a9dc7c15e2c1ee60b84fdbf5"
+    },
+    {
+      "path": "assets/v035-full/full_mat_007_normal.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_007_normal.png",
+      "bytes": 2572499,
+      "sha256": "0dadf9343ecf87d7fd156fef12ca057e2eaf8f9f97c869c1e075e7eb88b1b068"
+    },
+    {
+      "path": "assets/v035-full/full_mat_008_basecolor.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_008_basecolor.png",
+      "bytes": 958800,
+      "sha256": "10c110d7f2e98917573c08ca832d0795e1521308795117d3cf1b9a848885310a"
+    },
+    {
+      "path": "assets/v035-full/full_mat_008_normal.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_008_normal.png",
+      "bytes": 2193440,
+      "sha256": "f2ee655ee6bdcf65809c49357564013aed701a1dde68724b9d6d1237e86817f8"
+    },
+    {
+      "path": "assets/v035-full/full_mat_009_basecolor.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_009_basecolor.png",
+      "bytes": 753858,
+      "sha256": "2522c152b1f913a1cb80069dd9c04bb7ec509132756fc017323b30610e327c49"
+    },
+    {
+      "path": "assets/v035-full/full_mat_009_normal.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_009_normal.png",
+      "bytes": 1115537,
+      "sha256": "290d44da2c5e1de4b9bf7e1d75d2d01103bf43333363760dac1c6d73f26994a1"
+    },
+    {
+      "path": "assets/v035-full/full_mat_010_basecolor.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_010_basecolor.png",
+      "bytes": 995995,
+      "sha256": "eedfdef34fd503da2f03dc3cfadd8b8176c591bb336ad141def999b6f24a6a8c"
+    },
+    {
+      "path": "assets/v035-full/full_mat_010_normal.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_010_normal.png",
+      "bytes": 1756033,
+      "sha256": "41003f52f15c2b9b4a85e872c35a3bb00f92e782efd29fcc24f5e14d2c7430c2"
+    },
+    {
+      "path": "assets/v035-full/full_mat_012_basecolor.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_012_basecolor.png",
+      "bytes": 2101916,
+      "sha256": "27a6ae0d30994e23bcbf92a401c8c887d80323ea0c14cce8056d50a77b65cb48"
+    },
+    {
+      "path": "assets/v035-full/full_mat_012_normal.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_012_normal.png",
+      "bytes": 2216028,
+      "sha256": "45151088a640410d0f793272b21a6c0c5479e035ad68e520f2d8b7dbea676f08"
+    },
+    {
+      "path": "assets/v035-full/full_mat_013_basecolor.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_013_basecolor.png",
+      "bytes": 778204,
+      "sha256": "c737851f7e86276529dd54c5553f2b33919f6616ca4fbb4fbf413f2b0f62b3fa"
+    },
+    {
+      "path": "assets/v035-full/full_mat_013_normal.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_013_normal.png",
+      "bytes": 1309336,
+      "sha256": "8964d2d943bcede50817207b6d3d1f6dbdb11a722e82c77e718b50feb41657ee"
+    },
+    {
+      "path": "assets/v035-full/full_mat_017_basecolor.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_017_basecolor.png",
+      "bytes": 1690889,
+      "sha256": "16cbfc579aee8090bed1dd8d7bfc338e72c71fb11cc6b7c32afbc563b0d42a15"
+    },
+    {
+      "path": "assets/v035-full/full_mat_017_normal.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_017_normal.png",
+      "bytes": 1989555,
+      "sha256": "d20a84cbe9e1d15d15d9cca799b93a0818c60b99c5b27248b69950f0dd820a76"
+    },
+    {
+      "path": "assets/v035-full/full_mat_018_basecolor.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_018_basecolor.png",
+      "bytes": 594239,
+      "sha256": "c0db9c86df753d96f0639cd33e7209d7de1e53beb3a5ac1f18f1d4858da3b6c6"
+    },
+    {
+      "path": "assets/v035-full/full_mat_018_normal.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_018_normal.png",
+      "bytes": 820756,
+      "sha256": "4cc28a4668448735b9b4d0865be642c092e963f0770aaf056eb2e79b489c4510"
+    },
+    {
+      "path": "assets/v035-full/full_mat_019_basecolor.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_019_basecolor.png",
+      "bytes": 584136,
+      "sha256": "7c8243ec86b0c6e7da008e0c979d49b5b6e8721c2a3dea718b01f1d59b54909d"
+    },
+    {
+      "path": "assets/v035-full/full_mat_019_normal.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_019_normal.png",
+      "bytes": 918240,
+      "sha256": "8828bb7e3063ac887c28c64ca2932720d73d0bdee951916fa043c1595cd13bfd"
+    },
+    {
+      "path": "assets/v035-full/full_mat_021_basecolor.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_021_basecolor.png",
+      "bytes": 788239,
+      "sha256": "f03634fefd05fbe9c567d7b7c8291c9afe3e4bb060c4ed16f18cc620d94d3729"
+    },
+    {
+      "path": "assets/v035-full/full_mat_021_normal.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_021_normal.png",
+      "bytes": 1067293,
+      "sha256": "981f6cd9d5a6af7ace3b5d396fd5cf2c0c6bd076b1aa5107f932685ac776627c"
+    },
+    {
+      "path": "assets/v035-full/full_mat_022_basecolor.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_022_basecolor.png",
+      "bytes": 649494,
+      "sha256": "ac0030a1f959345db1686fee56ba327ba61c11e2eb728eee23723039c18d368b"
+    },
+    {
+      "path": "assets/v035-full/full_mat_022_normal.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_022_normal.png",
+      "bytes": 666852,
+      "sha256": "ba41f5ed3bde7554fbd7ea094838869c80cc869acfcbae58c3acdcb2130f3cd8"
+    },
+    {
+      "path": "assets/v035-full/full_mat_025_basecolor.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_025_basecolor.png",
+      "bytes": 1116099,
+      "sha256": "313e1eb8b9889abea275ef44b559d62cd40fd419f2a6dfaadb113760bb2280e3"
+    },
+    {
+      "path": "assets/v035-full/full_mat_025_normal.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_025_normal.png",
+      "bytes": 493942,
+      "sha256": "5fd0c0141be3c85252f889da2038ec5aa82d7265ed6507979e302d22c9a5b09e"
+    },
+    {
+      "path": "assets/v035-full/full_mat_026_basecolor.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_026_basecolor.png",
+      "bytes": 1137192,
+      "sha256": "c53d05310cf10085dc32ae3415147edde9a1899fb5e3523573e2c5cd1ab7b725"
+    },
+    {
+      "path": "assets/v035-full/full_mat_026_normal.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_026_normal.png",
+      "bytes": 1588879,
+      "sha256": "ea6f888e6b405b58e8c1cd00a5a2ae1ccd5b44315d1a9fd5b38231d448341d54"
+    },
+    {
+      "path": "assets/v035-full/full_mat_031_basecolor.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_031_basecolor.png",
+      "bytes": 749417,
+      "sha256": "7d13307ee75c478b8dfa5ac6795587378e7ddae17ebdabaaad429e9eaad941ec"
+    },
+    {
+      "path": "assets/v035-full/full_mat_031_normal.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_031_normal.png",
+      "bytes": 1499217,
+      "sha256": "f0d2ac72e6a7b93988a8c21f95bb0d3a795ad52f4fbe6fa74bd6d9585ac16060"
+    },
+    {
+      "path": "assets/v035-full/full_mat_033_basecolor.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_033_basecolor.png",
+      "bytes": 1009179,
+      "sha256": "8d31906f37aada73d459eeb4425b3ecf7b2229157f32176898b3f3a6aa68c0e8"
+    },
+    {
+      "path": "assets/v035-full/full_mat_033_normal.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_033_normal.png",
+      "bytes": 1647868,
+      "sha256": "5313a36ed870565f2b8d04cdf24c357bd8c141afb043ee4cbfb07f53ab1ca63f"
+    },
+    {
+      "path": "assets/v035-full/full_mat_034_basecolor.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_034_basecolor.png",
+      "bytes": 939447,
+      "sha256": "514100056e245107eecb1c2dfabfd65192d66ab48a224681590823d567184797"
+    },
+    {
+      "path": "assets/v035-full/full_mat_034_normal.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_034_normal.png",
+      "bytes": 1890803,
+      "sha256": "4f330be5c486bf0c1f1394335dfa70a86788f603c5143354717048bc81c47dbf"
+    },
+    {
+      "path": "assets/v035-full/full_mat_035_basecolor.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_035_basecolor.png",
+      "bytes": 826255,
+      "sha256": "38084d6376a1be0774ed2465cf7511f1733ebc848a66d8501515d29b322ddd18"
+    },
+    {
+      "path": "assets/v035-full/full_mat_035_normal.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_035_normal.png",
+      "bytes": 772997,
+      "sha256": "91d95079b69c97577364ce607c135879b408269d9f9dc0eb7a433b09e5924ddf"
+    },
+    {
+      "path": "assets/v035-full/full_mat_036_basecolor.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_036_basecolor.png",
+      "bytes": 189544,
+      "sha256": "fdfbdff6665c25934e8d6a62ff14ac53fd0fdb68c387f3ba7f55c6a6219bfd08"
+    },
+    {
+      "path": "assets/v035-full/full_mat_036_normal.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_036_normal.png",
+      "bytes": 1320852,
+      "sha256": "bed5a795bbbaf772bba4a2357e974a6650d1822fc202d8d124b9fb39a8298694"
+    },
+    {
+      "path": "assets/v035-full/full_mat_037_basecolor.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_037_basecolor.png",
+      "bytes": 752852,
+      "sha256": "f37a3f7c043f764067ac15206e16a05a207fb94154d6d890527678ed26a96a30"
+    },
+    {
+      "path": "assets/v035-full/full_mat_037_normal.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_037_normal.png",
+      "bytes": 1637268,
+      "sha256": "03ef79dae2c668e0e2fa1e7cfd1f7772ec5324a3ee312370d6cf7c50b4d7798f"
+    },
+    {
+      "path": "assets/v035-full/full_mat_038_basecolor.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_038_basecolor.png",
+      "bytes": 1037216,
+      "sha256": "be30ad0f32580f57a20db8eb1639b1c69c9cac97b8a61ba2b6e924f833646ed1"
+    },
+    {
+      "path": "assets/v035-full/full_mat_038_normal.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_038_normal.png",
+      "bytes": 1908307,
+      "sha256": "d96af16eb1828de04114960abf8727ebc3022b18a4592e4643e6c273f06984c0"
+    },
+    {
+      "path": "assets/v035-full/full_mat_039_basecolor.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_039_basecolor.png",
+      "bytes": 922890,
+      "sha256": "ee0b0ac17be97d94f3f659020db3dcf98341831a39213fa3a82ad775656fb34a"
+    },
+    {
+      "path": "assets/v035-full/full_mat_039_normal.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_039_normal.png",
+      "bytes": 1335684,
+      "sha256": "70b91c2f443b4a630042da38ed2fd45d5341c8f2003762063091b0debf8e1051"
+    },
+    {
+      "path": "assets/v035-full/full_mat_040_basecolor.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_040_basecolor.png",
+      "bytes": 866551,
+      "sha256": "aab31348889172655358f4e1e1ad730431c2a38d4ebfb280a3bea6a21f3a7092"
+    },
+    {
+      "path": "assets/v035-full/full_mat_040_normal.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_040_normal.png",
+      "bytes": 1403030,
+      "sha256": "47b49e966c69add238d9b3a438c924f3c9bc9923899b132522fbe61d02d2d97b"
+    },
+    {
+      "path": "assets/v035-full/full_mat_041_basecolor.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_041_basecolor.png",
+      "bytes": 354844,
+      "sha256": "b4f12b30c0eea629999fb2f99830f8229fc62ce61f57211e913005a4f204e0ec"
+    },
+    {
+      "path": "assets/v035-full/full_mat_041_normal.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_041_normal.png",
+      "bytes": 655655,
+      "sha256": "c1812f1996a8e3539d7e1481847012f30ddbb267b1b90b9de5c102a7d88e1739"
+    },
+    {
+      "path": "assets/v035-full/full_mat_044_basecolor.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_044_basecolor.png",
+      "bytes": 1211716,
+      "sha256": "b6360264d160acb289e403a9a579cbfed1d22ea76baccb1dba4107daa383a235"
+    },
+    {
+      "path": "assets/v035-full/full_mat_044_normal.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_044_normal.png",
+      "bytes": 1840018,
+      "sha256": "0e7d81afb40f37bb440529d03fa6845c7e9d0a60372d639948d8e3304e3ac719"
+    },
+    {
+      "path": "assets/v035-full/full_mat_048_basecolor.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_048_basecolor.png",
+      "bytes": 764887,
+      "sha256": "cb9eb220b619d560c199b99597ace9198502388ceab59944653636bb4940cd8f"
+    },
+    {
+      "path": "assets/v035-full/full_mat_048_normal.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_048_normal.png",
+      "bytes": 506847,
+      "sha256": "ccfa423f644d02d916568bf58fe24f840bffff9f6b21919905afafefec19adbb"
+    },
+    {
+      "path": "assets/v035-full/full_mat_055_normal.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/full_mat_055_normal.png",
+      "bytes": 956108,
+      "sha256": "c78e2d9c5e53332c7fb173613d1ce01ffd68dee8d0967be078e6bf32eb4fe1dd"
+    },
+    {
+      "path": "assets/v035-full/manifest.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/manifest.json",
+      "bytes": 724,
+      "sha256": "de0b74a898ac075625fc13efcdd5f3984929151cf3532f90814d966132f51f3a"
+    },
+    {
+      "path": "assets/v035-full/merchant-ship-muted.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/merchant-ship-muted.png",
+      "bytes": 1035489,
+      "sha256": "13220a898ea397b9381194d39573bc61f49e9b72929e01f6e20b56b4fba0d493"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_000_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_000_000.json",
+      "bytes": 109777,
+      "sha256": "4f1ac6c306c26d478eed28932145c3bdd16de02062e432587a8a8c4280fed1b9"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_001_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_001_000.json",
+      "bytes": 2877,
+      "sha256": "7b50e4a518a6dd8bb8aa5480a54c4573be5aeda7fe827c9cf80da8be05136041"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_002_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_002_000.json",
+      "bytes": 4707842,
+      "sha256": "03be99a439ef7d387fe2d8cf0ab978b0b786d897f6f26a373ceca026616df05e"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_002_001.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_002_001.json",
+      "bytes": 2101284,
+      "sha256": "a648a3d68e6e9e8a20d1ce36b45ac4e88c78776872f7d893a527cb0e9bfe21b2"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_003_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_003_000.json",
+      "bytes": 1905131,
+      "sha256": "cbdae1a4658067e19d4ff3c7f8440856973399ce627713a4760ae474d4739ddb"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_004_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_004_000.json",
+      "bytes": 377152,
+      "sha256": "10da2548821ffb42b6d4c839b50164f45802da4e1aa93a5cc81d283492fb309c"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_005_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_005_000.json",
+      "bytes": 940364,
+      "sha256": "1bf542c1f6411a87e592ebd8c5b164a52e261bc7f08dd46c1a3e5a4003b3a7e6"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_006_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_006_000.json",
+      "bytes": 605812,
+      "sha256": "3e36e3f9fae1a42837f9331bf7781b0f4584333acd6f78b65e6d07d466961a07"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_007_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_007_000.json",
+      "bytes": 3004261,
+      "sha256": "0811630ed2a490410f9e76d65ad5770c3a523612f81bb6e799a593e5dfa0a06a"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_008_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_008_000.json",
+      "bytes": 198710,
+      "sha256": "f5ed03a8592b16e3d28e5c35565033e0a752436cfd74dd39ca1ef96d1df0da25"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_009_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_009_000.json",
+      "bytes": 2093111,
+      "sha256": "4c7f6cb9bf1f2f570b9a07a3a9da603e4085732665872c323c8c76622eb84da8"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_010_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_010_000.json",
+      "bytes": 626623,
+      "sha256": "7a8ddf07ac5c622799ec66b57b183567a9cca783d5e66ce8114dee923b945157"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_011_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_011_000.json",
+      "bytes": 2578967,
+      "sha256": "83bab5f92a186b959353e1552e27f89ba18162c1cdc0192019c5dd959234622d"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_012_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_012_000.json",
+      "bytes": 6282657,
+      "sha256": "6e0aee23289e925f93c79aef83b461051f4f2f398d0720d4878a8d7c8ab0b952"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_012_001.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_012_001.json",
+      "bytes": 6273664,
+      "sha256": "0b1f7b0ab83c07444fa05bf251fa9f9a6b1fb2891bb12a8ec1d6f5c758a8aee3"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_012_002.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_012_002.json",
+      "bytes": 5457861,
+      "sha256": "28a68477eba3f126d06b31ef1c8b6e00d7387c6f6357f1300f30f7d2e083a6aa"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_012_003.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_012_003.json",
+      "bytes": 2557261,
+      "sha256": "dd1a5b331f6585bcb68752ff90388db326c9ba7dd991c993bd25f0faf7db4485"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_013_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_013_000.json",
+      "bytes": 1280416,
+      "sha256": "47ba1cfc3608ed5fc36139ee954bb8e39d7e60d1ca7e3bc3d1d8a78b590bb0f7"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_014_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_014_000.json",
+      "bytes": 429981,
+      "sha256": "528da6d282436869447ed3f2880634ccc20c77b8c52e30f2b168aa12c508211d"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_015_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_015_000.json",
+      "bytes": 4495469,
+      "sha256": "5919653a7c0fbaffd82d014341bd676ea13997380170b37968e3eec396cdd542"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_016_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_016_000.json",
+      "bytes": 6134065,
+      "sha256": "41436abf20788794077195b379a499d6718883fe6aeda893769925bdb8231731"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_016_001.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_016_001.json",
+      "bytes": 6266405,
+      "sha256": "967c233393b11dc2c1d7e289e812394a037022d5b4af51ed5df7d30495604671"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_016_002.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_016_002.json",
+      "bytes": 4238641,
+      "sha256": "3aeccb0b6bfb4a98957f098e0cd9af04b0d63aad84db0b7734e1d25fae929232"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_017_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_017_000.json",
+      "bytes": 4069055,
+      "sha256": "56e55c26952d7d212cba5bf01083df5ab184cc660fd3e711c88ae0e472597390"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_018_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_018_000.json",
+      "bytes": 3569812,
+      "sha256": "c657a0062d8bb7340c55dcf3ad6d17420edefb847309b6dbd6bf6d5312b74b5f"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_019_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_019_000.json",
+      "bytes": 45042,
+      "sha256": "886df4c358275a98b635e82d82abe6fef5ab6f03651b10bb5fa1d718b5916e69"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_020_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_020_000.json",
+      "bytes": 31269,
+      "sha256": "e511633da9bedea3c8e0b53da6ffa89233ab5e2965964cbffa607f2123095474"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_021_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_021_000.json",
+      "bytes": 163909,
+      "sha256": "060da57b1d60e96d5cb1af3a4e49d6b9b26ff03fb85c2801f0862d53716ea060"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_022_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_022_000.json",
+      "bytes": 820841,
+      "sha256": "8c39cb5eaf3f314b89429d5f44c89435ca1a67d9f1f6e4e0bf4288390daad634"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_023_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_023_000.json",
+      "bytes": 1794577,
+      "sha256": "ec58e1f04057f0f6d01e4e388ba3b453d008c7af99075c9438075768aefa11cd"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_024_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_024_000.json",
+      "bytes": 577034,
+      "sha256": "06c99f72908dd5a9f94c4fba6678830c9811f673b3834872f17a317e02e40c73"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_025_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_025_000.json",
+      "bytes": 386788,
+      "sha256": "d0a7b56bbe22d5396ed9d6c9610061e374a754666e076adbd63e263e7050cb8a"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_026_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_026_000.json",
+      "bytes": 658298,
+      "sha256": "7b99588c6abd1e1ff7f80e83cf3d1e4e84a36bf302448af253bf04f9966b4bee"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_027_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_027_000.json",
+      "bytes": 27776,
+      "sha256": "9ff066b464aa883e4bd3a3b427ab325151973563a881d68b3a32587d7de7e22e"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_028_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_028_000.json",
+      "bytes": 683098,
+      "sha256": "f1657a76db186227b1b9a885827c57d683a2464f60731893555b2fa8bedd45a5"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_029_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_029_000.json",
+      "bytes": 159375,
+      "sha256": "f07ef550f32ebd746565f16de104462480f7106368f89e9f6700ae715bc01210"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_030_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_030_000.json",
+      "bytes": 49192,
+      "sha256": "56ad1ab3f6db5b72c818ba631737e016b3d1280380dc758be13f6327d462a64d"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_031_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_031_000.json",
+      "bytes": 61565,
+      "sha256": "f04db74365a4faa11dbb14744d5afd3484c852999dbaa786c04388ead4c4ac2e"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_032_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_032_000.json",
+      "bytes": 121148,
+      "sha256": "700400891bcd7279836e482a12f617c2051b6d5265c67011daf231fbedb50bbd"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_033_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_033_000.json",
+      "bytes": 166718,
+      "sha256": "64c82c1a937ee45c632d67f2521561a55d731da102393e0b06421934f6bee1d8"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_034_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_034_000.json",
+      "bytes": 55612,
+      "sha256": "1b03a854aaa6951d0325ac30f2eb3a87a128136951457527215db5e4d85b0e63"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_035_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_035_000.json",
+      "bytes": 135061,
+      "sha256": "b64b0c0ba40b393e1f529b2f0e49dab9306af9779d5a209540ffb17236ab4daf"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_036_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_036_000.json",
+      "bytes": 604,
+      "sha256": "54ec9d20c8aebfd05ff5bcbc0eaad362050d94d72b07d2782c7898e56cccc3a6"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_037_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_037_000.json",
+      "bytes": 27770,
+      "sha256": "10759e91a8dcd9e83d1963c5380680db1e306f828b2215445b2f3fd82a886af3"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_038_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_038_000.json",
+      "bytes": 132513,
+      "sha256": "01b7a2ea1d9afae860a64614bc90fd57bb3d92565e7c592a4287d8afb1442033"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_039_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_039_000.json",
+      "bytes": 226060,
+      "sha256": "1519e095da5bcb9bb6557f362bd43433781bafb41858c3ed9202473ca2544886"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_040_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_040_000.json",
+      "bytes": 33134,
+      "sha256": "7fb772e0840061c9806910e72ae925f98a202fa1ebe5564fc6f143443eca8b70"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_041_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_041_000.json",
+      "bytes": 13000,
+      "sha256": "a9193ac306865e35c99f5694551e466f22067ca6cd96ebaaf4a0febd72d7ceb9"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_042_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_042_000.json",
+      "bytes": 246046,
+      "sha256": "637aea6a76c8709d0bba77764e6d112e5255166b80786f6f8291ac0b4a160caa"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_043_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_043_000.json",
+      "bytes": 50341,
+      "sha256": "5ccb3a55264057d18abd3a510f1cac9a8cd6830c3e60aa87539594aed826d21e"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_044_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_044_000.json",
+      "bytes": 167933,
+      "sha256": "885b4fbd6a1a821650c2265cb3711340aff268fcb493553d40176eda3f39262b"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_045_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_045_000.json",
+      "bytes": 27017,
+      "sha256": "a7286af10213c82913745eab0c1b6a32cee962c7b2917687b050901395cfc731"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_046_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_046_000.json",
+      "bytes": 6351201,
+      "sha256": "5fb1778d65d68f74f9c94adadf68f6527a3b6bb78da4cbe18a9bff2c06e22de4"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_046_001.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_046_001.json",
+      "bytes": 6349466,
+      "sha256": "134b08e119f28109b10979170bf34d7259d7b36e31980dd0c903c666cd980024"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_046_002.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_046_002.json",
+      "bytes": 6350070,
+      "sha256": "448812c180623e3a30bb25bee11b3ddbc1ad750652a70a5086a8a82bd0abcb90"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_046_003.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_046_003.json",
+      "bytes": 6350077,
+      "sha256": "11fb684e616240c60cd51190a240624a38d6d735400c8932c96f4d907adfbf99"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_046_004.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_046_004.json",
+      "bytes": 6350059,
+      "sha256": "f0c02c819b94b4d820c37c5806aa47c94f8bbbfafbcae4804c73428671aabf65"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_046_005.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_046_005.json",
+      "bytes": 6340690,
+      "sha256": "2d26b67b1a8aeaf0bb38420338414791567f642cb9a4c11365c688f825b85cc4"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_046_006.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_046_006.json",
+      "bytes": 6297055,
+      "sha256": "8937ceece61364a56d5c1ce124bcdfafabcdd3268f6b08d2ff99a0988c806a17"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_046_007.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_046_007.json",
+      "bytes": 6296721,
+      "sha256": "a802b6918f77ca91ecd2cf3f1ab5c7dd8a952d4195eab7259b11f842c8b3db8d"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_046_008.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_046_008.json",
+      "bytes": 6295967,
+      "sha256": "776bdeb889cff7df6a28538cf5d1cc724b665df9ae3d69aff9c654cbae9b39c5"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_046_009.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_046_009.json",
+      "bytes": 6300972,
+      "sha256": "49bc24eb5589a515610d5d164762855607c2c230ec9669a9ddd30e16cb2eba7d"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_046_010.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_046_010.json",
+      "bytes": 6349635,
+      "sha256": "d3b204e0ed84b87faf6783b29fea0035518eba8a745aa5cc7410b1cd71c8cac1"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_046_011.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_046_011.json",
+      "bytes": 6426461,
+      "sha256": "ce5326783b9a9d2ad3a294c84ec677f25fee3deab46b43275198bc34f0818d64"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_046_012.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_046_012.json",
+      "bytes": 6448942,
+      "sha256": "2b0df0877fc957dc52ccea4560d7644173f56968a7308c25442b3a4e27ce8a38"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_046_013.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_046_013.json",
+      "bytes": 6440232,
+      "sha256": "6c7364a45d1c3097d6ee569f880653a746d7c2d3ce2bd2763711ee8f5bf7a31e"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_046_014.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_046_014.json",
+      "bytes": 6388594,
+      "sha256": "ed5b3b0a17178ae1ed2df3985e12f1384c44fe1d7c76f5cd710cc552e06348d2"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_046_015.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_046_015.json",
+      "bytes": 6555793,
+      "sha256": "0afb2eee6e59bceb53a5304a63fefb1dbb61fc46f4ddb6c0a0d85547cea8b2a3"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_046_016.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_046_016.json",
+      "bytes": 2507328,
+      "sha256": "ca4568e9789b8095dd5c719b079b6cb060d89a704cf02c7a0deac9258ef956db"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_047_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_047_000.json",
+      "bytes": 4771642,
+      "sha256": "5c9472b47ff7722aa605925bfb13348ea91a5804fdebf8ec2578ca0b2f24f8d6"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_047_001.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_047_001.json",
+      "bytes": 4751425,
+      "sha256": "0b874cba3498f3de7b9667c2d96f6b9d63b95e71277e23b02ccd701287daba82"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_047_002.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_047_002.json",
+      "bytes": 2342688,
+      "sha256": "2e9c1fdd5d8679a29342f0b82db476eebb044eaca61c4ec0ff9a106a590908b9"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_048_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_048_000.json",
+      "bytes": 756357,
+      "sha256": "9544f36d7f1d05c83eb5a6f2668373c04a6980f0d755dcd50977b885316084bd"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_049_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_049_000.json",
+      "bytes": 4746379,
+      "sha256": "7ae7d3f25c9bde3caa1ae96a5f459f726b02b20f5719a1d968de90593e114d8e"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_049_001.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_049_001.json",
+      "bytes": 1737910,
+      "sha256": "a3614702a573b116d670d12d9c2a974c1bb3c42a76fff173c747fedc24293aa0"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_050_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_050_000.json",
+      "bytes": 1366395,
+      "sha256": "30f4b9b6203684463377ad1a52d9ecd55b530bf242cc2fbb62e5725b0ce4161a"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_051_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_051_000.json",
+      "bytes": 3052552,
+      "sha256": "4fb965b0f93e6df4ef5e65cd83a445d7ef617bd7a2cec4e1decbaec7903c1c7a"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_052_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_052_000.json",
+      "bytes": 4670803,
+      "sha256": "33d3d8f15cc0ca9acfade92efdff8e60a34f58dd9d7d89b017800e35ab4f4c47"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_052_001.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_052_001.json",
+      "bytes": 4692143,
+      "sha256": "29dbeda7bbc87a4452ff298fbbedca3b894573ede60e7f76b01f5543847f209e"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_052_002.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_052_002.json",
+      "bytes": 825080,
+      "sha256": "52f214021a013472d451feef67950189929e49e9ec289724cdd028271350959f"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_053_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_053_000.json",
+      "bytes": 4598260,
+      "sha256": "4f7eb977d9c9798df06f456f5780d8e8827280b1261b506fc2df8dde824a7d66"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_053_001.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_053_001.json",
+      "bytes": 2443658,
+      "sha256": "fb63e1218d638864527de7d9f224b57899719dbb70a34d91993c630b1567692a"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_054_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_054_000.json",
+      "bytes": 194190,
+      "sha256": "e4ff7c1d25740c791433cf885d6dba4483632c8a37e69aeb62da73caef3f755e"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_055_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_055_000.json",
+      "bytes": 6352184,
+      "sha256": "def696281aaa31b5ad1c952207d8922809cd794b7680cb725c995ca0abcc0d57"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_055_001.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_055_001.json",
+      "bytes": 6354286,
+      "sha256": "acf61277ee0f4e34f27d0626b83a41b4ed21c5229ab9234fb3c7f8cbb21cad86"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_055_002.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_055_002.json",
+      "bytes": 6358485,
+      "sha256": "05177f288e28435f1fb5ff501988d625b20d7c641924fd2c8c2e2c7bf46dbaaa"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_055_003.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_055_003.json",
+      "bytes": 6345535,
+      "sha256": "fb586a28fc70433f0cdb023d10d069c9d6d6f1aed3a793bffa8cb4eb9bca0111"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_055_004.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_055_004.json",
+      "bytes": 2427187,
+      "sha256": "fae6219e80f5e2b3adc1f65f00a8f5c83224d728b676e62a39a79dbb84a7d2b9"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_056_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_056_000.json",
+      "bytes": 594,
+      "sha256": "540e6dee28ce37bcbc17173eb4cb3a07603a4728545d689f3e6e5fd8145c48c3"
+    },
+    {
+      "path": "assets/v035-full/meshes/full_group_057_000.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/meshes/full_group_057_000.json",
+      "bytes": 588,
+      "sha256": "3fca25f59d0b5dd681d8633a1726d773262c0adf37df837bc84e2c1b5ec572e3"
+    },
+    {
+      "path": "assets/v035-full/object_mesh_coverage.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/object_mesh_coverage.json",
+      "bytes": 3186769,
+      "sha256": "3a6b1da8d2d65ba2f46aa8cb58297c7a06e9806025c054d1002c72cf5e43670d"
+    },
+    {
+      "path": "assets/v035-full/scene.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/scene.json",
+      "bytes": 73870,
+      "sha256": "5a210250a3693f6ed40435990e59120e4437cae54df35ed9ca0d231cf0692548"
+    },
+    {
+      "path": "assets/v035-full/sea-calm.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/sea-calm.png",
+      "bytes": 2383298,
+      "sha256": "3b83aa68c34c5d00d3c85dfaf15259482f4c5930098687e4a7e4816c55ce7b18"
+    },
+    {
+      "path": "assets/v035-full/uv_checker.png",
+      "source": "experiments/3d-lab/assets/import-v035-full/uv_checker.png",
+      "bytes": 60313,
+      "sha256": "8e6eb8be19c785e9fd58db37ad58ab9a686c3bddeed421051331c6d32b3540e4"
+    },
+    {
+      "path": "assets/v035-full/validation.json",
+      "source": "experiments/3d-lab/assets/import-v035-full/validation.json",
+      "bytes": 15233,
+      "sha256": "53a1ca503b3bb5c082a31486592b482f676da7fad52ba8d1424a24c9179f9136"
+    },
+    {
+      "path": "assets/v035-full/_lab/default-white.png",
+      "source": "v035/assets/engine-support/default-white.png",
+      "bytes": 68,
+      "sha256": "7ac2abfce2be8b46dd9826d597d94edeefc1570b4a992622721b90a1850e3ee9"
+    },
+    {
+      "path": "assets/v035-full/runtime-assets.sha256.json",
+      "source": "hashes of exactly the staged runtime resources",
+      "bytes": 15216,
+      "sha256": "b5d0d6db7583edd6b12b237d36cb786d2a8b3cad4b1d4277578c95274bbd46cc"
+    },
+    {
+      "path": "scripts/v035/lab35/Navigation.lua",
+      "source": "v035/scripts/lab35/Navigation.lua",
+      "bytes": 1681,
+      "sha256": "3f1d82ce85b6691de062ccba447ee09c1013cbcbd31cb2ffdfac4dd33004a51e"
+    },
+    {
+      "path": "scripts/v035/lab35/NativeObservation.lua",
+      "source": "v035/scripts/lab35/NativeObservation.lua",
+      "bytes": 2447,
+      "sha256": "84a3be9d78d470e2f7f88db838c686eb09170e50bb0e37c34b8720a2fb06a60b"
+    },
+    {
+      "path": "scripts/v035/lab35/SemanticOcclusion.lua",
+      "source": "v035/scripts/lab35/SemanticOcclusion.lua",
+      "bytes": 678,
+      "sha256": "b7af3cbc5c59871eb1b6ac2c06b8d3896975a6b3824f56b951676f038d53b090"
+    }
+  ],
+  "bindingChanged": false,
+  "nativeStarted": false,
+  "oldEntrySha256": "c348b8804781b2d9bf1b606ee6dfe7a4b1638ccd06a59c2359845e3d38163f67",
+  "runtimeResourceFiles": 150,
+  "preservedProbeEntry": "docs/evidence/v035-main-interface/probe-main-before-full.lua"
+}

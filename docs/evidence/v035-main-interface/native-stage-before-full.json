@@ -1,0 +1,559 @@
+{
+  "timestampUtc": "2026-10-13T12:30:52.040046+00:00",
+  "files": [
+    {
+      "path": "scripts/v035/core/EventBus.lua",
+      "source": "v035/scripts/core/EventBus.lua",
+      "bytes": 5671,
+      "sha256": "455cf1717f62a2e7e661be4d90da3f2fc5c759292abdae564ddbe20f852c514f"
+    },
+    {
+      "path": "scripts/v035/core/GameFlow.lua",
+      "source": "v035/scripts/core/GameFlow.lua",
+      "bytes": 7597,
+      "sha256": "9089079367f65a23a20e3c40b7d80708b89fa52b594706a4360e7e18c7ffd2ba"
+    },
+    {
+      "path": "scripts/v035/core/GameSession.lua",
+      "source": "v035/scripts/core/GameSession.lua",
+      "bytes": 2605,
+      "sha256": "380bb4d46836d0577aed38eff72bb79ffd935deabfbc53d763c9d615dd595a41"
+    },
+    {
+      "path": "scripts/v035/core/GameState.lua",
+      "source": "v035/scripts/core/GameState.lua",
+      "bytes": 26699,
+      "sha256": "68fd685363c656ba02936a985314dca1213f580ea60143a234e4b22237c07b2b"
+    },
+    {
+      "path": "scripts/v035/core/SaveJson.lua",
+      "source": "v035/scripts/core/SaveJson.lua",
+      "bytes": 2977,
+      "sha256": "8849c8c4a7d0ac2b1b3f2da5f401f45e652b27cc3a279d1c566107691c815978"
+    },
+    {
+      "path": "scripts/v035/core/SaveMigrations.lua",
+      "source": "v035/scripts/core/SaveMigrations.lua",
+      "bytes": 2305,
+      "sha256": "06eaaee4864d689151d187876751b0536450894b7bbfa2a01eff371dfe64afaa"
+    },
+    {
+      "path": "scripts/v035/core/SaveSchema.lua",
+      "source": "v035/scripts/core/SaveSchema.lua",
+      "bytes": 17230,
+      "sha256": "314fd736c0c1afcd26ae63c4d468f80df5cdcb14b40c7d425d2ca37e751840c8"
+    },
+    {
+      "path": "scripts/v035/core/SaveSystem.lua",
+      "source": "v035/scripts/core/SaveSystem.lua",
+      "bytes": 8016,
+      "sha256": "97be2096aea782f47724a4da4fb1361f000ea8d20d5ca0d8f809b2bb47fb9fd3"
+    },
+    {
+      "path": "scripts/v035/core/SchemaProjection.lua",
+      "source": "v035/scripts/core/SchemaProjection.lua",
+      "bytes": 962,
+      "sha256": "f7b543e396ba75535ef9d091413664d001d79eea819ff95eb8723365f3ae9e6d"
+    },
+    {
+      "path": "scripts/v035/core/StateUtil.lua",
+      "source": "v035/scripts/core/StateUtil.lua",
+      "bytes": 2972,
+      "sha256": "87b7818d2c4fce1325c1db6bc8b2e6b27ac48aec66f59d162d99e0d105cb336e"
+    },
+    {
+      "path": "scripts/v035/data/content.lua",
+      "source": "v035/scripts/data/content.lua",
+      "bytes": 73775,
+      "sha256": "e8839ad9548b445ff9f4175aeb7556eafb7f49af53671b489f57a30aee3491e7"
+    },
+    {
+      "path": "scripts/v035/data/effects.lua",
+      "source": "v035/scripts/data/effects.lua",
+      "bytes": 3741,
+      "sha256": "50905bf0ae9b015ec9adac3bc41d6a083369e7d8b7d9ec0c85dc7cc38efe5723"
+    },
+    {
+      "path": "scripts/v035/data/equipment.lua",
+      "source": "v035/scripts/data/equipment.lua",
+      "bytes": 1558,
+      "sha256": "df657c24642882e08d208ec13e526031dbfe14dee93d14f0646729cb6e4f1357"
+    },
+    {
+      "path": "scripts/v035/data/extension_test.lua",
+      "source": "v035/scripts/data/extension_test.lua",
+      "bytes": 8709,
+      "sha256": "ec68d77744302cf033768aee3ee763227037362f69ac4e11964103fd8f414fee"
+    },
+    {
+      "path": "scripts/v035/data/followup.lua",
+      "source": "v035/scripts/data/followup.lua",
+      "bytes": 26049,
+      "sha256": "f26732ee4227d1c720ad724e101e4a90a05b37ec8be222b8c0bed3bafb7300aa"
+    },
+    {
+      "path": "scripts/v035/data/gameplay.lua",
+      "source": "v035/scripts/data/gameplay.lua",
+      "bytes": 132,
+      "sha256": "e6325f44002ab0c19bd808378a1343a7db679acfca5f5b242f2ec4a015c3e53d"
+    },
+    {
+      "path": "scripts/v035/data/ingredients.lua",
+      "source": "v035/scripts/data/ingredients.lua",
+      "bytes": 1957,
+      "sha256": "8aa23678d86bb6531d39118b374cf294013f3ad9558cf3d53958048b48297429"
+    },
+    {
+      "path": "scripts/v035/data/letters.lua",
+      "source": "v035/scripts/data/letters.lua",
+      "bytes": 7592,
+      "sha256": "0920255a04e3d0a4ef26f7445befe845b2651b6db1833d7818e5aef40840b2b7"
+    },
+    {
+      "path": "scripts/v035/data/npcs.lua",
+      "source": "v035/scripts/data/npcs.lua",
+      "bytes": 3592,
+      "sha256": "b79bd999f0c5fbb75660ede65a32332afb833130405a8abef4d427ae3bcf324a"
+    },
+    {
+      "path": "scripts/v035/data/numeric_v02.lua",
+      "source": "v035/scripts/data/numeric_v02.lua",
+      "bytes": 703871,
+      "sha256": "b2dcd5a6a815fc03652d85355c8ecfcdba739325fa2c5834815f1d266330eb78"
+    },
+    {
+      "path": "scripts/v035/data/ordinary_orders.lua",
+      "source": "v035/scripts/data/ordinary_orders.lua",
+      "bytes": 49431,
+      "sha256": "2a84aac445730e3bc08189da12fb2b5d4e8199cfdb40be52436b3d8214c92780"
+    },
+    {
+      "path": "scripts/v035/data/recipes.lua",
+      "source": "v035/scripts/data/recipes.lua",
+      "bytes": 18522,
+      "sha256": "4b2fc68368a9d5acba92b3d81b25bb69ed06ecb26dd8f97b2a9b99a3c1ee6053"
+    },
+    {
+      "path": "scripts/v035/data/stage1.lua",
+      "source": "v035/scripts/data/stage1.lua",
+      "bytes": 22120,
+      "sha256": "584195a3ca8604870dc6fb6f17c0d91a676e8df842ed134aa6200672009a34e0"
+    },
+    {
+      "path": "scripts/v035/data/synthesis.lua",
+      "source": "v035/scripts/data/synthesis.lua",
+      "bytes": 3753,
+      "sha256": "185172cd8a5c5b782a96b78015d145b09787929bea8baa8889fc9e67dd05a68a"
+    },
+    {
+      "path": "scripts/v035/data/word_profiles.lua",
+      "source": "v035/scripts/data/word_profiles.lua",
+      "bytes": 3082,
+      "sha256": "5cdc3a29a29dcd4d67e7e3e91b2b7efe75283f57bee1af8632597abcebfa7b49"
+    },
+    {
+      "path": "scripts/v035/data/words.lua",
+      "source": "v035/scripts/data/words.lua",
+      "bytes": 9264,
+      "sha256": "36457271dc96565909515c05aac29829f4a9907e5504a9517c3111c69832b2f3"
+    },
+    {
+      "path": "scripts/v035/debug/DeveloperMode.lua",
+      "source": "v035/scripts/debug/DeveloperMode.lua",
+      "bytes": 104,
+      "sha256": "429b4fbfd22c1a0596e01d69790a4736623078eb78be8417dcc59f777355325b"
+    },
+    {
+      "path": "scripts/v035/lab35/AppView.lua",
+      "source": "v035/scripts/lab35/AppView.lua",
+      "bytes": 20779,
+      "sha256": "e0c01f8912fa76fcca4b8007154dc5ddd259d5e0b280d2e679ff80f8f10c3069"
+    },
+    {
+      "path": "scripts/v035/lab35/Bootstrap.lua",
+      "source": "v035/scripts/lab35/Bootstrap.lua",
+      "bytes": 916,
+      "sha256": "51ac618ff6025fa051534fa05ac70721c645eaf79dafdb965f463e073b583dc4"
+    },
+    {
+      "path": "scripts/v035/lab35/Controller.lua",
+      "source": "v035/scripts/lab35/Controller.lua",
+      "bytes": 5757,
+      "sha256": "c7b643036b6cb031f7c22d156ac2cae61b5ffbc734f23cd0bd018bffb3585732"
+    },
+    {
+      "path": "scripts/v035/lab35/HomeView.lua",
+      "source": "v035/scripts/lab35/HomeView.lua",
+      "bytes": 2735,
+      "sha256": "4d3437af41c2a62af57e825886a48267a43c8b7ab74774a989b466e80a99b156"
+    },
+    {
+      "path": "scripts/v035/lab35/Ids.lua",
+      "source": "v035/scripts/lab35/Ids.lua",
+      "bytes": 561,
+      "sha256": "d5c4e8c5e05a26ac2d50f465606cc9ef245e00b7ef613b584f73f9a7e427399d"
+    },
+    {
+      "path": "scripts/v035/lab35/Integration.lua",
+      "source": "v035/scripts/lab35/Integration.lua",
+      "bytes": 1658,
+      "sha256": "daefe511565737cbb59af55aafb273a4365981c9b2375b51832fb898f672cafd"
+    },
+    {
+      "path": "scripts/v035/lab35/Math3.lua",
+      "source": "v035/scripts/lab35/Math3.lua",
+      "bytes": 1458,
+      "sha256": "1f1fe7e869cccac4156deaa449730f38aa13692e5e8709cffc0e0265ea033078"
+    },
+    {
+      "path": "scripts/v035/lab35/MemoryStorage.lua",
+      "source": "v035/scripts/lab35/MemoryStorage.lua",
+      "bytes": 1060,
+      "sha256": "5c7e1eb84ecfca9504817b71a78cfbda9ff423e9723d011b782c1f87533a1096"
+    },
+    {
+      "path": "scripts/v035/lab35/MeshContract.lua",
+      "source": "v035/scripts/lab35/MeshContract.lua",
+      "bytes": 7653,
+      "sha256": "02781c5b07305fae5ebb0c78871e90cd6701959170f143213d8451a28915696b"
+    },
+    {
+      "path": "scripts/v035/lab35/MeshLoader.lua",
+      "source": "v035/scripts/lab35/MeshLoader.lua",
+      "bytes": 1564,
+      "sha256": "f43802bbfa746e40818bd627a1b422cb87347653f034d93b12071d7a5116f3f3"
+    },
+    {
+      "path": "scripts/v035/lab35/NativeGeometry.lua",
+      "source": "v035/scripts/lab35/NativeGeometry.lua",
+      "bytes": 3870,
+      "sha256": "bf72b91d731f8360ddbdab0964e6a4d61395dc8dddb6ce45691d0639d6eba53d"
+    },
+    {
+      "path": "scripts/v035/lab35/NativeHost.lua",
+      "source": "v035/scripts/lab35/NativeHost.lua",
+      "bytes": 14267,
+      "sha256": "58c64ac5411d9a6c815ccaeefdf1e91ace09bde3bc4933d01cd87d009aada183"
+    },
+    {
+      "path": "scripts/v035/lab35/Panels.lua",
+      "source": "v035/scripts/lab35/Panels.lua",
+      "bytes": 763,
+      "sha256": "48f920573af1758c891e60add3b2355f223692aad95a34b6b58e4a8a19a7635c"
+    },
+    {
+      "path": "scripts/v035/lab35/Picking.lua",
+      "source": "v035/scripts/lab35/Picking.lua",
+      "bytes": 1133,
+      "sha256": "550c648ea601f37815d80feeef36af17b850029dde9654af5470e165c29db1a5"
+    },
+    {
+      "path": "scripts/v035/lab35/ProbeAdapter.lua",
+      "source": "v035/scripts/lab35/ProbeAdapter.lua",
+      "bytes": 2405,
+      "sha256": "42c802538501aeb53064d06acf0089a7a49494e972a6bac373486773569b5700"
+    },
+    {
+      "path": "scripts/v035/systems/BrewJournal.lua",
+      "source": "v035/scripts/systems/BrewJournal.lua",
+      "bytes": 9284,
+      "sha256": "4ea96a675b90b21a447e9b3cd02bc01b8e854cb3e51799fce623ee09534d3ce2"
+    },
+    {
+      "path": "scripts/v035/systems/CalculationGuard.lua",
+      "source": "v035/scripts/systems/CalculationGuard.lua",
+      "bytes": 2457,
+      "sha256": "9776eed0ca71c55e42e80aef623e7959d4d4f9d3d11df5737ae0216acd773604"
+    },
+    {
+      "path": "scripts/v035/systems/CaseBoardProjection.lua",
+      "source": "v035/scripts/systems/CaseBoardProjection.lua",
+      "bytes": 244,
+      "sha256": "55d3b84fb3fd483e746ea74e7572d818872c0898f9d4fe9d0f242c5ca96e1a02"
+    },
+    {
+      "path": "scripts/v035/systems/Economy.lua",
+      "source": "v035/scripts/systems/Economy.lua",
+      "bytes": 12644,
+      "sha256": "f2aed8f2a85c9c505b63814cb3465031b922a2be9e0093a5ae15776468a57780"
+    },
+    {
+      "path": "scripts/v035/systems/Letter.lua",
+      "source": "v035/scripts/systems/Letter.lua",
+      "bytes": 14142,
+      "sha256": "193fb844a6ff8a31c32c7f9c614d10781bf6e4bf172392307d9f93e7ab43ba03"
+    },
+    {
+      "path": "scripts/v035/systems/Narrative.lua",
+      "source": "v035/scripts/systems/Narrative.lua",
+      "bytes": 15680,
+      "sha256": "9df4c890b9864ba939bda0710720e0db6234d08e01c0c12fe6c726385149c65b"
+    },
+    {
+      "path": "scripts/v035/systems/Order.lua",
+      "source": "v035/scripts/systems/Order.lua",
+      "bytes": 15555,
+      "sha256": "d7d2d722afca72cedb77f206a703b431cd9a1707ddd4f61a0e38f59036b8ac7f"
+    },
+    {
+      "path": "scripts/v035/systems/OrderAudit.lua",
+      "source": "v035/scripts/systems/OrderAudit.lua",
+      "bytes": 17152,
+      "sha256": "a32ff4aa47339fe8ebd7e25bff245122087aeb83c093c2962057e8b919407d5d"
+    },
+    {
+      "path": "scripts/v035/systems/OrderLifecycle.lua",
+      "source": "v035/scripts/systems/OrderLifecycle.lua",
+      "bytes": 17114,
+      "sha256": "29be635a335064b57cc7ced0953d55ca34bd67d6d8795b0f9f2ff1a9ec9c1db9"
+    },
+    {
+      "path": "scripts/v035/systems/OrderTrial.lua",
+      "source": "v035/scripts/systems/OrderTrial.lua",
+      "bytes": 11364,
+      "sha256": "73d6bee9c4c7465c34ed5236aeb45b7f5d67c13657291363431798b7989b7779"
+    },
+    {
+      "path": "scripts/v035/systems/PlayQueries.lua",
+      "source": "v035/scripts/systems/PlayQueries.lua",
+      "bytes": 8904,
+      "sha256": "0c49f79d84f279b307590f3ea6afe90f62119a8ff7ea34c1f28e8fd525d355b6"
+    },
+    {
+      "path": "scripts/v035/systems/Potion.lua",
+      "source": "v035/scripts/systems/Potion.lua",
+      "bytes": 20950,
+      "sha256": "bb5114fd4380e1fc88797ae3f0c5c2c678d8024f0624be6a5d51843bb01b34aa"
+    },
+    {
+      "path": "scripts/v035/systems/RecipeDraft.lua",
+      "source": "v035/scripts/systems/RecipeDraft.lua",
+      "bytes": 3288,
+      "sha256": "37e3cb4e6d1b8d565e77540f71b75e19397860997bd2bfcf8ca199bc4fa3d359"
+    },
+    {
+      "path": "scripts/v035/systems/StoryRules.lua",
+      "source": "v035/scripts/systems/StoryRules.lua",
+      "bytes": 8195,
+      "sha256": "10cac1e3f25e429a144935386401c8e379da9063c599dc393c80bc8da9ca35d6"
+    },
+    {
+      "path": "scripts/v035/systems/WordToken.lua",
+      "source": "v035/scripts/systems/WordToken.lua",
+      "bytes": 9867,
+      "sha256": "08e4b351db9731dfdecd6f8912147161eca30a14e6da39229ef1c19e379ddedd"
+    },
+    {
+      "path": "scripts/v035/systems/WorldState.lua",
+      "source": "v035/scripts/systems/WorldState.lua",
+      "bytes": 9702,
+      "sha256": "1bde80a9e6e8701a87df8d1b22a6c97cdbf6044a22f36a3125317dac65749126"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/AppView.lua",
+      "source": "v035/scripts/ui/landscape/AppView.lua",
+      "bytes": 21019,
+      "sha256": "f524703a35b3c4b7153cb7fe5bca142e4d804830fad985a9f09af7866a3ccb67"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/DevChecks.lua",
+      "source": "v035/scripts/ui/landscape/DevChecks.lua",
+      "bytes": 219,
+      "sha256": "144cf8f7543439e5043250a7357e9ebdca07bf425e2b9ce1b4a6717961cf6033"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/HarborStyle.lua",
+      "source": "v035/scripts/ui/landscape/HarborStyle.lua",
+      "bytes": 2302,
+      "sha256": "72f72b9292913c0298ae8f0ee792ae02ac35d1499d68f145a31ab97cb20a5320"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/HomeView.lua",
+      "source": "v035/scripts/ui/landscape/HomeView.lua",
+      "bytes": 7778,
+      "sha256": "a808194d6b460c297f1d2a8271a1bbb726cf7c19bd5adadacc0161c30a0e057e"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/HomeYawMotion.lua",
+      "source": "v035/scripts/ui/landscape/HomeYawMotion.lua",
+      "bytes": 1142,
+      "sha256": "5c9dbff78275fe5f15f8ab59b05da61c0157b5d05faada43f2d4f6712be41624"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/HomeYawProbe.lua",
+      "source": "v035/scripts/ui/landscape/HomeYawProbe.lua",
+      "bytes": 5014,
+      "sha256": "f666bce31b06f41c2ec9f57f5adbde51b23c7c28c98fd18f95ad6f9bfbf68e4f"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/HomeYawScene.lua",
+      "source": "v035/scripts/ui/landscape/HomeYawScene.lua",
+      "bytes": 7776,
+      "sha256": "1ec5c7067b8412585e7965497f16aa9607572260c3c659973cadba6ec57fb9ec"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/HomeZoom.lua",
+      "source": "v035/scripts/ui/landscape/HomeZoom.lua",
+      "bytes": 1847,
+      "sha256": "6ab022d3ec3d6eb7c73c4a148e44055740e5ec961e20635c3e936cfbb6dadf2b"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/HudLayout.lua",
+      "source": "v035/scripts/ui/landscape/HudLayout.lua",
+      "bytes": 1508,
+      "sha256": "f7ebfb32eb1d872408a97dd2660bbfbfabf11a953842f5ae302b07e22f5e26d4"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/LayoutGeometry.lua",
+      "source": "v035/scripts/ui/landscape/LayoutGeometry.lua",
+      "bytes": 3995,
+      "sha256": "89d54e4410ec1e8452261a0cc88e05181bf8a8f363c588668914033fa6b76e78"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/LayoutManifest.lua",
+      "source": "v035/scripts/ui/landscape/LayoutManifest.lua",
+      "bytes": 13609,
+      "sha256": "cc9093caf7e9104f5bdd4afa9076c49028869aadd32dee8c9c78fb374c7022af"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/MessagePresenter.lua",
+      "source": "v035/scripts/ui/landscape/MessagePresenter.lua",
+      "bytes": 1747,
+      "sha256": "5943ed58fc84e32fb668ddd7b299e205fe5f0d1987e76a591570b53a627d9142"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/Panels.lua",
+      "source": "v035/scripts/ui/landscape/Panels.lua",
+      "bytes": 16235,
+      "sha256": "d9f1b016da2e03c9a61d1dbce9fbc3dfe4d8d6dcb1752cba7086a8017193bded"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/SalvageController.lua",
+      "source": "v035/scripts/ui/landscape/SalvageController.lua",
+      "bytes": 3942,
+      "sha256": "f059e4e24e37acc33df43e3d15929f827157233a2c8d1799eaa30e25f102475a"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/SceneBackdrop.lua",
+      "source": "v035/scripts/ui/landscape/SceneBackdrop.lua",
+      "bytes": 1318,
+      "sha256": "75294122c479a410eea77d5846c8f3028c270bca5db1998109a4abe5366cefc2"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/SeaArt.lua",
+      "source": "v035/scripts/ui/landscape/SeaArt.lua",
+      "bytes": 371,
+      "sha256": "eb7b175274c4515496318f3d9bd97ec6aae1f7d8a23ce2766e4cb9522ac33c5c"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/SeasideManifest.lua",
+      "source": "v035/scripts/ui/landscape/SeasideManifest.lua",
+      "bytes": 678,
+      "sha256": "cba45f64fc73bca9c10cde020ad0099f1792ada2ab9f1e38856295d80b400bb4"
+    },
+    {
+      "path": "scripts/v035/ui/landscape/SeasideView.lua",
+      "source": "v035/scripts/ui/landscape/SeasideView.lua",
+      "bytes": 6584,
+      "sha256": "fdbb365df5af52db4cd8e3f2d30f8d45a6e5a2eea4f8cf0e21eb282350234e9c"
+    },
+    {
+      "path": "scripts/v035/ui/PlayModel.lua",
+      "source": "v035/scripts/ui/PlayModel.lua",
+      "bytes": 15701,
+      "sha256": "66f1d1abc14b69213ffaa3d3b7f4ccb0c3ea43ba5162cb9f5f76e399124b978c"
+    },
+    {
+      "path": "scripts/v035/ui/PlayView.lua",
+      "source": "v035/scripts/ui/PlayView.lua",
+      "bytes": 251,
+      "sha256": "02b0e6e7ea59eb196113bb663fd5209e63266f245a3e0e311416e3ad64904e65"
+    },
+    {
+      "path": "assets/v035-probe/probe.json",
+      "source": "experiments\\3d-lab\\assets\\import-probe-v035\\probe.json",
+      "bytes": 3866464,
+      "sha256": "faea79aacf1f0815f3f86da39f7284f0bad4ede916f380df96072bbef9e6b6f0"
+    },
+    {
+      "path": "assets/v035-probe/uv_checker.png",
+      "source": "experiments\\3d-lab\\assets\\import-probe-v035\\uv_checker.png",
+      "bytes": 60313,
+      "sha256": "8e6eb8be19c785e9fd58db37ad58ab9a686c3bddeed421051331c6d32b3540e4"
+    },
+    {
+      "path": "assets/v035-probe/mat_00_basecolor.png",
+      "source": "experiments\\3d-lab\\assets\\import-probe-v035\\mat_00_basecolor.png",
+      "bytes": 781165,
+      "sha256": "e165b1d1430eb20561acc39f988af34f30d3cfc267bef10232d8f10a8d25a4fb"
+    },
+    {
+      "path": "assets/v035-probe/mat_01_basecolor.png",
+      "source": "experiments\\3d-lab\\assets\\import-probe-v035\\mat_01_basecolor.png",
+      "bytes": 862543,
+      "sha256": "6298dfbad5ae15f7a5140fcf70767102f64de93fee34f48234a09459b9580776"
+    },
+    {
+      "path": "assets/v035-probe/mat_02_basecolor.png",
+      "source": "experiments\\3d-lab\\assets\\import-probe-v035\\mat_02_basecolor.png",
+      "bytes": 63581,
+      "sha256": "f58cc2af11d6dfed044c0c73355593a0b0ade6a60fbbc4ca302d73fa29603dd1"
+    },
+    {
+      "path": "assets/v035-probe/mat_03_basecolor.png",
+      "source": "experiments\\3d-lab\\assets\\import-probe-v035\\mat_03_basecolor.png",
+      "bytes": 832408,
+      "sha256": "6c4afc346613dc0daa7965fef6661de1730e161c9ffbe079744a39dffab1e1c2"
+    },
+    {
+      "path": "assets/v035-probe/sea-calm.png",
+      "source": "experiments\\3d-lab\\assets\\import-probe-v035\\sea-calm.png",
+      "bytes": 2383298,
+      "sha256": "3b83aa68c34c5d00d3c85dfaf15259482f4c5930098687e4a7e4816c55ce7b18"
+    },
+    {
+      "path": "assets/v035-probe/merchant-ship-muted.png",
+      "source": "experiments\\3d-lab\\assets\\import-probe-v035\\merchant-ship-muted.png",
+      "bytes": 1035489,
+      "sha256": "13220a898ea397b9381194d39573bc61f49e9b72929e01f6e20b56b4fba0d493"
+    },
+    {
+      "path": "assets/v035-main-image/misty-harbor-r1/dock-foreground.png",
+      "source": "v035\\assets\\image\\misty-harbor-r1\\dock-foreground.png",
+      "bytes": 548911,
+      "sha256": "a43cb9d75d69416be570e4f176f86a22977f1d929203251247440e71f613dea4"
+    },
+    {
+      "path": "assets/v035-main-image/misty-harbor-r1/merchant-ship-muted.png",
+      "source": "v035\\assets\\image\\misty-harbor-r1\\merchant-ship-muted.png",
+      "bytes": 1035489,
+      "sha256": "13220a898ea397b9381194d39573bc61f49e9b72929e01f6e20b56b4fba0d493"
+    },
+    {
+      "path": "assets/v035-main-image/misty-harbor-r1/sea-calm.png",
+      "source": "v035\\assets\\image\\misty-harbor-r1\\sea-calm.png",
+      "bytes": 2383298,
+      "sha256": "3b83aa68c34c5d00d3c85dfaf15259482f4c5930098687e4a7e4816c55ce7b18"
+    },
+    {
+      "path": "assets/v035-main-image/seaside-r1/bottle.png",
+      "source": "v035\\assets\\image\\seaside-r1\\bottle.png",
+      "bytes": 1310448,
+      "sha256": "c1a651c0644c967f3032467cce7d3776f9cfb0d480cf14ef1b2632aa33d95fa7"
+    },
+    {
+      "path": "assets/v035-main-image/seaside-r1/net.png",
+      "source": "v035\\assets\\image\\seaside-r1\\net.png",
+      "bytes": 784956,
+      "sha256": "9eba8ff0ab25f9b1d71ddd02c8a434a2161fcc84182d3e0ea0ac24bf3c648e31"
+    },
+    {
+      "path": "scripts/main.lua",
+      "source": "explicit v035 probe entry; old entry preserved",
+      "bytes": 137,
+      "sha256": "63a294e2e1ca6101cf119c33e577cee35b5da19d98bc2d0ab4f0ea6c17718a78"
+    }
+  ],
+  "oldEntrySha256": "c348b8804781b2d9bf1b606ee6dfe7a4b1638ccd06a59c2359845e3d38163f67",
+  "bindingChanged": false
+}

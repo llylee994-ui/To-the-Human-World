@@ -1,0 +1,17 @@
+{
+  "utc": "2026-10-13T15:07:14.921448+00:00",
+  "cliExitCode": 1,
+  "identity": {
+    "session_id": "632481e7-2e48-4fcc-932b-26b6cc0603ad",
+    "reload_id": 0,
+    "runtime_pid": 30960,
+    "supervisor_pid": 26532,
+    "started_at": "2026-10-13T14:56:37.329Z",
+    "executable": "D:\\taptap\\To-the-Human-World-3D-Lab\\.runtime\\UrhoXRuntime.exe",
+    "project_realpath": "D:\\taptap\\To-the-Human-World-3D-Lab"
+  },
+  "nativeExitCaptured": true,
+  "peakWorkingSetBytes": 1766084608,
+  "peakPrivateBytesSampled": 2775257088,
+  "nativeRestarted": false
+}

@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "format",
+    "camera",
+    "meshes",
+    "materials",
+    "interactionProxies",
+    "proxyMeshes"
+  ],
+  "properties": {
+    "meshes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "materialId",
+          "positions",
+          "normals",
+          "uv0",
+          "indices"
+        ],
+        "properties": {
+          "positions": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "normals": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "uv0": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "indices": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "camera": {
+      "type": "object",
+      "required": [
+        "position",
+        "forward",
+        "up",
+        "projection",
+        "verticalFovDegrees",
+        "horizontalFovDegrees"
+      ]
+    }
+  }
+}

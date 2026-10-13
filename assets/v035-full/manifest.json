@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "format": "dot-customgeometry-scene-v1",
+  "entry": "scene.json",
+  "loading": "Read scene.json then stream each meshFiles[].file. Each mesh file has v1 id/materialId/positions/normals/uv0/indices fields. Do not treat empty inline meshes as an empty scene.",
+  "completeVisibleScene": true,
+  "visibleSourceObjects": 10790,
+  "meshCount": 90,
+  "triangles": 3209455,
+  "vertices": 2584246,
+  "maxVerticesPerMesh": 60000,
+  "materials": 59,
+  "proxyCount": 8,
+  "engineValidated": false,
+  "cameraReference": "camera_projection_reference.json",
+  "coverage": "object_mesh_coverage.json",
+  "validation": "validation.json",
+  "suggestedExtractionPath": "experiments/3d-lab/assets/import-v035-full/"
+}

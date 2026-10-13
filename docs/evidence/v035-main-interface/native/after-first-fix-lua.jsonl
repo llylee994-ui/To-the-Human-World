@@ -1,0 +1,24 @@
+{"t":"2026-10-13 20_31_27_599","f":787,"l":"INFO","m":"[i18n] loadConfig: uuid='Q4M3GntfTmiNZCdTeiz5Kg' engine='Q4M3GntfTmiNZCdTeiz5Kg' match=true"}
+{"t":"2026-10-13 20_31_27_600","f":787,"l":"INFO","m":"[i18n] loadConfig: engine fallback, support_langs='zh_CN'"}
+{"t":"2026-10-13 20_31_27_600","f":787,"l":"INFO","m":"[i18n] PreloadI18nStep: resolved='zh_CN'"}
+{"t":"2026-10-13 20_31_44_910","f":1978,"l":"RAW","m":"[2026-10-13 20_31_44_910][1978][Script] [V035 CAMERA CANDIDATE] {\"aspect\":1.776566757493188,\"handedness\":0,\"error\":2.329415029373703,\"lookSign\":1}\n"}
+{"t":"2026-10-13 20_31_44_910","f":1978,"l":"RAW","m":"[2026-10-13 20_31_44_910][1978][Script] [V035 CAMERA CANDIDATE] {\"aspect\":1.776566757493188,\"handedness\":1,\"error\":1.6078143186974133,\"lookSign\":-1}\n"}
+{"t":"2026-10-13 20_31_44_911","f":1978,"l":"RAW","m":"[2026-10-13 20_31_44_911][1978][Script] [V035 CHECK] {\"details\":{\"handedness\":1,\"anchorSquaredError\":1.6078143186974133,\"lookSign\":-1},\"ok\":false,\"seconds\":0,\"name\":\"native camera calibration\"}\n"}
+{"t":"2026-10-13 20_31_45_825","f":1978,"l":"RAW","m":"[2026-10-13 20_31_45_825][1978][Script] [Data] 校验通过：效果 22 / 词条 61 / 原料 4 / 设备 2 / 人物 11 / 信件 22 / 时间属性 6 / 规则 196 / 片段 58 / 评分 58\n"}
+{"t":"2026-10-13 20_31_45_834","f":1978,"l":"RAW","m":"[2026-10-13 20_31_45_834][1978][Script] [Data] 首单包校验通过：C1 开局账本 / C2 首单数值 / C3 事实与回信；contentVersion = story-numeric-v02-r1\n"}
+{"t":"2026-10-13 20_31_45_915","f":1978,"l":"RAW","m":"[2026-10-13 20_31_45_915][1978][Script] [V035 START] actualCloudProbe=true fullRoom=false meshes=6 proxiesInvisible=8 main=1cd0cdbec06487a5c60f109d5fd477198cfc8846\n"}
+{"t":"2026-10-13 20_31_49_960","f":2205,"l":"RAW","m":"[2026-10-13 20_31_49_960][2205][Script] [V035 CHECK] {\"details\":{\"expandedVertices\":24384,\"meshes\":6,\"triangles\":8128,\"sourceVertices\":24384,\"drawables\":6},\"ok\":true,\"seconds\":4.015475530177355,\"name\":\"visible cloud geometry only\"}\n"}
+{"t":"2026-10-13 20_31_50_007","f":2205,"l":"RAW","m":"[2026-10-13 20_31_50_007][2205][Script] [V035 CAPTURE] {\"checker\":false,\"flipV\":false,\"seconds\":4.015475530177355,\"label\":\"01-home-source-v\",\"ok\":false}\n"}
+{"t":"2026-10-13 20_31_50_955","f":2262,"l":"RAW","m":"[2026-10-13 20_31_50_955][2262][Script] [V035 FRAME] resolution=1304x734 meanMs=17.64 worstMs=92.37 count=284 memoryWrites=0\n"}
+{"t":"2026-10-13 20_31_53_696","f":2380,"l":"RAW","m":"[2026-10-13 20_31_53_696][2380][Script] [V035 CAPTURE] {\"checker\":true,\"flipV\":false,\"seconds\":7.0083845388144259,\"label\":\"02-checker-source-v\",\"ok\":false}\n"}
+{"t":"2026-10-13 20_31_57_130","f":2662,"l":"RAW","m":"[2026-10-13 20_31_57_130][2662][Script] [V035 CAPTURE] {\"checker\":true,\"flipV\":true,\"seconds\":10.001333551947028,\"label\":\"03-checker-flipped-v\",\"ok\":false}\n"}
+{"t":"2026-10-13 20_31_57_136","f":2663,"l":"RAW","m":"[2026-10-13 20_31_57_136][2663][Script] [V035 FRAME] resolution=1304x734 meanMs=12.58 worstMs=58.52 count=401 memoryWrites=0\n"}
+{"t":"2026-10-13 20_32_00_703","f":3008,"l":"RAW","m":"[2026-10-13 20_32_00_703][3008][Script] [V035 CAPTURE] {\"checker\":false,\"flipV\":true,\"seconds\":13.002150039654225,\"label\":\"04-home-flipped-v\",\"ok\":false}\n"}
+{"t":"2026-10-13 20_32_02_680","f":3244,"l":"RAW","m":"[2026-10-13 20_32_02_680][3244][Script] [V035 FRAME] resolution=1304x734 meanMs=8.61 worstMs=64.10 count=581 memoryWrites=0\n"}
+{"t":"2026-10-13 20_32_03_676","f":3379,"l":"RAW","m":"[2026-10-13 20_32_03_676][3379][Script] [V035 CHECK] {\"ok\":true,\"seconds\":16.00658753607422,\"name\":\"native ship semantic pick\"}\n"}
+{"t":"2026-10-13 20_32_03_676","f":3379,"l":"RAW","m":"[2026-10-13 20_32_03_676][3379][Script] [V035 CHECK] {\"ok\":true,\"seconds\":16.00658753607422,\"name\":\"native stove semantic pick\"}\n"}
+{"t":"2026-10-13 20_32_03_695","f":3379,"l":"RAW","m":"[2026-10-13 20_32_03_695][3379][Script] [V035 CAPTURE] {\"checker\":false,\"flipV\":true,\"seconds\":16.00658753607422,\"label\":\"05-hints\",\"ok\":false}\n"}
+{"t":"2026-10-13 20_32_07_768","f":3893,"l":"RAW","m":"[2026-10-13 20_32_07_768][3893][Script] [V035 FRAME] resolution=1304x734 meanMs=7.71 worstMs=94.47 count=649 memoryWrites=0\n"}
+{"t":"2026-10-13 20_32_13_481","f":4452,"l":"RAW","m":"[2026-10-13 20_32_13_481][4452][Script] [V035 FRAME] resolution=1920x991 meanMs=8.95 worstMs=100.00 count=559 memoryWrites=0\n"}
+{"t":"2026-10-13 20_32_18_518","f":5125,"l":"RAW","m":"[2026-10-13 20_32_18_518][5125][Script] [V035 FRAME] resolution=1920x991 meanMs=7.43 worstMs=52.63 count=673 memoryWrites=0\n"}
+{"t":"2026-10-13 20_32_23_757","f":5767,"l":"RAW","m":"[2026-10-13 20_32_23_757][5767][Script] [V035 FRAME] resolution=1920x991 meanMs=7.80 worstMs=64.48 count=642 memoryWrites=0\n"}

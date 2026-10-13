@@ -1,0 +1,2489 @@
+{
+  "files": [
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\__manual_types.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\__manual_types.d.lua",
+      "sha256": "a100c3455ba8bb5b843b287744b20e084c015c3ed717c27ab7e50d4729be2f78",
+      "size": 7993,
+      "copied_at": "2026-10-11T18:29:47.197058+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\__union_func.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\__union_func.d.lua",
+      "sha256": "dbf30672cb7de468b692774fefed1262566ec429c85c2f0e3f496c2f011f05f4",
+      "size": 123660,
+      "copied_at": "2026-10-11T18:29:47.236902+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Achievement.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Achievement.d.lua",
+      "sha256": "0f068030edf47871b65206f7e0f731963ebc2df82e05284f69a462a6afd9a8ce",
+      "size": 1904,
+      "copied_at": "2026-10-11T18:29:47.280269+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\AimOffset.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\AimOffset.d.lua",
+      "sha256": "cb17a46637eff216aa4722fd2b2a7f160139332b8383b9c0885f23d09245fd80",
+      "size": 2347,
+      "copied_at": "2026-10-11T18:29:47.327687+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Animatable.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Animatable.d.lua",
+      "sha256": "ccaf3fa43108a4e1830711a14e6d09139c3897f99ccd1c4d63a6f28b52b50340",
+      "size": 1781,
+      "copied_at": "2026-10-11T18:29:47.364100+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\AnimatedModel.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\AnimatedModel.d.lua",
+      "sha256": "0175bd70e4a69ec998f85b3ce426bcd3ce04b47c7cdcb5d63690081792f32a7e",
+      "size": 2970,
+      "copied_at": "2026-10-11T18:29:47.412594+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\AnimatedSprite2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\AnimatedSprite2D.d.lua",
+      "sha256": "6e8a5b12c7ef2b8b0af29f4520b0c3d618d4cf8df21600dca2b2db59f8a022de",
+      "size": 1285,
+      "copied_at": "2026-10-11T18:29:47.441950+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Animation.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Animation.d.lua",
+      "sha256": "7239caf9f980753049d41579aeb382488892a10ababc010f796d76b90ddf83e7",
+      "size": 3423,
+      "copied_at": "2026-10-11T18:29:47.498477+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\AnimationController.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\AnimationController.d.lua",
+      "sha256": "0e7eecb71ab972fb818bfa6ba91e881b5bded26b1195c2574788617bf7a43ccc",
+      "size": 4899,
+      "copied_at": "2026-10-11T18:29:47.571716+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\AnimationLuaAPI.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\AnimationLuaAPI.d.lua",
+      "sha256": "565d2faeab6beada14de87053423db1edbaa173677761683caa293da5042be0c",
+      "size": 50,
+      "copied_at": "2026-10-11T18:29:47.597327+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\AnimationSet2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\AnimationSet2D.d.lua",
+      "sha256": "885775f7e0237a075e8be6d01cde53e803c5693809a74c3f39714ae113572e60",
+      "size": 304,
+      "copied_at": "2026-10-11T18:29:47.634032+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\AnimationState.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\AnimationState.d.lua",
+      "sha256": "5be41c5fe5ed7fc00ca04a879de55a7da7a01152640e7a7bb6f90929dfb1b119",
+      "size": 3329,
+      "copied_at": "2026-10-11T18:29:47.689497+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\AnimationStateMachine.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\AnimationStateMachine.d.lua",
+      "sha256": "1e3b10589fa6db5599fe057069723b5a250b32f7885b178377b0a4be2650920e",
+      "size": 6098,
+      "copied_at": "2026-10-11T18:29:47.769627+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Attribute.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Attribute.d.lua",
+      "sha256": "f0ad9a9d67ddcbd8bde91b1cb34d296c91f823a548e5ed1cc4c1035ffc959edb",
+      "size": 460,
+      "copied_at": "2026-10-11T18:29:47.801938+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Audio.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Audio.d.lua",
+      "sha256": "714b7cff7a8cc9c5cc318a9b33e3f0750d636a547b7f5149dad1a3135097f1c7",
+      "size": 2291,
+      "copied_at": "2026-10-11T18:29:47.850260+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\AudioLuaAPI.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\AudioLuaAPI.d.lua",
+      "sha256": "b6d693c4194624c3700b1a0c492e00466eab58d521d1f551317f54cfff26854a",
+      "size": 46,
+      "copied_at": "2026-10-11T18:29:47.880124+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\BillboardSet.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\BillboardSet.d.lua",
+      "sha256": "49b253a37c83a6c7292b3b242166492726ed624a305930c2cf15a942051aa3b1",
+      "size": 2091,
+      "copied_at": "2026-10-11T18:29:47.936844+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\BlendSpace.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\BlendSpace.d.lua",
+      "sha256": "65bb72b0d8031d05258f76c166c5d185a607ef63d368d9d23d433729b1addef7",
+      "size": 1823,
+      "copied_at": "2026-10-11T18:29:48.005040+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\BorderImage.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\BorderImage.d.lua",
+      "sha256": "35e278609e3744c35d0632960a8512ec211fa8df7a4544a06c28de3730357a42",
+      "size": 1562,
+      "copied_at": "2026-10-11T18:29:48.058404+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\BoundingBox.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\BoundingBox.d.lua",
+      "sha256": "677ffd56d8755e5430852df135798e3511048052f6505bc5a7776bad6449f796",
+      "size": 4006,
+      "copied_at": "2026-10-11T18:29:48.118604+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Button.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Button.d.lua",
+      "sha256": "1cdc0c6a9bf0c482497106fe8ef5c6ee3626e126ee2432984746b764ae91f681",
+      "size": 1935,
+      "copied_at": "2026-10-11T18:29:48.155141+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Camera.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Camera.d.lua",
+      "sha256": "619147ac0b0ed3a5ce89afcbc26f67e0773efd2b79d9864c7f9b9195cd29a8c3",
+      "size": 5637,
+      "copied_at": "2026-10-11T18:29:48.233959+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\CharacterComponent.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\CharacterComponent.d.lua",
+      "sha256": "b559add6877abd16d00008da95cd991a7a77e506e412117d35b5bdafbee67b25",
+      "size": 3703,
+      "copied_at": "2026-10-11T18:29:48.315004+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\CheckBox.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\CheckBox.d.lua",
+      "sha256": "adff0527f6576e169c30c80e341fa72c17d83e8d81d447679cd6bd2fda81ac76",
+      "size": 622,
+      "copied_at": "2026-10-11T18:29:48.341463+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\ClientCloud.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\ClientCloud.d.lua",
+      "sha256": "0049af5243bdbffda0eecc51a5ba256dbd47d24b9007e29ec06668b3d7b48783",
+      "size": 4869,
+      "copied_at": "2026-10-11T18:29:48.366911+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\CollisionBox2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\CollisionBox2D.d.lua",
+      "sha256": "f73ac25adafddc5f746428ce308179645fcc269ded947376ae6896807868e1e3",
+      "size": 832,
+      "copied_at": "2026-10-11T18:29:48.401499+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\CollisionChain2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\CollisionChain2D.d.lua",
+      "sha256": "966929a4f4371ed0d976cbdc83b9d608670828739ae6dcc660d14efd2d4c4085",
+      "size": 791,
+      "copied_at": "2026-10-11T18:29:48.453921+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\CollisionCircle2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\CollisionCircle2D.d.lua",
+      "sha256": "f447ed0341d28e487f71b4ce184915f94772994beba481fbe2245177d8bb86a4",
+      "size": 585,
+      "copied_at": "2026-10-11T18:29:48.491976+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\CollisionEdge2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\CollisionEdge2D.d.lua",
+      "sha256": "23ed4c48165241d3fa2d69c1476504067810d74f792828d15abd8a5dfde9f135",
+      "size": 606,
+      "copied_at": "2026-10-11T18:29:48.536735+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\CollisionLayer.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\CollisionLayer.d.lua",
+      "sha256": "90c02cc027532ab62ff027e41ce292c07c2b66c6ea160b642e69a74c086ab5b6",
+      "size": 886,
+      "copied_at": "2026-10-11T18:29:48.565290+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\CollisionPolygon2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\CollisionPolygon2D.d.lua",
+      "sha256": "f4ec80296460f8d2ecb3276251692b379ef89870b627e0f404e21ed96a83466e",
+      "size": 641,
+      "copied_at": "2026-10-11T18:29:48.593118+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\CollisionShape.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\CollisionShape.d.lua",
+      "sha256": "36c38d118552a7d675902523c873a3e26596485b94c310bbd367b83a96dae270",
+      "size": 4294,
+      "copied_at": "2026-10-11T18:29:48.643721+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\CollisionShape2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\CollisionShape2D.d.lua",
+      "sha256": "ebf5088517b6ed4ba668002dcb4c687f6adf934bc48315745cfd35d558c971e0",
+      "size": 1711,
+      "copied_at": "2026-10-11T18:29:48.690958+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Color.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Color.d.lua",
+      "sha256": "619bf6a9ebb02805e2efacb46cceb951a5213378714b5d19b4e18a131c2364fe",
+      "size": 3180,
+      "copied_at": "2026-10-11T18:29:48.748879+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\ColorLUT.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\ColorLUT.d.lua",
+      "sha256": "f56e45113a1edde79e723ec68cb602262813588222d24dd629778366d63db2f0",
+      "size": 776,
+      "copied_at": "2026-10-11T18:29:48.789525+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Common.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Common.d.lua",
+      "sha256": "8274dac3da4b9f86d0a1aab481242ed28def72b716272157595d11e523010cc7",
+      "size": 208,
+      "copied_at": "2026-10-11T18:29:48.834722+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Component.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Component.d.lua",
+      "sha256": "407dddae21b374a7888584b738adbc5b9ee99ed29433ba01f58c3b67d0ccc413",
+      "size": 1156,
+      "copied_at": "2026-10-11T18:29:48.889495+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Compression.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Compression.d.lua",
+      "sha256": "0b3c1d65110ce72e62c6be97b44092ce3ffa8d4c501a3b5d424330d1f4fe7d03",
+      "size": 253,
+      "copied_at": "2026-10-11T18:29:48.920014+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Connection.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Connection.d.lua",
+      "sha256": "e66b110a1a743cc38a8495631f98d5e7e7267d3b1c660ac47c3ebebf697b1f8c",
+      "size": 4656,
+      "copied_at": "2026-10-11T18:29:49.004096+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Console.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Console.d.lua",
+      "sha256": "436acbf0915728a0becfa3e8af1b24dae2697a9f1138ad69cdbcf69099f3cdfa",
+      "size": 2400,
+      "copied_at": "2026-10-11T18:29:49.057063+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Constraint.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Constraint.d.lua",
+      "sha256": "022d662ae7b6e7cd879e8958b2ace818992a8d3ee891a2c029907497e4db5314",
+      "size": 2982,
+      "copied_at": "2026-10-11T18:29:49.123210+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Constraint2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Constraint2D.d.lua",
+      "sha256": "5f78a566e010fc13cae9224b9ce7c1a721398c7843bed305ecaf4e174023ed67",
+      "size": 609,
+      "copied_at": "2026-10-11T18:29:49.156925+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\ConstraintDistance2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\ConstraintDistance2D.d.lua",
+      "sha256": "c7c1ee315ee4cae5341eceddcdf6dd53d370377c2dcbd09572e14e8dd9fd9caa",
+      "size": 1156,
+      "copied_at": "2026-10-11T18:29:49.204074+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\ConstraintFriction2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\ConstraintFriction2D.d.lua",
+      "sha256": "a9e79bd79cdc962d45ead071d5a6fb5ee6c155dcfac94f201813f22eeddf70ad",
+      "size": 707,
+      "copied_at": "2026-10-11T18:29:49.238283+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\ConstraintGear2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\ConstraintGear2D.d.lua",
+      "sha256": "443177dfaf25fb3c6a117f5ea8c523eb0cf6fdd0d97eaa93a42f28b9e3c4d9cc",
+      "size": 744,
+      "copied_at": "2026-10-11T18:29:49.262529+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\ConstraintMotor2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\ConstraintMotor2D.d.lua",
+      "sha256": "90a87eaf2180cfdf1b2a4b32c2dfec0298bf8ae5c1c692271fda20b5fab3fc30",
+      "size": 1145,
+      "copied_at": "2026-10-11T18:29:49.318207+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\ConstraintMouse2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\ConstraintMouse2D.d.lua",
+      "sha256": "b6e82379a4294c1542f45a806bcf963166608fd95d5a660d0744e7cd3972e931",
+      "size": 895,
+      "copied_at": "2026-10-11T18:29:49.371410+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\ConstraintPrismatic2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\ConstraintPrismatic2D.d.lua",
+      "sha256": "e5be33e7a44daa88b704ba54eab2ffcf6934693b329dce050511b02904abde1b",
+      "size": 1810,
+      "copied_at": "2026-10-11T18:29:49.419690+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\ConstraintPulley2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\ConstraintPulley2D.d.lua",
+      "sha256": "a6a5b3aa73435d29da5884253c897b643cc486743b8c671a7470fa4a5da59f9e",
+      "size": 1190,
+      "copied_at": "2026-10-11T18:29:49.454197+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\ConstraintRevolute2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\ConstraintRevolute2D.d.lua",
+      "sha256": "a7a3c1bb2008c253d8398a2b2d9751f588a772accd0e2c77ad98eff59df3d460",
+      "size": 1562,
+      "copied_at": "2026-10-11T18:29:49.502897+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\ConstraintRope2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\ConstraintRope2D.d.lua",
+      "sha256": "33de20a6ef7242665043fca3104d62af413820f499dc84c5ad63e0703eefe6be",
+      "size": 718,
+      "copied_at": "2026-10-11T18:29:49.548373+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\ConstraintWeld2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\ConstraintWeld2D.d.lua",
+      "sha256": "951de4ad2c8ccce5c3fdc88cd9bfba54f7eb4216eca468e4e8ef2d460ea9dac1",
+      "size": 701,
+      "copied_at": "2026-10-11T18:29:49.577730+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\ConstraintWheel2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\ConstraintWheel2D.d.lua",
+      "sha256": "d16f9db446df586b5eb007ed06ad005eccaddbf12dbf6d30e212c362440f0ebd",
+      "size": 1491,
+      "copied_at": "2026-10-11T18:29:49.614463+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Context.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Context.d.lua",
+      "sha256": "3a238e239724f4057009dc8b72bfa1bf861aa57c4a735ab739f25b3f67c2b529",
+      "size": 551,
+      "copied_at": "2026-10-11T18:29:49.634874+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Controls.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Controls.d.lua",
+      "sha256": "3e9c9d818f22f6a4bbcf24f322a420321cf2f83d69ba47ed7fb05f62c5351ab4",
+      "size": 637,
+      "copied_at": "2026-10-11T18:29:49.663041+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\CoreLuaAPI.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\CoreLuaAPI.d.lua",
+      "sha256": "c3ad910e10f0086a5c1ef3b7329164594df89a2aabaa3346141ae1586520e4b4",
+      "size": 45,
+      "copied_at": "2026-10-11T18:29:49.697690+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Coroutine.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Coroutine.d.lua",
+      "sha256": "7ba5d45a4b50b7f545ea3bfe297d0c2c631ac0a485343080764e38963781cd90",
+      "size": 54,
+      "copied_at": "2026-10-11T18:29:49.732377+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\CrowdAgent.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\CrowdAgent.d.lua",
+      "sha256": "fd9438a81250bd2685935d52cee286b9624b200058b906da151b342ebd6188ab",
+      "size": 4838,
+      "copied_at": "2026-10-11T18:29:49.792491+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\CrowdManager.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\CrowdManager.d.lua",
+      "sha256": "d246d678f1770cc7170ddb4b6b68083b2acbf513954218e96d9c2d81df02d81a",
+      "size": 4008,
+      "copied_at": "2026-10-11T18:29:49.869997+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Cursor.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Cursor.d.lua",
+      "sha256": "54345702477199dc6cd798bb6365b0ab8e6cef0bc52dc9a21584130d0142e74c",
+      "size": 1533,
+      "copied_at": "2026-10-11T18:29:49.919006+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\CustomGeometry.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\CustomGeometry.d.lua",
+      "sha256": "f9a452a04d45a884c5932ad71ea8f884fd8b429b55786e54aeab7d02335e869f",
+      "size": 4232,
+      "copied_at": "2026-10-11T18:29:49.983857+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Database.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Database.d.lua",
+      "sha256": "180c09a6d85d48a147e7dc138b8db521c9e574dfc64ad47b42f78c4c94828b18",
+      "size": 825,
+      "copied_at": "2026-10-11T18:29:50.009801+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\DatabaseLuaAPI.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\DatabaseLuaAPI.d.lua",
+      "sha256": "45ff55d7e66e2d675e5619a4deec32add3f3545f9aa3b4676ad62586d75347ec",
+      "size": 49,
+      "copied_at": "2026-10-11T18:29:50.042888+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\DbConnection.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\DbConnection.d.lua",
+      "sha256": "b152606d072937673c97ed1e851207eaf03d7157e65e5316126f3142b63dd249",
+      "size": 481,
+      "copied_at": "2026-10-11T18:29:50.099357+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\DbResult.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\DbResult.d.lua",
+      "sha256": "af3cac55c1d0994b34e6e0e6103e0b9567acdb4b37b6c050e99d708bb4d1e8e6",
+      "size": 352,
+      "copied_at": "2026-10-11T18:29:50.124893+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\DebugHud.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\DebugHud.d.lua",
+      "sha256": "64d22b40cb6bd61c2aa3878d48fe4482479adc9e4c9e99a2fd6e1ecdec398ebd",
+      "size": 2193,
+      "copied_at": "2026-10-11T18:29:50.185182+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\DebugRenderer.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\DebugRenderer.d.lua",
+      "sha256": "725fc9410d0c5ce3ea3efba30f3f2258ad2a9e56a4a59172352b50145210d0ce",
+      "size": 4248,
+      "copied_at": "2026-10-11T18:29:50.227408+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\DecalSet.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\DecalSet.d.lua",
+      "sha256": "2d67c008c2eda701e8f527ce364c1420174b1db2dac2671d574fc8d80ad7322c",
+      "size": 1695,
+      "copied_at": "2026-10-11T18:29:50.275849+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\DepthOfField.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\DepthOfField.d.lua",
+      "sha256": "950cadc7269a93db627926c9a10b5b4a2f0631e9e3e6b93c00d559f2e684fba6",
+      "size": 2120,
+      "copied_at": "2026-10-11T18:29:50.318195+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Deserializer.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Deserializer.d.lua",
+      "sha256": "d62a8b6b535ffdf82b52525f505493024a419a35191316420f81b2fa90274301",
+      "size": 3282,
+      "copied_at": "2026-10-11T18:29:50.389178+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\DownloadManager.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\DownloadManager.d.lua",
+      "sha256": "112a76cc6fc3f537e7ee93c7e51a89325b87b80b6831dbeae58450026d994e79",
+      "size": 4708,
+      "copied_at": "2026-10-11T18:29:50.454988+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Drawable.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Drawable.d.lua",
+      "sha256": "e61e57181a59af0bdf83ca45bcca2d985f14c2b235e74fbeb47e50f43be82242",
+      "size": 3861,
+      "copied_at": "2026-10-11T18:29:50.537515+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Drawable2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Drawable2D.d.lua",
+      "sha256": "861d8d102fee8bbaac1d66d4ecda99f0511b0cb5c17694643a89a8cac7c5fc79",
+      "size": 510,
+      "copied_at": "2026-10-11T18:29:50.580267+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\DropDownList.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\DropDownList.d.lua",
+      "sha256": "92b205de54041626a880c88a4b278cc74b92d94f1557645863e239c4314ad816",
+      "size": 1679,
+      "copied_at": "2026-10-11T18:29:50.630826+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\DynamicNavigationMesh.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\DynamicNavigationMesh.d.lua",
+      "sha256": "b57611cda69dcc92b0848a8b06050f2e5009233c9181288aeb538a4c6fd473fc",
+      "size": 769,
+      "copied_at": "2026-10-11T18:29:50.667515+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Engine.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Engine.d.lua",
+      "sha256": "f10d1fc686dcebcfb2181079caf49a2d23f66d0a7890238dfb7c21b49e4bf852",
+      "size": 1953,
+      "copied_at": "2026-10-11T18:29:50.712570+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\EngineLuaAPI.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\EngineLuaAPI.d.lua",
+      "sha256": "561e5ca8f8962646dcd0f94a14b56cfa355159e0667702783657d72c571c6ac2",
+      "size": 47,
+      "copied_at": "2026-10-11T18:29:50.734992+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\EnvironmentBakeCache.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\EnvironmentBakeCache.d.lua",
+      "sha256": "38a71a37b1cf2662a62b21d5aa050bdff94c3b70db1b8930b81bafc341dc9ee8",
+      "size": 1005,
+      "copied_at": "2026-10-11T18:29:50.761521+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Events.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Events.d.lua",
+      "sha256": "2ea3316bccc05517292096c2c265ebcc624609ee92521cd981d05341b564d019",
+      "size": 107126,
+      "copied_at": "2026-10-11T18:29:50.801117+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\example_usage.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\example_usage.lua",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "copied_at": "2026-10-11T18:29:50.803763+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\File.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\File.d.lua",
+      "sha256": "612354c6144f447c493be53639a4b83043f2c52e836a8be06d11cf3247f0cf73",
+      "size": 7767,
+      "copied_at": "2026-10-11T18:29:50.907727+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\FileSelector.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\FileSelector.d.lua",
+      "sha256": "8e7dc659a616e5bc92f8c33d6d97396a0ea2109fde3025b959baef1625cdf836",
+      "size": 2461,
+      "copied_at": "2026-10-11T18:29:50.975687+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\FileSystem.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\FileSystem.d.lua",
+      "sha256": "c73d1121b2fee68165a241324835c2128f1e989d2e0a68664cc9998de2836771",
+      "size": 4048,
+      "copied_at": "2026-10-11T18:29:51.052180+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Font.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Font.d.lua",
+      "sha256": "02eaf72484f9d27588d79efa92f5cceb74c6d52c1aa65cc4894e72883a831783",
+      "size": 941,
+      "copied_at": "2026-10-11T18:29:51.081291+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Frustum.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Frustum.d.lua",
+      "sha256": "dc3f7208a83415afbe4ec57fd93f95fe6562f2f98599d241bf620e1c1fba1908",
+      "size": 2698,
+      "copied_at": "2026-10-11T18:29:51.116825+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\GamePlayLuaAPI.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\GamePlayLuaAPI.d.lua",
+      "sha256": "97ebfc0df3b0b12fb94936df5a0472f700562c535f72e44d40435618895b6f14",
+      "size": 49,
+      "copied_at": "2026-10-11T18:29:51.146962+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Geometry.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Geometry.d.lua",
+      "sha256": "be80d5a486b10b443b27acbb7ee79501ba74dd058c6dc2ae61a3c697180a7939",
+      "size": 2013,
+      "copied_at": "2026-10-11T18:29:51.185423+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Graphics.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Graphics.d.lua",
+      "sha256": "3f754a793a8c4c27642b1ec190f129855aa8f99d56954dba5d01cc279c00d0cf",
+      "size": 7613,
+      "copied_at": "2026-10-11T18:29:51.261560+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\GraphicsDefs.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\GraphicsDefs.d.lua",
+      "sha256": "0a5ece13baef811ee0c526a4fe106b37c1b186ca2bfd61d4abde2f3b0e83cb69",
+      "size": 9274,
+      "copied_at": "2026-10-11T18:29:51.303071+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\GraphicsLuaAPI.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\GraphicsLuaAPI.d.lua",
+      "sha256": "80db1dc5f4c0941e535b25de575f6e407317a5e09032f20ea6bd174176781b7f",
+      "size": 49,
+      "copied_at": "2026-10-11T18:29:51.333264+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\HttpClient.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\HttpClient.d.lua",
+      "sha256": "f926cccd302a52d3ab56afb1e8f5394253f57756327670cbd3f19985a75293bd",
+      "size": 1595,
+      "copied_at": "2026-10-11T18:29:51.404900+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\HttpManager.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\HttpManager.d.lua",
+      "sha256": "ebe6ad748f95d66054ebd65865adabd7e94988ab76ba226e06279e15b15d8ef4",
+      "size": 526,
+      "copied_at": "2026-10-11T18:29:51.457428+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\HttpRequest.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\HttpRequest.d.lua",
+      "sha256": "f9a7d7aeafc8daadffd816e80cbf6718cf6834753479fca556b2b7a021c5455e",
+      "size": 3301,
+      "copied_at": "2026-10-11T18:29:51.570145+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\HttpResponse.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\HttpResponse.d.lua",
+      "sha256": "ae78c79a9e580181b82934330bdc77d3bdd7d550ebaa62ab18443e17c160ed84",
+      "size": 1357,
+      "copied_at": "2026-10-11T18:29:51.582867+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\IKConstraint.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\IKConstraint.d.lua",
+      "sha256": "107c5bba83b86ac88c68998f3c2022e532045073c1473cbe5155b656daf26402",
+      "size": 610,
+      "copied_at": "2026-10-11T18:29:51.614788+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\IKEffector.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\IKEffector.d.lua",
+      "sha256": "d8c17909ec5d41ec6b1b0c94c681742fe88083523640c1d78270040a928f45f5",
+      "size": 1656,
+      "copied_at": "2026-10-11T18:29:51.657320+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\IKLuaAPI.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\IKLuaAPI.d.lua",
+      "sha256": "ff612981abe1bfa051e0008211b13d1494f8ee52c7f52a04ded179ac237db5b6",
+      "size": 43,
+      "copied_at": "2026-10-11T18:29:51.678166+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\IKSolver.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\IKSolver.d.lua",
+      "sha256": "d7fbf4d72fa769357e1abef9b59b4183f144c8badba4b3f17c35a893b0e05411",
+      "size": 1256,
+      "copied_at": "2026-10-11T18:29:51.707556+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Image.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Image.d.lua",
+      "sha256": "1423f974cf0a94e8059c950c3ab2dea609627feb1f8badb7f1df8a9611a4b869",
+      "size": 4379,
+      "copied_at": "2026-10-11T18:29:51.759532+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\IndexBuffer.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\IndexBuffer.d.lua",
+      "sha256": "0811a03f30012af766a457c29da1b69948aa8b6b35c6bcc24e5543ef0e392792",
+      "size": 1136,
+      "copied_at": "2026-10-11T18:29:51.784964+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Input.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Input.d.lua",
+      "sha256": "c910c42a09f19e9425c8f104d1f3d0c6ed246ffa95ff5687c525528025c7f4c9",
+      "size": 7471,
+      "copied_at": "2026-10-11T18:29:51.832477+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\InputEvents.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\InputEvents.d.lua",
+      "sha256": "74ce153700ccddc4d6ed0615d7ee8784bc7a63bd8348794915d74721a24348d4",
+      "size": 18880,
+      "copied_at": "2026-10-11T18:29:51.870042+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\InputLuaAPI.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\InputLuaAPI.d.lua",
+      "sha256": "92e181700d310f2df7405714b2a1366201c246a2052bafb11a4de8d7078f59ff",
+      "size": 46,
+      "copied_at": "2026-10-11T18:29:51.891697+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\IOLuaAPI.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\IOLuaAPI.d.lua",
+      "sha256": "2b90412c9bf67f6e1f6aa8cd06f56dbded19dd56fb5d3bacce8a9cf3e57ee121",
+      "size": 43,
+      "copied_at": "2026-10-11T18:29:51.920149+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\JSONFile.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\JSONFile.d.lua",
+      "sha256": "f356d13a2cc77526b2d0196d18b26002ceb74fbb9b78c98733a3a6e9514d8f9d",
+      "size": 534,
+      "copied_at": "2026-10-11T18:29:51.968124+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\JSONValue.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\JSONValue.d.lua",
+      "sha256": "a574b1a5ace228c376ae8d6d81a1cb694b8d8b66327f63d3e5b588ea90fd9722",
+      "size": 4699,
+      "copied_at": "2026-10-11T18:29:52.043545+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\KinematicCharacterController.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\KinematicCharacterController.d.lua",
+      "sha256": "a158350984e16246fec6f4285a129a61afe1b5b7000300a3c515cd92e48ee096",
+      "size": 3582,
+      "copied_at": "2026-10-11T18:29:52.094940+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Light.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Light.d.lua",
+      "sha256": "bde3e3b83d0ba26a9085da91a06a1278c0dd390a1c2d7c64d863f48e90972cbb",
+      "size": 8368,
+      "copied_at": "2026-10-11T18:29:52.177777+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\LineEdit.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\LineEdit.d.lua",
+      "sha256": "4a17a8d76cbf71a05e9d658b11278d0040c6ca8ed9f8a30138f3acda4752ac43",
+      "size": 1738,
+      "copied_at": "2026-10-11T18:29:52.230658+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\ListView.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\ListView.d.lua",
+      "sha256": "0b4aed9783499593349d41b89d907683c8427331a91c310fd14397a74bfb7cca",
+      "size": 3941,
+      "copied_at": "2026-10-11T18:29:52.280974+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\LocalFogVolume.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\LocalFogVolume.d.lua",
+      "sha256": "a4fe6c9d43cc29078395ff2932806ccdd522097896aba7c7918209de0bed48fc",
+      "size": 1626,
+      "copied_at": "2026-10-11T18:29:52.303639+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Localization.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Localization.d.lua",
+      "sha256": "72935bd84261b5692bc79e47216fbf20a21b948de46bfae34cc8cf7d782e0602",
+      "size": 1717,
+      "copied_at": "2026-10-11T18:29:52.336495+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Log.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Log.d.lua",
+      "sha256": "5c03eae37928005e8f789c8274aa0f866ba10d6aa9cf16584bca788f7dfb35e2",
+      "size": 1203,
+      "copied_at": "2026-10-11T18:29:52.371083+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\LogicComponent.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\LogicComponent.d.lua",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "copied_at": "2026-10-11T18:29:52.375710+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\lua_compat.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\lua_compat.d.lua",
+      "sha256": "2166415a59491dcd980b0665808afb5beebbb8f4c2fa1ade3a6399caae2675f1",
+      "size": 636,
+      "copied_at": "2026-10-11T18:29:52.422037+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\LuaScript.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\LuaScript.d.lua",
+      "sha256": "f4e66bef3566dccd7cf18e6ef50da1e23c5cd482decc1f908c95f80c507f1927",
+      "size": 73754,
+      "copied_at": "2026-10-11T18:29:52.479628+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\LuaScriptInstance.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\LuaScriptInstance.d.lua",
+      "sha256": "dbd34cd95ab1d2a901ea1432c1aaa95974379d6ef88e6a4c47b6a695803981ce",
+      "size": 1754,
+      "copied_at": "2026-10-11T18:29:52.511616+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\LuaScriptLuaAPI.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\LuaScriptLuaAPI.d.lua",
+      "sha256": "18bdc5c9b20a488842ce6eec279c693b67ed7462a773c3ba9f05ebf14ea08955",
+      "size": 50,
+      "copied_at": "2026-10-11T18:29:52.531590+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\LuaScriptObject.manual.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\LuaScriptObject.manual.d.lua",
+      "sha256": "79c0e50bbb655ab29147d40d8081f709df70b7b2d1987c6028470731e07907af",
+      "size": 5453,
+      "copied_at": "2026-10-11T18:29:52.577006+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\LuaScripts\\Utilities\\2D\\Mover.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\LuaScripts\\Utilities\\2D\\Mover.lua",
+      "sha256": "52fc45ef923dd85d9accbbaa12dc4ee67958eb49ecc1b852ff13c054307f7cde",
+      "size": 3506,
+      "copied_at": "2026-10-11T18:29:52.637841+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\LuaScripts\\Utilities\\2D\\Sample2D.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\LuaScripts\\Utilities\\2D\\Sample2D.lua",
+      "sha256": "4c0211e6ca892b6bfbdfdee3ce92b7460dcc975632a8b49e9ab13e70f1c73a24",
+      "size": 19875,
+      "copied_at": "2026-10-11T18:29:52.707465+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\LuaScripts\\Utilities\\Network.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\LuaScripts\\Utilities\\Network.lua",
+      "sha256": "7b083c9ab24a53ceaea1ff841e8b9ba530fb757496105b2b10eb4c93d9016783",
+      "size": 1006,
+      "copied_at": "2026-10-11T18:29:52.754990+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\LuaScripts\\Utilities\\Rotator.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\LuaScripts\\Utilities\\Rotator.lua",
+      "sha256": "a39d6712cd55a9f9af0d93dad22acd3e96658c719300d4f5a2f543a8e7bf5167",
+      "size": 678,
+      "copied_at": "2026-10-11T18:29:52.793631+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\LuaScripts\\Utilities\\Sample.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\LuaScripts\\Utilities\\Sample.lua",
+      "sha256": "f7ffa59d07b49f2ee2b36d30116f5c41ab5d4b1d56f10f6dae0771ae664ae755",
+      "size": 6700,
+      "copied_at": "2026-10-11T18:29:52.844872+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\LuaScripts\\Utilities\\ScriptCompiler.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\LuaScripts\\Utilities\\ScriptCompiler.lua",
+      "sha256": "cf8d611cc1c287fef3f5152e7073f6ede89ba07c37dd13493e534ca8ff938613",
+      "size": 1247,
+      "copied_at": "2026-10-11T18:29:52.880310+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\LuaScripts\\Utilities\\Touch.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\LuaScripts\\Utilities\\Touch.lua",
+      "sha256": "18736c88412d641f5704614b4dfded17d0955fbf5b07c0a95c4a30e2a10ca9da",
+      "size": 4057,
+      "copied_at": "2026-10-11T18:29:52.910007+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\LuaScripts\\Utilities\\UIScaler.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\LuaScripts\\Utilities\\UIScaler.lua",
+      "sha256": "3399d4b8277889af76ec6d39c52b5cee741b32496f1224b0348070ce07874eed",
+      "size": 8574,
+      "copied_at": "2026-10-11T18:29:52.945590+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\LuaScripts\\Utilities\\VirtualControls.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\LuaScripts\\Utilities\\VirtualControls.lua",
+      "sha256": "5f8b98b13e262527c7d7879f0c70ce03872dc96743cfcb77ae47d491f5c3ac44",
+      "size": 175,
+      "copied_at": "2026-10-11T18:29:52.971741+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Material.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Material.d.lua",
+      "sha256": "6f571d7d44551db2ecf90060732f619b63c22b0e9654023cb543427361210f9f",
+      "size": 5688,
+      "copied_at": "2026-10-11T18:29:53.059919+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\MathDefs.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\MathDefs.d.lua",
+      "sha256": "0522b72613b8d086b82e91ee8f4c77ab6dd8cda16819fccefac541fbdcaec18e",
+      "size": 4168,
+      "copied_at": "2026-10-11T18:29:53.111775+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\MathLuaAPI.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\MathLuaAPI.d.lua",
+      "sha256": "c6555c03df5adb5e786d7255f55fe3cbda260f710dea29f5961081ef85a6f169",
+      "size": 45,
+      "copied_at": "2026-10-11T18:29:53.131641+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Matrix2.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Matrix2.d.lua",
+      "sha256": "0ef0e6b80bf680204543952194c3f140ec07db28bf5a114efc888daee905cfd6",
+      "size": 1596,
+      "copied_at": "2026-10-11T18:29:53.166502+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Matrix3.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Matrix3.d.lua",
+      "sha256": "0dc681f16420427cdc5d3fd3d4348235eb89f151a5524fe4f2c4e19af0c9bf74",
+      "size": 1779,
+      "copied_at": "2026-10-11T18:29:53.187149+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Matrix3x4.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Matrix3x4.d.lua",
+      "sha256": "ac544dfd137467bf07e122661e9669853f5a388267137553fa145a97a36c1495",
+      "size": 3573,
+      "copied_at": "2026-10-11T18:29:53.220476+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Matrix4.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Matrix4.d.lua",
+      "sha256": "832bcf8bc7a9ca498ab47bd12920ea5cb24352da76e734fa2913114eb34e1e1b",
+      "size": 2992,
+      "copied_at": "2026-10-11T18:29:53.251863+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Menu.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Menu.d.lua",
+      "sha256": "001c64ea2bb9163aa29a3f6bdfec6fe84acc185871703efb54e7babfcc457bee",
+      "size": 1043,
+      "copied_at": "2026-10-11T18:29:53.286109+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\MessageBox.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\MessageBox.d.lua",
+      "sha256": "cbc2de46b6e15bb962f2598e02b5722807f3eee5a31ae947b28181619ccfaa54",
+      "size": 951,
+      "copied_at": "2026-10-11T18:29:53.327465+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Model.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Model.d.lua",
+      "sha256": "ced4d54133a28db36b33096ff7052dac2d2559a4c7e039959bf5fe39b9fb4e28",
+      "size": 2226,
+      "copied_at": "2026-10-11T18:29:53.396966+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\NamedPipe.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\NamedPipe.d.lua",
+      "sha256": "afb6fee0269c6baca0e2346402752468b78794969f9670ad145d0dc3bcae5f10",
+      "size": 6545,
+      "copied_at": "2026-10-11T18:29:53.500996+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\NanoVG.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\NanoVG.d.lua",
+      "sha256": "e09c22f760ffc16404066cd1306abf7fec0c85151ecd091634e3b912706e939d",
+      "size": 20638,
+      "copied_at": "2026-10-11T18:29:53.556742+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\NanoVG.manual.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\NanoVG.manual.d.lua",
+      "sha256": "c6f77f64735d98c52791d570bef0534c0144f4c56efe0275341c7c8677ba72f0",
+      "size": 717,
+      "copied_at": "2026-10-11T18:29:53.584631+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\NanoVGEnums.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\NanoVGEnums.d.lua",
+      "sha256": "07b0ebc0f89f876d364720740c333eb584aaf448c413217216b8b91466d80573",
+      "size": 2690,
+      "copied_at": "2026-10-11T18:29:53.625479+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\NanoVGTypes.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\NanoVGTypes.d.lua",
+      "sha256": "70d14dfc00c414cefdf82fe6db33c20cb3b70b2cdfbb0d155de1f12fe58b9b7d",
+      "size": 2897,
+      "copied_at": "2026-10-11T18:29:53.683886+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\NavArea.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\NavArea.d.lua",
+      "sha256": "b75b002caa01ae4ba84482d32c1a64a7c2f259768cc8c8c47ef80a448b89f4d2",
+      "size": 543,
+      "copied_at": "2026-10-11T18:29:53.734931+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Navigable.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Navigable.d.lua",
+      "sha256": "d14edc7ef53cbe4799d005061946d67fbc8ce397a3b45731e459d2a1d7a77bb2",
+      "size": 274,
+      "copied_at": "2026-10-11T18:29:53.783673+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\NavigationLuaAPI.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\NavigationLuaAPI.d.lua",
+      "sha256": "fba2aa11086dc80634a1313d2f3034cb6ea62886357e3924dbbb77b9475eab35",
+      "size": 51,
+      "copied_at": "2026-10-11T18:29:53.806304+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\NavigationMesh.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\NavigationMesh.d.lua",
+      "sha256": "8b2080f1c8617e6eab62de09e8fb77dcd949a3c6cada9628928a67192d863948",
+      "size": 6588,
+      "copied_at": "2026-10-11T18:29:53.889091+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Network.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Network.d.lua",
+      "sha256": "3aad2f8cb53d691d97d7318a1cfca3c9ddb2f665cdd306e2ae8ecddb2e53f7c9",
+      "size": 6364,
+      "copied_at": "2026-10-11T18:29:53.977890+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Network_HttpLuaAPI.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Network_HttpLuaAPI.d.lua",
+      "sha256": "883db21acd5d62918a64d8ce9a3202ce7e6594d305c68492d1cd13da657360f5",
+      "size": 53,
+      "copied_at": "2026-10-11T18:29:54.003718+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\NetworkLuaAPI.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\NetworkLuaAPI.d.lua",
+      "sha256": "e92a3721d686c4edb7d26abfb0f5036bee765b1ae45065f82b9f64f789ebc4f5",
+      "size": 48,
+      "copied_at": "2026-10-11T18:29:54.022375+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\NetworkPriority.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\NetworkPriority.d.lua",
+      "sha256": "87e36f2a1210287dd414059a7ee01be3da9c10d9eb1ddb7134844fafb1f8c125",
+      "size": 1043,
+      "copied_at": "2026-10-11T18:29:54.069634+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Node.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Node.d.lua",
+      "sha256": "53455edfa9f0cbe7d8f4058575ce7feffe101f14b94555d91c1426e6d1d5917c",
+      "size": 15636,
+      "copied_at": "2026-10-11T18:29:54.145828+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Object.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Object.d.lua",
+      "sha256": "b39c2471e968ad8eb3527f06f00c55cbb35af2c086305d05648751a97f0f827d",
+      "size": 883,
+      "copied_at": "2026-10-11T18:29:54.185496+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\ObjectAnimation.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\ObjectAnimation.d.lua",
+      "sha256": "3cd6bb39a4a88b18d4709df89bdaff8d44c586ac90f9eed3d19e2bc82b2f198c",
+      "size": 1141,
+      "copied_at": "2026-10-11T18:29:54.239351+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Obstacle.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Obstacle.d.lua",
+      "sha256": "568f7d5a5f7093a3d3759d384d348eb2e60a04557311e0a315c5bcb0f629e05d",
+      "size": 510,
+      "copied_at": "2026-10-11T18:29:54.275165+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Octree.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Octree.d.lua",
+      "sha256": "22fec8bbd59f06076e5532ff72a7f2d0ed4025a556f71fc060efd3455bb181b9",
+      "size": 2147,
+      "copied_at": "2026-10-11T18:29:54.280536+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\OctreeQuery.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\OctreeQuery.d.lua",
+      "sha256": "a9e987e75e06432a8640c6bbcff849ff0e2bc824330ee39fe03b529af462508b",
+      "size": 849,
+      "copied_at": "2026-10-11T18:29:54.328358+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\OffMeshConnection.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\OffMeshConnection.d.lua",
+      "sha256": "141e5a858002ba4a8383c159f391c1cda1bee50463e4426ab08f6494b8640406",
+      "size": 1032,
+      "copied_at": "2026-10-11T18:29:54.378352+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\PackageFile.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\PackageFile.d.lua",
+      "sha256": "223cd39c05af900db9a701183726d0c6ce4701b00e5c8ce3fe66161879c7e428",
+      "size": 1780,
+      "copied_at": "2026-10-11T18:29:54.433460+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Paintable.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Paintable.d.lua",
+      "sha256": "d3951de08862fc7dead043ae1a77ba00282edd3710677ecb6683cc2c8e0f0222",
+      "size": 2182,
+      "copied_at": "2026-10-11T18:29:54.485260+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\ParameterContext.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\ParameterContext.d.lua",
+      "sha256": "1b54e3ec577e53dd225413d5cf6ce1a7d46548fdaf2f3ee60dfa996113f7d3ed",
+      "size": 1916,
+      "copied_at": "2026-10-11T18:29:54.553114+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\ParticleEffect.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\ParticleEffect.d.lua",
+      "sha256": "f8b220c6ab2f2f9465e043c4728513f6050e2933cd6c88538d0d69c282393cdc",
+      "size": 8489,
+      "copied_at": "2026-10-11T18:29:54.635365+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\ParticleEffect2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\ParticleEffect2D.d.lua",
+      "sha256": "5158437d8ef985b91b018b23a8616b70138a855087a7080ffcfc7bcf4fdbf23a",
+      "size": 386,
+      "copied_at": "2026-10-11T18:29:54.660418+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\ParticleEmitter.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\ParticleEmitter.d.lua",
+      "sha256": "55132f7a63052415a8fbdad7c3de75d46ec8b0315b21cff458b229a81cdba9eb",
+      "size": 1353,
+      "copied_at": "2026-10-11T18:29:54.736846+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\ParticleEmitter2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\ParticleEmitter2D.d.lua",
+      "sha256": "002c33fa55ebc7e87dc60a47edebe1dbefab40c6f472cb3575d9f5e7540f137b",
+      "size": 897,
+      "copied_at": "2026-10-11T18:29:54.772423+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\PhysicsLuaAPI.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\PhysicsLuaAPI.d.lua",
+      "sha256": "f5ae01465a87df6e6ebc12ea2e27e436776ae8bb3e7cd51b33f2fdbf5eac241c",
+      "size": 48,
+      "copied_at": "2026-10-11T18:29:54.804084+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\PhysicsWorld.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\PhysicsWorld.d.lua",
+      "sha256": "f699cd8de84d763cfa538952a311afca48b9ba6a4a25f1002929fdc019044636",
+      "size": 4169,
+      "copied_at": "2026-10-11T18:29:54.875463+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\PhysicsWorld2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\PhysicsWorld2D.d.lua",
+      "sha256": "181a050d9013e3aa3419a08bd7e9701cdbac30cc1cc9cd112cf3ca7f79ade3e6",
+      "size": 4106,
+      "copied_at": "2026-10-11T18:29:54.969194+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Plane.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Plane.d.lua",
+      "sha256": "493680c8e6616eb18706c92e6dc74d932ab1930644e70d5ded1b7a09bbfb5aa7",
+      "size": 2086,
+      "copied_at": "2026-10-11T18:29:55.030469+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Polyhedron.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Polyhedron.d.lua",
+      "sha256": "4bfb0dcac722c246c7b1ad9893f813ad4df359ec75d529eb669b92dc92b0d2a5",
+      "size": 1823,
+      "copied_at": "2026-10-11T18:29:55.066904+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\ProceduralGeometry.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\ProceduralGeometry.d.lua",
+      "sha256": "98c4f039bf536a4b52eb5e210a8f1277af9300ea22dca94787af9e50421a0fa0",
+      "size": 7215,
+      "copied_at": "2026-10-11T18:29:55.103514+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\ProcessUtils.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\ProcessUtils.d.lua",
+      "sha256": "bdff58bda3345e691c30e79e5b3027b8fd5ab4d4da79aad29afd21afbbb8f22c",
+      "size": 1155,
+      "copied_at": "2026-10-11T18:29:55.131311+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\ProgressBar.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\ProgressBar.d.lua",
+      "sha256": "cb6206acb0548b46fd9ebaf486cb20ec762383445518f18f04ba00154edbde44",
+      "size": 1290,
+      "copied_at": "2026-10-11T18:29:55.150828+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Quaternion.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Quaternion.d.lua",
+      "sha256": "7a183117d7a886c45c8c7fb4f8fccf18c0bda646854165c55c479c5179a72273",
+      "size": 4278,
+      "copied_at": "2026-10-11T18:29:55.187604+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Random.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Random.d.lua",
+      "sha256": "aaa76ee234e3c81b2d2f7278ff44340e87394bf85c71a813ad31a341ae7292c4",
+      "size": 280,
+      "copied_at": "2026-10-11T18:29:55.209013+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Ray.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Ray.d.lua",
+      "sha256": "375d0f8539d99ecee8b9e9a777b549c99b08c4a12bcc11ef8cc9c162989f7757",
+      "size": 1418,
+      "copied_at": "2026-10-11T18:29:55.214825+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\RaycastVehicle.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\RaycastVehicle.d.lua",
+      "sha256": "ebcf13f20d1e04c26629b6cf94e7135ae7b6e4f825e9942b5671b018226d6e3d",
+      "size": 6000,
+      "copied_at": "2026-10-11T18:29:55.305348+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Rect.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Rect.d.lua",
+      "sha256": "bad0dd68bbc4a2b00742d7dfd4168a6bd7bd4ad44af1224dd33b2627e1aafcb5",
+      "size": 3205,
+      "copied_at": "2026-10-11T18:29:55.366378+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\RefCounted.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\RefCounted.d.lua",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "copied_at": "2026-10-11T18:29:55.371512+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Renderer.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Renderer.d.lua",
+      "sha256": "740be3bd4f30428b61c8b900ef08ec6ed60a02c82edb0f29c801ad61ba935a42",
+      "size": 8766,
+      "copied_at": "2026-10-11T18:29:55.421246+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Renderer2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Renderer2D.d.lua",
+      "sha256": "f14e40f0b76b069f7a9ca9454c969711ad148e6b4cf27c66ddbf809a3d37e817",
+      "size": 424,
+      "copied_at": "2026-10-11T18:29:55.446049+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\RenderPath.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\RenderPath.d.lua",
+      "sha256": "4a4bf9c3b7d3321fb337c6c65d4010bc8842120dcc6643269f8cf570d1c83f2a",
+      "size": 5810,
+      "copied_at": "2026-10-11T18:29:55.530868+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\RenderSurface.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\RenderSurface.d.lua",
+      "sha256": "c2eb3810429c3ac97a2863f82e39fcc1cdd89f846812d41eee0fb16947afe7e8",
+      "size": 2040,
+      "copied_at": "2026-10-11T18:29:55.587174+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Resource.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Resource.d.lua",
+      "sha256": "80541ce6cde51a51392a0b8a94af3443437a98056676f3e6c915ec637fd8341e",
+      "size": 1203,
+      "copied_at": "2026-10-11T18:29:55.640945+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\ResourceCache.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\ResourceCache.d.lua",
+      "sha256": "4ddf02dfadbca02cc20990da7c83a83a4b0fa3f2069d9ae10db5d8a44aa56d3d",
+      "size": 3577,
+      "copied_at": "2026-10-11T18:29:55.680487+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\ResourceCache.extensions.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\ResourceCache.extensions.d.lua",
+      "sha256": "3cb39f3d198ac2f0dab06271076270590fd0519afa664ef668151596d9549431",
+      "size": 5031,
+      "copied_at": "2026-10-11T18:29:55.707979+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\ResourceLuaAPI.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\ResourceLuaAPI.d.lua",
+      "sha256": "79382917e6d88102e185e459cc99db078db24052d393062452e180134da1c104",
+      "size": 49,
+      "copied_at": "2026-10-11T18:29:55.720433+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\RibbonTrail.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\RibbonTrail.d.lua",
+      "sha256": "dc38b691c09ff8b7d384fb52f15e9b566bcaa0b4bb39d5f60b90a5a2ad019525",
+      "size": 2947,
+      "copied_at": "2026-10-11T18:29:55.768061+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\RigidBody.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\RigidBody.d.lua",
+      "sha256": "1e1d89b694429c684002b490e90f1e43de09fa8fd14d0ff54e288e47e0bd58fe",
+      "size": 6562,
+      "copied_at": "2026-10-11T18:29:55.845552+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\RigidBody2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\RigidBody2D.d.lua",
+      "sha256": "dc152edcb7dec3d485cea508948a4e901a410eb6a1ad3aa501aeb0fe2293c60f",
+      "size": 3815,
+      "copied_at": "2026-10-11T18:29:55.909400+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\RuntimeDebugger.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\RuntimeDebugger.d.lua",
+      "sha256": "84bba4b3d4100e6bd56faa3c921ff4c66443f4bf28a6dd9eb2d8f7470ca59de6",
+      "size": 1154,
+      "copied_at": "2026-10-11T18:29:55.993983+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\RuntimeDebuggerLuaAPI.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\RuntimeDebuggerLuaAPI.d.lua",
+      "sha256": "12d80f307037b0209c359a1878fe991a12dac63241cce1b77c02e79e5e11ae50",
+      "size": 56,
+      "copied_at": "2026-10-11T18:29:56.029737+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\RuntimeMode.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\RuntimeMode.d.lua",
+      "sha256": "3b19f18e1c9b341974718acbeeb817a835ffa9c50887a394caac315063664f33",
+      "size": 347,
+      "copied_at": "2026-10-11T18:29:56.067506+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Scene.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Scene.d.lua",
+      "sha256": "b4e49af1d70f8fd3ff53f2cdbed02bda817711f8c2ed723c820a5ba7b7fae2dd",
+      "size": 7011,
+      "copied_at": "2026-10-11T18:29:56.122040+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\SceneLuaAPI.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\SceneLuaAPI.d.lua",
+      "sha256": "1c2683f1a07c5056b745c60fb147664ee88add81c69fa832560593a61980d020",
+      "size": 46,
+      "copied_at": "2026-10-11T18:29:56.164098+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Score.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Score.d.lua",
+      "sha256": "bd02d67fb4fb7d68e90331e25a19a5f9dea849b179d92074c3bb421d27621a12",
+      "size": 18489,
+      "copied_at": "2026-10-11T18:29:56.223957+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\ScrollBar.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\ScrollBar.d.lua",
+      "sha256": "11c9e95fe06fc2ce7871e457fc39e6031b6689a104a83b7b4c83f5567a2ad9b4",
+      "size": 1568,
+      "copied_at": "2026-10-11T18:29:56.263706+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\ScrollView.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\ScrollView.d.lua",
+      "sha256": "e43b20f7534d20d4705c606e55427a8c67e0b1df9b626f1bcde7dca3ea7121c1",
+      "size": 2492,
+      "copied_at": "2026-10-11T18:29:56.316728+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Serializable.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Serializable.d.lua",
+      "sha256": "e3a470da2fe9f29f38d3dcc0390190006aa29abe2e3f9c1db0b80e89a26d7482",
+      "size": 1378,
+      "copied_at": "2026-10-11T18:29:56.378002+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Serializer.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Serializer.d.lua",
+      "sha256": "7ff7ef8bec5e7584ef94ca084510e2f15ac2f96047f6ed186c2a39d1b9316ff3",
+      "size": 3746,
+      "copied_at": "2026-10-11T18:29:56.454034+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\ServerCloud.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\ServerCloud.d.lua",
+      "sha256": "c9672848c4025495a77d1879b4f28a2bc31f49fe2a180590a4bb6e6f7de64202",
+      "size": 16436,
+      "copied_at": "2026-10-11T18:29:56.497048+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Skeleton.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Skeleton.d.lua",
+      "sha256": "f228384d54ac4b362f2472ee3e5d85fbfad64ae20e4b10b017a33604e7775099",
+      "size": 1186,
+      "copied_at": "2026-10-11T18:29:56.528941+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\SkinTextureBuffer.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\SkinTextureBuffer.d.lua",
+      "sha256": "ebd2903866b80f274d935539fca18cb05eb17ec183d496864cdbcfc7963d6d28",
+      "size": 228,
+      "copied_at": "2026-10-11T18:29:56.551387+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Skybox.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Skybox.d.lua",
+      "sha256": "f505999d8ddafe52c922c47e02e6a4f7a336e052abcf659151a405326d4d50eb",
+      "size": 95,
+      "copied_at": "2026-10-11T18:29:56.582522+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Slider.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Slider.d.lua",
+      "sha256": "7cfb8e06200d3e90363cc86d3bcd37f1a187d963f29cc300f908b23b57a450de",
+      "size": 970,
+      "copied_at": "2026-10-11T18:29:56.631414+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Sound.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Sound.d.lua",
+      "sha256": "85fc455c61256191f9395e7a818fccb2ff299fab2f9f969c25e7bf13db67df9a",
+      "size": 2534,
+      "copied_at": "2026-10-11T18:29:56.700817+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\SoundListener.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\SoundListener.d.lua",
+      "sha256": "fe135742c6a1bacec80cdf3bbb39645142c64bfe8fd5444f0c4d8d68454135a9",
+      "size": 111,
+      "copied_at": "2026-10-11T18:29:56.743664+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\SoundSource.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\SoundSource.d.lua",
+      "sha256": "5b203de1740a42ea103d10fdc6e7f052a1bfc13e54b7ed5463728eda2185d575",
+      "size": 3879,
+      "copied_at": "2026-10-11T18:29:56.817128+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\SoundSource3D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\SoundSource3D.d.lua",
+      "sha256": "5bf01d15540fc78f39ab449bff4ecd6f9c306a00b1a448040bd2cd7fe7052dc1",
+      "size": 1439,
+      "copied_at": "2026-10-11T18:29:56.847455+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Sphere.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Sphere.d.lua",
+      "sha256": "b8b24a0b6dc2480d71c1f8550eada0bf01b6d6dfb6439dc297216f80221b770e",
+      "size": 2589,
+      "copied_at": "2026-10-11T18:29:56.900581+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Spine.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Spine.d.lua",
+      "sha256": "312b3acb9494fd0f7d973548c1444b8de797798fed61b9a83a0dd101396c7574",
+      "size": 8195,
+      "copied_at": "2026-10-11T18:29:57.029831+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Spline.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Spline.d.lua",
+      "sha256": "c74c69de5ea2f4a97573d35d49650bdaf886fc488fea1d391bac3292caf2d2e5",
+      "size": 1390,
+      "copied_at": "2026-10-11T18:29:57.077006+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\SplinePath.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\SplinePath.d.lua",
+      "sha256": "7afa9b94696a86f8e6ba3429c18b488ce44f02b0c3ba12e9b3aa96b4e0938800",
+      "size": 1345,
+      "copied_at": "2026-10-11T18:29:57.127469+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Sprite.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Sprite.d.lua",
+      "sha256": "90e78083f9e9760e09559441e9498da82089e6aa0f34f2f3e334c669823243d4",
+      "size": 1784,
+      "copied_at": "2026-10-11T18:29:57.186007+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Sprite2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Sprite2D.d.lua",
+      "sha256": "8de6408b9f45004de3f966af135b97852aaff55972c3939ab2966551f72c9631",
+      "size": 1169,
+      "copied_at": "2026-10-11T18:29:57.235432+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\SpriteSheet2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\SpriteSheet2D.d.lua",
+      "sha256": "825f1cb90c01aab79d9f8e8a8d4eb629e2b24f307032ac3667003c9adb3c4c6f",
+      "size": 537,
+      "copied_at": "2026-10-11T18:29:57.273339+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\StaticModel.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\StaticModel.d.lua",
+      "sha256": "0196977538309c7dbb2afc810686ec5bdfc3fcdf721c5d7d0940f755a69d1deb",
+      "size": 2309,
+      "copied_at": "2026-10-11T18:29:57.315662+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\StaticModelGroup.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\StaticModelGroup.d.lua",
+      "sha256": "5e67029a216c0c1dd25ba695c00ea6da7e57b1752fc458b724295ba971dddd68",
+      "size": 576,
+      "copied_at": "2026-10-11T18:29:57.336947+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\StaticSprite2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\StaticSprite2D.d.lua",
+      "sha256": "56d10548eea8850649edd120637310c0de000a999fd6460250d678140260a024",
+      "size": 2785,
+      "copied_at": "2026-10-11T18:29:57.389922+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\StretchableSprite2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\StretchableSprite2D.d.lua",
+      "sha256": "fd1aa7ddb9dec36a125da85d7ff09256aaf34956747e618e5ffce8423ba6cc58",
+      "size": 317,
+      "copied_at": "2026-10-11T18:29:57.431140+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\StringHash.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\StringHash.d.lua",
+      "sha256": "b054654fc27235cb59eb96b85ff20f34d1408a16c9e1bea78932948db0192581",
+      "size": 963,
+      "copied_at": "2026-10-11T18:29:57.472277+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\StringUtils.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\StringUtils.d.lua",
+      "sha256": "2029939b71644c695e55c4dec983cc20f0cf67f42994f194c6baa7008c5c8841",
+      "size": 2043,
+      "copied_at": "2026-10-11T18:29:57.547485+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Technique.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Technique.d.lua",
+      "sha256": "1a884341b57bf9204ebb58e840196b86daa96374e46e4789e3f06c6c98842b43",
+      "size": 3874,
+      "copied_at": "2026-10-11T18:29:57.611748+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Terrain.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Terrain.d.lua",
+      "sha256": "064760e9d699d39affcbd3c1e81974648bc4d181fc7fd588d2bd0bea3d2154a5",
+      "size": 5063,
+      "copied_at": "2026-10-11T18:29:57.706888+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\TerrainPatch.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\TerrainPatch.d.lua",
+      "sha256": "18c335deaf41cd24408aab192061ce8c2079b4b1a69764123d03c262c6de27ed",
+      "size": 1830,
+      "copied_at": "2026-10-11T18:29:57.775864+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Text.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Text.d.lua",
+      "sha256": "32c42a0bfd58c60b75fee0104eba7df5f864e8bd20fe4f801bc3aa7f6b2705cb",
+      "size": 3503,
+      "copied_at": "2026-10-11T18:29:57.867049+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Text3D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Text3D.d.lua",
+      "sha256": "be885074c86e9ce59a325e1e20c4103add032908e958946ca13d8fc8c4c20521",
+      "size": 4718,
+      "copied_at": "2026-10-11T18:29:57.978620+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Texture.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Texture.d.lua",
+      "sha256": "1539fcd99dbcd9e98b567b4e3fa151d2ab07c5f27ba948c9bd7447304fc51d78",
+      "size": 2825,
+      "copied_at": "2026-10-11T18:29:58.039890+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Texture2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Texture2D.d.lua",
+      "sha256": "dd705d4715a739b8256280741daae67f570d94eba417c195258bb2a67898c7ab",
+      "size": 731,
+      "copied_at": "2026-10-11T18:29:58.074818+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Texture2DArray.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Texture2DArray.d.lua",
+      "sha256": "31d156fe031ee7a698e6229443b3f437b1d1729397111399d34aeefe568bb121",
+      "size": 872,
+      "copied_at": "2026-10-11T18:29:58.092376+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Texture3D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Texture3D.d.lua",
+      "sha256": "9c0407a28352c23cc54d67195c27fc2fc9d8d5ca647cc6ca2e01207bddc38d4b",
+      "size": 516,
+      "copied_at": "2026-10-11T18:29:58.123511+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\TextureCube.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\TextureCube.d.lua",
+      "sha256": "5f8575063864eda00b892317974080d23b3479ab68590eb3b74035a2717d6667",
+      "size": 728,
+      "copied_at": "2026-10-11T18:29:58.168132+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\TileMap2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\TileMap2D.d.lua",
+      "sha256": "8052283e32ee766991519d07972aa68b1b063c5144c23cc3f8367c13cca862e6",
+      "size": 794,
+      "copied_at": "2026-10-11T18:29:58.218812+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\TileMapDefs2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\TileMapDefs2D.d.lua",
+      "sha256": "41bab435aa4ccb7efa6e3411a0761de51cca4e58693d3f549e8c99538b3b2551",
+      "size": 3391,
+      "copied_at": "2026-10-11T18:29:58.308645+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\TileMapLayer2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\TileMapLayer2D.d.lua",
+      "sha256": "307c256c2f7650ce4a36b74ff307c13369db0b822c915c1a8a6fbf02e8e7502b",
+      "size": 1503,
+      "copied_at": "2026-10-11T18:29:58.357139+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Timer.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Timer.d.lua",
+      "sha256": "a4af7720b7e3d68a74818c84db8e42cfcbba2e97ccbaed1b1e42d898736b0b42",
+      "size": 868,
+      "copied_at": "2026-10-11T18:29:58.391499+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\TmxFile2D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\TmxFile2D.d.lua",
+      "sha256": "f1964151c66927f51592df6971eb2cb947a0e2ea78ac6f894f4c5c132a92b480",
+      "size": 296,
+      "copied_at": "2026-10-11T18:29:58.419319+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\ToolTip.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\ToolTip.d.lua",
+      "sha256": "7e9926f53673788095f7630f4fb2c4d6d6b69283ab73c65f32168513964d37a7",
+      "size": 315,
+      "copied_at": "2026-10-11T18:29:58.453113+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Transport.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Transport.d.lua",
+      "sha256": "b6ea56490f6c4b590f78aaf9c2393abbe3d621eb32ba0c5a9fd38175b96f1cc2",
+      "size": 394,
+      "copied_at": "2026-10-11T18:29:58.497055+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\UI.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\UI.d.lua",
+      "sha256": "1c91e37324ced12a41449e7783d06a9e411b6101c0f569e91c43b153e718871d",
+      "size": 5589,
+      "copied_at": "2026-10-11T18:29:58.587017+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\UIComponent.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\UIComponent.d.lua",
+      "sha256": "b4aa534f1ef841bb68a4ea015ac66a110846a9ca7e4c082a57f52037d7262fad",
+      "size": 447,
+      "copied_at": "2026-10-11T18:29:58.626485+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\UIElement.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\UIElement.d.lua",
+      "sha256": "6f9afeeda1330ecf2da8dcfccb88179ed2aab6857ee899a45806ddf5bb6cf2ff",
+      "size": 17581,
+      "copied_at": "2026-10-11T18:29:58.698353+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\UILuaAPI.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\UILuaAPI.d.lua",
+      "sha256": "6fe64cc9af92749450a5acc5266f260f494fbb0ec3b172a88ac91516cefc3cd4",
+      "size": 43,
+      "copied_at": "2026-10-11T18:29:58.740962+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\UISelectable.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\UISelectable.d.lua",
+      "sha256": "8544ee8d1d54a4797200048f5653e9a7865aa95909257cd01c18d17fa023fca7",
+      "size": 551,
+      "copied_at": "2026-10-11T18:29:58.784991+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Urho2DLuaAPI.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Urho2DLuaAPI.d.lua",
+      "sha256": "de3be0f88e4928997aa4f9b34f5e4ad92e1163b30df2944d5ed08fbecc99b07b",
+      "size": 47,
+      "copied_at": "2026-10-11T18:29:58.811908+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Urho3DGlobals.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Urho3DGlobals.d.lua",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "copied_at": "2026-10-11T18:29:58.817364+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\ValueAnimation.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\ValueAnimation.d.lua",
+      "sha256": "9a749aa85e4b2e142198cea3ad7dbb8b32b1ae6a14bf77702746e1806e2183c1",
+      "size": 1294,
+      "copied_at": "2026-10-11T18:29:58.869637+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Variant.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Variant.d.lua",
+      "sha256": "40a70e35f0a98fb6349984c9bd966bff53588167a825ba4c83d7f0d00fe4aa48",
+      "size": 6770,
+      "copied_at": "2026-10-11T18:29:58.917026+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Variant.manual.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Variant.manual.d.lua",
+      "sha256": "5a8529f4ef1beb21476d74b080e41857e8fd447a1a50a5d41c54b532a903cda9",
+      "size": 8333,
+      "copied_at": "2026-10-11T18:29:58.965113+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Vector2.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Vector2.d.lua",
+      "sha256": "a54da1fb56d4f18b47dba45ebcbf26ff7354eeba9add8d882f212f274a41aa48",
+      "size": 4096,
+      "copied_at": "2026-10-11T18:29:59.067858+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Vector3.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Vector3.d.lua",
+      "sha256": "8da0208c4cb26ddcb02fdb5224d4e8a0608b897c8fca9490d16aaf9fc16eb37c",
+      "size": 5360,
+      "copied_at": "2026-10-11T18:29:59.122616+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Vector4.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Vector4.d.lua",
+      "sha256": "e1622249daf34b1609f5b29038f7000513dfc93fde0a027ef4cc1a31e0427352",
+      "size": 2258,
+      "copied_at": "2026-10-11T18:29:59.150960+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\VectorBuffer.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\VectorBuffer.d.lua",
+      "sha256": "bd9d936c8224901906fd2a1283ddaf4609301b6fa6bc73edd7ec3696e919a60b",
+      "size": 7694,
+      "copied_at": "2026-10-11T18:29:59.243827+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\VertexBuffer.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\VertexBuffer.d.lua",
+      "sha256": "d9cf8fa15fe4cb50e2c023a87672effc46138f1caa5f2f98d0212b8d2a57731f",
+      "size": 2208,
+      "copied_at": "2026-10-11T18:29:59.292680+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\VideoPlayer.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\VideoPlayer.d.lua",
+      "sha256": "5826c1904a80164e85b9f4756250654885ce38b10cd9127e8282884d50a659d6",
+      "size": 4103,
+      "copied_at": "2026-10-11T18:29:59.364188+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\View3D.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\View3D.d.lua",
+      "sha256": "12ab30d6aced0a31c37cb29de79d44591b6b2fb82331513163af7100e73248b0",
+      "size": 951,
+      "copied_at": "2026-10-11T18:29:59.421677+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Viewport.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Viewport.d.lua",
+      "sha256": "cb99548b7414f969dac6e45cd2acb0fa3f3e9493931b2e8a47d032869e02e27a",
+      "size": 2519,
+      "copied_at": "2026-10-11T18:29:59.485596+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\VoxelAssembly.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\VoxelAssembly.d.lua",
+      "sha256": "e782f4802ef76568a26e8baae8df9d4ead0ce208825e30eb9984a893a34a1b09",
+      "size": 6263,
+      "copied_at": "2026-10-11T18:29:59.542727+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\VoxelCharacterController.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\VoxelCharacterController.d.lua",
+      "sha256": "a7db24e6addd6d93771a45652fbbc4fade5a2350f0a2bb71ecec03b16c2612de",
+      "size": 6908,
+      "copied_at": "2026-10-11T18:29:59.596370+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\VoxelConstraint.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\VoxelConstraint.d.lua",
+      "sha256": "81c39ac59e572bef18efc1d86b9b6a640143bf86b7ffa195465ec16442b89429",
+      "size": 9945,
+      "copied_at": "2026-10-11T18:29:59.673451+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\VoxelGrid.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\VoxelGrid.d.lua",
+      "sha256": "cf02702d35adf04b3a6e64aec8dbcb1721243c56343ce4a7ec26d3f5d1919926",
+      "size": 1531,
+      "copied_at": "2026-10-11T18:29:59.728236+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\VoxelModel.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\VoxelModel.d.lua",
+      "sha256": "412aca36c14818d60a83f2eec2cab842a77b986f781c804dd8f2a62f1f24df4c",
+      "size": 598,
+      "copied_at": "2026-10-11T18:29:59.770815+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\VoxelPhysicsLuaAPI.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\VoxelPhysicsLuaAPI.d.lua",
+      "sha256": "0da2a8578be30cb3c2766b111da662fbdac28aacb73fb6d6dd41aa7049082703",
+      "size": 53,
+      "copied_at": "2026-10-11T18:29:59.801859+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\VoxelPhysicsWorld.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\VoxelPhysicsWorld.d.lua",
+      "sha256": "d847e1e909e879070c7a984bf0dfab505120b8ee598971f15c1ce6fef2ec5508",
+      "size": 36501,
+      "copied_at": "2026-10-11T18:29:59.846678+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\VoxelRollingContact.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\VoxelRollingContact.d.lua",
+      "sha256": "45a1d687d01f52230ad428472a14cfdae00aa86036b2a8d45d3a9333e94cd2aa",
+      "size": 4412,
+      "copied_at": "2026-10-11T18:29:59.950932+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\VoxelVehicle.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\VoxelVehicle.d.lua",
+      "sha256": "0922e20ca83ff013f30846aa5804d5dd463c6aa47701fee23cac06512d3f7938",
+      "size": 5453,
+      "copied_at": "2026-10-11T18:30:00.002473+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\VoxelVolume.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\VoxelVolume.d.lua",
+      "sha256": "30c1d308d58f7ed25c29d8ade50370431b2e1acc83af11cf11df7dfd07d14700",
+      "size": 21796,
+      "copied_at": "2026-10-11T18:30:00.034598+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Window.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Window.d.lua",
+      "sha256": "9425b94a243b2f926f4d7b4185da120a42bc955ae6eee1318c62cf3a2451f85c",
+      "size": 2438,
+      "copied_at": "2026-10-11T18:30:00.072204+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\WorldPartition.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\WorldPartition.d.lua",
+      "sha256": "b271d26cdb2930573dc08590c4f04035be6564de123102f69f14e52108ba7959",
+      "size": 1737,
+      "copied_at": "2026-10-11T18:30:00.092935+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\WorldPartitionCell.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\WorldPartitionCell.d.lua",
+      "sha256": "78395c6b5b717e77e09d7ad3fbb104a3c6b0a1232f56474a3c7d8ebbb8c395ef",
+      "size": 550,
+      "copied_at": "2026-10-11T18:30:00.115708+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\XMLElement.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\XMLElement.d.lua",
+      "sha256": "1df157ac4a77c4f415cbd7dc563785110deab07153136d1082bbf3b8a2506641",
+      "size": 7251,
+      "copied_at": "2026-10-11T18:30:00.165660+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\XMLFile.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\XMLFile.d.lua",
+      "sha256": "a40e75c3ee4fe0823e4e37a5978c45ff568b0db2d5368c40dde99fb31960c996",
+      "size": 898,
+      "copied_at": "2026-10-11T18:30:00.202765+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\YogaEnums.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\YogaEnums.d.lua",
+      "sha256": "b14d4218e0b0533137046f62f82154c02ad917bef3c999bfc826d3d89615954d",
+      "size": 3412,
+      "copied_at": "2026-10-11T18:30:00.218030+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\YogaLayout.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\YogaLayout.d.lua",
+      "sha256": "59c024d2a1d276e56847fc87f338d96af6392c7b73f600f83af469f0c82bde3d",
+      "size": 15150,
+      "copied_at": "2026-10-11T18:30:00.266407+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\YogaLayout.manual.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\YogaLayout.manual.d.lua",
+      "sha256": "36b77bc6c4b1a7a61b28a2459a33b669cd730ae2ba365f1efd9e0ebd99186e27",
+      "size": 489,
+      "copied_at": "2026-10-11T18:30:00.294680+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\.emmylua\\Zone.d.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\.emmylua\\Zone.d.lua",
+      "sha256": "0e0bfb7d562f76bd9d386838ffafeb5ef59b422727a747726a40a0ac3feab27b",
+      "size": 10498,
+      "copied_at": "2026-10-11T18:30:00.363948+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\LICENSE",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\LICENSE",
+      "sha256": "b6377281e9d542fc77294918968ef690f91c7e394ba1ac7aef6b69f49f2a66d5",
+      "size": 1063,
+      "copied_at": "2026-10-11T18:30:00.407265+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\Sprite\\SpriteAnimator.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\Sprite\\SpriteAnimator.lua",
+      "sha256": "a63b2854ea0fb976d59978babfd26923c79303112df3d98e3d248a4479f15c0e",
+      "size": 15638,
+      "copied_at": "2026-10-11T18:30:00.416964+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\Sprite\\SpriteSheet.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\Sprite\\SpriteSheet.lua",
+      "sha256": "c49b537026e63170506033cec029d45fc720b586b9e8736381f3012d4294d053",
+      "size": 22385,
+      "copied_at": "2026-10-11T18:30:00.427505+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Components\\ChatWindow.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Components\\ChatWindow.lua",
+      "sha256": "4e629ae5258f71e364060c688560282eb1ec20537a7a1c622beae76b89f31cd3",
+      "size": 13593,
+      "copied_at": "2026-10-11T18:30:00.441669+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Components\\DragDropContext.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Components\\DragDropContext.lua",
+      "sha256": "bc6820d8a4b1a6e6f39ab6e2704eec2a3f62da98029c07ae344fc4747bfe8fc0",
+      "size": 8748,
+      "copied_at": "2026-10-11T18:30:00.451446+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Components\\InventoryManager.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Components\\InventoryManager.lua",
+      "sha256": "deaebd09ba497a3a03a1fd456340c058b5d066b66aa73154cb2171d4edbbd752",
+      "size": 8681,
+      "copied_at": "2026-10-11T18:30:00.459926+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Components\\ItemSlot.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Components\\ItemSlot.lua",
+      "sha256": "5e94f034686d8a849edd0bd06dd664acb7ddc91f6bdc614901257a59543995d2",
+      "size": 9039,
+      "copied_at": "2026-10-11T18:30:00.469857+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Components\\ItemTooltip.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Components\\ItemTooltip.lua",
+      "sha256": "ac7904da1318cd50f5a2ff7cacfc2c0e988fb625648f67a511b445367e92ef3f",
+      "size": 10799,
+      "copied_at": "2026-10-11T18:30:00.479986+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Components\\SkillTree.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Components\\SkillTree.lua",
+      "sha256": "2d08017fb535569881468eafd71d13834672e8cabf2dbd3b6b984fce2afced23",
+      "size": 20021,
+      "copied_at": "2026-10-11T18:30:00.492433+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Components\\VirtualList.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Components\\VirtualList.lua",
+      "sha256": "0d64174af8e4df408d835a454b80240d1df5a1d60688826fcac7007f16b80e5d",
+      "size": 13707,
+      "copied_at": "2026-10-11T18:30:00.499305+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Core\\Gesture.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Core\\Gesture.lua",
+      "sha256": "5ac07eaf16c13cca115fc929105122ebb7b86ff3036a7e1657a5755b2122f006",
+      "size": 18344,
+      "copied_at": "2026-10-11T18:30:00.502149+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Core\\GestureEvent.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Core\\GestureEvent.lua",
+      "sha256": "901ebce018ab618cb21d87dca8d6aee7e80350dad1009068d54e4148a3fea7a9",
+      "size": 7194,
+      "copied_at": "2026-10-11T18:30:00.505054+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Core\\ImageCache.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Core\\ImageCache.lua",
+      "sha256": "3773f2704b7d7b51bb9e6f224e372a0d0dade625c6339964e30e1332ec8389e8",
+      "size": 4091,
+      "copied_at": "2026-10-11T18:30:00.511825+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Core\\Input.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Core\\Input.lua",
+      "sha256": "2f83e6dee292c5d0d0a41d10861cf4d0b8d00a921f2009778471824a2b1027d7",
+      "size": 8140,
+      "copied_at": "2026-10-11T18:30:00.517076+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Core\\InputAdapter.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Core\\InputAdapter.lua",
+      "sha256": "2878bc47003faaa09a2249ca8520520d33061ac284ea42e20bc82185bd9973f7",
+      "size": 10954,
+      "copied_at": "2026-10-11T18:30:00.520869+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Core\\PointerEvent.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Core\\PointerEvent.lua",
+      "sha256": "753d6557be63d7c00cc9f5c8b5219a27acd41ef67021e86918dbe097a44af2ae",
+      "size": 8027,
+      "copied_at": "2026-10-11T18:30:00.523277+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Core\\Style.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Core\\Style.lua",
+      "sha256": "7ace494a67f881d98886e58d1219aef3a482a7cb22dcd4a13798d9ef6ca086bd",
+      "size": 13760,
+      "copied_at": "2026-10-11T18:30:00.528712+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Core\\Theme.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Core\\Theme.lua",
+      "sha256": "311c3fb128a90a838a7e951baa3968bf720f030721adbc3bbec7bcd9896bc2a4",
+      "size": 15809,
+      "copied_at": "2026-10-11T18:30:00.535357+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Core\\Transition.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Core\\Transition.lua",
+      "sha256": "208fae3334d2ef24cbbf2b298009512b632dd902c540b79e391a34f50ae826d5",
+      "size": 21756,
+      "copied_at": "2026-10-11T18:30:00.545184+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Core\\UI.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Core\\UI.lua",
+      "sha256": "71f48aaa663adbce0b3b12c7d0753da4c7642383dcb03ec965bc9c3c829865e5",
+      "size": 106748,
+      "copied_at": "2026-10-11T18:30:00.550654+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Core\\UILoader.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Core\\UILoader.lua",
+      "sha256": "9bb93883e134058220702d490c7b07375d5d4f471e58b6dd4a135ad522e11447",
+      "size": 16595,
+      "copied_at": "2026-10-11T18:30:00.554454+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Core\\UISerializer.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Core\\UISerializer.lua",
+      "sha256": "3f71dc2d3135f38a2e1ad115af01220ca9e9d87b1e14dcef861b090fc449c9cd",
+      "size": 3492,
+      "copied_at": "2026-10-11T18:30:00.559011+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Core\\Widget.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Core\\Widget.lua",
+      "sha256": "aa4f6e9b667f0681ccb9c0df4a7e727c1ac204afb5f8fb4ec6eeb57f62e4128d",
+      "size": 181166,
+      "copied_at": "2026-10-11T18:30:00.562358+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\init.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\init.lua",
+      "sha256": "41a44475e29a1172bca0f415f1608ae5e8260e4d7337fa72ea6bdc5caa13c58c",
+      "size": 9911,
+      "copied_at": "2026-10-11T18:30:00.565561+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\Accordion.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\Accordion.lua",
+      "sha256": "b76e98997625df81f9bbd9605d2ba6e8f2e1e184d2bf8316fdfb22b118835ee5",
+      "size": 29530,
+      "copied_at": "2026-10-11T18:30:00.570869+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\Alert.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\Alert.lua",
+      "sha256": "f765eb91dd88a4bf39fdaf8d02bb9d2aa8dc5fde57a50650ca696f59e429405d",
+      "size": 24033,
+      "copied_at": "2026-10-11T18:30:00.576163+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\Avatar.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\Avatar.lua",
+      "sha256": "5c8b4549f2e71d83f3d9237619bdbf4825294b2b167aecd55f6c4e49d09a8ba5",
+      "size": 17037,
+      "copied_at": "2026-10-11T18:30:00.579543+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\Badge.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\Badge.lua",
+      "sha256": "5ad14a1c5743a64a7de5a69c38d44cbd4384ef5b8bbc9c28be94f0236dce6f8f",
+      "size": 15371,
+      "copied_at": "2026-10-11T18:30:00.584753+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\Breadcrumb.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\Breadcrumb.lua",
+      "sha256": "a65997f91ddf1a62a45b04564a540fe45318076eba60edd44f2282acc7b12399",
+      "size": 15784,
+      "copied_at": "2026-10-11T18:30:00.591020+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\Button.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\Button.lua",
+      "sha256": "4841a1871db8ef78c557b2ee65d0c5f3c3fe877bc92f82feb7842d67c7bac6ef",
+      "size": 34676,
+      "copied_at": "2026-10-11T18:30:00.597210+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\Calendar.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\Calendar.lua",
+      "sha256": "f8040644b377d871c2bfefa4290190bc4646e2751b5dabdfb40606dd0f1a26bb",
+      "size": 23469,
+      "copied_at": "2026-10-11T18:30:00.604238+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\Card.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\Card.lua",
+      "sha256": "e3ec549b58b10315b9d9dd3337dac54e512b6aaad06e2759a95f9edaec6644ea",
+      "size": 20239,
+      "copied_at": "2026-10-11T18:30:00.608409+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\Carousel.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\Carousel.lua",
+      "sha256": "4be5570de303758b559f17a4e297cf4703fc6874a326c6df6a1ba50c23330aa6",
+      "size": 26945,
+      "copied_at": "2026-10-11T18:30:00.611528+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\Checkbox.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\Checkbox.lua",
+      "sha256": "926907a27b2af85040f57d67673b55c816b2c877a04f66ca491031d56f147543",
+      "size": 9308,
+      "copied_at": "2026-10-11T18:30:00.614059+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\Chip.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\Chip.lua",
+      "sha256": "18cd5cd933ba7f9cb77ab83f2636ae85bcc434002e5114ac2924cebec40df1a0",
+      "size": 23780,
+      "copied_at": "2026-10-11T18:30:00.617189+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\ColorPicker.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\ColorPicker.lua",
+      "sha256": "f0bb51c44397bad1a09d8ece02e7bfaac1adcc9760504cb9fc15aadb16608f90",
+      "size": 43873,
+      "copied_at": "2026-10-11T18:30:00.620052+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\DatePicker.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\DatePicker.lua",
+      "sha256": "cfff3a75e979c29b7b9a713289ccb831d6166d567492f1a14a8b53801dc8c255",
+      "size": 47545,
+      "copied_at": "2026-10-11T18:30:00.625348+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\Divider.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\Divider.lua",
+      "sha256": "9c5f755897e79b712157e3881f0bbec2a60232b379fedfce4ba14af13b14bb73",
+      "size": 11128,
+      "copied_at": "2026-10-11T18:30:00.628540+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\Drawer.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\Drawer.lua",
+      "sha256": "111e08a503c7ec64bb09519deea2e3abac22606d0997ed029768f01173847ac0",
+      "size": 25242,
+      "copied_at": "2026-10-11T18:30:00.634870+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\Dropdown.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\Dropdown.lua",
+      "sha256": "c1c607da9bd10bc6b2ed3e57f25bb71a94601f194e20bb06b87cade5c8dc531e",
+      "size": 35118,
+      "copied_at": "2026-10-11T18:30:00.640618+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\EditMenu.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\EditMenu.lua",
+      "sha256": "5c4c516fe2e19500bc42a310d07f5d7e928d9b0479c79b9bac8c6df193e67eb8",
+      "size": 10832,
+      "copied_at": "2026-10-11T18:30:00.646536+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\FileUpload.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\FileUpload.lua",
+      "sha256": "6cbcb13671e277d70b7242088a89347a63f8a96aa5cbac43a4a8a415648501d9",
+      "size": 26164,
+      "copied_at": "2026-10-11T18:30:00.652678+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\Label.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\Label.lua",
+      "sha256": "c04904aae6257963685b94b273f23ce343848d92b85252002c653475ed25cc03",
+      "size": 57371,
+      "copied_at": "2026-10-11T18:30:00.661194+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\List.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\List.lua",
+      "sha256": "28262cda1dd80ad766933cf433832c7e14a55d7dbb17dce9f285bf2a27c5093e",
+      "size": 29318,
+      "copied_at": "2026-10-11T18:30:00.670922+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\Menu.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\Menu.lua",
+      "sha256": "c0efe11be927516bc90ca10bf33a0cfbf981891d72fef88951ac9bcf0cb2b152",
+      "size": 33126,
+      "copied_at": "2026-10-11T18:30:00.680075+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\Modal.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\Modal.lua",
+      "sha256": "627d07f4e86092eb7cf774192ca66cff2c40df44da208f86c2546ea38d966a2a",
+      "size": 32066,
+      "copied_at": "2026-10-11T18:30:00.687070+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\Pagination.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\Pagination.lua",
+      "sha256": "b3e3275d09e62c2cd26b291150ed7a573d2000955c3e9496de38a5b6f03d1a30",
+      "size": 28202,
+      "copied_at": "2026-10-11T18:30:00.694127+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\Panel.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\Panel.lua",
+      "sha256": "0519b7b27605210069735a2a07530b7d74fc02ae6cca45e888e59aa09b1f4e26",
+      "size": 2597,
+      "copied_at": "2026-10-11T18:30:00.705520+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\Popover.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\Popover.lua",
+      "sha256": "1e2de43bd61a9fa7cf500d285f3b276af2b373e62e9d859862e2f03e6c5cfd4e",
+      "size": 20626,
+      "copied_at": "2026-10-11T18:30:00.714210+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\ProgressBar.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\ProgressBar.lua",
+      "sha256": "e727d2b25e5e68ac49513ded226c95fcb558515fbe1912cdf2f09aee02487671",
+      "size": 10469,
+      "copied_at": "2026-10-11T18:30:00.722315+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\Rating.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\Rating.lua",
+      "sha256": "6d9acc9ea984078b5331c561ae15c654c618f3c5fe63f4e6dff0c94d032b01b8",
+      "size": 19435,
+      "copied_at": "2026-10-11T18:30:00.728866+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\RichText.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\RichText.lua",
+      "sha256": "c50b75ca28890f40b98cfb1519ab380d79f809f611bf135b77520017d19fe714",
+      "size": 30962,
+      "copied_at": "2026-10-11T18:30:00.734261+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\SafeAreaView.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\SafeAreaView.lua",
+      "sha256": "22c0f9a9cc706e57c6c5366598c64bb24b42344780a957dad9c23a7bdf407472",
+      "size": 9904,
+      "copied_at": "2026-10-11T18:30:00.742968+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\ScrollView.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\ScrollView.lua",
+      "sha256": "0cc6da4947926cbf8bb642af4099675ea24fa46461c9a294a46d188a39427202",
+      "size": 42321,
+      "copied_at": "2026-10-11T18:30:00.749750+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\SimpleGrid.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\SimpleGrid.lua",
+      "sha256": "76c1d7cc0ade7c66142df74741602235efc90a91529312524111d95148dfc6a5",
+      "size": 9274,
+      "copied_at": "2026-10-11T18:30:00.753964+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\Skeleton.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\Skeleton.lua",
+      "sha256": "77933dbf040df77ecec4f1ba76f10b814ab2591e68416312f53e4e2639c99df5",
+      "size": 17103,
+      "copied_at": "2026-10-11T18:30:00.767295+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\Slider.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\Slider.lua",
+      "sha256": "d81ba221e18640b3dc02dc8eec48051bc2a9f9c247a6ba1f8a4b7b3dcd0490e8",
+      "size": 14128,
+      "copied_at": "2026-10-11T18:30:00.778642+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\Spine.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\Spine.lua",
+      "sha256": "90e6cc19ac05ca634352abd05eab0f060b574a5fadc25b258e773a9ce407a393",
+      "size": 13332,
+      "copied_at": "2026-10-11T18:30:00.790133+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\Sprite.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\Sprite.lua",
+      "sha256": "12ad6180b7c7e25cb040e0c38374b5041f35d79410b4c967c26625014a0b9eda",
+      "size": 40512,
+      "copied_at": "2026-10-11T18:30:00.799779+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\Stepper.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\Stepper.lua",
+      "sha256": "21531a0e76599576d09bc2c6d121f4237b1ade1437bf0d0d4974b7c24df6c1cb",
+      "size": 31708,
+      "copied_at": "2026-10-11T18:30:00.813074+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\Table.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\Table.lua",
+      "sha256": "903005134b624b13dc2792f9712385511b12b1a715730ccd7c22de312021ba69",
+      "size": 32465,
+      "copied_at": "2026-10-11T18:30:00.824424+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\Tabs.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\Tabs.lua",
+      "sha256": "b2920342912ace6ba5242d59cfe149994e907cf4fc8e8a0c818f9a20bc0836ec",
+      "size": 41585,
+      "copied_at": "2026-10-11T18:30:00.832964+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\TextField.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\TextField.lua",
+      "sha256": "de85be958d6f1ffc5a4bd5ecb73ebef89056c50b0d8bd1fb1048dc617c49337d",
+      "size": 34663,
+      "copied_at": "2026-10-11T18:30:00.843892+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\Timeline.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\Timeline.lua",
+      "sha256": "270c2d78a8b55b93755b82df835699ff79e75d34017581fc4c6e1758e882169c",
+      "size": 26050,
+      "copied_at": "2026-10-11T18:30:00.852091+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\TimePicker.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\TimePicker.lua",
+      "sha256": "a999f87936cd9ab5b7af716aa1295288a155889eedf4ab4e0aa893fa1b17774e",
+      "size": 45312,
+      "copied_at": "2026-10-11T18:30:00.860737+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\Toast.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\Toast.lua",
+      "sha256": "749bc261f6da7ec1fac5d02caad2a5ba7f293a3af8f27bbddc4481eee796e78f",
+      "size": 25320,
+      "copied_at": "2026-10-11T18:30:00.873355+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\Toggle.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\Toggle.lua",
+      "sha256": "645907a30de6b7e9b358709f9888d7142dc5ff5b7b35246fdf93711a3f4af6fe",
+      "size": 9790,
+      "copied_at": "2026-10-11T18:30:00.881899+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\Tooltip.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\Tooltip.lua",
+      "sha256": "93ef6d997b5a35fe6c10a30e7d92e48327d8fede6fd34bafdb8a1e470dbbdd43",
+      "size": 12644,
+      "copied_at": "2026-10-11T18:30:00.893576+00:00"
+    },
+    {
+      "source": "D:\\taptap\\To-the-Human-World\\urhox-libs\\UI\\Widgets\\Tree.lua",
+      "destination": "D:\\taptap\\To-the-Human-World-3D-Lab\\urhox-libs\\UI\\Widgets\\Tree.lua",
+      "sha256": "f43caaf8e3c04dffee68b6801420c83006df78135fe1b9517da8e54918779d19",
+      "size": 35607,
+      "copied_at": "2026-10-11T18:30:00.902108+00:00"
+    }
+  ],
+  "required_modules": [
+    "urhox-libs/Sprite/SpriteAnimator",
+    "urhox-libs/Sprite/SpriteSheet",
+    "urhox-libs/UI",
+    "urhox-libs/UI/Components/ChatWindow",
+    "urhox-libs/UI/Components/DragDropContext",
+    "urhox-libs/UI/Components/InventoryManager",
+    "urhox-libs/UI/Components/ItemSlot",
+    "urhox-libs/UI/Components/ItemTooltip",
+    "urhox-libs/UI/Components/SkillTree",
+    "urhox-libs/UI/Components/VirtualList",
+    "urhox-libs/UI/Core/Gesture",
+    "urhox-libs/UI/Core/GestureEvent",
+    "urhox-libs/UI/Core/ImageCache",
+    "urhox-libs/UI/Core/Input",
+    "urhox-libs/UI/Core/InputAdapter",
+    "urhox-libs/UI/Core/PointerEvent",
+    "urhox-libs/UI/Core/Style",
+    "urhox-libs/UI/Core/Theme",
+    "urhox-libs/UI/Core/Transition",
+    "urhox-libs/UI/Core/UI",
+    "urhox-libs/UI/Core/UILoader",
+    "urhox-libs/UI/Core/UISerializer",
+    "urhox-libs/UI/Core/Widget",
+    "urhox-libs/UI/Widgets/Accordion",
+    "urhox-libs/UI/Widgets/Alert",
+    "urhox-libs/UI/Widgets/Avatar",
+    "urhox-libs/UI/Widgets/Badge",
+    "urhox-libs/UI/Widgets/Breadcrumb",
+    "urhox-libs/UI/Widgets/Button",
+    "urhox-libs/UI/Widgets/Calendar",
+    "urhox-libs/UI/Widgets/Card",
+    "urhox-libs/UI/Widgets/Carousel",
+    "urhox-libs/UI/Widgets/Checkbox",
+    "urhox-libs/UI/Widgets/Chip",
+    "urhox-libs/UI/Widgets/ColorPicker",
+    "urhox-libs/UI/Widgets/DatePicker",
+    "urhox-libs/UI/Widgets/Divider",
+    "urhox-libs/UI/Widgets/Drawer",
+    "urhox-libs/UI/Widgets/Dropdown",
+    "urhox-libs/UI/Widgets/EditMenu",
+    "urhox-libs/UI/Widgets/FileUpload",
+    "urhox-libs/UI/Widgets/Label",
+    "urhox-libs/UI/Widgets/List",
+    "urhox-libs/UI/Widgets/Menu",
+    "urhox-libs/UI/Widgets/Modal",
+    "urhox-libs/UI/Widgets/Pagination",
+    "urhox-libs/UI/Widgets/Panel",
+    "urhox-libs/UI/Widgets/Popover",
+    "urhox-libs/UI/Widgets/ProgressBar",
+    "urhox-libs/UI/Widgets/Rating",
+    "urhox-libs/UI/Widgets/RichText",
+    "urhox-libs/UI/Widgets/SafeAreaView",
+    "urhox-libs/UI/Widgets/ScrollView",
+    "urhox-libs/UI/Widgets/SimpleGrid",
+    "urhox-libs/UI/Widgets/Skeleton",
+    "urhox-libs/UI/Widgets/Slider",
+    "urhox-libs/UI/Widgets/Spine",
+    "urhox-libs/UI/Widgets/Sprite",
+    "urhox-libs/UI/Widgets/Stepper",
+    "urhox-libs/UI/Widgets/Table",
+    "urhox-libs/UI/Widgets/Tabs",
+    "urhox-libs/UI/Widgets/TextField",
+    "urhox-libs/UI/Widgets/TimePicker",
+    "urhox-libs/UI/Widgets/Timeline",
+    "urhox-libs/UI/Widgets/Toast",
+    "urhox-libs/UI/Widgets/Toggle",
+    "urhox-libs/UI/Widgets/Tooltip",
+    "urhox-libs/UI/Widgets/Tree"
+  ]
+}

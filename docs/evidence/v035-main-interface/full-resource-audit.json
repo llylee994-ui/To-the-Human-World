@@ -1,0 +1,983 @@
+{
+  "timestampUtc": "2026-10-13T13:53:28.346131+00:00",
+  "status": "PASS",
+  "textures": {
+    "full_mat_007_basecolor.png": {
+      "size": [
+        2048,
+        2048
+      ],
+      "mode": "RGB",
+      "bytes": 1985314,
+      "rgba8Bytes": 16777216,
+      "sha256": "270a736272a444fb0d267e4ca3f87b11eb155857a9dc7c15e2c1ee60b84fdbf5",
+      "decoded": true
+    },
+    "full_mat_007_normal.png": {
+      "size": [
+        2048,
+        2048
+      ],
+      "mode": "RGB",
+      "bytes": 2572499,
+      "rgba8Bytes": 16777216,
+      "sha256": "0dadf9343ecf87d7fd156fef12ca057e2eaf8f9f97c869c1e075e7eb88b1b068",
+      "decoded": true
+    },
+    "full_mat_008_basecolor.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 958800,
+      "rgba8Bytes": 4194304,
+      "sha256": "10c110d7f2e98917573c08ca832d0795e1521308795117d3cf1b9a848885310a",
+      "decoded": true
+    },
+    "full_mat_008_normal.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 2193440,
+      "rgba8Bytes": 4194304,
+      "sha256": "f2ee655ee6bdcf65809c49357564013aed701a1dde68724b9d6d1237e86817f8",
+      "decoded": true
+    },
+    "full_mat_009_basecolor.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 753858,
+      "rgba8Bytes": 4194304,
+      "sha256": "2522c152b1f913a1cb80069dd9c04bb7ec509132756fc017323b30610e327c49",
+      "decoded": true
+    },
+    "full_mat_009_normal.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 1115537,
+      "rgba8Bytes": 4194304,
+      "sha256": "290d44da2c5e1de4b9bf7e1d75d2d01103bf43333363760dac1c6d73f26994a1",
+      "decoded": true
+    },
+    "full_mat_010_basecolor.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 995995,
+      "rgba8Bytes": 4194304,
+      "sha256": "eedfdef34fd503da2f03dc3cfadd8b8176c591bb336ad141def999b6f24a6a8c",
+      "decoded": true
+    },
+    "full_mat_010_normal.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 1756033,
+      "rgba8Bytes": 4194304,
+      "sha256": "41003f52f15c2b9b4a85e872c35a3bb00f92e782efd29fcc24f5e14d2c7430c2",
+      "decoded": true
+    },
+    "full_mat_012_basecolor.png": {
+      "size": [
+        2048,
+        2048
+      ],
+      "mode": "RGB",
+      "bytes": 2101916,
+      "rgba8Bytes": 16777216,
+      "sha256": "27a6ae0d30994e23bcbf92a401c8c887d80323ea0c14cce8056d50a77b65cb48",
+      "decoded": true
+    },
+    "full_mat_012_normal.png": {
+      "size": [
+        2048,
+        2048
+      ],
+      "mode": "RGB",
+      "bytes": 2216028,
+      "rgba8Bytes": 16777216,
+      "sha256": "45151088a640410d0f793272b21a6c0c5479e035ad68e520f2d8b7dbea676f08",
+      "decoded": true
+    },
+    "full_mat_013_basecolor.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 778204,
+      "rgba8Bytes": 4194304,
+      "sha256": "c737851f7e86276529dd54c5553f2b33919f6616ca4fbb4fbf413f2b0f62b3fa",
+      "decoded": true
+    },
+    "full_mat_013_normal.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 1309336,
+      "rgba8Bytes": 4194304,
+      "sha256": "8964d2d943bcede50817207b6d3d1f6dbdb11a722e82c77e718b50feb41657ee",
+      "decoded": true
+    },
+    "full_mat_017_basecolor.png": {
+      "size": [
+        2048,
+        2048
+      ],
+      "mode": "RGB",
+      "bytes": 1690889,
+      "rgba8Bytes": 16777216,
+      "sha256": "16cbfc579aee8090bed1dd8d7bfc338e72c71fb11cc6b7c32afbc563b0d42a15",
+      "decoded": true
+    },
+    "full_mat_017_normal.png": {
+      "size": [
+        2048,
+        2048
+      ],
+      "mode": "RGB",
+      "bytes": 1989555,
+      "rgba8Bytes": 16777216,
+      "sha256": "d20a84cbe9e1d15d15d9cca799b93a0818c60b99c5b27248b69950f0dd820a76",
+      "decoded": true
+    },
+    "full_mat_018_basecolor.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 594239,
+      "rgba8Bytes": 4194304,
+      "sha256": "c0db9c86df753d96f0639cd33e7209d7de1e53beb3a5ac1f18f1d4858da3b6c6",
+      "decoded": true
+    },
+    "full_mat_018_normal.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 820756,
+      "rgba8Bytes": 4194304,
+      "sha256": "4cc28a4668448735b9b4d0865be642c092e963f0770aaf056eb2e79b489c4510",
+      "decoded": true
+    },
+    "full_mat_019_basecolor.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 584136,
+      "rgba8Bytes": 4194304,
+      "sha256": "7c8243ec86b0c6e7da008e0c979d49b5b6e8721c2a3dea718b01f1d59b54909d",
+      "decoded": true
+    },
+    "full_mat_019_normal.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 918240,
+      "rgba8Bytes": 4194304,
+      "sha256": "8828bb7e3063ac887c28c64ca2932720d73d0bdee951916fa043c1595cd13bfd",
+      "decoded": true
+    },
+    "full_mat_021_basecolor.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 788239,
+      "rgba8Bytes": 4194304,
+      "sha256": "f03634fefd05fbe9c567d7b7c8291c9afe3e4bb060c4ed16f18cc620d94d3729",
+      "decoded": true
+    },
+    "full_mat_021_normal.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 1067293,
+      "rgba8Bytes": 4194304,
+      "sha256": "981f6cd9d5a6af7ace3b5d396fd5cf2c0c6bd076b1aa5107f932685ac776627c",
+      "decoded": true
+    },
+    "full_mat_022_basecolor.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 649494,
+      "rgba8Bytes": 4194304,
+      "sha256": "ac0030a1f959345db1686fee56ba327ba61c11e2eb728eee23723039c18d368b",
+      "decoded": true
+    },
+    "full_mat_022_normal.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 666852,
+      "rgba8Bytes": 4194304,
+      "sha256": "ba41f5ed3bde7554fbd7ea094838869c80cc869acfcbae58c3acdcb2130f3cd8",
+      "decoded": true
+    },
+    "full_mat_025_basecolor.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 1116099,
+      "rgba8Bytes": 4194304,
+      "sha256": "313e1eb8b9889abea275ef44b559d62cd40fd419f2a6dfaadb113760bb2280e3",
+      "decoded": true
+    },
+    "full_mat_025_normal.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 493942,
+      "rgba8Bytes": 4194304,
+      "sha256": "5fd0c0141be3c85252f889da2038ec5aa82d7265ed6507979e302d22c9a5b09e",
+      "decoded": true
+    },
+    "full_mat_026_basecolor.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 1137192,
+      "rgba8Bytes": 4194304,
+      "sha256": "c53d05310cf10085dc32ae3415147edde9a1899fb5e3523573e2c5cd1ab7b725",
+      "decoded": true
+    },
+    "full_mat_026_normal.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 1588879,
+      "rgba8Bytes": 4194304,
+      "sha256": "ea6f888e6b405b58e8c1cd00a5a2ae1ccd5b44315d1a9fd5b38231d448341d54",
+      "decoded": true
+    },
+    "full_mat_031_basecolor.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 749417,
+      "rgba8Bytes": 4194304,
+      "sha256": "7d13307ee75c478b8dfa5ac6795587378e7ddae17ebdabaaad429e9eaad941ec",
+      "decoded": true
+    },
+    "full_mat_031_normal.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 1499217,
+      "rgba8Bytes": 4194304,
+      "sha256": "f0d2ac72e6a7b93988a8c21f95bb0d3a795ad52f4fbe6fa74bd6d9585ac16060",
+      "decoded": true
+    },
+    "full_mat_033_basecolor.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 1009179,
+      "rgba8Bytes": 4194304,
+      "sha256": "8d31906f37aada73d459eeb4425b3ecf7b2229157f32176898b3f3a6aa68c0e8",
+      "decoded": true
+    },
+    "full_mat_033_normal.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 1647868,
+      "rgba8Bytes": 4194304,
+      "sha256": "5313a36ed870565f2b8d04cdf24c357bd8c141afb043ee4cbfb07f53ab1ca63f",
+      "decoded": true
+    },
+    "full_mat_034_basecolor.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 939447,
+      "rgba8Bytes": 4194304,
+      "sha256": "514100056e245107eecb1c2dfabfd65192d66ab48a224681590823d567184797",
+      "decoded": true
+    },
+    "full_mat_034_normal.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 1890803,
+      "rgba8Bytes": 4194304,
+      "sha256": "4f330be5c486bf0c1f1394335dfa70a86788f603c5143354717048bc81c47dbf",
+      "decoded": true
+    },
+    "full_mat_035_basecolor.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 826255,
+      "rgba8Bytes": 4194304,
+      "sha256": "38084d6376a1be0774ed2465cf7511f1733ebc848a66d8501515d29b322ddd18",
+      "decoded": true
+    },
+    "full_mat_035_normal.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 772997,
+      "rgba8Bytes": 4194304,
+      "sha256": "91d95079b69c97577364ce607c135879b408269d9f9dc0eb7a433b09e5924ddf",
+      "decoded": true
+    },
+    "full_mat_036_basecolor.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 189544,
+      "rgba8Bytes": 4194304,
+      "sha256": "fdfbdff6665c25934e8d6a62ff14ac53fd0fdb68c387f3ba7f55c6a6219bfd08",
+      "decoded": true
+    },
+    "full_mat_036_normal.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 1320852,
+      "rgba8Bytes": 4194304,
+      "sha256": "bed5a795bbbaf772bba4a2357e974a6650d1822fc202d8d124b9fb39a8298694",
+      "decoded": true
+    },
+    "full_mat_037_basecolor.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 752852,
+      "rgba8Bytes": 4194304,
+      "sha256": "f37a3f7c043f764067ac15206e16a05a207fb94154d6d890527678ed26a96a30",
+      "decoded": true
+    },
+    "full_mat_037_normal.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 1637268,
+      "rgba8Bytes": 4194304,
+      "sha256": "03ef79dae2c668e0e2fa1e7cfd1f7772ec5324a3ee312370d6cf7c50b4d7798f",
+      "decoded": true
+    },
+    "full_mat_038_basecolor.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 1037216,
+      "rgba8Bytes": 4194304,
+      "sha256": "be30ad0f32580f57a20db8eb1639b1c69c9cac97b8a61ba2b6e924f833646ed1",
+      "decoded": true
+    },
+    "full_mat_038_normal.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 1908307,
+      "rgba8Bytes": 4194304,
+      "sha256": "d96af16eb1828de04114960abf8727ebc3022b18a4592e4643e6c273f06984c0",
+      "decoded": true
+    },
+    "full_mat_039_basecolor.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 922890,
+      "rgba8Bytes": 4194304,
+      "sha256": "ee0b0ac17be97d94f3f659020db3dcf98341831a39213fa3a82ad775656fb34a",
+      "decoded": true
+    },
+    "full_mat_039_normal.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 1335684,
+      "rgba8Bytes": 4194304,
+      "sha256": "70b91c2f443b4a630042da38ed2fd45d5341c8f2003762063091b0debf8e1051",
+      "decoded": true
+    },
+    "full_mat_040_basecolor.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 866551,
+      "rgba8Bytes": 4194304,
+      "sha256": "aab31348889172655358f4e1e1ad730431c2a38d4ebfb280a3bea6a21f3a7092",
+      "decoded": true
+    },
+    "full_mat_040_normal.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 1403030,
+      "rgba8Bytes": 4194304,
+      "sha256": "47b49e966c69add238d9b3a438c924f3c9bc9923899b132522fbe61d02d2d97b",
+      "decoded": true
+    },
+    "full_mat_041_basecolor.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 354844,
+      "rgba8Bytes": 4194304,
+      "sha256": "b4f12b30c0eea629999fb2f99830f8229fc62ce61f57211e913005a4f204e0ec",
+      "decoded": true
+    },
+    "full_mat_041_normal.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 655655,
+      "rgba8Bytes": 4194304,
+      "sha256": "c1812f1996a8e3539d7e1481847012f30ddbb267b1b90b9de5c102a7d88e1739",
+      "decoded": true
+    },
+    "full_mat_044_basecolor.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 1211716,
+      "rgba8Bytes": 4194304,
+      "sha256": "b6360264d160acb289e403a9a579cbfed1d22ea76baccb1dba4107daa383a235",
+      "decoded": true
+    },
+    "full_mat_044_normal.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 1840018,
+      "rgba8Bytes": 4194304,
+      "sha256": "0e7d81afb40f37bb440529d03fa6845c7e9d0a60372d639948d8e3304e3ac719",
+      "decoded": true
+    },
+    "full_mat_048_basecolor.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 764887,
+      "rgba8Bytes": 4194304,
+      "sha256": "cb9eb220b619d560c199b99597ace9198502388ceab59944653636bb4940cd8f",
+      "decoded": true
+    },
+    "full_mat_048_normal.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 506847,
+      "rgba8Bytes": 4194304,
+      "sha256": "ccfa423f644d02d916568bf58fe24f840bffff9f6b21919905afafefec19adbb",
+      "decoded": true
+    },
+    "full_mat_055_normal.png": {
+      "size": [
+        2048,
+        2048
+      ],
+      "mode": "RGB",
+      "bytes": 956108,
+      "rgba8Bytes": 16777216,
+      "sha256": "c78e2d9c5e53332c7fb173613d1ce01ffd68dee8d0967be078e6bf32eb4fe1dd",
+      "decoded": true
+    },
+    "sea-calm.png": {
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "bytes": 2383298,
+      "rgba8Bytes": 6293408,
+      "sha256": "3b83aa68c34c5d00d3c85dfaf15259482f4c5930098687e4a7e4816c55ce7b18",
+      "decoded": true
+    },
+    "merchant-ship-muted.png": {
+      "size": [
+        1319,
+        1192
+      ],
+      "mode": "RGBA",
+      "bytes": 1035489,
+      "rgba8Bytes": 6288992,
+      "sha256": "13220a898ea397b9381194d39573bc61f49e9b72929e01f6e20b56b4fba0d493",
+      "decoded": true
+    }
+  },
+  "materials": [
+    {
+      "id": "full_mat_000",
+      "technique": "Techniques/PBR/PBRNoTexture.xml",
+      "normal": false,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_001",
+      "technique": "Techniques/PBR/PBRNoTexture.xml",
+      "normal": false,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_002",
+      "technique": "Techniques/PBR/PBRNoTexture.xml",
+      "normal": false,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_003",
+      "technique": "Techniques/PBR/PBRNoTexture.xml",
+      "normal": false,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_004",
+      "technique": "Techniques/PBR/PBRNoTextureAlpha.xml",
+      "normal": false,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_005",
+      "technique": "Techniques/PBR/PBRNoTextureAlpha.xml",
+      "normal": false,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_006",
+      "technique": "Techniques/PBR/PBRNoTexture.xml",
+      "normal": false,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_007",
+      "technique": "Techniques/PBR/PBRDiffNormal.xml",
+      "normal": true,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_008",
+      "technique": "Techniques/PBR/PBRDiffNormal.xml",
+      "normal": true,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_009",
+      "technique": "Techniques/PBR/PBRDiffNormal.xml",
+      "normal": true,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_010",
+      "technique": "Techniques/PBR/PBRDiffNormal.xml",
+      "normal": true,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_011",
+      "technique": "Techniques/PBR/PBRNoTexture.xml",
+      "normal": false,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_012",
+      "technique": "Techniques/PBR/PBRDiffNormal.xml",
+      "normal": true,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_013",
+      "technique": "Techniques/PBR/PBRDiffNormal.xml",
+      "normal": true,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_014",
+      "technique": "Techniques/PBR/PBRNoTexture.xml",
+      "normal": false,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_015",
+      "technique": "Techniques/PBR/PBRNoTexture.xml",
+      "normal": false,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_016",
+      "technique": "Techniques/PBR/PBRNoTexture.xml",
+      "normal": false,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_017",
+      "technique": "Techniques/PBR/PBRDiffNormal.xml",
+      "normal": true,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_018",
+      "technique": "Techniques/PBR/PBRDiffNormal.xml",
+      "normal": true,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_019",
+      "technique": "Techniques/PBR/PBRDiffNormal.xml",
+      "normal": true,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_020",
+      "technique": "Techniques/PBR/PBRNoTexture.xml",
+      "normal": false,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_021",
+      "technique": "Techniques/PBR/PBRDiffNormal.xml",
+      "normal": true,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_022",
+      "technique": "Techniques/PBR/PBRDiffNormal.xml",
+      "normal": true,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_023",
+      "technique": "Techniques/PBR/PBRNoTexture.xml",
+      "normal": false,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_024",
+      "technique": "Techniques/PBR/PBRNoTexture.xml",
+      "normal": false,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_025",
+      "technique": "Techniques/PBR/PBRDiffNormal.xml",
+      "normal": true,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_026",
+      "technique": "Techniques/PBR/PBRDiffNormal.xml",
+      "normal": true,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_027",
+      "technique": "Techniques/PBR/PBRNoTexture.xml",
+      "normal": false,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_028",
+      "technique": "Techniques/PBR/PBRNoTexture.xml",
+      "normal": false,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_029",
+      "technique": "Techniques/PBR/PBRNoTexture.xml",
+      "normal": false,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_030",
+      "technique": "Techniques/PBR/PBRNoTexture.xml",
+      "normal": false,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_031",
+      "technique": "Techniques/PBR/PBRDiffNormal.xml",
+      "normal": true,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_032",
+      "technique": "Techniques/PBR/PBRNoTexture.xml",
+      "normal": false,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_033",
+      "technique": "Techniques/PBR/PBRDiffNormal.xml",
+      "normal": true,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_034",
+      "technique": "Techniques/PBR/PBRDiffNormal.xml",
+      "normal": true,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_035",
+      "technique": "Techniques/PBR/PBRDiffNormal.xml",
+      "normal": true,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_036",
+      "technique": "Techniques/PBR/PBRDiffNormal.xml",
+      "normal": true,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_037",
+      "technique": "Techniques/PBR/PBRDiffNormal.xml",
+      "normal": true,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_038",
+      "technique": "Techniques/PBR/PBRDiffNormal.xml",
+      "normal": true,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_039",
+      "technique": "Techniques/PBR/PBRDiffNormal.xml",
+      "normal": true,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_040",
+      "technique": "Techniques/PBR/PBRDiffNormal.xml",
+      "normal": true,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_041",
+      "technique": "Techniques/PBR/PBRDiffNormal.xml",
+      "normal": true,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_042",
+      "technique": "Techniques/PBR/PBRNoTextureAlpha.xml",
+      "normal": false,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_043",
+      "technique": "Techniques/PBR/PBRNoTexture.xml",
+      "normal": false,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_044",
+      "technique": "Techniques/PBR/PBRDiffNormal.xml",
+      "normal": true,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_045",
+      "technique": "Techniques/PBR/PBRNoTexture.xml",
+      "normal": false,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_046",
+      "technique": "Techniques/PBR/PBRNoTexture.xml",
+      "normal": false,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_047",
+      "technique": "Techniques/PBR/PBRNoTexture.xml",
+      "normal": false,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_048",
+      "technique": "Techniques/PBR/PBRDiffNormal.xml",
+      "normal": true,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_049",
+      "technique": "Techniques/PBR/PBRNoTexture.xml",
+      "normal": false,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_050",
+      "technique": "Techniques/PBR/PBRNoTexture.xml",
+      "normal": false,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_051",
+      "technique": "Techniques/PBR/PBRNoTexture.xml",
+      "normal": false,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_052",
+      "technique": "Techniques/PBR/PBRNoTexture.xml",
+      "normal": false,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_053",
+      "technique": "Techniques/PBR/PBRNoTexture.xml",
+      "normal": false,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_054",
+      "technique": "Techniques/PBR/PBRNoTexture.xml",
+      "normal": false,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_055",
+      "technique": "Techniques/PBR/PBRDiffNormal.xml",
+      "normal": true,
+      "whiteFallback": true
+    },
+    {
+      "id": "full_mat_056",
+      "technique": "Techniques/DiffUnlit.xml",
+      "normal": false,
+      "whiteFallback": false
+    },
+    {
+      "id": "full_mat_057",
+      "technique": "Techniques/DiffUnlitAlpha.xml",
+      "normal": false,
+      "whiteFallback": false
+    }
+  ],
+  "techniques": {
+    "Techniques/PBR/PBRNoTexture.xml": {
+      "cachePath": "D:\\taptap\\To-the-Human-World-3D-Lab\\tools\\tmp\\maker-cache-9C6Hcl\\tapcode-sce.spark.xd.com\\src\\engine-res\\assets\\B2UZOcCSipafCe9Rf9SjC2HN-d33fc99a.xml",
+      "sha256": "65d53b561e113d40f87d0fb497c96bfc871823c60eade3bc515e1e26afda4407"
+    },
+    "Techniques/PBR/PBRNoTextureAlpha.xml": {
+      "cachePath": "D:\\taptap\\To-the-Human-World-3D-Lab\\tools\\tmp\\maker-cache-9C6Hcl\\tapcode-sce.spark.xd.com\\src\\engine-res\\assets\\HEfukUbVHL8hsHtIPeYO0DMc-ef05eabd.xml",
+      "sha256": "689c58532003dd345f1352f6b0424e88d383cebcf2a0f2227e27e4399ff6d6d0"
+    },
+    "Techniques/PBR/PBRDiffNormal.xml": {
+      "cachePath": "D:\\taptap\\To-the-Human-World-3D-Lab\\tools\\tmp\\maker-cache-9C6Hcl\\tapcode-sce.spark.xd.com\\src\\engine-res\\assets\\FjxlQYcZ956mcfHO3cA2h4qf-82910e89.xml",
+      "sha256": "19217516261d7de384f5671db4ed550225256d493d86c16fc5595ce314e8928a"
+    },
+    "Techniques/DiffUnlit.xml": {
+      "cachePath": "D:\\taptap\\To-the-Human-World-3D-Lab\\tools\\tmp\\maker-cache-9C6Hcl\\tapcode-sce.spark.xd.com\\src\\engine-res\\assets\\DV4rkTBJfgvhKzdFh4CA0Vvs-14bf4926.xml",
+      "sha256": "6f7c396e28c17cc8997ac36cc1293f09ce01ac15c3ebe5961e7f4466caeacf0c"
+    },
+    "Techniques/DiffUnlitAlpha.xml": {
+      "cachePath": "D:\\taptap\\To-the-Human-World-3D-Lab\\tools\\tmp\\maker-cache-9C6Hcl\\tapcode-sce.spark.xd.com\\src\\engine-res\\assets\\DNV8Ocrzf-zOW3JRKqpbyphU-38552ef4.xml",
+      "sha256": "e95e6e8b7b329b87c9d229a64b0014bbede19b030a8cdb2e54e7227ab7e44857"
+    }
+  },
+  "normalMaterials": 26,
+  "whiteFallback": {
+    "path": "D:\\taptap\\To-the-Human-World-3D-Lab\\v035\\assets\\engine-support\\default-white.png",
+    "sha256": "7ac2abfce2be8b46dd9826d597d94edeefc1570b4a992622721b90a1850e3ee9",
+    "rgba": [
+      255,
+      255,
+      255,
+      255
+    ],
+    "source": "literal constant generated by this script; no source scene file changed"
+  },
+  "normalTriangles": 761052,
+  "expandedPositionNormalUvBytes": 308107680,
+  "additionalTangentBytes": 36530496,
+  "expandedVertexBytesIncludingTangents": 344638176,
+  "textureRGBA8BytesNoMips": 314572288,
+  "nativeVerified": false,
+  "limitations": [
+    "GPU/CPU copies, index buffers, engine overhead, shadows and Lua peak are excluded",
+    "Technique existence and PNG decoding do not prove native tangent API or TBN appearance"
+  ]
+}

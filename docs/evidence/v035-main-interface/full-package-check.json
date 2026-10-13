@@ -1,0 +1,362 @@
+{
+  "timestampUtc": "2026-10-13T13:54:01.061828+00:00",
+  "package": "D:\\taptap\\To-the-Human-World-3D-Lab\\experiments\\3d-lab\\assets\\import-v035-full",
+  "synthetic": false,
+  "status": "PASS",
+  "nativePreviewStarted": false,
+  "runtime": "Lua 5.4, real validator/streamer with native backend substitute",
+  "limitation": "No GPU rendering, native performance, camera or human input acceptance",
+  "stats": {
+    "sourceObjects": 10790,
+    "triangles": 3209455.0,
+    "retainedGeometryMeshes": 1,
+    "drawables": 862,
+    "meshes": 90,
+    "expandedVertices": 9628365,
+    "sourceVertices": 2584246
+  },
+  "hashFiles": 169,
+  "meshFiles": 90,
+  "textures": {
+    "full_mat_007_basecolor.png": {
+      "width": 2048,
+      "height": 2048,
+      "bytes": 1985314
+    },
+    "full_mat_008_basecolor.png": {
+      "width": 1024,
+      "height": 1024,
+      "bytes": 958800
+    },
+    "full_mat_009_basecolor.png": {
+      "width": 1024,
+      "height": 1024,
+      "bytes": 753858
+    },
+    "full_mat_010_basecolor.png": {
+      "width": 1024,
+      "height": 1024,
+      "bytes": 995995
+    },
+    "full_mat_012_basecolor.png": {
+      "width": 2048,
+      "height": 2048,
+      "bytes": 2101916
+    },
+    "full_mat_013_basecolor.png": {
+      "width": 1024,
+      "height": 1024,
+      "bytes": 778204
+    },
+    "full_mat_017_basecolor.png": {
+      "width": 2048,
+      "height": 2048,
+      "bytes": 1690889
+    },
+    "full_mat_018_basecolor.png": {
+      "width": 1024,
+      "height": 1024,
+      "bytes": 594239
+    },
+    "full_mat_019_basecolor.png": {
+      "width": 1024,
+      "height": 1024,
+      "bytes": 584136
+    },
+    "full_mat_021_basecolor.png": {
+      "width": 1024,
+      "height": 1024,
+      "bytes": 788239
+    },
+    "full_mat_022_basecolor.png": {
+      "width": 1024,
+      "height": 1024,
+      "bytes": 649494
+    },
+    "full_mat_025_basecolor.png": {
+      "width": 1024,
+      "height": 1024,
+      "bytes": 1116099
+    },
+    "full_mat_026_basecolor.png": {
+      "width": 1024,
+      "height": 1024,
+      "bytes": 1137192
+    },
+    "full_mat_031_basecolor.png": {
+      "width": 1024,
+      "height": 1024,
+      "bytes": 749417
+    },
+    "full_mat_033_basecolor.png": {
+      "width": 1024,
+      "height": 1024,
+      "bytes": 1009179
+    },
+    "full_mat_034_basecolor.png": {
+      "width": 1024,
+      "height": 1024,
+      "bytes": 939447
+    },
+    "full_mat_035_basecolor.png": {
+      "width": 1024,
+      "height": 1024,
+      "bytes": 826255
+    },
+    "full_mat_036_basecolor.png": {
+      "width": 1024,
+      "height": 1024,
+      "bytes": 189544
+    },
+    "full_mat_037_basecolor.png": {
+      "width": 1024,
+      "height": 1024,
+      "bytes": 752852
+    },
+    "full_mat_038_basecolor.png": {
+      "width": 1024,
+      "height": 1024,
+      "bytes": 1037216
+    },
+    "full_mat_039_basecolor.png": {
+      "width": 1024,
+      "height": 1024,
+      "bytes": 922890
+    },
+    "full_mat_040_basecolor.png": {
+      "width": 1024,
+      "height": 1024,
+      "bytes": 866551
+    },
+    "full_mat_041_basecolor.png": {
+      "width": 1024,
+      "height": 1024,
+      "bytes": 354844
+    },
+    "full_mat_044_basecolor.png": {
+      "width": 1024,
+      "height": 1024,
+      "bytes": 1211716
+    },
+    "full_mat_048_basecolor.png": {
+      "width": 1024,
+      "height": 1024,
+      "bytes": 764887
+    },
+    "sea-calm.png": {
+      "width": 1672,
+      "height": 941,
+      "bytes": 2383298
+    },
+    "merchant-ship-muted.png": {
+      "width": 1319,
+      "height": 1192,
+      "bytes": 1035489
+    }
+  },
+  "normalTextureBindings": [
+    {
+      "material": "full_mat_007",
+      "file": "full_mat_007_normal.png",
+      "nativeStatus": "binding implemented; actual runtime tangent API and visual TBN unverified"
+    },
+    {
+      "material": "full_mat_008",
+      "file": "full_mat_008_normal.png",
+      "nativeStatus": "binding implemented; actual runtime tangent API and visual TBN unverified"
+    },
+    {
+      "material": "full_mat_009",
+      "file": "full_mat_009_normal.png",
+      "nativeStatus": "binding implemented; actual runtime tangent API and visual TBN unverified"
+    },
+    {
+      "material": "full_mat_010",
+      "file": "full_mat_010_normal.png",
+      "nativeStatus": "binding implemented; actual runtime tangent API and visual TBN unverified"
+    },
+    {
+      "material": "full_mat_012",
+      "file": "full_mat_012_normal.png",
+      "nativeStatus": "binding implemented; actual runtime tangent API and visual TBN unverified"
+    },
+    {
+      "material": "full_mat_013",
+      "file": "full_mat_013_normal.png",
+      "nativeStatus": "binding implemented; actual runtime tangent API and visual TBN unverified"
+    },
+    {
+      "material": "full_mat_017",
+      "file": "full_mat_017_normal.png",
+      "nativeStatus": "binding implemented; actual runtime tangent API and visual TBN unverified"
+    },
+    {
+      "material": "full_mat_018",
+      "file": "full_mat_018_normal.png",
+      "nativeStatus": "binding implemented; actual runtime tangent API and visual TBN unverified"
+    },
+    {
+      "material": "full_mat_019",
+      "file": "full_mat_019_normal.png",
+      "nativeStatus": "binding implemented; actual runtime tangent API and visual TBN unverified"
+    },
+    {
+      "material": "full_mat_021",
+      "file": "full_mat_021_normal.png",
+      "nativeStatus": "binding implemented; actual runtime tangent API and visual TBN unverified"
+    },
+    {
+      "material": "full_mat_022",
+      "file": "full_mat_022_normal.png",
+      "nativeStatus": "binding implemented; actual runtime tangent API and visual TBN unverified"
+    },
+    {
+      "material": "full_mat_025",
+      "file": "full_mat_025_normal.png",
+      "nativeStatus": "binding implemented; actual runtime tangent API and visual TBN unverified"
+    },
+    {
+      "material": "full_mat_026",
+      "file": "full_mat_026_normal.png",
+      "nativeStatus": "binding implemented; actual runtime tangent API and visual TBN unverified"
+    },
+    {
+      "material": "full_mat_031",
+      "file": "full_mat_031_normal.png",
+      "nativeStatus": "binding implemented; actual runtime tangent API and visual TBN unverified"
+    },
+    {
+      "material": "full_mat_033",
+      "file": "full_mat_033_normal.png",
+      "nativeStatus": "binding implemented; actual runtime tangent API and visual TBN unverified"
+    },
+    {
+      "material": "full_mat_034",
+      "file": "full_mat_034_normal.png",
+      "nativeStatus": "binding implemented; actual runtime tangent API and visual TBN unverified"
+    },
+    {
+      "material": "full_mat_035",
+      "file": "full_mat_035_normal.png",
+      "nativeStatus": "binding implemented; actual runtime tangent API and visual TBN unverified"
+    },
+    {
+      "material": "full_mat_036",
+      "file": "full_mat_036_normal.png",
+      "nativeStatus": "binding implemented; actual runtime tangent API and visual TBN unverified"
+    },
+    {
+      "material": "full_mat_037",
+      "file": "full_mat_037_normal.png",
+      "nativeStatus": "binding implemented; actual runtime tangent API and visual TBN unverified"
+    },
+    {
+      "material": "full_mat_038",
+      "file": "full_mat_038_normal.png",
+      "nativeStatus": "binding implemented; actual runtime tangent API and visual TBN unverified"
+    },
+    {
+      "material": "full_mat_039",
+      "file": "full_mat_039_normal.png",
+      "nativeStatus": "binding implemented; actual runtime tangent API and visual TBN unverified"
+    },
+    {
+      "material": "full_mat_040",
+      "file": "full_mat_040_normal.png",
+      "nativeStatus": "binding implemented; actual runtime tangent API and visual TBN unverified"
+    },
+    {
+      "material": "full_mat_041",
+      "file": "full_mat_041_normal.png",
+      "nativeStatus": "binding implemented; actual runtime tangent API and visual TBN unverified"
+    },
+    {
+      "material": "full_mat_044",
+      "file": "full_mat_044_normal.png",
+      "nativeStatus": "binding implemented; actual runtime tangent API and visual TBN unverified"
+    },
+    {
+      "material": "full_mat_048",
+      "file": "full_mat_048_normal.png",
+      "nativeStatus": "binding implemented; actual runtime tangent API and visual TBN unverified"
+    },
+    {
+      "material": "full_mat_055",
+      "file": "full_mat_055_normal.png",
+      "nativeStatus": "binding implemented; actual runtime tangent API and visual TBN unverified"
+    }
+  ],
+  "semanticEntries": [
+    {
+      "id": "home.net",
+      "visibleMeshIds": [
+        "full_group_019_000",
+        "full_group_022_000"
+      ],
+      "proxyTriangles": 2
+    },
+    {
+      "id": "home.merchantShip",
+      "visibleMeshIds": [
+        "full_group_057_000"
+      ],
+      "proxyTriangles": 2
+    },
+    {
+      "id": "home.letterPaper",
+      "visibleMeshIds": [
+        "full_group_002_000",
+        "full_group_002_001",
+        "full_group_036_000"
+      ],
+      "proxyTriangles": 2
+    },
+    {
+      "id": "home.tray",
+      "visibleMeshIds": [
+        "full_group_033_000",
+        "full_group_037_000",
+        "full_group_038_000"
+      ],
+      "proxyTriangles": 2
+    },
+    {
+      "id": "home.drawer",
+      "visibleMeshIds": [
+        "full_group_030_000",
+        "full_group_031_000"
+      ],
+      "proxyTriangles": 2
+    },
+    {
+      "id": "home.journal",
+      "visibleMeshIds": [
+        "full_group_028_000",
+        "full_group_034_000",
+        "full_group_040_000",
+        "full_group_041_000"
+      ],
+      "proxyTriangles": 2
+    },
+    {
+      "id": "home.caseFile",
+      "visibleMeshIds": [
+        "full_group_044_000"
+      ],
+      "proxyTriangles": 2
+    },
+    {
+      "id": "home.stove",
+      "visibleMeshIds": [
+        "full_group_029_000",
+        "full_group_032_000",
+        "full_group_035_000",
+        "full_group_042_000"
+      ],
+      "proxyTriangles": 2
+    }
+  ],
+  "expandedVertexPayloadBytes": 308107680,
+  "memoryEstimateNote": "Only position/normal/UV float payload; excludes engine buffers, overhead, textures and shadows",
+  "offlineSeconds": 122.64133539999602
+}

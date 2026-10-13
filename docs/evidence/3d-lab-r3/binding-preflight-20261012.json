@@ -1,0 +1,34 @@
+{
+  "timestamp_utc": "2026-10-12T04:04:36.569366+00:00",
+  "authorization": "User approved separate Maker app binding for Lab only; no software install, persistent credentials, formal writes, publication, remote build or system input.",
+  "lab_bound": false,
+  "formal_binding_sha256": "5f8318d48947e5f45f983d911f3e97d0f870ab4ab4505beea5db392eb7741b6f",
+  "formal_binding_unchanged_since_first_preflight": true,
+  "existing_app_list_summary": {
+    "count": 1,
+    "names": [
+      "寄往人间"
+    ],
+    "dedicated_lab_app_found": false,
+    "creation_option": "0 / new: Create a new Maker project; existing formal app must not be reused."
+  },
+  "sandbox_node_spawn_error": "spawnSync git EPERM; absolute git.exe and python.exe also EPERM",
+  "approved_readonly_native_probe": {
+    "git": "2.52.0.windows.1",
+    "python": "3.13.2",
+    "git_exit": 0,
+    "python_exit": 0
+  },
+  "official_doctor_explicit_existing_paths": {
+    "git_ready": true,
+    "python_ready": true,
+    "lua_lsp_ready": true,
+    "lua_lsp_version": "0.22.2"
+  },
+  "init_executed": false,
+  "persistent_credential_write_executed": false,
+  "native_preview_started": false,
+  "test_source_hash_mismatches": [],
+  "previous_checks": 70,
+  "library_input_directory_entries": []
+}

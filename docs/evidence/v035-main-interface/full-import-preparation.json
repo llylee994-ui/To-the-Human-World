@@ -1,0 +1,26 @@
+{
+  "timestampUtc": "2026-10-13T13:11:43.237776+00:00",
+  "taskId": "01a12c24-a725-712b-ba7d-df58430f5098",
+  "status": "FULL_LOADER_OFFLINE_READY_AWAITING_ACTUAL_PACKAGE",
+  "offlineStatus": "PASS",
+  "offlineChecks": 126,
+  "compiledLuaFiles": 105,
+  "fullPackageLocallyPresent": false,
+  "nativeRestarted": false,
+  "runtimeEntryAndStagedFilesUnchanged": true,
+  "knownRuntimePids41116And3332": "not running at latest read-only check",
+  "cloudReportedTotals": {
+    "meshFiles": 90,
+    "triangles": 3209455,
+    "sourceVertices": 2584246,
+    "visibleSourceObjects": 10790,
+    "normalTexturesNotNativelyBound": 26
+  },
+  "nativeCamera": "previous calibration FAIL; new basis/ray diagnostics prepared but unrun",
+  "processExitCause": "unresolved; no matching crash event or stack; no restart",
+  "notes": [
+    "All native/visual results remain unverified for full package",
+    "Actual input package file schema will be checked before staging",
+    "No generated runtime file or formal file was modified in this full-load preparation"
+  ]
+}

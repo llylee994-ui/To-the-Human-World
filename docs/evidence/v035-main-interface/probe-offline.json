@@ -1,0 +1,42 @@
+{
+  "timestampUtc": "2026-10-13T12:18:26.984024+00:00",
+  "status": "PASS",
+  "visibleMeshes": 6,
+  "triangles": 8128.0,
+  "expandedVertices": 24384,
+  "invisibleAnchors": 8,
+  "materials": [
+    {
+      "id": "mat_01",
+      "unlit": false,
+      "alphaMode": "OPAQUE"
+    },
+    {
+      "id": "mat_00",
+      "unlit": false,
+      "alphaMode": "OPAQUE"
+    },
+    {
+      "id": "mat_04",
+      "unlit": true,
+      "alphaMode": "OPAQUE"
+    },
+    {
+      "id": "mat_03",
+      "unlit": false,
+      "alphaMode": "OPAQUE"
+    },
+    {
+      "id": "mat_02",
+      "unlit": false,
+      "alphaMode": "OPAQUE"
+    },
+    {
+      "id": "mat_05",
+      "unlit": true,
+      "alphaMode": "BLEND"
+    }
+  ],
+  "namespace": "v035; staged scripts compiled; no old core/ui resolution",
+  "native": false
+}

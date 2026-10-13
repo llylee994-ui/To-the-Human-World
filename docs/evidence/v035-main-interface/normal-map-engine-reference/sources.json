@@ -1,0 +1,18 @@
+{
+  "engineResourceVersion": "1.32.12",
+  "files": {
+    "PBRDiffNormal.xml": {
+      "cachedSource": "D:\\taptap\\To-the-Human-World-3D-Lab\\tools\\tmp\\maker-cache-9C6Hcl\\tapcode-sce.spark.xd.com\\src\\engine-res\\assets\\FjxlQYcZ956mcfHO3cA2h4qf-82910e89.xml",
+      "sha256": "19217516261d7de384f5671db4ed550225256d493d86c16fc5595ce314e8928a"
+    },
+    "PBRDiffNormalAlpha.xml": {
+      "cachedSource": "D:\\taptap\\To-the-Human-World-3D-Lab\\tools\\tmp\\maker-cache-9C6Hcl\\tapcode-sce.spark.xd.com\\src\\engine-res\\assets\\AiXdqdlJwDVGDbz8JutLr6G2-049d9d20.xml",
+      "sha256": "157ccf923afdfaa646b7fe7cde343ff9f08eac6d39176dc504c5b8c37250b998"
+    },
+    "PBRLitSolid.glsl": {
+      "cachedSource": "D:\\taptap\\To-the-Human-World-3D-Lab\\tools\\tmp\\maker-cache-9C6Hcl\\tapcode-sce.spark.xd.com\\src\\engine-res\\assets\\DYHiabeZkC9TeN8InBKDJdKz-353030dd.glsl",
+      "sha256": "959eb8f1cfc9a1ad6f0adf667c0c9228e3d8183f4c7c54bd9d00a6c5ba62f810"
+    }
+  },
+  "nativeExecuted": false
+}

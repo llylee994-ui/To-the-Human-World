@@ -1,0 +1,72 @@
+{
+  "utc": "2026-10-12T07:01:22.623419+00:00",
+  "task_id": "01a12c24-a725-712b-ba7d-df58430f5098",
+  "artifact": "D3-LAB-20261012-r3-v01",
+  "explicit_restart_authorization": "Parent relayed user confirmation at 2026-10-12 06:40 UTC",
+  "reference_library_file_id": "libfile_6ea7753ee7a48191aa842fadeeb7db67",
+  "reference_rgba_sha256": "477413f9265ed4aca1deb3a3b92c89d758394e0c3de1792c0eb4209d02871061",
+  "reference_pixels_viewed": true,
+  "verified_render": {
+    "session_id": "637abbb6-b4bb-4721-a4ee-14465864b213",
+    "pid": 25840,
+    "image": "D:\\taptap\\To-the-Human-World-3D-Lab\\docs\\evidence\\3d-lab-r3\\native\\master-restart-a-home\\0002-20261012T064346247Z.png",
+    "image_library_file_id": "libfile_f8cfaf966d988191b47d922270f90a79",
+    "captured_utc": "2026-10-12T06:43:46.247Z",
+    "window_pixels": [
+      1322,
+      781
+    ],
+    "client_pixels": [
+      1304,
+      734
+    ],
+    "view": "Home",
+    "meshes": 537,
+    "vertices": 20694,
+    "material_version": "previous 128px procedural maps",
+    "actually_viewed": true,
+    "accepted": false,
+    "observed_frame_times": "steady samples about 16.85-17.46ms; not a phone or GPU timing result"
+  },
+  "latest_local_changes": {
+    "meshes": 1036,
+    "lua_files": 67,
+    "textures": 21,
+    "texture_resolution": 1024,
+    "texture_bytes": 7917148,
+    "source_files": [
+      "scripts/lab/BakedTextures.lua",
+      "scripts/lab/CloudSky.lua",
+      "scripts/lab/MasterDetails.lua",
+      "scripts/lab/SceneView.lua",
+      "scripts/lab/World.lua",
+      "scripts/lab/Hud.lua"
+    ],
+    "offline_checks": "70 PASS",
+    "native_render": "not verified",
+    "native_occlusion": "not verified",
+    "lsp": {
+      "publications": 67,
+      "errors": 0,
+      "warnings": 112,
+      "log_path_fix": "Explicit Lab-local log/resource paths; no global settings changed"
+    }
+  },
+  "preview_interruption": {
+    "last_lua_frame_utc": "2026-10-12T06:44:41.914Z",
+    "exec_server_reported_transport_disconnected": true,
+    "observer_received_native_exit": false,
+    "cli_complete_final_result_present": false,
+    "persisted_session_state": "running",
+    "current_status": "failed / stale_session_recovered=true / processes absent",
+    "cause": "Not proven; execution-channel loss is correlated, user stop cannot be completely excluded",
+    "restarted_after_interruption": false
+  },
+  "pending_question": "May the isolated Lab preview be started again to validate the prepared material/detail changes?",
+  "github": {
+    "branch": "experiment/3d-lab",
+    "verified_remote_sha": "6d4829df6d3af0b6c2f2d114dd7b32da9d6ab997",
+    "new_art_pushed": false
+  },
+  "next": "After explicit restart permission: run official bounded Lab preview with retained observer; capture and inspect new Home; correct visual/occlusion issues; run native QA; only then update the authorized experiment branch."
+}

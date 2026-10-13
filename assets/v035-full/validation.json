@@ -1,0 +1,642 @@
+{
+  "errors": [],
+  "coveredObjects": 10790,
+  "expectedObjects": 10790,
+  "meshCount": 90,
+  "triangles": 3209455,
+  "vertices": 2584246,
+  "removedZeroAreaTriangles": 6926,
+  "chunks": [
+    {
+      "id": "full_group_000_000",
+      "vertices": 1176,
+      "triangles": 2208,
+      "maxNormalError": 1.4255578018040893e-07,
+      "bytes": 109777
+    },
+    {
+      "id": "full_group_001_000",
+      "vertices": 36,
+      "triangles": 16,
+      "maxNormalError": 6.004780805923815e-08,
+      "bytes": 2877
+    },
+    {
+      "id": "full_group_002_000",
+      "vertices": 59998,
+      "triangles": 20002,
+      "maxNormalError": 1.3897171546872755e-07,
+      "bytes": 4707842
+    },
+    {
+      "id": "full_group_002_001",
+      "vertices": 26829,
+      "triangles": 8943,
+      "maxNormalError": 1.3800760045867833e-07,
+      "bytes": 2101284
+    },
+    {
+      "id": "full_group_003_000",
+      "vertices": 18799,
+      "triangles": 32836,
+      "maxNormalError": 1.733402299475273e-07,
+      "bytes": 1905131
+    },
+    {
+      "id": "full_group_004_000",
+      "vertices": 5097,
+      "triangles": 2528,
+      "maxNormalError": 1.5394945829250162e-07,
+      "bytes": 377152
+    },
+    {
+      "id": "full_group_005_000",
+      "vertices": 12513,
+      "triangles": 6144,
+      "maxNormalError": 1.7995535372961058e-07,
+      "bytes": 940364
+    },
+    {
+      "id": "full_group_006_000",
+      "vertices": 8502,
+      "triangles": 8248,
+      "maxNormalError": 1.4863866892866895e-07,
+      "bytes": 605812
+    },
+    {
+      "id": "full_group_007_000",
+      "vertices": 30027,
+      "triangles": 36392,
+      "maxNormalError": 1.7545062469537243e-07,
+      "bytes": 3004261
+    },
+    {
+      "id": "full_group_008_000",
+      "vertices": 2304,
+      "triangles": 1128,
+      "maxNormalError": 1.5575453793381655e-07,
+      "bytes": 198710
+    },
+    {
+      "id": "full_group_009_000",
+      "vertices": 23938,
+      "triangles": 13140,
+      "maxNormalError": 1.7812003916262142e-07,
+      "bytes": 2093111
+    },
+    {
+      "id": "full_group_010_000",
+      "vertices": 7168,
+      "triangles": 3508,
+      "maxNormalError": 1.6965775073707334e-07,
+      "bytes": 626623
+    },
+    {
+      "id": "full_group_011_000",
+      "vertices": 25691,
+      "triangles": 42240,
+      "maxNormalError": 1.7023289045070555e-07,
+      "bytes": 2578967
+    },
+    {
+      "id": "full_group_012_000",
+      "vertices": 59999,
+      "triangles": 84441,
+      "maxNormalError": 1.7661910933775005e-07,
+      "bytes": 6282657
+    },
+    {
+      "id": "full_group_012_001",
+      "vertices": 59998,
+      "triangles": 83688,
+      "maxNormalError": 1.795222288603071e-07,
+      "bytes": 6273664
+    },
+    {
+      "id": "full_group_012_002",
+      "vertices": 60000,
+      "triangles": 36926,
+      "maxNormalError": 1.5807521758226528e-07,
+      "bytes": 5457861
+    },
+    {
+      "id": "full_group_012_003",
+      "vertices": 27265,
+      "triangles": 20767,
+      "maxNormalError": 1.7229691029463368e-07,
+      "bytes": 2557261
+    },
+    {
+      "id": "full_group_013_000",
+      "vertices": 14592,
+      "triangles": 7144,
+      "maxNormalError": 1.7477999980641812e-07,
+      "bytes": 1280416
+    },
+    {
+      "id": "full_group_014_000",
+      "vertices": 5868,
+      "triangles": 3024,
+      "maxNormalError": 1.5092196148369652e-07,
+      "bytes": 429981
+    },
+    {
+      "id": "full_group_015_000",
+      "vertices": 44628,
+      "triangles": 86592,
+      "maxNormalError": 1.642366664889039e-07,
+      "bytes": 4495469
+    },
+    {
+      "id": "full_group_016_000",
+      "vertices": 59998,
+      "triangles": 102179,
+      "maxNormalError": 1.748148497071611e-07,
+      "bytes": 6134065
+    },
+    {
+      "id": "full_group_016_001",
+      "vertices": 59998,
+      "triangles": 104702,
+      "maxNormalError": 1.8298271831085344e-07,
+      "bytes": 6266405
+    },
+    {
+      "id": "full_group_016_002",
+      "vertices": 41425,
+      "triangles": 69603,
+      "maxNormalError": 1.7036454558194691e-07,
+      "bytes": 4238641
+    },
+    {
+      "id": "full_group_017_000",
+      "vertices": 40136,
+      "triangles": 49988,
+      "maxNormalError": 1.6673188096838487e-07,
+      "bytes": 4069055
+    },
+    {
+      "id": "full_group_018_000",
+      "vertices": 40320,
+      "triangles": 19740,
+      "maxNormalError": 1.8174300864259862e-07,
+      "bytes": 3569812
+    },
+    {
+      "id": "full_group_019_000",
+      "vertices": 492,
+      "triangles": 572,
+      "maxNormalError": 1.3734300075007866e-07,
+      "bytes": 45042
+    },
+    {
+      "id": "full_group_020_000",
+      "vertices": 434,
+      "triangles": 224,
+      "maxNormalError": 1.5434528688462734e-07,
+      "bytes": 31269
+    },
+    {
+      "id": "full_group_021_000",
+      "vertices": 1920,
+      "triangles": 940,
+      "maxNormalError": 1.828149331917217e-07,
+      "bytes": 163909
+    },
+    {
+      "id": "full_group_022_000",
+      "vertices": 8186,
+      "triangles": 10560,
+      "maxNormalError": 1.7188833512093993e-07,
+      "bytes": 820841
+    },
+    {
+      "id": "full_group_023_000",
+      "vertices": 23446,
+      "triangles": 11292,
+      "maxNormalError": 1.6428987847927345e-07,
+      "bytes": 1794577
+    },
+    {
+      "id": "full_group_024_000",
+      "vertices": 7824,
+      "triangles": 4032,
+      "maxNormalError": 1.4461826547407242e-07,
+      "bytes": 577034
+    },
+    {
+      "id": "full_group_025_000",
+      "vertices": 4218,
+      "triangles": 4304,
+      "maxNormalError": 1.4151725502564716e-07,
+      "bytes": 386788
+    },
+    {
+      "id": "full_group_026_000",
+      "vertices": 7388,
+      "triangles": 5076,
+      "maxNormalError": 1.7583840938861783e-07,
+      "bytes": 658298
+    },
+    {
+      "id": "full_group_027_000",
+      "vertices": 384,
+      "triangles": 188,
+      "maxNormalError": 1.4570259443402733e-07,
+      "bytes": 27776
+    },
+    {
+      "id": "full_group_028_000",
+      "vertices": 6930,
+      "triangles": 12240,
+      "maxNormalError": 1.549693229296878e-07,
+      "bytes": 683098
+    },
+    {
+      "id": "full_group_029_000",
+      "vertices": 1679,
+      "triangles": 3136,
+      "maxNormalError": 1.4071285991956728e-07,
+      "bytes": 159375
+    },
+    {
+      "id": "full_group_030_000",
+      "vertices": 521,
+      "triangles": 944,
+      "maxNormalError": 1.3366032103334646e-07,
+      "bytes": 49192
+    },
+    {
+      "id": "full_group_031_000",
+      "vertices": 714,
+      "triangles": 348,
+      "maxNormalError": 1.551596180426884e-07,
+      "bytes": 61565
+    },
+    {
+      "id": "full_group_032_000",
+      "vertices": 1630,
+      "triangles": 840,
+      "maxNormalError": 1.2289614759186662e-07,
+      "bytes": 121148
+    },
+    {
+      "id": "full_group_033_000",
+      "vertices": 1920,
+      "triangles": 940,
+      "maxNormalError": 1.5158699340211967e-07,
+      "bytes": 166718
+    },
+    {
+      "id": "full_group_034_000",
+      "vertices": 640,
+      "triangles": 312,
+      "maxNormalError": 1.503123088220093e-07,
+      "bytes": 55612
+    },
+    {
+      "id": "full_group_035_000",
+      "vertices": 1417,
+      "triangles": 1792,
+      "maxNormalError": 1.2728490306201934e-07,
+      "bytes": 135061
+    },
+    {
+      "id": "full_group_036_000",
+      "vertices": 4,
+      "triangles": 2,
+      "maxNormalError": 2.1529884541848787e-08,
+      "bytes": 604
+    },
+    {
+      "id": "full_group_037_000",
+      "vertices": 320,
+      "triangles": 156,
+      "maxNormalError": 1.6203123687219545e-07,
+      "bytes": 27770
+    },
+    {
+      "id": "full_group_038_000",
+      "vertices": 1536,
+      "triangles": 752,
+      "maxNormalError": 1.353388208169548e-07,
+      "bytes": 132513
+    },
+    {
+      "id": "full_group_039_000",
+      "vertices": 2450,
+      "triangles": 2316,
+      "maxNormalError": 1.5467264313784312e-07,
+      "bytes": 226060
+    },
+    {
+      "id": "full_group_040_000",
+      "vertices": 384,
+      "triangles": 188,
+      "maxNormalError": 1.5060465363703202e-07,
+      "bytes": 33134
+    },
+    {
+      "id": "full_group_041_000",
+      "vertices": 144,
+      "triangles": 120,
+      "maxNormalError": 1.2521965708778282e-07,
+      "bytes": 13000
+    },
+    {
+      "id": "full_group_042_000",
+      "vertices": 3260,
+      "triangles": 1680,
+      "maxNormalError": 1.560799721689321e-07,
+      "bytes": 246046
+    },
+    {
+      "id": "full_group_043_000",
+      "vertices": 672,
+      "triangles": 336,
+      "maxNormalError": 1.5303936318211697e-07,
+      "bytes": 50341
+    },
+    {
+      "id": "full_group_044_000",
+      "vertices": 1920,
+      "triangles": 940,
+      "maxNormalError": 1.391426702745946e-07,
+      "bytes": 167933
+    },
+    {
+      "id": "full_group_045_000",
+      "vertices": 384,
+      "triangles": 252,
+      "maxNormalError": 7.399808232833038e-08,
+      "bytes": 27017
+    },
+    {
+      "id": "full_group_046_000",
+      "vertices": 59998,
+      "triangles": 100802,
+      "maxNormalError": 1.685202559720267e-07,
+      "bytes": 6351201
+    },
+    {
+      "id": "full_group_046_001",
+      "vertices": 59998,
+      "triangles": 100683,
+      "maxNormalError": 1.7647451433511208e-07,
+      "bytes": 6349466
+    },
+    {
+      "id": "full_group_046_002",
+      "vertices": 59999,
+      "triangles": 100678,
+      "maxNormalError": 1.8647322752585183e-07,
+      "bytes": 6350070
+    },
+    {
+      "id": "full_group_046_003",
+      "vertices": 59998,
+      "triangles": 100682,
+      "maxNormalError": 1.734267749409213e-07,
+      "bytes": 6350077
+    },
+    {
+      "id": "full_group_046_004",
+      "vertices": 59999,
+      "triangles": 100678,
+      "maxNormalError": 1.8019746872433018e-07,
+      "bytes": 6350059
+    },
+    {
+      "id": "full_group_046_005",
+      "vertices": 59998,
+      "triangles": 100682,
+      "maxNormalError": 1.7995060885844794e-07,
+      "bytes": 6340690
+    },
+    {
+      "id": "full_group_046_006",
+      "vertices": 59999,
+      "triangles": 100678,
+      "maxNormalError": 1.782821590357031e-07,
+      "bytes": 6297055
+    },
+    {
+      "id": "full_group_046_007",
+      "vertices": 59998,
+      "triangles": 100682,
+      "maxNormalError": 1.7511352967680693e-07,
+      "bytes": 6296721
+    },
+    {
+      "id": "full_group_046_008",
+      "vertices": 59999,
+      "triangles": 100678,
+      "maxNormalError": 1.7427473486542056e-07,
+      "bytes": 6295967
+    },
+    {
+      "id": "full_group_046_009",
+      "vertices": 59998,
+      "triangles": 100682,
+      "maxNormalError": 1.827363633744028e-07,
+      "bytes": 6300972
+    },
+    {
+      "id": "full_group_046_010",
+      "vertices": 59999,
+      "triangles": 100678,
+      "maxNormalError": 1.7740718938341615e-07,
+      "bytes": 6349635
+    },
+    {
+      "id": "full_group_046_011",
+      "vertices": 59998,
+      "triangles": 103962,
+      "maxNormalError": 1.812031287240501e-07,
+      "bytes": 6426461
+    },
+    {
+      "id": "full_group_046_012",
+      "vertices": 59998,
+      "triangles": 104702,
+      "maxNormalError": 1.760714793963558e-07,
+      "bytes": 6448942
+    },
+    {
+      "id": "full_group_046_013",
+      "vertices": 59998,
+      "triangles": 104702,
+      "maxNormalError": 1.861271277103782e-07,
+      "bytes": 6440232
+    },
+    {
+      "id": "full_group_046_014",
+      "vertices": 59998,
+      "triangles": 104702,
+      "maxNormalError": 1.7751587422232262e-07,
+      "bytes": 6388594
+    },
+    {
+      "id": "full_group_046_015",
+      "vertices": 59998,
+      "triangles": 107422,
+      "maxNormalError": 1.7540248964387217e-07,
+      "bytes": 6555793
+    },
+    {
+      "id": "full_group_046_016",
+      "vertices": 22412,
+      "triangles": 40187,
+      "maxNormalError": 1.7739003421723964e-07,
+      "bytes": 2507328
+    },
+    {
+      "id": "full_group_047_000",
+      "vertices": 59999,
+      "triangles": 29999,
+      "maxNormalError": 1.5806303266252542e-07,
+      "bytes": 4771642
+    },
+    {
+      "id": "full_group_047_001",
+      "vertices": 59998,
+      "triangles": 29998,
+      "maxNormalError": 1.6822772086477755e-07,
+      "bytes": 4751425
+    },
+    {
+      "id": "full_group_047_002",
+      "vertices": 29767,
+      "triangles": 14883,
+      "maxNormalError": 1.5560872279607452e-07,
+      "bytes": 2342688
+    },
+    {
+      "id": "full_group_048_000",
+      "vertices": 8253,
+      "triangles": 6072,
+      "maxNormalError": 1.676470109401862e-07,
+      "bytes": 756357
+    },
+    {
+      "id": "full_group_049_000",
+      "vertices": 59999,
+      "triangles": 21428,
+      "maxNormalError": 1.2256061743265434e-07,
+      "bytes": 4746379
+    },
+    {
+      "id": "full_group_049_001",
+      "vertices": 21928,
+      "triangles": 7310,
+      "maxNormalError": 1.2164039264739301e-07,
+      "bytes": 1737910
+    },
+    {
+      "id": "full_group_050_000",
+      "vertices": 17636,
+      "triangles": 8740,
+      "maxNormalError": 1.691195707920201e-07,
+      "bytes": 1366395
+    },
+    {
+      "id": "full_group_051_000",
+      "vertices": 39168,
+      "triangles": 20160,
+      "maxNormalError": 1.6041624717466618e-07,
+      "bytes": 3052552
+    },
+    {
+      "id": "full_group_052_000",
+      "vertices": 59999,
+      "triangles": 31983,
+      "maxNormalError": 1.7159921528175914e-07,
+      "bytes": 4670803
+    },
+    {
+      "id": "full_group_052_001",
+      "vertices": 60000,
+      "triangles": 31908,
+      "maxNormalError": 1.8092531361979525e-07,
+      "bytes": 4692143
+    },
+    {
+      "id": "full_group_052_002",
+      "vertices": 10894,
+      "triangles": 5613,
+      "maxNormalError": 1.76928804496157e-07,
+      "bytes": 825080
+    },
+    {
+      "id": "full_group_053_000",
+      "vertices": 59999,
+      "triangles": 30881,
+      "maxNormalError": 1.5874137249127784e-07,
+      "bytes": 4598260
+    },
+    {
+      "id": "full_group_053_001",
+      "vertices": 31397,
+      "triangles": 16159,
+      "maxNormalError": 1.5844391243469147e-07,
+      "bytes": 2443658
+    },
+    {
+      "id": "full_group_054_000",
+      "vertices": 2464,
+      "triangles": 1628,
+      "maxNormalError": 1.575686576771318e-07,
+      "bytes": 194190
+    },
+    {
+      "id": "full_group_055_000",
+      "vertices": 59998,
+      "triangles": 84481,
+      "maxNormalError": 1.7587125444862295e-07,
+      "bytes": 6352184
+    },
+    {
+      "id": "full_group_055_001",
+      "vertices": 59998,
+      "triangles": 83632,
+      "maxNormalError": 1.77570264048299e-07,
+      "bytes": 6354286
+    },
+    {
+      "id": "full_group_055_002",
+      "vertices": 59998,
+      "triangles": 83542,
+      "maxNormalError": 1.8679642743713032e-07,
+      "bytes": 6358485
+    },
+    {
+      "id": "full_group_055_003",
+      "vertices": 59998,
+      "triangles": 84530,
+      "maxNormalError": 1.655214962870133e-07,
+      "bytes": 6345535
+    },
+    {
+      "id": "full_group_055_004",
+      "vertices": 23238,
+      "triangles": 32615,
+      "maxNormalError": 1.5858695734394246e-07,
+      "bytes": 2427187
+    },
+    {
+      "id": "full_group_056_000",
+      "vertices": 4,
+      "triangles": 2,
+      "maxNormalError": 1.0153682494795646e-07,
+      "bytes": 594
+    },
+    {
+      "id": "full_group_057_000",
+      "vertices": 4,
+      "triangles": 2,
+      "maxNormalError": 4.4482423966485385e-08,
+      "bytes": 588
+    }
+  ],
+  "engineValidated": false
+}

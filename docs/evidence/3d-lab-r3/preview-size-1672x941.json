@@ -1,0 +1,21 @@
+{
+  "utc": "2026-10-12T06:02:59.660513+00:00",
+  "path": "D:\\taptap\\To-the-Human-World-3D-Lab\\.preview-home\\preview\\8399e5e2bbabd5c8205bcd98679af65e37888a7db32a0784f4fcf4dd67214cef\\window.json",
+  "before": {
+    "orientation": "landscape",
+    "preset": "custom",
+    "custom": {
+      "longEdge": 1280,
+      "shortEdge": 720
+    }
+  },
+  "after": {
+    "orientation": "landscape",
+    "preset": "custom",
+    "custom": {
+      "longEdge": 1672,
+      "shortEdge": 941
+    }
+  },
+  "scope": "Only local preview dimensions; no app/binding/token or project identity changed. Actual size must be checked after official refresh."
+}

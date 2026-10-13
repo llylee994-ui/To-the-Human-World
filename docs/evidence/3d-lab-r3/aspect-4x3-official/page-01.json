@@ -1,0 +1,879 @@
+{
+  "protocol_version": 1,
+  "project_realpath": "D:\\taptap\\To-the-Human-World-3D-Lab",
+  "session_id": "9148828c-4727-49f8-9f2b-41b66fcf1d0b",
+  "reload_id": 2,
+  "state": "running",
+  "process_alive": true,
+  "runtime_pid": 49648,
+  "supervisor_id": "abae6a5f-8686-41ec-b53c-05f50a91a13f",
+  "supervisor_pid": 20864,
+  "supervisor_log_path": "D:\\taptap\\To-the-Human-World-3D-Lab\\.preview-home\\preview\\8399e5e2bbabd5c8205bcd98679af65e37888a7db32a0784f4fcf4dd67214cef\\supervisor.log",
+  "started_at": "2026-10-12T04:44:30.519Z",
+  "executable": "D:\\taptap\\To-the-Human-World-3D-Lab\\.runtime\\UrhoXRuntime.exe",
+  "runtime_version": "unknown",
+  "capabilities": [],
+  "launch_mode": "loopback_manifest",
+  "preparation": {
+    "ok": true,
+    "source_directory": "D:\\taptap\\To-the-Human-World-3D-Lab\\.preview-home\\preview\\8399e5e2bbabd5c8205bcd98679af65e37888a7db32a0784f4fcf4dd67214cef\\sessions\\9148828c-4727-49f8-9f2b-41b66fcf1d0b\\2\\source",
+    "log_path": "D:\\taptap\\To-the-Human-World-3D-Lab\\.preview-home\\preview\\8399e5e2bbabd5c8205bcd98679af65e37888a7db32a0784f4fcf4dd67214cef\\sessions\\9148828c-4727-49f8-9f2b-41b66fcf1d0b\\2\\prepare.log",
+    "warnings": [
+      "[WARN]   增强引用: 50 个路径未匹配到资源（已截断，上限 50）\r",
+      "[WARN]     LayoutManifest.lua: image/home-entry-r3/background.png\r",
+      "[WARN]     LayoutManifest.lua: home.journal\r",
+      "[WARN]     LayoutManifest.lua: image/home-entry-r3/case-file.png\r",
+      "[WARN]     LayoutManifest.lua: image/home-entry-r3/amber-jar.png\r",
+      "[WARN]     LayoutManifest.lua: home.stove\r",
+      "[WARN]     LayoutManifest.lua: home.tray\r",
+      "[WARN]     LayoutManifest.lua: image/home-entry-r3/tray.png\r",
+      "[WARN]     LayoutManifest.lua: image/home-entry-r3/merchant-ship.png\r",
+      "[WARN]     LayoutManifest.lua: home.net\r",
+      "[WARN]     LayoutManifest.lua: image/home-entry-r3/letter-paper.png\r",
+      "[WARN]     LayoutManifest.lua: image/home-entry-r3/net.png\r",
+      "[WARN]     LayoutManifest.lua: image/home-entry-r3/herb-jar.png\r",
+      "[WARN]     LayoutManifest.lua: home.drawer\r",
+      "[WARN]     LayoutManifest.lua: image/home-entry-r3/lily-vase.png\r",
+      "[WARN]     LayoutManifest.lua: image/home-entry-r3/glass-bottle.png\r",
+      "[WARN]     LayoutManifest.lua: image/home-entry-r3/stove.png\r",
+      "[WARN]     MemoryStorage.lua: _a.json\r",
+      "[WARN]     MemoryStorage.lua: _b.json\r",
+      "[WARN]     MemoryStorage.lua: _b.commit\r",
+      "[WARN]     MemoryStorage.lua: _a.commit\r",
+      "[WARN]     SaveSystem.lua: _b.commit\r",
+      "[WARN]     SaveSystem.lua: %.0f\r",
+      "[WARN]     SaveSystem.lua: _a.commit\r",
+      "[WARN]     SaveSystem.lua: _a.json\r",
+      "[WARN]     SaveSystem.lua: _b.json\r",
+      "[WARN]     SaveJson.lua: %.17g\r",
+      "[WARN]     Interaction.lua: home.net\r",
+      "[WARN]     Interaction.lua: home.drawer\r",
+      "[WARN]     Interaction.lua: home.stove\r"
+    ],
+    "entry": "main.lua",
+    "manifest_path": "D:\\taptap\\To-the-Human-World-3D-Lab\\.preview-home\\preview\\8399e5e2bbabd5c8205bcd98679af65e37888a7db32a0784f4fcf4dd67214cef\\sessions\\9148828c-4727-49f8-9f2b-41b66fcf1d0b\\2\\source\\dist\\1.0.0\\manifest-b31079a1.json",
+    "project_files": 59,
+    "public_sources": [
+      "engine-res",
+      "official-res"
+    ],
+    "builder_commit": "a6a4145ac8be26d9385f3a318032cc79009f8a79"
+  },
+  "ready": false,
+  "screenshots_supported": false,
+  "message": "Process status only; game loading, visuals and cloud/server features are not verified.",
+  "install_state": "missing",
+  "ok": true,
+  "errors": [
+    "[2026-10-12 12_50_15_769][0] ERROR: Could not find resource Cube/Day/DaySpecularHDR.dds\r",
+    "[2026-10-12 12_50_15_942][0] ERROR: Can not load themis_x64.dll.\r",
+    "[2026-10-12 12_50_26_050][516] ERROR: Could not find resource Cube/Day/DaySpecularHDR.dds\r",
+    "[2026-10-12 12_50_26_050][516] ERROR: Could not find resource Cube/Dusk/DuskSpecularHDR.dds\r"
+  ],
+  "artifacts": [],
+  "preflight": {
+    "entry": "main.lua",
+    "window": {
+      "orientation": "landscape",
+      "width": 840,
+      "height": 630,
+      "defaulted": false
+    },
+    "source_mode": false,
+    "kind": "new_project",
+    "network_required": false,
+    "preparation_required": true,
+    "preparation_reason": "missing_configuration",
+    "dependencies_verified": false,
+    "warning": "Local client preview only. Cloud/server features and resource completeness are not verified."
+  },
+  "available": true,
+  "logs": [
+    {
+      "cursor": 501,
+      "text": "[2026-10-12 12_50_26_147][516] INFO: Shader::BeginLoad: <engine-res>/assets/HRNx6WwGUWaCcYTcVjtHCfXv-13514704.glsl\r"
+    },
+    {
+      "cursor": 502,
+      "text": "[2026-10-12 12_50_26_147][516] INFO: Shader::EndLoad\r"
+    },
+    {
+      "cursor": 503,
+      "text": "[2026-10-12 12_50_26_147][516] INFO: Loaded vertex shader BloomHDR(BRIGHT REVERSED_Z)\r"
+    },
+    {
+      "cursor": 504,
+      "text": "[2026-10-12 12_50_26_147][516] INFO: Loaded pixel shader BloomHDR(BRIGHT2 REVERSED_Z TONEMAP_LUT)\r"
+    },
+    {
+      "cursor": 505,
+      "text": "[2026-10-12 12_50_26_148][516] INFO: Loaded pixel shader BloomHDR(BRIGHT4 REVERSED_Z TONEMAP_LUT)\r"
+    },
+    {
+      "cursor": 506,
+      "text": "[2026-10-12 12_50_26_148][516] INFO: Loaded pixel shader BloomHDR(BRIGHT8 REVERSED_Z TONEMAP_LUT)\r"
+    },
+    {
+      "cursor": 507,
+      "text": "[2026-10-12 12_50_26_148][516] INFO: Loaded pixel shader BloomHDR(BRIGHT16 REVERSED_Z TONEMAP_LUT)\r"
+    },
+    {
+      "cursor": 508,
+      "text": "[2026-10-12 12_50_26_148][516] INFO: Loaded pixel shader BloomHDR(BRIGHT32 REVERSED_Z TONEMAP_LUT)\r"
+    },
+    {
+      "cursor": 509,
+      "text": "[2026-10-12 12_50_26_148][516] INFO: Loaded vertex shader BloomHDR(COMBINE32 REVERSED_Z)\r"
+    },
+    {
+      "cursor": 510,
+      "text": "[2026-10-12 12_50_26_148][516] INFO: Loaded pixel shader BloomHDR(COMBINE32 REVERSED_Z TONEMAP_LUT)\r"
+    },
+    {
+      "cursor": 511,
+      "text": "[2026-10-12 12_50_26_148][516] INFO: Loaded vertex shader BloomHDR(COMBINE16 REVERSED_Z)\r"
+    },
+    {
+      "cursor": 512,
+      "text": "[2026-10-12 12_50_26_148][516] INFO: Loaded pixel shader BloomHDR(COMBINE16 REVERSED_Z TONEMAP_LUT)\r"
+    },
+    {
+      "cursor": 513,
+      "text": "[2026-10-12 12_50_26_148][516] INFO: Loaded vertex shader BloomHDR(COMBINE8 REVERSED_Z)\r"
+    },
+    {
+      "cursor": 514,
+      "text": "[2026-10-12 12_50_26_148][516] INFO: Loaded pixel shader BloomHDR(COMBINE8 REVERSED_Z TONEMAP_LUT)\r"
+    },
+    {
+      "cursor": 515,
+      "text": "[2026-10-12 12_50_26_149][516] INFO: Loaded vertex shader BloomHDR(COMBINE2 REVERSED_Z)\r"
+    },
+    {
+      "cursor": 516,
+      "text": "[2026-10-12 12_50_26_149][516] INFO: Loaded pixel shader BloomHDR(COMBINE2 GAMMA_IN_SHADERING REVERSED_Z TONEMAP_LUT)\r"
+    },
+    {
+      "cursor": 517,
+      "text": "[2026-10-12 12_50_31_062][801][Script] [D3-LAB frame] camera=Home moving=false frames=285 meanMs=17.58 worstMs=85.69 resolution=840x630 memoryWrites=0\r"
+    },
+    {
+      "cursor": 518,
+      "text": "[2026-10-12 12_50_34_071][978][Script] [D3-LAB QA] {\"status\":\"BEGIN\",\"detail\":\"\",\"height\":630,\"writes\":0,\"name\":\"Aspect setup real Receive\",\"width\":840,\"utc\":\"2026-10-12T04:50:34Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 519,
+      "text": "[2026-10-12 12_50_34_092][978][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":2,\"name\":\"aspect setup Receive\",\"width\":840,\"utc\":\"2026-10-12T04:50:34Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 520,
+      "text": "[lua] [2026-10-12 12_50_34_071][978][Script] [D3-LAB QA] {\"status\":\"BEGIN\",\"detail\":\"\",\"height\":630,\"writes\":0,\"name\":\"Aspect setup real Receive\",\"width\":840,\"utc\":\"2026-10-12T04:50:34Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 521,
+      "text": "[lua] [2026-10-12 12_50_34_092][978][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":2,\"name\":\"aspect setup Receive\",\"width\":840,\"utc\":\"2026-10-12T04:50:34Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 522,
+      "text": "[lua] [2026-10-12 12_50_34_111][978][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"aspect setup Read\",\"width\":840,\"utc\":\"2026-10-12T04:50:34Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 523,
+      "text": "[lua] [2026-10-12 12_50_36_065][1094][Script] [D3-LAB frame] camera=Home moving=false frames=293 meanMs=17.07 worstMs=33.07 resolution=840x630 memoryWrites=4\n"
+    },
+    {
+      "cursor": 524,
+      "text": "[lua] [2026-10-12 12_50_37_083][1150][Script] [D3-LAB QA] {\"status\":\"BEGIN\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"aspect 840x630\",\"width\":840,\"utc\":\"2026-10-12T04:50:37Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 525,
+      "text": "[lua] [2026-10-12 12_50_41_075][1382][Script] [D3-LAB frame] camera=Home moving=false frames=288 meanMs=17.39 worstMs=45.61 resolution=840x630 memoryWrites=4\n"
+    },
+    {
+      "cursor": 526,
+      "text": "[lua] [2026-10-12 12_50_42_105][1439][Script] [D3-LAB QA] {\"status\":\"BEGIN\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"aspect Home targets\",\"width\":840,\"utc\":\"2026-10-12T04:50:42Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 527,
+      "text": "[lua] [2026-10-12 12_50_42_105][1439][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"exact native dimensions\",\"width\":840,\"utc\":\"2026-10-12T04:50:42Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 528,
+      "text": "[lua] [2026-10-12 12_50_42_105][1439][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":{\"x\":0.24064287543296815,\"y\":0.5256351828575134},\"height\":630,\"writes\":4,\"name\":\"visible native projected target home.net\",\"width\":840,\"utc\":\"2026-10-12T04:50:42Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 529,
+      "text": "[lua] [2026-10-12 12_50_42_105][1439][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"aspect pick home.net\",\"width\":840,\"utc\":\"2026-10-12T04:50:42Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 530,
+      "text": "[lua] [2026-10-12 12_50_42_106][1439][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":{\"x\":0.665605902671814,\"y\":0.5006083250045776},\"height\":630,\"writes\":4,\"name\":\"visible native projected target home.stove\",\"width\":840,\"utc\":\"2026-10-12T04:50:42Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 531,
+      "text": "[lua] [2026-10-12 12_50_42_106][1439][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"aspect pick home.stove\",\"width\":840,\"utc\":\"2026-10-12T04:50:42Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 532,
+      "text": "[lua] [2026-10-12 12_50_42_106][1439][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":{\"x\":0.3637905716896057,\"y\":0.4180508255958557},\"height\":630,\"writes\":4,\"name\":\"visible native projected target home.merchantShip\",\"width\":840,\"utc\":\"2026-10-12T04:50:42Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 533,
+      "text": "[lua] [2026-10-12 12_50_42_106][1439][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"aspect pick home.merchantShip\",\"width\":840,\"utc\":\"2026-10-12T04:50:42Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 534,
+      "text": "[lua] [2026-10-12 12_50_42_106][1439][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":{\"x\":0.5407126545906067,\"y\":0.5627240538597107},\"height\":630,\"writes\":4,\"name\":\"visible native projected target home.letterPaper\",\"width\":840,\"utc\":\"2026-10-12T04:50:42Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 535,
+      "text": "[lua] [2026-10-12 12_50_42_106][1439][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"aspect pick home.letterPaper\",\"width\":840,\"utc\":\"2026-10-12T04:50:42Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 536,
+      "text": "[lua] [2026-10-12 12_50_42_106][1439][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":{\"x\":0.5471932888031006,\"y\":0.6319539546966553},\"height\":630,\"writes\":4,\"name\":\"visible native projected target home.drawer\",\"width\":840,\"utc\":\"2026-10-12T04:50:42Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 537,
+      "text": "[lua] [2026-10-12 12_50_42_107][1439][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"aspect pick home.drawer\",\"width\":840,\"utc\":\"2026-10-12T04:50:42Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 538,
+      "text": "[lua] [2026-10-12 12_50_42_107][1439][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":{\"x\":0.5407126545906067,\"y\":0.5627240538597107},\"height\":630,\"writes\":4,\"name\":\"visible native projected target home.letterPaper\",\"width\":840,\"utc\":\"2026-10-12T04:50:42Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 539,
+      "text": "[lua] [2026-10-12 12_50_42_107][1439][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"native pick home.letterPaper\",\"width\":840,\"utc\":\"2026-10-12T04:50:42Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 540,
+      "text": "[lua] [2026-10-12 12_50_42_108][1439][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"native pointer home.letterPaper\",\"width\":840,\"utc\":\"2026-10-12T04:50:42Z\",\"camera\":\"Home\",\"panel\":\"reader\"}\n"
+    },
+    {
+      "cursor": 541,
+      "text": "[2026-10-12 12_50_34_111][978][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"aspect setup Read\",\"width\":840,\"utc\":\"2026-10-12T04:50:34Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 542,
+      "text": "[2026-10-12 12_50_36_065][1094][Script] [D3-LAB frame] camera=Home moving=false frames=293 meanMs=17.07 worstMs=33.07 resolution=840x630 memoryWrites=4\r"
+    },
+    {
+      "cursor": 543,
+      "text": "[2026-10-12 12_50_37_083][1150][Script] [D3-LAB QA] {\"status\":\"BEGIN\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"aspect 840x630\",\"width\":840,\"utc\":\"2026-10-12T04:50:37Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 544,
+      "text": "[2026-10-12 12_50_41_075][1382][Script] [D3-LAB frame] camera=Home moving=false frames=288 meanMs=17.39 worstMs=45.61 resolution=840x630 memoryWrites=4\r"
+    },
+    {
+      "cursor": 545,
+      "text": "[2026-10-12 12_50_42_105][1439][Script] [D3-LAB QA] {\"status\":\"BEGIN\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"aspect Home targets\",\"width\":840,\"utc\":\"2026-10-12T04:50:42Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 546,
+      "text": "[2026-10-12 12_50_42_105][1439][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"exact native dimensions\",\"width\":840,\"utc\":\"2026-10-12T04:50:42Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 547,
+      "text": "[2026-10-12 12_50_42_105][1439][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":{\"x\":0.24064287543296815,\"y\":0.5256351828575134},\"height\":630,\"writes\":4,\"name\":\"visible native projected target home.net\",\"width\":840,\"utc\":\"2026-10-12T04:50:42Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 548,
+      "text": "[2026-10-12 12_50_42_105][1439][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"aspect pick home.net\",\"width\":840,\"utc\":\"2026-10-12T04:50:42Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 549,
+      "text": "[2026-10-12 12_50_42_106][1439][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":{\"x\":0.665605902671814,\"y\":0.5006083250045776},\"height\":630,\"writes\":4,\"name\":\"visible native projected target home.stove\",\"width\":840,\"utc\":\"2026-10-12T04:50:42Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 550,
+      "text": "[2026-10-12 12_50_42_106][1439][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"aspect pick home.stove\",\"width\":840,\"utc\":\"2026-10-12T04:50:42Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 551,
+      "text": "[2026-10-12 12_50_42_106][1439][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":{\"x\":0.3637905716896057,\"y\":0.4180508255958557},\"height\":630,\"writes\":4,\"name\":\"visible native projected target home.merchantShip\",\"width\":840,\"utc\":\"2026-10-12T04:50:42Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 552,
+      "text": "[2026-10-12 12_50_42_106][1439][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"aspect pick home.merchantShip\",\"width\":840,\"utc\":\"2026-10-12T04:50:42Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 553,
+      "text": "[2026-10-12 12_50_42_106][1439][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":{\"x\":0.5407126545906067,\"y\":0.5627240538597107},\"height\":630,\"writes\":4,\"name\":\"visible native projected target home.letterPaper\",\"width\":840,\"utc\":\"2026-10-12T04:50:42Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 554,
+      "text": "[2026-10-12 12_50_42_106][1439][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"aspect pick home.letterPaper\",\"width\":840,\"utc\":\"2026-10-12T04:50:42Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 555,
+      "text": "[2026-10-12 12_50_42_106][1439][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":{\"x\":0.5471932888031006,\"y\":0.6319539546966553},\"height\":630,\"writes\":4,\"name\":\"visible native projected target home.drawer\",\"width\":840,\"utc\":\"2026-10-12T04:50:42Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 556,
+      "text": "[2026-10-12 12_50_42_107][1439][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"aspect pick home.drawer\",\"width\":840,\"utc\":\"2026-10-12T04:50:42Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 557,
+      "text": "[2026-10-12 12_50_42_107][1439][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":{\"x\":0.5407126545906067,\"y\":0.5627240538597107},\"height\":630,\"writes\":4,\"name\":\"visible native projected target home.letterPaper\",\"width\":840,\"utc\":\"2026-10-12T04:50:42Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 558,
+      "text": "[2026-10-12 12_50_42_107][1439][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"native pick home.letterPaper\",\"width\":840,\"utc\":\"2026-10-12T04:50:42Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 559,
+      "text": "[2026-10-12 12_50_42_108][1439][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"native pointer home.letterPaper\",\"width\":840,\"utc\":\"2026-10-12T04:50:42Z\",\"camera\":\"Home\",\"panel\":\"reader\"}\r"
+    },
+    {
+      "cursor": 560,
+      "text": "[lua] [2026-10-12 12_50_46_089][1673][Script] [D3-LAB frame] camera=Home moving=false frames=291 meanMs=17.23 worstMs=41.72 resolution=840x630 memoryWrites=4\n"
+    },
+    {
+      "cursor": 561,
+      "text": "[lua] [2026-10-12 12_50_49_102][1849][Script] [D3-LAB QA] {\"status\":\"BEGIN\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"aspect reader scroll\",\"width\":840,\"utc\":\"2026-10-12T04:50:49Z\",\"camera\":\"Home\",\"panel\":\"reader\"}\n"
+    },
+    {
+      "cursor": 562,
+      "text": "[lua] [2026-10-12 12_50_49_103][1849][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":2054.704345703125,\"height\":630,\"writes\":4,\"name\":\"reader scroll has travel\",\"width\":840,\"utc\":\"2026-10-12T04:50:49Z\",\"camera\":\"Home\",\"panel\":\"reader\"}\n"
+    },
+    {
+      "cursor": 563,
+      "text": "[lua] [2026-10-12 12_50_51_101][1968][Script] [D3-LAB frame] camera=Home moving=false frames=295 meanMs=16.99 worstMs=37.92 resolution=840x630 memoryWrites=4\n"
+    },
+    {
+      "cursor": 564,
+      "text": "[lua] [2026-10-12 12_50_54_115][2143][Script] [D3-LAB QA] {\"status\":\"BEGIN\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"aspect reader close\",\"width\":840,\"utc\":\"2026-10-12T04:50:54Z\",\"camera\":\"Home\",\"panel\":\"reader\"}\n"
+    },
+    {
+      "cursor": 565,
+      "text": "[lua] [2026-10-12 12_50_54_116][2143][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":{\"x\":0.24064287543296815,\"y\":0.5256351828575134},\"height\":630,\"writes\":4,\"name\":\"visible native projected target home.net\",\"width\":840,\"utc\":\"2026-10-12T04:50:54Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 566,
+      "text": "[lua] [2026-10-12 12_50_54_116][2143][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"native pick home.net\",\"width\":840,\"utc\":\"2026-10-12T04:50:54Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 567,
+      "text": "[lua] [2026-10-12 12_50_54_116][2143][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"native pointer home.net\",\"width\":840,\"utc\":\"2026-10-12T04:50:54Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 568,
+      "text": "[lua] [2026-10-12 12_50_56_117][2262][Script] [D3-LAB frame] camera=Home moving=true frames=294 meanMs=17.06 worstMs=44.26 resolution=840x630 memoryWrites=4\n"
+    },
+    {
+      "cursor": 569,
+      "text": "[lua] [2026-10-12 12_51_01_127][2555][Script] [D3-LAB frame] camera=Seaside moving=false frames=293 meanMs=17.09 worstMs=49.69 resolution=840x630 memoryWrites=4\n"
+    },
+    {
+      "cursor": 570,
+      "text": "[lua] [2026-10-12 12_51_04_118][2732][Script] [D3-LAB QA] {\"status\":\"BEGIN\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"aspect Seaside\",\"width\":840,\"utc\":\"2026-10-12T04:51:04Z\",\"camera\":\"Seaside\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 571,
+      "text": "[lua] [2026-10-12 12_51_04_118][2732][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"aspect Seaside arrived\",\"width\":840,\"utc\":\"2026-10-12T04:51:04Z\",\"camera\":\"Seaside\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 572,
+      "text": "[lua] [2026-10-12 12_51_06_133][2849][Script] [D3-LAB frame] camera=Seaside moving=true frames=294 meanMs=17.02 worstMs=38.94 resolution=840x630 memoryWrites=4\n"
+    },
+    {
+      "cursor": 573,
+      "text": "[lua] [2026-10-12 12_51_11_143][3140][Script] [D3-LAB frame] camera=Home moving=false frames=291 meanMs=17.22 worstMs=47.56 resolution=840x630 memoryWrites=4\n"
+    },
+    {
+      "cursor": 574,
+      "text": "[lua] [2026-10-12 12_51_14_137][3317][Script] [D3-LAB QA] {\"status\":\"BEGIN\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"aspect Brew\",\"width\":840,\"utc\":\"2026-10-12T04:51:14Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 575,
+      "text": "[lua] [2026-10-12 12_51_14_137][3317][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":{\"x\":0.665605902671814,\"y\":0.5006083250045776},\"height\":630,\"writes\":4,\"name\":\"visible native projected target home.stove\",\"width\":840,\"utc\":\"2026-10-12T04:51:14Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 576,
+      "text": "[lua] [2026-10-12 12_51_14_137][3317][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"native pick home.stove\",\"width\":840,\"utc\":\"2026-10-12T04:51:14Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 577,
+      "text": "[lua] [2026-10-12 12_51_14_138][3317][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"native pointer home.stove\",\"width\":840,\"utc\":\"2026-10-12T04:51:14Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 578,
+      "text": "[lua] [2026-10-12 12_51_16_150][3435][Script] [D3-LAB frame] camera=Brew moving=false frames=295 meanMs=16.97 worstMs=26.60 resolution=840x630 memoryWrites=4\n"
+    },
+    {
+      "cursor": 579,
+      "text": "[lua] [2026-10-12 12_51_21_156][3727][Script] [D3-LAB frame] camera=Brew moving=false frames=292 meanMs=17.14 worstMs=40.58 resolution=840x630 memoryWrites=4\n"
+    },
+    {
+      "cursor": 580,
+      "text": "[2026-10-12 12_50_46_089][1673][Script] [D3-LAB frame] camera=Home moving=false frames=291 meanMs=17.23 worstMs=41.72 resolution=840x630 memoryWrites=4\r"
+    },
+    {
+      "cursor": 581,
+      "text": "[2026-10-12 12_50_49_102][1849][Script] [D3-LAB QA] {\"status\":\"BEGIN\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"aspect reader scroll\",\"width\":840,\"utc\":\"2026-10-12T04:50:49Z\",\"camera\":\"Home\",\"panel\":\"reader\"}\r"
+    },
+    {
+      "cursor": 582,
+      "text": "[2026-10-12 12_50_49_103][1849][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":2054.704345703125,\"height\":630,\"writes\":4,\"name\":\"reader scroll has travel\",\"width\":840,\"utc\":\"2026-10-12T04:50:49Z\",\"camera\":\"Home\",\"panel\":\"reader\"}\r"
+    },
+    {
+      "cursor": 583,
+      "text": "[2026-10-12 12_50_51_101][1968][Script] [D3-LAB frame] camera=Home moving=false frames=295 meanMs=16.99 worstMs=37.92 resolution=840x630 memoryWrites=4\r"
+    },
+    {
+      "cursor": 584,
+      "text": "[2026-10-12 12_50_54_115][2143][Script] [D3-LAB QA] {\"status\":\"BEGIN\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"aspect reader close\",\"width\":840,\"utc\":\"2026-10-12T04:50:54Z\",\"camera\":\"Home\",\"panel\":\"reader\"}\r"
+    },
+    {
+      "cursor": 585,
+      "text": "[2026-10-12 12_50_54_116][2143][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":{\"x\":0.24064287543296815,\"y\":0.5256351828575134},\"height\":630,\"writes\":4,\"name\":\"visible native projected target home.net\",\"width\":840,\"utc\":\"2026-10-12T04:50:54Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 586,
+      "text": "[2026-10-12 12_50_54_116][2143][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"native pick home.net\",\"width\":840,\"utc\":\"2026-10-12T04:50:54Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 587,
+      "text": "[2026-10-12 12_50_54_116][2143][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"native pointer home.net\",\"width\":840,\"utc\":\"2026-10-12T04:50:54Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 588,
+      "text": "[2026-10-12 12_50_56_117][2262][Script] [D3-LAB frame] camera=Home moving=true frames=294 meanMs=17.06 worstMs=44.26 resolution=840x630 memoryWrites=4\r"
+    },
+    {
+      "cursor": 589,
+      "text": "[2026-10-12 12_50_57_067][2318] INFO: Loaded pixel shader PBRLitSolid(AMBIENT AO DIRLIGHT ENVCUBE IBL PBR PCF_SHADOW PERPIXEL RENDER_QUALITY=3 REVERSED_Z SHADOW SSAO)\r"
+    },
+    {
+      "cursor": 590,
+      "text": "[2026-10-12 12_51_01_127][2555][Script] [D3-LAB frame] camera=Seaside moving=false frames=293 meanMs=17.09 worstMs=49.69 resolution=840x630 memoryWrites=4\r"
+    },
+    {
+      "cursor": 591,
+      "text": "[2026-10-12 12_51_04_118][2732][Script] [D3-LAB QA] {\"status\":\"BEGIN\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"aspect Seaside\",\"width\":840,\"utc\":\"2026-10-12T04:51:04Z\",\"camera\":\"Seaside\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 592,
+      "text": "[2026-10-12 12_51_04_118][2732][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"aspect Seaside arrived\",\"width\":840,\"utc\":\"2026-10-12T04:51:04Z\",\"camera\":\"Seaside\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 593,
+      "text": "[2026-10-12 12_51_06_133][2849][Script] [D3-LAB frame] camera=Seaside moving=true frames=294 meanMs=17.02 worstMs=38.94 resolution=840x630 memoryWrites=4\r"
+    },
+    {
+      "cursor": 594,
+      "text": "[2026-10-12 12_51_11_143][3140][Script] [D3-LAB frame] camera=Home moving=false frames=291 meanMs=17.22 worstMs=47.56 resolution=840x630 memoryWrites=4\r"
+    },
+    {
+      "cursor": 595,
+      "text": "[2026-10-12 12_51_14_137][3317][Script] [D3-LAB QA] {\"status\":\"BEGIN\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"aspect Brew\",\"width\":840,\"utc\":\"2026-10-12T04:51:14Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 596,
+      "text": "[2026-10-12 12_51_14_137][3317][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":{\"x\":0.665605902671814,\"y\":0.5006083250045776},\"height\":630,\"writes\":4,\"name\":\"visible native projected target home.stove\",\"width\":840,\"utc\":\"2026-10-12T04:51:14Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 597,
+      "text": "[2026-10-12 12_51_14_137][3317][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"native pick home.stove\",\"width\":840,\"utc\":\"2026-10-12T04:51:14Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 598,
+      "text": "[2026-10-12 12_51_14_138][3317][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"native pointer home.stove\",\"width\":840,\"utc\":\"2026-10-12T04:51:14Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 599,
+      "text": "[2026-10-12 12_51_16_150][3435][Script] [D3-LAB frame] camera=Brew moving=false frames=295 meanMs=16.97 worstMs=26.60 resolution=840x630 memoryWrites=4\r"
+    },
+    {
+      "cursor": 600,
+      "text": "[2026-10-12 12_51_21_156][3727][Script] [D3-LAB frame] camera=Brew moving=false frames=292 meanMs=17.14 worstMs=40.58 resolution=840x630 memoryWrites=4\r"
+    },
+    {
+      "cursor": 601,
+      "text": "[lua] [2026-10-12 12_51_23_154][3842][Script] [D3-LAB QA] {\"status\":\"BEGIN\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"aspect Brew return\",\"width\":840,\"utc\":\"2026-10-12T04:51:23Z\",\"camera\":\"Brew\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 602,
+      "text": "[lua] [2026-10-12 12_51_23_154][3842][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"aspect Brew arrived\",\"width\":840,\"utc\":\"2026-10-12T04:51:23Z\",\"camera\":\"Brew\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 603,
+      "text": "[lua] [2026-10-12 12_51_26_166][4021][Script] [D3-LAB frame] camera=Home moving=false frames=294 meanMs=17.03 worstMs=43.92 resolution=840x630 memoryWrites=4\n"
+    },
+    {
+      "cursor": 604,
+      "text": "[lua] [2026-10-12 12_51_31_180][4314][Script] [D3-LAB frame] camera=Home moving=false frames=293 meanMs=17.12 worstMs=44.26 resolution=840x630 memoryWrites=4\n"
+    },
+    {
+      "cursor": 605,
+      "text": "[2026-10-12 12_51_23_154][3842][Script] [D3-LAB QA] {\"status\":\"BEGIN\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"aspect Brew return\",\"width\":840,\"utc\":\"2026-10-12T04:51:23Z\",\"camera\":\"Brew\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 606,
+      "text": "[2026-10-12 12_51_23_154][3842][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"aspect Brew arrived\",\"width\":840,\"utc\":\"2026-10-12T04:51:23Z\",\"camera\":\"Brew\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 607,
+      "text": "[2026-10-12 12_51_26_166][4021][Script] [D3-LAB frame] camera=Home moving=false frames=294 meanMs=17.03 worstMs=43.92 resolution=840x630 memoryWrites=4\r"
+    },
+    {
+      "cursor": 608,
+      "text": "[2026-10-12 12_51_31_180][4314][Script] [D3-LAB frame] camera=Home moving=false frames=293 meanMs=17.12 worstMs=44.26 resolution=840x630 memoryWrites=4\r"
+    },
+    {
+      "cursor": 609,
+      "text": "[2026-10-12 12_51_32_165][4372][Script] [D3-LAB QA] {\"status\":\"BEGIN\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"Complete\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 610,
+      "text": "[2026-10-12 12_51_32_166][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"final navigation business invariant\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 611,
+      "text": "[2026-10-12 12_51_32_166][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"formal save path denied\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 612,
+      "text": "[2026-10-12 12_51_32_168][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_a.commit\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 613,
+      "text": "[2026-10-12 12_51_32_168][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_b.commit\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 614,
+      "text": "[2026-10-12 12_51_32_168][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3.json\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 615,
+      "text": "[2026-10-12 12_51_32_168][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_a.commit\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 616,
+      "text": "[2026-10-12 12_51_32_168][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_b.commit\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 617,
+      "text": "[2026-10-12 12_51_32_168][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3.json\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 618,
+      "text": "[2026-10-12 12_51_32_169][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_a.commit\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 619,
+      "text": "[2026-10-12 12_51_32_169][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_b.commit\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 620,
+      "text": "[2026-10-12 12_51_32_169][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3.json\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 621,
+      "text": "[2026-10-12 12_51_32_169][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_a.json\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 622,
+      "text": "[2026-10-12 12_51_32_169][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_a.json\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 623,
+      "text": "[2026-10-12 12_51_32_169][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_a.commit\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 624,
+      "text": "[lua] [2026-10-12 12_51_32_165][4372][Script] [D3-LAB QA] {\"status\":\"BEGIN\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"Complete\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 625,
+      "text": "[lua] [2026-10-12 12_51_32_166][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"final navigation business invariant\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 626,
+      "text": "[lua] [2026-10-12 12_51_32_166][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"formal save path denied\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 627,
+      "text": "[lua] [2026-10-12 12_51_32_168][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_a.commit\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 628,
+      "text": "[lua] [2026-10-12 12_51_32_168][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_b.commit\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 629,
+      "text": "[lua] [2026-10-12 12_51_32_168][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3.json\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 630,
+      "text": "[lua] [2026-10-12 12_51_32_168][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_a.commit\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 631,
+      "text": "[lua] [2026-10-12 12_51_32_168][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_b.commit\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 632,
+      "text": "[lua] [2026-10-12 12_51_32_168][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3.json\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 633,
+      "text": "[lua] [2026-10-12 12_51_32_169][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_a.commit\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 634,
+      "text": "[lua] [2026-10-12 12_51_32_169][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_b.commit\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 635,
+      "text": "[lua] [2026-10-12 12_51_32_169][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3.json\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 636,
+      "text": "[lua] [2026-10-12 12_51_32_169][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_a.json\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 637,
+      "text": "[lua] [2026-10-12 12_51_32_169][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_a.json\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 638,
+      "text": "[lua] [2026-10-12 12_51_32_169][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_a.commit\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 639,
+      "text": "[lua] [2026-10-12 12_51_32_169][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_a.commit\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 640,
+      "text": "[lua] [2026-10-12 12_51_32_169][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_a.commit\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 641,
+      "text": "[lua] [2026-10-12 12_51_32_169][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_a.commit\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 642,
+      "text": "[lua] [2026-10-12 12_51_32_169][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_b.commit\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 643,
+      "text": "[lua] [2026-10-12 12_51_32_169][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_a.json\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 644,
+      "text": "[lua] [2026-10-12 12_51_32_169][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_a.json\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 645,
+      "text": "[lua] [2026-10-12 12_51_32_169][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_a.commit\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 646,
+      "text": "[lua] [2026-10-12 12_51_32_169][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_a.commit\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 647,
+      "text": "[lua] [2026-10-12 12_51_32_169][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_b.commit\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 648,
+      "text": "[lua] [2026-10-12 12_51_32_170][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_a.json\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 649,
+      "text": "[lua] [2026-10-12 12_51_32_170][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_a.json\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 650,
+      "text": "[lua] [2026-10-12 12_51_32_170][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_b.json\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 651,
+      "text": "[lua] [2026-10-12 12_51_32_170][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_b.json\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 652,
+      "text": "[lua] [2026-10-12 12_51_32_170][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_b.commit\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 653,
+      "text": "[lua] [2026-10-12 12_51_32_170][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_b.commit\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 654,
+      "text": "[lua] [2026-10-12 12_51_32_170][4372][Script] [D3-LAB QA] {\"status\":\"COMPLETE\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"native program-driven suite; human input not tested\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\n"
+    },
+    {
+      "cursor": 655,
+      "text": "[lua] [2026-10-12 12_51_36_193][4607][Script] [D3-LAB frame] camera=Home moving=false frames=293 meanMs=17.10 worstMs=40.20 resolution=840x630 memoryWrites=4\n"
+    },
+    {
+      "cursor": 656,
+      "text": "[lua] [2026-10-12 12_51_41_208][4899][Script] [D3-LAB frame] camera=Home moving=false frames=292 meanMs=17.17 worstMs=41.62 resolution=840x630 memoryWrites=4\n"
+    },
+    {
+      "cursor": 657,
+      "text": "[lua] [2026-10-12 12_51_46_219][5192][Script] [D3-LAB frame] camera=Home moving=false frames=293 meanMs=17.10 worstMs=41.64 resolution=840x630 memoryWrites=4\n"
+    },
+    {
+      "cursor": 658,
+      "text": "[lua] [2026-10-12 12_51_51_233][5489][Script] [D3-LAB frame] camera=Home moving=false frames=297 meanMs=16.88 worstMs=19.28 resolution=840x630 memoryWrites=4\n"
+    },
+    {
+      "cursor": 659,
+      "text": "[2026-10-12 12_51_32_169][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_a.commit\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 660,
+      "text": "[2026-10-12 12_51_32_169][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_a.commit\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 661,
+      "text": "[2026-10-12 12_51_32_169][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_a.commit\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 662,
+      "text": "[2026-10-12 12_51_32_169][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_b.commit\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 663,
+      "text": "[2026-10-12 12_51_32_169][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_a.json\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 664,
+      "text": "[2026-10-12 12_51_32_169][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_a.json\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 665,
+      "text": "[2026-10-12 12_51_32_169][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_a.commit\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 666,
+      "text": "[2026-10-12 12_51_32_169][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_a.commit\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 667,
+      "text": "[2026-10-12 12_51_32_169][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_b.commit\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 668,
+      "text": "[2026-10-12 12_51_32_170][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_a.json\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 669,
+      "text": "[2026-10-12 12_51_32_170][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_a.json\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 670,
+      "text": "[2026-10-12 12_51_32_170][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_b.json\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 671,
+      "text": "[2026-10-12 12_51_32_170][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_b.json\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 672,
+      "text": "[2026-10-12 12_51_32_170][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_b.commit\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 673,
+      "text": "[2026-10-12 12_51_32_170][4372][Script] [D3-LAB QA] {\"status\":\"PASS\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"memory only save_d3_lab_r3_b.commit\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 674,
+      "text": "[2026-10-12 12_51_32_170][4372][Script] [D3-LAB QA] {\"status\":\"COMPLETE\",\"detail\":\"\",\"height\":630,\"writes\":4,\"name\":\"native program-driven suite; human input not tested\",\"width\":840,\"utc\":\"2026-10-12T04:51:32Z\",\"camera\":\"Home\",\"panel\":false}\r"
+    },
+    {
+      "cursor": 675,
+      "text": "[2026-10-12 12_51_36_193][4607][Script] [D3-LAB frame] camera=Home moving=false frames=293 meanMs=17.10 worstMs=40.20 resolution=840x630 memoryWrites=4\r"
+    },
+    {
+      "cursor": 676,
+      "text": "[2026-10-12 12_51_41_208][4899][Script] [D3-LAB frame] camera=Home moving=false frames=292 meanMs=17.17 worstMs=41.62 resolution=840x630 memoryWrites=4\r"
+    },
+    {
+      "cursor": 677,
+      "text": "[2026-10-12 12_51_46_219][5192][Script] [D3-LAB frame] camera=Home moving=false frames=293 meanMs=17.10 worstMs=41.64 resolution=840x630 memoryWrites=4\r"
+    },
+    {
+      "cursor": 678,
+      "text": "[2026-10-12 12_51_51_233][5489][Script] [D3-LAB frame] camera=Home moving=false frames=297 meanMs=16.88 worstMs=19.28 resolution=840x630 memoryWrites=4\r"
+    },
+    {
+      "cursor": 679,
+      "text": "[lua] [2026-10-12 12_51_56_249][5782][Script] [D3-LAB frame] camera=Home moving=false frames=293 meanMs=17.11 worstMs=41.42 resolution=840x630 memoryWrites=4\n"
+    },
+    {
+      "cursor": 680,
+      "text": "[lua] [2026-10-12 12_52_01_259][6076][Script] [D3-LAB frame] camera=Home moving=false frames=294 meanMs=17.04 worstMs=39.01 resolution=840x630 memoryWrites=4\n"
+    },
+    {
+      "cursor": 681,
+      "text": "[lua] [2026-10-12 12_52_06_270][6370][Script] [D3-LAB frame] camera=Home moving=false frames=294 meanMs=17.04 worstMs=42.91 resolution=840x630 memoryWrites=4\n"
+    },
+    {
+      "cursor": 682,
+      "text": "[lua] [2026-10-12 12_52_11_287][6665][Script] [D3-LAB frame] camera=Home moving=false frames=295 meanMs=17.00 worstMs=38.58 resolution=840x630 memoryWrites=4\n"
+    },
+    {
+      "cursor": 683,
+      "text": "[lua] [2026-10-12 12_52_16_297][6955][Script] [D3-LAB frame] camera=Home moving=false frames=290 meanMs=17.27 worstMs=46.68 resolution=840x630 memoryWrites=4\n"
+    },
+    {
+      "cursor": 684,
+      "text": "[lua] [2026-10-12 12_52_21_314][7249][Script] [D3-LAB frame] camera=Home moving=false frames=294 meanMs=17.06 worstMs=43.46 resolution=840x630 memoryWrites=4\n"
+    },
+    {
+      "cursor": 685,
+      "text": "[lua] [2026-10-12 12_52_26_316][7546][Script] [D3-LAB frame] camera=Home moving=false frames=297 meanMs=16.84 worstMs=17.50 resolution=840x630 memoryWrites=4\n"
+    },
+    {
+      "cursor": 686,
+      "text": "[lua] [2026-10-12 12_52_31_331][7839][Script] [D3-LAB frame] camera=Home moving=false frames=293 meanMs=17.11 worstMs=49.81 resolution=840x630 memoryWrites=4\n"
+    },
+    {
+      "cursor": 687,
+      "text": "[lua] [2026-10-12 12_52_36_337][8133][Script] [D3-LAB frame] camera=Home moving=false frames=294 meanMs=17.02 worstMs=38.94 resolution=840x630 memoryWrites=4\n"
+    },
+    {
+      "cursor": 688,
+      "text": "[lua] [2026-10-12 12_52_41_344][8426][Script] [D3-LAB frame] camera=Home moving=false frames=293 meanMs=17.09 worstMs=51.41 resolution=840x630 memoryWrites=4\n"
+    },
+    {
+      "cursor": 689,
+      "text": "[lua] [2026-10-12 12_52_46_345][8717][Script] [D3-LAB frame] camera=Home moving=false frames=291 meanMs=17.18 worstMs=39.79 resolution=840x630 memoryWrites=4\n"
+    },
+    {
+      "cursor": 690,
+      "text": "[lua] [2026-10-12 12_52_51_346][9010][Script] [D3-LAB frame] camera=Home moving=false frames=293 meanMs=17.07 worstMs=49.35 resolution=840x630 memoryWrites=4\n"
+    },
+    {
+      "cursor": 691,
+      "text": "[lua] [2026-10-12 12_52_56_353][9304][Script] [D3-LAB frame] camera=Home moving=false frames=294 meanMs=17.03 worstMs=39.65 resolution=840x630 memoryWrites=4\n"
+    },
+    {
+      "cursor": 692,
+      "text": "[lua] [2026-10-12 12_53_01_368][9601][Script] [D3-LAB frame] camera=Home moving=false frames=297 meanMs=16.88 worstMs=17.83 resolution=840x630 memoryWrites=4\n"
+    },
+    {
+      "cursor": 693,
+      "text": "[lua] [2026-10-12 12_53_06_376][9895][Script] [D3-LAB frame] camera=Home moving=false frames=294 meanMs=17.02 worstMs=46.05 resolution=840x630 memoryWrites=4\n"
+    },
+    {
+      "cursor": 694,
+      "text": "[lua] [2026-10-12 12_53_11_376][10189][Script] [D3-LAB frame] camera=Home moving=false frames=294 meanMs=17.01 worstMs=43.64 resolution=840x630 memoryWrites=4\n"
+    },
+    {
+      "cursor": 695,
+      "text": "[lua] [2026-10-12 12_53_16_393][10480][Script] [D3-LAB frame] camera=Home moving=false frames=291 meanMs=17.24 worstMs=44.76 resolution=840x630 memoryWrites=4\n"
+    },
+    {
+      "cursor": 696,
+      "text": "[lua] [2026-10-12 12_53_21_402][10773][Script] [D3-LAB frame] camera=Home moving=false frames=293 meanMs=17.09 worstMs=51.76 resolution=840x630 memoryWrites=4\n"
+    }
+  ],
+  "next_cursor": 696,
+  "truncated": false
+}

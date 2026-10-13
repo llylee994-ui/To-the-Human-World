@@ -1,0 +1,147 @@
+ M README.md
+ M docs/README.md
+ M docs/actions/2026-10-09-b-workbench-object-cutouts.md
+ M docs/协作/寄往人间_队友上手指南.md
+ M docs/寄往人间_开发计划与验收标准.md
+ M docs/记录/寄往人间_开发者日志.md
+ M docs/设计/B窗口_分层素材规划_v01.md
+ M docs/设计/主页原型与分层说明_v01.md
+ M docs/设计/主页原型与分层说明_v02.md
+ M docs/设计/寄往人间_前端界面设计草案_移动端竖版更新.md
+ M scripts/actions/2026-10-09-mobile-device-validation.md
+ M scripts/fyyAGENT.md
+ M scripts/layout-editor/README.md
+ M scripts/layout-editor/web/app.js
+ M scripts/layout-editor/web/index.html
+ M scripts/layout-editor/web/style.css
+ M scripts/前端接入接口手册.md
+ M scripts/最小NPC_页面与交互开发清单.md
+ D scripts/素材/BG03_工作台_局部清理_透明窗景_v01.png.meta
+ D scripts/素材/BG03_工作台_透明窗景_无捞网_v03.png.meta
+ D scripts/素材/BG03_工作台_透明窗景_无日历提灯_v02.png.meta
+ D scripts/素材/BG04_工作台融合海景_无船_v01.png.meta
+ D scripts/素材/BG04_工作台融合海景_有船_v01.png.meta
+ D scripts/素材/BG05_工作台_草药配方层架_无船_v01.png.meta
+ D scripts/素材/H04_工作台_v01.png.meta
+ D scripts/素材/H06_捞网_透明_v01.png.meta
+ D scripts/素材/H09_炼药炉_透明_v02.png.meta
+ D scripts/素材/H09_药炉_蒸汽阴影_透明_v03.png.meta
+ D scripts/素材/H10_木托盘_零散词条内阴影_透明_v03.png.meta
+ D scripts/素材/H10_零散词条托盘_透明_v02.png.meta
+ D scripts/素材/H11_黄铜剪刀_透明_v02.png.meta
+ D scripts/素材/H12_厚皮书_透明_v02.png.meta
+ D scripts/素材/H14_小台历_含阴影_透明_v03.png.meta
+ D scripts/素材/H14_月历_圈日_透明_v02.png.meta
+ D scripts/素材/H15_钱袋.png
+ D scripts/素材/H15_钱袋.png.meta
+ D scripts/素材/H15_钱袋_透明_v02.png
+ D scripts/素材/H15_钱袋_透明_v02.png.meta
+ D scripts/素材/H17_墙挂档案袋组_透明_v01.png
+ D scripts/素材/H17_墙挂档案袋组_透明_v01.png.meta
+ D scripts/素材/H18_商船组合层_原位_941x1672_v01.png
+ D scripts/素材/H18_商船组合层_原位_941x1672_v01.png.meta
+ D scripts/素材/H18_欧洲商船组合层_原位_941x1672_v02.png
+ D scripts/素材/H18_欧洲商船组合层_原位_941x1672_v02.png.meta
+ D scripts/素材/H25_花瓶花枝_v01.png.meta
+ D scripts/素材/H26_提灯.png.meta
+ D scripts/素材/H26_桌面小油灯_透明_v02.png.meta
+ D scripts/素材/H27_植物画框.png.meta
+ D scripts/素材/H28_玻璃瓶干药材_透明_v02.png.meta
+ D scripts/素材/H28_玻璃瓶装饰_透明_v01.png.meta
+ D scripts/素材/H29_铃兰花束_透明_v01.png.meta
+ D scripts/素材/H29_铃兰花瓶_透明_v02.png.meta
+ D scripts/素材/H30_琥珀药草罐_透明_v01.png.meta
+ D scripts/素材/H30_草药半圆盆_透明_v01.png.meta
+ D scripts/素材/H31_蓝色书本_透明_v01.png.meta
+ D scripts/素材/H31_陶瓶干花_透明_v01.png.meta
+ D scripts/素材/H32_干草药束_透明_v01.png.meta
+ D scripts/素材/H33_植物标本卡_透明_v01.png.meta
+ D scripts/素材/exec-00eede05-dc30-42d9-8238-850331b85d9c.png.meta
+ D scripts/素材/主页原型_v03_商船朝向码头_v02.png
+ D scripts/素材/主页原型_v03_商船朝向码头_v02.png.meta
+ D scripts/素材/参考_七件器物提取原图_v01.png
+ D scripts/素材/参考_七件器物提取原图_v01.png.meta
+ D scripts/素材/参考_右侧层架修改前_v01.png
+ D scripts/素材/参考_右侧层架修改前_v01.png.meta
+ D scripts/素材/参考_待融合海景_v01.png.meta
+ D scripts/素材/参考_新工作台原图_v01.png
+ D scripts/素材/参考_新工作台原图_v01.png.meta
+ D scripts/素材/参考_欧洲商船_01.jpg.meta
+ D scripts/素材/参考_欧洲商船_02.jpg.meta
+ D scripts/素材/船.png
+ D scripts/素材/船.png.meta
+ D scripts/素材/预览_BG04_商船组合层_原位叠加_v01.png
+ D scripts/素材/预览_BG04_商船组合层_原位叠加_v01.png.meta
+ D scripts/素材/预览_BG04_商船组合层_接缝放大_v01.png
+ D scripts/素材/预览_BG04_商船组合层_接缝放大_v01.png.meta
+ D scripts/素材/预览_BG04_欧洲商船_原位叠加_v02.png
+ D scripts/素材/预览_BG04_欧洲商船_原位叠加_v02.png.meta
+ D scripts/素材/预览_BG04_欧洲商船_接缝放大_v02.png
+ D scripts/素材/预览_BG04_欧洲商船_接缝放大_v02.png.meta
+ D scripts/素材/预览_BG05_右侧层架_局部_v01.png
+ D scripts/素材/预览_BG05_右侧层架_局部_v01.png.meta
+ D scripts/素材/预览_BG05_草药配方层架_欧洲商船_v01.png
+ D scripts/素材/预览_BG05_草药配方层架_欧洲商船_v01.png.meta
+ D scripts/素材/预览_七件器物透明素材_v01.png
+ D scripts/素材/预览_七件器物透明素材_v01.png.meta
+?? docs/actions/2026-10-09-b-desktop-bottles-letter.md
+?? docs/actions/2026-10-10-a2-handoff.md
+?? docs/actions/2026-10-10-b-home-cutout-r2.md
+?? docs/actions/2026-10-10-b-home-landscape-r1.md
+?? docs/actions/2026-10-10-b-home-selected-reference-retouch.md
+?? docs/actions/2026-10-10-landscape-home-prompt.md
+?? docs/actions/2026-10-10-layout-editor-landscape.md
+?? docs/actions/2026-10-10-mobile-orientation-test.md
+?? docs/actions/2026-10-10-screen-orientation-review.md
+?? docs/actions/2026-10-11-b-home-ledger-extract-r1.md
+?? docs/actions/2026-10-11-b-home-ledger-lighten-v02.md
+?? docs/actions/2026-10-11-b-home-ledger-r1.md
+?? docs/actions/2026-10-11-b-home-ledger-r2.md
+?? docs/actions/2026-10-11-b-home-ledger-table-r1.md
+?? docs/actions/2026-10-11-b-three-scenes-r1.md
+?? docs/actions/home-ledger-table-r1/
+?? docs/actions/ledger-r1/
+?? docs/actions/ledger-r2/
+?? docs/actions/ledger-v02/
+?? docs/actions/three-scenes-r1/
+?? docs/协作/2026-10-10-A2-统筹审查交接.md
+?? docs/设计/B窗口_横屏主页整图提示词_v01.md
+?? docs/验证/2026-10-10-maker-screen-orientation.md
+?? docs/验证/evidence/2026-10-10-a2-handoff/
+?? docs/验证/evidence/2026-10-10-mobile-test-eligibility.jpg
+?? scripts/actions/2026-10-10-mobile-save-recovery.md
+?? scripts/actions/2026-10-10-sync-latest.md
+?? scripts/layout-editor/tests/landscape.mjs
+?? scripts/主页排版工程文件/
+?? scripts/素材/BG06_横屏主页_清理背景_v01.png
+?? scripts/素材/H06_捞网_透明_自动提取_v02.png
+?? scripts/素材/H09_炼药炉_纤巧草药熬制_透明_v05.png
+?? scripts/素材/H09_炼药炉_草药熬制_透明_v04.png
+?? scripts/素材/H10_词条托盘组合_透明_自动提取_v04.png
+?? scripts/素材/H14_日历底座_透明_自动提取_v04.png
+?? scripts/素材/H17_黄色档案袋_透明_自动提取_v08.png
+?? scripts/素材/H18_商船组合层_透明_自动提取_v03.png
+?? scripts/素材/H20_中央信纸_手写字迹_透明_v01.png
+?? scripts/素材/H34_干花书签_桌面透视_透明_v01.png
+?? scripts/素材/H34_干花书签_桌面透视_透明_v02.png
+?? scripts/素材/三页场景_物件与接口摆放说明_v01.md
+?? scripts/素材/主页分层_细修版_v01/
+?? scripts/素材/主页效果_双瓶桌面摆放_v01.png
+?? scripts/素材/主页效果_双瓶桌面摆放_v02.png
+?? scripts/素材/主页效果_双瓶桌面摆放_v03.png
+?? scripts/素材/主页最新.png
+?? scripts/素材/信纸.png
+?? scripts/素材/参考_三页场景_主页基准_v01.png
+?? scripts/素材/参考_横屏主页细修_原图_v01.png
+?? scripts/素材/双瓶标签_v01/
+?? scripts/素材/双瓶标签_v02/
+?? scripts/素材/双瓶标签_选定版提取_v01/
+?? scripts/素材/账签_空白_透明_v01.png
+?? scripts/素材/过程稿/三页场景_r1/
+?? scripts/素材/过程稿/桌上瓶信_信纸留白修正版.png
+?? scripts/素材/过程稿/桌上瓶信_整体比例修正版.png
+?? scripts/素材/页面效果_来信抽屉_正视打开_横屏_v02.png
+?? scripts/素材/页面效果_海边捕捞_横屏_v02.png
+?? scripts/素材/页面效果_炼药近景_双侧栏_横屏_v02.png
+?? scripts/素材/预览_账签_主页左上角_v01.png
+?? scripts/素材/预览_账签_手机横屏与透明检查_v01.png

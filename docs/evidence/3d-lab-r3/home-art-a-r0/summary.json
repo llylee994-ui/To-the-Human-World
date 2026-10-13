@@ -1,0 +1,32 @@
+{
+  "collected_utc": "2026-10-12T05:32:40.091809+00:00",
+  "session_id": "937c4d9e-4c15-488e-b27a-a5f6ed7381e6",
+  "reload_id": 0,
+  "state": "running",
+  "native_qa": [],
+  "pass_count": 0,
+  "failures": [],
+  "complete": false,
+  "frame_logs": [
+    "[lua] [2026-10-12 13_31_59_730][766][Script] [D3-LAB frame] camera=Home moving=false frames=283 meanMs=17.67 worstMs=100.00 resolution=1280x720 memoryWrites=0",
+    "[lua] [2026-10-12 13_32_04_743][1060][Script] [D3-LAB frame] camera=Home moving=false frames=294 meanMs=17.05 worstMs=43.14 resolution=1280x720 memoryWrites=0",
+    "[lua] [2026-10-12 13_32_09_758][1352][Script] [D3-LAB frame] camera=Home moving=false frames=292 meanMs=17.18 worstMs=53.12 resolution=1280x720 memoryWrites=0",
+    "[lua] [2026-10-12 13_32_14_765][1649][Script] [D3-LAB frame] camera=Home moving=false frames=297 meanMs=16.85 worstMs=17.60 resolution=1280x720 memoryWrites=0",
+    "[lua] [2026-10-12 13_32_19_774][1940][Script] [D3-LAB frame] camera=Home moving=false frames=291 meanMs=17.22 worstMs=54.75 resolution=1280x720 memoryWrites=0",
+    "[lua] [2026-10-12 13_32_24_784][2233][Script] [D3-LAB frame] camera=Home moving=false frames=293 meanMs=17.10 worstMs=45.93 resolution=1280x720 memoryWrites=0",
+    "[lua] [2026-10-12 13_32_29_792][2527][Script] [D3-LAB frame] camera=Home moving=false frames=294 meanMs=17.03 worstMs=41.09 resolution=1280x720 memoryWrites=0",
+    "[lua] [2026-10-12 13_32_34_794][2820][Script] [D3-LAB frame] camera=Home moving=false frames=293 meanMs=17.08 worstMs=44.06 resolution=1280x720 memoryWrites=0",
+    "[lua] [2026-10-12 13_32_39_795][3114][Script] [D3-LAB frame] camera=Home moving=false frames=294 meanMs=17.01 worstMs=40.67 resolution=1280x720 memoryWrites=0"
+  ],
+  "errors": [
+    "[2026-10-12 13_31_44_354][0] ERROR: Could not find resource Cube/Day/DaySpecularHDR.dds",
+    "[2026-10-12 13_31_44_544][0] ERROR: Can not load themis_x64.dll.",
+    "[2026-10-12 13_31_54_476][483] ERROR: Could not find resource Cube/Day/DaySpecularHDR.dds",
+    "[2026-10-12 13_31_54_477][483] ERROR: Could not find resource Cube/Dusk/DuskSpecularHDR.dds",
+    "[2026-10-12 13_31_54_618][483] ERROR: Could not find resource Textures",
+    "[2026-10-12 13_31_54_928][484] ERROR: Could not find resource <official-res>/assets/DgRecSAR4qVdwosqqNXg2Hhe-73030c7e.ktx"
+  ],
+  "unparsed_qa": [],
+  "redacted_qa_headers": [],
+  "limitations": "Program-driven adapter and actual UI callbacks, not human input or full native UI event dispatch. Continuous still frames do not prove smooth playback."
+}
