@@ -2,7 +2,7 @@
 
 ## 状态与现场
 
-- In progress。用户要求“尝试解决分支”，并解释本地可合并、GitHub PR #10 却冲突的原因。
+- Completed：两套历史已连接，GitHub PR #10 已确认 `mergeable=true`。用户要求“尝试解决分支”，并解释本地可合并、GitHub PR #10 却冲突的原因。
 - 本地 `fengyycon=54eff6e2b4716031f1944465fe287f053cb34f0e`，GitHub `fengyycon=ff463d874d0fb5ff7aacdb93af6309b30369d1e5`，GitHub `main=1cd0cdbec06487a5c60f109d5fd477198cfc8846`。本地包含 main，GitHub 同名分支的共同祖先仍为 `0f6c248c9f4b51797df5626867ecfd0fcb318fec`。
 - 依据 `2026-10-13-stove-panzoom-push.md`，此前交付在两套历史分别提交相同文件，以不合并、只推指定分支的当时范围完成发布；没有把本地 main 历史带到远端分支。因此内容同步不等于提交历史同步。
 - GitHub PR #10 的 main/远端分支模拟合并确有 5 个代码冲突：AppView、DevChecks、HomeView、SceneBackdrop、HomeEntryTest。但这 5 个文件在本地 HEAD 与 GitHub fengyycon 的 Git blob 全部相同。
@@ -45,10 +45,21 @@ D:/taptap/.sync-backups/20261013-c2-reconcile-fengyycon-r1/  基线、冲突对�
 - 全量 `git diff --cached --check` 退出 2：命中远端原有日志和素材记录的尾随空白。153 个新增 blob 全部等于远端既有 blob，确认不是本轮新增空白；保留历史证据原件，不扩展成清理任务。本轮行动记录单独检查，结果见发布回执。
 - 本轮没有改变运行内容，按相同 tree/blob 的静态证据验证，不重跑整套测试。引擎原生／内部指针、截图与动画、OS 人工、手机均未新增验证；未刷新已有预览。旧 DDS/DLL 问题没有纳入本次修复或宣称解决。
 - 基线保存于 `D:/taptap/.sync-backups/20261013-c2-reconcile-fengyycon-r1/baseline.json`，含原有 358 个未提交路径与本行动记录；原索引和完整工作区差异已备份。17 项两侧哈希及解决选择在 `conflicts.json`。
-- 当前合并内容已准备；提交、普通推送、本地对齐、GitHub PR 可合并性及最终保全结果，在同一备份目录的 `receipt.json` 记录。此入库记录不预先宣称这些后续动作成功。
+- 本轮新写的行动记录单独 `git diff --cached --check` 通过。未将远端已有尾随空白问题误报为通过或改写历史日志。
+- 双亲合并提交 `355c76f3d69d2f69c9da5eb9d2869ba33adc2bed` 已生成并普通推送到 GitHub fengyycon；父节点依次为本地原头 `54eff6e` 与 GitHub 原头 `ff463d8`。本地原分支快进到相同提交，三条旧头（含 main）均为新头祖先，main 与新头模拟合并退出 0。
+- GitHub 实时远端核验：fengyycon=`355c76f`，main 仍为 `1cd0cdb`。PR #10 推送后首次读取尚为不可合并，15 秒后重查同一 head 返回 `mergeable=true`，PR 保持 open、merged=false。没有代替用户合并 PR。
+- 原有 358 个未提交路径的字节／删除状态全部保留；154 个同名路径（包括本记录）备份后恢复。2 份已有本地回执仍是未提交修改；暂存区为空，无未解决冲突。对应证明在 `preservation.json`、`merge-verification.json`、`remote-after.json`、`pr-after.json`。
+- 本完成记录另以单文件收尾提交归档；最终本地／远端一致的提交号与状态保存在备份目录 `receipt.json`，不为记录自身提交号递归生成提交。
+
+## 根因与后续约定
+
+- Git 分支名只是各仓库内部的指针。本地 `fengyycon` 与 GitHub 的同名指针不会因为名字一样而自动同步。
+- 此前限定文件发布在另一条历史上生成了新提交。虽然相关代码字节已经相同，远端仍未记录本地合入 main 的祖先关系；GitHub 以旧共同祖先做三方合并时，main 和远端分支的同一区域各有改动，所以报告 5 处冲突。
+- 本地从 `1cd0cdb` 继续开发，main 已经是本地祖先，因此再次拉 main 没有待合入提交。此前将这个本地事实表述为“无冲突”，未覆盖 PR 的真实 head，属于检查范围遗漏。
+- 本次使用保留双方父节点的 merge 连接历史，既保留远端独有素材，也让本地与远端同名分支对齐。以后发布前后应核对完整 SHA、共同祖先及 PR 的 base/head；若使用隔离工作树，仍保留并对齐提交历史，避免只复制文件后把两处称为同一分支版本。
 
 ## 交接
 
 - 对象：用户与 A2，由用户转发。
-- 必须修改项：连接分叉历史，消除 PR #10 冲突。
+- 必须修改项：无，历史分叉与 PR 冲突已解决。
 - 待用户决定事项：无；已授权的本分支修复直接推进，不合并 PR 或更新 main。
