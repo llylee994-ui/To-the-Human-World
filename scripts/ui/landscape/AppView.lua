@@ -3,6 +3,7 @@ local Model=require "ui.PlayModel"
 local Home=require "ui.landscape.HomeView"
 local Panels=require "ui.landscape.Panels"
 local Zoom=require "ui.landscape.HomeZoom"
+local StovePanZoom=require "ui.landscape.StovePanZoom"
 local Seaside=require "ui.landscape.SeasideView"
 local Salvage=require "ui.landscape.SalvageController"
 local Harbor=require "ui.landscape.HarborStyle"
@@ -32,6 +33,7 @@ function A.New(session,content,enabled)
     local yawEnabled=require("ui.landscape.DevChecks").yawProbe
     local yawAuto=yawEnabled and require("ui.landscape.DevChecks").yawProbeAuto and require("ui.landscape.tests.YawNativeProbe").New() or nil
     local stoveAuto=require("ui.landscape.DevChecks").stoveYawAuto and require("ui.landscape.tests.StoveYawNativeProbe").New() or nil
+    local panZoomAuto=require("ui.landscape.DevChecks").stovePanZoomAuto and require("ui.landscape.tests.StovePanZoomNativeProbe").New() or nil
     local developer=(require("debug.DeveloperMode") or require("ui.landscape.DevChecks").hotspots) --[[@as boolean]]
     -- main owns SafeAreaView; fill its mainPanel without shrinking under old headings.
     local root=UI.Panel {id="playPanel",position="absolute",left=0,top=0,width="100%",height="100%",
@@ -64,7 +66,9 @@ function A.New(session,content,enabled)
         return r
     end
     local home=Home.New(function(target,id)
-        if id=="home.net" then ctx.BeginHomeZoom() else ctx.Open(target) end
+        if id=="home.net" then ctx.BeginHomeZoom()
+        elseif id=="home.stove" then ctx.BeginHomeZoom("stove")
+        else ctx.Open(target) end
     end,developer); stage:AddChild(home.root); ctx.home=home
     home.SetInspect(require("ui.landscape.DevChecks").hotspots)
     local scene=UI.Panel {id="functionalScene",position="absolute",left=0,top=0,width="100%",height="100%",paddingTop=64,visible=false,backgroundColor={238,228,203,255}}
@@ -178,11 +182,15 @@ function A.New(session,content,enabled)
         return result
     end
     function ctx.CancelHomeZoom(reason)
-        ctx.zoom.Reset(reason);home.SetZoom(1);home.SetBlocked(false);zoomBlocker:SetVisible(false)
+        ctx.zoom.Reset(reason);home.SetZoom(1);home.SetPanZoom(false);home.SetBlocked(false);zoomBlocker:SetVisible(false)
     end
-    function ctx.BeginHomeZoom()
+    function ctx.BeginHomeZoom(kind)
         if ctx.destroyed or ctx.yawProbe or ctx.portrait or ctx.scene~="home" or (ctx.panel and not side[ctx.panel]) then return false end
-        if not ctx.zoom.Start(home.Fit(),GetTime():GetElapsedTime()) then return false end
+        local fit=home.Fit()
+        if fit.scale<=0 then return false end
+        local profile=kind=="stove" and StovePanZoom.Plan(home.manifest,fit,home.root:GetAbsoluteLayout()) or nil
+        if not ctx.zoom.Start(fit,GetTime():GetElapsedTime(),profile) then return false end
+        if profile then home.SetPanZoom(1,0,0) end
         home.SetBlocked(true);zoomBlocker:SetVisible(true)
         if ctx.panel then ctx.panel=false;ctx.stack={};model.dirty=true end
         return true
@@ -290,6 +298,7 @@ function A.New(session,content,enabled)
         if ctx.yawProbe then ctx.yawProbe.Update() end
         if yawAuto then yawAuto(ctx) end
         if stoveAuto then stoveAuto(ctx) end
+        if panZoomAuto then panZoomAuto(ctx) end
         local now,dt=clock();home.Update(dt)
         ctx.UpdateChrome()
         if ctx.scene=="seaside" then seaside.Update(GetTime():GetTimeStep()) end
@@ -305,9 +314,11 @@ function A.New(session,content,enabled)
         -- main already calls this every Update. Advance BEFORE the business dirty guard.
         if ctx.zoom.active then
             local clock=GetTime()
-            local result=ctx.zoom.Update(clock:GetTimeStep(),home.Fit(),input:HasFocus() and not input:IsMinimized(),clock:GetElapsedTime())
+            local destination=ctx.zoom.profile and ctx.zoom.profile.destination or "seaside"
+            local result=ctx.zoom.Update(clock:GetTimeStep(),home.Fit(),input:HasFocus() and not input:IsMinimized(),clock:GetElapsedTime(),home.root:GetAbsoluteLayout())
             home.SetZoom(ctx.zoom.scale)
-            if result=="complete" then ctx.Navigate("seaside")
+            if ctx.zoom.profile then home.SetPanZoom(ctx.zoom.scale,ctx.zoom.panX,ctx.zoom.panY) end
+            if result=="complete" then ctx.Navigate(destination)
             elseif result=="cancelled" then ctx.CancelHomeZoom(ctx.zoom.reason) end
         end
         if nativeProbe then nativeProbe(ctx) end
