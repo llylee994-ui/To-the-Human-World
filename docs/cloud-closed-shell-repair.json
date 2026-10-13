@@ -1,0 +1,121 @@
+{
+  "auditSha256": "14b422fbef2544118313365fe06b1ede5e28e9a5b1f338d25428fd0a2cb416fd",
+  "repairs": [
+    {
+      "id": "full_group_006_000",
+      "trianglesReversed": 752,
+      "normalsReversed": 1536,
+      "shaBefore": "3e36e3f9fae1a42837f9331bf7781b0f4584333acd6f78b65e6d07d466961a07",
+      "shaAfter": "b57361c7e06a53a56ac0a330393a8cbf4c266de4d70e0b9fc593044683b01f3b"
+    },
+    {
+      "id": "full_group_007_000",
+      "trianglesReversed": 1128,
+      "normalsReversed": 2304,
+      "shaBefore": "0811630ed2a490410f9e76d65ad5770c3a523612f81bb6e799a593e5dfa0a06a",
+      "shaAfter": "24fd5394151b8b8d399b4671823dedbd007f42d2dfaebceb6163202005c59ded"
+    },
+    {
+      "id": "full_group_008_000",
+      "trianglesReversed": 1128,
+      "normalsReversed": 2304,
+      "shaBefore": "f5ed03a8592b16e3d28e5c35565033e0a752436cfd74dd39ca1ef96d1df0da25",
+      "shaAfter": "b51b40b7875683aff63fba660010d906fee2a53556cdc1051ed35adb9b8db125"
+    },
+    {
+      "id": "full_group_009_000",
+      "trianglesReversed": 9964,
+      "normalsReversed": 20352,
+      "shaBefore": "4c7f6cb9bf1f2f570b9a07a3a9da603e4085732665872c323c8c76622eb84da8",
+      "shaAfter": "6451949ed4f1e2a676f92f62994093d6c23d33614cdd5f665bf8621416ac3ae2"
+    },
+    {
+      "id": "full_group_010_000",
+      "trianglesReversed": 3508,
+      "normalsReversed": 7168,
+      "shaBefore": "7a8ddf07ac5c622799ec66b57b183567a9cca783d5e66ce8114dee923b945157",
+      "shaAfter": "d1615f6def902a1b512e15a52fdba5669ded6c7fc2a5e8c3a20870154a144501"
+    },
+    {
+      "id": "full_group_013_000",
+      "trianglesReversed": 7144,
+      "normalsReversed": 14592,
+      "shaBefore": "47ba1cfc3608ed5fc36139ee954bb8e39d7e60d1ca7e3bc3d1d8a78b590bb0f7",
+      "shaAfter": "abe163bf46a3edcc6473311f801110f99b2761b77657d40103926ade76a71434"
+    },
+    {
+      "id": "full_group_021_000",
+      "trianglesReversed": 940,
+      "normalsReversed": 1920,
+      "shaBefore": "060da57b1d60e96d5cb1af3a4e49d6b9b26ff03fb85c2801f0862d53716ea060",
+      "shaAfter": "1d93c6086e585940ef8d29b7575435d25f0beb1c551ac40df4ab295f3c8cb586"
+    },
+    {
+      "id": "full_group_026_000",
+      "trianglesReversed": 2724,
+      "normalsReversed": 5568,
+      "shaBefore": "7b99588c6abd1e1ff7f80e83cf3d1e4e84a36bf302448af253bf04f9966b4bee",
+      "shaAfter": "43ea399bf00d2521b56d5b3f2935ce963211057a177bb4ef8a1cead7d1f92611"
+    },
+    {
+      "id": "full_group_027_000",
+      "trianglesReversed": 188,
+      "normalsReversed": 384,
+      "shaBefore": "9ff066b464aa883e4bd3a3b427ab325151973563a881d68b3a32587d7de7e22e",
+      "shaAfter": "7a6c2856173de49be87081a062d38a05a0eac985ddc548620518b5f42e00aec9"
+    },
+    {
+      "id": "full_group_031_000",
+      "trianglesReversed": 188,
+      "normalsReversed": 384,
+      "shaBefore": "f04db74365a4faa11dbb14744d5afd3484c852999dbaa786c04388ead4c4ac2e",
+      "shaAfter": "3eda6938311509ee873d53ef8f43f6ddd74273df6924571f841f8edca5296363"
+    },
+    {
+      "id": "full_group_033_000",
+      "trianglesReversed": 940,
+      "normalsReversed": 1920,
+      "shaBefore": "64c82c1a937ee45c632d67f2521561a55d731da102393e0b06421934f6bee1d8",
+      "shaAfter": "6bc976b39d79cbc23be08060e5fcfc222e35258e59a3a786b98a3f12c1714f93"
+    },
+    {
+      "id": "full_group_034_000",
+      "trianglesReversed": 312,
+      "normalsReversed": 640,
+      "shaBefore": "1b03a854aaa6951d0325ac30f2eb3a87a128136951457527215db5e4d85b0e63",
+      "shaAfter": "2af35bb0ee410a7690966dc534a13a4c9cff6233f786e2c9b3c56678172e946d"
+    },
+    {
+      "id": "full_group_037_000",
+      "trianglesReversed": 156,
+      "normalsReversed": 320,
+      "shaBefore": "10759e91a8dcd9e83d1963c5380680db1e306f828b2215445b2f3fd82a886af3",
+      "shaAfter": "6f77825f79892a47a361caa9afac309962305c3bbe2acc6f158132c43caa0262"
+    },
+    {
+      "id": "full_group_038_000",
+      "trianglesReversed": 752,
+      "normalsReversed": 1536,
+      "shaBefore": "01b7a2ea1d9afae860a64614bc90fd57bb3d92565e7c592a4287d8afb1442033",
+      "shaAfter": "34db0ff1d3e1c978a277236b72b0821fc87601b3e777d1f765442a294a88d3a7"
+    },
+    {
+      "id": "full_group_040_000",
+      "trianglesReversed": 188,
+      "normalsReversed": 384,
+      "shaBefore": "7fb772e0840061c9806910e72ae925f98a202fa1ebe5564fc6f143443eca8b70",
+      "shaAfter": "9f6a9fee31198204fb7ac8f1533e45882596ecc1faaa0b0db665f3f883d224c8"
+    },
+    {
+      "id": "full_group_044_000",
+      "trianglesReversed": 940,
+      "normalsReversed": 1920,
+      "shaBefore": "885b4fbd6a1a821650c2265cb3711340aff268fcb493553d40176eda3f39262b",
+      "shaAfter": "656bfc1649509aed78f02f8f3bc15942122601f620d27ee69d4331445bcbee35"
+    }
+  ],
+  "trianglesReversed": 30952,
+  "positionsUVIndicesCountsUnchanged": true,
+  "sharedVerticesAcrossRepairedBoundaries": 0,
+  "openComponentNormalsUnchanged": true
+}

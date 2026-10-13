@@ -56,7 +56,8 @@
       "unlit": false,
       "doubleSided": false,
       "notes": [],
-      "textureColorSpaces": {}
+      "textureColorSpaces": {},
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_001",
@@ -73,7 +74,8 @@
       "unlit": false,
       "doubleSided": false,
       "notes": [],
-      "textureColorSpaces": {}
+      "textureColorSpaces": {},
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_002",
@@ -90,7 +92,8 @@
       "unlit": false,
       "doubleSided": false,
       "notes": [],
-      "textureColorSpaces": {}
+      "textureColorSpaces": {},
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_003",
@@ -107,7 +110,8 @@
       "unlit": false,
       "doubleSided": false,
       "notes": [],
-      "textureColorSpaces": {}
+      "textureColorSpaces": {},
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_004",
@@ -166,7 +170,8 @@
       "unlit": false,
       "doubleSided": false,
       "notes": [],
-      "textureColorSpaces": {}
+      "textureColorSpaces": {},
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_007",
@@ -189,7 +194,8 @@
         "baseColorTexture": "sRGB",
         "normalTexture": "linear"
       },
-      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0"
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_008",
@@ -212,7 +218,8 @@
         "baseColorTexture": "sRGB",
         "normalTexture": "linear"
       },
-      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0"
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_009",
@@ -235,7 +242,8 @@
         "baseColorTexture": "sRGB",
         "normalTexture": "linear"
       },
-      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0"
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_010",
@@ -258,7 +266,8 @@
         "baseColorTexture": "sRGB",
         "normalTexture": "linear"
       },
-      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0"
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_011",
@@ -275,7 +284,8 @@
       "unlit": false,
       "doubleSided": false,
       "notes": [],
-      "textureColorSpaces": {}
+      "textureColorSpaces": {},
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_012",
@@ -298,7 +308,8 @@
         "baseColorTexture": "sRGB",
         "normalTexture": "linear"
       },
-      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0"
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_013",
@@ -321,7 +332,8 @@
         "baseColorTexture": "sRGB",
         "normalTexture": "linear"
       },
-      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0"
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_014",
@@ -338,7 +350,8 @@
       "unlit": false,
       "doubleSided": false,
       "notes": [],
-      "textureColorSpaces": {}
+      "textureColorSpaces": {},
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_015",
@@ -355,7 +368,8 @@
       "unlit": false,
       "doubleSided": false,
       "notes": [],
-      "textureColorSpaces": {}
+      "textureColorSpaces": {},
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_016",
@@ -372,7 +386,8 @@
       "unlit": false,
       "doubleSided": false,
       "notes": [],
-      "textureColorSpaces": {}
+      "textureColorSpaces": {},
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_017",
@@ -395,7 +410,8 @@
         "baseColorTexture": "sRGB",
         "normalTexture": "linear"
       },
-      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0"
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_018",
@@ -442,7 +458,8 @@
         "baseColorTexture": "sRGB",
         "normalTexture": "linear"
       },
-      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0"
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_020",
@@ -459,7 +476,8 @@
       "unlit": false,
       "doubleSided": false,
       "notes": [],
-      "textureColorSpaces": {}
+      "textureColorSpaces": {},
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_021",
@@ -482,7 +500,8 @@
         "baseColorTexture": "sRGB",
         "normalTexture": "linear"
       },
-      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0"
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_022",
@@ -505,7 +524,8 @@
         "baseColorTexture": "sRGB",
         "normalTexture": "linear"
       },
-      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0"
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_023",
@@ -522,7 +542,8 @@
       "unlit": false,
       "doubleSided": false,
       "notes": [],
-      "textureColorSpaces": {}
+      "textureColorSpaces": {},
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_024",
@@ -539,7 +560,8 @@
       "unlit": false,
       "doubleSided": false,
       "notes": [],
-      "textureColorSpaces": {}
+      "textureColorSpaces": {},
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_025",
@@ -562,7 +584,8 @@
         "baseColorTexture": "sRGB",
         "normalTexture": "linear"
       },
-      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0"
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_026",
@@ -585,7 +608,8 @@
         "baseColorTexture": "sRGB",
         "normalTexture": "linear"
       },
-      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0"
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_027",
@@ -602,7 +626,8 @@
       "unlit": false,
       "doubleSided": false,
       "notes": [],
-      "textureColorSpaces": {}
+      "textureColorSpaces": {},
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_028",
@@ -619,7 +644,8 @@
       "unlit": false,
       "doubleSided": false,
       "notes": [],
-      "textureColorSpaces": {}
+      "textureColorSpaces": {},
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_029",
@@ -636,7 +662,8 @@
       "unlit": false,
       "doubleSided": false,
       "notes": [],
-      "textureColorSpaces": {}
+      "textureColorSpaces": {},
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_030",
@@ -653,7 +680,8 @@
       "unlit": false,
       "doubleSided": false,
       "notes": [],
-      "textureColorSpaces": {}
+      "textureColorSpaces": {},
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_031",
@@ -676,7 +704,8 @@
         "baseColorTexture": "sRGB",
         "normalTexture": "linear"
       },
-      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0"
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_032",
@@ -693,7 +722,8 @@
       "unlit": false,
       "doubleSided": false,
       "notes": [],
-      "textureColorSpaces": {}
+      "textureColorSpaces": {},
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_033",
@@ -716,7 +746,8 @@
         "baseColorTexture": "sRGB",
         "normalTexture": "linear"
       },
-      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0"
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_034",
@@ -739,7 +770,8 @@
         "baseColorTexture": "sRGB",
         "normalTexture": "linear"
       },
-      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0"
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_035",
@@ -762,7 +794,8 @@
         "baseColorTexture": "sRGB",
         "normalTexture": "linear"
       },
-      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0"
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_036",
@@ -785,7 +818,8 @@
         "baseColorTexture": "sRGB",
         "normalTexture": "linear"
       },
-      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0"
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_037",
@@ -808,7 +842,8 @@
         "baseColorTexture": "sRGB",
         "normalTexture": "linear"
       },
-      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0"
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_038",
@@ -831,7 +866,8 @@
         "baseColorTexture": "sRGB",
         "normalTexture": "linear"
       },
-      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0"
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_039",
@@ -854,7 +890,8 @@
         "baseColorTexture": "sRGB",
         "normalTexture": "linear"
       },
-      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0"
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_040",
@@ -877,7 +914,8 @@
         "baseColorTexture": "sRGB",
         "normalTexture": "linear"
       },
-      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0"
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_041",
@@ -900,7 +938,8 @@
         "baseColorTexture": "sRGB",
         "normalTexture": "linear"
       },
-      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0"
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_042",
@@ -938,7 +977,8 @@
       "unlit": false,
       "doubleSided": false,
       "notes": [],
-      "textureColorSpaces": {}
+      "textureColorSpaces": {},
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_044",
@@ -961,7 +1001,8 @@
         "baseColorTexture": "sRGB",
         "normalTexture": "linear"
       },
-      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0"
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_045",
@@ -978,7 +1019,8 @@
       "unlit": false,
       "doubleSided": false,
       "notes": [],
-      "textureColorSpaces": {}
+      "textureColorSpaces": {},
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_046",
@@ -995,7 +1037,8 @@
       "unlit": false,
       "doubleSided": false,
       "notes": [],
-      "textureColorSpaces": {}
+      "textureColorSpaces": {},
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_047",
@@ -1012,7 +1055,8 @@
       "unlit": false,
       "doubleSided": false,
       "notes": [],
-      "textureColorSpaces": {}
+      "textureColorSpaces": {},
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_048",
@@ -1035,7 +1079,8 @@
         "baseColorTexture": "sRGB",
         "normalTexture": "linear"
       },
-      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0"
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_049",
@@ -1052,7 +1097,8 @@
       "unlit": false,
       "doubleSided": false,
       "notes": [],
-      "textureColorSpaces": {}
+      "textureColorSpaces": {},
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_050",
@@ -1069,7 +1115,8 @@
       "unlit": false,
       "doubleSided": false,
       "notes": [],
-      "textureColorSpaces": {}
+      "textureColorSpaces": {},
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_051",
@@ -1086,7 +1133,8 @@
       "unlit": false,
       "doubleSided": false,
       "notes": [],
-      "textureColorSpaces": {}
+      "textureColorSpaces": {},
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_052",
@@ -1103,7 +1151,8 @@
       "unlit": false,
       "doubleSided": false,
       "notes": [],
-      "textureColorSpaces": {}
+      "textureColorSpaces": {},
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_053",
@@ -1120,7 +1169,8 @@
       "unlit": false,
       "doubleSided": false,
       "notes": [],
-      "textureColorSpaces": {}
+      "textureColorSpaces": {},
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_054",
@@ -1137,7 +1187,8 @@
       "unlit": false,
       "doubleSided": false,
       "notes": [],
-      "textureColorSpaces": {}
+      "textureColorSpaces": {},
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_055",
@@ -1158,7 +1209,8 @@
       "textureColorSpaces": {
         "normalTexture": "linear"
       },
-      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0"
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_056",
@@ -1288,7 +1340,7 @@
       "vertices": 8502,
       "triangles": 8248,
       "semantic": "static",
-      "sha256": "3e36e3f9fae1a42837f9331bf7781b0f4584333acd6f78b65e6d07d466961a07"
+      "sha256": "b57361c7e06a53a56ac0a330393a8cbf4c266de4d70e0b9fc593044683b01f3b"
     },
     {
       "id": "full_group_007_000",
@@ -1297,7 +1349,7 @@
       "vertices": 30027,
       "triangles": 36392,
       "semantic": "static",
-      "sha256": "0811630ed2a490410f9e76d65ad5770c3a523612f81bb6e799a593e5dfa0a06a"
+      "sha256": "24fd5394151b8b8d399b4671823dedbd007f42d2dfaebceb6163202005c59ded"
     },
     {
       "id": "full_group_008_000",
@@ -1306,7 +1358,7 @@
       "vertices": 2304,
       "triangles": 1128,
       "semantic": "static",
-      "sha256": "f5ed03a8592b16e3d28e5c35565033e0a752436cfd74dd39ca1ef96d1df0da25"
+      "sha256": "b51b40b7875683aff63fba660010d906fee2a53556cdc1051ed35adb9b8db125"
     },
     {
       "id": "full_group_009_000",
@@ -1315,7 +1367,7 @@
       "vertices": 23938,
       "triangles": 13140,
       "semantic": "static",
-      "sha256": "4c7f6cb9bf1f2f570b9a07a3a9da603e4085732665872c323c8c76622eb84da8"
+      "sha256": "6451949ed4f1e2a676f92f62994093d6c23d33614cdd5f665bf8621416ac3ae2"
     },
     {
       "id": "full_group_010_000",
@@ -1324,7 +1376,7 @@
       "vertices": 7168,
       "triangles": 3508,
       "semantic": "static",
-      "sha256": "7a8ddf07ac5c622799ec66b57b183567a9cca783d5e66ce8114dee923b945157"
+      "sha256": "d1615f6def902a1b512e15a52fdba5669ded6c7fc2a5e8c3a20870154a144501"
     },
     {
       "id": "full_group_011_000",
@@ -1378,7 +1430,7 @@
       "vertices": 14592,
       "triangles": 7144,
       "semantic": "static",
-      "sha256": "47ba1cfc3608ed5fc36139ee954bb8e39d7e60d1ca7e3bc3d1d8a78b590bb0f7"
+      "sha256": "abe163bf46a3edcc6473311f801110f99b2761b77657d40103926ade76a71434"
     },
     {
       "id": "full_group_014_000",
@@ -1468,7 +1520,7 @@
       "vertices": 1920,
       "triangles": 940,
       "semantic": "static",
-      "sha256": "060da57b1d60e96d5cb1af3a4e49d6b9b26ff03fb85c2801f0862d53716ea060"
+      "sha256": "1d93c6086e585940ef8d29b7575435d25f0beb1c551ac40df4ab295f3c8cb586"
     },
     {
       "id": "full_group_022_000",
@@ -1513,7 +1565,7 @@
       "vertices": 7388,
       "triangles": 5076,
       "semantic": "static",
-      "sha256": "7b99588c6abd1e1ff7f80e83cf3d1e4e84a36bf302448af253bf04f9966b4bee"
+      "sha256": "43ea399bf00d2521b56d5b3f2935ce963211057a177bb4ef8a1cead7d1f92611"
     },
     {
       "id": "full_group_027_000",
@@ -1522,7 +1574,7 @@
       "vertices": 384,
       "triangles": 188,
       "semantic": "static",
-      "sha256": "9ff066b464aa883e4bd3a3b427ab325151973563a881d68b3a32587d7de7e22e"
+      "sha256": "7a6c2856173de49be87081a062d38a05a0eac985ddc548620518b5f42e00aec9"
     },
     {
       "id": "full_group_028_000",
@@ -1558,7 +1610,7 @@
       "vertices": 714,
       "triangles": 348,
       "semantic": "home.drawer",
-      "sha256": "f04db74365a4faa11dbb14744d5afd3484c852999dbaa786c04388ead4c4ac2e"
+      "sha256": "3eda6938311509ee873d53ef8f43f6ddd74273df6924571f841f8edca5296363"
     },
     {
       "id": "full_group_032_000",
@@ -1576,7 +1628,7 @@
       "vertices": 1920,
       "triangles": 940,
       "semantic": "home.tray",
-      "sha256": "64c82c1a937ee45c632d67f2521561a55d731da102393e0b06421934f6bee1d8"
+      "sha256": "6bc976b39d79cbc23be08060e5fcfc222e35258e59a3a786b98a3f12c1714f93"
     },
     {
       "id": "full_group_034_000",
@@ -1585,7 +1637,7 @@
       "vertices": 640,
       "triangles": 312,
       "semantic": "home.journal",
-      "sha256": "1b03a854aaa6951d0325ac30f2eb3a87a128136951457527215db5e4d85b0e63"
+      "sha256": "2af35bb0ee410a7690966dc534a13a4c9cff6233f786e2c9b3c56678172e946d"
     },
     {
       "id": "full_group_035_000",
@@ -1612,7 +1664,7 @@
       "vertices": 320,
       "triangles": 156,
       "semantic": "home.tray",
-      "sha256": "10759e91a8dcd9e83d1963c5380680db1e306f828b2215445b2f3fd82a886af3"
+      "sha256": "6f77825f79892a47a361caa9afac309962305c3bbe2acc6f158132c43caa0262"
     },
     {
       "id": "full_group_038_000",
@@ -1621,7 +1673,7 @@
       "vertices": 1536,
       "triangles": 752,
       "semantic": "home.tray",
-      "sha256": "01b7a2ea1d9afae860a64614bc90fd57bb3d92565e7c592a4287d8afb1442033"
+      "sha256": "34db0ff1d3e1c978a277236b72b0821fc87601b3e777d1f765442a294a88d3a7"
     },
     {
       "id": "full_group_039_000",
@@ -1639,7 +1691,7 @@
       "vertices": 384,
       "triangles": 188,
       "semantic": "home.journal",
-      "sha256": "7fb772e0840061c9806910e72ae925f98a202fa1ebe5564fc6f143443eca8b70"
+      "sha256": "9f6a9fee31198204fb7ac8f1533e45882596ecc1faaa0b0db665f3f883d224c8"
     },
     {
       "id": "full_group_041_000",
@@ -1675,7 +1727,7 @@
       "vertices": 1920,
       "triangles": 940,
       "semantic": "home.caseFile",
-      "sha256": "885b4fbd6a1a821650c2265cb3711340aff268fcb493553d40176eda3f39262b"
+      "sha256": "656bfc1649509aed78f02f8f3bc15942122601f620d27ee69d4331445bcbee35"
     },
     {
       "id": "full_group_045_000",
