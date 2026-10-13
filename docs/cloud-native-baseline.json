@@ -1,0 +1,498 @@
+{
+  "status": "native_capture_verified",
+  "runtimeExitCode": 0,
+  "resolution": [
+    1170,
+    658
+  ],
+  "renderer": "official Linux EGL/GLES surfaceless with Mesa software rendering",
+  "visualAccepted": false,
+  "ready": {
+    "businessQa": "no automatic commands",
+    "fullSceneRendered": "requires pixel verification",
+    "storage": "one in-memory GameSession/PlayModel",
+    "warnings": {},
+    "stats": {
+      "sourceObjects": 10790,
+      "sourceVertices": 2584246,
+      "expandedVertices": 9628365,
+      "meshes": 90,
+      "retainedGeometryMeshes": 1,
+      "triangles": 3209455,
+      "drawables": 862
+    },
+    "loadWallSeconds": 855.6069829463959,
+    "calibrationPassed": true
+  },
+  "camera": {
+    "lookSign": -1,
+    "handedness": 1,
+    "candidates": [
+      {
+        "mappedRight": [
+          0.9407478713563429,
+          -6.455343890927127e-08,
+          -0.3391068305689313
+        ],
+        "handedness": 0,
+        "upCrossForwardDot": -1.0000000000000004,
+        "lookSign": 1,
+        "centerDot": 1.0000000286787518,
+        "screenRightDot": -0.9999999995755746,
+        "pose": {
+          "fovAxis": "horizontal",
+          "nearClip": 0.05,
+          "handedness": 0,
+          "forward": [
+            -0.3337146043777466,
+            -0.1776223182678223,
+            -0.9257887601852416
+          ],
+          "position": [
+            3.4000000953674316,
+            4,
+            6
+          ],
+          "projection": "perspective",
+          "lookSign": 1,
+          "up": [
+            -0.06023290753364563,
+            0.9840986728668212,
+            -0.16709791123867035
+          ],
+          "farClip": 500,
+          "id": "Home",
+          "fovRadians": 0.9737984868200219
+        },
+        "pointError": 2.329414399030164,
+        "rayError": 0.2888213482205902,
+        "nodeRightDot": -1.0000002817156732,
+        "points": [
+          {
+            "rayDot": 0.7202717703221547,
+            "actual": [
+              0.8808663118772313,
+              0.4830669448691865
+            ],
+            "legacyWorldToScreen": [
+              0.880866289138794,
+              0.4830669164657593
+            ],
+            "id": "home.net",
+            "expected": [
+              0.1191338524222374,
+              0.483066804288801
+            ]
+          },
+          {
+            "rayDot": 0.9219002094048884,
+            "actual": [
+              0.6915001726302344,
+              0.3180989200689584
+            ],
+            "legacyWorldToScreen": [
+              0.691500186920166,
+              0.31809890270233154
+            ],
+            "id": "home.merchantShip",
+            "expected": [
+              0.3084999918937683,
+              0.31809878939545
+            ]
+          },
+          {
+            "rayDot": 0.9325834902963747,
+            "actual": [
+              0.3219670652034512,
+              0.7293326611259082
+            ],
+            "legacyWorldToScreen": [
+              0.32196706533432007,
+              0.729332685470581
+            ],
+            "id": "home.letterPaper",
+            "expected": [
+              0.6780331134796143,
+              0.7293325539347474
+            ]
+          },
+          {
+            "rayDot": 0.9972295761155714,
+            "actual": [
+              0.4646600632012525,
+              0.6628117459161196
+            ],
+            "legacyWorldToScreen": [
+              0.46466004848480225,
+              0.6628117561340332
+            ],
+            "id": "home.tray",
+            "expected": [
+              0.5353401303291321,
+              0.662811602807031
+            ]
+          },
+          {
+            "rayDot": 0.9997040586703171,
+            "actual": [
+              0.5117675521268976,
+              0.8701740930437246
+            ],
+            "legacyWorldToScreen": [
+              0.511767566204071,
+              0.8701740503311157
+            ],
+            "id": "home.drawer",
+            "expected": [
+              0.4882326126098633,
+              0.8701739247745136
+            ]
+          },
+          {
+            "rayDot": 0.759895043980238,
+            "actual": [
+              0.14590527673588072,
+              0.7924008560040933
+            ],
+            "legacyWorldToScreen": [
+              0.1459052562713623,
+              0.7924008369445801
+            ],
+            "id": "home.journal",
+            "expected": [
+              0.8540950417518616,
+              0.7924007405225642
+            ]
+          },
+          {
+            "rayDot": 0.6280816767459498,
+            "actual": [
+              0.03825861670765679,
+              0.8615196494245326
+            ],
+            "legacyWorldToScreen": [
+              0.038258641958236694,
+              0.8615196347236633
+            ],
+            "id": "home.caseFile",
+            "expected": [
+              0.9617416858673096,
+              0.8615195411682535
+            ]
+          },
+          {
+            "rayDot": 0.9371707809761768,
+            "actual": [
+              0.3298512138822921,
+              0.5442636916324181
+            ],
+            "legacyWorldToScreen": [
+              0.3298512101173401,
+              0.5442637205123901
+            ],
+            "id": "home.stove",
+            "expected": [
+              0.670149028301239,
+              0.5442635753174657
+            ]
+          }
+        ]
+      },
+      {
+        "mappedRight": [
+          0.9407478713563429,
+          -6.455343890927127e-08,
+          -0.3391068305689313
+        ],
+        "handedness": 0,
+        "upCrossForwardDot": -1.0000000000000004,
+        "lookSign": -1,
+        "centerDot": -0.9999999248133554,
+        "screenRightDot": 0.9999999996153215,
+        "pose": {
+          "fovAxis": "horizontal",
+          "nearClip": 0.05,
+          "handedness": 0,
+          "forward": [
+            -0.3337146043777466,
+            -0.1776223182678223,
+            -0.9257887601852416
+          ],
+          "position": [
+            3.4000000953674316,
+            4,
+            6
+          ],
+          "projection": "perspective",
+          "lookSign": -1,
+          "up": [
+            -0.06023290753364563,
+            0.9840986728668212,
+            -0.16709791123867035
+          ],
+          "farClip": 500,
+          "id": "Home",
+          "fovRadians": 0.9737984868200219
+        },
+        "pointError": 0,
+        "rayError": 0,
+        "nodeRightDot": 1.0000000013509598,
+        "points": {}
+      },
+      {
+        "mappedRight": [
+          0.9407478713563429,
+          -6.455343890927127e-08,
+          -0.3391068305689313
+        ],
+        "handedness": 1,
+        "upCrossForwardDot": -1.0000000000000004,
+        "lookSign": 1,
+        "centerDot": -1.0000000025321825,
+        "screenRightDot": -0.9999999995944271,
+        "pose": {
+          "fovAxis": "horizontal",
+          "nearClip": 0.05,
+          "handedness": 1,
+          "forward": [
+            -0.3337146043777466,
+            -0.1776223182678223,
+            -0.9257887601852416
+          ],
+          "position": [
+            3.4000000953674316,
+            4,
+            6
+          ],
+          "projection": "perspective",
+          "lookSign": 1,
+          "up": [
+            -0.06023290753364563,
+            0.9840986728668212,
+            -0.16709791123867035
+          ],
+          "farClip": 500,
+          "id": "Home",
+          "fovRadians": 0.9737984868200219
+        },
+        "pointError": 0,
+        "rayError": 0,
+        "nodeRightDot": -1.0000002817156732,
+        "points": {}
+      },
+      {
+        "mappedRight": [
+          0.9407478713563429,
+          -6.455343890927127e-08,
+          -0.3391068305689313
+        ],
+        "handedness": 1,
+        "upCrossForwardDot": -1.0000000000000004,
+        "lookSign": -1,
+        "centerDot": 0.9999999783099546,
+        "screenRightDot": 0.9999999996055144,
+        "pose": {
+          "fovAxis": "horizontal",
+          "nearClip": 0.05,
+          "handedness": 1,
+          "forward": [
+            -0.3337146043777466,
+            -0.1776223182678223,
+            -0.9257887601852416
+          ],
+          "position": [
+            3.4000000953674316,
+            4,
+            6
+          ],
+          "projection": "perspective",
+          "lookSign": -1,
+          "up": [
+            -0.06023290753364563,
+            0.9840986728668212,
+            -0.16709791123867035
+          ],
+          "farClip": 500,
+          "id": "Home",
+          "fovRadians": 0.9737984868200219
+        },
+        "pointError": 1.8936714382123116e-13,
+        "rayError": 6.615440865860957e-15,
+        "nodeRightDot": 1.0000000013509598,
+        "points": [
+          {
+            "rayDot": 0.9999999575233914,
+            "actual": [
+              0.1191338028594795,
+              0.483066889462245
+            ],
+            "legacyWorldToScreen": [
+              0,
+              0
+            ],
+            "id": "home.net",
+            "expected": [
+              0.1191338524222374,
+              0.483066804288801
+            ]
+          },
+          {
+            "rayDot": 1.0000000172060233,
+            "actual": [
+              0.3084998726810934,
+              0.31809889485680437
+            ],
+            "legacyWorldToScreen": [
+              0,
+              0
+            ],
+            "id": "home.merchantShip",
+            "expected": [
+              0.3084999918937683,
+              0.31809878939545
+            ]
+          },
+          {
+            "rayDot": 1.0000000248702166,
+            "actual": [
+              0.6780330042467091,
+              0.7293325434444773
+            ],
+            "legacyWorldToScreen": [
+              1,
+              1
+            ],
+            "id": "home.letterPaper",
+            "expected": [
+              0.6780331134796143,
+              0.7293325539347474
+            ]
+          },
+          {
+            "rayDot": 0.9999999787533966,
+            "actual": [
+              0.5353400049251795,
+              0.6628116228479013
+            ],
+            "legacyWorldToScreen": [
+              1,
+              1
+            ],
+            "id": "home.tray",
+            "expected": [
+              0.5353401303291321,
+              0.662811602807031
+            ]
+          },
+          {
+            "rayDot": 0.9999999970851831,
+            "actual": [
+              0.48823251627479247,
+              0.870173946434355
+            ],
+            "legacyWorldToScreen": [
+              0,
+              1
+            ],
+            "id": "home.drawer",
+            "expected": [
+              0.4882326126098633,
+              0.8701739247745136
+            ]
+          },
+          {
+            "rayDot": 0.9999999477375723,
+            "actual": [
+              0.8540948065493053,
+              0.7924007014582346
+            ],
+            "legacyWorldToScreen": [
+              1,
+              1
+            ],
+            "id": "home.journal",
+            "expected": [
+              0.8540950417518616,
+              0.7924007405225642
+            ]
+          },
+          {
+            "rayDot": 0.9999999867762311,
+            "actual": [
+              0.9617415074930707,
+              0.8615194718148642
+            ],
+            "legacyWorldToScreen": [
+              1,
+              1
+            ],
+            "id": "home.caseFile",
+            "expected": [
+              0.9617416858673096,
+              0.8615195411682535
+            ]
+          },
+          {
+            "rayDot": 0.9999999769682837,
+            "actual": [
+              0.6701488776168434,
+              0.544263590278526
+            ],
+            "legacyWorldToScreen": [
+              1,
+              1
+            ],
+            "id": "home.stove",
+            "expected": [
+              0.670149028301239,
+              0.5442635753174657
+            ]
+          }
+        ]
+      }
+    ],
+    "ok": true,
+    "referenceBasis": {
+      "conventionalLhRightDot": -1.0000000000000002,
+      "desiredLhNodeBasisDeterminant": -0.9999999999999968,
+      "backward": [
+        0.33371461211873127,
+        0.17762232238802447,
+        0.925788781660228
+      ],
+      "rhNodeBasisDeterminant": 0.9999999999999968,
+      "forward": [
+        -0.33371461211873127,
+        -0.17762232238802447,
+        -0.925788781660228
+      ],
+      "position": [
+        3.4000000953674316,
+        4,
+        6
+      ],
+      "right": [
+        0.9407478713563429,
+        -6.455343890927127e-08,
+        -0.3391068305689313
+      ],
+      "up": [
+        -0.060232910152918304,
+        0.9840987156610821,
+        -0.167097918505047
+      ]
+    },
+    "rayError": 6.615440865860957e-15,
+    "pointError": 1.8936714382123116e-13
+  },
+  "files": {
+    "baseline.png": {
+      "bytes": 1153055,
+      "sha256": "4a305328189af15f269b973b6e37397f8336f260942bbddb3d7708d86e89ffa7"
+    },
+    "baseline.log": {
+      "bytes": 277059,
+      "sha256": "b2231b88fb61f7c9a010db4bab3b6b0c53dee1437ce1878df47987cc8c0d742f"
+    }
+  }
+}

@@ -30,3 +30,12 @@ would precede completion. Correct second run uses -x 1170 -y 658 and READY-based
 capture. At this checkpoint the second run is still loading; no successful game
 image or visual acceptance is claimed. Software-rendering timing does not
 represent the user's hardware performance.
+
+## Verified native baseline
+
+The second run completed all 90 meshes / 10,790 source objects / 3,209,455 triangles
+and 862 drawables. Camera calibration passed. Load duration 855.607 seconds.
+READY plus 20 rendered frames produced a 1170x658 PNG; process exited 0.
+See cloud-native-baseline.json for hashes and exact calibration. The image was
+actually inspected: room present, but flat lighting/material degradation remains.
+This is an engine image, not Blender, and it is not visual acceptance.
