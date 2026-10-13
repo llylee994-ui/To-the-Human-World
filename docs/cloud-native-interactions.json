@@ -1,0 +1,173 @@
+{
+  "status": "PASS",
+  "sceneVisualCommit": "75a6db474ec97f28cd421eb66dd187fbfbf75b0e",
+  "report": {
+    "hintsEnabled": true,
+    "finalHud": {
+      "message": "",
+      "blocked": false,
+      "pending": false,
+      "day": 2,
+      "currency": 25,
+      "backVisible": false,
+      "enabled": true,
+      "scene": "home"
+    },
+    "navigationStateUnchanged": true,
+    "phase": "final",
+    "memoryWrites": 8,
+    "runtimeMouseLeft": 1,
+    "storage": "isolated MemoryStorage only",
+    "currency": {
+      "before": 30,
+      "ingredient": "ing_sea_salt",
+      "price": 5,
+      "after": 25
+    },
+    "coordinates": "UI layout pixels, scaled by UI.GetScale for event dispatch",
+    "input": "official synthetic UI.HandleMouseMove/Down/Up -> real widget hit testing/pressed release/onClick + native camera rays; no OS/human mouse input",
+    "receive": {
+      "letterInstanceId": "letter:letter_n01",
+      "availableLetterId": "letter_n01",
+      "ok": true
+    },
+    "entries": [
+      {
+        "screen": [
+          597.5384911919075,
+          598.942681823029
+        ],
+        "target": "letters",
+        "panel": "letters",
+        "picked": "home.drawer",
+        "id": "home.drawer",
+        "scene": "home"
+      },
+      {
+        "screen": [
+          1045.310390086908,
+          545.4111826199659
+        ],
+        "target": "journal",
+        "panel": "journal",
+        "picked": "home.journal",
+        "id": "home.journal",
+        "scene": "home"
+      },
+      {
+        "screen": [
+          655.1924506347672,
+          456.21472874325394
+        ],
+        "target": "words",
+        "panel": "words",
+        "picked": "home.tray",
+        "id": "home.tray",
+        "scene": "home"
+      },
+      {
+        "screen": [
+          1177.0571400873139,
+          592.9857875036722
+        ],
+        "target": "case",
+        "panel": "case",
+        "picked": "home.caseFile",
+        "id": "home.caseFile",
+        "scene": "home"
+      },
+      {
+        "screen": [
+          377.56712695269056,
+          218.94818380987806
+        ],
+        "target": "shop",
+        "panel": "shop",
+        "picked": "home.merchantShip",
+        "id": "home.merchantShip",
+        "scene": "home"
+      },
+      {
+        "screen": [
+          829.8316986897761,
+          502.0012278021012
+        ],
+        "target": "paper",
+        "panel": "letters",
+        "picked": "home.letterPaper",
+        "id": "home.letterPaper",
+        "scene": "home"
+      },
+      {
+        "screen": [
+          820.1824660521769,
+          374.61785165575793
+        ],
+        "target": "brew",
+        "panel": false,
+        "picked": "home.stove",
+        "id": "home.stove",
+        "scene": "brew"
+      },
+      {
+        "screen": [
+          145.8057897298783,
+          332.49602048047444
+        ],
+        "target": "seaside",
+        "panel": false,
+        "picked": "home.net",
+        "id": "home.net",
+        "scene": "seaside"
+      }
+    ],
+    "uiScale": 0.955975359979999,
+    "status": "PASS",
+    "beforeBusiness": {
+      "message": "",
+      "blocked": false,
+      "pending": false,
+      "day": 1,
+      "currency": 30,
+      "backVisible": false,
+      "enabled": true,
+      "scene": "home"
+    },
+    "returnHome": true,
+    "captures": {
+      "01-home-hints": true,
+      "entry-01": "not requested",
+      "received-letter-reader": true,
+      "entry-05": "not requested",
+      "entry-06": "not requested",
+      "seaside-received": true,
+      "entry-04": "not requested",
+      "entry-08": "not requested",
+      "final-hud-after-test": true,
+      "entry-03": "not requested",
+      "entry-07": "not requested",
+      "entry-02": "not requested"
+    },
+    "endDay": {
+      "before": 1,
+      "duplicateBlocked": true,
+      "after": 2
+    }
+  },
+  "processMetrics": {
+    "VmPeakKiB": 4164516,
+    "VmHWMKiB": 2243092,
+    "VmRSSKiB": 2212200,
+    "exitCode": 0,
+    "wallSeconds": 217.50953747399763,
+    "rusageMaxRssKiB": 2243092,
+    "resolution": [
+      1170,
+      658
+    ],
+    "renderer": "Mesa software EGL/GLES surfaceless"
+  },
+  "loadWallSeconds": 69.5600016117096,
+  "scope": "Official UI synthetic input, native hit testing and camera rays, real pinned main business, isolated in-memory saves. OS/human input and Windows untested.",
+  "correction": "Adapter comments say left=0, actual PointerEvent uses runtime MOUSEB_LEFT=1. Original Home filter is unchanged. Earlier zero-button experiment is not a game bug fix."
+}
