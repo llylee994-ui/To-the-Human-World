@@ -27,7 +27,9 @@ end
 local function tab(parent,ctx,id,title,selected)
     parent:AddChild(UI.Button {id="shopTab_"..id,text=title,minHeight=40,width=92,fontFamily="story",fontSize=16,
         backgroundColor=selected and {91,62,39,230} or {38,27,19,135},hoverBackgroundColor={99,72,47,230},
-        pressedBackgroundColor={46,32,23,230},backgroundGradient={},variantBackgroundGradient={},borderWidth=0,borderRadius=4,
+        -- Disable themed gradients through the variant map. An empty gradient
+        -- is still truthy in Lua and Button.Init would try to lighten nil colors.
+        pressedBackgroundColor={46,32,23,230},variantBackgroundGradient={},borderWidth=0,borderRadius=4,
         textColor=selected and light or {225,210,183,255},padding={5,12},
         onClick=function() ctx.shopCategory=id;ctx.shopSelectedId=false;ctx.ticketConfirm=false;ctx.model.dirty=true end})
 end
