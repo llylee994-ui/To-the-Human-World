@@ -1,0 +1,91 @@
+{
+  "version": "v02 local background decontamination",
+  "source": "D:\\taptap\\To-the-Human-World\\scripts\\素材\\桌面双瓶_原像素提取_v01\\源图_桌面双瓶主页_v01.png",
+  "sourceSha256": "699595D332129FA1B964AEA984680C27CA163E10F0DFF08AB7296C1BEECDFAEA",
+  "method": "Manual protected masks; non-generative local RGB/Alpha reconstruction of contaminated glass; original-position contact-shadow neutralization. No asset resize. Physical glass alpha is estimated, not recovered.",
+  "basePath": "D:\\taptap\\To-the-Human-World\\scripts\\素材\\双瓶标签_选定版提取_v01\\过程记录\\底图_未加标签主页.png",
+  "previewBaseSize": [
+    1672,
+    941
+  ],
+  "assets": [
+    {
+      "name": "日期瓶_DAY_局部修复_透明_v02.png",
+      "path": "D:\\taptap\\To-the-Human-World\\scripts\\素材\\桌面双瓶_去背景修复_v02\\日期瓶_DAY_局部修复_透明_v02.png",
+      "x": 1208,
+      "y": 366,
+      "width": 74,
+      "height": 194,
+      "protectedCorePixels": 1887,
+      "protectedCoreRgbaDifferences": 0,
+      "repairedPixels": 8098,
+      "newPixelsOutsideOldAlpha": 0,
+      "alphaZero": 4616,
+      "alphaPartial": 7853,
+      "alphaOpaque": 1887,
+      "borderNonzeroAlpha": 0,
+      "sha256": "6D7852130450CAB26166E41BCFA8F21CA809FBED8602A364E3781BF10844F90D",
+      "previousAssetUnchanged": true,
+      "alphaBounds": [
+        6.0,
+        2.0,
+        72.0,
+        190.0
+      ],
+      "clearGlassProbe": {
+        "localX": 22,
+        "localY": 100,
+        "width": 26,
+        "height": 38,
+        "alphaMin": 17.0,
+        "alphaMax": 17.0,
+        "alphaMean": 17.0,
+        "meanBackgroundTransmission": 0.9333333333333333
+      },
+      "pngColorType": 6
+    },
+    {
+      "name": "金币瓶_局部修复_透明_v02.png",
+      "path": "D:\\taptap\\To-the-Human-World\\scripts\\素材\\桌面双瓶_去背景修复_v02\\金币瓶_局部修复_透明_v02.png",
+      "x": 1280,
+      "y": 373,
+      "width": 72,
+      "height": 201,
+      "protectedCorePixels": 2169,
+      "protectedCoreRgbaDifferences": 0,
+      "repairedPixels": 8221,
+      "newPixelsOutsideOldAlpha": 0,
+      "alphaZero": 4575,
+      "alphaPartial": 7727,
+      "alphaOpaque": 2170,
+      "borderNonzeroAlpha": 0,
+      "sha256": "99B71789B84481996DC78BC0418B25CBF6763BD25FE6225027E541B842774772",
+      "previousAssetUnchanged": true,
+      "alphaBounds": [
+        5.0,
+        2.0,
+        70.0,
+        194.0
+      ],
+      "clearGlassProbe": {
+        "localX": 16,
+        "localY": 88,
+        "width": 36,
+        "height": 40,
+        "alphaMin": 17.0,
+        "alphaMax": 19.0,
+        "alphaMean": 17.072916666666668,
+        "meanBackgroundTransmission": 0.933047385620915
+      },
+      "pngColorType": 6
+    }
+  ],
+  "visualStatus": "Inspected native and magnified light/dark mattes, original-location bottle-free home and relocated sea background: no recognisable old herb-jar/mortar/table texture carried in clear interior; broad tabletop patch removed. Glass is more transparent; subtle original warm glass edging remains. Candidate awaits user visual approval. Exact physical refraction is not recovered.",
+  "runtimeAndDevice": "Not run",
+  "sceneCheck": {
+    "changedPixels": 19623,
+    "changedOutsideAssetRectangles": 0,
+    "baseWasAlreadyBottleFree": true
+  },
+  "userAcceptance": "Pending; prior v01 remains rejected"
+}

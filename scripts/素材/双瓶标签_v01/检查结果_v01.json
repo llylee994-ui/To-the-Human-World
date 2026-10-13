@@ -1,0 +1,403 @@
+{
+  "sourceSHA256": "A3A87B70EE2D7CECFD2279188D8A906F4D7A86F4916D8C651D82B8633252EF14",
+  "sourceUnchanged": true,
+  "date": {
+    "numberRegion": [
+      836,
+      179,
+      600,
+      280
+    ],
+    "crop": [
+      89,
+      111,
+      1776,
+      598
+    ],
+    "placement": [
+      24,
+      32,
+      400,
+      135
+    ],
+    "numberAreaAlpha": [
+      1,
+      248,
+      46.47224404761905
+    ],
+    "stats": {
+      "width": 1776,
+      "height": 598,
+      "alphaZero": 101895,
+      "alphaPartial": 959996,
+      "alphaOpaque": 157,
+      "bboxPositive": [
+        1,
+        0,
+        1770,
+        598
+      ],
+      "bboxAtLeast8": [
+        12,
+        12,
+        1764,
+        586
+      ],
+      "outerNonzero": 304
+    }
+  },
+  "money": {
+    "numberRegion": [
+      577,
+      297,
+      800,
+      235
+    ],
+    "crop": [
+      83,
+      103,
+      1810,
+      621
+    ],
+    "placement": [
+      24,
+      200,
+      400,
+      137
+    ],
+    "numberAreaAlpha": [
+      0,
+      250,
+      45.349973404255316
+    ],
+    "stats": {
+      "width": 1810,
+      "height": 621,
+      "alphaZero": 109841,
+      "alphaPartial": 1014051,
+      "alphaOpaque": 118,
+      "bboxPositive": [
+        0,
+        0,
+        1810,
+        621
+      ],
+      "bboxAtLeast8": [
+        12,
+        12,
+        1798,
+        609
+      ],
+      "outerNonzero": 273
+    }
+  },
+  "fonts": [
+    {
+      "weight": 600,
+      "file": "Mali-SemiBold.ttf",
+      "sha256": "0BA6D92B46369EC5040D119F87A17586BE96364FAC743FBF510B54A3EAD1ADCC",
+      "name": "Mali SemiBold"
+    },
+    {
+      "weight": 400,
+      "file": "Itim-Regular.ttf",
+      "sha256": "9164D7EB92CA717B53B07193E3445C96782222D24215151B8D2851B576B17645",
+      "name": "Itim"
+    }
+  ],
+  "emSize": 52,
+  "fits": [
+    {
+      "digits": "1",
+      "font": "Mali",
+      "regionHeight": 63.06306306306306,
+      "glyphHeight": 34.788,
+      "glyphWidth": 13.675999,
+      "asset": "日期瓶_DAY_透明_v01.png",
+      "regionWidth": 135.13513513513513,
+      "fit": true
+    },
+    {
+      "digits": "1",
+      "font": "Mali",
+      "regionHeight": 51.93370165745856,
+      "glyphHeight": 34.788,
+      "glyphWidth": 13.675999,
+      "asset": "金钱瓶_金币_透明_v01.png",
+      "regionWidth": 176.79558011049724,
+      "fit": true
+    },
+    {
+      "digits": "7",
+      "font": "Mali",
+      "regionHeight": 63.06306306306306,
+      "glyphHeight": 35.984,
+      "glyphWidth": 26.519995,
+      "asset": "日期瓶_DAY_透明_v01.png",
+      "regionWidth": 135.13513513513513,
+      "fit": true
+    },
+    {
+      "digits": "7",
+      "font": "Mali",
+      "regionHeight": 51.93370165745856,
+      "glyphHeight": 35.984,
+      "glyphWidth": 26.519995,
+      "asset": "金钱瓶_金币_透明_v01.png",
+      "regionWidth": 176.79558011049724,
+      "fit": true
+    },
+    {
+      "digits": "12",
+      "font": "Mali",
+      "regionHeight": 63.06306306306306,
+      "glyphHeight": 36.348,
+      "glyphWidth": 45.648075,
+      "asset": "日期瓶_DAY_透明_v01.png",
+      "regionWidth": 135.13513513513513,
+      "fit": true
+    },
+    {
+      "digits": "12",
+      "font": "Mali",
+      "regionHeight": 51.93370165745856,
+      "glyphHeight": 36.348,
+      "glyphWidth": 45.648075,
+      "asset": "金钱瓶_金币_透明_v01.png",
+      "regionWidth": 176.79558011049724,
+      "fit": true
+    },
+    {
+      "digits": "108",
+      "font": "Mali",
+      "regionHeight": 63.06306306306306,
+      "glyphHeight": 35.567997,
+      "glyphWidth": 82.297104,
+      "asset": "日期瓶_DAY_透明_v01.png",
+      "regionWidth": 135.13513513513513,
+      "fit": true
+    },
+    {
+      "digits": "108",
+      "font": "Mali",
+      "regionHeight": 51.93370165745856,
+      "glyphHeight": 35.567997,
+      "glyphWidth": 82.297104,
+      "asset": "金钱瓶_金币_透明_v01.png",
+      "regionWidth": 176.79558011049724,
+      "fit": true
+    },
+    {
+      "digits": "1280",
+      "font": "Mali",
+      "regionHeight": 63.06306306306306,
+      "glyphHeight": 36.348,
+      "glyphWidth": 111.393745,
+      "asset": "日期瓶_DAY_透明_v01.png",
+      "regionWidth": 135.13513513513513,
+      "fit": true
+    },
+    {
+      "digits": "1280",
+      "font": "Mali",
+      "regionHeight": 51.93370165745856,
+      "glyphHeight": 36.348,
+      "glyphWidth": 111.393745,
+      "asset": "金钱瓶_金币_透明_v01.png",
+      "regionWidth": 176.79558011049724,
+      "fit": true
+    },
+    {
+      "digits": "9999",
+      "font": "Mali",
+      "regionHeight": 63.06306306306306,
+      "glyphHeight": 35.516,
+      "glyphWidth": 121.44253,
+      "asset": "日期瓶_DAY_透明_v01.png",
+      "regionWidth": 135.13513513513513,
+      "fit": true
+    },
+    {
+      "digits": "9999",
+      "font": "Mali",
+      "regionHeight": 51.93370165745856,
+      "glyphHeight": 35.516,
+      "glyphWidth": 121.44253,
+      "asset": "金钱瓶_金币_透明_v01.png",
+      "regionWidth": 176.79558011049724,
+      "fit": true
+    },
+    {
+      "digits": "1",
+      "font": "Itim",
+      "regionHeight": 63.06306306306306,
+      "glyphHeight": 32.656002,
+      "glyphWidth": 20.123995,
+      "asset": "日期瓶_DAY_透明_v01.png",
+      "regionWidth": 135.13513513513513,
+      "fit": true
+    },
+    {
+      "digits": "1",
+      "font": "Itim",
+      "regionHeight": 51.93370165745856,
+      "glyphHeight": 32.656002,
+      "glyphWidth": 20.123995,
+      "asset": "金钱瓶_金币_透明_v01.png",
+      "regionWidth": 176.79558011049724,
+      "fit": true
+    },
+    {
+      "digits": "7",
+      "font": "Itim",
+      "regionHeight": 63.06306306306306,
+      "glyphHeight": 32.76,
+      "glyphWidth": 24.023994,
+      "asset": "日期瓶_DAY_透明_v01.png",
+      "regionWidth": 135.13513513513513,
+      "fit": true
+    },
+    {
+      "digits": "7",
+      "font": "Itim",
+      "regionHeight": 51.93370165745856,
+      "glyphHeight": 32.76,
+      "glyphWidth": 24.023994,
+      "asset": "金钱瓶_金币_透明_v01.png",
+      "regionWidth": 176.79558011049724,
+      "fit": true
+    },
+    {
+      "digits": "12",
+      "font": "Itim",
+      "regionHeight": 63.06306306306306,
+      "glyphHeight": 32.656002,
+      "glyphWidth": 47.521084,
+      "asset": "日期瓶_DAY_透明_v01.png",
+      "regionWidth": 135.13513513513513,
+      "fit": true
+    },
+    {
+      "digits": "12",
+      "font": "Itim",
+      "regionHeight": 51.93370165745856,
+      "glyphHeight": 32.656002,
+      "glyphWidth": 47.521084,
+      "asset": "金钱瓶_金币_透明_v01.png",
+      "regionWidth": 176.79558011049724,
+      "fit": true
+    },
+    {
+      "digits": "108",
+      "font": "Itim",
+      "regionHeight": 63.06306306306306,
+      "glyphHeight": 32.916,
+      "glyphWidth": 80.24004,
+      "asset": "日期瓶_DAY_透明_v01.png",
+      "regionWidth": 135.13513513513513,
+      "fit": true
+    },
+    {
+      "digits": "108",
+      "font": "Itim",
+      "regionHeight": 51.93370165745856,
+      "glyphHeight": 32.916,
+      "glyphWidth": 80.24004,
+      "asset": "金钱瓶_金币_透明_v01.png",
+      "regionWidth": 176.79558011049724,
+      "fit": true
+    },
+    {
+      "digits": "1280",
+      "font": "Itim",
+      "regionHeight": 63.06306306306306,
+      "glyphHeight": 32.916,
+      "glyphWidth": 106.371056,
+      "asset": "日期瓶_DAY_透明_v01.png",
+      "regionWidth": 135.13513513513513,
+      "fit": true
+    },
+    {
+      "digits": "1280",
+      "font": "Itim",
+      "regionHeight": 51.93370165745856,
+      "glyphHeight": 32.916,
+      "glyphWidth": 106.371056,
+      "asset": "金钱瓶_金币_透明_v01.png",
+      "regionWidth": 176.79558011049724,
+      "fit": true
+    },
+    {
+      "digits": "9999",
+      "font": "Itim",
+      "regionHeight": 63.06306306306306,
+      "glyphHeight": 32.708,
+      "glyphWidth": 104.20006,
+      "asset": "日期瓶_DAY_透明_v01.png",
+      "regionWidth": 135.13513513513513,
+      "fit": true
+    },
+    {
+      "digits": "9999",
+      "font": "Itim",
+      "regionHeight": 51.93370165745856,
+      "glyphHeight": 32.708,
+      "glyphWidth": 104.20006,
+      "asset": "金钱瓶_金币_透明_v01.png",
+      "regionWidth": 176.79558011049724,
+      "fit": true
+    }
+  ],
+  "homeDiff": [
+    [
+      96494,
+      0,
+      26,
+      34,
+      422,
+      335
+    ],
+    [
+      96494,
+      0,
+      26,
+      34,
+      422,
+      335
+    ]
+  ],
+  "fontDiff": [
+    3272,
+    0,
+    183,
+    85,
+    305,
+    312
+  ],
+  "netTopApprox": 385,
+  "moneyBottom": 337,
+  "gapToNetApprox": 48,
+  "phone800Em": 21.666666666666668,
+  "phone844ContainEm": 18.77777777777778,
+  "edgeCheck": {
+    "date": {
+      "maxAlpha": 1,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "money": {
+      "maxAlpha": 1,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "note": "Outer-edge alpha=1 dust retained; all alpha>=8 outline has 12px padding. No pixel alpha is rewritten."
+  }
+}

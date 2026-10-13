@@ -8,7 +8,14 @@ local SeaArt=require "ui.landscape.SeaArt"
 local H={}
 function H.New(onOpen,developer)
     local root=UI.Panel {id="homeView",position="absolute",left=0,top=0,width="100%",height="100%",pointerEvents="box-none"}
-    local background=Backdrop.New("homeBackdrop",SeaArt.background,Manifest.width,Manifest.height)
+    -- Same outer camera for backdrop and all room layers; labels remain UI siblings.
+    local panZoom=false --[[@as table|false]]
+    local function applyPanZoom(vg,bounds)
+        if not panZoom then return end
+        nvgTranslate(vg,bounds.x+panZoom.x,bounds.y+panZoom.y)
+        nvgScale(vg,panZoom.scale,panZoom.scale);nvgTranslate(vg,-bounds.x,-bounds.y)
+    end
+    local background=Backdrop.New("homeBackdrop",SeaArt.background,Manifest.width,Manifest.height,nil,applyPanZoom)
     root:AddChild(background)
     local art=UI.Panel {id="homeArt",position="absolute",left=0,top=0,width="100%",height="100%",pointerEvents="none"}
     root:AddChild(art)
@@ -21,6 +28,9 @@ function H.New(onOpen,developer)
     end
     function api.SetInspect(value) api.inspect=developer and value or false end
     function api.SetZoom(value) api.zoom=value end
+    function api.SetPanZoom(scale,x,y)
+        panZoom=scale and {scale=scale,x=x,y=y} or false
+    end
     function api.SetBlocked(value) api.blocked=value;api.pressed=false end
     local hintLayer=UI.Panel {id="homeHints",position="absolute",left=0,top=0,width="100%",height="100%",pointerEvents="none"}
     local intro=Harbor.Tag {id="homeHintIntro",text="点物件，看看有什么",position="absolute",left=12,bottom=12}
@@ -83,9 +93,12 @@ function H.New(onOpen,developer)
         local cache=require "urhox-libs/UI/Core/ImageCache"
         local bounds=root:GetAbsoluteLayout()
         nvgSave(vg); nvgIntersectScissor(vg,bounds.x,bounds.y,bounds.w,bounds.h)
-        -- Clip stays at the original fitted canvas; only the entire room art moves.
-        local ax,ay=fit.x+Zoom.anchor.x*fit.scale,fit.y+Zoom.anchor.y*fit.scale
-        nvgTranslate(vg,ax,ay);nvgScale(vg,api.zoom,api.zoom);nvgTranslate(vg,-ax,-ay)
+        -- Clip remains stationary. Stove moves all art; net keeps its original anchor.
+        if panZoom then applyPanZoom(vg,bounds)
+        else
+            local ax,ay=fit.x+Zoom.anchor.x*fit.scale,fit.y+Zoom.anchor.y*fit.scale
+            nvgTranslate(vg,ax,ay);nvgScale(vg,api.zoom,api.zoom);nvgTranslate(vg,-ax,-ay)
+        end
         local sea=SeaArt.homeSea
         Backdrop.Draw(vg,SeaArt.background,fit.x+sea.x*fit.scale,fit.y+sea.y*fit.scale,sea.w*fit.scale,sea.h*fit.scale)
         for _,layer in ipairs(Manifest.layers) do if layer.visible then

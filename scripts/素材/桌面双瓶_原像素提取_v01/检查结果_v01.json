@@ -1,0 +1,84 @@
+{
+  "method": "Original-source RGB + manually traced Alpha masks and tight crop. No generation, painting, RGB editing, asset resampling or sharpening.",
+  "sourcePath": "D:\\taptap\\To-the-Human-World\\scripts\\素材\\桌面双瓶_原像素提取_v01\\源图_桌面双瓶主页_v01.png",
+  "sourceWidth": 1672,
+  "sourceHeight": 941,
+  "sourceSha256": "699595D332129FA1B964AEA984680C27CA163E10F0DFF08AB7296C1BEECDFAEA",
+  "basePath": "D:\\taptap\\To-the-Human-World\\scripts\\素材\\双瓶标签_选定版提取_v01\\过程记录\\底图_未加标签主页.png",
+  "baseWidth": 1920,
+  "baseHeight": 1080,
+  "baseSha256": "A3A87B70EE2D7CECFD2279188D8A906F4D7A86F4916D8C651D82B8633252EF14",
+  "baseEvidence": "Recorded unlabelled home source in docs/actions/2026-10-11-b-home-ledger-table-r1.md; NOT the runtime layout acceptance.",
+  "previewBaseResampleOnly": [
+    1672,
+    941
+  ],
+  "assetScale": 1,
+  "assets": [
+    {
+      "name": "日期瓶_DAY_原像素_透明_v01.png",
+      "path": "D:\\taptap\\To-the-Human-World\\scripts\\素材\\桌面双瓶_原像素提取_v01\\日期瓶_DAY_原像素_透明_v01.png",
+      "x": 1208,
+      "y": 366,
+      "width": 74,
+      "height": 194,
+      "alphaZero": 4369,
+      "alphaPartial": 567,
+      "alphaOpaque": 9420,
+      "visibleRgbDifferencesFromSource": 0,
+      "borderNonzeroAlpha": 0,
+      "alphaBounds": [
+        2,
+        2,
+        72,
+        192
+      ],
+      "pixelFormat": "Format32bppArgb",
+      "sha256": "3FCA979E06704C34BFC576467EAEEBFF25DF8F6E5EF65C70339FD527E777F18D",
+      "bodySelection": "49.0,26.0 50.7,24.5 54,23.5 67,23.5 77.8,24.5 81.3,26.4 80.5,31.0 79.2,37.7 78.5,39.8 82.6,40.8 86,42.7 86.5,46.5 85.8,49.1 82.5,52.6 80,54.0 79,61.9 80.2,66.2 84.5,72.9 89,80.5 92.4,88.3 94.7,98 95.3,115 95.0,189 94.2,196.3 91,200.5 84.8,203.5 77,205.4 65,206.3 53,205.7 44.2,203.3 38.8,199.7 35.7,194.7 34.8,187 35.1,106 35.8,93.7 38,84.4 42.8,76 48.1,69.5 51.5,64 51.8,54 47.9,52.5 45.4,49 44.8,44.3 45.5,41.3 51,40.5 50.5,34.8",
+      "shadowSelection": "35,195 93,196 98,201 100,206 94,210 83,212 63,213 45,210 34,207 30,203",
+      "selectionOffset": [
+        1180,
+        345
+      ],
+      "interiorAlpha": "255; original transmitted background preserved, NOT recovered transparent glass"
+    },
+    {
+      "name": "金币瓶_原像素_透明_v01.png",
+      "path": "D:\\taptap\\To-the-Human-World\\scripts\\素材\\桌面双瓶_原像素提取_v01\\金币瓶_原像素_透明_v01.png",
+      "x": 1280,
+      "y": 373,
+      "width": 72,
+      "height": 201,
+      "alphaZero": 4080,
+      "alphaPartial": 576,
+      "alphaOpaque": 9816,
+      "visibleRgbDifferencesFromSource": 0,
+      "borderNonzeroAlpha": 0,
+      "alphaBounds": [
+        2,
+        2,
+        70,
+        199
+      ],
+      "pixelFormat": "Format32bppArgb",
+      "sha256": "1AEEF8E5711F8D45E4552E1A6A53D059C943BE1E342C770B766D5752E704A6E8",
+      "bodySelection": "122.0,31.8 126,30.7 139,30.5 149.8,32 153.1,34 152.5,39 150.7,46 154.8,46.7 157.6,49.1 158.1,52.4 155.8,55.3 153.4,57.5 152.2,64.8 153.5,70.6 158.2,79.1 162.1,87.2 164.8,96.7 165.5,109 165.2,201 164.1,208 160.1,213 153.5,215.9 145.8,218 134,218.5 122,217.5 114,214.8 108.7,210.6 106.2,205.3 105.6,198.3 106.4,105.4 107.6,94.1 110.5,85.4 115.6,78.2 120.1,72.9 122.2,67 122.4,58.3 118.2,55.5 117,52.7 116.4,49.5 117.6,47.3 123.3,45.8 122,39",
+      "shadowSelection": "107,209 163,210 170,217 170,222 157,226 137,227 116,224 105,221 102,217",
+      "selectionOffset": [
+        1180,
+        345
+      ],
+      "interiorAlpha": "255; original transmitted background preserved, NOT recovered transparent glass"
+    }
+  ],
+  "knownLimitation": "Visual inspection completed: date interior retains herb-jar imagery, money interior retains mortar/table imagery; brown tabletop remnants remain in contact-shadow selections. Base differs from source. Seam-free portable glass acceptance FAILED; no repainting attempted.",
+  "acceptance": {
+    "originalRgbPreservation": "PASS",
+    "tightCropAndRgba": "PASS",
+    "portableTransparentGlass": "FAIL: source background is baked into interiors",
+    "seamFreeOnRecordedBase": "NOT PASSED: remnants and local texture discontinuity",
+    "runtimeOrDevice": "NOT RUN",
+    "userDecision": "REJECTED: user does not accept original-background remnants. Do not adopt or hand off for integration. Preserve files as failed-trial evidence; further reconstruction requires separate authorization."
+  }
+}
