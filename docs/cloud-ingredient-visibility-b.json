@@ -1,0 +1,157 @@
+{
+  "baseSceneSha256": "865eb62a9fade85787ec69fb4a6df02a30b2cad4e6bcd760786eaae453d50ae7",
+  "candidateBundleSha256": "5815bd298df5ecb1e85b5e92779aa909a647706a404c05e1ec49b72d42b24c9e",
+  "meshChanges": [
+    {
+      "id": "full_group_009_000",
+      "path": "meshes/full_group_009_000.json",
+      "beforeSha256": "6451949ed4f1e2a676f92f62994093d6c23d33614cdd5f665bf8621416ac3ae2",
+      "afterSha256": "338cad02b5bea0caf22d732f93be0b68eea2d6d81919b6937985c56a1d6f954d",
+      "kind": "two old bellflower assemblies: positions only"
+    },
+    {
+      "id": "full_group_016_000",
+      "path": "meshes/full_group_016_000.json",
+      "beforeSha256": "41436abf20788794077195b379a499d6718883fe6aeda893769925bdb8231731",
+      "afterSha256": "cff7a25bcaba0e5a5e8122e55170af51f443705adaa010d7a781d3bb11f5cf75",
+      "kind": "two old bellflower assemblies: positions only"
+    },
+    {
+      "id": "full_group_016_002",
+      "path": "meshes/full_group_016_002.json",
+      "beforeSha256": "3aeccb0b6bfb4a98957f098e0cd9af04b0d63aad84db0b7734e1d25fae929232",
+      "afterSha256": "03aa69fb61807d2dfdd6c702c7c16c91ca83a6007bdaa2b0ab7505a45ce5f7fe",
+      "kind": "two old bellflower assemblies: positions only"
+    },
+    {
+      "id": "full_group_023_000",
+      "path": "meshes/full_group_023_000.json",
+      "beforeSha256": "ec58e1f04057f0f6d01e4e388ba3b453d008c7af99075c9438075768aefa11cd",
+      "afterSha256": "c54f4f9c82fe540e354dcb943e114bc98e5b7e57d92880f73ee55cc9d2f28d56",
+      "kind": "two old bellflower assemblies: positions only"
+    },
+    {
+      "id": "full_group_025_000",
+      "path": "meshes/full_group_025_000.json",
+      "beforeSha256": "d0a7b56bbe22d5396ed9d6c9610061e374a754666e076adbd63e263e7050cb8a",
+      "afterSha256": "2f1ab7f96df87f7d601cf7aaf58d862b1469f23285e5c6197380954ab4966ef3",
+      "kind": "two old bellflower assemblies: positions only"
+    },
+    {
+      "id": "full_group_050_000",
+      "path": "meshes/full_group_050_000.json",
+      "beforeSha256": "30f4b9b6203684463377ad1a52d9ecd55b530bf242cc2fbb62e5725b0ce4161a",
+      "afterSha256": "b4d813b2280e5b7c4177e30f76b87a1ead2bb1f1954cb2c4d46268383f4e3bfc",
+      "kind": "two old bellflower assemblies: positions only"
+    },
+    {
+      "id": "full_group_052_000",
+      "path": "meshes/full_group_052_000.json",
+      "beforeSha256": "33d3d8f15cc0ca9acfade92efdff8e60a34f58dd9d7d89b017800e35ab4f4c47",
+      "afterSha256": "d546fac622c18930db28a399f32a5b6f05a99662b2a45c57e296f5b6da528f5b",
+      "kind": "two old bellflower assemblies: positions only"
+    },
+    {
+      "id": "full_group_052_001",
+      "path": "meshes/full_group_052_001.json",
+      "beforeSha256": "29dbeda7bbc87a4452ff298fbbedca3b894573ede60e7f76b01f5543847f209e",
+      "afterSha256": "5db21eac105cf538c0f0360014bd62399a37360048bc98cd58fd2d6172dbbfb3",
+      "kind": "two old bellflower assemblies: positions only"
+    },
+    {
+      "id": "full_group_052_002",
+      "path": "meshes/full_group_052_002.json",
+      "beforeSha256": "52f214021a013472d451feef67950189929e49e9ec289724cdd028271350959f",
+      "afterSha256": "280f3decd8d9e9fe6b6f07e485fa288e78661d8ccbd38b0ca1402d7440320fc9",
+      "kind": "two old bellflower assemblies: positions only"
+    },
+    {
+      "id": "ingredient.salt_bowl",
+      "path": "meshes/ingredient.salt_bowl.json",
+      "beforeSha256": "089fa2c4d811a46b15fb01c70eeb6492da5aca990dc557ec4660430b4d0d913b",
+      "afterSha256": "6387dcb36e45e3d5cc3094a1993555f448491a8e6e0685a60ff9409e43bf5cfb",
+      "kind": "ingredient positive uniform scale and translation: positions only"
+    },
+    {
+      "id": "ingredient.salt_bed",
+      "path": "meshes/ingredient.salt_bed.json",
+      "beforeSha256": "38c478936b2d4501ea42dd097de061baad2a4d458701a793e6d7a5f315070bd3",
+      "afterSha256": "2fd0c373883da54c57447be092ebb7cfb22b65c0d5e2db9f17a37443f1c7ee4b",
+      "kind": "ingredient positive uniform scale and translation: positions only"
+    },
+    {
+      "id": "ingredient.salt_crystals",
+      "path": "meshes/ingredient.salt_crystals.json",
+      "beforeSha256": "b6507e90743d8fa338c3c69db02b674e0191c6a30a42f80168d7f1aba83a5cd8",
+      "afterSha256": "ae09b3aec83bee906af4565173af668dd2222e99510bc977b763dfe9075e7426",
+      "kind": "ingredient positive uniform scale and translation: positions only"
+    },
+    {
+      "id": "ingredient.petal_plate",
+      "path": "meshes/ingredient.petal_plate.json",
+      "beforeSha256": "7e9d6b6c34bf06b9381ffb5c0bb05ba21560d08109d0e98e3d2e2fcb06625343",
+      "afterSha256": "b2de401e9a2a97602abdb7c47653eccae80181b486f276e1c684abf41b68da6b",
+      "kind": "ingredient positive uniform scale and translation: positions only"
+    },
+    {
+      "id": "ingredient.dried_petals",
+      "path": "meshes/ingredient.dried_petals.json",
+      "beforeSha256": "5b8556a8f89591d8cbdc559d8215348bd9027924d2c5671c543e3cab066b7259",
+      "afterSha256": "5f311d6171768d207d9601bb7720b0efd0d08cd3c15f928044eebca17bbd9eaf",
+      "kind": "ingredient positive uniform scale and translation: positions only"
+    },
+    {
+      "id": "ingredient.herb_pot",
+      "path": "meshes/ingredient.herb_pot.json",
+      "beforeSha256": "d7b4eb574d61b65629687def210d8217e660c93bbc2ea64cc55690a3a3d00940",
+      "afterSha256": "74b576c5deb10deb27f66f570657cccad70541956c9757a6eef302df3db14ff1",
+      "kind": "ingredient positive uniform scale and translation: positions only"
+    },
+    {
+      "id": "ingredient.dew_cork_mesh",
+      "path": "meshes/ingredient.dew_cork_mesh.json",
+      "beforeSha256": "68a599db705ef24e63d653287b8e40792d83d592865fdc768af5d8744aec1269",
+      "afterSha256": "799cfa697511e5509e9127ccdf4fcfd3270c0fc9f1fb71e5bc61e3332ff9350f",
+      "kind": "ingredient positive uniform scale and translation: positions only"
+    },
+    {
+      "id": "ingredient.dew_glass_mesh",
+      "path": "meshes/ingredient.dew_glass_mesh.json",
+      "beforeSha256": "353535a787dc695e94d57a213688a46bd56121fecb7dd4863dfe48a4b4762932",
+      "afterSha256": "cf7348fa42e4c87b6f0cacbed40706bc2132bd6bacbe8e54d5da55bc64c4423e",
+      "kind": "ingredient positive uniform scale and translation: positions only"
+    },
+    {
+      "id": "ingredient.dew_liquid_mesh",
+      "path": "meshes/ingredient.dew_liquid_mesh.json",
+      "beforeSha256": "4463c04dffd172645f365b4417528d7065d4ece487acaabad210b4812b7247e2",
+      "afterSha256": "3330cc59e3c34bbd14fcb18df2f71696761d00e25cab7be415fb11bdbe9ac81b",
+      "kind": "ingredient positive uniform scale and translation: positions only"
+    },
+    {
+      "id": "ingredient.ash_herb",
+      "path": "meshes/ingredient.ash_herb.json",
+      "beforeSha256": "6f739e7772677e1138aef21168d01a4c56f4337bcaf28b1bfb1c68a17f6f7992",
+      "afterSha256": "f33cbc6b1fcc820587af904531006b39bf2a6d3ddeca732b80aac5445b542cd2",
+      "kind": "ingredient positive uniform scale and translation: positions only"
+    }
+  ],
+  "materialChange": {
+    "id": "ingredient.dew_glass",
+    "field": "baseColorFactor[3]",
+    "before": 0.16,
+    "after": 0.3
+  },
+  "onlyNecessarySceneFieldsChanged": true,
+  "allLatestOtherMaterialsAndMetadataPreserved": true,
+  "cameraEightProxiesAndAllCountsUnchanged": true,
+  "runtimeResourcesVerified": 164,
+  "verification": "PASS: 164 resource hashes; 100 mesh native load; eight anchor calibration; actual 1170x658 native image reviewed",
+  "lightingBaselineCommit": "225d897f11e5ff4cb5a99b835f14459c8ac6be3b",
+  "nativeLoadSeconds": 68.24200248718262,
+  "visualLimits": [
+    "Night-dew bottle remains dark under current light",
+    "Small petal content still subtle at full Home resolution",
+    "Transparent material is an engine approximation"
+  ]
+}

@@ -82,7 +82,7 @@
       "vertices": 23938,
       "triangles": 13140,
       "maxNormalError": 1.7812003916262142e-07,
-      "bytes": 2093111
+      "bytes": 2094191
     },
     {
       "id": "full_group_010_000",
@@ -229,7 +229,7 @@
       "vertices": 4218,
       "triangles": 4304,
       "maxNormalError": 1.4151725502564716e-07,
-      "bytes": 386788
+      "bytes": 386516
     },
     {
       "id": "full_group_026_000",
@@ -642,42 +642,42 @@
       "vertices": 1920,
       "triangles": 640,
       "maxNormalError": 6.966512122730251e-08,
-      "bytes": 221298
+      "bytes": 223860
     },
     {
       "id": "ingredient.salt_bed",
       "vertices": 300,
       "triangles": 100,
       "maxNormalError": 9.60908757008383e-08,
-      "bytes": 28936
+      "bytes": 28984
     },
     {
       "id": "ingredient.salt_crystals",
       "vertices": 1512,
       "triangles": 504,
       "maxNormalError": 9.853218729816149e-08,
-      "bytes": 155422
+      "bytes": 155336
     },
     {
       "id": "ingredient.petal_plate",
       "vertices": 1920,
       "triangles": 640,
       "maxNormalError": 9.603437445271368e-08,
-      "bytes": 220077
+      "bytes": 220429
     },
     {
       "id": "ingredient.dried_petals",
       "vertices": 7719,
       "triangles": 2573,
       "maxNormalError": 1.125642536958793e-07,
-      "bytes": 1056937
+      "bytes": 1057036
     },
     {
       "id": "ingredient.herb_pot",
       "vertices": 1536,
       "triangles": 512,
       "maxNormalError": 7.519001687938953e-08,
-      "bytes": 176372
+      "bytes": 178704
     },
     {
       "id": "ingredient.dew_cork_mesh",
@@ -691,21 +691,21 @@
       "vertices": 308,
       "triangles": 358,
       "maxNormalError": 1.0161228347627116e-07,
-      "bytes": 30408
+      "bytes": 30384
     },
     {
       "id": "ingredient.dew_liquid_mesh",
       "vertices": 73,
       "triangles": 76,
       "maxNormalError": 9.380079357690363e-08,
-      "bytes": 6718
+      "bytes": 6698
     },
     {
       "id": "ingredient.ash_herb",
       "vertices": 1638,
       "triangles": 1266,
       "maxNormalError": 6.4454614978615155e-09,
-      "bytes": 168127
+      "bytes": 168356
     }
   ],
   "engineValidated": false,
@@ -728,5 +728,15 @@
     "addedTriangles": 6681,
     "masksUsed": false,
     "cameraAndEightInteractionProxiesUnchanged": true
+  },
+  "ingredientVisibilityRevision": {
+    "status": "OFFLINE_GEOMETRY_PASS_NATIVE_ALPHA_SORT_REVIEW_PENDING",
+    "revision": "B",
+    "ingredientMeshes": 10,
+    "oldPlantMeshes": 9,
+    "oldPlantSourceObjects": 280,
+    "triangleCountsUnchanged": true,
+    "eightInteractionProxiesUnchanged": true,
+    "dewGlassAlpha": 0.3
   }
 }
