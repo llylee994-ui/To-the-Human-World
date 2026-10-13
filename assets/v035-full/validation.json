@@ -1,10 +1,10 @@
 {
   "errors": [],
-  "coveredObjects": 10755,
-  "expectedObjects": 10755,
-  "meshCount": 90,
-  "triangles": 3201927,
-  "vertices": 2575906,
+  "coveredObjects": 10847,
+  "expectedObjects": 10847,
+  "meshCount": 100,
+  "triangles": 3208608,
+  "vertices": 2592846,
   "removedZeroAreaTriangles": 6926,
   "chunks": [
     {
@@ -636,6 +636,76 @@
       "triangles": 2,
       "maxNormalError": 4.4482423966485385e-08,
       "bytes": 588
+    },
+    {
+      "id": "ingredient.salt_bowl",
+      "vertices": 1920,
+      "triangles": 640,
+      "maxNormalError": 6.966512122730251e-08,
+      "bytes": 221298
+    },
+    {
+      "id": "ingredient.salt_bed",
+      "vertices": 300,
+      "triangles": 100,
+      "maxNormalError": 9.60908757008383e-08,
+      "bytes": 28936
+    },
+    {
+      "id": "ingredient.salt_crystals",
+      "vertices": 1512,
+      "triangles": 504,
+      "maxNormalError": 9.853218729816149e-08,
+      "bytes": 155422
+    },
+    {
+      "id": "ingredient.petal_plate",
+      "vertices": 1920,
+      "triangles": 640,
+      "maxNormalError": 9.603437445271368e-08,
+      "bytes": 220077
+    },
+    {
+      "id": "ingredient.dried_petals",
+      "vertices": 7719,
+      "triangles": 2573,
+      "maxNormalError": 1.125642536958793e-07,
+      "bytes": 1056937
+    },
+    {
+      "id": "ingredient.herb_pot",
+      "vertices": 1536,
+      "triangles": 512,
+      "maxNormalError": 7.519001687938953e-08,
+      "bytes": 176372
+    },
+    {
+      "id": "ingredient.dew_cork_mesh",
+      "vertices": 14,
+      "triangles": 12,
+      "maxNormalError": 5.353891285864165e-08,
+      "bytes": 1464
+    },
+    {
+      "id": "ingredient.dew_glass_mesh",
+      "vertices": 308,
+      "triangles": 358,
+      "maxNormalError": 1.0161228347627116e-07,
+      "bytes": 30408
+    },
+    {
+      "id": "ingredient.dew_liquid_mesh",
+      "vertices": 73,
+      "triangles": 76,
+      "maxNormalError": 9.380079357690363e-08,
+      "bytes": 6718
+    },
+    {
+      "id": "ingredient.ash_herb",
+      "vertices": 1638,
+      "triangles": 1266,
+      "maxNormalError": 6.4454614978615155e-09,
+      "bytes": 168127
     }
   ],
   "engineValidated": false,
@@ -650,5 +720,13 @@
     "retainedGeometryAttributesAndWindingUnchanged": true,
     "nativeAndVisualValidation": "NOT RUN",
     "scope": "Changed meshes checked; existing validation retained for byte-identical baseline assets."
+  },
+  "ingredientDraftValidation": {
+    "status": "DATA_CONTRACT_PASS",
+    "nativeAndVisualValidation": "PENDING",
+    "addedMeshes": 10,
+    "addedTriangles": 6681,
+    "masksUsed": false,
+    "cameraAndEightInteractionProxiesUnchanged": true
   }
 }

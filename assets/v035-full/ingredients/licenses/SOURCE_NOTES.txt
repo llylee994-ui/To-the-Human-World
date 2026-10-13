@@ -1,0 +1,6 @@
+Saatou bottles: https://saatou.itch.io/potion-bottle-bundle-for-your-3d-game
+Commercial use and modification allowed by included author README. Not designated CC0.
+Tiny Weeds by Nobiax/Yughues: https://opengameart.org/content/tiny-weeds ; included CC0.
+Petal geometry and baked art derive from the user project hybrid_scene.blend; no public redistribution license inferred.
+Necessary ceramic containers, coarse salt pile/crystals and ceramic variation map are newly authored for this task.
+No GPL/CC-BY-SA Crockery Pack or unverified external petals used.

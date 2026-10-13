@@ -1266,6 +1266,174 @@
       "renderVisible": false,
       "note": "Prefer separate non-rendering pick geometry; not a visible room image",
       "textureColorSpaces": {}
+    },
+    {
+      "id": "ingredient.cream_ceramic",
+      "baseColorFactor": [
+        0.76,
+        0.65,
+        0.46,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.83,
+      "alphaMode": "OPAQUE",
+      "unlit": false,
+      "doubleSided": false,
+      "baseColorTexture": "ingredients/common/ceramic_throwing_variation.png",
+      "textureColorSpaces": {
+        "baseColorTexture": "sRGB"
+      },
+      "cullMode": "CW"
+    },
+    {
+      "id": "ingredient.unglazed_clay",
+      "baseColorFactor": [
+        0.29,
+        0.17,
+        0.09,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.83,
+      "alphaMode": "OPAQUE",
+      "unlit": false,
+      "doubleSided": false,
+      "baseColorTexture": "ingredients/common/ceramic_throwing_variation.png",
+      "textureColorSpaces": {
+        "baseColorTexture": "sRGB"
+      },
+      "cullMode": "CW"
+    },
+    {
+      "id": "ingredient.faded_green_ceramic",
+      "baseColorFactor": [
+        0.24,
+        0.31,
+        0.19,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.83,
+      "alphaMode": "OPAQUE",
+      "unlit": false,
+      "doubleSided": false,
+      "baseColorTexture": "ingredients/common/ceramic_throwing_variation.png",
+      "textureColorSpaces": {
+        "baseColorTexture": "sRGB"
+      },
+      "cullMode": "CW"
+    },
+    {
+      "id": "ingredient.salt_crystals",
+      "baseColorFactor": [
+        0.8,
+        0.83,
+        0.79,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.48,
+      "alphaMode": "OPAQUE",
+      "unlit": false,
+      "doubleSided": false,
+      "cullMode": "CW"
+    },
+    {
+      "id": "ingredient.salt_bed",
+      "baseColorFactor": [
+        0.65,
+        0.69,
+        0.65,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.68,
+      "alphaMode": "OPAQUE",
+      "unlit": false,
+      "doubleSided": false,
+      "cullMode": "CW"
+    },
+    {
+      "id": "ingredient.dried_petals",
+      "baseColorFactor": [
+        0.72,
+        0.38,
+        0.46,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.95,
+      "alphaMode": "OPAQUE",
+      "unlit": false,
+      "doubleSided": true,
+      "baseColorTexture": "ingredients/common/dried_petals_basecolor.png",
+      "textureColorSpaces": {
+        "baseColorTexture": "sRGB"
+      },
+      "cullMode": "NONE"
+    },
+    {
+      "id": "ingredient.dew_glass",
+      "baseColorFactor": [
+        0.035,
+        0.065,
+        0.08,
+        0.16
+      ],
+      "metallic": 0.0,
+      "roughness": 0.16,
+      "alphaMode": "BLEND",
+      "unlit": false,
+      "doubleSided": true,
+      "cullMode": "NONE"
+    },
+    {
+      "id": "ingredient.dew_cork",
+      "baseColorFactor": [
+        0.72,
+        0.63,
+        0.52,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.86,
+      "alphaMode": "OPAQUE",
+      "unlit": false,
+      "doubleSided": true,
+      "baseColorTexture": "ingredients/dew/cork_color.png",
+      "cullMode": "NONE"
+    },
+    {
+      "id": "ingredient.dew_liquid",
+      "baseColorFactor": [
+        0.004,
+        0.025,
+        0.05,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.34,
+      "alphaMode": "OPAQUE",
+      "unlit": false,
+      "doubleSided": true,
+      "cullMode": "NONE"
+    },
+    {
+      "id": "ingredient.ash_herb_dry",
+      "baseColorFactor": [
+        0.94,
+        0.94,
+        0.91,
+        1
+      ],
+      "metallic": 0.0,
+      "roughness": 0.94,
+      "alphaMode": "OPAQUE",
+      "doubleSided": true,
+      "baseColorTexture": "ingredients/herb/ash_herb_albedo.png",
+      "unlit": false,
+      "cullMode": "NONE"
     }
   ],
   "meshes": [],
@@ -2079,6 +2247,96 @@
       "triangles": 2,
       "semantic": "home.merchantShip",
       "sha256": "3fca25f59d0b5dd681d8633a1726d773262c0adf37df837bc84e2c1b5ec572e3"
+    },
+    {
+      "id": "ingredient.salt_bowl",
+      "file": "meshes/ingredient.salt_bowl.json",
+      "materialId": "ingredient.cream_ceramic",
+      "vertices": 1920,
+      "triangles": 640,
+      "semantic": "static.ingredient",
+      "sha256": "089fa2c4d811a46b15fb01c70eeb6492da5aca990dc557ec4660430b4d0d913b"
+    },
+    {
+      "id": "ingredient.salt_bed",
+      "file": "meshes/ingredient.salt_bed.json",
+      "materialId": "ingredient.salt_bed",
+      "vertices": 300,
+      "triangles": 100,
+      "semantic": "static.ingredient",
+      "sha256": "38c478936b2d4501ea42dd097de061baad2a4d458701a793e6d7a5f315070bd3"
+    },
+    {
+      "id": "ingredient.salt_crystals",
+      "file": "meshes/ingredient.salt_crystals.json",
+      "materialId": "ingredient.salt_crystals",
+      "vertices": 1512,
+      "triangles": 504,
+      "semantic": "static.ingredient",
+      "sha256": "b6507e90743d8fa338c3c69db02b674e0191c6a30a42f80168d7f1aba83a5cd8"
+    },
+    {
+      "id": "ingredient.petal_plate",
+      "file": "meshes/ingredient.petal_plate.json",
+      "materialId": "ingredient.faded_green_ceramic",
+      "vertices": 1920,
+      "triangles": 640,
+      "semantic": "static.ingredient",
+      "sha256": "7e9d6b6c34bf06b9381ffb5c0bb05ba21560d08109d0e98e3d2e2fcb06625343"
+    },
+    {
+      "id": "ingredient.dried_petals",
+      "file": "meshes/ingredient.dried_petals.json",
+      "materialId": "ingredient.dried_petals",
+      "vertices": 7719,
+      "triangles": 2573,
+      "semantic": "static.ingredient",
+      "sha256": "5b8556a8f89591d8cbdc559d8215348bd9027924d2c5671c543e3cab066b7259"
+    },
+    {
+      "id": "ingredient.herb_pot",
+      "file": "meshes/ingredient.herb_pot.json",
+      "materialId": "ingredient.unglazed_clay",
+      "vertices": 1536,
+      "triangles": 512,
+      "semantic": "static.ingredient",
+      "sha256": "d7b4eb574d61b65629687def210d8217e660c93bbc2ea64cc55690a3a3d00940"
+    },
+    {
+      "id": "ingredient.dew_cork_mesh",
+      "file": "meshes/ingredient.dew_cork_mesh.json",
+      "materialId": "ingredient.dew_cork",
+      "vertices": 14,
+      "triangles": 12,
+      "semantic": "static.ingredient",
+      "sha256": "68a599db705ef24e63d653287b8e40792d83d592865fdc768af5d8744aec1269"
+    },
+    {
+      "id": "ingredient.dew_glass_mesh",
+      "file": "meshes/ingredient.dew_glass_mesh.json",
+      "materialId": "ingredient.dew_glass",
+      "vertices": 308,
+      "triangles": 358,
+      "semantic": "static.ingredient",
+      "sha256": "353535a787dc695e94d57a213688a46bd56121fecb7dd4863dfe48a4b4762932"
+    },
+    {
+      "id": "ingredient.dew_liquid_mesh",
+      "file": "meshes/ingredient.dew_liquid_mesh.json",
+      "materialId": "ingredient.dew_liquid",
+      "vertices": 73,
+      "triangles": 76,
+      "semantic": "static.ingredient",
+      "sha256": "4463c04dffd172645f365b4417528d7065d4ece487acaabad210b4812b7247e2"
+    },
+    {
+      "id": "ingredient.ash_herb",
+      "file": "meshes/ingredient.ash_herb.json",
+      "materialId": "ingredient.ash_herb_dry",
+      "vertices": 1638,
+      "triangles": 1266,
+      "semantic": "static.ingredient",
+      "sha256": "6f739e7772677e1138aef21168d01a4c56f4337bcaf28b1bfb1c68a17f6f7992"
     }
   ],
   "proxyMeshes": [
@@ -2722,10 +2980,10 @@
     }
   ],
   "mainContractSha": "1cd0cdbec06487a5c60f109d5fd477198cfc8846",
-  "sourceVisibleObjects": 10755,
+  "sourceVisibleObjects": 10847,
   "removedZeroAreaTriangles": 6926,
-  "triangles": 3201927,
-  "vertices": 2575906,
+  "triangles": 3208608,
+  "vertices": 2592846,
   "coverageFile": "object_mesh_coverage.json",
   "projectionReference": "camera_projection_reference.json",
   "sourceObjectMappingScope": "Merged-group provenance repeated across chunk files; all original visible objects accounted for, not a triangle ownership map"
