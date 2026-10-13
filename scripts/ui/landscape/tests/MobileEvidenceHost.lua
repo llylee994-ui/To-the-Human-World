@@ -34,11 +34,12 @@ function T.Run()
             end
             view.Update()
         end
-        for _,scene in ipairs({"home","seaside","shop","shop-furniture","shop-ticket","brew","journal"}) do
+        for _,scene in ipairs({"home","seaside","shop","shop-page2","shop-furniture","shop-furniture-page2","shop-ticket","brew","journal"}) do
             local shop=scene:match("^shop")
             view.Navigate(shop and "seaside" or scene=="journal" and "home" or scene);view.Update();bind()
             if shop then
-                view.shopCategory=scene=="shop-furniture" and "furniture" or scene=="shop-ticket" and "tickets" or "ingredients"
+                view.shopCategory=scene:match("^shop%-furniture") and "furniture" or scene=="shop-ticket" and "tickets" or "ingredients"
+                view.shopPage=scene:match("page2$") and 2 or 1
                 view.shopSelectedId=false;view.Open("shop");view.Update();bind()
             elseif scene=="journal" then view.Open("journal");view.Update();bind() end
             local capture=rawget(_G,"MOBILE_EVIDENCE")
@@ -47,7 +48,7 @@ function T.Run()
         view.root.parent=nil
     end
     UI.GetViewportSize,UI.GetSafeAreaInsets=oldViewport,oldInsets
-    print("[MobileEvidence] exported 28 actual view trees; simulated host, NOT phone/Yoga rendering")
+    print("[MobileEvidence] exported 36 actual view trees; simulated host, NOT phone/Yoga rendering")
     return true
 end
 return T

@@ -14,6 +14,10 @@ function T.Run()
     local x=F.New(content,{targetSchema=3});local view=View.New(x.session,content)
     local function control(id) return assert(view.root:FindById(id),"missing control "..id) end
     local function click(id)
+        if not view.root:FindById(id) and (id=="shop_select_ing_dried_petal" or id=="shop_select_ing_sea_salt") then
+            local pageId=id=="shop_select_ing_sea_salt" and "shopPreviousPage" or "shopNextPage"
+            control(pageId).props.onClick();view.Update()
+        end
         if id=="shop_select_travel_ticket" and not view.root:FindById(id) then
             control("shopTab_tickets").props.onClick();view.Update()
         end

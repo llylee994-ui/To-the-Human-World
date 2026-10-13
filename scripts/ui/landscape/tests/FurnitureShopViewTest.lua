@@ -18,7 +18,10 @@ function T.Run()
     check(view.root:FindById("shopTab_furniture"),"shop must offer furniture category without shrinking nine goods")
     local before,writes=x.state.GetSnapshot(),x.writes
     click("shopTab_furniture")
-    for _,id in ipairs({"decor_tablecloth","decor_chair","decor_lamp","decor_bookshelf"}) do check(view.root:FindById("shop_select_"..id),"missing furniture "..id) end
+    for _,id in ipairs({"decor_tablecloth","decor_chair"}) do check(view.root:FindById("shop_select_"..id),"missing furniture "..id) end
+    click("shopNextPage")
+    for _,id in ipairs({"decor_lamp","decor_bookshelf"}) do check(view.root:FindById("shop_select_"..id),"missing furniture "..id) end
+    click("shopPreviousPage")
     click("shop_select_decor_chair")
     check(U.Equal(before,x.state.GetSnapshot()) and x.writes==writes,"category/selection never buys")
     check(widget("shopItemName"):GetText()=="椅子","detail follows furniture selection")
@@ -28,7 +31,7 @@ function T.Run()
     check(widget("shopItemOwned"):GetText():find("已拥有",1,true),"owned status remains visible")
     check(x.state.ReloadCurrent(),"purchase reload through same live coordinator")
     view.Refresh();view.Update();check(widget("buy_decor_chair").props.disabled,"ownership survives reload")
-    before,writes=x.state.GetSnapshot(),x.writes
+    click("shopNextPage");before,writes=x.state.GetSnapshot(),x.writes
     click("shop_select_decor_lamp");x.fault="write";click("buy_decor_lamp");x.fault=false
     check(U.Equal(before,x.state.GetSnapshot()),"save failure cannot debit lamp")
     check(not widget("buy_decor_lamp").props.disabled,"failed purchase can retry")

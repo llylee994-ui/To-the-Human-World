@@ -1,5 +1,6 @@
 -- Merchant counter. Browsing never mutates a business snapshot.
 local UI=require "urhox-libs/UI"
+local Widget=require "urhox-libs/UI/Core/Widget"
 local Harbor=require "ui.landscape.HarborStyle"
 local Art=require "ui.landscape.IngredientArt"
 local Merchandise=require "ui.landscape.MerchandiseArt"
@@ -25,13 +26,17 @@ local function reason(view,item)
     return ""
 end
 local function tab(parent,ctx,id,title,selected)
-    parent:AddChild(UI.Button {id="shopTab_"..id,text=title,minHeight=40,width=92,fontFamily="story",fontSize=16,
-        backgroundColor=selected and {91,62,39,230} or {38,27,19,135},hoverBackgroundColor={99,72,47,230},
-        -- Disable themed gradients through the variant map. An empty gradient
-        -- is still truthy in Lua and Button.Init would try to lighten nil colors.
-        pressedBackgroundColor={46,32,23,230},variantBackgroundGradient={},borderWidth=0,borderRadius=4,
-        textColor=selected and light or {225,210,183,255},padding={5,12},
-        onClick=function() ctx.shopCategory=id;ctx.shopSelectedId=false;ctx.ticketConfirm=false;ctx.model.dirty=true end})
+    local button=UI.Button {id="shopTab_"..id,text=title,height=44,width=104,fontFamily="story",fontSize=17,fontWeight="normal",
+        backgroundImage=Harbor.paperImage,backgroundFit="fill",backgroundImageOpacity=selected and 1 or .72,
+        hoverBackgroundImageOpacity=1,pressedBackgroundImageOpacity=.82,
+        backgroundColor={0,0,0,0},hoverBackgroundColor={0,0,0,0},pressedBackgroundColor={0,0,0,0},
+        variantBackgroundGradient={},variantHoverBackgroundGradient={},variantPressedBackgroundGradient={},
+        borderWidth=0,hoverBorderWidth=0,pressedBorderWidth=0,borderRadius=0,boxShadow=false,glowShadow={},
+        textColor=selected and ink or {116,89,63,255},padding={5,12},pressedPadding={5,12},
+        onClick=function() ctx.shopCategory=id;ctx.shopPage=1;ctx.shopSelectedId=false;ctx.ticketConfirm=false;ctx.model.dirty=true end}
+    if selected then button:AddChild(UI.Panel {position="absolute",left=16,right=16,bottom=4,height=2,
+        backgroundColor={155,107,57,210},pointerEvents="none"}) end
+    parent:AddChild(button)
 end
 function S.Render(ctx,overlay)
     local height=720 --[[@as number]]
@@ -48,9 +53,11 @@ function S.Render(ctx,overlay)
         paddingTop=8+safe.top,paddingBottom=8,paddingLeft=pad+safe.left,paddingRight=pad+safe.right,gap=12,
         flexDirection="row",alignItems="center",pointerEvents="box-none"}
     ctx.panelHeader=header;panel:AddChild(header)
-    text(header,"商队商店",compact and 23 or 27,nil,light)
+    local title=text(header,"商队商店",compact and 23 or 27,"shopTitle",light)
+    Widget.SetStyle(title,{width=compact and 150 or 180,whiteSpace="nowrap",alignSelf="center"})
     header:AddChild(UI.Panel {flexGrow=1,pointerEvents="none"})
     local wallet=text(header,"",17,"shopBalance",light)
+    Widget.SetStyle(wallet,{width=128,whiteSpace="nowrap",alignSelf="center"})
     header:AddChild(Harbor.Button {id="closePanel",text="关闭",minHeight=48,width=84,onClick=ctx.Close})
     local noticeArea=UI.ScrollView {id="shopMessageArea",width="100%",height=44,flexShrink=0,scrollY=true,
         visible=false,paddingLeft=pad+safe.left,paddingRight=pad+safe.right,pointerEvents="box-none"}
@@ -99,8 +106,14 @@ function S.Render(ctx,overlay)
     if #items==0 then
         local body=Harbor.Paper {margin=pad,padding=20};panel:AddChild(body);text(body,"目前没有可出售的商品。",18,"shopEmpty");return
     end
-    local selected=items[1]
-    for _,item in ipairs(items) do if item.ingredientId==ctx.shopSelectedId then selected=item;break end end
+    local pageCount=math.ceil(#items/2)
+    local page=math.max(1,math.min(pageCount,math.floor(ctx.shopPage or 1)))
+    ctx.shopPage=page
+    local first=(page-1)*2+1
+    local selected=items[first]
+    for index=first,math.min(first+1,#items) do
+        local item=items[index];if item.ingredientId==ctx.shopSelectedId then selected=item;break end
+    end
     ctx.shopSelectedId=selected.ingredientId
     local content=UI.Panel {id="shopContent",width="100%",flexGrow=1,flexShrink=1,flexBasis=0,minHeight=0,
         flexDirection="row",paddingTop=4,paddingLeft=pad+safe.left,paddingRight=pad+safe.right,paddingBottom=pad+safe.bottom,
@@ -108,25 +121,37 @@ function S.Render(ctx,overlay)
     panel:AddChild(content)
     local goods=UI.Panel {id="shopGoods",flexGrow=3,flexShrink=1,flexBasis=0,minWidth=0,gap=8,pointerEvents="box-none"}
     content:AddChild(goods)
-    text(goods,category=="ingredients" and "原料每日补货 · 滑动查看商品" or category=="furniture" and "购入后收存 · 滑动查看商品" or "通往人间的单程航程",13,nil,light)
-    local gallery=scroll(goods,"shopGoodsScroll")
-    local row
-    local cardHeight=compact and 204 or 264
-    for index,item in ipairs(items) do
-        if index%2==1 then row=UI.Panel {width="100%",flexDirection="row",gap=12,pointerEvents="box-none"};gallery:AddChild(row) end
+    text(goods,category=="ingredients" and "原料每日补货" or category=="furniture" and "购入后收存" or "通往人间的单程航程",13,nil,light)
+    local gallery=UI.Panel {id="shopGoodsPage",width="100%",flexGrow=1,flexShrink=1,flexBasis=0,minHeight=0,
+        flexDirection="row",gap=12,pointerEvents="box-none"}
+    goods:AddChild(gallery)
+    for index=first,math.min(first+1,#items) do
+        local item=items[index]
         local chosen=item.ingredientId==selected.ingredientId
         local card=UI.Panel {id="shop_select_"..item.ingredientId,flexGrow=1,flexShrink=1,flexBasis=0,minWidth=0,
-            height=cardHeight,padding=10,gap=3,alignItems="center",borderRadius=6,borderWidth=0,
+            minHeight=0,padding=10,gap=3,alignItems="center",borderRadius=6,borderWidth=0,
             backgroundColor=chosen and {111,79,48,155} or {34,24,17,95},
             onClick=function() ctx.shopSelectedId=item.ingredientId;ctx.model.dirty=true end}
-        assert(row):AddChild(card)
-        card:AddChild(Merchandise.Panel(item.ingredientId,{id="shopArt_"..item.ingredientId,width="100%",height=cardHeight-106}))
-        local name=text(card,item.name,16,nil,light);name.props.textAlign="center"
-        local price=text(card,item.price.." 金币",13,nil,{227,204,155,255});price.props.textAlign="center"
+        gallery:AddChild(card)
+        card:AddChild(Merchandise.Panel(item.ingredientId,{id="shopArt_"..item.ingredientId,width="100%",
+            flexGrow=1,flexShrink=1,flexBasis=0,minHeight=0}))
+        local name=text(card,item.name,16,"shopName_"..item.ingredientId,light);name.props.textAlign="center"
+        local price=text(card,item.price.." 金币",13,"shopPrice_"..item.ingredientId,{227,204,155,255});price.props.textAlign="center"
         local status=item.kind=="ticket" and Ticket.Expiry(item.ticket) or item.kind=="furniture" and (item.owned and "已拥有" or "可购入")
             or (item.remainingToday>0 and "余 "..item.remainingToday.." 份" or "今日售完")
-        local caption=text(card,status,11,nil,{222,207,179,255});caption.props.textAlign="center"
+        local caption=text(card,status,11,"shopStatus_"..item.ingredientId,{222,207,179,255});caption.props.textAlign="center"
     end
+    local pager=UI.Panel {id="shopPager",width="100%",height=48,flexShrink=0,flexDirection="row",gap=12,
+        alignItems="center",justifyContent="center",pointerEvents="box-none"}
+    goods:AddChild(pager)
+    local function turn(delta)
+        ctx.shopPage=math.max(1,math.min(pageCount,page+delta));ctx.shopSelectedId=false
+        ctx.ticketConfirm=false;ctx.model.dirty=true
+    end
+    pager:AddChild(Harbor.Button {id="shopPreviousPage",text="上一页",width=96,minHeight=44,disabled=page==1,onClick=function() turn(-1) end})
+    local pageNumber=text(pager,page.." / "..pageCount,14,"shopPageNumber",light)
+    Widget.SetStyle(pageNumber,{width=64,textAlign="center",whiteSpace="nowrap",alignSelf="center"})
+    pager:AddChild(Harbor.Button {id="shopNextPage",text="下一页",width=96,minHeight=44,disabled=page==pageCount,onClick=function() turn(1) end})
     local detail=Harbor.Paper {id="shopDetail",flexGrow=2,flexShrink=1,flexBasis=0,minWidth=0,padding=16,overflow="hidden"}
     content:AddChild(detail)
     local body=scroll(detail,"shopDetailScroll")
