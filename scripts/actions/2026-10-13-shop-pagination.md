@@ -7,3 +7,5 @@
 先新增 ShopPaginationTest，旧实现明确失败于“goods must use pages instead of scrolling”，再实现分页。分页测试 24 项通过，真实 Button.Init 的构建测试、原料与家具购买、船票、安全区、首页流程测试均通过，LSP 零 Error。
 
 离线控件树与 CSS 重放覆盖九个界面状态（包含两类第二页）、四个尺寸，共 36 组。翻页、购买、关闭按钮和每页名称/价格/库存均在视口内，避开模拟胶囊。证据为 docs/验证/evidence/shop-pagination-r1；该证据明确不代替真实手机/NanoVG 验收。本地预览 stopped，未重启；继续使用已有的独立 main 工作区提交至 Maker 手机测试。
+
+交付：Maker 提交 f3c7c21，远端构建成功且 preview_refresh_status=200。日志 watcher lastError=null，当前仍无新设备运行日志。新版手机测试二维码：https://tapcode-sce.spark.xd.com/qrcode/m_h4x3_1791904693440.png 。此记录在构建之后补充，没有为交付文档再次构建。
