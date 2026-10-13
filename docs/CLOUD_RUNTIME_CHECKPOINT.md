@@ -39,3 +39,13 @@ READY plus 20 rendered frames produced a 1170x658 PNG; process exited 0.
 See cloud-native-baseline.json for hashes and exact calibration. The image was
 actually inspected: room present, but flat lighting/material degradation remains.
 This is an engine image, not Blender, and it is not visual acceptance.
+
+## Verified shader-cache diagnosis
+
+Official bundled Sphere/Box PBR smoke scene with HDR initially produced a dark
+loading-like image and GLES link errors: vScreenPos/vTexCoord fragment inputs
+without preceding vertex outputs. The same scene with the official
+-recompile_shader flag produced a visible smooth sphere highlight, shaded box
+faces, and cast shadows. Both screenshots were inspected. No binary or shader
+source was patched. Cloud launch now disables the shipped shader-cache package
+through this supported flag. Complete-room confirmation follows separately.

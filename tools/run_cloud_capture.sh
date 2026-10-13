@@ -12,5 +12,5 @@ export LIBGL_ALWAYS_SOFTWARE=1 EGL_PLATFORM=surfaceless
 export D3_CLOUD_CAPTURE="$D3_CLOUD_OUTPUT/baseline.png"
 cd "$ROOT"
 timeout 960 "$URHOX_RUNTIME" scripts/cloud_capture.lua \
-  "-tapcode_dir=$ROOT" -skip_login -tool_mode -graphicssurfaceless -nosound \
+  "-tapcode_dir=$ROOT" -skip_login -tool_mode -graphicssurfaceless -recompile_shader -nosound \
   -x 1170 -y 658 > "$D3_CLOUD_OUTPUT/baseline.log" 2>&1
