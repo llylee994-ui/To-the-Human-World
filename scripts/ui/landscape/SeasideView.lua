@@ -82,8 +82,8 @@ function S.New(ctx)
         end
     end
     local info=Harbor.Paper {flexGrow=1,minWidth=0,pointerEvents="none",gap=4,padding={6,14}}
-    local title=UI.Label {text="海边 · 木码头",fontSize=17,fontColor={65,46,28,255},pointerEvents="none"}
-    local status=UI.Label {id="salvageStatus",fontSize=14,whiteSpace="normal",fontColor={65,46,28,255},pointerEvents="none"}
+    local title=UI.Label {text="海边 · 木码头",fontSize=17,fontFamily=Harbor.fontFamily,fontColor={65,46,28,255},pointerEvents="none"}
+    local status=UI.Label {id="salvageStatus",fontSize=14,fontFamily=Harbor.fontFamily,whiteSpace="normal",fontColor={65,46,28,255},pointerEvents="none"}
     info:AddChild(title);info:AddChild(status);bar:AddChild(info)
     local capture=Harbor.Button {id="startSalvage",text="开始捕捞",width=240,minHeight=48,fontSize=16,
         backgroundColor={188,147,77,255},textColor={35,36,29,255},borderRadius=8,onClick=function() ctx.StartSalvage() end}

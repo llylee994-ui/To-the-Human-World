@@ -10,14 +10,47 @@ function Economy.New(content)
         for _, item in ipairs(list or {}) do if item.id == id then return true end end
         return false
     end
+    local function furnitureCatalog()
+        if content.furniture==nil then return U.Ok({}) end
+        if not U.Array(content.furniture) then return U.Fail("CONFIG_INVALID","furniture","家具配置须为数组") end
+        local index={}
+        for _,item in ipairs(content.furniture) do
+            local fields=U.Keys(item,{id=true,name=true,price=true},"furniture")
+            if not fields.ok or not U.String(item.id) or not U.String(item.name) or not U.Integer(item.price,1) or index[item.id] then
+                return U.Fail("CONFIG_INVALID","furniture","家具须有唯一 ID、名称与正整数售价")
+            end
+            index[item.id]=item
+        end
+        return U.Ok(index)
+    end
     function api.ValidateSnapshot(s)
         local valid = U.Validate(s)
         if not valid.ok then return valid end
-        valid = U.Keys(s, {currency=true,ingredients=true,specialItems=true,ownedEquipmentIds=true,shopPurchases=content.shop~=nil}, "economy")
+        valid = U.Keys(s, {currency=true,ingredients=true,specialItems=true,ownedEquipmentIds=true,shopPurchases=content.shop~=nil,
+            ownedFurnitureIds=content.furniture~=nil,furniturePurchases=content.furniture~=nil}, "economy")
         if not valid.ok then return valid end
         if not U.Integer(s.currency) or type(s.ingredients) ~= "table" or type(s.specialItems) ~= "table"
             or type(s.ownedEquipmentIds) ~= "table" then
             return U.Fail("ECONOMY_INVALID", "economy", "金币/份数须为非负整数，设备须为集合")
+        end
+        local catalog=furnitureCatalog()
+        if not catalog.ok then return catalog end
+        -- 两字段同时缺省是旧存档；保留原形，不能改写已冻结的订单基准。
+        if s.ownedFurnitureIds~=nil or s.furniturePurchases~=nil then
+            if type(s.ownedFurnitureIds)~="table" or not U.Array(s.furniturePurchases) then
+                return U.Fail("ECONOMY_INVALID","furniturePurchases","家具集合与购买流水须同时存在")
+            end
+            local day,delivered,owned=1,0,{}
+            for _,p in ipairs(s.furniturePurchases) do
+                local fields=U.Keys(p,{day=true,afterDeliveredOrders=true,furnitureId=true,unitPrice=true},"furniturePurchases")
+                if not fields.ok then return fields end
+                local item=catalog.value[p.furnitureId]
+                if not item or p.unitPrice~=item.price or owned[p.furnitureId] or not U.Integer(p.day,day) or not U.Integer(p.afterDeliveredOrders,delivered) then
+                    return U.Fail("ECONOMY_INVALID","furniturePurchases","家具、售价、购买时序或唯一性错误")
+                end
+                owned[p.furnitureId]=true; day,delivered=p.day,p.afterDeliveredOrders
+            end
+            if not U.Equal(owned,s.ownedFurnitureIds) then return U.Fail("ECONOMY_INVALID","ownedFurnitureIds","家具所有权与购买流水不一致") end
         end
         if content.shop then
             if not U.Integer(content.shop.dailyStockPerIngredient,1) then return U.Fail("CONFIG_INVALID","shop","每日限购量须为正整数") end
@@ -100,6 +133,7 @@ function Economy.New(content)
         initial = U.Copy(initial)
         initial.ownedEquipmentIds = { [stage.initialEquipmentId] = true }
         if content.shop then initial.shopPurchases={} end
+        if content.furniture then initial.ownedFurnitureIds={}; initial.furniturePurchases={} end
         return api.ValidateSnapshot(initial)
     end
     function api.Restore(s)
@@ -138,6 +172,34 @@ function Economy.New(content)
         valid=api.ValidateSnapshot(candidate)
         if not valid.ok then return valid end
         return U.Ok({state=valid.value,cost=cost,ingredientId=definition.id,quantity=request.quantity})
+    end
+    function api.PlanFurniturePurchase(base,request,context)
+        if content.furniture==nil then return U.Fail("NOT_IMPLEMENTED","furniture","该内容包未配置家具商店") end
+        local valid=api.ValidateSnapshot(base)
+        if not valid.ok then return valid end
+        valid=U.Keys(request,{furnitureId=true},"furniture.request")
+        if not valid.ok then return valid end
+        if not U.String(request.furnitureId) then return U.Fail("INVALID_REQUEST","furnitureId","请选择家具") end
+        local catalog=furnitureCatalog()
+        if not catalog.ok then return catalog end
+        local definition=catalog.value[request.furnitureId]
+        if not definition then return U.Fail("UNKNOWN_ID","furnitureId","未知家具") end
+        if type(context)~="table" or not U.Integer(context.day,1) or not U.Integer(context.deliveredOrders) then
+            return U.Fail("INVALID_REQUEST","furniture.context","购买须使用正式天数和发货计数")
+        end
+        for _,p in ipairs(base.furniturePurchases or {}) do
+            if p.day>context.day or p.afterDeliveredOrders>context.deliveredOrders then return U.Fail("ECONOMY_INVALID","furniturePurchases","购买记录超出当前进度") end
+        end
+        if (base.ownedFurnitureIds or {})[definition.id] then return U.Fail("FURNITURE_ALREADY_OWNED","furnitureId","已经拥有这件家具") end
+        if base.currency<definition.price then return U.Fail("CURRENCY_SHORT","currency","金币不足") end
+        local candidate=U.Copy(base)
+        candidate.ownedFurnitureIds=candidate.ownedFurnitureIds or {}; candidate.furniturePurchases=candidate.furniturePurchases or {}
+        candidate.currency=base.currency-definition.price
+        candidate.ownedFurnitureIds[definition.id]=true
+        candidate.furniturePurchases[#candidate.furniturePurchases+1]={day=context.day,afterDeliveredOrders=context.deliveredOrders,furnitureId=definition.id,unitPrice=definition.price}
+        valid=api.ValidateSnapshot(candidate)
+        if not valid.ok then return valid end
+        return U.Ok({state=valid.value,cost=definition.price,furnitureId=definition.id,owned=true})
     end
     function api.PlanSettlement(base, ingredientUses, specialUses, reward)
         local valid = api.ValidateSnapshot(base)
@@ -186,4 +248,5 @@ Economy.ValidateSnapshot = live.ValidateSnapshot
 Economy.GetSnapshot = live.GetSnapshot
 Economy.Restore = live.Restore
 Economy.PlanSettlement = live.PlanSettlement
+Economy.PlanFurniturePurchase = live.PlanFurniturePurchase
 return Economy

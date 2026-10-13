@@ -1,37 +1,40 @@
--- Shared handpainted harbor chrome. Dynamic text stays in UI widgets.
+-- Shared handpainted harbor chrome. Text remains selectable UI content.
 local UI=require "urhox-libs/UI"
-local H={}
--- Maker texture generation timed out without a delivery. Keep native UI chrome
--- usable until a verified texture exists; never point the game at missing files.
-local paperGradient={direction="vertical",from={247,238,216,255},to={230,211,176,255}}
+local H={
+    fontFamily="story",
+    woodImage="image/界面_深木牌_透明_v01_20261013070534.png",
+    paperImage="image/界面_柔边纸面_透明_v01_20261013070534.png",
+}
 local function with(base,props)
     local out={};for k,v in pairs(base) do out[k]=v end
     for k,v in pairs(props or {}) do out[k]=v end
     return out
 end
 function H.Button(props)
-    local p=with({minHeight=44,fontSize=15,padding={8,14},flexShrink=0},props)
-    -- Clear variant/theme decoration so all interaction states share the art.
-    p.backgroundColor={221,185,124,255};p.hoverBackgroundColor={235,205,154,255}
-    p.pressedBackgroundColor={174,133,75,255};p.disabledBackgroundColor={171,155,129,255}
-    p.backgroundGradient={direction="vertical",from={239,216,172,255},to={202,163,103,255}}
-    p.hoverBackgroundGradient={direction="vertical",from={247,228,193,255},to={221,186,132,255}}
-    p.pressedBackgroundGradient={direction="vertical",from={190,149,90,255},to={218,182,123,255}}
-    p.disabledBackgroundGradient={direction="vertical",from={197,183,159,255},to={172,155,129,255}}
+    local p=with({minHeight=44,fontSize=15,fontFamily=H.fontFamily,fontWeight="normal",padding={8,14},flexShrink=0},props)
+    -- Cover crops transparent source padding instead of squeezing the wood grain.
+    p.backgroundImage=H.woodImage;p.backgroundFit="cover"
+    p.backgroundColor={0,0,0,0};p.hoverBackgroundColor={0,0,0,0}
+    p.pressedBackgroundColor={0,0,0,0};p.disabledBackgroundColor={0,0,0,0}
+    p.backgroundGradient=nil;p.hoverBackgroundGradient=nil;p.pressedBackgroundGradient=nil;p.disabledBackgroundGradient=nil
     p.variantBackgroundGradient={};p.variantHoverBackgroundGradient={};p.variantPressedBackgroundGradient={};p.variantDisabledBackgroundGradient={}
-    p.textColor={59,40,23,255};p.disabledTextColor={91,80,64,255}
-    p.borderWidth=1;p.borderColor={117,79,38,255};p.borderRadius=3
-    p.boxShadow={{x=0,y=2,blur=0,color={67,43,21,100}}}
-    p.hoverBoxShadow=p.boxShadow;p.pressedBoxShadow=false;p.disabledBoxShadow=false;p.glowShadow={}
+    p.backgroundImageOpacity=.96;p.hoverBackgroundImageOpacity=1;p.pressedBackgroundImageOpacity=.82;p.disabledBackgroundImageOpacity=.6
+    p.textColor={255,244,218,255};p.disabledTextColor={226,214,193,255}
+    p.borderWidth=0;p.hoverBorderWidth=0;p.pressedBorderWidth=0;p.borderRadius=0
+    p.boxShadow=false;p.hoverBoxShadow=false;p.pressedBoxShadow=false;p.disabledBoxShadow=false;p.glowShadow={}
+    p.pressedPadding=p.padding
     return UI.Button(p)
 end
-function H.Paper(props)
-    return UI.Panel(with({backgroundColor={244,232,208,255},backgroundGradient=paperGradient,
-        borderWidth=1,borderColor={174,142,91,255},borderRadius=2,padding={8,14},pointerEvents="box-none"},props))
+-- Also usable by ScrollView so transient messages share the same paper.
+function H.PaperProps(props)
+    return with({backgroundColor={0,0,0,0},backgroundImage=H.paperImage,backgroundFit="fill",
+        backgroundSlice={18,18,18,18},borderWidth=0,borderRadius=0,padding={8,14},pointerEvents="box-none"},props)
 end
+function H.Paper(props) return UI.Panel(H.PaperProps(props)) end
 function H.Tag(props)
-    return UI.Label(with({backgroundColor={244,232,208,250},backgroundGradient=paperGradient,borderWidth=1,borderColor={174,142,91,230},borderRadius=2,
-        fontColor={65,46,28,255},fontSize=14,padding={7,12},minHeight=32,textAlign="center",
+    -- Hints need a quiet contrast patch over the room, not a framed text card.
+    return UI.Label(with({backgroundColor={39,30,24,205},borderWidth=0,borderRadius=12,
+        fontFamily=H.fontFamily,fontWeight="normal",fontColor={255,244,218,255},fontSize=14,padding={5,10},minHeight=30,textAlign="center",
         whiteSpace="nowrap",pointerEvents="none"},props))
 end
 return H

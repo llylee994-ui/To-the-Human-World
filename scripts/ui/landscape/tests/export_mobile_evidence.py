@@ -4,7 +4,7 @@ import json
 import sys
 sys.dont_write_bytecode = True
 ROOT = Path(__file__).resolve().parents[4]
-OUT = ROOT / 'docs/验证/evidence/mobile-safe-r1'
+OUT = ROOT / 'docs/验证/evidence' / (sys.argv[1] if len(sys.argv)>1 else 'mobile-safe-r1')
 sys.path.insert(0, str(ROOT / 'scripts/debug'))
 import run_b1
 from content_test_runtime import run
@@ -45,7 +45,7 @@ draw=function(selected=chosen){
  // mainPanel is inside the entry SafeAreaView; AppView extends through it.
  const parent=document.createElement('div');parent.style.cssText=`position:absolute;left:${f.safe.left}px;top:${f.safe.top}px;width:${f.width/f.scale-f.safe.left-f.safe.right}px;height:${f.height/f.scale-f.safe.top-f.safe.bottom}px`;
  root.replaceWith(parent);parent.appendChild(root);
- if(f.selected!=='shop')sceneArt(f).then(art=>root.querySelector(f.selected==='home'?'#homeView':'#seasideView').prepend(art));
+ if(['home','seaside','journal'].includes(f.selected))sceneArt(f).then(art=>root.querySelector(f.selected==='seaside'?'#seasideView':'#homeView').prepend(art));
  for(const id of ['homeHints','homeHintIntro','homeObjectFeedback']){const node=root.querySelector('#'+id);if(node)node.style.display='none';}
  const capsule=document.createElement('div');capsule.id='simulatedCapsule';const m=f.menu;
  capsule.style.cssText=`position:absolute;left:${m.left*f.width/f.scale}px;top:${m.top*f.height/f.scale}px;width:${(m.right-m.left)*f.width/f.scale}px;height:${(m.bottom-m.top)*f.height/f.scale}px;border-radius:30px;background:#2229;color:white;font:25px sans-serif;display:flex;align-items:center;justify-content:space-evenly;z-index:9000`;
@@ -62,7 +62,20 @@ if __name__ == '__main__':
     html = HTML.replace('FRAMES',json.dumps(frames, ensure_ascii=False).replace('</','<\\/'))
     html = html.replace("let chosen='ing_sea_salt'", "let chosen='shop'")
     html = html.replace("s.fontSize=length(p.fontSize)", "s.fontSize=length(p.fontSize*4/3)")
+    html = html.replace("if(p.disabled){s.backgroundImage='none';s.backgroundColor=color(p.disabledBackgroundColor);s.color=color(p.disabledTextColor);}","if(p.disabled){s.backgroundColor=color(p.disabledBackgroundColor);s.color=color(p.disabledTextColor);if(p.disabledBackgroundImageOpacity!==undefined)s.opacity=p.disabledBackgroundImageOpacity;}")
+    html = html.replace('for(const child of node.children)el.appendChild(render(child));return el;',"for(const key of ['paddingLeft','paddingTop','paddingRight','paddingBottom'])if(p[key]!==undefined)s[key]=length(p[key]);for(const child of node.children)el.appendChild(render(child));return el;")
     html = html.replace('OFFLINE · 实际 Lua 控件树的 CSS 重放 · 非引擎/手机截图', 'OFFLINE · 模拟刘海和胶囊 · 非手机/引擎截图')
+    font = (ROOT/'assets/fonts/HarborHand-Regular.ttf').as_uri()
+    html = html.replace('</style>', '@font-face{font-family:HarborHand;src:url("'+font+'")} .widget{font-family:HarborHand}</style>')
+    crop = '''
+ if(p.sourceFrame){
+  s.backgroundImage='none';s.overflow='hidden';
+  const region=document.createElement('div');region.style.cssText='position:absolute;pointer-events:none;background-repeat:no-repeat';el.appendChild(region);
+  const update=()=>{const f=p.sourceFrame,k=Math.min(el.clientWidth/f.w,el.clientHeight/f.h);Object.assign(region.style,{left:(el.clientWidth-f.w*k)/2+'px',top:(el.clientHeight-f.h*k)/2+'px',width:f.w*k+'px',height:f.h*k+'px',backgroundImage:`url("${p.backgroundImage}")`,backgroundSize:`${f.width*k}px ${f.height*k}px`,backgroundPosition:`${-f.x*k}px ${-f.y*k}px`});};
+  new ResizeObserver(update).observe(el);
+ }
+ '''
+    html = html.replace('for(const child of node.children)el.appendChild(render(child));return el;',crop+'for(const child of node.children)el.appendChild(render(child));return el;')
     html = html.replace('</script>', 'const ASSET_ROOT='+json.dumps((ROOT/'assets').as_uri())+';\n'+ART+'\n</script>')
     (OUT/'offline-preview.html').write_text(html, encoding='utf-8')
     (OUT/'widget-trees.json').write_text(json.dumps(frames, ensure_ascii=False), encoding='utf-8')

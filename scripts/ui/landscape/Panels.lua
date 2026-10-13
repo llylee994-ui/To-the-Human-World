@@ -4,7 +4,7 @@ local IngredientArt=require "ui.landscape.IngredientArt"
 local Harbor=require "ui.landscape.HarborStyle"
 local P={}
 function P.Text(parent,value,size,id)
-    local label=UI.Label {id=id,text=tostring(value or ""),alignSelf="stretch",fontSize=size or 16,
+    local label=UI.Label {id=id,text=tostring(value or ""),alignSelf="stretch",fontSize=size or 16,fontFamily=Harbor.fontFamily,
         whiteSpace="normal",lineHeight=1.55,flexShrink=0,fontColor={62,49,36,255},pointerEvents="none"}
     parent:AddChild(label); return label
 end
@@ -163,7 +163,7 @@ end
 function P.Seaside(ctx,body)
     local view=query(ctx,body,"GetSalvageView"); if not view then return end
     P.Text(body,"海边捕捞",22)
-    P.Text(body,"功能界面 · 正式海边场景待制作",14,"seasideStage")
+    P.Text(body,"去码头看看漂流瓶，或登上商船采购。",14,"seasideStage")
     P.Text(body,"今日剩余 "..view.remaining.." / "..view.dailyLimit.." 次",18)
     if #view.availableLetterIds==0 then P.Text(body,"目前海面上没有可打捞的新信。") end
     P.Button(body,"startSalvage","开始捕捞",function()
@@ -183,7 +183,7 @@ function P.Brew(ctx,body)
     end
     local summary=query(ctx,body,"GetOrderSummary"); if not summary then return end
     P.Text(body,"炼药工作区",22)
-    P.Text(body,"功能界面 · 正式近景、拖拽投料与动效待制作",14,"brewStage")
+    P.Text(body,"选择词条和原料，为委托调制魔药。",14,"brewStage")
     if not summary.orderId then
         P.Text(body,"尚未接下委托。可先查看来信及现有词卡。")
         P.Button(body,"brewLetters","查看来信",function() ctx.Open("letters") end)

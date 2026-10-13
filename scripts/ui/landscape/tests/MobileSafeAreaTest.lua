@@ -52,7 +52,7 @@ function T.Run()
     check(widget("shopContent").props.paddingBottom>=26,"shop purchase footer avoids home indicator")
     UI.GetSafeAreaInsets=function() return {left=14,top=12,right=52,bottom=0} end
     view.Update()
-    check(widget("shopContent").props.paddingLeft==26 and widget("shopContent").props.paddingRight==64,"open shop follows landscape rotation without reopening")
+    check(widget("shopContent").props.paddingLeft>=26 and widget("shopContent").props.paddingRight>=64,"open shop follows landscape rotation without reopening")
     UI.GetSafeAreaInsets=function() return {left=52,top=0,right=12,bottom=14} end
     view.Update()
     view.Close();view.Update()

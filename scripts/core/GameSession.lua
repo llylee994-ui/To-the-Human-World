@@ -24,7 +24,7 @@ function Session.New(content,options)
     local ready=options.dataReady~=false and initial.ok
     local state=require("core.GameState").New({gameFlow=flow,saveSystem=save,eventBus=bus,targetSchema=schema,content=content,salvageDailyLimit=limit,
         dataReady=ready,dataError=options.dataError or initial.error,contentVersion=content.contentVersion,synthesisVersion=content.synthesis.version,
-        economy=modules.economy,shopEnabled=content.shop~=nil,letters=modules.letters,wordTokens=modules.wordTokens,narrative=modules.narrative,
+        economy=modules.economy,shopEnabled=content.shop~=nil,furnitureEnabled=content.furniture~=nil,letters=modules.letters,wordTokens=modules.wordTokens,narrative=modules.narrative,
         order=modules.orders,adapters=modules,initialState=initial.value})
     modules.orders.BindCoordinator(state)
     local session={state=state,order=modules.orders,modules=modules,initial=initial.ok and U.Copy(initial.value) or nil,ready=ready}

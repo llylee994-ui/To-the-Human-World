@@ -3,12 +3,14 @@ local UI=require("urhox-libs/UI") --[[@as table]]
 local Data=require "data.content"
 local F=require "debug.fixtures.B5Fixtures"
 local View=require "ui.PlayView"
+local U=require "core.StateUtil"
 local T={}
 function T.Run()
     package.loaded["debug.DeveloperMode"]=false
     local host=require("ui.landscape.tests.ZoomTestHost").New()
-    local x=F.New(Data,{targetSchema=3})
-    local view=View.New(x.session,Data)
+    local content=U.Copy(Data);content.furniture=require "data.furniture"
+    local x=F.New(content,{targetSchema=3})
+    local view=View.New(x.session,content)
     GetPlatform=function() return "iOS" end
     local oldViewport,oldInsets=UI.GetViewportSize,UI.GetSafeAreaInsets
     for _,size in ipairs({{2048,917,1.8},{1280,720,1},{800,360,.8},{1024,768,1}}) do
@@ -32,16 +34,20 @@ function T.Run()
             end
             view.Update()
         end
-        for _,scene in ipairs({"home","seaside","shop"}) do
-            view.Navigate(scene=="shop" and "seaside" or scene);view.Update();bind()
-            if scene=="shop" then view.Open("shop");view.Update();bind() end
+        for _,scene in ipairs({"home","seaside","shop","shop-furniture","shop-ticket","brew","journal"}) do
+            local shop=scene:match("^shop")
+            view.Navigate(shop and "seaside" or scene=="journal" and "home" or scene);view.Update();bind()
+            if shop then
+                view.shopCategory=scene=="shop-furniture" and "furniture" or scene=="shop-ticket" and "tickets" or "ingredients"
+                view.shopSelectedId=false;view.Open("shop");view.Update();bind()
+            elseif scene=="journal" then view.Open("journal");view.Update();bind() end
             local capture=rawget(_G,"MOBILE_EVIDENCE")
             if capture then capture(size[1],size[2],size[3],scene,safe,menu,view.root,view.home.Fit(),view.home.manifest,view.seaside.manifest) end
         end
         view.root.parent=nil
     end
     UI.GetViewportSize,UI.GetSafeAreaInsets=oldViewport,oldInsets
-    print("[MobileEvidence] exported 12 actual view trees; simulated host, NOT phone/Yoga rendering")
+    print("[MobileEvidence] exported 28 actual view trees; simulated host, NOT phone/Yoga rendering")
     return true
 end
 return T

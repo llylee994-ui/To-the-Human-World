@@ -191,11 +191,17 @@ function Audit.New(content,orderApi)
             -- 账本重放包含购买与已确认订单；购买不能借用之后的订单报酬。
             local replay=U.Copy(data.live)
             replay.world=G.Value(world.InitialSnapshot()); replay.economy=G.Value(economy.InitialSnapshot())
+            -- 旧档可缺家具字段；重放也保持原形，避免篡改历史基准或放宽其它账本差异。
+            if data.live.economy.ownedFurnitureIds==nil and data.live.economy.furniturePurchases==nil then
+                replay.economy.ownedFurnitureIds=nil; replay.economy.furniturePurchases=nil
+            end
             replay.orders.confirmedById={}; replay.letters.directArchive={}; replay.gameFlow.deliveredOrders=0
             replay.narrative=G.Value(narrative.InitialSnapshot())
             for _,token in pairs(replay.wordTokens.byId) do token.available=true; token.consumedByOrderId=false end
             local purchases=data.live.economy.shopPurchases or {}
+            local furniturePurchases=data.live.economy.furniturePurchases or {}
             local purchaseIndex=1
+            local furnitureIndex=1
             local lastDay=1
             local function replayPurchases(delivered,untilDay)
                 while purchaseIndex<=#purchases and purchases[purchaseIndex].afterDeliveredOrders==delivered do
@@ -204,6 +210,14 @@ function Audit.New(content,orderApi)
                     local planned=G.Value(economy.PlanPurchase(replay.economy,{ingredientId=p.ingredientId,quantity=p.quantity},{day=p.day,deliveredOrders=delivered}))
                     same(planned.state.shopPurchases[#planned.state.shopPurchases],p,"shopPurchases")
                     replay.economy=planned.state; purchaseIndex=purchaseIndex+1
+                end
+                -- 两类流水在同一发货间隔内均只扣金币，先后不影响结算；每类仍严格校验天数和进度。
+                while furnitureIndex<=#furniturePurchases and furniturePurchases[furnitureIndex].afterDeliveredOrders==delivered do
+                    local p=furniturePurchases[furnitureIndex]
+                    G.Need(p.day>=lastDay and p.day<=untilDay,"STATE_INVALID","furniturePurchases.day","购买时间不属于对应发货进度")
+                    local planned=G.Value(economy.PlanFurniturePurchase(replay.economy,{furnitureId=p.furnitureId},{day=p.day,deliveredOrders=delivered}))
+                    same(planned.state.furniturePurchases[#planned.state.furniturePurchases],p,"furniturePurchases")
+                    replay.economy=planned.state; furnitureIndex=furnitureIndex+1
                 end
             end
             for _,id in ipairs(history) do
@@ -215,6 +229,7 @@ function Audit.New(content,orderApi)
             end
             replayPurchases(replay.gameFlow.deliveredOrders,data.live.gameFlow.day)
             G.Need(purchaseIndex==#purchases+1,"STATE_INVALID","shopPurchases","购买记录借用了未来发货数")
+            G.Need(furnitureIndex==#furniturePurchases+1,"STATE_INVALID","furniturePurchases","购买记录借用了未来发货数")
             for _,key in ipairs({"world","economy","wordTokens"}) do same(data.live[key],replay[key],"live." .. key) end
             -- 解锁是已声明订单集合；其保存可包含已领取项。阶段条件由实际查询复核。
             if data.currentOrder then

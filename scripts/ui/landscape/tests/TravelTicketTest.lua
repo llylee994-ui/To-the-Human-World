@@ -14,10 +14,14 @@ function T.Run()
     local x=F.New(content,{targetSchema=3});local view=View.New(x.session,content)
     local function control(id) return assert(view.root:FindById(id),"missing "..id) end
     local function click(id)
+        if id=="shop_select_travel_ticket" and not view.root:FindById(id) then
+            control("shopTab_tickets").props.onClick();view.Update()
+        end
         local node=control(id);check(not node.props.disabled,"disabled "..id);node.props.onClick();view.Update()
     end
     view.Open("shop");view.Update()
-    check(view.root:FindById("shop_select_travel_ticket"),"fifth travel ticket product must be visible")
+    click("shopTab_tickets")
+    check(view.root:FindById("shop_select_travel_ticket"),"ticket category keeps the travel product visible")
     click("shop_select_travel_ticket")
     local ticket=require "ui.landscape.TravelTicket"
     check(control("shopItemPrice"):GetText():find("666",1,true),"new confirmed price")

@@ -102,6 +102,14 @@ function Q.New(session,content)
         end end
         return {currency=data.live.economy.currency,items=rows,enabled=action.enabled,reasonCode=action.reasonCode,message=action.message}
     end)
+    api.GetFurnitureShopView=query(function(data)
+        local rows={}; local action=session.state.CheckAction("PurchaseFurniture")
+        local owned=data.live.economy.ownedFurnitureIds or {}
+        for _,item in ipairs(content.furniture or {}) do
+            rows[#rows+1]={furnitureId=item.id,name=item.name,price=item.price,owned=owned[item.id]==true}
+        end
+        return {currency=data.live.economy.currency,items=rows,enabled=action.enabled,reasonCode=action.reasonCode,message=action.message}
+    end)
     api.GetOrderSummary=query(function(data)
         local order=data.currentOrder; local actions={}
         for _,name in ipairs({"Accept","UpdateDraft","Preview","Confirm","Reset","Shop","NextDay"}) do actions[name]=session.state.CheckAction(name) end

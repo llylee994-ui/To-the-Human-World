@@ -1,0 +1,104 @@
+{
+  "maker": {
+    "total": 6,
+    "succeeded": 6,
+    "failed": 0,
+    "results": [
+      {
+        "name": "家具_窗帘_透明_v01",
+        "prompt": "为《寄往人间》温暖海边魔药小屋制作单件商店商品透明PNG，与参考图的精细手绘油彩插画、木质与织物质感一致。不是3D渲染，不是卡通图标。单件物品完整居中，物体占画布80%-88%，四周仅留少量透明边距。三分之四前视角，光从左上照来，细腻但轮廓清楚。不含文字、价格、标志、背景场景、地板、人物、商品卡片，也不要额外道具或发光边框。背景必须真正透明。商品是一套挂在短木杆上的橄榄绿旧棉麻窗帘，两片帘布向两侧轻轻束起，柔和的自然褶皱；窗帘之间透明，不绘制墙或窗。",
+        "success": true,
+        "previewUrl": "https://tapcode-sce.spark.xd.com/tapcode-images/41a39831-2aef-4f77-9a84-480b9092acef.png",
+        "actualSize": "1024x1024",
+        "aspect_ratio": "1:1",
+        "transparent": true,
+        "localPath": "assets/image/家具_窗帘_透明_v01_20261013070534.png",
+        "absolutePath": "D:\\To the Human World\\assets\\image\\家具_窗帘_透明_v01_20261013070534.png",
+        "download": {
+          "success": true
+        }
+      },
+      {
+        "name": "家具_床铺_透明_v01",
+        "prompt": "为《寄往人间》温暖海边魔药小屋制作单件商店商品透明PNG，与参考图的精细手绘油彩插画、木质与织物质感一致。不是3D渲染，不是卡通图标。单件物品完整居中，物体占画布80%-88%，四周仅留少量透明边距。三分之四前视角，光从左上照来，细腻但轮廓清楚。不含文字、价格、标志、背景场景、地板、人物、商品卡片，也不要额外道具或发光边框。背景必须真正透明。商品是朴实的深色胡桃木单人床，低床脚，亚麻米白床单、暗青绿色薄被和一个枕头。完整床架清晰，有手工木纹，无人物无房间。",
+        "success": true,
+        "previewUrl": "https://tapcode-sce.spark.xd.com/tapcode-images/02eddc42-301f-4642-9eba-70d09cd4f7a9.png",
+        "actualSize": "1152x768",
+        "aspect_ratio": "4:3",
+        "transparent": true,
+        "localPath": "assets/image/家具_床铺_透明_v01_20261013070534.png",
+        "absolutePath": "D:\\To the Human World\\assets\\image\\家具_床铺_透明_v01_20261013070534.png",
+        "download": {
+          "success": true
+        }
+      },
+      {
+        "name": "家具_壁炉_透明_v01",
+        "prompt": "为《寄往人间》温暖海边魔药小屋制作单件商店商品透明PNG，与参考图的精细手绘油彩插画、木质与织物质感一致。不是3D渲染，不是卡通图标。单件物品完整居中，物体占画布80%-88%，四周仅留少量透明边距。三分之四前视角，光从左上照来，细腻但轮廓清楚。不含文字、价格、标志、背景场景、地板、人物、商品卡片，也不要额外道具或发光边框。背景必须真正透明。商品是一座小型粗石砌壁炉，暖灰砂岩，简洁木质炉台，炉内有少量燃烧木柴和温暖火焰。完整独立家具正面偏侧，炉口暗色清楚，不画墙和烟囱延伸。",
+        "success": true,
+        "previewUrl": "https://tapcode-sce.spark.xd.com/tapcode-images/2bfea9ac-c431-4fe6-a183-682056615265.png",
+        "actualSize": "1024x1024",
+        "aspect_ratio": "1:1",
+        "transparent": true,
+        "localPath": "assets/image/家具_壁炉_透明_v01_20261013070534.png",
+        "absolutePath": "D:\\To the Human World\\assets\\image\\家具_壁炉_透明_v01_20261013070534.png",
+        "download": {
+          "success": true
+        }
+      },
+      {
+        "name": "家具_书架_透明_v01",
+        "prompt": "为《寄往人间》温暖海边魔药小屋制作单件商店商品透明PNG，与参考图的精细手绘油彩插画、木质与织物质感一致。不是3D渲染，不是卡通图标。单件物品完整居中，物体占画布80%-88%，四周仅留少量透明边距。三分之四前视角，光从左上照来，细腻但轮廓清楚。不含文字、价格、标志、背景场景、地板、人物、商品卡片，也不要额外道具或发光边框。背景必须真正透明。商品是一座朴素深棕木书架，三层，摆满高低错落旧书，书脊是灰蓝、暗绿、赭红，无可辨识文字；少量留白。完整书架有短脚，不绘制墙或地板。",
+        "success": true,
+        "previewUrl": "https://tapcode-sce.spark.xd.com/tapcode-images/71262020-6a3c-4652-b6c8-8c9a81189505.png",
+        "actualSize": "768x1152",
+        "aspect_ratio": "3:4",
+        "transparent": true,
+        "localPath": "assets/image/家具_书架_透明_v01_20261013070534.png",
+        "absolutePath": "D:\\To the Human World\\assets\\image\\家具_书架_透明_v01_20261013070534.png",
+        "download": {
+          "success": true
+        }
+      },
+      {
+        "name": "界面_深木牌_透明_v01",
+        "prompt": "游戏UI按钮贴图，一块横向深胡桃木牌，正面直视，平面适配，宽扁，柔和略不规则的手绘边缘。中央非常安静的深茶褐色木纹，细纹低对比，可叠加米白色中文字。边缘稍浅磨损，无金框、金属、钉子、绳子、文字、标志、图案或装饰。不高光、不渐变塑料感，与温暖旧海港木屋插画相配。透明背景，只保留薄薄的物件边缘，木牌占画布94%。",
+        "success": true,
+        "previewUrl": "https://tapcode-sce.spark.xd.com/tapcode-images/b8a26e2d-db22-4031-9632-701ed9f3c5e8.png",
+        "actualSize": "1024x683",
+        "aspect_ratio": "3:2",
+        "transparent": true,
+        "localPath": "assets/image/界面_深木牌_透明_v01_20261013070534.png",
+        "absolutePath": "D:\\To the Human World\\assets\\image\\界面_深木牌_透明_v01_20261013070534.png",
+        "download": {
+          "success": true
+        }
+      },
+      {
+        "name": "界面_柔边纸面_透明_v01",
+        "prompt": "游戏UI可拉伸纸面贴图，正面直视，一张细密纤维的浅亚麻色纸，中央均匀干净，极轻微手绘纸纹，边缘柔和、不完全规则，纸边厚度非常窄。没有烧焦卷边、污点、文字、装饰、线条、边框、印章、绑带或其他物品。用于覆盖旧海港木屋中的详情与阅读界面，安静温暖，整体亮度柔和。真正透明背景，纸面占画布96%。",
+        "success": true,
+        "previewUrl": "https://tapcode-sce.spark.xd.com/tapcode-images/43632dc2-0a2c-4eb5-b052-c5c40012a37b.png",
+        "actualSize": "768x1152",
+        "aspect_ratio": "3:4",
+        "transparent": true,
+        "localPath": "assets/image/界面_柔边纸面_透明_v01_20261013070534.png",
+        "absolutePath": "D:\\To the Human World\\assets\\image\\界面_柔边纸面_透明_v01_20261013070534.png",
+        "download": {
+          "success": true
+        }
+      }
+    ]
+  },
+  "additional": {
+    "workflow": "image_gen builtin; Maker replacements returned INSUFFICIENT_BALANCE and were not retried",
+    "source": "C:/Users/liliy/.codex/generated_images/01a13341-570e-7ba2-9edc-e034832ae0aa/exec-da450672-c639-4b5a-afe1-a90b9e38e77f.png",
+    "localPath": "assets/image/shop-art-r2/tablecloth-chair-lamp.png",
+    "use": "three independent merchandise frames from original transparent atlas; no source bitmap editing"
+  },
+  "superseded": [
+    "家具_窗帘_透明_v01",
+    "家具_床铺_透明_v01",
+    "家具_壁炉_透明_v01"
+  ]
+}

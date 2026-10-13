@@ -4,7 +4,7 @@ local Ticket=require "ui.landscape.TravelTicket"
 local U=require "core.StateUtil"
 local V={}
 local function label(parent,text,id,size)
-    local control=UI.Label {id=id,text=text,fontSize=size or 17,fontColor={65,46,28,255},whiteSpace="normal",
+    local control=UI.Label {id=id,text=text,fontSize=size or 17,fontFamily=Harbor.fontFamily,fontColor={65,46,28,255},whiteSpace="normal",
         lineHeight=1.5,flexShrink=0,pointerEvents="none",alignSelf="stretch"}
     parent:AddChild(control);return control
 end
@@ -16,7 +16,7 @@ function V.Confirm(ctx,overlay)
     overlay:AddChild(panel)
     local header=UI.Panel {id="panelHeader",width="100%",flexDirection="row",alignItems="center",gap=8,minHeight=44,pointerEvents="box-none"}
     ctx.panelHeader=header;panel:AddChild(header)
-    header:AddChild(UI.Label {text="购买并启程",fontSize=21,flexGrow=1,fontColor={65,46,28,255},pointerEvents="none"})
+    header:AddChild(UI.Label {text="购买并启程",fontSize=21,fontFamily=Harbor.fontFamily,flexGrow=1,fontColor={65,46,28,255},pointerEvents="none"})
     header:AddChild(Harbor.Button {id="closeTicketConfirm",text="返回",minHeight=44,width=72,onClick=function() ctx.ticketConfirm=false;ctx.ticketQuote=false;ctx.model.dirty=true end})
     local messageArea=UI.ScrollView {width="100%",height=48,flexShrink=0,scrollY=true,visible=false}
     ctx.panelNotice=label(messageArea,ctx.model.message,"panelMessage",14);ctx.panelNoticeArea=messageArea;panel:AddChild(messageArea)

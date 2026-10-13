@@ -226,6 +226,7 @@ function GameState.New(options)
         local enabled,code,message=true,"",""
         local phase=envelope and envelope.currentOrder and envelope.currentOrder.phase or "idle"
         if not api.CanMutate() then enabled,code,message=false,"STATE_LOCKED","请先读取存档排除配置或提交错误"
+        elseif name=="PurchaseFurniture" and (targetSchema<2 or options.furnitureEnabled~=true) then enabled,code,message=false,"NOT_IMPLEMENTED","家具商店尚未接入"
         elseif targetSchema==3 then
             local order=envelope and envelope.currentOrder
             if phase=="pending" and not ({GetView=true,Save=true,Preview=true,Confirm=true,Reset=true})[name] then
@@ -400,6 +401,27 @@ function GameState.New(options)
     function api.ClaimAttachment(_request)
         local action=api.CheckAction("ClaimAttachment")
         return U.Fail(action.reasonCode,"ClaimAttachment",action.message)
+    end
+    -- 家具只改变经济账本；正式扣款、所有权和流水在同一次整档提交中安装。
+    function api.PurchaseFurniture(request)
+        if busy then return U.Fail("COMMAND_BUSY","GameState","候选提交期间禁止嵌套命令") end
+        local action=api.CheckAction("PurchaseFurniture")
+        if not action.enabled then return U.Fail(action.reasonCode,"PurchaseFurniture",action.message) end
+        if not options.economy or not options.economy.PlanFurniturePurchase then return U.Fail("NOT_IMPLEMENTED","PurchaseFurniture","家具账本尚未接入") end
+        busy=true
+        local called,result=pcall(function()
+            local current=api.GetSnapshot()
+            local valid=prepare(current,targetSchema)
+            if not valid.ok then return valid end
+            local planned=options.economy.PlanFurniturePurchase(current.live.economy,request,current.live.gameFlow)
+            if not planned.ok then return planned end
+            local candidate=U.Copy(current)
+            candidate.live.economy=planned.value.state; candidate.revision=candidate.revision+1
+            return commit(candidate,{furnitureId=planned.value.furnitureId,cost=planned.value.cost,owned=true},{"FurniturePurchased","MoneyChanged"})
+        end)
+        busy=false
+        if not called then return U.Fail("COMMAND_FAILED","PurchaseFurniture",tostring(result)) end
+        return result
     end
     -- 仅调试专项使用：连同协调器的锁定/状态一起恢复，不能让测试解锁真实坏档。
     function api.WithPreservedState(callback)

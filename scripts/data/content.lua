@@ -20,6 +20,7 @@ local numericV02 = require "data.numeric_v02"
 Data.words = numericV02.words
 Data.ingredients = require "data.ingredients"
 Data.equipment = require "data.equipment"
+Data.furniture = require "data.furniture"
 Data.synthesis = require "data.synthesis"
 Data.npcs = numericV02.npcs
 Data.letters = numericV02.letters

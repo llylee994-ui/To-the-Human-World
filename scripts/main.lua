@@ -130,14 +130,18 @@ function InitUI()
     -- UI.Init 内部完成字体、主题、事件订阅与 NanoVG 上下文创建，
     -- 不需要手动 nvgCreate / nvgCreateFont（见 engine-docs/recipes/ui.md）
     --
-    -- 字体必须显式指定：default-dark 主题默认找 Fonts/NotoSansSC-*.ttf，
-    -- 而运行时实际只带 Fonts/MiSans-Regular.ttf，不覆盖会因字体加载失败导致整屏不渲染。
+    -- 保留运行时 MiSans 注册，并为海港主题注册项目内的 OFL 手写字体子集。
+    -- HarborTheme 统一使用 story；regular/bold 共用正文笔画，避免伪粗体糊字。
     -- options.fonts 的优先级高于 theme.fonts（见 ui.md §初始化）。
     UI.Init({
-        theme = "default-dark",
+        theme = require "ui.landscape.HarborTheme",
         fonts = {
             { family = "sans", weights = {
                 normal = "Fonts/MiSans-Regular.ttf",
+            } },
+            { family = "story", weights = {
+                normal = "fonts/HarborHand-Regular.ttf",
+                bold = "fonts/HarborHand-Regular.ttf",
             } },
         },
         -- DPR + 小屏密度自适应：1 基准像素 ≈ 1 CSS 像素，

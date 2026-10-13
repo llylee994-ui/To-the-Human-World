@@ -14,6 +14,9 @@ function T.Run()
     local x=F.New(content,{targetSchema=3});local view=View.New(x.session,content)
     local function control(id) return assert(view.root:FindById(id),"missing control "..id) end
     local function click(id)
+        if id=="shop_select_travel_ticket" and not view.root:FindById(id) then
+            control("shopTab_tickets").props.onClick();view.Update()
+        end
         local w=control(id);check(not w.props.disabled,"unexpectedly disabled "..id)
         w.props.onClick();view.Update()
     end

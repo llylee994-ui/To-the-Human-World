@@ -46,15 +46,15 @@ function A.New(session,content,enabled)
         backgroundColor={48,42,34,255},pointerEvents="box-none",overflow="hidden"}
     local hud=UI.Panel {id="homeHud",position="absolute",top=8,left=0,width="100%",height=48,flexShrink=0,
         flexDirection="row",alignItems="center",gap=8,paddingLeft=12,paddingRight=12,pointerEvents="box-none"}
-    local ledger=UI.Label {id="playLedger",fontSize=16,fontColor={65,46,28,255},minWidth=0,pointerEvents="none"}
+    local ledger=UI.Label {id="playLedger",fontSize=16,fontFamily=Harbor.fontFamily,fontColor={65,46,28,255},minWidth=0,pointerEvents="none"}
     local ledgerCard=Harbor.Paper {width=236,height=44,justifyContent="center",children={ledger}}
     hud:AddChild(ledgerCard);hud:AddChild(UI.Panel {flexGrow=1,minWidth=0,pointerEvents="none"})
     local stage=UI.Panel {id="homeStage",width="100%",flexGrow=1,flexShrink=1,flexBasis=0,minHeight=0,pointerEvents="box-none"}
     root:AddChild(stage)
-    local notice=UI.Label {id="playMessage",fontSize=14,fontColor={65,46,28,255},whiteSpace="normal",flexShrink=0,pointerEvents="none"}
-    local noticeArea=UI.ScrollView {id="playMessageArea",position="absolute",left=14,bottom=12,width="70%",maxWidth=680,
+    local notice=UI.Label {id="playMessage",fontSize=14,fontFamily=Harbor.fontFamily,fontColor={65,46,28,255},whiteSpace="normal",flexShrink=0,pointerEvents="none"}
+    local noticeArea=UI.ScrollView(Harbor.PaperProps {id="playMessageArea",position="absolute",left=14,bottom=12,width="70%",maxWidth=680,
         minHeight=44,maxHeight=96,visible=false,scrollY=true,padding=12,pointerEvents="box-none",
-        backgroundColor={244,232,208,255},borderColor={174,142,91,255},borderWidth=1,borderRadius=2,children={notice}} --[[@as Widget]]
+        children={notice}}) --[[@as Widget]]
     root:AddChild(noticeArea)
     local ctx={root=root,model=model,session=session,content=content,
         scene="home" --[[@as string]],panel=false --[[@as string|false]],stack={},
@@ -76,7 +76,7 @@ function A.New(session,content,enabled)
         if id=="home.net" then ctx.BeginHomeZoom() else ctx.Open(target) end
     end,developer); stage:AddChild(home.root); ctx.home=home
     home.SetInspect(require("ui.landscape.DevChecks").hotspots)
-    local scene=UI.Panel {id="functionalScene",position="absolute",left=0,top=0,width="100%",height="100%",paddingTop=64,visible=false,backgroundColor={238,228,203,255}}
+    local scene=Harbor.Paper {id="functionalScene",position="absolute",left=0,top=0,width="100%",height="100%",padding=0,paddingTop=64,visible=false}
     stage:AddChild(scene)
     local seaside=Seaside.New(ctx);stage:AddChild(seaside.root);ctx.seaside=seaside
     root:AddChild(hud)
@@ -300,7 +300,7 @@ function A.New(session,content,enabled)
         local viewport=ctx.viewport
         local panelProps={id="activePanel",position="absolute",top=location and 0 or "3%",bottom=location and 0 or "3%",
             width=location and "38%" or "92%",minWidth=location and 260 or nil,maxWidth=location and "85%" or nil,
-            backgroundColor={245,236,216,255},borderRadius=8,overflow="hidden",onClick=function() end} --[[@as PanelProps]]
+            padding=0,overflow="hidden",onClick=function() end} --[[@as PanelProps]]
         if location=="right" then panelProps.right=0 else panelProps.left=location and 0 or "4%" end
         if viewport then
             panelProps.top=safe.top+(location and 0 or viewport.h*.03)
@@ -309,15 +309,15 @@ function A.New(session,content,enabled)
             else panelProps.left=safe.left+(location and 0 or (viewport.w-safe.left-safe.right)*.04) end
             if not location then panelProps.width=(viewport.w-safe.left-safe.right)*.92 end
         end
-        local panel=UI.Panel(panelProps)
+        local panel=Harbor.Paper(panelProps)
         overlay:AddChild(panel)
         local bar=UI.Panel {id="panelHeader",width="100%",height=50,flexShrink=0,flexDirection="row",alignItems="center",paddingLeft=16,paddingRight=12,gap=8,pointerEvents="box-none"}
         ctx.panelHeader=bar
-        bar:AddChild(UI.Label {text=titles[kind] or "",fontSize=17,flexGrow=1,minWidth=0,fontColor={55,48,36,255}})
+        bar:AddChild(UI.Label {text=titles[kind] or "",fontSize=17,fontFamily=Harbor.fontFamily,flexGrow=1,minWidth=0,fontColor={55,48,36,255}})
         bar:AddChild(Harbor.Button {id="closePanel",text=#ctx.stack>0 and "返回" or "关闭",width=76,minHeight=44,onClick=ctx.Close})
         panel:AddChild(bar)
         local current=ctx.messages:Current(clock())
-        local panelNotice=UI.Label {id="panelMessage",text=current.text,fontSize=14,fontColor={108,53,30,255},whiteSpace="normal",flexShrink=0,pointerEvents="none"}
+        local panelNotice=UI.Label {id="panelMessage",text=current.text,fontSize=14,fontFamily=Harbor.fontFamily,fontColor={108,53,30,255},whiteSpace="normal",flexShrink=0,pointerEvents="none"}
         local panelNoticeArea=UI.ScrollView {width="100%",height=44,visible=current.visible,flexShrink=0,scrollY=true,paddingLeft=16,paddingRight=16,children={panelNotice}}
         panel:AddChild(panelNoticeArea);ctx.panelNoticeArea=panelNoticeArea
         ctx.panelNotice=panelNotice
