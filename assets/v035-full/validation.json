@@ -1,10 +1,10 @@
 {
   "errors": [],
-  "coveredObjects": 10790,
-  "expectedObjects": 10790,
+  "coveredObjects": 10755,
+  "expectedObjects": 10755,
   "meshCount": 90,
-  "triangles": 3209455,
-  "vertices": 2584246,
+  "triangles": 3201927,
+  "vertices": 2575906,
   "removedZeroAreaTriangles": 6926,
   "chunks": [
     {
@@ -37,10 +37,10 @@
     },
     {
       "id": "full_group_003_000",
-      "vertices": 18799,
-      "triangles": 32836,
+      "vertices": 17935,
+      "triangles": 32008,
       "maxNormalError": 1.733402299475273e-07,
-      "bytes": 1905131
+      "bytes": 1828334
     },
     {
       "id": "full_group_004_000",
@@ -51,10 +51,10 @@
     },
     {
       "id": "full_group_005_000",
-      "vertices": 12513,
-      "triangles": 6144,
+      "vertices": 9383,
+      "triangles": 4608,
       "maxNormalError": 1.7995535372961058e-07,
-      "bytes": 940364
+      "bytes": 702820
     },
     {
       "id": "full_group_006_000",
@@ -103,28 +103,28 @@
       "vertices": 59999,
       "triangles": 84441,
       "maxNormalError": 1.7661910933775005e-07,
-      "bytes": 6282657
+      "bytes": 6282594
     },
     {
       "id": "full_group_012_001",
       "vertices": 59998,
       "triangles": 83688,
       "maxNormalError": 1.795222288603071e-07,
-      "bytes": 6273664
+      "bytes": 6273601
     },
     {
       "id": "full_group_012_002",
-      "vertices": 60000,
-      "triangles": 36926,
+      "vertices": 59368,
+      "triangles": 36634,
       "maxNormalError": 1.5807521758226528e-07,
-      "bytes": 5457861
+      "bytes": 5402783
     },
     {
       "id": "full_group_012_003",
       "vertices": 27265,
       "triangles": 20767,
       "maxNormalError": 1.7229691029463368e-07,
-      "bytes": 2557261
+      "bytes": 2557198
     },
     {
       "id": "full_group_013_000",
@@ -170,10 +170,10 @@
     },
     {
       "id": "full_group_017_000",
-      "vertices": 40136,
-      "triangles": 49988,
+      "vertices": 38242,
+      "triangles": 47468,
       "maxNormalError": 1.6673188096838487e-07,
-      "bytes": 4069055
+      "bytes": 3872613
     },
     {
       "id": "full_group_018_000",
@@ -233,10 +233,10 @@
     },
     {
       "id": "full_group_026_000",
-      "vertices": 7388,
-      "triangles": 5076,
+      "vertices": 5568,
+      "triangles": 2724,
       "maxNormalError": 1.7583840938861783e-07,
-      "bytes": 658298
+      "bytes": 477352
     },
     {
       "id": "full_group_027_000",
@@ -638,5 +638,17 @@
       "bytes": 588
     }
   ],
-  "engineValidated": false
+  "engineValidated": false,
+  "incrementalRemovalValidation": {
+    "status": "PASS",
+    "targetObjects": 35,
+    "removedNonzeroTriangles": 7528,
+    "sourceTargetZeroAreaTrianglesAlreadyOmitted": 128,
+    "exactSevenDecimalTriangleMatches": 7528,
+    "unmatched": 0,
+    "ambiguous": 0,
+    "retainedGeometryAttributesAndWindingUnchanged": true,
+    "nativeAndVisualValidation": "NOT RUN",
+    "scope": "Changed meshes checked; existing validation retained for byte-identical baseline assets."
+  }
 }

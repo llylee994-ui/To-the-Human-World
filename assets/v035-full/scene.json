@@ -1310,10 +1310,10 @@
       "id": "full_group_003_000",
       "file": "meshes/full_group_003_000.json",
       "materialId": "full_mat_003",
-      "vertices": 18799,
-      "triangles": 32836,
+      "vertices": 17935,
+      "triangles": 32008,
       "semantic": "static",
-      "sha256": "cbdae1a4658067e19d4ff3c7f8440856973399ce627713a4760ae474d4739ddb"
+      "sha256": "a0e01157c0a10b22a4853ac39db32805749af3375a3379b26983e5fb5a8889d0"
     },
     {
       "id": "full_group_004_000",
@@ -1328,10 +1328,10 @@
       "id": "full_group_005_000",
       "file": "meshes/full_group_005_000.json",
       "materialId": "full_mat_005",
-      "vertices": 12513,
-      "triangles": 6144,
+      "vertices": 9383,
+      "triangles": 4608,
       "semantic": "static",
-      "sha256": "1bf542c1f6411a87e592ebd8c5b164a52e261bc7f08dd46c1a3e5a4003b3a7e6"
+      "sha256": "1d2cd85a852bebc6f88ff3286ac82dd9afcae7a5c185d4ab9a9df18c23d7cd83"
     },
     {
       "id": "full_group_006_000",
@@ -1394,7 +1394,7 @@
       "vertices": 59999,
       "triangles": 84441,
       "semantic": "static",
-      "sha256": "6e0aee23289e925f93c79aef83b461051f4f2f398d0720d4878a8d7c8ab0b952"
+      "sha256": "e59dcd1fd6f37421720ed3edc8bf054ed806630126bb3d7f9979a0db1039502d"
     },
     {
       "id": "full_group_012_001",
@@ -1403,16 +1403,16 @@
       "vertices": 59998,
       "triangles": 83688,
       "semantic": "static",
-      "sha256": "0b1f7b0ab83c07444fa05bf251fa9f9a6b1fb2891bb12a8ec1d6f5c758a8aee3"
+      "sha256": "b531cb09ff2cef22d248785ab695b322a4c1ef1747d897cfd728add6cde14a37"
     },
     {
       "id": "full_group_012_002",
       "file": "meshes/full_group_012_002.json",
       "materialId": "full_mat_012",
-      "vertices": 60000,
-      "triangles": 36926,
+      "vertices": 59368,
+      "triangles": 36634,
       "semantic": "static",
-      "sha256": "28a68477eba3f126d06b31ef1c8b6e00d7387c6f6357f1300f30f7d2e083a6aa"
+      "sha256": "b82609f9a309053f0fd3940081c2fb026c1329e9a187ffd1175e8668e6b19cb9"
     },
     {
       "id": "full_group_012_003",
@@ -1421,7 +1421,7 @@
       "vertices": 27265,
       "triangles": 20767,
       "semantic": "static",
-      "sha256": "dd1a5b331f6585bcb68752ff90388db326c9ba7dd991c993bd25f0faf7db4485"
+      "sha256": "bc40d4c4d9c28d2158ea17260d601bc323f7f0cbb14a58c8f48821b1d5db95d6"
     },
     {
       "id": "full_group_013_000",
@@ -1481,10 +1481,10 @@
       "id": "full_group_017_000",
       "file": "meshes/full_group_017_000.json",
       "materialId": "full_mat_017",
-      "vertices": 40136,
-      "triangles": 49988,
+      "vertices": 38242,
+      "triangles": 47468,
       "semantic": "static",
-      "sha256": "56e55c26952d7d212cba5bf01083df5ab184cc660fd3e711c88ae0e472597390"
+      "sha256": "c263d57b3b3b4e372d09eb9117fbf2372b249ee17714647923fcae24eb7258da"
     },
     {
       "id": "full_group_018_000",
@@ -1562,10 +1562,10 @@
       "id": "full_group_026_000",
       "file": "meshes/full_group_026_000.json",
       "materialId": "full_mat_026",
-      "vertices": 7388,
-      "triangles": 5076,
+      "vertices": 5568,
+      "triangles": 2724,
       "semantic": "static",
-      "sha256": "43ea399bf00d2521b56d5b3f2935ce963211057a177bb4ef8a1cead7d1f92611"
+      "sha256": "c6d839c016997b8785844a9a71e50579ae035dffe013dd8d0657f3bcf31d8158"
     },
     {
       "id": "full_group_027_000",
@@ -2722,10 +2722,10 @@
     }
   ],
   "mainContractSha": "1cd0cdbec06487a5c60f109d5fd477198cfc8846",
-  "sourceVisibleObjects": 10790,
+  "sourceVisibleObjects": 10755,
   "removedZeroAreaTriangles": 6926,
-  "triangles": 3209455,
-  "vertices": 2584246,
+  "triangles": 3201927,
+  "vertices": 2575906,
   "coverageFile": "object_mesh_coverage.json",
   "projectionReference": "camera_projection_reference.json",
   "sourceObjectMappingScope": "Merged-group provenance repeated across chunk files; all original visible objects accounted for, not a triangle ownership map"
