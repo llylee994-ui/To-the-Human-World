@@ -49,3 +49,22 @@ without preceding vertex outputs. The same scene with the official
 faces, and cast shadows. Both screenshots were inspected. No binary or shader
 source was patched. Cloud launch now disables the shipped shader-cache package
 through this supported flag. Complete-room confirmation follows separately.
+
+## Complete-room GLES pipeline confirmation
+
+Source recompilation exposed a second official GLES issue: default BloomHDR
+TONEMAP_LUT failed on texture3DLod. The cloud-only cloudNoLut option locks exposure
+and selects the supported TONEMAP_MODE_NONE; cloudHdr enables HDR before rendering
+starts. Runtime toggling HDR caused a failed screenshot and is not used.
+The HDR-from-start complete-room run exited 0 and captured all five A/B frames
+with no shader errors. Camera and all geometry remained intact. Turning off only
+the two distant card shadow casters produced pixel-identical output under the
+baseline light: that hypothesis was not the baseline flat-lighting cause.
+Lower ambient and a doorway-aligned directional light change the image, but do
+not yet achieve the requested appearance. Shadow and rectangle-light diagnostics
+remain in progress. Windows was not run for these cloud options.
+
+Publication attempt: git push had no configured HTTPS authentication. The
+connected GitHub API refused blob writes with 403 Resource not accessible by
+integration. No remote branch or commit was created. Publishing is paused; local
+checkpoints remain available and no credentials were created.

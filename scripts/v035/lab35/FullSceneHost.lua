@@ -86,7 +86,7 @@ function H.Install(config)
     end
     local function finish()
         local imported=assert(job.Result())
-        if config.deferLoadingViewport then renderer:SetViewport(0,Viewport:new(scene,camera)) end
+        if config.deferLoadingViewport then renderer:SetNumViewports(1);renderer:SetViewport(0,Viewport:new(scene,camera)) end
         home=U.Copy(imported.prepared.cameras.Home)
         local calibration
         home,calibration=require("v035.lab35.CameraCalibration").Run(camera,node,home,raw,graphics:GetWidth()/graphics:GetHeight())
@@ -108,6 +108,7 @@ function H.Install(config)
         end
         log("READY",{stats=imported.stats,loadWallSeconds=(nowMs()-startedMs)/1000,calibrationPassed=calibration.ok,
             warnings=imported.prepared.warnings,storage="one in-memory GameSession/PlayModel",businessQa="no automatic commands",fullSceneRendered="requires pixel verification"})
+        if config.onReady then config.onReady(scene,camera) end
         if config.observeEntries and calibration.ok then
             observation=require("v035.lab35.NativeObservation").New(app,camera,node,log)
         end
@@ -121,12 +122,15 @@ function H.Install(config)
         root:AddChild(display.root)
         local ok,err=pcall(function()
             scene=Scene();octree=scene:CreateComponent("Octree")
+            if config.cloudHdr then renderer.hdrRendering=true end
             node=scene:CreateChild("FullSceneCamera");camera=node:CreateComponent("Camera")
-            if not config.deferLoadingViewport then renderer:SetViewport(0,Viewport:new(scene,camera)) end
+            if config.deferLoadingViewport then renderer:SetNumViewports(0)
+            else renderer:SetViewport(0,Viewport:new(scene,camera)) end
             local lightNode=scene:CreateChild("FullSceneSun");lightNode.rotation=Quaternion(35,140,0)
             local light=lightNode:CreateComponent("Light");light.lightType=LIGHT_DIRECTIONAL;light.color=Color(1,.87,.7);light.brightness=1.6;light.castShadows=true
             local zone=scene:CreateChild("FullSceneAmbient"):CreateComponent("Zone")
             zone.boundingBox=BoundingBox(Vector3(-1000,-1000,-1000),Vector3(1000,1000,1000));zone.ambientSource=AMBIENT_COLOR;zone.ambientColor=Color(.45,.43,.4);zone.fogStart=400;zone.fogEnd=500
+            if config.cloudNoLut then zone:SetAutoExposureEnabled(false);zone:SetTonemapMode(TONEMAP_MODE_NONE) end
         end)
         SubscribeToEvent("Update","V035FullUpdate")
         if not ok then fail(err) end
