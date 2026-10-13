@@ -9,6 +9,19 @@ function N.New(scene,resourcePrefix,options)
     if resourcePrefix:sub(-1)~="/" then resourcePrefix=resourcePrefix.."/" end
     local api={}
     local normalMaterials,normalGeometry={},{}
+    local textures={}
+    local function loadTexture(path,srgb)
+        local key=path..(srgb and ':srgb' or ':linear')
+        if textures[key] then return textures[key] end
+        local image=assert(cache:GetResource("Image",resourcePrefix..path),"missing package image "..path)
+        local texture=Texture2D:new()
+        -- GPU format must be selected BEFORE SetData uploads the image. Setting
+        -- sRGB on a cache-loaded Texture2D is too late in the verified GLES runtime.
+        texture:SetSRGB(srgb)
+        assert(texture:SetData(image),"texture upload failed "..path)
+        textures[key]=texture
+        return texture
+    end
     function api.Material(m)
         -- MASK is parsed but cannot be silently replaced by alpha blending.
         assert(m.alphaMode~="MASK","MASK technique/cutoff transfer not yet verified; material "..m.id)
@@ -19,13 +32,13 @@ function N.New(scene,resourcePrefix,options)
         local tech=assert(cache:GetResource("Technique",directory..name..".xml"),"missing technique "..name)
         local texturePath=(options.checker and not m.unlit) and "uv_checker.png" or m.baseColorTexture
         if m.normalTexture and not texturePath then texturePath="_lab/default-white.png" end
-        local texture=texturePath and assert(cache:GetResource("Texture2D",resourcePrefix..texturePath),"missing package texture "..texturePath)
-        local normal=m.normalTexture and assert(cache:GetResource("Texture2D",resourcePrefix..m.normalTexture),"missing normal texture "..m.normalTexture)
+        local texture=texturePath and loadTexture(texturePath,true)
+        local normal=m.normalTexture and loadTexture(m.normalTexture,false)
         local mat=Material:new();mat:SetTechnique(0,tech)
-        if texture then texture.sRGB=true;mat:SetTexture(TU_DIFFUSE,texture) end
+        if texture then mat:SetTexture(TU_DIFFUSE,texture) end
         if normal then
             assert(TU_NORMAL~=nil,"runtime lacks TU_NORMAL")
-            normal.sRGB=false;mat:SetTexture(TU_NORMAL,normal);normalMaterials[mat]=true
+            mat:SetTexture(TU_NORMAL,normal);normalMaterials[mat]=true
         end
         local c=m.baseColor;mat:SetShaderParameter("MatDiffColor",Variant(Color(c[1],c[2],c[3],c[4])))
         mat:SetShaderParameter("Roughness",Variant(m.roughness));mat:SetShaderParameter("Metallic",Variant(m.metallic))

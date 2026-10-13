@@ -1,0 +1,30 @@
+{
+  "status": "PASS: upload order changes GPU sampling",
+  "resolution": [
+    900,
+    450
+  ],
+  "runtimeBuild": "20260924-1343-91bee56",
+  "hdr": true,
+  "tonemap": "NONE",
+  "autoExposure": false,
+  "gray128ExpectedLinear": 0.2158605,
+  "samples": {
+    "linear_constant": [
+      128,
+      128,
+      128
+    ],
+    "SetData_then_SetSRGB_true": [
+      187,
+      187,
+      187
+    ],
+    "SetSRGB_true_then_SetData": [
+      128,
+      128,
+      128
+    ]
+  },
+  "method": "Three real unlit native Box models, same image and exposure, only texture upload order differs. No image postprocessing."
+}
