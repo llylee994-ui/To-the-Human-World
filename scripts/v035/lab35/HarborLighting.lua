@@ -3,7 +3,8 @@ local H={}
 function H.Apply(scene,opts)
  opts=opts or {}
  local z=scene:GetChild('FullSceneAmbient'):GetComponent('Zone')
- z.ambientSource=AMBIENT_COLOR;z.ambientColor=opts.ambient or Color(.22,.205,.18)
+ z.ambientSource=AMBIENT_COLOR;z.ambientColor=opts.ambient or Color(.035,.03,.025)
+ z:SetFogDensity(0);z:SetHeightFog(false);z:SetVolumetricFogEnabled(false)
  z:SetAttribute('Env Spec Texture',Variant(ResourceRef('TextureCube','Cube/Dusk/DuskSpecularHDR_QualityLow.xml')))
  z:SetAttribute('Env texture spec intensity',Variant(VAR_FLOAT,'0.6'))
  local n=scene:GetChild('FullSceneSun');n.direction=Vector3(.4682927,-.4682927,.7492687)
@@ -21,7 +22,7 @@ function H.Apply(scene,opts)
   return light
  end
  point('RestoredLanternPoint',Vector3(-.2,3.6,-3),Color(1,.40,.10),1.3,2.8,true)
- point('SoftRoomFillApproximation',Vector3(1.3,4.2,2),Color(.70,.78,1),.35,8,false)
+ point('SoftRoomFillApproximation',Vector3(1.3,4.2,2),Color(1,.95,.86),40,8,false)
  return {zone=z}
 end
 return H
