@@ -13,4 +13,6 @@ export D3_CLOUD_CAPTURE="$D3_CLOUD_OUTPUT/baseline.png"
 cd "$ROOT"
 timeout 960 "$URHOX_RUNTIME" scripts/cloud_capture.lua \
   "-tapcode_dir=$ROOT" -skip_login -tool_mode -graphicssurfaceless -recompile_shader -nosound \
-  -x 1170 -y 658 > "$D3_CLOUD_OUTPUT/baseline.log" 2>&1
+  -x "${D3_WIDTH:-1170}" -y "${D3_HEIGHT:-658}" > "$D3_CLOUD_OUTPUT/baseline.log" 2>&1
+
+test -s "$D3_CLOUD_CAPTURE" || { echo "Native capture missing after bounded readback retries" >&2; exit 2; }

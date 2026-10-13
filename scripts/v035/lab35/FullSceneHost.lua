@@ -108,7 +108,8 @@ function H.Install(config)
         end
         log("READY",{stats=imported.stats,loadWallSeconds=(nowMs()-startedMs)/1000,calibrationPassed=calibration.ok,
             warnings=imported.prepared.warnings,storage="one in-memory GameSession/PlayModel",businessQa="no automatic commands",fullSceneRendered="requires pixel verification"})
-        if config.onReady then config.onReady(scene,camera) end
+        if config.lightingPreset=="warm_harbor" then require("v035.lab35.HarborLighting").Apply(scene) end
+        if config.onReady then config.onReady(scene,camera,app,node) end
         if config.observeEntries and calibration.ok then
             observation=require("v035.lab35.NativeObservation").New(app,camera,node,log)
         end
