@@ -670,7 +670,7 @@
       "vertices": 7719,
       "triangles": 2573,
       "maxNormalError": 1.125642536958793e-07,
-      "bytes": 1057036
+      "bytes": 1047615
     },
     {
       "id": "ingredient.herb_pot",
@@ -738,5 +738,10 @@
     "triangleCountsUnchanged": true,
     "eightInteractionProxiesUnchanged": true,
     "dewGlassAlpha": 0.3
+  },
+  "petalFacingRepair": {
+    "triangles": 2573,
+    "normalsAndWindingReversed": true,
+    "uvAndMaterialUnchanged": true
   }
 }

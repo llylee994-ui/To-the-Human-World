@@ -2291,7 +2291,7 @@
       "vertices": 7719,
       "triangles": 2573,
       "semantic": "static.ingredient",
-      "sha256": "5f311d6171768d207d9601bb7720b0efd0d08cd3c15f928044eebca17bbd9eaf"
+      "sha256": "828c11515ae5c4ef173782018fee187139d66250f2f1261994d826ab0ce09a63"
     },
     {
       "id": "ingredient.herb_pot",

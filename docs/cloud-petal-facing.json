@@ -1,0 +1,39 @@
+{
+  "status": "APPLIED_NATIVE_IMAGE_REVIEWED",
+  "baseCommit": "97a048f748dc7cbd0737307536d1a32979274467",
+  "mesh": "ingredient.dried_petals",
+  "beforeSha256": "5f311d6171768d207d9601bb7720b0efd0d08cd3c15f928044eebca17bbd9eaf",
+  "afterSha256": "828c11515ae5c4ef173782018fee187139d66250f2f1261994d826ab0ce09a63",
+  "triangles": 2573,
+  "vertices": 7719,
+  "changed": [
+    "normals negated",
+    "triangle winding reversed"
+  ],
+  "preserved": [
+    "positions",
+    "uv0",
+    "materials",
+    "lighting",
+    "camera",
+    "all other objects"
+  ],
+  "verifiedResourceHashes": 164,
+  "visualResult": "Facing repaired; dark burgundy petals still have weak full-view readability. No UV or material change.",
+  "nativeImage": "petal-normal-corrected/baseline.png",
+  "frameMetrics": {
+    "medianFrameSeconds": 0.5810012817382812,
+    "meanFrameSeconds": 0.617142813546317,
+    "p95FrameSeconds": 0.9970016479492188,
+    "successfulReadback": true,
+    "renderEnvironment": "Mesa software GLES, not target-device performance",
+    "intervalSamples": 14,
+    "wallClock": "time:GetElapsedTime, not clamped Update dt",
+    "resolution": [
+      1170,
+      658
+    ],
+    "nativeFrames": 20,
+    "excludedInitialFrames": 6
+  }
+}
