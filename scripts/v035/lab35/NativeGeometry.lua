@@ -29,7 +29,8 @@ function N.New(scene,resourcePrefix,options)
         end
         local c=m.baseColor;mat:SetShaderParameter("MatDiffColor",Variant(Color(c[1],c[2],c[3],c[4])))
         mat:SetShaderParameter("Roughness",Variant(m.roughness));mat:SetShaderParameter("Metallic",Variant(m.metallic))
-        if m.doubleSided then mat:SetCullMode(CULL_NONE) end
+        if m.doubleSided then mat:SetCullMode(CULL_NONE)
+        elseif m.cullMode then mat:SetCullMode(({CW=CULL_CW,CCW=CULL_CCW,NONE=CULL_NONE})[m.cullMode]) end
         return mat
     end
     function api.Begin()

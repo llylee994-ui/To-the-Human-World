@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "mesh": "meshes/full_group_018_000.json",
+  "closedComponents": 105,
+  "closedEdges": 29610,
+  "triangles": 19740,
+  "volumeBefore": -13.351172698468895,
+  "volumeAfter": 13.351172698468895,
+  "minimumComponentVolumeAfter": 0.12715393318541116,
+  "positionsUVUnchanged": true,
+  "indicesExactlyReverseOfOriginal": true,
+  "normalsExactlyNegated": true,
+  "cameraAndAnchorsUnchanged": true,
+  "nativeCullMode": "CW",
+  "nativeValidatedPlatform": "official Linux GLES surfaceless software"
+}

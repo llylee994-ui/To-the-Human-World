@@ -87,10 +87,11 @@ function C.Prepare(data,limits)
         local color={};for i,x in ipairs(m.baseColor) do color[i]=number(x,"baseColor",0,1) end
         expect(m.alphaMode=="OPAQUE" or m.alphaMode=="BLEND" or m.alphaMode=="MASK","alphaMode")
         expect(type(m.doubleSided)=="boolean","doubleSided must be boolean")
+        expect(m.cullMode==nil or m.cullMode=="CW" or m.cullMode=="CCW" or m.cullMode=="NONE","invalid explicit cullMode")
         if m.alphaMode=="MASK" then number(m.alphaCutoff,"alphaCutoff",0,1) end
         out.materials[key]={id=key,baseColor=color,roughness=number(m.roughness,"roughness",0,1),
             metallic=number(m.metallic,"metallic",0,1),alphaMode=m.alphaMode,alphaCutoff=m.alphaCutoff,
-            doubleSided=m.doubleSided,unlit=m.unlit==true,baseColorTexture=m.baseColorTexture and C.ResourcePath(m.baseColorTexture)}
+            doubleSided=m.doubleSided,cullMode=m.cullMode,unlit=m.unlit==true,baseColorTexture=m.baseColorTexture and C.ResourcePath(m.baseColorTexture)}
         if m.normalTexture then
             expect(not m.unlit,"normal texture on unlit material is unsupported")
             expect(m.normalMapConvention=="tangent-space OpenGL +Y; requires tangent basis derived from uv0","normal map convention must explicitly declare tangent-space OpenGL +Y")

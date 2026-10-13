@@ -418,7 +418,8 @@
         "baseColorTexture": "sRGB",
         "normalTexture": "linear"
       },
-      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0"
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "cullMode": "CW"
     },
     {
       "id": "full_mat_019",
@@ -1440,7 +1441,7 @@
       "vertices": 40320,
       "triangles": 19740,
       "semantic": "static",
-      "sha256": "c657a0062d8bb7340c55dcf3ad6d17420edefb847309b6dbd6bf6d5312b74b5f"
+      "sha256": "9d1ae562116244af53161cb62652fd81b4050735e0e36631f72306eb928c5859"
     },
     {
       "id": "full_group_019_000",
