@@ -1,4 +1,4 @@
-"""Compatibility command: verify direct stove entry after removal of its yaw."""
+"""Compatibility command: verify current real-home stove pan/zoom, never 3D yaw."""
 from pathlib import Path
 import sys
 sys.dont_write_bytecode = True

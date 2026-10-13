@@ -1,4 +1,4 @@
--- Compatibility filename: this suite now verifies removal of the stove yaw.
+-- Compatibility filename: real-room pan/zoom replaces the retired geometric yaw.
 -- Real AppView/business/UI dispatch; clock and Yoga layout are headless adapters.
 local T={}
 function T.Run()
@@ -24,9 +24,13 @@ function T.Run()
     local function check(ok,why) checks=checks+1;assert(ok,why) end
     local function bind()
         host.Bind(view.root);Engine.SetRoot(view.root)
-        -- The shared layout adapter predates the pending-result HUD button.
+        -- Keep the pending-result adapter separate from the current return button.
+        -- These synthetic rectangles are only for headless input dispatch.
         local pending=view.root:FindById("resumePending")
-        if pending then pending.testLayout={x=view.root:GetAbsoluteLayout().w-356,y=0,w=114,h=48} end
+        if pending then
+            local back=assert(view.root:FindById("returnHome")):GetAbsoluteLayout()
+            pending.testLayout={x=back.x-122,y=back.y,w=114,h=back.h}
+        end
     end
     local function step(dt) host.Step(view,dt);bind() end
     local function point(id)
@@ -83,7 +87,7 @@ function T.Run()
     check(before.currentOrder.pending~=false,"fixture has pending result")
     view.Open("brew");step(0);returnHome()
     check(U.Equal(before,fixture.state.GetSnapshot()) and fixture.writes==writes,"existing navigation preserves pending result")
-    print("[StoveDirectEntryTest] P_TO_P PASS assertions="..checks.."; six other entries/modal/draft/pending/state")
+    print("[StovePanZoomTest] P_TO_P PASS assertions="..checks.."; six other entries/modal/draft/pending/state")
     local pChecks=checks
     for _,size in ipairs({{1280,720},{1560,720},{1600,720},{1024,768},{640,360}}) do
         host.width,host.height=size[1],size[2];bind()
@@ -91,8 +95,36 @@ function T.Run()
             local previous=nav;local sx,sy=point("home.stove")
             check(assert(Engine.FindWidgetAt(sx,sy)).props.id=="home.stove","stove subject hit")
             tap(sx,sy)
-            check(view.scene=="brew" and nav==previous+1,"F1: stove must navigate immediately, without waiting for yaw")
-            check(creates==0 and not view.yawProbe and not view.zoom.active and not view.home.blocked,"F2: no transition creation or input lock")
+            check(view.scene=="home" and nav==previous and view.zoom.active,"stove starts delayed real-room navigation")
+            check(creates==0 and not view.yawProbe and view.home.blocked,"no geometric scene; room input blocked")
+            local profile=view.zoom.profile
+            local bounds=view.home.root:GetAbsoluteLayout();local fit=view.home.Fit()
+            local room,tree=view.home.art,view.root:GetNumChildren()
+            local previousScale=1 --[[@as number]]
+            local previousPan=0 --[[@as number]]
+            check(profile.target==1.5 and profile.duration==.6 and profile.panX<0,"scale/duration/left pan defaults")
+            check(math.abs(profile.subjectX*1.5+profile.panX-bounds.w/2)<1,"stove ends horizontally centered")
+            for frame=1,35 do
+                if frame==4 then
+                    tap(sx,sy);tap(point("home.net"));tap(point("home.merchantShip"));tap(point("home.drawer"))
+                    local day=view.root:FindById("nextDay"):GetAbsoluteLayout();tap(day.x+5,day.y+5)
+                    view.Open("day");view.Open("shop");view.Close()
+                    check(view.zoom.profile==profile and not view.panel and nav==previous,"repeat/other/HUD input blocked")
+                end
+                step(1/60)
+                local s,dx,dy=view.zoom.scale,view.zoom.panX,view.zoom.panY
+                check(view.zoom.active and s>previousScale and dx<previousPan,"simultaneous monotone pan/zoom")
+                check(view.home.art==room and view.root:GetNumChildren()==tree and not view.model.dirty,"same UI tree; animation advances without dirty")
+                local left=bounds.x+(fit.x-bounds.x)*s+dx
+                local top=bounds.y+(fit.y-bounds.y)*s+dy
+                check(left<=math.max(fit.x,bounds.x)+.001 and top<=math.max(fit.y,bounds.y)+.001
+                    and left+fit.w*s>=math.min(fit.x+fit.w,bounds.x+bounds.w)-.001
+                    and top+fit.h*s>=math.min(fit.y+fit.h,bounds.y+bounds.h)-.001,"no newly exposed room edges")
+                check(dx<=0 and dy<=0 and dx+bounds.w*s>=bounds.w and dy+bounds.h*s>=bounds.h,"cover backdrop remains full")
+                previousScale,previousPan=s,dx
+            end
+            step(1/60+.000001)
+            check(view.scene=="brew" and nav==previous+1 and not view.zoom.active and not view.home.blocked,"complete once to existing brew; unlocked")
             step(0)
             check(view.root:FindById("brewStage") and view.root:FindById("openPending"),"existing pending-result brew controls visible")
             check(not view.root:FindById("homeYawCanvas") and not view.root:FindById("homeYawClose"),"no geometry test UI")
@@ -102,6 +134,26 @@ function T.Run()
             check(U.Equal(before,fixture.state.GetSnapshot()) and fixture.writes==writes,"stove and return do not consume pending or mutate saves")
         end
     end
+    host.width,host.height=1280,720;bind()
+    for _,reason in ipairs({"resize","focus-lost","minimized","frame-gap","elapsed-gap","portrait"}) do
+        local previous=nav;tap(point("home.stove"));step(.1)
+        if reason=="resize" then host.width=1290;bind()
+        elseif reason=="focus-lost" then host.focused=false
+        elseif reason=="minimized" then host.minimized=true
+        elseif reason=="elapsed-gap" then host.now=host.now+1
+        elseif reason=="portrait" then host.width=360;host.height=640;bind() end
+        step(reason=="frame-gap" and .3 or .01)
+        check(not view.zoom.active and view.home.zoom==1 and not view.home.blocked and nav==previous,"cancel/reset "..reason)
+        check(not view.root:FindById("homeZoomBlocker").props.visible,"release input "..reason)
+        host.width,host.height=1280,720;host.focused=true;host.minimized=false;bind();step(.01)
+        tap(point("home.stove"));check(view.zoom.active,"replay after "..reason)
+        view.CancelHomeZoom("test-reset")
+    end
+    -- A pointer held on the blocker cannot click the new page/HUD on release.
+    tap(point("home.stove"));pointer("PointerDown",1200,20)
+    for _=1,37 do step(1/60) end
+    pointer("PointerUp",1200,20);check(view.scene=="brew" and not view.panel,"late release cannot penetrate")
+    view.Navigate("home");step(0)
     -- Real engine sorting (the shared headless layout adapter normally bypasses it).
     view.Open("shop");step(0)
     view.root.GetRenderChildren=require("urhox-libs/UI/Core/Widget").GetRenderChildren
@@ -109,11 +161,15 @@ function T.Run()
     local sx,sy=point("home.stove")
     check(Engine.FindWidgetAt(sx,sy)~=view.root:FindById("home.stove"),"F4: real z-order must keep modal above home")
     view.Close();step(0)
+    tap(point("home.stove"));step(.1);local previous=nav
     view.root:Destroy();step(.1)
-    check(creates==0,"no transition during destruction")
+    check(creates==0 and nav==previous and not view.zoom.active and not view.home.blocked,"destroy cancels without navigation or geometric scene")
+    check(not view.BeginHomeZoom("stove"),"destroyed view cannot replay")
+    check(U.Equal(before,fixture.state.GetSnapshot()) and fixture.writes==writes,"all interrupts and inputs preserve pending/draft/saves")
     package.loaded["ui.landscape.HomeYawProbe"]=original
-    print("[StoveDirectEntryTest] F_TO_P PASS assertions="..(checks-pChecks).."; 5 sizes, 15 visits; transition creations=0")
-    print("[StoveDirectEntryTest] PASS assertions="..checks.."; headless, not native/mobile evidence")
+    require("ui.landscape.tests.StovePanZoomRenderTest").Run()
+    print("[StovePanZoomTest] PASS motion assertions="..(checks-pChecks).."; 5 sizes, 15 visits; geometry creations=0")
+    print("[StovePanZoomTest] PASS assertions="..checks.."; headless, not native/mobile evidence")
     return true
 end
 return T

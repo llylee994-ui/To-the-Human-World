@@ -1,0 +1,58 @@
+{
+  "version": "seaside-r1",
+  "concept": "assets/image/海边捕捞_构图稿_v01_20261012053950.png",
+  "records": [
+    {
+      "key": "seaside_background",
+      "success": true,
+      "name": "海边捕捞_纯背景_v01",
+      "prompt": "为已确认的横屏游戏场景拆分背景层。仅删除水面中左上方的帆船及其倒影、偏下中央的漂流瓶及其环状波纹，删除画面最左边伸入的网兜。用对应海水纹理或码头自然补齐这三处。保持其余每一处原图构图、透视、木码头、绳索、木桩、灯塔、山岸、天空云彩、太阳位置、海浪密度与暖金蓝色光线完全一致，不重新设计、不移动码头、不新增物件。完整1920x1080不透明背景，无文字、无按钮、无水印。",
+      "previewUrl": "https://tapcode-sce.spark.xd.com/tapcode-images/d8f3a981-035f-4fd9-9caf-84fb74f5d573.png",
+      "actualSize": "1920x1080",
+      "localPath": "assets/image/海边捕捞_纯背景_v01_20261012054550.png",
+      "absolutePath": "D:\\To the Human World\\assets\\image\\海边捕捞_纯背景_v01_20261012054550.png",
+      "download": {
+        "success": true
+      }
+    },
+    {
+      "key": "seaside_bottle",
+      "success": true,
+      "name": "海边捕捞_漂流瓶透明_v01",
+      "prompt": "从图中偏下中央水面的漂流瓶提取单独的2D游戏透明精灵。只保留一只原造型淡青透明玻璃瓶、软木塞、瓶内卷起的米色信纸，保持原图瓶颈朝左上、瓶底朝右下的倾斜角度与金色受光、细腻手绘风格。放大呈现完整瓶子，瓶子占输出宽度约75%，居中保留少量透明边距。去掉海面、波纹、船、天空、码头，不保留矩形画面，不增加底座或文字，不画手，背景必须为真正RGBA alpha透明，不要白底或棋盘格。玻璃透光但瓶内信纸和瓶口清晰。",
+      "previewUrl": "https://tapcode-sce.spark.xd.com/tapcode-images/5dd38b0c-1e0a-454d-88ac-686c6fe078ce.png",
+      "actualSize": "1024x1024",
+      "localPath": "assets/image/海边捕捞_漂流瓶透明_v01_20261012054511.png",
+      "absolutePath": "D:\\To the Human World\\assets\\image\\海边捕捞_漂流瓶透明_v01_20261012054511.png",
+      "download": {
+        "success": true
+      }
+    },
+    {
+      "key": "seaside_bottle_clean",
+      "success": true,
+      "name": "海边捕捞_漂流瓶净透明_v02",
+      "prompt": "仅清理这个透明漂流瓶图片的边缘和外部背景，不改变瓶子本身。保留当前单个蓝绿色玻璃瓶、软木塞、瓶颈绳结、卷起的信纸、倾斜角度、材质细节、物件大小和位置。彻底删除瓶子外部所有金色光晕、棕色光雾、青色辉光、黑色背景和投影，瓶子外轮廓以外的每个像素必须alpha=0透明，不能出现泛光。瓶子本身的金色反光保留。真正RGBA透明背景，不要棋盘格或任何底色，不添加物件，不移动主体。",
+      "previewUrl": "https://tapcode-sce.spark.xd.com/tapcode-images/d7355e9c-0e65-4900-a4cb-c36588cd4330.png",
+      "actualSize": "1024x1024",
+      "localPath": "assets/image/海边捕捞_漂流瓶净透明_v02_20261012054934.png",
+      "absolutePath": "D:\\To the Human World\\assets\\image\\海边捕捞_漂流瓶净透明_v02_20261012054934.png",
+      "download": {
+        "success": true
+      }
+    },
+    {
+      "key": "seaside_net",
+      "success": true,
+      "name": "海边捕捞_网兜透明_v01",
+      "prompt": "将参考的长柄木质绳网兜制作成干净独立的透明2D游戏精灵。保留参考网兜长柄、椭圆木框、绳结和深绳网袋的同一造型和暖金色光照，保持全长竖向，网口上方、柄端下方，完整不截断。原图周边所有棕色光晕、阴影背景、黑色底必须完全移除；网孔也必须真实透明而非实心棕色。单个网兜居中占画布约90%高度，便于游戏旋转平移，无手无人物无水面无其他道具无文字。真正RGBA alpha透明背景，不要棋盘格。",
+      "previewUrl": "https://tapcode-sce.spark.xd.com/tapcode-images/e11a3a1f-ff61-461d-8d41-cde56ca46317.png",
+      "actualSize": "1536x1536",
+      "localPath": "assets/image/海边捕捞_网兜透明_v01_20261012054622.png",
+      "absolutePath": "D:\\To the Human World\\assets\\image\\海边捕捞_网兜透明_v01_20261012054622.png",
+      "download": {
+        "success": true
+      }
+    }
+  ]
+}

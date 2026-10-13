@@ -1,5 +1,6 @@
 -- Real projections only. Every mutation goes through the supplied PlayModel.
 local UI=require "urhox-libs/UI"
+local Harbor=require "ui.landscape.HarborStyle"
 local P={}
 function P.Text(parent,value,size,id)
     local label=UI.Label {id=id,text=tostring(value or ""),alignSelf="stretch",fontSize=size or 16,
@@ -7,7 +8,7 @@ function P.Text(parent,value,size,id)
     parent:AddChild(label); return label
 end
 function P.Button(parent,id,title,click,allowed,reason)
-    local b=UI.Button {id=id,text=title,width="100%",minWidth=0,minHeight=44,flexShrink=0,fontSize=15,
+    local b=Harbor.Button {id=id,text=title,width="100%",minWidth=0,minHeight=44,flexShrink=0,fontSize=15,
         disabled=allowed==false,onClick=click,backgroundColor={64,85,70,255},textColor={255,247,225,255},borderRadius=6}
     parent:AddChild(b)
     if allowed==false and reason and reason~="" then P.Text(parent,reason,13) end
@@ -176,6 +177,9 @@ function P.Seaside(ctx,body)
     P.Button(body,"seasideShop","查看商队商店",function() ctx.Open("shop") end)
 end
 function P.Brew(ctx,body)
+    if ctx.session.state.GetStatus().migrationNotice then
+        P.Text(body,"进度已更新。继续炼药前，请重新选择词与材料。",14,"migrationRecipeHint")
+    end
     local summary=query(ctx,body,"GetOrderSummary"); if not summary then return end
     P.Text(body,"炼药工作区",22)
     P.Text(body,"功能界面 · 正式近景、拖拽投料与动效待制作",14,"brewStage")

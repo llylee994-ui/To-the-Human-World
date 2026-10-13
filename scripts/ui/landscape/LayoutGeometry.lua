@@ -7,6 +7,15 @@ function G.Fit(bounds,manifest)
     return {x=bounds.x+(bounds.w-manifest.width*scale)/2,y=bounds.y+(bounds.h-manifest.height*scale)/2,
         w=manifest.width*scale,h=manifest.height*scale,scale=scale}
 end
+-- Wide phones crop the uninteractive ceiling, preserving the bottom-row props.
+-- Narrow tablet ratios keep the complete composition; the backdrop fills the rest.
+function G.SceneFit(bounds,manifest)
+    if bounds.w<=0 or bounds.h<=0 then return G.Fit(bounds,manifest) end
+    if bounds.w/bounds.h<manifest.width/manifest.height then return G.Fit(bounds,manifest) end
+    local scale=bounds.w/manifest.width
+    return {x=bounds.x,y=bounds.y+bounds.h-manifest.height*scale,w=bounds.w,h=manifest.height*scale,scale=scale,
+        clip={x=bounds.x,y=bounds.y,w=bounds.w,h=bounds.h}}
+end
 function G.Rotate(x,y,degrees)
     local a=math.rad(degrees); local c,s=math.cos(a),math.sin(a)
     return x*c-y*s,x*s+y*c
@@ -58,6 +67,8 @@ function G.InRegion(x,y,r)
     return math.abs(dx)<=r.w/2 and math.abs(dy)<=r.h/2
 end
 function G.HitObject(manifest,object,fit,x,y)
+    local clip=fit.clip
+    if clip and (x<clip.x or y<clip.y or x>clip.x+clip.w or y>clip.y+clip.h) then return false end
     if fit.scale<=0 or x<fit.x or y<fit.y or x>fit.x+fit.w or y>fit.y+fit.h then return false end
     local layer=manifest.layers[object.layer]
     if not layer.visible then return false end
