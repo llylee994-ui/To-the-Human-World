@@ -1,0 +1,52 @@
+{
+  "status": "NATIVE_CANDIDATE_NOT_REFERENCE_ACCEPTANCE",
+  "baseCommit": "dabc126",
+  "singleVariable": "added shelf point brightness 0/2/6; same position/range/color/camera/materials",
+  "selectedBrightness": 2,
+  "reason": "6 brightens upper shelf underside excessively; 2 retains dark room contrast while modestly improving ingredients",
+  "position": [
+    2.65,
+    4.05,
+    -1.7
+  ],
+  "range": 2.2,
+  "color": [
+    1,
+    0.95,
+    0.88
+  ],
+  "castShadows": false,
+  "nativeImages": [
+    "petal-normal-corrected/baseline.png",
+    "shelf-local-fill-2-resumed/baseline.png",
+    "shelf-local-fill-6/baseline.png"
+  ],
+  "resolution": [
+    1170,
+    658
+  ],
+  "meanRgbNotPerceptualQuality": {
+    "shelf": [
+      79.47084490740741,
+      85.6213425925926,
+      95.68625
+    ],
+    "petals": [
+      56.51766513056835,
+      61.498394079039244,
+      69.3108504398827
+    ],
+    "dew": [
+      64.85437853107345,
+      72.5704802259887,
+      84.7069209039548
+    ]
+  },
+  "offlineChecks": 161,
+  "runtimeResourceHashes": 164,
+  "remaining": [
+    "petal and night-dew readability still imperfect",
+    "local contact shadows unsupported on current cluster GLES path",
+    "no actual Windows or mobile performance acceptance"
+  ]
+}

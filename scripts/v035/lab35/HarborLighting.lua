@@ -23,6 +23,8 @@ function H.Apply(scene,opts)
  end
  point('RestoredLanternPoint',Vector3(-.2,3.6,-3),Color(1,.40,.10),1.3,2.8,true)
  point('SoftRoomFillApproximation',Vector3(1.3,4.2,2),Color(1,.95,.86),40,8,false)
+ -- Small local shelf fill improves ingredient readability without lifting the whole room.
+ point('IngredientShelfFill',Vector3(2.65,4.05,-1.7),Color(1,.95,.88),2,2.2,false)
  return {zone=z}
 end
 return H

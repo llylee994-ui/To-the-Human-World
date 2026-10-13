@@ -17,6 +17,9 @@ function Start()
 end
 function CloudCaptureReadyFrame()
     if readyFrames==nil then return end
+    if graphics:GetWidth()~=tonumber(os.getenv('D3_WIDTH') or '1170') or graphics:GetHeight()~=tonumber(os.getenv('D3_HEIGHT') or '658') then
+        originalPrint('[CLOUD CAPTURE FAIL] Actual native dimensions do not match explicit D3_WIDTH/D3_HEIGHT');engine:Exit();return
+    end
     readyFrames=readyFrames+1
     nativeWallTimes[#nativeWallTimes+1]=time:GetElapsedTime()
     if readyFrames<20 or readyFrames%10~=0 then return end

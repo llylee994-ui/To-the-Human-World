@@ -1,5 +1,5 @@
 {
-  "timestampUtc": "2026-10-13T15:08:20.031447+00:00",
+  "timestampUtc": "2026-10-13T21:15:46.890918+00:00",
   "status": "PASS",
   "failure": null,
   "runtime": "Lupa Lua 5.4 with widget/API substitutes; real pinned main business",
@@ -14,799 +14,799 @@
   "mainSha": "1cd0cdbec06487a5c60f109d5fd477198cfc8846",
   "results": [
     {
+      "detail": "",
       "name": "source data not mutated or double-converted",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "zero based indices convert exactly once",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "Blender Z-up maps to engine Y-up",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "rotation preserves triangle winding and normal",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "UV orientation preserved pending checker",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "unit conversion scales geometry/camera/clips but not normals",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "reject negative indices",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "reject out-of-range zero based indices",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "reject fractional indices",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "reject incomplete triangles",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "reject sparse mesh arrays",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "reject NaN positions",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "reject coordinate conversion overflow",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "reject missing normals",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "reject zero normals",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "reject mismatched UV count",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "reject degenerate triangles",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "reject collinear distinct vertices",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "reject nonfinite triangle cross product",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "preserve actual nonzero letter-ink triangle below old area threshold",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "reject unbaked transform",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "reject foreign axis and double conversion",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "reject material reference mismatch",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "reject duplicate semantic ID",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "reject independent scissors target",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "reject package path traversal",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "reject absolute texture path",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "reject ambiguous camera FOV",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "reject sphere for transparent ship",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "missing proxy disables picking rather than inventing bounds",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "semantic ship triangle is selectable",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "transparent card corner is not a ship hit",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "occluder veto prevents through-wall hit",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "loader emits complete synthetic geometry",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "invalid data causes zero native scene mutations",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "native emission failure removes partial root",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "AppView uses the one injected real session/model",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "main semantic mapping and exact visible label home.drawer",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "rendered hint uses main label home.drawer",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "main semantic mapping and exact visible label home.journal",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "rendered hint uses main label home.journal",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "main semantic mapping and exact visible label home.tray",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "rendered hint uses main label home.tray",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "main semantic mapping and exact visible label home.net",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "rendered hint uses main label home.net",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "main semantic mapping and exact visible label home.caseFile",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "rendered hint uses main label home.caseFile",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "main semantic mapping and exact visible label home.merchantShip",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "rendered hint uses main label home.merchantShip",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "main semantic mapping and exact visible label home.letterPaper",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "rendered hint uses main label home.letterPaper",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "main semantic mapping and exact visible label home.stove",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "rendered hint uses main label home.stove",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "exactly eight Home business entries",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "Home hint anchors visible",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "offscreen hints omitted",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "occluded hints omitted",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "UI-consumed pointer cannot reach scene",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "drag blocks navigation and hints",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "net starts navigation only",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "navigation blocks repeated clicks and hints",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "net completion opens existing SeasideView",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "navigation completion replay has no effect",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "navigation never receives or saves",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "return Home starts guarded navigation",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "Home return restores hint display",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "duplicate gesture rejected after completion",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "new gesture begins a fresh transition",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "cancel invalidates stale camera completion",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "dispatch home.drawer",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "panel blocks scene and hints home.drawer",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "dispatch home.journal",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "panel blocks scene and hints home.journal",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "dispatch home.tray",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "panel blocks scene and hints home.tray",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "dispatch home.caseFile",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "panel blocks scene and hints home.caseFile",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "dispatch home.merchantShip",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "panel blocks scene and hints home.merchantShip",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "dispatch home.letterPaper",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "panel blocks scene and hints home.letterPaper",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "dispatch home.stove",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "stove reaches brew without automatic Preview",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "all eight routes preserve business state",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "End Day opens confirmation only",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "opening confirmation does not advance day",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "cancelled confirmation cannot advance day",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "double confirmation advances exactly one day",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "HUD ledger binds real day and currency",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "existing Shop panel performs real purchase",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "HUD follows committed purchase",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "failed purchase does not debit or save",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "existing salvage command runs once before animation",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "repeat salvage and return blocked during animation",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "skip preserves receipt and opens real Reader",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "repeat real Cut cannot duplicate cards",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "reopen paper retains the real cut gap",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "formal save slot is rejected",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "all real storage operations remain memory scoped",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "separate memory instances do not share player data",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "offline HUD/hint layout update 1920x1080",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "offline HUD/hint layout update 2560x1080",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "offline HUD/hint layout update 1440x1080",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "hint toggle hides all bubbles",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "destroy blocks all future navigation",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "missing Seaside camera still opens original salvage page",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "existing Seaside UI is actually visible on fallback route",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "fallback page can return to calibrated Home",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "missing Brew camera still opens existing brewing page",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "fallback routes never receive brew or write storage",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "full catalog exceeds six-mesh sample without dropping entries",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "stream rejects package path escape",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "stream rejects Windows case-colliding file paths",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "stream rejects source batches above 60000 vertices",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "stream creation is lazy and does not read or mutate engine",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "stream reads every declared mesh in order",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "stream geometry yields across update steps",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "stream publishes only one complete root",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "stream totals use actual emitted meshes and source members",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "stream releases ordinary Lua mesh geometry",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "stream retains explicit ship geometry for alpha picking",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "cancel after publish does not destroy complete scene",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "stream failure rolls back root and stops later reads",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "stream failure preserves useful file and error",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "failed coroutine releases the currently parsed mesh",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "cancel pending import removes partial native root",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "bad semantic mesh reference fails before root mutation",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "catalog identity mismatch cannot silently substitute geometry",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "full header adapter preserves eight independent invisible proxies",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "full header validates without loading all mesh payloads",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "declared linear tangent normal map survives preparation",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "reject gamma-encoded normal map metadata",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "full adapter rejects missing semantic visible mesh mapping",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "failed load remains visible with exact error and no retry",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "frame reporting uses measured Update samples and resets",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "oversized mesh is rejected before reading and handle closes",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "resource read exception still closes handle",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "truncated resource read is rejected",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "bounded resource read preserves bytes and closes once",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "Blender rotation alone does not turn desired camera into a LH basis",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "right-up-backward is a proper RH camera node rotation",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "reference camera projects forward to image center",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "native adapter selects existing PBR alpha texture technique",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "native adapter emits normals/UV before commit",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "native adapter preserves metallic/roughness and double-sided flag",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "missing texture fails before scene creation",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "unsupported MASK fails explicitly before scene creation",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "normal alpha uses verified technique and correct texture units",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "normal geometry generates tangents after attributes before Commit",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "constant-color normal material binds white diffuse fallback",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "tangent API failure rolls back without Commit",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "tangent API absent rolls back without Commit",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "horizontal FOV converted to native vertical FOV",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "native projection maps to active screen rectangle",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "native projection suppresses behind-camera and far-clipped anchors",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "RH camera projects through signed native clip W despite WorldToScreen clamp",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "measured parcel cord hit belongs to the tied paper stack",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "shared rope mesh outside parcel bounds remains an occluder",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
+      "detail": "",
       "name": "foreign mesh inside parcel bounds remains an occluder",
-      "status": "PASS",
-      "detail": ""
+      "status": "PASS"
     },
     {
       "name": "actual delivered probe remains schema-compatible",
@@ -914,7 +914,7 @@
     "[PASS] HUD ledger binds real day and currency",
     "[PASS] existing Shop panel performs real purchase",
     "[PASS] HUD follows committed purchase",
-    "[PlayActionFailure] {\"code\": \"UNKNOWN_ID\", \"details\": {}, \"message\": \"未知原料\", \"path\": \"ingredientId\"}",
+    "[PlayActionFailure] {\"message\": \"未知原料\", \"details\": {}, \"code\": \"UNKNOWN_ID\", \"path\": \"ingredientId\"}",
     "[PASS] failed purchase does not debit or save",
     "[PASS] existing salvage command runs once before animation",
     "[PASS] repeat salvage and return blocked during animation",
@@ -989,115 +989,115 @@
     "[PASS] actual Blender camera basis reproduces all eight anchors offline"
   ],
   "sourceHashes": {
-    "scripts\\core\\EventBus.lua": "f53bce9dfe7c18ea854d50f7413b339bf32904acfc469bde7044d4231a35f92a",
-    "scripts\\core\\GameFlow.lua": "5eb17d719de096b45e17c0f381e20ba3cc9b6d06a8ff20df6fbd0c163ec5c679",
-    "scripts\\core\\GameSession.lua": "dbe5ded4e726cf53f0232cc6fb2dcda80b1bcade295e3982575e4597ac03afc8",
-    "scripts\\core\\GameState.lua": "1d66fe9e9547c8e6811d100dca228db0e04e64b43496e637dc60c271d078c31e",
-    "scripts\\core\\SaveJson.lua": "407249e9959bb17b1099d1338302a5e3ad7ef04165d219f25afcd8909518a880",
-    "scripts\\core\\SaveMigrations.lua": "5137d80eb11c3abcb641d13d81539ea41f0ba0cef78d767ec6e3c2e66bf8b243",
-    "scripts\\core\\SaveSchema.lua": "a965f0d5898a08c1591c5bc15fbbcfdbd6058608354f7013201c81679e31f6b4",
-    "scripts\\core\\SaveSystem.lua": "acb870cc745d7e5531d0e8f32fd027a28e9df55499e84f0d88dc50d4b4730f9f",
-    "scripts\\core\\SchemaProjection.lua": "147991b7a2102dcd4ff37be175a42d74140880036a87ca4c9d60bb3b14031bfd",
-    "scripts\\core\\StateUtil.lua": "17d73e257e16199dd6b51f2c33b9ffe684610bf9765c71858b1d238427403257",
-    "scripts\\data\\content.lua": "31321c3836b3a927b798e012e4caff7ed48d773410f24e5fbc67ce71e4b514b5",
-    "scripts\\data\\effects.lua": "a88c061d34a5b3b91ac6c51392f482b0de70f9a6ea77007ff4759b80ebb9c540",
-    "scripts\\data\\equipment.lua": "05543c85f8fa6ef50cd9fdb037f38aa14d99512deab81aa8f279af6c3e797c29",
-    "scripts\\data\\extension_test.lua": "7395aac16f27c7dfe04253339a5bd54a2b6a2aa3a3f7b05cb34d53cbb2d8b5d3",
-    "scripts\\data\\followup.lua": "0ef136381fa636d831b289581d1b477a1c2183f1255dde38a69178bb06b5df78",
-    "scripts\\data\\gameplay.lua": "1821c473308170c8c11717b57033c3e9794a49f53471c23b8f934bdaa52889f4",
-    "scripts\\data\\ingredients.lua": "5a9c9a756ff8dd6fda44dba54e4101fb7cb99fc762e82606e55f5c10b69ed0d8",
-    "scripts\\data\\letters.lua": "7a238595d7ce891cd19d080f4914314d0ca7cf9ebb4427bf5830de5dc61f1bd3",
-    "scripts\\data\\npcs.lua": "10e1cd5556ed7c74c28815e5fed034f038f56bf18c97637d0fb2304a8481278b",
-    "scripts\\data\\numeric_v02.lua": "2a3c99a732b902fac65b03311640e47a70cce1c13bf54406b88be707e739c886",
-    "scripts\\data\\ordinary_orders.lua": "d6124a6c9069ea7baf7cd1b2757bbf68bd15fe6f67ca4994712fa6453ccbebd0",
-    "scripts\\data\\recipes.lua": "303718e3d720f24b6a0a2b169bf5ae58650b49974ead1a8e36b06a2947f4b499",
-    "scripts\\data\\stage1.lua": "0aeb55db07ed4f3f00686605d82ce337dcbbe58460bd9e2cc7514a7eff4dc770",
-    "scripts\\data\\synthesis.lua": "0b36bbc69e584655d5f574ea977b397fe840b4ea0a0a41bbac94505234582dee",
-    "scripts\\data\\word_profiles.lua": "c3d0a31814ccb3c409c9a56fcacbf52e4873706ade52eb33eceec51a24245dde",
-    "scripts\\data\\words.lua": "f84ad8e6408af4129efbfd3ad75125d5f734a2cf92231cb3f21cdaf52746b873",
-    "scripts\\debug\\DeveloperMode.lua": "137bc2ba369c2d642c8bc08408292097acd5f786537c1f873d8595580752d63f",
-    "scripts\\lab35\\AppView.lua": "2967c9ba688c5eadc48c6048d091273999425b55cf12c3c1b214fff6c57c10b1",
-    "scripts\\lab35\\Bootstrap.lua": "16b7381b4d7f7c12ce22e8bf881d9a93a1389598e5dff89608efb702f304ce52",
-    "scripts\\lab35\\CameraCalibration.lua": "3c7b06fde794d51fc328302d3fd7b3e2a75d9d1c1c2a9bf0413dabd267715e17",
-    "scripts\\lab35\\CameraMath.lua": "645e90373af1c6e636306f62859556a62aa4c154176caf1286105f2f5c072879",
-    "scripts\\lab35\\Controller.lua": "f8a572796b8dc5e316ffa66253517a500067bf214e1dbb087569654787700517",
-    "scripts\\lab35\\FrameStats.lua": "59d723439574e46112df7b3d6f8cae220eb752bbd20472e10ac345bd8830dcee",
-    "scripts\\lab35\\FullSceneHost.lua": "fd628e61f27a1f1ea9fc8020ee993ec748d5e902a670ae02ad2db97fe8ec8a5e",
-    "scripts\\lab35\\HomeView.lua": "36b0712a45adb748684bd67fe12cf58646ab5c52ca7c20caa1091d028cf9e958",
-    "scripts\\lab35\\Ids.lua": "1cc9c793f2cae6b19420afad709766c21d8c74bdf05a386c5f6894cc423a6bf8",
-    "scripts\\lab35\\Integration.lua": "a7e6dfeabd351d0a910db2673d7b57159bf7c652858bfa2e3f2b92fdd63dd844",
-    "scripts\\lab35\\LoadStatus.lua": "20b05053f895f4a2b0aaf59e53c5b0f24ac210701bdc3043ebfbdc442f5e374b",
-    "scripts\\lab35\\Math3.lua": "1f1fe7e869cccac4156deaa449730f38aa13692e5e8709cffc0e0265ea033078",
-    "scripts\\lab35\\MemoryStorage.lua": "2d99fef2ce8919ab1e74348fc41646ecb5281163c603283916640b8e6b08e3f6",
-    "scripts\\lab35\\MeshContract.lua": "87b11451b76d7f2d472244b88de43477749716dc713ebeaa0592b428f4cc689c",
-    "scripts\\lab35\\MeshLoader.lua": "003d2af5ccaf796220994133812a5f15c478ff098a8516cd788fdc37a6b00403",
-    "scripts\\lab35\\NativeGeometry.lua": "58f438714f47120d76a6ac1564790ebae6c28c7247233f0f9a6ab9383633ef38",
-    "scripts\\lab35\\NativeHost.lua": "ac46640cc3099942a968241a814a9a167ce1e9b9b478e3cfe3bc5a6dfee632c2",
-    "scripts\\lab35\\NativeObservation.lua": "44a57238e37475acdc2e20b7dd8303b9ee32fbc017f5a3fd4a4346f08c7cebb3",
-    "scripts\\lab35\\Navigation.lua": "da1e8bcee804c8053d0bde1b9f32a910f5fa96e0f035f2aef741a743c5ba6399",
-    "scripts\\lab35\\Panels.lua": "e93471a4ff1ba729bf3f9601516e8d13e2be9bcc554f1ae589df60bdc238586d",
-    "scripts\\lab35\\Picking.lua": "6ff62956541725b62f0d4b3e601a84797099476997238dbdef4d8daa9b80a588",
-    "scripts\\lab35\\ProbeAdapter.lua": "37d4ef366f196c2e7c78524765c7f5722650b141cc7efe666394329bdcf0da3f",
-    "scripts\\lab35\\ResourceReader.lua": "aebb927ebd54f93d49bd3a47db8bb62a4565401a3d92df2645a3a2ad22cda429",
-    "scripts\\lab35\\ScenePackage.lua": "fb11b788e6e181d270087e03819b47d49333bb309714e4e084a938d245b2816f",
-    "scripts\\lab35\\SemanticOcclusion.lua": "b7af3cbc5c59871eb1b6ac2c06b8d3896975a6b3824f56b951676f038d53b090",
-    "scripts\\lab35\\tests\\Checks.lua": "cac5f2b6ab4d28c0ebb7f1d47b727b3687bfa2f50a87fc1933cbf7b7f28094bd",
-    "scripts\\lab35\\tests\\FakeUI.lua": "fb85917f4c2ff233d8e5827d33ec797d1bea1556a34fa18f0b5bcb1fd33a9498",
-    "scripts\\lab35\\tests\\Fixture.lua": "5890804d884bdbfc0197d4c83e7fe2b7ceaee7b8a25bc120ff945f9c11ab7cf5",
-    "scripts\\lab35\\tests\\FullImport.lua": "87c42c1c45942cb8b13124d4ffd3d68f02f0a44887fd1193c431aefbab90fb06",
-    "scripts\\lab35\\tests\\NativeCalls.lua": "46bf6ae336dad7840a707a06ad018683e896649a237167c9fd1f36f4e01d6355",
-    "scripts\\systems\\BrewJournal.lua": "f95542029bbe76ce06f63a6e0a823084c75d2c082c37d1f76ee57e7d654e2014",
-    "scripts\\systems\\CalculationGuard.lua": "5b7cdb8688921f95f720a240f0b3c951a1b4f8824df7f95c6abfee4fa797a358",
-    "scripts\\systems\\CaseBoardProjection.lua": "179d6451a94d02845e1fef72e484cc9f15de9678d25487daac3085efd4a9fe53",
-    "scripts\\systems\\Economy.lua": "2c06697f099ace07facd4f7c4f035ae3898c5145fc0c78f5fb2799cdfb22ee7b",
-    "scripts\\systems\\Letter.lua": "a1cf42f86fa72a4a40e52059d4d9f98bd38a65ad52a329ccc22896889579476f",
-    "scripts\\systems\\Narrative.lua": "5fe8c844ccacc1144cbd346a8a66f28b6a569257fa7aa6dbbc77f82aa887e750",
-    "scripts\\systems\\Order.lua": "be2944ec7650ab051f7ac2a71823ea1fe0292340c8b6848b136d7e0705494856",
-    "scripts\\systems\\OrderAudit.lua": "22828caef710319e3eb959afe6648bc5c37a153b9d8a4ad5f649f115c20d6817",
-    "scripts\\systems\\OrderLifecycle.lua": "5fe1da2555da9380f97d4f606e0c20505a319ecd1f2188dacc8ca4d7d37c8eb2",
-    "scripts\\systems\\OrderTrial.lua": "afe37558945c6c6019f0324ac40a8f2cc93b32209bdf74bd14c3bfbfcdfd4047",
-    "scripts\\systems\\PlayQueries.lua": "536a533542e9a12b9fc7b565059116453c0edfa1427d1884d15ecc3cd7e064e7",
-    "scripts\\systems\\Potion.lua": "fb8681ef36c70d73245ecf181cd2ad3dfe4cfc90ab44059a2ee290d59f788565",
-    "scripts\\systems\\RecipeDraft.lua": "30035c51288329c310ca220e4f4af3de521aa673907f4f435f280871956808a3",
-    "scripts\\systems\\StoryRules.lua": "4472ade3dc481ec4e099f77bcaf492960e8c36b45ad747ab9ef2fa75b04b894c",
-    "scripts\\systems\\WordToken.lua": "09370a5d87002137e7ac19cc9771910bfee7fbe6f8884837c7c852879c504bcd",
-    "scripts\\systems\\WorldState.lua": "a92272aa05041d2cb1826893b668b396e3fcf758df32241552dc775282e4b665",
-    "scripts\\ui\\landscape\\AppView.lua": "b513a5ab11b74fa1f4156ac8bb48852a916cc6449e7981d258f6bf36828b62a0",
-    "scripts\\ui\\landscape\\DevChecks.lua": "8bd6934a406e6b5d137cac8260c029a051d7dd4c0b15279847b38d0fae7283fa",
-    "scripts\\ui\\landscape\\HarborStyle.lua": "effd7990f08c80eaf4f158e0f2c251553485b21476348be99b76ab3014915b39",
-    "scripts\\ui\\landscape\\HomeView.lua": "0876b775330654b0cfd24444e8fcee76e31fbb79be20c483c5cc0511e76e49c6",
-    "scripts\\ui\\landscape\\HomeYawMotion.lua": "8c112f869c84b6e515affd01f2fbb8e28a6a1998a6f356788d39d11cfad2bff4",
-    "scripts\\ui\\landscape\\HomeYawProbe.lua": "db00982af15da24f24eecb89ff6685a8cdf26ba0626414b12d1e8bb04a9082d2",
-    "scripts\\ui\\landscape\\HomeYawScene.lua": "c6a647fc81b109648bf3c91ac5c3bb7ebdcd0ac89a96da0459f4de8d94a31568",
-    "scripts\\ui\\landscape\\HomeZoom.lua": "0c0532ef9e55cef30fc68c6ca21614852c7471926123450ed7927bbd0f163ade",
-    "scripts\\ui\\landscape\\HudLayout.lua": "09e0560e7c69f2546cbec21811a695a2c36c0361a06d8787391ee2968865a909",
-    "scripts\\ui\\landscape\\LayoutGeometry.lua": "3ccb92b2a819b8b3b315c386ccc4d2f30fd6ef2e93be66fe0333da8606550ba1",
-    "scripts\\ui\\landscape\\LayoutManifest.lua": "fbea821927d986367b50181c2f8de6b6d949ab7fa3cab7af649ab1c87d1f0f7c",
-    "scripts\\ui\\landscape\\MessagePresenter.lua": "5405552178ab573791353c4fc16aa42b044af96230d747b46e8299d25ec64ba8",
-    "scripts\\ui\\landscape\\Panels.lua": "f754a1173c9ca07ae5be7811c793b39c4da8912b8d95813939d20ef08a301509",
-    "scripts\\ui\\landscape\\SalvageController.lua": "b16d0600998f3f7b0178f15f0f8ce4eee1ca0514721a74f398c316409ffed1f1",
-    "scripts\\ui\\landscape\\SceneBackdrop.lua": "2887b9ddcb6f02002e526775f9ea5cc7748570313facee6043b754622a2ba081",
-    "scripts\\ui\\landscape\\SeaArt.lua": "800a6f8b978cab7835761d16fb7ac4ffe2b4eb89b90204514d23b4a44b5e3121",
-    "scripts\\ui\\landscape\\SeasideManifest.lua": "0e726b67c2709a309ef9da8cfff82e627803ae525bc65c21a6b9a8d5513e5c2f",
-    "scripts\\ui\\landscape\\SeasideView.lua": "cb571deeacbce32736bb01b8206bd34c3b328d68f4ef652a3c29d505957fb550",
-    "scripts\\ui\\landscape\\tests\\FullscreenMotionProbe.lua": "ee98cb857124abc6dccdad62abe8f78491db6587f671d27197b1de93df5f45b6",
-    "scripts\\ui\\landscape\\tests\\HitFeedbackProbe.lua": "492020331e54ceac8a28cc5f3c49d780e467eaf84b9d1638be9f61424114440d",
-    "scripts\\ui\\landscape\\tests\\HitFeedbackTest.lua": "cfd853bf86538134a9cc696a110d8bfdc358f01dc2adb2e4d79ab90c9f9190a1",
-    "scripts\\ui\\landscape\\tests\\HomeEntryTest.lua": "ce8d7ddeb559b9673132114d03c7d4025433ef61a94a7c63462e1787ff8559e3",
-    "scripts\\ui\\landscape\\tests\\HomeHudNativeProbe.lua": "f5dce34b43c54042b445640c9da678599205ab1d882b752aeba94d2186cfba50",
-    "scripts\\ui\\landscape\\tests\\HomeHudTest.lua": "115f3c0531255e229bb2e4649f272282162ab3991e6435a9ed058adbf6b6dfe1",
-    "scripts\\ui\\landscape\\tests\\HomePresentationTest.lua": "5fcf7722e77ee2e10666d15ecb590d49d377f4269916213746fd75d066f4a190",
-    "scripts\\ui\\landscape\\tests\\HomeYawTest.lua": "4f726887033bb7e713a224d7eb4811b9dcf44dba1366e7cc11562903784be54a",
-    "scripts\\ui\\landscape\\tests\\HomeZoomTest.lua": "e85fc914f7f026ff664303ed30e230b4108e7199f03fde0945943a562681f896",
-    "scripts\\ui\\landscape\\tests\\NativeProbe.lua": "4e55f0b526ef7ee30a6d7606dde86c6919f48a390dfbf01095197f04b840d7bf",
-    "scripts\\ui\\landscape\\tests\\SalvageControllerTest.lua": "ba4a05a9e1f1d6ac6a9aa530283dc624cedd37fa16037c7006a1fc6adf882a44",
-    "scripts\\ui\\landscape\\tests\\SceneProjectionTest.lua": "9fd731b17d935138870d0309a7f36ec5b877455ab32a85f0894312ce6a4fb3a1",
-    "scripts\\ui\\landscape\\tests\\SeasideEvidenceHost.lua": "beb911fb5a710377a2198d73e68fbf87cbdd1965de3b352578ad636153ab514d",
-    "scripts\\ui\\landscape\\tests\\SeasideFlowTest.lua": "3595c7bdf14c97076ee76b43bce2c7d42b101a1483274c1da6bb1a3d5b20b9fa",
-    "scripts\\ui\\landscape\\tests\\SeasideNativeProbe.lua": "59b25270fbd8100f363b0bd433a67658215b9ce8e6dee404f447056096758e8e",
-    "scripts\\ui\\landscape\\tests\\YawNativeProbe.lua": "6187882a013b813d3b3e6d564d9319001114830ff6122e652c9180d180f26a59",
-    "scripts\\ui\\landscape\\tests\\ZoomTestHost.lua": "7f2b8b316443d2cc9c5dc3944c872f767128d54b75994f86517a7dea59fe361a",
-    "scripts\\ui\\PlayModel.lua": "e0e971207ac471016066e2d18e5093ab85f0d11a4809ff8899a506bdfe8cba3a",
-    "scripts\\ui\\PlayView.lua": "7d21836d31e8f31eb54187eb6df0b80c34514355204ba18a9901e5d43f4de02d"
+    "scripts/core/EventBus.lua": "f53bce9dfe7c18ea854d50f7413b339bf32904acfc469bde7044d4231a35f92a",
+    "scripts/core/GameFlow.lua": "5eb17d719de096b45e17c0f381e20ba3cc9b6d06a8ff20df6fbd0c163ec5c679",
+    "scripts/core/GameSession.lua": "dbe5ded4e726cf53f0232cc6fb2dcda80b1bcade295e3982575e4597ac03afc8",
+    "scripts/core/GameState.lua": "1d66fe9e9547c8e6811d100dca228db0e04e64b43496e637dc60c271d078c31e",
+    "scripts/core/SaveJson.lua": "407249e9959bb17b1099d1338302a5e3ad7ef04165d219f25afcd8909518a880",
+    "scripts/core/SaveMigrations.lua": "5137d80eb11c3abcb641d13d81539ea41f0ba0cef78d767ec6e3c2e66bf8b243",
+    "scripts/core/SaveSchema.lua": "a965f0d5898a08c1591c5bc15fbbcfdbd6058608354f7013201c81679e31f6b4",
+    "scripts/core/SaveSystem.lua": "acb870cc745d7e5531d0e8f32fd027a28e9df55499e84f0d88dc50d4b4730f9f",
+    "scripts/core/SchemaProjection.lua": "147991b7a2102dcd4ff37be175a42d74140880036a87ca4c9d60bb3b14031bfd",
+    "scripts/core/StateUtil.lua": "17d73e257e16199dd6b51f2c33b9ffe684610bf9765c71858b1d238427403257",
+    "scripts/data/content.lua": "31321c3836b3a927b798e012e4caff7ed48d773410f24e5fbc67ce71e4b514b5",
+    "scripts/data/effects.lua": "a88c061d34a5b3b91ac6c51392f482b0de70f9a6ea77007ff4759b80ebb9c540",
+    "scripts/data/equipment.lua": "05543c85f8fa6ef50cd9fdb037f38aa14d99512deab81aa8f279af6c3e797c29",
+    "scripts/data/extension_test.lua": "7395aac16f27c7dfe04253339a5bd54a2b6a2aa3a3f7b05cb34d53cbb2d8b5d3",
+    "scripts/data/followup.lua": "0ef136381fa636d831b289581d1b477a1c2183f1255dde38a69178bb06b5df78",
+    "scripts/data/gameplay.lua": "1821c473308170c8c11717b57033c3e9794a49f53471c23b8f934bdaa52889f4",
+    "scripts/data/ingredients.lua": "5a9c9a756ff8dd6fda44dba54e4101fb7cb99fc762e82606e55f5c10b69ed0d8",
+    "scripts/data/letters.lua": "7a238595d7ce891cd19d080f4914314d0ca7cf9ebb4427bf5830de5dc61f1bd3",
+    "scripts/data/npcs.lua": "10e1cd5556ed7c74c28815e5fed034f038f56bf18c97637d0fb2304a8481278b",
+    "scripts/data/numeric_v02.lua": "2a3c99a732b902fac65b03311640e47a70cce1c13bf54406b88be707e739c886",
+    "scripts/data/ordinary_orders.lua": "d6124a6c9069ea7baf7cd1b2757bbf68bd15fe6f67ca4994712fa6453ccbebd0",
+    "scripts/data/recipes.lua": "303718e3d720f24b6a0a2b169bf5ae58650b49974ead1a8e36b06a2947f4b499",
+    "scripts/data/stage1.lua": "0aeb55db07ed4f3f00686605d82ce337dcbbe58460bd9e2cc7514a7eff4dc770",
+    "scripts/data/synthesis.lua": "0b36bbc69e584655d5f574ea977b397fe840b4ea0a0a41bbac94505234582dee",
+    "scripts/data/word_profiles.lua": "c3d0a31814ccb3c409c9a56fcacbf52e4873706ade52eb33eceec51a24245dde",
+    "scripts/data/words.lua": "f84ad8e6408af4129efbfd3ad75125d5f734a2cf92231cb3f21cdaf52746b873",
+    "scripts/debug/DeveloperMode.lua": "137bc2ba369c2d642c8bc08408292097acd5f786537c1f873d8595580752d63f",
+    "scripts/lab35/AppView.lua": "2967c9ba688c5eadc48c6048d091273999425b55cf12c3c1b214fff6c57c10b1",
+    "scripts/lab35/Bootstrap.lua": "16b7381b4d7f7c12ce22e8bf881d9a93a1389598e5dff89608efb702f304ce52",
+    "scripts/lab35/CameraCalibration.lua": "3c7b06fde794d51fc328302d3fd7b3e2a75d9d1c1c2a9bf0413dabd267715e17",
+    "scripts/lab35/CameraMath.lua": "645e90373af1c6e636306f62859556a62aa4c154176caf1286105f2f5c072879",
+    "scripts/lab35/Controller.lua": "f8a572796b8dc5e316ffa66253517a500067bf214e1dbb087569654787700517",
+    "scripts/lab35/FrameStats.lua": "59d723439574e46112df7b3d6f8cae220eb752bbd20472e10ac345bd8830dcee",
+    "scripts/lab35/FullSceneHost.lua": "fd628e61f27a1f1ea9fc8020ee993ec748d5e902a670ae02ad2db97fe8ec8a5e",
+    "scripts/lab35/HomeView.lua": "36b0712a45adb748684bd67fe12cf58646ab5c52ca7c20caa1091d028cf9e958",
+    "scripts/lab35/Ids.lua": "1cc9c793f2cae6b19420afad709766c21d8c74bdf05a386c5f6894cc423a6bf8",
+    "scripts/lab35/Integration.lua": "a7e6dfeabd351d0a910db2673d7b57159bf7c652858bfa2e3f2b92fdd63dd844",
+    "scripts/lab35/LoadStatus.lua": "20b05053f895f4a2b0aaf59e53c5b0f24ac210701bdc3043ebfbdc442f5e374b",
+    "scripts/lab35/Math3.lua": "1f1fe7e869cccac4156deaa449730f38aa13692e5e8709cffc0e0265ea033078",
+    "scripts/lab35/MemoryStorage.lua": "2d99fef2ce8919ab1e74348fc41646ecb5281163c603283916640b8e6b08e3f6",
+    "scripts/lab35/MeshContract.lua": "87b11451b76d7f2d472244b88de43477749716dc713ebeaa0592b428f4cc689c",
+    "scripts/lab35/MeshLoader.lua": "003d2af5ccaf796220994133812a5f15c478ff098a8516cd788fdc37a6b00403",
+    "scripts/lab35/NativeGeometry.lua": "58f438714f47120d76a6ac1564790ebae6c28c7247233f0f9a6ab9383633ef38",
+    "scripts/lab35/NativeHost.lua": "ac46640cc3099942a968241a814a9a167ce1e9b9b478e3cfe3bc5a6dfee632c2",
+    "scripts/lab35/NativeObservation.lua": "44a57238e37475acdc2e20b7dd8303b9ee32fbc017f5a3fd4a4346f08c7cebb3",
+    "scripts/lab35/Navigation.lua": "da1e8bcee804c8053d0bde1b9f32a910f5fa96e0f035f2aef741a743c5ba6399",
+    "scripts/lab35/Panels.lua": "e93471a4ff1ba729bf3f9601516e8d13e2be9bcc554f1ae589df60bdc238586d",
+    "scripts/lab35/Picking.lua": "6ff62956541725b62f0d4b3e601a84797099476997238dbdef4d8daa9b80a588",
+    "scripts/lab35/ProbeAdapter.lua": "37d4ef366f196c2e7c78524765c7f5722650b141cc7efe666394329bdcf0da3f",
+    "scripts/lab35/ResourceReader.lua": "aebb927ebd54f93d49bd3a47db8bb62a4565401a3d92df2645a3a2ad22cda429",
+    "scripts/lab35/ScenePackage.lua": "fb11b788e6e181d270087e03819b47d49333bb309714e4e084a938d245b2816f",
+    "scripts/lab35/SemanticOcclusion.lua": "b7af3cbc5c59871eb1b6ac2c06b8d3896975a6b3824f56b951676f038d53b090",
+    "scripts/lab35/tests/Checks.lua": "cac5f2b6ab4d28c0ebb7f1d47b727b3687bfa2f50a87fc1933cbf7b7f28094bd",
+    "scripts/lab35/tests/FakeUI.lua": "fb85917f4c2ff233d8e5827d33ec797d1bea1556a34fa18f0b5bcb1fd33a9498",
+    "scripts/lab35/tests/Fixture.lua": "5890804d884bdbfc0197d4c83e7fe2b7ceaee7b8a25bc120ff945f9c11ab7cf5",
+    "scripts/lab35/tests/FullImport.lua": "87c42c1c45942cb8b13124d4ffd3d68f02f0a44887fd1193c431aefbab90fb06",
+    "scripts/lab35/tests/NativeCalls.lua": "46bf6ae336dad7840a707a06ad018683e896649a237167c9fd1f36f4e01d6355",
+    "scripts/systems/BrewJournal.lua": "f95542029bbe76ce06f63a6e0a823084c75d2c082c37d1f76ee57e7d654e2014",
+    "scripts/systems/CalculationGuard.lua": "5b7cdb8688921f95f720a240f0b3c951a1b4f8824df7f95c6abfee4fa797a358",
+    "scripts/systems/CaseBoardProjection.lua": "179d6451a94d02845e1fef72e484cc9f15de9678d25487daac3085efd4a9fe53",
+    "scripts/systems/Economy.lua": "2c06697f099ace07facd4f7c4f035ae3898c5145fc0c78f5fb2799cdfb22ee7b",
+    "scripts/systems/Letter.lua": "a1cf42f86fa72a4a40e52059d4d9f98bd38a65ad52a329ccc22896889579476f",
+    "scripts/systems/Narrative.lua": "5fe8c844ccacc1144cbd346a8a66f28b6a569257fa7aa6dbbc77f82aa887e750",
+    "scripts/systems/Order.lua": "be2944ec7650ab051f7ac2a71823ea1fe0292340c8b6848b136d7e0705494856",
+    "scripts/systems/OrderAudit.lua": "22828caef710319e3eb959afe6648bc5c37a153b9d8a4ad5f649f115c20d6817",
+    "scripts/systems/OrderLifecycle.lua": "5fe1da2555da9380f97d4f606e0c20505a319ecd1f2188dacc8ca4d7d37c8eb2",
+    "scripts/systems/OrderTrial.lua": "afe37558945c6c6019f0324ac40a8f2cc93b32209bdf74bd14c3bfbfcdfd4047",
+    "scripts/systems/PlayQueries.lua": "536a533542e9a12b9fc7b565059116453c0edfa1427d1884d15ecc3cd7e064e7",
+    "scripts/systems/Potion.lua": "fb8681ef36c70d73245ecf181cd2ad3dfe4cfc90ab44059a2ee290d59f788565",
+    "scripts/systems/RecipeDraft.lua": "30035c51288329c310ca220e4f4af3de521aa673907f4f435f280871956808a3",
+    "scripts/systems/StoryRules.lua": "4472ade3dc481ec4e099f77bcaf492960e8c36b45ad747ab9ef2fa75b04b894c",
+    "scripts/systems/WordToken.lua": "09370a5d87002137e7ac19cc9771910bfee7fbe6f8884837c7c852879c504bcd",
+    "scripts/systems/WorldState.lua": "a92272aa05041d2cb1826893b668b396e3fcf758df32241552dc775282e4b665",
+    "scripts/ui/PlayModel.lua": "e0e971207ac471016066e2d18e5093ab85f0d11a4809ff8899a506bdfe8cba3a",
+    "scripts/ui/PlayView.lua": "7d21836d31e8f31eb54187eb6df0b80c34514355204ba18a9901e5d43f4de02d",
+    "scripts/ui/landscape/AppView.lua": "b513a5ab11b74fa1f4156ac8bb48852a916cc6449e7981d258f6bf36828b62a0",
+    "scripts/ui/landscape/DevChecks.lua": "8bd6934a406e6b5d137cac8260c029a051d7dd4c0b15279847b38d0fae7283fa",
+    "scripts/ui/landscape/HarborStyle.lua": "effd7990f08c80eaf4f158e0f2c251553485b21476348be99b76ab3014915b39",
+    "scripts/ui/landscape/HomeView.lua": "0876b775330654b0cfd24444e8fcee76e31fbb79be20c483c5cc0511e76e49c6",
+    "scripts/ui/landscape/HomeYawMotion.lua": "8c112f869c84b6e515affd01f2fbb8e28a6a1998a6f356788d39d11cfad2bff4",
+    "scripts/ui/landscape/HomeYawProbe.lua": "db00982af15da24f24eecb89ff6685a8cdf26ba0626414b12d1e8bb04a9082d2",
+    "scripts/ui/landscape/HomeYawScene.lua": "c6a647fc81b109648bf3c91ac5c3bb7ebdcd0ac89a96da0459f4de8d94a31568",
+    "scripts/ui/landscape/HomeZoom.lua": "0c0532ef9e55cef30fc68c6ca21614852c7471926123450ed7927bbd0f163ade",
+    "scripts/ui/landscape/HudLayout.lua": "09e0560e7c69f2546cbec21811a695a2c36c0361a06d8787391ee2968865a909",
+    "scripts/ui/landscape/LayoutGeometry.lua": "3ccb92b2a819b8b3b315c386ccc4d2f30fd6ef2e93be66fe0333da8606550ba1",
+    "scripts/ui/landscape/LayoutManifest.lua": "fbea821927d986367b50181c2f8de6b6d949ab7fa3cab7af649ab1c87d1f0f7c",
+    "scripts/ui/landscape/MessagePresenter.lua": "5405552178ab573791353c4fc16aa42b044af96230d747b46e8299d25ec64ba8",
+    "scripts/ui/landscape/Panels.lua": "f754a1173c9ca07ae5be7811c793b39c4da8912b8d95813939d20ef08a301509",
+    "scripts/ui/landscape/SalvageController.lua": "b16d0600998f3f7b0178f15f0f8ce4eee1ca0514721a74f398c316409ffed1f1",
+    "scripts/ui/landscape/SceneBackdrop.lua": "2887b9ddcb6f02002e526775f9ea5cc7748570313facee6043b754622a2ba081",
+    "scripts/ui/landscape/SeaArt.lua": "800a6f8b978cab7835761d16fb7ac4ffe2b4eb89b90204514d23b4a44b5e3121",
+    "scripts/ui/landscape/SeasideManifest.lua": "0e726b67c2709a309ef9da8cfff82e627803ae525bc65c21a6b9a8d5513e5c2f",
+    "scripts/ui/landscape/SeasideView.lua": "cb571deeacbce32736bb01b8206bd34c3b328d68f4ef652a3c29d505957fb550",
+    "scripts/ui/landscape/tests/FullscreenMotionProbe.lua": "ee98cb857124abc6dccdad62abe8f78491db6587f671d27197b1de93df5f45b6",
+    "scripts/ui/landscape/tests/HitFeedbackProbe.lua": "492020331e54ceac8a28cc5f3c49d780e467eaf84b9d1638be9f61424114440d",
+    "scripts/ui/landscape/tests/HitFeedbackTest.lua": "cfd853bf86538134a9cc696a110d8bfdc358f01dc2adb2e4d79ab90c9f9190a1",
+    "scripts/ui/landscape/tests/HomeEntryTest.lua": "ce8d7ddeb559b9673132114d03c7d4025433ef61a94a7c63462e1787ff8559e3",
+    "scripts/ui/landscape/tests/HomeHudNativeProbe.lua": "f5dce34b43c54042b445640c9da678599205ab1d882b752aeba94d2186cfba50",
+    "scripts/ui/landscape/tests/HomeHudTest.lua": "115f3c0531255e229bb2e4649f272282162ab3991e6435a9ed058adbf6b6dfe1",
+    "scripts/ui/landscape/tests/HomePresentationTest.lua": "5fcf7722e77ee2e10666d15ecb590d49d377f4269916213746fd75d066f4a190",
+    "scripts/ui/landscape/tests/HomeYawTest.lua": "4f726887033bb7e713a224d7eb4811b9dcf44dba1366e7cc11562903784be54a",
+    "scripts/ui/landscape/tests/HomeZoomTest.lua": "e85fc914f7f026ff664303ed30e230b4108e7199f03fde0945943a562681f896",
+    "scripts/ui/landscape/tests/NativeProbe.lua": "4e55f0b526ef7ee30a6d7606dde86c6919f48a390dfbf01095197f04b840d7bf",
+    "scripts/ui/landscape/tests/SalvageControllerTest.lua": "ba4a05a9e1f1d6ac6a9aa530283dc624cedd37fa16037c7006a1fc6adf882a44",
+    "scripts/ui/landscape/tests/SceneProjectionTest.lua": "9fd731b17d935138870d0309a7f36ec5b877455ab32a85f0894312ce6a4fb3a1",
+    "scripts/ui/landscape/tests/SeasideEvidenceHost.lua": "beb911fb5a710377a2198d73e68fbf87cbdd1965de3b352578ad636153ab514d",
+    "scripts/ui/landscape/tests/SeasideFlowTest.lua": "3595c7bdf14c97076ee76b43bce2c7d42b101a1483274c1da6bb1a3d5b20b9fa",
+    "scripts/ui/landscape/tests/SeasideNativeProbe.lua": "59b25270fbd8100f363b0bd433a67658215b9ce8e6dee404f447056096758e8e",
+    "scripts/ui/landscape/tests/YawNativeProbe.lua": "6187882a013b813d3b3e6d564d9319001114830ff6122e652c9180d180f26a59",
+    "scripts/ui/landscape/tests/ZoomTestHost.lua": "7f2b8b316443d2cc9c5dc3944c872f767128d54b75994f86517a7dea59fe361a"
   }
 }
