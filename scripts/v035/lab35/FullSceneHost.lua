@@ -86,6 +86,7 @@ function H.Install(config)
     end
     local function finish()
         local imported=assert(job.Result())
+        if config.deferLoadingViewport then renderer:SetViewport(0,Viewport:new(scene,camera)) end
         home=U.Copy(imported.prepared.cameras.Home)
         local calibration
         home,calibration=require("v035.lab35.CameraCalibration").Run(camera,node,home,raw,graphics:GetWidth()/graphics:GetHeight())
@@ -121,7 +122,7 @@ function H.Install(config)
         local ok,err=pcall(function()
             scene=Scene();octree=scene:CreateComponent("Octree")
             node=scene:CreateChild("FullSceneCamera");camera=node:CreateComponent("Camera")
-            renderer:SetViewport(0,Viewport:new(scene,camera))
+            if not config.deferLoadingViewport then renderer:SetViewport(0,Viewport:new(scene,camera)) end
             local lightNode=scene:CreateChild("FullSceneSun");lightNode.rotation=Quaternion(35,140,0)
             local light=lightNode:CreateComponent("Light");light.lightType=LIGHT_DIRECTIONAL;light.color=Color(1,.87,.7);light.brightness=1.6;light.castShadows=true
             local zone=scene:CreateChild("FullSceneAmbient"):CreateComponent("Zone")
@@ -142,9 +143,9 @@ function H.Install(config)
                 -- Bound cooperative work by wall time as well as resume count;
                 -- a full package should not spend thousands of idle frames.
                 local state
-                for _=1,8 do
+                for _=1,(config.loadingMaxSteps or 8) do
                     state=job.Step(1)
-                    if state=="complete" or state=="failed" or nowMs()-stepStart>=8 then break end
+                    if state=="complete" or state=="failed" or nowMs()-stepStart>=(config.loadingBudgetMs or 8) then break end
                 end
                 local status=job.Snapshot();display.Update(status)
                 if status.phase~=lastPhase then log("PROGRESS",status);lastPhase=status.phase end

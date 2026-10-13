@@ -6,7 +6,8 @@ function print(...)
     if type(first)=="string" and first:find("[V035 FULL READY]",1,true) then readyFrames=0 end
     originalPrint(...)
 end
-require("v035.lab35.FullSceneHost").Install({resourcePrefix="v035-full",manifestPath="manifest.json",flipV=true,maxLoadingSeconds=900})
+require("v035.lab35.FullSceneHost").Install({resourcePrefix="v035-full",manifestPath="manifest.json",flipV=true,maxLoadingSeconds=900,
+    deferLoadingViewport=true,loadingMaxSteps=64,loadingBudgetMs=50})
 local originalStart=Start
 function Start()
     originalStart()

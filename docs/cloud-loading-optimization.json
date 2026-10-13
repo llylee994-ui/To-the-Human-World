@@ -1,0 +1,23 @@
+{
+  "beforeSeconds": 855.6069829463959,
+  "afterSeconds": 87.91799736022949,
+  "geometryCountsUnchanged": true,
+  "baselineComparison": {
+    "size": [
+      1170,
+      658
+    ],
+    "differenceBbox": [
+      148,
+      258,
+      150,
+      259
+    ],
+    "meanAbsoluteRgb": [
+      0.0,
+      0.0,
+      2.59787493830047e-06
+    ]
+  },
+  "nativeExitCode": 0
+}
