@@ -1,0 +1,62 @@
+[Data] 校验通过：效果 22 / 词条 61 / 原料 4 / 设备 2 / 人物 11 / 信件 22 / 时间属性 6 / 规则 196 / 片段 58 / 评分 58
+[Data] 首单包校验通过：C1 开局账本 / C2 首单数值 / C3 事实与回信；contentVersion = story-numeric-v02-r1
+========== 阶段 0 自检开始 ==========
+[SelfTest] PASS  B2 两个监听者都收到事件
+[SelfTest] PASS  B2 高优先级先收到
+[SelfTest] PASS  B2 同优先级按注册顺序
+[SelfTest] PASS  B2 退订生效
+[SelfTest] FAIL  B3 存档往返一致  —— 写入失败
+[SelfTest] FAIL  B3 字段缺失不崩溃且补齐默认值  —— 实际 day=1
+[SelfTest] FAIL  B3 存档自检执行异常  —— [Errno 13] Permission denied: 'D:\\taptap\\To-the-Human-World\\.tmp\\b1-files-2kqo4n3t\\save_selftest.json'
+[SelfTest] PASS  B4 跨天后天数 +1
+[SelfTest] PASS  B4 派发 DayEnded 且带当天编号
+[SelfTest] PASS  B4 派发 DayStarted
+========== 阶段 0 自检结束：通过 7，失败 3 ==========
+[DebugPanel] 已挂载，按 Z 键开关
+=== 寄往人间 启动完成（第 1 天）===
+[HomeZoomTest] PASS simulated timeline start/middle/end/seaside/return at 4 aspect ratios; same UI tree; unchanged business
+[HomeZoomTest] PASS assertions=383; repeat/HUD/modal/blank/ship/late-release; resize/focus/minimize/gap/destroy; OS and native rendering NOT tested
+Traceback (most recent call last):
+  File "<frozen os>", line 368, in walk
+PermissionError: [WinError 5] 拒绝访问。: 'D:\\taptap\\To-the-Human-World\\.tmp\\b1-files-2kqo4n3t'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\taptap\To-the-Human-World\scripts\ui\landscape\tests\run_home_zoom.py", line 10, in <module>
+    raise SystemExit(run('ui.landscape.tests.HomeZoomTest'))
+                     ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\taptap\To-the-Human-World\scripts\debug\content_test_runtime.py", line 33, in run
+    return run_b1.main([], entrypoint)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "D:\taptap\To-the-Human-World\scripts\debug\run_b1.py", line 46, in main
+    with tempfile.TemporaryDirectory(prefix="b1-files-", dir=ROOT / ".tmp") as directory:
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\tempfile.py", line 946, in __exit__
+    self.cleanup()
+    ~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\shutil.py", line 790, in rmtree
+    return _rmtree_unsafe(path, onexc)
+  File "C:\Python313\Lib\shutil.py", line 613, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 371, in walk
+  File "C:\Python313\Lib\shutil.py", line 611, in onerror
+    onexc(os.scandir, err.filename, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Python313\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\tempfile.py", line 275, in _dont_follow_symlinks
+    func(path, *args, follow_symlinks=False)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] 拒绝访问。: 'D:\\taptap\\To-the-Human-World\\.tmp\\b1-files-2kqo4n3t'
