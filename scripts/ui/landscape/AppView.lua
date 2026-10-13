@@ -31,6 +31,7 @@ function A.New(session,content,enabled)
     local nativeProbe=require("ui.landscape.DevChecks").nativeProbe and require("ui.landscape.tests.NativeProbe").New() or nil
     local yawEnabled=require("ui.landscape.DevChecks").yawProbe
     local yawAuto=yawEnabled and require("ui.landscape.DevChecks").yawProbeAuto and require("ui.landscape.tests.YawNativeProbe").New() or nil
+    local stoveAuto=require("ui.landscape.DevChecks").stoveYawAuto and require("ui.landscape.tests.StoveYawNativeProbe").New() or nil
     local developer=(require("debug.DeveloperMode") or require("ui.landscape.DevChecks").hotspots) --[[@as boolean]]
     -- main owns SafeAreaView; fill its mainPanel without shrinking under old headings.
     local root=UI.Panel {id="playPanel",position="absolute",left=0,top=0,width="100%",height="100%",
@@ -70,7 +71,8 @@ function A.New(session,content,enabled)
     stage:AddChild(scene)
     local seaside=Seaside.New(ctx);stage:AddChild(seaside.root);ctx.seaside=seaside
     root:AddChild(hud)
-    local overlay=UI.Panel {id="overlayHost",position="absolute",left=0,top=0,width="100%",height="100%",pointerEvents="box-none"}
+    -- Explicit order: equal-z siblings are not stably sorted by the UI library.
+    local overlay=UI.Panel {id="overlayHost",position="absolute",left=0,top=0,width="100%",height="100%",zIndex=100,pointerEvents="box-none"}
     root:AddChild(overlay)
     -- Stable topmost blocker: blocks HUD and all room inputs without rebuilding the tree.
     local zoomBlocker=UI.Panel {id="homeZoomBlocker",position="absolute",left=0,top=0,width="100%",height="100%",
@@ -198,22 +200,23 @@ function A.New(session,content,enabled)
     end
     function ctx.Navigate(target)
         if ctx.destroyed or ctx.salvage.active then return end
+        if ctx.yawProbe then ctx.yawProbe.Close("navigate") end
         ctx.CancelHomeZoom("navigate")
         ctx.scene=target; ctx.panel=false; ctx.stack={}; ctx.readerCache=false; ctx.choosingLetter=false
         if target=="home" then model.ReturnHome() else model.Navigate(target) end
         model.dirty=true
     end
     function ctx.Push(kind)
-        if ctx.destroyed or ctx.portrait or ctx.zoom.active or ctx.salvage.active then return end
+        if ctx.destroyed or ctx.portrait or ctx.zoom.active or ctx.salvage.active or ctx.yawProbe then return end
         ctx.stack[#ctx.stack+1]=ctx.panel or false; ctx.panel=kind; ctx.readerCache=false; model.dirty=true
     end
     function ctx.Close()
-        if ctx.destroyed or ctx.zoom.active or ctx.salvage.active then return end
+        if ctx.destroyed or ctx.zoom.active or ctx.salvage.active or ctx.yawProbe then return end
         ctx.panel=table.remove(ctx.stack) or false; ctx.readerCache=false
         model.Navigate(ctx.panel=="reader" and "letter" or ctx.scene)
     end
     function ctx.Read(id)
-        if ctx.destroyed or ctx.zoom.active or ctx.salvage.active then return end
+        if ctx.destroyed or ctx.zoom.active or ctx.salvage.active or ctx.yawProbe then return end
         local result=model.Read(id)
         if result.ok then
             ctx.salvage.Acknowledge(id)
@@ -232,7 +235,7 @@ function A.New(session,content,enabled)
         else ctx.panel="letters"; ctx.stack={}; ctx.choosingLetter=true; model.dirty=true end
     end
     function ctx.Open(kind)
-        if ctx.destroyed or ctx.portrait or ctx.zoom.active or ctx.salvage.active then return end
+        if ctx.destroyed or ctx.portrait or ctx.zoom.active or ctx.salvage.active or ctx.yawProbe then return end
         if kind=="paper" then ctx.OpenPaper(); return end
         if kind=="home" or kind=="brew" or kind=="seaside" then ctx.Navigate(kind); return end
         ctx.panel=kind; ctx.stack={}; ctx.readerCache=false; ctx.choosingLetter=false; model.dirty=true
@@ -250,7 +253,7 @@ function A.New(session,content,enabled)
     end
     if developer then
         hud:AddChild(Harbor.Button {id="toggleHomeHotspots",text="热区检查",width=98,minHeight=44,onClick=function()
-            if ctx.zoom.active then return end
+            if ctx.zoom.active or ctx.yawProbe then return end
             home.SetInspect(not home.inspect); model.dirty=true
         end})
     end
@@ -286,6 +289,7 @@ function A.New(session,content,enabled)
         if ctx.destroyed then return end
         if ctx.yawProbe then ctx.yawProbe.Update() end
         if yawAuto then yawAuto(ctx) end
+        if stoveAuto then stoveAuto(ctx) end
         local now,dt=clock();home.Update(dt)
         ctx.UpdateChrome()
         if ctx.scene=="seaside" then seaside.Update(GetTime():GetTimeStep()) end

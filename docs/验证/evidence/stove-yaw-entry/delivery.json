@@ -1,0 +1,40 @@
+{
+  "version": "C-STOVE-YAW-ENTRY-20261012-v01",
+  "baselineHEAD": "c59c59044218e6be626edb86f66dc950f6943bd2",
+  "upstream": "C-HOME-YAW-PROBE-20261012-r1-v01 in existing dirty worktree",
+  "result": "entry and native automated regression passed; art and manual acceptance pending",
+  "files": [
+    {
+      "path": "scripts/ui/landscape/AppView.lua",
+      "sha256": "d783950bd8031bceec5738a47126df111a5c2bf639e135ad60c36c8f3ac7030d"
+    },
+    {
+      "path": "scripts/ui/landscape/HomeYawProbe.lua",
+      "sha256": "71c22a27b98572533ae5305b691a1baa0fd9adfa52ad2441845d64a62f9151df"
+    },
+    {
+      "path": "scripts/ui/landscape/HomeYawScene.lua",
+      "sha256": "b8b0c50fcb241411e654003f4f4169e92c7fcf0cf96a9ecf12438c3fc8c523b4"
+    },
+    {
+      "path": "scripts/ui/landscape/DevChecks.lua",
+      "sha256": "a5bc36ffb06a5137b53126b61914bb83562db940a0e8bba9bf74c35195b00dba"
+    },
+    {
+      "path": "scripts/ui/landscape/tests/StoveYawEntryTest.lua",
+      "sha256": "1e3cc23f456a20905a96ff6ed1978bfe5bae4a2234bf67579d508da3fe0c82e3"
+    },
+    {
+      "path": "scripts/ui/landscape/tests/StoveYawNativeProbe.lua",
+      "sha256": "21543c19fa409cbeb8a079b129a9b100b2d93b2c4011fd990ef372e435f79bff"
+    },
+    {
+      "path": "scripts/ui/landscape/tests/run_stove_yaw.py",
+      "sha256": "fd494b9e4581c1765b08101f346f8a7915fa4582fce6806abff9c91b30dfb9ad"
+    },
+    {
+      "path": "scripts/actions/2026-10-12-stove-yaw-entry.md",
+      "sha256": "8b1e2c29d7409100f27df277545188c733792b59861cef85aa422dc20cf26b6f"
+    }
+  ]
+}

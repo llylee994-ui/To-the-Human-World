@@ -1,0 +1,39 @@
+--- before/scripts/ui/landscape/AppView.lua
++++ scripts/ui/landscape/AppView.lua
+@@ -38,13 +38,13 @@
+         panelNotice=false --[[@as Label|false]],zoom=Zoom.New(),destroyed=false --[[@as boolean]],yawProbe=false --[[@as table|false]]}
+     local home=Home.New(function(target,id)
+         if id=="home.net" then ctx.BeginHomeZoom()
+-        elseif id=="home.stove" then ctx.BeginStoveYaw()
+         else ctx.Open(target) end
+     end,developer); stage:AddChild(home.root); ctx.home=home
+     home.SetInspect(require("ui.landscape.DevChecks").hotspots)
+     local scene=UI.Panel {id="functionalScene",position="absolute",left=0,top=0,width="100%",height="100%",visible=false,backgroundColor={238,228,203,255}}
+     stage:AddChild(scene)
+-    local overlay=UI.Panel {id="overlayHost",position="absolute",left=0,top=0,width="100%",height="100%",pointerEvents="box-none"}
++    -- Explicit order: equal-z siblings are not stably sorted by the UI library.
++    local overlay=UI.Panel {id="overlayHost",position="absolute",left=0,top=0,width="100%",height="100%",zIndex=100,pointerEvents="box-none"}
+     root:AddChild(overlay)
+     -- Stable topmost blocker: blocks HUD and all room inputs without rebuilding the tree.
+     local zoomBlocker=UI.Panel {id="homeZoomBlocker",position="absolute",left=0,top=0,width="100%",height="100%",
+@@ -69,20 +69,6 @@
+     function ctx.OpenYawProbe()
+         if not yawEnabled or ctx.destroyed or ctx.yawProbe or ctx.zoom.active or ctx.panel or ctx.scene~="home" then return false end
+         ctx.yawProbe=require("ui.landscape.HomeYawProbe").New(root,function() ctx.yawProbe=false end)
+-        return true
+-    end
+-    function ctx.BeginStoveYaw()
+-        if ctx.destroyed or ctx.yawProbe or ctx.zoom.active or ctx.scene~="home" or (ctx.panel and not side[ctx.panel]) then return false end
+-        if ctx.panel then ctx.panel=false;ctx.stack={};model.dirty=true end
+-        home.SetBlocked(true)
+-        ctx.yawProbe=require("ui.landscape.HomeYawProbe").New(root,function(reason)
+-            ctx.yawProbe=false;home.SetBlocked(false)
+-            if ctx.destroyed then return end
+-            print("[StoveYaw] "..tostring(reason))
+-            if reason=="complete" then ctx.Navigate("brew")
+-            elseif reason=="failed" then model.message="转头画面未能加载，请点击药炉重试。";model.dirty=true end
+-        end,{transition=true})
+-        print("[StoveYaw] begin from home.stove")
+         return true
+     end
+     function ctx.Navigate(target)

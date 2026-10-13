@@ -13,16 +13,18 @@ function S.New()
     local function releaseTarget()
         releaseImage()
         if a.surface then a.surface:SetNumViewports(0) end
-        if a.texture then a.texture:Dispose() end
+        -- The video bridge and RenderSurface can still own this Texture2D.
+        -- Release Lua references instead of explicitly destroying their resource.
         a.surface=nil;a.texture=nil
     end
     function a.Close()
         if a.closed then return end
         a.closed=true;releaseTarget();a.viewport=nil
-        if a.scene then a.scene:Dispose();a.scene=nil end
-        -- These materials belong only to this scene; cached models/techniques stay alive.
-        for _,m in ipairs(a.materials) do m:Dispose() end
-        a.materials={};a.objects={};a.camera=nil;a.cameraNode=nil
+        -- Drop our owning references after detaching the viewport. Do not forcibly
+        -- Dispose the Scene/materials while native render batches or Lua wrappers
+        -- can still reference their nodes. Native reference counting / Lua GC owns
+        -- their final lifetime, including repeated close/reopen cycles.
+        a.materials={};a.objects={};a.camera=nil;a.cameraNode=nil;a.scene=nil
     end
     local function material(r,g,b)
         local m=Material:new();a.materials[#a.materials+1]=m

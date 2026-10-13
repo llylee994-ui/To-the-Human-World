@@ -1,0 +1,375 @@
+{
+  "version": "C-HOME-STOVE-DIRECT-20261012-v01",
+  "completed_at": "2026-10-12T23:27:44.161055+08:00",
+  "baseline": {
+    "head": "c59c59044218e6be626edb86f66dc950f6943bd2",
+    "branch": "fengyycon",
+    "basis": "actual dirty worktree preserved; no commit/push/branch change"
+  },
+  "result": "scoped implementation and automated checks passed; overall Maker check FAIL from two existing errors; phone and OS manual unverified",
+  "behavior": "home.stove directly opens existing brew functional scene; no transition creation; net zoom retained",
+  "additional_fix": "overlayHost zIndex=100 to prevent home overdraw and modal click-through under real sibling sorting",
+  "files": [
+    {
+      "path": "scripts/ui/landscape/AppView.lua",
+      "before_sha256": "d783950bd8031bceec5738a47126df111a5c2bf639e135ad60c36c8f3ac7030d",
+      "sha256": "4abe0d4c10db9f1977d74cce60e4ea2ddcb62c9eddb2a36ae5cb0d4beaa0a64b",
+      "changed": true
+    },
+    {
+      "path": "scripts/ui/landscape/DevChecks.lua",
+      "before_sha256": "a5bc36ffb06a5137b53126b61914bb83562db940a0e8bba9bf74c35195b00dba",
+      "sha256": "a5bc36ffb06a5137b53126b61914bb83562db940a0e8bba9bf74c35195b00dba",
+      "changed": false
+    },
+    {
+      "path": "scripts/ui/landscape/tests/StoveYawEntryTest.lua",
+      "before_sha256": "1e3cc23f456a20905a96ff6ed1978bfe5bae4a2234bf67579d508da3fe0c82e3",
+      "sha256": "9f8e008654c7c3fc3c5a2bd735b0c4542ca26a79339431bd44f1327c774eb05d",
+      "changed": true
+    },
+    {
+      "path": "scripts/ui/landscape/tests/StoveYawNativeProbe.lua",
+      "before_sha256": "21543c19fa409cbeb8a079b129a9b100b2d93b2c4011fd990ef372e435f79bff",
+      "sha256": "6a246a43c2e45b146f9b50bba890c7ec3a2fe1b96f2e9e2747b995c6b4c67699",
+      "changed": true
+    },
+    {
+      "path": "scripts/ui/landscape/tests/run_stove_yaw.py",
+      "before_sha256": "fd494b9e4581c1765b08101f346f8a7915fa4582fce6806abff9c91b30dfb9ad",
+      "sha256": "5ed7defa0d01a6512a3e0b08bd37823c85ab546ff6954f229db551b34722bc0d",
+      "changed": true
+    },
+    {
+      "path": "scripts/actions/2026-10-12-stove-yaw-entry.md",
+      "before_sha256": "8b1e2c29d7409100f27df277545188c733792b59861cef85aa422dc20cf26b6f",
+      "sha256": "a485ac094b5b6442465c69dad437b5e48e037b04ea6dd0008c53eb068987ceb6",
+      "changed": true
+    },
+    {
+      "path": "scripts/actions/2026-10-12-remove-stove-yaw.md",
+      "sha256": "e8cef6e823cfeac0aed7ac562216f66460fa898481ac1888f67f71a93517a30b",
+      "new_in_task": true
+    }
+  ],
+  "protected_files": [
+    {
+      "path": "scripts/ui/landscape/HomeView.lua",
+      "sha256": "874777165ec7184e7a36bc31c79ae9bbd0b06e05b299c6f16bfd5c38a2637bcd",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/ui/landscape/HomeZoom.lua",
+      "sha256": "6ab022d3ec3d6eb7c73c4a148e44055740e5ec961e20635c3e936cfbb6dadf2b",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/ui/landscape/LayoutGeometry.lua",
+      "sha256": "f3a606059830f4edcfcda47273ff6fbc4305916775bb4ef51c7abdcdef39af33",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/ui/landscape/LayoutManifest.lua",
+      "sha256": "58191586f3f4d648de56ec978527eb0dcb0a38b0dedc9d9efe319e32ca0153ad",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/ui/PlayModel.lua",
+      "sha256": "d75787e020b59c23c88f43e50acce611aa44ab9d190e7934839e5833963b395f",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/ui/landscape/HomeYawScene.lua",
+      "sha256": "b8b0c50fcb241411e654003f4f4169e92c7fcf0cf96a9ecf12438c3fc8c523b4",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/ui/landscape/HomeYawProbe.lua",
+      "sha256": "71c22a27b98572533ae5305b691a1baa0fd9adfa52ad2441845d64a62f9151df",
+      "unchanged": true
+    }
+  ],
+  "checks": {
+    "fail_to_pass": {
+      "before": "same direct-entry test failed F1; real sorting test failed F4 before zIndex fix",
+      "after_assertions": 122,
+      "note": "group passed; baseline stopped at first failure, not every assertion individually demonstrated red",
+      "before_log": "f-to-p-final-before.log",
+      "additional_before_log": "modal-order-before.log",
+      "after_log": "f-to-p-after.log"
+    },
+    "pass_to_pass": {
+      "entry_state_assertions": 22,
+      "net_zoom_assertions": 383,
+      "result": "both baseline and final passed"
+    },
+    "homepage_suite": {
+      "after_assertions": 303,
+      "result": "PASS after; baseline failed in old yaw/headless setup, not P-to-P"
+    },
+    "ratios": {
+      "sizes": [
+        [
+          1280,
+          720
+        ],
+        [
+          1560,
+          720
+        ],
+        [
+          1600,
+          720
+        ],
+        [
+          1024,
+          768
+        ],
+        [
+          640,
+          360
+        ]
+      ],
+      "evidence": "headless real Lua dispatch/business with widget and clock adapters"
+    },
+    "lua_diagnostics": {
+      "errors": 0,
+      "warnings": 33,
+      "hints": 8,
+      "method": "watch; check unavailable missing emmylua_check; watch manually stopped after results"
+    },
+    "native": {
+      "session_id": "a4ca4c9a-65f8-4c4d-ba85-02eca0033128",
+      "verified_reload": 4,
+      "verified_pid": 47764,
+      "result": "PASS direct entry/reentry/return/shop/modal/state",
+      "input": "engine internal pointer dispatch, not OS input",
+      "log": "native-verified-logs.json",
+      "screenshots": "screenshots.json"
+    },
+    "restored_preview": {
+      "session_id": "a4ca4c9a-65f8-4c4d-ba85-02eca0033128",
+      "reload": 5,
+      "pid": 54000,
+      "process_alive": true,
+      "all_dev_flags_false": true,
+      "no_auto_probe_log": true
+    },
+    "maker_check": {
+      "result": "FAIL",
+      "existing_errors": [
+        "Cube/Day/DaySpecularHDR.dds missing",
+        "themis_x64.dll load failure"
+      ],
+      "receipt": "preview-restored-check.json"
+    },
+    "unverified": [
+      "OS manual interaction",
+      "mobile device touch",
+      "native testing at each aspect ratio",
+      "full-project regression"
+    ]
+  },
+  "handoff": {
+    "to": [
+      "user",
+      "A2"
+    ],
+    "must_fix_this_task": [],
+    "user_decisions": []
+  },
+  "artifacts": [
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/01-home.png",
+      "sha256": "e22b125bcf659a1ae56c2b3910afa16e92c9d4cd9cfb0d307396950b60688808"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/02-direct-brew.png",
+      "sha256": "296d0def9d2df02090e4faae35111274335d26dda7d9a6144c9ae11c00b2a704"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/03-return-home.png",
+      "sha256": "e22b125bcf659a1ae56c2b3910afa16e92c9d4cd9cfb0d307396950b60688808"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/04-shop-modal.png",
+      "sha256": "23006c6dc3bfa249ed7becf1831bede1e1c446152f6962df77b161c70e4ce2be"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/05-reenter-brew.png",
+      "sha256": "296d0def9d2df02090e4faae35111274335d26dda7d9a6144c9ae11c00b2a704"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/06-final-home.png",
+      "sha256": "e22b125bcf659a1ae56c2b3910afa16e92c9d4cd9cfb0d307396950b60688808"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/appview.diff",
+      "sha256": "be3f8147e165dcd4b0a943213dd1db6bf72bd77237e74fef42d1168aa64a141e"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/baseline.json",
+      "sha256": "d3a35423ed7aacb517baf67f9e6b2c794bd38514ea6450b2f388f4c30e00d3c7"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/before/scripts/actions/2026-10-12-stove-yaw-entry.md",
+      "sha256": "8b1e2c29d7409100f27df277545188c733792b59861cef85aa422dc20cf26b6f"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/before/scripts/ui/landscape/AppView.lua",
+      "sha256": "d783950bd8031bceec5738a47126df111a5c2bf639e135ad60c36c8f3ac7030d"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/before/scripts/ui/landscape/DevChecks.lua",
+      "sha256": "a5bc36ffb06a5137b53126b61914bb83562db940a0e8bba9bf74c35195b00dba"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/before/scripts/ui/landscape/tests/run_stove_yaw.py",
+      "sha256": "fd494b9e4581c1765b08101f346f8a7915fa4582fce6806abff9c91b30dfb9ad"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/before/scripts/ui/landscape/tests/StoveYawEntryTest.lua",
+      "sha256": "1e3cc23f456a20905a96ff6ed1978bfe5bae4a2234bf67579d508da3fe0c82e3"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/before/scripts/ui/landscape/tests/StoveYawNativeProbe.lua",
+      "sha256": "21543c19fa409cbeb8a079b129a9b100b2d93b2c4011fd990ef372e435f79bff"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/capture.csv",
+      "sha256": "54977a353679bf0abc9b9354d0404efdd2cb5aff708caa67475d6bf9085c076d"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/entry-after.log",
+      "sha256": "25d13c4a183569506ba3ba6b3295bc437aae8eacf43362b2bafa6b037e97301d"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/f-to-p-after-expectation-failed.log",
+      "sha256": "35a845f752d13210db8603bc426ef14b302e7ba9697fe345043853c4fa91ba9e"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/f-to-p-after-flag-isolation-failed.log",
+      "sha256": "f9275c6fde937c50170eec8ac4d3aa407e2ea6276239f721a6cab1e6ac27226b"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/f-to-p-after.log",
+      "sha256": "97acf5751dc863a7f9e1c1507b483babd20d965a6d0d5009e2c42cd4200334d5"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/f-to-p-before-layout-failed.log",
+      "sha256": "791cfa09bf6dbe02a5ec5a38de31883daa5226eca1950d2d1579d3db4f2fb8a4"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/f-to-p-before-setup-failed.log",
+      "sha256": "6d9ff44faddbf4b7017d48c840924286763df43098a14771d210d7b2337b74f9"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/f-to-p-before.log",
+      "sha256": "dbdaad9e93cc22c44d9a941db674ceaf21fcb23ea8c87dfdbab959b04846e21e"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/f-to-p-final-before.log",
+      "sha256": "316211d5de197b35c521443bb486eeda56a9cb6c39d2810f9fe0210cc678f259"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/lsp/lua_lsp.log",
+      "sha256": "eeec5c48110c103e011906b0fa89a92b92dfed4d99bdaed5b10e548f52ed0905"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/lsp-command.log",
+      "sha256": "ba48ac1df79baaa591d92c429411a488e23f712c584ae5ffbd340679ef2d29fb"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/lsp-watch/lua_diagnostics.log",
+      "sha256": "641c7c2372525c7bec41389d96eaeecad36070edad0da44f6068eddb222ea763"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/lsp-watch/lua_errors.log",
+      "sha256": "467e9276d4961d77f8989f99e677e067a0d65460ea8934b7745010d2f3a31650"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/lsp-watch/lua_lsp.log",
+      "sha256": "4de9bd771e21beaa13db8861bdbee9b48c83458d2f09bae9ab433f349ed83688"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/modal-order-before.log",
+      "sha256": "c936662fe099b0a6023d447036b245d30b590b48baa207679dc029bb2fed3632"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/native-check.json",
+      "sha256": "98f19f3f5ee56db0549b493565ce5e4d9ea1d4619dc7d9def43d132f5b57341b"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/native-first-check/capture.csv",
+      "sha256": "6e2a7724d6d58c55469050e160ac3bac564659510e39c6cce102d8b63a662ecd"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/native-first-check/frame-0000.png",
+      "sha256": "dc096aee875a3ea62eb169639f706484ffe5e1a6fe503f2b95587b4d1a5001ae"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/native-logs-2.json",
+      "sha256": "4962d9bf9f7aefb0aef28536ac6c1bd1fe4c9da29808532ff446d709b1a38246"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/native-logs.json",
+      "sha256": "198cebdcf07e2384174710ddf5bfe46bdcf12a168c46c7e2cbb3171dbd54e23a"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/native-verified-logs.json",
+      "sha256": "65359939a6189751fcca4f5fe6176fe16b6a5e24424320198496b6ca27c2a325"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/p-to-p-entry-before-pass.log",
+      "sha256": "82907e4c676fa49ddf6a863367b1315e6e149fc9bac6f96d510a5a6996f6be20"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/p-to-p-entry-before.log",
+      "sha256": "b828c1e7a607e9a4816a8259c0ba8bdfbd8dfaddb3798295f2f41bb810f07eb2"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/p-to-p-zoom-after.log",
+      "sha256": "214cc1eb28840bc10222a62b7ff5ee19cda44f191b8b89f510a81bc31e95fc43"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/p-to-p-zoom-before-pass.log",
+      "sha256": "214cc1eb28840bc10222a62b7ff5ee19cda44f191b8b89f510a81bc31e95fc43"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/p-to-p-zoom-before.log",
+      "sha256": "5c694e6b971783484499f3482ccf2b23c32896e000778034782cdf4639e5ccf8"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/preview-after-probe.json",
+      "sha256": "9f08ff31d2f90ebbd123e9b149943e71cf4eacfe17155f5c4948f48e2c29459c"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/preview-before-refresh.json",
+      "sha256": "c5fb60f1a193818b3f3d995e3c170851a9a459c75cc78e10fd0c0120c8c44c77"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/preview-refresh-probe.json",
+      "sha256": "52b87c5260150c026e6b49413108559d3021afbb08fb7e5e73581a3a56d14b99"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/preview-refresh-verified.json",
+      "sha256": "71fd0dcc0f8219a1feb1bef2a9363b70a9c640d82a3f9f6ae28d5e044bc7450d"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/preview-restored-check.json",
+      "sha256": "8dd35714550849e47a6e0380a416c08ef9400d17f91645078394324faaf04095"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/preview-restored-logs.json",
+      "sha256": "e8086243aa1572ad15d14b552311fa4c5878ae05373707630f50066e11784724"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/preview-restored.json",
+      "sha256": "74e69c54474ba75d5bc523cf83878da02c15a7583a89f2ee6f648a80fb544322"
+    },
+    {
+      "path": "docs/验证/evidence/remove-stove-yaw/screenshots.json",
+      "sha256": "a096b39733ebe487ad8a52588c90b834ff195a47bf73dbab27eab983486a1972"
+    }
+  ]
+}
