@@ -1,173 +1,226 @@
 {
   "status": "PASS",
-  "sceneVisualCommit": "75a6db474ec97f28cd421eb66dd187fbfbf75b0e",
+  "sceneVisualCommit": "5996b62",
   "report": {
-    "hintsEnabled": true,
-    "finalHud": {
-      "message": "",
-      "blocked": false,
-      "pending": false,
-      "day": 2,
-      "currency": 25,
-      "backVisible": false,
-      "enabled": true,
-      "scene": "home"
+    "coordinates": "UI layout pixels, scaled by UI.GetScale for event dispatch",
+    "captures": {
+      "entry-04": true,
+      "final-hud-after-test": true,
+      "entry-01": true,
+      "entry-07": true,
+      "seaside-received": true,
+      "entry-03": true,
+      "received-letter-reader": true,
+      "entry-06": true,
+      "entry-08": true,
+      "01-home-hints": true,
+      "entry-05": true,
+      "entry-02": true
     },
-    "navigationStateUnchanged": true,
-    "phase": "final",
-    "memoryWrites": 8,
+    "returnHome": true,
     "runtimeMouseLeft": 1,
     "storage": "isolated MemoryStorage only",
-    "currency": {
-      "before": 30,
-      "ingredient": "ing_sea_salt",
-      "price": 5,
-      "after": 25
-    },
-    "coordinates": "UI layout pixels, scaled by UI.GetScale for event dispatch",
-    "input": "official synthetic UI.HandleMouseMove/Down/Up -> real widget hit testing/pressed release/onClick + native camera rays; no OS/human mouse input",
+    "memoryWrites": 8,
+    "uiScale": 0.955975359979999,
     "receive": {
+      "ok": true,
       "letterInstanceId": "letter:letter_n01",
-      "availableLetterId": "letter_n01",
-      "ok": true
+      "availableLetterId": "letter_n01"
     },
     "entries": [
       {
+        "scene": "home",
+        "id": "home.drawer",
         "screen": [
           597.5384911919075,
           598.942681823029
         ],
-        "target": "letters",
         "panel": "letters",
-        "picked": "home.drawer",
-        "id": "home.drawer",
-        "scene": "home"
+        "target": "letters",
+        "picked": "home.drawer"
       },
       {
+        "scene": "home",
+        "id": "home.journal",
         "screen": [
           1045.310390086908,
           545.4111826199659
         ],
-        "target": "journal",
         "panel": "journal",
-        "picked": "home.journal",
-        "id": "home.journal",
-        "scene": "home"
+        "target": "journal",
+        "picked": "home.journal"
       },
       {
+        "scene": "home",
+        "id": "home.tray",
         "screen": [
           655.1924506347672,
           456.21472874325394
         ],
-        "target": "words",
         "panel": "words",
-        "picked": "home.tray",
-        "id": "home.tray",
-        "scene": "home"
+        "target": "words",
+        "picked": "home.tray"
       },
       {
+        "scene": "home",
+        "id": "home.caseFile",
         "screen": [
           1177.0571400873139,
           592.9857875036722
         ],
-        "target": "case",
         "panel": "case",
-        "picked": "home.caseFile",
-        "id": "home.caseFile",
-        "scene": "home"
+        "target": "case",
+        "picked": "home.caseFile"
       },
       {
+        "scene": "home",
+        "id": "home.merchantShip",
         "screen": [
           377.56712695269056,
           218.94818380987806
         ],
-        "target": "shop",
         "panel": "shop",
-        "picked": "home.merchantShip",
-        "id": "home.merchantShip",
-        "scene": "home"
+        "target": "shop",
+        "picked": "home.merchantShip"
       },
       {
+        "scene": "home",
+        "id": "home.letterPaper",
         "screen": [
           829.8316986897761,
           502.0012278021012
         ],
-        "target": "paper",
         "panel": "letters",
-        "picked": "home.letterPaper",
-        "id": "home.letterPaper",
-        "scene": "home"
+        "target": "paper",
+        "picked": "home.letterPaper"
       },
       {
+        "scene": "brew",
+        "id": "home.stove",
         "screen": [
           820.1824660521769,
           374.61785165575793
         ],
-        "target": "brew",
         "panel": false,
-        "picked": "home.stove",
-        "id": "home.stove",
-        "scene": "brew"
+        "target": "brew",
+        "picked": "home.stove"
       },
       {
+        "scene": "seaside",
+        "id": "home.net",
         "screen": [
           145.8057897298783,
           332.49602048047444
         ],
-        "target": "seaside",
         "panel": false,
-        "picked": "home.net",
-        "id": "home.net",
-        "scene": "seaside"
+        "target": "seaside",
+        "picked": "home.net"
       }
     ],
-    "uiScale": 0.955975359979999,
+    "phase": "final",
     "status": "PASS",
+    "finalHud": {
+      "message": "",
+      "day": 2,
+      "scene": "home",
+      "blocked": false,
+      "enabled": true,
+      "currency": 25,
+      "backVisible": false,
+      "pending": false
+    },
+    "hintsEnabled": true,
     "beforeBusiness": {
       "message": "",
-      "blocked": false,
-      "pending": false,
       "day": 1,
+      "scene": "home",
+      "blocked": false,
+      "enabled": true,
       "currency": 30,
       "backVisible": false,
-      "enabled": true,
-      "scene": "home"
-    },
-    "returnHome": true,
-    "captures": {
-      "01-home-hints": true,
-      "entry-01": "not requested",
-      "received-letter-reader": true,
-      "entry-05": "not requested",
-      "entry-06": "not requested",
-      "seaside-received": true,
-      "entry-04": "not requested",
-      "entry-08": "not requested",
-      "final-hud-after-test": true,
-      "entry-03": "not requested",
-      "entry-07": "not requested",
-      "entry-02": "not requested"
+      "pending": false
     },
     "endDay": {
       "before": 1,
       "duplicateBlocked": true,
       "after": 2
+    },
+    "input": "official synthetic UI.HandleMouseMove/Down/Up -> real widget hit testing/pressed release/onClick + native camera rays; no OS/human mouse input",
+    "navigationStateUnchanged": true,
+    "currency": {
+      "before": 30,
+      "price": 5,
+      "after": 25,
+      "ingredient": "ing_sea_salt"
     }
   },
   "processMetrics": {
-    "VmPeakKiB": 4164516,
-    "VmHWMKiB": 2243092,
-    "VmRSSKiB": 2212200,
+    "VmPeakKiB": 4480280,
+    "VmHWMKiB": 2558424,
+    "VmRSSKiB": 2530508,
     "exitCode": 0,
-    "wallSeconds": 217.50953747399763,
-    "rusageMaxRssKiB": 2243092,
+    "wallSeconds": 219.88839741700212,
+    "rusageMaxRssKiB": 2558424,
     "resolution": [
       1170,
       658
     ],
     "renderer": "Mesa software EGL/GLES surfaceless"
   },
-  "loadWallSeconds": 69.5600016117096,
-  "scope": "Official UI synthetic input, native hit testing and camera rays, real pinned main business, isolated in-memory saves. OS/human input and Windows untested.",
-  "correction": "Adapter comments say left=0, actual PointerEvent uses runtime MOUSEB_LEFT=1. Original Home filter is unchanged. Earlier zero-button experiment is not a game bug fix."
+  "evidenceDirectory": "5996b62-native-ui",
+  "screenshots": {
+    "01-home-hints.png": {
+      "bytes": 1210704,
+      "sha256": "e182b3441470a33fece06e764f04a1c4b531ad318120104f673904094ef94050"
+    },
+    "entry-01.png": {
+      "bytes": 120390,
+      "sha256": "d09895144102c8353a3d41e6a916ece32aea55eb8f2efae086b2b1a9341a956f"
+    },
+    "entry-02.png": {
+      "bytes": 832235,
+      "sha256": "2562a24dfd7870a359f721f75c444cc3f3cb68b5509e5a5b33b06cf122036f28"
+    },
+    "entry-03.png": {
+      "bytes": 867159,
+      "sha256": "782db71ea3e1b967111567831932e5ea1bfe09000681e5a2ffebb7d1876fe1bd"
+    },
+    "entry-04.png": {
+      "bytes": 120391,
+      "sha256": "632b1bf6b4e725bc6758b1f3a9f2abb09b3e42f226e6edffa51486ec63577cee"
+    },
+    "entry-05.png": {
+      "bytes": 148288,
+      "sha256": "dfe7dd08a367bb7a3cf39563dab0608ea641f0c695e260f92bee69c059130145"
+    },
+    "entry-06.png": {
+      "bytes": 128047,
+      "sha256": "0b745fe11339daa912fd70714e22b3f029021a7271fd09909f9aee8af6469804"
+    },
+    "entry-07.png": {
+      "bytes": 926065,
+      "sha256": "1da3043d0b2b564fe57524360903d1f36c7c359595903227013e15ed3c9ef359"
+    },
+    "entry-08.png": {
+      "bytes": 1597806,
+      "sha256": "128dec70426d33f7f01975036b9bda2ed29f17a1b2d7bb78425f68632b9d897c"
+    },
+    "final-hud-after-test.png": {
+      "bytes": 1210930,
+      "sha256": "1e67154040e857fa3f701d1f6b99623ed1ca8407de4b649e421f8dce640e6b0a"
+    },
+    "received-letter-reader.png": {
+      "bytes": 309901,
+      "sha256": "d0dcb3ccc7bc3131651b962560b9bb636cff39e6cad08ade7776a4ab87c5571e"
+    },
+    "seaside-received.png": {
+      "bytes": 1539086,
+      "sha256": "e220b42dac1901bb16a938b1c6e3afe3c0bbbfc308b6ad07c17e006b46cc8637"
+    }
+  },
+  "limitations": [
+    "Synthetic native UI input, not OS mouse",
+    "Mesa software rendering, not target-device performance",
+    "Business pass does not imply Blender visual equivalence"
+  ]
 }

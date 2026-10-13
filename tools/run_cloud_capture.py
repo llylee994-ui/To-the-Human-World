@@ -13,6 +13,7 @@ root = Path(__file__).resolve().parents[1]
 out = Path(os.environ['D3_CLOUD_OUTPUT']).resolve()
 runtime = Path(os.environ['URHOX_RUNTIME']).resolve()
 assert runtime.is_file(), 'Set URHOX_RUNTIME to the official installed Linux executable'
+assert not (out / 'baseline.png').exists() and not (out / 'baseline.png.metrics.json').exists(), 'Choose a fresh evidence directory; never accept a stale capture'
 (out / 'home/cache').mkdir(parents=True, exist_ok=True)
 env = os.environ.copy()
 env['D3_CLOUD_CAPTURE'] = str(out / 'baseline.png')
@@ -55,4 +56,6 @@ image = out / 'baseline.png'
 assert code == 0 and image.is_file(), 'Native capture did not finish; inspect runtime.log'
 frame_path = out / 'baseline.png.metrics.json'
 assert frame_path.is_file(), 'Capture frame timing report missing'
+frames = json.loads(frame_path.read_text())
+assert frames.get('successfulReadback') is True and frames.get('resolution') == metrics['resolution'], 'Native readback success/dimensions must match the requested capture'
 print(json.dumps({'process': metrics, 'frames': json.loads(frame_path.read_text())}, indent=2))

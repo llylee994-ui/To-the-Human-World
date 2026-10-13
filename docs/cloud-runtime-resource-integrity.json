@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "verifiedFiles": 164,
+  "scope": "actual shipped runtime assets; not rendering or interaction acceptance",
+  "manifestSha256": "e09483686cac096dfb2fa759977689aee1b269961ad4650d88c2e6f4d7fadc1b"
+}

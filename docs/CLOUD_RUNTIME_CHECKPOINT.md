@@ -1,4 +1,6 @@
-# Cloud native rendering checkpoint
+# Cloud native rendering checkpoint history
+
+This file retains early chronological findings, not the current task status. See CLOUD-CANDIDATE-REPORT.md for the latest verified candidate and remaining acceptance limits.
 
 Base: branch `3d`, commit `65e640cafc3330e70c0d934404077ad98932603f`.
 Cloud work branch: `cloud/v035-runtime-visual`. No push.

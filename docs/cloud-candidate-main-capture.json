@@ -1,0 +1,47 @@
+{
+  "status": "NATIVE_CAPTURE_PASS_VISUAL_MATCH_NOT_ACCEPTED",
+  "gameEntry": "scripts/main.lua",
+  "captureHarness": "scripts/cloud_capture.lua requires actual main",
+  "sceneVisualCommit": "5996b62",
+  "image": "candidate-real-main-entry/baseline.png",
+  "sha256": "2a9d93d4c2ed26539535750507d28b9cb7d193bbcf9604c81e7e48dace1591b0",
+  "resolution": [
+    1170,
+    658
+  ],
+  "nativeFullScene": {
+    "meshes": 100,
+    "triangles": 3208608,
+    "drawables": 870,
+    "anchors": 8
+  },
+  "process": {
+    "VmPeakKiB": 4220656,
+    "VmHWMKiB": 2435272,
+    "VmRSSKiB": 2435272,
+    "exitCode": 0,
+    "wallSeconds": 87.42241991100309,
+    "rusageMaxRssKiB": 2434972,
+    "resolution": [
+      1170,
+      658
+    ],
+    "renderer": "Mesa software EGL/GLES surfaceless"
+  },
+  "frames": {
+    "successfulReadback": true,
+    "resolution": [
+      1170,
+      658
+    ],
+    "excludedInitialFrames": 6,
+    "meanFrameSeconds": 0.6297144208635602,
+    "medianFrameSeconds": 0.572998046875,
+    "intervalSamples": 14,
+    "renderEnvironment": "Mesa software GLES, not target-device performance",
+    "nativeFrames": 20,
+    "wallClock": "time:GetElapsedTime, not clamped Update dt",
+    "p95FrameSeconds": 1.16400146484375
+  },
+  "matchesShelfBrightness2TestPixels": true
+}

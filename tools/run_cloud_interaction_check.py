@@ -13,6 +13,7 @@ root = Path(__file__).resolve().parents[1]
 out = Path(os.environ['D3_CLOUD_OUTPUT']).resolve()
 runtime = Path(os.environ['URHOX_RUNTIME']).resolve()
 assert runtime.is_file(), 'Set URHOX_RUNTIME to the official installed Linux executable'
+assert not (out / 'interaction-report.json').exists(), 'Choose a fresh evidence directory; never accept a stale QA report'
 (out / 'home/cache').mkdir(parents=True, exist_ok=True)
 env = os.environ.copy()
 env.update(HOME=str(out / 'home'), XDG_CACHE_HOME=str(out / 'home/cache'),

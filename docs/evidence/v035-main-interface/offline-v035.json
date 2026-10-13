@@ -1,5 +1,5 @@
 {
-  "timestampUtc": "2026-10-13T21:15:46.890918+00:00",
+  "timestampUtc": "2026-10-13T21:21:17.428484+00:00",
   "status": "PASS",
   "failure": null,
   "runtime": "Lupa Lua 5.4 with widget/API substitutes; real pinned main business",
@@ -14,799 +14,799 @@
   "mainSha": "1cd0cdbec06487a5c60f109d5fd477198cfc8846",
   "results": [
     {
-      "detail": "",
       "name": "source data not mutated or double-converted",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "zero based indices convert exactly once",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "Blender Z-up maps to engine Y-up",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "rotation preserves triangle winding and normal",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "UV orientation preserved pending checker",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "unit conversion scales geometry/camera/clips but not normals",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "reject negative indices",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "reject out-of-range zero based indices",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "reject fractional indices",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "reject incomplete triangles",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "reject sparse mesh arrays",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "reject NaN positions",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "reject coordinate conversion overflow",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "reject missing normals",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "reject zero normals",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "reject mismatched UV count",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "reject degenerate triangles",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "reject collinear distinct vertices",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "reject nonfinite triangle cross product",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "preserve actual nonzero letter-ink triangle below old area threshold",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "reject unbaked transform",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "reject foreign axis and double conversion",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "reject material reference mismatch",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "reject duplicate semantic ID",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "reject independent scissors target",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "reject package path traversal",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "reject absolute texture path",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "reject ambiguous camera FOV",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "reject sphere for transparent ship",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "missing proxy disables picking rather than inventing bounds",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "semantic ship triangle is selectable",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "transparent card corner is not a ship hit",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "occluder veto prevents through-wall hit",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "loader emits complete synthetic geometry",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "invalid data causes zero native scene mutations",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "native emission failure removes partial root",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "AppView uses the one injected real session/model",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "main semantic mapping and exact visible label home.drawer",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "rendered hint uses main label home.drawer",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "main semantic mapping and exact visible label home.journal",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "rendered hint uses main label home.journal",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "main semantic mapping and exact visible label home.tray",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "rendered hint uses main label home.tray",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "main semantic mapping and exact visible label home.net",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "rendered hint uses main label home.net",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "main semantic mapping and exact visible label home.caseFile",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "rendered hint uses main label home.caseFile",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "main semantic mapping and exact visible label home.merchantShip",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "rendered hint uses main label home.merchantShip",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "main semantic mapping and exact visible label home.letterPaper",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "rendered hint uses main label home.letterPaper",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "main semantic mapping and exact visible label home.stove",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "rendered hint uses main label home.stove",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "exactly eight Home business entries",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "Home hint anchors visible",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "offscreen hints omitted",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "occluded hints omitted",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "UI-consumed pointer cannot reach scene",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "drag blocks navigation and hints",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "net starts navigation only",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "navigation blocks repeated clicks and hints",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "net completion opens existing SeasideView",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "navigation completion replay has no effect",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "navigation never receives or saves",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "return Home starts guarded navigation",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "Home return restores hint display",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "duplicate gesture rejected after completion",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "new gesture begins a fresh transition",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "cancel invalidates stale camera completion",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "dispatch home.drawer",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "panel blocks scene and hints home.drawer",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "dispatch home.journal",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "panel blocks scene and hints home.journal",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "dispatch home.tray",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "panel blocks scene and hints home.tray",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "dispatch home.caseFile",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "panel blocks scene and hints home.caseFile",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "dispatch home.merchantShip",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "panel blocks scene and hints home.merchantShip",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "dispatch home.letterPaper",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "panel blocks scene and hints home.letterPaper",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "dispatch home.stove",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "stove reaches brew without automatic Preview",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "all eight routes preserve business state",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "End Day opens confirmation only",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "opening confirmation does not advance day",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "cancelled confirmation cannot advance day",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "double confirmation advances exactly one day",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "HUD ledger binds real day and currency",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "existing Shop panel performs real purchase",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "HUD follows committed purchase",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "failed purchase does not debit or save",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "existing salvage command runs once before animation",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "repeat salvage and return blocked during animation",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "skip preserves receipt and opens real Reader",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "repeat real Cut cannot duplicate cards",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "reopen paper retains the real cut gap",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "formal save slot is rejected",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "all real storage operations remain memory scoped",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "separate memory instances do not share player data",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "offline HUD/hint layout update 1920x1080",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "offline HUD/hint layout update 2560x1080",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "offline HUD/hint layout update 1440x1080",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "hint toggle hides all bubbles",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "destroy blocks all future navigation",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "missing Seaside camera still opens original salvage page",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "existing Seaside UI is actually visible on fallback route",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "fallback page can return to calibrated Home",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "missing Brew camera still opens existing brewing page",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "fallback routes never receive brew or write storage",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "full catalog exceeds six-mesh sample without dropping entries",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "stream rejects package path escape",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "stream rejects Windows case-colliding file paths",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "stream rejects source batches above 60000 vertices",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "stream creation is lazy and does not read or mutate engine",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "stream reads every declared mesh in order",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "stream geometry yields across update steps",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "stream publishes only one complete root",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "stream totals use actual emitted meshes and source members",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "stream releases ordinary Lua mesh geometry",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "stream retains explicit ship geometry for alpha picking",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "cancel after publish does not destroy complete scene",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "stream failure rolls back root and stops later reads",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "stream failure preserves useful file and error",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "failed coroutine releases the currently parsed mesh",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "cancel pending import removes partial native root",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "bad semantic mesh reference fails before root mutation",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "catalog identity mismatch cannot silently substitute geometry",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "full header adapter preserves eight independent invisible proxies",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "full header validates without loading all mesh payloads",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "declared linear tangent normal map survives preparation",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "reject gamma-encoded normal map metadata",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "full adapter rejects missing semantic visible mesh mapping",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "failed load remains visible with exact error and no retry",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "frame reporting uses measured Update samples and resets",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "oversized mesh is rejected before reading and handle closes",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "resource read exception still closes handle",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "truncated resource read is rejected",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "bounded resource read preserves bytes and closes once",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "Blender rotation alone does not turn desired camera into a LH basis",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "right-up-backward is a proper RH camera node rotation",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "reference camera projects forward to image center",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "native adapter selects existing PBR alpha texture technique",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "native adapter emits normals/UV before commit",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "native adapter preserves metallic/roughness and double-sided flag",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "missing texture fails before scene creation",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "unsupported MASK fails explicitly before scene creation",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "normal alpha uses verified technique and correct texture units",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "normal geometry generates tangents after attributes before Commit",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "constant-color normal material binds white diffuse fallback",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "tangent API failure rolls back without Commit",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "tangent API absent rolls back without Commit",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "horizontal FOV converted to native vertical FOV",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "native projection maps to active screen rectangle",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "native projection suppresses behind-camera and far-clipped anchors",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "RH camera projects through signed native clip W despite WorldToScreen clamp",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "measured parcel cord hit belongs to the tied paper stack",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "shared rope mesh outside parcel bounds remains an occluder",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
-      "detail": "",
       "name": "foreign mesh inside parcel bounds remains an occluder",
-      "status": "PASS"
+      "status": "PASS",
+      "detail": ""
     },
     {
       "name": "actual delivered probe remains schema-compatible",
@@ -914,7 +914,7 @@
     "[PASS] HUD ledger binds real day and currency",
     "[PASS] existing Shop panel performs real purchase",
     "[PASS] HUD follows committed purchase",
-    "[PlayActionFailure] {\"message\": \"未知原料\", \"details\": {}, \"code\": \"UNKNOWN_ID\", \"path\": \"ingredientId\"}",
+    "[PlayActionFailure] {\"message\": \"未知原料\", \"path\": \"ingredientId\", \"details\": {}, \"code\": \"UNKNOWN_ID\"}",
     "[PASS] failed purchase does not debit or save",
     "[PASS] existing salvage command runs once before animation",
     "[PASS] repeat salvage and return blocked during animation",
