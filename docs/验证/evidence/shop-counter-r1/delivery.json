@@ -1,0 +1,92 @@
+{
+  "baseCommit": "1cd0cdbec06487a5c60f109d5fd477198cfc8846",
+  "assets": [
+    {
+      "path": "assets/image/商队木柜台_背景_v01_20261013032602.png",
+      "mode": "RGB",
+      "size": [
+        1920,
+        1080
+      ],
+      "alpha": null,
+      "sha256": "80d7790b735d8e3c1e0304e2359df786cf78402e7a4c8d8141102293678816e2"
+    },
+    {
+      "path": "assets/image/原料_海盐_透明_v01_20261013032602.png",
+      "mode": "RGBA",
+      "size": [
+        1024,
+        1024
+      ],
+      "alpha": [
+        0,
+        254
+      ],
+      "sha256": "3973b84256881cf83fbd7400e5cd0678fc050f83f473d3ab3ad9f2dae1241a33"
+    },
+    {
+      "path": "assets/image/原料_夜露_透明_v01_20261013032602.png",
+      "mode": "RGBA",
+      "size": [
+        1024,
+        1024
+      ],
+      "alpha": [
+        0,
+        254
+      ],
+      "sha256": "c4f57b62f3cce8adce730a1da62af3b508349aac74b75565d3db70441527a719"
+    },
+    {
+      "path": "assets/image/原料_灰烬草_透明_v01_20261013032602.png",
+      "mode": "RGBA",
+      "size": [
+        1024,
+        1024
+      ],
+      "alpha": [
+        0,
+        254
+      ],
+      "sha256": "26ed3fe6e2524e429ca63680a7c43ff6f555d50abf048d86f3e5148a58d4020f"
+    },
+    {
+      "path": "assets/image/原料_干花瓣_透明_v01_20261013032602.png",
+      "mode": "RGBA",
+      "size": [
+        1024,
+        1024
+      ],
+      "alpha": [
+        0,
+        254
+      ],
+      "sha256": "f8243e592df7de22c966d38910bf3062047133c24fe2648fe051cd2ba498cced"
+    }
+  ],
+  "files": {
+    "scripts/ui/landscape/ShopView.lua": "6c4cd5056005b9e052f2f8fb4322f4f927fe0be02a2bf07ab11de5587ad7353d",
+    "scripts/ui/landscape/IngredientArt.lua": "ecb03cc7dc7a341181ffca9e438cc8627062a7d7f9cc6a695c2b60f8b6aa0f57",
+    "scripts/ui/landscape/AppView.lua": "7d0d9cbadd173edc8cb3349500e316e42e19363550e3a18d554d79baaac1464e",
+    "scripts/ui/landscape/Panels.lua": "78c8b2f25df8282a4709c2af1b1b15d7c7dbedfb4023d2a588410daeeb69f5ff",
+    "scripts/ui/landscape/tests/ShopViewTest.lua": "a34b93aeb8a5b25b38ec4bb439242eadf3f0094899cd93bd990868b23c8b2466",
+    "scripts/ui/landscape/tests/ShopEvidenceHost.lua": "a58b7acd6922a6bb69a2de101413bbb6a2832d12d78038e34235f8e25ac73242",
+    "scripts/ui/landscape/tests/export_shop_evidence.py": "c38e6f19dd2558aeae82d5b372eb3d3c507cf627c4756db89304d1035395bde4"
+  },
+  "tests": {
+    "ShopViewTest": 48,
+    "HomeEntryTest": 303,
+    "SeasideFlowTest": 89,
+    "HomeHudTest": 50,
+    "HomeZoomTest": 383,
+    "NumericV02ShopTest": "PASS existing transaction suite"
+  },
+  "lsp": {
+    "errors": 0,
+    "warnings": 67,
+    "hints": 11,
+    "source": "fresh standalone watch, actual workspace diagnostics"
+  },
+  "visualEvidence": "actual Lua widget props replayed by CSS; NOT native Yoga/NanoVG or device evidence",
+  "nativePreview": "stopped; not started or refreshed"
+}

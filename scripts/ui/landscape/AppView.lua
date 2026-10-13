@@ -10,6 +10,8 @@ local Messages=require "ui.landscape.MessagePresenter"
 local HudLayout=require "ui.landscape.HudLayout"
 local Widget=require "urhox-libs/UI/Core/Widget"
 local SeaArt=require "ui.landscape.SeaArt"
+local Shop=require "ui.landscape.ShopView"
+local TicketView=require "ui.landscape.TravelTicketView"
 local A={}
 local side={words="left",journal="right"}
 local titles={letters="来信抽屉",reader="阅读信件",words="词条栏",journal="故事记录",attempt="试做记录",shop="商队商店",case="案件板",day="结束当天",result="试做结果"}
@@ -26,6 +28,7 @@ local function bodyIn(parent,id)
     local body=UI.Panel {alignSelf="stretch",flexShrink=0,padding=18,paddingRight=24,gap=10,pointerEvents="box-none"}
     scroll:AddChild(body); parent:AddChild(scroll); return body,scroll
 end
+---@return table Session-bound view with navigation, scene controllers and lifecycle methods.
 function A.New(session,content,enabled)
     local model=Model.New(session,content,enabled)
     local nativeProbe=require("ui.landscape.DevChecks").nativeProbe and require("ui.landscape.tests.NativeProbe").New() or nil
@@ -49,7 +52,8 @@ function A.New(session,content,enabled)
     root:AddChild(noticeArea)
     local ctx={root=root,model=model,session=session,content=content,
         scene="home" --[[@as string]],panel=false --[[@as string|false]],stack={},
-        storyId=false --[[@as string|false]],readerCache=false --[[@as table|false]],choosingLetter=false --[[@as boolean]],
+        storyId=false --[[@as string|false]],shopSelectedId=false --[[@as string|false]],readerCache=false --[[@as table|false]],choosingLetter=false --[[@as boolean]],
+        ticketConfirm=false --[[@as boolean]],ticketQuote=false --[[@as table|false]],ticketEnding=false --[[@as table|false]],
         panelNotice=false --[[@as Label|false]],panelNoticeArea=false --[[@as ScrollView|false]],
         panelHeader=false --[[@as Widget|false]],
         zoom=Zoom.New(),salvage=Salvage.New(),destroyed=false --[[@as boolean]],portrait=false --[[@as boolean]],
@@ -197,9 +201,9 @@ function A.New(session,content,enabled)
         return true
     end
     function ctx.Navigate(target)
-        if ctx.destroyed or ctx.salvage.active then return end
+        if ctx.destroyed or ctx.salvage.active or ctx.ticketEnding then return end
         ctx.CancelHomeZoom("navigate")
-        ctx.scene=target; ctx.panel=false; ctx.stack={}; ctx.readerCache=false; ctx.choosingLetter=false
+        ctx.scene=target; ctx.panel=false; ctx.stack={}; ctx.readerCache=false; ctx.choosingLetter=false;ctx.ticketConfirm=false;ctx.ticketQuote=false
         if target=="home" then model.ReturnHome() else model.Navigate(target) end
         model.dirty=true
     end
@@ -208,7 +212,8 @@ function A.New(session,content,enabled)
         ctx.stack[#ctx.stack+1]=ctx.panel or false; ctx.panel=kind; ctx.readerCache=false; model.dirty=true
     end
     function ctx.Close()
-        if ctx.destroyed or ctx.zoom.active or ctx.salvage.active then return end
+        if ctx.destroyed or ctx.zoom.active or ctx.salvage.active or ctx.ticketEnding then return end
+        ctx.ticketConfirm=false;ctx.ticketQuote=false
         ctx.panel=table.remove(ctx.stack) or false; ctx.readerCache=false
         model.Navigate(ctx.panel=="reader" and "letter" or ctx.scene)
     end
@@ -233,6 +238,8 @@ function A.New(session,content,enabled)
     end
     function ctx.Open(kind)
         if ctx.destroyed or ctx.portrait or ctx.zoom.active or ctx.salvage.active then return end
+        if ctx.ticketEnding and kind~="ticketEnding" then return end
+        ctx.ticketConfirm=false;ctx.ticketQuote=false
         if kind=="paper" then ctx.OpenPaper(); return end
         if kind=="home" or kind=="brew" or kind=="seaside" then ctx.Navigate(kind); return end
         ctx.panel=kind; ctx.stack={}; ctx.readerCache=false; ctx.choosingLetter=false; model.dirty=true
@@ -263,6 +270,8 @@ function A.New(session,content,enabled)
             overlay:AddChild(UI.Panel {id="modalBlocker",position="absolute",left=0,top=0,width="100%",height="100%",
                 backgroundColor={18,24,20,190},onClick=function() end})
         end
+        if kind=="shop" then Shop.Render(ctx,overlay);return end
+        if kind=="ticketEnding" then TicketView.Ending(ctx,overlay);return end
         local panelProps={id="activePanel",position="absolute",top=location and 0 or "3%",bottom=location and 0 or "3%",
             width=location and "38%" or "92%",minWidth=location and 260 or nil,maxWidth=location and "85%" or nil,
             backgroundColor={245,236,216,255},borderRadius=8,overflow="hidden",onClick=function() end}
@@ -281,6 +290,15 @@ function A.New(session,content,enabled)
         ctx.panelNotice=panelNotice
         local body,scroll=bodyIn(panel,"playScroll"); ctx.scroll=scroll
         assert(Panels.Renderers[kind])(ctx,body)
+    end
+    local function syncSavedTicketEnding()
+        local query=rawget(session.queries,"GetTravelTicketView")
+        if not query then return end
+        local saved=query()
+        local value=saved.ok and saved.value
+        if value and value.departed==true and type(value.ending)=="table" and type(value.ending.title)=="string" and type(value.ending.text)=="string" then
+            ctx.ticketEnding=value.ending;ctx.panel="ticketEnding";ctx.stack={};ctx.ticketConfirm=false;ctx.ticketQuote=false
+        end
     end
     function ctx.Update()
         if ctx.destroyed then return end
@@ -312,9 +330,12 @@ function A.New(session,content,enabled)
         local data=model.Refresh()
         ctx.messages:Observe(model.message,now,ctx.importantMessage==model.message)
         if not data then return end
+        syncSavedTicketEnding()
         ledger:SetText(string.format("金币 %d   ·   第 %d 天",data.live.economy.currency,data.live.gameFlow.day))
-        pending:SetVisible(not not (data.currentOrder and data.currentOrder.pending))
-        back:SetVisible(ctx.scene~="home")
+        pending:SetVisible(not ctx.ticketEnding and not not (data.currentOrder and data.currentOrder.pending))
+        back:SetVisible(not ctx.ticketEnding and ctx.scene~="home")
+        local dayButton=hud:FindById("nextDay")
+        if dayButton then dayButton:SetVisible(not ctx.ticketEnding) end
         if developer and home.inspect then notice:SetText("热区检查 · "..(home.lastHit~="" and home.lastHit or "点击主体查看命中")) end
         if model.letterEdited and ctx.panel=="reader" and Panels.RefreshReader(ctx) then model.letterEdited=false; return end
         model.letterEdited=false

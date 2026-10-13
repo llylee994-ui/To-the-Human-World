@@ -1,5 +1,6 @@
 -- Real projections only. Every mutation goes through the supplied PlayModel.
 local UI=require "urhox-libs/UI"
+local IngredientArt=require "ui.landscape.IngredientArt"
 local Harbor=require "ui.landscape.HarborStyle"
 local P={}
 function P.Text(parent,value,size,id)
@@ -207,7 +208,12 @@ function P.Brew(ctx,body)
     for _,item in ipairs(ctx.content.ingredients) do
         local selected=0; for _,line in ipairs(draft.ingredients) do if line.ingredientId==item.id then selected=line.quantity end end
         local owned=data.live.economy.ingredients[item.id] or 0
-        P.Text(body,item.name.." · 库存 "..owned.." · 已放 "..selected,15)
+        local ingredientRow=UI.Panel {width="100%",flexDirection="row",gap=12,alignItems="center",pointerEvents="box-none"}
+        ingredientRow:AddChild(IngredientArt.Panel(item.id,{id="brewArt_"..item.id,width=68,height=68}))
+        local ingredientInfo=UI.Panel {flexGrow=1,flexShrink=1,flexBasis=0,minWidth=0,pointerEvents="box-none"}
+        ingredientRow:AddChild(ingredientInfo)
+        P.Text(ingredientInfo,item.name.." · 库存 "..owned.." · 已放 "..selected,15)
+        body:AddChild(ingredientRow)
         P.Button(body,"add_"..item.id,"放入一份",function() ctx.model.Drop("ingredient",item.id) end,action.enabled and owned>selected)
         if selected>0 then P.Button(body,"minus_"..item.id,"取出一份",function() ctx.model.TakeOut("ingredient",item.id) end,action.enabled) end
     end
