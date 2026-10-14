@@ -69,3 +69,8 @@ __pycache__/
 **/.story-backups/
 **/.story-editor.lock
 scripts/story-editor/.local/
+
+# 验证截图不入库（只提交记录 json/log/md/html；本地文件保留便于复核）
+docs/验证/**/*.png
+docs/验证/**/*.jpg
+docs/验证/**/*.jpeg
