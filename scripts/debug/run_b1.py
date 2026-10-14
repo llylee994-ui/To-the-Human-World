@@ -18,6 +18,7 @@ def main(argv=None, entrypoint=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--b6-acceptance', action='store_true', help='Check real entry binds every debug operation to a B6 slot')
     parser.add_argument('--numeric-v02-startup', action='store_true', help='Check default trial startup protects old slot1')
+    parser.add_argument('--release-startup', action='store_true', help='Check formal release startup protects old slot1 and numeric trial')
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument("--config-failure", choices=("load", "c1", "stage1"))
     mode.add_argument("--debug-isolation", choices=(
@@ -79,17 +80,24 @@ def main(argv=None, entrypoint=None):
         g.B1_CONFIG_FAILURE = args.config_failure
         g.B1_ISOLATION_SCENARIO = args.debug_isolation
         g.B6_ACCEPTANCE_CHECK = args.b6_acceptance
-        g.DEVELOPMENT_CHECK = not args.numeric_v02_startup and entrypoint not in ('debug.MobileFrontendTest', 'debug.LandscapeEntryTest')
+        g.DEVELOPMENT_CHECK = not (args.numeric_v02_startup or args.release_startup) and entrypoint not in ('debug.MobileFrontendTest', 'debug.LandscapeEntryTest')
+        g.RELEASE_STARTUP_CHECK = args.release_startup
         if args.b6_acceptance:
             (storage / 'save_slot1.json').write_text('B6 default-slot canary', encoding='utf-8')
-        if args.numeric_v02_startup:
+        if args.numeric_v02_startup or args.release_startup:
             (storage / 'save_slot1.json').write_text('old progress canary', encoding='utf-8')
+            (storage / 'save_numeric_v02_trial.json').write_text('old trial canary', encoding='utf-8')
+            (storage / 'save_ordinary_release_v1.json').write_text('task1 progress canary', encoding='utf-8')
         lua.execute('''
             package.preload["urhox-libs/UI"] = function() return require "debug.fixtures.HeadlessUI" end
             graphics = {}
             function SubscribeToEvent(...) end
             KEY_Z, KEY_F6, KEY_F7, KEY_F8 = 1, 2, 3, 4 -- 仅替身枚举
             package.loaded["debug.DeveloperMode"] = DEVELOPMENT_CHECK
+            -- 原生窗口探针依赖真实Yoga/PointerEvent；隔离UI介质不运行它们。
+            -- 只覆盖本Lua进程的配置表，保留工作区及正在运行的原生探针设置。
+            local headlessChecks = require "ui.landscape.DevChecks"
+            headlessChecks.nativeProbe, headlessChecks.yawProbe, headlessChecks.yawProbeAuto = false, false, false
             if B6_ACCEPTANCE_CHECK then
                 package.loaded["debug.B6RunRequest"] = "b6_acceptance_test"
             end
@@ -109,7 +117,7 @@ def main(argv=None, entrypoint=None):
             require "main"
             Start()
         ''')
-        if args.numeric_v02_startup:
+        if args.numeric_v02_startup or args.release_startup:
             lua.execute('''
                 local state = GetGameSession().state
                 assert(state.GetStatus().status == "new")
@@ -117,11 +125,20 @@ def main(argv=None, entrypoint=None):
                 assert(state.ReloadCurrent())
                 assert(state.GetStatus().status == "loaded")
                 assert(state.GetSnapshot().live.gameFlow.day == 2)
+                if RELEASE_STARTUP_CHECK then
+                    assert(state.GetStatus().schema == 4)
+                    assert(state.GetSnapshot().chapter.phase == "operating")
+                    assert(state.GetSnapshot().live.economy.itemPurchases ~= nil)
+                end
             ''')
             assert (storage / 'save_slot1.json').read_text(encoding='utf-8') == 'old progress canary'
             assert not list(storage.glob('save_slot1_*.json'))
-            assert list(storage.glob('save_numeric_v02_trial_*.commit'))
-            print('[NumericV02 startup] PASS real main default slot + save/reload; old progress unchanged; File/UI adapters')
+            assert (storage / 'save_numeric_v02_trial.json').read_text(encoding='utf-8') == 'old trial canary'
+            assert not list(storage.glob('save_numeric_v02_trial_*.json'))
+            assert (storage / 'save_ordinary_release_v1.json').read_text(encoding='utf-8') == 'task1 progress canary'
+            assert not list(storage.glob('save_ordinary_release_v1_*.json'))
+            assert list(storage.glob('save_ordinary_release_v2_*.commit'))
+            print('[Release startup] PASS real main default slot + save/reload; old slot1, trial and Task1 unchanged; File/UI adapters')
             return 0
         if args.b6_acceptance:
             lua.execute('''

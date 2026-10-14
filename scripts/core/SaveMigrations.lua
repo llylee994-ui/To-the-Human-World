@@ -39,4 +39,23 @@ function M.ToV3(data,schema,content,limit,initial)
         return candidate
     end)
 end
+function M.ToV4(data,content,limit)
+    return G.Run(function()
+        -- 先用原结构审计；不同内容版本及坏旧账不能先转换后放行。
+        G.Value(require("systems.OrderTrial").Wrap(require("systems.Order").New(content),content,limit,3).ValidateEnvelope(data))
+        local candidate=U.Copy(data)
+        local function convert(live)
+            local e=live.economy;e.itemPurchases={}
+            for _,row in ipairs(e.furniturePurchases or {}) do
+                e.itemPurchases[#e.itemPurchases+1]={itemId=row.furnitureId,unitPrice=row.unitPrice,day=row.day,
+                    afterDeliveredOrders=row.afterDeliveredOrders,transactionId="purchase:"..row.furnitureId}
+            end
+            e.furniturePurchases=nil;e.ownedFurnitureIds=nil
+        end
+        convert(candidate.live)
+        if candidate.currentOrder and candidate.currentOrder.pending then convert(candidate.currentOrder.baseline.live);convert(candidate.currentOrder.pending.candidateLive) end
+        candidate.chapter=require("systems.ReleaseLedger").EmptyChapter()
+        return G.Value(require("systems.OrderTrial").Wrap(require("systems.Order").New(content),content,limit,4).ValidateEnvelope(candidate))
+    end)
+end
 return M

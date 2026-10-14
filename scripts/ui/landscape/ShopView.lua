@@ -92,7 +92,7 @@ function S.Render(ctx,overlay)
             local action=ctx.model.Action("PurchaseFurniture")
             if not action.enabled then view.enabled=false;view.message=action.message end
             for _,item in ipairs(view.items) do
-                items[#items+1]={kind="furniture",ingredientId=item.furnitureId,furnitureId=item.furnitureId,name=item.name,price=item.price,owned=item.owned}
+                items[#items+1]={kind="furniture",ingredientId=item.furnitureId,furnitureId=item.furnitureId,name=item.name,price=item.price,owned=item.owned,quote=item.quote}
             end
         else errorMessage,errorId=furniture.error.message,"furnitureQueryError" end
     else
@@ -181,7 +181,7 @@ function S.Render(ctx,overlay)
                 if not current.ok then ctx.model.Notify(current)
                 elseif not current.value.enabled then ctx.model.Notify({ok=false,error={code=current.value.reasonCode,message=current.value.message}})
                 else ctx.ticketConfirm=true;ctx.model.dirty=true end
-            elseif selected.kind=="furniture" then ctx.model.BuyFurniture(selected.furnitureId)
+            elseif selected.kind=="furniture" then ctx.model.BuyFurniture(selected.furnitureId,selected.quote)
             else ctx.model.Buy(selected.ingredientId) end
         end})
     if ctx.ticketConfirm then TicketView.Confirm(ctx,overlay) end

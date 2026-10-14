@@ -21,6 +21,7 @@ Data.words = numericV02.words
 Data.ingredients = require "data.ingredients"
 Data.equipment = require "data.equipment"
 Data.furniture = require "data.furniture"
+Data.release = require "data.release"
 Data.synthesis = require "data.synthesis"
 Data.npcs = numericV02.npcs
 Data.letters = numericV02.letters
@@ -38,12 +39,12 @@ Data.contentVersion = Data.stage1.contentVersion
 -- 供文案/程序复算的示例，不是 Potion 的配方白名单或查找表。
 Data.recipes = numericV02.recipes
 
--- v02试用包替换旧故事配置；系统仍只通过本入口读取。
-Data.contentVersion = "story-numeric-v02-r1"
+-- 普通剧情首发沿用 v02 词值/分支；日程与报酬从来源重新生成。
+Data.contentVersion = Data.release.contentVersion
 Data.stage1.contentVersion = Data.contentVersion
 Data.stage1.sampleCases = numericV02.sampleCases
 Data.shop = { dailyStockPerIngredient = 6 }
-Data.saveSlotId = "numeric_v02_trial"
+Data.saveSlotId = Data.release.saveSlotId
 
 -- 原料 mods 允许出现的键。写错键名不会报错，只会静默失效，所以在这里卡住。
 ---@type table<string, boolean?>

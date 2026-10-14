@@ -1,0 +1,75 @@
+{
+  "version": "seaside-r1",
+  "base": "d1b2d06",
+  "tests": {
+    "salvageController": 2934,
+    "seasideFlow": 89,
+    "homeEntry": 303,
+    "homeZoom": 383
+  },
+  "nativeVerified": false,
+  "mobileVerified": false,
+  "review": "independent controller and integration review: no actionable findings",
+  "files": [
+    {
+      "path": "scripts/ui/landscape/AppView.lua",
+      "sha256": "2e34ca6b3b1555ef1335089259ba3512c8ab19392f64703d97243ad7d7042415"
+    },
+    {
+      "path": "scripts/ui/landscape/SeasideView.lua",
+      "sha256": "11b5d8eaa260c8c8cfbeb171b4c6e5a794ccdf3b4a560fa34f3c9e34e552368b"
+    },
+    {
+      "path": "scripts/ui/landscape/SeasideManifest.lua",
+      "sha256": "207ca995d4428d5e7a0c32426e5f7bf28820b6964a989c1036d953c0535c4d7b"
+    },
+    {
+      "path": "scripts/ui/landscape/SalvageController.lua",
+      "sha256": "f059e4e24e37acc33df43e3d15929f827157233a2c8d1799eaa30e25f102475a"
+    },
+    {
+      "path": "assets/image/seaside-r1/background.png",
+      "sha256": "4ca5d21fd0f3ccb81ad4df3a1e9e876533c33c2996bba8ca35187b2c959c018a"
+    },
+    {
+      "path": "assets/image/seaside-r1/bottle.png",
+      "sha256": "c1a651c0644c967f3032467cce7d3776f9cfb0d480cf14ef1b2632aa33d95fa7"
+    },
+    {
+      "path": "assets/image/seaside-r1/merchant-ship.png",
+      "sha256": "bc261c32e3839fb72d365ae394963c0417dced57f48b1f1dd0381df2561f16be"
+    },
+    {
+      "path": "assets/image/seaside-r1/net.png",
+      "sha256": "9eba8ff0ab25f9b1d71ddd02c8a434a2161fcc84182d3e0ea0ac24bf3c648e31"
+    },
+    {
+      "path": "scripts/ui/landscape/DevChecks.lua",
+      "sha256": "b323a8425a34d06b1b5b92856e1610af49fb984de8c2016fdb02d52ede1b0cb0"
+    },
+    {
+      "path": "scripts/ui/landscape/tests/NativeProbe.lua",
+      "sha256": "5cd445b1bebc0f31749c8dc15f8a4c061d74b3a9c98e16dedbaa1792ad017302"
+    },
+    {
+      "path": "scripts/ui/landscape/tests/SeasideNativeProbe.lua",
+      "sha256": "9bc879633a934e94c1695379b3d9030873c9673fccd8600df8ca25bad644cf43"
+    }
+  ],
+  "nativeLayoutVerified": true,
+  "nativeShopPointerDispatchVerified": true,
+  "nativeProgressUnchanged": true,
+  "nativeAnimationVerified": false,
+  "nativeEvidence": "docs/验证/evidence/seaside-r1/native-seaside-final.png",
+  "finalPreview": {
+    "session": "3d560e43-6467-4174-8520-2556b0a3eb59",
+    "unresolvedErrors": [
+      "Cube/Day/DaySpecularHDR.dds missing",
+      "themis_x64.dll load failed"
+    ],
+    "reload": 7,
+    "check": "FAIL",
+    "devChecksEnabled": false,
+    "alive": true
+  }
+}

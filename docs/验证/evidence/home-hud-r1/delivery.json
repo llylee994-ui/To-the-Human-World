@@ -1,0 +1,82 @@
+{
+  "base": "d1b2d06",
+  "nativeProgressUnchanged": true,
+  "nativeChromeVerified": true,
+  "remoteBuildPerformed": false,
+  "luaErrors": 0,
+  "tests": {
+    "zoom": 383,
+    "seaside": 89,
+    "home": 303,
+    "controller": 2934,
+    "presentation": 32,
+    "hud": 50,
+    "total": 3791
+  },
+  "platformGreenNoticeSourceConfirmed": false,
+  "nativeDoorAnimationVerified": false,
+  "rasterTexturesDelivered": false,
+  "phoneVerified": false,
+  "devChecksEnabled": false,
+  "version": "home-hud-r1",
+  "files": [
+    {
+      "path": "scripts/ui/landscape/AppView.lua",
+      "sha256": "64a712bb06da1def62ac824b694405e9b8adac1c19c51b4188b56b549c570253"
+    },
+    {
+      "path": "scripts/ui/landscape/HomeView.lua",
+      "sha256": "0a79ba75c69b77af32f63708c810149e6202103dc681a3a49a8e70e2a3fb0850"
+    },
+    {
+      "path": "scripts/ui/landscape/Panels.lua",
+      "sha256": "f754a1173c9ca07ae5be7811c793b39c4da8912b8d95813939d20ef08a301509"
+    },
+    {
+      "path": "scripts/ui/landscape/SeasideView.lua",
+      "sha256": "5840a9d8875839942da7d38c3ff2a8860863a939975bd8dcbe8585d9333978b2"
+    },
+    {
+      "path": "scripts/ui/landscape/MessagePresenter.lua",
+      "sha256": "5943ed58fc84e32fb668ddd7b299e205fe5f0d1987e76a591570b53a627d9142"
+    },
+    {
+      "path": "scripts/ui/landscape/HudLayout.lua",
+      "sha256": "f7ebfb32eb1d872408a97dd2660bbfbfabf11a953842f5ae302b07e22f5e26d4"
+    },
+    {
+      "path": "scripts/ui/landscape/HarborStyle.lua",
+      "sha256": "72f72b9292913c0298ae8f0ee792ae02ac35d1499d68f145a31ab97cb20a5320"
+    },
+    {
+      "path": "scripts/ui/landscape/DevChecks.lua",
+      "sha256": "844f60158da304c521707319f50224bd96121910e735a271ff638b26c9fc914e"
+    },
+    {
+      "path": "scripts/ui/landscape/tests/HomeHudTest.lua",
+      "sha256": "2378c626eaf65127e55098eeef4ac24c589a89bba532c152101c2be0a290ca7a"
+    },
+    {
+      "path": "scripts/ui/landscape/tests/HomePresentationTest.lua",
+      "sha256": "3bcdba8f7334eccb0abbf2358fe4a99d719b52663a46560c603d36b62e03822f"
+    },
+    {
+      "path": "scripts/ui/landscape/tests/HomeHudNativeProbe.lua",
+      "sha256": "2f0e5618acf5152ff091bdfeb4a0fc65641db9d7c69486fc24d7b5bacdf07441"
+    },
+    {
+      "path": "scripts/ui/landscape/tests/NativeProbe.lua",
+      "sha256": "33536045045fe0eab7cc175f4b9c1af157ddd6a4e43fd96d4488d368305d7991"
+    },
+    {
+      "path": "scripts/ui/landscape/tests/ZoomTestHost.lua",
+      "sha256": "7f2b8b316443d2cc9c5dc3944c872f767128d54b75994f86517a7dea59fe361a"
+    }
+  ],
+  "preview": {
+    "alive": true,
+    "reload": 4,
+    "session": "25994446-16d6-44b2-9db4-5568987779c9",
+    "check": "FAIL"
+  }
+}

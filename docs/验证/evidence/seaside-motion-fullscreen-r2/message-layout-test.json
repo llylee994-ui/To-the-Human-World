@@ -1,0 +1,7 @@
+{
+  "chunk_id": "3658d2",
+  "wall_time_seconds": 1.0072726,
+  "exit_code": 0,
+  "original_token_count": 260,
+  "output": "[Data] 校验通过：效果 22 / 词条 61 / 原料 4 / 设备 2 / 人物 11 / 信件 22 / 时间属性 6 / 规则 196 / 片段 58 / 评分 58\r\n[Data] 首单包校验通过：C1 开局账本 / C2 首单数值 / C3 事实与回信；contentVersion = story-numeric-v02-r1\r\n========== 阶段 0 自检开始 ==========\r\n[SelfTest] PASS  B2 两个监听者都收到事件\r\n[SelfTest] PASS  B2 高优先级先收到\r\n[SelfTest] PASS  B2 同优先级按注册顺序\r\n[SelfTest] PASS  B2 退订生效\r\n[SelfTest] PASS  B3 存档往返一致\r\n[SelfTest] PASS  B3 字段缺失不崩溃且补齐默认值\r\n[SelfTest] PASS  B3 版本号过新时回落默认值\r\n[SelfTest] PASS  B3 内容损坏时回落默认值\r\n[SelfTest] PASS  B4 跨天后天数 +1\r\n[SelfTest] PASS  B4 派发 DayEnded 且带当天编号\r\n[SelfTest] PASS  B4 派发 DayStarted\r\n========== 阶段 0 自检结束：通过 11，失败 0 ==========\r\n[DebugPanel] 已挂载，按 Z 键开关\r\n=== 寄往人间 启动完成（第 1 天）===\r\nHomePresentationTest: 32 checks passed\r\n"
+}

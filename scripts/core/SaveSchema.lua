@@ -212,6 +212,7 @@ function Schema.ValidateV3(data,options)
         object(data,"contentVersion revision nextOrderSerial live currentOrder journal","data")
         local flow=Flow.New(options.salvageDailyLimit)
         local function checkFlow(l)
+            if options.schema4Projection~=true then need(type(l.economy)=="table" and l.economy.itemPurchases==nil,"economy.itemPurchases","schema3不能加载schema4永久流水") end
             local result=flow.ValidateSnapshot(l.gameFlow)
             if not result.ok then error(result.error,0) end
         end
@@ -232,6 +233,25 @@ function Schema.ValidateV3(data,options)
         local old=require("core.SchemaProjection").V2(data)
         local legacy=Schema.ValidateV2(old,options)
         if not legacy.ok then error(legacy.error,0) end
+    end)
+    if not ok then return {ok=false,error=type(err)=="table" and err or U.Error("STATE_INVALID","data",tostring(err))} end
+    return U.Ok(U.Copy(data))
+end
+function Schema.ValidateV4(data,options)
+    local pure=U.Validate(data);if not pure.ok then return pure end
+    local ok,err=pcall(function()
+        object(data,"contentVersion revision nextOrderSerial live currentOrder journal chapter","data")
+        object(data.chapter,"phase wishDraftSourceIds ending endingTransactionId checkpoint","chapter")
+        need(U.Equal(data.chapter,require("systems.ReleaseLedger").EmptyChapter()),"chapter","终局协调尚未开放")
+        local function ledger(l)
+            need(U.Array(l.economy.itemPurchases) and l.economy.furniturePurchases==nil and l.economy.ownedFurnitureIds==nil,"itemPurchases")
+            for _,row in ipairs(l.economy.itemPurchases) do need(row.itemId~="travel_ticket","chapter","船票需终局协调事务") end
+        end
+        ledger(data.live)
+        if data.currentOrder and data.currentOrder.pending then ledger(data.currentOrder.baseline.live);ledger(data.currentOrder.pending.candidateLive) end
+        local projected=U.Copy(data);projected.chapter=nil
+        local projectionOptions=U.Copy(options);projectionOptions.schema4Projection=true
+        local r=Schema.ValidateV3(projected,projectionOptions);if not r.ok then error(r.error,0) end
     end)
     if not ok then return {ok=false,error=type(err)=="table" and err or U.Error("STATE_INVALID","data",tostring(err))} end
     return U.Ok(U.Copy(data))

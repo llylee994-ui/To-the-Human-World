@@ -2,10 +2,12 @@
 local U=require "core.StateUtil"
 local G=require "systems.CalculationGuard"
 local D=require "systems.RecipeDraft"
+---@type table<string, function>
 local J=require "systems.BrewJournal"
 local P=require "core.SchemaProjection"
 local T={}
-function T.Wrap(legacy,content,limit)
+function T.Wrap(legacy,content,limit,schema)
+    schema=schema or 3
     local api={}
     for key,value in pairs(legacy) do api[key]=value end
     local current=false
@@ -27,7 +29,8 @@ function T.Wrap(legacy,content,limit)
     function api.CurrentOrder.GetSnapshot() return U.Copy(current) end
     function api.ValidateEnvelope(data)
         return G.Run(function()
-            G.Value(require("core.SaveSchema").ValidateV3(data,{contentVersion=content.contentVersion,synthesisVersion=content.synthesis.version,
+            local validate=schema==4 and require("core.SaveSchema").ValidateV4 or require("core.SaveSchema").ValidateV3
+            G.Value(validate(data,{contentVersion=content.contentVersion,synthesisVersion=content.synthesis.version,
                 economy=require("systems.Economy").New(content),letters=require("systems.Letter").New(content),wordTokens=require("systems.WordToken").New(content),salvageDailyLimit=limit}))
             G.Value(api.CurrentOrder.ValidateSnapshot(data.currentOrder))
             G.Value(J.Validate(data,content))
@@ -95,7 +98,7 @@ function T.Wrap(legacy,content,limit)
                 for oid,record in pairs(data.live.orders.confirmedById) do nextOrder.pending.candidateLive.orders.confirmedById[oid]=U.Copy(record) end
                 nextOrder.pending.candidateLive.orders.confirmedById[order.orderId].recipe=U.Copy(nextOrder.recipe)
                 nextOrder.nextAttemptSerial=order.nextAttemptSerial+1
-                J.Insert(candidate.journal,J.Record(candidate,order.orderId,nextOrder.pending,nextOrder.recipe,"pending",3,content))
+                J.Insert(candidate.journal,J.Record(candidate,order.orderId,nextOrder.pending,nextOrder.recipe,"pending",schema,content))
                 return plan(candidate,result.value,{"DeliveryPreviewReady"})
             elseif kind=="Reset" then
                 G.Keys(request,{orderId=true,baselineId=true,transactionId=true},"request")

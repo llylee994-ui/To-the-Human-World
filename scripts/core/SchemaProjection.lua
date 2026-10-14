@@ -9,7 +9,7 @@ function P.Live(live)
     return out
 end
 function P.V2(data)
-    local out=U.Copy(data); out.journal=nil; out.live=P.Live(data.live)
+    local out=U.Copy(data); out.journal=nil; out.chapter=nil; out.live=P.Live(data.live)
     local order=out.currentOrder
     if order then
         order.draft=nil

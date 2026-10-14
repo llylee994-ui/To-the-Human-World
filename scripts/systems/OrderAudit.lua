@@ -195,6 +195,7 @@ function Audit.New(content,orderApi)
             if data.live.economy.ownedFurnitureIds==nil and data.live.economy.furniturePurchases==nil then
                 replay.economy.ownedFurnitureIds=nil; replay.economy.furniturePurchases=nil
             end
+            if data.live.economy.itemPurchases~=nil then replay.economy.itemPurchases={} end
             replay.orders.confirmedById={}; replay.letters.directArchive={}; replay.gameFlow.deliveredOrders=0
             replay.narrative=G.Value(narrative.InitialSnapshot())
             for _,token in pairs(replay.wordTokens.byId) do token.available=true; token.consumedByOrderId=false end
@@ -202,8 +203,34 @@ function Audit.New(content,orderApi)
             local furniturePurchases=data.live.economy.furniturePurchases or {}
             local purchaseIndex=1
             local furnitureIndex=1
+            local itemPurchases=data.live.economy.itemPurchases or {};local itemIndex=1
             local lastDay=1
             local function replayPurchases(delivered,untilDay)
+                -- schema4按日期合并原料和永久商品；每类原顺序保留，均不得借未来报酬。
+                if data.live.economy.itemPurchases~=nil then
+                    while true do
+                        local p=purchases[purchaseIndex];if p and p.afterDeliveredOrders~=delivered then p=nil end
+                        local item=itemPurchases[itemIndex];if item and item.afterDeliveredOrders~=delivered then item=nil end
+                        if not p and not item then break end
+                        local permanent=item and (not p or item.day<p.day)
+                        local row=permanent and item or p
+                        G.Need(row.day>=lastDay and row.day<=untilDay,"STATE_INVALID","purchases.day","采购不属于对应发货进度")
+                        if permanent then
+                            local kind=row.itemId==content.release.ticket.id and "departure" or "home"
+                            local planned=G.Value(require("systems.ReleaseLedger").New(content).PlanPurchase(replay.economy,
+                                {itemId=row.itemId,expectedPrice=row.unitPrice,expectedDay=row.day,expectedRevision=0},
+                                {day=row.day,deliveredOrders=delivered,revision=0,kind=kind}))
+                            G.Need(not planned.alreadyPurchased,"STATE_INVALID","itemPurchases","重复永久购买")
+                            same(planned.state.itemPurchases[#planned.state.itemPurchases],row,"itemPurchases")
+                            replay.economy=planned.state;itemIndex=itemIndex+1
+                        else
+                            local planned=G.Value(economy.PlanPurchase(replay.economy,{ingredientId=row.ingredientId,quantity=row.quantity},{day=row.day,deliveredOrders=delivered}))
+                            same(planned.state.shopPurchases[#planned.state.shopPurchases],row,"shopPurchases")
+                            replay.economy=planned.state;purchaseIndex=purchaseIndex+1
+                        end
+                    end
+                    return
+                end
                 while purchaseIndex<=#purchases and purchases[purchaseIndex].afterDeliveredOrders==delivered do
                     local p=purchases[purchaseIndex]
                     G.Need(p.day>=lastDay and p.day<=untilDay,"STATE_INVALID","shopPurchases.day","购买时间不属于对应发货进度")
@@ -230,6 +257,7 @@ function Audit.New(content,orderApi)
             replayPurchases(replay.gameFlow.deliveredOrders,data.live.gameFlow.day)
             G.Need(purchaseIndex==#purchases+1,"STATE_INVALID","shopPurchases","购买记录借用了未来发货数")
             G.Need(furnitureIndex==#furniturePurchases+1,"STATE_INVALID","furniturePurchases","购买记录借用了未来发货数")
+            G.Need(itemIndex==#itemPurchases+1,"STATE_INVALID","itemPurchases","购买记录借用了未来发货数")
             for _,key in ipairs({"world","economy","wordTokens"}) do same(data.live[key],replay[key],"live." .. key) end
             -- 解锁是已声明订单集合；其保存可包含已领取项。阶段条件由实际查询复核。
             if data.currentOrder then

@@ -1,0 +1,13 @@
+{
+  "maker_commit": "1c28162b7070df42a634cfb13f07b991536d0396",
+  "build": "success",
+  "qr": "https://tapcode-sce.spark.xd.com/qrcode/m_h4x3_1791954110104.png",
+  "scope": "7 frontend modules, 3 tests, action record; no story/economy/save schema changes",
+  "native": "reload12, 1450x650 real engine; capsule/insets and journal history are explicit test fixtures, not phone evidence",
+  "native_probe": "PASS complete room bounds, 8 object hit targets and touch-pointer return to journal directory",
+  "screenshots_read": ["home-clean","home-hints","journal-list","journal-detail","brew","shop"],
+  "lua_errors": 0,
+  "tests": {"homeEntry":303,"paperConsistency":25,"letterPresentation":8022,"letterReader":14,"letterRender":23,"sceneProjection":78,"homeHud":50},
+  "preview_after_cleanup": "reload13 launched, developer probes off; current public-resource loading/check status recorded separately",
+  "github": "previous stove-transition merge conflict remains; not overwritten"
+}

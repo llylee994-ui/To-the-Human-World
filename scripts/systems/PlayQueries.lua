@@ -105,8 +105,10 @@ function Q.New(session,content)
     api.GetFurnitureShopView=query(function(data)
         local rows={}; local action=session.state.CheckAction("PurchaseFurniture")
         local owned=data.live.economy.ownedFurnitureIds or {}
+        if data.live.economy.itemPurchases then owned=G.Value(require("systems.ReleaseLedger").New(content).Validate(data.live.economy.itemPurchases)) end
         for _,item in ipairs(content.furniture or {}) do
-            rows[#rows+1]={furnitureId=item.id,name=item.name,price=item.price,owned=owned[item.id]==true}
+            rows[#rows+1]={furnitureId=item.id,name=item.name,price=item.price,owned=owned[item.id]==true,
+                quote={itemId=item.id,expectedPrice=item.price,expectedDay=data.live.gameFlow.day,expectedRevision=data.revision}}
         end
         return {currency=data.live.economy.currency,items=rows,enabled=action.enabled,reasonCode=action.reasonCode,message=action.message}
     end)
@@ -114,7 +116,8 @@ function Q.New(session,content)
         local order=data.currentOrder; local actions={}
         for _,name in ipairs({"Accept","UpdateDraft","Preview","Confirm","Reset","Shop","NextDay"}) do actions[name]=session.state.CheckAction(name) end
         local result={orderId=false --[[@as string|false]],phase="idle" --[[@as string]],sourceLetterId=false --[[@as string|false]],
-            title="",requirementDesc="",draft=false --[[@as table|false]],pending=false --[[@as table|false]],actions=actions,requirementHint={evaluated=false}}
+            title="",requirementDesc="",draft=false --[[@as table|false]],pending=false --[[@as table|false]],
+            potionPreview=false --[[@as table|false]],actions=actions,requirementHint={evaluated=false}}
         if not order then return result end
         local accepted=data.live.orders.acceptedById[order.orderId]; local d=definition(accepted.letterId)
         result.orderId=order.orderId; result.phase=order.phase=="brewing" and "accepted" or order.phase
@@ -128,6 +131,7 @@ function Q.New(session,content)
             local potion=G.Value(require("systems.Potion").Calculate(resolved,content))
             local evaluated=G.Value(session.order.Evaluate(d.requirement,potion))
             result.requirementHint={evaluated=true,canShip=evaluated.canShip,failures=evaluated.failures}
+            result.potionPreview={effects=U.Copy(potion.effects),intensityByEffect=U.Copy(potion.intensityByEffect)}
         end
         return result
     end)

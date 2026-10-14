@@ -13464,11 +13464,11 @@ return {
                 },
             },
             ["reward"] = {
-                ["currency"] = 80,
+                ["currency"] = 100,
             },
             ["selfIntro"] = "来信人：埃利亚斯·沃德",
             ["senderId"] = "npc_passerby_a",
-            ["title"] = "码头来的第一封信",
+            ["title"] = "铁锚巷的一夜",
         },
         {
             ["address"] = "灰港铁锚巷12号 二楼",
@@ -13548,11 +13548,11 @@ return {
                 },
             },
             ["reward"] = {
-                ["currency"] = 80,
+                ["currency"] = 100,
             },
             ["selfIntro"] = "来信人：卢卡",
             ["senderId"] = "npc_luca",
-            ["title"] = "去做抄写员学徒",
+            ["title"] = "面包坊与抄写铺",
         },
         {
             ["address"] = "灰港 铁锚巷8号 晨炉面包坊",
@@ -13568,7 +13568,7 @@ return {
         {
             ["address"] = "灰港 铁锚巷14号 一层临街补衣窗口",
             ["appearCondition"] = {
-                ["dayMin"] = 4,
+                ["dayMin"] = 3,
             },
             ["attachments"] = {},
             ["body"] = [=[我叫诺拉，今年六十三了。在灰港铁锚巷临街的窗户底下，我支着一张窄木案，平日里就靠替码头工人和街坊们缝补破衣烂衫、收短裤脚讨生活。屋里常年就我一个人，空落落的。儿子艾文在海船上做木工，一年到头随着大船在风浪里漂，难得着一回家。
@@ -13620,7 +13620,7 @@ return {
                 },
             },
             ["reward"] = {
-                ["currency"] = 80,
+                ["currency"] = 100,
             },
             ["selfIntro"] = "来信人：诺拉",
             ["senderId"] = "npc_nora",
@@ -13640,7 +13640,7 @@ return {
         {
             ["address"] = "灰港 外城东麦田 佃户小院 3 号",
             ["appearCondition"] = {
-                ["dayMin"] = 6,
+                ["dayMin"] = 4,
             },
             ["attachments"] = {},
             ["body"] = [=[我叫艾莉，今年十岁啦。我家住在外城东边，一推开门就是大片大片的麦田。我可聪明了，路边的木牌子我都认得，数数数得比我爹还要快呢！
@@ -13681,11 +13681,11 @@ return {
                 },
             },
             ["reward"] = {
-                ["currency"] = 0,
+                ["currency"] = 100,
             },
             ["selfIntro"] = "来信人：艾莉",
             ["senderId"] = "npc_ellie",
-            ["title"] = "一袋胡萝卜的远行",
+            ["title"] = "集市上的萝卜",
         },
         {
             ["address"] = "灰港 外城东麦田 佃户小院 3 号",
@@ -13701,7 +13701,7 @@ return {
         {
             ["address"] = "灰港 老钟楼西侧 帮工宿舍 2 号 二层",
             ["appearCondition"] = {
-                ["dayMin"] = 8,
+                ["dayMin"] = 5,
             },
             ["attachments"] = {},
             ["body"] = [=[我叫奥托，今年十一岁。我在老钟楼打杂扫地，住西边那间窄小的小屋。这楼里的大钟响得对不对，我耳朵一听就知道；台阶上的灰积了多少，我搭眼一瞧就心里有数。
@@ -13745,11 +13745,11 @@ return {
                 },
             },
             ["reward"] = {
-                ["currency"] = 0,
+                ["currency"] = 100,
             },
             ["selfIntro"] = "来信人：奥托",
             ["senderId"] = "npc_otto",
-            ["title"] = "钟声过后还有一口甜",
+            ["title"] = "钟楼里的纸旗",
         },
         {
             ["address"] = "灰港 老钟楼西侧 帮工宿舍 2 号 二层",
@@ -13765,7 +13765,7 @@ return {
         {
             ["address"] = "灰港 月桂坡 6 号 旧宅侧门",
             ["appearCondition"] = {
-                ["dayMin"] = 10,
+                ["dayMin"] = 6,
             },
             ["attachments"] = {},
             ["body"] = [=[我和{{姑母}}守着月桂坡六号的旧宅。我叫塞西莉亚，今年十七岁，每日的功课除了去庭院里侍弄那些月桂树，便是替姑母核对账房送来的单子。我自小受过算术教育，算盘打得极快，可近来我念账单时总忍不住停顿，那些开支和进项的条目，一年比一年短了。
@@ -13808,11 +13808,11 @@ return {
                 },
             },
             ["reward"] = {
-                ["currency"] = 0,
+                ["currency"] = 100,
             },
             ["selfIntro"] = "来信人：塞西莉亚",
             ["senderId"] = "npc_cecilia",
-            ["title"] = "花圃比家徽好养",
+            ["title"] = "餐桌上的云雀",
         },
         {
             ["address"] = "灰港 月桂坡 6 号 旧宅侧门",
@@ -13828,7 +13828,7 @@ return {
         {
             ["address"] = "灰港 船匠巷 21 号 一层",
             ["appearCondition"] = {
-                ["dayMin"] = 12,
+                ["dayMin"] = 7,
             },
             ["attachments"] = {},
             ["body"] = [=[我叫莱昂，整整七十了。从前我是造大海船的船匠，如今退了下来，守在船匠巷的老屋里，接点修修补补的零活打发日子。年轻那会儿手底下过的是龙骨大木，现在刨的是碎板椅腿。手头这几件家伙什还是当年的老物件，钢磨薄了，木柄盘得发亮，用惯了，比这世上的人还听使唤。
@@ -13867,11 +13867,11 @@ return {
                 },
             },
             ["reward"] = {
-                ["currency"] = 0,
+                ["currency"] = 100,
             },
             ["selfIntro"] = "来信人：莱昂",
             ["senderId"] = "npc_leon",
-            ["title"] = "椅子不该跪着迎客",
+            ["title"] = "旧椅子与围巾",
         },
         {
             ["address"] = "灰港 船匠巷 21 号 一层",
@@ -13887,7 +13887,7 @@ return {
         {
             ["address"] = "灰港 漂布巷 9 号 后院二层",
             ["appearCondition"] = {
-                ["dayMin"] = 14,
+                ["dayMin"] = 8,
             },
             ["attachments"] = {},
             ["body"] = [=[我叫贝娅，三十一岁，在漂布巷租了间背阴的屋子，靠替石鸥客栈洗浆被褥过活。我和妹妹两个人挤这一间房，全靠我这双手从冷水和碱汤里挣出来的铜板交房租、买面包。我母亲从前在杂货铺帮过工，教过我一套笨办法记账：进项列一行，出项列一行，纸上的账，得认得清活人的脸。
@@ -13930,11 +13930,11 @@ return {
                 },
             },
             ["reward"] = {
-                ["currency"] = 0,
+                ["currency"] = 100,
             },
             ["selfIntro"] = "来信人：贝娅",
             ["senderId"] = "npc_bea",
-            ["title"] = "把工钱从下次里洗出来",
+            ["title"] = "石鸥客栈的旧账",
         },
         {
             ["address"] = "灰港 漂布巷 9 号 后院二层",
@@ -13950,7 +13950,7 @@ return {
         {
             ["address"] = "灰港 南门街 17 号 木门",
             ["appearCondition"] = {
-                ["dayMin"] = 16,
+                ["dayMin"] = 9,
             },
             ["attachments"] = {},
             ["body"] = [=[我叫马丁，今年二十九岁，在灰港当城镇守卫，家住南门街十七号。跟老婆和刚满四岁的丫头挤一个小院子。守了这几年夜哨，这双耳朵算是彻底练贼了，巷子口杂乱的皮靴声，哪一串是巡夜换防的弟兄，哪一声是心虚赶路的过客，我隔着两层土坯墙都能听得一清二楚。可这门站哨练出来的本事带回自己家里，实在不大讨人喜欢。
@@ -13992,11 +13992,11 @@ return {
                 },
             },
             ["reward"] = {
-                ["currency"] = 0,
+                ["currency"] = 100,
             },
             ["selfIntro"] = "来信人：马丁",
             ["senderId"] = "npc_martin",
-            ["title"] = "休假的脚步不用列队",
+            ["title"] = "院子里的皮靴",
         },
         {
             ["address"] = "灰港 南门街 17 号 木门",
@@ -14012,7 +14012,7 @@ return {
         {
             ["address"] = "灰港 北坡白桦庄园 账房",
             ["appearCondition"] = {
-                ["dayMin"] = 18,
+                ["dayMin"] = 10,
             },
             ["attachments"] = {},
             ["body"] = [=[我叫阿涅丝，四十五岁，守着北坡的白桦庄园，管着庄上的地租出入和四时用度。底下佃户的口粮、我和妹妹的衣食，全系在这些账目上。说白了，我这辈子大半的光阴，都在替这片地里流血流汗的人称量公道。
@@ -14074,11 +14074,11 @@ return {
                 },
             },
             ["reward"] = {
-                ["currency"] = 0,
+                ["currency"] = 100,
             },
             ["selfIntro"] = "来信人：阿涅丝",
             ["senderId"] = "npc_agnes",
-            ["title"] = "花是花，租是租",
+            ["title"] = "租契上的一行字",
         },
         {
             ["address"] = "灰港 北坡白桦庄园 账房",
@@ -14094,7 +14094,7 @@ return {
         {
             ["address"] = "灰港 榫木街 4 号 木作坊 后门",
             ["appearCondition"] = {
-                ["dayMin"] = 20,
+                ["dayMin"] = 11,
             },
             ["attachments"] = {},
             ["body"] = [=[我叫雅各布，今年三十四岁，在榫木街开着一间挂了行会铁牌的木作坊，手底下带着两个学徒。
@@ -14160,11 +14160,11 @@ return {
                 },
             },
             ["reward"] = {
-                ["currency"] = 0,
+                ["currency"] = 100,
             },
             ["selfIntro"] = "来信人：雅各布",
             ["senderId"] = "npc_jacob",
-            ["title"] = "汤可以喝",
+            ["title"] = "医馆的收条",
         },
         {
             ["address"] = "灰港 榫木街 4 号 木作坊 后门",
@@ -15124,12 +15124,7 @@ return {
             ["recipe"] = {
                 ["auxWordIds"] = {},
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_elias_sleep",
                 ["specialItemIds"] = {},
             },
@@ -15151,12 +15146,7 @@ return {
                     "word_candidate_elias_dream",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_elias_sleep",
                 ["specialItemIds"] = {},
             },
@@ -15178,12 +15168,7 @@ return {
                     "word_candidate_elias_forget",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_elias_sleep",
                 ["specialItemIds"] = {},
             },
@@ -15206,12 +15191,7 @@ return {
                     "word_candidate_elias_forget",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_elias_sleep",
                 ["specialItemIds"] = {},
             },
@@ -15234,12 +15214,7 @@ return {
                     "word_candidate_elias_happy",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_elias_sleep",
                 ["specialItemIds"] = {},
             },
@@ -15262,12 +15237,7 @@ return {
                     "word_candidate_elias_reason",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_elias_sleep",
                 ["specialItemIds"] = {},
             },
@@ -15288,10 +15258,6 @@ return {
                 ["auxWordIds"] = {},
                 ["equipmentId"] = "kit_old_cauldron",
                 ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
                     {
                         ["ingredientId"] = "ing_ashen_herb",
                         ["quantity"] = 1,
@@ -15320,10 +15286,6 @@ return {
                 ["equipmentId"] = "kit_old_cauldron",
                 ["ingredients"] = {
                     {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                    {
                         ["ingredientId"] = "ing_ashen_herb",
                         ["quantity"] = 1,
                     },
@@ -15347,16 +15309,7 @@ return {
             ["recipe"] = {
                 ["auxWordIds"] = {},
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n01_brave",
                 ["specialItemIds"] = {},
             },
@@ -15378,16 +15331,7 @@ return {
                     "word_candidate_n01_anger",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n01_brave",
                 ["specialItemIds"] = {},
             },
@@ -15409,16 +15353,7 @@ return {
                     "word_candidate_n01_trust",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n01_brave",
                 ["specialItemIds"] = {},
             },
@@ -15440,16 +15375,7 @@ return {
                     "word_candidate_n01_fear",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n01_brave",
                 ["specialItemIds"] = {},
             },
@@ -15471,16 +15397,7 @@ return {
                     "word_candidate_n01_curiosity",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n01_brave",
                 ["specialItemIds"] = {},
             },
@@ -15500,16 +15417,7 @@ return {
             ["recipe"] = {
                 ["auxWordIds"] = {},
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n02_happy",
                 ["specialItemIds"] = {},
             },
@@ -15531,16 +15439,7 @@ return {
                     "word_candidate_n02_fear",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n02_happy",
                 ["specialItemIds"] = {},
             },
@@ -15563,16 +15462,7 @@ return {
                     "word_candidate_n02_sadness",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n02_happy",
                 ["specialItemIds"] = {},
             },
@@ -15594,16 +15484,7 @@ return {
                     "word_candidate_n02_h2",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n02_happy",
                 ["specialItemIds"] = {},
             },
@@ -15625,16 +15506,7 @@ return {
                     "word_candidate_n02_suspicion",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n02_happy",
                 ["specialItemIds"] = {},
             },
@@ -15654,16 +15526,7 @@ return {
             ["recipe"] = {
                 ["auxWordIds"] = {},
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n03_k1",
                 ["specialItemIds"] = {},
             },
@@ -15685,16 +15548,7 @@ return {
                     "word_candidate_n03_fear",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n03_k1",
                 ["specialItemIds"] = {},
             },
@@ -15717,16 +15571,7 @@ return {
                     "word_candidate_e01_c1",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n03_k1",
                 ["specialItemIds"] = {},
             },
@@ -15748,16 +15593,7 @@ return {
                     "word_candidate_n03_c1",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n03_k1",
                 ["specialItemIds"] = {},
             },
@@ -15779,16 +15615,7 @@ return {
                     "word_candidate_n01_s2",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n03_k1",
                 ["specialItemIds"] = {},
             },
@@ -15808,16 +15635,7 @@ return {
             ["recipe"] = {
                 ["auxWordIds"] = {},
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n04_h1",
                 ["specialItemIds"] = {},
             },
@@ -15839,16 +15657,7 @@ return {
                     "word_candidate_n04_e1",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n04_h1",
                 ["specialItemIds"] = {},
             },
@@ -15871,16 +15680,7 @@ return {
                     "word_candidate_n01_a2",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n04_h1",
                 ["specialItemIds"] = {},
             },
@@ -15902,16 +15702,7 @@ return {
                     "word_candidate_n04_h2",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n04_h1",
                 ["specialItemIds"] = {},
             },
@@ -15934,16 +15725,7 @@ return {
                     "word_candidate_n04_s1",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n04_h1",
                 ["specialItemIds"] = {},
             },
@@ -15963,16 +15745,7 @@ return {
             ["recipe"] = {
                 ["auxWordIds"] = {},
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n05_a1",
                 ["specialItemIds"] = {},
             },
@@ -15994,16 +15767,7 @@ return {
                     "word_candidate_n05_q1",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n05_a1",
                 ["specialItemIds"] = {},
             },
@@ -16025,16 +15789,7 @@ return {
                     "word_candidate_n05_s1",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n05_a1",
                 ["specialItemIds"] = {},
             },
@@ -16056,16 +15811,7 @@ return {
                     "word_candidate_n05_t1",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n05_a1",
                 ["specialItemIds"] = {},
             },
@@ -16087,16 +15833,7 @@ return {
                     "word_candidate_n01_suspicion",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n05_a1",
                 ["specialItemIds"] = {},
             },
@@ -16116,16 +15853,7 @@ return {
             ["recipe"] = {
                 ["auxWordIds"] = {},
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n06_m1",
                 ["specialItemIds"] = {},
             },
@@ -16147,16 +15875,7 @@ return {
                     "word_candidate_n06_p1",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n06_m1",
                 ["specialItemIds"] = {},
             },
@@ -16179,16 +15898,7 @@ return {
                     "word_candidate_elias_fear",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n06_m1",
                 ["specialItemIds"] = {},
             },
@@ -16210,16 +15920,7 @@ return {
                     "word_candidate_elias_sleep_alt",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n06_m1",
                 ["specialItemIds"] = {},
             },
@@ -16241,16 +15942,7 @@ return {
                     "word_candidate_n06_a1",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n06_m1",
                 ["specialItemIds"] = {},
             },
@@ -16270,16 +15962,7 @@ return {
             ["recipe"] = {
                 ["auxWordIds"] = {},
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n07_a1",
                 ["specialItemIds"] = {},
             },
@@ -16301,16 +15984,7 @@ return {
                     "word_candidate_n07_s1",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n07_a1",
                 ["specialItemIds"] = {},
             },
@@ -16333,16 +16007,7 @@ return {
                     "word_candidate_n03_e1",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n07_a1",
                 ["specialItemIds"] = {},
             },
@@ -16364,16 +16029,7 @@ return {
                     "word_candidate_n07_f1",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n07_a1",
                 ["specialItemIds"] = {},
             },
@@ -16395,16 +16051,7 @@ return {
                     "word_candidate_n07_a2",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n07_a1",
                 ["specialItemIds"] = {},
             },
@@ -16424,16 +16071,7 @@ return {
             ["recipe"] = {
                 ["auxWordIds"] = {},
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n08_r1",
                 ["specialItemIds"] = {},
             },
@@ -16455,16 +16093,7 @@ return {
                     "word_candidate_n08_c1",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n08_r1",
                 ["specialItemIds"] = {},
             },
@@ -16487,16 +16116,7 @@ return {
                     "word_candidate_n08_c2",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n08_c1",
                 ["specialItemIds"] = {},
             },
@@ -16518,16 +16138,7 @@ return {
                     "word_candidate_n08_h1",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n08_r1",
                 ["specialItemIds"] = {},
             },
@@ -16549,16 +16160,7 @@ return {
                     "word_candidate_n08_a1",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n08_r1",
                 ["specialItemIds"] = {},
             },
@@ -16578,16 +16180,7 @@ return {
             ["recipe"] = {
                 ["auxWordIds"] = {},
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n09_q1",
                 ["specialItemIds"] = {},
             },
@@ -16609,16 +16202,7 @@ return {
                     "word_candidate_n09_suspicion",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n09_q1",
                 ["specialItemIds"] = {},
             },
@@ -16641,16 +16225,7 @@ return {
                     "word_candidate_n09_a1",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n09_q1",
                 ["specialItemIds"] = {},
             },
@@ -16672,16 +16247,7 @@ return {
                     "word_candidate_n09_f1",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n09_q1",
                 ["specialItemIds"] = {},
             },
@@ -16704,16 +16270,7 @@ return {
                     "word_candidate_n09_t2",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n09_q1",
                 ["specialItemIds"] = {},
             },
@@ -16733,16 +16290,7 @@ return {
             ["recipe"] = {
                 ["auxWordIds"] = {},
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n10_recall",
                 ["specialItemIds"] = {},
             },
@@ -16764,16 +16312,7 @@ return {
                     "word_candidate_n10_anger",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n10_recall",
                 ["specialItemIds"] = {},
             },
@@ -16795,16 +16334,7 @@ return {
                     "word_candidate_n10_fear",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n10_recall",
                 ["specialItemIds"] = {},
             },
@@ -16826,16 +16356,7 @@ return {
                     "word_candidate_n09_p2",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n10_recall",
                 ["specialItemIds"] = {},
             },
@@ -16858,16 +16379,7 @@ return {
                     "word_candidate_elias_trust",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_night_dew",
-                        ["quantity"] = 1,
-                    },
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n10_recall",
                 ["specialItemIds"] = {},
             },
@@ -16898,7 +16410,7 @@ return {
                     ["stars"] = 3,
                 },
                 ["sideEffects"] = {},
-                ["stability"] = 1,
+                ["stability"] = 0,
                 ["tiers"] = {
                     ["calm"] = "微弱",
                     ["dream"] = "微弱",
@@ -16911,12 +16423,7 @@ return {
             ["recipe"] = {
                 ["auxWordIds"] = {},
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_elias_sleep",
                 ["specialItemIds"] = {},
             },
@@ -16944,7 +16451,7 @@ return {
                     ["stars"] = 3,
                 },
                 ["sideEffects"] = {},
-                ["stability"] = 1,
+                ["stability"] = 0,
                 ["tiers"] = {
                     ["calm"] = "微弱",
                     ["dream"] = "明显",
@@ -16959,12 +16466,7 @@ return {
                     "word_candidate_elias_dream",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_elias_sleep",
                 ["specialItemIds"] = {},
             },
@@ -16995,7 +16497,7 @@ return {
                     ["stars"] = 2,
                 },
                 ["sideEffects"] = {},
-                ["stability"] = 1,
+                ["stability"] = 0,
                 ["tiers"] = {
                     ["calm"] = "微弱",
                     ["dream"] = "微弱",
@@ -17013,12 +16515,7 @@ return {
                     "word_candidate_elias_forget",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_elias_sleep",
                 ["specialItemIds"] = {},
             },
@@ -17049,7 +16546,7 @@ return {
                     ["stars"] = 1,
                 },
                 ["sideEffects"] = {},
-                ["stability"] = 1,
+                ["stability"] = 0,
                 ["tiers"] = {
                     ["calm"] = "微弱",
                     ["dream"] = "明显",
@@ -17068,12 +16565,7 @@ return {
                     "word_candidate_elias_forget",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_elias_sleep",
                 ["specialItemIds"] = {},
             },
@@ -17104,7 +16596,7 @@ return {
                     ["stars"] = 3,
                 },
                 ["sideEffects"] = {},
-                ["stability"] = 1,
+                ["stability"] = 0,
                 ["tiers"] = {
                     ["calm"] = "微弱",
                     ["dream"] = "明显",
@@ -17123,12 +16615,7 @@ return {
                     "word_candidate_elias_happy",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_elias_sleep",
                 ["specialItemIds"] = {},
             },
@@ -17158,7 +16645,7 @@ return {
                     ["stars"] = 3,
                 },
                 ["sideEffects"] = {},
-                ["stability"] = 1,
+                ["stability"] = 0,
                 ["tiers"] = {
                     ["calm"] = "微弱",
                     ["dream"] = "明显",
@@ -17176,12 +16663,7 @@ return {
                     "word_candidate_elias_reason",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                },
+                ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_elias_sleep",
                 ["specialItemIds"] = {},
             },
@@ -17216,7 +16698,7 @@ return {
                         ["ruleId"] = "se_dream",
                     },
                 },
-                ["stability"] = 1,
+                ["stability"] = 0,
                 ["tiers"] = {
                     ["calm"] = "微弱",
                     ["dream"] = "微弱",
@@ -17230,10 +16712,6 @@ return {
                 ["auxWordIds"] = {},
                 ["equipmentId"] = "kit_old_cauldron",
                 ["ingredients"] = {
-                    {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
                     {
                         ["ingredientId"] = "ing_ashen_herb",
                         ["quantity"] = 1,
@@ -17276,7 +16754,7 @@ return {
                         ["ruleId"] = "se_dream",
                     },
                 },
-                ["stability"] = 1,
+                ["stability"] = 0,
                 ["tiers"] = {
                     ["calm"] = "微弱",
                     ["dream"] = "微弱",
@@ -17296,10 +16774,6 @@ return {
                 ["equipmentId"] = "kit_old_cauldron",
                 ["ingredients"] = {
                     {
-                        ["ingredientId"] = "ing_sea_salt",
-                        ["quantity"] = 1,
-                    },
-                    {
                         ["ingredientId"] = "ing_ashen_herb",
                         ["quantity"] = 1,
                     },
@@ -17314,9 +16788,9 @@ return {
                 ["canShip"] = true,
                 ["durationHours"] = 8,
                 ["effects"] = {
-                    ["calm"] = 0.05,
-                    ["dream"] = 0.1,
-                    ["sleep"] = 1.0,
+                    ["calm"] = 0.057499999999999996,
+                    ["dream"] = 0.11499999999999999,
+                    ["sleep"] = 1.15,
                 },
                 ["facts"] = {
                     "e01_result_rested",
@@ -17325,7 +16799,7 @@ return {
                 ["followupFragments"] = {
                     "frag_e01_result_rested",
                 },
-                ["onsetDelayHours"] = 1,
+                ["onsetDelayHours"] = 2,
                 ["rating"] = {
                     ["ruleId"] = "rating_e01_result_rested",
                     ["stars"] = 3,
@@ -17364,9 +16838,9 @@ return {
                 ["canShip"] = true,
                 ["durationHours"] = 8,
                 ["effects"] = {
-                    ["calm"] = 0.05,
-                    ["dream"] = 0.1,
-                    ["sleep"] = 1.0,
+                    ["calm"] = 0.07500000000000001,
+                    ["dream"] = 0.15000000000000002,
+                    ["sleep"] = 1.5,
                 },
                 ["facts"] = {
                     "e01_result_rested",
@@ -17375,19 +16849,19 @@ return {
                 ["followupFragments"] = {
                     "frag_e01_result_rested",
                 },
-                ["onsetDelayHours"] = 0,
+                ["onsetDelayHours"] = 2,
                 ["rating"] = {
                     ["ruleId"] = "rating_e01_result_rested",
                     ["stars"] = 3,
                 },
                 ["sideEffects"] = {},
-                ["stability"] = -2,
+                ["stability"] = 0,
                 ["tiers"] = {
                     ["calm"] = "微弱",
                     ["dream"] = "微弱",
-                    ["sleep"] = "明显",
+                    ["sleep"] = "强烈",
                 },
-                ["unstable"] = true,
+                ["unstable"] = false,
             },
             ["id"] = "G4",
             ["purpose"] = "v02首单登记配方及不同原料验收",
@@ -17406,26 +16880,32 @@ return {
         },
     },
     ["sourceHashes"] = {
-        ["docs/文案/供给验算表_v02.md"] = "c24f30f7e10e5d13cda999883b56873acb30db5e8d1fb678915625b3a4a5a762",
+        ["docs/文案/供给验算表_v02.md"] = "8c170d5a045b91a4db643869ac9fb829c39c73d9280990abe09b45cfb7432baf",
         ["docs/文案/分支条件表_v02.md"] = "f832076207f49555f593eaaeaf29ce1a65d3474b4b13555c46f4a628cf6ca765",
-        ["docs/文案/开场与首封来信_定稿_v01.md"] = "f592916fbdd9e44c223b180504b578ccf39977219d54701662f6a02493cdbc95",
-        ["docs/文案/普通订单/N01_去做抄写员学徒_后续定稿_v01.md"] = "f0738e97d16f2020e2fbf8db74485d7db10923581812d79e4e16c8bc83963d43",
-        ["docs/文案/普通订单/N01_去做抄写员学徒_来信定稿_v01.md"] = "9b7ca81ebdde45dc0306ef786bc6a35de8ccff9b2426c6936b68b6f5b5280dc3",
-        ["docs/文案/普通订单/N02_两个人的晚饭_后续定稿_v01.md"] = "f53ddb7d2bb7767317b65534b9e847e71e26cde997eba529545c9a991aad4cd8",
+        ["docs/文案/开场与首封来信_定稿_v01.md"] = "c85b88751b6bf89d516e14e5a365401869b7583ca6a98e69b09898e9d9e9eb41",
+        ["docs/文案/故事标题表_v01.json"] = "b149f5f50f4909bb0adb8cda2daf2884fa807ac6ab4e99bfc3e3a907af925406",
+        ["docs/文案/普通订单/N01_去做抄写员学徒_后续定稿_v01.md"] = "1d0a26dffc028ff0020189edc48572c7b20cb1c3a2652ead57bbe26f0dc02c04",
+        ["docs/文案/普通订单/N01_去做抄写员学徒_来信定稿_v01.md"] = "eea10896cae1169bf0b6a6692a6ef8ac3dcbcd9b4876673e219d2e01c4699aef",
+        ["docs/文案/普通订单/N02_两个人的晚饭_后续定稿_v01.md"] = "9d16ff5032be2d659b7031d2910ae3c0e592474ee735ff31529252d4850b620b",
         ["docs/文案/普通订单/N02_两个人的晚饭_来信定稿_v01.md"] = "ffdc237d1e0f1f94e3e33342f6b99b0a2a46b5ccfe6975dd495e316c8e86f268",
-        ["docs/文案/普通订单/N03_一袋胡萝卜的远行_定稿_v01.md"] = "3ad6e8738536d24f46bf1d3c1f70caecdf4f64833484d3b6b9acf8db47d311de",
-        ["docs/文案/普通订单/N04_钟声过后还有一口甜_定稿_v01.md"] = "a4448bdffc267f700298c8e4c6c4e1d855ee7f151f1a25be6dae97227a5e4e95",
-        ["docs/文案/普通订单/N05_花圃比家徽好养_定稿_v01.md"] = "938cf893f1039197b64441d4e98d6213d750e20c636462fc56020b3522db6778",
-        ["docs/文案/普通订单/N06_椅子不该跪着迎客_定稿_v01.md"] = "2d229a0d7acbce6a87aa822297f4fd8c2593552ce0bd79d40b477e06659f07aa",
-        ["docs/文案/普通订单/N07_把工钱从下次里洗出来_定稿_v01.md"] = "2c0699f8df1b5254f35d5c08f1d4254b9e5c745b562667d49be89d55eb645a41",
-        ["docs/文案/普通订单/N08_休假的脚步不用列队_后续定稿_v01.md"] = "2731afa4d30487816c7950db07b9bdd66fbedcc55c8cd773804a015825211032",
-        ["docs/文案/普通订单/N08_休假的脚步不用列队_来信定稿_v01.md"] = "3fc6d93350bff1ce4991f1cd7ca6987f3d1851534a929d432baff1b88c95a4c9",
-        ["docs/文案/普通订单/N09_花是花，租是租_后续定稿_v01.md"] = "819ecaf63e91fc2b23d5a5fad04c364b231ed373dc544976cb37e1fdbb287b52",
-        ["docs/文案/普通订单/N09_花是花，租是租_来信定稿_v01.md"] = "a0c562f554f0bc65c5a49ee32247e7c4c4b05ab5948bb3e1d913db607798d585",
-        ["docs/文案/普通订单/N10_汤可以喝_后续定稿_v01.md"] = "e446ae6dcf54aacba605dab33f4f4a06abbe1f6b63c306340f2c9be0342df16f",
-        ["docs/文案/普通订单/N10_汤可以喝_来信定稿_v01.md"] = "42373e5d77acab36bb055542a2bf261c4c8d943b8a41f95413d39e42a1f68873",
-        ["docs/文案/普通订单/首单_埃利亚斯_后续定稿_v01.md"] = "28d8f37ff36a04418445cad0d53d4c1e93836e514fe244b0e61ab7985ac75802",
+        ["docs/文案/普通订单/N03_一袋胡萝卜的远行_定稿_v01.md"] = "d116177e336140958511c447cf2c71804c8d80125ae7db2108b16f7355437c5d",
+        ["docs/文案/普通订单/N04_钟声过后还有一口甜_定稿_v01.md"] = "0a3acab187580a0b6ebc888773d8a19c287d3f782eb242a641b2400d193b2d04",
+        ["docs/文案/普通订单/N05_花圃比家徽好养_定稿_v01.md"] = "e5a62c7812fedb3c54f94923db198738ab4d7278ee3b6ee99e62486fdaaf6ead",
+        ["docs/文案/普通订单/N06_椅子不该跪着迎客_定稿_v01.md"] = "71f754340f7bf585ca54f150b9d4e93b1cbc0d13f68e75f3e53f4534c80efa22",
+        ["docs/文案/普通订单/N07_把工钱从下次里洗出来_定稿_v01.md"] = "7e527727255e01f583bdd845e22dbd0f7209405b20b03137aae4b67f0b111f53",
+        ["docs/文案/普通订单/N08_休假的脚步不用列队_后续定稿_v01.md"] = "3cccd415d065349bd77ea2d8b78d2bdf55ebaedfe91e6456ae93565ceb4d57ab",
+        ["docs/文案/普通订单/N08_休假的脚步不用列队_来信定稿_v01.md"] = "5abf6d34e18f00c5266f11130aff1cb5b2e54f77674c40d9c8583cb0cbc6da2f",
+        ["docs/文案/普通订单/N09_花是花，租是租_后续定稿_v01.md"] = "3640abc43f22ebd9cd3cb351a13b5bfeef2031fa1afb78e926068ae02c23f0ff",
+        ["docs/文案/普通订单/N09_花是花，租是租_来信定稿_v01.md"] = "27cb19cb7bb89486b1417f564b0f90923c7203f195949774a8ea3f1f9abbe692",
+        ["docs/文案/普通订单/N10_汤可以喝_后续定稿_v01.md"] = "77cc83a27527d44084ea64d6fdaaf75a865bd4a2727505bf31351a452bfa5b37",
+        ["docs/文案/普通订单/N10_汤可以喝_来信定稿_v01.md"] = "54536ef70c89ae854a0c9d85ce4ac2e828a96afda1da8c103b0169bf1f6a634a",
+        ["docs/文案/普通订单/首单_埃利亚斯_后续定稿_v01.md"] = "f75c4bfa57a04cdf6cb85db58b11e30aef8712df81e65f79ae6a728e804dd66b",
         ["docs/文案/词条数值表_v02.md"] = "a7790f178dfc24aa806fd59336a27eb18074120b3ca9394843069c363146d2ad",
+        ["scripts/data/furniture.lua"] = "1a5bdc9993e3d98e06b91738f9bbb7c1444fe87f8f7f281a67cffb2bd585aa01",
+        ["scripts/data/ingredients.lua"] = "4b72d3e8d33e8dd045fdfe1aec318355bb42e85e2869b16dfd4afa3616d90cab",
+        ["scripts/data/release.lua"] = "a78c6574f8413823f308f232feb09616f654604f1845ccf5e007418bea5228b8",
+        ["scripts/data/stage1.lua"] = "70c396a2a6a40d29ad39a6a547f60567d222ab0a4febdee14554d97a33033132",
+        ["scripts/data/synthesis.lua"] = "185172cd8a5c5b782a96b78015d145b09787929bea8baa8889fc9e67dd05a68a",
     },
     ["words"] = {
         {

@@ -11,3 +11,5 @@
 原生预览仍报告既有DaySpecularHDR.dds和themis_x64.dll错误；未出现此次Lua运行异常。原生探针验证完成后关闭开发标记。演出尚待手机实机确认。
 
 交付：复用C:/Users/liliy/.codex/worktrees/shop-art-preview/To the Human World的main，先Maker官方提交构建，再同步同一提交到GitHub main，最后生成测试二维码。提交/构建/二维码回执以工具实际返回为准；本记录写入时尚未远端提交。
+
+回执：Maker官方提交0f91e2863a5985f12b2853b75ccbb94684656fbe并远端构建成功，测试二维码已生成。GitHub push被fetch-first拒绝；读取远端81baa45并用merge-tree做只读合并检查，AppView.lua与另一组炉灶推拉镜头存在冲突，未实际合并、未改写索引或覆盖远端。手机包不受GitHub同步失败影响。runtime watcher成功轮询、连续失败0；回执见docs/验证/evidence/paper-consistency-r2/delivery.json。本段只记录于开发工作区，没有触发第二次远端构建。

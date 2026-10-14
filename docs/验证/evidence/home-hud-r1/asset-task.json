@@ -1,0 +1,40 @@
+{
+  "request": {
+    "target_dir": "D:/To the Human World",
+    "images": [
+      {
+        "name": "海港UI_旧信纸签_v01",
+        "aspect_ratio": "3:2",
+        "target_size": "768x256",
+        "transparent": true,
+        "reference_images": [
+          "assets/image/home-entry-r3/background.png"
+        ],
+        "prompt": "用参考图片仅参考治愈油画海港小屋的笔触、暖木头与旧信纸风格，不画场景。输出供横屏手机游戏UI使用的单个空白底板素材，正面平视，横长方形，主体填满画布约96%，周围极少透明留边。中央干净、均匀、明亮，可放置动态深褐色中文。无文字、无字母、无符号、无图标、无人、无手、无多个面板、无背景环境。真实RGBA透明背景，不画棋盘格。边缘细节低调，能九宫格伸缩；不是现代圆角系统控件。材质：一张横向奶油白旧信纸签，纸纤维和轻微磨损边缘，极薄黄褐边，纸面米白，纹理淡而细。纸主体完整，不卷曲、不撕大口、无绳子、无钉子、无蜡封，形状近似直边长方形。"
+      },
+      {
+        "name": "海港UI_浅木牌按钮_v01",
+        "aspect_ratio": "3:2",
+        "target_size": "768x256",
+        "transparent": true,
+        "reference_images": [
+          "assets/image/home-entry-r3/background.png"
+        ],
+        "prompt": "用参考图片仅参考治愈油画海港小屋的笔触、暖木头与旧信纸风格，不画场景。输出供横屏手机游戏UI使用的单个空白底板素材，正面平视，横长方形，主体填满画布约96%，周围极少透明留边。中央干净、均匀、明亮，可放置动态深褐色中文。无文字、无字母、无符号、无图标、无人、无手、无多个面板、无背景环境。真实RGBA透明背景，不画棋盘格。边缘细节低调，能九宫格伸缩；不是现代圆角系统控件。材质：一块浅蜂蜜色木牌，朴素的磨圆四角、细黄铜色包边，油画笔触，细淡木纹，中央浅而无高对比木节。与小屋旧木家具协调，中央方便叠加深褐文字。无钉子、无绳子、无支架、无立体大阴影。"
+      }
+    ]
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "tool call error: tool call failed for `taptap-maker/batch_generate_images`\n\nCaused by:\n    timed out awaiting tools/call after 300s"
+      }
+    ],
+    "isError": true
+  },
+  "localDeliveryVerified": false,
+  "upstreamCompletion": "unknown",
+  "retries": 0,
+  "uiFallback": "native UI paper/wood palette; no missing PNG references"
+}

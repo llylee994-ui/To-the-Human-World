@@ -112,18 +112,20 @@ function T.RunSchema(schema)
     end
     local final=x.state.GetSnapshot()
     assert(final.live.gameFlow.deliveredOrders==11)
-    assert(final.live.economy.currency==146,"保守供给账30+240-124=146")
+    assert(final.live.economy.currency==1130,"首发无料基础路线30+1100=1130")
     local used,total=0,0
     for _,v in pairs(final.live.wordTokens.byId) do total=total+1;if not v.available then used=used+1 end end
     assert(total==61 and used==11)
     local cost=0;for _,p in ipairs(final.live.economy.shopPurchases) do cost=cost+p.unitPrice*p.quantity end
-    assert(cost==124)
-    local forged=U.Copy(final)
+    assert(cost==0)
+    -- 基础登记锅无料；单独真实采购再验证采购时间防伪，避免空循环失去覆盖。
+    must(x.state.Shop({ingredientId="ing_sea_salt",quantity=1}))
+    local forged=x.state.GetSnapshot()
     for _,p in ipairs(forged.live.economy.shopPurchases) do
         if p.afterDeliveredOrders>0 then p.day=1;break end
     end
     assert(not x.order.ValidateEnvelope(forged).ok,"已发货后的采购不能伪造为首日购买")
-    print("[NumericV02Flow] schema="..schema.." PASS "..count.." registration flows; real 11-order chain, 61 cards, consumed11, purchases124, balance146")
+    print("[NumericV02Flow] schema="..schema.." PASS "..count.." registration flows; real 11-order chain, 61 cards, consumed11, purchases0, balance1130; separate purchase audit")
     return true
 end
 function T.Run() return T.RunSchema(2) end

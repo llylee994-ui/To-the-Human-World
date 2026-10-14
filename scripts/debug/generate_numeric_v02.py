@@ -83,9 +83,24 @@ def lua(value, level=0):
 
 def compile_pack():
     words, sources, rules, registry, paths = load_sources()
+    # 读取实际 Lua 配置，不用正则复制另一个版本/订单顺序来源。
+    import sys
+    sys.path.insert(0, str(ROOT / '.tmp/b1-python'))
+    from lupa.lua54 import LuaRuntime
+    runtime = LuaRuntime(unpack_returned_tuples=True)
+    runtime.execute('package.path = ... .. "/scripts/?.lua;" .. package.path', ROOT.as_posix())
+    release = runtime.eval('require')("data.release")
+    if isinstance(release, tuple):
+        release = release[0]
+    order_ids = [release.requiredOrderIds[i] for i in range(1, len(release.requiredOrderIds) + 1)]
+    expected_ids = ['letter_pa_01'] + ['letter_' + oid.lower() for oid in ORDER_IDS[1:]]
+    assert order_ids == expected_ids, '首发必需订单顺序与正文包不一致'
+    title_path = DOCS / '故事标题表_v01.json'
+    titles = json.loads(title_path.read_text(encoding='utf-8'))
     pack = {k: [] for k in ['words', 'letters', 'npcs', 'directRules', 'factExclusionGroups', 'fragments', 'followupTemplates', 'orderRatings', 'recipes']}
     pack['words'] = list(words.values())
-    inputs = set(paths)
+    inputs = set(paths) | {title_path, ROOT / 'scripts/data/release.lua', ROOT / 'scripts/data/furniture.lua',
+                          ROOT / 'scripts/data/ingredients.lua', ROOT / 'scripts/data/synthesis.lua', ROOT / 'scripts/data/stage1.lua'}
     cases = []
     for index, oid in enumerate(ORDER_IDS):
         rows = rules[oid]['exclusiveBranches']
@@ -104,12 +119,13 @@ def compile_pack():
             paragraphs[loc['paragraph']] = p[:loc['start']] + '{{' + words[cid]['displayText'] + '}}' + p[loc['end']:]
         marked = clean('\n\n'.join(paragraphs))
         address = raw.splitlines()[-1]
-        title = source_path.name.split('_')[1] if oid != 'E01' else '码头来的第一封信'
+        title = titles['ordinaryLetters'][oid]
         description = rules[oid]['requirement']['desc'].replace('（候选）', '').replace('（候选要求）', '').replace(oid + ' ', '')
         requirement = {**rules[oid]['requirement'], 'desc': description}
         assert requirement['conditions'] == [] and requirement['forbiddenEffects'] == []
-        day = 1 if index == 0 else 2 * index
+        day = index + 1
         reward = registry['shop']['rewardByOrder'].get(oid, registry['shop']['laterRewardForConservativeCheck'])
+        assert reward == release.orderReward, (oid, '报酬来源与首发配置不一致')
         pack['letters'].extend([
             dict(id=letter_id, senderId=npc_id, kind='order', cuttable=True, bottleType='normal', title=title,
                  selfIntro='来信人：'+NAMES[index], body=marked, address=address, attachments=[],
@@ -167,7 +183,8 @@ def compile_pack():
             fragments.append(fid)
             pack['fragments'].append(dict(id=fid, templateId=tpl, kind='key', priority=0, requiresFacts=[branch],
                 excludesFacts=[], coversFacts=[branch], overrides=[], text=clean(text)))
-            feedback = heading.split('｜',1)[-1]
+            # Story headings are editable titles; evaluation wording is independent.
+            feedback = titles['ratingFeedback'].get('rating_'+branch, heading.split('｜',1)[-1])
             pack['orderRatings'].append(dict(id='rating_'+branch, ratingSetId=rating_set, priority=0, stars=row['stars'],
                 requiresFacts=[branch], excludesFacts=[], feedback=feedback))
         pack['followupTemplates'].append(dict(id=tpl, letterId=letter_id+'_followup', opening='', closing='',
@@ -183,10 +200,10 @@ def compile_pack():
             cases.append(dict(**entry, sources=[{'positionId':c, 'wordId':words[c]['id'], 'letterId':'letter_pa_01' if c[:3]=='E01' else 'letter_'+c[:3].lower()} for c in [r['main']]+r['aux']]))
     # Git/Windows可切换CRLF；哈希使用统一LF的UTF-8正文，避免换行格式造成生成物过期。
     pack['sourceHashes'] = {str(p.relative_to(ROOT)).replace('\\','/'): hashlib.sha256(p.read_text(encoding='utf-8').encode('utf-8')).hexdigest() for p in sorted(inputs)}
-    pack['sampleCases'] = make_samples(pack, rules)
+    pack['sampleCases'] = make_samples(pack, rules, release.contentVersion)
     return pack, cases
 
-def make_samples(pack, rules):
+def make_samples(pack, rules, content_version):
     # 生成首单结构验收数据，正式回归另读三表独立预期，不复用此计算。
     import sys
     sys.path.insert(0, str(ROOT/'.tmp/b1-python'))
@@ -208,7 +225,7 @@ def make_samples(pack, rules):
         return v
     stage=require('data.stage1')
     c=lt(dict(words=pack['words'],effects=py(require('data.effects')),synthesis=py(require('data.synthesis')),
-              equipment=py(require('data.equipment')),ingredients=py(require('data.ingredients')),attributeProfiles=py(stage.attributeProfiles),stage1=py(stage),contentVersion='story-numeric-v02-r1'))
+              equipment=py(require('data.equipment')),ingredients=py(require('data.ingredients')),attributeProfiles=py(stage.attributeProfiles),stage1=py(stage),contentVersion=content_version))
     pmod=require('systems.Potion')
     byword={w['id']:w for w in pack['words']}
     equipment=py(c.equipment[1]);ingredients={v.id:py(v) for _,v in c.ingredients.items()}

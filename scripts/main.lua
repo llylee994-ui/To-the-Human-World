@@ -86,7 +86,7 @@ function Start()
         sessionSave = require("debug.B6UncertainStorage").New(SaveSystem, b6Request_)
     end
     session_ = GameSession.New(Data,{gameFlow=GameFlow,saveSystem=sessionSave,eventBus=EventBus,dataReady=dataReady,dataError=dataError,
-        targetSchema=b6Request_~="off" and 2 or 3}) -- 仅显式旧 B6 验收入口保留 schema 2。
+        targetSchema=b6Request_~="off" and 2 or (Data.release and 4 or 3)}) -- 首发schema4，旧内容schema3，显式旧B6为schema2。
     gameState_ = session_.state
 
     -- 仅无存档时新开局；配置/读档失败保留诊断并锁定写入和推进。

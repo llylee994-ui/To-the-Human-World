@@ -27,7 +27,7 @@ function Economy.New(content)
         local valid = U.Validate(s)
         if not valid.ok then return valid end
         valid = U.Keys(s, {currency=true,ingredients=true,specialItems=true,ownedEquipmentIds=true,shopPurchases=content.shop~=nil,
-            ownedFurnitureIds=content.furniture~=nil,furniturePurchases=content.furniture~=nil}, "economy")
+            ownedFurnitureIds=content.furniture~=nil,furniturePurchases=content.furniture~=nil,itemPurchases=content.release~=nil}, "economy")
         if not valid.ok then return valid end
         if not U.Integer(s.currency) or type(s.ingredients) ~= "table" or type(s.specialItems) ~= "table"
             or type(s.ownedEquipmentIds) ~= "table" then
@@ -35,6 +35,11 @@ function Economy.New(content)
         end
         local catalog=furnitureCatalog()
         if not catalog.ok then return catalog end
+        if s.itemPurchases~=nil then
+            if s.ownedFurnitureIds~=nil or s.furniturePurchases~=nil then return U.Fail("ECONOMY_INVALID","itemPurchases","首发采购账不能同时包含旧家具集合") end
+            local permanent=require("systems.ReleaseLedger").New(content).Validate(s.itemPurchases)
+            if not permanent.ok then return permanent end
+        end
         -- 两字段同时缺省是旧存档；保留原形，不能改写已冻结的订单基准。
         if s.ownedFurnitureIds~=nil or s.furniturePurchases~=nil then
             if type(s.ownedFurnitureIds)~="table" or not U.Array(s.furniturePurchases) then

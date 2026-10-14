@@ -19,7 +19,7 @@ function GameState.New(options)
     local activeSlot
     local letters = options.letters or (options.adapters and options.adapters.letters)
     local words = options.wordTokens or (options.adapters and options.adapters.wordTokens)
-    local schemaOptions = {contentVersion=options.contentVersion,synthesisVersion=options.synthesisVersion,economy=options.economy,salvageDailyLimit=options.salvageDailyLimit}
+    local schemaOptions = {content=options.content,contentVersion=options.contentVersion,synthesisVersion=options.synthesisVersion,economy=options.economy,salvageDailyLimit=options.salvageDailyLimit}
     if letters and words and type(letters.ResolveSource)=="function" and type(words.PlanCut)=="function" then
         schemaOptions.letters, schemaOptions.wordTokens = letters, words
     end
@@ -50,7 +50,10 @@ function GameState.New(options)
     local function prepare(data, schema)
         if schema == 1 then return validateV1(data) end
         local valid
-        if schema==3 then valid=Schema.ValidateV3(data,schemaOptions) else valid=Schema.ValidateV2(data,schemaOptions) end
+        if schema==4 then valid=Schema.ValidateV4(data,schemaOptions)
+        elseif schema==3 then valid=Schema.ValidateV3(data,schemaOptions)
+        elseif schema==2 then valid=Schema.ValidateV2(data,schemaOptions)
+        else return U.Fail("SAVE_UNSUPPORTED","schema","不支持的结构版本") end
         if not valid.ok then return valid end
         for _, key in ipairs(BLOCKS) do
             local adapter = options.adapters and options.adapters[key]
@@ -121,6 +124,10 @@ function GameState.New(options)
             if targetSchema == 1 then data = {gameFlow=flow.ValidateSnapshot(nil).value}
             elseif options.initialState then data = U.Copy(options.initialState); schema = targetSchema
             else return fail("migration_required", U.Error("CONFIG_MISSING", "initialState", "缺少完整开局配置")) end
+        elseif targetSchema==4 and schema==3 then
+            local result=require("core.SaveMigrations").ToV4(data,options.content,options.salvageDailyLimit)
+            if not result.ok then return fail("migration_required",result.error) end
+            data,schema,migrated=result.value,4,true
         elseif targetSchema==3 and (schema==1 or schema==2) then
             local result=require("core.SaveMigrations").ToV3(data,schema,options.content,options.salvageDailyLimit,options.initialState)
             if not result.ok then return fail("migration_required",result.error) end
@@ -140,10 +147,10 @@ function GameState.New(options)
             local migration=code=="RESTORER_MISSING" or code=="CONTENT_VERSION_MISMATCH" or code=="SYNTHESIS_VERSION_MISMATCH"
             return fail(migration and "migration_required" or "corrupt",checked.error)
         end
-        if migrated and targetSchema==3 then
+        if migrated and (targetSchema==3 or targetSchema==4) then
             activeSlot=slot -- 失败后重试仍绑定本次迁移槽，不退回默认槽。
             busy=true
-            local called,saved,problem=pcall(save.Save,slot,checked.value,3)
+            local called,saved,problem=pcall(save.Save,slot,checked.value,targetSchema)
             busy=false
             if not called then
                 activeSlot=slot
@@ -162,6 +169,7 @@ function GameState.New(options)
         locked = false
         last = {status=migrated and "migrated" or status.status,schema=schema}
         if migrated and schema==3 then last.migrationNotice="旧档已升级；无正文的旧试做不补历史，旧选料需重选，今日捕捞额度保守用尽，明日恢复。" end
+        if migrated and schema==4 then last.migrationNotice="同内容存档已升级；家居流水、草稿和试做记录已保留。" end
         busy=true
         local notified,problem=pcall(options.eventBus.Emit,"SaveLoaded",U.Copy(last))
         busy=false
@@ -227,13 +235,15 @@ function GameState.New(options)
         local phase=envelope and envelope.currentOrder and envelope.currentOrder.phase or "idle"
         if not api.CanMutate() then enabled,code,message=false,"STATE_LOCKED","请先读取存档排除配置或提交错误"
         elseif name=="PurchaseFurniture" and (targetSchema<2 or options.furnitureEnabled~=true) then enabled,code,message=false,"NOT_IMPLEMENTED","家具商店尚未接入"
-        elseif targetSchema==3 then
+        elseif name=="PurchaseHomeItem" and (targetSchema~=4 or not options.content or not options.content.release) then enabled,code,message=false,"NOT_IMPLEMENTED","首发采购账尚未接入"
+        elseif (targetSchema==3 or targetSchema==4) then
             local order=envelope and envelope.currentOrder
             if phase=="pending" and not ({GetView=true,Save=true,Preview=true,Confirm=true,Reset=true})[name] then
                 enabled,code,message=false,"ORDER_LOCKED","请先发货或重置本次结果"
             elseif name=="BeginBrew" or name=="CancelBrew" then enabled,code,message=false,"DEPRECATED_COMMAND","返回桌前仅导航；选料请更新草稿"
             elseif name=="ClaimAttachment" or (name=="Shop" and options.shopEnabled~=true) then enabled,code,message=false,"NOT_IMPLEMENTED","操作尚未接入"
             elseif name=="NextDay" and order and not require("systems.RecipeDraft").IsEmpty(order.draft) then enabled,code,message=false,"DRAFT_NOT_EMPTY","请先清空投料再跨天"
+            elseif targetSchema==4 and (name=="PurchaseHomeItem" or name=="PurchaseFurniture") and order and not require("systems.RecipeDraft").IsEmpty(order.draft) then enabled,code,message=false,"DRAFT_NOT_EMPTY","请先清空投料再购置家居"
             elseif (name=="Confirm" and phase~="pending") or ((name=="Preview" or name=="UpdateDraft" or name=="Reset") and phase=="idle") or (name=="Accept" and phase~="idle") then
                 enabled,code,message=false,"INVALID_ORDER_STATE","当前阶段不支持此操作"
             end
@@ -273,7 +283,7 @@ function GameState.New(options)
         if targetSchema>=2 and envelope and envelope.currentOrder~=false and envelope.currentOrder.phase~="accepted" then
             return U.Fail("ORDER_LOCKED","currentOrder.phase","已建立炼药基准或待确认，禁止跨天")
         end
-        if targetSchema==3 and envelope and envelope.currentOrder and not require("systems.RecipeDraft").IsEmpty(envelope.currentOrder.draft) then
+        if (targetSchema==3 or targetSchema==4) and envelope and envelope.currentOrder and not require("systems.RecipeDraft").IsEmpty(envelope.currentOrder.draft) then
             return U.Fail("DRAFT_NOT_EMPTY","draft","请先清空投料再跨天")
         end
         if targetSchema>=2 then
@@ -282,7 +292,7 @@ function GameState.New(options)
                 local candidate=api.GetSnapshot()
                 local before=candidate.live.gameFlow.day
                 candidate.live.gameFlow.day=before+1; candidate.live.gameFlow.phase="day"; candidate.live.gameFlow.canSalvage=true
-                if targetSchema==3 then candidate.live.gameFlow.salvageUsedToday=0 end
+                if (targetSchema==3 or targetSchema==4) then candidate.live.gameFlow.salvageUsedToday=0 end
                 candidate.revision=candidate.revision+1
                 return commit(candidate,{day=before+1},{{name="DayEnded",payload={day=before}},{name="DayStarted",payload={day=before+1}}})
             end)
@@ -336,7 +346,7 @@ function GameState.New(options)
                 for _, id in ipairs(available.value) do if id==request.letterId then found=true end end
                 if not found then return U.Fail("LETTER_NOT_AVAILABLE","letterId","该信尚未满足出现条件") end
             end
-            if kind=="receive" and targetSchema==3 then
+            if kind=="receive" and (targetSchema==3 or targetSchema==4) then
                 candidate.live.gameFlow.salvageUsedToday=current.live.gameFlow.salvageUsedToday+1
                 candidate.live.gameFlow.canSalvage=candidate.live.gameFlow.salvageUsedToday<options.salvageDailyLimit and candidate.live.gameFlow.phase=="day"
             end
@@ -403,7 +413,39 @@ function GameState.New(options)
         return U.Fail(action.reasonCode,"ClaimAttachment",action.message)
     end
     -- 家具只改变经济账本；正式扣款、所有权和流水在同一次整档提交中安装。
+    function api.PurchaseHomeItem(request)
+        if busy then return U.Fail("COMMAND_BUSY","GameState","候选提交期间禁止嵌套命令") end
+        local action=api.CheckAction("PurchaseHomeItem")
+        if not action.enabled then return U.Fail(action.reasonCode,"PurchaseHomeItem",action.message) end
+        busy=true
+        local called,result=pcall(function()
+            local current=api.GetSnapshot();local valid=prepare(current,targetSchema)
+            if not valid.ok then return valid end
+            local context={day=current.live.gameFlow.day,deliveredOrders=current.live.gameFlow.deliveredOrders,revision=current.revision,kind="home"}
+            local planned=require("systems.ReleaseLedger").New(options.content).PlanPurchase(current.live.economy,request,context)
+            if not planned.ok then return planned end
+            local value=planned.value --[[@as table]]
+            local response={itemId=value.itemId,furnitureId=value.itemId,cost=value.cost,currency=value.state.currency,owned=true,
+                transactionId=value.transactionId,alreadyPurchased=value.alreadyPurchased}
+            if value.alreadyPurchased then return U.Ok(response) end
+            local candidate=U.Copy(current);candidate.live.economy=value.state;candidate.revision=candidate.revision+1
+            return commit(candidate,response,{"FurniturePurchased","MoneyChanged"})
+        end)
+        busy=false
+        if not called then return U.Fail("COMMAND_FAILED","PurchaseHomeItem",tostring(result)) end
+        return result
+    end
     function api.PurchaseFurniture(request)
+        if targetSchema==4 then
+            local valid=U.Keys(request,{furnitureId=true},"furniture.request");if not valid.ok then return valid end
+            ---@type number|nil
+            local price
+            for _,item in ipairs(options.content.release.homeItems) do if item.id==request.furnitureId then price=item.price end end
+            if not price then return U.Fail("UNKNOWN_ID","furnitureId","未知家具") end
+            local current=api.GetSnapshot()
+            if not current then return U.Fail("STATE_LOCKED","GameState","请先读取存档") end
+            return api.PurchaseHomeItem({itemId=request.furnitureId,expectedPrice=price,expectedDay=current.live.gameFlow.day,expectedRevision=current.revision})
+        end
         if busy then return U.Fail("COMMAND_BUSY","GameState","候选提交期间禁止嵌套命令") end
         local action=api.CheckAction("PurchaseFurniture")
         if not action.enabled then return U.Fail(action.reasonCode,"PurchaseFurniture",action.message) end

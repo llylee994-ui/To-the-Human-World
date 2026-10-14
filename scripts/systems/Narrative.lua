@@ -207,7 +207,7 @@ function Narrative.New(content)
             G.Required(content.letters,U.Array,"letters")
             local received,result={},{}
             for _,item in pairs(live.letters.byId) do if item.received then received[item.letterId]=true end end
-            local ids={}
+            local ids,appearDays={},{}
             for _,letter in ipairs(content.letters) do
                 G.Need(U.String(letter.id) and not ids[letter.id],"CONFIG_INVALID","letters","信件 ID 缺失或重复")
                 ids[letter.id]=true
@@ -217,10 +217,18 @@ function Narrative.New(content)
                     G.Keys(c,{dayMin=true,dayMax=true},"letters." .. letter.id .. ".appearCondition","CONFIG_INVALID")
                     for key,value in pairs(c) do G.Need(U.Integer(value,1),"CONFIG_INVALID","appearCondition." .. key,"天数须为正整数") end
                     G.Need(c.dayMin==nil or c.dayMax==nil or c.dayMin<=c.dayMax,"CONFIG_INVALID","appearCondition","天数上下限颠倒")
-                    if not received[letter.id] and (c.dayMin==nil or live.gameFlow.day>=c.dayMin) and (c.dayMax==nil or live.gameFlow.day<=c.dayMax) then result[#result+1]=letter.id end
+                    if not received[letter.id] and (c.dayMin==nil or live.gameFlow.day>=c.dayMin) and (c.dayMax==nil or live.gameFlow.day<=c.dayMax) then
+                        result[#result+1]=letter.id
+                        appearDays[letter.id]=c.dayMin or 1
+                    end
                 end
             end
-            table.sort(result)
+            -- 积压时优先最早出现的信；同日再按稳定 ID 排序。
+            table.sort(result,function(a,b)
+                local ad,bd=appearDays[a],appearDays[b]
+                if ad~=bd then return ad<bd end
+                return a<b
+            end)
             return result
         end)
     end

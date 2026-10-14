@@ -6,6 +6,12 @@ local Geometry=require "ui.landscape.LayoutGeometry"
 local U=require "core.StateUtil"
 local N={}
 function N.New()
+    if require("ui.landscape.DevChecks").chromeProbe then
+        return require("ui.landscape.tests.ChromeNativeProbe").New()
+    end
+    if require("ui.landscape.DevChecks").paperProbe then
+        return require("ui.landscape.tests.PaperNativeProbe").New()
+    end
     if require("ui.landscape.DevChecks").sceneFillProbe then
         return require("ui.landscape.tests.FullscreenMotionProbe").New()
     end

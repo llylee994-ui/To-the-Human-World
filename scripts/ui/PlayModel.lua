@@ -100,8 +100,12 @@ function M.New(session,content,enabled)
         if not active() then return api.Notify(fail("STATE_LOCKED","当前为隔离调试模式")) end
         return api.Notify(session.state.Shop({ingredientId=ingredientId,quantity=1}),"原料已购入并保存。")
     end
-    function api.BuyFurniture(furnitureId)
+    function api.BuyFurniture(furnitureId,quote)
         if not active() then return api.Notify(fail("STATE_LOCKED","当前为隔离调试模式")) end
+        if session.state.GetStatus().schema==4 then
+            if not quote then return api.Notify(fail("STALE_QUOTE","请重新查看家居报价。")) end
+            return api.Notify(session.state.PurchaseHomeItem(quote),"家具已购入并保存，暂未布置到小屋。")
+        end
         return api.Notify(session.state.PurchaseFurniture({furnitureId=furnitureId}),"家具已购入并保存，暂未布置到小屋。")
     end
     function api.Reload()

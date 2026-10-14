@@ -52,7 +52,7 @@ function J.Validate(data,content)
             G.Need(n>(max[a.orderId] or 0),"STATE_INVALID","journal.attemptIds","同单试做顺序错误")
             max[a.orderId]=n
             G.Need(U.Integer(a.attemptDay,accepted.acceptedDay) and a.attemptDay<=data.live.gameFlow.day,"STATE_INVALID","journal.attemptDay","试做日期错误")
-            G.Need(a.originSchema==2 or a.originSchema==3,"STATE_INVALID","journal.originSchema","来源版本错误")
+            G.Need(a.originSchema==2 or a.originSchema==3 or a.originSchema==4,"STATE_INVALID","journal.originSchema","来源版本错误")
             G.Need(a.contentVersion==data.contentVersion and a.synthesisVersion==content.synthesis.version,"STATE_INVALID","journal.version","记录配置版本错误")
             local definition=G.Known(content,"letters",a.sourceLetterId,"journal.sourceLetterId")
             local template=G.Known(content,"followupTemplates",definition.followupTemplateId,"journal.templateId")

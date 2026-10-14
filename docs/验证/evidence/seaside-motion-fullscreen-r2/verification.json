@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-12",
+  "head": "27aaa97",
+  "tests": {
+    "projection": {
+      "chunk_id": "085efe",
+      "wall_time_seconds": 0.9759555,
+      "exit_code": 0,
+      "original_token_count": 260,
+      "output": "[Data] 校验通过：效果 22 / 词条 61 / 原料 4 / 设备 2 / 人物 11 / 信件 22 / 时间属性 6 / 规则 196 / 片段 58 / 评分 58\r\n[Data] 首单包校验通过：C1 开局账本 / C2 首单数值 / C3 事实与回信；contentVersion = story-numeric-v02-r1\r\n========== 阶段 0 自检开始 ==========\r\n[SelfTest] PASS  B2 两个监听者都收到事件\r\n[SelfTest] PASS  B2 高优先级先收到\r\n[SelfTest] PASS  B2 同优先级按注册顺序\r\n[SelfTest] PASS  B2 退订生效\r\n[SelfTest] PASS  B3 存档往返一致\r\n[SelfTest] PASS  B3 字段缺失不崩溃且补齐默认值\r\n[SelfTest] PASS  B3 版本号过新时回落默认值\r\n[SelfTest] PASS  B3 内容损坏时回落默认值\r\n[SelfTest] PASS  B4 跨天后天数 +1\r\n[SelfTest] PASS  B4 派发 DayEnded 且带当天编号\r\n[SelfTest] PASS  B4 派发 DayStarted\r\n========== 阶段 0 自检结束：通过 11，失败 0 ==========\r\n[DebugPanel] 已挂载，按 Z 键开关\r\n=== 寄往人间 启动完成（第 1 天）===\r\n[SceneProjectionTest] 73 checks passed\r\n"
+    },
+    "hud": {
+      "chunk_id": "9c0e6a",
+      "wall_time_seconds": 1.0040267,
+      "exit_code": 0,
+      "original_token_count": 314,
+      "output": "[Data] 校验通过：效果 22 / 词条 61 / 原料 4 / 设备 2 / 人物 11 / 信件 22 / 时间属性 6 / 规则 196 / 片段 58 / 评分 58\r\n[Data] 首单包校验通过：C1 开局账本 / C2 首单数值 / C3 事实与回信；contentVersion = story-numeric-v02-r1\r\n========== 阶段 0 自检开始 ==========\r\n[SelfTest] PASS  B2 两个监听者都收到事件\r\n[SelfTest] PASS  B2 高优先级先收到\r\n[SelfTest] PASS  B2 同优先级按注册顺序\r\n[SelfTest] PASS  B2 退订生效\r\n[SelfTest] PASS  B3 存档往返一致\r\n[SelfTest] PASS  B3 字段缺失不崩溃且补齐默认值\r\n[SelfTest] PASS  B3 版本号过新时回落默认值\r\n[SelfTest] PASS  B3 内容损坏时回落默认值\r\n[SelfTest] PASS  B4 跨天后天数 +1\r\n[SelfTest] PASS  B4 派发 DayEnded 且带当天编号\r\n[SelfTest] PASS  B4 派发 DayStarted\r\n========== 阶段 0 自检结束：通过 11，失败 0 ==========\r\n[DebugPanel] 已挂载，按 Z 键开关\r\n=== 寄往人间 启动完成（第 1 天）===\r\n[PlaySaveFailure] {\"path\": \"snapshot_write\", \"details\": {}, \"message\": \"D:/To the Human World/scripts/core\\\\SaveSystem.lua:118: WriteString 返回 false\", \"code\": \"SAVE_WRITE_FAILED\"}\r\n[HomeHudTest] 50 checks passed; adapters are not native screen evidence\r\n"
+    },
+    "seaside": {
+      "chunk_id": "723003",
+      "wall_time_seconds": 1.1976799,
+      "exit_code": 0,
+      "original_token_count": 378,
+      "output": "[Data] 校验通过：效果 22 / 词条 61 / 原料 4 / 设备 2 / 人物 11 / 信件 22 / 时间属性 6 / 规则 196 / 片段 58 / 评分 58\r\n[Data] 首单包校验通过：C1 开局账本 / C2 首单数值 / C3 事实与回信；contentVersion = story-numeric-v02-r1\r\n========== 阶段 0 自检开始 ==========\r\n[SelfTest] PASS  B2 两个监听者都收到事件\r\n[SelfTest] PASS  B2 高优先级先收到\r\n[SelfTest] PASS  B2 同优先级按注册顺序\r\n[SelfTest] PASS  B2 退订生效\r\n[SelfTest] PASS  B3 存档往返一致\r\n[SelfTest] PASS  B3 字段缺失不崩溃且补齐默认值\r\n[SelfTest] PASS  B3 版本号过新时回落默认值\r\n[SelfTest] PASS  B3 内容损坏时回落默认值\r\n[SelfTest] PASS  B4 跨天后天数 +1\r\n[SelfTest] PASS  B4 派发 DayEnded 且带当天编号\r\n[SelfTest] PASS  B4 派发 DayStarted\r\n========== 阶段 0 自检结束：通过 11，失败 0 ==========\r\n[DebugPanel] 已挂载，按 Z 键开关\r\n=== 寄往人间 启动完成（第 1 天）===\r\n[PlaySaveFailure] {\"details\": {}, \"path\": \"snapshot_write\", \"message\": \"D:/To the Human World/scripts/core\\\\SaveSystem.lua:118: WriteString 返回 false\", \"code\": \"SAVE_WRITE_FAILED\"}\r\n[PlaySaveFailure] {\"details\": {}, \"path\": \"snapshot_write\", \"message\": \"D:/To the Human World/scripts/core\\\\SaveSystem.lua:118: WriteString 返回 false\", \"code\": \"SAVE_WRITE_FAILED\"}\r\n[SeasideFlow] PASS assertions=89; saved capture, once-only, reader retry, modal, failure, skip/interruption, drawer/reload; NOT native/mobile\r\n"
+    },
+    "home": {
+      "chunk_id": "8c0946",
+      "wall_time_seconds": 5.4292517,
+      "exit_code": 0,
+      "original_token_count": 692,
+      "output": "[Data] 校验通过：效果 22 / 词条 61 / 原料 4 / 设备 2 / 人物 11 / 信件 22 / 时间属性 6 / 规则 196 / 片段 58 / 评分 58\r\n[Data] 首单包校验通过：C1 开局账本 / C2 首单数值 / C3 事实与回信；contentVersion = story-numeric-v02-r1\r\n========== 阶段 0 自检开始 ==========\r\n[SelfTest] PASS  B2 两个监听者都收到事件\r\n[SelfTest] PASS  B2 高优先级先收到\r\n[SelfTest] PASS  B2 同优先级按注册顺序\r\n[SelfTest] PASS  B2 退订生效\r\n[SelfTest] PASS  B3 存档往返一致\r\n[SelfTest] PASS  B3 字段缺失不崩溃且补齐默认值\r\n[SelfTest] PASS  B3 版本号过新时回落默认值\r\n[SelfTest] PASS  B3 内容损坏时回落默认值\r\n[SelfTest] PASS  B4 跨天后天数 +1\r\n[SelfTest] PASS  B4 派发 DayEnded 且带当天编号\r\n[SelfTest] PASS  B4 派发 DayStarted\r\n========== 阶段 0 自检结束：通过 11，失败 0 ==========\r\n[DebugPanel] 已挂载，按 Z 键开关\r\n=== 寄往人间 启动完成（第 1 天）===\r\n[HomeEntry] eight object callbacks navigate without writes or consumption\r\n[PlaySaveFailure] {\"path\": \"snapshot_write\", \"message\": \"D:/To the Human World/scripts/core\\\\SaveSystem.lua:118: WriteString 返回 false\", \"code\": \"SAVE_WRITE_FAILED\", \"details\": {}}\r\n[PlayActionFailure] {\"path\": \"draft\", \"message\": \"请先清空投料再跨天\", \"code\": \"DRAFT_NOT_EMPTY\", \"details\": {}}\r\n[PlaySaveFailure] {\"path\": \"snapshot_write\", \"message\": \"D:/To the Human World/scripts/core\\\\SaveSystem.lua:118: WriteString 返回 false\", \"code\": \"SAVE_WRITE_FAILED\", \"details\": {}}\r\n[PlaySaveFailure] {\"path\": \"snapshot_write\", \"message\": \"D:/To the Human World/scripts/core\\\\SaveSystem.lua:118: WriteString 返回 false\", \"code\": \"SAVE_WRITE_FAILED\", \"details\": {}}\r\n[PlayActionFailure] {\"path\": \"currentOrder.phase\", \"message\": \"已建立炼药基准或待确认，禁止跨天\", \"code\": \"ORDER_LOCKED\", \"details\": {}}\r\n[PlaySaveFailure] {\"path\": \"snapshot_write\", \"message\": \"D:/To the Human World/scripts/core\\\\SaveSystem.lua:118: WriteString 返回 false\", \"code\": \"SAVE_WRITE_FAILED\", \"details\": {}}\r\n[PlaySaveFailure] {\"path\": \"snapshot_write\", \"message\": \"D:/To the Human World/scripts/core\\\\SaveSystem.lua:118: WriteString 返回 false\", \"code\": \"SAVE_WRITE_FAILED\", \"details\": {}}\r\n[HomeEntry] letter binding/read/cut/faults, source cards, draft/pending preservation, shop, history, reset, day and shipping callbacks passed\r\n[HomeEntry] six aspect/size/safe-margin projections: subjects, transparent margins, inverse rotation and no intersecting targets\r\n[HomeEntry] actual urhox-libs/UI/Core/UI pointer dispatch: decoration, modal, side panel and closing no click-through\r\n[HomeEntry] PASS assertions=303; Lua input dispatch + File/widget adapters; native/mobile separate\r\n"
+    },
+    "zoom": {
+      "chunk_id": "b90f9c",
+      "wall_time_seconds": 1.0458757,
+      "exit_code": 0,
+      "original_token_count": 318,
+      "output": "[Data] 校验通过：效果 22 / 词条 61 / 原料 4 / 设备 2 / 人物 11 / 信件 22 / 时间属性 6 / 规则 196 / 片段 58 / 评分 58\r\n[Data] 首单包校验通过：C1 开局账本 / C2 首单数值 / C3 事实与回信；contentVersion = story-numeric-v02-r1\r\n========== 阶段 0 自检开始 ==========\r\n[SelfTest] PASS  B2 两个监听者都收到事件\r\n[SelfTest] PASS  B2 高优先级先收到\r\n[SelfTest] PASS  B2 同优先级按注册顺序\r\n[SelfTest] PASS  B2 退订生效\r\n[SelfTest] PASS  B3 存档往返一致\r\n[SelfTest] PASS  B3 字段缺失不崩溃且补齐默认值\r\n[SelfTest] PASS  B3 版本号过新时回落默认值\r\n[SelfTest] PASS  B3 内容损坏时回落默认值\r\n[SelfTest] PASS  B4 跨天后天数 +1\r\n[SelfTest] PASS  B4 派发 DayEnded 且带当天编号\r\n[SelfTest] PASS  B4 派发 DayStarted\r\n========== 阶段 0 自检结束：通过 11，失败 0 ==========\r\n[DebugPanel] 已挂载，按 Z 键开关\r\n=== 寄往人间 启动完成（第 1 天）===\r\n[HomeZoomTest] PASS simulated timeline start/middle/end/seaside/return at 4 aspect ratios; same UI tree; unchanged business\r\n[HomeZoomTest] PASS assertions=383; repeat/HUD/modal/blank/ship/late-release; resize/focus/minimize/gap/destroy; OS and native rendering NOT tested\r\n"
+    },
+    "yaw": {
+      "chunk_id": "1533b1",
+      "wall_time_seconds": 1.0035954,
+      "exit_code": 0,
+      "original_token_count": 274,
+      "output": "[Data] 校验通过：效果 22 / 词条 61 / 原料 4 / 设备 2 / 人物 11 / 信件 22 / 时间属性 6 / 规则 196 / 片段 58 / 评分 58\r\n[Data] 首单包校验通过：C1 开局账本 / C2 首单数值 / C3 事实与回信；contentVersion = story-numeric-v02-r1\r\n========== 阶段 0 自检开始 ==========\r\n[SelfTest] PASS  B2 两个监听者都收到事件\r\n[SelfTest] PASS  B2 高优先级先收到\r\n[SelfTest] PASS  B2 同优先级按注册顺序\r\n[SelfTest] PASS  B2 退订生效\r\n[SelfTest] PASS  B3 存档往返一致\r\n[SelfTest] PASS  B3 字段缺失不崩溃且补齐默认值\r\n[SelfTest] PASS  B3 版本号过新时回落默认值\r\n[SelfTest] PASS  B3 内容损坏时回落默认值\r\n[SelfTest] PASS  B4 跨天后天数 +1\r\n[SelfTest] PASS  B4 派发 DayEnded 且带当天编号\r\n[SelfTest] PASS  B4 派发 DayStarted\r\n========== 阶段 0 自检结束：通过 11，失败 0 ==========\r\n[DebugPanel] 已挂载，按 Z 键开关\r\n=== 寄往人间 启动完成（第 1 天）===\r\n[HomeYawTest] PASS assertions=597; headless timing/AppView lifecycle only; no native visual claim\r\n"
+    },
+    "controller": {
+      "chunk_id": "a47fcc",
+      "wall_time_seconds": 1.0326226,
+      "exit_code": 0,
+      "original_token_count": 259,
+      "output": "[Data] 校验通过：效果 22 / 词条 61 / 原料 4 / 设备 2 / 人物 11 / 信件 22 / 时间属性 6 / 规则 196 / 片段 58 / 评分 58\r\n[Data] 首单包校验通过：C1 开局账本 / C2 首单数值 / C3 事实与回信；contentVersion = story-numeric-v02-r1\r\n========== 阶段 0 自检开始 ==========\r\n[SelfTest] PASS  B2 两个监听者都收到事件\r\n[SelfTest] PASS  B2 高优先级先收到\r\n[SelfTest] PASS  B2 同优先级按注册顺序\r\n[SelfTest] PASS  B2 退订生效\r\n[SelfTest] PASS  B3 存档往返一致\r\n[SelfTest] PASS  B3 字段缺失不崩溃且补齐默认值\r\n[SelfTest] PASS  B3 版本号过新时回落默认值\r\n[SelfTest] PASS  B3 内容损坏时回落默认值\r\n[SelfTest] PASS  B4 跨天后天数 +1\r\n[SelfTest] PASS  B4 派发 DayEnded 且带当天编号\r\n[SelfTest] PASS  B4 派发 DayStarted\r\n========== 阶段 0 自检结束：通过 11，失败 0 ==========\r\n[DebugPanel] 已挂载，按 Z 键开关\r\n=== 寄往人间 启动完成（第 1 天）===\r\nSalvageController: 2934 checks passed\r\n"
+    }
+  },
+  "luaDiagnostics": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"ok\": true, \"result\": {\"kind\": \"full\", \"summary\": {\"files\": 22, \"total\": 85, \"errors\": 0, \"warnings\": 72, \"info\": 0, \"hints\": 13}, \"items\": []}}"
+      }
+    ]
+  },
+  "scope": "headless regression + native desktop engine screenshots; 20:9 is UI area only; no OS/mobile viewport verification"
+}

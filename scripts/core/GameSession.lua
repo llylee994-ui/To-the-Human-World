@@ -6,19 +6,23 @@ function Session.New(content,options)
     options=options or {}
     local schema=options.targetSchema or 3
     local limit=(content.gameplay or require("data.gameplay")).salvageDailyLimit
-    local flow=schema==3 and require("core.GameFlow").New(limit) or options.gameFlow or require "core.GameFlow"
+    local flow=(schema==3 or schema==4) and require("core.GameFlow").New(limit) or options.gameFlow or require "core.GameFlow"
     local save=options.saveSystem or require "core.SaveSystem"
     local bus=options.eventBus or require "core.EventBus"
     ---@type table<string, table>
     local modules={gameFlow=flow,letters=require("systems.Letter").New(content),wordTokens=require("systems.WordToken").New(content),
         economy=require("systems.Economy").New(content),world=require("systems.WorldState").New(content),narrative=require("systems.Narrative").New(content),orders=require("systems.Order").New(content)}
-    if schema==3 then modules.orders=require("systems.OrderTrial").Wrap(modules.orders,content,limit) end
+    if (schema==3 or schema==4) then modules.orders=require("systems.OrderTrial").Wrap(modules.orders,content,limit,schema) end
     modules.currentOrder=modules.orders.CurrentOrder
     local initial=G.Run(function()
         local live={gameFlow=G.Value(flow.ValidateSnapshot(nil))}
         for _,name in ipairs({"letters","wordTokens","economy","world","narrative","orders"}) do live[name]=G.Value(modules[name].InitialSnapshot()) end
         local data={contentVersion=content.contentVersion,revision=0,nextOrderSerial=1,live=live,currentOrder=false}
-        if schema==3 then data.journal=require("systems.BrewJournal").Empty() end
+        if (schema==3 or schema==4) then data.journal=require("systems.BrewJournal").Empty() end
+        if schema==4 then
+            data.live.economy.ownedFurnitureIds=nil;data.live.economy.furniturePurchases=nil;data.live.economy.itemPurchases={}
+            data.chapter=require("systems.ReleaseLedger").EmptyChapter()
+        end
         return G.Value(modules.orders.ValidateEnvelope(data))
     end)
     local ready=options.dataReady~=false and initial.ok
