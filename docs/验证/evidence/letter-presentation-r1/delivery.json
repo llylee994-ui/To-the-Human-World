@@ -1,0 +1,34 @@
+{
+  "version": "letter-presentation-r1",
+  "evidence": "offline geometry and simulated rendering; not native/mobile",
+  "files": [
+    {
+      "path": "scripts/ui/landscape/LetterLayout.lua",
+      "sha256": "85E4FABC1D6203B0493F09808C9B884D1D7210AC9EA8BDEB3C76933A185D010B"
+    },
+    {
+      "path": "scripts/ui/landscape/LetterMotion.lua",
+      "sha256": "4EF007CCB625DF752D7308854452414C0E112916EDC0F5DE075D0ED90638BF1E"
+    },
+    {
+      "path": "scripts/ui/landscape/LetterPaper.lua",
+      "sha256": "7115A185F36D691D0CDEE3A92EBECC49F9F24CCC25E604258ADB431C99F440E9"
+    },
+    {
+      "path": "scripts/ui/landscape/LetterPresentation.lua",
+      "sha256": "269AEF3A93850FB000E0C744E0D2D010DFBF121843BEDBBA625CCB2073468AAC"
+    },
+    {
+      "path": "scripts/ui/landscape/AppView.lua",
+      "sha256": "B91CCC5DD7A7CAC2A88A3861ED1BAAD2F6EC2D82EE28A7CCFF5E6F7F01D19D35"
+    },
+    {
+      "path": "scripts/ui/landscape/Panels.lua",
+      "sha256": "65FA5BA82657BDDC4E7596343052E00583628EF9E03C4B1BA99CDC636B8A7667"
+    },
+    {
+      "path": "assets/image/letter-scissors.png",
+      "sha256": "D3FF66193F75B10FE28B8EEF790BF867CCC734A9AE077DC2D12472069C65E718"
+    }
+  ]
+}

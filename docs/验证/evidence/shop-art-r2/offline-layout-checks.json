@@ -1,0 +1,978 @@
+[
+  {
+    "width": 2048,
+    "height": 917,
+    "scene": "home",
+    "geometry": {
+      "capsule": {
+        "x": 1802.2218017578125,
+        "y": 50.428123474121094,
+        "w": 217.0687255859375,
+        "h": 77.93437957763672
+      },
+      "controls": {
+        "nextDay": {
+          "x": 1586.2218017578125,
+          "y": 18,
+          "w": 194.4000244140625,
+          "h": 79.19999694824219
+        },
+        "toggleHomeHints": {
+          "x": 1442.2218017578125,
+          "y": 18,
+          "w": 129.5999755859375,
+          "h": 79.19999694824219
+        }
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "w": 2047.97802734375,
+        "h": 916.9874877929688
+      }
+    },
+    "evidence": "CSS replay with simulated host; NOT phone/native/touch"
+  },
+  {
+    "width": 2048,
+    "height": 917,
+    "scene": "seaside",
+    "geometry": {
+      "capsule": {
+        "x": 1802.2218017578125,
+        "y": 50.428123474121094,
+        "w": 217.0687255859375,
+        "h": 77.93437957763672
+      },
+      "controls": {
+        "returnHome": {
+          "x": 1237.0218505859375,
+          "y": 18,
+          "w": 190.7999267578125,
+          "h": 79.19999694824219
+        },
+        "nextDay": {
+          "x": 1586.2218017578125,
+          "y": 18,
+          "w": 194.4000244140625,
+          "h": 79.19999694824219
+        },
+        "seasideShop": {
+          "x": 1781.578125,
+          "y": 780.1875,
+          "w": 219.5999755859375,
+          "h": 86.39996337890625
+        },
+        "startSalvage": {
+          "x": 1327.9781494140625,
+          "y": 780.1875,
+          "w": 431.9998779296875,
+          "h": 86.39996337890625
+        }
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "w": 2047.97802734375,
+        "h": 916.9874877929688
+      }
+    },
+    "evidence": "CSS replay with simulated host; NOT phone/native/touch"
+  },
+  {
+    "width": 2048,
+    "height": 917,
+    "scene": "shop",
+    "geometry": {
+      "capsule": {
+        "x": 1802.2218017578125,
+        "y": 50.428123474121094,
+        "w": 217.0687255859375,
+        "h": 77.93437957763672
+      },
+      "controls": {
+        "closePanel": {
+          "x": 1629.421875,
+          "y": 14.399999618530273,
+          "w": 151.199951171875,
+          "h": 86.39999389648438
+        },
+        "buy_ing_sea_salt": {
+          "x": 1253.981201171875,
+          "y": 751.387451171875,
+          "w": 718.3968505859375,
+          "h": 86.4000244140625
+        }
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "w": 2047.97802734375,
+        "h": 916.9874877929688
+      }
+    },
+    "evidence": "CSS replay with simulated host; NOT phone/native/touch"
+  },
+  {
+    "width": 2048,
+    "height": 917,
+    "scene": "shop-furniture",
+    "geometry": {
+      "capsule": {
+        "x": 1802.2218017578125,
+        "y": 50.428123474121094,
+        "w": 217.0687255859375,
+        "h": 77.93437957763672
+      },
+      "controls": {
+        "closePanel": {
+          "x": 1629.421875,
+          "y": 14.399999618530273,
+          "w": 151.199951171875,
+          "h": 86.39999389648438
+        },
+        "buy_decor_tablecloth": {
+          "x": 1253.981201171875,
+          "y": 751.387451171875,
+          "w": 718.3968505859375,
+          "h": 86.4000244140625
+        }
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "w": 2047.97802734375,
+        "h": 916.9874877929688
+      }
+    },
+    "evidence": "CSS replay with simulated host; NOT phone/native/touch"
+  },
+  {
+    "width": 2048,
+    "height": 917,
+    "scene": "shop-ticket",
+    "geometry": {
+      "capsule": {
+        "x": 1802.2218017578125,
+        "y": 50.428123474121094,
+        "w": 217.0687255859375,
+        "h": 77.93437957763672
+      },
+      "controls": {
+        "closePanel": {
+          "x": 1629.421875,
+          "y": 14.399999618530273,
+          "w": 151.199951171875,
+          "h": 86.39999389648438
+        },
+        "buy_travel_ticket": {
+          "x": 1253.981201171875,
+          "y": 751.387451171875,
+          "w": 718.3968505859375,
+          "h": 86.4000244140625
+        }
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "w": 2047.97802734375,
+        "h": 916.9874877929688
+      }
+    },
+    "evidence": "CSS replay with simulated host; NOT phone/native/touch"
+  },
+  {
+    "width": 2048,
+    "height": 917,
+    "scene": "brew",
+    "geometry": {
+      "capsule": {
+        "x": 1802.2218017578125,
+        "y": 50.428123474121094,
+        "w": 217.0687255859375,
+        "h": 77.93437957763672
+      },
+      "controls": {
+        "nextDay": {
+          "x": 1586.2218017578125,
+          "y": 18,
+          "w": 194.4000244140625,
+          "h": 79.19999694824219
+        },
+        "toggleHomeHints": {
+          "x": 1442.2218017578125,
+          "y": 18,
+          "w": 129.5999755859375,
+          "h": 79.19999694824219
+        }
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "w": 2047.97802734375,
+        "h": 916.9874877929688
+      }
+    },
+    "evidence": "CSS replay with simulated host; NOT phone/native/touch"
+  },
+  {
+    "width": 2048,
+    "height": 917,
+    "scene": "journal",
+    "geometry": {
+      "capsule": {
+        "x": 1802.2218017578125,
+        "y": 50.428123474121094,
+        "w": 217.0687255859375,
+        "h": 77.93437957763672
+      },
+      "controls": {
+        "closePanel": {
+          "x": 1622.2218017578125,
+          "y": 5.399999618530273,
+          "w": 136.800048828125,
+          "h": 79.19999694824219
+        }
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "w": 2047.97802734375,
+        "h": 916.9874877929688
+      }
+    },
+    "evidence": "CSS replay with simulated host; NOT phone/native/touch"
+  },
+  {
+    "width": 1280,
+    "height": 720,
+    "scene": "home",
+    "geometry": {
+      "capsule": {
+        "x": 1126.390625,
+        "y": 39.59375,
+        "w": 135.671875,
+        "h": 61.1875
+      },
+      "controls": {
+        "nextDay": {
+          "x": 1006.40625,
+          "y": 10,
+          "w": 108,
+          "h": 44
+        },
+        "toggleHomeHints": {
+          "x": 926.40625,
+          "y": 10,
+          "w": 72,
+          "h": 44
+        }
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 720
+      }
+    },
+    "evidence": "CSS replay with simulated host; NOT phone/native/touch"
+  },
+  {
+    "width": 1280,
+    "height": 720,
+    "scene": "seaside",
+    "geometry": {
+      "capsule": {
+        "x": 1126.390625,
+        "y": 39.59375,
+        "w": 135.671875,
+        "h": 61.1875
+      },
+      "controls": {
+        "returnHome": {
+          "x": 812.40625,
+          "y": 10,
+          "w": 106,
+          "h": 44
+        },
+        "nextDay": {
+          "x": 1006.40625,
+          "y": 10,
+          "w": 108,
+          "h": 44
+        },
+        "seasideShop": {
+          "x": 1132,
+          "y": 644,
+          "w": 122,
+          "h": 48
+        },
+        "startSalvage": {
+          "x": 880,
+          "y": 644,
+          "w": 240,
+          "h": 48
+        }
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 720
+      }
+    },
+    "evidence": "CSS replay with simulated host; NOT phone/native/touch"
+  },
+  {
+    "width": 1280,
+    "height": 720,
+    "scene": "shop",
+    "geometry": {
+      "capsule": {
+        "x": 1126.390625,
+        "y": 39.59375,
+        "w": 135.671875,
+        "h": 61.1875
+      },
+      "controls": {
+        "closePanel": {
+          "x": 1030.40625,
+          "y": 9.1875,
+          "w": 84,
+          "h": 48
+        },
+        "buy_ing_sea_salt": {
+          "x": 783.203125,
+          "y": 618,
+          "w": 444.796875,
+          "h": 48
+        }
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 720
+      }
+    },
+    "evidence": "CSS replay with simulated host; NOT phone/native/touch"
+  },
+  {
+    "width": 1280,
+    "height": 720,
+    "scene": "shop-furniture",
+    "geometry": {
+      "capsule": {
+        "x": 1126.390625,
+        "y": 39.59375,
+        "w": 135.671875,
+        "h": 61.1875
+      },
+      "controls": {
+        "closePanel": {
+          "x": 1030.40625,
+          "y": 9.1875,
+          "w": 84,
+          "h": 48
+        },
+        "buy_decor_tablecloth": {
+          "x": 783.203125,
+          "y": 618,
+          "w": 444.796875,
+          "h": 48
+        }
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 720
+      }
+    },
+    "evidence": "CSS replay with simulated host; NOT phone/native/touch"
+  },
+  {
+    "width": 1280,
+    "height": 720,
+    "scene": "shop-ticket",
+    "geometry": {
+      "capsule": {
+        "x": 1126.390625,
+        "y": 39.59375,
+        "w": 135.671875,
+        "h": 61.1875
+      },
+      "controls": {
+        "closePanel": {
+          "x": 1030.40625,
+          "y": 9.1875,
+          "w": 84,
+          "h": 48
+        },
+        "buy_travel_ticket": {
+          "x": 783.203125,
+          "y": 618,
+          "w": 444.796875,
+          "h": 48
+        }
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 720
+      }
+    },
+    "evidence": "CSS replay with simulated host; NOT phone/native/touch"
+  },
+  {
+    "width": 1280,
+    "height": 720,
+    "scene": "brew",
+    "geometry": {
+      "capsule": {
+        "x": 1126.390625,
+        "y": 39.59375,
+        "w": 135.671875,
+        "h": 61.1875
+      },
+      "controls": {
+        "nextDay": {
+          "x": 1006.40625,
+          "y": 10,
+          "w": 108,
+          "h": 44
+        },
+        "toggleHomeHints": {
+          "x": 926.40625,
+          "y": 10,
+          "w": 72,
+          "h": 44
+        }
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 720
+      }
+    },
+    "evidence": "CSS replay with simulated host; NOT phone/native/touch"
+  },
+  {
+    "width": 1280,
+    "height": 720,
+    "scene": "journal",
+    "geometry": {
+      "capsule": {
+        "x": 1126.390625,
+        "y": 39.59375,
+        "w": 135.671875,
+        "h": 61.1875
+      },
+      "controls": {
+        "closePanel": {
+          "x": 1026.40625,
+          "y": 3,
+          "w": 76,
+          "h": 44
+        }
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 720
+      }
+    },
+    "evidence": "CSS replay with simulated host; NOT phone/native/touch"
+  },
+  {
+    "width": 800,
+    "height": 360,
+    "scene": "home",
+    "geometry": {
+      "capsule": {
+        "x": 704,
+        "y": 19.80000114440918,
+        "w": 84.79998779296875,
+        "h": 30.600000381469727
+      },
+      "controls": {
+        "nextDay": {
+          "x": 608,
+          "y": 8,
+          "w": 86.4000244140625,
+          "h": 35.20000076293945
+        },
+        "toggleHomeHints": {
+          "x": 544,
+          "y": 8,
+          "w": 57.60003662109375,
+          "h": 35.20000076293945
+        }
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "w": 800,
+        "h": 360
+      }
+    },
+    "evidence": "CSS replay with simulated host; NOT phone/native/touch"
+  },
+  {
+    "width": 800,
+    "height": 360,
+    "scene": "seaside",
+    "geometry": {
+      "capsule": {
+        "x": 704,
+        "y": 19.80000114440918,
+        "w": 84.79998779296875,
+        "h": 30.600000381469727
+      },
+      "controls": {
+        "returnHome": {
+          "x": 452.8000183105469,
+          "y": 8,
+          "w": 84.80001831054688,
+          "h": 35.20000076293945
+        },
+        "nextDay": {
+          "x": 608,
+          "y": 8,
+          "w": 86.4000244140625,
+          "h": 35.20000076293945
+        },
+        "seasideShop": {
+          "x": 681.6000366210938,
+          "y": 299.20001220703125,
+          "w": 97.5999755859375,
+          "h": 38.399993896484375
+        },
+        "startSalvage": {
+          "x": 480,
+          "y": 299.20001220703125,
+          "w": 192,
+          "h": 38.399993896484375
+        }
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "w": 800,
+        "h": 360
+      }
+    },
+    "evidence": "CSS replay with simulated host; NOT phone/native/touch"
+  },
+  {
+    "width": 800,
+    "height": 360,
+    "scene": "shop",
+    "geometry": {
+      "capsule": {
+        "x": 704,
+        "y": 19.80000114440918,
+        "w": 84.79998779296875,
+        "h": 30.600000381469727
+      },
+      "controls": {
+        "closePanel": {
+          "x": 627.2000122070312,
+          "y": 6.400000095367432,
+          "w": 67.20001220703125,
+          "h": 38.39999771118164
+        },
+        "buy_ing_sea_salt": {
+          "x": 491.20001220703125,
+          "y": 286.3999938964844,
+          "w": 275.20001220703125,
+          "h": 38.4000244140625
+        }
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "w": 800,
+        "h": 360
+      }
+    },
+    "evidence": "CSS replay with simulated host; NOT phone/native/touch"
+  },
+  {
+    "width": 800,
+    "height": 360,
+    "scene": "shop-furniture",
+    "geometry": {
+      "capsule": {
+        "x": 704,
+        "y": 19.80000114440918,
+        "w": 84.79998779296875,
+        "h": 30.600000381469727
+      },
+      "controls": {
+        "closePanel": {
+          "x": 627.2000122070312,
+          "y": 6.400000095367432,
+          "w": 67.20001220703125,
+          "h": 38.39999771118164
+        },
+        "buy_decor_tablecloth": {
+          "x": 491.20001220703125,
+          "y": 286.3999938964844,
+          "w": 275.20001220703125,
+          "h": 38.4000244140625
+        }
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "w": 800,
+        "h": 360
+      }
+    },
+    "evidence": "CSS replay with simulated host; NOT phone/native/touch"
+  },
+  {
+    "width": 800,
+    "height": 360,
+    "scene": "shop-ticket",
+    "geometry": {
+      "capsule": {
+        "x": 704,
+        "y": 19.80000114440918,
+        "w": 84.79998779296875,
+        "h": 30.600000381469727
+      },
+      "controls": {
+        "closePanel": {
+          "x": 627.2000122070312,
+          "y": 6.400000095367432,
+          "w": 67.20001220703125,
+          "h": 38.39999771118164
+        },
+        "buy_travel_ticket": {
+          "x": 491.20001220703125,
+          "y": 286.3999938964844,
+          "w": 275.20001220703125,
+          "h": 38.4000244140625
+        }
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "w": 800,
+        "h": 360
+      }
+    },
+    "evidence": "CSS replay with simulated host; NOT phone/native/touch"
+  },
+  {
+    "width": 800,
+    "height": 360,
+    "scene": "brew",
+    "geometry": {
+      "capsule": {
+        "x": 704,
+        "y": 19.80000114440918,
+        "w": 84.79998779296875,
+        "h": 30.600000381469727
+      },
+      "controls": {
+        "nextDay": {
+          "x": 608,
+          "y": 8,
+          "w": 86.4000244140625,
+          "h": 35.20000076293945
+        },
+        "toggleHomeHints": {
+          "x": 544,
+          "y": 8,
+          "w": 57.60003662109375,
+          "h": 35.20000076293945
+        }
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "w": 800,
+        "h": 360
+      }
+    },
+    "evidence": "CSS replay with simulated host; NOT phone/native/touch"
+  },
+  {
+    "width": 800,
+    "height": 360,
+    "scene": "journal",
+    "geometry": {
+      "capsule": {
+        "x": 704,
+        "y": 19.80000114440918,
+        "w": 84.79998779296875,
+        "h": 30.600000381469727
+      },
+      "controls": {
+        "closePanel": {
+          "x": 624,
+          "y": 2.4000000953674316,
+          "w": 60.79998779296875,
+          "h": 35.20000076293945
+        }
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "w": 800,
+        "h": 360
+      }
+    },
+    "evidence": "CSS replay with simulated host; NOT phone/native/touch"
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "scene": "home",
+    "geometry": {
+      "capsule": {
+        "x": 901.109375,
+        "y": 42.234375,
+        "w": 108.53125,
+        "h": 65.265625
+      },
+      "controls": {
+        "nextDay": {
+          "x": 781.125,
+          "y": 10,
+          "w": 108,
+          "h": 44
+        },
+        "toggleHomeHints": {
+          "x": 701.125,
+          "y": 10,
+          "w": 72,
+          "h": 44
+        }
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "w": 1024,
+        "h": 768
+      }
+    },
+    "evidence": "CSS replay with simulated host; NOT phone/native/touch"
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "scene": "seaside",
+    "geometry": {
+      "capsule": {
+        "x": 901.109375,
+        "y": 42.234375,
+        "w": 108.53125,
+        "h": 65.265625
+      },
+      "controls": {
+        "returnHome": {
+          "x": 587.125,
+          "y": 10,
+          "w": 106,
+          "h": 44
+        },
+        "nextDay": {
+          "x": 781.125,
+          "y": 10,
+          "w": 108,
+          "h": 44
+        },
+        "seasideShop": {
+          "x": 876,
+          "y": 692,
+          "w": 122,
+          "h": 48
+        },
+        "startSalvage": {
+          "x": 624,
+          "y": 692,
+          "w": 240,
+          "h": 48
+        }
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "w": 1024,
+        "h": 768
+      }
+    },
+    "evidence": "CSS replay with simulated host; NOT phone/native/touch"
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "scene": "shop",
+    "geometry": {
+      "capsule": {
+        "x": 901.109375,
+        "y": 42.234375,
+        "w": 108.53125,
+        "h": 65.265625
+      },
+      "controls": {
+        "closePanel": {
+          "x": 805.125,
+          "y": 9.1875,
+          "w": 84,
+          "h": 48
+        },
+        "buy_ing_sea_salt": {
+          "x": 629.59375,
+          "y": 666,
+          "w": 342.40625,
+          "h": 48
+        }
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "w": 1024,
+        "h": 768
+      }
+    },
+    "evidence": "CSS replay with simulated host; NOT phone/native/touch"
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "scene": "shop-furniture",
+    "geometry": {
+      "capsule": {
+        "x": 901.109375,
+        "y": 42.234375,
+        "w": 108.53125,
+        "h": 65.265625
+      },
+      "controls": {
+        "closePanel": {
+          "x": 805.125,
+          "y": 9.1875,
+          "w": 84,
+          "h": 48
+        },
+        "buy_decor_tablecloth": {
+          "x": 629.59375,
+          "y": 666,
+          "w": 342.40625,
+          "h": 48
+        }
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "w": 1024,
+        "h": 768
+      }
+    },
+    "evidence": "CSS replay with simulated host; NOT phone/native/touch"
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "scene": "shop-ticket",
+    "geometry": {
+      "capsule": {
+        "x": 901.109375,
+        "y": 42.234375,
+        "w": 108.53125,
+        "h": 65.265625
+      },
+      "controls": {
+        "closePanel": {
+          "x": 805.125,
+          "y": 9.1875,
+          "w": 84,
+          "h": 48
+        },
+        "buy_travel_ticket": {
+          "x": 629.59375,
+          "y": 666,
+          "w": 342.40625,
+          "h": 48
+        }
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "w": 1024,
+        "h": 768
+      }
+    },
+    "evidence": "CSS replay with simulated host; NOT phone/native/touch"
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "scene": "brew",
+    "geometry": {
+      "capsule": {
+        "x": 901.109375,
+        "y": 42.234375,
+        "w": 108.53125,
+        "h": 65.265625
+      },
+      "controls": {
+        "nextDay": {
+          "x": 781.125,
+          "y": 10,
+          "w": 108,
+          "h": 44
+        },
+        "toggleHomeHints": {
+          "x": 701.125,
+          "y": 10,
+          "w": 72,
+          "h": 44
+        }
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "w": 1024,
+        "h": 768
+      }
+    },
+    "evidence": "CSS replay with simulated host; NOT phone/native/touch"
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "scene": "journal",
+    "geometry": {
+      "capsule": {
+        "x": 901.109375,
+        "y": 42.234375,
+        "w": 108.53125,
+        "h": 65.265625
+      },
+      "controls": {
+        "closePanel": {
+          "x": 801.125,
+          "y": 3,
+          "w": 76,
+          "h": 44
+        }
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "w": 1024,
+        "h": 768
+      }
+    },
+    "evidence": "CSS replay with simulated host; NOT phone/native/touch"
+  }
+]

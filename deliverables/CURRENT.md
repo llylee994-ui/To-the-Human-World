@@ -1,3 +1,5 @@
+> 2026-10-14 历史整合更新：当前开发分支为 `integration/3d-main-20261014`，继续使用同一本地目录。原候选 `cloud/3d-d00aca9` 的提交将通过整合分支保留；该旧分支名按用户授权在新分支上传核验后移除。当前整合状态见 [行动记录](../docs/actions/2026-10-14-main-history-integration.md)。以下保留清理交付阶段的身份信息。
+
 # 当前交付与历史身份记录
 
 当前工作分支：`cloud/3d-d00aca9`；仓库：<https://github.com/llylee994-ui/To-the-Human-World>。

@@ -1,0 +1,15 @@
+{
+  "result": {
+    "kind": "full",
+    "summary": {
+      "info": 0,
+      "errors": 0,
+      "hints": 8,
+      "warnings": 27,
+      "files": 14,
+      "total": 35
+    },
+    "items": []
+  },
+  "ok": true
+}

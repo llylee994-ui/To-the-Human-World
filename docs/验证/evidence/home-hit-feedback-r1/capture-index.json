@@ -1,0 +1,92 @@
+﻿[
+    {
+        "endUtc":  "2026-10-11T05:57:50.7915314Z",
+        "file":  "D:\\taptap\\To-the-Human-World\\docs\\验证\\evidence\\home-hit-feedback-r1\\pressed-home.drawer.png",
+        "startUtc":  "2026-10-11T05:57:49.8089316Z",
+        "name":  "pressed-home.drawer",
+        "runtimePid":  1576,
+        "reload":  1,
+        "marker":  "[lua] [2026-10-11 13_57_49_507][4292][Script] [HitFeedback] CAPTURE pressed-home.drawer\n",
+        "session":  "6a279c51-bf25-42ed-93c3-79501b28473d"
+    },
+    {
+        "endUtc":  "2026-10-11T05:57:56.8230069Z",
+        "file":  "D:\\taptap\\To-the-Human-World\\docs\\验证\\evidence\\home-hit-feedback-r1\\pressed-home.journal.png",
+        "startUtc":  "2026-10-11T05:57:55.9010764Z",
+        "name":  "pressed-home.journal",
+        "runtimePid":  1576,
+        "reload":  1,
+        "marker":  "[lua] [2026-10-11 13_57_55_525][4650][Script] [HitFeedback] CAPTURE pressed-home.journal\n",
+        "session":  "6a279c51-bf25-42ed-93c3-79501b28473d"
+    },
+    {
+        "endUtc":  "2026-10-11T05:58:02.8741094Z",
+        "file":  "D:\\taptap\\To-the-Human-World\\docs\\验证\\evidence\\home-hit-feedback-r1\\pressed-home.tray.png",
+        "startUtc":  "2026-10-11T05:58:01.9750008Z",
+        "name":  "pressed-home.tray",
+        "runtimePid":  1576,
+        "reload":  1,
+        "marker":  "[lua] [2026-10-11 13_58_01_550][5008][Script] [HitFeedback] CAPTURE pressed-home.tray\n",
+        "session":  "6a279c51-bf25-42ed-93c3-79501b28473d"
+    },
+    {
+        "endUtc":  "2026-10-11T05:58:08.6645352Z",
+        "file":  "D:\\taptap\\To-the-Human-World\\docs\\验证\\evidence\\home-hit-feedback-r1\\pressed-home.net.png",
+        "startUtc":  "2026-10-11T05:58:07.7266325Z",
+        "name":  "pressed-home.net",
+        "runtimePid":  1576,
+        "reload":  1,
+        "marker":  "[lua] [2026-10-11 13_58_07_572][5366][Script] [HitFeedback] CAPTURE pressed-home.net\n",
+        "session":  "6a279c51-bf25-42ed-93c3-79501b28473d"
+    },
+    {
+        "endUtc":  "2026-10-11T05:58:14.8664508Z",
+        "file":  "D:\\taptap\\To-the-Human-World\\docs\\验证\\evidence\\home-hit-feedback-r1\\pressed-home.caseFile.png",
+        "startUtc":  "2026-10-11T05:58:13.9513107Z",
+        "name":  "pressed-home.caseFile",
+        "runtimePid":  1576,
+        "reload":  1,
+        "marker":  "[lua] [2026-10-11 13_58_13_595][5724][Script] [HitFeedback] CAPTURE pressed-home.caseFile\n",
+        "session":  "6a279c51-bf25-42ed-93c3-79501b28473d"
+    },
+    {
+        "endUtc":  "2026-10-11T05:58:21.0189220Z",
+        "file":  "D:\\taptap\\To-the-Human-World\\docs\\验证\\evidence\\home-hit-feedback-r1\\pressed-home.merchantShip.png",
+        "startUtc":  "2026-10-11T05:58:19.9712785Z",
+        "name":  "pressed-home.merchantShip",
+        "runtimePid":  1576,
+        "reload":  1,
+        "marker":  "[lua] [2026-10-11 13_58_19_613][6081][Script] [HitFeedback] CAPTURE pressed-home.merchantShip\n",
+        "session":  "6a279c51-bf25-42ed-93c3-79501b28473d"
+    },
+    {
+        "endUtc":  "2026-10-11T05:58:27.0087162Z",
+        "file":  "D:\\taptap\\To-the-Human-World\\docs\\验证\\evidence\\home-hit-feedback-r1\\pressed-home.letterPaper.png",
+        "startUtc":  "2026-10-11T05:58:26.0457049Z",
+        "name":  "pressed-home.letterPaper",
+        "runtimePid":  1576,
+        "reload":  1,
+        "marker":  "[lua] [2026-10-11 13_58_25_625][6438][Script] [HitFeedback] CAPTURE pressed-home.letterPaper\n",
+        "session":  "6a279c51-bf25-42ed-93c3-79501b28473d"
+    },
+    {
+        "endUtc":  "2026-10-11T05:58:33.7093600Z",
+        "file":  "D:\\taptap\\To-the-Human-World\\docs\\验证\\evidence\\home-hit-feedback-r1\\pressed-home.stove.png",
+        "startUtc":  "2026-10-11T05:58:32.5965397Z",
+        "name":  "pressed-home.stove",
+        "runtimePid":  1576,
+        "reload":  1,
+        "marker":  "[lua] [2026-10-11 13_58_31_636][6795][Script] [HitFeedback] CAPTURE pressed-home.stove\n",
+        "session":  "6a279c51-bf25-42ed-93c3-79501b28473d"
+    },
+    {
+        "endUtc":  "2026-10-11T05:58:38.8687521Z",
+        "file":  "D:\\taptap\\To-the-Human-World\\docs\\验证\\evidence\\home-hit-feedback-r1\\pressed-drawer-second.png",
+        "startUtc":  "2026-10-11T05:58:37.9021059Z",
+        "name":  "pressed-drawer-second",
+        "runtimePid":  1576,
+        "reload":  1,
+        "marker":  "[lua] [2026-10-11 13_58_37_650][7153][Script] [HitFeedback] CAPTURE pressed-drawer-second\n",
+        "session":  "6a279c51-bf25-42ed-93c3-79501b28473d"
+    }
+]

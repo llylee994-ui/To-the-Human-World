@@ -1,0 +1,12 @@
+{
+  "utc": "2026-10-14T06:43:38.683906+00:00",
+  "candidate": "b9194ea32ee3e8eab7bdcd0d559890d3f20e115b",
+  "main": "41cdaf3ff0fdd083d7411373a3cc9b70e26fb2e6",
+  "branch": "integration/3d-main-20261014",
+  "cwd": "D:\\taptap\\D3-cloud-d00aca9\\D3-github-cloud-3d-d00aca9",
+  "baselineFiles": 1013,
+  "baselineFileBytes": 432406970,
+  "protectedFiles": 488,
+  "cleanupAuthorization": "User explicitly chose deletion of local and GitHub cloud/3d-d00aca9 only after new remote branch verified; keep current directory",
+  "runtimeBehavior": "Do not activate main schema4 release in the existing 3D entry during history integration"
+}

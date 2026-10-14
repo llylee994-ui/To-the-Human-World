@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-09",
+  "status": "withdrawn_historical_comparison_only",
+  "proposedSleepCap": 1.0,
+  "registered": [
+    {
+      "name": "做完了",
+      "sleep": 0,
+      "canShipWithProposedCap": true
+    },
+    {
+      "name": "疼着做完",
+      "sleep": 0,
+      "canShipWithProposedCap": true
+    },
+    {
+      "name": "怕痛停手",
+      "sleep": 0,
+      "canShipWithProposedCap": true
+    },
+    {
+      "name": "睡过头",
+      "sleep": 0.6,
+      "canShipWithProposedCap": true
+    },
+    {
+      "name": "强敲开裂",
+      "sleep": 0,
+      "canShipWithProposedCap": true
+    }
+  ],
+  "counterexample": {
+    "main": "N06-M1",
+    "aux": [
+      "E01-S1",
+      "E01-S2"
+    ],
+    "ingredients": [
+      "ing_night_dew",
+      "ing_sea_salt"
+    ],
+    "sleep": 1.6,
+    "steady": 1.0,
+    "onset": 1,
+    "duration": 2,
+    "stable": true,
+    "currentCanShip": true,
+    "proposedCanShip": false
+  },
+  "limitations": [
+    "Not a simulation of work and sleep timing.",
+    "The 1.0 limit is a candidate design value, not a global clinical or engine definition.",
+    "Counterexample assumes both first-letter sleep cards were retained; it is not a registered chain history."
+  ],
+  "supersededBy": "开放发货与全区间证据_2026-10-09.json"
+}

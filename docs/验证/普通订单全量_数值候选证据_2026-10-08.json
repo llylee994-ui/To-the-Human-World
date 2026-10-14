@@ -1,0 +1,3280 @@
+{
+  "sourceSha256": {
+    "docs\\文案\\分支条件表_v01.md": "431126a76155475c4aa1997aacd06ea51d59fb7644ffae27dba6aea2eb4bee00",
+    "docs\\文案\\词条数值表_v01.md": "6957e3bfbb0d792e55ffd16a3eb503162789de16cde4ded7fd50c4fdc8f79a8a",
+    "docs\\文案\\供给验算表_v01.md": "a9db6e7020697ad750405d20800c7fa7eb6327ef1ee86a1a30fec6b496b50111"
+  },
+  "runtimeContentVersion": "story-v0.4-r1",
+  "candidatePositions": 61,
+  "sourceCounts": {
+    "N10": 5,
+    "N01": 8,
+    "N03": 5,
+    "N09": 7,
+    "E01": 9,
+    "N02": 5,
+    "N04": 5,
+    "N05": 4,
+    "N06": 4,
+    "N07": 4,
+    "N08": 5
+  },
+  "logical": {
+    "N10": {
+      "cells": 16,
+      "byBranch": {
+        "n10_result_3": 1,
+        "n10_result_1b": 4,
+        "n10_result_1a": 8,
+        "n10_result_2b": 2,
+        "n10_result_2a": 1
+      },
+      "boundaries": 96
+    },
+    "N01": {
+      "cells": 16,
+      "byBranch": {
+        "n01_result_departure_agreed": 1,
+        "n01_result_started_learning": 1,
+        "n01_result_missed_place": 8,
+        "n01_result_stayed_for_promise": 4,
+        "n01_result_departure_conflict": 2
+      },
+      "boundaries": 96
+    },
+    "E01": {
+      "cells": 24,
+      "byBranch": {
+        "e01_result_rested": 4,
+        "e01_result_song_faded": 4,
+        "e01_result_fragmented_dream": 4,
+        "e01_result_fragmented_song_faded": 4,
+        "e01_result_mother_dream": 1,
+        "e01_result_walking_crates": 1,
+        "e01_result_fish_choir": 2,
+        "e01_result_mother_unclear": 4
+      },
+      "boundaries": 156
+    },
+    "N02": {
+      "cells": 16,
+      "byBranch": {
+        "n02_candidate_good": 2,
+        "n02_candidate_care": 2,
+        "n02_candidate_swallowed": 2,
+        "n02_candidate_escaped": 2,
+        "n02_candidate_doubted": 8
+      },
+      "boundaries": 96
+    },
+    "N03": {
+      "cells": 16,
+      "byBranch": {
+        "n03_candidate_good": 2,
+        "n03_candidate_salt": 2,
+        "n03_candidate_hide": 2,
+        "n03_candidate_freeze": 2,
+        "n03_candidate_protect": 8
+      },
+      "boundaries": 96
+    },
+    "N04": {
+      "cells": 32,
+      "byBranch": {
+        "n04_candidate_good": 6,
+        "n04_candidate_play": 6,
+        "n04_candidate_envy": 6,
+        "n04_candidate_tear": 6,
+        "n04_candidate_past": 8
+      },
+      "boundaries": 240
+    },
+    "N05": {
+      "cells": 16,
+      "byBranch": {
+        "n05_candidate_good": 1,
+        "n05_candidate_count": 1,
+        "n05_candidate_talk": 2,
+        "n05_candidate_sad": 4,
+        "n05_candidate_fork": 8
+      },
+      "boundaries": 96
+    },
+    "N06": {
+      "cells": 16,
+      "byBranch": {
+        "n06_candidate_good": 2,
+        "n06_candidate_sleep": 3,
+        "n06_candidate_pain": 1,
+        "n06_candidate_stop": 2,
+        "n06_candidate_split": 8
+      },
+      "boundaries": 96
+    },
+    "N07": {
+      "cells": 16,
+      "byBranch": {
+        "n07_candidate_good": 2,
+        "n07_candidate_discount": 3,
+        "n07_candidate_soft": 1,
+        "n07_candidate_acid": 2,
+        "n07_candidate_bucket": 8
+      },
+      "boundaries": 96
+    },
+    "N08": {
+      "cells": 12,
+      "byBranch": {
+        "n08_candidate_good": 1,
+        "n08_candidate_child": 1,
+        "n08_candidate_military": 4,
+        "n08_candidate_slow": 2,
+        "n08_candidate_wait": 4
+      },
+      "boundaries": 60
+    },
+    "N09": {
+      "cells": 16,
+      "byBranch": {
+        "n09_candidate_good": 2,
+        "n09_candidate_grace": 2,
+        "n09_candidate_doubt": 2,
+        "n09_candidate_hedge": 2,
+        "n09_candidate_grain": 8
+      },
+      "boundaries": 96
+    }
+  },
+  "registeredWitnesses": [
+    {
+      "orderId": "E01",
+      "name": "一",
+      "main": "E01-S1",
+      "aux": [],
+      "ingredients": [
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "e01_result_rested",
+      "effects": {
+        "dream": 0.1,
+        "calm": 0.05,
+        "sleep": 1.0
+      },
+      "branch": "e01_result_rested",
+      "canShip": true,
+      "onset": 2,
+      "duration": 8,
+      "stability": 1,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "E01",
+      "name": "二",
+      "main": "E01-S1",
+      "aux": [
+        "E01-D1"
+      ],
+      "ingredients": [
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "e01_result_mother_dream",
+      "effects": {
+        "warmth": 0.03,
+        "dream": 1.1,
+        "calm": 0.05,
+        "sleep": 1.46
+      },
+      "branch": "e01_result_mother_dream",
+      "canShip": true,
+      "onset": 2,
+      "duration": 8,
+      "stability": 1,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "E01",
+      "name": "三",
+      "main": "E01-S1",
+      "aux": [
+        "E01-M1"
+      ],
+      "ingredients": [
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "e01_result_song_faded",
+      "effects": {
+        "forget": 0.6,
+        "calm": 0.05,
+        "sadness": 0.06,
+        "dream": 0.1,
+        "relax": 0.03,
+        "sleep": 1.0
+      },
+      "branch": "e01_result_song_faded",
+      "canShip": true,
+      "onset": 2,
+      "duration": 8,
+      "stability": 1,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "E01",
+      "name": "四",
+      "main": "E01-S1",
+      "aux": [
+        "E01-D1",
+        "E01-M1"
+      ],
+      "ingredients": [
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "e01_result_mother_unclear",
+      "effects": {
+        "forget": 0.6,
+        "calm": 0.05,
+        "warmth": 0.03,
+        "sadness": 0.06,
+        "dream": 1.1,
+        "relax": 0.03,
+        "sleep": 1.46
+      },
+      "branch": "e01_result_mother_unclear",
+      "canShip": true,
+      "onset": 2,
+      "duration": 8,
+      "stability": 1,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "E01",
+      "name": "五",
+      "main": "E01-S1",
+      "aux": [
+        "E01-D1",
+        "E01-H1"
+      ],
+      "ingredients": [
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "e01_result_fish_choir",
+      "effects": {
+        "calm": 0.05,
+        "warmth": 0.49,
+        "relax": 0.03,
+        "dream": 1.1,
+        "happy": 0.6,
+        "sleep": 1.46
+      },
+      "branch": "e01_result_fish_choir",
+      "canShip": true,
+      "onset": 2,
+      "duration": 8,
+      "stability": 1,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "E01",
+      "name": "六",
+      "main": "E01-S1",
+      "aux": [
+        "E01-D1",
+        "E01-Q1"
+      ],
+      "ingredients": [
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "e01_result_walking_crates",
+      "effects": {
+        "calm": 0.05,
+        "steady": 0.03,
+        "warmth": 0.03,
+        "recall": 0.03,
+        "dream": 1.1,
+        "reason": 0.6,
+        "sleep": 1.46
+      },
+      "branch": "e01_result_walking_crates",
+      "canShip": true,
+      "onset": 2,
+      "duration": 8,
+      "stability": 1,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "E01",
+      "name": "七",
+      "main": "E01-S1",
+      "aux": [],
+      "ingredients": [
+        "ing_sea_salt",
+        "ing_ashen_herb"
+      ],
+      "expectedBranch": "e01_result_fragmented_dream",
+      "effects": {
+        "dream": 0.55,
+        "calm": 0.07500000000000001,
+        "sleep": 1.5
+      },
+      "branch": "e01_result_fragmented_dream",
+      "canShip": true,
+      "onset": 2,
+      "duration": 8,
+      "stability": 1,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "E01",
+      "name": "八",
+      "main": "E01-S1",
+      "aux": [
+        "E01-M1"
+      ],
+      "ingredients": [
+        "ing_sea_salt",
+        "ing_ashen_herb"
+      ],
+      "expectedBranch": "e01_result_fragmented_song_faded",
+      "effects": {
+        "forget": 0.8999999999999999,
+        "calm": 0.07500000000000001,
+        "sadness": 0.09,
+        "dream": 0.55,
+        "relax": 0.045,
+        "sleep": 1.5
+      },
+      "branch": "e01_result_fragmented_song_faded",
+      "canShip": true,
+      "onset": 2,
+      "duration": 8,
+      "stability": 1,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N01",
+      "name": "谈妥",
+      "main": "N01-B1",
+      "aux": [],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n01_result_departure_agreed",
+      "effects": {
+        "fear": 0.05,
+        "reason": 0.05,
+        "brave": 1.0
+      },
+      "branch": "n01_result_departure_agreed",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N01",
+      "name": "冲突",
+      "main": "N01-B1",
+      "aux": [
+        "N01-A1"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n01_result_departure_conflict",
+      "effects": {
+        "pain": 0.03,
+        "anger": 0.6,
+        "fear": 0.05,
+        "reason": 0.05,
+        "brave": 1.4300000000000002
+      },
+      "branch": "n01_result_departure_conflict",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N01",
+      "name": "留下",
+      "main": "N01-B1",
+      "aux": [
+        "N01-T1"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n01_result_stayed_for_promise",
+      "effects": {
+        "safety": 0.03,
+        "brave": 1.0,
+        "fear": 0.05,
+        "recall": 0.03,
+        "reason": 0.05,
+        "trust": 0.6
+      },
+      "branch": "n01_result_stayed_for_promise",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N01",
+      "name": "错过",
+      "main": "N01-B1",
+      "aux": [
+        "N01-F1"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n01_result_missed_place",
+      "effects": {
+        "fear": 1.05,
+        "steady": 0.03,
+        "reason": 0.51,
+        "brave": 1.0
+      },
+      "branch": "n01_result_missed_place",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N01",
+      "name": "学习",
+      "main": "N01-B1",
+      "aux": [
+        "N01-C1"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n01_result_started_learning",
+      "effects": {
+        "brave": 1.0,
+        "fear": 0.05,
+        "recall": 0.03,
+        "curiosity": 0.6,
+        "reason": 0.48000000000000004
+      },
+      "branch": "n01_result_started_learning",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N02",
+      "name": "吃成了",
+      "main": "N02-H1",
+      "aux": [],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n02_candidate_good",
+      "effects": {
+        "relax": 0.05,
+        "happy": 1.0,
+        "warmth": 0.1
+      },
+      "branch": "n02_candidate_good",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N02",
+      "name": "咽回去",
+      "main": "N02-H1",
+      "aux": [
+        "N02-F1"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n02_candidate_swallowed",
+      "effects": {
+        "sadness": 0.06,
+        "warmth": 0.1,
+        "fear": 0.6,
+        "relax": 0.05,
+        "reason": 0.03,
+        "happy": 1.0
+      },
+      "branch": "n02_candidate_swallowed",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N02",
+      "name": "问出口",
+      "main": "N02-H1",
+      "aux": [
+        "N02-F1",
+        "N02-S1"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n02_candidate_escaped",
+      "effects": {
+        "sadness": 1.06,
+        "recall": 0.06,
+        "warmth": 0.53,
+        "fear": 0.6,
+        "relax": 0.05,
+        "reason": 0.03,
+        "happy": 1.0
+      },
+      "branch": "n02_candidate_escaped",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N02",
+      "name": "忙照料",
+      "main": "N02-H1",
+      "aux": [
+        "N02-H2"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n02_candidate_care",
+      "effects": {
+        "trust": 0.03,
+        "relax": 0.05,
+        "happy": 2.0,
+        "warmth": 0.53
+      },
+      "branch": "n02_candidate_care",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N02",
+      "name": "不相信",
+      "main": "N02-H1",
+      "aux": [
+        "N02-P1"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n02_candidate_doubted",
+      "effects": {
+        "suspicion": 0.6,
+        "warmth": 0.1,
+        "fear": 0.03,
+        "relax": 0.05,
+        "reason": 0.06,
+        "happy": 1.0
+      },
+      "branch": "n02_candidate_doubted",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N03",
+      "name": "顺利卖完",
+      "main": "N03-K1",
+      "aux": [],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n03_candidate_good",
+      "effects": {
+        "safety": 1.0,
+        "reason": 0.05,
+        "trust": 0.05
+      },
+      "branch": "n03_candidate_good",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N03",
+      "name": "一直躲",
+      "main": "N03-K1",
+      "aux": [
+        "N03-F1"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n03_candidate_hide",
+      "effects": {
+        "calm": 0.03,
+        "sadness": 0.03,
+        "fear": 0.6,
+        "safety": 1.0,
+        "reason": 0.05,
+        "trust": 0.05
+      },
+      "branch": "n03_candidate_hide",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N03",
+      "name": "没开口",
+      "main": "N03-K1",
+      "aux": [
+        "N03-F1",
+        "E01-C1"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n03_candidate_freeze",
+      "effects": {
+        "sleep": 0.06,
+        "calm": 0.03,
+        "confusion": 0.6,
+        "sadness": 0.03,
+        "fear": 1.03,
+        "safety": 1.0,
+        "reason": 0.05,
+        "trust": 0.05
+      },
+      "branch": "n03_candidate_freeze",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N03",
+      "name": "忘买盐",
+      "main": "N03-K1",
+      "aux": [
+        "N03-C1"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n03_candidate_salt",
+      "effects": {
+        "happy": 0.03,
+        "brave": 0.03,
+        "curiosity": 0.6,
+        "safety": 1.0,
+        "reason": 0.05,
+        "trust": 0.05
+      },
+      "branch": "n03_candidate_salt",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N03",
+      "name": "护萝卜",
+      "main": "N03-K1",
+      "aux": [
+        "N03-P1"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n03_candidate_protect",
+      "effects": {
+        "steady": 0.03,
+        "suspicion": 0.6,
+        "fear": 0.03,
+        "safety": 1.0,
+        "reason": 0.05,
+        "trust": 0.05
+      },
+      "branch": "n03_candidate_protect",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N04",
+      "name": "高兴回来了",
+      "main": "N04-H1",
+      "aux": [],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n04_candidate_good",
+      "effects": {
+        "relax": 0.1,
+        "warmth": 0.05,
+        "happy": 1.0
+      },
+      "branch": "n04_candidate_good",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N04",
+      "name": "笑没入心",
+      "main": "N04-H1",
+      "aux": [
+        "N04-E1"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n04_candidate_envy",
+      "effects": {
+        "sadness": 0.03,
+        "warmth": 0.05,
+        "relax": 0.1,
+        "envy": 0.6,
+        "reason": 0.03,
+        "happy": 1.0
+      },
+      "branch": "n04_candidate_envy",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N04",
+      "name": "撕旗",
+      "main": "N04-H1",
+      "aux": [
+        "N04-E1",
+        "N01-A2"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n04_candidate_tear",
+      "effects": {
+        "brave": 0.03,
+        "relax": 0.1,
+        "pain": 0.03,
+        "sadness": 0.03,
+        "anger": 0.6,
+        "warmth": 0.05,
+        "envy": 0.6,
+        "reason": 0.03,
+        "happy": 1.0
+      },
+      "branch": "n04_candidate_tear",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N04",
+      "name": "贪玩未扫",
+      "main": "N04-H1",
+      "aux": [
+        "N04-H2"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n04_candidate_play",
+      "effects": {
+        "brave": 0.03,
+        "relax": 0.1,
+        "warmth": 0.48000000000000004,
+        "happy": 2.0
+      },
+      "branch": "n04_candidate_play",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N04",
+      "name": "熬旧甜汤",
+      "main": "N04-H1",
+      "aux": [
+        "N04-R1",
+        "N04-S1"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n04_candidate_past",
+      "effects": {
+        "sadness": 1.06,
+        "warmth": 0.48000000000000004,
+        "calm": 0.06,
+        "recall": 1.03,
+        "relax": 0.1,
+        "happy": 1.0
+      },
+      "branch": "n04_candidate_past",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N05",
+      "name": "吃完了",
+      "main": "N05-A1",
+      "aux": [],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n05_candidate_good",
+      "effects": {
+        "appetite": 1.0,
+        "happy": 0.05,
+        "warmth": 0.05
+      },
+      "branch": "n05_candidate_good",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N05",
+      "name": "算菜价",
+      "main": "N05-A1",
+      "aux": [
+        "N05-Q1"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n05_candidate_count",
+      "effects": {
+        "appetite": 1.0,
+        "steady": 0.03,
+        "warmth": 0.05,
+        "recall": 0.03,
+        "reason": 0.6,
+        "happy": 0.05
+      },
+      "branch": "n05_candidate_count",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N05",
+      "name": "一口没动",
+      "main": "N05-A1",
+      "aux": [
+        "N05-S1"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n05_candidate_sad",
+      "effects": {
+        "appetite": 1.0,
+        "sadness": 0.6,
+        "warmth": 0.05,
+        "fear": 0.03,
+        "recall": 0.03,
+        "happy": 0.05
+      },
+      "branch": "n05_candidate_sad",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N05",
+      "name": "说家事",
+      "main": "N05-A1",
+      "aux": [
+        "N05-T1"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n05_candidate_talk",
+      "effects": {
+        "appetite": 1.0,
+        "warmth": 0.51,
+        "safety": 0.03,
+        "trust": 0.6,
+        "happy": 0.05
+      },
+      "branch": "n05_candidate_talk",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N05",
+      "name": "质问银叉",
+      "main": "N05-A1",
+      "aux": [
+        "N01-S1"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n05_candidate_fork",
+      "effects": {
+        "appetite": 1.0,
+        "warmth": 0.05,
+        "fear": 0.03,
+        "suspicion": 0.6,
+        "reason": 0.03,
+        "happy": 0.05
+      },
+      "branch": "n05_candidate_fork",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N06",
+      "name": "做完了",
+      "main": "N06-M1",
+      "aux": [],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n06_candidate_good",
+      "effects": {
+        "steady": 1.0,
+        "reason": 0.1,
+        "calm": 0.05
+      },
+      "branch": "n06_candidate_good",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N06",
+      "name": "疼着做完",
+      "main": "N06-M1",
+      "aux": [
+        "N06-P1"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n06_candidate_pain",
+      "effects": {
+        "pain": 0.6,
+        "steady": 1.0,
+        "fear": 0.03,
+        "recall": 0.03,
+        "reason": 0.1,
+        "calm": 0.05
+      },
+      "branch": "n06_candidate_pain",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N06",
+      "name": "怕痛停手",
+      "main": "N06-M1",
+      "aux": [
+        "N06-P1",
+        "E01-F1"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n06_candidate_stop",
+      "effects": {
+        "pain": 0.6,
+        "steady": 1.0,
+        "sadness": 0.03,
+        "fear": 1.03,
+        "recall": 0.03,
+        "reason": 0.1,
+        "calm": 0.48000000000000004
+      },
+      "branch": "n06_candidate_stop",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N06",
+      "name": "睡过头",
+      "main": "N06-M1",
+      "aux": [
+        "E01-S2"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n06_candidate_sleep",
+      "effects": {
+        "steady": 1.0,
+        "calm": 0.51,
+        "relax": 0.03,
+        "reason": 0.1,
+        "sleep": 0.6
+      },
+      "branch": "n06_candidate_sleep",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N06",
+      "name": "强敲开裂",
+      "main": "N06-M1",
+      "aux": [
+        "N06-A1"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n06_candidate_split",
+      "effects": {
+        "calm": 0.05,
+        "anger": 0.6,
+        "recall": 0.03,
+        "reason": 0.53,
+        "steady": 1.0
+      },
+      "branch": "n06_candidate_split",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N07",
+      "name": "要回部分",
+      "main": "N07-A1",
+      "aux": [],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n07_candidate_good",
+      "effects": {
+        "pain": 0.05,
+        "brave": 0.05,
+        "anger": 1.0
+      },
+      "branch": "n07_candidate_good",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N07",
+      "name": "软下来",
+      "main": "N07-A1",
+      "aux": [
+        "N07-S1"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n07_candidate_soft",
+      "effects": {
+        "pain": 0.05,
+        "calm": 0.03,
+        "brave": 0.05,
+        "fear": 0.03,
+        "sadness": 0.6,
+        "anger": 1.0
+      },
+      "branch": "n07_candidate_soft",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N07",
+      "name": "泛酸没要成",
+      "main": "N07-A1",
+      "aux": [
+        "N07-S1",
+        "N03-E1"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n07_candidate_acid",
+      "effects": {
+        "pain": 0.05,
+        "calm": 0.03,
+        "sadness": 1.03,
+        "brave": 0.05,
+        "fear": 0.03,
+        "envy": 0.6,
+        "reason": 0.03,
+        "anger": 1.0
+      },
+      "branch": "n07_candidate_acid",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N07",
+      "name": "应半价",
+      "main": "N07-A1",
+      "aux": [
+        "N07-F1"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n07_candidate_discount",
+      "effects": {
+        "pain": 0.05,
+        "sadness": 0.03,
+        "brave": 0.05,
+        "fear": 0.6,
+        "reason": 0.03,
+        "anger": 1.0
+      },
+      "branch": "n07_candidate_discount",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N07",
+      "name": "掀桶",
+      "main": "N07-A1",
+      "aux": [
+        "N07-A2"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n07_candidate_bucket",
+      "effects": {
+        "pain": 0.05,
+        "brave": 0.05,
+        "fear": 0.03,
+        "reason": 0.03,
+        "anger": 2.0
+      },
+      "branch": "n07_candidate_bucket",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N08",
+      "name": "休日过成",
+      "main": "N08-R1",
+      "aux": [],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n08_candidate_good",
+      "effects": {
+        "relax": 1.0,
+        "safety": 0.1,
+        "calm": 0.05
+      },
+      "branch": "n08_candidate_good",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N08",
+      "name": "慢半拍",
+      "main": "N08-R1",
+      "aux": [
+        "N08-C1"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n08_candidate_slow",
+      "effects": {
+        "safety": 0.1,
+        "relax": 1.4300000000000002,
+        "reason": 0.03,
+        "calm": 1.05
+      },
+      "branch": "n08_candidate_slow",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N08",
+      "name": "可以再等",
+      "main": "N08-C1",
+      "aux": [
+        "N08-R1",
+        "N08-C2"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n08_candidate_wait",
+      "effects": {
+        "safety": 0.49,
+        "relax": 1.05,
+        "reason": 0.48000000000000004,
+        "calm": 2.43
+      },
+      "branch": "n08_candidate_wait",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N08",
+      "name": "陪玩拖鞋",
+      "main": "N08-R1",
+      "aux": [
+        "N08-H1"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n08_candidate_child",
+      "effects": {
+        "calm": 0.05,
+        "warmth": 0.03,
+        "trust": 0.03,
+        "relax": 1.0,
+        "safety": 0.1,
+        "happy": 0.6
+      },
+      "branch": "n08_candidate_child",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N08",
+      "name": "家如哨所",
+      "main": "N08-R1",
+      "aux": [
+        "N08-A1"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n08_candidate_military",
+      "effects": {
+        "calm": 0.05,
+        "anger": 0.6,
+        "fear": 0.03,
+        "relax": 1.0,
+        "steady": 0.03,
+        "safety": 0.1
+      },
+      "branch": "n08_candidate_military",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N09",
+      "name": "对上了",
+      "main": "N09-Q1",
+      "aux": [],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n09_candidate_good",
+      "effects": {
+        "recall": 0.1,
+        "reason": 1.0,
+        "steady": 0.05
+      },
+      "branch": "n09_candidate_good",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N09",
+      "name": "盘问失礼",
+      "main": "N09-Q1",
+      "aux": [
+        "N09-S1"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n09_candidate_doubt",
+      "effects": {
+        "steady": 0.05,
+        "fear": 0.03,
+        "recall": 0.1,
+        "reason": 1.4300000000000002,
+        "suspicion": 0.6
+      },
+      "branch": "n09_candidate_doubt",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N09",
+      "name": "数落花篱",
+      "main": "N09-Q1",
+      "aux": [
+        "N09-S1",
+        "N09-A1"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n09_candidate_hedge",
+      "effects": {
+        "pain": 0.03,
+        "steady": 0.05,
+        "anger": 0.6,
+        "fear": 0.03,
+        "recall": 0.53,
+        "reason": 1.4300000000000002,
+        "suspicion": 0.6
+      },
+      "branch": "n09_candidate_hedge",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N09",
+      "name": "改作恩典",
+      "main": "N09-Q1",
+      "aux": [
+        "N09-F1"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n09_candidate_grace",
+      "effects": {
+        "steady": 0.05,
+        "sadness": 0.03,
+        "fear": 0.6,
+        "recall": 0.1,
+        "reason": 1.0,
+        "trust": 0.03
+      },
+      "branch": "n09_candidate_grace",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N09",
+      "name": "先收粮",
+      "main": "N09-Q1",
+      "aux": [
+        "N09-T1",
+        "N09-T2"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n09_candidate_grain",
+      "effects": {
+        "steady": 0.48000000000000004,
+        "safety": 0.03,
+        "recall": 0.1,
+        "reason": 1.8900000000000001,
+        "trust": 1.6
+      },
+      "branch": "n09_candidate_grain",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N10",
+      "name": "三星",
+      "main": "N10-W1",
+      "aux": [],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n10_result_3",
+      "effects": {
+        "recall": 1.0,
+        "reason": 0.05,
+        "trust": 0.1
+      },
+      "branch": "n10_result_3",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N10",
+      "name": "顶嘴",
+      "main": "N10-W1",
+      "aux": [
+        "N10-W2"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n10_result_2a",
+      "effects": {
+        "pain": 0.03,
+        "anger": 0.6,
+        "brave": 0.03,
+        "recall": 1.0,
+        "reason": 0.05,
+        "trust": 0.1
+      },
+      "branch": "n10_result_2a",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N10",
+      "name": "答早",
+      "main": "N10-W1",
+      "aux": [
+        "N10-W3"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n10_result_2b",
+      "effects": {
+        "calm": 0.03,
+        "sadness": 0.03,
+        "fear": 0.6,
+        "recall": 1.0,
+        "reason": 0.05,
+        "trust": 0.1
+      },
+      "branch": "n10_result_2b",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N10",
+      "name": "怀疑",
+      "main": "N10-W1",
+      "aux": [
+        "N09-P2"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n10_result_1a",
+      "effects": {
+        "suspicion": 0.6,
+        "fear": 0.03,
+        "recall": 1.0,
+        "reason": 0.51,
+        "trust": 0.1
+      },
+      "branch": "n10_result_1a",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "N10",
+      "name": "再伤",
+      "main": "N10-W1",
+      "aux": [
+        "N10-W4",
+        "E01-T1"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_sea_salt"
+      ],
+      "expectedBranch": "n10_result_1b",
+      "effects": {
+        "warmth": 0.03,
+        "recall": 1.4300000000000002,
+        "safety": 0.46,
+        "reason": 0.05,
+        "trust": 2.1
+      },
+      "branch": "n10_result_1b",
+      "canShip": true,
+      "onset": 1,
+      "duration": 2,
+      "stability": 0,
+      "unstable": false,
+      "failed": []
+    }
+  ],
+  "firstAlternateWitnesses": [
+    {
+      "orderId": "E01",
+      "main": "E01-S2",
+      "effects": {
+        "calm": 0.1,
+        "relax": 0.05,
+        "sleep": 1.0
+      },
+      "branch": "e01_result_rested",
+      "canShip": true,
+      "onset": 2,
+      "duration": 6,
+      "stability": 1,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "E01",
+      "main": "E01-S2",
+      "effects": {
+        "calm": 0.1,
+        "warmth": 0.03,
+        "dream": 0.6,
+        "relax": 0.05,
+        "sleep": 1.46
+      },
+      "branch": "e01_result_mother_dream",
+      "canShip": true,
+      "onset": 2,
+      "duration": 6,
+      "stability": 1,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "E01",
+      "main": "E01-S2",
+      "effects": {
+        "forget": 0.6,
+        "calm": 0.1,
+        "relax": 0.48000000000000004,
+        "sadness": 0.06,
+        "sleep": 1.0
+      },
+      "branch": "e01_result_song_faded",
+      "canShip": true,
+      "onset": 2,
+      "duration": 6,
+      "stability": 1,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "E01",
+      "main": "E01-S2",
+      "effects": {
+        "forget": 0.6,
+        "calm": 0.1,
+        "warmth": 0.03,
+        "sadness": 0.06,
+        "dream": 0.6,
+        "relax": 0.48000000000000004,
+        "sleep": 1.46
+      },
+      "branch": "e01_result_mother_unclear",
+      "canShip": true,
+      "onset": 2,
+      "duration": 6,
+      "stability": 1,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "E01",
+      "main": "E01-S2",
+      "effects": {
+        "calm": 0.1,
+        "warmth": 0.49,
+        "happy": 0.6,
+        "dream": 0.6,
+        "relax": 0.48000000000000004,
+        "sleep": 1.46
+      },
+      "branch": "e01_result_fish_choir",
+      "canShip": true,
+      "onset": 2,
+      "duration": 6,
+      "stability": 1,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "E01",
+      "main": "E01-S2",
+      "effects": {
+        "steady": 0.03,
+        "calm": 0.1,
+        "recall": 0.03,
+        "warmth": 0.03,
+        "relax": 0.05,
+        "dream": 0.6,
+        "reason": 0.6,
+        "sleep": 1.46
+      },
+      "branch": "e01_result_walking_crates",
+      "canShip": true,
+      "onset": 2,
+      "duration": 6,
+      "stability": 1,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "E01",
+      "main": "E01-S2",
+      "effects": {
+        "dream": 0.4,
+        "calm": 0.15000000000000002,
+        "relax": 0.07500000000000001,
+        "sleep": 1.5
+      },
+      "branch": "e01_result_fragmented_dream",
+      "canShip": true,
+      "onset": 2,
+      "duration": 6,
+      "stability": 1,
+      "unstable": false,
+      "failed": []
+    },
+    {
+      "orderId": "E01",
+      "main": "E01-S2",
+      "effects": {
+        "forget": 0.8999999999999999,
+        "calm": 0.15000000000000002,
+        "dream": 0.4,
+        "relax": 0.7200000000000001,
+        "sadness": 0.09,
+        "sleep": 1.5
+      },
+      "branch": "e01_result_fragmented_song_faded",
+      "canShip": true,
+      "onset": 2,
+      "duration": 6,
+      "stability": 1,
+      "unstable": false,
+      "failed": []
+    }
+  ],
+  "negativeChecks": [
+    {
+      "orderId": "N01",
+      "case": "未加速",
+      "failed": [
+        "onset"
+      ]
+    },
+    {
+      "orderId": "N01",
+      "case": "持续过长",
+      "failed": [
+        "duration",
+        "onset"
+      ]
+    },
+    {
+      "orderId": "N01",
+      "case": "睡意越界",
+      "failed": [
+        "sleep"
+      ]
+    },
+    {
+      "orderId": "N02",
+      "case": "未加速",
+      "failed": [
+        "onset"
+      ]
+    },
+    {
+      "orderId": "N02",
+      "case": "持续过长",
+      "failed": [
+        "onset",
+        "duration"
+      ]
+    },
+    {
+      "orderId": "N02",
+      "case": "睡意越界",
+      "failed": [
+        "sleep"
+      ]
+    },
+    {
+      "orderId": "N03",
+      "case": "未加速",
+      "failed": [
+        "onset"
+      ]
+    },
+    {
+      "orderId": "N03",
+      "case": "持续过长",
+      "failed": [
+        "onset",
+        "duration"
+      ]
+    },
+    {
+      "orderId": "N03",
+      "case": "睡意越界",
+      "failed": [
+        "sleep"
+      ]
+    },
+    {
+      "orderId": "N04",
+      "case": "未加速",
+      "failed": [
+        "onset"
+      ]
+    },
+    {
+      "orderId": "N04",
+      "case": "持续过长",
+      "failed": [
+        "onset",
+        "duration"
+      ]
+    },
+    {
+      "orderId": "N04",
+      "case": "睡意越界",
+      "failed": [
+        "sleep"
+      ]
+    },
+    {
+      "orderId": "N05",
+      "case": "未加速",
+      "failed": [
+        "onset"
+      ]
+    },
+    {
+      "orderId": "N05",
+      "case": "持续过长",
+      "failed": [
+        "onset",
+        "duration"
+      ]
+    },
+    {
+      "orderId": "N05",
+      "case": "睡意越界",
+      "failed": [
+        "sleep"
+      ]
+    },
+    {
+      "orderId": "N06",
+      "case": "未加速",
+      "failed": [
+        "onset"
+      ]
+    },
+    {
+      "orderId": "N06",
+      "case": "持续过长",
+      "failed": [
+        "onset",
+        "duration"
+      ]
+    },
+    {
+      "orderId": "N07",
+      "case": "未加速",
+      "failed": [
+        "onset"
+      ]
+    },
+    {
+      "orderId": "N07",
+      "case": "持续过长",
+      "failed": [
+        "onset",
+        "duration"
+      ]
+    },
+    {
+      "orderId": "N07",
+      "case": "睡意越界",
+      "failed": [
+        "sleep"
+      ]
+    },
+    {
+      "orderId": "N08",
+      "case": "未加速",
+      "failed": [
+        "onset"
+      ]
+    },
+    {
+      "orderId": "N08",
+      "case": "持续过长",
+      "failed": [
+        "onset",
+        "duration"
+      ]
+    },
+    {
+      "orderId": "N08",
+      "case": "睡意越界",
+      "failed": [
+        "sleep"
+      ]
+    },
+    {
+      "orderId": "N09",
+      "case": "未加速",
+      "failed": [
+        "onset"
+      ]
+    },
+    {
+      "orderId": "N09",
+      "case": "持续过长",
+      "failed": [
+        "onset",
+        "duration"
+      ]
+    },
+    {
+      "orderId": "N09",
+      "case": "睡意越界",
+      "failed": [
+        "sleep"
+      ]
+    },
+    {
+      "orderId": "N10",
+      "case": "未加速",
+      "failed": [
+        "onset"
+      ]
+    },
+    {
+      "orderId": "N10",
+      "case": "持续过长",
+      "failed": [
+        "duration",
+        "onset"
+      ]
+    },
+    {
+      "orderId": "N10",
+      "case": "睡意越界",
+      "failed": [
+        "sleep"
+      ]
+    },
+    {
+      "orderId": "N06",
+      "case": "痛感主词只有1小时",
+      "failed": [
+        "duration"
+      ]
+    },
+    {
+      "orderId": "E01",
+      "case": "整夜延长过量",
+      "failed": [
+        "duration",
+        "work",
+        "residual"
+      ]
+    }
+  ],
+  "scans": {
+    "E01": {
+      "pool": [
+        "E01-C1",
+        "E01-D1",
+        "E01-F1",
+        "E01-H1",
+        "E01-M1",
+        "E01-Q1",
+        "E01-S2",
+        "E01-T1"
+      ],
+      "scan": {
+        "total": 975,
+        "can_ship": 646,
+        "unstable": 195,
+        "cannot_ship": 329
+      },
+      "byBranch": {
+        "e01_result_rested": 222,
+        "e01_result_fragmented_dream": 111,
+        "e01_result_mother_dream": 103,
+        "e01_result_fish_choir": 31,
+        "e01_result_song_faded": 78,
+        "e01_result_fragmented_song_faded": 39,
+        "e01_result_mother_unclear": 33,
+        "e01_result_walking_crates": 29
+      },
+      "unroutedEffects": {
+        "sleep": 646,
+        "trust": 15
+      },
+      "examples": {
+        "sleep": {
+          "main": "E01-S1",
+          "aux": [],
+          "ingredients": [],
+          "weight": 1.0,
+          "branch": "e01_result_rested"
+        },
+        "trust": {
+          "main": "E01-S1",
+          "aux": [
+            "E01-T1"
+          ],
+          "ingredients": [
+            "ing_ashen_herb",
+            "ing_ashen_herb"
+          ],
+          "weight": 1.2,
+          "branch": "e01_result_mother_dream"
+        }
+      }
+    },
+    "N01": {
+      "pool": [
+        "E01-M1",
+        "E01-S1",
+        "E01-T1",
+        "N01-A1",
+        "N01-A2",
+        "N01-C1",
+        "N01-F1",
+        "N01-R1",
+        "N01-S1",
+        "N01-T1"
+      ],
+      "scan": {
+        "total": 1515,
+        "cannot_ship": 1105,
+        "can_ship": 410,
+        "unstable": 328
+      },
+      "byBranch": {
+        "n01_result_departure_agreed": 45,
+        "n01_result_stayed_for_promise": 136,
+        "n01_result_departure_conflict": 96,
+        "n01_result_started_learning": 33,
+        "n01_result_missed_place": 100
+      },
+      "unroutedEffects": {
+        "dream": 82,
+        "forget": 85
+      },
+      "examples": {
+        "dream": {
+          "main": "N01-B1",
+          "aux": [],
+          "ingredients": [
+            "ing_night_dew",
+            "ing_ashen_herb"
+          ],
+          "weight": 0.4,
+          "branch": "n01_result_departure_agreed"
+        },
+        "forget": {
+          "main": "N01-B1",
+          "aux": [
+            "E01-M1"
+          ],
+          "ingredients": [
+            "ing_night_dew"
+          ],
+          "weight": 0.6,
+          "branch": "n01_result_departure_agreed"
+        }
+      }
+    },
+    "N02": {
+      "pool": [
+        "E01-M1",
+        "E01-S1",
+        "E01-T1",
+        "N01-A1",
+        "N02-F1",
+        "N02-H2",
+        "N02-P1",
+        "N02-S1"
+      ],
+      "scan": {
+        "total": 975,
+        "cannot_ship": 725,
+        "can_ship": 250,
+        "unstable": 200
+      },
+      "byBranch": {
+        "n02_candidate_good": 85,
+        "n02_candidate_swallowed": 43,
+        "n02_candidate_care": 45,
+        "n02_candidate_doubted": 65,
+        "n02_candidate_escaped": 12
+      },
+      "unroutedEffects": {
+        "dream": 50,
+        "forget": 65,
+        "anger": 65,
+        "trust": 2
+      },
+      "examples": {
+        "dream": {
+          "main": "N02-H1",
+          "aux": [],
+          "ingredients": [
+            "ing_night_dew",
+            "ing_ashen_herb"
+          ],
+          "weight": 0.4,
+          "branch": "n02_candidate_good"
+        },
+        "forget": {
+          "main": "N02-H1",
+          "aux": [
+            "E01-M1"
+          ],
+          "ingredients": [
+            "ing_night_dew"
+          ],
+          "weight": 0.6,
+          "branch": "n02_candidate_good"
+        },
+        "anger": {
+          "main": "N02-H1",
+          "aux": [
+            "N01-A1"
+          ],
+          "ingredients": [
+            "ing_night_dew"
+          ],
+          "weight": 0.6,
+          "branch": "n02_candidate_good"
+        },
+        "trust": {
+          "main": "N02-H1",
+          "aux": [
+            "E01-T1",
+            "N02-H2"
+          ],
+          "ingredients": [
+            "ing_night_dew",
+            "ing_ashen_herb"
+          ],
+          "weight": 1.545,
+          "branch": "n02_candidate_care"
+        }
+      }
+    },
+    "N03": {
+      "pool": [
+        "E01-C1",
+        "E01-M1",
+        "E01-S1",
+        "E01-T1",
+        "N01-A1",
+        "N03-C1",
+        "N03-E1",
+        "N03-F1",
+        "N03-P1"
+      ],
+      "scan": {
+        "total": 1230,
+        "cannot_ship": 905,
+        "can_ship": 325,
+        "unstable": 260
+      },
+      "byBranch": {
+        "n03_candidate_good": 130,
+        "n03_candidate_salt": 55,
+        "n03_candidate_hide": 55,
+        "n03_candidate_protect": 75,
+        "n03_candidate_freeze": 10
+      },
+      "unroutedEffects": {
+        "dream": 65,
+        "forget": 75,
+        "trust": 15,
+        "anger": 75
+      },
+      "examples": {
+        "dream": {
+          "main": "N03-K1",
+          "aux": [],
+          "ingredients": [
+            "ing_night_dew",
+            "ing_ashen_herb"
+          ],
+          "weight": 0.4,
+          "branch": "n03_candidate_good"
+        },
+        "forget": {
+          "main": "N03-K1",
+          "aux": [
+            "E01-M1"
+          ],
+          "ingredients": [
+            "ing_night_dew"
+          ],
+          "weight": 0.6,
+          "branch": "n03_candidate_good"
+        },
+        "trust": {
+          "main": "N03-K1",
+          "aux": [
+            "E01-T1"
+          ],
+          "ingredients": [
+            "ing_night_dew",
+            "ing_ashen_herb"
+          ],
+          "weight": 1.5750000000000002,
+          "branch": "n03_candidate_good"
+        },
+        "anger": {
+          "main": "N03-K1",
+          "aux": [
+            "N01-A1"
+          ],
+          "ingredients": [
+            "ing_night_dew"
+          ],
+          "weight": 0.6,
+          "branch": "n03_candidate_good"
+        }
+      }
+    },
+    "N04": {
+      "pool": [
+        "E01-M1",
+        "E01-S1",
+        "E01-T1",
+        "N01-A1",
+        "N01-A2",
+        "N04-E1",
+        "N04-H2",
+        "N04-R1",
+        "N04-S1"
+      ],
+      "scan": {
+        "total": 1230,
+        "cannot_ship": 905,
+        "can_ship": 325,
+        "unstable": 260
+      },
+      "byBranch": {
+        "n04_candidate_good": 173,
+        "n04_candidate_envy": 53,
+        "n04_candidate_play": 65,
+        "n04_candidate_past": 14,
+        "n04_candidate_tear": 20
+      },
+      "unroutedEffects": {
+        "dream": 65,
+        "forget": 75
+      },
+      "examples": {
+        "dream": {
+          "main": "N04-H1",
+          "aux": [],
+          "ingredients": [
+            "ing_night_dew",
+            "ing_ashen_herb"
+          ],
+          "weight": 0.4,
+          "branch": "n04_candidate_good"
+        },
+        "forget": {
+          "main": "N04-H1",
+          "aux": [
+            "E01-M1"
+          ],
+          "ingredients": [
+            "ing_night_dew"
+          ],
+          "weight": 0.6,
+          "branch": "n04_candidate_good"
+        }
+      }
+    },
+    "N05": {
+      "pool": [
+        "E01-M1",
+        "E01-S1",
+        "E01-T1",
+        "N01-A1",
+        "N01-S1",
+        "N05-Q1",
+        "N05-S1",
+        "N05-T1"
+      ],
+      "scan": {
+        "total": 975,
+        "cannot_ship": 725,
+        "can_ship": 250,
+        "unstable": 200
+      },
+      "byBranch": {
+        "n05_candidate_good": 25,
+        "n05_candidate_talk": 80,
+        "n05_candidate_fork": 65,
+        "n05_candidate_count": 25,
+        "n05_candidate_sad": 55
+      },
+      "unroutedEffects": {
+        "dream": 50,
+        "forget": 65,
+        "anger": 65
+      },
+      "examples": {
+        "dream": {
+          "main": "N05-A1",
+          "aux": [],
+          "ingredients": [
+            "ing_night_dew",
+            "ing_ashen_herb"
+          ],
+          "weight": 0.4,
+          "branch": "n05_candidate_good"
+        },
+        "forget": {
+          "main": "N05-A1",
+          "aux": [
+            "E01-M1"
+          ],
+          "ingredients": [
+            "ing_night_dew"
+          ],
+          "weight": 0.6,
+          "branch": "n05_candidate_good"
+        },
+        "anger": {
+          "main": "N05-A1",
+          "aux": [
+            "N01-A1"
+          ],
+          "ingredients": [
+            "ing_night_dew"
+          ],
+          "weight": 0.6,
+          "branch": "n05_candidate_good"
+        }
+      }
+    },
+    "N06": {
+      "pool": [
+        "E01-F1",
+        "E01-M1",
+        "E01-S1",
+        "E01-S2",
+        "E01-T1",
+        "N01-A1",
+        "N06-A1",
+        "N06-P1",
+        "N06-W1"
+      ],
+      "scan": {
+        "total": 1230,
+        "cannot_ship": 820,
+        "can_ship": 410,
+        "unstable": 328
+      },
+      "byBranch": {
+        "n06_candidate_good": 85,
+        "n06_candidate_sleep": 120,
+        "n06_candidate_split": 160,
+        "n06_candidate_pain": 35,
+        "n06_candidate_stop": 10
+      },
+      "unroutedEffects": {
+        "dream": 82,
+        "forget": 85
+      },
+      "examples": {
+        "dream": {
+          "main": "N06-M1",
+          "aux": [],
+          "ingredients": [
+            "ing_night_dew",
+            "ing_ashen_herb"
+          ],
+          "weight": 0.4,
+          "branch": "n06_candidate_good"
+        },
+        "forget": {
+          "main": "N06-M1",
+          "aux": [
+            "E01-M1"
+          ],
+          "ingredients": [
+            "ing_night_dew"
+          ],
+          "weight": 0.6,
+          "branch": "n06_candidate_good"
+        }
+      }
+    },
+    "N07": {
+      "pool": [
+        "E01-M1",
+        "E01-S1",
+        "E01-T1",
+        "N01-A1",
+        "N03-E1",
+        "N07-A2",
+        "N07-F1",
+        "N07-S1"
+      ],
+      "scan": {
+        "total": 975,
+        "cannot_ship": 725,
+        "can_ship": 250,
+        "unstable": 200
+      },
+      "byBranch": {
+        "n07_candidate_good": 48,
+        "n07_candidate_bucket": 120,
+        "n07_candidate_discount": 43,
+        "n07_candidate_soft": 25,
+        "n07_candidate_acid": 14
+      },
+      "unroutedEffects": {
+        "dream": 50,
+        "forget": 65
+      },
+      "examples": {
+        "dream": {
+          "main": "N07-A1",
+          "aux": [],
+          "ingredients": [
+            "ing_night_dew",
+            "ing_ashen_herb"
+          ],
+          "weight": 0.4,
+          "branch": "n07_candidate_good"
+        },
+        "forget": {
+          "main": "N07-A1",
+          "aux": [
+            "E01-M1"
+          ],
+          "ingredients": [
+            "ing_night_dew"
+          ],
+          "weight": 0.6,
+          "branch": "n07_candidate_good"
+        }
+      }
+    },
+    "N08": {
+      "pool": [
+        "E01-M1",
+        "E01-S1",
+        "E01-T1",
+        "N01-A1",
+        "N08-A1",
+        "N08-C1",
+        "N08-C2",
+        "N08-H1"
+      ],
+      "scan": {
+        "total": 975,
+        "cannot_ship": 725,
+        "can_ship": 250,
+        "unstable": 200
+      },
+      "byBranch": {
+        "n08_candidate_good": 25,
+        "n08_candidate_military": 120,
+        "n08_candidate_slow": 78,
+        "n08_candidate_child": 25,
+        "n08_candidate_wait": 2
+      },
+      "unroutedEffects": {
+        "dream": 50,
+        "forget": 65,
+        "trust": 2
+      },
+      "examples": {
+        "dream": {
+          "main": "N08-R1",
+          "aux": [],
+          "ingredients": [
+            "ing_night_dew",
+            "ing_ashen_herb"
+          ],
+          "weight": 0.4,
+          "branch": "n08_candidate_good"
+        },
+        "forget": {
+          "main": "N08-R1",
+          "aux": [
+            "E01-M1"
+          ],
+          "ingredients": [
+            "ing_night_dew"
+          ],
+          "weight": 0.6,
+          "branch": "n08_candidate_good"
+        },
+        "trust": {
+          "main": "N08-R1",
+          "aux": [
+            "E01-T1",
+            "N08-H1"
+          ],
+          "ingredients": [
+            "ing_night_dew",
+            "ing_ashen_herb"
+          ],
+          "weight": 1.545,
+          "branch": "n08_candidate_child"
+        }
+      }
+    },
+    "N09": {
+      "pool": [
+        "E01-M1",
+        "E01-S1",
+        "E01-T1",
+        "N01-A1",
+        "N09-A1",
+        "N09-F1",
+        "N09-P2",
+        "N09-S1",
+        "N09-T1",
+        "N09-T2"
+      ],
+      "scan": {
+        "total": 1515,
+        "cannot_ship": 1105,
+        "can_ship": 410,
+        "unstable": 328
+      },
+      "byBranch": {
+        "n09_candidate_good": 155,
+        "n09_candidate_grace": 59,
+        "n09_candidate_doubt": 120,
+        "n09_candidate_grain": 36,
+        "n09_candidate_hedge": 40
+      },
+      "unroutedEffects": {
+        "dream": 82,
+        "forget": 85
+      },
+      "examples": {
+        "dream": {
+          "main": "N09-Q1",
+          "aux": [],
+          "ingredients": [
+            "ing_night_dew",
+            "ing_ashen_herb"
+          ],
+          "weight": 0.4,
+          "branch": "n09_candidate_good"
+        },
+        "forget": {
+          "main": "N09-Q1",
+          "aux": [
+            "E01-M1"
+          ],
+          "ingredients": [
+            "ing_night_dew"
+          ],
+          "weight": 0.6,
+          "branch": "n09_candidate_good"
+        }
+      }
+    },
+    "N10": {
+      "pool": [
+        "E01-M1",
+        "E01-S1",
+        "E01-T1",
+        "N01-A1",
+        "N09-P2",
+        "N10-W2",
+        "N10-W3",
+        "N10-W4",
+        "N10-W5"
+      ],
+      "scan": {
+        "total": 1230,
+        "cannot_ship": 905,
+        "can_ship": 325,
+        "unstable": 260
+      },
+      "byBranch": {
+        "n10_result_3": 65,
+        "n10_result_1b": 32,
+        "n10_result_2a": 92,
+        "n10_result_1a": 75,
+        "n10_result_2b": 61
+      },
+      "unroutedEffects": {
+        "dream": 65,
+        "forget": 75
+      },
+      "examples": {
+        "dream": {
+          "main": "N10-W1",
+          "aux": [],
+          "ingredients": [
+            "ing_night_dew",
+            "ing_ashen_herb"
+          ],
+          "weight": 0.4,
+          "branch": "n10_result_3"
+        },
+        "forget": {
+          "main": "N10-W1",
+          "aux": [
+            "E01-M1"
+          ],
+          "ingredients": [
+            "ing_night_dew"
+          ],
+          "weight": 0.6,
+          "branch": "n10_result_3"
+        }
+      }
+    }
+  },
+  "scanTotals": {
+    "total": 12825,
+    "can_ship": 3851,
+    "unstable": 2759,
+    "cannot_ship": 8974
+  },
+  "chain": {
+    "stages": [
+      {
+        "orderId": "E01",
+        "histories": 8,
+        "compressedStates": 2,
+        "edgesChecked": 8,
+        "minCurrency": 110,
+        "maxSpent": 0
+      },
+      {
+        "orderId": "N01",
+        "histories": 40,
+        "compressedStates": 2,
+        "edgesChecked": 10,
+        "minCurrency": 190,
+        "maxSpent": 0
+      },
+      {
+        "orderId": "N02",
+        "histories": 200,
+        "compressedStates": 2,
+        "edgesChecked": 10,
+        "minCurrency": 270,
+        "maxSpent": 0
+      },
+      {
+        "orderId": "N03",
+        "histories": 1000,
+        "compressedStates": 2,
+        "edgesChecked": 10,
+        "minCurrency": 265,
+        "maxSpent": 5
+      },
+      {
+        "orderId": "N04",
+        "histories": 5000,
+        "compressedStates": 2,
+        "edgesChecked": 10,
+        "minCurrency": 248,
+        "maxSpent": 22
+      },
+      {
+        "orderId": "N05",
+        "histories": 25000,
+        "compressedStates": 2,
+        "edgesChecked": 10,
+        "minCurrency": 231,
+        "maxSpent": 39
+      },
+      {
+        "orderId": "N06",
+        "histories": 125000,
+        "compressedStates": 2,
+        "edgesChecked": 10,
+        "minCurrency": 214,
+        "maxSpent": 56
+      },
+      {
+        "orderId": "N07",
+        "histories": 625000,
+        "compressedStates": 2,
+        "edgesChecked": 10,
+        "minCurrency": 197,
+        "maxSpent": 73
+      },
+      {
+        "orderId": "N08",
+        "histories": 3125000,
+        "compressedStates": 2,
+        "edgesChecked": 10,
+        "minCurrency": 180,
+        "maxSpent": 90
+      },
+      {
+        "orderId": "N09",
+        "histories": 15625000,
+        "compressedStates": 2,
+        "edgesChecked": 10,
+        "minCurrency": 163,
+        "maxSpent": 107
+      },
+      {
+        "orderId": "N10",
+        "histories": 78125000,
+        "compressedStates": 2,
+        "edgesChecked": 10,
+        "minCurrency": 146,
+        "maxSpent": 124
+      }
+    ],
+    "representedHistories": 78125000,
+    "finalStates": [
+      {
+        "histories": 58593750,
+        "ledger": {
+          "currency": 146,
+          "specialItems": {},
+          "ingredients": {
+            "ing_dried_petal": 3,
+            "ing_night_dew": 0,
+            "ing_ashen_herb": 3,
+            "ing_sea_salt": 0
+          },
+          "ownedEquipmentIds": {
+            "kit_old_cauldron": true
+          }
+        },
+        "purchaseCost": 124,
+        "purchases": {
+          "ing_sea_salt": 8,
+          "ing_night_dew": 7
+        },
+        "sample": [
+          "E01:一",
+          "N01:谈妥",
+          "N02:吃成了",
+          "N03:顺利卖完",
+          "N04:高兴回来了",
+          "N05:吃完了",
+          "N06:做完了",
+          "N07:要回部分",
+          "N08:休日过成",
+          "N09:对上了",
+          "N10:三星"
+        ]
+      },
+      {
+        "histories": 19531250,
+        "ledger": {
+          "currency": 146,
+          "specialItems": {},
+          "ingredients": {
+            "ing_dried_petal": 3,
+            "ing_night_dew": 0,
+            "ing_ashen_herb": 2,
+            "ing_sea_salt": 0
+          },
+          "ownedEquipmentIds": {
+            "kit_old_cauldron": true
+          }
+        },
+        "purchaseCost": 124,
+        "purchases": {
+          "ing_sea_salt": 8,
+          "ing_ashen_herb": 0,
+          "ing_night_dew": 7
+        },
+        "sample": [
+          "E01:七",
+          "N01:谈妥",
+          "N02:吃成了",
+          "N03:顺利卖完",
+          "N04:高兴回来了",
+          "N05:吃完了",
+          "N06:做完了",
+          "N07:要回部分",
+          "N08:休日过成",
+          "N09:对上了",
+          "N10:三星"
+        ]
+      }
+    ]
+  },
+  "unroutedCounterexamples": [
+    {
+      "orderId": "E01",
+      "effect": "sleep",
+      "main": "E01-S1",
+      "aux": [],
+      "ingredients": [],
+      "weight": 1.0,
+      "branch": "e01_result_rested"
+    },
+    {
+      "orderId": "E01",
+      "effect": "trust",
+      "main": "E01-S1",
+      "aux": [
+        "E01-T1"
+      ],
+      "ingredients": [
+        "ing_ashen_herb",
+        "ing_ashen_herb"
+      ],
+      "weight": 1.2,
+      "branch": "e01_result_mother_dream"
+    },
+    {
+      "orderId": "N01",
+      "effect": "dream",
+      "main": "N01-B1",
+      "aux": [],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_ashen_herb"
+      ],
+      "weight": 0.4,
+      "branch": "n01_result_departure_agreed"
+    },
+    {
+      "orderId": "N01",
+      "effect": "forget",
+      "main": "N01-B1",
+      "aux": [
+        "E01-M1"
+      ],
+      "ingredients": [
+        "ing_night_dew"
+      ],
+      "weight": 0.6,
+      "branch": "n01_result_departure_agreed"
+    },
+    {
+      "orderId": "N02",
+      "effect": "dream",
+      "main": "N02-H1",
+      "aux": [],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_ashen_herb"
+      ],
+      "weight": 0.4,
+      "branch": "n02_candidate_good"
+    },
+    {
+      "orderId": "N02",
+      "effect": "forget",
+      "main": "N02-H1",
+      "aux": [
+        "E01-M1"
+      ],
+      "ingredients": [
+        "ing_night_dew"
+      ],
+      "weight": 0.6,
+      "branch": "n02_candidate_good"
+    },
+    {
+      "orderId": "N02",
+      "effect": "anger",
+      "main": "N02-H1",
+      "aux": [
+        "N01-A1"
+      ],
+      "ingredients": [
+        "ing_night_dew"
+      ],
+      "weight": 0.6,
+      "branch": "n02_candidate_good"
+    },
+    {
+      "orderId": "N02",
+      "effect": "trust",
+      "main": "N02-H1",
+      "aux": [
+        "E01-T1",
+        "N02-H2"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_ashen_herb"
+      ],
+      "weight": 1.545,
+      "branch": "n02_candidate_care"
+    },
+    {
+      "orderId": "N03",
+      "effect": "dream",
+      "main": "N03-K1",
+      "aux": [],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_ashen_herb"
+      ],
+      "weight": 0.4,
+      "branch": "n03_candidate_good"
+    },
+    {
+      "orderId": "N03",
+      "effect": "forget",
+      "main": "N03-K1",
+      "aux": [
+        "E01-M1"
+      ],
+      "ingredients": [
+        "ing_night_dew"
+      ],
+      "weight": 0.6,
+      "branch": "n03_candidate_good"
+    },
+    {
+      "orderId": "N03",
+      "effect": "trust",
+      "main": "N03-K1",
+      "aux": [
+        "E01-T1"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_ashen_herb"
+      ],
+      "weight": 1.5750000000000002,
+      "branch": "n03_candidate_good"
+    },
+    {
+      "orderId": "N03",
+      "effect": "anger",
+      "main": "N03-K1",
+      "aux": [
+        "N01-A1"
+      ],
+      "ingredients": [
+        "ing_night_dew"
+      ],
+      "weight": 0.6,
+      "branch": "n03_candidate_good"
+    },
+    {
+      "orderId": "N04",
+      "effect": "dream",
+      "main": "N04-H1",
+      "aux": [],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_ashen_herb"
+      ],
+      "weight": 0.4,
+      "branch": "n04_candidate_good"
+    },
+    {
+      "orderId": "N04",
+      "effect": "forget",
+      "main": "N04-H1",
+      "aux": [
+        "E01-M1"
+      ],
+      "ingredients": [
+        "ing_night_dew"
+      ],
+      "weight": 0.6,
+      "branch": "n04_candidate_good"
+    },
+    {
+      "orderId": "N05",
+      "effect": "dream",
+      "main": "N05-A1",
+      "aux": [],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_ashen_herb"
+      ],
+      "weight": 0.4,
+      "branch": "n05_candidate_good"
+    },
+    {
+      "orderId": "N05",
+      "effect": "forget",
+      "main": "N05-A1",
+      "aux": [
+        "E01-M1"
+      ],
+      "ingredients": [
+        "ing_night_dew"
+      ],
+      "weight": 0.6,
+      "branch": "n05_candidate_good"
+    },
+    {
+      "orderId": "N05",
+      "effect": "anger",
+      "main": "N05-A1",
+      "aux": [
+        "N01-A1"
+      ],
+      "ingredients": [
+        "ing_night_dew"
+      ],
+      "weight": 0.6,
+      "branch": "n05_candidate_good"
+    },
+    {
+      "orderId": "N06",
+      "effect": "dream",
+      "main": "N06-M1",
+      "aux": [],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_ashen_herb"
+      ],
+      "weight": 0.4,
+      "branch": "n06_candidate_good"
+    },
+    {
+      "orderId": "N06",
+      "effect": "forget",
+      "main": "N06-M1",
+      "aux": [
+        "E01-M1"
+      ],
+      "ingredients": [
+        "ing_night_dew"
+      ],
+      "weight": 0.6,
+      "branch": "n06_candidate_good"
+    },
+    {
+      "orderId": "N07",
+      "effect": "dream",
+      "main": "N07-A1",
+      "aux": [],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_ashen_herb"
+      ],
+      "weight": 0.4,
+      "branch": "n07_candidate_good"
+    },
+    {
+      "orderId": "N07",
+      "effect": "forget",
+      "main": "N07-A1",
+      "aux": [
+        "E01-M1"
+      ],
+      "ingredients": [
+        "ing_night_dew"
+      ],
+      "weight": 0.6,
+      "branch": "n07_candidate_good"
+    },
+    {
+      "orderId": "N08",
+      "effect": "dream",
+      "main": "N08-R1",
+      "aux": [],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_ashen_herb"
+      ],
+      "weight": 0.4,
+      "branch": "n08_candidate_good"
+    },
+    {
+      "orderId": "N08",
+      "effect": "forget",
+      "main": "N08-R1",
+      "aux": [
+        "E01-M1"
+      ],
+      "ingredients": [
+        "ing_night_dew"
+      ],
+      "weight": 0.6,
+      "branch": "n08_candidate_good"
+    },
+    {
+      "orderId": "N08",
+      "effect": "trust",
+      "main": "N08-R1",
+      "aux": [
+        "E01-T1",
+        "N08-H1"
+      ],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_ashen_herb"
+      ],
+      "weight": 1.545,
+      "branch": "n08_candidate_child"
+    },
+    {
+      "orderId": "N09",
+      "effect": "dream",
+      "main": "N09-Q1",
+      "aux": [],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_ashen_herb"
+      ],
+      "weight": 0.4,
+      "branch": "n09_candidate_good"
+    },
+    {
+      "orderId": "N09",
+      "effect": "forget",
+      "main": "N09-Q1",
+      "aux": [
+        "E01-M1"
+      ],
+      "ingredients": [
+        "ing_night_dew"
+      ],
+      "weight": 0.6,
+      "branch": "n09_candidate_good"
+    },
+    {
+      "orderId": "N10",
+      "effect": "dream",
+      "main": "N10-W1",
+      "aux": [],
+      "ingredients": [
+        "ing_night_dew",
+        "ing_ashen_herb"
+      ],
+      "weight": 0.4,
+      "branch": "n10_result_3"
+    },
+    {
+      "orderId": "N10",
+      "effect": "forget",
+      "main": "N10-W1",
+      "aux": [
+        "E01-M1"
+      ],
+      "ingredients": [
+        "ing_night_dew"
+      ],
+      "weight": 0.6,
+      "branch": "n10_result_3"
+    }
+  ]
+}

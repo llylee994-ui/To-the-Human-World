@@ -1,0 +1,154 @@
+{
+  "version": "C-HOME-ENTRY-20261010-r3-v01",
+  "baseline": "e4d2862",
+  "results": [
+    {
+      "name": "home-entry",
+      "command": [
+        "scripts/ui/landscape/tests/run_home_entry.py"
+      ],
+      "exitCode": 0,
+      "seconds": 3.02,
+      "log": "logs/home-entry-r3/home-entry.log"
+    },
+    {
+      "name": "landscape-flow-migration",
+      "command": [
+        "scripts/debug/run_landscape_flow.py"
+      ],
+      "exitCode": 0,
+      "seconds": 8.04,
+      "log": "logs/home-entry-r3/landscape-flow-migration.log"
+    },
+    {
+      "name": "landscape-entry",
+      "command": [
+        "scripts/debug/run_landscape_flow.py",
+        "--entry"
+      ],
+      "exitCode": 0,
+      "seconds": 0.12,
+      "log": "logs/home-entry-r3/landscape-entry.log"
+    },
+    {
+      "name": "landscape-numeric",
+      "command": [
+        "scripts/debug/run_landscape_flow.py",
+        "--numeric"
+      ],
+      "exitCode": 0,
+      "seconds": 126.82,
+      "log": "logs/home-entry-r3/landscape-numeric.log"
+    },
+    {
+      "name": "numeric-runtime",
+      "command": [
+        "scripts/debug/run_numeric_v02.py"
+      ],
+      "exitCode": 0,
+      "seconds": 0.16,
+      "log": "logs/home-entry-r3/numeric-runtime.log"
+    },
+    {
+      "name": "numeric-flow-schema2",
+      "command": [
+        "scripts/debug/run_numeric_v02.py",
+        "--flows"
+      ],
+      "exitCode": 0,
+      "seconds": 103.0,
+      "log": "logs/home-entry-r3/numeric-flow-schema2.log"
+    },
+    {
+      "name": "numeric-shop",
+      "command": [
+        "scripts/debug/run_numeric_v02.py",
+        "--shop"
+      ],
+      "exitCode": 1,
+      "seconds": 0.12,
+      "log": "logs/home-entry-r3/numeric-shop.log"
+    },
+    {
+      "name": "numeric-startup",
+      "command": [
+        "scripts/debug/run_numeric_v02.py",
+        "--startup"
+      ],
+      "exitCode": 0,
+      "seconds": 0.12,
+      "log": "logs/home-entry-r3/numeric-startup.log"
+    },
+    {
+      "name": "numeric-data-check",
+      "command": [
+        "scripts/debug/generate_numeric_v02.py",
+        "--check"
+      ],
+      "exitCode": 0,
+      "seconds": 0.22,
+      "log": "logs/home-entry-r3/numeric-data-check.log"
+    },
+    {
+      "name": "numeric-intervals",
+      "command": [
+        "scripts/debug/check_numeric_runtime.py"
+      ],
+      "exitCode": 0,
+      "seconds": 11.62,
+      "log": "logs/home-entry-r3/numeric-intervals.log"
+    },
+    {
+      "name": "historical-order",
+      "command": [
+        "-c",
+        "import sys;sys.path.insert(0,\"scripts/debug\");from content_test_runtime import run;raise SystemExit(run(\"debug.OrderFlowTest\",\"3dbca09\"))"
+      ],
+      "exitCode": 0,
+      "seconds": 4.55,
+      "log": "logs/home-entry-r3/historical-order.log"
+    },
+    {
+      "name": "historical-single-use",
+      "command": [
+        "scripts/debug/run_single_use_words.py",
+        "--content-ref",
+        "3dbca09"
+      ],
+      "exitCode": 0,
+      "seconds": 5.21,
+      "log": "logs/home-entry-r3/historical-single-use.log"
+    },
+    {
+      "name": "historical-story",
+      "command": [
+        "scripts/debug/run_story_content.py",
+        "--content-ref",
+        "3dbca09"
+      ],
+      "exitCode": 0,
+      "seconds": 13.8,
+      "log": "logs/home-entry-r3/historical-story.log"
+    },
+    {
+      "name": "historical-vertical-ui",
+      "command": [
+        "-c",
+        "import sys;sys.path.insert(0,\"scripts/debug\");from content_test_runtime import run;raise SystemExit(run(\"debug.PlayFlowTest\",\"3dbca09\"))"
+      ],
+      "exitCode": 1,
+      "seconds": 0.57,
+      "log": "logs/home-entry-r3/historical-vertical-ui.log"
+    },
+    {
+      "name": "old-mobile-ui",
+      "command": [
+        "-c",
+        "import sys;sys.path.insert(0,\"scripts/debug\");from content_test_runtime import run;raise SystemExit(run(\"debug.MobileFrontendTest\"))"
+      ],
+      "exitCode": 1,
+      "seconds": 0.11,
+      "log": "logs/home-entry-r3/old-mobile-ui.log"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "ok": true,
+  "launched": false,
+  "version": "20260923-1717-bf3316f",
+  "source": "C:\\Users\\YINGYI\\.taptap-maker\\runtime\\runtime-55daebeb-793b-4258-9b0e-9ca63cd33351",
+  "cwd": "D:\\taptap\\D3-cloud-d00aca9\\D3-github-cloud-3d-d00aca9",
+  "command": [
+    "D:\\taptap\\D3-cloud-d00aca9\\D3-github-cloud-3d-d00aca9\\.runtime-windows\\UrhoXRuntime.exe",
+    "scripts/main.lua",
+    "-tapcode_dir=D:\\taptap\\D3-cloud-d00aca9\\D3-github-cloud-3d-d00aca9",
+    "-skip_login",
+    "-p=Res",
+    "-w",
+    "-width=1170",
+    "-height=658"
+  ],
+  "storage": "isolated in-memory d3_lab_v035",
+  "files": [
+    {
+      "path": "UrhoXRuntime.exe",
+      "bytes": 27601920,
+      "sha256": "116e3309d52873044d7832ad153cd88c3adcca17289baa22497994234f817ee2"
+    },
+    {
+      "path": "shaderc.dll",
+      "bytes": 6666752,
+      "sha256": "9f3b3edd64a8989c1200893ec130bf76c43499b9e3892d34bc021971014603a0"
+    },
+    {
+      "path": "d3dcompiler_47.dll",
+      "bytes": 4741488,
+      "sha256": "a05f99734f7c4822fefc12b367af21fd0976ed6608752fb1e1e80b6ece7ecbbb"
+    },
+    {
+      "path": "Autoload/Data.pak",
+      "bytes": 7036729,
+      "sha256": "dae258d0647a34daca866cc0a499cbfe8a7f03208cf9194aea740307cc3d7445"
+    },
+    {
+      "path": "Autoload/CoreData.pak",
+      "bytes": 80334,
+      "sha256": "b8f3e14a4867899f8d89b80b7ed64a3ef28a52ce572af4f14603ae9811c20560"
+    },
+    {
+      "path": "Autoload/Res.pak",
+      "bytes": 28147830,
+      "sha256": "302468bfc6f9a991c30b19043153f0ac564a8bf95dd2a45ebd7063227968b42d"
+    },
+    {
+      "path": "Res/shadercache_runtime/shadercache_dx11.pak",
+      "bytes": 30811781,
+      "sha256": "534d7e462ebd248d95dafca4c1f8fa66197087811973a3a4f9b97a2cdcafedd2"
+    },
+    {
+      "path": "build.json",
+      "bytes": 956,
+      "sha256": "3c89c2e7ca074645b6c5ee67b50f5a1a186f25511c89ef4d3aabafbe7d41982c"
+    },
+    {
+      "path": "Res/Fonts/MiSans-Regular.ttf",
+      "bytes": 16324168,
+      "sha256": "e051009b42b454352a90ae0c9b8adb58bbdbcd168768750b35bc3357510de141"
+    }
+  ]
+}

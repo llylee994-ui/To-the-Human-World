@@ -1,0 +1,13 @@
+{
+  "maker_commit": "0f91e2863a5985f12b2853b75ccbb94684656fbe",
+  "maker_build": "success",
+  "test_qrcode": "https://tapcode-sce.spark.xd.com/qrcode/m_h4x3_1791950505698.png",
+  "github_push": "rejected_fetch_first",
+  "github_head": "81baa45d6c754cee5ba2ef03d2fd0ec9928622f9",
+  "github_merge_dry_run": "conflict in scripts/ui/landscape/AppView.lua with stove pan/zoom changes; worktree/index unchanged",
+  "scope": "frontend only, existing Maker main content; no concurrent release/schema4/data work",
+  "native_evidence": "8 actual engine screenshots, isolated in-memory save, touch-pointer cut and stable title coordinates, not a phone",
+  "lua_errors": 0,
+  "native_check": "existing DaySpecularHDR.dds and themis_x64.dll errors; no new Lua exception",
+  "tests": {"paperConsistency":21,"letterPresentation":8022,"letterReader":14,"letterRender":23,"readerBounds":45,"homeEntry":303}
+}

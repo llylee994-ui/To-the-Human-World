@@ -1,0 +1,31 @@
+{
+  "confirmedInitialOffer": {
+    "price": 666,
+    "offerStartDay": 1,
+    "lastPurchaseDay": 10,
+    "expiredFromDay": 11
+  },
+  "implementation": "frontend product/countdown/gates/confirmation/endpoint adapter; actual departure transaction absent",
+  "tests": {
+    "TravelTicketTest": 46,
+    "ShopViewTest": 51,
+    "HomeEntryTest": 303,
+    "SeasideFlowTest": 89,
+    "HomeHudTest": 50
+  },
+  "diagnostics": {
+    "errors": 0,
+    "warnings": 60,
+    "hints": 6,
+    "method": "fresh standalone LSP watch"
+  },
+  "screenshots": "CSS replay of actual Lua props; isolated 666-coin review fixture; NOT native/game save/mobile evidence",
+  "codeSha256": {
+    "scripts/ui/landscape/TravelTicket.lua": "49552d183254087235c91b4b0c6f2c49eacd2c2758d2f1f98a17b22d49054775",
+    "scripts/ui/landscape/TravelTicketView.lua": "d1f63f22e5fb43924eaf778995ad472eac44725e97e6c243eb7bf82a60be26ea",
+    "scripts/ui/landscape/ShopView.lua": "351937438681023d22ded249d46b2cb692590392d522ceaf30ef0ef5c3d813df",
+    "scripts/ui/landscape/AppView.lua": "040b1fd0da114dfd92dbe0f56d0caa39de5a23205e23fd32eb3fdb325f7eb00b",
+    "scripts/ui/landscape/tests/TravelTicketTest.lua": "ca025667d5315fc12d108371c2e311b94fa8d6a31d1a2a0e9ae62a8d831cc9f0"
+  },
+  "preview": "stopped; never started or refreshed"
+}

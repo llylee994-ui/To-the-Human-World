@@ -1,0 +1,130 @@
+[
+  {
+    "width": 1140,
+    "height": 510,
+    "label": "before",
+    "runs": 39,
+    "holes": 0,
+    "evidence": "production Lua geometry, simulated font/layout; NOT native/mobile"
+  },
+  {
+    "width": 1140,
+    "height": 510,
+    "label": "snip",
+    "runs": 39,
+    "holes": 1,
+    "evidence": "production Lua geometry, simulated font/layout; NOT native/mobile"
+  },
+  {
+    "width": 1140,
+    "height": 510,
+    "label": "flight",
+    "runs": 39,
+    "holes": 1,
+    "evidence": "production Lua geometry, simulated font/layout; NOT native/mobile"
+  },
+  {
+    "width": 1140,
+    "height": 510,
+    "label": "after",
+    "runs": 39,
+    "holes": 1,
+    "evidence": "production Lua geometry, simulated font/layout; NOT native/mobile"
+  },
+  {
+    "width": 800,
+    "height": 360,
+    "label": "before",
+    "runs": 46,
+    "holes": 1,
+    "evidence": "production Lua geometry, simulated font/layout; NOT native/mobile"
+  },
+  {
+    "width": 800,
+    "height": 360,
+    "label": "snip",
+    "runs": 46,
+    "holes": 2,
+    "evidence": "production Lua geometry, simulated font/layout; NOT native/mobile"
+  },
+  {
+    "width": 800,
+    "height": 360,
+    "label": "flight",
+    "runs": 46,
+    "holes": 2,
+    "evidence": "production Lua geometry, simulated font/layout; NOT native/mobile"
+  },
+  {
+    "width": 800,
+    "height": 360,
+    "label": "after",
+    "runs": 46,
+    "holes": 2,
+    "evidence": "production Lua geometry, simulated font/layout; NOT native/mobile"
+  },
+  {
+    "width": 1280,
+    "height": 720,
+    "label": "before",
+    "runs": 35,
+    "holes": 2,
+    "evidence": "production Lua geometry, simulated font/layout; NOT native/mobile"
+  },
+  {
+    "width": 1280,
+    "height": 720,
+    "label": "snip",
+    "runs": 35,
+    "holes": 3,
+    "evidence": "production Lua geometry, simulated font/layout; NOT native/mobile"
+  },
+  {
+    "width": 1280,
+    "height": 720,
+    "label": "flight",
+    "runs": 35,
+    "holes": 3,
+    "evidence": "production Lua geometry, simulated font/layout; NOT native/mobile"
+  },
+  {
+    "width": 1280,
+    "height": 720,
+    "label": "after",
+    "runs": 35,
+    "holes": 3,
+    "evidence": "production Lua geometry, simulated font/layout; NOT native/mobile"
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "label": "before",
+    "runs": 42,
+    "holes": 3,
+    "evidence": "production Lua geometry, simulated font/layout; NOT native/mobile"
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "label": "snip",
+    "runs": 42,
+    "holes": 4,
+    "evidence": "production Lua geometry, simulated font/layout; NOT native/mobile"
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "label": "flight",
+    "runs": 42,
+    "holes": 4,
+    "evidence": "production Lua geometry, simulated font/layout; NOT native/mobile"
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "label": "after",
+    "runs": 42,
+    "holes": 4,
+    "evidence": "production Lua geometry, simulated font/layout; NOT native/mobile"
+  }
+]

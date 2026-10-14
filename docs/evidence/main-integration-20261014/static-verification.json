@@ -1,0 +1,31 @@
+{
+  "utc": "2026-10-14T06:52:08.079825+00:00",
+  "status": "PASS_STATIC",
+  "candidate": "b9194ea32ee3e8eab7bdcd0d559890d3f20e115b",
+  "main": "41cdaf3ff0fdd083d7411373a3cc9b70e26fb2e6",
+  "upstreamFilesPreservedExactly": 1531,
+  "candidateFilesPreservedExactly": 1007,
+  "entryPreservedExactly": true,
+  "excludedNewUpstreamFiles": 142,
+  "unmergedIndexEntries": 0,
+  "protectedSha256Files": 488,
+  "resourceHashes": 164,
+  "runtimeLuaClosure": 147,
+  "windowsLauncherPreflight": "PASS; no launch",
+  "ignoreRules": {
+    ".runtime-windows/UrhoXRuntime.exe": true,
+    ".windows-runs/check.json": true,
+    ".project/project.json": true,
+    "tools/run_windows_game.py": false,
+    "urhox-libs/UI/init.lua": false
+  },
+  "runtimeBehavior": "unchanged; no OS input, no visual reacceptance, no main schema4 activation",
+  "formatCheck": "PASS on our changed/new files; upstream file bytes preserved",
+  "ancestryCheck": "pending merge commit",
+  "intentionalCandidateDocumentChanges": [
+    "LAB_STATUS.md",
+    "docs/RUNBOOK.md",
+    "docs/WINDOWS-RUN.md",
+    "deliverables/CURRENT.md"
+  ]
+}

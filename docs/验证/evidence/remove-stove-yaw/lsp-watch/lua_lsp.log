@@ -1,0 +1,278 @@
+2026-10-12 22:55:21,032 - 30152 - WARNING - .luarc.json 不存在: D:\taptap\To-the-Human-World\scripts\.emmyrc.json
+2026-10-12 22:55:21,134 - 30152 - INFO - 使用 LSP: C:\WINDOWS\TEMP\maker-lua-lsp\0.22.2\emmylua_ls.exe
+2026-10-12 22:55:21,134 - 30152 - INFO - 监视目录: D:\taptap\To-the-Human-World\scripts
+2026-10-12 22:55:21,134 - 30152 - INFO - EmmyLua 类型: D:\taptap\To-the-Human-World\.emmylua
+2026-10-12 22:55:21,134 - 30152 - INFO - 
+============================================================
+2026-10-12 22:55:21,135 - 30152 - INFO -  Lua LSP 服务器 v0.22.2 - EmmyLuaLS (持续监视模式)
+2026-10-12 22:55:21,135 - 30152 - INFO - ============================================================
+2026-10-12 22:55:21,135 - 30152 - INFO - 监视目录: D:\taptap\To-the-Human-World\scripts
+2026-10-12 22:55:21,138 - 30152 - INFO - EmmyLua:  D:\taptap\To-the-Human-World\.emmylua
+2026-10-12 22:55:21,139 - 30152 - INFO - 完整报告: D:\taptap\To-the-Human-World\docs\验证\evidence\remove-stove-yaw\lsp-watch\lua_diagnostics.log
+2026-10-12 22:55:21,139 - 30152 - INFO - 错误报告: D:\taptap\To-the-Human-World\docs\验证\evidence\remove-stove-yaw\lsp-watch\lua_errors.log
+2026-10-12 22:55:21,139 - 30152 - INFO - ============================================================
+
+2026-10-12 22:55:21,139 - 30152 - INFO - 正在启动 Lua LSP 服务器...
+2026-10-12 22:55:21,139 - 30152 - INFO - LSP 启动参数: C:\WINDOWS\TEMP\maker-lua-lsp\0.22.2\emmylua_ls.exe --communication stdio --log-level warn --log-path none --resources-path none
+2026-10-12 22:55:21,154 - 30152 - INFO - emmylua_ls 进程已启动
+2026-10-12 22:55:23,657 - 30152 - INFO - LSP 连接已初始化（配置通过 workspace/configuration 注入）
+2026-10-12 22:55:23,658 - 30152 - INFO - 
+============================================================
+2026-10-12 22:55:23,659 - 30152 - INFO - 🔍 等待 EmmyLua 工作区诊断...
+2026-10-12 22:55:23,660 - 30152 - INFO - ============================================================
+2026-10-12 22:55:23,672 - 30152 - INFO - emmylua_ls: Failed to open log file: Os { code: 5, kind: PermissionDenied, message: "拒绝访问。" }
+2026-10-12 22:55:23,673 - 30152 - INFO - workspace/configuration 请求: items=[{"scopeUri": "file:///D:/taptap/To-the-Human-World/scripts", "section": "emmylua"}]
+2026-10-12 22:55:23,677 - 30152 - INFO - workspace/configuration 已响应 override 配置 (1 items)
+2026-10-12 22:55:23,677 - 30152 - INFO - workspace/configuration payload: {"runtime": {"version": "Lua5.4", "requireLikeFunction": ["tolua"], "special": {"tolua": "require"}}, "workspace": {"library": ["D:\\taptap\\To-the-Human-World\\.emmylua"], "packages": ["D:\\taptap\\To-the-Human-World\\urhox-libs"]}, "diagnostics": {"enable": true, "globals": ["tolua"], "severity": {"missing-parameter": "error", "param-type-mismatch": "error", "assign-type-mismatch": "error", "return-type-mismatch": "error", "type-not-found": "error", "undefined-doc-param": "error", "circle-doc-
+2026-10-12 22:55:26,697 - 30152 - INFO - client/registerCapability: ['**/*.lua', '**/.editorconfig', '**/.emmyrc.json', '**/.emmyrc.lua', '**/.luarc.json']
+2026-10-12 22:55:26,730 - 30152 - INFO - ✓ HomeYawMotion.lua - 没有问题
+2026-10-12 22:55:26,757 - 30152 - INFO - ✓ RecipeDraft.lua - 没有问题
+2026-10-12 22:55:26,789 - 30152 - INFO - ✓ effects.lua - 没有问题
+2026-10-12 22:55:26,794 - 30152 - INFO - ✓ B1RunRequest.lua - 没有问题
+2026-10-12 22:55:26,796 - 30152 - INFO - ✓ SchemaProjection.lua - 没有问题
+2026-10-12 22:55:26,798 - 30152 - INFO - ✓ GameSession.lua - 没有问题
+2026-10-12 22:55:26,799 - 30152 - INFO - ✓ DeveloperMode.lua - 没有问题
+2026-10-12 22:55:26,801 - 30152 - INFO - ✓ ZoomTestHost.lua - 没有问题
+2026-10-12 22:55:26,802 - 30152 - INFO - ✓ PlayView.lua - 没有问题
+2026-10-12 22:55:26,803 - 30152 - INFO - ✓ B5Fixtures.lua - 没有问题
+2026-10-12 22:55:26,804 - 30152 - INFO - ✓ DevChecks.lua - 没有问题
+2026-10-12 22:55:26,806 - 30152 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 22:55:26,806 - 30152 - INFO - 📄 HomeView.lua - 2 other
+2026-10-12 22:55:26,806 - 30152 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 22:55:26,807 - 30152 - INFO - HomeView.lua:79:21: 提示: Implicit self is never used, if this is intentional, please use '.' instead of ':' to define the method
+2026-10-12 22:55:26,807 - 30152 - INFO - HomeView.lua:42:17: 提示: Implicit self is never used, if this is intentional, please use '.' instead of ':' to define the method
+2026-10-12 22:55:26,809 - 30152 - INFO - ✓ SelfTest.lua - 没有问题
+2026-10-12 22:55:26,810 - 30152 - INFO - ✓ LayoutManifest.lua - 没有问题
+2026-10-12 22:55:26,811 - 30152 - INFO - ✓ recipes.lua - 没有问题
+2026-10-12 22:55:26,812 - 30152 - INFO - ✓ word_profiles.lua - 没有问题
+2026-10-12 22:55:26,813 - 30152 - INFO - ✓ B6RunRequest.lua - 没有问题
+2026-10-12 22:55:26,814 - 30152 - INFO - ✓ B3Fixtures.lua - 没有问题
+2026-10-12 22:55:26,816 - 30152 - INFO - ✓ B6UncertainStorage.lua - 没有问题
+2026-10-12 22:55:26,818 - 30152 - INFO - ✓ SingleUseFixtures.lua - 没有问题
+2026-10-12 22:55:26,819 - 30152 - INFO - ✓ synthesis.lua - 没有问题
+2026-10-12 22:55:26,821 - 30152 - INFO - ✓ BrewPreparationTest.lua - 没有问题
+2026-10-12 22:55:26,822 - 30152 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 22:55:26,822 - 30152 - INFO - 📄 HitFeedbackTest.lua - 3 warnings
+2026-10-12 22:55:26,822 - 30152 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 22:55:26,823 - 30152 - INFO - HitFeedbackTest.lua:46:14: 警告: Missing required fields in type `NVGContextWrapper`: `Dispose`, `GetBlockEvents`, `GetCategory`, `GetTypeName`, `GetType`, `HasSubscribedToEvent`, `SendEvent`, `SetBlockEvents`, `category`, `delete`, `typeName`, `type`
+2026-10-12 22:55:26,823 - 30152 - INFO - HitFeedbackTest.lua:74:26: 警告: Cannot assign `number` to `integer`. 
+2026-10-12 22:55:26,823 - 30152 - INFO - HitFeedbackTest.lua:74:44: 警告: Cannot assign `number` to `integer`. 
+2026-10-12 22:55:26,825 - 30152 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 22:55:26,825 - 30152 - INFO - 📄 HomeYawProbe.lua - 1 warning
+2026-10-12 22:55:26,826 - 30152 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 22:55:26,826 - 30152 - INFO - HomeYawProbe.lua:64:12: 警告: Unnecessary `if` statement: this condition is always truthy
+2026-10-12 22:55:26,828 - 30152 - INFO - ✓ LetterTest.lua - 没有问题
+2026-10-12 22:55:26,829 - 30152 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 22:55:26,829 - 30152 - INFO - 📄 NumericV02RuntimeTest.lua - 1 warning
+2026-10-12 22:55:26,829 - 30152 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 22:55:26,830 - 30152 - INFO - NumericV02RuntimeTest.lua:60:37: 警告: Data.GetLetter("letter_n02") may be nil
+2026-10-12 22:55:26,831 - 30152 - INFO - ✓ WorldState.lua - 没有问题
+2026-10-12 22:55:26,832 - 30152 - INFO - ✓ OrderTrial.lua - 没有问题
+2026-10-12 22:55:26,833 - 30152 - INFO - ✓ CaseBoardProjection.lua - 没有问题
+2026-10-12 22:55:26,834 - 30152 - INFO - ✓ PlayModel.lua - 没有问题
+2026-10-12 22:55:26,835 - 30152 - INFO - ✓ WordTokenTest.lua - 没有问题
+2026-10-12 22:55:26,836 - 30152 - INFO - ✓ HeadlessUI.lua - 没有问题
+2026-10-12 22:55:26,837 - 30152 - INFO - ✓ BrewJournal.lua - 没有问题
+2026-10-12 22:55:26,838 - 30152 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 22:55:26,839 - 30152 - INFO - 📄 StoveYawNativeProbe.lua - 1 warning
+2026-10-12 22:55:26,839 - 30152 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 22:55:26,839 - 30152 - INFO - StoveYawNativeProbe.lua:38:17: 警告: Impossible assert: this expression is always falsy; prefer `error()`
+2026-10-12 22:55:26,841 - 30152 - INFO - ✓ PlayQueries.lua - 没有问题
+2026-10-12 22:55:26,842 - 30152 - INFO - ✓ DebugPanel.lua - 没有问题
+2026-10-12 22:55:26,844 - 30152 - INFO - ✓ DebugIsolationTest.lua - 没有问题
+2026-10-12 22:55:26,845 - 30152 - INFO - ✓ OrderAudit.lua - 没有问题
+2026-10-12 22:55:26,846 - 30152 - INFO - ✓ SaveJsonTest.lua - 没有问题
+2026-10-12 22:55:26,847 - 30152 - INFO - ✓ EventBus.lua - 没有问题
+2026-10-12 22:55:26,849 - 30152 - INFO - ✓ LetterFlowTest.lua - 没有问题
+2026-10-12 22:55:26,850 - 30152 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 22:55:26,850 - 30152 - INFO - 📄 NativeProbe.lua - 1 warning
+2026-10-12 22:55:26,851 - 30152 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 22:55:26,851 - 30152 - INFO - NativeProbe.lua:9:8: 警告: Impossible `if` statement: this condition is always falsy
+2026-10-12 22:55:26,852 - 30152 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 22:55:26,852 - 30152 - INFO - 📄 StoryContentFlowTest.lua - 1 warning
+2026-10-12 22:55:26,852 - 30152 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 22:55:26,853 - 30152 - INFO - StoryContentFlowTest.lua:186:12: 警告: Impossible `if` statement: this condition is always falsy
+2026-10-12 22:55:26,854 - 30152 - INFO - ✓ HomeEntryTest.lua - 没有问题
+2026-10-12 22:55:26,854 - 30152 - INFO - ✓ LayoutGeometry.lua - 没有问题
+2026-10-12 22:55:26,855 - 30152 - INFO - ✓ NarrativeTest.lua - 没有问题
+2026-10-12 22:55:26,856 - 30152 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 22:55:26,856 - 30152 - INFO - 📄 HomeYawScene.lua - 2 warnings
+2026-10-12 22:55:26,856 - 30152 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 22:55:26,857 - 30152 - INFO - HomeYawScene.lua:31:26: 警告: Unnecessary assert: this expression is always truthy
+2026-10-12 22:55:26,857 - 30152 - INFO - HomeYawScene.lua:37:17: 警告: Unnecessary assert: this expression is always truthy
+2026-10-12 22:55:26,858 - 30152 - INFO - ✓ OrderLifecycle.lua - 没有问题
+2026-10-12 22:55:26,859 - 30152 - INFO - ✓ PotionTest.lua - 没有问题
+2026-10-12 22:55:26,860 - 30152 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 22:55:26,860 - 30152 - INFO - 📄 HomeZoomTest.lua - 3 other
+2026-10-12 22:55:26,860 - 30152 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 22:55:26,861 - 30152 - INFO - HomeZoomTest.lua:62:44: 提示: Prefer use local alias variable 'previous'
+2026-10-12 22:55:26,862 - 30152 - INFO - HomeZoomTest.lua:62:73: 提示: Prefer use local alias variable 'previous'
+2026-10-12 22:55:26,862 - 30152 - INFO - HomeZoomTest.lua:63:23: 提示: Prefer use local alias variable 'room'
+2026-10-12 22:55:26,864 - 30152 - INFO - ✓ Panels.lua - 没有问题
+2026-10-12 22:55:26,865 - 30152 - INFO - ✓ Potion.lua - 没有问题
+2026-10-12 22:55:26,867 - 30152 - INFO - ✓ equipment.lua - 没有问题
+2026-10-12 22:55:26,868 - 30152 - INFO - ✓ ingredients.lua - 没有问题
+2026-10-12 22:55:26,869 - 30152 - INFO - ✓ letters.lua - 没有问题
+2026-10-12 22:55:26,870 - 30152 - INFO - ✓ B6Evidence.lua - 没有问题
+2026-10-12 22:55:26,871 - 30152 - INFO - ✓ CalculationGuard.lua - 没有问题
+2026-10-12 22:55:26,872 - 30152 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 22:55:26,873 - 30152 - INFO - 📄 NumericV02ShopTest.lua - 1 warning, 1 other
+2026-10-12 22:55:26,873 - 30152 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 22:55:26,873 - 30152 - INFO - NumericV02ShopTest.lua:8:11: 提示: before is never used, if this is intentional, prefix it with an underscore: _before
+2026-10-12 22:55:26,874 - 30152 - INFO - NumericV02ShopTest.lua:41:12: 警告: lockedView.root:FindById("buy_ing_sea_salt") may be nil
+2026-10-12 22:55:26,874 - 30152 - INFO - ✓ GameFlow.lua - 没有问题
+2026-10-12 22:55:26,876 - 30152 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 22:55:26,876 - 30152 - INFO - 📄 B2Fixtures.lua - 1 warning
+2026-10-12 22:55:26,876 - 30152 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 22:55:26,876 - 30152 - INFO - B2Fixtures.lua:80:72: 警告: content.fragments[1] may be nil
+2026-10-12 22:55:26,877 - 30152 - INFO - ✓ OrderFlowTest.lua - 没有问题
+2026-10-12 22:55:26,878 - 30152 - INFO - ✓ ordinary_orders.lua - 没有问题
+2026-10-12 22:55:26,879 - 30152 - INFO - ✓ Narrative.lua - 没有问题
+2026-10-12 22:55:26,880 - 30152 - INFO - ✓ NumericV02Cases.lua - 没有问题
+2026-10-12 22:55:26,882 - 30152 - INFO - ✓ Economy.lua - 没有问题
+2026-10-12 22:55:26,883 - 30152 - INFO - ✓ main.lua - 没有问题
+2026-10-12 22:55:26,884 - 30152 - INFO - ✓ LandscapeFlowTest.lua - 没有问题
+2026-10-12 22:55:26,885 - 30152 - INFO - ✓ B2Check.lua - 没有问题
+2026-10-12 22:55:26,886 - 30152 - INFO - ✓ words.lua - 没有问题
+2026-10-12 22:55:26,888 - 30152 - INFO - ✓ HomeZoom.lua - 没有问题
+2026-10-12 22:55:26,888 - 30152 - INFO - ✓ followup.lua - 没有问题
+2026-10-12 22:55:26,889 - 30152 - INFO - ✓ SaveJson.lua - 没有问题
+2026-10-12 22:55:26,890 - 30152 - INFO - ✓ EconomyTest.lua - 没有问题
+2026-10-12 22:55:26,891 - 30152 - INFO - ✓ StoryRules.lua - 没有问题
+2026-10-12 22:55:26,892 - 30152 - INFO - ✓ HitFeedbackProbe.lua - 没有问题
+2026-10-12 22:55:26,893 - 30152 - INFO - ✓ OrderTest.lua - 没有问题
+2026-10-12 22:55:26,893 - 30152 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 22:55:26,894 - 30152 - INFO - 📄 SaveV3MigrationTest.lua - 1 warning
+2026-10-12 22:55:26,894 - 30152 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 22:55:26,894 - 30152 - INFO - SaveV3MigrationTest.lua:88:27: 警告: status may be nil
+2026-10-12 22:55:26,895 - 30152 - INFO - ✓ PlayFlowTest.lua - 没有问题
+2026-10-12 22:55:26,896 - 30152 - INFO - ✓ SaveSystem.lua - 没有问题
+2026-10-12 22:55:26,897 - 30152 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 22:55:26,897 - 30152 - INFO - 📄 NumericV02FlowTest.lua - 11 warnings
+2026-10-12 22:55:26,897 - 30152 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 22:55:26,897 - 30152 - INFO - NumericV02FlowTest.lua:99:24: 警告: Impossible assert: this expression is always falsy; prefer `error()`
+2026-10-12 22:55:26,897 - 30152 - INFO - NumericV02FlowTest.lua:12:15: 警告: Data.GetLetter(id) may be nil
+2026-10-12 22:55:26,897 - 30152 - INFO - NumericV02FlowTest.lua:56:49: 警告: Data.GetLetter(case.letterId) may be nil
+2026-10-12 22:55:26,898 - 30152 - INFO - NumericV02FlowTest.lua:71:47: 警告: pending may be nil
+2026-10-12 22:55:26,898 - 30152 - INFO - NumericV02FlowTest.lua:74:13: 警告: pending may be nil
+2026-10-12 22:55:26,898 - 30152 - INFO - NumericV02FlowTest.lua:79:70: 警告: pending may be nil
+2026-10-12 22:55:26,898 - 30152 - INFO - NumericV02FlowTest.lua:96:44: 警告: Data.GetLetter(a) may be nil
+2026-10-12 22:55:26,899 - 30152 - INFO - NumericV02FlowTest.lua:96:85: 警告: Data.GetLetter(b) may be nil
+2026-10-12 22:55:26,899 - 30152 - INFO - NumericV02FlowTest.lua:108:40: 警告: Data.GetLetter(a) may be nil
+2026-10-12 22:55:26,899 - 30152 - INFO - NumericV02FlowTest.lua:108:81: 警告: Data.GetLetter(b) may be nil
+2026-10-12 22:55:26,900 - 30152 - INFO - NumericV02FlowTest.lua:119:73: 警告: Cannot assign `number` to `integer`. 
+2026-10-12 22:55:26,901 - 30152 - INFO - ✓ SaveSchema.lua - 没有问题
+2026-10-12 22:55:26,901 - 30152 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 22:55:26,902 - 30152 - INFO - 📄 AppView.lua - 5 warnings
+2026-10-12 22:55:26,902 - 30152 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 22:55:26,902 - 30152 - INFO - AppView.lua:69:12: 警告: Unnecessary `if` statement: this condition is always truthy
+2026-10-12 22:55:26,902 - 30152 - INFO - AppView.lua:117:8: 警告: Impossible `if` statement: this condition is always falsy
+2026-10-12 22:55:26,902 - 30152 - INFO - AppView.lua:154:12: 警告: Impossible `if` statement: this condition is always falsy
+2026-10-12 22:55:26,902 - 30152 - INFO - AppView.lua:155:12: 警告: Unnecessary `if` statement: this condition is always truthy
+2026-10-12 22:55:26,903 - 30152 - INFO - AppView.lua:164:12: 警告: Impossible `if` statement: this condition is always falsy
+2026-10-12 22:55:26,904 - 30152 - INFO - ✓ gameplay.lua - 没有问题
+2026-10-12 22:55:26,904 - 30152 - INFO - ✓ B2RunRequest.lua - 没有问题
+2026-10-12 22:55:26,905 - 30152 - INFO - ✓ SaveMigrations.lua - 没有问题
+2026-10-12 22:55:26,906 - 30152 - INFO - ✓ B6PersistenceProbe.lua - 没有问题
+2026-10-12 22:55:26,907 - 30152 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 22:55:26,907 - 30152 - INFO - 📄 HomeYawTest.lua - 1 other
+2026-10-12 22:55:26,907 - 30152 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 22:55:26,908 - 30152 - INFO - HomeYawTest.lua:11:53: 提示: Prefer use local alias variable 'old'
+2026-10-12 22:55:26,909 - 30152 - INFO - ✓ StateUtil.lua - 没有问题
+2026-10-12 22:55:26,909 - 30152 - INFO - ✓ B6FaultEvidence.lua - 没有问题
+2026-10-12 22:55:26,910 - 30152 - INFO - ✓ B4Fixtures.lua - 没有问题
+2026-10-12 22:55:26,911 - 30152 - INFO - ✓ stage1.lua - 没有问题
+2026-10-12 22:55:26,912 - 30152 - INFO - ✓ numeric_v02.lua - 没有问题
+2026-10-12 22:55:26,913 - 30152 - INFO - ✓ MobileFrontendTest.lua - 没有问题
+2026-10-12 22:55:26,913 - 30152 - INFO - ✓ SingleUseWordTest.lua - 没有问题
+2026-10-12 22:55:26,914 - 30152 - INFO - ✓ Order.lua - 没有问题
+2026-10-12 22:55:26,915 - 30152 - INFO - ✓ OrderRecoveryTest.lua - 没有问题
+2026-10-12 22:55:26,916 - 30152 - INFO - ✓ Letter.lua - 没有问题
+2026-10-12 22:55:26,916 - 30152 - INFO - ✓ SaveSystemTest.lua - 没有问题
+2026-10-12 22:55:26,917 - 30152 - INFO - ✓ LandscapeNumericFlowTest.lua - 没有问题
+2026-10-12 22:55:26,918 - 30152 - INFO - ✓ npcs.lua - 没有问题
+2026-10-12 22:55:26,918 - 30152 - INFO - ✓ extension_test.lua - 没有问题
+2026-10-12 22:55:26,919 - 30152 - INFO - ✓ B6NativeSaveProbe.lua - 没有问题
+2026-10-12 22:55:26,920 - 30152 - INFO - ✓ B1Fixtures.lua - 没有问题
+2026-10-12 22:55:26,921 - 30152 - INFO - ✓ LandscapeEntryTest.lua - 没有问题
+2026-10-12 22:55:26,921 - 30152 - INFO - ✓ WorldStateTest.lua - 没有问题
+2026-10-12 22:55:26,922 - 30152 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 22:55:26,922 - 30152 - INFO - 📄 StoveYawEntryTest.lua - 3 warnings, 1 other
+2026-10-12 22:55:26,923 - 30152 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 22:55:26,923 - 30152 - INFO - StoveYawEntryTest.lua:90:13: 提示: cycle is never used, if this is intentional, prefix it with an underscore: _cycle
+2026-10-12 22:55:26,923 - 30152 - INFO - StoveYawEntryTest.lua:34:103: 警告: r may be nil
+2026-10-12 22:55:26,923 - 30152 - INFO - StoveYawEntryTest.lua:34:108: 警告: r may be nil
+2026-10-12 22:55:26,924 - 30152 - INFO - StoveYawEntryTest.lua:71:18: 警告: require("debug.fixtures.NumericV02Cases")[1] may be nil
+2026-10-12 22:55:26,924 - 30152 - INFO - ✓ WordToken.lua - 没有问题
+2026-10-12 22:55:26,925 - 30152 - INFO - ✓ content.lua - 没有问题
+2026-10-12 22:55:26,926 - 30152 - INFO - ✓ YawNativeProbe.lua - 没有问题
+2026-10-12 22:55:26,927 - 30152 - INFO - ✓ GameState.lua - 没有问题
+2026-10-12 22:55:29,173 - 30152 - INFO - 
+============================================================
+诊断摘要
+============================================================
+检查文件数: 16
+错误: 0 | 警告: 32 | 信息: 0 | 提示: 8
+============================================================
+
+2026-10-12 22:55:29,179 - 30152 - INFO - ✓ 初始诊断同步完成
+2026-10-12 22:55:29,186 - 30152 - INFO - 文件监视器已启动 (block=True, observer.alive=True, handler=(<class 'watchdog.events.FileSystemEventHandler'>,))
+2026-10-12 23:10:33,219 - 30152 - INFO - 检测到文件变化: D:\taptap\To-the-Human-World\scripts\ui\landscape\tests\StoveYawEntryTest.lua
+2026-10-12 23:10:33,786 - 30152 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 23:10:33,787 - 30152 - INFO - 📄 StoveYawEntryTest.lua - 3 warnings, 1 other
+2026-10-12 23:10:33,788 - 30152 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 23:10:33,788 - 30152 - INFO - StoveYawEntryTest.lua:90:13: 提示: cycle is never used, if this is intentional, prefix it with an underscore: _cycle
+2026-10-12 23:10:33,789 - 30152 - INFO - StoveYawEntryTest.lua:34:103: 警告: r may be nil
+2026-10-12 23:10:33,790 - 30152 - INFO - StoveYawEntryTest.lua:34:108: 警告: r may be nil
+2026-10-12 23:10:33,791 - 30152 - INFO - StoveYawEntryTest.lua:71:18: 警告: require("debug.fixtures.NumericV02Cases")[1] may be nil
+2026-10-12 23:12:07,321 - 30152 - INFO - 检测到文件变化: D:\taptap\To-the-Human-World\scripts\ui\landscape\tests\StoveYawEntryTest.lua
+2026-10-12 23:12:07,903 - 30152 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 23:12:07,905 - 30152 - INFO - 📄 StoveYawEntryTest.lua - 3 warnings, 1 other
+2026-10-12 23:12:07,906 - 30152 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 23:12:07,907 - 30152 - INFO - StoveYawEntryTest.lua:90:13: 提示: cycle is never used, if this is intentional, prefix it with an underscore: _cycle
+2026-10-12 23:12:07,907 - 30152 - INFO - StoveYawEntryTest.lua:34:103: 警告: r may be nil
+2026-10-12 23:12:07,908 - 30152 - INFO - StoveYawEntryTest.lua:34:108: 警告: r may be nil
+2026-10-12 23:12:07,909 - 30152 - INFO - StoveYawEntryTest.lua:71:18: 警告: require("debug.fixtures.NumericV02Cases")[1] may be nil
+2026-10-12 23:13:04,013 - 30152 - INFO - 检测到文件变化: D:\taptap\To-the-Human-World\scripts\ui\landscape\AppView.lua
+2026-10-12 23:13:04,418 - 30152 - INFO - 检测到文件变化: D:\taptap\To-the-Human-World\scripts\ui\landscape\DevChecks.lua
+2026-10-12 23:13:04,623 - 30152 - INFO - 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 23:13:04,624 - 30152 - INFO - 📄 AppView.lua - 6 warnings
+2026-10-12 23:13:04,624 - 30152 - INFO - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-12 23:13:04,624 - 30152 - INFO - AppView.lua:70:12: 警告: Unnecessary `if` statement: this condition is always truthy
+2026-10-12 23:13:04,625 - 30152 - INFO - AppView.lua:118:8: 警告: Impossible `if` statement: this condition is always falsy
+2026-10-12 23:13:04,625 - 30152 - INFO - AppView.lua:155:12: 警告: Impossible `if` statement: this condition is always falsy
+2026-10-12 23:13:04,626 - 30152 - INFO - AppView.lua:156:12: 警告: Unnecessary `if` statement: this condition is always truthy
+2026-10-12 23:13:04,626 - 30152 - INFO - AppView.lua:165:12: 警告: Impossible `if` statement: this condition is always falsy
+2026-10-12 23:13:04,626 - 30152 - INFO - AppView.lua:22:11: 警告: Cannot assign `nil` to `fun(ctx)`. 
+2026-10-12 23:13:04,930 - 30152 - INFO - ✓ DevChecks.lua - 没有问题
+2026-10-12 23:13:47,038 - 30152 - INFO - 检测到文件变化: D:\taptap\To-the-Human-World\scripts\ui\landscape\DevChecks.lua
+2026-10-12 23:13:47,553 - 30152 - INFO - ✓ DevChecks.lua - 没有问题
+2026-10-12 23:16:29,840 - 30152 - INFO - 检测到文件变化: D:\taptap\To-the-Human-World\scripts\ui\landscape\DevChecks.lua
+2026-10-12 23:16:30,348 - 30152 - INFO - ✓ DevChecks.lua - 没有问题
+2026-10-12 23:21:24,018 - 30152 - INFO - 收到信号 2，正在清理...
+2026-10-12 23:21:24,018 - 30152 - INFO - 正在停止 Lua LSP 服务器...
+2026-10-12 23:21:24,022 - 30152 - INFO - 正在清理 LSP 进程 (PID: 42500)...
+2026-10-12 23:21:24,025 - 30152 - ERROR - 发送消息失败: [Errno 22] Invalid argument
+2026-10-12 23:21:24,228 - 30152 - INFO - LSP 进程已清理
+2026-10-12 23:21:24,229 - 30152 - INFO - Lua LSP 服务器已停止
+2026-10-12 23:21:24,232 - 30152 - INFO - 正在停止 Lua LSP 服务器...
+2026-10-12 23:21:24,233 - 30152 - INFO - Lua LSP 服务器已停止

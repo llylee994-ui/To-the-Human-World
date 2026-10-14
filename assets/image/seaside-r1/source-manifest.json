@@ -1,0 +1,57 @@
+{
+  "version": "seaside-r1",
+  "concept": "assets/image/海边捕捞_构图稿_v01_20261012053950.png",
+  "generationRecords": "assets/image/seaside-r1/generation-records.json",
+  "assets": [
+    {
+      "path": "assets/image/seaside-r1/background.png",
+      "source": "assets/image/海边捕捞_纯背景_v01_20261012054550.png",
+      "width": 1920,
+      "height": 1080,
+      "mode": "RGB",
+      "sha256": "4ca5d21fd0f3ccb81ad4df3a1e9e876533c33c2996bba8ca35187b2c959c018a"
+    },
+    {
+      "path": "assets/image/seaside-r1/bottle.png",
+      "source": "assets/image/海边捕捞_漂流瓶净透明_v02_20261012054934.png",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "sha256": "c1a651c0644c967f3032467cce7d3776f9cfb0d480cf14ef1b2632aa33d95fa7",
+      "alphaBounds": [
+        41,
+        47,
+        1010,
+        1000
+      ]
+    },
+    {
+      "path": "assets/image/seaside-r1/net.png",
+      "source": "assets/image/海边捕捞_网兜透明_v01_20261012054622.png",
+      "width": 1536,
+      "height": 1536,
+      "mode": "RGBA",
+      "sha256": "9eba8ff0ab25f9b1d71ddd02c8a434a2161fcc84182d3e0ea0ac24bf3c648e31",
+      "alphaBounds": [
+        110,
+        0,
+        1519,
+        1536
+      ]
+    },
+    {
+      "path": "assets/image/seaside-r1/merchant-ship.png",
+      "source": "assets/image/home-entry-r3/merchant-ship.png",
+      "width": 1319,
+      "height": 1192,
+      "mode": "RGBA",
+      "sha256": "bc261c32e3839fb72d365ae394963c0417dced57f48b1f1dd0381df2561f16be",
+      "alphaBounds": [
+        17,
+        20,
+        1311,
+        1192
+      ]
+    }
+  ]
+}

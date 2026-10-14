@@ -1,0 +1,61 @@
+# B1 修复复核、B2 计划与提交推送
+
+## 状态与背景
+
+Completed（B1 基础代码、R2 修复与 B2 计划已提交推送并核对远端；B2 尚未实施，完整 B1 尚未验收）。用户确认 R2 已修复，要求给下一步实施计划并提交推送。本轮复核已有修复、编写 B2 计划、同步开发入口，交付本批 B1 基础代码及关联记录。
+
+当前 `fengyycon@6789bb0eff2e5632338c83cdae58b8216e74b4b0`，已有 B1 未提交工作和 R2 修复。暂存区为空，`origin` 实际指向 GitHub。原 `docs/actions/` 未跟踪资料保留，不纳入此次程序交付。`scripts/data/` 与 `docs/` 内容只读。
+
+R2 已有 8 个隔离场景、原 130 项及三种配置失败的历史回归记录；本轮重新运行核对。真实窗口输入待复验，历史 LSP 为 0 Error / 2 Warning。完整 B1 尚未验收：正式 v2 需要其余模块恢复器，V13 需要保留 savedata 的真实运行环境。
+
+适用 project-control-report、action-document、code-review-skill；项目指南、引擎规范、Lua 指南和相关示例已在本会话读过，本轮复查当前规则、B0/B1 契约、修复入口、实际配置和总计划。用户已经授权 GitHub 提交推送；不执行 Maker 构建、发布或新增项目。
+
+## 实施措施
+
+1. 核对 R2 的先绑定后载入及失败路径，重跑现有回归与 8 个隔离场景。
+2. 编写 B2：按 B0 实现 Letter/WordToken 的副本操作、稳定来源、校验/恢复和剪词原子保存；明确依赖与正式 v2 门禁。
+3. 更新 scripts 开发入口及总计划的当前状态，链接 B2；保留已接受的玩法与内容分工。
+4. 检查文档链接、Git 差异和原文件摘要；明确暂存本批 B1 文件及新计划，排除日志、引擎资料和无关 docs/actions。
+5. 核对实时远端分支，在无新增阻止提交问题时提交、推送 GitHub `fengyycon`，验证远端提交。
+
+## 影响文件树（本轮实际）
+
+```text
+scripts/
+├─ B2_信件与词条实施计划.md                  [新增] 下一批步骤、模块接口、验收与队友事项
+├─ README.md                               [更新] 开发入口及 B1/B2 状态
+├─ 后端闭环与双人并行开发计划.md             [更新] 已实施基础与当前下一批
+└─ actions/2026-10-02-b2-plan-and-publish.md  [新增] 本轮复核、文档与推送证据
+```
+
+本轮修改仅为上述文档。随本轮提交的已有工作：GameFlow/SaveSystem/GameState/SaveSchema/StateUtil、Economy、main、调试面板与自检、B1/R2 测试及夹具/runner、B1 状态计划与三份实施/评审记录。它们来自前续已授权实现，本轮只复核和交付。提交具体文件清单以暂存检查为准。
+
+## 自验方法
+
+- 用现有 `python -X utf8 scripts/debug/run_b1.py` 执行 130 项专项及原逻辑自检；分别执行三种 `--config-failure` 与八种 `--debug-isolation`。
+- 复核修复代码与新计划，确认默认槽保护、纯候选、版本/恢复器门禁和先保存后安装要求一致。
+- 检查新增/修改文档的本地链接、UTF-8、围栏与空白；`git diff --check`、暂存清单、内容目录无本地改动。
+- 对 58 份已有非忽略文件进行 SHA-256 比对，只允许计划列明的文档改变；保留代码、配置、原记录、图片及 docs/actions。
+- 不将历史 LSP、真实 File 或窗口截图当成本轮新检查；本轮无程序修改，不因此启动预览。
+- 推送后读取实时远端引用，确认与本地 HEAD 相同；失败则记录实际错误，不声称交付完成。
+
+## 自验结果
+
+- R2 静态复核：`RunB1RestartCheck` 在任何测试安装前设置 b1_restart_flow 并显示面板；F8 与自动 write/read 均使用该入口，错误捕获保留隔离与诊断。专项没有修改正式保存协议。
+- 本轮 12 个独立 runner 进程均退出 0：基础 130/130；三种配置门禁；八种 R2 场景。自动 write 场景再次执行 130/130；各进程原逻辑自检 11/11。文件保护检查验证默认槽字节不变或保持不存在。存储/UI 为替身，不能代替真实窗口键鼠或 V13。
+- 历史 R2 LSP 诊断本轮实际读取为 0 Error / 2 Warning，时间 21:02:48，两条位于 SaveSystemTest.lua 的故障断言。本轮只改文档，未重新运行 LSP/预览，没有将历史结果称为本轮新验收。
+- 四份新增/更新文档的 24 处本地链接检查通过，UTF-8、围栏和行尾空白检查通过；`git diff --check` 通过。补充收信门禁后两份新文档再次检查通过，runner Python 语法检查通过。
+- 58 份原文件摘要比对：仅 scripts/README.md 与双人总计划改变，其余 56 份不变；新增 B2 计划与本记录。原 B1/R2 代码、记录、配置、图片和 docs/actions 均保留。
+- `scripts/data` 与已跟踪 docs 无本地改动，诊断开关为 off，提交前暂存区为空。
+- 实时 `git ls-remote --heads origin refs/heads/fengyycon refs/heads/main`：GitHub fengyycon=2e9252a681aa428298075890fbf8fbe8e04559ff、main=6789bb0eff2e5632338c83cdae58b8216e74b4b0；与本地已知基线相符，无须同步额外提交。
+
+本轮未发现新的阻止提交问题；完整 B1、真实 v2/V13 与 R2 实际窗口复验按原记录保留。
+
+## 提交、推送与下一步
+
+- 明确暂存 24 个相关 scripts 文件；`git diff --cached --check` 通过。暂存范围没有 data、docs/actions、日志、引擎资料或凭证；未暂存差异为空。原 docs/actions 保留未跟踪状态。
+- 代码与计划提交：`900b04f0b11dd9df593e1e14e91910e4c3e6f06f`，标题“feat: 接入 B1 存档账本与调试隔离，规划 B2 信件词条”，24 文件，2147 行新增、166 行删除。
+- `git push origin fengyycon` 成功，GitHub 从 2e9252a 快进到 900b04f。随后 `git ls-remote --heads origin refs/heads/fengyycon` 返回同一完整哈希；本地分支与 origin/fengyycon 同步。
+- 本记录回填结果作为同批后续文档提交；未修改代码，没有重新运行不受影响的回归。未执行 Maker 构建/发布、main 合并或强推。
+
+下一步按 [B2 计划](../B2_信件与词条实施计划.md) P1＋P2 实施真实正文解析、稳定 spanId、收到/已读候选和专项测试；随后接 WordToken 与跨块恢复。内容负责人准备 A12 的技术增信配置，继续支持 C2/C3 联合验证。无需重新讨论已接受规则；正式 v2 与真实退出重进按原依赖补齐。

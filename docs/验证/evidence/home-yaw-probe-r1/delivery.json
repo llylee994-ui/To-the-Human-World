@@ -1,0 +1,1824 @@
+{
+  "delivery": "C-HOME-YAW-PROBE-20261012-r1-v01",
+  "conclusion": "PASS: native fixed-position yaw geometry/UI probe; formal artwork, OS manual, smoothness and mobile acceptance unverified",
+  "baseline": {
+    "branch": "fengyycon",
+    "head": "c59c59044218e6be626edb86f66dc950f6943bd2",
+    "home": "C-HOME-ENTRY-20261010-r3-v02",
+    "projectRevision": 201,
+    "homeRevision": 189
+  },
+  "native_verified": {
+    "session": "fd7f0f24-b9e4-42df-a1d6-4fcc27bba5a7",
+    "reload": 3,
+    "pid": 36040,
+    "override": "DevChecks yawProbe=true,yawProbeAuto=true only",
+    "override_sha256_lf": "8237b67f91db6e9c71f9856e1a0ef4a70738f36f31246d93bed4a840e6a23079"
+  },
+  "restored": {
+    "reload": 4,
+    "pid": 29024,
+    "flags": "both false",
+    "screenshot": "player-default-off.png"
+  },
+  "parameters": {
+    "camera": [
+      0,
+      1.65,
+      0
+    ],
+    "pot": [
+      3.2,
+      1.15,
+      2.8
+    ],
+    "fovVertical": 50,
+    "pitch": 8,
+    "roll": 0,
+    "yawStart": 0,
+    "yawEnd": 48.81407483429035,
+    "seconds": 1.2,
+    "easing": "smoothstep",
+    "aspect": "16:9"
+  },
+  "verification": {
+    "camera_samples": 304,
+    "completed_plays": 3,
+    "fixed_position": [
+      0,
+      1.65,
+      0
+    ],
+    "fixed_pitch": 8,
+    "fixed_roll": 0,
+    "fixed_vertical_fov": 50,
+    "yaw_end": 48.81406,
+    "end_pot_screen": [
+      0.5,
+      0.475791
+    ],
+    "object_count": 48,
+    "objects_unchanged": true,
+    "render_target_sizes": [
+      "1056x594",
+      "1280x720",
+      "768x432"
+    ],
+    "native_lifecycle": "PASS",
+    "capture_frames": 388,
+    "capture_only": "Timestamped PrintWindow sampling; not a smoothness/FPS or OS touch acceptance",
+    "raw_captures": ".tmp\\yaw-native-frames-verified",
+    "first_capture": "2026-10-12T06:03:16.4819852Z",
+    "last_capture": "2026-10-12T06:04:08.4444545Z"
+  },
+  "checks": {
+    "headless": 597,
+    "home_zoom_regression": 383,
+    "lspErrors": 0,
+    "lspWarnings": 27,
+    "lspHints": 7,
+    "makerCheck": "FAIL, existing missing Cube/Day/DaySpecularHDR.dds and themis_x64.dll"
+  },
+  "mustFix": [],
+  "userDecisions": [],
+  "handoff": [
+    "user",
+    "A2"
+  ],
+  "code_files": [
+    {
+      "path": "scripts/ui/landscape/AppView.lua",
+      "sha256": "22e5d62455579fee7e8daefd212563e27fd3e4cf1a50601e35ce1f1c3559cd86"
+    },
+    {
+      "path": "scripts/ui/landscape/DevChecks.lua",
+      "sha256": "1a6f3222ae02a7976cc80a4b4d06ef4b12925b1a1b13e7f0f489b83005422bf4"
+    },
+    {
+      "path": "scripts/ui/landscape/HomeYawMotion.lua",
+      "sha256": "5c9dbff78275fe5f15f8ab59b05da61c0157b5d05faada43f2d4f6712be41624"
+    },
+    {
+      "path": "scripts/ui/landscape/HomeYawScene.lua",
+      "sha256": "d09d343d4dd57d54c806569aea5115f563c01c456c9ad00399a7cf80001ac9a7"
+    },
+    {
+      "path": "scripts/ui/landscape/HomeYawProbe.lua",
+      "sha256": "ad1e18673f55655c93a4089565801876495404c0843bcfe622eadce91228fa8d"
+    },
+    {
+      "path": "scripts/ui/landscape/tests/HomeYawTest.lua",
+      "sha256": "4418708f256e1073c68dd931af21bc7141f587cb9c6f704b5a7a18cbee1ba508"
+    },
+    {
+      "path": "scripts/ui/landscape/tests/YawNativeProbe.lua",
+      "sha256": "e4cf6186e99c223b61c2cbc8b7d4e285829ee5798e9a632a93baf33ba73558bf"
+    },
+    {
+      "path": "scripts/ui/landscape/tests/run_home_yaw.py",
+      "sha256": "761a6d5fa7c02afcb21e5436516d0b20b0377067b149de163ca8b72737ae65ca"
+    },
+    {
+      "path": "scripts/ui/landscape/tests/capture_yaw.ps1",
+      "sha256": "18c763722bf05ffe0eaf42f36f0648bbea085c2a067682834282f951657c136b"
+    },
+    {
+      "path": "scripts/ui/landscape/tests/summarize_home_yaw.py",
+      "sha256": "c003c3cbec47ecb08c311216079e619beceb6e2bb929762da324626074f0dd81"
+    },
+    {
+      "path": "scripts/actions/2026-10-12-home-yaw-probe-r1.md",
+      "sha256": "ba313909c31d91d34022650eb408e3987dbd72b002900c685833110d2084c398"
+    }
+  ],
+  "evidence_files": [
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/B-material-spec.md",
+      "sha256": "6f6a9f3d88b207ee7a9165b31e92d9a0e104e1d250a06d4fe399dd68485cda88"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/camera-timeline.json",
+      "sha256": "7e385b48d5b74b6b9d810ab4d5b32e13c85570517302a1d0768f36e142eddf98"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/failed-test-width-string.png",
+      "sha256": "ea5aab6011f4f3e37b07c80343ed45652ed5f3b9330b9fe760238f21397cd9a0"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/headless-yaw-final.log",
+      "sha256": "5b23a6aa9faf116350e98d46eeeff5bea476c78f265e31c474700b72a925acf2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/headless-yaw.log",
+      "sha256": "5b23a6aa9faf116350e98d46eeeff5bea476c78f265e31c474700b72a925acf2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/lsp/lua_diagnostics.log",
+      "sha256": "0dcf83a13d1cfe91a5bdd43190753ec3e1b39c823c4fa60ae5e107803e8ad60e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/lsp/lua_errors.log",
+      "sha256": "713cb61b9079144a213005a290b7e1430b1d4da49bb41f9f316a257bcf4ffd86"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/lsp/lua_lsp.log",
+      "sha256": "747cf7b55cd8d34d45faa6c80d9f4cf5972b013bbd7c79f2c2bd7437597c60b5"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/maker-check-native.json",
+      "sha256": "cc01136ca7acd1caa5e14750e5174750de95e5eeb5177f40a1682fdaaa7896ff"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/capture.csv",
+      "sha256": "4651212ea3e61fe278fc2e92ee73866920f6c48ef990f918ad1c4e8a7139f03e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0000.png",
+      "sha256": "8a794d5b5ff9e34aba828dcefc15247a2eb89bca8256a272c6223e7f668fc89c"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0094.png",
+      "sha256": "0dbf984bde4cefe7bc92d972dd46d79b7dd0abc78ef66ef679edeae960fcb567"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0095.png",
+      "sha256": "0dbf984bde4cefe7bc92d972dd46d79b7dd0abc78ef66ef679edeae960fcb567"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0096.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0097.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0098.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0099.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0100.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0101.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0102.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0103.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0104.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0105.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0106.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0107.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0108.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0109.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0110.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0111.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0112.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0113.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0114.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0115.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0116.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0117.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0118.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0119.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0120.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0121.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0122.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0123.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0124.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0125.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0126.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0127.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0128.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0129.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0130.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0131.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0132.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0133.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0134.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0135.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0136.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0137.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0138.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0139.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0140.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0141.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0142.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0143.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0144.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0145.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0146.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0147.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0148.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0149.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0150.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0151.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0152.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0153.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0154.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0155.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0156.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0157.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0158.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0159.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0160.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0161.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0162.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0163.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0164.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0165.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0166.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0167.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0168.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0169.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0170.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0171.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0172.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0173.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0174.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0175.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0176.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0177.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0178.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0179.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0180.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0181.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0182.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0183.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0184.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0185.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0186.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0187.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0188.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0189.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0190.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0191.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0192.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0193.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0194.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0195.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0196.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0197.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0198.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0199.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0200.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0201.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0202.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0203.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0204.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0205.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0206.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0207.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0208.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0209.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0210.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0211.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0212.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0213.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0214.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0215.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0216.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0217.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0218.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0219.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0220.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0221.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0222.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0223.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0224.png",
+      "sha256": "54b083a134f673eef2c22fc7f4ca4362bdf1051648d0f66cb49738023f9c3cee"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0225.png",
+      "sha256": "2d53d6b140e6bc6c103e25c3f4b9d98e2a696a02e24f238851487132fdeb4365"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0226.png",
+      "sha256": "1c8cf2beb55cb0b3d359e4fb40d1d45c6453ba9710d5974e557e2580ca280275"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0227.png",
+      "sha256": "ee0b302bedc02a3be633d2262001ed6d13c0841e2ec0e369a1995811a6aa161a"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0228.png",
+      "sha256": "381e7e1c603ed0be89b8fc4e57c58cb0fe55c80e070b5dcc0b8445a74c39eb7f"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0229.png",
+      "sha256": "d0f46b1e64c4d01695f5b635a5b33562cc6f276fbef972a49526fbcdc62b3f88"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0230.png",
+      "sha256": "169993c3fcf5ee0d0339b03f447b3eb69276260bbf4a582d068e84c74699d261"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0231.png",
+      "sha256": "c958cb3e882b673ca3d8e36ab36794941072ea7d5262b0cdf34986f197aa865d"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0232.png",
+      "sha256": "f74a2b6397faa00bd26522759c91d164c2dfcfc576cbfd79c94e19c9c7f6f526"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0233.png",
+      "sha256": "2177d05a2ac0c228c57f46f7cedbd76671f4cb513a5d3152a2a15cd651000ed6"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0234.png",
+      "sha256": "220a2a1fd5ad0a963343e73df1d434110133ed018701e3f9507c99fe54dac04c"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0235.png",
+      "sha256": "facf27b56980a4f4050379b0621639d6e19d20d97e070bdba2803cd1ad6116b5"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0236.png",
+      "sha256": "2acade9ed4afa2fe941318cb75fc624cb73218865c889fd1d4f7eac237aea6c4"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0237.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0238.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0239.png",
+      "sha256": "317b85470ded8f28c63acf1b5c2eceef3e9aa3237114d0505e3d4fd92d0581db"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0240.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0241.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0242.png",
+      "sha256": "317b85470ded8f28c63acf1b5c2eceef3e9aa3237114d0505e3d4fd92d0581db"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0243.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0244.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0245.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0246.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0247.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0248.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0249.png",
+      "sha256": "317b85470ded8f28c63acf1b5c2eceef3e9aa3237114d0505e3d4fd92d0581db"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0250.png",
+      "sha256": "317b85470ded8f28c63acf1b5c2eceef3e9aa3237114d0505e3d4fd92d0581db"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0251.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0252.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0253.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0254.png",
+      "sha256": "317b85470ded8f28c63acf1b5c2eceef3e9aa3237114d0505e3d4fd92d0581db"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0255.png",
+      "sha256": "6ac34058cba6df29c60874056498a611b66dca54e9b0f9e39035dee22a763bc9"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0256.png",
+      "sha256": "6ac34058cba6df29c60874056498a611b66dca54e9b0f9e39035dee22a763bc9"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0257.png",
+      "sha256": "455838aa577c5034b1bddde08f50c48ad90b23f2f0e63ddefec94129b1ee0312"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0258.png",
+      "sha256": "455838aa577c5034b1bddde08f50c48ad90b23f2f0e63ddefec94129b1ee0312"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0259.png",
+      "sha256": "455838aa577c5034b1bddde08f50c48ad90b23f2f0e63ddefec94129b1ee0312"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0260.png",
+      "sha256": "6ac34058cba6df29c60874056498a611b66dca54e9b0f9e39035dee22a763bc9"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0261.png",
+      "sha256": "6ac34058cba6df29c60874056498a611b66dca54e9b0f9e39035dee22a763bc9"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0262.png",
+      "sha256": "6ac34058cba6df29c60874056498a611b66dca54e9b0f9e39035dee22a763bc9"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0263.png",
+      "sha256": "455838aa577c5034b1bddde08f50c48ad90b23f2f0e63ddefec94129b1ee0312"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0264.png",
+      "sha256": "455838aa577c5034b1bddde08f50c48ad90b23f2f0e63ddefec94129b1ee0312"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0265.png",
+      "sha256": "6ac34058cba6df29c60874056498a611b66dca54e9b0f9e39035dee22a763bc9"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0266.png",
+      "sha256": "455838aa577c5034b1bddde08f50c48ad90b23f2f0e63ddefec94129b1ee0312"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0267.png",
+      "sha256": "455838aa577c5034b1bddde08f50c48ad90b23f2f0e63ddefec94129b1ee0312"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0268.png",
+      "sha256": "455838aa577c5034b1bddde08f50c48ad90b23f2f0e63ddefec94129b1ee0312"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0269.png",
+      "sha256": "6ac34058cba6df29c60874056498a611b66dca54e9b0f9e39035dee22a763bc9"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0270.png",
+      "sha256": "455838aa577c5034b1bddde08f50c48ad90b23f2f0e63ddefec94129b1ee0312"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0271.png",
+      "sha256": "455838aa577c5034b1bddde08f50c48ad90b23f2f0e63ddefec94129b1ee0312"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0272.png",
+      "sha256": "455838aa577c5034b1bddde08f50c48ad90b23f2f0e63ddefec94129b1ee0312"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0273.png",
+      "sha256": "455838aa577c5034b1bddde08f50c48ad90b23f2f0e63ddefec94129b1ee0312"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0274.png",
+      "sha256": "6ac34058cba6df29c60874056498a611b66dca54e9b0f9e39035dee22a763bc9"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0275.png",
+      "sha256": "8e3e0dab5b51659c24572c80ddfb881a8b7cc59bd66d0a84a27137c190bdf4b5"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0276.png",
+      "sha256": "1e3a785f1291ab674ff42a0a36e3f1220252c38b21dc6861e34764b902ddf959"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0277.png",
+      "sha256": "34701445e4e39a4f09144609e14958930fd228fe5b07c081354821223f8ca9d1"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0278.png",
+      "sha256": "fbc34384813fe12d0178b290a8e387bd6e725f9f4e5688f2f2b01d9771fd78f5"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0279.png",
+      "sha256": "958e3a2a2e8afaee8d769ca57f74b7465ad5799462254d90b71fbb377b87ed0a"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0280.png",
+      "sha256": "6ac34058cba6df29c60874056498a611b66dca54e9b0f9e39035dee22a763bc9"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0281.png",
+      "sha256": "455838aa577c5034b1bddde08f50c48ad90b23f2f0e63ddefec94129b1ee0312"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0282.png",
+      "sha256": "6ac34058cba6df29c60874056498a611b66dca54e9b0f9e39035dee22a763bc9"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0283.png",
+      "sha256": "6ac34058cba6df29c60874056498a611b66dca54e9b0f9e39035dee22a763bc9"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0284.png",
+      "sha256": "6ac34058cba6df29c60874056498a611b66dca54e9b0f9e39035dee22a763bc9"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0285.png",
+      "sha256": "455838aa577c5034b1bddde08f50c48ad90b23f2f0e63ddefec94129b1ee0312"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0286.png",
+      "sha256": "6ac34058cba6df29c60874056498a611b66dca54e9b0f9e39035dee22a763bc9"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0287.png",
+      "sha256": "455838aa577c5034b1bddde08f50c48ad90b23f2f0e63ddefec94129b1ee0312"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0288.png",
+      "sha256": "455838aa577c5034b1bddde08f50c48ad90b23f2f0e63ddefec94129b1ee0312"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0289.png",
+      "sha256": "455838aa577c5034b1bddde08f50c48ad90b23f2f0e63ddefec94129b1ee0312"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0290.png",
+      "sha256": "6ac34058cba6df29c60874056498a611b66dca54e9b0f9e39035dee22a763bc9"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0291.png",
+      "sha256": "6ac34058cba6df29c60874056498a611b66dca54e9b0f9e39035dee22a763bc9"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0292.png",
+      "sha256": "455838aa577c5034b1bddde08f50c48ad90b23f2f0e63ddefec94129b1ee0312"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0293.png",
+      "sha256": "455838aa577c5034b1bddde08f50c48ad90b23f2f0e63ddefec94129b1ee0312"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0294.png",
+      "sha256": "455838aa577c5034b1bddde08f50c48ad90b23f2f0e63ddefec94129b1ee0312"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0295.png",
+      "sha256": "3a2bea242079916671bd8b4af8e5f318b3fe504c2df5b9dcfae2ff4b79191908"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0296.png",
+      "sha256": "7214d8a8a2205dc8f9b265c6340d305e4ff480e12ec3f65154b3be1152ca1ed9"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0297.png",
+      "sha256": "d9589452f3aabf679f2bdf48a4e12753499f22b20b6b541b33f972a229c84061"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0298.png",
+      "sha256": "a0d8f0e477ae1543e6b3dba8195a6853a1038758e2612f4778953d6c01151af1"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0299.png",
+      "sha256": "0dbf984bde4cefe7bc92d972dd46d79b7dd0abc78ef66ef679edeae960fcb567"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0300.png",
+      "sha256": "0dbf984bde4cefe7bc92d972dd46d79b7dd0abc78ef66ef679edeae960fcb567"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0301.png",
+      "sha256": "0dbf984bde4cefe7bc92d972dd46d79b7dd0abc78ef66ef679edeae960fcb567"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0302.png",
+      "sha256": "0dbf984bde4cefe7bc92d972dd46d79b7dd0abc78ef66ef679edeae960fcb567"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0303.png",
+      "sha256": "0dbf984bde4cefe7bc92d972dd46d79b7dd0abc78ef66ef679edeae960fcb567"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0304.png",
+      "sha256": "0dbf984bde4cefe7bc92d972dd46d79b7dd0abc78ef66ef679edeae960fcb567"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0305.png",
+      "sha256": "0dbf984bde4cefe7bc92d972dd46d79b7dd0abc78ef66ef679edeae960fcb567"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0306.png",
+      "sha256": "0dbf984bde4cefe7bc92d972dd46d79b7dd0abc78ef66ef679edeae960fcb567"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0307.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0308.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0309.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0310.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0311.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0312.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0313.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0314.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0315.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0316.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0317.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0318.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0319.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0320.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0321.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0322.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0323.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0324.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0325.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0326.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0327.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0328.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0329.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0330.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0331.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0332.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0333.png",
+      "sha256": "c0e922d4e522ee88c26c6dc5563d9d4c94234ed590ebd2483a916e4d986db36e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0334.png",
+      "sha256": "636e2aaa835bb1a69d02194f78fd5c940f8bf64d7fcc3e2d7778a9b74ece86d5"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0335.png",
+      "sha256": "9717363bad84ac564b022e772936a3ff41d9b6bafd9bf75896a24d3692563301"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0336.png",
+      "sha256": "60fcc7fb5ac41906018ef7a94d8fda163bcc0a7a036531b682df3b88976546b2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0337.png",
+      "sha256": "4ea46a964d39106d40996273b152aab5fb8d451851095099e829af603bb352af"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0338.png",
+      "sha256": "7a82f22e4621576e241a88bc1a95270261bdd4d242e6f2e42024889b12936bde"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0339.png",
+      "sha256": "8e8879cc97ffd6b5fc30db5d4247d39cd659fcf250715274552aec6072d82168"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0340.png",
+      "sha256": "4ee3ad4550fcfdf65bf71148a629f8f01f5046a8f318f2e0feac0660890d5c31"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0341.png",
+      "sha256": "e2153e57c405e05a1521808dc820e0fdb58bee4e9fbd0a1642b674ca139c7575"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0342.png",
+      "sha256": "2cce5a7440ec305a67826aab370a825230b7d4a731bf344befb3790db0cd4f3c"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0343.png",
+      "sha256": "8c88b8927ffc4055335c0b99b2b384551d46feb7ae061170ba9be27f4f995c8f"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0344.png",
+      "sha256": "57221cf47eded222ca1322d050f67c30d4dd3a6c61fa589e27ffc8d5cfc4218a"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0345.png",
+      "sha256": "94458e04038d1c70b355b378c16322f7f57a4c3e7665c888b1449d2f726de667"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0346.png",
+      "sha256": "5ef0c370546d4b380e5313f09c6f8c6a020919a8f0482526d6a5591b8802e3d9"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0347.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0348.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0349.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0350.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0351.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0352.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0353.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0354.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0355.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0356.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0357.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0358.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0359.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0360.png",
+      "sha256": "317b85470ded8f28c63acf1b5c2eceef3e9aa3237114d0505e3d4fd92d0581db"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0361.png",
+      "sha256": "317b85470ded8f28c63acf1b5c2eceef3e9aa3237114d0505e3d4fd92d0581db"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0362.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0363.png",
+      "sha256": "317b85470ded8f28c63acf1b5c2eceef3e9aa3237114d0505e3d4fd92d0581db"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0364.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0365.png",
+      "sha256": "0dbf984bde4cefe7bc92d972dd46d79b7dd0abc78ef66ef679edeae960fcb567"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0366.png",
+      "sha256": "0dbf984bde4cefe7bc92d972dd46d79b7dd0abc78ef66ef679edeae960fcb567"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0367.png",
+      "sha256": "0dbf984bde4cefe7bc92d972dd46d79b7dd0abc78ef66ef679edeae960fcb567"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0368.png",
+      "sha256": "0dbf984bde4cefe7bc92d972dd46d79b7dd0abc78ef66ef679edeae960fcb567"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0369.png",
+      "sha256": "0dbf984bde4cefe7bc92d972dd46d79b7dd0abc78ef66ef679edeae960fcb567"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0370.png",
+      "sha256": "0dbf984bde4cefe7bc92d972dd46d79b7dd0abc78ef66ef679edeae960fcb567"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0371.png",
+      "sha256": "0dbf984bde4cefe7bc92d972dd46d79b7dd0abc78ef66ef679edeae960fcb567"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0372.png",
+      "sha256": "0dbf984bde4cefe7bc92d972dd46d79b7dd0abc78ef66ef679edeae960fcb567"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0373.png",
+      "sha256": "ee6d4176ed8d5b8ee6fef2e13cb2eb8ba56e685d871a8b985e0f8ee97b551b5a"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0374.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0375.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0376.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0377.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0378.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0379.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0380.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0381.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0382.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0383.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0384.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0385.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0386.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0387.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0388.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0389.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0390.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0391.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0392.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0393.png",
+      "sha256": "f602b1569632714e33259abb5dd3f30aab471cd1b7accf038cd4cf241d4499ef"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0394.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0395.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0396.png",
+      "sha256": "630e17eb31dffcba159dd144162f7fd9c57918a6235b29db911b14678d2c103e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0397.png",
+      "sha256": "b3ed8f0e2d41664ef5f233c6b7176d17823be085b758a60e077d99ebb35c2a8c"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0398.png",
+      "sha256": "99bf541d12bcb6a55672868f050756423e5c17b827c551726dd0850612c7be97"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0399.png",
+      "sha256": "101f856072a527975ebc65c9d9aec4885d33444c9ccbb858f0e1cdfce5df7a76"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0400.png",
+      "sha256": "1a3f8d7baaa4ac6ae6d81a2509214fd8664057ea6448a377c50a8b431fe92a35"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0401.png",
+      "sha256": "1cdd2b7506ef0cda296ccd18a10aa90ebe4cb102db6a6d9f1e63a7fc7776f49e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0402.png",
+      "sha256": "a82652179b1f1d83424c0f8e2c71098fda6355bf73e42c932c9602ce7c4e042e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0403.png",
+      "sha256": "828852cbd96c40856aeca965a093803aabba1e89d453ffbf5a54a9b533e001c7"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0404.png",
+      "sha256": "a82652179b1f1d83424c0f8e2c71098fda6355bf73e42c932c9602ce7c4e042e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0405.png",
+      "sha256": "828852cbd96c40856aeca965a093803aabba1e89d453ffbf5a54a9b533e001c7"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0406.png",
+      "sha256": "a82652179b1f1d83424c0f8e2c71098fda6355bf73e42c932c9602ce7c4e042e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0407.png",
+      "sha256": "a82652179b1f1d83424c0f8e2c71098fda6355bf73e42c932c9602ce7c4e042e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0408.png",
+      "sha256": "a82652179b1f1d83424c0f8e2c71098fda6355bf73e42c932c9602ce7c4e042e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0409.png",
+      "sha256": "a82652179b1f1d83424c0f8e2c71098fda6355bf73e42c932c9602ce7c4e042e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0410.png",
+      "sha256": "a82652179b1f1d83424c0f8e2c71098fda6355bf73e42c932c9602ce7c4e042e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0411.png",
+      "sha256": "a82652179b1f1d83424c0f8e2c71098fda6355bf73e42c932c9602ce7c4e042e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0412.png",
+      "sha256": "a82652179b1f1d83424c0f8e2c71098fda6355bf73e42c932c9602ce7c4e042e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0413.png",
+      "sha256": "a82652179b1f1d83424c0f8e2c71098fda6355bf73e42c932c9602ce7c4e042e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0414.png",
+      "sha256": "a82652179b1f1d83424c0f8e2c71098fda6355bf73e42c932c9602ce7c4e042e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0415.png",
+      "sha256": "828852cbd96c40856aeca965a093803aabba1e89d453ffbf5a54a9b533e001c7"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0416.png",
+      "sha256": "828852cbd96c40856aeca965a093803aabba1e89d453ffbf5a54a9b533e001c7"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0417.png",
+      "sha256": "828852cbd96c40856aeca965a093803aabba1e89d453ffbf5a54a9b533e001c7"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0418.png",
+      "sha256": "a82652179b1f1d83424c0f8e2c71098fda6355bf73e42c932c9602ce7c4e042e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0419.png",
+      "sha256": "99dfdd3f1bab26e04fb9709ec4d94d6c4751589e4c0729f4bd7b23e0786e255d"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0420.png",
+      "sha256": "2ae4ac5e82a69e255d5c36ae32b04cb2a5235000217954a90f598e8b94e38f0d"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0421.png",
+      "sha256": "a02a2364d590a731c0e553a1720754c743b3db7453e1f96c1dd92e931d70fda0"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0422.png",
+      "sha256": "2ae4ac5e82a69e255d5c36ae32b04cb2a5235000217954a90f598e8b94e38f0d"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0423.png",
+      "sha256": "a02a2364d590a731c0e553a1720754c743b3db7453e1f96c1dd92e931d70fda0"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0424.png",
+      "sha256": "a02a2364d590a731c0e553a1720754c743b3db7453e1f96c1dd92e931d70fda0"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0425.png",
+      "sha256": "a02a2364d590a731c0e553a1720754c743b3db7453e1f96c1dd92e931d70fda0"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0426.png",
+      "sha256": "2ae4ac5e82a69e255d5c36ae32b04cb2a5235000217954a90f598e8b94e38f0d"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0427.png",
+      "sha256": "a02a2364d590a731c0e553a1720754c743b3db7453e1f96c1dd92e931d70fda0"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0428.png",
+      "sha256": "a02a2364d590a731c0e553a1720754c743b3db7453e1f96c1dd92e931d70fda0"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0429.png",
+      "sha256": "2ae4ac5e82a69e255d5c36ae32b04cb2a5235000217954a90f598e8b94e38f0d"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0430.png",
+      "sha256": "a02a2364d590a731c0e553a1720754c743b3db7453e1f96c1dd92e931d70fda0"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0431.png",
+      "sha256": "a02a2364d590a731c0e553a1720754c743b3db7453e1f96c1dd92e931d70fda0"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0432.png",
+      "sha256": "a02a2364d590a731c0e553a1720754c743b3db7453e1f96c1dd92e931d70fda0"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0433.png",
+      "sha256": "2ae4ac5e82a69e255d5c36ae32b04cb2a5235000217954a90f598e8b94e38f0d"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0434.png",
+      "sha256": "a02a2364d590a731c0e553a1720754c743b3db7453e1f96c1dd92e931d70fda0"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0435.png",
+      "sha256": "2ae4ac5e82a69e255d5c36ae32b04cb2a5235000217954a90f598e8b94e38f0d"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0436.png",
+      "sha256": "2ae4ac5e82a69e255d5c36ae32b04cb2a5235000217954a90f598e8b94e38f0d"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0437.png",
+      "sha256": "a02a2364d590a731c0e553a1720754c743b3db7453e1f96c1dd92e931d70fda0"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0438.png",
+      "sha256": "2ae4ac5e82a69e255d5c36ae32b04cb2a5235000217954a90f598e8b94e38f0d"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0439.png",
+      "sha256": "a02a2364d590a731c0e553a1720754c743b3db7453e1f96c1dd92e931d70fda0"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0440.png",
+      "sha256": "a02a2364d590a731c0e553a1720754c743b3db7453e1f96c1dd92e931d70fda0"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0441.png",
+      "sha256": "552a56e3acdae26f54729330193f43f901cb5ee563f7612295c89bbc3d93383d"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0442.png",
+      "sha256": "99b6b581f172b0ba870c708c02b26b0ce4217c4d26e90c19fab3327ec02e2365"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0443.png",
+      "sha256": "19effea402a91dfb15b456ff0db32520abc0ffb56318bf8feccc36f367b4a978"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0444.png",
+      "sha256": "99b0bec0905c83f8b28f7bd948bef359687bc43a96c6a03bc7f7fd95d736f42f"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0445.png",
+      "sha256": "f18a77755c9b55b6e7850fefb476eda816f0e5a24dc27db5368865fa826b320e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0446.png",
+      "sha256": "6f714fa0fc9cecf732e3ffc3a07ca9537a745086e9b9271521191c8c29ca9e82"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0447.png",
+      "sha256": "c82b7e2208f07d8aba945abbdeac8f77b787a20c4e39347e6f16c08f0e8b389b"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0448.png",
+      "sha256": "85b359019370605eb56cd8266d24f87f11581a709511ffe14143356714e73d05"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0449.png",
+      "sha256": "e35d9384dcdd24e5ea903a11128dee44083ada9428606dc2f3c2404b06e4f15b"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0450.png",
+      "sha256": "e7ccfb81079cb9dba1ecec387c3429b9515237fbc1db14bd3b07393f1e67eb3b"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0451.png",
+      "sha256": "81ac986e22142564bb2d4ef1c2a669f64c05c6783f13bc8e3bd538d1ff2e9ef7"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0452.png",
+      "sha256": "a6d7aba0e3912e8f16603084710c7c398fa7bb1853fd5db36d12d317d2e67f56"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0453.png",
+      "sha256": "9d57bad8a00a4bbcfebee1fb3ddd11e92bdbfb699b361e983d56219ab720ddf0"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0454.png",
+      "sha256": "9ccdfd4f2e78e535c0677f5a13a57b5bfbb85f312693623ed5f74600fe837d4e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0455.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0456.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0457.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0458.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0459.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0460.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0461.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0462.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0463.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0464.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0465.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0466.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0467.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0468.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0469.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0470.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0471.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0472.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0473.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0474.png",
+      "sha256": "bcd949757b95577802fd23e0dad1a90255a16d75b980fe7a8ba2fea72a642ad2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0475.png",
+      "sha256": "0dbf984bde4cefe7bc92d972dd46d79b7dd0abc78ef66ef679edeae960fcb567"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0476.png",
+      "sha256": "0dbf984bde4cefe7bc92d972dd46d79b7dd0abc78ef66ef679edeae960fcb567"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0477.png",
+      "sha256": "0dbf984bde4cefe7bc92d972dd46d79b7dd0abc78ef66ef679edeae960fcb567"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0478.png",
+      "sha256": "0dbf984bde4cefe7bc92d972dd46d79b7dd0abc78ef66ef679edeae960fcb567"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0479.png",
+      "sha256": "0dbf984bde4cefe7bc92d972dd46d79b7dd0abc78ef66ef679edeae960fcb567"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/frame-0491.png",
+      "sha256": "0dbf984bde4cefe7bc92d972dd46d79b7dd0abc78ef66ef679edeae960fcb567"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-frames/sha256.json",
+      "sha256": "87d1c43963b6230e2efe3c696b10e7834d1e2c1cc3745555e009f0c2f400bb71"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-log-final-part1.json",
+      "sha256": "cc1f8d042d8cb4a7d74a1ef0c8108478ee120fed301a0a8c03fbd78a9e867029"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-log-final-part2.json",
+      "sha256": "2a1e875795a3c2a424851c6a7d6516919be17862a53472a5117f166237c90308"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-log-final-part3.json",
+      "sha256": "8de7f70da76181ff1b1b96ef552b97b243fe811696901ae2d0dafe3ca4bcd55d"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-log-final-part4.json",
+      "sha256": "d8ce89937a0d56d544a026ca99f5f181f11d8e39660044e0ebf9b3d9da179ded"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-log-r1-part2.json",
+      "sha256": "4596df1b8917e683fa247414b55ff7d0fd7469e21bff8ae0bb7127c937b5740c"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-log-r1-part3.json",
+      "sha256": "e1c9eec2bb249226e639c2751b71526750c4365ccdabe37c4c1753c87eb8e409"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-log-r1.json",
+      "sha256": "9602a51187a5b95e285596addece9b8d58dd1e9e8856194d56b00428e1089b5e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-log-verified-part1.json",
+      "sha256": "3c213300c050cb7acee2a62569fe070c2bbfea75728c9ee3cad0756afcf55397"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-log-verified-part2.json",
+      "sha256": "185b532754152bdd3e0fec048049e2abc8b76c5e4f4382267457f6403d87f82e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-log-verified-part3.json",
+      "sha256": "4d10955f65e7116b35a87ab9cc0e1447a9f2a8e1cb77412dc44b6fe2005aab7e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-log-verified-part4.json",
+      "sha256": "6a66c3ba98c9e249c70ecd209728d483388ca16d82590cfc0f8a78a04477eebd"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-review.html",
+      "sha256": "5cfc3375c5af959c20e60d46018720f57e780b12551d376ab3ea1a730196896e"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/native-verification.log",
+      "sha256": "acc949480f7d0916414eb3a5df294c575d3c15b63917696040e6e796d5b09e30"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/player-default-off.png",
+      "sha256": "e22b125bcf659a1ae56c2b3910afa16e92c9d4cd9cfb0d307396950b60688808"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/player-restored-log.json",
+      "sha256": "adc2fa8ef415f9272f17b57951117800874cac2812a83925a54152df0a3f0bc1"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/preview-before.json",
+      "sha256": "e70c6390beae33464e0ab7d68d72e23f59dceccc917f8aea8a871accb1d716dc"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/preview-refresh-native-final.json",
+      "sha256": "b4d9efd9cf7ceb859cec72c1dedd9ab5732db5cb8eff2c04bcf1743c6f9ba20d"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/preview-refresh-native.json",
+      "sha256": "8e1b9350af17e553f6e0efc41a9149ed9e51b44f8fe10264d52e0901a7d6f652"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/preview-refresh-verified.json",
+      "sha256": "019c43294058422f40986f792da71b1c3aa8f2490dc54f11b3cddd350cb93cf2"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/preview-restored.json",
+      "sha256": "c29e6be5540651126e0c83030d7f946193da08c9df0257f2a596afd9f4f86c3c"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/README.md",
+      "sha256": "a6218fb0068ac3c882b26b9094bb727078ac6eac470d97f6fc1362d48d03372b"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/regression-home-zoom.log",
+      "sha256": "214cc1eb28840bc10222a62b7ff5ee19cda44f191b8b89f510a81bc31e95fc43"
+    },
+    {
+      "path": "docs/验证/evidence/home-yaw-probe-r1/verification-summary.json",
+      "sha256": "e0879f300416fb9387267c8f203f8c2dd21cad41c2700edfa92f8936e31efe82"
+    }
+  ]
+}

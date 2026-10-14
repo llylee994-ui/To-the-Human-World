@@ -1,0 +1,287 @@
+{
+  "task": "C-STOVE-PANZOOM-20261012 r1",
+  "version": "C-STOVE-PANZOOM-20261012-r1-v01",
+  "conclusion": "证据不足",
+  "implementation": "Completed; native motion acceptance deferred by user",
+  "branch": "fengyycon",
+  "baseline": "5880d8f932221437d7621439e0e6658ad3e1ef6c",
+  "checkpoint_parent": "1cd0cdbec06487a5c60f109d5fd477198cfc8846",
+  "checkpoint_local_only": true,
+  "new_task_committed": false,
+  "push_build_binding_changes": false,
+  "upstream": "current misty-harbor home/HUD + direct stove entry; original layout project 201 / page 189 retained",
+  "parameters": {
+    "scale": [
+      1,
+      1.5
+    ],
+    "duration_seconds": 0.6,
+    "easing": "smoothstep t*t*(3-2*t)",
+    "subject_design": [
+      1265.541024332558,
+      491.62497542370244
+    ],
+    "design_endpoint_translation": [
+      -938.311536498837,
+      -197.4374631355537
+    ],
+    "design_subject_landing": [
+      960,
+      540
+    ],
+    "destination": "existing brew functional page",
+    "window_endpoints_base_pixels_origin_24_8": [
+      {
+        "finalY": 368.0,
+        "width": 1280,
+        "panY": -131.62497542370244,
+        "height": 720,
+        "finalX": 664.0,
+        "panX": -625.541024332558
+      },
+      {
+        "finalY": 368.0,
+        "width": 1560,
+        "panY": -2.9179387976374755,
+        "height": 720,
+        "finalX": 804.0,
+        "panX": -762.3781234053049
+      },
+      {
+        "finalY": 352.5312192796282,
+        "width": 1600,
+        "panY": 0,
+        "height": 720,
+        "finalX": 824.0,
+        "panX": -781.9262804156974
+      },
+      {
+        "finalY": 392.0,
+        "width": 1024,
+        "panY": -153.29998033896197,
+        "height": 768,
+        "finalX": 536.0,
+        "panX": -500.43281946604634
+      },
+      {
+        "finalY": 188.0,
+        "width": 640,
+        "panY": -65.81248771185122,
+        "height": 360,
+        "finalX": 344.0,
+        "panX": -312.770512166279
+      }
+    ]
+  },
+  "changes": [
+    {
+      "path": "scripts/ui/landscape/AppView.lua",
+      "sha256": "6cc33d264b82c49f2cb813b50666f31216a9ea91c5295e8c8b732a08192107c4",
+      "preview_sha256": "6cc33d264b82c49f2cb813b50666f31216a9ea91c5295e8c8b732a08192107c4",
+      "preview_matches": true
+    },
+    {
+      "path": "scripts/ui/landscape/DevChecks.lua",
+      "sha256": "589b69411d78997b2076da16e3e0bfb7082f95ad1bb99cc889da9b1dcd088710",
+      "preview_sha256": "589b69411d78997b2076da16e3e0bfb7082f95ad1bb99cc889da9b1dcd088710",
+      "preview_matches": true
+    },
+    {
+      "path": "scripts/ui/landscape/HomeView.lua",
+      "sha256": "ec754222ca80db00e3e793c95db13092f77cedb3ccd99563b1152898f862435a",
+      "preview_sha256": "ec754222ca80db00e3e793c95db13092f77cedb3ccd99563b1152898f862435a",
+      "preview_matches": true
+    },
+    {
+      "path": "scripts/ui/landscape/HomeZoom.lua",
+      "sha256": "779508351e2ef1d16026caf6d2f026d1da95a1bdc8e366091b5668cf56ea70a5",
+      "preview_sha256": "779508351e2ef1d16026caf6d2f026d1da95a1bdc8e366091b5668cf56ea70a5",
+      "preview_matches": true
+    },
+    {
+      "path": "scripts/ui/landscape/SceneBackdrop.lua",
+      "sha256": "79cdae1e6f96deed0a91c82fa8d431a8341d220242d75e099691b690b2c7767f",
+      "preview_sha256": "79cdae1e6f96deed0a91c82fa8d431a8341d220242d75e099691b690b2c7767f",
+      "preview_matches": true
+    },
+    {
+      "path": "scripts/ui/landscape/StovePanZoom.lua",
+      "sha256": "10ba514a609158f584a5d39fe36103f90c1e9905d61e967a71db6c079ac1f027",
+      "preview_sha256": "10ba514a609158f584a5d39fe36103f90c1e9905d61e967a71db6c079ac1f027",
+      "preview_matches": true
+    },
+    {
+      "path": "scripts/ui/landscape/tests/StoveYawEntryTest.lua",
+      "sha256": "d68eba78a276f05525f00962309357d0114f2595f4e89d71ce2334cf7d3a0425",
+      "preview_sha256": "d68eba78a276f05525f00962309357d0114f2595f4e89d71ce2334cf7d3a0425",
+      "preview_matches": true
+    },
+    {
+      "path": "scripts/ui/landscape/tests/run_stove_yaw.py",
+      "sha256": "cd650c3e2edbe7047e8ecebb0fc71f4d3134a802e1e864ecc7dd14c0dd1c7ffc"
+    },
+    {
+      "path": "scripts/ui/landscape/tests/HomeEntryTest.lua",
+      "sha256": "f941a8ba6334b194c44d53c6ea96fcda10949e878bd011b0c15bf01601f54980",
+      "preview_sha256": "f941a8ba6334b194c44d53c6ea96fcda10949e878bd011b0c15bf01601f54980",
+      "preview_matches": true
+    },
+    {
+      "path": "scripts/ui/landscape/tests/StovePanZoomRenderTest.lua",
+      "sha256": "fe5804a23e4ae9b2eed0b22de3a720007d83d556080c124ff1566088ffc65c0b",
+      "preview_sha256": "fe5804a23e4ae9b2eed0b22de3a720007d83d556080c124ff1566088ffc65c0b",
+      "preview_matches": true
+    },
+    {
+      "path": "scripts/ui/landscape/tests/StovePanZoomNativeProbe.lua",
+      "sha256": "80c59df5f489b37900dc8be247b8e5ba944c19c67457597373bf79d34a169d96",
+      "preview_sha256": "80c59df5f489b37900dc8be247b8e5ba944c19c67457597373bf79d34a169d96",
+      "preview_matches": true
+    },
+    {
+      "path": "scripts/actions/2026-10-12-stove-panzoom-r1.md",
+      "sha256": "90e1394f89f26c38890be65efeb006e0373abee030773363729dbd917aa4633f"
+    },
+    {
+      "path": "scripts/actions/2026-10-12-remove-stove-yaw.md",
+      "sha256": "2377a702e0ee0a0b5fb8bfd3fc904250a33f2aa7f5157938547f1a48450f5c7c"
+    }
+  ],
+  "checks": [
+    {
+      "suite": "stove navigation",
+      "passed": true,
+      "assertions": 2325,
+      "layer": "headless real Lua UI/business with clock/layout adapters"
+    },
+    {
+      "suite": "art shared matrices",
+      "passed": true,
+      "assertions": 835,
+      "layer": "real render call recording, not native pixels"
+    },
+    {
+      "suite": "net zoom",
+      "passed": true,
+      "assertions": 383
+    },
+    {
+      "suite": "home entry",
+      "passed": true,
+      "assertions": 303,
+      "previous_failure": "old immediate-stove expectation, now updated to wait for motion"
+    },
+    {
+      "suite": "home HUD",
+      "passed": true,
+      "assertions": 50
+    },
+    {
+      "suite": "scene projection",
+      "passed": true,
+      "assertions": 73
+    },
+    {
+      "suite": "hit feedback",
+      "passed": true,
+      "assertions": 251117
+    },
+    {
+      "suite": "Lua LSP workspace",
+      "errors": 0,
+      "warnings": 78,
+      "hints": 14,
+      "passed_error_check": true,
+      "all_warnings_cleared": false
+    }
+  ],
+  "failures": [
+    "Initial Python temporary directory WinError 5; same check passed elevated without machine permission changes",
+    "Intermediate new-script type annotations corrected; final diagnostics 0 errors",
+    "Native motion evidence attempt stopped because Runtime had no focus; no OS activation/control",
+    "Maker readiness check retains pre-existing missing DaySpecularHDR.dds and themis_x64.dll errors"
+  ],
+  "native": {
+    "session": "a4ca4c9a-65f8-4c4d-ba85-02eca0033128",
+    "reload": 10,
+    "pid": 52756,
+    "process_alive": true,
+    "maker_result": "FAIL",
+    "maker_errors": [
+      "[2026-10-13 15_06_20_757][0] ERROR: Could not find resource Cube/Day/DaySpecularHDR.dds\r",
+      "[2026-10-13 15_06_20_938][0] ERROR: Can not load themis_x64.dll.\r"
+    ],
+    "motion_frames_captured": false,
+    "normal_speed_video": false,
+    "static_screenshot": "native-home-r7.jpg",
+    "screenshot_scope": "native start home only, inspected",
+    "automatic_driver": false,
+    "user_decision": "先交付，实际效果我之后手动测试",
+    "source_directory": "C:\\Users\\YINGYI\\.taptap-maker\\preview\\7ec99854c054b7dea8c25d1a7496bd962dc0baeb0e2bcdbed56fea7592fe023b\\sessions\\a4ca4c9a-65f8-4c4d-ba85-02eca0033128\\10\\source",
+    "runtime_lua_hashes_match_workspace": true
+  },
+  "not_verified": [
+    "native animation appearance/fluency/timeline",
+    "native resize/background interruptions",
+    "OS manual clicks",
+    "phone device testing"
+  ],
+  "mandatory_implementation_changes": "无已知",
+  "required_before_visual_pass": "native motion acceptance",
+  "pending_user_decisions": "无",
+  "handoff": [
+    "用户",
+    "A2（由用户转发）"
+  ],
+  "dag": "用户确认范围 -> C实现与自动检查 -> 用户转发A2审查 -> 用户人工体验",
+  "manifest_unchanged": true,
+  "evidence_hashes": {
+    "baseline.json": "68c88b50871a2f7dbc6e21c84c4b36efc983f41c670d847c5d34b3f28b7c8f68",
+    "capture-native.ps1": "7ee3376fb4d2bd6e78ea44056a8265930895ceefb71a1d6a47454fb4e0a37b90",
+    "capture-r7.csv": "cb0ce7ba01c61591d7e2f4d84a308ea83c8a56ea0873e49be650ae988b6aceee",
+    "headless-hit-feedback.log": "e32492c50f28a54b43ba1a6216e70f048fc2e15f25dce223af18b34da3f72cff",
+    "headless-home_entry-updated.log": "135099e9fe57ba202fee599846683a33ef0d5b9c5f477650c451a0f8972bb92e",
+    "headless-home_entry.log": "c2dab423dd81dd65d86b41f4ded519b37e654495195fbc9f27967c8e4998bd84",
+    "headless-home_hud.log": "28421b53078dd297bef93e60a14b0279e4af23e1b0b7ce59da52cab566b865ea",
+    "headless-home_zoom.log": "214cc1eb28840bc10222a62b7ff5ee19cda44f191b8b89f510a81bc31e95fc43",
+    "headless-scene_projection.log": "8749c5410ff4b35478529638eb7d1eca3290364c26dba286e8d81f2035d0d31f",
+    "headless-stove-final.log": "1efa34da7f76cf7c3f2601d5c523f17327f3f7ee66c6d3faa07d311be170bf33",
+    "headless-stove-retry.log": "c34df8d3e0350278feb30ba15356ebfa4cfc636135beb1cb611fa6d6b8b3249c",
+    "headless-stove.log": "593188683cd3856845f1a2b2461ad507c19cb542f63a5e11d92d9359a1248de2",
+    "native-check-r7.json": "bd93ed6255c8689424d9538114b242bf45829224ab8857699ad131084b3a54eb",
+    "native-home-r7.jpg": "4af929ab820bf10b99a3cefb82bffb8bfaf5ffcb80bb129312962868bdb3eea5",
+    "native-logs-r7.json": "be3ccb9930c5679b23d3c1252404c53c2ea6b7770dbf6af23601eb91e2449ebe",
+    "native-r7.log": "956b6e3ab6698bb8a4fcceb9018efe831390ea4ba7a9addd605c3fd3b848d9a6",
+    "player-check-r8.json": "f78f2e59d09b17463d270334ff472dfd7506990c90a16c76617db55c2cdd0202",
+    "player-check-r9.json": "169b9262bc1ac3d124ced1cdcd8efdc9315dbf450bd92097cb0c9e8b252ad391",
+    "player-final-check.json": "18b56e8aeb6714ee6e9976e43c32ac6188f3234212abf416d51895a4d691d31b",
+    "player-final-logs.json": "f40c5c5d0c445a55e96dfcb206cf74bbe396d4cbf59cd419f7dc800c70357b03",
+    "player-final.log": "a61c64a5713126e1feaa41fb6d4f04ff9d3732417338a95f1346f815f60356f4",
+    "player-logs-r8.json": "b9da1183884f80854f6746dae8dffd7d67159d55c4deea7606c0f98183390220",
+    "player-r8.log": "ab5945576274c00e8b6c9b5d0098807e2f33960f1bce9ea8a7ffe7a6483a1c11",
+    "preview-before.json": "ac5ce0e76170ffb691f7048393f62109e954138b12e88eaecdecd5e738dce6f2",
+    "preview-delivery.json": "a4e9497a887663d4325316e76c42e87d7f051e7fec700b210e31ed6bf7ce6bfe",
+    "preview-final.json": "2d06f9e1a8bbf00b39d0dd1511ac9e0e37546ecf9bf93241afa9c5fd00689bc3",
+    "preview-native.json": "4ede72982beb8db100973f2bcb63d272528a36e83252b223f1dda5587302f73b",
+    "preview-player.json": "dce7df1cf7e995b134f1c12a72ef5b9c22b75d6ce330ab174ec4a0c204c319aa",
+    "preview-pre-delivery.json": "08984c68b9a06b27e32a96062e0ed2ae6fed8718b53566f522c09f162377764d",
+    "preview-pre-final-types.json": "71202d9cc62a32b44fa70c812ac318bbc6443c739b96b1e95af973f1e21b73d6",
+    "preview-pre-final.json": "c5eefde2937d136fcab44efd7dcff67175bc2a3ae17d497f59980a56cc8e9db9",
+    "preview-pre-refresh.json": "ac5ce0e76170ffb691f7048393f62109e954138b12e88eaecdecd5e738dce6f2",
+    "README.md": "76885cfff62570f5d19241aa2280350c47a925ee51c7dbf5f81b2ae12d9765b3",
+    "worktree-before.txt": "c6385833b49d8d0d078b68e2fa9be836e3fa1f11b907100e8382ff8e7336f266",
+    "lsp/lua_diagnostics.log": "183181d9daa16769fd9436ab2d06913083d05afeded17c50202eb6ce9333ea3f",
+    "lsp/lua_errors.log": "a73403850c9da2a40fe5c77301fcb01a60f18a6f9c2f3975bd346160f81b6a20",
+    "lsp/lua_lsp.log": "1a2d886324f8cabecdf260222e1757434b1bcc5732eb687e01d238abb25e80d8",
+    "lsp-final/lua_diagnostics.log": "db661be545840a7b9c255daf3049021ce7f821d722f096bd2f09f4a7e407cb2a",
+    "lsp-final/lua_errors.log": "09452ecb5daee2ffe61298c98dbe32f9526655190d4eebc6abb55070335db2a5",
+    "lsp-final/lua_lsp.log": "ec7f74523c1b16ef26b1ae1f6b158d6d930231750171e88f5a524f9470f21d52"
+  },
+  "user_acceptance": {
+    "date": "2026-10-13",
+    "statement": "可以，这个动效可以接受",
+    "scope": "用户接受当前动效；未提供逐项过程或手机证据",
+    "publication_record": "scripts/actions/2026-10-13-stove-panzoom-push.md"
+  },
+  "record_scope": "Original implementation delivery snapshot; later publication tracked separately"
+}

@@ -1,0 +1,169 @@
+[
+  {
+    "name": "b1-save",
+    "command": [
+      "scripts/debug/run_b1.py"
+    ],
+    "exitCode": 0,
+    "seconds": 0.36,
+    "log": "logs/home-entry-r3/b1-save.log"
+  },
+  {
+    "name": "b2-letter",
+    "command": [
+      "scripts/debug/run_b2.py"
+    ],
+    "exitCode": 1,
+    "seconds": 0.12,
+    "log": "logs/home-entry-r3/b2-letter.log"
+  },
+  {
+    "name": "b3-potion",
+    "command": [
+      "scripts/debug/run_b3.py"
+    ],
+    "exitCode": 1,
+    "seconds": 0.68,
+    "log": "logs/home-entry-r3/b3-potion.log"
+  },
+  {
+    "name": "b4-narrative",
+    "command": [
+      "scripts/debug/run_b4.py"
+    ],
+    "exitCode": 1,
+    "seconds": 0.45,
+    "log": "logs/home-entry-r3/b4-narrative.log"
+  },
+  {
+    "name": "b6-entry",
+    "command": [
+      "scripts/debug/run_b1.py",
+      "--b6-acceptance"
+    ],
+    "exitCode": 0,
+    "seconds": 0.16,
+    "log": "logs/home-entry-r3/b6-entry.log"
+  },
+  {
+    "name": "b1-config-load",
+    "command": [
+      "scripts/debug/run_b1.py",
+      "--config-failure",
+      "load"
+    ],
+    "exitCode": 0,
+    "seconds": 0.11,
+    "log": "logs/home-entry-r3/b1-config-load.log"
+  },
+  {
+    "name": "b1-config-c1",
+    "command": [
+      "scripts/debug/run_b1.py",
+      "--config-failure",
+      "c1"
+    ],
+    "exitCode": 0,
+    "seconds": 0.09,
+    "log": "logs/home-entry-r3/b1-config-c1.log"
+  },
+  {
+    "name": "b1-config-stage1",
+    "command": [
+      "scripts/debug/run_b1.py",
+      "--config-failure",
+      "stage1"
+    ],
+    "exitCode": 0,
+    "seconds": 0.1,
+    "log": "logs/home-entry-r3/b1-config-stage1.log"
+  },
+  {
+    "name": "b1-isolation-existing",
+    "command": [
+      "scripts/debug/run_b1.py",
+      "--debug-isolation",
+      "existing"
+    ],
+    "exitCode": 0,
+    "seconds": 0.19,
+    "log": "logs/home-entry-r3/b1-isolation-existing.log"
+  },
+  {
+    "name": "b1-isolation-missing",
+    "command": [
+      "scripts/debug/run_b1.py",
+      "--debug-isolation",
+      "missing"
+    ],
+    "exitCode": 0,
+    "seconds": 0.18,
+    "log": "logs/home-entry-r3/b1-isolation-missing.log"
+  },
+  {
+    "name": "b1-isolation-flow_missing",
+    "command": [
+      "scripts/debug/run_b1.py",
+      "--debug-isolation",
+      "flow_missing"
+    ],
+    "exitCode": 0,
+    "seconds": 0.17,
+    "log": "logs/home-entry-r3/b1-isolation-flow_missing.log"
+  },
+  {
+    "name": "b1-isolation-v2_corrupt",
+    "command": [
+      "scripts/debug/run_b1.py",
+      "--debug-isolation",
+      "v2_corrupt"
+    ],
+    "exitCode": 0,
+    "seconds": 0.21,
+    "log": "logs/home-entry-r3/b1-isolation-v2_corrupt.log"
+  },
+  {
+    "name": "b1-isolation-auto_write",
+    "command": [
+      "scripts/debug/run_b1.py",
+      "--debug-isolation",
+      "auto_write"
+    ],
+    "exitCode": 0,
+    "seconds": 0.41,
+    "log": "logs/home-entry-r3/b1-isolation-auto_write.log"
+  },
+  {
+    "name": "b1-isolation-auto_read",
+    "command": [
+      "scripts/debug/run_b1.py",
+      "--debug-isolation",
+      "auto_read"
+    ],
+    "exitCode": 0,
+    "seconds": 0.19,
+    "log": "logs/home-entry-r3/b1-isolation-auto_read.log"
+  },
+  {
+    "name": "b1-isolation-auto_read_flow_missing",
+    "command": [
+      "scripts/debug/run_b1.py",
+      "--debug-isolation",
+      "auto_read_flow_missing"
+    ],
+    "exitCode": 0,
+    "seconds": 0.16,
+    "log": "logs/home-entry-r3/b1-isolation-auto_read_flow_missing.log"
+  },
+  {
+    "name": "b1-isolation-auto_read_v2_corrupt",
+    "command": [
+      "scripts/debug/run_b1.py",
+      "--debug-isolation",
+      "auto_read_v2_corrupt"
+    ],
+    "exitCode": 0,
+    "seconds": 0.19,
+    "log": "logs/home-entry-r3/b1-isolation-auto_read_v2_corrupt.log"
+  }
+]

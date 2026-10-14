@@ -1,0 +1,26 @@
+[
+  {
+    "name": "b2",
+    "baseline": "e4d2862",
+    "currentBusinessMatchesBaseline": true,
+    "oldViewLoaded": true,
+    "exitCode": 1,
+    "log": "logs/home-entry-r3/baseline-b2.log"
+  },
+  {
+    "name": "b3",
+    "baseline": "e4d2862",
+    "currentBusinessMatchesBaseline": true,
+    "oldViewLoaded": true,
+    "exitCode": 1,
+    "log": "logs/home-entry-r3/baseline-b3.log"
+  },
+  {
+    "name": "b4",
+    "baseline": "e4d2862",
+    "currentBusinessMatchesBaseline": true,
+    "oldViewLoaded": true,
+    "exitCode": 1,
+    "log": "logs/home-entry-r3/baseline-b4.log"
+  }
+]

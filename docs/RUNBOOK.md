@@ -23,3 +23,9 @@
 ## 历史资料
 
 当前交付身份汇总见 [deliverables/CURRENT.md](../deliverables/CURRENT.md)，清理清单和测试状态见 [独立清理行动记录](actions/2026-10-14-independent-cleanup.md)。历史说明中的旧采样路径、已退役工具和旧交付压缩包仅说明当时过程，可从清理前提交 `7460d04e697c5ca7e6d312afae3cb0ef769ecc4b` 查阅，不应作为当前操作步骤。
+
+## main 历史整合后的目录边界
+
+当前开发分支为 `integration/3d-main-20261014`。main 的业务与编辑器源码已并入本仓库，当前完整 3D 仍加载 `scripts/v035`；不要将根目录 `scripts/core` 的更新误认为已进入这套业务副本。后续业务共享/升级需要单独适配与测试。
+
+本机稀疏检出只省略 `scripts/素材/` 的美术过程稿，其内容与许可仍在 Git 中。完整 3D 运行路径不受影响；按需恢复方法见根目录 README。旧 `.project` 绑定与 `experiments/3d-lab` 样片不接收，当前 probe.json 留作根目录测试。

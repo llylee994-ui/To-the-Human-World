@@ -1,0 +1,43 @@
+2026-10-11 20:38:46,192 - 41584 - WARNING - .luarc.json 不存在: D:\taptap\To-the-Human-World\scripts\.emmyrc.json
+2026-10-11 20:38:46,323 - 41584 - INFO - 使用 LSP: C:\Users\YINGYI\.taptap-maker\lua-lsp-venv\Lib\site-packages\maker_lua_lsp\bin\emmylua_ls.exe
+2026-10-11 20:38:46,324 - 41584 - INFO - 监视目录: D:\taptap\To-the-Human-World\scripts
+2026-10-11 20:38:46,324 - 41584 - INFO - EmmyLua 类型: D:\taptap\To-the-Human-World\.emmylua
+2026-10-11 20:38:46,324 - 41584 - INFO - 
+============================================================
+2026-10-11 20:38:46,327 - 41584 - INFO -  Lua LSP 服务器 v0.22.2 - EmmyLuaLS (持续监视模式)
+2026-10-11 20:38:46,327 - 41584 - INFO - ============================================================
+2026-10-11 20:38:46,330 - 41584 - INFO - 监视目录: D:\taptap\To-the-Human-World\scripts
+2026-10-11 20:38:46,330 - 41584 - INFO - EmmyLua:  D:\taptap\To-the-Human-World\.emmylua
+2026-10-11 20:38:46,331 - 41584 - INFO - 完整报告: D:\taptap\To-the-Human-World\logs\home-zoom-r1-lsp\lua_diagnostics.log
+2026-10-11 20:38:46,332 - 41584 - INFO - 错误报告: D:\taptap\To-the-Human-World\logs\home-zoom-r1-lsp\lua_errors.log
+2026-10-11 20:38:46,332 - 41584 - INFO - ============================================================
+
+2026-10-11 20:38:46,333 - 41584 - INFO - 正在启动 Lua LSP 服务器...
+2026-10-11 20:38:46,333 - 41584 - INFO - LSP 启动参数: C:\Users\YINGYI\.taptap-maker\lua-lsp-venv\Lib\site-packages\maker_lua_lsp\bin\emmylua_ls.exe --communication stdio --log-level warn --log-path none --resources-path none
+2026-10-11 20:38:48,327 - 41584 - INFO - emmylua_ls 进程已启动
+2026-10-11 20:38:48,833 - 41584 - INFO - MCP stdio 前端已启动
+2026-10-11 20:38:48,834 - 41584 - INFO - MCP stdio 前端已退出
+2026-10-11 20:38:50,833 - 41584 - INFO - LSP 连接已初始化（配置通过 workspace/configuration 注入）
+2026-10-11 20:38:50,834 - 41584 - INFO - 
+============================================================
+2026-10-11 20:38:50,834 - 41584 - INFO - 等待 EmmyLua 工作区诊断...
+2026-10-11 20:38:50,835 - 41584 - INFO - ============================================================
+2026-10-11 20:38:50,855 - 41584 - INFO - emmylua_ls: Failed to open log file: Os { code: 5, kind: PermissionDenied, message: "拒绝访问。" }
+2026-10-11 20:38:55,843 - 41584 - INFO - 
+============================================================
+诊断摘要
+============================================================
+检查文件数: 0
+错误: 0 | 警告: 0 | 信息: 0 | 提示: 0
+============================================================
+
+2026-10-11 20:38:55,847 - 41584 - INFO - 初始诊断同步完成
+2026-10-11 20:38:55,855 - 41584 - INFO - 文件监视器已启动 (block=False, observer.alive=True, handler=(<class 'watchdog.events.FileSystemEventHandler'>,))
+2026-10-11 20:38:55,856 - 41584 - INFO - Lua LSP 服务器已启动
+2026-10-11 20:38:55,856 - 41584 - INFO - 正在停止 Lua LSP 服务器...
+2026-10-11 20:38:55,859 - 41584 - INFO - 正在清理 LSP 进程 (PID: 14532)...
+2026-10-11 20:38:58,063 - 41584 - INFO - 强制终止 LSP 进程树 (PID: 14532)
+2026-10-11 20:38:58,269 - 41584 - INFO - LSP 进程已清理
+2026-10-11 20:38:58,269 - 41584 - INFO - Lua LSP 服务器已停止
+2026-10-11 20:38:58,270 - 41584 - INFO - 正在停止 Lua LSP 服务器...
+2026-10-11 20:38:58,270 - 41584 - INFO - Lua LSP 服务器已停止

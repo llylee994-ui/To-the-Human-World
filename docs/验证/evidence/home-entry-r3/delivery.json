@@ -1,0 +1,386 @@
+{
+  "version": "C-HOME-ENTRY-20261010-r3-v01",
+  "baseline": "e4d28622e31838c6d48a564e5ae829bf0dc5de18",
+  "sourceSha256": "e4ccb82e4c8b64c0abb8a3c1a005d04b82aa7b0123ec89eec58c1996a50c8ce6",
+  "projectRevision": 201,
+  "pageRevision": 189,
+  "layerCount": 11,
+  "libraryCount": 39,
+  "artByteIdentical": true,
+  "transformsExact": true,
+  "normalRuntimeReload": 4,
+  "debugRuntimeReload": 3,
+  "debugOnlyDifference": "DevChecks hotspots/nativeProbe true during inspection; both false in delivered source",
+  "luaFilesAndArtSha256": {
+    "scripts/ui/PlayView.lua": "7d21836d31e8f31eb54187eb6df0b80c34514355204ba18a9901e5d43f4de02d",
+    "scripts/ui/landscape/AppView.lua": "f249f2e4b3523947593f94c72ec15508bf2206d8748e9f0ee0d57126434a3885",
+    "scripts/ui/landscape/DevChecks.lua": "3cdc3c704fbbe555a7795bb0f3a9335546346b88a3254b14c5401c5c485a3777",
+    "scripts/ui/landscape/HomeView.lua": "5b35d47c9cf0528a32e150c49d7f9bb59be17b398151cfb6e096b6821270f774",
+    "scripts/ui/landscape/LayoutGeometry.lua": "0e9f327afd6b28fede5627a078df092849befcc2317c9d493bea1f5e0a9761ac",
+    "scripts/ui/landscape/LayoutManifest.lua": "aea9d81a9f4287b2e3f2003b706f5978d3fff31064637c5074673b5fb8527d89",
+    "scripts/ui/landscape/Panels.lua": "4b27af4cdf642eb488a83f72672a75e2308924f496fdf76f98e3c00a4e7e7d88",
+    "scripts/ui/landscape/tests/NativeProbe.lua": "e15c62de2742c8937266da77d8beac370bb76aac49681f251a875c501df652c8",
+    "assets/image/home-entry-r3/amber-jar.png": "928fc9dc1ca1ce88d8ff94c2dc28feaaa9dc47f2d0dd14736c4ac651b67f9608",
+    "assets/image/home-entry-r3/background.png": "1de5de32c77e4e897c97a790c1add0b1b688d390562be464d6932fef12216055",
+    "assets/image/home-entry-r3/case-file.png": "462e30fb4b932e8e181c559024206a19a35ebe11ba37a89e19d8b78246fa4aeb",
+    "assets/image/home-entry-r3/glass-bottle.png": "69d141d0e010657d522daa1b573a908d3b90e5898a94236865bfa20243a5ed13",
+    "assets/image/home-entry-r3/herb-jar.png": "2790313f49b588609ace365632bf8c2aeb7214638de4db8057162809f4961f6a",
+    "assets/image/home-entry-r3/letter-paper.png": "9c0096340142d3ffc9825db281a8f1f09c1e1f66844037be88ae3a400ac35fed",
+    "assets/image/home-entry-r3/lily-vase.png": "726655e971433a392fc243f3163deb3b2cd9aff1cf7064ceed5b176ecb9899c2",
+    "assets/image/home-entry-r3/merchant-ship.png": "bc261c32e3839fb72d365ae394963c0417dced57f48b1f1dd0381df2561f16be",
+    "assets/image/home-entry-r3/net.png": "88e554c6abbe273e065b7c7f5c6944c0a73d08e4c4655185770ecececfa036f7",
+    "assets/image/home-entry-r3/source-manifest.json": "3fa1078576bcbe0eea157cb98118664bfc131d25af1e124ec00b921627943d53",
+    "assets/image/home-entry-r3/stove.png": "a09c379fe6ac0946076c2e0284afad32a57f60831a425560b2259830d0292898",
+    "assets/image/home-entry-r3/tray.png": "e9d0c21d5315de6083ee83c04311334d939166a20ad59f9d635cd33090f01600"
+  },
+  "screenshots": {
+    "native-home.png": "e22b125bcf659a1ae56c2b3910afa16e92c9d4cd9cfb0d307396950b60688808",
+    "native-hotspots-16x9.png": "499824462d58d2193f21fd5697198434d5bed0bdac069b0376cbad7bff15b07c",
+    "native-hotspots-19_5x9.png": "a0c3a10119aa61c2c920ccd7f90bd57367298a10804c1cd5b15646064b56c247",
+    "native-hotspots-20x9.png": "d9af1eb8f10758bb0f1722dc2cde3f7e56e68ca8ee32c718bf05df1a3bc3eb5b",
+    "native-hotspots-4x3.png": "c93b2b4eda035f7e90f272a99934706d61e5dc57b62e1bc380e232428cda1a00",
+    "native-hotspots-phone-800x360.png": "db875e18329727709f5df124f0f7f92293cec5fd1f7aa3ee607c2af1f645855e"
+  },
+  "checks": [
+    {
+      "name": "landscape-flow-migration",
+      "command": [
+        "scripts/debug/run_landscape_flow.py"
+      ],
+      "exitCode": 0,
+      "seconds": 8.04,
+      "log": "logs/home-entry-r3/landscape-flow-migration.log"
+    },
+    {
+      "name": "landscape-entry",
+      "command": [
+        "scripts/debug/run_landscape_flow.py",
+        "--entry"
+      ],
+      "exitCode": 0,
+      "seconds": 0.12,
+      "log": "logs/home-entry-r3/landscape-entry.log"
+    },
+    {
+      "name": "landscape-numeric",
+      "command": [
+        "scripts/debug/run_landscape_flow.py",
+        "--numeric"
+      ],
+      "exitCode": 0,
+      "seconds": 126.82,
+      "log": "logs/home-entry-r3/landscape-numeric.log"
+    },
+    {
+      "name": "numeric-runtime",
+      "command": [
+        "scripts/debug/run_numeric_v02.py"
+      ],
+      "exitCode": 0,
+      "seconds": 0.16,
+      "log": "logs/home-entry-r3/numeric-runtime.log"
+    },
+    {
+      "name": "numeric-flow-schema2",
+      "command": [
+        "scripts/debug/run_numeric_v02.py",
+        "--flows"
+      ],
+      "exitCode": 0,
+      "seconds": 103.0,
+      "log": "logs/home-entry-r3/numeric-flow-schema2.log"
+    },
+    {
+      "name": "numeric-startup",
+      "command": [
+        "scripts/debug/run_numeric_v02.py",
+        "--startup"
+      ],
+      "exitCode": 0,
+      "seconds": 0.12,
+      "log": "logs/home-entry-r3/numeric-startup.log"
+    },
+    {
+      "name": "numeric-data-check",
+      "command": [
+        "scripts/debug/generate_numeric_v02.py",
+        "--check"
+      ],
+      "exitCode": 0,
+      "seconds": 0.22,
+      "log": "logs/home-entry-r3/numeric-data-check.log"
+    },
+    {
+      "name": "numeric-intervals",
+      "command": [
+        "scripts/debug/check_numeric_runtime.py"
+      ],
+      "exitCode": 0,
+      "seconds": 11.62,
+      "log": "logs/home-entry-r3/numeric-intervals.log"
+    },
+    {
+      "name": "historical-order",
+      "command": [
+        "-c",
+        "import sys;sys.path.insert(0,\"scripts/debug\");from content_test_runtime import run;raise SystemExit(run(\"debug.OrderFlowTest\",\"3dbca09\"))"
+      ],
+      "exitCode": 0,
+      "seconds": 4.55,
+      "log": "logs/home-entry-r3/historical-order.log"
+    },
+    {
+      "name": "historical-single-use",
+      "command": [
+        "scripts/debug/run_single_use_words.py",
+        "--content-ref",
+        "3dbca09"
+      ],
+      "exitCode": 0,
+      "seconds": 5.21,
+      "log": "logs/home-entry-r3/historical-single-use.log"
+    },
+    {
+      "name": "historical-story",
+      "command": [
+        "scripts/debug/run_story_content.py",
+        "--content-ref",
+        "3dbca09"
+      ],
+      "exitCode": 0,
+      "seconds": 13.8,
+      "log": "logs/home-entry-r3/historical-story.log"
+    },
+    {
+      "name": "home-entry",
+      "command": [
+        "scripts/ui/landscape/tests/run_home_entry.py"
+      ],
+      "exitCode": 0,
+      "log": "logs/home-entry-r3/home-entry.log"
+    },
+    {
+      "name": "numeric-shop",
+      "command": [
+        "scripts/ui/landscape/tests/run_ui_contracts.py",
+        "shop"
+      ],
+      "exitCode": 0,
+      "log": "logs/home-entry-r3/numeric-shop.log"
+    },
+    {
+      "name": "archived-vertical-ui-backend-only",
+      "command": [
+        "scripts/ui/landscape/tests/run_ui_contracts.py",
+        "legacy"
+      ],
+      "exitCode": 0,
+      "log": "logs/home-entry-r3/archived-vertical-ui-backend-only.log"
+    },
+    {
+      "name": "archived-mobile-ui-backend-only",
+      "command": [
+        "scripts/ui/landscape/tests/run_ui_contracts.py",
+        "mobile"
+      ],
+      "exitCode": 0,
+      "log": "logs/home-entry-r3/archived-mobile-ui-backend-only.log"
+    },
+    {
+      "name": "b1-save",
+      "command": [
+        "scripts/debug/run_b1.py"
+      ],
+      "exitCode": 0,
+      "seconds": 0.36,
+      "log": "logs/home-entry-r3/b1-save.log"
+    },
+    {
+      "name": "b2-letter",
+      "command": [
+        "scripts/debug/run_b2.py"
+      ],
+      "exitCode": 1,
+      "seconds": 0.12,
+      "log": "logs/home-entry-r3/b2-letter.log"
+    },
+    {
+      "name": "b3-potion",
+      "command": [
+        "scripts/debug/run_b3.py"
+      ],
+      "exitCode": 1,
+      "seconds": 0.68,
+      "log": "logs/home-entry-r3/b3-potion.log"
+    },
+    {
+      "name": "b4-narrative",
+      "command": [
+        "scripts/debug/run_b4.py"
+      ],
+      "exitCode": 1,
+      "seconds": 0.45,
+      "log": "logs/home-entry-r3/b4-narrative.log"
+    },
+    {
+      "name": "b6-entry",
+      "command": [
+        "scripts/debug/run_b1.py",
+        "--b6-acceptance"
+      ],
+      "exitCode": 0,
+      "seconds": 0.16,
+      "log": "logs/home-entry-r3/b6-entry.log"
+    },
+    {
+      "name": "b1-config-load",
+      "command": [
+        "scripts/debug/run_b1.py",
+        "--config-failure",
+        "load"
+      ],
+      "exitCode": 0,
+      "seconds": 0.11,
+      "log": "logs/home-entry-r3/b1-config-load.log"
+    },
+    {
+      "name": "b1-config-c1",
+      "command": [
+        "scripts/debug/run_b1.py",
+        "--config-failure",
+        "c1"
+      ],
+      "exitCode": 0,
+      "seconds": 0.09,
+      "log": "logs/home-entry-r3/b1-config-c1.log"
+    },
+    {
+      "name": "b1-config-stage1",
+      "command": [
+        "scripts/debug/run_b1.py",
+        "--config-failure",
+        "stage1"
+      ],
+      "exitCode": 0,
+      "seconds": 0.1,
+      "log": "logs/home-entry-r3/b1-config-stage1.log"
+    },
+    {
+      "name": "b1-isolation-existing",
+      "command": [
+        "scripts/debug/run_b1.py",
+        "--debug-isolation",
+        "existing"
+      ],
+      "exitCode": 0,
+      "seconds": 0.19,
+      "log": "logs/home-entry-r3/b1-isolation-existing.log"
+    },
+    {
+      "name": "b1-isolation-missing",
+      "command": [
+        "scripts/debug/run_b1.py",
+        "--debug-isolation",
+        "missing"
+      ],
+      "exitCode": 0,
+      "seconds": 0.18,
+      "log": "logs/home-entry-r3/b1-isolation-missing.log"
+    },
+    {
+      "name": "b1-isolation-flow_missing",
+      "command": [
+        "scripts/debug/run_b1.py",
+        "--debug-isolation",
+        "flow_missing"
+      ],
+      "exitCode": 0,
+      "seconds": 0.17,
+      "log": "logs/home-entry-r3/b1-isolation-flow_missing.log"
+    },
+    {
+      "name": "b1-isolation-v2_corrupt",
+      "command": [
+        "scripts/debug/run_b1.py",
+        "--debug-isolation",
+        "v2_corrupt"
+      ],
+      "exitCode": 0,
+      "seconds": 0.21,
+      "log": "logs/home-entry-r3/b1-isolation-v2_corrupt.log"
+    },
+    {
+      "name": "b1-isolation-auto_write",
+      "command": [
+        "scripts/debug/run_b1.py",
+        "--debug-isolation",
+        "auto_write"
+      ],
+      "exitCode": 0,
+      "seconds": 0.41,
+      "log": "logs/home-entry-r3/b1-isolation-auto_write.log"
+    },
+    {
+      "name": "b1-isolation-auto_read",
+      "command": [
+        "scripts/debug/run_b1.py",
+        "--debug-isolation",
+        "auto_read"
+      ],
+      "exitCode": 0,
+      "seconds": 0.19,
+      "log": "logs/home-entry-r3/b1-isolation-auto_read.log"
+    },
+    {
+      "name": "b1-isolation-auto_read_flow_missing",
+      "command": [
+        "scripts/debug/run_b1.py",
+        "--debug-isolation",
+        "auto_read_flow_missing"
+      ],
+      "exitCode": 0,
+      "seconds": 0.16,
+      "log": "logs/home-entry-r3/b1-isolation-auto_read_flow_missing.log"
+    },
+    {
+      "name": "b1-isolation-auto_read_v2_corrupt",
+      "command": [
+        "scripts/debug/run_b1.py",
+        "--debug-isolation",
+        "auto_read_v2_corrupt"
+      ],
+      "exitCode": 0,
+      "seconds": 0.19,
+      "log": "logs/home-entry-r3/b1-isolation-auto_read_v2_corrupt.log"
+    },
+    {
+      "name": "archived-b2",
+      "module": "RunB2Checks",
+      "contentRef": "3dbca09",
+      "exitCode": 0,
+      "log": "logs/home-entry-r3/archived-b2.log"
+    },
+    {
+      "name": "archived-b3",
+      "module": "debug.PotionTest",
+      "contentRef": "3dbca09",
+      "exitCode": 0,
+      "log": "logs/home-entry-r3/archived-b3.log"
+    },
+    {
+      "name": "archived-b4",
+      "module": "debug.NarrativeTest",
+      "contentRef": "3dbca09",
+      "exitCode": 0,
+      "log": "logs/home-entry-r3/archived-b4.log"
+    }
+  ],
+  "currentLegacyFailures": [
+    "b2-letter",
+    "b3-potion",
+    "b4-narrative"
+  ],
+  "nativeCheck": "FAIL two engine bootstrap errors; see native-check-final.json",
+  "deviceTested": false,
+  "osMouseTested": false
+}

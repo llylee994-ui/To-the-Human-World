@@ -1,0 +1,37 @@
+{
+  "nativeScope": "desktop engine screenshot; 20:9 UI area only, not OS viewport or mobile",
+  "head": "27aaa97",
+  "allDevChecksFalse": true,
+  "previewSession": "e94a1a56-533d-4c66-8225-fb74dede88e8",
+  "reload": 3,
+  "source": [
+    {
+      "path": "scripts/main.lua",
+      "sha256": "12B175794B01DD5322F70E594CD08AF8AF9412B0C9B6FEB2905B1104D26CAB82"
+    },
+    {
+      "path": "scripts/ui/landscape/AppView.lua",
+      "sha256": "05E307DA279ED75C4F6482628ED3EEB6F67B5ED32C7ACE319D10EB0220141F37"
+    },
+    {
+      "path": "scripts/ui/landscape/DevChecks.lua",
+      "sha256": "8BD6934A406E6B5D137CAC8260C029A051D7DD4C0B15279847B38D0FAE7283FA"
+    },
+    {
+      "path": "scripts/ui/landscape/SceneBackdrop.lua",
+      "sha256": "D4CCBE0150638F5DC2E7999E7EFABB36C3FF31A03DDBD7B2D19FC8DD6E3AE3FF"
+    },
+    {
+      "path": "scripts/ui/landscape/LayoutGeometry.lua",
+      "sha256": "3CCB92B2A819B8B3B315C386CCC4D2F30FD6EF2E93BE66FE0333DA8606550BA1"
+    },
+    {
+      "path": "scripts/ui/landscape/HomeView.lua",
+      "sha256": "DB31788956259EB157F367D6729CA6F3EB6738930EAA9B18CA18AA6E779D858E"
+    },
+    {
+      "path": "scripts/ui/landscape/SeasideView.lua",
+      "sha256": "E06860165DD28A894344FE22E7105C3E3AE6EA9EC90E2A24082BCDD2F26D3492"
+    }
+  ]
+}

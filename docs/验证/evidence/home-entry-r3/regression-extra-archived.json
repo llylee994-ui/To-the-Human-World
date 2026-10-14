@@ -1,0 +1,23 @@
+[
+  {
+    "name": "archived-b2",
+    "module": "RunB2Checks",
+    "contentRef": "3dbca09",
+    "exitCode": 0,
+    "log": "logs/home-entry-r3/archived-b2.log"
+  },
+  {
+    "name": "archived-b3",
+    "module": "debug.PotionTest",
+    "contentRef": "3dbca09",
+    "exitCode": 0,
+    "log": "logs/home-entry-r3/archived-b3.log"
+  },
+  {
+    "name": "archived-b4",
+    "module": "debug.NarrativeTest",
+    "contentRef": "3dbca09",
+    "exitCode": 0,
+    "log": "logs/home-entry-r3/archived-b4.log"
+  }
+]
