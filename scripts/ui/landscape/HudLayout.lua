@@ -63,4 +63,9 @@ function M.Compute(bounds, viewport, menuRect, requiredWidth)
     end
     return result
 end
+function M.SidePanelTop(viewport,safe,menu)
+    local top=safe.top+12
+    if validMenu(menu) then top=math.max(top,menu.bottom*viewport.h+12) end
+    return top
+end
 return M

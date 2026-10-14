@@ -11,10 +11,14 @@ function T.Run()
         check(p.paddingLeft>=32 and p.paddingRight>=32,"all paper content clears torn side edges")
         check(p.paddingTop>=32 and p.paddingBottom>=32,"full paper frames clear top/bottom edges")
     end
-    local compact=H.PaperProps({compact=true,padding={6,14},height=76})
+    local compact=H.PaperProps({compact=true,padding={6,32},height=76})
     check(compact.paddingLeft>=32 and compact.paddingTop>=6,"compact sea/HUD paper keeps side clearance without inflating height")
+    local ledger=H.PaperProps({height=32})
+    check(ledger.paddingTop+ledger.paddingBottom<=12,"compact paper must not inherit full-frame 64px vertical padding")
     local host=require("ui.landscape.tests.ZoomTestHost").New()
     local x=F.New(Data,{targetSchema=3});local view=View.New(x.session,Data)
+    local hud=assert(view.root:FindById("playLedger")).parent
+    check(hud.props.height<=36 and hud.props.paddingLeft<=18,"ledger remains a small status tag")
     local id=assert(view.model.Receive(x.session.queries.GetSalvageView().value.availableLetterIds[1]).value).letterInstanceId
     assert(view.Read(id).ok);view.Update();host.Bind(view.root)
     local sender=view.root:FindById("readerSender")
@@ -29,6 +33,11 @@ function T.Run()
     assert(presentation.Cut(spans[1].spanId).ok);view.Update()
     check(view.panelNoticeArea.props.visible==false,"cut feedback must not insert a row above the reading viewport")
     check(view.root:FindById("playScroll")==scroll,"cut retains the same scroll node")
+    view.Open("journal");view.Update()
+    check(not view.root:FindById("journalDetailTitle"),"story directory must not mix with the selected story detail")
+    local rows=x.session.queries.GetJournalStories().value
+    assert(view.root:FindById("story_"..rows[1].sourceLetterId)).props.onClick();view.Update()
+    check(view.root:FindById("journalDetailTitle") and view.root:FindById("journalBack"),"detail has its own title and return-to-directory action")
     for _,kind in ipairs({"letters","words","case","journal","day","result"}) do
         view.Open(kind);view.Update()
         local p=view.root:FindById("activePanel").props

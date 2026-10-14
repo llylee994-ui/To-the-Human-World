@@ -28,7 +28,7 @@ function T.Run()
         check(tag:GetText()==obj.label,"hint describes the object action")
         check(tag:GetProps().pointerEvents=="none","hint remains input transparent")
     end
-    check(widget("hint_home.stove").props.width>=128,"five CJK glyphs plus padding cannot fit the original clipped tag")
+    check(widget("hint_home.stove").props.width>=104 and widget("hint_home.stove").props.fontSize==12,"quiet labels still reserve five readable glyphs plus padding")
     for _=1,61 do host.Step(v,.1) end
     check(not v.home.HintsVisible(),"intro hints fade after five seconds")
     check(not widget("playMessageArea"):GetProps().visible,"ordinary migration message expires")

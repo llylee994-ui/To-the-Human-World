@@ -1,5 +1,6 @@
 -- Real projections only. Every mutation goes through the supplied PlayModel.
 local UI=require "urhox-libs/UI"
+local Widget=require "urhox-libs/UI/Core/Widget"
 local IngredientArt=require "ui.landscape.IngredientArt"
 local Harbor=require "ui.landscape.HarborStyle"
 local LetterPresentation=require "ui.landscape.LetterPresentation"
@@ -10,7 +11,7 @@ function P.Text(parent,value,size,id)
     parent:AddChild(label); return label
 end
 function P.Button(parent,id,title,click,allowed,reason)
-    local b=Harbor.Button {id=id,text=title,width="100%",minWidth=0,minHeight=44,flexShrink=0,fontSize=15,
+    local b=Harbor.Button {id=id,text=title,width="100%",maxWidth=420,alignSelf="flex-start",minWidth=0,minHeight=44,flexShrink=0,fontSize=15,
         disabled=allowed==false,onClick=click,backgroundColor={64,85,70,255},textColor={255,247,225,255},borderRadius=6}
     parent:AddChild(b)
     if allowed==false and reason and reason~="" then P.Text(parent,reason,13) end
@@ -131,17 +132,22 @@ end
 function P.Journal(ctx,body)
     local stories=query(ctx,body,"GetJournalStories"); if not stories then return end
     if #stories==0 then P.Text(body,"尚未收到故事。这里会保存已收到的故事及试做记录。",16,"journalEmpty") end
-    for _,story in ipairs(stories) do
-        P.Button(body,"story_"..story.sourceLetterId,story.title.." · "..story.attemptCount.." 次试做",function()
-            ctx.storyId=story.sourceLetterId; ctx.model.dirty=true
-        end)
+    if not ctx.storyId then
+        for _,story in ipairs(stories) do
+            P.Button(body,"story_"..story.sourceLetterId,story.title,function()
+                ctx.storyId=story.sourceLetterId; ctx.model.dirty=true
+            end)
+            P.Text(body,story.attemptCount.." 次试做",13)
+        end
+        return
     end
-    if not ctx.storyId then return end
     local page=query(ctx,body,"GetJournalPage",ctx.storyId); if not page then return end
-    P.Text(body,page.title,20)
+    local back=P.Button(body,"journalBack","返回故事目录",function() ctx.storyId=false;ctx.model.dirty=true end)
+    Widget.SetStyle(back,{width=136,fontSize=13})
+    P.Text(body,page.title,19,"journalDetailTitle")
     if #page.outcomes==0 then P.Text(body,"这个故事还没有保存的试做后续。") end
     for _,outcome in ipairs(page.outcomes) do
-        P.Text(body,outcome.displayTitle,18)
+        P.Text(body,outcome.displayTitle,15)
         for index,attempt in ipairs(outcome.attempts) do
             P.Button(body,"attempt_"..attempt.transactionId,"第 "..index.." 次 · "..(attemptNames[attempt.status] or attempt.status).." · "..attempt.stars.." 星",function()
                 local r=ctx.model.OpenAttempt(attempt.transactionId)

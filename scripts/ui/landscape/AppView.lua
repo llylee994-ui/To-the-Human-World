@@ -9,6 +9,7 @@ local Harbor=require "ui.landscape.HarborStyle"
 local Messages=require "ui.landscape.MessagePresenter"
 local HudLayout=require "ui.landscape.HudLayout"
 local Widget=require "urhox-libs/UI/Core/Widget"
+local Theme=require "urhox-libs/UI/Core/Theme"
 local SeaArt=require "ui.landscape.SeaArt"
 local Shop=require "ui.landscape.ShopView"
 local TicketView=require "ui.landscape.TravelTicketView"
@@ -46,8 +47,8 @@ function A.New(session,content,enabled)
         backgroundColor={48,42,34,255},pointerEvents="box-none",overflow="hidden"}
     local hud=UI.Panel {id="homeHud",position="absolute",top=8,left=0,width="100%",height=48,flexShrink=0,
         flexDirection="row",alignItems="center",gap=8,paddingLeft=12,paddingRight=12,pointerEvents="box-none"}
-    local ledger=UI.Label {id="playLedger",fontSize=16,fontFamily=Harbor.fontFamily,fontColor={65,46,28,255},minWidth=0,pointerEvents="none"}
-    local ledgerCard=Harbor.Paper {width=280,height=44,justifyContent="center",children={ledger}}
+    local ledger=UI.Label {id="playLedger",fontSize=13,fontFamily=Harbor.fontFamily,fontColor={65,46,28,255},minWidth=0,pointerEvents="none"}
+    local ledgerCard=Harbor.Paper {id="ledgerCard",width=184,height=32,padding={6,16},justifyContent="center",children={ledger}}
     hud:AddChild(ledgerCard);hud:AddChild(UI.Panel {flexGrow=1,minWidth=0,pointerEvents="none"})
     local stage=UI.Panel {id="homeStage",width="100%",flexGrow=1,flexShrink=1,flexBasis=0,minHeight=0,pointerEvents="box-none"}
     root:AddChild(stage)
@@ -106,7 +107,19 @@ function A.New(session,content,enabled)
         local oldViewport,oldSafe=ctx.viewport,ctx.safeInsets
         local changed=not oldViewport or oldViewport.w~=vw or oldViewport.h~=vh or not oldSafe
             or oldSafe.left~=safe.left or oldSafe.top~=safe.top or oldSafe.right~=safe.right or oldSafe.bottom~=safe.bottom
+        local oldMenu=ctx.menuRect
+        if (oldMenu==nil)~=(menu==nil) then changed=true
+        elseif oldMenu and menu then
+            for _,key in ipairs({"left","top","right","bottom"}) do if oldMenu[key]~=menu[key] then changed=true end end
+        end
         ctx.safeInsets=safe;ctx.viewport=viewport
+        ctx.menuRect=menu and {left=menu.left,top=menu.top,right=menu.right,bottom=menu.bottom} or nil
+        home.SetPanelOpen(ctx.panel~=false)
+        hud:SetVisible(not ctx.panel)
+        local label=ledger:GetText()
+        local measured=UI.MeasureTextWidth and UI.MeasureTextWidth(label,Theme.FontSize(13),Harbor.fontFamily) or (utf8.len(label) or 0)*10
+        local ledgerWidth=math.max(144,measured+36)
+        setStyle(ledgerCard,{width=ledgerWidth})
         if changed and ctx.panel then model.dirty=true end
         local parent=root.parent
         if parent and parent.GetAbsoluteLayout then
@@ -127,7 +140,7 @@ function A.New(session,content,enabled)
                 if viewportRoot.props.backgroundImage~=background then viewportRoot:SetBackgroundImage(background) end
             end
         end
-        local required=280+12+108+72+24+(ctx.scene~="home" and 114 or 0)+(pending and pending.props.visible and 122 or 0)
+        local required=ledgerWidth+12+108+72+24+(ctx.scene~="home" and 114 or 0)+(pending and pending.props.visible and 122 or 0)
         local safeWidth=math.max(0,vw-safe.left-safe.right)
         local offsets=HudLayout.Compute({x=safe.left,y=safe.top+8,w=safeWidth,h=48},viewport,menu,required)
         local p=hud.props
@@ -242,6 +255,7 @@ function A.New(session,content,enabled)
         if ctx.destroyed or ctx.zoom.active or ctx.salvage.active or ctx.ticketEnding then return end
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
         ctx.ticketConfirm=false;ctx.ticketQuote=false
+        if ctx.panel=="journal" then ctx.storyId=false end
         ctx.panel=table.remove(ctx.stack) or false; ctx.readerCache=false
         model.Navigate(ctx.panel=="reader" and "letter" or ctx.scene)
     end
@@ -309,10 +323,10 @@ function A.New(session,content,enabled)
             padding=32,overflow="hidden",onClick=function() end} --[[@as PanelProps]]
         if location=="right" then panelProps.right=0 else panelProps.left=location and 0 or "4%" end
         if viewport then
-            panelProps.top=safe.top+(location and 0 or viewport.h*.03)
-            panelProps.bottom=safe.bottom+(location and 0 or viewport.h*.03)
-            if location=="right" then panelProps.right=safe.right
-            else panelProps.left=safe.left+(location and 0 or (viewport.w-safe.left-safe.right)*.04) end
+            panelProps.top=location=="right" and HudLayout.SidePanelTop(viewport,safe,ctx.menuRect) or safe.top+(location and 12 or viewport.h*.03)
+            panelProps.bottom=safe.bottom+(location and 12 or viewport.h*.03)
+            if location=="right" then panelProps.right=safe.right+12
+            else panelProps.left=safe.left+(location and 12 or (viewport.w-safe.left-safe.right)*.04) end
             if not location then panelProps.width=(viewport.w-safe.left-safe.right)*.92 end
         end
         if kind=="reader" then
@@ -327,7 +341,7 @@ function A.New(session,content,enabled)
         overlay:AddChild(panel)
         local bar=UI.Panel {id="panelHeader",width="100%",height=50,flexShrink=0,flexDirection="row",alignItems="center",paddingLeft=16,paddingRight=12,gap=8,pointerEvents="box-none"}
         ctx.panelHeader=bar
-        bar:AddChild(UI.Label {text=titles[kind] or "",fontSize=17,fontFamily=Harbor.fontFamily,flexGrow=1,minWidth=0,fontColor={55,48,36,255}})
+        bar:AddChild(UI.Label {text=titles[kind] or "",fontSize=16,fontFamily=Harbor.fontFamily,flexGrow=1,minWidth=0,fontColor={55,48,36,255}})
         bar:AddChild(Harbor.Button {id="closePanel",text=#ctx.stack>0 and "返回" or "关闭",width=76,minHeight=44,onClick=ctx.Close})
         panel:AddChild(bar)
         local current=ctx.messages:Current(clock())

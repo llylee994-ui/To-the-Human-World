@@ -7,8 +7,14 @@ function G.Fit(bounds,manifest)
     return {x=bounds.x+(bounds.w-manifest.width*scale)/2,y=bounds.y+(bounds.h-manifest.height*scale)/2,
         w=manifest.width*scale,h=manifest.height*scale,scale=scale}
 end
--- Wide phones crop the uninteractive ceiling, preserving the bottom-row props.
--- Narrow tablet ratios keep the complete composition; the backdrop fills the rest.
+-- Keep the complete room/dock, including the ceiling, at its original aspect.
+-- Backdrop extensions fill the spare space; input uses the same contained fit.
+function G.RoomFit(bounds,manifest)
+    local fit=G.Fit(bounds,manifest)
+    fit.clip={x=bounds.x,y=bounds.y,w=bounds.w,h=bounds.h}
+    return fit
+end
+-- Sea/dock retains its existing full-width projection.
 function G.SceneFit(bounds,manifest)
     if bounds.w<=0 or bounds.h<=0 then return G.Fit(bounds,manifest) end
     if bounds.w/bounds.h<manifest.width/manifest.height then return G.Fit(bounds,manifest) end

@@ -14,26 +14,32 @@ function H.New(onOpen,developer)
     root:AddChild(art)
     local api={root=root,art=art,background=background,inspect=false --[[@as boolean]],lastHit="" --[[@as string]],
         pressed=false --[[@as string|false]],manifest=Manifest,zoom=1 --[[@as number]],blocked=false --[[@as boolean]],
-        hintTime=5 --[[@as number]],hintsOpen=false --[[@as boolean]],feedbackId=false --[[@as string|false]],feedbackTime=0 --[[@as number]]}
+        hintTime=3 --[[@as number]],hintsOpen=false --[[@as boolean]],panelOpen=false --[[@as boolean]],feedbackId=false --[[@as string|false]],feedbackTime=0 --[[@as number]]}
     function api.Fit()
         local bounds=root:GetAbsoluteLayout()
-        return Geometry.SceneFit({x=bounds.x,y=bounds.y,w=bounds.w,h=bounds.h},Manifest)
+        return Geometry.RoomFit({x=bounds.x,y=bounds.y,w=bounds.w,h=bounds.h},Manifest)
     end
     function api.SetInspect(value) api.inspect=developer and value or false end
     function api.SetZoom(value) api.zoom=value end
     function api.SetBlocked(value) api.blocked=value;api.pressed=false end
+    function api.SetPanelOpen(value) api.panelOpen=value end
+    local renderSurround=background.Render
+    function background:Render(vg)
+        renderSurround(self,vg)
+        Backdrop.DrawRoomSides(vg,SeaArt.homeForeground,api.Fit(),root:GetAbsoluteLayout())
+    end
     local hintLayer=UI.Panel {id="homeHints",position="absolute",left=0,top=0,width="100%",height="100%",pointerEvents="none"}
     local intro=Harbor.Tag {id="homeHintIntro",text="点物件，看看有什么",position="absolute",left=12,bottom=12}
     local feedback=Harbor.Tag {id="homeObjectFeedback",position="absolute",visible=false}
     local tags={}
-    function api.HintsVisible() return not api.blocked and (api.hintsOpen or api.hintTime>0) end
+    function api.HintsVisible() return not api.blocked and not api.panelOpen and (api.hintsOpen or api.hintTime>0) end
     function api.ShowHints(value) api.hintsOpen=value;api.hintTime=0 end
     function api.SetFeedback(id) api.feedbackId=id;api.feedbackTime=1.3 end
     function api.Update(dt)
         dt=math.max(0,math.min(dt or 0,.25))
         api.hintTime=math.max(0,api.hintTime-dt);api.feedbackTime=math.max(0,api.feedbackTime-dt)
-        hintLayer:SetVisible(api.HintsVisible());feedback:SetVisible(not api.blocked and api.feedbackTime>0)
-        intro:SetVisible(not api.blocked and api.hintTime>0)
+        hintLayer:SetVisible(api.HintsVisible());feedback:SetVisible(not api.blocked and not api.panelOpen and api.feedbackTime>0)
+        intro:SetVisible(not api.blocked and not api.panelOpen and api.hintTime>0)
         if not root.GetAbsoluteLayout then return end -- explicit headless adapters bind after construction
         local fit=api.Fit();if fit.scale<=0 then return end
         local bounds=root:GetAbsoluteLayout()
@@ -41,9 +47,9 @@ function H.New(onOpen,developer)
             local layer=Manifest.layers[obj.layer];local region=obj.regions[1]
             local x,y=Geometry.ToScreen(layer,fit,region.cx,region.cy)
             -- Tags sit below each subject, independently of the minimum touch region.
-            -- UI font sizes are points (14 pt is ~18.7 base px); reserve glyphs
-            -- at 20 px plus the tag's 24 px padding and border clearance.
-            local w=math.max(100,utf8.len(obj.label)*20+28)
+            -- 12pt handwriting is 16 base pixels; labels stay compact and
+            -- reserve their actual glyph width plus padding.
+            local w=math.max(88,utf8.len(obj.label)*16+24)
             local left=math.max(fit.x,math.min(fit.x+fit.w-w,x-w/2))-bounds.x
             local top=math.max(bounds.y+56,math.min(bounds.y+bounds.h-48,y+region.h*layer.height*fit.scale*.5+4))-bounds.y
             local tag=tags[obj.id]
