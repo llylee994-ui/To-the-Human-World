@@ -1,0 +1,30 @@
+{
+  "status": "DELETED",
+  "utc": "2026-10-14T05:54:13.940208+00:00",
+  "fileCount": 1311,
+  "deletedBytes": 663851833,
+  "plan": "deletion-plan.json",
+  "allTargetsVerifiedBeforeDelete": true,
+  "emptyDirectoriesRemoved": [
+    "docs/evidence/3d-lab-r3/lsp/server-resources/std/table",
+    "docs/evidence/3d-lab-r3/lsp/server-resources/std/jit",
+    "docs/evidence/3d-lab-r3/lsp/server-resources/std/string",
+    "docs/evidence/3d-lab-r3/lsp/server-resources/std",
+    "experiments/3d-lab/assets/import-v035-full/meshes",
+    "docs/evidence/3d-lab-r3/lsp/server-resources",
+    "experiments/3d-lab/assets/import-v035-full",
+    "scripts/lab/tests",
+    "scripts/ui/landscape",
+    "deliverables/history/2026-10-11-v01",
+    "assets/Textures/LabArt",
+    "deliverables/history/2026-10-12-before-native",
+    "assets/v035-probe",
+    "scripts/core",
+    "deliverables/history",
+    "assets/Textures",
+    "scripts/data",
+    "scripts/lab",
+    "scripts/systems",
+    "scripts/ui"
+  ]
+}

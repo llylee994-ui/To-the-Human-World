@@ -1,0 +1,15 @@
+{
+  "scope": "Logical file bytes; no Git history rewrite and no claim of exact NTFS free-space delta",
+  "deletedFiles": 1311,
+  "deletedFileBytes": 663851833,
+  "beforeTrackedFiles": 2277,
+  "beforeTrackedBytes": 1085476416,
+  "afterVersionableFiles": 1013,
+  "afterVersionableBytes": 432406970,
+  "netVersionableBytesFreed": 653069446,
+  "netVersionableMiBFreed": 622.82,
+  "newIgnoredRuntimeBytesSnapshot": 121716166,
+  "newIgnoredRunEvidenceBytesSnapshot": 3155482,
+  "approxNetBytesAfterNewRuntimeAndEvidence": 528197798,
+  "gitHistory": "Old payload retained in .git and safety branch; not counted as freed"
+}

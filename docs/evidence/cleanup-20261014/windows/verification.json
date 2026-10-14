@@ -1,0 +1,246 @@
+{
+  "status": "PARTIAL_NATIVE_VALIDATION_USER_TAKES_OVER",
+  "pidAtLaunch": 34996,
+  "runtimeBuild": "20260923-1717-bf3316f",
+  "runtimePEVersion": "1.32.14.0",
+  "resolution": [
+    1170,
+    658
+  ],
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "graphics": "Direct3D 11",
+  "loadWallSeconds": 62.2630033493042,
+  "timeOrigin": "FullSceneHost loader start to native complete; screenshot independently confirms full room",
+  "homeFrameSamples": [
+    {
+      "timestamp": "2026-10-14 13_55_50_603",
+      "kind": "[V035 FULL FRAME]",
+      "data": {
+        "memoryWrites": 0,
+        "load": {
+          "yields": 25766,
+          "meshFiles": 100,
+          "expected": {
+            "sourceVertices": 2592846,
+            "expandedVertices": 9625824,
+            "triangles": 3208608,
+            "meshes": 100
+          },
+          "status": "complete",
+          "phase": "complete",
+          "done": 100,
+          "committedBatches": 870,
+          "emittedVertices": 9625824,
+          "total": 100,
+          "stepCalls": 25767
+        },
+        "width": 1170,
+        "p95FrameMs": 13.90950009226799,
+        "height": 658,
+        "lastHostStepMs": 0,
+        "seconds": 5.00060448423028,
+        "worstHostStepMs": 208.9996337890625,
+        "source": "Update TimeStep, not GPU profiler",
+        "worstFrameMs": 14.501499943435192,
+        "wallSeconds": 76.4350004196167,
+        "luaMemoryKiB": 59488.9228515625,
+        "frames": 423,
+        "updateFps": 84.5897733631918,
+        "meanFrameMs": 11.821760010000661,
+        "stage": "ready"
+      }
+    },
+    {
+      "timestamp": "2026-10-14 13_55_55_609",
+      "kind": "[V035 FULL FRAME]",
+      "data": {
+        "memoryWrites": 0,
+        "load": {
+          "yields": 25766,
+          "meshFiles": 100,
+          "expected": {
+            "sourceVertices": 2592846,
+            "expandedVertices": 9625824,
+            "triangles": 3208608,
+            "meshes": 100
+          },
+          "status": "complete",
+          "phase": "complete",
+          "done": 100,
+          "committedBatches": 870,
+          "emittedVertices": 9625824,
+          "total": 100,
+          "stepCalls": 25767
+        },
+        "width": 1170,
+        "p95FrameMs": 13.838499784469604,
+        "height": 658,
+        "lastHostStepMs": 0,
+        "seconds": 5.005525489337742,
+        "worstHostStepMs": 208.9996337890625,
+        "source": "Update TimeStep, not GPU profiler",
+        "worstFrameMs": 14.2815001308918,
+        "wallSeconds": 81.4410047531128,
+        "luaMemoryKiB": 70052.7490234375,
+        "frames": 423,
+        "updateFps": 84.50661192336973,
+        "meanFrameMs": 11.833393591814994,
+        "stage": "ready"
+      }
+    },
+    {
+      "timestamp": "2026-10-14 13_56_00_622",
+      "kind": "[V035 FULL FRAME]",
+      "data": {
+        "memoryWrites": 0,
+        "load": {
+          "yields": 25766,
+          "meshFiles": 100,
+          "expected": {
+            "sourceVertices": 2592846,
+            "expandedVertices": 9625824,
+            "triangles": 3208608,
+            "meshes": 100
+          },
+          "status": "complete",
+          "phase": "complete",
+          "done": 100,
+          "committedBatches": 870,
+          "emittedVertices": 9625824,
+          "total": 100,
+          "stepCalls": 25767
+        },
+        "width": 1170,
+        "p95FrameMs": 13.911999762058258,
+        "height": 658,
+        "lastHostStepMs": 0,
+        "seconds": 5.01075148396194,
+        "worstHostStepMs": 208.9996337890625,
+        "source": "Update TimeStep, not GPU profiler",
+        "worstFrameMs": 15.292000025510788,
+        "wallSeconds": 86.45400524139404,
+        "luaMemoryKiB": 68806.6650390625,
+        "frames": 421,
+        "updateFps": 84.0193334966835,
+        "meanFrameMs": 11.90202252722551,
+        "stage": "ready"
+      }
+    },
+    {
+      "timestamp": "2026-10-14 13_56_05_633",
+      "kind": "[V035 FULL FRAME]",
+      "data": {
+        "memoryWrites": 0,
+        "load": {
+          "yields": 25766,
+          "meshFiles": 100,
+          "expected": {
+            "sourceVertices": 2592846,
+            "expandedVertices": 9625824,
+            "triangles": 3208608,
+            "meshes": 100
+          },
+          "status": "complete",
+          "phase": "complete",
+          "done": 100,
+          "committedBatches": 870,
+          "emittedVertices": 9625824,
+          "total": 100,
+          "stepCalls": 25767
+        },
+        "width": 1170,
+        "p95FrameMs": 14.031000435352325,
+        "height": 658,
+        "lastHostStepMs": 0,
+        "seconds": 5.011066501960158,
+        "worstHostStepMs": 208.9996337890625,
+        "source": "Update TimeStep, not GPU profiler",
+        "worstFrameMs": 14.522500336170197,
+        "wallSeconds": 91.46400737762451,
+        "luaMemoryKiB": 67416.7431640625,
+        "frames": 417,
+        "updateFps": 83.21581839651975,
+        "meanFrameMs": 12.016946047866087,
+        "stage": "ready"
+      }
+    },
+    {
+      "timestamp": "2026-10-14 13_56_10_633",
+      "kind": "[V035 FULL FRAME]",
+      "data": {
+        "memoryWrites": 0,
+        "load": {
+          "yields": 25766,
+          "meshFiles": 100,
+          "expected": {
+            "sourceVertices": 2592846,
+            "expandedVertices": 9625824,
+            "triangles": 3208608,
+            "meshes": 100
+          },
+          "status": "complete",
+          "phase": "complete",
+          "done": 100,
+          "committedBatches": 870,
+          "emittedVertices": 9625824,
+          "total": 100,
+          "stepCalls": 25767
+        },
+        "width": 1170,
+        "p95FrameMs": 13.797500170767307,
+        "height": 658,
+        "lastHostStepMs": 0,
+        "seconds": 5.0021554781124,
+        "worstHostStepMs": 208.9996337890625,
+        "source": "Update TimeStep, not GPU profiler",
+        "worstFrameMs": 14.638500288128853,
+        "wallSeconds": 96.4650068283081,
+        "luaMemoryKiB": 66180.1025390625,
+        "frames": 421,
+        "updateFps": 84.16371738986159,
+        "meanFrameMs": 11.881604461074584,
+        "stage": "ready"
+      }
+    }
+  ],
+  "weightedUpdateFps": 84.09873356087198,
+  "fpsScope": "25.0301s home sample before drawer click; engine Update TimeStep, not GPU profiler or gameplay smoothness acceptance",
+  "observedWorkingSetBytes": {
+    "min": 1978904576,
+    "max": 2104745984,
+    "peak": 2193747968
+  },
+  "storage": "isolated in-memory d3_lab_v035; no disk player saves",
+  "pixelVerified": [
+    "complete 3D room",
+    "DAY and coin tabletop bottles absent",
+    "shelf sea salt / night dew / ash grass / dried petals visible",
+    "HUD 30 coins / day 1 / hint / end day visible"
+  ],
+  "osVerified": [
+    "drawer -> letters panel",
+    "letters close -> full home"
+  ],
+  "notAccepted": [
+    "journal: click attempted but capture still home; cause unconfirmed; subsequent focus guard stopped before input",
+    "tray",
+    "net/seaside",
+    "case board",
+    "merchant shop",
+    "letter paper/reader",
+    "stove/brew",
+    "hint bubbles",
+    "return-home button from another scene",
+    "end day/date increment",
+    "purchase deducts coins",
+    "bottle salvage then read"
+  ],
+  "stopReason": "User explicitly requested personal acceptance; no further OS input or restart after that message",
+  "existingWarnings": [
+    "Cube/Day/DaySpecularHDR.dds unavailable",
+    "Cube/Dusk/DuskSpecularHDR.xml unavailable",
+    "themis_x64.dll unavailable"
+  ],
+  "automaticAcceptance": false,
+  "committedLogCopy": "stdout snapshot normalizes line endings/trailing spaces; original stdout.log retained under ignored .windows-runs"
+}

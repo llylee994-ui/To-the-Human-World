@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "protectedFilesUnchanged": 463,
+  "blenderScriptsSyntax": 9,
+  "unsafeOutputLocationsRejected": 4,
+  "historicalProjection": "PASS",
+  "mappingGroups": 58,
+  "currentInteractionProxies": 8,
+  "blenderEndToEnd": "NOT RUN: external .blend source outside task scope",
+  "retiredHistoryDocuments": [
+    "LAB_STATUS.md",
+    "REPORT.md",
+    "docs/D3-v035-native-acceptance-report.md"
+  ],
+  "selectedScreenshotsUnchanged": 104,
+  "remainingNativeScreenshots": 197,
+  "retainedFrameLogPaths": "all exist",
+  "changedPythonSyntax": "11 files PASS",
+  "currentResourceAudit": "164 hashes / 100 meshes / 8 proxies / 147 Lua dependencies PASS",
+  "legacyRootTests": "not rerun; source and required probe.json retained",
+  "lspSummary": "old sample: 67 files, 0 errors, 112 warnings; not current candidate result"
+}

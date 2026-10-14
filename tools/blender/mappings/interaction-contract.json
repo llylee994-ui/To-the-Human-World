@@ -1,0 +1,660 @@
+{
+  "proxyMeshes": [
+    {
+      "id": "proxy_home.net",
+      "interactionId": "home.net",
+      "materialId": "interaction_proxy_invisible",
+      "positions": [
+        -4.165975553170026,
+        1.9117061749015054,
+        1.7086053279627686,
+        -3.6040788453326638,
+        2.1142503607598533,
+        1.7086052894058226,
+        -3.674024599417865,
+        2.308293615290145,
+        2.8513946148167726,
+        -4.235921307255226,
+        2.105749429431797,
+        2.8513946533737187
+      ],
+      "normals": [
+        0.3337146043777466,
+        -0.9257887601852417,
+        0.17762231826782227,
+        0.3337146043777466,
+        -0.9257887601852417,
+        0.17762231826782227,
+        0.3337146043777466,
+        -0.9257887601852417,
+        0.17762231826782227,
+        0.3337146043777466,
+        -0.9257887601852417,
+        0.17762231826782227
+      ],
+      "uv0": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "indices": [
+        0,
+        1,
+        2,
+        0,
+        2,
+        3
+      ],
+      "renderVisible": false,
+      "pickable": true
+    },
+    {
+      "id": "proxy_home.merchantShip",
+      "interactionId": "home.merchantShip",
+      "materialId": "interaction_proxy_invisible",
+      "positions": [
+        -38.018182224050726,
+        55.17196561253535,
+        -4.702898385269283,
+        -31.20495439197145,
+        57.62789686300882,
+        -4.702898852788052,
+        -31.64428573249224,
+        58.846688257093554,
+        2.474994542343258,
+        -38.45751356457152,
+        56.390757006620085,
+        2.4749950098620266
+      ],
+      "normals": [
+        0.3337146043777466,
+        -0.9257887601852417,
+        0.17762231826782227,
+        0.3337146043777466,
+        -0.9257887601852417,
+        0.17762231826782227,
+        0.3337146043777466,
+        -0.9257887601852417,
+        0.17762231826782227,
+        0.3337146043777466,
+        -0.9257887601852417,
+        0.17762231826782227
+      ],
+      "uv0": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "indices": [
+        0,
+        1,
+        2,
+        0,
+        2,
+        3
+      ],
+      "renderVisible": false,
+      "pickable": true
+    },
+    {
+      "id": "proxy_home.letterPaper",
+      "interactionId": "home.letterPaper",
+      "materialId": "interaction_proxy_invisible",
+      "positions": [
+        1.9089416169558138,
+        0.458338061028918,
+        1.7110734390127287,
+        2.868819130907733,
+        0.8043404612483547,
+        1.7110733731466277,
+        2.8515249586667446,
+        0.8523178904710209,
+        1.9936294151437655,
+        1.891647444714826,
+        0.5063154902515843,
+        1.9936294810098665
+      ],
+      "normals": [
+        0.3337146043777466,
+        -0.9257887601852417,
+        0.17762231826782227,
+        0.3337146043777466,
+        -0.9257887601852417,
+        0.17762231826782227,
+        0.3337146043777466,
+        -0.9257887601852417,
+        0.17762231826782227,
+        0.3337146043777466,
+        -0.9257887601852417,
+        0.17762231826782227
+      ],
+      "uv0": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "indices": [
+        0,
+        1,
+        2,
+        0,
+        2,
+        3
+      ],
+      "renderVisible": false,
+      "pickable": true
+    },
+    {
+      "id": "proxy_home.tray",
+      "interactionId": "home.tray",
+      "materialId": "interaction_proxy_invisible",
+      "positions": [
+        0.5973034543374703,
+        0.9345179141166007,
+        1.673998575901338,
+        1.680615553117635,
+        1.3250141815220977,
+        1.6739985015652448,
+        1.6555208521505669,
+        1.3946318089363778,
+        2.084001321101836,
+        0.5722087533704022,
+        1.0041355415308808,
+        2.0840013954379293
+      ],
+      "normals": [
+        0.3337146043777466,
+        -0.9257887601852417,
+        0.17762231826782227,
+        0.3337146043777466,
+        -0.9257887601852417,
+        0.17762231826782227,
+        0.3337146043777466,
+        -0.9257887601852417,
+        0.17762231826782227,
+        0.3337146043777466,
+        -0.9257887601852417,
+        0.17762231826782227
+      ],
+      "uv0": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "indices": [
+        0,
+        1,
+        2,
+        0,
+        2,
+        3
+      ],
+      "renderVisible": false,
+      "pickable": true
+    },
+    {
+      "id": "proxy_home.drawer",
+      "interactionId": "home.drawer",
+      "materialId": "interaction_proxy_invisible",
+      "positions": [
+        0.6992501474437708,
+        -0.3135286066132941,
+        1.184319407034766,
+        1.6952183626925532,
+        0.045483233969950077,
+        1.184319338692147,
+        1.672488763231278,
+        0.10853960545839453,
+        1.5556806025019771,
+        0.6765205479824957,
+        -0.2504722351248497,
+        1.5556806708445963
+      ],
+      "normals": [
+        0.3337146043777466,
+        -0.9257887601852417,
+        0.17762231826782227,
+        0.3337146043777466,
+        -0.9257887601852417,
+        0.17762231826782227,
+        0.3337146043777466,
+        -0.9257887601852417,
+        0.17762231826782227,
+        0.3337146043777466,
+        -0.9257887601852417,
+        0.17762231826782227
+      ],
+      "uv0": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "indices": [
+        0,
+        1,
+        2,
+        0,
+        2,
+        3
+      ],
+      "renderVisible": false,
+      "pickable": true
+    },
+    {
+      "id": "proxy_home.journal",
+      "interactionId": "home.journal",
+      "materialId": "interaction_proxy_invisible",
+      "positions": [
+        3.2266876078082958,
+        0.06724346589344181,
+        1.698619988991544,
+        3.9538621231105915,
+        0.3293645428182658,
+        1.6986199390933545,
+        3.9320262097881398,
+        0.38994165349704585,
+        2.055379959510043,
+        3.204851694485844,
+        0.12782057657222184,
+        2.0553800094082324
+      ],
+      "normals": [
+        0.3337146043777466,
+        -0.9257887601852417,
+        0.17762231826782227,
+        0.3337146043777466,
+        -0.9257887601852417,
+        0.17762231826782227,
+        0.3337146043777466,
+        -0.9257887601852417,
+        0.17762231826782227,
+        0.3337146043777466,
+        -0.9257887601852417,
+        0.17762231826782227
+      ],
+      "uv0": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "indices": [
+        0,
+        1,
+        2,
+        0,
+        2,
+        3
+      ],
+      "renderVisible": false,
+      "pickable": true
+    },
+    {
+      "id": "proxy_home.caseFile",
+      "interactionId": "home.caseFile",
+      "materialId": "interaction_proxy_invisible",
+      "positions": [
+        3.9834057956142037,
+        -0.3177417559255321,
+        1.6732112529384138,
+        4.365446451669693,
+        -0.1800294102822014,
+        1.6732112267230603,
+        4.34184673734478,
+        -0.1145591693292897,
+        2.0587886211765767,
+        3.959806081289291,
+        -0.25227151497262035,
+        2.05878864739193
+      ],
+      "normals": [
+        0.3337146043777466,
+        -0.9257887601852417,
+        0.17762231826782227,
+        0.3337146043777466,
+        -0.9257887601852417,
+        0.17762231826782227,
+        0.3337146043777466,
+        -0.9257887601852417,
+        0.17762231826782227,
+        0.3337146043777466,
+        -0.9257887601852417,
+        0.17762231826782227
+      ],
+      "uv0": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "indices": [
+        0,
+        1,
+        2,
+        0,
+        2,
+        3
+      ],
+      "renderVisible": false,
+      "pickable": true
+    },
+    {
+      "id": "proxy_home.stove",
+      "interactionId": "home.stove",
+      "materialId": "interaction_proxy_invisible",
+      "positions": [
+        1.5909676406693134,
+        1.6682161528112538,
+        1.931260651369039,
+        2.6360006637291296,
+        2.0449141471194965,
+        1.931260579659628,
+        2.5838604118514388,
+        2.189561442708766,
+        2.783139640073832,
+        1.5388273887916222,
+        1.8128634484005228,
+        2.783139711783243
+      ],
+      "normals": [
+        0.3337146043777466,
+        -0.9257887601852417,
+        0.17762231826782227,
+        0.3337146043777466,
+        -0.9257887601852417,
+        0.17762231826782227,
+        0.3337146043777466,
+        -0.9257887601852417,
+        0.17762231826782227,
+        0.3337146043777466,
+        -0.9257887601852417,
+        0.17762231826782227
+      ],
+      "uv0": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "indices": [
+        0,
+        1,
+        2,
+        0,
+        2,
+        3
+      ],
+      "renderVisible": false,
+      "pickable": true
+    }
+  ],
+  "interactionProxies": [
+    {
+      "id": "home.net",
+      "target": "seaside",
+      "position": [
+        -3.9200000762939453,
+        2.109999895095825,
+        2.2799999713897705
+      ],
+      "screenAnchor": [
+        0.1191338524222374,
+        0.4830790162086487
+      ],
+      "shape": "camera_facing_quad",
+      "renderVisible": false,
+      "status": "candidate anchor, not validated collider",
+      "note": "Independent interaction proxy; target assets absent in probe except stove/ship. Case-file binding is only proposed.",
+      "screenSize": [
+        0.055,
+        0.19
+      ],
+      "proxyMeshId": "proxy_home.net",
+      "visibleMeshIds": [
+        "full_group_019_000",
+        "full_group_022_000"
+      ]
+    },
+    {
+      "id": "home.merchantShip",
+      "target": "shop",
+      "position": [
+        -34.831233978271484,
+        57.00932693481445,
+        -1.1139519214630127
+      ],
+      "screenAnchor": [
+        0.3084999918937683,
+        0.3182299733161926
+      ],
+      "shape": "camera_facing_quad",
+      "renderVisible": false,
+      "status": "candidate anchor, not validated collider",
+      "note": "Independent interaction proxy; target assets absent in probe except stove/ship. Case-file binding is only proposed.",
+      "screenSize": [
+        0.095,
+        0.17
+      ],
+      "proxyMeshId": "proxy_home.merchantShip",
+      "visibleMeshIds": [
+        "full_group_057_000"
+      ]
+    },
+    {
+      "id": "home.letterPaper",
+      "target": "paper",
+      "position": [
+        2.3802332878112793,
+        0.6553279757499695,
+        1.852351427078247
+      ],
+      "screenAnchor": [
+        0.6780331134796143,
+        0.7291671633720398
+      ],
+      "shape": "camera_facing_quad",
+      "renderVisible": false,
+      "status": "candidate anchor, not validated collider",
+      "note": "Independent interaction proxy; target assets absent in probe except stove/ship. Case-file binding is only proposed.",
+      "screenSize": [
+        0.14,
+        0.07
+      ],
+      "proxyMeshId": "proxy_home.letterPaper",
+      "visibleMeshIds": [
+        "full_group_002_000",
+        "full_group_002_001",
+        "full_group_036_000"
+      ]
+    },
+    {
+      "id": "home.tray",
+      "target": "words",
+      "position": [
+        1.1264121532440186,
+        1.1645748615264893,
+        1.878999948501587
+      ],
+      "screenAnchor": [
+        0.5353401303291321,
+        0.6626941859722137
+      ],
+      "shape": "camera_facing_quad",
+      "renderVisible": false,
+      "status": "candidate anchor, not validated collider",
+      "note": "Independent interaction proxy; target assets absent in probe except stove/ship. Case-file binding is only proposed.",
+      "screenSize": [
+        0.14,
+        0.09
+      ],
+      "proxyMeshId": "proxy_home.tray",
+      "visibleMeshIds": [
+        "full_group_033_000",
+        "full_group_037_000",
+        "full_group_038_000"
+      ]
+    },
+    {
+      "id": "home.drawer",
+      "target": "letters",
+      "position": [
+        1.1858694553375244,
+        -0.1024945005774498,
+        1.3700000047683716
+      ],
+      "screenAnchor": [
+        0.4882326126098633,
+        0.8699069619178772
+      ],
+      "shape": "camera_facing_quad",
+      "renderVisible": false,
+      "status": "candidate anchor, not validated collider",
+      "note": "Independent interaction proxy; target assets absent in probe except stove/ship. Case-file binding is only proposed.",
+      "screenSize": [
+        0.15,
+        0.095
+      ],
+      "proxyMeshId": "proxy_home.drawer",
+      "visibleMeshIds": [
+        "full_group_030_000",
+        "full_group_031_000"
+      ]
+    },
+    {
+      "id": "home.journal",
+      "target": "journal",
+      "position": [
+        3.5793569087982178,
+        0.22859255969524384,
+        1.8769999742507935
+      ],
+      "screenAnchor": [
+        0.8540950417518616,
+        0.7921898663043976
+      ],
+      "shape": "camera_facing_quad",
+      "renderVisible": false,
+      "status": "candidate anchor, not validated collider",
+      "note": "Independent interaction proxy; target assets absent in probe except stove/ship. Case-file binding is only proposed.",
+      "screenSize": [
+        0.12,
+        0.1
+      ],
+      "proxyMeshId": "proxy_home.journal",
+      "visibleMeshIds": [
+        "full_group_028_000",
+        "full_group_034_000",
+        "full_group_040_000",
+        "full_group_041_000"
+      ]
+    },
+    {
+      "id": "home.caseFile",
+      "target": "case",
+      "position": [
+        4.162626266479492,
+        -0.2161504626274109,
+        1.8659999370574951
+      ],
+      "screenAnchor": [
+        0.9617416858673096,
+        0.8612588196992874
+      ],
+      "shape": "camera_facing_quad",
+      "renderVisible": false,
+      "status": "candidate anchor, not validated collider",
+      "note": "Independent interaction proxy; target assets absent in probe except stove/ship. Case-file binding is only proposed.",
+      "screenSize": [
+        0.07,
+        0.12
+      ],
+      "proxyMeshId": "proxy_home.caseFile",
+      "visibleMeshIds": [
+        "full_group_044_000"
+      ]
+    },
+    {
+      "id": "home.stove",
+      "target": "brew",
+      "position": [
+        2.087414026260376,
+        1.9288887977600098,
+        2.3572001457214355
+      ],
+      "screenAnchor": [
+        0.670149028301239,
+        0.544231653213501
+      ],
+      "shape": "camera_facing_quad",
+      "renderVisible": false,
+      "status": "candidate anchor, not validated collider",
+      "note": "Independent interaction proxy; target assets absent in probe except stove/ship. Case-file binding is only proposed.",
+      "screenSize": [
+        0.13,
+        0.18
+      ],
+      "proxyMeshId": "proxy_home.stove",
+      "visibleMeshIds": [
+        "full_group_029_000",
+        "full_group_032_000",
+        "full_group_035_000",
+        "full_group_042_000"
+      ]
+    }
+  ],
+  "mainContractSha": "1cd0cdbec06487a5c60f109d5fd477198cfc8846",
+  "materials": [
+    {
+      "id": "interaction_proxy_invisible",
+      "baseColorFactor": [
+        1,
+        1,
+        1,
+        0
+      ],
+      "alphaMode": "BLEND",
+      "unlit": true,
+      "doubleSided": true,
+      "renderVisible": false,
+      "note": "Prefer separate non-rendering pick geometry; not a visible room image",
+      "textureColorSpaces": {}
+    }
+  ]
+}

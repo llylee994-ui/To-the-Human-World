@@ -25,190 +25,211 @@
       "file": "native-qa-local-r1--0001-20261012T043604775Z.png",
       "label": "Home to Seaside / 路径连续帧",
       "utc": "20261012T043604775Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0001-20261012T043604775Z.png",
       "series": "native-qa-local-r1",
       "sha256": "b11979f7ec124e845f418c9d35e9f99577572602e70dc013d9676ec0cdd2e6b1",
-      "bytes": 123357
+      "bytes": 123357,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0001-20261012T043604775Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "native-qa-local-r1--0006-20261012T043610432Z.png",
       "label": "Seaside same ship shop / 阶段静态帧",
       "utc": "20261012T043610432Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0006-20261012T043610432Z.png",
       "series": "native-qa-local-r1",
       "sha256": "260f8740615beff8eb5c6e149f714dd4b67fb0803bfa765452e8202ff61ace34",
-      "bytes": 79709
+      "bytes": 79709,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0006-20261012T043610432Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "native-qa-local-r1--0012-20261012T043617181Z.png",
       "label": "Buy through real shop button / 阶段静态帧",
       "utc": "20261012T043617181Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0012-20261012T043617181Z.png",
       "series": "native-qa-local-r1",
       "sha256": "f63fd41086559775791507067d177bc7662e54b8efd4c327ec3a106d222b14eb",
-      "bytes": 78509
+      "bytes": 78509,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0012-20261012T043617181Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "native-qa-local-r1--0018-20261012T043624102Z.png",
       "label": "Atomic real purchase failures / 阶段静态帧",
       "utc": "20261012T043624102Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0018-20261012T043624102Z.png",
       "series": "native-qa-local-r1",
       "sha256": "c6d16665938829fcffcbb2b553fe0b08849b03c8a35db941ed73718f140c66b7",
-      "bytes": 70745
+      "bytes": 70745,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0018-20261012T043624102Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "native-qa-local-r1--0024-20261012T043630861Z.png",
       "label": "Open explicit salvage / 阶段静态帧",
       "utc": "20261012T043630861Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0024-20261012T043630861Z.png",
       "series": "native-qa-local-r1",
       "sha256": "1fed5f2f497cb7d11de03f8d3dce3755d4b73cd4d309d9c4dfa75fb80745fda3",
-      "bytes": 55759
+      "bytes": 55759,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0024-20261012T043630861Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "native-qa-local-r1--0030-20261012T043637579Z.png",
       "label": "Real receive setup / 阶段静态帧",
       "utc": "20261012T043637579Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0030-20261012T043637579Z.png",
       "series": "native-qa-local-r1",
       "sha256": "db24d3edef792f8454e44db42fcb97544019f78d9b32150d2b69e7a5cd29bd56",
-      "bytes": 55605
+      "bytes": 55605,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0030-20261012T043637579Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "native-qa-local-r1--0036-20261012T043644404Z.png",
       "label": "Seaside return / 路径连续帧",
       "utc": "20261012T043644404Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0036-20261012T043644404Z.png",
       "series": "native-qa-local-r1",
       "sha256": "3f1ecc24d7b59fe9fe92c03b48e00d07443660057186e96fcda2263d96102631",
-      "bytes": 62066
+      "bytes": 62066,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0036-20261012T043644404Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "native-qa-local-r1--0037-20261012T043645522Z.png",
       "label": "Seaside return / 路径连续帧",
       "utc": "20261012T043645522Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0037-20261012T043645522Z.png",
       "series": "native-qa-local-r1",
       "sha256": "669e9ce17b8e8dcc26c16b3e54748523ac73d2a20cfb0a95fec6a0e75f699a06",
-      "bytes": 127365
+      "bytes": 127365,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0037-20261012T043645522Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "native-qa-local-r1--0038-20261012T043646640Z.png",
       "label": "Seaside return / 路径连续帧",
       "utc": "20261012T043646640Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0038-20261012T043646640Z.png",
       "series": "native-qa-local-r1",
       "sha256": "b9c2b7763827e4e9a92afc05b602a9c4b097dc5d27e67e10b340c811059b1742",
-      "bytes": 350800
+      "bytes": 350800,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0038-20261012T043646640Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "native-qa-local-r1--0039-20261012T043647798Z.png",
       "label": "Seaside return / 路径连续帧",
       "utc": "20261012T043647798Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0039-20261012T043647798Z.png",
       "series": "native-qa-local-r1",
       "sha256": "a10f7f1916f0a105f0020a19edf064515d43bf923a0ecb147febd456c63bbc98",
-      "bytes": 465427
+      "bytes": 465427,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0039-20261012T043647798Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "native-qa-local-r1--0040-20261012T043649007Z.png",
       "label": "Seaside return / 路径连续帧",
       "utc": "20261012T043649007Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0040-20261012T043649007Z.png",
       "series": "native-qa-local-r1",
       "sha256": "15ebca35cd09fa7b75e17441b873cb187bb0933d88841c370fd58a4b6d6e9be5",
-      "bytes": 434337
+      "bytes": 434337,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0040-20261012T043649007Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "native-qa-local-r1--0045-20261012T043654967Z.png",
       "label": "Pick paper opens real reader / 阶段静态帧",
       "utc": "20261012T043654967Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0045-20261012T043654967Z.png",
       "series": "native-qa-local-r1",
       "sha256": "f14f072801056d05b4d155ee91fb592f515e8992c4d6a2e9ea2f7a683c13d0bf",
-      "bytes": 159423
+      "bytes": 159423,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0045-20261012T043654967Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "native-qa-local-r1--0051-20261012T043701773Z.png",
       "label": "Cut real span through UI / 阶段静态帧",
       "utc": "20261012T043701773Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0051-20261012T043701773Z.png",
       "series": "native-qa-local-r1",
       "sha256": "2c5f413e8314b15a2fcdff7594d8e65f633624e96099b8cd1e51093b5b31c69a",
-      "bytes": 157117
+      "bytes": 157117,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0051-20261012T043701773Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "native-qa-local-r1--0057-20261012T043708717Z.png",
       "label": "Repeat cut idempotent / 阶段静态帧",
       "utc": "20261012T043708717Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0057-20261012T043708717Z.png",
       "series": "native-qa-local-r1",
       "sha256": "30a296c9ab1564e3512332873c1179c739f85e2a0d62f3eaa4854a658dbbdc1b",
-      "bytes": 158866
+      "bytes": 158866,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0057-20261012T043708717Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "native-qa-local-r1--0063-20261012T043715598Z.png",
       "label": "Home to Brew / 路径连续帧",
       "utc": "20261012T043715598Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0063-20261012T043715598Z.png",
       "series": "native-qa-local-r1",
       "sha256": "9cf2fb00f43b706e2ee13849d18103e8e64b218d8b5e86a8bd7e1eb468ffa1df",
-      "bytes": 158880
+      "bytes": 158880,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0063-20261012T043715598Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "native-qa-local-r1--0064-20261012T043716736Z.png",
       "label": "Home to Brew / 路径连续帧",
       "utc": "20261012T043716736Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0064-20261012T043716736Z.png",
       "series": "native-qa-local-r1",
       "sha256": "8bb95c2c969ebdf1dd028618d0134e32def82bb3d957352c73a72b6d9003ce85",
-      "bytes": 541318
+      "bytes": 541318,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0064-20261012T043716736Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "native-qa-local-r1--0065-20261012T043717900Z.png",
       "label": "Home to Brew / 路径连续帧",
       "utc": "20261012T043717900Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0065-20261012T043717900Z.png",
       "series": "native-qa-local-r1",
       "sha256": "8c8a8aa5a722e54175a9b3eb1fe8cee82259af0f83c04a530e326056a3a58680",
-      "bytes": 633975
+      "bytes": 633975,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0065-20261012T043717900Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "native-qa-local-r1--0071-20261012T043725257Z.png",
       "label": "Brew same geometry / 阶段静态帧",
       "utc": "20261012T043725257Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0071-20261012T043725257Z.png",
       "series": "native-qa-local-r1",
       "sha256": "67573505948fb2f165b4cea0d796b17ea4929986ae2dbe62b9e2d8118182857c",
-      "bytes": 634262
+      "bytes": 634262,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0071-20261012T043725257Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "native-qa-local-r1--0076-20261012T043731382Z.png",
       "label": "Brew return / 路径连续帧",
       "utc": "20261012T043731382Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0076-20261012T043731382Z.png",
       "series": "native-qa-local-r1",
       "sha256": "67573505948fb2f165b4cea0d796b17ea4929986ae2dbe62b9e2d8118182857c",
-      "bytes": 634262
+      "bytes": 634262,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0076-20261012T043731382Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "native-qa-local-r1--0077-20261012T043732537Z.png",
       "label": "Brew return / 路径连续帧",
       "utc": "20261012T043732537Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0077-20261012T043732537Z.png",
       "series": "native-qa-local-r1",
       "sha256": "0cebb6741b95ba9ae9a9daa5f1c965188f5194dfb514fa30f4b048ca4aed187e",
-      "bytes": 517185
+      "bytes": 517185,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0077-20261012T043732537Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "native-qa-local-r1--0078-20261012T043733705Z.png",
       "label": "Brew return / 路径连续帧",
       "utc": "20261012T043733705Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0078-20261012T043733705Z.png",
       "series": "native-qa-local-r1",
       "sha256": "83353252ec6264206818a23d62d40ac030082848ce47a6df6e7e8d5cf190161f",
-      "bytes": 442004
+      "bytes": 442004,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\native-qa-local-r1\\0078-20261012T043733705Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-16x9--0000-20261012T044517217Z.png",
@@ -223,154 +244,171 @@
       "file": "aspect-16x9--0004-20261012T044520373Z.png",
       "label": "aspect reader close / 路径连续帧",
       "utc": "20261012T044520373Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0004-20261012T044520373Z.png",
       "series": "aspect-16x9",
       "sha256": "0b99584c3b4553afcc66877323c9b82476fc62a05e79e3115d16e7d08bd9f864",
-      "bytes": 292322
+      "bytes": 292322,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0004-20261012T044520373Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-16x9--0005-20261012T044521163Z.png",
       "label": "aspect reader close / 路径连续帧",
       "utc": "20261012T044521163Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0005-20261012T044521163Z.png",
       "series": "aspect-16x9",
       "sha256": "5dc59aeee58693dc68f52c22b13ff1db2c79a02444e6be928fdcc23c52f82025",
-      "bytes": 295520
+      "bytes": 295520,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0005-20261012T044521163Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-16x9--0006-20261012T044522001Z.png",
       "label": "aspect reader close / 路径连续帧",
       "utc": "20261012T044522001Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0006-20261012T044522001Z.png",
       "series": "aspect-16x9",
       "sha256": "6043cebf093cc48be7455b1953b555326c4d127f9777921665e9343c7ef81211",
-      "bytes": 204750
+      "bytes": 204750,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0006-20261012T044522001Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-16x9--0007-20261012T044522808Z.png",
       "label": "aspect reader close / 路径连续帧",
       "utc": "20261012T044522808Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0007-20261012T044522808Z.png",
       "series": "aspect-16x9",
       "sha256": "5a37e7f8813a25e5170449f96b6051bfff60b0d6bc5351c2bdc61e684120023a",
-      "bytes": 181220
+      "bytes": 181220,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0007-20261012T044522808Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-16x9--0008-20261012T044523604Z.png",
       "label": "aspect reader close / 路径连续帧",
       "utc": "20261012T044523604Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0008-20261012T044523604Z.png",
       "series": "aspect-16x9",
       "sha256": "fd755077d0ff202d411425e5731291329de0c84a5326c4e15ac2cab25fd004f0",
-      "bytes": 90104
+      "bytes": 90104,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0008-20261012T044523604Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-16x9--0009-20261012T044524402Z.png",
       "label": "aspect reader close / 路径连续帧",
       "utc": "20261012T044524402Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0009-20261012T044524402Z.png",
       "series": "aspect-16x9",
       "sha256": "5c5d1df0efc4164ef16ba845b0698a196e188ba3974f3fcc3d864597529cfd62",
-      "bytes": 85660
+      "bytes": 85660,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0009-20261012T044524402Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-16x9--0010-20261012T044525211Z.png",
       "label": "aspect reader close / 路径连续帧",
       "utc": "20261012T044525211Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0010-20261012T044525211Z.png",
       "series": "aspect-16x9",
       "sha256": "5c5d1df0efc4164ef16ba845b0698a196e188ba3974f3fcc3d864597529cfd62",
-      "bytes": 85660
+      "bytes": 85660,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0010-20261012T044525211Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-16x9--0016-20261012T044529977Z.png",
       "label": "aspect Seaside / 路径连续帧",
       "utc": "20261012T044529977Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0016-20261012T044529977Z.png",
       "series": "aspect-16x9",
       "sha256": "5c5d1df0efc4164ef16ba845b0698a196e188ba3974f3fcc3d864597529cfd62",
-      "bytes": 85660
+      "bytes": 85660,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0016-20261012T044529977Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-16x9--0017-20261012T044530859Z.png",
       "label": "aspect Seaside / 路径连续帧",
       "utc": "20261012T044530859Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0017-20261012T044530859Z.png",
       "series": "aspect-16x9",
       "sha256": "53153e86dc519ab28dcfd80371cb7311f45c35133ad91fe4ac092c7b26e736f0",
-      "bytes": 90988
+      "bytes": 90988,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0017-20261012T044530859Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-16x9--0018-20261012T044531639Z.png",
       "label": "aspect Seaside / 路径连续帧",
       "utc": "20261012T044531639Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0018-20261012T044531639Z.png",
       "series": "aspect-16x9",
       "sha256": "84af0f01d7d04089f28ae6429d7f0b0c04662d165124dce8cdb8cc7bb69e1f26",
-      "bytes": 199815
+      "bytes": 199815,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0018-20261012T044531639Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-16x9--0019-20261012T044532411Z.png",
       "label": "aspect Seaside / 路径连续帧",
       "utc": "20261012T044532411Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0019-20261012T044532411Z.png",
       "series": "aspect-16x9",
       "sha256": "c3224e018253a905bf0b2ad41cbbc147ccc3b3b01bb81a992c00cc32fa5288ea",
-      "bytes": 201310
+      "bytes": 201310,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0019-20261012T044532411Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-16x9--0020-20261012T044533249Z.png",
       "label": "aspect Seaside / 路径连续帧",
       "utc": "20261012T044533249Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0020-20261012T044533249Z.png",
       "series": "aspect-16x9",
       "sha256": "b816d7c971c238209d9828ab4479d2803b37086cb6e9fbd9584a17f5eb6760a3",
-      "bytes": 302206
+      "bytes": 302206,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0020-20261012T044533249Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-16x9--0021-20261012T044534059Z.png",
       "label": "aspect Seaside / 路径连续帧",
       "utc": "20261012T044534059Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0021-20261012T044534059Z.png",
       "series": "aspect-16x9",
       "sha256": "80cd9f6722bf2091d1e86433ce33b0a691c3cc709ac6c319149d94c3204e8ed4",
-      "bytes": 288585
+      "bytes": 288585,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0021-20261012T044534059Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-16x9--0022-20261012T044534838Z.png",
       "label": "aspect Seaside / 路径连续帧",
       "utc": "20261012T044534838Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0022-20261012T044534838Z.png",
       "series": "aspect-16x9",
       "sha256": "05995fb21ac966a39a5d3486721baa031c82515e7ec2af5aa9207bf5272bb3bd",
-      "bytes": 282397
+      "bytes": 282397,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0022-20261012T044534838Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-16x9--0023-20261012T044535667Z.png",
       "label": "aspect Seaside / 路径连续帧",
       "utc": "20261012T044535667Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0023-20261012T044535667Z.png",
       "series": "aspect-16x9",
       "sha256": "05995fb21ac966a39a5d3486721baa031c82515e7ec2af5aa9207bf5272bb3bd",
-      "bytes": 282397
+      "bytes": 282397,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0023-20261012T044535667Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-16x9--0028-20261012T044539853Z.png",
       "label": "aspect Brew / 路径连续帧",
       "utc": "20261012T044539853Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0028-20261012T044539853Z.png",
       "series": "aspect-16x9",
       "sha256": "05995fb21ac966a39a5d3486721baa031c82515e7ec2af5aa9207bf5272bb3bd",
-      "bytes": 282397
+      "bytes": 282397,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0028-20261012T044539853Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-16x9--0029-20261012T044540679Z.png",
       "label": "aspect Brew / 路径连续帧",
       "utc": "20261012T044540679Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0029-20261012T044540679Z.png",
       "series": "aspect-16x9",
       "sha256": "0bb477cfa2ddd6e59041834bbf37907852fa1a65eb912cd60a51c5ee6d700bcc",
-      "bytes": 328998
+      "bytes": 328998,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0029-20261012T044540679Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-16x9--0030-20261012T044541473Z.png",
@@ -385,262 +423,291 @@
       "file": "aspect-16x9--0031-20261012T044542285Z.png",
       "label": "aspect Brew / 路径连续帧",
       "utc": "20261012T044542285Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0031-20261012T044542285Z.png",
       "series": "aspect-16x9",
       "sha256": "2854edaffae645cc3327c11d95368d2921a0530e0878b260036db14cb7a233d8",
-      "bytes": 398049
+      "bytes": 398049,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0031-20261012T044542285Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-16x9--0039-20261012T044549088Z.png",
       "label": "aspect Brew return / 路径连续帧",
       "utc": "20261012T044549088Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0039-20261012T044549088Z.png",
       "series": "aspect-16x9",
       "sha256": "3ce97f3c677e63cae42f8920a2c6ddb7356c8f9012da26286a2f4015c8429c82",
-      "bytes": 397282
+      "bytes": 397282,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0039-20261012T044549088Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-16x9--0040-20261012T044549915Z.png",
       "label": "aspect Brew return / 路径连续帧",
       "utc": "20261012T044549915Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0040-20261012T044549915Z.png",
       "series": "aspect-16x9",
       "sha256": "92fab9cf35c292328fc99be670541dbcdf09c38a25e5cbc80054f6c4e6236a45",
-      "bytes": 328258
+      "bytes": 328258,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0040-20261012T044549915Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-16x9--0041-20261012T044550746Z.png",
       "label": "aspect Brew return / 路径连续帧",
       "utc": "20261012T044550746Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0041-20261012T044550746Z.png",
       "series": "aspect-16x9",
       "sha256": "bf54d1ab7cb1057275e5acdd7179b503ad4efea1c9f0ecc10598ca9aa69ae3ec",
-      "bytes": 282499
+      "bytes": 282499,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0041-20261012T044550746Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-16x9--0042-20261012T044551582Z.png",
       "label": "aspect Brew return / 路径连续帧",
       "utc": "20261012T044551582Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0042-20261012T044551582Z.png",
       "series": "aspect-16x9",
       "sha256": "bf54d1ab7cb1057275e5acdd7179b503ad4efea1c9f0ecc10598ca9aa69ae3ec",
-      "bytes": 282499
+      "bytes": 282499,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0042-20261012T044551582Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-16x9--0051-20261012T044559048Z.png",
       "label": "Complete / 阶段静态帧",
       "utc": "20261012T044559048Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0051-20261012T044559048Z.png",
       "series": "aspect-16x9",
       "sha256": "97e7b0d2671c419f4382ba68265c254a6766ce7f1a74570c22315f7bb766572b",
-      "bytes": 282198
+      "bytes": 282198,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-16x9\\0051-20261012T044559048Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-21x9--0010-20261012T044751076Z.png",
       "label": "Aspect setup real Receive / 阶段静态帧",
       "utc": "20261012T044751076Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0010-20261012T044751076Z.png",
       "series": "aspect-21x9",
       "sha256": "4e063ee6ee7e1555de3dda6b8a371c20e4a883ac633c315e1e6e8d2818310fce",
-      "bytes": 318420
+      "bytes": 318420,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0010-20261012T044751076Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-21x9--0013-20261012T044753540Z.png",
       "label": "aspect 1260x540 / 阶段静态帧",
       "utc": "20261012T044753540Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0013-20261012T044753540Z.png",
       "series": "aspect-21x9",
       "sha256": "be91b5afe112636b4d0ea8dcc8c012c498bbd4bb156cf262f974e9db533f0916",
-      "bytes": 318071
+      "bytes": 318071,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0013-20261012T044753540Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-21x9--0019-20261012T044758561Z.png",
       "label": "aspect Home targets / 阶段静态帧",
       "utc": "20261012T044758561Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0019-20261012T044758561Z.png",
       "series": "aspect-21x9",
       "sha256": "a6fcd752cba9c615f119436e12a3af02230624b70ccfd448836a5e6f9c279aa3",
-      "bytes": 110328
+      "bytes": 110328,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0019-20261012T044758561Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-21x9--0028-20261012T044805929Z.png",
       "label": "aspect reader scroll / 阶段静态帧",
       "utc": "20261012T044805929Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0028-20261012T044805929Z.png",
       "series": "aspect-21x9",
       "sha256": "ac20c48dc8c94238aaff973cfd33892abfc0f7a4dcc53a1f334e3b6fc66d8391",
-      "bytes": 64420
+      "bytes": 64420,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0028-20261012T044805929Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-21x9--0033-20261012T044809992Z.png",
       "label": "aspect reader close / 路径连续帧",
       "utc": "20261012T044809992Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0033-20261012T044809992Z.png",
       "series": "aspect-21x9",
       "sha256": "ac20c48dc8c94238aaff973cfd33892abfc0f7a4dcc53a1f334e3b6fc66d8391",
-      "bytes": 64420
+      "bytes": 64420,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0033-20261012T044809992Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-21x9--0034-20261012T044810860Z.png",
       "label": "aspect reader close / 路径连续帧",
       "utc": "20261012T044810860Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0034-20261012T044810860Z.png",
       "series": "aspect-21x9",
       "sha256": "22859bcffcf45e829307958406977af4d22528d0ef4115789a8d312b6a03a49f",
-      "bytes": 329724
+      "bytes": 329724,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0034-20261012T044810860Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-21x9--0035-20261012T044811686Z.png",
       "label": "aspect reader close / 路径连续帧",
       "utc": "20261012T044811686Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0035-20261012T044811686Z.png",
       "series": "aspect-21x9",
       "sha256": "fde4544d079fe8d0c8fa4888598ac1dc74054ae46d1acf10d3dd0d00dc3e456f",
-      "bytes": 382127
+      "bytes": 382127,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0035-20261012T044811686Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-21x9--0036-20261012T044812549Z.png",
       "label": "aspect reader close / 路径连续帧",
       "utc": "20261012T044812549Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0036-20261012T044812549Z.png",
       "series": "aspect-21x9",
       "sha256": "b431ea6e62a73175baafc74b6ff8a473c3d63daf149d5f39d68f9314beb9e01a",
-      "bytes": 235835
+      "bytes": 235835,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0036-20261012T044812549Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-21x9--0037-20261012T044813394Z.png",
       "label": "aspect reader close / 路径连续帧",
       "utc": "20261012T044813394Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0037-20261012T044813394Z.png",
       "series": "aspect-21x9",
       "sha256": "22ebf0b8f518680cac854196f50959e6e78e8cb3754e3aa6fa113b4ee89ccab2",
-      "bytes": 159222
+      "bytes": 159222,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0037-20261012T044813394Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-21x9--0038-20261012T044814207Z.png",
       "label": "aspect reader close / 路径连续帧",
       "utc": "20261012T044814207Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0038-20261012T044814207Z.png",
       "series": "aspect-21x9",
       "sha256": "8ddad670bd3301e86d0341cd5578f5748fa0a16bf386a5129ae9607b8395a5a9",
-      "bytes": 105056
+      "bytes": 105056,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0038-20261012T044814207Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-21x9--0039-20261012T044815044Z.png",
       "label": "aspect reader close / 路径连续帧",
       "utc": "20261012T044815044Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0039-20261012T044815044Z.png",
       "series": "aspect-21x9",
       "sha256": "21bcb978d114c03114aa0ef39f19b0aa1933dd10252da0b9175c82e947919de9",
-      "bytes": 104706
+      "bytes": 104706,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0039-20261012T044815044Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-21x9--0040-20261012T044815810Z.png",
       "label": "aspect reader close / 路径连续帧",
       "utc": "20261012T044815810Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0040-20261012T044815810Z.png",
       "series": "aspect-21x9",
       "sha256": "5137463c8a64f53900cda71f0fd52b9152ff2f990d581cc6e69805460d795807",
-      "bytes": 104720
+      "bytes": 104720,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0040-20261012T044815810Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-21x9--0045-20261012T044819867Z.png",
       "label": "aspect Seaside / 路径连续帧",
       "utc": "20261012T044819867Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0045-20261012T044819867Z.png",
       "series": "aspect-21x9",
       "sha256": "5137463c8a64f53900cda71f0fd52b9152ff2f990d581cc6e69805460d795807",
-      "bytes": 104720
+      "bytes": 104720,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0045-20261012T044819867Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-21x9--0046-20261012T044820689Z.png",
       "label": "aspect Seaside / 路径连续帧",
       "utc": "20261012T044820689Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0046-20261012T044820689Z.png",
       "series": "aspect-21x9",
       "sha256": "d5cd211f7b600888d130342c7af8df4f6615dbcca73d05b021fec389d1aef43c",
-      "bytes": 104015
+      "bytes": 104015,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0046-20261012T044820689Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-21x9--0047-20261012T044821504Z.png",
       "label": "aspect Seaside / 路径连续帧",
       "utc": "20261012T044821504Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0047-20261012T044821504Z.png",
       "series": "aspect-21x9",
       "sha256": "a15f488571506a34756d70a6620777abe93d987aa16fd01f6a501218c0801f78",
-      "bytes": 105537
+      "bytes": 105537,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0047-20261012T044821504Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-21x9--0048-20261012T044822323Z.png",
       "label": "aspect Seaside / 路径连续帧",
       "utc": "20261012T044822323Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0048-20261012T044822323Z.png",
       "series": "aspect-21x9",
       "sha256": "11e90305fac03f80126c57d15e2e316e84914937fa1421596375e4566ce804e6",
-      "bytes": 265366
+      "bytes": 265366,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0048-20261012T044822323Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-21x9--0049-20261012T044823179Z.png",
       "label": "aspect Seaside / 路径连续帧",
       "utc": "20261012T044823179Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0049-20261012T044823179Z.png",
       "series": "aspect-21x9",
       "sha256": "9296cb6586a1ee7869fc2107c1608d995bd472db61cc8cfae70b40d4715c8198",
-      "bytes": 306957
+      "bytes": 306957,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0049-20261012T044823179Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-21x9--0050-20261012T044824021Z.png",
       "label": "aspect Seaside / 路径连续帧",
       "utc": "20261012T044824021Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0050-20261012T044824021Z.png",
       "series": "aspect-21x9",
       "sha256": "48898e0c35deaa873a981cfb4665d4cfc4f8e82a541b6a48993ef6c0dd206129",
-      "bytes": 356041
+      "bytes": 356041,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0050-20261012T044824021Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-21x9--0051-20261012T044824846Z.png",
       "label": "aspect Seaside / 路径连续帧",
       "utc": "20261012T044824846Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0051-20261012T044824846Z.png",
       "series": "aspect-21x9",
       "sha256": "97633e5dd7f9dc470e28eb620b72a9edd634f249bce739d5a0d2818b4d8204cf",
-      "bytes": 318002
+      "bytes": 318002,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0051-20261012T044824846Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-21x9--0052-20261012T044825686Z.png",
       "label": "aspect Seaside / 路径连续帧",
       "utc": "20261012T044825686Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0052-20261012T044825686Z.png",
       "series": "aspect-21x9",
       "sha256": "97633e5dd7f9dc470e28eb620b72a9edd634f249bce739d5a0d2818b4d8204cf",
-      "bytes": 318002
+      "bytes": 318002,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0052-20261012T044825686Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-21x9--0057-20261012T044829905Z.png",
       "label": "aspect Brew / 路径连续帧",
       "utc": "20261012T044829905Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0057-20261012T044829905Z.png",
       "series": "aspect-21x9",
       "sha256": "97633e5dd7f9dc470e28eb620b72a9edd634f249bce739d5a0d2818b4d8204cf",
-      "bytes": 318002
+      "bytes": 318002,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0057-20261012T044829905Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-21x9--0058-20261012T044830787Z.png",
       "label": "aspect Brew / 路径连续帧",
       "utc": "20261012T044830787Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0058-20261012T044830787Z.png",
       "series": "aspect-21x9",
       "sha256": "c10563c725310fd4349c7f2669f22d4a0bbbb1874ba7352167af3e5e774a5f3e",
-      "bytes": 328014
+      "bytes": 328014,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0058-20261012T044830787Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-21x9--0059-20261012T044831661Z.png",
       "label": "aspect Brew / 路径连续帧",
       "utc": "20261012T044831661Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0059-20261012T044831661Z.png",
       "series": "aspect-21x9",
       "sha256": "91e7a2e76f9435a2392b0db01f2873eaa2a8506e84e2481cf3ccec1095411ce3",
-      "bytes": 433632
+      "bytes": 433632,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0059-20261012T044831661Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-21x9--0060-20261012T044832559Z.png",
@@ -655,289 +722,325 @@
       "file": "aspect-21x9--0068-20261012T044839450Z.png",
       "label": "aspect Brew return / 路径连续帧",
       "utc": "20261012T044839450Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0068-20261012T044839450Z.png",
       "series": "aspect-21x9",
       "sha256": "37af55e242086b7d4d69db2f609590cb06d6ac18d01156799ea66176a3d9a040",
-      "bytes": 439075
+      "bytes": 439075,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0068-20261012T044839450Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-21x9--0069-20261012T044840322Z.png",
       "label": "aspect Brew return / 路径连续帧",
       "utc": "20261012T044840322Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0069-20261012T044840322Z.png",
       "series": "aspect-21x9",
       "sha256": "3293852402dbb72f0790c857abb8134f046fe77aa419d4a174117dcf9941dd6e",
-      "bytes": 372289
+      "bytes": 372289,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0069-20261012T044840322Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-21x9--0070-20261012T044841167Z.png",
       "label": "aspect Brew return / 路径连续帧",
       "utc": "20261012T044841167Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0070-20261012T044841167Z.png",
       "series": "aspect-21x9",
       "sha256": "3c630c8a7b984e429a9e34076c27b63baf70997993c4687af639305072fb83bf",
-      "bytes": 318131
+      "bytes": 318131,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0070-20261012T044841167Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-21x9--0079-20261012T044848736Z.png",
       "label": "Complete / 阶段静态帧",
       "utc": "20261012T044848736Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0079-20261012T044848736Z.png",
       "series": "aspect-21x9",
       "sha256": "cbd8b3733bbb2187f4b709f4c26fd7772eff501a9f0047c38d47d9d9c412dca7",
-      "bytes": 317797
+      "bytes": 317797,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-21x9\\0079-20261012T044848736Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-4x3--0010-20261012T045034531Z.png",
       "label": "Aspect setup real Receive / 阶段静态帧",
       "utc": "20261012T045034531Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0010-20261012T045034531Z.png",
       "series": "aspect-4x3",
       "sha256": "a4520aa76c202fd7e4de338ecd50ca60079c3a43cd27f190bdc78a8c6fa867df",
-      "bytes": 252286
+      "bytes": 252286,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0010-20261012T045034531Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-4x3--0014-20261012T045037799Z.png",
       "label": "aspect 840x630 / 阶段静态帧",
       "utc": "20261012T045037799Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0014-20261012T045037799Z.png",
       "series": "aspect-4x3",
       "sha256": "77440228fb1b3f37c20bd30f56c3ebfae53ada89dc43bdd6cb1a8174bd8213dd",
-      "bytes": 252013
+      "bytes": 252013,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0014-20261012T045037799Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-4x3--0020-20261012T045042952Z.png",
       "label": "aspect Home targets / 阶段静态帧",
       "utc": "20261012T045042952Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0020-20261012T045042952Z.png",
       "series": "aspect-4x3",
       "sha256": "fc97f9b6992f14fd52a1c18bef70d2355864057e421f2efc442a5e6805d6e8cd",
-      "bytes": 113125
+      "bytes": 113125,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0020-20261012T045042952Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-4x3--0029-20261012T045050206Z.png",
       "label": "aspect reader scroll / 阶段静态帧",
       "utc": "20261012T045050206Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0029-20261012T045050206Z.png",
       "series": "aspect-4x3",
       "sha256": "1a16aa8aff01b667bd2b6eef863939f946da85a2760333eb5136be6bdc790fd5",
-      "bytes": 70721
+      "bytes": 70721,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0029-20261012T045050206Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-4x3--0034-20261012T045054180Z.png",
       "label": "aspect reader close / 路径连续帧",
       "utc": "20261012T045054180Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0034-20261012T045054180Z.png",
       "series": "aspect-4x3",
       "sha256": "7bcc539a486156559ee21e575ef8a4082d51b558d1e559296495a0a318a6222f",
-      "bytes": 252557
+      "bytes": 252557,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0034-20261012T045054180Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-4x3--0035-20261012T045054989Z.png",
       "label": "aspect reader close / 路径连续帧",
       "utc": "20261012T045054989Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0035-20261012T045054989Z.png",
       "series": "aspect-4x3",
       "sha256": "842b0d864e4f2920210cd9361bd413d42d070f4935fe40471f2d72ae0a1fc332",
-      "bytes": 292393
+      "bytes": 292393,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0035-20261012T045054989Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-4x3--0036-20261012T045055801Z.png",
       "label": "aspect reader close / 路径连续帧",
       "utc": "20261012T045055801Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0036-20261012T045055801Z.png",
       "series": "aspect-4x3",
       "sha256": "38f6666d425b1ef363dd86811ed1a2593dbd7d3f5bb6ab45161ac6cea6993d61",
-      "bytes": 266590
+      "bytes": 266590,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0036-20261012T045055801Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-4x3--0037-20261012T045056605Z.png",
       "label": "aspect reader close / 路径连续帧",
       "utc": "20261012T045056605Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0037-20261012T045056605Z.png",
       "series": "aspect-4x3",
       "sha256": "95e53e61bca3fbf8bd9d9b34f3aea1e4f9f5e71c508f7bb9924cbcc7c07b5578",
-      "bytes": 229278
+      "bytes": 229278,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0037-20261012T045056605Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-4x3--0038-20261012T045057419Z.png",
       "label": "aspect reader close / 路径连续帧",
       "utc": "20261012T045057419Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0038-20261012T045057419Z.png",
       "series": "aspect-4x3",
       "sha256": "c125f8abe76b5736d75a023bd2b769b9ac5ea955affcffc563fdb2303920a39b",
-      "bytes": 92428
+      "bytes": 92428,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0038-20261012T045057419Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-4x3--0039-20261012T045058197Z.png",
       "label": "aspect reader close / 路径连续帧",
       "utc": "20261012T045058197Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0039-20261012T045058197Z.png",
       "series": "aspect-4x3",
       "sha256": "9b0fe4ffb772df9b4f01f893f853f6c7eea73187fd364a25bc6390b4655c5845",
-      "bytes": 88241
+      "bytes": 88241,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0039-20261012T045058197Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-4x3--0040-20261012T045058975Z.png",
       "label": "aspect reader close / 路径连续帧",
       "utc": "20261012T045058975Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0040-20261012T045058975Z.png",
       "series": "aspect-4x3",
       "sha256": "9b8da664267675ce9f0c1e9117320ef61ffe4cfa1140bf6dc9394528344f5ef3",
-      "bytes": 87614
+      "bytes": 87614,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0040-20261012T045058975Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-4x3--0041-20261012T045059760Z.png",
       "label": "aspect reader close / 路径连续帧",
       "utc": "20261012T045059760Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0041-20261012T045059760Z.png",
       "series": "aspect-4x3",
       "sha256": "9b8da664267675ce9f0c1e9117320ef61ffe4cfa1140bf6dc9394528344f5ef3",
-      "bytes": 87614
+      "bytes": 87614,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0041-20261012T045059760Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-4x3--0047-20261012T045104530Z.png",
       "label": "aspect Seaside / 路径连续帧",
       "utc": "20261012T045104530Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0047-20261012T045104530Z.png",
       "series": "aspect-4x3",
       "sha256": "c06de088767e2b0cfe560c934ec4b786672df575db6bb15d62606ee14285a49c",
-      "bytes": 92277
+      "bytes": 92277,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0047-20261012T045104530Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-4x3--0048-20261012T045105315Z.png",
       "label": "aspect Seaside / 路径连续帧",
       "utc": "20261012T045105315Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0048-20261012T045105315Z.png",
       "series": "aspect-4x3",
       "sha256": "c4997b1ed632a335161be3f93f2d7ecba9a3775b402268015ca5bdf415bb50bd",
-      "bytes": 96437
+      "bytes": 96437,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0048-20261012T045105315Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-4x3--0049-20261012T045106081Z.png",
       "label": "aspect Seaside / 路径连续帧",
       "utc": "20261012T045106081Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0049-20261012T045106081Z.png",
       "series": "aspect-4x3",
       "sha256": "198aa8a33e8887ccfc88db273442b5b04f6fceb8b8da6c7ce505b015254584a6",
-      "bytes": 231159
+      "bytes": 231159,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0049-20261012T045106081Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-4x3--0050-20261012T045106888Z.png",
       "label": "aspect Seaside / 路径连续帧",
       "utc": "20261012T045106888Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0050-20261012T045106888Z.png",
       "series": "aspect-4x3",
       "sha256": "62970187fff3de88f0946b5daa6bb30b114b8bb3a0e728f9c94852b72bc8a8d6",
-      "bytes": 271283
+      "bytes": 271283,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0050-20261012T045106888Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-4x3--0051-20261012T045107682Z.png",
       "label": "aspect Seaside / 路径连续帧",
       "utc": "20261012T045107682Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0051-20261012T045107682Z.png",
       "series": "aspect-4x3",
       "sha256": "217c3792c65a8a19bbcbf680c29358a55055d27542b1720e2e3698957ce708f0",
-      "bytes": 283297
+      "bytes": 283297,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0051-20261012T045107682Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-4x3--0052-20261012T045108488Z.png",
       "label": "aspect Seaside / 路径连续帧",
       "utc": "20261012T045108488Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0052-20261012T045108488Z.png",
       "series": "aspect-4x3",
       "sha256": "a80ad888f10251a8f465fd2e9cbec77731e9b572e4d48258bfdf2e268d521837",
-      "bytes": 251891
+      "bytes": 251891,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0052-20261012T045108488Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-4x3--0053-20261012T045109281Z.png",
       "label": "aspect Seaside / 路径连续帧",
       "utc": "20261012T045109281Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0053-20261012T045109281Z.png",
       "series": "aspect-4x3",
       "sha256": "a80ad888f10251a8f465fd2e9cbec77731e9b572e4d48258bfdf2e268d521837",
-      "bytes": 251891
+      "bytes": 251891,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0053-20261012T045109281Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-4x3--0059-20261012T045114246Z.png",
       "label": "aspect Brew / 路径连续帧",
       "utc": "20261012T045114246Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0059-20261012T045114246Z.png",
       "series": "aspect-4x3",
       "sha256": "e17ea3881a6d05aab867670dfabbc208d22615c066cee8ac330c7d18cdd88689",
-      "bytes": 253731
+      "bytes": 253731,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0059-20261012T045114246Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-4x3--0060-20261012T045115045Z.png",
       "label": "aspect Brew / 路径连续帧",
       "utc": "20261012T045115045Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0060-20261012T045115045Z.png",
       "series": "aspect-4x3",
       "sha256": "c08d7812a3e5a3554dbf859eda87b5d17f7c3e9513da3542a92a640210026317",
-      "bytes": 321326
+      "bytes": 321326,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0060-20261012T045115045Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-4x3--0061-20261012T045115900Z.png",
       "label": "aspect Brew / 路径连续帧",
       "utc": "20261012T045115900Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0061-20261012T045115900Z.png",
       "series": "aspect-4x3",
       "sha256": "941398c5cb9df8981c9122f865a8c355a96bd745c02780429aeeaa3fb1cd941d",
-      "bytes": 370378
+      "bytes": 370378,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0061-20261012T045115900Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-4x3--0062-20261012T045116737Z.png",
       "label": "aspect Brew / 路径连续帧",
       "utc": "20261012T045116737Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0062-20261012T045116737Z.png",
       "series": "aspect-4x3",
       "sha256": "941398c5cb9df8981c9122f865a8c355a96bd745c02780429aeeaa3fb1cd941d",
-      "bytes": 370378
+      "bytes": 370378,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0062-20261012T045116737Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-4x3--0070-20261012T045123476Z.png",
       "label": "aspect Brew return / 路径连续帧",
       "utc": "20261012T045123476Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0070-20261012T045123476Z.png",
       "series": "aspect-4x3",
       "sha256": "16164516ee13037655b5b52607b9009c7af704b252d2b0ebdaf0a7332f75c0ed",
-      "bytes": 341836
+      "bytes": 341836,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0070-20261012T045123476Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-4x3--0071-20261012T045124301Z.png",
       "label": "aspect Brew return / 路径连续帧",
       "utc": "20261012T045124301Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0071-20261012T045124301Z.png",
       "series": "aspect-4x3",
       "sha256": "3f6e0565dd0376bd4e67b0ec71fdab3bdba61b6c3b2f3cc30851243013810c1e",
-      "bytes": 267823
+      "bytes": 267823,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0071-20261012T045124301Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-4x3--0072-20261012T045125124Z.png",
       "label": "aspect Brew return / 路径连续帧",
       "utc": "20261012T045125124Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0072-20261012T045125124Z.png",
       "series": "aspect-4x3",
       "sha256": "9181983c47e4e23db0c7d5a7b81752e6a26aa1f67304b0e835527a3b09ba6af9",
-      "bytes": 252011
+      "bytes": 252011,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0072-20261012T045125124Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-4x3--0073-20261012T045125971Z.png",
       "label": "aspect Brew return / 路径连续帧",
       "utc": "20261012T045125971Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0073-20261012T045125971Z.png",
       "series": "aspect-4x3",
       "sha256": "9181983c47e4e23db0c7d5a7b81752e6a26aa1f67304b0e835527a3b09ba6af9",
-      "bytes": 252011
+      "bytes": 252011,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0073-20261012T045125971Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     },
     {
       "file": "aspect-4x3--0081-20261012T045132609Z.png",
       "label": "Complete / 阶段静态帧",
       "utc": "20261012T045132609Z",
-      "original": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0081-20261012T045132609Z.png",
       "series": "aspect-4x3",
       "sha256": "38975ac646cef4d332e2d5484f5937cdc930e240e9ad3bb52b791936af851ee5",
-      "bytes": 251678
+      "bytes": 251678,
+      "originalGitPath": "docs\\evidence\\3d-lab-r3\\native\\aspect-4x3\\0081-20261012T045132609Z.png",
+      "originalGitCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b"
     }
-  ]
+  ],
+  "cleanup20261014": {
+    "sourceCommit": "7460d04e697c5ca7e6d312afae3cb0ef769ecc4b",
+    "note": "Key selected PNGs preserved. Original captures removed below have a historical Git path, not a live local-file link."
+  }
 }

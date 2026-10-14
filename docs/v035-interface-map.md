@@ -3,7 +3,7 @@
 Pinned source: `llylee994-ui/To-the-Human-World` main `1cd0cdbec06487a5c60f109d5fd477198cfc8846`.
 Dedicated task: `01a12c24-a725-712b-ba7d-df58430f5098`.
 
-`v035/scripts/lab35/Integration.lua` is an explicit host seam. `scripts/main.lua` now installs the complete `v035.lab35.FullSceneHost` with resources under `assets/v035-full`. Complete cloud schema normalization, streaming import and staged-resource checks passed offline. It never loads the earlier local procedural World. Native start remains paused. The delivered package supplies only Home; Brew/Seaside routes still require implementation and native acceptance.
+The current runtime host seam is `scripts/v035/lab35/Integration.lua`; `scripts/main.lua` installs `v035.lab35.FullSceneHost` with resources under `assets/v035-full`. The earlier procedural World is retired. Root `v035/scripts` retains legacy tests and some different core implementations; it is not the current runtime copy. Cloud Brew/Seaside integration exists, while Windows gameplay acceptance is tracked separately in [WINDOWS-RUN.md](WINDOWS-RUN.md). The clean candidate has been displayed in a real Windows window; the user is conducting the remaining interaction acceptance.
 
 User confirmed all eight visual mappings. Green book opens 故事记录 (story and trial/recipe history); tied paper stack opens 案件板. `Ids.lua` reads exact labels/targets from pinned `LayoutManifest`, and eight actual hint labels are covered by regression tests. Other labels are 来信抽屉、分类词条、海边捕捞、商队商店、阅读信件、炼药工作区. Letter paper reads; no writing or separate diary flow was added.
 

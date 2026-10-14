@@ -1,0 +1,42 @@
+{
+  "Start-3D.cmd": {
+    "files": 1,
+    "bytes": 108
+  },
+  "Start-3D.ps1": {
+    "files": 1,
+    "bytes": 1352
+  },
+  "assets": {
+    "files": 29,
+    "bytes": 17802409
+  },
+  "deliverables": {
+    "files": 21,
+    "bytes": 1345050
+  },
+  "old-lsp": {
+    "files": 23,
+    "bytes": 347537
+  },
+  "native-continuous-images": {
+    "files": 951,
+    "bytes": 311750791
+  },
+  "old-probe-export": {
+    "files": 21,
+    "bytes": 8926800
+  },
+  "old-full-export": {
+    "files": 170,
+    "bytes": 322206419
+  },
+  "scripts": {
+    "files": 66,
+    "bytes": 1346189
+  },
+  "tools": {
+    "files": 28,
+    "bytes": 125178
+  }
+}
