@@ -1,0 +1,13 @@
+{
+  "candidateVersionedFileBytesBefore": 432406970,
+  "integratedVersionedFiles": 2554,
+  "versionedFilesPresentOnDisk": 2185,
+  "versionedFileBytesPresentOnDisk": 547914840,
+  "sparseFilesRetainedInGit": 369,
+  "sparseWorkingTreeBytesSavedComparedWithFullCheckout": 361213559,
+  "excludedIncomingCopyBytes": 3122927,
+  "additionalFullProjectCopies": 0,
+  "gitObjectBytesNow": 684238612,
+  "note": "Main imports add source/resources and Git objects. Old branch name deletion itself saves almost no space because its history remains reachable; 344.48 MiB saving is relative to fully expanding the integrated tree.",
+  "netVersionedWorkingTreeBytesAdded": 115507870
+}

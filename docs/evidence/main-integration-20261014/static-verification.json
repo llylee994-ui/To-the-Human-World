@@ -21,7 +21,7 @@
   },
   "runtimeBehavior": "unchanged; no OS input, no visual reacceptance, no main schema4 activation",
   "formatCheck": "PASS on our changed/new files; upstream file bytes preserved",
-  "ancestryCheck": "pending merge commit",
+  "ancestryCheck": "PASS: merge c14376b has candidate b9194ea and main 41cdaf3 as actual parents",
   "intentionalCandidateDocumentChanges": [
     "LAB_STATUS.md",
     "docs/RUNBOOK.md",

@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "mergeCommit": "c14376ba4f585b54c9a835647cce553e3e09844c",
+  "parents": [
+    "b9194ea32ee3e8eab7bdcd0d559890d3f20e115b",
+    "41cdaf3ff0fdd083d7411373a3cc9b70e26fb2e6"
+  ],
+  "commonAncestorWithIntegratedMain": "41cdaf3ff0fdd083d7411373a3cc9b70e26fb2e6",
+  "candidateHistoryRetained": true,
+  "cloudCandidateCommitsAfter65e640c": 17,
+  "newBranch": "integration/3d-main-20261014",
+  "firstPushVerifiedCommit": "c14376ba4f585b54c9a835647cce553e3e09844c",
+  "localOldBranchRemoved": true,
+  "remoteOldBranchDeletionCommand": "git push origin --delete cloud/3d-d00aca9 succeeded",
+  "preservedDirectory": "D:\\taptap\\D3-cloud-d00aca9\\D3-github-cloud-3d-d00aca9",
+  "noHistoryRewrite": true,
+  "manualGameplay": "user-owned; not repeated",
+  "remoteOldBranchAbsent": true,
+  "remoteVerificationUtc": "2026-10-14T07:07:17.713952+00:00",
+  "verifiedRemoteHeadsAfterOldBranchDeletion": {
+    "3d": "65e640cafc3330e70c0d934404077ad98932603f",
+    "integration/3d-main-20261014": "c14376ba4f585b54c9a835647cce553e3e09844c",
+    "main": "41cdaf3ff0fdd083d7411373a3cc9b70e26fb2e6"
+  }
+}
