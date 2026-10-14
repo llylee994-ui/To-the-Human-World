@@ -1,0 +1,16 @@
+{
+  "result": "PASS native internal UI sequence",
+  "cameraSamples": 614,
+  "completed": 8,
+  "cancelled": 1,
+  "GC_reopen_cycles": 6,
+  "unchangedBusinessState": true,
+  "positionAndFOVFixed": true,
+  "limits": [
+    "No OS manual or phone acceptance",
+    "Capture started after automated sequence, only returned-home screenshot available for passing run",
+    "No motion screenshots or normal-speed video for passing run; timeline logs do not prove visual smoothness",
+    "Maker check still FAIL with two preexisting resource errors"
+  ],
+  "screenshotUTC": "2026-10-12T12:54:35.4344610Z"
+}

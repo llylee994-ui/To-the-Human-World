@@ -3,6 +3,7 @@ local Model=require "ui.PlayModel"
 local Home=require "ui.landscape.HomeView"
 local Panels=require "ui.landscape.Panels"
 local Zoom=require "ui.landscape.HomeZoom"
+local StovePanZoom=require "ui.landscape.StovePanZoom"
 local Seaside=require "ui.landscape.SeasideView"
 local Salvage=require "ui.landscape.SalvageController"
 local Harbor=require "ui.landscape.HarborStyle"
@@ -40,6 +41,8 @@ function A.New(session,content,enabled)
     local nativeProbe=require("ui.landscape.DevChecks").nativeProbe and require("ui.landscape.tests.NativeProbe").New() or nil
     local yawEnabled=require("ui.landscape.DevChecks").yawProbe
     local yawAuto=yawEnabled and require("ui.landscape.DevChecks").yawProbeAuto and require("ui.landscape.tests.YawNativeProbe").New() or nil
+    local stoveAuto=require("ui.landscape.DevChecks").stoveYawAuto and require("ui.landscape.tests.StoveYawNativeProbe").New() or nil
+    local panZoomAuto=require("ui.landscape.DevChecks").stovePanZoomAuto and require("ui.landscape.tests.StovePanZoomNativeProbe").New() or nil
     local developer=(require("debug.DeveloperMode") or require("ui.landscape.DevChecks").hotspots) --[[@as boolean]]
     -- The stage fills the viewport; each control group applies its own safe area.
     -- UpdateChrome extends this surface through main's SafeAreaView insets.
@@ -74,14 +77,17 @@ function A.New(session,content,enabled)
         return r
     end
     local home=Home.New(function(target,id)
-        if id=="home.net" then ctx.BeginHomeZoom() else ctx.Open(target) end
+        if id=="home.net" then ctx.BeginHomeZoom()
+        elseif id=="home.stove" then ctx.BeginHomeZoom("stove")
+        else ctx.Open(target) end
     end,developer); stage:AddChild(home.root); ctx.home=home
     home.SetInspect(require("ui.landscape.DevChecks").hotspots)
     local scene=Harbor.Paper {id="functionalScene",position="absolute",left=0,top=0,width="100%",height="100%",padding=0,paddingTop=64,visible=false}
     stage:AddChild(scene)
     local seaside=Seaside.New(ctx);stage:AddChild(seaside.root);ctx.seaside=seaside
     root:AddChild(hud)
-    local overlay=UI.Panel {id="overlayHost",position="absolute",left=0,top=0,width="100%",height="100%",pointerEvents="box-none"}
+    -- Explicit order: equal-z siblings are not stably sorted by the UI library.
+    local overlay=UI.Panel {id="overlayHost",position="absolute",left=0,top=0,width="100%",height="100%",zIndex=100,pointerEvents="box-none"}
     root:AddChild(overlay)
     -- Stable topmost blocker: blocks HUD and all room inputs without rebuilding the tree.
     local zoomBlocker=UI.Panel {id="homeZoomBlocker",position="absolute",left=0,top=0,width="100%",height="100%",
@@ -217,11 +223,15 @@ function A.New(session,content,enabled)
         return result
     end
     function ctx.CancelHomeZoom(reason)
-        ctx.zoom.Reset(reason);home.SetZoom(1);home.SetBlocked(false);zoomBlocker:SetVisible(false)
+        ctx.zoom.Reset(reason);home.SetZoom(1);home.SetPanZoom(false);home.SetBlocked(false);zoomBlocker:SetVisible(false)
     end
-    function ctx.BeginHomeZoom()
+    function ctx.BeginHomeZoom(kind)
         if ctx.destroyed or ctx.yawProbe or ctx.portrait or ctx.scene~="home" or (ctx.panel and not side[ctx.panel]) then return false end
-        if not ctx.zoom.Start(home.Fit(),GetTime():GetElapsedTime()) then return false end
+        local fit=home.Fit()
+        if fit.scale<=0 then return false end
+        local profile=kind=="stove" and StovePanZoom.Plan(home.manifest,fit,home.root:GetAbsoluteLayout()) or nil
+        if not ctx.zoom.Start(fit,GetTime():GetElapsedTime(),profile) then return false end
+        if profile then home.SetPanZoom(1,0,0) end
         home.SetBlocked(true);zoomBlocker:SetVisible(true)
         if ctx.panel then ctx.panel=false;ctx.stack={};model.dirty=true end
         return true
@@ -240,6 +250,7 @@ function A.New(session,content,enabled)
     end
     function ctx.Navigate(target)
         if ctx.destroyed or ctx.salvage.active or ctx.ticketEnding then return end
+        if ctx.yawProbe then ctx.yawProbe.Close("navigate") end
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
         ctx.CancelHomeZoom("navigate")
         ctx.scene=target; ctx.panel=false; ctx.stack={}; ctx.readerCache=false; ctx.choosingLetter=false;ctx.ticketConfirm=false;ctx.ticketQuote=false
@@ -247,12 +258,12 @@ function A.New(session,content,enabled)
         model.dirty=true
     end
     function ctx.Push(kind)
-        if ctx.destroyed or ctx.portrait or ctx.zoom.active or ctx.salvage.active then return end
+        if ctx.destroyed or ctx.portrait or ctx.zoom.active or ctx.salvage.active or ctx.yawProbe then return end
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
         ctx.stack[#ctx.stack+1]=ctx.panel or false; ctx.panel=kind; ctx.readerCache=false; model.dirty=true
     end
     function ctx.Close()
-        if ctx.destroyed or ctx.zoom.active or ctx.salvage.active or ctx.ticketEnding then return end
+        if ctx.destroyed or ctx.zoom.active or ctx.salvage.active or ctx.ticketEnding or ctx.yawProbe then return end
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
         ctx.ticketConfirm=false;ctx.ticketQuote=false
         if ctx.panel=="journal" then ctx.storyId=false end
@@ -260,7 +271,7 @@ function A.New(session,content,enabled)
         model.Navigate(ctx.panel=="reader" and "letter" or ctx.scene)
     end
     function ctx.Read(id)
-        if ctx.destroyed or ctx.zoom.active or ctx.salvage.active then return end
+        if ctx.destroyed or ctx.zoom.active or ctx.salvage.active or ctx.yawProbe then return end
         local result=model.Read(id)
         if result.ok then
             ctx.salvage.Acknowledge(id)
@@ -279,7 +290,7 @@ function A.New(session,content,enabled)
         else ctx.panel="letters"; ctx.stack={}; ctx.choosingLetter=true; model.dirty=true end
     end
     function ctx.Open(kind)
-        if ctx.destroyed or ctx.portrait or ctx.zoom.active or ctx.salvage.active then return end
+        if ctx.destroyed or ctx.portrait or ctx.zoom.active or ctx.salvage.active or ctx.yawProbe then return end
         if ctx.ticketEnding and kind~="ticketEnding" then return end
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
         ctx.ticketConfirm=false;ctx.ticketQuote=false
@@ -300,7 +311,7 @@ function A.New(session,content,enabled)
     end
     if developer then
         hud:AddChild(Harbor.Button {id="toggleHomeHotspots",text="热区检查",width=98,minHeight=44,onClick=function()
-            if ctx.zoom.active then return end
+            if ctx.zoom.active or ctx.yawProbe then return end
             home.SetInspect(not home.inspect); model.dirty=true
         end})
     end
@@ -365,6 +376,8 @@ function A.New(session,content,enabled)
         if ctx.destroyed then return end
         if ctx.yawProbe then ctx.yawProbe.Update() end
         if yawAuto then yawAuto(ctx) end
+        if stoveAuto then stoveAuto(ctx) end
+        if panZoomAuto then panZoomAuto(ctx) end
         local now,dt=clock();home.Update(dt)
         ctx.UpdateChrome()
         if ctx.readerCache and ctx.readerCache.presentation then
@@ -383,9 +396,11 @@ function A.New(session,content,enabled)
         -- main already calls this every Update. Advance BEFORE the business dirty guard.
         if ctx.zoom.active then
             local clock=GetTime()
-            local result=ctx.zoom.Update(clock:GetTimeStep(),home.Fit(),input:HasFocus() and not input:IsMinimized(),clock:GetElapsedTime())
+            local destination=ctx.zoom.profile and ctx.zoom.profile.destination or "seaside"
+            local result=ctx.zoom.Update(clock:GetTimeStep(),home.Fit(),input:HasFocus() and not input:IsMinimized(),clock:GetElapsedTime(),home.root:GetAbsoluteLayout())
             home.SetZoom(ctx.zoom.scale)
-            if result=="complete" then ctx.Navigate("seaside")
+            if ctx.zoom.profile then home.SetPanZoom(ctx.zoom.scale,ctx.zoom.panX,ctx.zoom.panY) end
+            if result=="complete" then ctx.Navigate(destination)
             elseif result=="cancelled" then ctx.CancelHomeZoom(ctx.zoom.reason) end
         end
         if nativeProbe then nativeProbe(ctx) end

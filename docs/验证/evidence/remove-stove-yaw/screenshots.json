@@ -1,0 +1,50 @@
+[
+  {
+    "evidence": "01-home.png",
+    "frame": "15",
+    "utc": "2026-10-12T15:14:44.5360676Z",
+    "elapsed_ms": "15012.872",
+    "width": "1280",
+    "height": "720"
+  },
+  {
+    "evidence": "02-direct-brew.png",
+    "frame": "18",
+    "utc": "2026-10-12T15:14:47.5272896Z",
+    "elapsed_ms": "18004.396",
+    "width": "1280",
+    "height": "720"
+  },
+  {
+    "evidence": "03-return-home.png",
+    "frame": "22",
+    "utc": "2026-10-12T15:14:51.5292403Z",
+    "elapsed_ms": "22006.147",
+    "width": "1280",
+    "height": "720"
+  },
+  {
+    "evidence": "04-shop-modal.png",
+    "frame": "24",
+    "utc": "2026-10-12T15:14:53.5356700Z",
+    "elapsed_ms": "24012.425",
+    "width": "1280",
+    "height": "720"
+  },
+  {
+    "evidence": "05-reenter-brew.png",
+    "frame": "28",
+    "utc": "2026-10-12T15:14:57.5334293Z",
+    "elapsed_ms": "28010.032",
+    "width": "1280",
+    "height": "720"
+  },
+  {
+    "evidence": "06-final-home.png",
+    "frame": "32",
+    "utc": "2026-10-12T15:15:01.5291575Z",
+    "elapsed_ms": "32005.739",
+    "width": "1280",
+    "height": "720"
+  }
+]
