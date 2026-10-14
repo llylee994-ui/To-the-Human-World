@@ -5,7 +5,7 @@
     "id": "1983130124"
   },
   "entry": "main.lua",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "taptap_publish": {
     "title": "寄往人间",
     "description": "",
@@ -24,10 +24,10 @@
     "promotional_image": ""
   },
   "test_qrcode": {
-    "url": "https://tapcode-sce.spark.xd.com/qrcode/m_h4x3_1791954110104.png",
-    "generated_at": "2026-10-14T05:01:50.230Z"
+    "url": "https://tapcode-sce.spark.xd.com/qrcode/m_h4x3_1791996131198.png",
+    "generated_at": "2026-10-14T16:42:11.291Z"
   },
   "metadata": {
-    "updated_at": "2026-10-14T05:01:50.230Z"
+    "updated_at": "2026-10-14T16:42:11.291Z"
   }
 }
