@@ -1,0 +1,384 @@
+-- 记录书：右侧布料底衬 + 摊开的左半页 + 左缘索引贴（一个故事一个标签）。
+-- 只读查询；切换故事时翻页（翻动页盖住内容时换页），列表与详情之间不翻。
+-- 布局与滑动沿用 WordTrayDrawer 的约定：状态存在 ctx，重建控件树后由 Update 重新贴位。
+local UI=require "urhox-libs/UI"
+local Widget=require "urhox-libs/UI/Core/Widget"
+local Theme=require "urhox-libs/UI/Core/Theme"
+local Harbor=require "ui.landscape.HarborStyle"
+local B={}
+local ink,inkFaint={72,52,36,255},{128,106,78,255}
+local clothImage="image/界面_桌布_透明_v01.png"
+local pageColor={247,238,216,255}
+local sheetColor={241,230,203,255}
+
+---@class JournalBookState
+---@field open number 布料滑入进度 0~1
+---@field target number
+---@field settled boolean
+---@field panel Widget|false
+---@field page Widget|false
+---@field story string|false 当前故事（来源信 id）
+---@field entry string|false 详情页的分支片段 id；false 表示目录
+---@field flip number 翻页剩余秒数；0 表示静止
+---@field flipTitle string|false 正在翻走的那一页的故事名
+---@field closing boolean
+
+B.AnimationSeconds=.22
+B.FlipSeconds=.34
+-- 面板宽度与词条托盘一致（可用宽度的 26%）：左右两侧各留出一条，中间留给药锅。
+B.WidthRatio=.26
+B.TabWidth=86
+B.ShowLockedTitles=false -- 未收集分支是否露出短名：false 时显示“？？？”
+
+local function ease(t) t=math.max(0,math.min(1,t));return t*t*(3-2*t) end
+local function viewportWidth(ctx)
+    if ctx.viewport and ctx.viewport.w and ctx.viewport.w>0 then return ctx.viewport.w end
+    if UI.GetViewportSize then local w=UI.GetViewportSize();if w and w>0 then return w end end
+    return 1280
+end
+local function viewportHeight(ctx)
+    if ctx.viewport and ctx.viewport.h and ctx.viewport.h>0 then return ctx.viewport.h end
+    if UI.GetViewportSize then local _,h=UI.GetViewportSize();if h and h>0 then return h end end
+    return 720
+end
+local function insets(ctx) return ctx.safeInsets or {left=0,top=0,right=0,bottom=0} end
+local function panelWidth(ctx)
+    local safe=insets(ctx)
+    return math.floor(math.max(0,viewportWidth(ctx)-safe.left-safe.right)*B.WidthRatio)
+end
+-- 关闭态整个面板推到屏外，把右安全区一起算进去，边界上也不露一条。
+local function panelRight(ctx,state)
+    local safe=insets(ctx)
+    return math.floor(safe.right-(1-ease(state.open))*(panelWidth(ctx)+safe.right+8))
+end
+
+---@return JournalBookState
+function B.State(ctx)
+    local state=ctx.journalBook
+    if not state then
+        state={open=0,target=0,settled=true,panel=false,page=false,
+            story=ctx.storyId or false,entry=false,flip=0,flipTitle=false,closing=false}
+        ctx.journalBook=state
+    end
+    return state --[[@as JournalBookState]]
+end
+function B.Progress(ctx)
+    local state=ctx.journalBook --[[@as JournalBookState?]]
+    return state and state.open or 0
+end
+function B.Settled(ctx)
+    local state=ctx.journalBook --[[@as JournalBookState?]]
+    return not state or state.settled
+end
+function B.Open(ctx)
+    local state=B.State(ctx)
+    if state.closing then return state end
+    state.target=1;state.settled=false
+    if ctx.storyId then state.story=ctx.storyId end
+    return state
+end
+-- 切场景/换面板/销毁时复位，别把动画状态带进下一次打开。
+function B.Reset(ctx)
+    local state=ctx.journalBook --[[@as JournalBookState?]]
+    if not state then return end
+    state.open=0;state.target=0;state.settled=true;state.panel=false;state.page=false
+    state.story=false;state.entry=false;state.flip=0;state.flipTitle=false;state.closing=false
+end
+-- 关闭按钮先滑出再真正关面板。
+function B.RequestClose(ctx)
+    local state=ctx.journalBook --[[@as JournalBookState?]]
+    if not state or state.open<=0 then return end
+    state.closing=true;state.target=0;state.settled=false
+end
+function B.Update(ctx,dt)
+    local state=ctx.journalBook --[[@as JournalBookState?]]
+    if not state then return end
+    local step=(dt or 0)
+    if state.flip>0 then state.flip=math.max(0,state.flip-step) end
+    if state.settled then return end
+    local amount=step/B.AnimationSeconds
+    if state.target>=state.open then state.open=math.min(state.target,state.open+amount)
+    else state.open=math.max(state.target,state.open-amount) end
+    if state.open==state.target then state.settled=true end
+    if state.panel then Widget.SetStyle(state.panel,{right=panelRight(ctx,state)}) end
+    if state.closing and state.settled then
+        state.closing=false
+        ctx.Close()
+    end
+end
+-- 切故事：内容立刻换（此时翻动页整页盖着，看不见切换），翻动页再收向书脊。
+function B.Select(ctx,storyId,title)
+    local state=B.State(ctx)
+    if not storyId or state.story==storyId then return end
+    state.flipTitle=title or state.flipTitle
+    state.story=storyId;state.entry=false
+    if state.open>0 then state.flip=B.FlipSeconds end
+    ctx.storyId=storyId
+    ctx.model.dirty=true
+end
+function B.OpenEntry(ctx,fragmentId)
+    local state=B.State(ctx)
+    if not fragmentId or state.entry==fragmentId then return end
+    state.entry=fragmentId
+    ctx.model.dirty=true
+end
+function B.CloseEntry(ctx)
+    local state=B.State(ctx)
+    if not state.entry then return end
+    state.entry=false
+    ctx.model.dirty=true
+end
+
+-- 分支目录与实际记录合成列表条目；未收集的分支保留空位。
+-- 纯函数，便于无头测试；不读 ctx、不写快照。
+function B.Entries(page)
+    local byBranch={}
+    for _,outcome in ipairs(page and page.outcomes or {}) do
+        local attempts=outcome.attempts or {}
+        local latest=attempts[#attempts]
+        if latest then
+            local slot=byBranch[outcome.branchFragmentId]
+            if not slot or (latest.day or 0)>=(slot.day or 0) then
+                byBranch[outcome.branchFragmentId]={day=latest.day,stars=latest.stars,text=latest.text,
+                    recipeSummary=latest.recipeSummary,count=0}
+            end
+            byBranch[outcome.branchFragmentId].count=byBranch[outcome.branchFragmentId].count+#attempts
+        end
+    end
+    local rows={}
+    for _,branch in ipairs(page and page.branches or {}) do
+        local hit=byBranch[branch.fragmentId]
+        rows[#rows+1]={fragmentId=branch.fragmentId,shortName=branch.shortName or false,collected=hit~=nil,
+            day=hit and hit.day or false,stars=hit and hit.stars or false,text=hit and hit.text or false,
+            attemptCount=hit and hit.count or 0,recipeSummary=hit and hit.recipeSummary or false}
+    end
+    return rows
+end
+
+local function queryError(ctx)
+    local result=ctx.session.queries.GetJournalStories()
+    if result.ok then return nil end
+    return result.error.message or "记录暂时读不到"
+end
+
+local function text(parent,value,size,id,color)
+    local label=UI.Label {id=id,text=tostring(value or ""),fontFamily=Harbor.fontFamily,fontSize=size or 15,
+        fontColor=color or ink,whiteSpace="normal",lineHeight=1.35,flexShrink=0,pointerEvents="none",alignSelf="stretch"}
+    parent:AddChild(label);return label
+end
+local function storyLabel(row)
+    if row.received then return row.title end
+    if B.ShowLockedTitles then return row.title end
+    return "？？？"
+end
+local function branchLabel(entry)
+    if entry.collected or B.ShowLockedTitles then return entry.shortName or "未命名分支" end
+    return "？？？"
+end
+local function metaText(entry)
+    if not entry.collected then return "未收集" end
+    local parts={"第 "..tostring(entry.day or 1).." 天"}
+    if entry.stars then parts[#parts+1]=tostring(entry.stars).." 星" end
+    if entry.attemptCount>1 then parts[#parts+1]="试做 "..tostring(entry.attemptCount).." 次" end
+    return table.concat(parts," · ")
+end
+
+-- 索引贴：一个故事一张纸贴（沿用托盘的纸面标签写法），未收到的锁住。
+local function indexTab(ctx,state,parent,row,active)
+    local label=storyLabel(row)
+    local button=UI.Button {id="bookTab_"..row.sourceLetterId,text=label,
+        width="100%",minHeight=36,fontFamily=Harbor.fontFamily,fontSize=13,fontWeight="normal",
+        backgroundImage=Harbor.paperImage,backgroundFit="fill",
+        backgroundImageOpacity=not row.received and .38 or (active and 1 or .72),
+        hoverBackgroundImageOpacity=1,pressedBackgroundImageOpacity=.82,disabledBackgroundImageOpacity=.38,
+        backgroundColor={0,0,0,0},hoverBackgroundColor={0,0,0,0},pressedBackgroundColor={0,0,0,0},
+        variantBackgroundGradient={},variantHoverBackgroundGradient={},variantPressedBackgroundGradient={},
+        borderWidth=0,hoverBorderWidth=0,pressedBorderWidth=0,borderRadius=0,boxShadow=false,glowShadow={},
+        textColor=active and ink or inkFaint,disabledTextColor=inkFaint,padding={5,10},pressedPadding={5,10},
+        disabled=not row.received,
+        onClick=function() if row.received then B.Select(ctx,row.sourceLetterId,label) end end}
+    if active then
+        button:AddChild(UI.Panel {position="absolute",left=8,right=8,bottom=3,height=2,
+            backgroundColor={155,107,57,210},pointerEvents="none"})
+    end
+    parent:AddChild(button)
+    return button
+end
+
+-- 目录：一行一支，含未收集空位。
+local function renderCatalog(ctx,page,host,entries)
+    text(host,page.title,17,"bookStoryTitle")
+    local collected=0
+    for _,entry in ipairs(entries) do if entry.collected then collected=collected+1 end end
+    text(host,"已收集 "..tostring(collected).." / "..tostring(#entries).." 支",12,"bookProgress",inkFaint)
+    local list=UI.ScrollView {id="bookEntryList",width="100%",flexGrow=1,flexShrink=1,flexBasis=0,scrollY=true,
+        showScrollbar=true,gap=8,pointerEvents="box-none"}
+    host:AddChild(list)
+    for index,entry in ipairs(entries) do
+        local row=UI.Panel {id="bookEntry_"..entry.fragmentId,width="100%",gap=2,padding={8,10},
+            backgroundColor=entry.collected and {252,246,230,255} or {240,232,214,140},
+            borderRadius=3,flexShrink=0,flexDirection="column"}
+        local clickable=entry.collected
+        row.props.onClick=clickable and function() B.OpenEntry(ctx,entry.fragmentId) end or function() end
+        list:AddChild(row)
+        text(row,tostring(index)..". "..branchLabel(entry),16,"bookEntryName_"..entry.fragmentId,
+            entry.collected and ink or inkFaint)
+        text(row,metaText(entry),12,"bookEntryMeta_"..entry.fragmentId,inkFaint)
+    end
+    return list
+end
+
+-- 详情：一条分支的后续全文与当时用料。
+local function renderEntry(ctx,state,page,host,entry)
+    local back=Harbor.Button {id="bookEntryBack",text="返回目录",width=140,minHeight=40,fontSize=14,
+        onClick=function() B.CloseEntry(ctx) end}
+    host:AddChild(back)
+    text(host,branchLabel(entry),19,"bookEntryTitle")
+    text(host,metaText(entry),13,"bookEntryMeta",inkFaint)
+    local scroll=UI.ScrollView {id="bookEntryBody",width="100%",flexGrow=1,flexShrink=1,flexBasis=0,scrollY=true,
+        showScrollbar=true,paddingRight=8,pointerEvents="box-none"}
+    host:AddChild(scroll)
+    text(scroll,entry.text or "这条后续还没有正文。",16,"bookEntryText")
+    local recipe=entry.recipeSummary
+    if recipe and recipe.main then
+        text(scroll,"当时用料",14,"bookEntryRecipeTitle",inkFaint)
+        text(scroll,"主词 "..tostring(recipe.main.text or "—"),14,"bookEntryRecipeMain",inkFaint)
+        for index,aux in ipairs(recipe.aux or {}) do
+            text(scroll,"辅词 "..tostring(index).." "..tostring(aux.text or "—"),14,"bookEntryRecipeAux"..index,inkFaint)
+        end
+        for index,row in ipairs(recipe.ingredients or {}) do
+            text(scroll,tostring(row.name or "原料").." × "..tostring(row.quantity or 1),14,"bookEntryRecipeIng"..index,inkFaint)
+        end
+    end
+    return scroll
+end
+
+function B.Render(ctx,overlay)
+    local state=B.State(ctx)
+    local safe=insets(ctx)
+    local width=panelWidth(ctx)
+    local panel=UI.Panel {id="activePanel",position="absolute",right=panelRight(ctx,state),top=safe.top+12,
+        width=width,height=viewportHeight(ctx)-(safe.top+12)-(safe.bottom+12),padding=14,gap=8,
+        backgroundImage=clothImage,backgroundFit="fill",
+        overflow="hidden",pointerEvents="box-none",onClick=function() end}
+    overlay:AddChild(panel)
+    state.panel=panel
+    local header=UI.Panel {id="journalBookHeader",width="100%",height=44,flexShrink=0,flexDirection="row",
+        alignItems="center",gap=8,pointerEvents="box-none"}
+    panel:AddChild(header)
+    -- 交给 UpdateChrome 按主机胶囊与安全区加内边距（和其它右栏面板同一路径）。
+    ctx.panelHeader=header
+    header:AddChild(Harbor.Tag {id="journalBookTitle",text="记录书",fontSize=15})
+    header:AddChild(UI.Panel {flexGrow=1,pointerEvents="none"})
+    header:AddChild(Harbor.Button {id="closePanel",text="×",width=44,minHeight=44,fontSize=22,
+        onClick=function() B.RequestClose(ctx) end})
+    local noticeArea=UI.ScrollView {id="journalBookMessageArea",width="100%",height=40,flexShrink=0,scrollY=true,
+        visible=false,paddingLeft=8,paddingRight=8,pointerEvents="box-none"}
+    ctx.panelNotice=text(noticeArea,ctx.model.message,13,"panelMessage",inkFaint);ctx.panelNoticeArea=noticeArea
+    panel:AddChild(noticeArea)
+
+    local body=UI.Panel {id="journalBookBody",width="100%",flexGrow=1,flexShrink=1,flexBasis=0,minHeight=0,
+        flexDirection="row",gap=8,pointerEvents="box-none"}
+    panel:AddChild(body)
+    local tabs=UI.ScrollView {id="bookTabs",width=B.TabWidth,flexShrink=0,scrollY=true,
+        marginRight=-8,paddingRight=8,gap=6,pointerEvents="box-none"}
+    body:AddChild(tabs)
+    local page=Harbor.Paper {id="bookPage",flexGrow=1,flexShrink=1,flexBasis=0,padding=18,gap=8,
+        overflow="hidden",onClick=function() end}
+    body:AddChild(page)
+    state.page=page
+    -- 书脊阴影与翻动页画在内容之上；布局由框架照常处理。
+    function page:CustomRenderChildren(nvg,renderFn)
+        local children=self:GetRenderChildren()
+        for i=1,#children do renderFn(children[i],nvg) end
+        self:RenderOverlays(nvg)
+    end
+    function page:RenderOverlays(nvg)
+        local rect=self:GetAbsoluteLayout()
+        if rect.w<=0 or rect.h<=0 then return end
+        nvgSave(nvg)
+        nvgIntersectScissor(nvg,rect.x,rect.y,rect.w,rect.h)
+        -- 书脊在右侧：外缘分段加深，读起来像摊开书的左半页。
+        for i=1,6 do
+            local alpha=14+i*8
+            nvgBeginPath(nvg);nvgRect(nvg,rect.x+rect.w-i*4,rect.y,4,rect.h)
+            nvgFillColor(nvg,nvgRGBA(86,64,44,alpha));nvgFill(nvg)
+        end
+        local flip=state.flip
+        if flip>0 then
+            local progress=math.max(0,math.min(1,flip/B.FlipSeconds))
+            local cover=rect.w*progress
+            if cover>2 then
+                local x=rect.x+rect.w-cover
+                -- 折页：外侧浅、靠书脊压暗，像纸被抬起又落回。
+                local sheet=nvgLinearGradient(nvg,x,0,rect.x+rect.w,0,
+                    nvgRGBA(236,224,198,255),nvgRGBA(203,186,155,255))
+                nvgBeginPath(nvg);nvgRect(nvg,x,rect.y,cover,rect.h);nvgFillPaint(nvg,sheet);nvgFill(nvg)
+                local fold=nvgLinearGradient(nvg,x,0,rect.x+rect.w,0,
+                    nvgRGBA(96,74,50,0),nvgRGBA(96,74,50,120))
+                nvgBeginPath(nvg);nvgRect(nvg,x,rect.y,cover,rect.h);nvgFillPaint(nvg,fold);nvgFill(nvg)
+                -- 底页上的投影，只画在翻动页外侧。
+                local cast=nvgLinearGradient(nvg,x-24,0,x,0,nvgRGBA(96,74,50,0),nvgRGBA(96,74,50,64))
+                nvgBeginPath(nvg);nvgRect(nvg,x-24,rect.y,24,rect.h);nvgFillPaint(nvg,cast);nvgFill(nvg)
+                nvgBeginPath(nvg);nvgRect(nvg,x,rect.y,2,rect.h);nvgFillColor(nvg,nvgRGBA(255,250,236,190));nvgFill(nvg)
+                if state.flipTitle then
+                    nvgFontFace(nvg,Theme.FontFace("story","normal"));nvgFontSize(nvg,Theme.FontSize(15))
+                    nvgTextAlign(nvg,math.floor(NVG_ALIGN_CENTER+NVG_ALIGN_MIDDLE))
+                    nvgFillColor(nvg,nvgRGBA(93,71,46,math.floor(140*progress)))
+                    nvgText(nvg,x+cover*.5,rect.y+rect.h*.5,state.flipTitle,nil)
+                end
+            end
+        end
+        nvgRestore(nvg)
+    end
+
+    local stories=ctx.session.queries.GetJournalStories()
+    if not stories.ok then
+        text(page,"记录暂时读不到："..tostring(stories.error.message or ""),15,"bookQueryError",inkFaint)
+        return
+    end
+    local rows=stories.value
+    local active=false
+    for _,row in ipairs(rows) do
+        if not active and state.story==row.sourceLetterId then active=true end
+    end
+    if not active then
+        state.story=false;state.entry=false
+        for _,row in ipairs(rows) do
+            if not state.story and row.received then state.story=row.sourceLetterId end
+        end
+        ctx.storyId=state.story
+    end
+    for _,row in ipairs(rows) do
+        indexTab(ctx,state,tabs,row,row.sourceLetterId==state.story)
+    end
+    if not state.story then
+        text(page,"还没有收到任何故事。剪开漂流瓶里的信，这里会记下每一支后续。",16,"bookEmpty",inkFaint)
+        return
+    end
+    local active_row=false
+    for _,row in ipairs(rows) do if row.sourceLetterId==state.story then active_row=row end end
+    if active_row and not active_row.received then
+        text(page,"这一页还空着。收到这封信以后，它记的分支会出现在这里。",16,"bookLocked",inkFaint)
+        return
+    end
+    local result=ctx.session.queries.GetJournalPage(state.story)
+    if not result.ok then
+        text(page,"这一页暂时读不到："..tostring(result.error.message or ""),15,"bookPageError",inkFaint)
+        return
+    end
+    local pageData=result.value
+    local entries=B.Entries(pageData)
+    if state.entry then
+        local selected=false
+        for _,entry in ipairs(entries) do if entry.fragmentId==state.entry then selected=entry end end
+        if selected and selected.collected then
+            renderEntry(ctx,state,pageData,page,selected)
+            return
+        end
+        state.entry=false
+    end
+    renderCatalog(ctx,pageData,page,entries)
+end
+
+return B

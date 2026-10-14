@@ -27,6 +27,7 @@
 ---@field label string
 ---@field layer integer
 ---@field target string
+---@field developerOnly? boolean
 ---@field minTouch number
 ---@field regions HomeRegion[]
 ---@type {version:string,projectRevision:integer,pageRevision:integer,sourceSha256:string,sourcePageId:string,width:number,height:number,background:string,layers:HomeLayer[],objects:HomeObject[]}
@@ -260,6 +261,23 @@ local manifest={
             }
         },
         {
+            ["id"]="home.trayHandle",
+            ["label"]="拉开词条托盘",
+            ["layer"]=2,
+            ["target"]="words",
+            ["minTouch"]=40,
+            ["regions"]={
+                {
+                    ["kind"]="ellipse",
+                    ["cx"]=0.13,
+                    ["cy"]=0.5,
+                    ["w"]=0.24,
+                    ["h"]=0.42,
+                    ["rotation"]=0
+                }
+            }
+        },
+        {
             ["id"]="home.net",
             ["label"]="海边捕捞",
             ["layer"]=3,
@@ -294,6 +312,7 @@ local manifest={
         },
         {
             ["id"]="home.caseFile",
+            ["developerOnly"]=true,
             ["label"]="案件板",
             ["layer"]=4,
             ["target"]="case",

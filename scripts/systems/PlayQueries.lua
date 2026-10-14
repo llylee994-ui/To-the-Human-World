@@ -56,26 +56,58 @@ function Q.New(session,content)
     end)
     api.GetJournalStories=query(function(data)
         local j=journal(data); local rows={}
-        for _,id in ipairs(G.Sorted(data.live.letters.byId)) do
-            local d=definition(data.live.letters.byId[id].letterId); local count,seen=0,{}
+        local function row(d)
+            local count,seen=0,{}
             for _,tid in ipairs(j.attemptIds) do local a=j.byAttemptId[tid]; if a.sourceLetterId==d.id then count=count+1; seen[a.outcomeKey]=true end end
-            rows[#rows+1]={sourceLetterId=d.id,title=title(d),attemptCount=count,discoveredOutcomeCount=#G.Sorted(seen)}
+            local template=content.GetFollowupTemplate(d.followupTemplateId)
+            return {sourceLetterId=d.id,title=title(d),received=data.live.letters.byId["letter:"..d.id]~=nil,
+                attemptCount=count,discoveredOutcomeCount=#G.Sorted(seen),totalBranchCount=template and #template.fragmentIds or 0}
+        end
+        -- 记录书标签：首发故事按订单顺序在前（未收到的也列出，供灰置标签），其余已收故事接在后面。
+        local listed={}
+        for _,sourceId in ipairs(content.release and content.release.requiredOrderIds or {}) do
+            local d=definition(sourceId); rows[#rows+1]=row(d); listed[d.id]=true
+        end
+        for _,id in ipairs(G.Sorted(data.live.letters.byId)) do
+            local d=definition(data.live.letters.byId[id].letterId)
+            if not listed[d.id] then rows[#rows+1]=row(d); listed[d.id]=true end
         end
         return rows
     end)
     api.GetJournalPage=query(function(data,id)
         local d=definition(id)
         G.Need(data.live.letters.byId["letter:"..id]~=nil,"UNKNOWN_ID","sourceLetterId","尚未收到该信件")
+        local template=content.GetFollowupTemplate(d.followupTemplateId)
+        local candidates=template and template.fragmentIds or {}
+        -- 一条记录属于哪一支：取模板候选里实际用到的那个片段；兜底用记录的第一个片段。
+        local function branchOf(record)
+            for _,fid in ipairs(candidates) do
+                for _,used in ipairs(record.followup.fragmentIds) do if used==fid then return fid end end
+            end
+            return record.followup.fragmentIds[1]
+        end
         local j=journal(data); local outcomes,index={},{}
         for _,tid in ipairs(j.attemptIds) do
             local a=j.byAttemptId[tid]
             if a.sourceLetterId==id then
                 local group=index[a.outcomeKey]
-                if not group then group={outcomeKey=a.outcomeKey,displayTitle=title(content.GetLetter(a.followup.letterId)),attempts={}}; index[a.outcomeKey]=group; outcomes[#outcomes+1]=group end
-                group.attempts[#group.attempts+1]={transactionId=tid,status=a.status,stars=a.rating.stars,recipeSummary=U.Copy(a.recipeDisplay)}
+                if not group then
+                    local branchId=branchOf(a); local frag=content.GetFragment(branchId)
+                    group={outcomeKey=a.outcomeKey,branchFragmentId=branchId,shortName=frag and frag.shortName or false,
+                        displayTitle=title(content.GetLetter(a.followup.letterId)),attempts={}}
+                    index[a.outcomeKey]=group; outcomes[#outcomes+1]=group
+                end
+                group.attempts[#group.attempts+1]={transactionId=tid,status=a.status,stars=a.rating.stars,
+                    day=a.attemptDay,text=a.followup.renderedText,recipeSummary=U.Copy(a.recipeDisplay)}
             end
         end
-        return {sourceLetterId=id,title=title(d),outcomes=outcomes}
+        -- 分支目录：模板全部候选（含未收集空位），短名取自内容配置。
+        local branches={}
+        for _,fid in ipairs(candidates) do
+            local frag=content.GetFragment(fid)
+            branches[#branches+1]={fragmentId=fid,shortName=frag and frag.shortName or false}
+        end
+        return {sourceLetterId=id,title=title(d),branches=branches,outcomes=outcomes}
     end)
     api.GetAttempt=query(function(data,id)
         G.Need(U.String(id),"INVALID_REQUEST","transactionId","缺少事务 ID")
@@ -136,6 +168,28 @@ function Q.New(session,content)
         return result
     end)
     api.GetCaseBoard=query(function(data) return G.Value(require("systems.CaseBoardProjection").Get(data,content)) end)
+    if session.initial and session.initial.chapter then
+    api.GetReleaseProgress=query(function(data)
+        G.Need(data.chapter~=nil,"NOT_IMPLEMENTED","release","此存档尚未接入首发终局")
+        local progress=G.Value(require("systems.ReleaseEndings").New(content).GetProgress(data))
+        progress.phase=data.chapter.phase
+        progress.endingsReady={departure=require("systems.ReleaseEndings").New(content).TextReady("departure"),
+            apprentice=require("systems.ReleaseEndings").New(content).TextReady("apprentice"),wish=require("systems.ReleaseEndings").New(content).TextReady("wish")}
+        return progress
+    end)
+    api.GetTravelTicketView=query(function(data)
+        G.Need(data.chapter~=nil,"NOT_IMPLEMENTED","release","此存档尚未接入首发终局")
+        return G.Value(require("systems.ReleaseCoordinator").New(content).GetTravelTicketView(data))
+    end)
+    api.GetWishView=query(function(data)
+        G.Need(data.chapter~=nil,"NOT_IMPLEMENTED","release","此存档尚未接入首发终局")
+        return G.Value(require("systems.ReleaseCoordinator").New(content).GetWishView(data))
+    end)
+    api.GetEndingView=query(function(data)
+        G.Need(data.chapter~=nil,"NOT_IMPLEMENTED","release","此存档尚未接入首发终局")
+        return G.Value(require("systems.ReleaseCoordinator").New(content).GetEndingView(data))
+    end)
+    end
     return api
 end
 return Q

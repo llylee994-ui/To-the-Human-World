@@ -11,7 +11,7 @@ function Session.New(content,options)
     local bus=options.eventBus or require "core.EventBus"
     ---@type table<string, table>
     local modules={gameFlow=flow,letters=require("systems.Letter").New(content),wordTokens=require("systems.WordToken").New(content),
-        economy=require("systems.Economy").New(content),world=require("systems.WorldState").New(content),narrative=require("systems.Narrative").New(content),orders=require("systems.Order").New(content)}
+        economy=require("systems.Economy").New(content),world=require("systems.WorldState").New(content),narrative=require("systems.Narrative").New(content),orders=require("systems.Order").New(content,{schema4Projection=schema==4})}
     if (schema==3 or schema==4) then modules.orders=require("systems.OrderTrial").Wrap(modules.orders,content,limit,schema) end
     modules.currentOrder=modules.orders.CurrentOrder
     local initial=G.Run(function()

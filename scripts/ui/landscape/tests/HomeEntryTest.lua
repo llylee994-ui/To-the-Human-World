@@ -12,8 +12,13 @@ local function check(ok,message) count=count+1; assert(ok,message) end
 local function must(r) assert(r.ok,cjson.encode(r.error)); return r.value end
 local function trace(value) print("[HomeEntry] "..value) end
 function T.Run()
+    -- Preserve the complete legacy room regression, including its case board.
+    -- The release player entry is covered by debug.ReleaseUITest.
+    local Data=U.Copy(Data);Data.release=nil
     package.loaded["debug.DeveloperMode"]=false
     local zoomHost=require("ui.landscape.tests.ZoomTestHost").New()
+    local testUI=require "urhox-libs/UI"
+    testUI.MeasureTextWidth=testUI.MeasureTextWidth or function(value,size) return utf8.len(value)*size end
     local x=F.New(Data,{targetSchema=3})
     local view=View.New(x.session,Data)
     local function control(id) return assert(view.root:FindById(id),"control missing: "..id) end
@@ -103,11 +108,17 @@ function T.Run()
     local sample=assert(require("debug.fixtures.NumericV02Cases")[1]).recipe
     local main=assert(tokens[sample.mainWordId]);local extra=false
     for _,card in ipairs(cards) do if card.tokenId~=main then extra=card.tokenId;break end end
-    click("card_"..main);click("card_"..extra)
+    local mainCard=false
+    for _,card in ipairs(cards) do if card.tokenId==main then mainCard=card end end
+    assert(mainCard,"fixture main word appears in the tray query")
+    click("wordTrayTab_"..mainCard.categoryId)
+    check(view.root:FindById("wordTrayCard_"..main),"collected word is browsable in the tray")
+    must(view.model.Drop("word",main));must(view.model.Drop("word",extra))
     local draft=view.model.GetDraft()
     check(draft.mainTokenId==main and draft.auxTokenIds[1]==extra,"real source IDs in draft")
-    click("card_"..main);check(view.model.GetDraft().mainTokenId==false and view.model.GetDraft().auxTokenIds[1]==extra,"main removal does not promote aux")
-    click("card_"..main);click("card_"..extra);click("closePanel")
+    must(view.model.TakeOut("word",main));check(view.model.GetDraft().mainTokenId==false and view.model.GetDraft().auxTokenIds[1]==extra,"main removal does not promote aux")
+    must(view.model.Drop("word",main));must(view.model.TakeOut("word",extra));click("closePanel")
+    for _=1,20 do zoomHost.Step(view,1/60) end
     for _,line in ipairs(sample.ingredients) do for _=1,line.quantity do click("add_"..line.ingredientId) end end
     draft=view.model.GetDraft();click("returnHome")
     check(U.Equal(draft,view.model.GetDraft()),"return home preserves saved draft")
@@ -129,24 +140,30 @@ function T.Run()
     capture("pending")
     click("closePanel");click("returnHome")
     check(U.Equal(pending,x.state.GetSnapshot()),"return home preserves pending")
-    click("home.journal");click("story_"..definition.id);click("attempt_"..tid)
-    check(control("historyBody"):GetText()==pending.journal.byAttemptId[tid].followup.renderedText,"history renders stored text")
+    click("home.journal")
+    local pendingPage=must(x.session.queries.GetJournalPage(definition.id))
+    local pendingBranch=assert(pendingPage.outcomes[1],"pending attempt keeps its branch")
+    click("bookEntry_"..pendingBranch.branchFragmentId)
+    check(control("bookEntryText"):GetText()==pending.journal.byAttemptId[tid].followup.renderedText,"history renders stored text")
     check(not view.root:FindById("confirmOrder") and not view.root:FindById("resetOrder"),"history has no resolution commands")
     check(U.Equal(pending,x.state.GetSnapshot()),"history never recomputes or settles")
-    click("closePanel");click("closePanel");click("nextDay");click("confirmNextDay",true)
+    click("closePanel");click("nextDay");click("confirmNextDay",true)
     check(U.Equal(pending,x.state.GetSnapshot()),"pending blocks cross day")
     click("cancelNextDay");click("resumePending");click("resetOrder")
     check(must(x.session.queries.GetAttempt(tid)).status=="reset","reset attempt retained")
-    click("returnHome");click("home.journal");click("story_"..definition.id);click("attempt_"..tid)
-    check(control("historyBody"):GetText()==pending.journal.byAttemptId[tid].followup.renderedText,"reset history still readable")
-    capture("history-reset");click("closePanel");click("closePanel")
+    click("returnHome");click("home.journal")
+    local journalPage=must(x.session.queries.GetJournalPage(definition.id))
+    local branch=assert(journalPage.outcomes[1],"reset attempt keeps its branch")
+    click("bookEntry_"..branch.branchFragmentId)
+    check(control("bookEntryText"):GetText()==pending.journal.byAttemptId[tid].followup.renderedText,"reset history still readable")
+    capture("history-reset");click("closePanel")
     click("nextDay");before=x.state.GetSnapshot();x.fault="write";click("confirmNextDay");x.fault=false
     check(U.Equal(before,x.state.GetSnapshot()),"cross day write failure not installed")
     click("confirmNextDay");check(x.state.GetSnapshot().live.gameFlow.day==day+1,"empty draft allows explicit day")
     check(view.panel==false,"successful day closes confirmation")
     click("home.caseFile");check(control("caseEmpty"),"true unopened case state");click("closePanel")
     -- Recreate the view/session from saved state, never a production slot.
-    assert(x.Reload());view=View.New(x.session,Data);view.Open("brew");view.Update();click("brewWords");click("card_"..main);click("closePanel")
+    assert(x.Reload());view=View.New(x.session,Data);view.Open("brew");view.Update();click("brewWords");must(view.model.Drop("word",main));click("closePanel")
     for _,line in ipairs(sample.ingredients) do for _=1,line.quantity do click("add_"..line.ingredientId) end end
     click("previewOrder");local second=x.state.GetSnapshot();x.fault="write";click("confirmOrder");x.fault=false
     check(U.Equal(second,x.state.GetSnapshot()),"shipping failure preserves pending")

@@ -174,15 +174,18 @@ def compile_pack():
             follow_text = follow_text.split('\n## 作者区', 1)[0]
             sections = re.findall(r'^## (.*?)\n(.*?)(?=^## |\Z)', follow_text, re.M|re.S)
         assert len(sections) == len(rows), (oid, len(sections))
+        # 分支短名（记录书用）按 copy order 取标题表；数量错位必须立刻失败，不能悄悄串支。
+        branch_titles = titles['ordinaryBranches'][oid]
+        assert len(branch_titles) == len(COPY_ORDER[oid]), ('ordinaryBranches 与分支顺序长度不一致', oid, len(branch_titles))
         fragments = []
-        for suffix, (heading, text) in zip(COPY_ORDER[oid], sections):
+        for suffix, (heading, text), short_name in zip(COPY_ORDER[oid], sections, branch_titles):
             prefix = oid.lower() + ('_result_' if oid in ['E01','N01','N10'] else '_candidate_')
             branch = prefix + suffix
             row = next(x for x in rows if x['branch'] == branch)
             fid = 'frag_'+branch
             fragments.append(fid)
             pack['fragments'].append(dict(id=fid, templateId=tpl, kind='key', priority=0, requiresFacts=[branch],
-                excludesFacts=[], coversFacts=[branch], overrides=[], text=clean(text)))
+                excludesFacts=[], coversFacts=[branch], overrides=[], text=clean(text), shortName=short_name))
             # Story headings are editable titles; evaluation wording is independent.
             feedback = titles['ratingFeedback'].get('rating_'+branch, heading.split('｜',1)[-1])
             pack['orderRatings'].append(dict(id='rating_'+branch, ratingSetId=rating_set, priority=0, stars=row['stars'],

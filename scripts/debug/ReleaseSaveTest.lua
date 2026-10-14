@@ -93,6 +93,34 @@ function T.Run()
         assert(not old.state.Load("b5_flow"),"schema3 accepted permanent fields from newer schema4")
         assert(not x.Reload() and U.Equal(files,x.files),"downgraded ledger accepted as old schema3")
     end)
+    for _,phase in ipairs({"idle","pending"}) do
+        for _,purchased in ipairs({false,true}) do
+            check("schema2 rejects downgraded permanent ledger "..phase.." "..tostring(purchased),function()
+                local x=R.New(600)
+                if purchased then must(x.state.PurchaseHomeItem(R.Quote(x,"decor_chair",100))) end
+                if phase=="pending" then R.Preview(x,R.Accept(x,1)) end
+                local d=require("core.SchemaProjection").V2(x.state.GetSnapshot())
+                assert(x.save.Save("b5_flow",d,2));local files=U.Copy(x.files)
+                local old=require("core.GameSession").New(x.content,{targetSchema=2,saveSystem=x.save,eventBus=x.bus})
+                local before=old.state.GetSnapshot()
+                local loaded,status=old.state.Load("b5_flow")
+                assert(not loaded,"schema2 accepted permanent fields from newer schema4")
+                assert(status.error.code=="STATE_INVALID" and status.error.path=="live.economy.itemPurchases")
+                assert(U.Equal(before,old.state.GetSnapshot()) and U.Equal(files,x.files),"rejected load changed state or saved bytes")
+                assert(not x.Reload() and U.Equal(files,x.files),"downgraded ledger migrated as old schema2")
+            end)
+        end
+    end
+    check("same-content genuine schema2 still buys, reloads and advances",function()
+        local x=R.New(600,2)
+        must(x.state.PurchaseFurniture({furnitureId="decor_chair"}))
+        assert(x.Reload() and x.state.GetSnapshot().live.economy.currency==500)
+        local e=x.state.GetSnapshot().live.economy
+        assert(e.itemPurchases==nil and e.ownedFurnitureIds.decor_chair and #e.furniturePurchases==1)
+        must(x.state.NextDay())
+        assert(x.Reload() and x.state.GetSnapshot().live.gameFlow.day==2)
+        assert(x.state.GetSnapshot().live.economy.currency==500)
+    end)
     return done()
 end
 return T

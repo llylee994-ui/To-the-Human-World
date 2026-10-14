@@ -2,7 +2,7 @@
 local U=require "core.StateUtil"
 local G=require "systems.CalculationGuard"
 local Lifecycle={}
-function Lifecycle.Attach(api,content)
+function Lifecycle.Attach(api,content,options)
     local letter=require("systems.Letter").New(content)
     local words=require("systems.WordToken").New(content)
     local economy=require("systems.Economy").New(content)
@@ -64,7 +64,7 @@ function Lifecycle.Attach(api,content)
         return result
     end
     function api.CurrentOrder.GetSnapshot() return U.Copy(current) end
-    api.ValidateEnvelope=require("systems.OrderAudit").New(content,api).ValidateEnvelope
+    api.ValidateEnvelope=require("systems.OrderAudit").New(content,api,options).ValidateEnvelope
 
     local function active(data,request)
         G.Need(type(data.currentOrder)=="table" and data.currentOrder.orderId==request.orderId,"INVALID_ORDER_STATE","orderId","当前没有该订单")

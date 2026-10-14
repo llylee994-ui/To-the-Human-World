@@ -43,18 +43,23 @@ function N.New()
                 capture("home-clean");v.Open("journal");v.Update()
             elseif phase==3 then
                 capture("journal-list")
-                assert(v.root:FindById("story_letter_pa_01")).props.onClick();v.Update()
+                assert(v.root:FindById("bookTab_letter_pa_01"),"story index tab").props.onClick();v.Update()
+                local page=v.session.queries.GetJournalPage("letter_pa_01").value
+                local branch=false
+                for _,outcome in ipairs(page.outcomes) do if not branch then branch=outcome.branchFragmentId end end
+                assert(branch,"fixture has a collected branch to open")
+                assert(v.root:FindById("bookEntry_"..branch),"collected branch row").props.onClick();v.Update()
             elseif phase==4 then
                 capture("journal-detail")
                 local close=assert(v.root:FindById("closePanel")):GetAbsoluteLayout()
                 local w,h=UI.GetViewportSize()
                 assert(close.y>=h*.212,"close control overlaps the simulated capsule")
-                local back=assert(v.root:FindById("journalBack"));local r=back:GetAbsoluteLayout()
+                local back=assert(v.root:FindById("bookEntryBack"));local r=back:GetAbsoluteLayout()
                 local x,y=r.x+r.w/2,r.y+r.h/2
                 assert(UI.FindWidgetAt(x,y)==back,"journal return pointer blocked")
                 UI.HandlePointerDown(Event.new("PointerDown",{x=x,y=y,button=MOUSEB_LEFT,pointerType="touch",pointerId=1}))
                 UI.HandlePointerUp(Event.new("PointerUp",{x=x,y=y,button=MOUSEB_LEFT,pointerType="touch",pointerId=1}))
-                v.Update();assert(not v.storyId,"journal return did not show directory")
+                v.Update();assert(v.root:FindById("bookEntryText")==nil,"journal return did not show the branch directory")
                 v.Close();v.Navigate("brew");v.Update()
             elseif phase==5 then capture("brew");v.Navigate("seaside");v.Open("shop");v.Update()
             elseif phase==6 then

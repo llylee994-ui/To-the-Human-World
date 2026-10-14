@@ -5,7 +5,7 @@ local Potion = require "systems.Potion"
 local Story = require "systems.StoryRules"
 local Order = {}
 
-function Order.New(content)
+function Order.New(content,options)
     local words=require("systems.WordToken").New(content)
     local letters=require("systems.Letter").New(content)
     local economy=require("systems.Economy").New(content)
@@ -191,7 +191,7 @@ function Order.New(content)
             return {stars=rule.stars,feedback=rule.feedback,ruleId=rule.id,factIds=U.Copy(rule.requiresFacts)}
         end)
     end
-    require("systems.OrderLifecycle").Attach(api,content)
+    require("systems.OrderLifecycle").Attach(api,content,options)
     return api
 end
 

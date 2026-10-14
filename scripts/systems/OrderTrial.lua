@@ -30,7 +30,7 @@ function T.Wrap(legacy,content,limit,schema)
     function api.ValidateEnvelope(data)
         return G.Run(function()
             local validate=schema==4 and require("core.SaveSchema").ValidateV4 or require("core.SaveSchema").ValidateV3
-            G.Value(validate(data,{contentVersion=content.contentVersion,synthesisVersion=content.synthesis.version,
+            G.Value(validate(data,{content=content,contentVersion=content.contentVersion,synthesisVersion=content.synthesis.version,
                 economy=require("systems.Economy").New(content),letters=require("systems.Letter").New(content),wordTokens=require("systems.WordToken").New(content),salvageDailyLimit=limit}))
             G.Value(api.CurrentOrder.ValidateSnapshot(data.currentOrder))
             G.Value(J.Validate(data,content))

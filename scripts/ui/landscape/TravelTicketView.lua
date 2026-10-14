@@ -47,7 +47,9 @@ function V.Confirm(ctx,overlay)
             if result.ok then
                 local value=result.value
                 if value and value.departed==true and type(value.ending)=="table" and U.String(value.ending.title) and U.String(value.ending.text) then
-                    ctx.ticketConfirm=false;ctx.ticketEnding=U.Copy(value.ending);ctx.Open("ticketEnding")
+                    ctx.ticketConfirm=false
+                    if rawget(ctx.session.queries,"GetEndingView") then ctx.Open("ending")
+                    else ctx.ticketEnding=U.Copy(value.ending);ctx.Open("ticketEnding") end
                 else ctx.model.Notify(U.Fail("TICKET_RESULT_INVALID","ticket","启程结果需要核对，请重新读取进度。")) end
             end
         end})

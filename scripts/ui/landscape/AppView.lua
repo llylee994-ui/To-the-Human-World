@@ -14,6 +14,11 @@ local Theme=require "urhox-libs/UI/Core/Theme"
 local SeaArt=require "ui.landscape.SeaArt"
 local Shop=require "ui.landscape.ShopView"
 local TicketView=require "ui.landscape.TravelTicketView"
+local WordTray=require "ui.landscape.WordTrayDrawer"
+local JournalBook=require "ui.landscape.JournalBook"
+local Closing=require "ui.landscape.ReleaseClosingView"
+local Wish=require "ui.landscape.WishView"
+local Ending=require "ui.landscape.EndingView"
 local A={}
 local side={words="left",journal="right"}
 local titles={letters="来信抽屉",reader="阅读信件",words="词条栏",journal="故事记录",attempt="试做记录",shop="商队商店",case="案件板",day="结束当天",result="试做结果"}
@@ -63,7 +68,9 @@ function A.New(session,content,enabled)
     local ctx={root=root,model=model,session=session,content=content,
         scene="home" --[[@as string]],panel=false --[[@as string|false]],stack={},
         storyId=false --[[@as string|false]],shopSelectedId=false --[[@as string|false]],readerCache=false --[[@as table|false]],choosingLetter=false --[[@as boolean]],
+        wordTray=false --[[@as table|false]],
         ticketConfirm=false --[[@as boolean]],ticketQuote=false --[[@as table|false]],ticketEnding=false --[[@as table|false]],
+        releasePhase=false --[[@as string|false]],newPlaythroughConfirm=false --[[@as boolean]],
         panelNotice=false --[[@as Label|false]],panelNoticeArea=false --[[@as ScrollView|false]],
         panelHeader=false --[[@as Widget|false]],
         zoom=Zoom.New(),salvage=Salvage.New(),destroyed=false --[[@as boolean]],portrait=false --[[@as boolean]],
@@ -80,7 +87,7 @@ function A.New(session,content,enabled)
         if id=="home.net" then ctx.BeginHomeZoom()
         elseif id=="home.stove" then ctx.BeginHomeZoom("stove")
         else ctx.Open(target) end
-    end,developer); stage:AddChild(home.root); ctx.home=home
+    end,developer,content.release~=nil); stage:AddChild(home.root); ctx.home=home
     home.SetInspect(require("ui.landscape.DevChecks").hotspots)
     local scene=Harbor.Paper {id="functionalScene",position="absolute",left=0,top=0,width="100%",height="100%",padding=0,paddingTop=64,visible=false}
     stage:AddChild(scene)
@@ -121,7 +128,7 @@ function A.New(session,content,enabled)
         ctx.safeInsets=safe;ctx.viewport=viewport
         ctx.menuRect=menu and {left=menu.left,top=menu.top,right=menu.right,bottom=menu.bottom} or nil
         home.SetPanelOpen(ctx.panel~=false)
-        hud:SetVisible(not ctx.panel)
+        hud:SetVisible(not ctx.panel and (not ctx.releasePhase or ctx.releasePhase=="operating"))
         local label=ledger:GetText()
         local measured=UI.MeasureTextWidth and UI.MeasureTextWidth(label,Theme.FontSize(13),Harbor.fontFamily) or (utf8.len(label) or 0)*10
         local ledgerWidth=math.max(144,measured+36)
@@ -147,6 +154,8 @@ function A.New(session,content,enabled)
             end
         end
         local required=ledgerWidth+12+108+72+24+(ctx.scene~="home" and 114 or 0)+(pending and pending.props.visible and 122 or 0)
+        local finish=hud:FindById("finishJourney")
+        if finish and finish.props.visible then required=required+116 end
         local safeWidth=math.max(0,vw-safe.left-safe.right)
         local offsets=HudLayout.Compute({x=safe.left,y=safe.top+8,w=safeWidth,h=48},viewport,menu,required)
         local p=hud.props
@@ -239,6 +248,7 @@ function A.New(session,content,enabled)
     local destroyRoot=root.Destroy
     function root:Destroy()
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
+        WordTray.Reset(ctx);JournalBook.Reset(ctx)
         ctx.destroyed=true
         if ctx.yawProbe then ctx.yawProbe.Close() end
         ctx.CancelHomeZoom("destroyed");ctx.CancelSalvage("destroyed");destroyRoot(self)
@@ -250,8 +260,10 @@ function A.New(session,content,enabled)
     end
     function ctx.Navigate(target)
         if ctx.destroyed or ctx.salvage.active or ctx.ticketEnding then return end
+        if ctx.releasePhase and ctx.releasePhase~="operating" then return end
         if ctx.yawProbe then ctx.yawProbe.Close("navigate") end
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
+        WordTray.Reset(ctx);JournalBook.Reset(ctx)
         ctx.CancelHomeZoom("navigate")
         ctx.scene=target; ctx.panel=false; ctx.stack={}; ctx.readerCache=false; ctx.choosingLetter=false;ctx.ticketConfirm=false;ctx.ticketQuote=false
         if target=="home" then model.ReturnHome() else model.Navigate(target) end
@@ -260,11 +272,16 @@ function A.New(session,content,enabled)
     function ctx.Push(kind)
         if ctx.destroyed or ctx.portrait or ctx.zoom.active or ctx.salvage.active or ctx.yawProbe then return end
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
+        WordTray.Reset(ctx);JournalBook.Reset(ctx)
         ctx.stack[#ctx.stack+1]=ctx.panel or false; ctx.panel=kind; ctx.readerCache=false; model.dirty=true
     end
     function ctx.Close()
         if ctx.destroyed or ctx.zoom.active or ctx.salvage.active or ctx.ticketEnding or ctx.yawProbe then return end
+        if ctx.releasePhase and ctx.releasePhase~="operating" then
+            ctx.panel=ctx.releasePhase=="wish" and "wish" or "closing";ctx.stack={};model.dirty=true;return
+        end
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
+        WordTray.Reset(ctx);JournalBook.Reset(ctx)
         ctx.ticketConfirm=false;ctx.ticketQuote=false
         if ctx.panel=="journal" then ctx.storyId=false end
         ctx.panel=table.remove(ctx.stack) or false; ctx.readerCache=false
@@ -291,8 +308,16 @@ function A.New(session,content,enabled)
     end
     function ctx.Open(kind)
         if ctx.destroyed or ctx.portrait or ctx.zoom.active or ctx.salvage.active or ctx.yawProbe then return end
+        if kind=="case" and content.release and not developer then return end
+        if ctx.releasePhase and ctx.releasePhase~="operating" then
+            if ctx.releasePhase=="ended" and kind~="ending" then return end
+            if ctx.releasePhase=="closing_prepare" and kind~="closing" then return end
+            if ctx.releasePhase=="closing" and kind~="closing" and kind~="wish" then return end
+            if ctx.releasePhase=="wish" and kind~="wish" and kind~="wishPreview" and kind~="closing" then return end
+        end
         if ctx.ticketEnding and kind~="ticketEnding" then return end
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
+        WordTray.Reset(ctx);JournalBook.Reset(ctx)
         ctx.ticketConfirm=false;ctx.ticketQuote=false
         if kind=="paper" then ctx.OpenPaper(); return end
         if kind=="home" or kind=="brew" or kind=="seaside" then ctx.Navigate(kind); return end
@@ -306,6 +331,8 @@ function A.New(session,content,enabled)
         if ctx.scene=="home" and not ctx.zoom.active and not ctx.salvage.active then home.ShowHints(not home.HintsVisible()) end
     end})
     hud:AddChild(Harbor.Button {id="nextDay",text="结束当天",width=108,minHeight=44,fontSize=15,onClick=function() ctx.Open("day") end})
+    hud:AddChild(Harbor.Button {id="finishJourney",text="旅程收尾",width=108,minHeight=44,fontSize=15,visible=false,
+        onClick=function() model.BeginClosing() end})
     if yawEnabled then
         hud:AddChild(Harbor.Button {id="openHomeYawProbe",text="转头验证",width=106,minHeight=44,onClick=ctx.OpenYawProbe})
     end
@@ -326,7 +353,14 @@ function A.New(session,content,enabled)
                 backgroundColor={18,24,20,190},onClick=function() end})
         end
         if kind=="shop" then Shop.Render(ctx,overlay);return end
+        if kind=="words" then WordTray.Open(ctx);WordTray.Render(ctx,overlay);return end
+        if kind=="journal" then JournalBook.Open(ctx);JournalBook.Render(ctx,overlay);return end
         if kind=="ticketEnding" then TicketView.Ending(ctx,overlay);return end
+        if kind=="closing" or kind=="wish" or kind=="wishPreview" or kind=="ending" then
+            local module=kind=="closing" and Closing or kind=="ending" and Ending or Wish
+            local view=module.New(ctx) --[[@as ReleasePage]]
+            overlay:AddChild(view.root);return
+        end
         local safe=ctx.safeInsets or {left=0,top=0,right=0,bottom=0}
         local viewport=ctx.viewport
         local panelProps={id="activePanel",position="absolute",top=location and 0 or "3%",bottom=location and 0 or "3%",
@@ -364,6 +398,26 @@ function A.New(session,content,enabled)
         assert(Panels.Renderers[kind])(ctx,body)
     end
     local function syncSavedTicketEnding()
+        local endingQuery=rawget(session.queries,"GetEndingView")
+        if endingQuery then
+            local saved=endingQuery()
+            if not saved.ok then model.Notify(saved);return end
+            local phase=saved.value.phase
+            local changed=phase~=ctx.releasePhase
+            ctx.releasePhase=phase
+            if changed then
+                if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
+                WordTray.Reset(ctx);JournalBook.Reset(ctx);ctx.CancelHomeZoom("releasePhase");ctx.CancelSalvage("releasePhase")
+                ctx.stack={};ctx.readerCache=false;ctx.ticketEnding=false;ctx.ticketConfirm=false;ctx.ticketQuote=false
+                ctx.newPlaythroughConfirm=false;ctx.scene="home"
+                ctx.panel=phase=="ended" and "ending" or phase=="wish" and "wish" or phase~="operating" and "closing" or false
+            end
+            if phase=="ended" then ctx.panel="ending"
+            elseif phase=="closing_prepare" and ctx.panel~="reader" then ctx.panel="closing"
+            elseif phase=="closing" and ctx.panel~="closing" then ctx.panel="closing"
+            elseif phase=="wish" and ctx.panel~="wish" and ctx.panel~="wishPreview" and ctx.panel~="closing" then ctx.panel="wish" end
+            return
+        end
         local query=rawget(session.queries,"GetTravelTicketView")
         if not query then return end
         local saved=query()
@@ -383,6 +437,7 @@ function A.New(session,content,enabled)
         if ctx.readerCache and ctx.readerCache.presentation then
             ctx.readerCache.presentation.Update(dt,input:HasFocus() and not input:IsMinimized())
         end
+        WordTray.Update(ctx,dt);JournalBook.Update(ctx,dt)
         if ctx.scene=="seaside" then seaside.Update(GetTime():GetTimeStep()) end
         if ctx.salvage.active then
             local clock=GetTime()
@@ -415,6 +470,12 @@ function A.New(session,content,enabled)
         back:SetVisible(not ctx.ticketEnding and ctx.scene~="home")
         local dayButton=hud:FindById("nextDay")
         if dayButton then dayButton:SetVisible(not ctx.ticketEnding) end
+        local finishButton=hud:FindById("finishJourney")
+        if finishButton then
+            local query=rawget(session.queries,"GetReleaseProgress")
+            local progress=query and query()
+            finishButton:SetVisible(progress and progress.ok and progress.value.canClose and ctx.releasePhase=="operating" or false)
+        end
         if developer and home.inspect then notice:SetText("热区检查 · "..(home.lastHit~="" and home.lastHit or "点击主体查看命中")) end
         if model.letterEdited and ctx.panel=="reader" and Panels.RefreshReader(ctx) then model.letterEdited=false; return end
         model.letterEdited=false

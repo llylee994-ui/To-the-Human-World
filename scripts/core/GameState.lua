@@ -230,7 +230,18 @@ function GameState.New(options)
         if #errors>0 then value.notificationErrors=errors end
         return U.Ok(value)
     end
+    local function releaseGate(data,name)
+        if targetSchema~=4 then return U.Ok(true) end
+        if not data or not data.chapter then return U.Fail("STATE_NOT_READY","chapter","请先读取首发存档") end
+        local called,result=pcall(function() return require("systems.ReleaseCoordinator").New(options.content).GetAction(data,name) end)
+        if not called then return U.Fail("CONFIG_INVALID","release",tostring(result)) end
+        return result
+    end
     function api.CheckAction(name)
+        if targetSchema==4 and envelope and api.CanMutate() then
+            local gate=releaseGate(envelope,name)
+            if not gate.ok then return {enabled=false,reasonCode=gate.error.code,message=gate.error.message} end
+        end
         local enabled,code,message=true,"",""
         local phase=envelope and envelope.currentOrder and envelope.currentOrder.phase or "idle"
         if not api.CanMutate() then enabled,code,message=false,"STATE_LOCKED","请先读取存档排除配置或提交错误"
@@ -266,6 +277,7 @@ function GameState.New(options)
         if busy then return U.Fail("COMMAND_BUSY","GameState","候选提交期间禁止嵌套命令") end
         if not api.CanMutate() then return U.Fail("STATE_LOCKED","GameState","请先排除配置或提交错误") end
         if targetSchema<2 or not options.order then return U.Fail("RESTORER_MISSING","Order","订单恢复器未接入") end
+        local gate=releaseGate(api.GetSnapshot(),kind);if not gate.ok then return gate end
         busy=true
         local called,result=pcall(function()
             local current=api.GetSnapshot()
@@ -280,12 +292,14 @@ function GameState.New(options)
     end
     function api.NextDay()
         if not api.CanMutate() then return U.Fail("STATE_LOCKED", "GameState", "当前禁止推进") end
+        local gate=releaseGate(api.GetSnapshot(),"NextDay");if not gate.ok then return gate end
         if targetSchema>=2 and envelope and envelope.currentOrder~=false and envelope.currentOrder.phase~="accepted" then
             return U.Fail("ORDER_LOCKED","currentOrder.phase","已建立炼药基准或待确认，禁止跨天")
         end
         if (targetSchema==3 or targetSchema==4) and envelope and envelope.currentOrder and not require("systems.RecipeDraft").IsEmpty(envelope.currentOrder.draft) then
             return U.Fail("DRAFT_NOT_EMPTY","draft","请先清空投料再跨天")
         end
+        if targetSchema==4 and envelope.live.gameFlow.day>=options.content.release.finalDay then return api.BeginClosing({expectedRevision=envelope.revision}) end
         if targetSchema>=2 then
             busy=true
             local called,result=pcall(function()
@@ -308,6 +322,8 @@ function GameState.New(options)
     local function command(kind,request)
         if busy then return U.Fail("COMMAND_BUSY","GameState","候选提交期间禁止嵌套操作") end
         if not api.CanMutate() then return U.Fail("STATE_LOCKED","GameState","请先排除配置、读档或提交错误") end
+        local name=kind=="receive" and "ReceiveLetter" or kind=="read" and "ReadLetter" or "CutWord"
+        local gate=releaseGate(api.GetSnapshot(),name);if not gate.ok then return gate end
         if targetSchema < 2 then return U.Fail("V2_REQUIRED","schema","完整 v2 尚未启用，不能保存信件或词条") end
         if not envelope or not schemaOptions.letters or not schemaOptions.wordTokens then return U.Fail("RESTORER_MISSING","letters/wordTokens","真实信件和词条恢复器尚未接入") end
         busy = true
@@ -322,6 +338,10 @@ function GameState.New(options)
             if not valid.ok then return valid end
             if current.currentOrder ~= false and current.currentOrder.phase ~= "accepted" then
                 return U.Fail("ORDER_LOCKED","currentOrder.phase","已建立炼药基准或待确认，禁止改变信件和词条",{phase=current.currentOrder.phase})
+            end
+            if targetSchema==4 then
+                valid=require("systems.ReleaseCoordinator").New(options.content).CheckPreparationRequest(current,kind,request)
+                if not valid.ok then return valid end
             end
             local candidate, planned, token = U.Copy(current), nil, nil
             if kind=="receive" then planned=letters.PlanReceive(current.live.letters,request.letterId)
@@ -352,6 +372,7 @@ function GameState.New(options)
             end
             candidate.live.letters=planned.value.state
             candidate.revision=current.revision+1
+            if targetSchema==4 then require("systems.ReleaseCoordinator").New(options.content).AfterPreparation(candidate) end
             if not U.Integer(candidate.revision) then return U.Fail("STATE_INVALID","revision","版本计数溢出") end
             valid=prepare(candidate,targetSchema)
             if not valid.ok then return valid end
@@ -464,6 +485,28 @@ function GameState.New(options)
         busy=false
         if not called then return U.Fail("COMMAND_FAILED","PurchaseFurniture",tostring(result)) end
         return result
+    end
+    function api.ReleaseCommand(kind,request)
+        if busy then return U.Fail("COMMAND_BUSY","GameState","候选提交期间禁止嵌套命令") end
+        if not api.CanMutate() then return U.Fail("STATE_LOCKED","GameState","请先读取原槽核对进度") end
+        if targetSchema~=4 then return U.Fail("NOT_IMPLEMENTED","release","当前存档未接入首发终局") end
+        busy=true
+        local called,result=pcall(function()
+            local current=api.GetSnapshot();local valid=prepare(current,targetSchema)
+            if not valid.ok then return valid end
+            local planned=require("systems.ReleaseCoordinator").New(options.content).Plan(kind,current,request,options.initialState)
+            if not planned.ok then return planned end
+            if not planned.value.changed then return U.Ok(planned.value.value) end
+            return commit(planned.value.data,planned.value.value,planned.value.events)
+        end)
+        busy=false
+        if not called then return U.Fail("COMMAND_FAILED","release",type(result)=="table" and result.message or tostring(result)) end
+        return result
+    end
+    if targetSchema==4 then
+        for _,name in ipairs({"PurchaseTravelTicket","BeginClosing","BeginWish","UpdateWishDraft","ConfirmEnding","RestoreEndingCheckpoint","StartNewPlaythrough"}) do
+            api[name]=function(request)return api.ReleaseCommand(name,request)end
+        end
     end
     -- 仅调试专项使用：连同协调器的锁定/状态一起恢复，不能让测试解锁真实坏档。
     function api.WithPreservedState(callback)

@@ -11261,6 +11261,7 @@ return {
             ["requiresFacts"] = {
                 "e01_result_rested",
             },
+            ["shortName"] = "踏实的一夜",
             ["templateId"] = "tpl_pa_01",
             ["text"] = [=[早上是妹妹找围裙把我弄醒的。她怕吵着我就没点灯，找半天找不到，最后还是我爬起来拿给她。窗外刚有点亮，我这一觉睡得好，身上有劲，便顺手把昨晚剩的汤搁火上热了下肚。
 
@@ -11282,6 +11283,7 @@ return {
             ["requiresFacts"] = {
                 "e01_result_mother_dream",
             },
+            ["shortName"] = "梦里的母亲",
             ["templateId"] = "tpl_pa_01",
             ["text"] = [=[昨晚又梦见娘在旧桌子旁补衣裳。
 
@@ -11303,6 +11305,7 @@ return {
             ["requiresFacts"] = {
                 "e01_result_song_faded",
             },
+            ["shortName"] = "淡去的旧事",
             ["templateId"] = "tpl_pa_01",
             ["text"] = [=[昨晚躺下没多久就睡过去了。早上听见妹妹在屋里起床的动静，我也跟着起来，就着凉水吃了两口硬面包就去码头。今天搬货顺当，清点箱数也没差错，歇下来时只想找桶水痛快喝几口。
 
@@ -11324,6 +11327,7 @@ return {
             ["requiresFacts"] = {
                 "e01_result_mother_unclear",
             },
+            ["shortName"] = "梦里陌生的面孔",
             ["templateId"] = "tpl_pa_01",
             ["text"] = [=[今早醒来胳膊腿都不僵了，去码头搬重货时，再没让旁边的汉克照顾我。可歇下来坐在木箱上，心里却总想着昨晚的梦，越琢磨越不是滋味。
 
@@ -11347,6 +11351,7 @@ return {
             ["requiresFacts"] = {
                 "e01_result_fish_choir",
             },
+            ["shortName"] = "母亲与鱼的合唱",
             ["templateId"] = "tpl_pa_01",
             ["text"] = [=[昨晚梦见娘站在码头边上，面前整整齐齐排着一溜大白鱼，全都张着嘴等她领头唱。
 
@@ -11368,6 +11373,7 @@ return {
             ["requiresFacts"] = {
                 "e01_result_walking_crates",
             },
+            ["shortName"] = "会走路的货箱",
             ["templateId"] = "tpl_pa_01",
             ["text"] = [=[昨晚梦见我又回到了码头，娘手里捧着个大账本坐在搬货的木台子上，催我赶紧把搬完的货报给她算工钱。
 
@@ -11389,6 +11395,7 @@ return {
             ["requiresFacts"] = {
                 "e01_result_fragmented_dream",
             },
+            ["shortName"] = "零碎的怪梦",
             ["templateId"] = "tpl_pa_01",
             ["text"] = [=[昨晚梦里颠颠倒倒的全是鱼。一会儿是在深海里游，一会儿又全排在码头结工钱的木桌前。
 
@@ -11410,6 +11417,7 @@ return {
             ["requiresFacts"] = {
                 "e01_result_fragmented_song_faded",
             },
+            ["shortName"] = "半截调子与碎梦",
             ["templateId"] = "tpl_pa_01",
             ["text"] = [=[昨晚的梦碎得很，一会儿是深水里游着的鱼，一会儿又排到了码头结工钱的木桌前。最小那条嫌工头给的铜板少，贴着桌角往前挤，不肯挪窝。工头拿手背敲桌子赶它，它偏在桌沿上甩起尾巴，把铜钱拍得叮当响，滚了一地。我蹲下去帮着捡，捡着捡着，手里的铜钱变成了浅水滩里滑溜溜的石子，再往后就断片了。
 
@@ -11433,6 +11441,7 @@ return {
             ["requiresFacts"] = {
                 "n01_result_departure_agreed",
             },
+            ["shortName"] = "一个月后的新学徒",
             ["templateId"] = "tpl_n01",
             ["text"] = [=[大清早铺子还没上客，炉膛里的柴火刚点着。我把老板堵在后厨灶间，深吸了一口气，把在心里滚了三天的硬话砸了出来：“老板，我想清楚了，我决定去给抄写员当学徒。”
 
@@ -11460,6 +11469,7 @@ return {
             ["requiresFacts"] = {
                 "n01_result_departure_conflict",
             },
+            ["shortName"] = "抄写铺后屋的行李",
             ["templateId"] = "tpl_n01",
             ["text"] = [=[今早我刚起了个头，话还没落定，老板整个人就炸了。
 
@@ -11491,6 +11501,7 @@ return {
             ["requiresFacts"] = {
                 "n01_result_stayed_for_promise",
             },
+            ["shortName"] = "加薪与账本",
             ["templateId"] = "tpl_n01",
             ["text"] = [=[今早铺子里只有我们俩，我深吸一口气刚要摊牌，老板却像是早就料到了。
 
@@ -11528,6 +11539,7 @@ return {
             ["requiresFacts"] = {
                 "n01_result_missed_place",
             },
+            ["shortName"] = "错过的报到日",
             ["templateId"] = "tpl_n01",
             ["text"] = [=[那几天我真觉得自己是个能撑起大局的角色，两头我都答应得滴水不漏。
 
@@ -11567,6 +11579,7 @@ return {
             ["requiresFacts"] = {
                 "n01_result_started_learning",
             },
+            ["shortName"] = "纸上的第一行字",
             ["templateId"] = "tpl_n01",
             ["text"] = [=[去见老先生的那天早晨，我胸口其实憋着一股暗劲儿。这四年里我替整条巷子写了上百封家书，街坊们人人都夸我字写得漂亮、脑子灵光。我跨进老先生门槛的时候，胸脯挺得老高，急着想在这位饱学宿儒面前露一手，证明自己不是个只会搬烤盘的粗鄙伙计。
 
@@ -11608,6 +11621,7 @@ return {
             ["requiresFacts"] = {
                 "n02_candidate_good",
             },
+            ["shortName"] = "热汤与船上的故事",
             ["templateId"] = "tpl_n02",
             ["text"] = [=[他推门进屋的时候，外头天刚擦黑，靴面上结着一层厚厚的干白海盐和泥灰。
 
@@ -11637,6 +11651,7 @@ return {
             ["requiresFacts"] = {
                 "n02_candidate_swallowed",
             },
+            ["shortName"] = "咽回去的半句话",
             ["templateId"] = "tpl_n02",
             ["text"] = [=[他跨进门槛的那一刻，我脸上是笑着迎上去的，可胸口却像拉紧了一根细鱼线，绷得生疼。
 
@@ -11666,6 +11681,7 @@ return {
             ["requiresFacts"] = {
                 "n02_candidate_escaped",
             },
+            ["shortName"] = "饭桌上的旧问题",
             ["templateId"] = "tpl_n02",
             ["text"] = [=[锅里的热汤端上桌的时候，我心里明明千遍万遍地告诫过自己：把嘴闭紧，千万别提找活，千万别提银钱。
 
@@ -11701,6 +11717,7 @@ return {
             ["requiresFacts"] = {
                 "n02_candidate_care",
             },
+            ["shortName"] = "凉汤与没听完的故事",
             ["templateId"] = "tpl_n02",
             ["text"] = [=[他推门进屋的那一刻，我笑得合不拢嘴，一把接过他肩上沉甸甸的帆布行囊，连声催他快去铜盆边洗手。
 
@@ -11754,6 +11771,7 @@ return {
             ["requiresFacts"] = {
                 "n02_candidate_doubted",
             },
+            ["shortName"] = "紧闭的里屋门",
             ["templateId"] = "tpl_n02",
             ["text"] = [=[他推门进屋的那一刻，我高高兴兴把炖了很久的肉汤端上桌。
 
@@ -11819,6 +11837,7 @@ return {
             ["requiresFacts"] = {
                 "n03_candidate_good",
             },
+            ["shortName"] = "空篮子与盐袋",
             ["templateId"] = "tpl_n03",
             ["text"] = [=[早上天刚亮，我就把大篮子跨在胳膊上准备出门。娘在后头大声喊：“艾莉，千万别把盐给落下了啊！”我脆生生地应了一声。
 
@@ -11844,6 +11863,7 @@ return {
             ["requiresFacts"] = {
                 "n03_candidate_hide",
             },
+            ["shortName"] = "叔叔身后的摊位",
             ["templateId"] = "tpl_n03",
             ["text"] = [=[早上我还是把篮子背出门了。路上走得好好的，可一扎进集市，黑压压全是大人，我的心又开始慌了。我先在路边靠着墙站了好一会儿，等腿不发软了，才磨磨蹭蹭挪到蓝围裙叔叔旁边。
 
@@ -11865,6 +11885,7 @@ return {
             ["requiresFacts"] = {
                 "n03_candidate_freeze",
             },
+            ["shortName"] = "没有开口的午后",
             ["templateId"] = "tpl_n03",
             ["text"] = [=[早上我还是硬着头皮出门了。可一走到集口，人多得像麦浪一样挤来挤去，闹哄哄的声音全往我耳朵里钻。我站在路口呆呆地看路边的木牌子，一块、两块、三块……数着数着，脑子里全乱套了，我连该往哪边拐都拿不准了。娘画的那张纸明明就压在篮子底下，可我吓得手脚僵硬，连蹲下去翻一翻的胆子都没有。
 
@@ -11888,6 +11909,7 @@ return {
             ["requiresFacts"] = {
                 "n03_candidate_salt",
             },
+            ["shortName"] = "空篮子与空盐碗",
             ["templateId"] = "tpl_n03",
             ["text"] = [=[今天我一迈进集市的大拱门，一下子就瞅准了那个蓝围裙叔叔！我两只手稳稳提着大菜篮子，昂首挺胸走到他跟前，脆生生地喊了一声：“叔叔好！”
 
@@ -11940,6 +11962,7 @@ return {
             ["requiresFacts"] = {
                 "n03_candidate_protect",
             },
+            ["shortName"] = "巷口的大半篮萝卜",
             ["templateId"] = "tpl_n03",
             ["text"] = [=[今天一迈进集市的大道，我的小腰杆挺得像田里的麦秆一样直！我迈着大步走到蓝围裙叔叔跟前，脆生生喊了他一声，嗓门亮堂堂的，比周围那些扯着脖子招揽客人的大人还要神气。
 
@@ -12015,6 +12038,7 @@ return {
             ["requiresFacts"] = {
                 "n04_candidate_good",
             },
+            ["shortName"] = "纸旗与半块糖饼",
             ["templateId"] = "tpl_n04",
             ["text"] = [=[第二天再去扫钟楼，台阶上没有那些挂着的破旗子碍事，扫帚一挥顺溜多了，灰尘一堆一堆老老实实被我归拢到了墙角。
 
@@ -12036,6 +12060,7 @@ return {
             ["requiresFacts"] = {
                 "n04_candidate_envy",
             },
+            ["shortName"] = "石头下的纸旗",
             ["templateId"] = "tpl_n04",
             ["text"] = [=[今天我把台阶上的灰一路从墙角扫到塔门口，堆得比昨天还要高出一大截。
 
@@ -12059,6 +12084,7 @@ return {
             ["requiresFacts"] = {
                 "n04_candidate_tear",
             },
+            ["shortName"] = "撕成两半的旗子",
             ["templateId"] = "tpl_n04",
             ["text"] = [=[今天皮特又蹬蹬蹬跑上塔来了。昨天剩下的那半块糖饼他居然一直没舍得吃，今天特意掏出来在我眼前晃悠，挤眉弄眼地说要当着我的面一口吞掉。
 
@@ -12086,6 +12112,7 @@ return {
             ["requiresFacts"] = {
                 "n04_candidate_play",
             },
+            ["shortName"] = "灰堆上的马蹄印",
             ["templateId"] = "tpl_n04",
             ["text"] = [=[第二天我拎着扫帚上楼，才扫了两级台阶，皮特就从门外探进半个脑袋来。他嘴里嚼着糖饼，把剩下的一角递给我，我一把接过来，嚼得满嘴甜，连他手上还剩多少都没顾上瞧。
 
@@ -12131,6 +12158,7 @@ return {
             ["requiresFacts"] = {
                 "n04_candidate_past",
             },
+            ["shortName"] = "糊锅里的苦味",
             ["templateId"] = "tpl_n04",
             ["text"] = [=[第二天皮特来找我的时候，我已经把扫帚靠在厨房门边，正蹲在灶前往里头添柴。帮灶的婶婶给了我一小把糖屑，我全倒进了那只小铁锅，又舀了半瓢水进去，想熬一锅老厨娘从前做的甜汤。
 
@@ -12188,6 +12216,7 @@ return {
             ["requiresFacts"] = {
                 "n05_candidate_good",
             },
+            ["shortName"] = "盘底的野莓酱",
             ["templateId"] = "tpl_n05",
             ["text"] = [=[席间我仍旧坐在老位置，靠窗的那张高背软椅上。
 
@@ -12211,6 +12240,7 @@ return {
             ["requiresFacts"] = {
                 "n05_candidate_count",
             },
+            ["shortName"] = "鹅肉与煤钱",
             ["templateId"] = "tpl_n05",
             ["text"] = [=[今晚表姐家的席面摆得比上回还要体面。
 
@@ -12236,6 +12266,7 @@ return {
             ["requiresFacts"] = {
                 "n05_candidate_sad",
             },
+            ["shortName"] = "一口未动的烤鹅",
             ["templateId"] = "tpl_n05",
             ["text"] = [=[今晚我依旧坐在那个靠窗的软椅上。
 
@@ -12261,6 +12292,7 @@ return {
             ["requiresFacts"] = {
                 "n05_candidate_talk",
             },
+            ["shortName"] = "餐桌上的家事",
             ["templateId"] = "tpl_n05",
             ["text"] = [=[今晚第一碗浓汤端上来时，我便闻到了奶油的香气。胃里空了许久，我低头喝了一勺，觉得很好，便把剩下的也慢慢喝完了。
 
@@ -12314,6 +12346,7 @@ return {
             ["requiresFacts"] = {
                 "n05_candidate_fork",
             },
+            ["shortName"] = "银叉背面的云雀",
             ["templateId"] = "tpl_n05",
             ["text"] = [=[今晚我原本表现得还可以。
 
@@ -12375,6 +12408,7 @@ return {
             ["requiresFacts"] = {
                 "n06_candidate_good",
             },
+            ["shortName"] = "合好的旧椅子",
             ["templateId"] = "tpl_n06",
             ["text"] = [=[新榫头推着旧卯眼，只听“喀哒”一声闷响，严丝合缝地咬死了。
 
@@ -12400,6 +12434,7 @@ return {
             ["requiresFacts"] = {
                 "n06_candidate_pain",
             },
+            ["shortName"] = "疼痛里的木屑",
             ["templateId"] = "tpl_n06",
             ["text"] = [=[榫头到底还是砸进了卯眼，只是这一趟活走得太磨人。
 
@@ -12425,6 +12460,7 @@ return {
             ["requiresFacts"] = {
                 "n06_candidate_stop",
             },
+            ["shortName"] = "停在半途的椅腿",
             ["templateId"] = "tpl_n06",
             ["text"] = [=[凿到榫肩最吃紧的一刀，腕子里突然像被细针狠扎了一下，猛地一抽。
 
@@ -12456,6 +12492,7 @@ return {
             ["requiresFacts"] = {
                 "n06_candidate_sleep",
             },
+            ["shortName"] = "榫口与暮色",
             ["templateId"] = "tpl_n06",
             ["text"] = [=[今天下凿的时候，手倒真稳当。木槌先在料上轻敲三下，凿刃顺着划好的线往里吃，一片片薄木屑翻出来，榫肩留得方方正正。
 
@@ -12501,6 +12538,7 @@ return {
             ["requiresFacts"] = {
                 "n06_candidate_split",
             },
+            ["shortName"] = "卯眼边的裂缝",
             ["templateId"] = "tpl_n06",
             ["text"] = [=[今天我手里拿着凿子，沿榫肩一边边走下来，木线留得清楚，我凑近看了两遍，心里还挺得意，想着闺女下回再来，得让她瞧瞧我修好的椅子，别一进门就劝我收家伙什。
 
@@ -12550,6 +12588,7 @@ return {
             ["requiresFacts"] = {
                 "n07_candidate_good",
             },
+            ["shortName"] = "蓝布兜里的工钱",
             ["templateId"] = "tpl_n07",
             ["text"] = [=[大清早，我把收条按日子一张叠一张理得整齐，揣在衣襟里进了石鸥客栈的大堂。
 
@@ -12579,6 +12618,7 @@ return {
             ["requiresFacts"] = {
                 "n07_candidate_soft",
             },
+            ["shortName"] = "柜台前的半句话",
             ["templateId"] = "tpl_n07",
             ["text"] = [=[我去得挺早，收条一张张排得妥妥当当，憋在心口的那几句话也练了一宿。
 
@@ -12606,6 +12646,7 @@ return {
             ["requiresFacts"] = {
                 "n07_candidate_acid",
             },
+            ["shortName"] = "回家路上的酸楚",
             ["templateId"] = "tpl_n07",
             ["text"] = [=[我到底还是按捺着性子去了客栈。收条整齐地压在柜台上时，我的手平平稳稳，半点没抖。
 
@@ -12641,6 +12682,7 @@ return {
             ["requiresFacts"] = {
                 "n07_candidate_discount",
             },
+            ["shortName"] = "旧账与半价的新单",
             ["templateId"] = "tpl_n07",
             ["text"] = [=[大清早我进了石鸥客栈，把两叠旧收条按日子一张张排开在柜台上，先念上上个月的十二套，再念上个月的九套，合起来整整二十一套。
 
@@ -12708,6 +12750,7 @@ return {
             ["requiresFacts"] = {
                 "n07_candidate_bucket",
             },
+            ["shortName"] = "污水沟里的床单",
             ["templateId"] = "tpl_n07",
             ["text"] = [=[今天去石鸥客栈，我不仅把收条贴着胸口放好，还天不亮就挑上了那整整十六套新洗好的大床单。
 
@@ -12811,6 +12854,7 @@ return {
             ["requiresFacts"] = {
                 "n08_candidate_good",
             },
+            ["shortName"] = "院子里的笑声",
             ["templateId"] = "tpl_n08",
             ["text"] = [=[这顿家常饭我吃得干干净净，锅底那点甘蓝汤都被我拿黑麦面包蘸着抹了光。
 
@@ -12844,6 +12888,7 @@ return {
             ["requiresFacts"] = {
                 "n08_candidate_slow",
             },
+            ["shortName"] = "慢半拍的午后",
             ["templateId"] = "tpl_n08",
             ["text"] = [=[这顿饭吃得极慢，我拿木勺的手也沉，舀一口菜要在嘴里嚼上好半晌。
 
@@ -12875,6 +12920,7 @@ return {
             ["requiresFacts"] = {
                 "n08_candidate_wait",
             },
+            ["shortName"] = "迟来的闲暇",
             ["templateId"] = "tpl_n08",
             ["text"] = [=[这个休日，我陷在椅子里坐得可真叫一个瓷实。院里的日光从东墙一寸一寸挪到了西墙，我就那么瘫在竹椅里，连一根小拇指都懒得动弹。
 
@@ -12904,6 +12950,7 @@ return {
             ["requiresFacts"] = {
                 "n08_candidate_child",
             },
+            ["shortName"] = "暮色里的破靴子",
             ["templateId"] = "tpl_n08",
             ["text"] = [=[进屋端起热汤，炖烂的甘蓝就着昨儿烤好的黑麦面包，我连吃了两大块。
 
@@ -12939,6 +12986,7 @@ return {
             ["requiresFacts"] = {
                 "n08_candidate_military",
             },
+            ["shortName"] = "家里的哨所",
             ["templateId"] = "tpl_n08",
             ["text"] = [=[进屋坐下时，满桌一盆热腾腾的炖甘蓝。
 
@@ -12994,6 +13042,7 @@ return {
             ["requiresFacts"] = {
                 "n09_candidate_good",
             },
+            ["shortName"] = "原约与新租契",
             ["templateId"] = "tpl_n09",
             ["text"] = [=[午后，鲁本准时来了，穿了一身浆洗过的干净衣裳，手里紧紧攥着那顶褪了色的旧毡帽，拘谨地坐在长桌对面。
 
@@ -13035,6 +13084,7 @@ return {
             ["requiresFacts"] = {
                 "n09_candidate_doubt",
             },
+            ["shortName"] = "账桌两侧的疑心",
             ["templateId"] = "tpl_n09",
             ["text"] = [=[两份契纸对到修渠那一行，鲁本刚要开口解释，我就不由自主地截住了他的话头。
 
@@ -13062,6 +13112,7 @@ return {
             ["requiresFacts"] = {
                 "n09_candidate_hedge",
             },
+            ["shortName"] = "旧花篱的争执",
             ["templateId"] = "tpl_n09",
             ["text"] = [=[念到修渠那一行，两份契纸明明白白地对不上了，他那份抄本上写得清楚，庄园的底册里却空着。
 
@@ -13095,6 +13146,7 @@ return {
             ["requiresFacts"] = {
                 "n09_candidate_grace",
             },
+            ["shortName"] = "新契上的“恩典”",
             ["templateId"] = "tpl_n09",
             ["text"] = [=[鲁本把旧契平摊在长桌上，我让管事取来了最初的原约与出工簿。三份纸并在案头，修渠抵租的约定赫然在目，唯独庄园底册上空了那一行。
 
@@ -13132,6 +13184,7 @@ return {
             ["requiresFacts"] = {
                 "n09_candidate_grain",
             },
+            ["shortName"] = "粮仓里混在一起的麦子",
             ["templateId"] = "tpl_n09",
             ["text"] = [=[鲁本来对账时，我手边已列好了这几年他“短交”的谷石细数。底册摊在案上，我把数目冰冷地念了一遍，问他几时能把亏空补齐。
 
@@ -13199,6 +13252,7 @@ return {
             ["requiresFacts"] = {
                 "n10_result_3",
             },
+            ["shortName"] = "桌上的三只碗",
             ["templateId"] = "tpl_n10",
             ["text"] = [=[第二天我起得比打鸣的公鸡还早。
 
@@ -13236,6 +13290,7 @@ return {
             ["requiresFacts"] = {
                 "n10_result_2a",
             },
+            ["shortName"] = "顶出去的半句话",
             ["templateId"] = "tpl_n10",
             ["text"] = [=[第二天一早，我把铁皮钱匣子抱上案台，数好医药费，用粗纸妥帖包好。
 
@@ -13269,6 +13324,7 @@ return {
             ["requiresFacts"] = {
                 "n10_result_1a",
             },
+            ["shortName"] = "解开的包扎布",
             ["templateId"] = "tpl_n10",
             ["text"] = [=[第二天门板一卸，作坊里就没断过人。
 
@@ -13316,6 +13372,7 @@ return {
             ["requiresFacts"] = {
                 "n10_result_2b",
             },
+            ["shortName"] = "医馆收条与交货字据",
             ["templateId"] = "tpl_n10",
             ["text"] = [=[天刚亮，我便揣着包好的铜币赶去医馆。伙计验了钱，把催单划去，我又预支了往后半个月换药的开销，心里那块悬着的石头总算落了地。
 
@@ -13355,6 +13412,7 @@ return {
             ["requiresFacts"] = {
                 "n10_result_1b",
             },
+            ["shortName"] = "米洛绷带上的血",
             ["templateId"] = "tpl_n10",
             ["text"] = [=[清早去医馆把药钱结清，我心里踏实了许多。回到作坊，我把盖了印的收条塞给米洛，让他踏实回家养手，半个月内千万别碰重活。
 

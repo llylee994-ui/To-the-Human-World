@@ -22,6 +22,7 @@ Data.ingredients = require "data.ingredients"
 Data.equipment = require "data.equipment"
 Data.furniture = require "data.furniture"
 Data.release = require "data.release"
+Data.releaseEndings = require "data.release_endings"
 Data.synthesis = require "data.synthesis"
 Data.npcs = numericV02.npcs
 Data.letters = numericV02.letters

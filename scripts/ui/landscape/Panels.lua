@@ -91,26 +91,6 @@ function P.RefreshReader(ctx)
     cache.presentation.Refresh(r.value)
     return true
 end
-function P.Words(ctx,body)
-    local view=query(ctx,body,"GetWordTray"); if not view then return end
-    P.Text(body,"分类词条",22)
-    if #view.cards==0 then P.Text(body,"尚未收集词卡。阅读来信并剪下标记词后，会按来源收在这里。",16,"wordsEmpty") end
-    local data=ctx.model.Refresh(); local order=data.currentOrder; local action=gate(ctx,"UpdateDraft")
-    for _,category in ipairs(view.categories) do
-        P.Text(body,category.title .. " · 可用 "..category.availableCount,18)
-        for _,card in ipairs(view.cards) do if card.categoryId==category.id then
-            local status=not card.available and "已消耗" or card.selectedRole=="main" and "已投入 · 主词" or card.selectedRole=="aux" and "已投入 · 辅词" or "可用"
-            body:AddChild(LetterPresentation.Card(card.text,"wordStrip_"..card.tokenId))
-            P.Text(body,status,13)
-            P.Text(body,"来源："..card.sourceTitle,13)
-            if order and order.phase~="pending" and card.available then
-                P.Button(body,"card_"..card.tokenId,card.selectedRole and "取出这张词卡" or "投入这张词卡",function()
-                    if card.selectedRole then ctx.model.TakeOut("word",card.tokenId) else ctx.model.Drop("word",card.tokenId) end
-                end,action.enabled,action.message)
-            end
-        end end
-    end
-end
 function P.Shop(ctx,body)
     local view=query(ctx,body,"GetShopView"); if not view then return end
     P.Text(body,"商队商店",22); P.Text(body,"金币 "..view.currency,16)
@@ -128,33 +108,6 @@ function P.Case(ctx,body)
     if view.availability~="ready" then P.Text(body,"案件板尚未开放，暂无已解锁的案件资料。",16,"caseEmpty"); return end
     for _,node in ipairs(view.nodes) do P.Text(body,node.title,18); P.Text(body,node.summary) end
     for _,edge in ipairs(view.edges) do P.Text(body,edge.label,14) end
-end
-function P.Journal(ctx,body)
-    local stories=query(ctx,body,"GetJournalStories"); if not stories then return end
-    if #stories==0 then P.Text(body,"尚未收到故事。这里会保存已收到的故事及试做记录。",16,"journalEmpty") end
-    if not ctx.storyId then
-        for _,story in ipairs(stories) do
-            P.Button(body,"story_"..story.sourceLetterId,story.title,function()
-                ctx.storyId=story.sourceLetterId; ctx.model.dirty=true
-            end)
-            P.Text(body,story.attemptCount.." 次试做",13)
-        end
-        return
-    end
-    local page=query(ctx,body,"GetJournalPage",ctx.storyId); if not page then return end
-    local back=P.Button(body,"journalBack","返回故事目录",function() ctx.storyId=false;ctx.model.dirty=true end)
-    Widget.SetStyle(back,{width=136,fontSize=13})
-    P.Text(body,page.title,19,"journalDetailTitle")
-    if #page.outcomes==0 then P.Text(body,"这个故事还没有保存的试做后续。") end
-    for _,outcome in ipairs(page.outcomes) do
-        P.Text(body,outcome.displayTitle,15)
-        for index,attempt in ipairs(outcome.attempts) do
-            P.Button(body,"attempt_"..attempt.transactionId,"第 "..index.." 次 · "..(attemptNames[attempt.status] or attempt.status).." · "..attempt.stars.." 星",function()
-                local r=ctx.model.OpenAttempt(attempt.transactionId)
-                if r.ok then ctx.Push("attempt") else ctx.model.Notify(r) end
-            end)
-        end
-    end
 end
 function P.Attempt(ctx,body)
     local record=query(ctx,body,"GetAttempt",ctx.model.selectedAttempt); if not record then return end
@@ -264,12 +217,13 @@ end
 function P.Day(ctx,body)
     local data=ctx.model.Refresh(); local action=gate(ctx,"NextDay")
     P.Text(body,"结束第 "..data.live.gameFlow.day.." 天？",22)
-    P.Text(body,"确认后进入下一天。未处理结果或非空投料会按业务规则阻止跨天。",16)
+    local final=ctx.content.release and data.chapter and data.live.gameFlow.day>=ctx.content.release.finalDay
+    P.Text(body,final and "确认后进入旅程收尾。请先处理试做结果，或清空正在准备的投料。" or "确认后进入下一天。请先处理试做结果，或清空正在准备的投料。",16)
     P.Button(body,"confirmNextDay","确认结束当天",function()
         if ctx.model.NextDay().ok then ctx.Close() end
     end,action.enabled,action.message)
     P.Button(body,"cancelNextDay","继续今天",ctx.Close)
 end
-P.Renderers={letters=P.Letters,reader=P.Reader,words=P.Words,shop=P.Shop,case=P.Case,journal=P.Journal,
+P.Renderers={letters=P.Letters,reader=P.Reader,shop=P.Shop,case=P.Case,
     attempt=P.Attempt,seaside=P.Seaside,brew=P.Brew,result=P.Result,day=P.Day}
 return P

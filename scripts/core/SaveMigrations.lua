@@ -55,7 +55,7 @@ function M.ToV4(data,content,limit)
         convert(candidate.live)
         if candidate.currentOrder and candidate.currentOrder.pending then convert(candidate.currentOrder.baseline.live);convert(candidate.currentOrder.pending.candidateLive) end
         candidate.chapter=require("systems.ReleaseLedger").EmptyChapter()
-        return G.Value(require("systems.OrderTrial").Wrap(require("systems.Order").New(content),content,limit,4).ValidateEnvelope(candidate))
+        return G.Value(require("systems.OrderTrial").Wrap(require("systems.Order").New(content,{schema4Projection=true}),content,limit,4).ValidateEnvelope(candidate))
     end)
 end
 return M
