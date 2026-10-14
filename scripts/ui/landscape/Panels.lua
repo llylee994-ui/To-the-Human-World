@@ -2,6 +2,7 @@
 local UI=require "urhox-libs/UI"
 local IngredientArt=require "ui.landscape.IngredientArt"
 local Harbor=require "ui.landscape.HarborStyle"
+local LetterPresentation=require "ui.landscape.LetterPresentation"
 local P={}
 function P.Text(parent,value,size,id)
     local label=UI.Label {id=id,text=tostring(value or ""),alignSelf="stretch",fontSize=size or 16,fontFamily=Harbor.fontFamily,
@@ -23,6 +24,14 @@ end
 local function gate(ctx,name) return ctx.model.Action(name) end
 local orderNames={unaccepted="未接单",accepted="已接单",pending="待处理结果",confirmed="已完成"}
 local attemptNames={pending="待处理",reset="已重置",shipped="已发货"}
+function P.IntroText(text,name)
+    text=tostring(text or ""):match("^%s*(.-)%s*$")
+    local first,rest=text:match("^([^\n]*)\n?(.*)$")
+    local value=first:match("^来信人：%s*(.-)%s*$") or first:match("^来信人:%s*(.-)%s*$")
+        or first:match("^寄信人：%s*(.-)%s*$") or first:match("^寄信人:%s*(.-)%s*$")
+    if value==name then return rest:match("^%s*(.-)%s*$") end
+    return text
+end
 function P.Letters(ctx,body)
     local rows=query(ctx,body,"GetLetters"); if not rows then return end
     P.Text(body,"已收来信",22)
@@ -50,18 +59,16 @@ function P.Reader(ctx,body)
     local sender=ctx.content.GetNpc(definition.senderId)
     P.Text(body,definition.title,23,"readerTitle")
     P.Text(body,"寄信人："..(sender and sender.name or "未记录"),16,"readerSender")
-    P.Text(body,view.selfIntro,16,"readerIntro")
-    local cache={id=ctx.model.selectedLetter,label=P.Text(body,P.PaperText(view),18,"letterPaper"),buttons={}}
+    local intro=P.IntroText(view.selfIntro,sender and sender.name)
+    if intro~="" then P.Text(body,intro,16,"readerIntro") end
+    local presentation=LetterPresentation.New(ctx,body,view)
+    local cache={id=ctx.model.selectedLetter,label=presentation.paper.root,presentation=presentation}
     ctx.readerCache=cache
     P.Text(body,"寄往："..(view.address or ""),16,"readerAddress")
     if definition.requirement then P.Text(body,"委托要求："..definition.requirement.desc,17,"readerRequirement") end
     if definition.reward then P.Text(body,"报酬："..definition.reward.currency.." 金币",16,"readerReward") end
-    if #(view.spans or {})>0 then P.Text(body,"剪下标记词",19) end
-    local action=gate(ctx,"CutWord")
-    for _,span in ipairs(view.spans or {}) do
-        cache.buttons[span.spanId]=P.Button(body,"cut_"..span.spanId,span.cut and span.text.." · 已剪" or "剪下「"..span.text.."」",
-            function() ctx.model.Cut(span.spanId) end,action.enabled and span.canCut,not span.cut and action.message or nil)
-    end
+    if #(view.spans or {})>0 then P.Text(body,"点信中发光的词语剪下收取。",13) end
+    presentation.Refresh(view)
     local data=ctx.model.Refresh(); local existing=false
     for id,entry in pairs(data.live.orders.acceptedById) do if entry.letterInstanceId==ctx.model.selectedLetter then existing=id; break end end
     if existing then
@@ -70,7 +77,7 @@ function P.Reader(ctx,body)
             if confirmed then ctx.storyId=definition.id; ctx.Open("journal") else ctx.Navigate("brew") end
         end)
     elseif definition.requirement then
-        action=gate(ctx,"Accept")
+        local action=gate(ctx,"Accept")
         P.Button(body,"acceptOrder","接下这份委托",function()
             if ctx.model.Accept().ok then ctx.Navigate("brew") end
         end,action.enabled,action.message)
@@ -80,12 +87,7 @@ function P.RefreshReader(ctx)
     local cache=ctx.readerCache
     if not cache or cache.id~=ctx.model.selectedLetter then return false end
     local r=ctx.session.modules.letters.GetView(cache.id); if not r.ok then return false end
-    cache.label:SetText(P.PaperText(r.value))
-    local action=gate(ctx,"CutWord")
-    for _,span in ipairs(r.value.spans) do
-        local b=cache.buttons[span.spanId]
-        if b then b:SetText(span.cut and span.text.." · 已剪" or "剪下「"..span.text.."」"); b:SetDisabled(not (action.enabled and span.canCut)) end
-    end
+    cache.presentation.Refresh(r.value)
     return true
 end
 function P.Words(ctx,body)
@@ -97,7 +99,8 @@ function P.Words(ctx,body)
         P.Text(body,category.title .. " · 可用 "..category.availableCount,18)
         for _,card in ipairs(view.cards) do if card.categoryId==category.id then
             local status=not card.available and "已消耗" or card.selectedRole=="main" and "已投入 · 主词" or card.selectedRole=="aux" and "已投入 · 辅词" or "可用"
-            P.Text(body,card.text.." · "..status,17)
+            body:AddChild(LetterPresentation.Card(card.text,"wordStrip_"..card.tokenId))
+            P.Text(body,status,13)
             P.Text(body,"来源："..card.sourceTitle,13)
             if order and order.phase~="pending" and card.available then
                 P.Button(body,"card_"..card.tokenId,card.selectedRole and "取出这张词卡" or "投入这张词卡",function()
@@ -121,14 +124,12 @@ function P.Shop(ctx,body)
 end
 function P.Case(ctx,body)
     local view=query(ctx,body,"GetCaseBoard"); if not view then return end
-    P.Text(body,"案件板",22)
     if view.availability~="ready" then P.Text(body,"案件板尚未开放，暂无已解锁的案件资料。",16,"caseEmpty"); return end
     for _,node in ipairs(view.nodes) do P.Text(body,node.title,18); P.Text(body,node.summary) end
     for _,edge in ipairs(view.edges) do P.Text(body,edge.label,14) end
 end
 function P.Journal(ctx,body)
     local stories=query(ctx,body,"GetJournalStories"); if not stories then return end
-    P.Text(body,"故事记录",22)
     if #stories==0 then P.Text(body,"尚未收到故事。这里会保存已收到的故事及试做记录。",16,"journalEmpty") end
     for _,story in ipairs(stories) do
         P.Button(body,"story_"..story.sourceLetterId,story.title.." · "..story.attemptCount.." 次试做",function()
@@ -213,11 +214,21 @@ function P.Brew(ctx,body)
         local ingredientInfo=UI.Panel {flexGrow=1,flexShrink=1,flexBasis=0,minWidth=0,pointerEvents="box-none"}
         ingredientRow:AddChild(ingredientInfo)
         P.Text(ingredientInfo,item.name.." · 库存 "..owned.." · 已放 "..selected,15)
+        P.Text(ingredientInfo,item.desc,13,"brewDesc_"..item.id)
         body:AddChild(ingredientRow)
         P.Button(body,"add_"..item.id,"放入一份",function() ctx.model.Drop("ingredient",item.id) end,action.enabled and owned>selected)
         if selected>0 then P.Button(body,"minus_"..item.id,"取出一份",function() ctx.model.TakeOut("ingredient",item.id) end,action.enabled) end
     end
     if summary.requirementHint.evaluated then
+        if summary.potionPreview then
+            P.Text(body,"当前药效",18,"brewEffectsTitle")
+            for _,effect in ipairs(ctx.content.effects) do
+                local weight=summary.potionPreview.effects[effect.id]
+                if weight then P.Text(body,string.format("%s · %.2f · %s",effect.name,weight,
+                    summary.potionPreview.intensityByEffect[effect.id]),14,"brewEffect_"..effect.id) end
+            end
+            P.Text(body,"辅料可不放；效果更强并不一定更合适。",13,"brewIngredientHint")
+        end
         P.Text(body,summary.requirementHint.canShip and "当前投料满足字面要求。" or "当前投料尚未满足字面要求。",15)
         for _,failure in ipairs(summary.requirementHint.failures or {}) do P.Text(body,failure.message,14) end
     end

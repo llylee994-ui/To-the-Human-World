@@ -47,7 +47,7 @@ function A.New(session,content,enabled)
     local hud=UI.Panel {id="homeHud",position="absolute",top=8,left=0,width="100%",height=48,flexShrink=0,
         flexDirection="row",alignItems="center",gap=8,paddingLeft=12,paddingRight=12,pointerEvents="box-none"}
     local ledger=UI.Label {id="playLedger",fontSize=16,fontFamily=Harbor.fontFamily,fontColor={65,46,28,255},minWidth=0,pointerEvents="none"}
-    local ledgerCard=Harbor.Paper {width=236,height=44,justifyContent="center",children={ledger}}
+    local ledgerCard=Harbor.Paper {width=280,height=44,justifyContent="center",children={ledger}}
     hud:AddChild(ledgerCard);hud:AddChild(UI.Panel {flexGrow=1,minWidth=0,pointerEvents="none"})
     local stage=UI.Panel {id="homeStage",width="100%",flexGrow=1,flexShrink=1,flexBasis=0,minHeight=0,pointerEvents="box-none"}
     root:AddChild(stage)
@@ -127,7 +127,7 @@ function A.New(session,content,enabled)
                 if viewportRoot.props.backgroundImage~=background then viewportRoot:SetBackgroundImage(background) end
             end
         end
-        local required=236+12+108+72+24+(ctx.scene~="home" and 114 or 0)+(pending and pending.props.visible and 122 or 0)
+        local required=280+12+108+72+24+(ctx.scene~="home" and 114 or 0)+(pending and pending.props.visible and 122 or 0)
         local safeWidth=math.max(0,vw-safe.left-safe.right)
         local offsets=HudLayout.Compute({x=safe.left,y=safe.top+8,w=safeWidth,h=48},viewport,menu,required)
         local p=hud.props
@@ -138,7 +138,7 @@ function A.New(session,content,enabled)
         if scene.props.paddingTop~=contentTop then
             setStyle(scene,{paddingTop=contentTop})
         end
-        setStyle(scene,{paddingLeft=safe.left+12,paddingRight=safe.right+12,paddingBottom=safe.bottom+12})
+        setStyle(scene,{paddingLeft=safe.left+32,paddingRight=safe.right+32,paddingBottom=safe.bottom+32})
         seaside.SetInsets(safe)
         setStyle(assert(salvageBlocker:FindById("skipSalvage")),{right=safe.right+14,bottom=safe.bottom+46})
         if ctx.panelHeader and ctx.panelHeader.GetAbsoluteLayout then
@@ -167,7 +167,7 @@ function A.New(session,content,enabled)
         local bottom=ctx.scene=="seaside" and 86 or 12
         setStyle(noticeArea,{left=14+safe.left,bottom=bottom+safe.bottom})
         if ctx.panelNotice then ctx.panelNotice:SetText(current.text) end
-        if ctx.panelNoticeArea then ctx.panelNoticeArea:SetVisible(current.visible) end
+        if ctx.panelNoticeArea then ctx.panelNoticeArea:SetVisible(current.visible and ctx.panel~="reader") end
     end
     function ctx.CancelSalvage(reason)
         local active=ctx.salvage.active
@@ -215,6 +215,7 @@ function A.New(session,content,enabled)
     end
     local destroyRoot=root.Destroy
     function root:Destroy()
+        if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
         ctx.destroyed=true
         if ctx.yawProbe then ctx.yawProbe.Close() end
         ctx.CancelHomeZoom("destroyed");ctx.CancelSalvage("destroyed");destroyRoot(self)
@@ -226,6 +227,7 @@ function A.New(session,content,enabled)
     end
     function ctx.Navigate(target)
         if ctx.destroyed or ctx.salvage.active or ctx.ticketEnding then return end
+        if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
         ctx.CancelHomeZoom("navigate")
         ctx.scene=target; ctx.panel=false; ctx.stack={}; ctx.readerCache=false; ctx.choosingLetter=false;ctx.ticketConfirm=false;ctx.ticketQuote=false
         if target=="home" then model.ReturnHome() else model.Navigate(target) end
@@ -233,10 +235,12 @@ function A.New(session,content,enabled)
     end
     function ctx.Push(kind)
         if ctx.destroyed or ctx.portrait or ctx.zoom.active or ctx.salvage.active then return end
+        if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
         ctx.stack[#ctx.stack+1]=ctx.panel or false; ctx.panel=kind; ctx.readerCache=false; model.dirty=true
     end
     function ctx.Close()
         if ctx.destroyed or ctx.zoom.active or ctx.salvage.active or ctx.ticketEnding then return end
+        if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
         ctx.ticketConfirm=false;ctx.ticketQuote=false
         ctx.panel=table.remove(ctx.stack) or false; ctx.readerCache=false
         model.Navigate(ctx.panel=="reader" and "letter" or ctx.scene)
@@ -263,6 +267,7 @@ function A.New(session,content,enabled)
     function ctx.Open(kind)
         if ctx.destroyed or ctx.portrait or ctx.zoom.active or ctx.salvage.active then return end
         if ctx.ticketEnding and kind~="ticketEnding" then return end
+        if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
         ctx.ticketConfirm=false;ctx.ticketQuote=false
         if kind=="paper" then ctx.OpenPaper(); return end
         if kind=="home" or kind=="brew" or kind=="seaside" then ctx.Navigate(kind); return end
@@ -286,6 +291,7 @@ function A.New(session,content,enabled)
         end})
     end
     local function renderPanel()
+        if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
         clear(overlay); ctx.readerCache=false; ctx.panelNotice=false;ctx.panelNoticeArea=false;ctx.panelHeader=false
         if not ctx.panel then return end
         local kind=ctx.panel; local location=side[kind]
@@ -300,7 +306,7 @@ function A.New(session,content,enabled)
         local viewport=ctx.viewport
         local panelProps={id="activePanel",position="absolute",top=location and 0 or "3%",bottom=location and 0 or "3%",
             width=location and "38%" or "92%",minWidth=location and 260 or nil,maxWidth=location and "85%" or nil,
-            padding=0,overflow="hidden",onClick=function() end} --[[@as PanelProps]]
+            padding=32,overflow="hidden",onClick=function() end} --[[@as PanelProps]]
         if location=="right" then panelProps.right=0 else panelProps.left=location and 0 or "4%" end
         if viewport then
             panelProps.top=safe.top+(location and 0 or viewport.h*.03)
@@ -308,6 +314,14 @@ function A.New(session,content,enabled)
             if location=="right" then panelProps.right=safe.right
             else panelProps.left=safe.left+(location and 0 or (viewport.w-safe.left-safe.right)*.04) end
             if not location then panelProps.width=(viewport.w-safe.left-safe.right)*.92 end
+        end
+        if kind=="reader" then
+            -- The paper's torn alpha edge extends beyond the old 18px slices.
+            -- Inset the entire header/scroll frame, not just the scroll content:
+            -- inner padding alone would still clip scrolling text at the paper edge.
+            panelProps.padding=32
+            panelProps.paddingBottom=68
+            panelProps.backgroundSlice={32,32,32,32}
         end
         local panel=Harbor.Paper(panelProps)
         overlay:AddChild(panel)
@@ -318,7 +332,7 @@ function A.New(session,content,enabled)
         panel:AddChild(bar)
         local current=ctx.messages:Current(clock())
         local panelNotice=UI.Label {id="panelMessage",text=current.text,fontSize=14,fontFamily=Harbor.fontFamily,fontColor={108,53,30,255},whiteSpace="normal",flexShrink=0,pointerEvents="none"}
-        local panelNoticeArea=UI.ScrollView {width="100%",height=44,visible=current.visible,flexShrink=0,scrollY=true,paddingLeft=16,paddingRight=16,children={panelNotice}}
+        local panelNoticeArea=UI.ScrollView {width="100%",height=44,visible=current.visible and kind~="reader",flexShrink=0,scrollY=true,paddingLeft=16,paddingRight=16,children={panelNotice}}
         panel:AddChild(panelNoticeArea);ctx.panelNoticeArea=panelNoticeArea
         ctx.panelNotice=panelNotice
         local body,scroll=bodyIn(panel,"playScroll"); ctx.scroll=scroll
@@ -339,6 +353,9 @@ function A.New(session,content,enabled)
         if yawAuto then yawAuto(ctx) end
         local now,dt=clock();home.Update(dt)
         ctx.UpdateChrome()
+        if ctx.readerCache and ctx.readerCache.presentation then
+            ctx.readerCache.presentation.Update(dt,input:HasFocus() and not input:IsMinimized())
+        end
         if ctx.scene=="seaside" then seaside.Update(GetTime():GetTimeStep()) end
         if ctx.salvage.active then
             local clock=GetTime()

@@ -18,6 +18,19 @@ function T.Run()
     local view=View.New(x.session,Data)
     local function control(id) return assert(view.root:FindById(id),"control missing: "..id) end
     local function click(id,force)
+        -- The reader now unfolds before accepting cuts and collects one strip
+        -- at a time. Advance only its simulated display clock, keeping every
+        -- original business assertion below intact.
+        for _=1,90 do
+            local cache=view.readerCache
+            if not cache or not cache.presentation or (not cache.presentation.motion.opening and not cache.presentation.motion.flight) then break end
+            zoomHost.Step(view,1/60)
+        end
+        if id:match("^cut_") then
+            local presentation=view.readerCache.presentation --[[@as table]]
+            check(presentation.paper.enabled,"paper cut enabled")
+            presentation.Cut(id:sub(5));view.Update();return
+        end
         local b=control(id); check(force or not b:GetProps().disabled,"button disabled: "..id)
         if id=="home.net" then zoomHost.Bind(view.root) end
         b:GetProps().onClick(); view.Update()
@@ -66,14 +79,16 @@ function T.Run()
     for _,span in ipairs(parsed.spans) do
         click("cut_"..span.spanId)
         check(control("letterPaper")==paper and scroll.testScrollY==650,"successful cut retains nodes/scroll")
-        check(control("cut_"..span.spanId):GetProps().disabled,"span cut once")
+        local saved=must(x.modules.letters.GetView(id))
+        local cut=false;for _,s in ipairs(saved.spans) do if s.spanId==span.spanId then cut=s.cut end end
+        check(cut,"span cut once")
     end
     check(not paper:GetText():find("缺口",1,true),"cut slots leave whitespace")
     before=x.state.GetSnapshot();click("closePanel")
     check(U.Equal(before,x.state.GetSnapshot()) and not before.currentOrder,"closing does not accept")
     check(view.scene=="seaside","reader close returns scene")
     click("returnHome");click("home.letterPaper")
-    check(control("cut_"..parsed.spans[1].spanId):GetProps().disabled,"reopen preserves cuts")
+    check(must(x.modules.letters.GetView(id)).spans[1].cut,"reopen preserves cuts")
     capture("reader-cut")
     click("acceptOrder");check(view.scene=="brew","accept explicit command opens workspace")
     local order=x.state.GetSnapshot().currentOrder

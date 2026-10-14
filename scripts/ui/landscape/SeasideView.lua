@@ -81,7 +81,7 @@ function S.New(ctx)
             Widget.SetStyle(bar,{height=height,paddingLeft=14+insets.left,paddingRight=14+insets.right,paddingBottom=insets.bottom})
         end
     end
-    local info=Harbor.Paper {flexGrow=1,minWidth=0,pointerEvents="none",gap=4,padding={6,14}}
+    local info=Harbor.Paper {id="seasideInfo",compact=true,flexGrow=1,minWidth=0,pointerEvents="none",gap=4,padding={6,32}}
     local title=UI.Label {text="海边 · 木码头",fontSize=17,fontFamily=Harbor.fontFamily,fontColor={65,46,28,255},pointerEvents="none"}
     local status=UI.Label {id="salvageStatus",fontSize=14,fontFamily=Harbor.fontFamily,whiteSpace="normal",fontColor={65,46,28,255},pointerEvents="none"}
     info:AddChild(title);info:AddChild(status);bar:AddChild(info)

@@ -27,8 +27,27 @@ function H.Button(props)
 end
 -- Also usable by ScrollView so transient messages share the same paper.
 function H.PaperProps(props)
-    return with({backgroundColor={0,0,0,0},backgroundImage=H.paperImage,backgroundFit="fill",
-        backgroundSlice={18,18,18,18},borderWidth=0,borderRadius=0,padding={8,14},pointerEvents="box-none"},props)
+    local p=with({backgroundColor={0,0,0,0},backgroundImage=H.paperImage,backgroundFit="fill",
+        backgroundSlice={32,32,32,32},borderWidth=0,borderRadius=0,padding=32,pointerEvents="box-none"},props)
+    -- One policy for every paper surface, including callers with legacy padding=0.
+    -- Short HUD/sea strips scale the source vertically and need smaller top insets.
+    local compact=p.compact==true or (type(p.height)=="number" and p.height<=96) or (type(p.maxHeight)=="number" and p.maxHeight<=96)
+    local function edge(name,index)
+        local value=p["padding"..name]
+        if value==nil then
+            local pad=p.padding
+            if type(pad)=="number" then value=pad
+            elseif type(pad)=="table" then
+                value=pad[name:lower()] or (#pad==2 and pad[(index==2 or index==4) and 2 or 1] or pad[index])
+            end
+        end
+        local minimum=(compact and (index==1 or index==3)) and 6 or 32
+        return math.max(minimum,type(value)=="number" and value or minimum)
+    end
+    p.paddingTop=edge("Top",1);p.paddingRight=edge("Right",2)
+    p.paddingBottom=edge("Bottom",3);p.paddingLeft=edge("Left",4)
+    p.compact=nil
+    return p
 end
 function H.Paper(props) return UI.Panel(H.PaperProps(props)) end
 function H.Tag(props)

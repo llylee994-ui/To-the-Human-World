@@ -1,0 +1,43 @@
+-- Real constructors/state with an isolated clock/widget host; native QA is separate.
+local H=require "ui.landscape.HarborStyle"
+local Data=require "data.content"
+local F=require "debug.fixtures.B5Fixtures"
+local View=require "ui.PlayView"
+local T={}
+function T.Run()
+    local n=0;local function check(ok,msg) n=n+1;assert(ok,msg) end
+    for _,props in ipairs({{}, {padding=0},{padding=12},{padding={6,14}}}) do
+        local p=H.PaperProps(props)
+        check(p.paddingLeft>=32 and p.paddingRight>=32,"all paper content clears torn side edges")
+        check(p.paddingTop>=32 and p.paddingBottom>=32,"full paper frames clear top/bottom edges")
+    end
+    local compact=H.PaperProps({compact=true,padding={6,14},height=76})
+    check(compact.paddingLeft>=32 and compact.paddingTop>=6,"compact sea/HUD paper keeps side clearance without inflating height")
+    local host=require("ui.landscape.tests.ZoomTestHost").New()
+    local x=F.New(Data,{targetSchema=3});local view=View.New(x.session,Data)
+    local id=assert(view.model.Receive(x.session.queries.GetSalvageView().value.availableLetterIds[1]).value).letterInstanceId
+    assert(view.Read(id).ok);view.Update();host.Bind(view.root)
+    local sender=view.root:FindById("readerSender")
+    local Panels=require "ui.landscape.Panels"
+    check(sender~=nil,"reader keeps one sender metadata row")
+    check(Panels.IntroText("来信人：埃利亚斯·沃德","埃利亚斯·沃德")=="","name-only introduction must not repeat the sender")
+    check(Panels.IntroText("来信人：埃利亚斯·沃德\n我叫埃利亚斯。","埃利亚斯·沃德")=="我叫埃利亚斯。","dedup preserves actual biography")
+    for _=1,25 do host.Step(view,1/60) end
+    local scroll=view.root:FindById("playScroll")
+    local presentation=view.readerCache.presentation --[[@as table]]
+    local spans=x.modules.letters.GetView(id).value.spans
+    assert(presentation.Cut(spans[1].spanId).ok);view.Update()
+    check(view.panelNoticeArea.props.visible==false,"cut feedback must not insert a row above the reading viewport")
+    check(view.root:FindById("playScroll")==scroll,"cut retains the same scroll node")
+    for _,kind in ipairs({"letters","words","case","journal","day","result"}) do
+        view.Open(kind);view.Update()
+        local p=view.root:FindById("activePanel").props
+        check(p.paddingLeft>=32 and p.paddingTop>=32,kind.." uses the same safe paper frame")
+    end
+    view.Navigate("brew");view.Update()
+    local p=view.root:FindById("functionalScene").props
+    check(p.paddingLeft>=32 and p.paddingRight>=32,"brew scene retains paper clearance after safe-area updates")
+    print("[PaperConsistencyTest] PASS assertions="..n.."; global frames, sender dedup, stable cut viewport; NOT native evidence")
+    return n
+end
+return T
