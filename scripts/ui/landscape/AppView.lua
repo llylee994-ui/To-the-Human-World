@@ -14,6 +14,7 @@ local Theme=require "urhox-libs/UI/Core/Theme"
 local SeaArt=require "ui.landscape.SeaArt"
 local Shop=require "ui.landscape.ShopView"
 local TicketView=require "ui.landscape.TravelTicketView"
+local WordTray=require "ui.landscape.WordTrayDrawer"
 local A={}
 local side={words="left",journal="right"}
 local titles={letters="来信抽屉",reader="阅读信件",words="词条栏",journal="故事记录",attempt="试做记录",shop="商队商店",case="案件板",day="结束当天",result="试做结果"}
@@ -238,6 +239,7 @@ function A.New(session,content,enabled)
     end
     local destroyRoot=root.Destroy
     function root:Destroy()
+        WordTray.Reset(ctx)
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
         ctx.destroyed=true
         if ctx.yawProbe then ctx.yawProbe.Close() end
@@ -252,6 +254,7 @@ function A.New(session,content,enabled)
         if ctx.destroyed or ctx.salvage.active or ctx.ticketEnding then return end
         if ctx.yawProbe then ctx.yawProbe.Close("navigate") end
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
+        WordTray.Reset(ctx)
         ctx.CancelHomeZoom("navigate")
         ctx.scene=target; ctx.panel=false; ctx.stack={}; ctx.readerCache=false; ctx.choosingLetter=false;ctx.ticketConfirm=false;ctx.ticketQuote=false
         if target=="home" then model.ReturnHome() else model.Navigate(target) end
@@ -260,11 +263,13 @@ function A.New(session,content,enabled)
     function ctx.Push(kind)
         if ctx.destroyed or ctx.portrait or ctx.zoom.active or ctx.salvage.active or ctx.yawProbe then return end
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
+        WordTray.Reset(ctx)
         ctx.stack[#ctx.stack+1]=ctx.panel or false; ctx.panel=kind; ctx.readerCache=false; model.dirty=true
     end
     function ctx.Close()
         if ctx.destroyed or ctx.zoom.active or ctx.salvage.active or ctx.ticketEnding or ctx.yawProbe then return end
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
+        WordTray.Reset(ctx)
         ctx.ticketConfirm=false;ctx.ticketQuote=false
         if ctx.panel=="journal" then ctx.storyId=false end
         ctx.panel=table.remove(ctx.stack) or false; ctx.readerCache=false
@@ -293,6 +298,7 @@ function A.New(session,content,enabled)
         if ctx.destroyed or ctx.portrait or ctx.zoom.active or ctx.salvage.active or ctx.yawProbe then return end
         if ctx.ticketEnding and kind~="ticketEnding" then return end
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
+        WordTray.Reset(ctx)
         ctx.ticketConfirm=false;ctx.ticketQuote=false
         if kind=="paper" then ctx.OpenPaper(); return end
         if kind=="home" or kind=="brew" or kind=="seaside" then ctx.Navigate(kind); return end
@@ -326,6 +332,7 @@ function A.New(session,content,enabled)
                 backgroundColor={18,24,20,190},onClick=function() end})
         end
         if kind=="shop" then Shop.Render(ctx,overlay);return end
+        if kind=="words" then WordTray.Open(ctx);WordTray.Render(ctx,overlay);return end
         if kind=="ticketEnding" then TicketView.Ending(ctx,overlay);return end
         local safe=ctx.safeInsets or {left=0,top=0,right=0,bottom=0}
         local viewport=ctx.viewport
@@ -378,7 +385,7 @@ function A.New(session,content,enabled)
         if yawAuto then yawAuto(ctx) end
         if stoveAuto then stoveAuto(ctx) end
         if panZoomAuto then panZoomAuto(ctx) end
-        local now,dt=clock();home.Update(dt)
+        local now,dt=clock();home.Update(dt);WordTray.Update(ctx,dt)
         ctx.UpdateChrome()
         if ctx.readerCache and ctx.readerCache.presentation then
             ctx.readerCache.presentation.Update(dt,input:HasFocus() and not input:IsMinimized())

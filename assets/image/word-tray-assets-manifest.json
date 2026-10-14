@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-14",
+  "generator": "built-in image_gen",
+  "maker_generation": "INSUFFICIENT_BALANCE; no output delivered; no automatic retry",
+  "remote_asset_mapping": null,
+  "runtime_validation": "not performed; preview stopped",
+  "assets": [
+    {
+      "path": "assets/image/界面_桌布_透明_v01.png",
+      "source_basename": "exec-3a0209d1-1903-47da-9a0b-aff0bcf776fb.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "solid_bbox": [
+        14,
+        14,
+        1073,
+        1428
+      ],
+      "sha256": "0a29420408c16f4f0aba964610384e554c488a41047ec27c25193f07753e1066",
+      "prompt_summary": "正俯视米白手帕，细绿双缝边、四角蓝色花草刺绣，干净中央"
+    },
+    {
+      "path": "assets/image/界面_木托盘_透明_v01.png",
+      "source_basename": "exec-0810222d-1ecb-45ab-860e-c64a94361485.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "solid_bbox": [
+        39,
+        41,
+        1048,
+        1405
+      ],
+      "sha256": "c5949f810c05fe88138f96232b5baae3a9543960c9065c6c60534f7af608498a",
+      "prompt_summary": "正俯视深棕空木托盘，窄边框、浅凹槽，不透明木底"
+    },
+    {
+      "path": "assets/image/界面_纸条_折痕_透明_v01.png",
+      "source_basename": "exec-d8f776aa-70e4-4a07-bdf3-c5ba4fe61533.png",
+      "size": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "solid_bbox": [
+        7,
+        7,
+        2166,
+        705
+      ],
+      "sha256": "adf4fa9f84e4dabb1d104e60abb2db8ffcdeb1fb1413f333f275949eed420a40",
+      "prompt_summary": "正俯视浅米色空白纸条，左右轻折痕，收紧透明留白"
+    }
+  ]
+}
