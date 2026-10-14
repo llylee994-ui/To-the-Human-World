@@ -2,6 +2,8 @@
 /.maker-mcp/
 /.preview-home/
 /.runtime/
+/.runtime-windows/
+/.windows-runs/
 /.emmylua/
 # Temporary downloads, uploader work areas and old independent checkout
 /tools/tmp/
@@ -10,6 +12,12 @@
 # Original archives remain locally; unpacked source and runtime assets are versioned
 /D3-*.zip
 /deliverables/*.zip
+# New local downloads, Blender sources and player progress are not publication inputs
+*.zip.part*
+*.blend
+*.blend1
+save_*.json
+save_*.commit
 # Generated logs and live process sampling remain locally
 *.log
 **/observer.jsonl
