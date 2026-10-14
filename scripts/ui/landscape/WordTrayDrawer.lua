@@ -24,7 +24,7 @@ local TRAY_RIM_RATIO=.08             -- 盘沿用原图的宽度比例，纸条�
 ---@field closing boolean
 
 D.AnimationSeconds=.22
-D.WidthRatio=.38
+D.WidthRatio=.26
 
 local function ease(t) t=math.max(0,math.min(1,t));return t*t*(3-2*t) end
 local function text(parent,value,size,id,color)
@@ -43,7 +43,10 @@ local function viewportHeight(ctx)
     return 720
 end
 local function insets(ctx) return ctx.safeInsets or {left=0,top=0,right=0,bottom=0} end
-local function panelWidth(ctx) return math.floor(viewportWidth(ctx)*D.WidthRatio) end
+local function panelWidth(ctx)
+    local safe=insets(ctx)
+    return math.floor(math.max(0,viewportWidth(ctx)-safe.left-safe.right)*D.WidthRatio)
+end
 local function panelLeft(ctx,state) return math.floor(insets(ctx).left-(1-ease(state.open))*panelWidth(ctx)) end
 -- 托盘尺寸按实际占位反推（标签行数、页脚行数、紧凑态），保持原图比例：
 -- 宁可小一点，也别把木框拉扁或把页脚挤出面板。
@@ -221,11 +224,14 @@ function D.Render(ctx,overlay)
     for _,card in ipairs(view.cards) do if card.tokenId==state.selected then picked=card end end
     if not picked then state.selected=false end
     local trayWidth,trayHeight=traySize(ctx,collected,compact,picked)
+    local rimPadding=math.floor(trayWidth*TRAY_RIM_RATIO)+6
+    local flowerWidth=math.floor(math.min(compact and 64 or 76,trayWidth*.28))
+    local flowerHeight=math.floor(flowerWidth*1.5)
     local holder=UI.Panel {id="wordTrayHolder",width="100%",flexGrow=1,flexShrink=1,flexBasis=0,minHeight=0,
         alignItems="center",justifyContent="center",pointerEvents="box-none"}
     panel:AddChild(holder)
     local tray=UI.Panel {id="wordTrayFrame",width=trayWidth,height=trayHeight,
-        padding=math.floor(trayWidth*TRAY_RIM_RATIO)+6,gap=8,
+        padding=rimPadding,paddingBottom=math.max(rimPadding,flowerHeight+12),gap=8,
         backgroundImage=TRAY_IMAGE,backgroundFit="fill",overflow="hidden",pointerEvents="box-none"}
     holder:AddChild(tray)
     local strips=UI.ScrollView {id="wordTrayStrips",width="100%",flexGrow=1,flexShrink=1,flexBasis=0,minHeight=0,
@@ -233,11 +239,9 @@ function D.Render(ctx,overlay)
     local row=UI.Panel {width="100%",flexShrink=0,flexDirection="row",flexWrap="wrap",alignContent="flex-start",
         gap=10,pointerEvents="box-none"}
     strips:AddChild(row);tray:AddChild(strips)
-    -- Stay within the left gutter and wooden rim, outside the scrolling paper area.
-    local flowerWidth=math.floor(math.max(12,math.min(compact and 54 or 76,
-        (width-32-trayWidth)/2+math.floor(trayWidth*TRAY_RIM_RATIO)-6)))
-    holder:AddChild(UI.Panel {id="wordTrayDriedFlowers",position="absolute",left=2,bottom=6,
-        width=flowerWidth,height=math.min(trayHeight*.32,flowerWidth*1.5),
+    -- A readable bunch rests on the lower-left corner; scrolling stops above it.
+    tray:AddChild(UI.Panel {id="wordTrayDriedFlowers",position="absolute",left=6,bottom=6,
+        width=flowerWidth,height=flowerHeight,
         backgroundImage=FLOWERS_IMAGE,backgroundFit="contain",pointerEvents="none"})
     local mounted=0
     for _,card in ipairs(view.cards) do

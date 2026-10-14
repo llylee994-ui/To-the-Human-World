@@ -55,7 +55,7 @@ function N.New()
             local f=flowers:GetAbsoluteLayout()
             local papers=assert(view.root:FindById("wordTrayStrips")):GetAbsoluteLayout()
             assert(flowers.props.pointerEvents=="none","flowers intercept pointers")
-            assert(f.x+f.w<=papers.x+.1,"flowers overlap paper strips")
+            assert(f.y>=papers.y+papers.h-.1,"flowers overlap scrolling paper strips")
             assert(f.y+f.h<=footer.y+.1,"flowers overlap source footer")
         end
         print("[WordTrayNative] bounds "..cjson.encode({panel=panel,tray=tray,footer=footer,close=close}))

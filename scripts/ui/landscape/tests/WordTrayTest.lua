@@ -81,7 +81,7 @@ function T.Run()
     settle(20)
     check(Drawer.Progress(view)==1 and Drawer.Settled(view),"drawer slides fully in and settles")
     local panel=assert(find("activePanel"),"drawer keeps the overlay panel id")
-    check(panel.props.width>=math.floor(1280*0.3) and panel.props.width<=math.floor(1280*0.5),"drawer keeps the narrow left column")
+    check(panel.props.width>=math.floor(1280*0.22) and panel.props.width<=math.floor(1280*0.27),"tray stays in the left quarter, preserving the pot and journal areas")
     check(type(panel.props.backgroundImage)=="string","drawer is dressed with the generated cloth image")
     check(type(find("wordTrayFrame").props.backgroundImage)=="string","strips sit in the generated wooden tray image")
     local first=collected[1]
