@@ -1,0 +1,238 @@
+{
+  "status": "PASS",
+  "method": "literal image/font references from reachable non-test Lua modules, distinguishing label-only metadata",
+  "references": [
+    {
+      "source": "scripts/ui/landscape/HarborStyle.lua",
+      "asset": "image/界面_深木牌_透明_v01_20261013070534.png",
+      "sha256": "67ddac6f3321cc1fa4b25a9d56e2789d17c184ef8ab099d0ed40bdb8cc959878"
+    },
+    {
+      "source": "scripts/ui/landscape/HarborStyle.lua",
+      "asset": "image/界面_柔边纸面_透明_v01_20261013070534.png",
+      "sha256": "cd5bba3abbf42ba207c7f5cb820f94069a7017c95f2826f55b00d98f1e9732b3"
+    },
+    {
+      "source": "scripts/ui/landscape/IngredientArt.lua",
+      "asset": "image/商队木柜台_背景_v01_20261013032602.png",
+      "sha256": "80d7790b735d8e3c1e0304e2359df786cf78402e7a4c8d8141102293678816e2"
+    },
+    {
+      "source": "scripts/ui/landscape/IngredientArt.lua",
+      "asset": "image/原料_海盐_透明_v01_20261013032602.png",
+      "sha256": "3973b84256881cf83fbd7400e5cd0678fc050f83f473d3ab3ad9f2dae1241a33"
+    },
+    {
+      "source": "scripts/ui/landscape/IngredientArt.lua",
+      "asset": "image/原料_夜露_透明_v01_20261013032602.png",
+      "sha256": "c4f57b62f3cce8adce730a1da62af3b508349aac74b75565d3db70441527a719"
+    },
+    {
+      "source": "scripts/ui/landscape/IngredientArt.lua",
+      "asset": "image/原料_灰烬草_透明_v01_20261013032602.png",
+      "sha256": "26ed3fe6e2524e429ca63680a7c43ff6f555d50abf048d86f3e5148a58d4020f"
+    },
+    {
+      "source": "scripts/ui/landscape/IngredientArt.lua",
+      "asset": "image/原料_干花瓣_透明_v01_20261013032602.png",
+      "sha256": "f8243e592df7de22c966d38910bf3062047133c24fe2648fe051cd2ba498cced"
+    },
+    {
+      "source": "scripts/ui/landscape/LayoutManifest.lua",
+      "asset": "image/misty-harbor-r1/home-foreground.png",
+      "sha256": "52d529c420633852842eb77b5bb6b608aa3e5e6faf5ef63625a1c69b089b539a"
+    },
+    {
+      "source": "scripts/ui/landscape/LayoutManifest.lua",
+      "asset": "image/home-entry-r3/tray.png",
+      "sha256": "e9d0c21d5315de6083ee83c04311334d939166a20ad59f9d635cd33090f01600"
+    },
+    {
+      "source": "scripts/ui/landscape/LayoutManifest.lua",
+      "asset": "image/home-entry-r3/net.png",
+      "sha256": "88e554c6abbe273e065b7c7f5c6944c0a73d08e4c4655185770ecececfa036f7"
+    },
+    {
+      "source": "scripts/ui/landscape/LayoutManifest.lua",
+      "asset": "image/home-entry-r3/case-file.png",
+      "sha256": "462e30fb4b932e8e181c559024206a19a35ebe11ba37a89e19d8b78246fa4aeb"
+    },
+    {
+      "source": "scripts/ui/landscape/LayoutManifest.lua",
+      "asset": "image/misty-harbor-r1/merchant-ship-muted.png",
+      "sha256": "13220a898ea397b9381194d39573bc61f49e9b72929e01f6e20b56b4fba0d493"
+    },
+    {
+      "source": "scripts/ui/landscape/LayoutManifest.lua",
+      "asset": "image/home-entry-r3/letter-paper.png",
+      "sha256": "9c0096340142d3ffc9825db281a8f1f09c1e1f66844037be88ae3a400ac35fed"
+    },
+    {
+      "source": "scripts/ui/landscape/LayoutManifest.lua",
+      "asset": "image/home-entry-r3/lily-vase.png",
+      "sha256": "726655e971433a392fc243f3163deb3b2cd9aff1cf7064ceed5b176ecb9899c2"
+    },
+    {
+      "source": "scripts/ui/landscape/LayoutManifest.lua",
+      "asset": "image/home-entry-r3/amber-jar.png",
+      "sha256": "928fc9dc1ca1ce88d8ff94c2dc28feaaa9dc47f2d0dd14736c4ac651b67f9608"
+    },
+    {
+      "source": "scripts/ui/landscape/LayoutManifest.lua",
+      "asset": "image/home-entry-r3/herb-jar.png",
+      "sha256": "2790313f49b588609ace365632bf8c2aeb7214638de4db8057162809f4961f6a"
+    },
+    {
+      "source": "scripts/ui/landscape/LayoutManifest.lua",
+      "asset": "image/home-entry-r3/glass-bottle.png",
+      "sha256": "69d141d0e010657d522daa1b573a908d3b90e5898a94236865bfa20243a5ed13"
+    },
+    {
+      "source": "scripts/ui/landscape/LayoutManifest.lua",
+      "asset": "image/home-entry-r3/stove.png",
+      "sha256": "a09c379fe6ac0946076c2e0284afad32a57f60831a425560b2259830d0292898"
+    },
+    {
+      "source": "scripts/ui/landscape/LetterPresentation.lua",
+      "asset": "image/letter-scissors.png",
+      "sha256": "d3ff66193f75b10fe28b8eef790bf867ccc734a9ae077dc2d12472069c65e718"
+    },
+    {
+      "source": "scripts/ui/landscape/MerchandiseArt.lua",
+      "asset": "image/shop-art-r2/tablecloth-chair-lamp.png",
+      "sha256": "a4906524cd1c32d7368f485780c79efa542c31e542cefe4a02cfab0e94a775ff"
+    },
+    {
+      "source": "scripts/ui/landscape/MerchandiseArt.lua",
+      "asset": "image/原料_海盐_透明_v01_20261013032602.png",
+      "sha256": "3973b84256881cf83fbd7400e5cd0678fc050f83f473d3ab3ad9f2dae1241a33"
+    },
+    {
+      "source": "scripts/ui/landscape/MerchandiseArt.lua",
+      "asset": "image/原料_夜露_透明_v01_20261013032602.png",
+      "sha256": "c4f57b62f3cce8adce730a1da62af3b508349aac74b75565d3db70441527a719"
+    },
+    {
+      "source": "scripts/ui/landscape/MerchandiseArt.lua",
+      "asset": "image/原料_灰烬草_透明_v01_20261013032602.png",
+      "sha256": "26ed3fe6e2524e429ca63680a7c43ff6f555d50abf048d86f3e5148a58d4020f"
+    },
+    {
+      "source": "scripts/ui/landscape/MerchandiseArt.lua",
+      "asset": "image/原料_干花瓣_透明_v01_20261013032602.png",
+      "sha256": "f8243e592df7de22c966d38910bf3062047133c24fe2648fe051cd2ba498cced"
+    },
+    {
+      "source": "scripts/ui/landscape/MerchandiseArt.lua",
+      "asset": "image/商品_人间单程船票_透明_v01_20261013040555.png",
+      "sha256": "b2f88e58790fafbca72ba7f4cb799c0945a7d1fc479d95119c44864890600097"
+    },
+    {
+      "source": "scripts/ui/landscape/MerchandiseArt.lua",
+      "asset": "image/家具_书架_透明_v01_20261013070534.png",
+      "sha256": "4d5ba024a49db04f77432f4dd6493c8cb00ee265e1509a9a8b06fa7b3c8791e0"
+    },
+    {
+      "source": "scripts/ui/landscape/SeaArt.lua",
+      "asset": "image/misty-harbor-r1/sea-calm.png",
+      "sha256": "3b83aa68c34c5d00d3c85dfaf15259482f4c5930098687e4a7e4816c55ce7b18"
+    },
+    {
+      "source": "scripts/ui/landscape/SeaArt.lua",
+      "asset": "image/misty-harbor-r1/home-foreground.png",
+      "sha256": "52d529c420633852842eb77b5bb6b608aa3e5e6faf5ef63625a1c69b089b539a"
+    },
+    {
+      "source": "scripts/ui/landscape/SeaArt.lua",
+      "asset": "image/misty-harbor-r1/dock-foreground.png",
+      "sha256": "a43cb9d75d69416be570e4f176f86a22977f1d929203251247440e71f613dea4"
+    },
+    {
+      "source": "scripts/ui/landscape/SeasideManifest.lua",
+      "asset": "image/seaside-r1/bottle.png",
+      "sha256": "c1a651c0644c967f3032467cce7d3776f9cfb0d480cf14ef1b2632aa33d95fa7"
+    },
+    {
+      "source": "scripts/ui/landscape/SeasideManifest.lua",
+      "asset": "image/seaside-r1/net.png",
+      "sha256": "9eba8ff0ab25f9b1d71ddd02c8a434a2161fcc84182d3e0ea0ac24bf3c648e31"
+    },
+    {
+      "source": "scripts/ui/landscape/SeasideManifest.lua",
+      "asset": "image/misty-harbor-r1/merchant-ship-muted.png",
+      "sha256": "13220a898ea397b9381194d39573bc61f49e9b72929e01f6e20b56b4fba0d493"
+    },
+    {
+      "source": "scripts/ui/landscape/TravelTicket.lua",
+      "asset": "image/商品_人间单程船票_透明_v01_20261013040555.png",
+      "sha256": "b2f88e58790fafbca72ba7f4cb799c0945a7d1fc479d95119c44864890600097"
+    },
+    {
+      "source": "scripts/v035/lab35/FullSceneHost.lua",
+      "asset": "fonts/HarborHand-Regular.ttf",
+      "sha256": "a714df1d6540239ae8be455ef9da854157000e19e27919074118ae5e053c6e01"
+    },
+    {
+      "source": "scripts/v035/lab35/FullSceneHost.lua",
+      "asset": "fonts/HarborHand-Regular.ttf",
+      "sha256": "a714df1d6540239ae8be455ef9da854157000e19e27919074118ae5e053c6e01"
+    }
+  ],
+  "inactiveImageMetadata": [
+    {
+      "source": "scripts/v035/ui/landscape/LayoutManifest.lua",
+      "asset": "v035-main-image/misty-harbor-r1/home-foreground.png",
+      "reason": "3D Ids.lua consumes only object id/target/label, not old 2D image fields"
+    },
+    {
+      "source": "scripts/v035/ui/landscape/LayoutManifest.lua",
+      "asset": "v035-main-image/home-entry-r3/tray.png",
+      "reason": "3D Ids.lua consumes only object id/target/label, not old 2D image fields"
+    },
+    {
+      "source": "scripts/v035/ui/landscape/LayoutManifest.lua",
+      "asset": "v035-main-image/home-entry-r3/net.png",
+      "reason": "3D Ids.lua consumes only object id/target/label, not old 2D image fields"
+    },
+    {
+      "source": "scripts/v035/ui/landscape/LayoutManifest.lua",
+      "asset": "v035-main-image/home-entry-r3/case-file.png",
+      "reason": "3D Ids.lua consumes only object id/target/label, not old 2D image fields"
+    },
+    {
+      "source": "scripts/v035/ui/landscape/LayoutManifest.lua",
+      "asset": "v035-main-image/misty-harbor-r1/merchant-ship-muted.png",
+      "reason": "3D Ids.lua consumes only object id/target/label, not old 2D image fields"
+    },
+    {
+      "source": "scripts/v035/ui/landscape/LayoutManifest.lua",
+      "asset": "v035-main-image/home-entry-r3/letter-paper.png",
+      "reason": "3D Ids.lua consumes only object id/target/label, not old 2D image fields"
+    },
+    {
+      "source": "scripts/v035/ui/landscape/LayoutManifest.lua",
+      "asset": "v035-main-image/home-entry-r3/lily-vase.png",
+      "reason": "3D Ids.lua consumes only object id/target/label, not old 2D image fields"
+    },
+    {
+      "source": "scripts/v035/ui/landscape/LayoutManifest.lua",
+      "asset": "v035-main-image/home-entry-r3/amber-jar.png",
+      "reason": "3D Ids.lua consumes only object id/target/label, not old 2D image fields"
+    },
+    {
+      "source": "scripts/v035/ui/landscape/LayoutManifest.lua",
+      "asset": "v035-main-image/home-entry-r3/herb-jar.png",
+      "reason": "3D Ids.lua consumes only object id/target/label, not old 2D image fields"
+    },
+    {
+      "source": "scripts/v035/ui/landscape/LayoutManifest.lua",
+      "asset": "v035-main-image/home-entry-r3/glass-bottle.png",
+      "reason": "3D Ids.lua consumes only object id/target/label, not old 2D image fields"
+    },
+    {
+      "source": "scripts/v035/ui/landscape/LayoutManifest.lua",
+      "asset": "v035-main-image/home-entry-r3/stove.png",
+      "reason": "3D Ids.lua consumes only object id/target/label, not old 2D image fields"
+    }
+  ]
+}

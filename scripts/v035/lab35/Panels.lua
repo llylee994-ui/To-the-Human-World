@@ -1,5 +1,5 @@
--- Reuse pinned main panels; only confirmation dispatch differs.
-local Main=require "v035.ui.landscape.Panels"
+-- Reuse current main panels; only single-use day confirmation dispatch differs.
+local Main=require "ui.landscape.Panels"
 local P={};for k,v in pairs(Main) do P[k]=v end
 P.Renderers={};for k,v in pairs(Main.Renderers) do P.Renderers[k]=v end
 function P.Day(ctx,body)

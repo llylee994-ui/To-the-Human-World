@@ -36,8 +36,10 @@ local function bodyIn(parent,id)
     scroll:AddChild(body); parent:AddChild(scroll); return body,scroll
 end
 ---@return table Session-bound view with navigation, scene controllers and lifecycle methods.
-function A.New(session,content,enabled)
-    local model=Model.New(session,content,enabled)
+function A.New(session,content,enabled,options)
+    options=options or {}
+    local model=options.model or Model.New(session,content,enabled)
+    local Panels=options.panels or Panels
     local nativeProbe=require("ui.landscape.DevChecks").nativeProbe and require("ui.landscape.tests.NativeProbe").New() or nil
     local yawEnabled=require("ui.landscape.DevChecks").yawProbe
     local yawAuto=yawEnabled and require("ui.landscape.DevChecks").yawProbeAuto and require("ui.landscape.tests.YawNativeProbe").New() or nil
@@ -47,7 +49,7 @@ function A.New(session,content,enabled)
     -- The stage fills the viewport; each control group applies its own safe area.
     -- UpdateChrome extends this surface through main's SafeAreaView insets.
     local root=UI.Panel {id="playPanel",position="absolute",left=0,top=0,width="100%",height="100%",
-        backgroundColor={48,42,34,255},pointerEvents="box-none",overflow="hidden"}
+        backgroundColor=options.nativeScene and {0,0,0,0} or {48,42,34,255},pointerEvents="box-none",overflow="hidden"}
     local hud=UI.Panel {id="homeHud",position="absolute",top=8,left=0,width="100%",height=48,flexShrink=0,
         flexDirection="row",alignItems="center",gap=8,paddingLeft=12,paddingRight=12,pointerEvents="box-none"}
     local ledger=UI.Label {id="playLedger",fontSize=13,fontFamily=Harbor.fontFamily,fontColor={65,46,28,255},minWidth=0,pointerEvents="none"}
@@ -76,13 +78,16 @@ function A.New(session,content,enabled)
         ctx.messages:Observe(model.message,clock(),ctx.importantMessage==model.message,true)
         return r
     end
-    local home=Home.New(function(target,id)
-        if id=="home.net" then ctx.BeginHomeZoom()
+    local home=(options.homeFactory or Home.New)(function(target,id)
+        if options.nativeScene then ctx.Open(target)
+        elseif id=="home.net" then ctx.BeginHomeZoom()
         elseif id=="home.stove" then ctx.BeginHomeZoom("stove")
         else ctx.Open(target) end
     end,developer); stage:AddChild(home.root); ctx.home=home
     home.SetInspect(require("ui.landscape.DevChecks").hotspots)
-    local scene=Harbor.Paper {id="functionalScene",position="absolute",left=0,top=0,width="100%",height="100%",padding=0,paddingTop=64,visible=false}
+    local scene=options.nativeScene and UI.Panel {id="functionalScene",position="absolute",right=0,top=0,width="40%",height="100%",
+        paddingTop=64,visible=false,backgroundColor={238,228,203,245}}
+        or Harbor.Paper {id="functionalScene",position="absolute",left=0,top=0,width="100%",height="100%",padding=0,paddingTop=64,visible=false}
     stage:AddChild(scene)
     local seaside=Seaside.New(ctx);stage:AddChild(seaside.root);ctx.seaside=seaside
     root:AddChild(hud)
@@ -137,7 +142,12 @@ function A.New(session,content,enabled)
         end
         local viewportRoot=UI.GetRoot()
         if viewportRoot and viewportRoot.SetBackgroundImage then
-            if ctx.scene=="brew" then
+            if options.nativeScene then
+                local color=viewportRoot.props.backgroundColor
+                if viewportRoot.props.backgroundImage~=false or not color or color[4]~=0 then
+                    Widget.SetStyle(viewportRoot,{backgroundImage=false,backgroundColor={0,0,0,0}})
+                end
+            elseif ctx.scene=="brew" then
                 if viewportRoot.props.backgroundImage~=false then
                     Widget.SetStyle(viewportRoot,{backgroundImage=false,backgroundColor={238,228,203,255}})
                 end
@@ -394,7 +404,7 @@ function A.New(session,content,enabled)
             end
         end
         -- main already calls this every Update. Advance BEFORE the business dirty guard.
-        if ctx.zoom.active then
+        if ctx.zoom.active and not options.nativeScene then
             local clock=GetTime()
             local destination=ctx.zoom.profile and ctx.zoom.profile.destination or "seaside"
             local result=ctx.zoom.Update(clock:GetTimeStep(),home.Fit(),input:HasFocus() and not input:IsMinimized(),clock:GetElapsedTime(),home.root:GetAbsoluteLayout())
@@ -427,6 +437,8 @@ function A.New(session,content,enabled)
         ctx.UpdateChrome()
     end
     function ctx.Refresh() model.dirty=true end
+    -- Bind native navigation before the first view update. Default 2D needs no adapter.
+    if options.bind then options.bind(ctx) end
     -- Saved pending results stay accessible in HUD; entering does not consume them.
     model.ReturnHome(); ctx.Update()
     return ctx

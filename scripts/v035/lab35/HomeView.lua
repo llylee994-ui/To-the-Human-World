@@ -2,7 +2,7 @@
 local H={}
 function H.New(controller,options)
     local UI=require "urhox-libs/UI"
-    local Harbor=require "v035.ui.landscape.HarborStyle"
+    local Harbor=require "ui.landscape.HarborStyle"
     assert(options and options.ray and options.picker and options.project and options.hintOccluded,"explicit scene pick/projection dependencies required")
     local root=UI.Panel {id="v035Home",position="absolute",left=0,top=0,width="100%",height="100%",pointerEvents="box-none"}
     local surface=UI.Panel {id="v035PickSurface",position="absolute",left=0,top=0,width="100%",height="100%",
@@ -28,6 +28,8 @@ function H.New(controller,options)
     function api.Fit() local r=root:GetAbsoluteLayout();return {x=r.x,y=r.y,w=r.w,h=r.h,scale=r.w/1920} end
     function api.SetInspect() end
     function api.SetZoom(value) api.zoom=value end -- compatibility only; no flat-image zoom.
+    function api.SetPanZoom() end -- camera navigation owns native 3D motion.
+    function api.SetPanelOpen(value) api.panelOpen=value end
     function api.SetBlocked(value) api.blocked=value end
     function api.ShowHints(value) controller.ShowHints(value) end
     function api.HintsVisible() return controller.HintsVisible() end

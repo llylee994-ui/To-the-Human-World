@@ -1,3 +1,5 @@
+> 当前功能更新：完整 3D 已接入共享 main 的 ordinary-release-v2 / schema 4。保留独立内存进度和 3D 场景。当前实现及验收边界见 [功能接入记录](../docs/actions/2026-10-14-main-business-3d-integration.md)；下面的历史整合、清理交付记录保留原阶段事实。
+
 > 2026-10-14 历史整合更新：当前开发分支为 `integration/3d-main-20261014`，继续使用同一本地目录。原候选 `cloud/3d-d00aca9` 的提交完整保留在整合分支中；该旧分支名已在新分支上传核验后从本地与 GitHub 移除。当前整合状态见 [行动记录](../docs/actions/2026-10-14-main-history-integration.md)。以下保留清理交付阶段的身份信息。
 
 # 当前交付与历史身份记录

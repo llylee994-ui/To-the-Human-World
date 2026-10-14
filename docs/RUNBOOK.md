@@ -26,6 +26,10 @@
 
 ## main 历史整合后的目录边界
 
-当前开发分支为 `integration/3d-main-20261014`。main 的业务与编辑器源码已并入本仓库，当前完整 3D 仍加载 `scripts/v035`；不要将根目录 `scripts/core` 的更新误认为已进入这套业务副本。后续业务共享/升级需要单独适配与测试。
+当前开发分支为 `integration/3d-main-20261014`。完整 3D 经 `scripts/v035/lab35/Bootstrap.lua` 使用 main 的 `core`、`data`、`systems` 和 `ui.PlayModel`，采用 ordinary-release-v2 / schema 4；页面共用 `ui/landscape/AppView`，3D 提供透明房间、镜头导航和单次跨天确认适配。旧 `scripts/v035` 业务副本和根目录 `v035` 保留作历史参考，不作为当前生效业务。
 
 本机稀疏检出只省略 `scripts/素材/` 的美术过程稿，其内容与许可仍在 Git 中。完整 3D 运行路径不受影响；按需恢复方法见根目录 README。旧 `.project` 绑定与 `experiments/3d-lab` 样片不接收，当前 probe.json 留作根目录测试。
+
+## 当前共享业务回归
+
+`python -X utf8 tools/check_3d_main_integration.py` 测试实际 3D 装配和页面回调，使用明确的 UI/时钟替身，禁止磁盘存档 API。测试依赖为本仓库 `.tmp/b1-python` 内的 Lupa 2.6，不提交或修改系统 Python。该检查不能替代真实鼠标、画面或手机验收。

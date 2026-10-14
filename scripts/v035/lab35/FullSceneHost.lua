@@ -107,7 +107,8 @@ function H.Install(config)
             display.Update({status="warning",error="原生投影校准未通过。画面仅供排查，交互保持暂停。"})
         end
         log("READY",{stats=imported.stats,loadWallSeconds=(nowMs()-startedMs)/1000,calibrationPassed=calibration.ok,
-            warnings=imported.prepared.warnings,storage="one in-memory GameSession/PlayModel",businessQa="no automatic commands",fullSceneRendered="requires pixel verification"})
+            warnings=imported.prepared.warnings,storage="one in-memory GameSession/PlayModel",
+            businessSource="shared main",contentVersion=app.bundle.content.contentVersion,schema=app.bundle.session.state.GetStatus().schema,businessQa="no automatic commands",fullSceneRendered="requires pixel verification"})
         if config.lightingPreset=="warm_harbor" then require("v035.lab35.HarborLighting").Apply(scene) end
         if config.onReady then config.onReady(scene,camera,app,node) end
         if config.observeEntries and calibration.ok then
@@ -116,8 +117,10 @@ function H.Install(config)
     end
     function Start()
         startedMs=nowMs()
-        graphics.windowTitle="寄往人间 · 独立 3D · v03.5 完整场景"
-        UI.Init({scale=UI.Scale.DEFAULT,fonts={{family="sans",weights={normal="Fonts/MiSans-Regular.ttf"}}}})
+        graphics.windowTitle="寄往人间 · 3D · main 接入测试"
+        UI.Init({theme=require "ui.landscape.HarborTheme",scale=UI.Scale.DEFAULT,fonts={
+            {family="sans",weights={normal="Fonts/MiSans-Regular.ttf"}},
+            {family="story",weights={normal="fonts/HarborHand-Regular.ttf",bold="fonts/HarborHand-Regular.ttf"}}}})
         local root=UI.Panel {width="100%",height="100%",backgroundColor={0,0,0,0},pointerEvents="box-none"};UI.SetRoot(root)
         display=require("v035.lab35.LoadStatus").New(UI,function() if job then job.Cancel() end;stage="cancelled";display.Update({status="cancelled"}) end)
         root:AddChild(display.root)

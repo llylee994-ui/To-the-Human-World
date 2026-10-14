@@ -24,7 +24,10 @@ def audit():
    else:unresolved.add(name)
  expected_optional={'UIInspector','v035.ui.landscape.tests.NativeProbe','v035.ui.landscape.tests.YawNativeProbe'}
  assert unresolved<=expected_optional,unresolved-expected_optional
- legacy=('scripts/core/','scripts/data/','scripts/systems/','scripts/ui/','scripts/lab/')
- assert not any(p.startswith(legacy) for p in visited)
+ required={'scripts/core/GameSession.lua','scripts/data/content.lua','scripts/data/release.lua','scripts/ui/PlayModel.lua','scripts/ui/landscape/ShopView.lua'}
+ assert required<=visited,required-visited
+ assert not any(p.startswith(('scripts/v035/data/','scripts/v035/systems/')) for p in visited), 'Old business remains reachable'
+ assert 'scripts/v035/ui/PlayModel.lua' not in visited
+ assert (ROOT/'assets/fonts/HarborHand-Regular.ttf').is_file()
  return {'status':'PASS','layer':'static only','resourceHashes':len(hashes),'meshes':len(scene['meshFiles']),'triangles':scene['triangles'],'interactionProxies':len(scene['interactionProxies']),'literalRequireClosure':sorted(visited),'optionalDeveloperImports':sorted(unresolved),'note':'Dynamic resource use and OS input require separate native gameplay QA.'}
 if __name__=='__main__':print(json.dumps(audit(),ensure_ascii=False,indent=2))

@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "layer": "Lua modules and widget/camera/clock adapters; no OS gameplay clicks",
+  "module": "v035.lab35.tests.MainIntegration",
+  "assertions": 344,
+  "command": "python -X utf8 tools/check_3d_main_integration.py",
+  "resourceHashCount": 164,
+  "luaModulesSyntaxChecked": 181,
+  "baseHead": "e3c958964eb930a3434da5b64cdf6567ef8374b6",
+  "sharedMain": "41cdaf3ff0fdd083d7411373a3cc9b70e26fb2e6",
+  "gitMergeResult": "Already up to date.",
+  "protectedAssetsRootV035AndEngineLibrariesChanged": false,
+  "modifiedSourceHashes": {
+    "scripts/ui/landscape/AppView.lua": "9f6b63e7f0c079f8ce2eda4ef2c299c841d06bfc3c3aa1fad0776ada195ce2e8",
+    "scripts/v035/lab35/AppView.lua": "5776c1405cc218441864c9f79ee0ec1a37b455db56474a65b471cd4f59fc600a",
+    "scripts/v035/lab35/Bootstrap.lua": "b62b12f30bbf139807979d4ff5773afe0e6e2e16fda0e8eb7428fc60f735c963",
+    "scripts/v035/lab35/Controller.lua": "6c2dd3888d7ad2a3cb4491c3923b8760dbc7ea5370c3bd27ef9a4b3514087a31",
+    "scripts/v035/lab35/FullSceneHost.lua": "14e5a63888880ef8c9d958ba093176d6c573f0b9a2c4a5f2e89118c84549ca25",
+    "scripts/v035/lab35/HomeView.lua": "606905a61fad2b8b10a1cb6a1910df74c97acc8d5d93dca420da5eaf20638de6",
+    "scripts/v035/lab35/Panels.lua": "ead5274f578de8cd75c1d051ccdd7ccfe58e51e33289a2e552aa276354422d52",
+    "tools/audit_v035_resources.py": "df8d870777914822237bea769e7d35b321df9bdf3242f4f39d46adfffd049a55"
+  },
+  "runtimeWindowRecord": "windows-window-check.json",
+  "nativeManualGameplay": "user-owned, not agent-validated"
+}

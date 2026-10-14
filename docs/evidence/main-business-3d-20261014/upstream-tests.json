@@ -1,0 +1,37 @@
+{
+  "layer": "headless; no OS input",
+  "results": [
+    {
+      "module": "debug.ReleasePurchaseTest",
+      "exitCode": 0
+    },
+    {
+      "module": "debug.ReleaseSaveTest",
+      "exitCode": 0
+    },
+    {
+      "module": "debug.ReleaseFlowTest",
+      "exitCode": 0
+    },
+    {
+      "module": "ui.landscape.tests.ShopViewTest",
+      "exitCode": 0
+    },
+    {
+      "module": "ui.landscape.tests.LetterPresentationTest",
+      "exitCode": 0
+    },
+    {
+      "module": "ui.landscape.tests.SeasideFlowTest",
+      "exitCode": 0
+    },
+    {
+      "module": "ui.landscape.tests.HomeEntryTest",
+      "exitCode": 0
+    },
+    {
+      "module": "ui.landscape.tests.TravelTicketTest",
+      "exitCode": 0
+    }
+  ]
+}

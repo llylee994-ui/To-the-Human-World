@@ -45,8 +45,8 @@
 ## 当前 3D 运行与开发
 
 - Windows：双击 `Start-Windows.cmd`；先检查环境可执行 `python tools/run_windows_game.py --check`。详见 [Windows 说明](docs/WINDOWS-RUN.md)。此入口使用隔离内存进度，不写真实玩家存档。
-- 当前场景：`assets/v035-full`；当前游戏业务与 UI：`scripts/v035`；原始测试快照：根目录 `v035`。这些目录在本次历史整合中保持原字节。
-- main 的新业务代码、内容、UI 和编辑器现位于 `scripts/core`、`scripts/data`、`scripts/systems`、`scripts/ui` 等原路径。当前 3D **尚未切换到这套新业务**：schema 4、首发内容等需要后续明确适配并回归，不能仅凭合并提交声称已经上线。
+- 当前场景：`assets/v035-full`；3D 宿主与镜头导航：`scripts/v035/lab35`；业务与共享页面：`scripts/core`、`scripts/data`、`scripts/systems`、`scripts/ui`。根目录 `v035` 仍是独立历史测试快照。
+- 当前 3D 已接入 main `41cdaf3` 的 `ordinary-release-v2` / schema 4、新版信纸裁词、商店家具与辅料药效预览。复用共享业务和页面，仍使用独立内存进度。船票启程、结局和案件映射以 main 已实现范围为准；本轮检查与用户试玩边界见 [功能接入记录](docs/actions/2026-10-14-main-business-3d-integration.md)。
 - 游戏框架为 TapTap Maker / UrhoX / Lua；运行必需的 `urhox-libs` 与本仓库第一方 `tools` 保持版本化，不使用 main 中将它们整体忽略的规则。
 - Blender 导出辅助工具见 [tools/blender](tools/blender/README.md)。所有重导出进入独立暂存目录，不直接覆盖现有资源。
 
@@ -54,7 +54,7 @@
 
 本次将 main `41cdaf3` 与候选 `b9194ea` 作为两个真实父提交合并；main 的提交历史被保留，后续存在共同祖先，不改写旧历史。旧候选分支 `cloud/3d-d00aca9` 已在新分支上传核验后从本地和 GitHub 删除，候选原提交完整保留在整合分支中。
 
-后续同步先检查未提交改动，再获取 `origin/main` 并正常合并。再次遇到冲突需按游戏入口、公共业务与资源职责逐项处理；不把当前 3D 入口换成 main 的 2D 入口。共同祖先解决提交历史关系，业务副本的同步仍需单独管理。
+后续同步先检查未提交改动，再获取 `origin/main` 并正常合并。再次遇到冲突需按游戏入口、公共业务与资源职责逐项处理；不把当前 3D 入口换成 main 的 2D 入口。共同祖先解决提交历史关系；当前业务已共享，合并更新后仍须回归 3D 宿主适配。
 
 ## 本机节省空间
 

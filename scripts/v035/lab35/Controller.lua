@@ -1,4 +1,4 @@
--- Adapts presentation/navigation only. All business stays in pinned main.
+-- Adapts native presentation/navigation only. Business uses shared main modules.
 local IDs=require "v035.lab35.Ids"
 local C={}
 function C.New(bundle,navigation)
@@ -7,7 +7,7 @@ function C.New(bundle,navigation)
     local ctx,serial,active,dayToken,lastGesture=nil,0,nil,nil,nil
     local original={}
     local function blocked()
-        return not ctx or ctx.destroyed or ctx.portrait or api.busy or api.dragging or ctx.salvage.active
+        return not ctx or ctx.destroyed or ctx.portrait or api.busy or api.dragging or ctx.salvage.active or ctx.ticketEnding
     end
     function api.WorldAllowed() return not blocked() and not ctx.panel and ctx.scene=="home" end
     function api.SetDragging(value) api.dragging=not not value end
