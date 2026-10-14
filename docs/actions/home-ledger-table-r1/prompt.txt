@@ -1,0 +1,26 @@
+Use case: precise-object-edit / full-scene prop integration.
+Produce ONE complete landscape 16:9 homepage concept image for the warm seaside potion-shop game.
+
+INPUT ROLES:
+Image 1 is the sole SCENE EDIT TARGET: the clean unlabelled 1920x1080 workshop. Preserve its camera, framing, room architecture, open door, ocean, boat, pier, warm sunset palette, painterly treatment, worktable arrangement and main objects.
+Image 2 is BOTTLE DESIGN REFERENCE ONLY: use ONLY the two small upright rectangular glass bottles shown in its upper-left corner. Their old screen-corner placement is rejected for this iteration. Do not import its top-left UI into the new image. Keep the upper-left of image 1 exactly as it is.
+
+TASK:
+Add the SAME two recognizable bottle designs as real three-dimensional upright OBJECTS STANDING ON THE RIGHT WORKTABLE near the existing ingredient jars. Repaint them for the scene's viewpoint and lighting. Do not paste flat front-facing sprites onto the tabletop. This is a natural interior composition, not HUD placement.
+
+COMPOSITION:
+Use the quiet worktop space to the right of the cauldron, around the existing ingredient jar and mortar, a little forward of that equipment and behind the foreground letter/book/opened bottle/purse group. Choose the precise feet positions to make them physically plausible and uncrowded. Form a modest staggered pair: date bottle somewhat to the left and nearer the viewer, money bottle a little to the right and farther back. Leave breathing room between them; neither bottle hides the other one's identifying motif or blank number area. Their feet belong to the same receding tabletop plane, not an arbitrary shared screen baseline.
+Match their size to the neighbouring apothecary bottles. Small useful objects within this workshop, with enough front-face area to distinguish their identities, not giant glass signs. Keep the cauldron and stand, letter tray, scissors, complete written sheet, green record book, tied yellow archive bag, purse and opened bottle clearly recognizable and unobstructed. Prefer adjusting the new pair's placement over moving existing major objects. Do not add furniture, platforms or shelves to support the bottles.
+
+PERSPECTIVE AND CONTACT — essential:
+The scene is viewed from above the work surface. Each bottle's cork top and mouth rim must therefore show their top planes, with elliptical rings and a little side depth consistent with the nearby jars. Reconstruct the short neck, rounded rectangular shoulders, straight upright walls and thickened narrow base coherently in this slightly elevated three-quarter view. Their front faces can turn gently toward the viewer while following the workshop perspective; no dramatic lean, skew or distorted body.
+Bottle bottoms must visibly rest against the wood/cloth at their chosen feet points. Add small dark contact shadows immediately beneath each base and soft warm directional cast shadows extending away from the bright left doorway, consistent with nearby objects. No floating gaps. Glass should transmit and subtly refract the ACTUAL ingredients/wood/tablecloth behind this new location, never the old upper-left wall. Restrained warm glints, delicate greenish edge tint, transparent central faces. Match the hand-painted brush texture and detail scale of image 1. Avoid glossy product photography or conspicuous bright white edging.
+
+PRESERVE THE APPROVED DESIGNS:
+- Date bottle: upright slim rounded RECTANGULAR body, small short cork, fixed capital "DAY" made from tiny pale beach pebbles in the upper interior, a few pebbles at the bottom. The letters are inside the bottle and follow its new front-plane viewing angle while remaining recognizable. Keep the middle/lower face clear for future day digits.
+- Money bottle: matching upright slim rectangular body, small cork, the existing TWO overlapping warm gold coins in the upper interior, a few small pale bottom stones. Preserve the coin motif, not a new currency design. Keep the middle/lower face clear for future balance digits.
+- Do not add any numerical characters, sample values, underscore placeholders, price prefix, extra label or button. Exact only new text: DAY.
+Keep the light, warm, understated glass character and the bottles' familiar proportions from image 2, adapted to the table's viewpoint.
+
+INVARIANTS:
+Entire horizontal scene visible, stable overall lighting and major layout, attractive open sea and workbench. No upper-left duplicate bottles, no left-corner HUD, no signs, shelves, panel, popup, circles around controls or new decoration. No transparent cutouts or isolated asset sheet: the deliverable is the COMPLETE edited homepage with the two bottles convincingly grounded on the right tabletop. No titles, watermarks or comparison panels.

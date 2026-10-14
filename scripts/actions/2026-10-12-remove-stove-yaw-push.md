@@ -2,7 +2,7 @@
 
 ## 状态与现场
 
-- In progress。用户在取消药炉动效、自测交付后要求“提交推送”。提交本次已验收结果及其关联源码、测试和证据；不纳入其他窗口修改。
+- Completed（GitHub）；Maker Blocked（仅 main 的工作流与用户当前分支约束冲突）。用户在取消药炉动效、自测交付后要求“提交推送”。提交本次已验收结果及其关联源码、测试和证据；不纳入其他窗口修改。
 - 原工作区 `D:/taptap/To-the-Human-World` 仍为 `fengyycon@c59c59044218e6be626edb86f66dc950f6943bd2`，大量既有未提交修改保留，暂存区原状保留。
 - GitHub 实时核对：`fengyycon=978a738c7c8b46b2f05e00a0a1dfc8903ff0f392`、`main=27aaa971e7dc0377e67cea1e3dc8dd2a8ff35ca7`。既有交付工作树 `D:/taptap/To-the-Human-World-yaw-push` 干净，detached HEAD 与目标分支相同。
 - Maker 状态查询：绑定健康。远端只读分支查询本次 HTTP 502；官方 taptap-maker-local 规则与工具说明仍限定只接受 main。上轮 Maker 提交曾被自动审批拒绝，原因是不能证明只操作用户授权的 fengyycon。用户未授权改推 main；本次不重试被拒动作、不切换分支、不合并、不强推、不改绑定。Maker 保留未推送状态。
@@ -45,7 +45,12 @@ docs/验证/evidence/remove-stove-yaw-push/               本地提交/推送回
 
 - 提交前核对：59 个明确文件（含实现、测试、关联源码和原始证据），约 9.47 MB。凭据特征扫描无命中；交付源码与取消动效 delivery 清单一致；全部暂存 blob 与源文件 SHA-256 一致，零删除、零其他目录修改。
 - 默认源码空白检查退出 2：两个 Lua 专项文件末行分别为 `return T\r\n`、`return N\r\n`，报告 CR 为尾部空白。仅对本次命令声明允许 CRLF 后，源码/文档检查退出 0；未改全局配置或原文件。包含原始证据的默认整体空白检查仍退出 2，保留原始日志格式，不当作通过。
-- 沿用上一轮已运行的自测；本次未改实现、未重复运行游戏。GitHub 提交与远端 SHA 核对 Pending，完成后回执保留原工作区。
+- 沿用上一轮已运行的自测；本次未改实现、未重复运行游戏。
+- 本地普通提交 `b205ea1ffe9943b6f00441856237bb78991308b1`，标题 `fix(ui): remove stove click transition and preserve modal blocking`；唯一父提交为 `978a738c7c8b46b2f05e00a0a1dfc8903ff0f392`。无 merge，交付工作树提交后干净。
+- `git push github HEAD:refs/heads/fengyycon` 返回 0，远端接受 `978a738..b205ea1`。随后 `git ls-remote` 验证 GitHub fengyycon 等于完整提交 SHA；main 仍为 `27aaa971e7dc0377e67cea1e3dc8dd2a8ff35ca7`，本轮未变。
+- 原开发工作区仍为 fengyycon@c59c590，暂存区为空，其他未提交成果保留。本地新提交位于现有独立交付工作树，不为让原目录显示新 HEAD 而重置或合并。
+- Maker 本轮未提交、未推送、未远端构建。既有自动审批拒绝和分支限制已向用户说明；未改绑、未绕过分支边界。
+- 清单、提交日志、推送日志和最终 SHA 回执保存在 `docs/验证/evidence/remove-stove-yaw-push/`。本文随提交的是推送前快照；此最终回执只更新原工作区，不为补写提交号反复提交。
 
 ## 交接
 

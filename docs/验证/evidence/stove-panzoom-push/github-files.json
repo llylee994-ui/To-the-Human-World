@@ -1,0 +1,814 @@
+[
+  {
+    "path": ".gitignore",
+    "bytes": 1302,
+    "source_blob": "6a250008c14408635cc72bdbdba79ea870dcb357",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "assets/image/misty-harbor-r1/dock-foreground.png",
+    "bytes": 548911,
+    "source_blob": "605e620350cc5fb61c23ef116ead1fd41aa4497d",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "assets/image/misty-harbor-r1/dock-foreground.png.meta",
+    "bytes": 39,
+    "source_blob": "64e5322135e030e625a6414a5e6dec71d60a8ec4",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "assets/image/misty-harbor-r1/home-foreground.png",
+    "bytes": 2918216,
+    "source_blob": "f90ce97cf70b6b637b4cbc6dab5621dbdad39bbf",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "assets/image/misty-harbor-r1/home-foreground.png.meta",
+    "bytes": 39,
+    "source_blob": "1d6eee8359b8ac1d7c7b049fe467006c520e63d6",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "assets/image/misty-harbor-r1/merchant-ship-muted.png",
+    "bytes": 1035489,
+    "source_blob": "c4b012efd9399c24d641d182f1c715b35027f34d",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "assets/image/misty-harbor-r1/merchant-ship-muted.png.meta",
+    "bytes": 39,
+    "source_blob": "d22c9f3491840045c5772f7f3ad287324e4222aa",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "assets/image/misty-harbor-r1/sea-calm.png",
+    "bytes": 2383298,
+    "source_blob": "c9c4d8d2179b188e6c88f38f2ed7ea0d9d6fba8b",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "assets/image/misty-harbor-r1/sea-calm.png.meta",
+    "bytes": 39,
+    "source_blob": "25cea237b0f017032d1b3ea27d22748f750e644b",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "assets/image/seaside-r1/bottle.png",
+    "bytes": 1310448,
+    "source_blob": "eb67dde7020f88ed6a2bdefe8469a785ae3c9d13",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "assets/image/seaside-r1/bottle.png.meta",
+    "bytes": 38,
+    "source_blob": "b349c4737fd7851300b276fcf809f716adb8b662",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "assets/image/seaside-r1/generation-records.json",
+    "bytes": 4450,
+    "source_blob": "0ef673a08dcecade27f263cdf9792cf47b2d68b1",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "assets/image/seaside-r1/generation-records.json.meta",
+    "bytes": 38,
+    "source_blob": "8a3b4c8b79ff3030e16057819963784c70a37232",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "assets/image/seaside-r1/net.png",
+    "bytes": 784956,
+    "source_blob": "b9f89a92e072de52c3304645e9c2a64cca15b179",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "assets/image/seaside-r1/net.png.meta",
+    "bytes": 38,
+    "source_blob": "9e28be3199bab6050488aadbb8fd11818446ffa1",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "assets/image/seaside-r1/source-manifest.json",
+    "bytes": 1614,
+    "source_blob": "42139e685f73c64a86ecdd642961b44bed89292c",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "assets/image/seaside-r1/source-manifest.json.meta",
+    "bytes": 38,
+    "source_blob": "dfb0e012e8165a4f5bbefeaf3fe76d6954cb47a8",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "docs/验证/evidence/stove-panzoom-r1/README.md",
+    "bytes": 2127,
+    "source_blob": "0659f93fed450ddc5d53479a675886e7740bec82",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "docs/验证/evidence/stove-panzoom-r1/baseline.json",
+    "bytes": 888,
+    "source_blob": "c6bca476eb271e4a70fe26d84799f9a74fc47da5",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "docs/验证/evidence/stove-panzoom-r1/capture-native.ps1",
+    "bytes": 2477,
+    "source_blob": "69cdf18f6c5186ad3ddfcc296e4389ffd2409325",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "docs/验证/evidence/stove-panzoom-r1/capture-r7.csv",
+    "bytes": 34286,
+    "source_blob": "454caf45bdd62edab74d579782df2cbe2b692761",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "docs/验证/evidence/stove-panzoom-r1/delivery.json",
+    "bytes": 12383,
+    "source_blob": "19ac4a265df8982a834c921a6822a5995e434718",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "docs/验证/evidence/stove-panzoom-r1/native-check-r7.json",
+    "bytes": 3809,
+    "source_blob": "99e6b0013dc28b2390aa28a94032aadfd0502b36",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "docs/验证/evidence/stove-panzoom-r1/native-home-r7.jpg",
+    "bytes": 354232,
+    "source_blob": "a8c66faeb2cd7e27a6edf3ec466c2d0c8ac070a2",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "docs/验证/evidence/stove-panzoom-r1/native-logs-r7.json",
+    "bytes": 17045,
+    "source_blob": "5dda4d72064ed17793fa0a118cc140c53b15578a",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "docs/验证/evidence/stove-panzoom-r1/player-check-r8.json",
+    "bytes": 3872,
+    "source_blob": "efd7ee323cabffaccdbe13eb0fc93937ff1ab836",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "docs/验证/evidence/stove-panzoom-r1/player-check-r9.json",
+    "bytes": 3910,
+    "source_blob": "44c31178b12936cca6518d8d9d189ac8b983182e",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "docs/验证/evidence/stove-panzoom-r1/player-final-check.json",
+    "bytes": 3786,
+    "source_blob": "7a98a233838fe698c731f6bf90191b209804cf69",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "docs/验证/evidence/stove-panzoom-r1/player-final-logs.json",
+    "bytes": 17027,
+    "source_blob": "2c8758d3b1454b4e19c4eb174168c4b4a35d7dd1",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "docs/验证/evidence/stove-panzoom-r1/player-logs-r8.json",
+    "bytes": 17112,
+    "source_blob": "c4b46b942ec0e1594eafdf4cdac13d3faeda8978",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "docs/验证/evidence/stove-panzoom-r1/preview-before.json",
+    "bytes": 3994,
+    "source_blob": "9d57f941eaec0f48e25f0d42972e26c933c82fb5",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "docs/验证/evidence/stove-panzoom-r1/preview-delivery.json",
+    "bytes": 3791,
+    "source_blob": "6613ceee5449032a8331b943488d75d5a5a7ac66",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "docs/验证/evidence/stove-panzoom-r1/preview-final.json",
+    "bytes": 3667,
+    "source_blob": "2cc16fbeb149ec776319e9e63e3083de203ec0f9",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "docs/验证/evidence/stove-panzoom-r1/preview-native.json",
+    "bytes": 3690,
+    "source_blob": "9d6b1a147edce62b4984f0d85604e89fed7206f8",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "docs/验证/evidence/stove-panzoom-r1/preview-player.json",
+    "bytes": 3593,
+    "source_blob": "22e125368dd7c18cba503c5bb3deed30f1949166",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "docs/验证/evidence/stove-panzoom-r1/preview-pre-delivery.json",
+    "bytes": 3949,
+    "source_blob": "f6ed13726797e385af3548fcd66709d462540a00",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "docs/验证/evidence/stove-panzoom-r1/preview-pre-final-types.json",
+    "bytes": 3987,
+    "source_blob": "6cd6f97e9f26430b6e2fed02312a47fd4c570608",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "docs/验证/evidence/stove-panzoom-r1/preview-pre-final.json",
+    "bytes": 3886,
+    "source_blob": "803069203c84adc51787719216201e634c3c36a5",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "docs/验证/evidence/stove-panzoom-r1/preview-pre-refresh.json",
+    "bytes": 3994,
+    "source_blob": "9d57f941eaec0f48e25f0d42972e26c933c82fb5",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "docs/验证/evidence/stove-panzoom-r1/worktree-before.txt",
+    "bytes": 23165,
+    "source_blob": "4bf49e85adc4d9741ad3a5b2f232feacb8135837",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "scripts/actions/2026-10-12-remove-stove-yaw.md",
+    "bytes": 10860,
+    "source_blob": "1cc5ed7e8eda26269726be184b15cdb07a53e061",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "scripts/actions/2026-10-12-stove-panzoom-r1.md",
+    "bytes": 13131,
+    "source_blob": "9f6b448b943460c11ae56f252ed4c6caf5dae0a1",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "scripts/actions/2026-10-13-stove-panzoom-push.md",
+    "bytes": 3977,
+    "source_blob": "5467380225be972e7cf3596f8ab50506f1430382",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "scripts/main.lua",
+    "bytes": 18309,
+    "source_blob": "bb66005e37894340e740a239db3d9021fe4d821f",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/AppView.lua",
+    "bytes": 22153,
+    "source_blob": "b8c5cf2d3c11cf9b1ad16050c8210d07e5de41ec",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "scripts/ui/landscape/DevChecks.lua",
+    "bytes": 261,
+    "source_blob": "d39c46a12173b3b6dc8f00d6d84c53a4a460f548",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "scripts/ui/landscape/HarborStyle.lua",
+    "bytes": 2302,
+    "source_blob": "d9b53fb722b81b13d7d9ce26423217efd0868662",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/HarborStyle.lua.meta",
+    "bytes": 39,
+    "source_blob": "2ae77d5af9d963e29767e0eefb831701dea37217",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/HomeView.lua",
+    "bytes": 8324,
+    "source_blob": "0014796a5229e0eb80c338d7530a49c62f00233b",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "scripts/ui/landscape/HomeYawMotion.lua.meta",
+    "bytes": 40,
+    "source_blob": "4920f879ac3107190f25e8f14b576d53fd8b9460",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/HomeYawProbe.lua.meta",
+    "bytes": 40,
+    "source_blob": "a2d53c0c9de64a30235187756e6a30b0f4511194",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/HomeYawScene.lua.meta",
+    "bytes": 40,
+    "source_blob": "2d03ce111a02be42fcb1049af75ab7777b7047ec",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/HomeZoom.lua",
+    "bytes": 2626,
+    "source_blob": "0414f7e0b6974e043c6b947c1cc79e9dd9762d6d",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "scripts/ui/landscape/HudLayout.lua",
+    "bytes": 1508,
+    "source_blob": "b2279583cff9d4d2d8d30b96adfc3980d5795467",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/HudLayout.lua.meta",
+    "bytes": 49,
+    "source_blob": "7c3b8cfc6b993296358cfe15f179ab71241801c7",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/LayoutGeometry.lua",
+    "bytes": 3995,
+    "source_blob": "f08101b6c648f707684ff8e3dfce94f4b14de086",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/LayoutManifest.lua",
+    "bytes": 13499,
+    "source_blob": "c7d928c2327006166e2ff11fbb116c5ee366f5e7",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/MessagePresenter.lua",
+    "bytes": 1747,
+    "source_blob": "41d32fd61288774e24cdc55a885fb04df3f88a44",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/MessagePresenter.lua.meta",
+    "bytes": 49,
+    "source_blob": "c4e7d85478ec423e84fef99f18f8d929d5325dc1",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/Panels.lua",
+    "bytes": 16230,
+    "source_blob": "bba75c0674383fbd816f5e2dade7be7da8a5d1ff",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/SalvageController.lua",
+    "bytes": 3942,
+    "source_blob": "74e32d2c13c4e718cc319ddea0d3c2c0f4865e8b",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/SalvageController.lua.meta",
+    "bytes": 41,
+    "source_blob": "dc3594ad1c765920b61aa33805d32651cf607182",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/SceneBackdrop.lua",
+    "bytes": 1374,
+    "source_blob": "c0705e9e63cc707d61a42d635b54af29dcb346fe",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "scripts/ui/landscape/SceneBackdrop.lua.meta",
+    "bytes": 38,
+    "source_blob": "6c39a61b222031445c5a9dc8de4039f8b03a24a4",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/SeaArt.lua",
+    "bytes": 341,
+    "source_blob": "da9771a8fcba445b98780749b09379eb6aaab4a6",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/SeaArt.lua.meta",
+    "bytes": 39,
+    "source_blob": "5436eff20e4dd61a7e7a32f3da67ee9df467a243",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/SeasideManifest.lua",
+    "bytes": 643,
+    "source_blob": "0991120ec685cb7d1022c2c71f5ace2e649d08a9",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/SeasideManifest.lua.meta",
+    "bytes": 38,
+    "source_blob": "c20c94a0069e5f69c6aaa85106699f07d51cc7fb",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/SeasideView.lua",
+    "bytes": 6564,
+    "source_blob": "4c2e28c575408d39066c8f284b0cc496d0c36397",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/SeasideView.lua.meta",
+    "bytes": 38,
+    "source_blob": "e470bf12f21433835b416cc354610561fde44861",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/StovePanZoom.lua",
+    "bytes": 2097,
+    "source_blob": "fdacc61c441f4321973f6802bc9120b1dca4eb72",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/FullscreenMotionProbe.lua",
+    "bytes": 3720,
+    "source_blob": "c13bdfb3d482fd6517b3e9a7c4a3c007db6a0095",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/FullscreenMotionProbe.lua.meta",
+    "bytes": 38,
+    "source_blob": "1f5ea04776089096a63d9c50351db17f3d764259",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/HomeEntryTest.lua",
+    "bytes": 14865,
+    "source_blob": "b0e6fb27b649a1c7fb8496880d1e37957ff197cd",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/HomeHudNativeProbe.lua",
+    "bytes": 5035,
+    "source_blob": "a2f042491ea4666e6c75dec2e8f3e5e06e90bc93",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/HomeHudNativeProbe.lua.meta",
+    "bytes": 39,
+    "source_blob": "dd7d0938ace8e1af71f76741fd50745d60194048",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/HomeHudTest.lua",
+    "bytes": 5983,
+    "source_blob": "acc5c442c3a6c6e45a56818a31f0ce82c5b223eb",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/HomeHudTest.lua.meta",
+    "bytes": 39,
+    "source_blob": "843af4a6d0c904f965ee0f758fe5418c9d4a2bbf",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/HomePresentationTest.lua",
+    "bytes": 4490,
+    "source_blob": "7cfd6411e1b33ef84e128c1408dc847757f85dc8",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/HomePresentationTest.lua.meta",
+    "bytes": 49,
+    "source_blob": "327cb81d4931d1d8442ebfd6f895f98bb2cc655e",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/HomeYawTest.lua.meta",
+    "bytes": 40,
+    "source_blob": "26d626d5acec1a4d0ec87f67285bec34fcdcbbaa",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/NativeProbe.lua",
+    "bytes": 3699,
+    "source_blob": "cd707736359c0094923c538010f2b86c47af70a8",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/SalvageControllerTest.lua",
+    "bytes": 3174,
+    "source_blob": "148aefad2a53f8bb0f06dc992bab3593cb3d3d64",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/SalvageControllerTest.lua.meta",
+    "bytes": 41,
+    "source_blob": "c1941ad8878b385d33d3805ba8f2ced7d7aa06f6",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/SceneProjectionTest.lua",
+    "bytes": 1318,
+    "source_blob": "690230ff951005bb1bad5e566bde76d7093e0b2f",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/SceneProjectionTest.lua.meta",
+    "bytes": 38,
+    "source_blob": "a43bbbf542e031ff77878261f0838e7a5ea03e12",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/SeasideEvidenceHost.lua",
+    "bytes": 1596,
+    "source_blob": "0685698fe4ab9fa13670aef709b5a8efde980d8e",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/SeasideEvidenceHost.lua.meta",
+    "bytes": 38,
+    "source_blob": "d77be9101be6dd2d0beb84c527cba7a056cd4f2d",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/SeasideFlowTest.lua",
+    "bytes": 9410,
+    "source_blob": "42108085b88ced74675e72ff1a07bcb70afb000e",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/SeasideFlowTest.lua.meta",
+    "bytes": 38,
+    "source_blob": "fa02056f2872ec1d6dc8df7d8df1fab04081122b",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/SeasideNativeProbe.lua",
+    "bytes": 3291,
+    "source_blob": "0c1351be4610a7d26f28594becd26791f9f511bc",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/SeasideNativeProbe.lua.meta",
+    "bytes": 38,
+    "source_blob": "63ca62aac0179a8af72aab4a548eceaf862c3b5c",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/StovePanZoomNativeProbe.lua",
+    "bytes": 5093,
+    "source_blob": "fc0edc2e244f5b04b983bbb9b9f0a159599ba0f2",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/StovePanZoomRenderTest.lua",
+    "bytes": 4285,
+    "source_blob": "2192035153038a795f850632ed91bd31839856c2",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/StoveYawEntryTest.lua",
+    "bytes": 11610,
+    "source_blob": "89c4a27ae6c0735ec62e7226abcf52034076e593",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/StoveYawNativeProbe.lua",
+    "bytes": 4055,
+    "source_blob": "d738cfee4552589f2b615b533f540d16e916a04e",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/YawNativeProbe.lua.meta",
+    "bytes": 40,
+    "source_blob": "ffea888df3f437c806d6f6afbf0e841580957f02",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/ZoomTestHost.lua",
+    "bytes": 3332,
+    "source_blob": "f5361f13e356313aab8ffbd47cb5dc8d115bb19b",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/export_seaside_evidence.py",
+    "bytes": 8232,
+    "source_blob": "2c210307e8538c1f84ae908aed0e485c6e09fc71",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/export_seaside_evidence.py.meta",
+    "bytes": 38,
+    "source_blob": "51daab70427a3f5d0e472c00adcce589b054eb50",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/prepare_seaside_manifest.py",
+    "bytes": 2425,
+    "source_blob": "447b8025ea9ad22fd82d810fdc3b5d1db2396e42",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/prepare_seaside_manifest.py.meta",
+    "bytes": 38,
+    "source_blob": "2d3c58692528524df93ce2191862598ebcebdb2a",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/run_home_hud.py",
+    "bytes": 669,
+    "source_blob": "0c63e1476c98c3890cb51b23a127856c08da3f82",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/run_home_hud.py.meta",
+    "bytes": 39,
+    "source_blob": "749a33ed3f3b3530216dbe43ad878cf362b97a5f",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/run_home_presentation.py",
+    "bytes": 356,
+    "source_blob": "19a3fbe4b930e6a78601f2e6746e555220e38dc8",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/run_home_presentation.py.meta",
+    "bytes": 49,
+    "source_blob": "7b871e86e5345e7b33121ec2033ea52cce6cc6ea",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/run_home_yaw.py.meta",
+    "bytes": 40,
+    "source_blob": "37ae4e66b5c994d190cd37b154e821d003352bdc",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/run_salvage_controller.py",
+    "bytes": 348,
+    "source_blob": "b31db51f509571bd487157707e01aa1ea14388da",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/run_salvage_controller.py.meta",
+    "bytes": 41,
+    "source_blob": "24a6defed01f694d67fc51cbc1223bdd078037e1",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/run_scene_projection.py",
+    "bytes": 642,
+    "source_blob": "4ecac2e74dee8530740ca0e6ef5544eb63a293ef",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/run_scene_projection.py.meta",
+    "bytes": 38,
+    "source_blob": "20ec5866d58b04c01f9abae06a88dffcd1781546",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/run_seaside_flow.py",
+    "bytes": 692,
+    "source_blob": "c414bde25d6631762db473ed3235f1207453c48b",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/run_seaside_flow.py.meta",
+    "bytes": 38,
+    "source_blob": "461a1a8d6562a8df9e9db686d36b9e7a4ecdf052",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/run_stove_yaw.py",
+    "bytes": 875,
+    "source_blob": "d8e7a44d6c2a0103a15dd041022f38d4832c1ae1",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "accepted stove delivery"
+  },
+  {
+    "path": "scripts/ui/landscape/tests/summarize_home_yaw.py.meta",
+    "bytes": 40,
+    "source_blob": "13ed26bcfd70c5106142559b174443aae10c26c1",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  },
+  {
+    "path": "scripts/ui/landscape/人工验收.md",
+    "bytes": 7384,
+    "source_blob": "db0c6b596b50250f800a20a2afaf1fe050db390c",
+    "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+    "reason": "existing reviewed runtime dependency missing on target"
+  }
+]

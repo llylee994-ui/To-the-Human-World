@@ -1,0 +1,114 @@
+{
+  "node": "Singapore 02",
+  "result": "image generation failed: network error: error sending request",
+  "duration_seconds": 305.596,
+  "image_request_logs": [
+    {
+      "id": 4276051,
+      "utc": "2026-10-12T04:13:29+00:00",
+      "level": "DEBUG",
+      "endpoint": "images/edits",
+      "is_timeout": [
+        "false"
+      ],
+      "is_connect": [
+        "false"
+      ],
+      "http_status": []
+    },
+    {
+      "id": 4276447,
+      "utc": "2026-10-12T04:14:30+00:00",
+      "level": "DEBUG",
+      "endpoint": "images/edits",
+      "is_timeout": [
+        "false"
+      ],
+      "is_connect": [
+        "false"
+      ],
+      "http_status": []
+    },
+    {
+      "id": 4276560,
+      "utc": "2026-10-12T04:15:31+00:00",
+      "level": "DEBUG",
+      "endpoint": "images/edits",
+      "is_timeout": [
+        "false"
+      ],
+      "is_connect": [
+        "false"
+      ],
+      "http_status": []
+    },
+    {
+      "id": 4276566,
+      "utc": "2026-10-12T04:15:32+00:00",
+      "level": "DEBUG",
+      "endpoint": "images/edits",
+      "is_timeout": [
+        "false"
+      ],
+      "is_connect": [
+        "false"
+      ],
+      "http_status": []
+    },
+    {
+      "id": 4276648,
+      "utc": "2026-10-12T04:16:33+00:00",
+      "level": "DEBUG",
+      "endpoint": "images/edits",
+      "is_timeout": [
+        "false"
+      ],
+      "is_connect": [
+        "false"
+      ],
+      "http_status": []
+    },
+    {
+      "id": 4276649,
+      "utc": "2026-10-12T04:16:33+00:00",
+      "level": "DEBUG",
+      "endpoint": "images/edits",
+      "is_timeout": [
+        "false"
+      ],
+      "is_connect": [
+        "false"
+      ],
+      "http_status": []
+    }
+  ],
+  "restored_selection": [
+    "GLOBAL",
+    "{\"GLOBAL\":\"🇸🇬 Singapore 01\"}"
+  ],
+  "tun_enabled": true,
+  "started_utc": "2026-10-12T04:11:28.004+00:00",
+  "ended_utc": "2026-10-12T04:16:33.600+00:00",
+  "log_scope": "Process-wide image-endpoint logs within the call time window; thread_id is absent, so attribution to this exact call is not guaranteed.",
+  "earlier_observed_row_rotated_out": {
+    "id": 4275411,
+    "utc": "2026-10-12T04:12:28+00:00",
+    "endpoint": "images/edits",
+    "is_timeout": [
+      "false"
+    ],
+    "is_connect": [
+      "false"
+    ],
+    "http_status": []
+  },
+  "restoration_verified": {
+    "live_window": "Singapore 01 selected",
+    "app_pid": 19164,
+    "core_pid": 46648,
+    "listener": "127.0.0.1:7890",
+    "tun_adapter": "FlClash / Meta Tunnel",
+    "tun_adapter_status": "Up",
+    "window_restored_to_minimized": true
+  }
+}

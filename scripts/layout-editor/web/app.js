@@ -7,6 +7,10 @@ let saveTimer, toastTimer, polling = false, heartbeat = false, assetSignature = 
 const canEdit = () => Boolean(state.page && state.token && state.connected && !state.conflict && !state.transition);
 const canvas = new Canvas(state, {canEdit, select, commit});
 const icon = name => `<svg aria-hidden="true"><use href="#i-${name}"/></svg>`;
+const pageSizes = {portrait: [1080, 1920], landscape: [1920, 1080]};
+function pageSizeValue() {
+  return Object.keys(pageSizes).find(key => pageSizes[key][0] === state.page?.width && pageSizes[key][1] === state.page?.height) || 'custom';
+}
 function toast(message) { $('#toast').textContent = message; $('#toast').hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => $('#toast').hidden = true, 4800); }
 function fail(error) { toast(error.message || String(error)); }
 async function request(path, data, raw = false) {
@@ -34,6 +38,8 @@ function status() {
   $('#window-status').textContent = state.token && !state.conflict ? '本窗口编辑此页 · 其他窗口实时查看' : '页面独立 · 素材共享';
   $('#release').disabled = !canEdit();
   $('#rename-page').disabled = !canEdit();
+  $('#page-size').disabled = !canEdit() || Boolean(canvas.gesture);
+  $('#page-size').value = pageSizeValue();
   $('#undo').disabled = !canEdit() || !state.undo.length;
   $('#redo').disabled = !canEdit() || !state.redo.length;
   const selected = canvas.items();
@@ -134,9 +140,12 @@ function renderLayers() {
 function render() {
   if (!state.doc || !state.page) return;
   $('#current-name').textContent = state.page.name;
-  $('.page-heading>.subtle').textContent = `${state.page.width} × ${state.page.height}`;
+  $('#page-dimensions').textContent = `${state.page.width} × ${state.page.height}`;
+  $('#custom-page-size').hidden = pageSizeValue() !== 'custom';
+  $('#custom-page-size').textContent = `当前尺寸 ${state.page.width} × ${state.page.height}`;
   state.selected = new Set([...state.selected].filter(id => state.page.layers.some(item => item.id === id)));
   renderPages(); renderAssets(); renderLayers(); canvas.render(); status();
+  if ($('#preview-dialog').open) preview();
 }
 function commit(before) {
   if (!canEdit()) { state.page = before; canvas.render(); return; }
@@ -149,6 +158,23 @@ function mutate(operation) {
   if (!canEdit()) { toast('先取得本页编辑权，再调整画面。'); return; }
   if (canvas.gesture) return;
   const before = clone(state.page); operation(state.page); commit(before);
+}
+function changePageSize(value) {
+  const size = pageSizes[value];
+  if (!size || !canEdit() || canvas.gesture) { status(); return; }
+  const [width, height] = size;
+  if (state.page.width === width && state.page.height === height) return;
+  const dx = (width - state.page.width) / 2, dy = (height - state.page.height) / 2;
+  if (state.page.layers.some(item => Math.abs(item.x + dx) > 100000 || Math.abs(item.y + dy) > 100000)) {
+    status(); toast('有物件距离画布过远，请移回画布附近后再切换尺寸。'); return;
+  }
+  mutate(page => {
+    page.width = width; page.height = height;
+    // A canvas resize shifts the common origin; preserve every layer's size and group relationship.
+    for (const item of page.layers) { item.x += dx; item.y += dy; }
+  });
+  canvas.setZoom('fit');
+  toast(`已切换为${value === 'landscape' ? '横版' : '竖版'} ${width} × ${height}；素材大小不变，可撤销。`);
 }
 async function save() {
   if (state.saveFlight) { await state.saveFlight; return; }
@@ -320,17 +346,34 @@ async function importProject(file) {
 }
 function preview() {
   if (!state.page) return;
-  const ratio = $('#preview-ratio').value;
   const page = state.page;
+  const direction = page.width > page.height ? 'landscape' : 'portrait';
+  const ratios = $('#preview-ratio');
+  if (ratios.dataset.direction !== direction) {
+    const presets = direction === 'landscape' ? [['16:9', 16 / 9], ['19.5:9', 19.5 / 9], ['20:9', 20 / 9]] : [['9:16', 9 / 16], ['9:19.5', 9 / 19.5], ['9:20', 9 / 20]];
+    ratios.replaceChildren(new Option('原始画布', 'original'), ...presets.map(([label, ratio]) => new Option(`手机${direction === 'landscape' ? '横版' : '竖版'} ${label}`, String(ratio))));
+    ratios.dataset.direction = direction;
+  }
+  const ratio = ratios.value;
   let width = page.width, height = page.height;
   if (ratio !== 'original') { const r = Number(ratio); if (width / height > r) width = height * r; else height = width / r; }
   const root = svg('svg', {xmlns: 'http://www.w3.org/2000/svg', viewBox: `${(page.width - width) / 2} ${(page.height - height) / 2} ${width} ${height}`, width, height});
   root.append(svg('rect', {x: 0, y: 0, width: page.width, height: page.height, fill: page.background}));
   const artwork = svg('g'); drawArtwork(artwork, page, state.doc.epoch); root.append(artwork);
   $('#preview-stage').replaceChildren(root); $('#preview-name').textContent = page.name;
+  fitPreview();
 }
+function fitPreview() {
+  const stage = $('#preview-stage'), root = stage.querySelector('svg');
+  if (!root || !$('#preview-dialog').open) return;
+  const width = Number(root.getAttribute('width')), height = Number(root.getAttribute('height'));
+  const scale = Math.max(0, Math.min((stage.clientWidth - 40) / width, (stage.clientHeight - 40) / height));
+  root.style.width = `${width * scale}px`; root.style.height = `${height * scale}px`;
+}
+new ResizeObserver(fitPreview).observe($('#preview-stage'));
 async function previewPNG() {
   const root = $('#preview-stage svg').cloneNode(true);
+  root.removeAttribute('style'); // Export design pixels, not the fitted on-screen preview size.
   for (const image of root.querySelectorAll('image')) {
     const response = await fetch(image.getAttribute('href')); if (!response.ok) throw new Error('素材读取失败');
     const data = await response.blob();
@@ -349,6 +392,7 @@ async function previewPNG() {
 function action(id, handler) { $(id).onclick = () => Promise.resolve().then(handler).catch(fail); }
 action('#new-page', async () => { const name = await askName('新建页面', `页面 ${state.doc.pages.length + 1}`); if (!name) return; await flush(); const page = await request('/api/pages', {...context(), name}); await switchPage(page.id); });
 action('#rename-page', async () => { const id = state.page.id; const name = await askName('重命名页面', state.page.name); if (name && state.page.id === id) mutate(page => page.name = name); });
+$('#page-size').onchange = event => changePageSize(event.target.value);
 action('#upload', () => $('#image-input').click()); action('#empty-upload', () => $('#image-input').click());
 $('#image-input').onchange = event => upload([...event.target.files]).catch(fail);
 $('#asset-search').oninput = renderAssets;
@@ -362,7 +406,7 @@ action('#recover', async () => {
 action('#export', exportProject); action('#import', () => $('#project-input').click());
 $('#project-input').onchange = event => importProject(event.target.files[0]).catch(fail);
 action('#help', () => $('#help-dialog').showModal());
-action('#preview', async () => { await flush(); preview(); $('#preview-dialog').showModal(); });
+action('#preview', async () => { await flush(); $('#preview-dialog').showModal(); preview(); });
 $('#preview-ratio').onchange = preview;
 action('#preview-download', previewPNG);
 document.querySelectorAll('.close-dialog').forEach(button => button.onclick = () => button.closest('dialog').close());
