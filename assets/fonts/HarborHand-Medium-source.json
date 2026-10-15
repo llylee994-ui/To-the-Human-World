@@ -1,0 +1,9 @@
+{
+  "source": "https://github.com/lxgw/LxgwWenKai/blob/main/fonts/TTF/LXGWWenKai-Medium.ttf",
+  "sourceSha256": "cd665aabdecd4c025d30307efaebe02e604b6f768885b28297bc22a8cb379e03",
+  "subsetSha256": "d7d61f959be776439bdb6a2d63b2834f21e7a4f72054ac404e3e741bdcd324a0",
+  "coveredCodepoints": 6945,
+  "subsetBytes": 3439144,
+  "license": "SIL OFL 1.1",
+  "purpose": "Independent story-strong reader wish face; other UI uses existing fonts."
+}

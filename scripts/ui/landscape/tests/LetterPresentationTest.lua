@@ -16,6 +16,34 @@ function T.Run()
     for _,r in ipairs(narrow.runs) do check(r.spanId=="same" and r.w<=22,"every narrow fragment is correctly sourced and bounded") end
     local duplicate=L.Layout({{kind="word",text="字",spanId="a"},{kind="word",text="字",spanId="b"}},100,30,measure)
     check(duplicate.runs[1].spanId~=duplicate.runs[2].spanId,"same text from two positions has distinct cuts")
+    local styled=L.Layout({{kind="text",text="前"},{kind="text",text="愿望",fontWeight="bold"},{kind="text",text="后"}},100,30,
+        function(s,weight) return utf8.len(s)*(weight=="bold" and 12 or 10) end)
+    check(#styled.runs==3 and styled.runs[2].fontWeight=="bold","a wish stays separate from adjacent regular text")
+    check(styled.runs[2].w==24 and styled.runs[3].x==34,"bold text is measured at its actual weight")
+    local emphasis=require "ui.landscape.LetterEmphasis"
+    local letters=require("systems.Letter").New(require "data.content")
+    local annotated=0
+    for id,phrase in pairs(emphasis.Phrases) do
+        local result=letters.ParseDefinition(id);check(result.ok,"approved wish references an actual order letter")
+        local view=result.value;local before=cjson.encode(view.segments)
+        local parts,strong,sources={},{},{}
+        for _,s in ipairs(emphasis.Segments(view)) do
+            parts[#parts+1]=s.text
+            if s.fontWeight=="bold" then strong[#strong+1]=s.text end
+            if s.kind=="word" then sources[#sources+1]=s.spanId..":"..s.wordId..":"..s.text end
+        end
+        local original,originalSources={},{}
+        for _,s in ipairs(view.segments) do
+            original[#original+1]=s.text
+            if s.kind=="word" then originalSources[#originalSources+1]=s.spanId..":"..s.wordId..":"..s.text end
+        end
+        check(table.concat(parts)==table.concat(original),"bold wishes never alter the letter text")
+        check(table.concat(strong)==phrase,"only the complete approved wish is emphasized")
+        check(table.concat(sources,"|")==table.concat(originalSources,"|"),"word identities and source text survive annotation")
+        check(cjson.encode(view.segments)==before,"annotation never mutates the authoritative view")
+        annotated=annotated+1
+    end
+    check(annotated==11,"all eleven current order letters have their approved wish")
     local frame={x=0,y=0,w=100,h=80}
     local holes={{x=10,y=10,w=20,h=15},{x=20,y=15,w=20,h=15},{x=-5,y=50,w=10,h=40}}
     local regions=L.VisibleRegions(frame,holes)

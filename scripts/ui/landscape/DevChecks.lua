@@ -1,2 +1,2 @@
 -- Developer-only inspection. Keep false for normal player entry.
-return {hotspots=false,nativeProbe=false,panelReferenceProbe=false,wordTrayProbe=false,journalBookProbe=false,chromeProbe=false,paperProbe=false,hitFeedback=false,seasideProbe=false,homeHudProbe=false,yawProbe=false,yawProbeAuto=false,sceneFillProbe=false,stoveYawAuto=false,stovePanZoomAuto=false}
+return {hotspots=false,nativeProbe=false,letterDrawerProbe=false,panelReferenceProbe=false,wordTrayProbe=false,journalBookProbe=false,chromeProbe=false,paperProbe=false,hitFeedback=false,seasideProbe=false,homeHudProbe=false,yawProbe=false,yawProbeAuto=false,sceneFillProbe=false,stoveYawAuto=false,stovePanZoomAuto=false}

@@ -132,7 +132,7 @@ function InitUI()
     -- 不需要手动 nvgCreate / nvgCreateFont（见 engine-docs/recipes/ui.md）
     --
     -- 保留运行时 MiSans 注册，并为海港主题注册项目内的 OFL 手写字体子集。
-    -- HarborTheme 统一使用 story；regular/bold 共用正文笔画，避免伪粗体糊字。
+    -- 正文沿用 story；心愿句单独使用真实较粗字重，避免影响其它界面。
     -- options.fonts 的优先级高于 theme.fonts（见 ui.md §初始化）。
     UI.Init({
         theme = require "ui.landscape.HarborTheme",
@@ -143,6 +143,9 @@ function InitUI()
             { family = "story", weights = {
                 normal = "fonts/HarborHand-Regular.ttf",
                 bold = "fonts/HarborHand-Regular.ttf",
+            } },
+            { family = "story-strong", weights = {
+                normal = "fonts/HarborHand-Medium.ttf",
             } },
         },
         -- DPR + 小屏密度自适应：1 基准像素 ≈ 1 CSS 像素，

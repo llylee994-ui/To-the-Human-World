@@ -8,7 +8,7 @@ function T.Run()
     local calls={};local n=0
     local function check(ok,msg) n=n+1;assert(ok,msg) end
     local oldMeasure,oldVersion,oldImage=UI.MeasureTextWidth,UI.GetFontVersion,Cache.Get
-    UI.MeasureTextWidth=function(text,size,face) check(face=="story","measurement uses the handwriting face");return utf8.len(text)*size end
+    UI.MeasureTextWidth=function(text,size,face) check(face=="story" or face=="story-strong","measurement uses a registered handwriting face");return utf8.len(text)*size end
     UI.GetFontVersion=function() return 1 end
     Cache.Get=function() return 1 end
     local saved={}
@@ -59,6 +59,20 @@ function T.Run()
     paper.enabled=true;calls={};paper.root:Render(vg)
     local first=cjson.encode(calls);paper.Update(.2,true);calls={};paper.root:Render(vg)
     check(cjson.encode(calls)~=first,"uncut words have animated rotating halo geometry")
+    local wish=require("ui.landscape.LetterEmphasis").Phrases.letter_pa_01
+    local emphasized=Paper.New({letterId="letter_pa_01",spans={},segments={{kind="text",text="正文\n"..wish.."\n落款"}}},function() end)
+    emphasized.root.GetAbsoluteLayout=function() return {x=0,y=0,w=280,h=emphasized.root.props.height} end
+    calls={};emphasized.root:Render(vg)
+    local face,strong,ordinary="",{},{}
+    for _,call in ipairs(calls) do
+        if call.name=="nvgFontFace" then face=call.args[1]
+        elseif call.name=="nvgText" then
+            local target=face=="story-strong" and strong or ordinary
+            target[#target+1]=call.args[3]
+        end
+    end
+    check(table.concat(strong)==wish,"the actual renderer uses the stronger face for every wish glyph")
+    check(table.concat(ordinary)=="正文落款","normal body and signature retain their original face")
     local capture=rawget(_G,"LETTER_RENDER_EVIDENCE")
     if capture then capture(view,paper.layout,calls) end
     for name,value in pairs(saved) do _G[name]=value end
