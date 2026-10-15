@@ -19,6 +19,7 @@ local JournalBook=require "ui.landscape.JournalBook"
 local Closing=require "ui.landscape.ReleaseClosingView"
 local Wish=require "ui.landscape.WishView"
 local Ending=require "ui.landscape.EndingView"
+local SceneMusic=require "ui.landscape.SceneMusic"
 local A={}
 local side={words="left",journal="right"}
 local titles={letters="来信抽屉",reader="阅读信件",words="词条栏",journal="故事记录",attempt="试做记录",shop="商队商店",case="案件板",day="结束当天",result="试做结果"}
@@ -43,6 +44,7 @@ end
 ---@return table Session-bound view with navigation, scene controllers and lifecycle methods.
 function A.New(session,content,enabled)
     local model=Model.New(session,content,enabled)
+    local music=SceneMusic.New()
     local nativeProbe=require("ui.landscape.DevChecks").nativeProbe and require("ui.landscape.tests.NativeProbe").New() or nil
     local yawEnabled=require("ui.landscape.DevChecks").yawProbe
     local yawAuto=yawEnabled and require("ui.landscape.DevChecks").yawProbeAuto and require("ui.landscape.tests.YawNativeProbe").New() or nil
@@ -247,6 +249,8 @@ function A.New(session,content,enabled)
     end
     local destroyRoot=root.Destroy
     function root:Destroy()
+        if ctx.destroyed then return end
+        music.Destroy()
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
         WordTray.Reset(ctx);JournalBook.Reset(ctx)
         ctx.destroyed=true
@@ -465,6 +469,7 @@ function A.New(session,content,enabled)
         ctx.messages:Observe(model.message,now,ctx.importantMessage==model.message)
         if not data then return end
         syncSavedTicketEnding()
+        music.Sync(ctx.scene,ctx.panel)
         ledger:SetText(string.format("金币 %d   ·   第 %d 天",data.live.economy.currency,data.live.gameFlow.day))
         pending:SetVisible(not ctx.ticketEnding and not not (data.currentOrder and data.currentOrder.pending))
         back:SetVisible(not ctx.ticketEnding and ctx.scene~="home")

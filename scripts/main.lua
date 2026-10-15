@@ -117,6 +117,7 @@ function GetGameSession() return session_ end
 
 function Stop()
     if playListener_ then EventBus.Off("",playListener_); playListener_=nil end
+    if playView_ then playView_.root:Destroy() end
     playView_=nil
     UI.Shutdown()
     print("=== " .. TITLE .. " 已退出 ===")
