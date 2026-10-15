@@ -72,9 +72,10 @@ function B.Settled(ctx)
     local state=ctx.journalBook --[[@as JournalBookState?]]
     return not state or state.settled
 end
-function B.Open(ctx)
+function B.Open(ctx,userInitiated)
     local state=B.State(ctx)
     if state.closing then return state end
+    if userInitiated and state.target~=1 and ctx.PlayObjectSound then ctx.PlayObjectSound("recipe_book_open") end
     state.target=1;state.settled=false
     if ctx.storyId then state.story=ctx.storyId end
     return state
@@ -91,6 +92,7 @@ end
 function B.RequestClose(ctx)
     local state=ctx.journalBook --[[@as JournalBookState?]]
     if not state or state.open<=0 then return end
+    if not state.closing and ctx.panel=="journal" and ctx.PlayObjectSound then ctx.PlayObjectSound("recipe_book_close") end
     state.closing=true;state.target=0;state.settled=false
 end
 function B.Update(ctx,dt)

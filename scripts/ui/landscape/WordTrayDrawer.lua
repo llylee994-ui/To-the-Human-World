@@ -62,9 +62,10 @@ function D.Settled(ctx)
     local state=ctx.wordTray --[[@as WordTrayState?]]
     return not state or state.settled
 end
-function D.Open(ctx)
+function D.Open(ctx,userInitiated)
     local state=D.State(ctx)
     if state.closing then return state end
+    if userInitiated and state.target~=1 and ctx.PlayObjectSound then ctx.PlayObjectSound("tray_open") end
     state.target=1;state.settled=false
     return state
 end
@@ -79,6 +80,7 @@ end
 function D.RequestClose(ctx)
     local state=ctx.wordTray --[[@as WordTrayState?]]
     if not state or state.open<=0 then return end
+    if not state.closing and ctx.panel=="words" and ctx.PlayObjectSound then ctx.PlayObjectSound("tray_close") end
     state.closing=true;state.target=0;state.settled=false
 end
 function D.Update(ctx,dt)

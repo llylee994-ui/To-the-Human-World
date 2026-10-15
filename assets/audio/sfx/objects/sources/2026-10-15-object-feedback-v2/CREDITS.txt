@@ -1,0 +1,21 @@
+物件有声 v2 · 来源与加工说明
+
+本版使用免费 CC0 声音素材，经助手剪辑、组合、均衡、变速、动态处理与音量调整，形成八个游戏短音。
+不是助手独立录制，也不再声称全部原创合成。素材作者与来源如下：
+
+Kenney / RPG Audio / CC0 1.0 / https://kenney.nl/assets/rpg-audio
+Kenney / Impact Sounds / CC0 1.0 / https://kenney.nl/assets/impact-sounds
+Joseph SARDIN / BigSoundBank / CC0 1.0：
+https://bigsoundbank.com/wooden-drawer-opening-s1499.html
+https://bigsoundbank.com/tiroir-en-bois-fermeture-s1500.html
+https://bigsoundbank.com/splash-small-6-s1534.html
+
+水声原素材是小石入水录音，经剪辑重组用于瓶子出水反馈；不是瓶子打捞的实录。
+信件由 bookFlip3 的单页声音剪辑，托盘由轻木碰撞声组合，书本使用独立 bookOpen/bookFlip/bookClose 素材。
+CC0 允许免费使用及修改；作者不强制署名，本包仍保留作者和来源以便追溯。
+https://creativecommons.org/publicdomain/zero/1.0/
+
+source/sources.json 与 manifest.json 记录每个文件对应素材、处理步骤和 SHA-256。
+source/licenses/ 保存作者素材包授权与下载时的来源页面；source/raw/ 保留采用的原始音频。
+试听页的“旧版对照”是前版原创程序合成音效。新旧音效均已嵌入页面。
+可选 BGM 仍读取原文件；BGM 的钢琴采样署名以相邻 BGM 目录 CREDITS.txt 为准。

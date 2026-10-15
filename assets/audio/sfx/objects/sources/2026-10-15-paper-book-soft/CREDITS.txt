@@ -1,0 +1,10 @@
+旧信纸与厚字典 · 来源说明
+
+本版由助手剪辑、组合、变速、柔化和调低已有 CC0 素材。不是独立实录，也不是厚字典或旧信纸的专门录音。
+来源：Kenney / RPG Audio / CC0 1.0
+https://kenney.nl/assets/rpg-audio
+https://creativecommons.org/publicdomain/zero/1.0/
+
+source/raw 保留采用的五个原始录音；source/licenses 保留原包授权。每个成品的素材及加工记录见 manifest.json 和 source/sources.json。
+旧版按钮播放保留的 v2 音频，同属 Kenney RPG Audio 素材剪辑。新旧均嵌入页面，播放增益相同，不自动拉齐响度。
+可选背景音乐读取相邻的已确认 BGM；其钢琴采样署名见 ../2026-10-15-hearth-and-sea/CREDITS.txt。

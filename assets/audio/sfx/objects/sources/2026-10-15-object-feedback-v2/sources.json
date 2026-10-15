@@ -1,0 +1,114 @@
+{
+  "assets": [
+    {
+      "file": "source/raw/bsb_drawer_close.ogg",
+      "title": "Wooden drawer, closing",
+      "author": "Joseph SARDIN / BigSoundBank",
+      "source_url": "https://bigsoundbank.com/tiroir-en-bois-fermeture-s1500.html",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "4c9e2963031214d462fed3cefc94623ca8448ce214b775b7dee21f280272486a"
+    },
+    {
+      "file": "source/raw/bsb_drawer_open.ogg",
+      "title": "Wooden drawer, opening",
+      "author": "Joseph SARDIN / BigSoundBank",
+      "source_url": "https://bigsoundbank.com/wooden-drawer-opening-s1499.html",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "78d57e5b65ffb2294771684b7dbeb857df1c162742dc945f5b836967f8edd37c"
+    },
+    {
+      "file": "source/raw/bsb_small_splash.ogg",
+      "title": "Splash, small #6",
+      "author": "Joseph SARDIN / BigSoundBank",
+      "source_url": "https://bigsoundbank.com/splash-small-6-s1534.html",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "b52f14e8650eecb1c0446e38bf1dc12c7dc79da51a88daa2870d5bfc0b25af10"
+    },
+    {
+      "file": "source/raw/kenney_impact-sounds/impactWood_light_000.ogg",
+      "title": "Impact Sounds",
+      "author": "Kenney",
+      "source_url": "https://kenney.nl/assets/impact-sounds",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "eb45e35b4bed784d3f120de4afec4b0d6ac09d9e143cce8cfcb7d739e1b1f3c3"
+    },
+    {
+      "file": "source/raw/kenney_impact-sounds/impactWood_light_003.ogg",
+      "title": "Impact Sounds",
+      "author": "Kenney",
+      "source_url": "https://kenney.nl/assets/impact-sounds",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "cdfbe8af2fe7ff9ee28f337a0a989deee0f327620da456c8413644880e9d0004"
+    },
+    {
+      "file": "source/raw/kenney_impact-sounds/impactWood_medium_002.ogg",
+      "title": "Impact Sounds",
+      "author": "Kenney",
+      "source_url": "https://kenney.nl/assets/impact-sounds",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "3f3f1917428b828f733a963167833c707bf88296ff158e1559c57c5cb813d799"
+    },
+    {
+      "file": "source/raw/kenney_rpg-audio/bookClose.ogg",
+      "title": "RPG Audio",
+      "author": "Kenney",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "81e976532565f4372abd14e83d2684195fa548d0a28d345de221e56052454f32"
+    },
+    {
+      "file": "source/raw/kenney_rpg-audio/bookFlip1.ogg",
+      "title": "RPG Audio",
+      "author": "Kenney",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "fa81ac2fedc8c641661b87e349630a36c9800e795e0c800e029214efdbe26a7d"
+    },
+    {
+      "file": "source/raw/kenney_rpg-audio/bookFlip2.ogg",
+      "title": "RPG Audio",
+      "author": "Kenney",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "3409042acbfaebc24c1a6327dc073e36f9250841712e96c5040da566a97df73c"
+    },
+    {
+      "file": "source/raw/kenney_rpg-audio/bookFlip3.ogg",
+      "title": "RPG Audio",
+      "author": "Kenney",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "c85db5dceb3f1df073e960630277eaa88a5afda0477c1ddd68dad707621767be"
+    },
+    {
+      "file": "source/raw/kenney_rpg-audio/bookOpen.ogg",
+      "title": "RPG Audio",
+      "author": "Kenney",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "953390534377222bee89ac8cd9e60a58fdc037c71a4d7c18c43cd647c7f34ba8"
+    }
+  ],
+  "processing": {
+    "bottle_lift": "BSB 1534: body 0.023-0.205s, falling water 0.275-0.590s; short recorded details at 0.178-0.212s and 0.265-0.313s are placed as isolated drips at 0.57/0.75s. No glass collision or synthesized noise.",
+    "drawer_open": "BSB 1499: splice 0.143-0.400s and 0.580-0.895s with 14ms crossfade, preserve end-stop; Kenney wood medium 002 at -16dB relative as initial handle contact.",
+    "drawer_close": "BSB 1500: splice 0.330-0.500s and 0.820-1.100s with 14ms crossfade, preserving the real wooden close impact.",
+    "letter_pick": "Kenney bookFlip3: 0.028-0.212s, preserve single paper-edge transient, high-pass 300Hz; no additional wood, continuous noise, or extra pages.",
+    "tray_open": "Kenney wood light 000/003, isolated short impacts, speed 1.30/1.13, 220Hz high-pass; two dry contacts at 0/0.072s; no scrape bed.",
+    "tray_close": "Kenney wood light 000/003, isolated short impacts, speed 1.30/1.13, 220Hz high-pass; two dry contacts at 0/0.038s; no scrape bed.",
+    "recipe_book_open": "Kenney bookOpen 0.011-0.135s plus a distinct longer bookFlip1 0.285-0.700s at 60ms; retain cover-to-pages sequence.",
+    "recipe_book_close": "Kenney bookFlip2 0.027-0.110s quietly precedes bookClose 0.056-0.225s at 45ms; retain low cover body and short natural tail."
+  },
+  "common_processing": "Mono downmix, polyphase resampling, selective EQ, 2ms peak detector / 12ms release dynamic peak reduction (ratio approximately 3.6:1), short edge fades, per-event peak normalization. No noise generation."
+}

@@ -21,6 +21,7 @@ local Closing=require "ui.landscape.ReleaseClosingView"
 local Wish=require "ui.landscape.WishView"
 local Ending=require "ui.landscape.EndingView"
 local SceneMusic=require "ui.landscape.SceneMusic"
+local ObjectSounds=require "ui.landscape.ObjectSounds"
 local MusicSettings=require "core.MusicSettings"
 local MusicSettingsView=require "ui.landscape.MusicSettingsView"
 local A={}
@@ -48,6 +49,8 @@ end
 function A.New(session,content,enabled)
     local model=Model.New(session,content,enabled)
     local music=SceneMusic.New()
+    local objectSounds=ObjectSounds.New()
+    local objectOpen=false --[[@as string|false]]
     local preferences=MusicSettings.New()
     local function applyMusicSettings(value) music.SetOptions(value.enabled,value.volume) end
     applyMusicSettings(preferences.Get())
@@ -85,6 +88,10 @@ function A.New(session,content,enabled)
         zoom=Zoom.New(),salvage=Salvage.New(),destroyed=false --[[@as boolean]],portrait=false --[[@as boolean]],
         yawProbe=false --[[@as table|false]],
         messages=Messages.New(session.state.GetStatus().migrationNotice),importantMessage=false --[[@as string|false]]}
+    function ctx.PlayObjectSound(id)
+        if not ctx.destroyed then return objectSounds.Play(id) end
+        return false
+    end
     local notify=model.Notify
     function model.Notify(result,message)
         local r=notify(result,message)
@@ -216,10 +223,10 @@ function A.New(session,content,enabled)
             if ctx.salvage.letterInstanceId then model.message="信已收好，可继续阅读，也可从药铺抽屉查看。" end
         end
     end
-    function ctx.OpenCapturedLetter()
+    function ctx.OpenCapturedLetter(userInitiated)
         if ctx.destroyed or ctx.salvage.active or ctx.panel or ctx.scene~="seaside" then return false end
         local id=ctx.salvage.letterInstanceId;if not id then return false end
-        local result=ctx.Read(id)
+        local result=ctx.Read(id,userInitiated)
         model.dirty=true;return result
     end
     function ctx.SkipSalvage()
@@ -261,6 +268,7 @@ function A.New(session,content,enabled)
         if ctx.destroyed then return end
         if settings.IsOpen() then settings.Save() end
         music.Destroy()
+        objectSounds.Destroy()
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
         WordTray.Reset(ctx);JournalBook.Reset(ctx);LetterDrawer.Reset(ctx)
         ctx.destroyed=true
@@ -275,6 +283,7 @@ function A.New(session,content,enabled)
     function ctx.Navigate(target)
         if ctx.destroyed or ctx.salvage.active or ctx.ticketEnding then return end
         if ctx.releasePhase and ctx.releasePhase~="operating" then return end
+        objectOpen=false
         if ctx.yawProbe then ctx.yawProbe.Close("navigate") end
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
         WordTray.Reset(ctx);JournalBook.Reset(ctx);LetterDrawer.Reset(ctx)
@@ -285,12 +294,14 @@ function A.New(session,content,enabled)
     end
     function ctx.Push(kind)
         if ctx.destroyed or ctx.portrait or ctx.zoom.active or ctx.salvage.active or ctx.yawProbe then return end
+        objectOpen=false
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
         WordTray.Reset(ctx);JournalBook.Reset(ctx);LetterDrawer.Reset(ctx)
         ctx.stack[#ctx.stack+1]=ctx.panel or false; ctx.panel=kind; ctx.readerCache=false; model.dirty=true
     end
     function ctx.Close()
         if ctx.destroyed or ctx.zoom.active or ctx.salvage.active or ctx.ticketEnding or ctx.yawProbe then return end
+        objectOpen=false
         if ctx.releasePhase and ctx.releasePhase~="operating" then
             ctx.panel=ctx.releasePhase=="wish" and "wish" or "closing";ctx.stack={};model.dirty=true;return
         end
@@ -301,12 +312,14 @@ function A.New(session,content,enabled)
         ctx.panel=table.remove(ctx.stack) or false; ctx.readerCache=false
         model.Navigate(ctx.panel=="reader" and "letter" or ctx.scene)
     end
-    function ctx.Read(id)
+    function ctx.Read(id,userInitiated)
         if ctx.destroyed or ctx.zoom.active or ctx.salvage.active or ctx.yawProbe then return end
+        local entering=ctx.panel~="reader" or model.selectedLetter~=id
         local result=model.Read(id)
         if result.ok then
             ctx.salvage.Acknowledge(id)
             ctx.Push("reader");ctx.choosingLetter=false
+            if userInitiated and entering and not ctx.portrait and ctx.panel=="reader" then ctx.PlayObjectSound("letter_pick") end
         end
         return result
     end
@@ -317,8 +330,11 @@ function A.New(session,content,enabled)
         local id=known[model.selectedLetter] and model.selectedLetter or false
         local data=model.Refresh(); local order=data and data.currentOrder
         if not id and order and known[order.letterInstanceId] then id=order.letterInstanceId end
-        if id then ctx.Read(id)
-        else ctx.panel="letters"; ctx.stack={}; ctx.choosingLetter=true; model.dirty=true end
+        if id then ctx.Read(id,true)
+        else
+            if ctx.panel~="letters" then objectOpen="letters" end
+            ctx.panel="letters"; ctx.stack={}; ctx.choosingLetter=true; model.dirty=true
+        end
     end
     function ctx.Open(kind)
         if ctx.destroyed or ctx.portrait or ctx.zoom.active or ctx.salvage.active or ctx.yawProbe then return end
@@ -330,6 +346,7 @@ function A.New(session,content,enabled)
             if ctx.releasePhase=="wish" and kind~="wish" and kind~="wishPreview" and kind~="closing" then return end
         end
         if ctx.ticketEnding and kind~="ticketEnding" then return end
+        if ctx.panel~=kind then objectOpen=kind end
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
         WordTray.Reset(ctx);JournalBook.Reset(ctx);LetterDrawer.Reset(ctx)
         ctx.ticketConfirm=false;ctx.ticketQuote=false
@@ -375,9 +392,10 @@ function A.New(session,content,enabled)
             overlay:AddChild(blocker)
         end
         if kind=="shop" then Shop.Render(ctx,overlay);return end
-        if kind=="words" then WordTray.Open(ctx);WordTray.Render(ctx,overlay);return end
-        if kind=="journal" then JournalBook.Open(ctx);JournalBook.Render(ctx,overlay);return end
-        if kind=="letters" then LetterDrawer.Open(ctx);LetterDrawer.Render(ctx,overlay);return end
+        local audible=objectOpen==kind;objectOpen=false
+        if kind=="words" then WordTray.Open(ctx,audible);WordTray.Render(ctx,overlay);return end
+        if kind=="journal" then JournalBook.Open(ctx,audible);JournalBook.Render(ctx,overlay);return end
+        if kind=="letters" then LetterDrawer.Open(ctx,audible);LetterDrawer.Render(ctx,overlay);return end
         if kind=="ticketEnding" then TicketView.Ending(ctx,overlay);return end
         if kind=="closing" or kind=="wish" or kind=="wishPreview" or kind=="ending" then
             local module=kind=="closing" and Closing or kind=="ending" and Ending or Wish
@@ -465,7 +483,11 @@ function A.New(session,content,enabled)
         if ctx.scene=="seaside" then seaside.Update(GetTime():GetTimeStep()) end
         if ctx.salvage.active then
             local clock=GetTime()
+            local previousPhase=ctx.salvage.Pose().phase
             local result=ctx.salvage.Update(clock:GetTimeStep(),seaside.Fit(),input:HasFocus() and not input:IsMinimized(),clock:GetElapsedTime())
+            if ctx.salvage.active and previousPhase~="lifting" and ctx.salvage.Pose().phase=="lifting" then
+                ctx.PlayObjectSound("bottle_lift")
+            end
             if result then
                 salvageBlocker:SetVisible(false);model.dirty=true
                 if result=="complete" then ctx.OpenCapturedLetter()

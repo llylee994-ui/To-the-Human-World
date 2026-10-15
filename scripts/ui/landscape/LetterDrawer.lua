@@ -39,9 +39,12 @@ function D.State(ctx)
 end
 function D.Progress(ctx) return ctx.letterDrawer and ctx.letterDrawer.open or 0 end
 function D.Settled(ctx) return not ctx.letterDrawer or ctx.letterDrawer.settled end
-function D.Open(ctx)
+function D.Open(ctx,userInitiated)
     local state=D.State(ctx)
-    if not state.closing then state.target=1;state.settled=false end
+    if not state.closing then
+        if userInitiated and state.target~=1 and ctx.PlayObjectSound then ctx.PlayObjectSound("drawer_open") end
+        state.target=1;state.settled=false
+    end
     return state
 end
 function D.Reset(ctx)
@@ -53,6 +56,7 @@ function D.RequestClose(ctx)
     local state=ctx.letterDrawer --[[@as LetterDrawerState?]]
     if not state or state.closing then return end
     if state.open<=0 then ctx.Close();return end
+    if ctx.panel=="letters" and ctx.PlayObjectSound then ctx.PlayObjectSound("drawer_close") end
     state.closing=true;state.target=0;state.settled=false
 end
 function D.Update(ctx,dt)
@@ -86,7 +90,7 @@ local function card(ctx,row,allowed,layout,index)
         left=((index-1)%columns)*(layout.card.w+layout.card.gap),
         top=math.floor((index-1)/columns)*layout.card.rowStep,
         width=layout.card.w,height=layout.card.h,flexShrink=0,
-        onClick=allowed and function() ctx.Read(row.letterInstanceId) end or nil}
+        onClick=allowed and function() ctx.Read(row.letterInstanceId,true) end or nil}
     local _,paper=Art.Image(node,"letterDrawerCardArt_"..row.letterInstanceId,row.read and "read" or "unread",
         {x=0,y=0,w=layout.card.w,h=layout.card.h},false,allowed and 1 or .5)
     local title=text(node,row.title,layout.card.w<190 and 12 or 14,"letterDrawerCardTitle_"..row.letterInstanceId)
