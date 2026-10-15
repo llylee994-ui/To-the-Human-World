@@ -58,6 +58,7 @@ function S.Render(ctx,overlay)
     header:AddChild(UI.Panel {flexGrow=1,pointerEvents="none"})
     local wallet=text(header,"",17,"shopBalance",light)
     Widget.SetStyle(wallet,{width=128,whiteSpace="nowrap",alignSelf="center"})
+    header:AddChild(Harbor.Button {id="shopSettings",text="设置",minHeight=48,width=72,onClick=ctx.OpenSettings})
     header:AddChild(Harbor.Button {id="closePanel",text="关闭",minHeight=48,width=84,onClick=ctx.Close})
     local noticeArea=UI.ScrollView {id="shopMessageArea",width="100%",height=44,flexShrink=0,scrollY=true,
         visible=false,paddingLeft=pad+safe.left,paddingRight=pad+safe.right,pointerEvents="box-none"}

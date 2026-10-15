@@ -20,6 +20,8 @@ local Closing=require "ui.landscape.ReleaseClosingView"
 local Wish=require "ui.landscape.WishView"
 local Ending=require "ui.landscape.EndingView"
 local SceneMusic=require "ui.landscape.SceneMusic"
+local MusicSettings=require "core.MusicSettings"
+local MusicSettingsView=require "ui.landscape.MusicSettingsView"
 local A={}
 local side={words="left",journal="right"}
 local titles={letters="来信抽屉",reader="阅读信件",words="词条栏",journal="故事记录",attempt="试做记录",shop="商队商店",case="案件板",day="结束当天",result="试做结果"}
@@ -45,6 +47,10 @@ end
 function A.New(session,content,enabled)
     local model=Model.New(session,content,enabled)
     local music=SceneMusic.New()
+    local preferences=MusicSettings.New()
+    local function applyMusicSettings(value) music.SetOptions(value.enabled,value.volume) end
+    applyMusicSettings(preferences.Get())
+    local settings=MusicSettingsView.New(preferences,applyMusicSettings)
     local nativeProbe=require("ui.landscape.DevChecks").nativeProbe and require("ui.landscape.tests.NativeProbe").New() or nil
     local yawEnabled=require("ui.landscape.DevChecks").yawProbe
     local yawAuto=yawEnabled and require("ui.landscape.DevChecks").yawProbeAuto and require("ui.landscape.tests.YawNativeProbe").New() or nil
@@ -98,6 +104,7 @@ function A.New(session,content,enabled)
     -- Explicit order: equal-z siblings are not stably sorted by the UI library.
     local overlay=UI.Panel {id="overlayHost",position="absolute",left=0,top=0,width="100%",height="100%",zIndex=100,pointerEvents="box-none"}
     root:AddChild(overlay)
+    root:AddChild(settings.root)
     -- Stable topmost blocker: blocks HUD and all room inputs without rebuilding the tree.
     local zoomBlocker=UI.Panel {id="homeZoomBlocker",position="absolute",left=0,top=0,width="100%",height="100%",
         zIndex=1000,visible=false,pointerEvents="box-only",onClick=function() end}
@@ -129,7 +136,8 @@ function A.New(session,content,enabled)
         end
         ctx.safeInsets=safe;ctx.viewport=viewport
         ctx.menuRect=menu and {left=menu.left,top=menu.top,right=menu.right,bottom=menu.bottom} or nil
-        home.SetPanelOpen(ctx.panel~=false)
+        home.SetPanelOpen(ctx.panel~=false or settings.IsOpen())
+        settings.SetInsets(safe,viewport,menu)
         hud:SetVisible(not ctx.panel and (not ctx.releasePhase or ctx.releasePhase=="operating"))
         local label=ledger:GetText()
         local measured=UI.MeasureTextWidth and UI.MeasureTextWidth(label,Theme.FontSize(13),Harbor.fontFamily) or (utf8.len(label) or 0)*10
@@ -155,7 +163,7 @@ function A.New(session,content,enabled)
                 if viewportRoot.props.backgroundImage~=background then viewportRoot:SetBackgroundImage(background) end
             end
         end
-        local required=ledgerWidth+12+108+72+24+(ctx.scene~="home" and 114 or 0)+(pending and pending.props.visible and 122 or 0)
+        local required=ledgerWidth+12+108+72+80+24+(ctx.scene~="home" and 114 or 0)+(pending and pending.props.visible and 122 or 0)
         local finish=hud:FindById("finishJourney")
         if finish and finish.props.visible then required=required+116 end
         local safeWidth=math.max(0,vw-safe.left-safe.right)
@@ -177,7 +185,7 @@ function A.New(session,content,enabled)
             -- Compute from the unshifted position so a fallback margin cannot
             -- alternate between clearing the capsule and undoing itself.
             local shop=ctx.panel=="shop" and not ctx.ticketConfirm
-            local clearance=HudLayout.Compute({x=r.x,y=r.y-(header.props.marginTop or 0),w=r.w,h=r.h},viewport,menu,shop and 450+safe.left or 250)
+            local clearance=HudLayout.Compute({x=r.x,y=r.y-(header.props.marginTop or 0),w=r.w,h=r.h},viewport,menu,shop and 534+safe.left or 250)
             local pad=shop and (vh-safe.top-safe.bottom<540 and 12 or 24) or 16
             local right=math.max(clearance.right,shop and safe.right+pad or 12)
             if header.props.paddingRight~=right or header.props.marginTop~=clearance.top then
@@ -250,6 +258,7 @@ function A.New(session,content,enabled)
     local destroyRoot=root.Destroy
     function root:Destroy()
         if ctx.destroyed then return end
+        if settings.IsOpen() then settings.Save() end
         music.Destroy()
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
         WordTray.Reset(ctx);JournalBook.Reset(ctx)
@@ -327,10 +336,15 @@ function A.New(session,content,enabled)
         if kind=="home" or kind=="brew" or kind=="seaside" then ctx.Navigate(kind); return end
         ctx.panel=kind; ctx.stack={}; ctx.readerCache=false; ctx.choosingLetter=false; model.dirty=true
     end
+    function ctx.OpenSettings()
+        if ctx.destroyed or ctx.portrait or ctx.zoom.active or ctx.salvage.active or ctx.yawProbe then return end
+        settings.Open()
+    end
     local back=Harbor.Button {id="returnHome",text="返回主页",width=106,minHeight=44,visible=false,onClick=function() ctx.Navigate("home") end}
     hud:AddChild(back)
     pending=Harbor.Button {id="resumePending",text="待处理结果",width=114,minHeight=44,visible=false,onClick=function() ctx.Open("result") end}
     hud:AddChild(pending)
+    hud:AddChild(Harbor.Button {id="openSettings",text="设置",width=72,minHeight=44,onClick=ctx.OpenSettings})
     hud:AddChild(Harbor.Button {id="toggleHomeHints",text="提示",width=72,minHeight=44,onClick=function()
         if ctx.scene=="home" and not ctx.zoom.active and not ctx.salvage.active then home.ShowHints(not home.HintsVisible()) end
     end})
@@ -432,6 +446,7 @@ function A.New(session,content,enabled)
     end
     function ctx.Update()
         if ctx.destroyed then return end
+        settings.Update()
         if ctx.yawProbe then ctx.yawProbe.Update() end
         if yawAuto then yawAuto(ctx) end
         if stoveAuto then stoveAuto(ctx) end

@@ -35,6 +35,21 @@ local function widget(props)
     return w
 end
 UI.Label, UI.Panel, UI.Button, UI.ScrollView, UI.SafeAreaView = widget, widget, widget, widget, widget
+-- Reuse the actual value/callback methods; only layout/render/event dispatch is absent.
+function UI.Slider(props)
+    local control=widget(props) --[[@as table]]
+    local Slider=require "urhox-libs/UI/Widgets/Slider"
+    control.SetValue=Slider.SetValue;control.GetValue=Slider.GetValue
+    control.DispatchEvent=function() end
+    return control
+end
+function UI.Toggle(props)
+    local control=widget(props) --[[@as table]]
+    local Toggle=require "urhox-libs/UI/Widgets/Toggle"
+    control.SetValue=Toggle.SetValue;control.GetValue=Toggle.GetValue;control.SetLabel=Toggle.SetLabel
+    control.DispatchEvent=function() end
+    return control
+end
 function UI.Init(_) end
 function UI.Shutdown() end
 function UI.SetRoot(root) UI.root = root end

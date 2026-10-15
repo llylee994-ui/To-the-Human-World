@@ -5,9 +5,21 @@ local seaside="audio/bgm/seaside-path-loop.wav"
 
 function Music.New()
     local player={}
-    local node,source,current
+    ---@type Node|nil
+    local node
+    ---@type SoundSource|nil
+    local source
+    ---@type string|nil
+    local current
     local failed={}
     local destroyed=false
+    local gain=1 --[[@as number]]
+
+    function player.SetOptions(enabled,volume)
+        if destroyed then return end
+        gain=enabled and math.max(0,math.min(100,volume))/100 or 0
+        if source then source:SetGain(gain) end
+    end
 
     function player.Sync(scene,panel)
         if destroyed then return end
@@ -27,7 +39,7 @@ function Music.New()
                 source:SetSoundType(SOUND_MUSIC)
             end
             -- Use each file's sample rate and preserve its approved mix/gain.
-            source:Play(sound,0,1)
+            source:Play(sound,0,gain)
             current=path
         end)
         if not ok then
