@@ -39,7 +39,19 @@ function T.Run()
         end
         return owner
     end
+    -- Native engine globals can be exposed by getters rather than raw table keys.
+    local originalMetatable=getmetatable(_G)
+    local boundNode,boundCache=Node,cache
+    Node=nil;cache=nil
+    setmetatable(_G,{__index=function(t,key)
+        if key=="Node" then return boundNode end
+        if key=="cache" then return boundCache end
+        local index=originalMetatable and originalMetatable.__index
+        if type(index)=="function" then return index(t,key) end
+        if type(index)=="table" then return index[key] end
+    end})
     local ok,err=pcall(function()
+        check(Node~=nil and cache~=nil and rawget(_G,"cache")==nil,"engine globals available through getters")
         package.loaded["debug.DeveloperMode"]=false
         local host=require("ui.landscape.tests.ZoomTestHost").New()
         local data=require "data.content"
@@ -101,6 +113,7 @@ function T.Run()
         Stop();Stop()
         check(active==nil and removed==removedBefore+1,"real main Stop releases music exactly once")
     end)
+    setmetatable(_G,originalMetatable)
     Node,cache,SOUND_MUSIC=savedNode,savedCache,savedType
     assert(ok,err)
     print("[SceneMusicTest] PASS assertions="..n.."; schema4 navigation, purchase, salvage/reader, no overlap/restart, missing asset and main Stop; audio adapters only")

@@ -13,8 +13,9 @@ function Music.New()
         if destroyed then return end
         local path=(scene=="seaside" or panel=="shop") and seaside or hearth
         if current==path then return end
-        -- Isolated business/UI tests have no native audio subsystem.
-        if not rawget(_G,"Node") or not rawget(_G,"cache") then return end
+        -- Native cache is a global getter; rawget would incorrectly skip playback.
+        -- Isolated business/UI tests have neither of these native bindings.
+        if not Node or not cache then return end
         if source then source:Stop();current=nil end
         if failed[path] then return end
         local ok,err=pcall(function()
