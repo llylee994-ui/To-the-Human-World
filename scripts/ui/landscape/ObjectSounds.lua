@@ -21,6 +21,13 @@ function S.New()
     local sounds={}
     local reported={}
     local destroyed=false
+    local gain=1 --[[@as number]]
+    function player.SetOptions(enabled,volume)
+        if destroyed then return end
+        gain=enabled and math.max(0,math.min(100,volume))/100 or 0
+        -- Only our object voices change; the existing effects bus still applies.
+        for _,voice in ipairs(voices) do voice:SetGain(gain) end
+    end
     local function load(id)
         if sounds[id] then return sounds[id] end
         local sound=assert(cache:GetResource("Sound",paths[id]),"missing sound: "..paths[id])
@@ -37,7 +44,7 @@ function S.New()
         for id in pairs(paths) do local ok,err=pcall(load,id);if not ok then report(id,err) end end
     end
     function player.Play(id)
-        if destroyed or not paths[id] or not Node or not cache or not SOUND_EFFECT then return false end
+        if destroyed or gain<=0 or not paths[id] or not Node or not cache or not SOUND_EFFECT then return false end
         local ok,result=pcall(function()
             local sound=load(id)
             ---@type SoundSource|nil
@@ -51,8 +58,8 @@ function S.New()
                 source:SetSoundType(SOUND_EFFECT)
                 voices[#voices+1]=source
             end
-            -- Preserve source sample rate, authored loudness and the existing effects bus.
-            source:Play(sound,0,1.0)
+            -- Per-file gain stays at 1.0; apply only the shared user preference.
+            source:Play(sound,0,1.0*gain)
             return true
         end)
         if not ok then report(id,result);return false end

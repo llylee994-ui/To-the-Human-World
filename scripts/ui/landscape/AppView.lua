@@ -23,6 +23,7 @@ local Ending=require "ui.landscape.EndingView"
 local SceneMusic=require "ui.landscape.SceneMusic"
 local ObjectSounds=require "ui.landscape.ObjectSounds"
 local MusicSettings=require "core.MusicSettings"
+local SoundSettings=require "core.SoundSettings"
 local MusicSettingsView=require "ui.landscape.MusicSettingsView"
 local A={}
 local side={words="left",journal="right"}
@@ -54,7 +55,10 @@ function A.New(session,content,enabled)
     local preferences=MusicSettings.New()
     local function applyMusicSettings(value) music.SetOptions(value.enabled,value.volume) end
     applyMusicSettings(preferences.Get())
-    local settings=MusicSettingsView.New(preferences,applyMusicSettings)
+    local soundPreferences=SoundSettings.New()
+    local function applySoundSettings(value) objectSounds.SetOptions(value.enabled,value.volume) end
+    applySoundSettings(soundPreferences.Get())
+    local settings=MusicSettingsView.New(preferences,applyMusicSettings,soundPreferences,applySoundSettings)
     local nativeProbe=require("ui.landscape.DevChecks").nativeProbe and require("ui.landscape.tests.NativeProbe").New() or nil
     local yawEnabled=require("ui.landscape.DevChecks").yawProbe
     local yawAuto=yawEnabled and require("ui.landscape.DevChecks").yawProbeAuto and require("ui.landscape.tests.YawNativeProbe").New() or nil
