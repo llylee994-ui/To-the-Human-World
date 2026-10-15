@@ -33,17 +33,6 @@ function P.IntroText(text,name)
     if value==name then return rest:match("^%s*(.-)%s*$") end
     return text
 end
-function P.Letters(ctx,body)
-    local rows=query(ctx,body,"GetLetters"); if not rows then return end
-    P.Text(body,"已收来信",22)
-    if ctx.choosingLetter then P.Text(body,"请选择要放到桌面阅读的信件。",14) end
-    if #rows==0 then P.Text(body,"还没有收到信件。可点击捞网前往海边捕捞。",16,"lettersEmpty") end
-    for _,row in ipairs(rows) do
-        P.Text(body,row.senderName .. " · " .. (row.read and "已读" or "未读") .. " · 可剪 " .. row.remainingCutCount .. " 处 · " .. (orderNames[row.orderStatus] or row.orderStatus),14)
-        local action=gate(ctx,"ReadLetter")
-        P.Button(body,"read_"..row.letterInstanceId,row.title,function() ctx.Read(row.letterInstanceId) end,row.read or action.enabled,action.message)
-    end
-end
 function P.PaperText(view)
     local parts={}
     for _,segment in ipairs(view.segments or {}) do
@@ -224,6 +213,6 @@ function P.Day(ctx,body)
     end,action.enabled,action.message)
     P.Button(body,"cancelNextDay","继续今天",ctx.Close)
 end
-P.Renderers={letters=P.Letters,reader=P.Reader,shop=P.Shop,case=P.Case,
+P.Renderers={reader=P.Reader,shop=P.Shop,case=P.Case,
     attempt=P.Attempt,seaside=P.Seaside,brew=P.Brew,result=P.Result,day=P.Day}
 return P

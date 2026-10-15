@@ -16,6 +16,7 @@ local Shop=require "ui.landscape.ShopView"
 local TicketView=require "ui.landscape.TravelTicketView"
 local WordTray=require "ui.landscape.WordTrayDrawer"
 local JournalBook=require "ui.landscape.JournalBook"
+local LetterDrawer=require "ui.landscape.LetterDrawer"
 local Closing=require "ui.landscape.ReleaseClosingView"
 local Wish=require "ui.landscape.WishView"
 local Ending=require "ui.landscape.EndingView"
@@ -248,7 +249,7 @@ function A.New(session,content,enabled)
     local destroyRoot=root.Destroy
     function root:Destroy()
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
-        WordTray.Reset(ctx);JournalBook.Reset(ctx)
+        WordTray.Reset(ctx);JournalBook.Reset(ctx);LetterDrawer.Reset(ctx)
         ctx.destroyed=true
         if ctx.yawProbe then ctx.yawProbe.Close() end
         ctx.CancelHomeZoom("destroyed");ctx.CancelSalvage("destroyed");destroyRoot(self)
@@ -263,7 +264,7 @@ function A.New(session,content,enabled)
         if ctx.releasePhase and ctx.releasePhase~="operating" then return end
         if ctx.yawProbe then ctx.yawProbe.Close("navigate") end
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
-        WordTray.Reset(ctx);JournalBook.Reset(ctx)
+        WordTray.Reset(ctx);JournalBook.Reset(ctx);LetterDrawer.Reset(ctx)
         ctx.CancelHomeZoom("navigate")
         ctx.scene=target; ctx.panel=false; ctx.stack={}; ctx.readerCache=false; ctx.choosingLetter=false;ctx.ticketConfirm=false;ctx.ticketQuote=false
         if target=="home" then model.ReturnHome() else model.Navigate(target) end
@@ -272,7 +273,7 @@ function A.New(session,content,enabled)
     function ctx.Push(kind)
         if ctx.destroyed or ctx.portrait or ctx.zoom.active or ctx.salvage.active or ctx.yawProbe then return end
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
-        WordTray.Reset(ctx);JournalBook.Reset(ctx)
+        WordTray.Reset(ctx);JournalBook.Reset(ctx);LetterDrawer.Reset(ctx)
         ctx.stack[#ctx.stack+1]=ctx.panel or false; ctx.panel=kind; ctx.readerCache=false; model.dirty=true
     end
     function ctx.Close()
@@ -281,7 +282,7 @@ function A.New(session,content,enabled)
             ctx.panel=ctx.releasePhase=="wish" and "wish" or "closing";ctx.stack={};model.dirty=true;return
         end
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
-        WordTray.Reset(ctx);JournalBook.Reset(ctx)
+        WordTray.Reset(ctx);JournalBook.Reset(ctx);LetterDrawer.Reset(ctx)
         ctx.ticketConfirm=false;ctx.ticketQuote=false
         if ctx.panel=="journal" then ctx.storyId=false end
         ctx.panel=table.remove(ctx.stack) or false; ctx.readerCache=false
@@ -317,7 +318,7 @@ function A.New(session,content,enabled)
         end
         if ctx.ticketEnding and kind~="ticketEnding" then return end
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
-        WordTray.Reset(ctx);JournalBook.Reset(ctx)
+        WordTray.Reset(ctx);JournalBook.Reset(ctx);LetterDrawer.Reset(ctx)
         ctx.ticketConfirm=false;ctx.ticketQuote=false
         if kind=="paper" then ctx.OpenPaper(); return end
         if kind=="home" or kind=="brew" or kind=="seaside" then ctx.Navigate(kind); return end
@@ -349,12 +350,16 @@ function A.New(session,content,enabled)
         local kind=ctx.panel; local location=side[kind]
         if not location then
             -- Keep the blocker through pointer-up; only rebuild on Update.
-            overlay:AddChild(UI.Panel {id="modalBlocker",position="absolute",left=0,top=0,width="100%",height="100%",
-                backgroundColor={18,24,20,190},onClick=function() end})
+            local blocker=UI.Panel {id="modalBlocker",position="absolute",left=0,top=0,width="100%",height="100%",
+                backgroundColor={18,24,20,190},onClick=function() end}
+            -- 抽屉跟侧栏一样先滑回去再关；其它面板保持吞掉点击。
+            if kind=="letters" then blocker.props.onClick=function() LetterDrawer.RequestClose(ctx) end end
+            overlay:AddChild(blocker)
         end
         if kind=="shop" then Shop.Render(ctx,overlay);return end
         if kind=="words" then WordTray.Open(ctx);WordTray.Render(ctx,overlay);return end
         if kind=="journal" then JournalBook.Open(ctx);JournalBook.Render(ctx,overlay);return end
+        if kind=="letters" then LetterDrawer.Open(ctx);LetterDrawer.Render(ctx,overlay);return end
         if kind=="ticketEnding" then TicketView.Ending(ctx,overlay);return end
         if kind=="closing" or kind=="wish" or kind=="wishPreview" or kind=="ending" then
             local module=kind=="closing" and Closing or kind=="ending" and Ending or Wish
@@ -407,7 +412,7 @@ function A.New(session,content,enabled)
             ctx.releasePhase=phase
             if changed then
                 if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
-                WordTray.Reset(ctx);JournalBook.Reset(ctx);ctx.CancelHomeZoom("releasePhase");ctx.CancelSalvage("releasePhase")
+                WordTray.Reset(ctx);JournalBook.Reset(ctx);LetterDrawer.Reset(ctx);ctx.CancelHomeZoom("releasePhase");ctx.CancelSalvage("releasePhase")
                 ctx.stack={};ctx.readerCache=false;ctx.ticketEnding=false;ctx.ticketConfirm=false;ctx.ticketQuote=false
                 ctx.newPlaythroughConfirm=false;ctx.scene="home"
                 ctx.panel=phase=="ended" and "ending" or phase=="wish" and "wish" or phase~="operating" and "closing" or false
@@ -437,7 +442,7 @@ function A.New(session,content,enabled)
         if ctx.readerCache and ctx.readerCache.presentation then
             ctx.readerCache.presentation.Update(dt,input:HasFocus() and not input:IsMinimized())
         end
-        WordTray.Update(ctx,dt);JournalBook.Update(ctx,dt)
+        WordTray.Update(ctx,dt);JournalBook.Update(ctx,dt);LetterDrawer.Update(ctx,dt)
         if ctx.scene=="seaside" then seaside.Update(GetTime():GetTimeStep()) end
         if ctx.salvage.active then
             local clock=GetTime()

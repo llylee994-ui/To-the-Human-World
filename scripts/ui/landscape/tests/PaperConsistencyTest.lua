@@ -51,8 +51,9 @@ function T.Run()
         check(view.root:FindById("bookEntryText"):GetText()~="","stored follow-up text renders inside the page")
     end
     check(#page.branches>=#page.outcomes,"catalog keeps every branch, including uncollected ones")
-    -- 词条栏与记录书改走布料面板（WordTrayDrawer / JournalBook），不再共用纸面框架，故不在此列。
-    for _,kind in ipairs({"letters","case","day","result"}) do
+    -- 词条栏、记录书与来信抽屉都改走各自的素材面板（WordTrayDrawer / JournalBook /
+    -- LetterDrawer），不再共用纸面框架，故不在此列。
+    for _,kind in ipairs({"case","day","result"}) do
         view.Open(kind);view.Update()
         local p=view.root:FindById("activePanel").props
         check(p.paddingLeft>=32 and p.paddingTop>=32,kind.." uses the same safe paper frame")
