@@ -99,6 +99,24 @@ function C.Prepare(data,limits)
             out.materials[key].normalTexture=C.ResourcePath(m.normalTexture)
             out.materials[key].normalMapConvention=m.normalMapConvention
         end
+        if m.roughMetalOcclusionTexture then
+            expect(not m.unlit and (m.alphaMode=="OPAQUE" or m.alphaMode=="BLEND") and m.normalTexture,"packed PBR texture requires opaque or blended normal-mapped material")
+            expect(type(m.textureColorSpaces)=="table" and m.textureColorSpaces.roughMetalOcclusionTexture=="linear","packed PBR texture must be linear")
+            out.materials[key].roughMetalOcclusionTexture=C.ResourcePath(m.roughMetalOcclusionTexture)
+        end
+        expect(m.emissiveStrength==nil or m.emissiveFactor,"emissive strength requires factor")
+        if m.emissiveFactor then
+            vec(m.emissiveFactor,"emissiveFactor",3)
+            local e={};for i,x in ipairs(m.emissiveFactor) do e[i]=number(x,"emissiveFactor",0,1) end
+            out.materials[key].emissiveFactor=e
+            out.materials[key].emissiveStrength=number(m.emissiveStrength or 1,"emissiveStrength",0,100000)
+        end
+        if m.emissiveTexture then
+            expect(m.emissiveFactor,"emissive texture requires factor")
+            expect(not m.unlit and m.normalTexture and m.roughMetalOcclusionTexture,"emissive texture requires lit normal and RMA maps")
+            expect(type(m.textureColorSpaces)=="table" and m.textureColorSpaces.emissiveTexture=="sRGB","emissive texture must be sRGB")
+            out.materials[key].emissiveTexture=C.ResourcePath(m.emissiveTexture)
+        end
         if progress then progress("validateMaterials",0,#data.materials,key) end
     end
     seen={}

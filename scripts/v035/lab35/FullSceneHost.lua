@@ -1,4 +1,4 @@
--- Separate full-scene entry. Not staged/launched while native preview is paused.
+-- Full d584352 scene with the local shared-main gameplay adapter and isolated memory progress.
 local H={}
 function H.Install(config)
     assert(config and config.resourcePrefix,"explicit full-scene resource prefix required")
@@ -9,6 +9,7 @@ function H.Install(config)
     local U=require "v035.core.StateUtil"
     local prefix=Package.Path(config.resourcePrefix).."/"
     local app,scene,camera,node,octree,job,display,header,raw,home,pose,nav,observation
+    local fire
     local stage,waitFrames,elapsed,reportAt,lastPhase="waiting",0,0,0,nil
     local startedMs,lastStepMs,worstStepMs=0,0,0
     -- Use the same monotonic instance API as the shipped UI input clock.
@@ -19,12 +20,16 @@ function H.Install(config)
     local function log(label,data) print("[V035 FULL "..label.."] "..cjson.encode(data)) end
     local function fail(err)
         local failedPhase=stage;stage="failed"
+        local lampCleanupOk,lampCleanupError=true,nil
+        if scene then lampCleanupOk,lampCleanupError=pcall(require("v035.lab35.SelectedLampLighting").Stop,scene) end
+        if fire then fire.Stop();fire=nil end
         if job then
             if not job.Cancel() and job.Result() then job.Result().root:Remove() end
         end
         if app then app.view.root:Destroy();app=nil end
         local row=job and job.Snapshot() or {phase=failedPhase}
         row.status="failed";row.error=tostring(err)
+        if not lampCleanupOk then row.cleanupError="selected lamp: "..tostring(lampCleanupError) end
         if display then display.Update(row) end
         log("FAIL",row)
     end
@@ -62,7 +67,7 @@ function H.Install(config)
     local function occluded(origin,direction,distance,id)
         local a=anchorById[id]
         if not a or not alphaOpaque(origin,direction,a) then return true end
-        local hit=octree:RaycastSingle(Ray(vector(origin),vector(direction)),RAY_TRIANGLE,distance+.02,DRAWABLE_GEOMETRY)
+        local hit=octree:RaycastSingle(Ray(vector(origin),vector(direction)),RAY_TRIANGLE,distance+.02,DRAWABLE_GEOMETRY,0x7fffffff)
         if not hit or not hit.node or hit.distance>=distance-.02 then return false end
         local owner=hit.node.name:match("^(.*):%d+$")
         local hitPoint=V.Add(origin,V.Mul(direction,hit.distance))
@@ -108,8 +113,9 @@ function H.Install(config)
         end
         log("READY",{stats=imported.stats,loadWallSeconds=(nowMs()-startedMs)/1000,calibrationPassed=calibration.ok,
             warnings=imported.prepared.warnings,storage="one in-memory GameSession/PlayModel",
-            businessSource="shared main",contentVersion=app.bundle.content.contentVersion,schema=app.bundle.session.state.GetStatus().schema,businessQa="no automatic commands",fullSceneRendered="requires pixel verification"})
+            businessSource="shared main",visualRevision="d584352",contentVersion=app.bundle.content.contentVersion,schema=app.bundle.session.state.GetStatus().schema,businessQa="no automatic commands",fullSceneRendered="requires pixel verification"})
         if config.lightingPreset=="warm_harbor" then require("v035.lab35.HarborLighting").Apply(scene) end
+        fire=require('v035.lab35.KenneyCauldronFire').New(scene,config.resourcePrefix,{freezeTime=config.fireFreezeTime})
         if config.onReady then config.onReady(scene,camera,app,node) end
         if config.observeEntries and calibration.ok then
             observation=require("v035.lab35.NativeObservation").New(app,camera,node,log)
@@ -117,7 +123,7 @@ function H.Install(config)
     end
     function Start()
         startedMs=nowMs()
-        graphics.windowTitle="寄往人间 · 3D · main 接入测试"
+        graphics.windowTitle="寄往人间 · 3D · main + d584352"
         UI.Init({theme=require "ui.landscape.HarborTheme",scale=UI.Scale.DEFAULT,fonts={
             {family="sans",weights={normal="Fonts/MiSans-Regular.ttf"}},
             {family="story",weights={normal="fonts/HarborHand-Regular.ttf",bold="fonts/HarborHand-Regular.ttf"}}}})
@@ -160,6 +166,7 @@ function H.Install(config)
                 if state=="complete" then finish() elseif state=="failed" then fail(status.error) end
             elseif stage=="ready" then
                 nav.Update(dt);Native.ApplyCamera(camera,node,pose,graphics:GetWidth()/math.max(1,graphics:GetHeight()));app.view.Update()
+                if fire then fire.Update(dt) end
                 if observation then observation.Update(dt) end
             end
         end)
@@ -176,10 +183,15 @@ function H.Install(config)
         end
     end
     function Stop()
+        local lampCleanupOk,lampCleanupError=true,nil
+        if scene then lampCleanupOk,lampCleanupError=pcall(require("v035.lab35.SelectedLampLighting").Stop,scene) end
+        if fire then fire.Stop();fire=nil end
         if job then job.Cancel() end
         if app then app.view.root:Destroy() end
         UI.Shutdown();if scene then scene:Dispose() end
         app=nil
+        if not lampCleanupOk then log("CLEANUP FAIL",{error=tostring(lampCleanupError),sceneDisposalContinued=true});return false,lampCleanupError end
+        return true
     end
 end
 return H

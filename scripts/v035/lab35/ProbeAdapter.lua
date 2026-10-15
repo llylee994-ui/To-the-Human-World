@@ -15,7 +15,8 @@ function A.Convert(probe,options)
             assert(m.renderVisible~=false,"visible mesh refers to invisible proxy material")
             out.materials[#out.materials+1]={id=m.id,baseColor=m.baseColorFactor,baseColorTexture=m.baseColorTexture,
                 roughness=m.roughness,metallic=m.metallic,alphaMode=m.alphaMode,alphaCutoff=m.alphaCutoff,doubleSided=m.doubleSided,cullMode=m.cullMode,unlit=m.unlit==true,
-                normalTexture=m.normalTexture,normalMapConvention=m.normalMapConvention,textureColorSpaces=m.textureColorSpaces}
+                normalTexture=m.normalTexture,normalMapConvention=m.normalMapConvention,textureColorSpaces=m.textureColorSpaces,
+                roughMetalOcclusionTexture=m.roughMetalOcclusionTexture,emissiveFactor=m.emissiveFactor,emissiveStrength=m.emissiveStrength,emissiveTexture=m.emissiveTexture}
         end
     end
     local proxies={}

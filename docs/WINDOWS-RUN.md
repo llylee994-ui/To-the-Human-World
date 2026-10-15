@@ -1,5 +1,7 @@
 # 完整 3D 候选：Windows 本机启动
 
+当前美术版本为 `d584352`，本地共享 main / ordinary-release-v2 / schema 4 保留。窗口标题为“寄往人间 · 3D · main + d584352”，启动入口仍是本仓库 `Start-Windows.cmd`。不运行仓库外参考目录，也不使用包内写死旧路径的 Start-3D 脚本。2026-10-15 分层验证以 [整合记录](actions/2026-10-15-d584352-visual-integration.md) 为准，以下旧日期截图不替代本轮验收。
+
 此分支保留从 `65e640cafc3330e70c0d934404077ad98932603f` 到 `d00aca9c4874117fcc924625820cf43a20c44936` 的完整 17 次云端提交，Windows 启动修复另做提交。游戏入口仍为 `scripts/main.lua`，旧个人目录启动器已清理。
 
 ## 启动

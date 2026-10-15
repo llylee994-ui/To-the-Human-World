@@ -44,6 +44,7 @@
 
 ## 当前 3D 运行与开发
 
+- 当前美术已整合完整包 `d584352`，共享 main 玩法仍来自本地 `135334d`，没有替换为云端旧业务。座钟、台灯及其他确认模型的导入范围、分阶段提交与 Windows 验证进展见 [本轮行动记录](docs/actions/2026-10-15-d584352-visual-integration.md)。
 - Windows：双击 `Start-Windows.cmd`；先检查环境可执行 `python tools/run_windows_game.py --check`。详见 [Windows 说明](docs/WINDOWS-RUN.md)。此入口使用隔离内存进度，不写真实玩家存档。
 - 当前场景：`assets/v035-full`；3D 宿主与镜头导航：`scripts/v035/lab35`；业务与共享页面：`scripts/core`、`scripts/data`、`scripts/systems`、`scripts/ui`。根目录 `v035` 仍是独立历史测试快照。
 - 当前 3D 已接入 main `41cdaf3` 的 `ordinary-release-v2` / schema 4、新版信纸裁词、商店家具与辅料药效预览。复用共享业务和页面，仍使用独立内存进度。船票启程、结局和案件映射以 main 已实现范围为准；本轮检查与用户试玩边界见 [功能接入记录](docs/actions/2026-10-14-main-business-3d-integration.md)。

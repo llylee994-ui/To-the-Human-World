@@ -29,16 +29,37 @@ function N.New(scene,resourcePrefix,options)
         local directory="Techniques/PBR/"
         if m.unlit then name=m.baseColorTexture and "DiffUnlit" or "NoTextureUnlit";directory="Techniques/" end
         if m.alphaMode=="BLEND" then name=name.."Alpha" end
-        local tech=assert(cache:GetResource("Technique",directory..name..".xml"),"missing technique "..name)
+        local techniquePath=m.roughMetalOcclusionTexture and (resourcePrefix.."lantern/techniques/PBRNormalRMA.xml") or (directory..name..".xml")
+        if m.emissiveTexture then
+            assert(m.normalTexture and m.roughMetalOcclusionTexture,"emissive technique requires normal and RMA maps")
+            techniquePath=resourcePrefix.."selected-lamp/techniques/PBRNormalRMAEmissive"..(m.alphaMode=="BLEND" and "Alpha" or "")..".xml"
+        elseif m.roughMetalOcclusionTexture and m.alphaMode=="BLEND" then
+            techniquePath=resourcePrefix.."techniques/PBRNormalRMAAlpha.xml"
+        end
+        local tech=assert(cache:GetResource("Technique",techniquePath),"missing technique "..techniquePath)
         local texturePath=(options.checker and not m.unlit) and "uv_checker.png" or m.baseColorTexture
         if m.normalTexture and not texturePath then texturePath="_lab/default-white.png" end
         local texture=texturePath and loadTexture(texturePath,true)
         local normal=m.normalTexture and loadTexture(m.normalTexture,false)
         local mat=Material:new();mat:SetTechnique(0,tech)
         if texture then mat:SetTexture(TU_DIFFUSE,texture) end
+        if m.roughMetalOcclusionTexture then
+            assert(TU_SPECULAR~=nil,"runtime lacks packed PBR texture slot")
+            mat:SetTexture(TU_SPECULAR,loadTexture(m.roughMetalOcclusionTexture,false))
+            mat:SetShaderParameter("TextureRoughnessFactor",Variant(1.0))
+            mat:SetShaderParameter("TextureMetallicFactor",Variant(1.0))
+        end
         if normal then
             assert(TU_NORMAL~=nil,"runtime lacks TU_NORMAL")
             mat:SetTexture(TU_NORMAL,normal);normalMaterials[mat]=true
+        end
+        if m.emissiveTexture then
+            assert(TU_EMISSIVE~=nil,"runtime lacks emissive texture slot")
+            mat:SetTexture(TU_EMISSIVE,loadTexture(m.emissiveTexture,true))
+        end
+        if m.emissiveFactor then
+            local e=m.emissiveFactor;local strength=m.emissiveStrength or 1
+            mat:SetShaderParameter("MatEmissiveColor",Variant(Vector3(e[1]*strength,e[2]*strength,e[3]*strength)))
         end
         local c=m.baseColor;mat:SetShaderParameter("MatDiffColor",Variant(Color(c[1],c[2],c[3],c[4])))
         mat:SetShaderParameter("Roughness",Variant(m.roughness));mat:SetShaderParameter("Metallic",Variant(m.metallic))

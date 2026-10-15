@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "layer": "headless Lua callbacks, not OS clicks",
+  "assertions": 344,
+  "contentVersion": "ordinary-release-v2",
+  "schema": 4,
+  "protectedPathsUnchangedFrom": "135334dc997023a1bbbc35c1b994364a24504c3a",
+  "protectedPaths": [
+    "scripts/core",
+    "scripts/data",
+    "scripts/systems",
+    "scripts/ui",
+    "v035",
+    "urhox-libs",
+    "scripts/main.lua",
+    "scripts/v035/lab35/Bootstrap.lua",
+    "scripts/v035/lab35/AppView.lua",
+    "scripts/v035/lab35/Controller.lua",
+    "scripts/v035/lab35/HomeView.lua",
+    "scripts/v035/lab35/Panels.lua",
+    "scripts/v035/lab35/MemoryStorage.lua"
+  ],
+  "covered": [
+    "eight entry callbacks",
+    "memory slot isolation",
+    "bottle/reader/cut",
+    "shop debit",
+    "furniture quotes",
+    "potion preview",
+    "return home",
+    "idempotent next day"
+  ]
+}

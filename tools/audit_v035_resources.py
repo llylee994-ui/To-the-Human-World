@@ -10,7 +10,7 @@ def audit():
  scene=json.loads((assets/'scene.json').read_text())
  for mesh in scene['meshFiles']:assert mesh['file'] in hashes,mesh['id']
  for material in scene['materials']:
-  for field in ('baseColorTexture','normalTexture'):
+  for field in ('baseColorTexture','normalTexture','roughMetalOcclusionTexture','emissiveTexture'):
    if material.get(field):assert material[field] in hashes,material[field]
  queue=['scripts/main.lua'];visited=set();unresolved=set()
  while queue:
