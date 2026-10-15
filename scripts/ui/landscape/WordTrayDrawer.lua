@@ -2,17 +2,13 @@
 -- Browsing and picking strips are view state only; nothing here writes a snapshot.
 local UI=require "urhox-libs/UI"
 local Widget=require "urhox-libs/UI/Core/Widget"
-local Theme=require "urhox-libs/UI/Core/Theme"
 local Harbor=require "ui.landscape.HarborStyle"
+local Art=require "ui.landscape.WordTrayArt"
+local PanelArt=require "ui.landscape.PanelArt"
 local D={}
 local ink,light={65,47,32,255},{255,244,218,255}
--- 三张生成图：铺满即可，不做九宫格切分（切片在目标小于切片和时两端不缩、会重叠）。
-local CLOTH_IMAGE="image/界面_桌布_透明_v01.png"
-local TRAY_IMAGE="image/界面_木托盘_透明_v01.png"
+-- 原纸条纹理整图显示；词卡按参考布局的两列排布。
 local SLIP_IMAGE="image/界面_纸条_折痕_透明_v01.png"
-local FLOWERS_IMAGE="image/界面_干花束_透明_v01.png"
-local TRAY_ASPECT=1086/1448          -- 托盘原图比例，锁住免得木框被拉扁
-local TRAY_RIM_RATIO=.08             -- 盘沿用原图的宽度比例，纸条要落在盘底里面
 
 ---@class WordTrayState
 ---@field open number
@@ -48,20 +44,6 @@ local function panelWidth(ctx)
     return math.floor(math.max(0,viewportWidth(ctx)-safe.left-safe.right)*D.WidthRatio)
 end
 local function panelLeft(ctx,state) return math.floor(insets(ctx).left-(1-ease(state.open))*panelWidth(ctx)) end
--- 托盘尺寸按实际占位反推（标签行数、页脚行数、紧凑态），保持原图比例：
--- 宁可小一点，也别把木框拉扁或把页脚挤出面板。
-local function traySize(ctx,collected,compact,picked)
-    local panelHeight=viewportHeight(ctx)-(insets(ctx).top+12)-(insets(ctx).bottom+12)
-    local contentWidth=panelWidth(ctx)-32
-    local tabWidth,tabHeight,gap=compact and 64 or 78,compact and 36 or 42,compact and 6 or 8
-    local perRow=math.max(1,math.floor((contentWidth+gap)/(tabWidth+gap)))
-    local tabRows=#collected>0 and math.ceil(#collected/perRow) or 0
-    local tabsHeight=tabRows*tabHeight+(tabRows>0 and (tabRows-1)*gap or 0)
-    local footerHeight=compact and 26 or 52
-    local available=math.max(96,panelHeight-32-44-8-tabsHeight-8-footerHeight-8)
-    local width=math.min(contentWidth,math.floor(available*TRAY_ASPECT))
-    return width,math.floor(width/TRAY_ASPECT)
-end
 ---@param ctx table
 ---@return WordTrayState
 function D.State(ctx)
@@ -130,10 +112,13 @@ function D.MarkText(card)
     return false
 end
 -- 纸条：底面用生成图整体拉伸（切片在短纸条上会重叠），词由代码渲染。
-local function strip(ctx,state,card,compact)
-    local width=math.floor(UI.MeasureTextWidth(card.text,Theme.FontSize(compact and 16 or 18),Harbor.fontFamily)
-        +(compact and 24 or 40))
-    local wrapper=UI.Panel {id="wordTrayCard_"..card.tokenId,width=width,height=compact and 38 or 46,flexShrink=0,
+local function strip(ctx,state,card,compact,layout,index)
+    local width=layout.slipWidth
+    local height=math.max(38,layout.slipHeight)
+    local col=(index-1)%2
+    local wrapper=UI.Panel {id="wordTrayCard_"..card.tokenId,position="absolute",
+        left=col*(layout.cards.w-width),top=math.floor((index-1)/2)*math.max(height+12,layout.rowStep),
+        width=width,height=height,flexShrink=0,
         alignItems="center",justifyContent="center",
         backgroundImage=SLIP_IMAGE,backgroundFit="fill",
         backgroundImageOpacity=card.available and 1 or .55,
@@ -154,16 +139,21 @@ local function strip(ctx,state,card,compact)
     end
     return wrapper
 end
-local function tab(ctx,state,parent,category,selected,compact)
+local function tab(ctx,state,parent,category,selected,compact,layout,index)
+    local template=layout.categories[math.min(index,#layout.categories)]
+    local extra=math.max(0,index-#layout.categories)*80*layout.scale
+    local paper={x=template.x,y=template.y-layout.tabs.y+extra,w=template.w,h=template.h,
+        path=template.path,rotate=template.rotate}
+    local image=PanelArt.Image(parent,"wordTrayCategoryPaper_"..category.id,paper)
+    image.props.backgroundImageOpacity=selected and 1 or .8
     local button=UI.Button {id="wordTrayTab_"..category.id,text=D.ShortTitle(category.title),
-        height=compact and 36 or 42,width=compact and 64 or 78,fontFamily=Harbor.fontFamily,
-        fontSize=compact and 15 or 17,fontWeight="normal",
-        backgroundImage=Harbor.paperImage,backgroundFit="fill",backgroundImageOpacity=selected and 1 or .72,
-        hoverBackgroundImageOpacity=1,pressedBackgroundImageOpacity=.82,
+        position="absolute",left=layout.tabs.x,top=paper.y+(paper.h-44)/2,
+        height=44,width=layout.tabs.w,fontFamily=Harbor.fontFamily,
+        fontSize=15,fontWeight="normal",
         backgroundColor={0,0,0,0},hoverBackgroundColor={0,0,0,0},pressedBackgroundColor={0,0,0,0},
         variantBackgroundGradient={},variantHoverBackgroundGradient={},variantPressedBackgroundGradient={},
         borderWidth=0,hoverBorderWidth=0,pressedBorderWidth=0,borderRadius=0,boxShadow=false,glowShadow={},
-        textColor=selected and ink or {116,89,63,255},padding={5,10},pressedPadding={5,10},
+        textColor=selected and ink or {116,89,63,255},padding=0,pressedPadding=0,
         onClick=function() state.category=category.id;state.selected=false;ctx.model.dirty=true end}
     if selected then
         button:AddChild(UI.Panel {position="absolute",left=14,right=14,bottom=4,height=2,
@@ -179,12 +169,13 @@ function D.Render(ctx,overlay)
     local width=panelWidth(ctx)
     local compact=viewportHeight(ctx)<540
     local panel=UI.Panel {id="activePanel",position="absolute",left=panelLeft(ctx,state),top=safe.top+12,
-        width=width,height=viewportHeight(ctx)-(safe.top+12)-(safe.bottom+12),padding=16,gap=8,
-        backgroundImage=CLOTH_IMAGE,backgroundFit="fill",
-        overflow="hidden",pointerEvents="box-none",onClick=function() end}
+        width=width,height=viewportHeight(ctx)-(safe.top+12)-(safe.bottom+12),padding=0,
+        overflow="hidden",pointerEvents="auto",onClick=function() end}
     overlay:AddChild(panel)
     state.panel=panel
-    local header=UI.Panel {id="wordTrayHeader",width="100%",height=44,flexShrink=0,flexDirection="row",
+    local layout=Art.Fit(width,panel.props.height)
+    PanelArt.Image(panel,"wordTrayCloth",layout.cloth)
+    local header=UI.Panel {id="wordTrayHeader",position="absolute",left=8,right=8,top=8,zIndex=10,height=44,flexShrink=0,flexDirection="row",
         alignItems="center",gap=8,pointerEvents="box-none"}
     panel:AddChild(header)
     -- 布面是浅色又有绣花，标题和页脚都用深色小底板压住，免得读不清。
@@ -193,7 +184,7 @@ function D.Render(ctx,overlay)
     header:AddChild(UI.Panel {flexGrow=1,pointerEvents="none"})
     header:AddChild(Harbor.Button {id="closePanel",text="×",width=44,minHeight=44,fontSize=22,onClick=function() D.RequestClose(ctx) end})
     -- 转瞬消息沿用通用面板的字段，交给 UpdateChrome 每帧刷新。
-    local noticeArea=UI.ScrollView {id="wordTrayMessageArea",width="100%",height=40,flexShrink=0,scrollY=true,
+    local noticeArea=UI.ScrollView {id="wordTrayMessageArea",position="absolute",left=8,right=8,top=58,zIndex=11,height=40,flexShrink=0,scrollY=true,
         visible=false,paddingLeft=8,paddingRight=8,pointerEvents="box-none"}
     ctx.panelNotice=text(noticeArea,ctx.model.message,13,"panelMessage");ctx.panelNoticeArea=noticeArea
     panel:AddChild(noticeArea)
@@ -214,46 +205,41 @@ function D.Render(ctx,overlay)
     if not known then selected=collected[1] and collected[1].id or false end
     state.category=selected
     if #collected>0 then
-        local tabs=UI.Panel {id="wordTrayTabs",width="100%",flexShrink=0,flexDirection="row",flexWrap="wrap",
-            gap=compact and 6 or 8,pointerEvents="box-none"}
+        local tabs=UI.ScrollView {id="wordTrayTabs",position="absolute",left=0,top=layout.tabs.y,width=width,
+            height=layout.tabs.h,scrollY=true,showScrollbar=false,pointerEvents="box-none"}
         panel:AddChild(tabs)
-        for _,category in ipairs(collected) do tab(ctx,state,tabs,category,category.id==selected,compact) end
+        local stack=UI.Panel {width="100%",height=math.max(layout.tabs.h,(#collected*80+20)*layout.scale),pointerEvents="box-none"}
+        tabs:AddChild(stack)
+        for i,category in ipairs(collected) do tab(ctx,state,stack,category,category.id==selected,compact,layout,i) end
     end
     ---@type table|false
     local picked=false
     for _,card in ipairs(view.cards) do if card.tokenId==state.selected then picked=card end end
     if not picked then state.selected=false end
-    local trayWidth,trayHeight=traySize(ctx,collected,compact,picked)
-    local rimPadding=math.floor(trayWidth*TRAY_RIM_RATIO)+6
-    local flowerWidth=math.floor(math.min(compact and 64 or 76,trayWidth*.28))
-    local flowerHeight=math.floor(flowerWidth*1.5)
-    local holder=UI.Panel {id="wordTrayHolder",width="100%",flexGrow=1,flexShrink=1,flexBasis=0,minHeight=0,
-        alignItems="center",justifyContent="center",pointerEvents="box-none"}
+    local holder=UI.Panel {id="wordTrayHolder",position="absolute",left=0,top=0,width="100%",height="100%",
+        pointerEvents="box-none"}
     panel:AddChild(holder)
-    local tray=UI.Panel {id="wordTrayFrame",width=trayWidth,height=trayHeight,
-        padding=rimPadding,paddingBottom=math.max(rimPadding,flowerHeight+12),gap=8,
-        backgroundImage=TRAY_IMAGE,backgroundFit="fill",overflow="hidden",pointerEvents="box-none"}
-    holder:AddChild(tray)
-    local strips=UI.ScrollView {id="wordTrayStrips",width="100%",flexGrow=1,flexShrink=1,flexBasis=0,minHeight=0,
-        scrollY=true,showScrollbar=true,pointerEvents="box-none"}
-    local row=UI.Panel {width="100%",flexShrink=0,flexDirection="row",flexWrap="wrap",alignContent="flex-start",
-        gap=10,pointerEvents="box-none"}
-    strips:AddChild(row);tray:AddChild(strips)
-    -- A readable bunch rests on the lower-left corner; scrolling stops above it.
-    tray:AddChild(UI.Panel {id="wordTrayDriedFlowers",position="absolute",left=6,bottom=6,
-        width=flowerWidth,height=flowerHeight,
-        backgroundImage=FLOWERS_IMAGE,backgroundFit="contain",pointerEvents="none"})
+    PanelArt.Image(holder,"wordTrayFrame",layout.tray)
+    local scrollProps=PanelArt.Style(layout.cards)
+    scrollProps.id="wordTrayStrips";scrollProps.scrollY=true;scrollProps.showScrollbar=true;scrollProps.pointerEvents="box-none"
+    local strips=UI.ScrollView(scrollProps)
+    local row=UI.Panel {width="100%",height=layout.cards.h,pointerEvents="box-none"}
+    strips:AddChild(row);holder:AddChild(strips)
+    PanelArt.Image(holder,"wordTrayLavender",layout.lavender)
+    PanelArt.Image(holder,"wordTrayDriedFlowers",layout.flowers)
     local mounted=0
     for _,card in ipairs(view.cards) do
         if card.categoryId==selected then
             mounted=mounted+1
-            row:AddChild(strip(ctx,state,card,compact))
+            row:AddChild(strip(ctx,state,card,compact,layout,mounted))
         end
     end
+    Widget.SetStyle(row,{height=math.max(layout.cards.h,math.ceil(mounted/2)*math.max(50,layout.rowStep))})
     if #collected==0 then
         text(row,"尚未收集词卡。阅读来信并剪下标记词后，会按来源收在这里。",16,"wordTrayEmpty",light)
     end
-    local footer=UI.Panel {id="wordTrayFooter",width="100%",flexShrink=0,gap=4,overflow="hidden",pointerEvents="box-none"}
+    local footer=UI.Panel {id="wordTrayFooter",position="absolute",left=12,right=12,bottom=8,
+        height=56,gap=2,overflow="hidden",pointerEvents="box-none"}
     panel:AddChild(footer)
     ---@type table|false
     local active=false

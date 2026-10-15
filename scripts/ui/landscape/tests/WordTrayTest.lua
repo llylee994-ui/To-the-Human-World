@@ -81,9 +81,18 @@ function T.Run()
     settle(20)
     check(Drawer.Progress(view)==1 and Drawer.Settled(view),"drawer slides fully in and settles")
     local panel=assert(find("activePanel"),"drawer keeps the overlay panel id")
+    check(panel.props.pointerEvents=="auto","empty tray wood blocks room hotspots beneath it")
     check(panel.props.width>=math.floor(1280*0.22) and panel.props.width<=math.floor(1280*0.27),"tray stays in the left quarter, preserving the pot and journal areas")
-    check(type(panel.props.backgroundImage)=="string","drawer is dressed with the generated cloth image")
+    check(type(find("wordTrayCloth").props.backgroundImage)=="string","drawer uses the designer's enlarged cloth")
     check(type(find("wordTrayFrame").props.backgroundImage)=="string","strips sit in the generated wooden tray image")
+    local art=require "ui.landscape.WordTrayArt"
+    for _,size in ipairs({{332,696},{499,1056},{240,480}}) do
+        local a=art.Fit(size[1],size[2])
+        check(a.tray.x<0 and a.tray.x+a.tray.w<size[1],"tray intentionally crops off the left edge")
+        check(math.abs(a.tray.w/a.tray.h-.75)<.001,"tray retains its original proportions")
+        check(a.cards.x>=0 and a.cards.x+a.cards.w<a.tabs.x,"paper grid stays left of category hit targets")
+        check(a.cards.y+a.cards.h<=a.decorationTop,"card scroll ends above the decorative flowers")
+    end
     local first=collected[1]
     local function mounted(categoryId)
         local ids={}

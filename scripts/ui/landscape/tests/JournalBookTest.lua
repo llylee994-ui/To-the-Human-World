@@ -10,6 +10,9 @@ function T.Run()
     local host=require("ui.landscape.tests.ZoomTestHost").New()
     local x=F.New(Data,{targetSchema=3})
     local v=View.New(x.session,Data);host.Bind(v.root);v.Update()
+    -- This host has no Yoga. Newly rebuilt panels need their explicit layout adapter.
+    local update=v.Update
+    v.Update=function() host.Bind(v.root);update();host.Bind(v.root) end
     local function widget(id) return v.root:FindById(id) end
     local function click(id)
         local node=assert(widget(id),id);check(not node.props.disabled,id.." disabled")
@@ -43,18 +46,27 @@ function T.Run()
     local before,writes=x.state.GetSnapshot(),x.writes
     v.Open("journal");v.Update()
     local panel=assert(widget("activePanel"),"book panel")
-    check(panel.props.backgroundImage~=nil and panel.props.backgroundImage:find("桌布",1,true)~=nil,"book sits on the cloth mat")
+    check(panel.props.pointerEvents=="auto","blank book and cloth block room hotspots beneath them")
+    check(widget("bookCloth").props.backgroundImage:find("桌布",1,true)~=nil,"book sits on the enlarged designer cloth")
     check(widget("journalBookTitle"):GetText()=="记录书","book title")
     local closed=panel.props.right
     for _=1,40 do host.Step(v,.05) end
     check(panel.props.right>closed,"cloth slides in from the right edge")
     check(v.journalBook.open==1,"slide finishes")
 
+    local frame=assert(widget("bookArtFrame"),"dedicated thick book frame")
+    check(frame.props.backgroundImage:find("左半厚书",1,true)~=nil,"new thick book is mounted")
+    local flowers=assert(widget("bookDriedFlowers"),"new large dried flowers")
+    local grass=assert(widget("bookDriedGrass"),"new dried meadow grass")
+    check(flowers.props.pointerEvents=="none" and grass.props.pointerEvents=="none","botanical layers never capture scrolling or clicks")
+    check(flowers.props.backgroundImage:find("大朵干花",1,true)~=nil,"flowers do not reuse the word tray sprigs")
+    check(widget("bookTab_"..received).props.backgroundImage:find("索引纸签",1,true)~=nil,"story index uses its new paper tab")
+
     -- 索引贴：全部故事都在，未收到的锁住且不剧透。
     check(widget("bookTab_"..received),"received story keeps its tab")
     local lockedTab=assert(widget("bookTab_"..locked),"unreceived story keeps a locked tab")
     check(lockedTab.props.disabled,"unreceived story tab is locked")
-    check(lockedTab:GetText()=="？？？","locked tab does not reveal the story title")
+    check(widget("bookTabText_"..locked):GetText()=="？？？","locked tab does not reveal the story title")
 
     -- 目录：分支目录含空位，目录页不混入详情。
     check(assert(widget("bookEntry_"..branchA)),"collected branch row")
@@ -68,6 +80,8 @@ function T.Run()
     click("bookEntry_"..branchA)
     check(assert(widget("bookEntryBody")),"branch detail opens inside the page")
     check(widget("bookEntryText"):GetText()=="第一支的后续正文。","stored follow-up text is readable")
+    check(widget("bookEntryText").props.fontFamily=="story" and widget("bookEntryText").props.fontSize>=16,"WenKai-based body remains readable")
+    check(widget("bookEntryText").props.lineHeight>=1.55,"long follow-up uses generous leading")
     check(widget("bookEntryMeta"):GetText():find("第 3 天",1,true)~=nil,"detail keeps the attempt day")
     check(widget("bookEntryMeta"):GetText():find("3 星",1,true)~=nil,"detail keeps the star rating")
     click("bookEntryBack")
@@ -108,7 +122,7 @@ function T.Run()
     calls={};v.journalBook.flip=0;page:RenderOverlays(1)
     local spine=0
     for _,call in ipairs(calls) do if call.name=="nvgFill" then spine=spine+1 end end
-    check(spine>=6,"spine shading is drawn on the page edge")
+    check(spine==0,"physical book image owns the resting spine instead of another fake flat border")
     calls={};v.journalBook.flip=0.17;v.journalBook.flipTitle="铁锚巷的一夜";page:RenderOverlays(1)
     local gradients,texts=0,0
     for _,call in ipairs(calls) do
@@ -140,6 +154,18 @@ function T.Run()
     for _=1,40 do host.Step(v,.05) end
     check(v.panel==false,"locked page still closes")
     check(U.Equal(before,x.state.GetSnapshot()) and x.writes==writes,"book never writes player state")
+    local art=require "ui.landscape.JournalBookArt"
+    for _,size in ipairs({{192,260},{310,600},{400,600},{240,680}}) do
+        local layout=art.Fit(size[1],size[2])
+        local b,c=layout.book,layout.content
+        check(math.abs(b.w/b.h-2/3)<.001,"thick book keeps its source proportions")
+        local fit=require("ui.landscape.PanelArt").Fit(size[1],size[2])
+        check(b.x>=0 and b.x+b.w>fit.x+520*fit.scale,"designer book extends beyond its reference canvas")
+        check(c.x>b.x+b.w*.14 and c.x+c.w<=size[1],"text avoids the page stack and stays on screen")
+        check(c.y+c.h<=layout.decorationTop,"reading scroll stops above bottom flowers and grass")
+        check(c.w>70 and c.h>90,"small screen keeps a useful reading viewport")
+    end
     print("[JournalBookTest] PASS assertions="..n.."; cloth mat, locked index tabs, two-level stored text, page turn; NOT native evidence")
+    return true
 end
 return T

@@ -6,6 +6,12 @@ local Geometry=require "ui.landscape.LayoutGeometry"
 local U=require "core.StateUtil"
 local N={}
 function N.New()
+    if require("ui.landscape.DevChecks").panelReferenceProbe then
+        return require("ui.landscape.tests.PanelReferenceNativeProbe").New()
+    end
+    if require("ui.landscape.DevChecks").journalBookProbe then
+        return require("ui.landscape.tests.JournalBookNativeProbe").New()
+    end
     if require("ui.landscape.DevChecks").wordTrayProbe then
         return require("ui.landscape.tests.WordTrayNativeProbe").New()
     end

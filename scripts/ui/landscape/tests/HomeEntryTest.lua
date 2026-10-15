@@ -108,7 +108,7 @@ function T.Run()
     local sample=assert(require("debug.fixtures.NumericV02Cases")[1]).recipe
     local main=assert(tokens[sample.mainWordId]);local extra=false
     for _,card in ipairs(cards) do if card.tokenId~=main then extra=card.tokenId;break end end
-    local mainCard=false
+    local mainCard=false --[[@as table|false]]
     for _,card in ipairs(cards) do if card.tokenId==main then mainCard=card end end
     assert(mainCard,"fixture main word appears in the tray query")
     click("wordTrayTab_"..mainCard.categoryId)

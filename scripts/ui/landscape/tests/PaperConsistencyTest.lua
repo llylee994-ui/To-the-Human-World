@@ -36,10 +36,10 @@ function T.Run()
     view.Open("journal");view.Update()
     check(not view.root:FindById("bookEntryBody"),"story directory must not mix with the selected branch detail")
     local rows=x.session.queries.GetJournalStories().value
-    local first=false
+    local first=false --[[@as table|false]]
     for _,row in ipairs(rows) do if not first and row.received then first=row end end
     assert(first,"fixture has a received story")
-    local tab=assert(view.root:FindById("bookTab_"..first.sourceLetterId),"story keeps an index tab")
+    local tab=assert(view.root:FindById("bookTab_"..first.sourceLetterId),"story keeps an index tab") --[[@as Button]]
     check(tab.props.disabled~=true,"received story tab is selectable")
     local page=x.session.queries.GetJournalPage(first.sourceLetterId).value
     local collected=false

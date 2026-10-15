@@ -5,11 +5,10 @@ local UI=require "urhox-libs/UI"
 local Widget=require "urhox-libs/UI/Core/Widget"
 local Theme=require "urhox-libs/UI/Core/Theme"
 local Harbor=require "ui.landscape.HarborStyle"
+local Art=require "ui.landscape.JournalBookArt"
+local PanelArt=require "ui.landscape.PanelArt"
 local B={}
 local ink,inkFaint={72,52,36,255},{128,106,78,255}
-local clothImage="image/界面_桌布_透明_v01.png"
-local pageColor={247,238,216,255}
-local sheetColor={241,230,203,255}
 
 ---@class JournalBookState
 ---@field open number 布料滑入进度 0~1
@@ -22,12 +21,15 @@ local sheetColor={241,230,203,255}
 ---@field flip number 翻页剩余秒数；0 表示静止
 ---@field flipTitle string|false 正在翻走的那一页的故事名
 ---@field closing boolean
+---@field art table|false Physical book widgets, isolated from collected records.
+
+---@class JournalBookPage: Panel
+---@field RenderOverlays fun(self:JournalBookPage,nvg:any)
 
 B.AnimationSeconds=.22
 B.FlipSeconds=.34
 -- 面板宽度与词条托盘一致（可用宽度的 26%）：左右两侧各留出一条，中间留给药锅。
 B.WidthRatio=.26
-B.TabWidth=86
 B.ShowLockedTitles=false -- 未收集分支是否露出短名：false 时显示“？？？”
 
 local function ease(t) t=math.max(0,math.min(1,t));return t*t*(3-2*t) end
@@ -57,7 +59,7 @@ function B.State(ctx)
     local state=ctx.journalBook
     if not state then
         state={open=0,target=0,settled=true,panel=false,page=false,
-            story=ctx.storyId or false,entry=false,flip=0,flipTitle=false,closing=false}
+            story=ctx.storyId or false,entry=false,flip=0,flipTitle=false,closing=false,art=false}
         ctx.journalBook=state
     end
     return state --[[@as JournalBookState]]
@@ -83,6 +85,7 @@ function B.Reset(ctx)
     if not state then return end
     state.open=0;state.target=0;state.settled=true;state.panel=false;state.page=false
     state.story=false;state.entry=false;state.flip=0;state.flipTitle=false;state.closing=false
+    state.art=false
 end
 -- 关闭按钮先滑出再真正关面板。
 function B.RequestClose(ctx)
@@ -94,6 +97,19 @@ function B.Update(ctx,dt)
     local state=ctx.journalBook --[[@as JournalBookState?]]
     if not state then return end
     local step=(dt or 0)
+    -- Yoga bounds become available after mounting; keep art and reading region aligned.
+    if state.art and state.art.body.GetAbsoluteLayout then
+        local a=state.art
+        local bounds=a.body:GetAbsoluteLayout()
+        if bounds.w>0 and bounds.h>0 and (a.lastW~=bounds.w or a.lastH~=bounds.h) then
+            a.lastW=bounds.w;a.lastH=bounds.h
+            local layout=Art.Fit(bounds.w,bounds.h)
+            for _,key in ipairs({"cloth","book","content","title","tabs","flowers","grass","lavender"}) do
+                local r=layout[key]
+                Widget.SetStyle(a[key],{left=r.x,top=r.y,width=r.w,height=r.h})
+            end
+        end
+    end
     if state.flip>0 then state.flip=math.max(0,state.flip-step) end
     if state.settled then return end
     local amount=step/B.AnimationSeconds
@@ -163,7 +179,7 @@ end
 
 local function text(parent,value,size,id,color)
     local label=UI.Label {id=id,text=tostring(value or ""),fontFamily=Harbor.fontFamily,fontSize=size or 15,
-        fontColor=color or ink,whiteSpace="normal",lineHeight=1.35,flexShrink=0,pointerEvents="none",alignSelf="stretch"}
+        fontColor=color or ink,whiteSpace="normal",lineHeight=1.6,flexShrink=0,pointerEvents="none",alignSelf="stretch"}
     parent:AddChild(label);return label
 end
 local function storyLabel(row)
@@ -183,60 +199,66 @@ local function metaText(entry)
     return table.concat(parts," · ")
 end
 
--- 索引贴：一个故事一张纸贴（沿用托盘的纸面标签写法），未收到的锁住。
-local function indexTab(ctx,state,parent,row,active)
+-- The source has transparent top/bottom margins and a folded right end.
+-- Keep handwriting centered on the broad paper face, independently of Button defaults.
+local function indexTab(ctx,state,parent,row,active,slot,origin)
     local label=storyLabel(row)
-    local button=UI.Button {id="bookTab_"..row.sourceLetterId,text=label,
-        width="100%",minHeight=36,fontFamily=Harbor.fontFamily,fontSize=13,fontWeight="normal",
-        backgroundImage=Harbor.paperImage,backgroundFit="fill",
+    -- A compact index identifies the story; the page heading keeps its full title.
+    local short=label
+    if row.received and utf8.len(label)>4 then short=utf8.char(utf8.codepoint(label,1,utf8.offset(label,3)-1)) end
+    local button=UI.Button {id="bookTab_"..row.sourceLetterId,text="",
+        position="absolute",left=slot.x-origin.x,top=slot.y-origin.y,width=slot.w,height=slot.h,
+        fontFamily=Harbor.fontFamily,fontSize=12,fontWeight="normal",
+        backgroundImage=Art.tabImage,backgroundFit="fill",
         backgroundImageOpacity=not row.received and .38 or (active and 1 or .72),
         hoverBackgroundImageOpacity=1,pressedBackgroundImageOpacity=.82,disabledBackgroundImageOpacity=.38,
         backgroundColor={0,0,0,0},hoverBackgroundColor={0,0,0,0},pressedBackgroundColor={0,0,0,0},
         variantBackgroundGradient={},variantHoverBackgroundGradient={},variantPressedBackgroundGradient={},
         borderWidth=0,hoverBorderWidth=0,pressedBorderWidth=0,borderRadius=0,boxShadow=false,glowShadow={},
-        textColor=active and ink or inkFaint,disabledTextColor=inkFaint,padding={5,10},pressedPadding={5,10},
+        textColor=active and ink or inkFaint,disabledTextColor=inkFaint,
+        paddingTop=0,paddingRight=0,paddingBottom=0,paddingLeft=0,pressedPadding=0,
         disabled=not row.received,
         onClick=function() if row.received then B.Select(ctx,row.sourceLetterId,label) end end}
-    if active then
-        button:AddChild(UI.Panel {position="absolute",left=8,right=8,bottom=3,height=2,
-            backgroundColor={155,107,57,210},pointerEvents="none"})
-    end
+    button:AddChild(UI.Label {id="bookTabText_"..row.sourceLetterId,text=short,
+        position="absolute",left="7%",top="13%",width="72%",height="73%",fontFamily=Harbor.fontFamily,
+        fontSize=11,lineHeight=1,textAlign="center",verticalAlign="middle",whiteSpace="nowrap",fontColor=active and ink or inkFaint,
+        flexShrink=0,pointerEvents="none"})
     parent:AddChild(button)
     return button
 end
 
 -- 目录：一行一支，含未收集空位。
 local function renderCatalog(ctx,page,host,entries)
-    text(host,page.title,17,"bookStoryTitle")
+    text(host,page.title,19,"bookStoryTitle")
     local collected=0
     for _,entry in ipairs(entries) do if entry.collected then collected=collected+1 end end
     text(host,"已收集 "..tostring(collected).." / "..tostring(#entries).." 支",12,"bookProgress",inkFaint)
     local list=UI.ScrollView {id="bookEntryList",width="100%",flexGrow=1,flexShrink=1,flexBasis=0,scrollY=true,
-        showScrollbar=true,gap=8,pointerEvents="box-none"}
+        showScrollbar=true,gap=6,minHeight=0,pointerEvents="box-none"}
     host:AddChild(list)
     for index,entry in ipairs(entries) do
-        local row=UI.Panel {id="bookEntry_"..entry.fragmentId,width="100%",gap=2,padding={8,10},
-            backgroundColor=entry.collected and {252,246,230,255} or {240,232,214,140},
-            borderRadius=3,flexShrink=0,flexDirection="column"}
+        local row=UI.Panel {id="bookEntry_"..entry.fragmentId,width="100%",gap=2,padding={7,0},
+            minHeight=44,flexShrink=0,flexDirection="column"}
         local clickable=entry.collected
         row.props.onClick=clickable and function() B.OpenEntry(ctx,entry.fragmentId) end or function() end
         list:AddChild(row)
         text(row,tostring(index)..". "..branchLabel(entry),16,"bookEntryName_"..entry.fragmentId,
             entry.collected and ink or inkFaint)
         text(row,metaText(entry),12,"bookEntryMeta_"..entry.fragmentId,inkFaint)
+        row:AddChild(UI.Panel {width="100%",height=1,marginTop=5,backgroundColor={130,104,74,65},pointerEvents="none"})
     end
     return list
 end
 
 -- 详情：一条分支的后续全文与当时用料。
 local function renderEntry(ctx,state,page,host,entry)
-    local back=Harbor.Button {id="bookEntryBack",text="返回目录",width=140,minHeight=40,fontSize=14,
+    local back=Harbor.Button {id="bookEntryBack",text="返回目录",width="100%",minHeight=40,fontSize=14,
         onClick=function() B.CloseEntry(ctx) end}
     host:AddChild(back)
     text(host,branchLabel(entry),19,"bookEntryTitle")
     text(host,metaText(entry),13,"bookEntryMeta",inkFaint)
     local scroll=UI.ScrollView {id="bookEntryBody",width="100%",flexGrow=1,flexShrink=1,flexBasis=0,scrollY=true,
-        showScrollbar=true,paddingRight=8,pointerEvents="box-none"}
+        showScrollbar=true,minHeight=0,paddingRight=3,pointerEvents="box-none"}
     host:AddChild(scroll)
     text(scroll,entry.text or "这条后续还没有正文。",16,"bookEntryText")
     local recipe=entry.recipeSummary
@@ -258,36 +280,49 @@ function B.Render(ctx,overlay)
     local safe=insets(ctx)
     local width=panelWidth(ctx)
     local panel=UI.Panel {id="activePanel",position="absolute",right=panelRight(ctx,state),top=safe.top+12,
-        width=width,height=viewportHeight(ctx)-(safe.top+12)-(safe.bottom+12),padding=14,gap=8,
-        backgroundImage=clothImage,backgroundFit="fill",
-        overflow="hidden",pointerEvents="box-none",onClick=function() end}
+        width=width,height=viewportHeight(ctx)-(safe.top+12)-(safe.bottom+12),padding=0,
+        overflow="hidden",pointerEvents="auto",onClick=function() end}
     overlay:AddChild(panel)
     state.panel=panel
-    local header=UI.Panel {id="journalBookHeader",width="100%",height=44,flexShrink=0,flexDirection="row",
+    local header=UI.Panel {id="journalBookHeader",position="absolute",left=8,top=8,width=56,height=48,flexShrink=0,flexDirection="row",
         alignItems="center",gap=8,pointerEvents="box-none"}
-    panel:AddChild(header)
     -- 交给 UpdateChrome 按主机胶囊与安全区加内边距（和其它右栏面板同一路径）。
     ctx.panelHeader=header
-    header:AddChild(Harbor.Tag {id="journalBookTitle",text="记录书",fontSize=15})
-    header:AddChild(UI.Panel {flexGrow=1,pointerEvents="none"})
-    header:AddChild(Harbor.Button {id="closePanel",text="×",width=44,minHeight=44,fontSize=22,
+    header:AddChild(Harbor.Button {id="closePanel",text="×",width=44,height=48,minHeight=44,fontSize=22,
         onClick=function() B.RequestClose(ctx) end})
     local noticeArea=UI.ScrollView {id="journalBookMessageArea",width="100%",height=40,flexShrink=0,scrollY=true,
         visible=false,paddingLeft=8,paddingRight=8,pointerEvents="box-none"}
     ctx.panelNotice=text(noticeArea,ctx.model.message,13,"panelMessage",inkFaint);ctx.panelNoticeArea=noticeArea
-    panel:AddChild(noticeArea)
 
-    local body=UI.Panel {id="journalBookBody",width="100%",flexGrow=1,flexShrink=1,flexBasis=0,minHeight=0,
-        flexDirection="row",gap=8,pointerEvents="box-none"}
+    local body=UI.Panel {id="journalBookBody",position="absolute",left=0,top=0,width="100%",height="100%",
+        pointerEvents="box-none"}
     panel:AddChild(body)
-    local tabs=UI.ScrollView {id="bookTabs",width=B.TabWidth,flexShrink=0,scrollY=true,
-        marginRight=-8,paddingRight=8,gap=6,pointerEvents="box-none"}
-    body:AddChild(tabs)
-    local page=Harbor.Paper {id="bookPage",flexGrow=1,flexShrink=1,flexBasis=0,padding=18,gap=8,
-        overflow="hidden",onClick=function() end}
+    local layout=Art.Fit(width,panel.props.height)
+    local function box(r) return {position="absolute",left=r.x,top=r.y,width=r.w,height=r.h} end
+    local cloth=PanelArt.Image(body,"bookCloth",layout.cloth)
+    local frame=PanelArt.Image(body,"bookArtFrame",layout.book)
+    local pageProps=box(layout.content)
+    pageProps.id="bookPage";pageProps.gap=6;pageProps.overflow="hidden";pageProps.onClick=function() end
+    local page=UI.Panel(pageProps) --[[@as JournalBookPage]]
     body:AddChild(page)
+    local grass=PanelArt.Image(body,"bookDriedGrass",layout.grass)
+    local flowers=PanelArt.Image(body,"bookDriedFlowers",layout.flowers)
+    local lavender=PanelArt.Image(body,"bookLavender",layout.lavender)
+    local titleProps=box(layout.title)
+    titleProps.id="journalBookTitle";titleProps.text="记录书";titleProps.fontFamily=Harbor.fontFamily
+    titleProps.fontSize=13;titleProps.fontColor=inkFaint;titleProps.verticalAlign="middle";titleProps.pointerEvents="none"
+    local title=UI.Label(titleProps);body:AddChild(title)
+    local tabProps=box(layout.tabs)
+    tabProps.id="bookTabs";tabProps.scrollY=true;tabProps.gap=5;tabProps.pointerEvents="box-none"
+    local tabs=UI.ScrollView(tabProps);body:AddChild(tabs)
+    state.art={body=body,cloth=cloth,book=frame,content=page,title=title,tabs=tabs,flowers=flowers,grass=grass,lavender=lavender,
+        lastW=width,lastH=panel.props.height}
     state.page=page
-    -- 书脊阴影与翻动页画在内容之上；布局由框架照常处理。
+    -- Chrome is above all art, without shrinking the designer canvas below it.
+    panel:AddChild(header)
+    Widget.SetStyle(noticeArea,{position="absolute",left=8,right=8,top=58})
+    panel:AddChild(noticeArea)
+    -- The texture owns the resting spine/page stack. Only the turning sheet is drawn.
     function page:CustomRenderChildren(nvg,renderFn)
         local children=self:GetRenderChildren()
         for i=1,#children do renderFn(children[i],nvg) end
@@ -298,12 +333,6 @@ function B.Render(ctx,overlay)
         if rect.w<=0 or rect.h<=0 then return end
         nvgSave(nvg)
         nvgIntersectScissor(nvg,rect.x,rect.y,rect.w,rect.h)
-        -- 书脊在右侧：外缘分段加深，读起来像摊开书的左半页。
-        for i=1,6 do
-            local alpha=14+i*8
-            nvgBeginPath(nvg);nvgRect(nvg,rect.x+rect.w-i*4,rect.y,4,rect.h)
-            nvgFillColor(nvg,nvgRGBA(86,64,44,alpha));nvgFill(nvg)
-        end
         local flip=state.flip
         if flip>0 then
             local progress=math.max(0,math.min(1,flip/B.FlipSeconds))
@@ -349,14 +378,21 @@ function B.Render(ctx,overlay)
         end
         ctx.storyId=state.story
     end
-    for _,row in ipairs(rows) do
-        indexTab(ctx,state,tabs,row,row.sourceLetterId==state.story)
+    local indexContent=UI.Panel {width="100%",height=math.max(layout.tabs.h,(#rows*55+20)*layout.scale),pointerEvents="box-none"}
+    tabs:AddChild(indexContent)
+    for i,row in ipairs(rows) do
+        local slot=layout.tabSlots[i]
+        if not slot then
+            local last=layout.tabSlots[#layout.tabSlots]
+            slot={x=last.x,y=last.y+(i-#layout.tabSlots)*55*layout.scale,w=last.w,h=last.h}
+        end
+        indexTab(ctx,state,indexContent,row,row.sourceLetterId==state.story,slot,layout.tabs)
     end
     if not state.story then
         text(page,"还没有收到任何故事。剪开漂流瓶里的信，这里会记下每一支后续。",16,"bookEmpty",inkFaint)
         return
     end
-    local active_row=false
+    local active_row=false --[[@as table|false]]
     for _,row in ipairs(rows) do if row.sourceLetterId==state.story then active_row=row end end
     if active_row and not active_row.received then
         text(page,"这一页还空着。收到这封信以后，它记的分支会出现在这里。",16,"bookLocked",inkFaint)
@@ -370,7 +406,7 @@ function B.Render(ctx,overlay)
     local pageData=result.value
     local entries=B.Entries(pageData)
     if state.entry then
-        local selected=false
+        local selected=false --[[@as table|false]]
         for _,entry in ipairs(entries) do if entry.fragmentId==state.entry then selected=entry end end
         if selected and selected.collected then
             renderEntry(ctx,state,pageData,page,selected)

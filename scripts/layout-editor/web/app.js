@@ -133,6 +133,7 @@ function renderLayers() {
 }
 function render() {
   if (!state.doc || !state.page) return;
+  $('.project-title').textContent = state.doc.name;
   $('#current-name').textContent = state.page.name;
   $('.page-heading>.subtle').textContent = `${state.page.width} × ${state.page.height}`;
   state.selected = new Set([...state.selected].filter(id => state.page.layers.some(item => item.id === id)));
