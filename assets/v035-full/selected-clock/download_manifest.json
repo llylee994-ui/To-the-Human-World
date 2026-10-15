@@ -1,0 +1,37 @@
+[
+  {
+    "path": "textures/mantel_clock_01_diff_1k.jpg",
+    "verified": true,
+    "size": 542895,
+    "md5": "a012d80ace15cc37f75e8679702bb92f",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/mantel_clock_01/mantel_clock_01_diff_1k.jpg"
+  },
+  {
+    "path": "textures/mantel_clock_01_arm_1k.jpg",
+    "verified": true,
+    "size": 700545,
+    "md5": "a52929305a9a0f5cbe6c840f9ee9fc6c",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/mantel_clock_01/mantel_clock_01_arm_1k.jpg"
+  },
+  {
+    "path": "textures/mantel_clock_01_nor_gl_1k.jpg",
+    "verified": true,
+    "size": 536272,
+    "md5": "ebc20f1198b1972c10d71c5960280f97",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/mantel_clock_01/mantel_clock_01_nor_gl_1k.jpg"
+  },
+  {
+    "path": "mantel_clock_01.bin",
+    "verified": true,
+    "size": 641880,
+    "md5": "200740e20c08d0c370b608af6a17e9f9",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/mantel_clock_01/mantel_clock_01.bin"
+  },
+  {
+    "path": "mantel_clock_01_1k.gltf",
+    "verified": true,
+    "size": 5628,
+    "md5": "768ccf9a56c73b0ef542c93922fdb5db",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/mantel_clock_01/mantel_clock_01_1k.gltf"
+  }
+]

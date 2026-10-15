@@ -1,10 +1,10 @@
 {
   "errors": [],
-  "coveredObjects": 10847,
-  "expectedObjects": 10847,
-  "meshCount": 100,
-  "triangles": 3208608,
-  "vertices": 2592846,
+  "coveredObjects": 10705,
+  "expectedObjects": 10705,
+  "meshCount": 138,
+  "triangles": 3214558,
+  "vertices": 2643579,
   "removedZeroAreaTriangles": 6926,
   "chunks": [
     {
@@ -37,59 +37,45 @@
     },
     {
       "id": "full_group_003_000",
-      "vertices": 17935,
-      "triangles": 32008,
+      "vertices": 14166,
+      "triangles": 25768,
       "maxNormalError": 1.733402299475273e-07,
-      "bytes": 1828334
-    },
-    {
-      "id": "full_group_004_000",
-      "vertices": 5097,
-      "triangles": 2528,
-      "maxNormalError": 1.5394945829250162e-07,
-      "bytes": 377152
-    },
-    {
-      "id": "full_group_005_000",
-      "vertices": 9383,
-      "triangles": 4608,
-      "maxNormalError": 1.7995535372961058e-07,
-      "bytes": 702820
+      "bytes": 1462435
     },
     {
       "id": "full_group_006_000",
-      "vertices": 8502,
-      "triangles": 8248,
+      "vertices": 7715,
+      "triangles": 7016,
       "maxNormalError": 1.4863866892866895e-07,
-      "bytes": 605812
+      "bytes": 536447
     },
     {
       "id": "full_group_007_000",
-      "vertices": 30027,
-      "triangles": 36392,
+      "vertices": 29397,
+      "triangles": 35752,
       "maxNormalError": 1.7545062469537243e-07,
-      "bytes": 3004261
+      "bytes": 3208808
     },
     {
       "id": "full_group_008_000",
       "vertices": 2304,
       "triangles": 1128,
       "maxNormalError": 1.5575453793381655e-07,
-      "bytes": 198710
+      "bytes": 326640
     },
     {
       "id": "full_group_009_000",
-      "vertices": 23938,
-      "triangles": 13140,
+      "vertices": 23834,
+      "triangles": 13048,
       "maxNormalError": 1.7812003916262142e-07,
-      "bytes": 2094191
+      "bytes": 2156416
     },
     {
       "id": "full_group_010_000",
       "vertices": 7168,
       "triangles": 3508,
       "maxNormalError": 1.6965775073707334e-07,
-      "bytes": 626623
+      "bytes": 626663
     },
     {
       "id": "full_group_011_000",
@@ -110,7 +96,7 @@
       "vertices": 59998,
       "triangles": 83688,
       "maxNormalError": 1.795222288603071e-07,
-      "bytes": 6273601
+      "bytes": 6403109
     },
     {
       "id": "full_group_012_002",
@@ -131,56 +117,49 @@
       "vertices": 14592,
       "triangles": 7144,
       "maxNormalError": 1.7477999980641812e-07,
-      "bytes": 1280416
-    },
-    {
-      "id": "full_group_014_000",
-      "vertices": 5868,
-      "triangles": 3024,
-      "maxNormalError": 1.5092196148369652e-07,
-      "bytes": 429981
+      "bytes": 1281284
     },
     {
       "id": "full_group_015_000",
       "vertices": 44628,
       "triangles": 86592,
       "maxNormalError": 1.642366664889039e-07,
-      "bytes": 4495469
+      "bytes": 5163372
     },
     {
       "id": "full_group_016_000",
       "vertices": 59998,
       "triangles": 102179,
       "maxNormalError": 1.748148497071611e-07,
-      "bytes": 6134065
+      "bytes": 8324985
     },
     {
       "id": "full_group_016_001",
       "vertices": 59998,
       "triangles": 104702,
       "maxNormalError": 1.8298271831085344e-07,
-      "bytes": 6266405
+      "bytes": 7647175
     },
     {
       "id": "full_group_016_002",
       "vertices": 41425,
       "triangles": 69603,
       "maxNormalError": 1.7036454558194691e-07,
-      "bytes": 4238641
+      "bytes": 5027206
     },
     {
       "id": "full_group_017_000",
-      "vertices": 38242,
-      "triangles": 47468,
+      "vertices": 34488,
+      "triangles": 42816,
       "maxNormalError": 1.6673188096838487e-07,
-      "bytes": 3872613
+      "bytes": 3638587
     },
     {
       "id": "full_group_018_000",
       "vertices": 40320,
       "triangles": 19740,
       "maxNormalError": 1.8174300864259862e-07,
-      "bytes": 3569812
+      "bytes": 3572332
     },
     {
       "id": "full_group_019_000",
@@ -190,18 +169,11 @@
       "bytes": 45042
     },
     {
-      "id": "full_group_020_000",
-      "vertices": 434,
-      "triangles": 224,
-      "maxNormalError": 1.5434528688462734e-07,
-      "bytes": 31269
-    },
-    {
       "id": "full_group_021_000",
       "vertices": 1920,
       "triangles": 940,
       "maxNormalError": 1.828149331917217e-07,
-      "bytes": 163909
+      "bytes": 164093
     },
     {
       "id": "full_group_022_000",
@@ -212,52 +184,31 @@
     },
     {
       "id": "full_group_023_000",
-      "vertices": 23446,
-      "triangles": 11292,
+      "vertices": 17138,
+      "triangles": 8068,
       "maxNormalError": 1.6428987847927345e-07,
-      "bytes": 1794577
-    },
-    {
-      "id": "full_group_024_000",
-      "vertices": 7824,
-      "triangles": 4032,
-      "maxNormalError": 1.4461826547407242e-07,
-      "bytes": 577034
+      "bytes": 1595370
     },
     {
       "id": "full_group_025_000",
-      "vertices": 4218,
-      "triangles": 4304,
+      "vertices": 3195,
+      "triangles": 3136,
       "maxNormalError": 1.4151725502564716e-07,
-      "bytes": 386516
+      "bytes": 645356
     },
     {
       "id": "full_group_026_000",
       "vertices": 5568,
       "triangles": 2724,
       "maxNormalError": 1.7583840938861783e-07,
-      "bytes": 477352
+      "bytes": 738981
     },
     {
       "id": "full_group_027_000",
       "vertices": 384,
       "triangles": 188,
       "maxNormalError": 1.4570259443402733e-07,
-      "bytes": 27776
-    },
-    {
-      "id": "full_group_028_000",
-      "vertices": 6930,
-      "triangles": 12240,
-      "maxNormalError": 1.549693229296878e-07,
-      "bytes": 683098
-    },
-    {
-      "id": "full_group_029_000",
-      "vertices": 1679,
-      "triangles": 3136,
-      "maxNormalError": 1.4071285991956728e-07,
-      "bytes": 159375
+      "bytes": 27800
     },
     {
       "id": "full_group_030_000",
@@ -274,32 +225,11 @@
       "bytes": 61565
     },
     {
-      "id": "full_group_032_000",
-      "vertices": 1630,
-      "triangles": 840,
-      "maxNormalError": 1.2289614759186662e-07,
-      "bytes": 121148
-    },
-    {
       "id": "full_group_033_000",
       "vertices": 1920,
       "triangles": 940,
       "maxNormalError": 1.5158699340211967e-07,
       "bytes": 166718
-    },
-    {
-      "id": "full_group_034_000",
-      "vertices": 640,
-      "triangles": 312,
-      "maxNormalError": 1.503123088220093e-07,
-      "bytes": 55612
-    },
-    {
-      "id": "full_group_035_000",
-      "vertices": 1417,
-      "triangles": 1792,
-      "maxNormalError": 1.2728490306201934e-07,
-      "bytes": 135061
     },
     {
       "id": "full_group_036_000",
@@ -324,31 +254,10 @@
     },
     {
       "id": "full_group_039_000",
-      "vertices": 2450,
-      "triangles": 2316,
+      "vertices": 1974,
+      "triangles": 1868,
       "maxNormalError": 1.5467264313784312e-07,
-      "bytes": 226060
-    },
-    {
-      "id": "full_group_040_000",
-      "vertices": 384,
-      "triangles": 188,
-      "maxNormalError": 1.5060465363703202e-07,
-      "bytes": 33134
-    },
-    {
-      "id": "full_group_041_000",
-      "vertices": 144,
-      "triangles": 120,
-      "maxNormalError": 1.2521965708778282e-07,
-      "bytes": 13000
-    },
-    {
-      "id": "full_group_042_000",
-      "vertices": 3260,
-      "triangles": 1680,
-      "maxNormalError": 1.560799721689321e-07,
-      "bytes": 246046
+      "bytes": 260276
     },
     {
       "id": "full_group_043_000",
@@ -356,20 +265,6 @@
       "triangles": 336,
       "maxNormalError": 1.5303936318211697e-07,
       "bytes": 50341
-    },
-    {
-      "id": "full_group_044_000",
-      "vertices": 1920,
-      "triangles": 940,
-      "maxNormalError": 1.391426702745946e-07,
-      "bytes": 167933
-    },
-    {
-      "id": "full_group_045_000",
-      "vertices": 384,
-      "triangles": 252,
-      "maxNormalError": 7.399808232833038e-08,
-      "bytes": 27017
     },
     {
       "id": "full_group_046_000",
@@ -537,42 +432,42 @@
       "vertices": 17636,
       "triangles": 8740,
       "maxNormalError": 1.691195707920201e-07,
-      "bytes": 1366395
+      "bytes": 1630682
     },
     {
       "id": "full_group_051_000",
       "vertices": 39168,
       "triangles": 20160,
       "maxNormalError": 1.6041624717466618e-07,
-      "bytes": 3052552
+      "bytes": 4448528
     },
     {
       "id": "full_group_052_000",
       "vertices": 59999,
       "triangles": 31983,
       "maxNormalError": 1.7159921528175914e-07,
-      "bytes": 4670803
+      "bytes": 7954418
     },
     {
       "id": "full_group_052_001",
       "vertices": 60000,
       "triangles": 31908,
       "maxNormalError": 1.8092531361979525e-07,
-      "bytes": 4692143
+      "bytes": 6403372
     },
     {
       "id": "full_group_052_002",
       "vertices": 10894,
       "triangles": 5613,
       "maxNormalError": 1.76928804496157e-07,
-      "bytes": 825080
+      "bytes": 1219961
     },
     {
       "id": "full_group_053_000",
       "vertices": 59999,
       "triangles": 30881,
       "maxNormalError": 1.5874137249127784e-07,
-      "bytes": 4598260
+      "bytes": 7094542
     },
     {
       "id": "full_group_053_001",
@@ -642,70 +537,441 @@
       "vertices": 1920,
       "triangles": 640,
       "maxNormalError": 6.966512122730251e-08,
-      "bytes": 223860
+      "bytes": 269897
     },
     {
       "id": "ingredient.salt_bed",
       "vertices": 300,
       "triangles": 100,
       "maxNormalError": 9.60908757008383e-08,
-      "bytes": 28984
+      "bytes": 35617
     },
     {
       "id": "ingredient.salt_crystals",
       "vertices": 1512,
       "triangles": 504,
       "maxNormalError": 9.853218729816149e-08,
-      "bytes": 155336
+      "bytes": 184895
     },
     {
       "id": "ingredient.petal_plate",
       "vertices": 1920,
       "triangles": 640,
       "maxNormalError": 9.603437445271368e-08,
-      "bytes": 220429
+      "bytes": 273413
     },
     {
       "id": "ingredient.dried_petals",
       "vertices": 7719,
       "triangles": 2573,
       "maxNormalError": 1.125642536958793e-07,
-      "bytes": 1047615
+      "bytes": 1216851
     },
     {
       "id": "ingredient.herb_pot",
       "vertices": 1536,
       "triangles": 512,
       "maxNormalError": 7.519001687938953e-08,
-      "bytes": 178704
+      "bytes": 220305
     },
     {
       "id": "ingredient.dew_cork_mesh",
       "vertices": 14,
       "triangles": 12,
       "maxNormalError": 5.353891285864165e-08,
-      "bytes": 1464
+      "bytes": 2140
     },
     {
       "id": "ingredient.dew_glass_mesh",
       "vertices": 308,
       "triangles": 358,
       "maxNormalError": 1.0161228347627116e-07,
-      "bytes": 30384
+      "bytes": 45844
     },
     {
       "id": "ingredient.dew_liquid_mesh",
       "vertices": 73,
       "triangles": 76,
       "maxNormalError": 9.380079357690363e-08,
-      "bytes": 6698
+      "bytes": 10213
     },
     {
       "id": "ingredient.ash_herb",
       "vertices": 1638,
       "triangles": 1266,
       "maxNormalError": 6.4454614978615155e-09,
-      "bytes": 168356
+      "bytes": 235110
+    },
+    {
+      "id": "lantern.00",
+      "vertices": 16749,
+      "triangles": 5583,
+      "maxNormalError": 9.925261368337601e-08,
+      "bytes": 2708998
+    },
+    {
+      "id": "lantern.01",
+      "vertices": 108,
+      "triangles": 36,
+      "maxNormalError": 6.712822608889724e-08,
+      "bytes": 15133
+    },
+    {
+      "id": "lantern.02",
+      "vertices": 6126,
+      "triangles": 2042,
+      "maxNormalError": 9.526528899073128e-08,
+      "bytes": 987868
+    },
+    {
+      "id": "lantern.03",
+      "vertices": 36,
+      "triangles": 12,
+      "maxNormalError": 5.062616992290714e-14,
+      "bytes": 4948
+    },
+    {
+      "id": "lantern.04",
+      "vertices": 1944,
+      "triangles": 648,
+      "maxNormalError": 9.507918030671192e-08,
+      "bytes": 312089
+    },
+    {
+      "id": "lantern.05",
+      "vertices": 36,
+      "triangles": 12,
+      "maxNormalError": 5.960464477539063e-08,
+      "bytes": 3044
+    },
+    {
+      "id": "lantern.06",
+      "vertices": 132,
+      "triangles": 44,
+      "maxNormalError": 9.036914638826943e-08,
+      "bytes": 19364
+    },
+    {
+      "id": "lantern.07",
+      "vertices": 360,
+      "triangles": 120,
+      "maxNormalError": 9.02490615573015e-08,
+      "bytes": 54163
+    },
+    {
+      "id": "lantern.08",
+      "vertices": 360,
+      "triangles": 120,
+      "maxNormalError": 9.02490615573015e-08,
+      "bytes": 52991
+    },
+    {
+      "id": "lantern.09",
+      "vertices": 864,
+      "triangles": 288,
+      "maxNormalError": 9.897481856313561e-08,
+      "bytes": 95271
+    },
+    {
+      "id": "lantern.10",
+      "vertices": 864,
+      "triangles": 288,
+      "maxNormalError": 1.021407165513466e-07,
+      "bytes": 97175
+    },
+    {
+      "id": "lantern.11",
+      "vertices": 504,
+      "triangles": 168,
+      "maxNormalError": 7.425216486112163e-08,
+      "bytes": 71986
+    },
+    {
+      "id": "folder.00",
+      "maxNormalError": 1e-06,
+      "vertices": 600,
+      "triangles": 200,
+      "bytes": 85474
+    },
+    {
+      "id": "folder.01",
+      "maxNormalError": 1e-06,
+      "vertices": 432,
+      "triangles": 144,
+      "bytes": 54633
+    },
+    {
+      "id": "books.00",
+      "maxNormalError": 1e-06,
+      "vertices": 408,
+      "triangles": 136,
+      "bytes": 65300
+    },
+    {
+      "id": "books.01",
+      "maxNormalError": 1e-06,
+      "vertices": 408,
+      "triangles": 136,
+      "bytes": 65869
+    },
+    {
+      "id": "books.02",
+      "maxNormalError": 1e-06,
+      "vertices": 468,
+      "triangles": 156,
+      "bytes": 69652
+    },
+    {
+      "id": "cauldron_restored.00",
+      "maxNormalError": 1e-06,
+      "vertices": 7056,
+      "triangles": 2352,
+      "bytes": 1434773
+    },
+    {
+      "id": "cauldron_restored.01",
+      "maxNormalError": 1e-06,
+      "vertices": 1920,
+      "triangles": 640,
+      "bytes": 389565
+    },
+    {
+      "id": "cauldron_restored.02",
+      "maxNormalError": 1e-06,
+      "vertices": 576,
+      "triangles": 192,
+      "bytes": 117841
+    },
+    {
+      "id": "cauldron_restored.03",
+      "maxNormalError": 1e-06,
+      "vertices": 7776,
+      "triangles": 2592,
+      "bytes": 1578019
+    },
+    {
+      "id": "cauldron_restored.04",
+      "maxNormalError": 1e-06,
+      "vertices": 9360,
+      "triangles": 3120,
+      "bytes": 1901171
+    },
+    {
+      "id": "cauldron_restored.05",
+      "maxNormalError": 1e-06,
+      "vertices": 60,
+      "triangles": 20,
+      "bytes": 10220
+    },
+    {
+      "id": "cauldron_restored.06",
+      "maxNormalError": 1e-06,
+      "vertices": 60,
+      "triangles": 20,
+      "bytes": 10273
+    },
+    {
+      "id": "cauldron_restored.07",
+      "maxNormalError": 1e-06,
+      "vertices": 60,
+      "triangles": 20,
+      "bytes": 10273
+    },
+    {
+      "id": "cauldron_restored.08",
+      "maxNormalError": 1e-06,
+      "vertices": 60,
+      "triangles": 20,
+      "bytes": 10266
+    },
+    {
+      "id": "cauldron_restored.09",
+      "maxNormalError": 1e-06,
+      "vertices": 60,
+      "triangles": 20,
+      "bytes": 10285
+    },
+    {
+      "id": "cauldron_restored.10",
+      "maxNormalError": 1e-06,
+      "vertices": 60,
+      "triangles": 20,
+      "bytes": 10305
+    },
+    {
+      "id": "cauldron_restored.11",
+      "maxNormalError": 1e-06,
+      "vertices": 60,
+      "triangles": 20,
+      "bytes": 10248
+    },
+    {
+      "id": "cauldron_restored.12",
+      "maxNormalError": 1e-06,
+      "vertices": 60,
+      "triangles": 20,
+      "bytes": 10270
+    },
+    {
+      "id": "cauldron_restored.13",
+      "maxNormalError": 1e-06,
+      "vertices": 60,
+      "triangles": 20,
+      "bytes": 10264
+    },
+    {
+      "id": "cauldron_restored.14",
+      "maxNormalError": 1e-06,
+      "vertices": 60,
+      "triangles": 20,
+      "bytes": 10256
+    },
+    {
+      "id": "cauldron_restored.20",
+      "maxNormalError": 1e-06,
+      "vertices": 504,
+      "triangles": 168,
+      "bytes": 83927
+    },
+    {
+      "id": "cauldron_restored.21",
+      "maxNormalError": 1e-06,
+      "vertices": 504,
+      "triangles": 168,
+      "bytes": 84059
+    },
+    {
+      "id": "cauldron_restored.22",
+      "maxNormalError": 1e-06,
+      "vertices": 504,
+      "triangles": 168,
+      "bytes": 84151
+    },
+    {
+      "id": "cauldron_restored.23",
+      "maxNormalError": 1e-06,
+      "vertices": 504,
+      "triangles": 168,
+      "bytes": 84001
+    },
+    {
+      "id": "cauldron_restored.24",
+      "maxNormalError": 1e-06,
+      "vertices": 504,
+      "triangles": 168,
+      "bytes": 84085
+    },
+    {
+      "id": "cauldron_restored.25",
+      "maxNormalError": 1e-06,
+      "vertices": 504,
+      "triangles": 168,
+      "bytes": 84045
+    },
+    {
+      "id": "cauldron_restored.26",
+      "maxNormalError": 1e-06,
+      "vertices": 504,
+      "triangles": 168,
+      "bytes": 84121
+    },
+    {
+      "id": "cauldron_restored.27",
+      "maxNormalError": 1e-06,
+      "vertices": 504,
+      "triangles": 168,
+      "bytes": 84197
+    },
+    {
+      "id": "cauldron_restored.28",
+      "maxNormalError": 1e-06,
+      "vertices": 504,
+      "triangles": 168,
+      "bytes": 84135
+    },
+    {
+      "id": "cauldron_restored.29",
+      "maxNormalError": 1e-06,
+      "vertices": 504,
+      "triangles": 168,
+      "bytes": 84081
+    },
+    {
+      "id": "cauldron_restored.30",
+      "maxNormalError": 1e-06,
+      "vertices": 864,
+      "triangles": 288,
+      "bytes": 145284
+    },
+    {
+      "id": "cauldron_restored.31",
+      "maxNormalError": 1e-06,
+      "vertices": 756,
+      "triangles": 252,
+      "bytes": 117148
+    },
+    {
+      "id": "bird.00",
+      "maxNormalError": 1.1180277725841847e-07,
+      "vertices": 7848,
+      "triangles": 2616,
+      "bytes": 1246814
+    },
+    {
+      "id": "frame.00",
+      "maxNormalError": 2.220446049250313e-16,
+      "vertices": 629,
+      "triangles": 936,
+      "bytes": 141653
+    },
+    {
+      "id": "frame.01",
+      "maxNormalError": 0.0,
+      "vertices": 4,
+      "triangles": 2,
+      "bytes": 960
+    },
+    {
+      "id": "selected-lamp.00",
+      "vertices": 22818,
+      "triangles": 7606,
+      "bytes": 4619291,
+      "maxNormalError": 1e-06
+    },
+    {
+      "id": "selected-lamp.01",
+      "vertices": 2514,
+      "triangles": 838,
+      "bytes": 510056,
+      "maxNormalError": 1e-06
+    },
+    {
+      "id": "selected-lamp.02",
+      "vertices": 546,
+      "triangles": 182,
+      "bytes": 109788,
+      "maxNormalError": 1e-06
+    },
+    {
+      "id": "lantern.slim_support",
+      "vertices": 636,
+      "triangles": 212,
+      "bytes": 75643,
+      "maxNormalError": 1.0254552362809477e-07
+    },
+    {
+      "id": "clock.00",
+      "maxNormalError": 2.220446049250313e-16,
+      "vertices": 14979,
+      "triangles": 25241,
+      "bytes": 3621960
+    },
+    {
+      "id": "clock.01",
+      "maxNormalError": 2.220446049250313e-16,
+      "vertices": 257,
+      "triangles": 480,
+      "bytes": 62213
     }
   ],
   "engineValidated": false,
@@ -743,5 +1009,154 @@
     "triangles": 2573,
     "normalsAndWindingReversed": true,
     "uvAndMaterialUnchanged": true
+  },
+  "woodenLanternReplacement": {
+    "removedTriangles": 1440,
+    "addedTriangles": 9361,
+    "preservedGlassJarTriangles": 2304,
+    "preservedBracketTriangles": 480,
+    "anchorCount": 8,
+    "license": "CC0",
+    "runtimeVerified": true,
+    "nativeVerificationScope": "Linux software GLES graphical capture and native synthetic UI, not Windows/mobile"
+  },
+  "selectedBooksReplacement": {
+    "sourceSHA256": "667316a20ccd0ef40f5c360a261a20128f9e57377e67a11cecb668ce76df9970",
+    "triangles": 428,
+    "nativeVerified": false,
+    "journalProxyPreserved": true
+  },
+  "selectedCauldronReplacement": {
+    "sourceSHA256": "caf9936fa0195badec79b08debbacceb142c7715b366adf52a97ca24e0e83951",
+    "removedTriangles": 9660,
+    "addedTriangles": 12156,
+    "nativeVerified": false,
+    "stoveProxyPreserved": true
+  },
+  "selectedBirdAddition": {
+    "sourceSHA256": "9e6848e5c35f2662957a466dfc03f90a0159de6e255d76ce17f2bb3f2e10b02f",
+    "triangles": 2616,
+    "nativeVerified": false,
+    "noNewInteraction": true
+  },
+  "selectedKenneyFire": {
+    "sourceSHA256": "fb9da6e7b4d7bafd8b424340d165def6008db2b82c674bd0f80c3edd992db165",
+    "removedStaticTriangles": 840,
+    "dynamicTriangles": 6,
+    "previewMeshesExported": false,
+    "stoveProxyPreserved": true,
+    "apiSmokePassed": true,
+    "actualCameraVerified": false
+  },
+  "selectedFolderDoubleSided": {
+    "status": "OFFLINE_GEOMETRY_VERIFIED_NATIVE_VISUAL_PENDING",
+    "implementation": "Runtime derived reversed-winding faces with negated normals under CW culling implement source glTF doubleSided visibility and backface normal orientation. Source Blender geometry, original material factors, bounds, transforms and scene lighting unchanged.",
+    "addedRuntimeTriangles": 172,
+    "addedRuntimeVertices": 516,
+    "sourceMeshHashes": {
+      "folder.00": "4e30833d10f107df71f46d79769af06a04133f461bcd12f38e8674506ff7f412",
+      "folder.01": "711022229a2fc7cd2dbf9e2ec717663e7b46b7e5dc12293051a15e4da895534a"
+    }
+  },
+  "selectedFrameAddition": {
+    "sourceSHA256": "81ae621adb118bc290cd8a26f196ca6a762b56b43f968808a43a161e1be91f30",
+    "triangles": 938,
+    "nativeVerified": false,
+    "noNewInteraction": true
+  },
+  "selectedLamp": {
+    "nativeVerified": false,
+    "bulbCenterEngine": [
+      1.028643012046814,
+      2.3194267749786377,
+      -1.9446430802345276
+    ],
+    "supportAdjustments": [
+      {
+        "lower": "Thick tabletop plank (union)",
+        "upper": "selected-lamp industrial_pipe_lamp",
+        "deltaZ": 3.2699584960937524e-06,
+        "sampleCount": 1906,
+        "minGapBefore": 4.673004150390625e-05,
+        "minGapAfter": 5.14984130859375e-05
+      }
+    ]
+  },
+  "selectedClockAddition": {
+    "sourceSHA256": "c1b41610c149329774a655e84d392ad0d62b939f2ffc1ca4af639e859a0c226d",
+    "triangles": 25721,
+    "nativeVerified": false,
+    "noNewInteraction": true
+  },
+  "clockLampPlacement20261015": {
+    "changes": [
+      {
+        "id": "selected-lamp.00",
+        "min": [
+          2.4799717630460556,
+          1.683360854630882,
+          1.852000000001741
+        ],
+        "max": [
+          2.7689876999695713,
+          2.0975504227916257,
+          2.4346390981691606
+        ]
+      },
+      {
+        "id": "selected-lamp.01",
+        "min": [
+          2.589655916970813,
+          1.7554869740645016,
+          2.2848323602693803
+        ],
+        "max": [
+          2.659376882047507,
+          1.8507021905076415,
+          2.377914788247896
+        ]
+      },
+      {
+        "id": "selected-lamp.02",
+        "min": [
+          2.6350622243410418,
+          1.8557084800914059,
+          1.982060076715303
+        ],
+        "max": [
+          2.647607337118422,
+          1.8692254084543491,
+          2.010335566522432
+        ]
+      },
+      {
+        "id": "clock.00",
+        "min": [
+          3.05,
+          2.8294357294916885,
+          2.4205
+        ],
+        "max": [
+          3.6500000000000004,
+          3.0505642705083114,
+          2.7017631770603088
+        ]
+      },
+      {
+        "id": "clock.01",
+        "min": [
+          3.2553995350928955,
+          2.838083346377034,
+          2.485440083511117
+        ],
+        "max": [
+          3.4446004649071047,
+          2.8455568408219847,
+          2.674641013325327
+        ]
+      }
+    ],
+    "sourceReplayScript": "tools/reposition_clock_lamp_20261015.py",
+    "nativeVerified": false
   }
 }

@@ -1407,9 +1407,9 @@
     {
       "id": "ingredient.dew_liquid",
       "baseColorFactor": [
-        0.004,
-        0.025,
-        0.05,
+        0.012,
+        0.11,
+        0.16,
         1.0
       ],
       "metallic": 0.0,
@@ -1434,6 +1434,360 @@
       "baseColorTexture": "ingredients/herb/ash_herb_albedo.png",
       "unlit": false,
       "cullMode": "NONE"
+    },
+    {
+      "id": "lantern.wood",
+      "sourceMaterial": "PolyHaven Wooden Lantern01 wood/metal/wax surface",
+      "baseColorFactor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.65,
+      "alphaMode": "OPAQUE",
+      "unlit": false,
+      "doubleSided": true,
+      "cullMode": "NONE",
+      "baseColorTexture": "lantern/textures/diff.png",
+      "normalTexture": "lantern/textures/nor_gl.png",
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "roughMetalOcclusionTexture": "lantern/textures/rma.png",
+      "textureColorSpaces": {
+        "baseColorTexture": "sRGB",
+        "normalTexture": "linear",
+        "roughMetalOcclusionTexture": "linear"
+      }
+    },
+    {
+      "id": "lantern.glass",
+      "baseColorFactor": [
+        1,
+        1,
+        1,
+        0.12
+      ],
+      "metallic": 0,
+      "roughness": 0.18,
+      "alphaMode": "BLEND",
+      "unlit": false,
+      "doubleSided": true,
+      "cullMode": "NONE",
+      "baseColorTexture": "lantern/textures/glass_diff.png",
+      "normalTexture": "lantern/textures/glass_nor_gl.png",
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "textureColorSpaces": {
+        "baseColorTexture": "sRGB",
+        "normalTexture": "linear"
+      }
+    },
+    {
+      "id": "lantern.support_iron",
+      "baseColorFactor": [
+        0.055,
+        0.04,
+        0.026,
+        1
+      ],
+      "metallic": 0.7,
+      "roughness": 0.48,
+      "alphaMode": "OPAQUE",
+      "unlit": false,
+      "doubleSided": false,
+      "cullMode": "CW"
+    },
+    {
+      "id": "lantern.candle_flame",
+      "baseColorFactor": [
+        1,
+        0.55,
+        0.06,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.5,
+      "alphaMode": "OPAQUE",
+      "unlit": true,
+      "doubleSided": false,
+      "cullMode": "CW"
+    },
+    {
+      "id": "folder.material.0",
+      "sourceMaterial": "Material.002",
+      "baseColorFactor": [
+        1.0,
+        0.927805,
+        0.48856,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.5,
+      "alphaMode": "OPAQUE",
+      "unlit": false,
+      "doubleSided": false,
+      "cullMode": "CW",
+      "textureColorSpaces": {}
+    },
+    {
+      "id": "folder.material.1",
+      "sourceMaterial": "Material.001",
+      "baseColorFactor": [
+        0.800063,
+        0.750838,
+        0.689559,
+        1.0
+      ],
+      "metallic": 0.0,
+      "roughness": 0.5,
+      "alphaMode": "OPAQUE",
+      "unlit": false,
+      "doubleSided": false,
+      "cullMode": "CW",
+      "textureColorSpaces": {}
+    },
+    {
+      "id": "books.material.0",
+      "sourceMaterial": "lambert1",
+      "baseColorFactor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "alphaMode": "OPAQUE",
+      "unlit": false,
+      "doubleSided": true,
+      "cullMode": "NONE",
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "textureColorSpaces": {
+        "baseColorTexture": "sRGB",
+        "normalTexture": "linear",
+        "roughMetalOcclusionTexture": "linear"
+      },
+      "baseColorTexture": "selected-books/textures/basecolor.png",
+      "normalTexture": "selected-books/textures/normal.png",
+      "roughMetalOcclusionTexture": "selected-books/textures/rma.png"
+    },
+    {
+      "id": "cauldron.selected.material.0",
+      "sourceMaterial": "Scene_-_Root",
+      "baseColorFactor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "alphaMode": "OPAQUE",
+      "unlit": false,
+      "doubleSided": true,
+      "cullMode": "NONE",
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "textureColorSpaces": {
+        "baseColorTexture": "sRGB",
+        "normalTexture": "linear",
+        "roughMetalOcclusionTexture": "linear"
+      },
+      "baseColorTexture": "selected-cauldron/textures/basecolor.png",
+      "normalTexture": "selected-cauldron/textures/normal.png",
+      "roughMetalOcclusionTexture": "selected-cauldron/textures/rma.png"
+    },
+    {
+      "id": "bird.material.0",
+      "sourceMaterial": "Bird_Decor",
+      "baseColorFactor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 1,
+      "alphaMode": "OPAQUE",
+      "unlit": false,
+      "doubleSided": true,
+      "cullMode": "NONE",
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "textureColorSpaces": {
+        "baseColorTexture": "sRGB",
+        "normalTexture": "linear",
+        "roughMetalOcclusionTexture": "linear"
+      },
+      "baseColorTexture": "selected-bird/textures/basecolor.png",
+      "normalTexture": "selected-bird/textures/normal.png",
+      "roughMetalOcclusionTexture": "selected-bird/textures/rma.png"
+    },
+    {
+      "id": "frame.material.0",
+      "sourceMaterial": "fancy_picture_frame_01",
+      "baseColorFactor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 1,
+      "alphaMode": "OPAQUE",
+      "unlit": false,
+      "doubleSided": true,
+      "cullMode": "NONE",
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "textureColorSpaces": {
+        "baseColorTexture": "sRGB",
+        "normalTexture": "linear",
+        "roughMetalOcclusionTexture": "linear"
+      },
+      "baseColorTexture": "selected-frame/textures/0-baseColorTexture.png",
+      "normalTexture": "selected-frame/textures/0-normalTexture.png",
+      "roughMetalOcclusionTexture": "selected-frame/textures/0-roughMetalOcclusionTexture.png"
+    },
+    {
+      "id": "frame.material.1",
+      "sourceMaterial": "fancy_picture_frame_01_canvas",
+      "baseColorFactor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 1,
+      "alphaMode": "OPAQUE",
+      "unlit": false,
+      "doubleSided": true,
+      "cullMode": "NONE",
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "textureColorSpaces": {
+        "baseColorTexture": "sRGB",
+        "normalTexture": "linear",
+        "roughMetalOcclusionTexture": "linear"
+      },
+      "baseColorTexture": "selected-frame/textures/1-baseColorTexture.png",
+      "normalTexture": "selected-frame/textures/1-normalTexture.png",
+      "roughMetalOcclusionTexture": "selected-frame/textures/1-roughMetalOcclusionTexture.png"
+    },
+    {
+      "id": "selected-lamp.material.0",
+      "sourceMaterial": "industrial_pipe_lamp",
+      "baseColorFactor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "alphaMode": "OPAQUE",
+      "doubleSided": true,
+      "cullMode": "NONE",
+      "unlit": false,
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "textureColorSpaces": {
+        "baseColorTexture": "sRGB",
+        "normalTexture": "linear",
+        "roughMetalOcclusionTexture": "linear",
+        "emissiveTexture": "sRGB"
+      },
+      "emissiveFactor": [
+        1,
+        1,
+        1
+      ],
+      "emissiveStrength": 2,
+      "sourceEmissiveStrength": 82.4000015258789,
+      "baseColorTexture": "selected-lamp/textures/0/basecolor.png",
+      "normalTexture": "selected-lamp/textures/0/normal.png",
+      "emissiveTexture": "selected-lamp/textures/0/emission.png",
+      "roughMetalOcclusionTexture": "selected-lamp/textures/0/rma.png"
+    },
+    {
+      "id": "selected-lamp.material.1",
+      "sourceMaterial": "industrial_pipe_lamp_glass",
+      "baseColorFactor": [
+        1,
+        1,
+        1,
+        0.20000000298023224
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "alphaMode": "BLEND",
+      "doubleSided": true,
+      "cullMode": "NONE",
+      "unlit": false,
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "textureColorSpaces": {
+        "baseColorTexture": "sRGB",
+        "normalTexture": "linear",
+        "roughMetalOcclusionTexture": "linear",
+        "emissiveTexture": "sRGB"
+      },
+      "emissiveFactor": [
+        1,
+        1,
+        1
+      ],
+      "emissiveStrength": 2,
+      "sourceEmissiveStrength": 82.4000015258789,
+      "baseColorTexture": "selected-lamp/textures/1/basecolor.png",
+      "normalTexture": "selected-lamp/textures/1/normal.png",
+      "emissiveTexture": "selected-lamp/textures/1/emission.png",
+      "roughMetalOcclusionTexture": "selected-lamp/textures/1/rma.png"
+    },
+    {
+      "id": "clock.material.0",
+      "sourceMaterial": "mantel_clock_01",
+      "baseColorFactor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "alphaMode": "OPAQUE",
+      "unlit": false,
+      "doubleSided": true,
+      "cullMode": "NONE",
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "textureColorSpaces": {
+        "baseColorTexture": "sRGB",
+        "normalTexture": "linear",
+        "roughMetalOcclusionTexture": "linear"
+      },
+      "baseColorTexture": "selected-clock/textures/0-baseColorTexture.png",
+      "normalTexture": "selected-clock/textures/0-normalTexture.png",
+      "roughMetalOcclusionTexture": "selected-clock/textures/0-roughMetalOcclusionTexture.png"
+    },
+    {
+      "id": "clock.material.1",
+      "sourceMaterial": "mantel_clock_01_glass",
+      "baseColorFactor": [
+        1,
+        1,
+        1,
+        0.30000001192092896
+      ],
+      "metallic": 0,
+      "roughness": 1,
+      "alphaMode": "BLEND",
+      "unlit": false,
+      "doubleSided": true,
+      "cullMode": "NONE",
+      "normalMapConvention": "tangent-space OpenGL +Y; requires tangent basis derived from uv0",
+      "textureColorSpaces": {
+        "baseColorTexture": "sRGB",
+        "normalTexture": "linear",
+        "roughMetalOcclusionTexture": "linear"
+      },
+      "baseColorTexture": "selected-clock/textures/0-baseColorTexture.png",
+      "normalTexture": "selected-clock/textures/0-normalTexture.png",
+      "roughMetalOcclusionTexture": "selected-clock/textures/0-roughMetalOcclusionTexture.png"
     }
   ],
   "meshes": [],
@@ -1478,46 +1832,28 @@
       "id": "full_group_003_000",
       "file": "meshes/full_group_003_000.json",
       "materialId": "full_mat_003",
-      "vertices": 17935,
-      "triangles": 32008,
+      "vertices": 14166,
+      "triangles": 25768,
       "semantic": "static",
-      "sha256": "a0e01157c0a10b22a4853ac39db32805749af3375a3379b26983e5fb5a8889d0"
-    },
-    {
-      "id": "full_group_004_000",
-      "file": "meshes/full_group_004_000.json",
-      "materialId": "full_mat_004",
-      "vertices": 5097,
-      "triangles": 2528,
-      "semantic": "static",
-      "sha256": "10da2548821ffb42b6d4c839b50164f45802da4e1aa93a5cc81d283492fb309c"
-    },
-    {
-      "id": "full_group_005_000",
-      "file": "meshes/full_group_005_000.json",
-      "materialId": "full_mat_005",
-      "vertices": 9383,
-      "triangles": 4608,
-      "semantic": "static",
-      "sha256": "1d2cd85a852bebc6f88ff3286ac82dd9afcae7a5c185d4ab9a9df18c23d7cd83"
+      "sha256": "d3eb1ef85b1f11ecd869bf3ef2d8a4cdade2d7d124344440040a701d778d89e8"
     },
     {
       "id": "full_group_006_000",
       "file": "meshes/full_group_006_000.json",
       "materialId": "full_mat_006",
-      "vertices": 8502,
-      "triangles": 8248,
+      "vertices": 7715,
+      "triangles": 7016,
       "semantic": "static",
-      "sha256": "b57361c7e06a53a56ac0a330393a8cbf4c266de4d70e0b9fc593044683b01f3b"
+      "sha256": "a48ce3ddfc64abbda524c5670e7c7f28f6f1ac4ecd1f4a9d084d59d2ecb274d6"
     },
     {
       "id": "full_group_007_000",
       "file": "meshes/full_group_007_000.json",
       "materialId": "full_mat_007",
-      "vertices": 30027,
-      "triangles": 36392,
+      "vertices": 29397,
+      "triangles": 35752,
       "semantic": "static",
-      "sha256": "24fd5394151b8b8d399b4671823dedbd007f42d2dfaebceb6163202005c59ded"
+      "sha256": "2106e039d5fa3a6f1dc348bd76f33b75d8c4bf1351de26b007851acc732d2551"
     },
     {
       "id": "full_group_008_000",
@@ -1526,16 +1862,16 @@
       "vertices": 2304,
       "triangles": 1128,
       "semantic": "static",
-      "sha256": "b51b40b7875683aff63fba660010d906fee2a53556cdc1051ed35adb9b8db125"
+      "sha256": "e835793290265910de1867304896b3f16e2b410a72d4c77618502761b7204d8b"
     },
     {
       "id": "full_group_009_000",
       "file": "meshes/full_group_009_000.json",
       "materialId": "full_mat_009",
-      "vertices": 23938,
-      "triangles": 13140,
+      "vertices": 23834,
+      "triangles": 13048,
       "semantic": "static",
-      "sha256": "338cad02b5bea0caf22d732f93be0b68eea2d6d81919b6937985c56a1d6f954d"
+      "sha256": "364921ce12692eafc2bc087b336b3dc9680820739766cea7643fb7f143083be5"
     },
     {
       "id": "full_group_010_000",
@@ -1571,7 +1907,7 @@
       "vertices": 59998,
       "triangles": 83688,
       "semantic": "static",
-      "sha256": "b531cb09ff2cef22d248785ab695b322a4c1ef1747d897cfd728add6cde14a37"
+      "sha256": "c6f69aa525c5f2657f1cf4c285db360d3bc30bcba422b7b41f3bbff7c9772b8c"
     },
     {
       "id": "full_group_012_002",
@@ -1601,22 +1937,13 @@
       "sha256": "abe163bf46a3edcc6473311f801110f99b2761b77657d40103926ade76a71434"
     },
     {
-      "id": "full_group_014_000",
-      "file": "meshes/full_group_014_000.json",
-      "materialId": "full_mat_014",
-      "vertices": 5868,
-      "triangles": 3024,
-      "semantic": "static",
-      "sha256": "528da6d282436869447ed3f2880634ccc20c77b8c52e30f2b168aa12c508211d"
-    },
-    {
       "id": "full_group_015_000",
       "file": "meshes/full_group_015_000.json",
       "materialId": "full_mat_015",
       "vertices": 44628,
       "triangles": 86592,
       "semantic": "static",
-      "sha256": "5919653a7c0fbaffd82d014341bd676ea13997380170b37968e3eec396cdd542"
+      "sha256": "2cb202e274efd5c47595de7c5cf38e66a881419f72fd675d425af0adf1dd6b29"
     },
     {
       "id": "full_group_016_000",
@@ -1625,7 +1952,7 @@
       "vertices": 59998,
       "triangles": 102179,
       "semantic": "static",
-      "sha256": "cff7a25bcaba0e5a5e8122e55170af51f443705adaa010d7a781d3bb11f5cf75"
+      "sha256": "e36acb80848b864976fe73759c6e373b696f39978ae63cac105874b44b9e0aa2"
     },
     {
       "id": "full_group_016_001",
@@ -1634,7 +1961,7 @@
       "vertices": 59998,
       "triangles": 104702,
       "semantic": "static",
-      "sha256": "967c233393b11dc2c1d7e289e812394a037022d5b4af51ed5df7d30495604671"
+      "sha256": "973d495734bc2e9a5008997f0ad2c7e2a99a563e479a576db0d42a677e0cf74a"
     },
     {
       "id": "full_group_016_002",
@@ -1643,16 +1970,16 @@
       "vertices": 41425,
       "triangles": 69603,
       "semantic": "static",
-      "sha256": "03aa69fb61807d2dfdd6c702c7c16c91ca83a6007bdaa2b0ab7505a45ce5f7fe"
+      "sha256": "e6d96b6e1a99161e7ba5e34bb84ffcefbf599c2fc94b188898c6252b0cd6c1eb"
     },
     {
       "id": "full_group_017_000",
       "file": "meshes/full_group_017_000.json",
       "materialId": "full_mat_017",
-      "vertices": 38242,
-      "triangles": 47468,
+      "vertices": 34488,
+      "triangles": 42816,
       "semantic": "static",
-      "sha256": "c263d57b3b3b4e372d09eb9117fbf2372b249ee17714647923fcae24eb7258da"
+      "sha256": "8e5ef87e93c5e52904d33412baea7e180f3cc59b55d61fd2299f44f7aa373dfe"
     },
     {
       "id": "full_group_018_000",
@@ -1671,15 +1998,6 @@
       "triangles": 572,
       "semantic": "home.net",
       "sha256": "886df4c358275a98b635e82d82abe6fef5ab6f03651b10bb5fa1d718b5916e69"
-    },
-    {
-      "id": "full_group_020_000",
-      "file": "meshes/full_group_020_000.json",
-      "materialId": "full_mat_020",
-      "vertices": 434,
-      "triangles": 224,
-      "semantic": "static",
-      "sha256": "e511633da9bedea3c8e0b53da6ffa89233ab5e2965964cbffa607f2123095474"
     },
     {
       "id": "full_group_021_000",
@@ -1703,28 +2021,19 @@
       "id": "full_group_023_000",
       "file": "meshes/full_group_023_000.json",
       "materialId": "full_mat_023",
-      "vertices": 23446,
-      "triangles": 11292,
+      "vertices": 17138,
+      "triangles": 8068,
       "semantic": "static",
-      "sha256": "c54f4f9c82fe540e354dcb943e114bc98e5b7e57d92880f73ee55cc9d2f28d56"
-    },
-    {
-      "id": "full_group_024_000",
-      "file": "meshes/full_group_024_000.json",
-      "materialId": "full_mat_024",
-      "vertices": 7824,
-      "triangles": 4032,
-      "semantic": "static",
-      "sha256": "06c99f72908dd5a9f94c4fba6678830c9811f673b3834872f17a317e02e40c73"
+      "sha256": "01f1d9ab9c033d21c698e82da8fc43a9e728d5159b9580717f3f1a0afca64a19"
     },
     {
       "id": "full_group_025_000",
       "file": "meshes/full_group_025_000.json",
       "materialId": "full_mat_025",
-      "vertices": 4218,
-      "triangles": 4304,
+      "vertices": 3195,
+      "triangles": 3136,
       "semantic": "static",
-      "sha256": "2f1ab7f96df87f7d601cf7aaf58d862b1469f23285e5c6197380954ab4966ef3"
+      "sha256": "cc3c7af9f5cac4948d4e1ae70139b1d1166553eb465fc201bc722d51a0aba6ae"
     },
     {
       "id": "full_group_026_000",
@@ -1733,7 +2042,7 @@
       "vertices": 5568,
       "triangles": 2724,
       "semantic": "static",
-      "sha256": "c6d839c016997b8785844a9a71e50579ae035dffe013dd8d0657f3bcf31d8158"
+      "sha256": "37f0d8a55639989187f0317bfc5470037579dbb8a0e15e5a15759a497e11a8d4"
     },
     {
       "id": "full_group_027_000",
@@ -1743,24 +2052,6 @@
       "triangles": 188,
       "semantic": "static",
       "sha256": "7a6c2856173de49be87081a062d38a05a0eac985ddc548620518b5f42e00aec9"
-    },
-    {
-      "id": "full_group_028_000",
-      "file": "meshes/full_group_028_000.json",
-      "materialId": "full_mat_028",
-      "vertices": 6930,
-      "triangles": 12240,
-      "semantic": "home.journal",
-      "sha256": "f1657a76db186227b1b9a885827c57d683a2464f60731893555b2fa8bedd45a5"
-    },
-    {
-      "id": "full_group_029_000",
-      "file": "meshes/full_group_029_000.json",
-      "materialId": "full_mat_029",
-      "vertices": 1679,
-      "triangles": 3136,
-      "semantic": "home.stove",
-      "sha256": "f07ef550f32ebd746565f16de104462480f7106368f89e9f6700ae715bc01210"
     },
     {
       "id": "full_group_030_000",
@@ -1781,15 +2072,6 @@
       "sha256": "3eda6938311509ee873d53ef8f43f6ddd74273df6924571f841f8edca5296363"
     },
     {
-      "id": "full_group_032_000",
-      "file": "meshes/full_group_032_000.json",
-      "materialId": "full_mat_032",
-      "vertices": 1630,
-      "triangles": 840,
-      "semantic": "home.stove",
-      "sha256": "700400891bcd7279836e482a12f617c2051b6d5265c67011daf231fbedb50bbd"
-    },
-    {
       "id": "full_group_033_000",
       "file": "meshes/full_group_033_000.json",
       "materialId": "full_mat_033",
@@ -1797,24 +2079,6 @@
       "triangles": 940,
       "semantic": "home.tray",
       "sha256": "6bc976b39d79cbc23be08060e5fcfc222e35258e59a3a786b98a3f12c1714f93"
-    },
-    {
-      "id": "full_group_034_000",
-      "file": "meshes/full_group_034_000.json",
-      "materialId": "full_mat_034",
-      "vertices": 640,
-      "triangles": 312,
-      "semantic": "home.journal",
-      "sha256": "2af35bb0ee410a7690966dc534a13a4c9cff6233f786e2c9b3c56678172e946d"
-    },
-    {
-      "id": "full_group_035_000",
-      "file": "meshes/full_group_035_000.json",
-      "materialId": "full_mat_035",
-      "vertices": 1417,
-      "triangles": 1792,
-      "semantic": "home.stove",
-      "sha256": "b64b0c0ba40b393e1f529b2f0e49dab9306af9779d5a209540ffb17236ab4daf"
     },
     {
       "id": "full_group_036_000",
@@ -1847,37 +2111,10 @@
       "id": "full_group_039_000",
       "file": "meshes/full_group_039_000.json",
       "materialId": "full_mat_039",
-      "vertices": 2450,
-      "triangles": 2316,
+      "vertices": 1974,
+      "triangles": 1868,
       "semantic": "static",
-      "sha256": "1519e095da5bcb9bb6557f362bd43433781bafb41858c3ed9202473ca2544886"
-    },
-    {
-      "id": "full_group_040_000",
-      "file": "meshes/full_group_040_000.json",
-      "materialId": "full_mat_040",
-      "vertices": 384,
-      "triangles": 188,
-      "semantic": "home.journal",
-      "sha256": "9f6a9fee31198204fb7ac8f1533e45882596ecc1faaa0b0db665f3f883d224c8"
-    },
-    {
-      "id": "full_group_041_000",
-      "file": "meshes/full_group_041_000.json",
-      "materialId": "full_mat_041",
-      "vertices": 144,
-      "triangles": 120,
-      "semantic": "home.journal",
-      "sha256": "a9193ac306865e35c99f5694551e466f22067ca6cd96ebaaf4a0febd72d7ceb9"
-    },
-    {
-      "id": "full_group_042_000",
-      "file": "meshes/full_group_042_000.json",
-      "materialId": "full_mat_042",
-      "vertices": 3260,
-      "triangles": 1680,
-      "semantic": "home.stove",
-      "sha256": "637aea6a76c8709d0bba77764e6d112e5255166b80786f6f8291ac0b4a160caa"
+      "sha256": "db5ee50347f116038c7c2f6ce61cca0dc89c2628989e750523287cd2710514f7"
     },
     {
       "id": "full_group_043_000",
@@ -1887,24 +2124,6 @@
       "triangles": 336,
       "semantic": "static",
       "sha256": "5ccb3a55264057d18abd3a510f1cac9a8cd6830c3e60aa87539594aed826d21e"
-    },
-    {
-      "id": "full_group_044_000",
-      "file": "meshes/full_group_044_000.json",
-      "materialId": "full_mat_044",
-      "vertices": 1920,
-      "triangles": 940,
-      "semantic": "home.caseFile",
-      "sha256": "656bfc1649509aed78f02f8f3bc15942122601f620d27ee69d4331445bcbee35"
-    },
-    {
-      "id": "full_group_045_000",
-      "file": "meshes/full_group_045_000.json",
-      "materialId": "full_mat_045",
-      "vertices": 384,
-      "triangles": 252,
-      "semantic": "static",
-      "sha256": "a7286af10213c82913745eab0c1b6a32cee962c7b2917687b050901395cfc731"
     },
     {
       "id": "full_group_046_000",
@@ -2120,7 +2339,7 @@
       "vertices": 17636,
       "triangles": 8740,
       "semantic": "static",
-      "sha256": "b4d813b2280e5b7c4177e30f76b87a1ead2bb1f1954cb2c4d46268383f4e3bfc"
+      "sha256": "4e88e8f8ef3b48cea30d102387c7808a0c63260df4b6272afb8c2c24f2b0501e"
     },
     {
       "id": "full_group_051_000",
@@ -2129,7 +2348,7 @@
       "vertices": 39168,
       "triangles": 20160,
       "semantic": "static",
-      "sha256": "4fb965b0f93e6df4ef5e65cd83a445d7ef617bd7a2cec4e1decbaec7903c1c7a"
+      "sha256": "91a2e6366ce1d76f93e4a55ad3a5b0414dcaa7dc13686b0afad8282124198715"
     },
     {
       "id": "full_group_052_000",
@@ -2138,7 +2357,7 @@
       "vertices": 59999,
       "triangles": 31983,
       "semantic": "static",
-      "sha256": "d546fac622c18930db28a399f32a5b6f05a99662b2a45c57e296f5b6da528f5b"
+      "sha256": "369ac07c90fdbf4184872159c87659ead8e2167a2f0972996a6c1c02141793ff"
     },
     {
       "id": "full_group_052_001",
@@ -2147,7 +2366,7 @@
       "vertices": 60000,
       "triangles": 31908,
       "semantic": "static",
-      "sha256": "5db21eac105cf538c0f0360014bd62399a37360048bc98cd58fd2d6172dbbfb3"
+      "sha256": "24562c3da1bc782faec2102c83b81a3eb21c47e906bab8a09f1cb94a90011a10"
     },
     {
       "id": "full_group_052_002",
@@ -2156,7 +2375,7 @@
       "vertices": 10894,
       "triangles": 5613,
       "semantic": "static",
-      "sha256": "280f3decd8d9e9fe6b6f07e485fa288e78661d8ccbd38b0ca1402d7440320fc9"
+      "sha256": "8e5089c941edce83b3e11513fa7ee203db9746d5d2cc93be0a1c5b378b985cff"
     },
     {
       "id": "full_group_053_000",
@@ -2165,7 +2384,7 @@
       "vertices": 59999,
       "triangles": 30881,
       "semantic": "static",
-      "sha256": "4f7eb977d9c9798df06f456f5780d8e8827280b1261b506fc2df8dde824a7d66"
+      "sha256": "88ac949f19c84e51a4e253c0b82a772230bc77f9f9397a46dd94dee906089814"
     },
     {
       "id": "full_group_053_001",
@@ -2255,7 +2474,7 @@
       "vertices": 1920,
       "triangles": 640,
       "semantic": "static.ingredient",
-      "sha256": "6387dcb36e45e3d5cc3094a1993555f448491a8e6e0685a60ff9409e43bf5cfb"
+      "sha256": "1cd7a6ea90c6d066765950bc18278b77e2df63930df409aa98bda8f66d94f9bd"
     },
     {
       "id": "ingredient.salt_bed",
@@ -2264,7 +2483,7 @@
       "vertices": 300,
       "triangles": 100,
       "semantic": "static.ingredient",
-      "sha256": "2fd0c373883da54c57447be092ebb7cfb22b65c0d5e2db9f17a37443f1c7ee4b"
+      "sha256": "67befeee7d2291105baba8c2e4acdc91726a540d635de58a24ed897a66ed481e"
     },
     {
       "id": "ingredient.salt_crystals",
@@ -2273,7 +2492,7 @@
       "vertices": 1512,
       "triangles": 504,
       "semantic": "static.ingredient",
-      "sha256": "ae09b3aec83bee906af4565173af668dd2222e99510bc977b763dfe9075e7426"
+      "sha256": "12b0600484bcdc9a4715ce55d5153c66068ce5595561067987a84cd47d4a4b36"
     },
     {
       "id": "ingredient.petal_plate",
@@ -2282,7 +2501,7 @@
       "vertices": 1920,
       "triangles": 640,
       "semantic": "static.ingredient",
-      "sha256": "b2de401e9a2a97602abdb7c47653eccae80181b486f276e1c684abf41b68da6b"
+      "sha256": "efecf85b30888ed5aba2aa04ae38202afc1272a359f8d07c1db30c477957481d"
     },
     {
       "id": "ingredient.dried_petals",
@@ -2291,7 +2510,7 @@
       "vertices": 7719,
       "triangles": 2573,
       "semantic": "static.ingredient",
-      "sha256": "828c11515ae5c4ef173782018fee187139d66250f2f1261994d826ab0ce09a63"
+      "sha256": "ee093793c97bfdec978d66a31ff1dc16e139a7f54d0fdb95804446b3e1fe4cb8"
     },
     {
       "id": "ingredient.herb_pot",
@@ -2300,7 +2519,7 @@
       "vertices": 1536,
       "triangles": 512,
       "semantic": "static.ingredient",
-      "sha256": "74b576c5deb10deb27f66f570657cccad70541956c9757a6eef302df3db14ff1"
+      "sha256": "afd47cadea5d59471d134f17e93d2fcd252f215ed9232f94ea91a4e5e45ff32b"
     },
     {
       "id": "ingredient.dew_cork_mesh",
@@ -2309,7 +2528,7 @@
       "vertices": 14,
       "triangles": 12,
       "semantic": "static.ingredient",
-      "sha256": "799cfa697511e5509e9127ccdf4fcfd3270c0fc9f1fb71e5bc61e3332ff9350f"
+      "sha256": "b583034dfdef2bb21c72cdc853f499c6eed223569b1f1fd5d0ab15880a854e38"
     },
     {
       "id": "ingredient.dew_glass_mesh",
@@ -2318,7 +2537,7 @@
       "vertices": 308,
       "triangles": 358,
       "semantic": "static.ingredient",
-      "sha256": "cf7348fa42e4c87b6f0cacbed40706bc2132bd6bacbe8e54d5da55bc64c4423e"
+      "sha256": "b6d849e1178684e61d376d098503f22db50c06ca9c175c12668633cc7444b67e"
     },
     {
       "id": "ingredient.dew_liquid_mesh",
@@ -2327,7 +2546,7 @@
       "vertices": 73,
       "triangles": 76,
       "semantic": "static.ingredient",
-      "sha256": "3330cc59e3c34bbd14fcb18df2f71696761d00e25cab7be415fb11bdbe9ac81b"
+      "sha256": "a60e0dd8634dde04e1cfcb7bfcfe4286199ec31d2509e3210d2461e6615b71bc"
     },
     {
       "id": "ingredient.ash_herb",
@@ -2336,7 +2555,627 @@
       "vertices": 1638,
       "triangles": 1266,
       "semantic": "static.ingredient",
-      "sha256": "f33cbc6b1fcc820587af904531006b39bf2a6d3ddeca732b80aac5445b542cd2"
+      "sha256": "1bb0e0cc0841f16ecccdf4dc2144f843c787543e57083704f434718e7bbbd4b4"
+    },
+    {
+      "id": "lantern.00",
+      "materialId": "lantern.wood",
+      "file": "meshes/lantern.00.json",
+      "vertices": 16749,
+      "triangles": 5583,
+      "sourceObjects": [
+        "PH wooden_lantern_01"
+      ],
+      "sha256": "43791b015cd622afce2677524477fd4462a72a1c6a724552c430206b3c06f199"
+    },
+    {
+      "id": "lantern.01",
+      "materialId": "lantern.glass",
+      "file": "meshes/lantern.01.json",
+      "vertices": 108,
+      "triangles": 36,
+      "sourceObjects": [
+        "PH wooden_lantern_01"
+      ],
+      "sha256": "b4b0e44a4e8cab1207f294b5a38afd9a28fb336023e7568d121bf061277049bd"
+    },
+    {
+      "id": "lantern.02",
+      "materialId": "lantern.wood",
+      "file": "meshes/lantern.02.json",
+      "vertices": 6126,
+      "triangles": 2042,
+      "sourceObjects": [
+        "PH wooden_lantern_01_door"
+      ],
+      "sha256": "6c8c080f1d6057f4b307bff3add74369de2ae1968db3fffa7ec48cc6afaad30c"
+    },
+    {
+      "id": "lantern.03",
+      "materialId": "lantern.glass",
+      "file": "meshes/lantern.03.json",
+      "vertices": 36,
+      "triangles": 12,
+      "sourceObjects": [
+        "PH wooden_lantern_01_door"
+      ],
+      "sha256": "818e0432dc6c6951030a8c26ca95efc4b6e36c6dd37307b67cbd2d69199843eb"
+    },
+    {
+      "id": "lantern.04",
+      "materialId": "lantern.wood",
+      "file": "meshes/lantern.04.json",
+      "vertices": 1944,
+      "triangles": 648,
+      "sourceObjects": [
+        "PH wooden_lantern_01_handle"
+      ],
+      "sha256": "f384776b8b0efd40afaae2393e0340577b459558170af531f5bd5fe19cad0370"
+    },
+    {
+      "id": "lantern.05",
+      "materialId": "lantern.support_iron",
+      "file": "meshes/lantern.05.json",
+      "vertices": 36,
+      "triangles": 12,
+      "sourceObjects": [
+        "Lantern timber side mounting plate"
+      ],
+      "sha256": "aefecd889ef863e9d299231e1c823fc0b4e61e09abc415e7746b0d977975c9e5"
+    },
+    {
+      "id": "lantern.06",
+      "materialId": "lantern.support_iron",
+      "file": "meshes/lantern.06.json",
+      "vertices": 132,
+      "triangles": 44,
+      "sourceObjects": [
+        "Lantern bracket timber connector"
+      ],
+      "sha256": "14218436f168a3ced32632186c917088470dbb313b3b7fa649ddc145cede0327"
+    },
+    {
+      "id": "lantern.07",
+      "materialId": "lantern.support_iron",
+      "file": "meshes/lantern.07.json",
+      "vertices": 360,
+      "triangles": 120,
+      "sourceObjects": [
+        "Lantern mounting bolt"
+      ],
+      "sha256": "d1041b9db870740d2bed2d0c24ddbf7787a618b7473ffb9c39f25e7a2c290371"
+    },
+    {
+      "id": "lantern.08",
+      "materialId": "lantern.support_iron",
+      "file": "meshes/lantern.08.json",
+      "vertices": 360,
+      "triangles": 120,
+      "sourceObjects": [
+        "Lantern mounting bolt.001"
+      ],
+      "sha256": "6b678e6bcbcfdaf2f27b73d746f535d00dd5711bef6ad27dad5bc55a62fc9f50"
+    },
+    {
+      "id": "lantern.09",
+      "materialId": "lantern.support_iron",
+      "file": "meshes/lantern.09.json",
+      "vertices": 864,
+      "triangles": 288,
+      "sourceObjects": [
+        "Lantern support chain lower"
+      ],
+      "sha256": "987d0a72cec027fef178a3060f25a3d9cc204c724968f22326549429d70b71ed"
+    },
+    {
+      "id": "lantern.10",
+      "materialId": "lantern.support_iron",
+      "file": "meshes/lantern.10.json",
+      "vertices": 864,
+      "triangles": 288,
+      "sourceObjects": [
+        "Lantern welded suspension eye"
+      ],
+      "sha256": "2f7e457ff528ed5815edc7a1926b99d1d093fb25b41f8ae7f31d5a30387086d0"
+    },
+    {
+      "id": "lantern.11",
+      "materialId": "lantern.candle_flame",
+      "file": "meshes/lantern.11.json",
+      "vertices": 504,
+      "triangles": 168,
+      "sourceObjects": [
+        "Lantern new candle flame"
+      ],
+      "sha256": "0e4c34f30c0b97a3622c3ce436fecbddc55d8298f1d2e863f6e8b55abc590343"
+    },
+    {
+      "id": "folder.00",
+      "materialId": "folder.material.0",
+      "file": "meshes/folder.00.json",
+      "vertices": 600,
+      "triangles": 200,
+      "semantic": "home.caseFile",
+      "sourceObjects": [
+        "folder Object_11"
+      ],
+      "sha256": "91cd087f142bf927a29e270fa9af9ad599aa92a99eb29a5f49e9198418bda754"
+    },
+    {
+      "id": "folder.01",
+      "materialId": "folder.material.1",
+      "file": "meshes/folder.01.json",
+      "vertices": 432,
+      "triangles": 144,
+      "semantic": "home.caseFile",
+      "sourceObjects": [
+        "folder Object_8"
+      ],
+      "sha256": "e02729f6a74a799f9e67434768b5e99074a30b168fee4d8fbcbf250dc2021a04"
+    },
+    {
+      "id": "books.00",
+      "materialId": "books.material.0",
+      "file": "meshes/books.00.json",
+      "vertices": 408,
+      "triangles": 136,
+      "semantic": "home.journal",
+      "sourceObjects": [
+        "books defaultMaterial.003"
+      ],
+      "sha256": "b17592b3d12f0c2b55b90fb5f244c8d52a8eb584434c1340dcba8499adeab6ae"
+    },
+    {
+      "id": "books.01",
+      "materialId": "books.material.0",
+      "file": "meshes/books.01.json",
+      "vertices": 408,
+      "triangles": 136,
+      "semantic": "home.journal",
+      "sourceObjects": [
+        "books defaultMaterial.004"
+      ],
+      "sha256": "628ca989554f175cbd5fa6d3c197ef28b31f88c44578200e72d1444ceeb10e68"
+    },
+    {
+      "id": "books.02",
+      "materialId": "books.material.0",
+      "file": "meshes/books.02.json",
+      "vertices": 468,
+      "triangles": 156,
+      "semantic": "home.journal",
+      "sourceObjects": [
+        "books defaultMaterial.005"
+      ],
+      "sha256": "9b9d70591168b3834943b1af7ceece2f7ff3c0b223eeb9abd71250de68baaea0"
+    },
+    {
+      "id": "cauldron_restored.00",
+      "file": "meshes/cauldron_restored.00.json",
+      "materialId": "cauldron.selected.material.0",
+      "vertices": 7056,
+      "triangles": 2352,
+      "semantic": "home.stove",
+      "sourceObjects": [
+        "cauldron CauldronPot_low__0"
+      ],
+      "sha256": "82b6d09e01e8290c42a4ace8128126898cb40fa29ac2650f01758031f6214bfe"
+    },
+    {
+      "id": "cauldron_restored.01",
+      "file": "meshes/cauldron_restored.01.json",
+      "materialId": "cauldron.selected.material.0",
+      "vertices": 1920,
+      "triangles": 640,
+      "semantic": "home.stove",
+      "sourceObjects": [
+        "cauldron Stand_low__0"
+      ],
+      "sha256": "a2ace1542ff15e45fe48e73e9df49766cce232e1e14cd1b80e81e3c9da563fb6"
+    },
+    {
+      "id": "cauldron_restored.02",
+      "file": "meshes/cauldron_restored.02.json",
+      "materialId": "cauldron.selected.material.0",
+      "vertices": 576,
+      "triangles": 192,
+      "semantic": "home.stove",
+      "sourceObjects": [
+        "cauldron CauldronHandleHooks_low__0"
+      ],
+      "sha256": "30da5537533a1c82d57f8401a1961cbe89e7c99f98d681f77b140f78bf22f329"
+    },
+    {
+      "id": "cauldron_restored.03",
+      "file": "meshes/cauldron_restored.03.json",
+      "materialId": "cauldron.selected.material.0",
+      "vertices": 7776,
+      "triangles": 2592,
+      "semantic": "home.stove",
+      "sourceObjects": [
+        "cauldron CauldronHandle_low__0"
+      ],
+      "sha256": "32a74286e33e469f8945f4a54943cc91fe9c9162f80bcb09cb55a8ce25d4e2fb"
+    },
+    {
+      "id": "cauldron_restored.04",
+      "file": "meshes/cauldron_restored.04.json",
+      "materialId": "cauldron.selected.material.0",
+      "vertices": 9360,
+      "triangles": 3120,
+      "semantic": "home.stove",
+      "sourceObjects": [
+        "cauldron Standlegs_low__0"
+      ],
+      "sha256": "35e8af82657c4253d9789108b06d2690c366dbd58a2ce10f17da5c9129fe68bf"
+    },
+    {
+      "id": "cauldron_restored.05",
+      "file": "meshes/cauldron_restored.05.json",
+      "materialId": "full_mat_023",
+      "vertices": 60,
+      "triangles": 20,
+      "semantic": "home.stove",
+      "sourceObjects": [
+        "Curved oval herb leaf.290"
+      ],
+      "sha256": "58c36f4199687187ea151ab0eeca666903235e1167ded63dd2510e0b2489ad61"
+    },
+    {
+      "id": "cauldron_restored.06",
+      "file": "meshes/cauldron_restored.06.json",
+      "materialId": "full_mat_023",
+      "vertices": 60,
+      "triangles": 20,
+      "semantic": "home.stove",
+      "sourceObjects": [
+        "Curved oval herb leaf.291"
+      ],
+      "sha256": "b5950293f5496258221b020afa50a882ff7127cd26eea76c7481cd4752a8c048"
+    },
+    {
+      "id": "cauldron_restored.07",
+      "file": "meshes/cauldron_restored.07.json",
+      "materialId": "full_mat_023",
+      "vertices": 60,
+      "triangles": 20,
+      "semantic": "home.stove",
+      "sourceObjects": [
+        "Curved oval herb leaf.292"
+      ],
+      "sha256": "a9fcf89d464fbadbf9de6f15b9ef00007490409f5054ed92b9c4e35194674b9e"
+    },
+    {
+      "id": "cauldron_restored.08",
+      "file": "meshes/cauldron_restored.08.json",
+      "materialId": "full_mat_023",
+      "vertices": 60,
+      "triangles": 20,
+      "semantic": "home.stove",
+      "sourceObjects": [
+        "Curved oval herb leaf.293"
+      ],
+      "sha256": "0092597145e56333c375df270955be370e1b465f12ad355b82e3758aa441b06e"
+    },
+    {
+      "id": "cauldron_restored.09",
+      "file": "meshes/cauldron_restored.09.json",
+      "materialId": "full_mat_023",
+      "vertices": 60,
+      "triangles": 20,
+      "semantic": "home.stove",
+      "sourceObjects": [
+        "Curved oval herb leaf.294"
+      ],
+      "sha256": "6d0c7cb7c76d2acba448060bb03d992f96ba950c935cb151a492b06267b31aac"
+    },
+    {
+      "id": "cauldron_restored.10",
+      "file": "meshes/cauldron_restored.10.json",
+      "materialId": "full_mat_023",
+      "vertices": 60,
+      "triangles": 20,
+      "semantic": "home.stove",
+      "sourceObjects": [
+        "Curved oval herb leaf.295"
+      ],
+      "sha256": "aa46cc1b19f321ceb458c5b5f76d7d84c41e154ed81a3d6fb336f73deed7ce4c"
+    },
+    {
+      "id": "cauldron_restored.11",
+      "file": "meshes/cauldron_restored.11.json",
+      "materialId": "full_mat_023",
+      "vertices": 60,
+      "triangles": 20,
+      "semantic": "home.stove",
+      "sourceObjects": [
+        "Curved oval herb leaf.296"
+      ],
+      "sha256": "a73b907a7733bbe3bbf3db4072d5d4136756afe48bb70729e329e302b9e0bfbd"
+    },
+    {
+      "id": "cauldron_restored.12",
+      "file": "meshes/cauldron_restored.12.json",
+      "materialId": "full_mat_023",
+      "vertices": 60,
+      "triangles": 20,
+      "semantic": "home.stove",
+      "sourceObjects": [
+        "Curved oval herb leaf.297"
+      ],
+      "sha256": "1f081ecbe40096268f180c85dd5fc1c9803cb0127dfff91cd1e56b3e3ed68204"
+    },
+    {
+      "id": "cauldron_restored.13",
+      "file": "meshes/cauldron_restored.13.json",
+      "materialId": "full_mat_023",
+      "vertices": 60,
+      "triangles": 20,
+      "semantic": "home.stove",
+      "sourceObjects": [
+        "Curved oval herb leaf.298"
+      ],
+      "sha256": "8dc35430fcd958fda6ba11453cbb26fc8d4b8650044cdcb61be19bcf789448f1"
+    },
+    {
+      "id": "cauldron_restored.14",
+      "file": "meshes/cauldron_restored.14.json",
+      "materialId": "full_mat_023",
+      "vertices": 60,
+      "triangles": 20,
+      "semantic": "home.stove",
+      "sourceObjects": [
+        "Curved oval herb leaf.299"
+      ],
+      "sha256": "1e2fdbb364b46f31ae625a51b916c08ea38196ba056006254f51e7d96ce2cabe"
+    },
+    {
+      "id": "cauldron_restored.20",
+      "file": "meshes/cauldron_restored.20.json",
+      "materialId": "full_mat_042",
+      "vertices": 504,
+      "triangles": 168,
+      "semantic": "home.stove",
+      "sourceObjects": [
+        "Potion glistening bubble"
+      ],
+      "sha256": "99e5def259cc99cf7e5736e6675cee3f6d333edc855f5fccfc176af464255b6c"
+    },
+    {
+      "id": "cauldron_restored.21",
+      "file": "meshes/cauldron_restored.21.json",
+      "materialId": "full_mat_042",
+      "vertices": 504,
+      "triangles": 168,
+      "semantic": "home.stove",
+      "sourceObjects": [
+        "Potion glistening bubble.001"
+      ],
+      "sha256": "36af59c5824ed5d5961fc6bd897d524745068d97bc3b862ec4c8f22317b0699b"
+    },
+    {
+      "id": "cauldron_restored.22",
+      "file": "meshes/cauldron_restored.22.json",
+      "materialId": "full_mat_042",
+      "vertices": 504,
+      "triangles": 168,
+      "semantic": "home.stove",
+      "sourceObjects": [
+        "Potion glistening bubble.002"
+      ],
+      "sha256": "b262afb09c8ca027c0d698a5c34c9f6f1853addf2ff2816b278a7f4b623c0113"
+    },
+    {
+      "id": "cauldron_restored.23",
+      "file": "meshes/cauldron_restored.23.json",
+      "materialId": "full_mat_042",
+      "vertices": 504,
+      "triangles": 168,
+      "semantic": "home.stove",
+      "sourceObjects": [
+        "Potion glistening bubble.003"
+      ],
+      "sha256": "782e91601e4c1872ddb97a2020e7983b9cd28f7e2e5471af1d6d69cf36a6ff29"
+    },
+    {
+      "id": "cauldron_restored.24",
+      "file": "meshes/cauldron_restored.24.json",
+      "materialId": "full_mat_042",
+      "vertices": 504,
+      "triangles": 168,
+      "semantic": "home.stove",
+      "sourceObjects": [
+        "Potion glistening bubble.004"
+      ],
+      "sha256": "b346742c138731fe2dc130bb6313d3ddaca6e82cc8698fb50add031dff885f81"
+    },
+    {
+      "id": "cauldron_restored.25",
+      "file": "meshes/cauldron_restored.25.json",
+      "materialId": "full_mat_042",
+      "vertices": 504,
+      "triangles": 168,
+      "semantic": "home.stove",
+      "sourceObjects": [
+        "Potion glistening bubble.005"
+      ],
+      "sha256": "36cd5b0a9cbadfae0a14e8913c0870885e7fa0db9530796dd504a0c35f6edd5f"
+    },
+    {
+      "id": "cauldron_restored.26",
+      "file": "meshes/cauldron_restored.26.json",
+      "materialId": "full_mat_042",
+      "vertices": 504,
+      "triangles": 168,
+      "semantic": "home.stove",
+      "sourceObjects": [
+        "Potion glistening bubble.006"
+      ],
+      "sha256": "f2889125f125a2aba0a26fa523d4569271a45b69976e42bbc49f80c35ccc377b"
+    },
+    {
+      "id": "cauldron_restored.27",
+      "file": "meshes/cauldron_restored.27.json",
+      "materialId": "full_mat_042",
+      "vertices": 504,
+      "triangles": 168,
+      "semantic": "home.stove",
+      "sourceObjects": [
+        "Potion glistening bubble.007"
+      ],
+      "sha256": "1b73f800fef098de6e0c253ebc2ff53685d686360b95bd0d0751d3df1ded2b9b"
+    },
+    {
+      "id": "cauldron_restored.28",
+      "file": "meshes/cauldron_restored.28.json",
+      "materialId": "full_mat_042",
+      "vertices": 504,
+      "triangles": 168,
+      "semantic": "home.stove",
+      "sourceObjects": [
+        "Potion glistening bubble.008"
+      ],
+      "sha256": "78ce6d77dbf3ce829b826ec1b79044cc02144f44c55969565b7d550e2df887f2"
+    },
+    {
+      "id": "cauldron_restored.29",
+      "file": "meshes/cauldron_restored.29.json",
+      "materialId": "full_mat_042",
+      "vertices": 504,
+      "triangles": 168,
+      "semantic": "home.stove",
+      "sourceObjects": [
+        "Potion glistening bubble.009"
+      ],
+      "sha256": "e8b62ddeec2ba7fe1387a7dc99a9aff0efbfa3cf884799deac825e0d58aabdf1"
+    },
+    {
+      "id": "cauldron_restored.30",
+      "file": "meshes/cauldron_restored.30.json",
+      "materialId": "full_mat_003",
+      "vertices": 864,
+      "triangles": 288,
+      "semantic": "home.stove",
+      "sourceObjects": [
+        "Spirit burner"
+      ],
+      "sha256": "018178b9e9fff300523d0567a412a8de5349ad48661975ce337ac87106c569cd"
+    },
+    {
+      "id": "cauldron_restored.31",
+      "file": "meshes/cauldron_restored.31.json",
+      "materialId": "full_mat_045",
+      "vertices": 756,
+      "triangles": 252,
+      "semantic": "home.stove",
+      "sourceObjects": [
+        "Visible potion surface"
+      ],
+      "sha256": "ee9bd124ce51de00fc022e9d6eb565a7044f3c5c02fbe4085371c5fd44de549b"
+    },
+    {
+      "id": "bird.00",
+      "materialId": "bird.material.0",
+      "file": "meshes/bird.00.json",
+      "vertices": 7848,
+      "triangles": 2616,
+      "semantic": "decorative.shelfBird",
+      "sourceObjects": [
+        "bird Bird_Decorative_Bird_Decor_0"
+      ],
+      "sha256": "2b0f7bbf67347a2a2e50ea26f6ec5e3555779478619efa1fcc8409bd92fbdcf7"
+    },
+    {
+      "id": "frame.00",
+      "materialId": "frame.material.0",
+      "file": "meshes/frame.00.json",
+      "vertices": 629,
+      "triangles": 936,
+      "semantic": "decorative.shelfFrame",
+      "sourceObjects": [
+        "frame fancy_picture_frame_01"
+      ],
+      "sha256": "df781fd3d28ee42552f7fc7ab324858128d6495e5f61ada445192f6308fa2a8a"
+    },
+    {
+      "id": "frame.01",
+      "materialId": "frame.material.1",
+      "file": "meshes/frame.01.json",
+      "vertices": 4,
+      "triangles": 2,
+      "semantic": "decorative.shelfFrame",
+      "sourceObjects": [
+        "frame fancy_picture_frame_01_canvas"
+      ],
+      "sha256": "3308657c1f6f0f606d1fe30568b7d5cdc712b018b2a36afb632710ebe2ada89d"
+    },
+    {
+      "id": "selected-lamp.00",
+      "file": "meshes/selected-lamp.00.json",
+      "materialId": "selected-lamp.material.0",
+      "vertices": 22818,
+      "triangles": 7606,
+      "sourceObjects": [
+        "selected-lamp industrial_pipe_lamp"
+      ],
+      "sha256": "215f4d9bdcb5e11b8f54551a669f5abdfadb1b3926cc776ea11c3323f257de2a"
+    },
+    {
+      "id": "selected-lamp.01",
+      "file": "meshes/selected-lamp.01.json",
+      "materialId": "selected-lamp.material.1",
+      "vertices": 2514,
+      "triangles": 838,
+      "sourceObjects": [
+        "selected-lamp industrial_pipe_lamp_bulb"
+      ],
+      "sha256": "09827ec63f729a70c180202a33951fddedfe9ed37cb0facabfe5e88902ef5214"
+    },
+    {
+      "id": "selected-lamp.02",
+      "file": "meshes/selected-lamp.02.json",
+      "materialId": "selected-lamp.material.0",
+      "vertices": 546,
+      "triangles": 182,
+      "sourceObjects": [
+        "selected-lamp industrial_pipe_lamp_switch"
+      ],
+      "sha256": "738322f547a90be9cdaa6bf68d4bc54e2de15960886841b95f6b375f4bca79a7"
+    },
+    {
+      "id": "lantern.slim_support",
+      "file": "meshes/lantern.slim_support.json",
+      "materialId": "lantern.support_iron",
+      "vertices": 636,
+      "triangles": 212,
+      "sourceObjects": [
+        "Lantern slim bent hanging rod"
+      ],
+      "sha256": "7adc1c137cc3dbfaf2228309509d97d1b20a2490332c8ac9e453d84f6d16da41"
+    },
+    {
+      "id": "clock.00",
+      "materialId": "clock.material.0",
+      "file": "meshes/clock.00.json",
+      "vertices": 14979,
+      "triangles": 25241,
+      "semantic": "decorative.shelfClock",
+      "sourceObjects": [
+        "clock mantel_clock_01"
+      ],
+      "sha256": "ca986aec976d275fef27ac1fbb34f7ed13e280374d68f877565d1ee367eea2b6"
+    },
+    {
+      "id": "clock.01",
+      "materialId": "clock.material.1",
+      "file": "meshes/clock.01.json",
+      "vertices": 257,
+      "triangles": 480,
+      "semantic": "decorative.shelfClock",
+      "sourceObjects": [
+        "clock mantel_clock_01_glass"
+      ],
+      "sha256": "ea71be38a8085aa11f071bb3f0b09c42041bcdb4de126d54e044b27496f58dc5"
     }
   ],
   "proxyMeshes": [
@@ -2663,18 +3502,18 @@
       "interactionId": "home.caseFile",
       "materialId": "interaction_proxy_invisible",
       "positions": [
-        3.9834057956142037,
-        -0.3177417559255321,
-        1.6732112529384138,
-        4.365446451669693,
-        -0.1800294102822014,
-        1.6732112267230603,
-        4.34184673734478,
-        -0.1145591693292897,
-        2.0587886211765767,
-        3.959806081289291,
-        -0.25227151497262035,
-        2.05878864739193
+        2.8958028356102314,
+        1.7036486471665047,
+        1.5975405726156255,
+        3.4345715606182186,
+        1.897856001028184,
+        1.5975405356457055,
+        3.401290317389646,
+        1.9901847039687492,
+        2.1412969079294184,
+        2.862521592381659,
+        1.79597735010707,
+        2.141296944899339
       ],
       "normals": [
         0.3337146043777466,
@@ -2919,23 +3758,22 @@
       ],
       "proxyMeshId": "proxy_home.journal",
       "visibleMeshIds": [
-        "full_group_028_000",
-        "full_group_034_000",
-        "full_group_040_000",
-        "full_group_041_000"
+        "books.00",
+        "books.01",
+        "books.02"
       ]
     },
     {
       "id": "home.caseFile",
       "target": "case",
       "position": [
-        4.162626266479492,
-        -0.2161504626274109,
-        1.8659999370574951
+        3.148546576499939,
+        1.846916675567627,
+        1.869418740272522
       ],
       "screenAnchor": [
-        0.9617416858673096,
-        0.8612588196992874
+        0.7963269423010038,
+        0.6673036135459932
       ],
       "shape": "camera_facing_quad",
       "renderVisible": false,
@@ -2947,7 +3785,8 @@
       ],
       "proxyMeshId": "proxy_home.caseFile",
       "visibleMeshIds": [
-        "full_group_044_000"
+        "folder.00",
+        "folder.01"
       ]
     },
     {
@@ -2972,18 +3811,41 @@
       ],
       "proxyMeshId": "proxy_home.stove",
       "visibleMeshIds": [
-        "full_group_029_000",
-        "full_group_032_000",
-        "full_group_035_000",
-        "full_group_042_000"
+        "cauldron_restored.00",
+        "cauldron_restored.01",
+        "cauldron_restored.02",
+        "cauldron_restored.03",
+        "cauldron_restored.04",
+        "cauldron_restored.05",
+        "cauldron_restored.06",
+        "cauldron_restored.07",
+        "cauldron_restored.08",
+        "cauldron_restored.09",
+        "cauldron_restored.10",
+        "cauldron_restored.11",
+        "cauldron_restored.12",
+        "cauldron_restored.13",
+        "cauldron_restored.14",
+        "cauldron_restored.20",
+        "cauldron_restored.21",
+        "cauldron_restored.22",
+        "cauldron_restored.23",
+        "cauldron_restored.24",
+        "cauldron_restored.25",
+        "cauldron_restored.26",
+        "cauldron_restored.27",
+        "cauldron_restored.28",
+        "cauldron_restored.29",
+        "cauldron_restored.30",
+        "cauldron_restored.31"
       ]
     }
   ],
   "mainContractSha": "1cd0cdbec06487a5c60f109d5fd477198cfc8846",
-  "sourceVisibleObjects": 10847,
+  "sourceVisibleObjects": 10705,
   "removedZeroAreaTriangles": 6926,
-  "triangles": 3208608,
-  "vertices": 2592846,
+  "triangles": 3214558,
+  "vertices": 2643579,
   "coverageFile": "object_mesh_coverage.json",
   "projectionReference": "camera_projection_reference.json",
   "sourceObjectMappingScope": "Merged-group provenance repeated across chunk files; all original visible objects accounted for, not a triangle ownership map"

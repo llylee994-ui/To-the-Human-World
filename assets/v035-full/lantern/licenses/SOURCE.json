@@ -1,0 +1,65 @@
+{
+  "asset": "https://polyhaven.com/a/wooden_lantern_01",
+  "author": "James Ray Cock",
+  "license": "CC0-1.0",
+  "downloadedAt": "2026-10-14",
+  "officialFilesMetadata": "https://api.polyhaven.com/files/wooden_lantern_01",
+  "downloads": [
+    {
+      "file": "wooden_lantern_01_1k.gltf",
+      "bytes": 9540,
+      "source": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/wooden_lantern_01/wooden_lantern_01_1k.gltf",
+      "sha256": "2380275a5c90bf3442c426f3363e826e6b1ceff12a7e65f83b03cc8fac70a099",
+      "officialMd5Passed": true
+    },
+    {
+      "file": "textures/wooden_lantern_01_nor_gl_1k.jpg",
+      "bytes": 747945,
+      "source": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wooden_lantern_01/wooden_lantern_01_nor_gl_1k.jpg",
+      "sha256": "06a7d3bb7342b5aa96d8c22d46883153df8948b59cab26e19f0e91ba82dba9ef",
+      "officialMd5Passed": true
+    },
+    {
+      "file": "textures/wooden_lantern_01_diff_1k.jpg",
+      "bytes": 712250,
+      "source": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wooden_lantern_01/wooden_lantern_01_diff_1k.jpg",
+      "sha256": "5a346e7e3335e9502eb4e25178d16ba29ae49786b75853d7bd36b386edf7a30d",
+      "officialMd5Passed": true
+    },
+    {
+      "file": "textures/wooden_lantern_01_glass_nor_gl_1k.jpg",
+      "bytes": 216436,
+      "source": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wooden_lantern_01/wooden_lantern_01_glass_nor_gl_1k.jpg",
+      "sha256": "0aaab86f76172aeb7ccfa5f5c7f047f616726e6b3ce6636e162caf633f173c0a",
+      "officialMd5Passed": true
+    },
+    {
+      "file": "textures/wooden_lantern_01_glass_arm_1k.jpg",
+      "bytes": 561615,
+      "source": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wooden_lantern_01/wooden_lantern_01_glass_arm_1k.jpg",
+      "sha256": "2d549dde55d65c690872f148581d81b3468100e8a0eb22847f31273e47d8f1fb",
+      "officialMd5Passed": true
+    },
+    {
+      "file": "textures/wooden_lantern_01_arm_1k.jpg",
+      "bytes": 842111,
+      "source": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wooden_lantern_01/wooden_lantern_01_arm_1k.jpg",
+      "sha256": "6bbe63887f60d20445df75dcaef75653b86cb47fe9e139baab717de542cab429",
+      "officialMd5Passed": true
+    },
+    {
+      "file": "textures/wooden_lantern_01_glass_diff_1k.jpg",
+      "bytes": 410747,
+      "source": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wooden_lantern_01/wooden_lantern_01_glass_diff_1k.jpg",
+      "sha256": "1bfced8c9470ea01e73085439e8cee0c44c8ee8199b806a22cc4f2434ae2f151",
+      "officialMd5Passed": true
+    },
+    {
+      "file": "wooden_lantern_01.bin",
+      "bytes": 268136,
+      "source": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/wooden_lantern_01/wooden_lantern_01.bin",
+      "sha256": "65c6b1a776c66d4170dab3657f0809b1a8a88219507589d6c9aad70ffbe687a3",
+      "officialMd5Passed": true
+    }
+  ]
+}

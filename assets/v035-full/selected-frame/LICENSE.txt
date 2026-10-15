@@ -1,0 +1,4 @@
+Fancy Picture Frame 01 by Poly Haven
+https://polyhaven.com/a/fancy_picture_frame_01
+CC0 1.0 Universal: https://creativecommons.org/publicdomain/zero/1.0/
+Original frame and canvas retained; local derivatives from supplied 4K textures to 1K. No source lighting/world imported. No support geometry added.

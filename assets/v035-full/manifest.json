@@ -4,16 +4,16 @@
   "entry": "scene.json",
   "loading": "Read scene.json then stream each meshFiles[].file. Each mesh file has v1 id/materialId/positions/normals/uv0/indices fields. Do not treat empty inline meshes as an empty scene.",
   "completeVisibleScene": true,
-  "visibleSourceObjects": 10847,
-  "meshCount": 100,
-  "triangles": 3208608,
-  "vertices": 2592846,
+  "visibleSourceObjects": 10705,
+  "meshCount": 138,
+  "triangles": 3214558,
+  "vertices": 2643579,
   "maxVerticesPerMesh": 60000,
-  "materials": 69,
+  "materials": 84,
   "proxyCount": 8,
   "engineValidated": false,
   "cameraReference": "camera_projection_reference.json",
   "coverage": "object_mesh_coverage.json",
   "validation": "validation.json",
-  "suggestedExtractionPath": "experiments/3d-lab/assets/import-v035-full/"
+  "suggestedExtractionPath": "assets/v035-full/"
 }

@@ -34,4 +34,15 @@ In progress. 用户授权先本地提交检查点，再从完整包导入已确�
 分块/ZIP/项目清单 SHA256 与 CRC；三方文件比较；资源引用与清单；现有 shared main 344 项隔离检查及相关变更测试；Lua 语法；Git 精确暂存与 diff --check；官方启动器 --check；Windows 窗口/日志/截图/加载时间/内存与实际输入记录。原生画面、真实鼠标和脚本替身检查分层报告。
 
 ## Self-verification results
-Pending. 初始目录、分支、HEAD、干净状态、完整包下载文件数量已核对；未开始资源导入或运行验收。
+阶段 0 已完成：基线记录提交 d8689b9ecea6d3ab898f7cf62daaa388d090fbb6，源码仍为 135334d。
+
+- 11 个分块、194958529 字节完整 ZIP 的 SHA256 及所有 ZIP 成员 CRC 通过；963 个项目文件逐项匹配包内索引。包装共 967 文件，不含 .git。
+- 恢复工具误写索引名“项目文件清单.json”，实际为“项目文件索引.json”；按实际索引核验，原下载包未修改。恢复到仓库外 D:\taptap\D3-visual-d584352-reference。
+- 三方比较 d00aca9 / 本地 / d584352：Bootstrap、AppView、Controller、HomeView、Panels 的包内代码等于旧 d00aca9，本地共享 main 版本全部保留。FullSceneHost 双方都有修改，需要逐项合并。其他 7 个美术加载相关文件只有云端变化。
+- 精确计划见 [import-plan.json](../evidence/d584352-integration/import-plan.json)：资源新增 102、替换 36、删除 15。删除项均为旧场景显式移除/替换且不在新网格目录和哈希清单中的网格，无活跃代码直接引用；不是按完整包缺失任意删本地文件。
+- 57 个将修改/删除的既有文件已完整备份到仓库外 docs/actions/d584352-restore/local-before 并逐项核验。没有用户未提交改动混入。
+- 只导入 assets/v035-full 的已确认资源，不重新引入 assets/Textures、v035-probe、scripts/lab、旧 LSP、旧交付包或历史启动器。主相机相同，档案位置/代理与书本、药炉的可见模型归属随包同步，八入口用途不变。
+- 包内最新验收 JSON 记录有截图，但对应最新全屋 PNG 未包含在包中；现有参考图不能冒充 d584352 截图。本地截图按实际包内几何与用户目标检查，逐像素对照待原图。
+- 阶段 1 资源导入与静态检查通过：251 项资源 SHA256、138 个网格、3,214,558 三角形、2,643,579 顶点、88 个贴图引用、4 个材质 technique XML 和 8 个稳定入口映射均有效。座钟宽 0.60m、底面 Z=2.4205，台灯底面 Z=1.852，符合确认摆放。完整结果见 resource-checks.json。
+- 资源文件按包内字节导入；将 manifest 的过时 suggestedExtractionPath 修正为 assets/v035-full/。首次 git diff --check 检出包内 4 个 technique XML 和 selected-fire/LICENSE.txt 的行尾空白，已仅清除这些空白并更新对应 SHA256；许可正文、材质参数、构图和模型不变。
+- 当前 scripts/core、data、systems、ui、根目录 v035、urhox-libs 与基线无差异。阶段 1 仅是资源提交，尚不能用未适配的旧加载器作验收；阶段 2 代码适配和 Windows 运行验收待完成。

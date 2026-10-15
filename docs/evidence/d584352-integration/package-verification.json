@@ -1,0 +1,14 @@
+{
+  "status": "VERIFIED",
+  "source": "C:\\Users\\YINGYI\\Downloads\\2",
+  "referenceRoot": "D:\\taptap\\D3-visual-d584352-reference",
+  "head": "d584352a8e5cd0a776f91b41e1f3d7f7e7a6d35d",
+  "zipBytes": 194958529,
+  "zipSha256": "d18cf2d3435bf3fae3cda06f3be64ae4dbd29a3b8916ed98302b8a121c4a85e1",
+  "filesVerified": 963,
+  "totalFiles": 967,
+  "zipCRC": "PASS during extraction",
+  "index": "项目文件索引.json",
+  "recoveryToolCorrection": "Tool expected 项目文件清单.json, actual complete ZIP contains 项目文件索引.json; original source unchanged",
+  "gitIncluded": false
+}

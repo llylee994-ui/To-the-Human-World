@@ -1,0 +1,12 @@
+Wooden Lantern 01
+Author: James Ray Cock / Poly Haven
+Asset: https://polyhaven.com/a/wooden_lantern_01
+Model/textures license: CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/)
+Poly Haven license statement: https://polyhaven.com/license
+Retrieved: 2026-10-14
+
+Borrowed: actual 1K glTF model, wood/metal/wax/handle/door/glass geometry, diffuse/normal/packed material maps. Source has 8,321 triangles. Official source MD5 and local SHA256 are recorded in SOURCE.json. JPG maps are decoded to PNG; ARM is reordered into engine RMA (roughness, metallic, ambient occlusion). Geometry is uniformly scaled/translated into the existing scene.
+
+Added for this scene: timber mounting plate, horizontal connector, two mounting bolts, a fixed welded eyelet and one free chain link, and candle flame. Existing game iron bracket is retained. The old lamp is removed by audited triangle ownership, preserving shared reagent-jar glass.
+
+Native-game glass uses explicit alpha approximation. It does not claim physical refraction parity with Blender. Source-preview website renders are not included in this game asset folder or claimed CC0.

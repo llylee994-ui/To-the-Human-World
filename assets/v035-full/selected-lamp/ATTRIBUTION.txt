@@ -1,0 +1,8 @@
+Industrial Pipe Lamp — Poly Haven
+Official asset: https://polyhaven.com/a/industrial_pipe_lamp
+License: CC0, https://polyhaven.com/license
+Original user-selected 4K Blender asset retained separately without emission edits.
+Runtime derivative: 1K textures, original geometry, runtime emission strength 2
+calibrated from source KHR_materials_emissive_strength 82.4000015258789.
+This calibration is an intentional runtime artistic adjustment, not exact
+source emission fidelity or an assertion of equivalent physical wattage.
