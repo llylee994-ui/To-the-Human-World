@@ -16,7 +16,9 @@ local function rank(a,b)
     if a.priority~=b.priority then return a.priority>b.priority end
     return a.id<b.id
 end
-function Audit.New(content,orderApi)
+function Audit.New(content,orderApi,options)
+    -- 构造期能力，仅由 schema 4 的装配和迁移传入，不能从存档字段取得。
+    local schema4Projection=options and options.schema4Projection==true or false
     local api={}
     local letters=require("systems.Letter").New(content)
     local words=require("systems.WordToken").New(content)
@@ -167,7 +169,7 @@ function Audit.New(content,orderApi)
     function api.ValidateEnvelope(data)
         return G.Run(function()
             G.Pure(data,"data","STATE_INVALID")
-            G.Value(require("core.SaveSchema").ValidateV2(data,{contentVersion=content.contentVersion,synthesisVersion=content.synthesis.version,economy=economy,letters=letters,wordTokens=words}))
+            G.Value(require("core.SaveSchema").ValidateV2(data,{contentVersion=content.contentVersion,synthesisVersion=content.synthesis.version,economy=economy,letters=letters,wordTokens=words,schema4Projection=schema4Projection}))
             G.Value(orderApi.ValidateSnapshot(data.live.orders)); G.Value(orderApi.CurrentOrder.ValidateSnapshot(data.currentOrder))
             G.Value(world.ValidateSnapshot(data.live.world)); G.Value(narrative.ValidateSnapshot(data.live.narrative))
             local accepted,confirmed=data.live.orders.acceptedById,data.live.orders.confirmedById

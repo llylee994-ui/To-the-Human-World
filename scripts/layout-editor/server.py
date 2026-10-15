@@ -6,6 +6,7 @@ import mimetypes
 import os
 import secrets
 import threading
+import tempfile
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -20,7 +21,12 @@ ROOT = Path(__file__).resolve().parent
 
 def lock_directory(directory):
     directory.mkdir(parents=True, exist_ok=True)
-    lock = open(directory / '.server.lock', 'a+b')
+    # Maker copies scripts into its managed preview. A Windows byte-locked file
+    # inside scripts makes that copy fail with EBUSY while this editor is open.
+    lock_root = Path(tempfile.gettempdir()) / 'to-human-world-layout-locks'
+    lock_root.mkdir(parents=True, exist_ok=True)
+    key = hashlib.sha256(os.path.normcase(str(directory.resolve())).encode('utf-8')).hexdigest()
+    lock = open(lock_root / (key + '.lock'), 'a+b')
     try:
         if os.fstat(lock.fileno()).st_size == 0:
             lock.write(b'1'); lock.flush()
@@ -121,12 +127,12 @@ def handler_class(store, secret):
     return Handler
 
 
-def main():
+def main(argv=None, initialize=None):
     parser = argparse.ArgumentParser()
     parser.add_argument("--port", type=int, default=18765)
     parser.add_argument("--data-dir", type=Path, default=ROOT / ".local")
     parser.add_argument("--no-browser", action="store_true")
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
     url = f"http://127.0.0.1:{args.port}"
     storage_key = hashlib.sha256(str(args.data_dir.resolve()).encode()).hexdigest()
     if args.port:
@@ -142,6 +148,8 @@ def main():
             pass
     directory_lock = lock_directory(args.data_dir.resolve())
     store = Store(args.data_dir)
+    if initialize:
+        initialize(store)
     try:
         server = ThreadingHTTPServer(("127.0.0.1", args.port), handler_class(store, secrets.token_urlsafe(32)))
     except OSError:

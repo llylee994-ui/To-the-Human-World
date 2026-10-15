@@ -94,7 +94,9 @@ function M.New(session,content,enabled)
     end
     function api.NextDay()
         if not active() then return api.Notify(fail("STATE_LOCKED","当前为隔离调试模式")) end
-        return api.Notify(session.state.NextDay(),"已进入新的一天。")
+        local result=session.state.NextDay()
+        local closing=result.ok and result.value and (result.value.phase=="closing" or result.value.phase=="closing_prepare")
+        return api.Notify(result,closing and "已进入收尾。" or "已进入新的一天。")
     end
     function api.Buy(ingredientId)
         if not active() then return api.Notify(fail("STATE_LOCKED","当前为隔离调试模式")) end
@@ -107,6 +109,38 @@ function M.New(session,content,enabled)
             return api.Notify(session.state.PurchaseHomeItem(quote),"家具已购入并保存，暂未布置到小屋。")
         end
         return api.Notify(session.state.PurchaseFurniture({furnitureId=furnitureId}),"家具已购入并保存，暂未布置到小屋。")
+    end
+    local function releaseCommand(name,extra,message)
+        if not active() then return api.Notify(fail("STATE_LOCKED","当前为隔离调试模式")) end
+        local data=api.Refresh()
+        if not data or not data.chapter then return api.Notify(fail("STATE_LOCKED","请先读取本次旅程的进度。")) end
+        local request={expectedRevision=data.revision}
+        for k,v in pairs(extra or {}) do request[k]=v end
+        return api.Notify(session.state[name](request),message)
+    end
+    function api.BeginClosing() return releaseCommand("BeginClosing",nil,"已进入收尾。") end
+    function api.BeginWish() return releaseCommand("BeginWish",nil,"把自己的愿望放到纸上。") end
+    function api.UpdateWishDraft(ids,expectedRevision)
+        return releaseCommand("UpdateWishDraft",{sourceTokenIds=U.Copy(ids),expectedRevision=expectedRevision},"愿望草稿已保存。")
+    end
+    function api.ConfirmEnding(kind,expectedRevision)
+        return releaseCommand("ConfirmEnding",{kind=kind,expectedRevision=expectedRevision},"这段旅程已保存。")
+    end
+    local function clearNavigation()
+        draftOrder=false;api.selectedLetter=false;api.selectedResult=false;api.selectedAttempt=false
+        api.failure=nil;api.trialPotion=nil;api.page="home"
+        api.Refresh()
+    end
+    function api.RestoreEndingCheckpoint()
+        local result=releaseCommand("RestoreEndingCheckpoint",nil,"已返回结束前的进度。")
+        if result.ok then clearNavigation() end
+        return result
+    end
+    function api.StartNewPlaythrough(confirmed)
+        if confirmed~=true then return api.Notify(fail("CONFIRMATION_REQUIRED","请先确认覆盖本次旅程，开始新周目。")) end
+        local result=releaseCommand("StartNewPlaythrough",nil,"新旅程已开始。")
+        if result.ok then clearNavigation() end
+        return result
     end
     function api.Reload()
         if not active() then return api.Notify(fail("STATE_LOCKED","当前为隔离调试模式")) end

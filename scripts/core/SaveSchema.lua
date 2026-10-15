@@ -67,6 +67,10 @@ function Schema.ValidateLetterTokens(letters,tokens,options)
 end
 local function live(s, path, options)
     object(s, "gameFlow letters wordTokens economy world narrative orders", path)
+    -- 只允许 schema 4 已审计后的内部投影携带永久流水；旧存档入口默认严格拒绝。
+    if options.schema4Projection~=true then
+        need(type(s.economy)=="table" and s.economy.itemPurchases==nil,path .. ".economy.itemPurchases","schema2不能加载schema4永久流水")
+    end
     need(Flow.ValidateSnapshot(s.gameFlow).ok, path .. ".gameFlow")
     object(s.gameFlow, "day phase canSalvage mainStoryStage deliveredOrders", path .. ".gameFlow")
     object(s.letters, "byId bottleQueue directArchive", path .. ".letters")
@@ -242,16 +246,16 @@ function Schema.ValidateV4(data,options)
     local ok,err=pcall(function()
         object(data,"contentVersion revision nextOrderSerial live currentOrder journal chapter","data")
         object(data.chapter,"phase wishDraftSourceIds ending endingTransactionId checkpoint","chapter")
-        need(U.Equal(data.chapter,require("systems.ReleaseLedger").EmptyChapter()),"chapter","终局协调尚未开放")
         local function ledger(l)
             need(U.Array(l.economy.itemPurchases) and l.economy.furniturePurchases==nil and l.economy.ownedFurnitureIds==nil,"itemPurchases")
-            for _,row in ipairs(l.economy.itemPurchases) do need(row.itemId~="travel_ticket","chapter","船票需终局协调事务") end
         end
         ledger(data.live)
         if data.currentOrder and data.currentOrder.pending then ledger(data.currentOrder.baseline.live);ledger(data.currentOrder.pending.candidateLive) end
         local projected=U.Copy(data);projected.chapter=nil
         local projectionOptions=U.Copy(options);projectionOptions.schema4Projection=true
         local r=Schema.ValidateV3(projected,projectionOptions);if not r.ok then error(r.error,0) end
+        local chapter=require("systems.ReleaseChapterAudit").Validate(data,options.content)
+        if not chapter.ok then error(chapter.error,0) end
     end)
     if not ok then return {ok=false,error=type(err)=="table" and err or U.Error("STATE_INVALID","data",tostring(err))} end
     return U.Ok(U.Copy(data))

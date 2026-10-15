@@ -44,10 +44,10 @@
 
 ## 当前 3D 运行与开发
 
-- 当前美术已整合完整包 `d584352`，共享 main 玩法仍来自本地 `135334d`，没有替换为云端旧业务。座钟、台灯及其他确认模型的导入范围、分阶段提交与 Windows 验证进展见 [本轮行动记录](docs/actions/2026-10-15-d584352-visual-integration.md)。
+- 当前美术为完整包 `d584352`，共享玩法已合入 main `7f1f6d4` 的首发更新；没有替换为云端旧业务。美术导入与此前 Windows 观察见 [美术整合记录](docs/actions/2026-10-15-d584352-visual-integration.md)，本次合并范围及未测试边界见 [首发合并记录](docs/actions/2026-10-15-main-release-merge.md)。
 - Windows：双击 `Start-Windows.cmd`；先检查环境可执行 `python tools/run_windows_game.py --check`。详见 [Windows 说明](docs/WINDOWS-RUN.md)。此入口使用隔离内存进度，不写真实玩家存档。
 - 当前场景：`assets/v035-full`；3D 宿主与镜头导航：`scripts/v035/lab35`；业务与共享页面：`scripts/core`、`scripts/data`、`scripts/systems`、`scripts/ui`。根目录 `v035` 仍是独立历史测试快照。
-- 当前 3D 已接入 main `41cdaf3` 的 `ordinary-release-v2` / schema 4、新版信纸裁词、商店家具与辅料药效预览。复用共享业务和页面，仍使用独立内存进度。船票启程、结局和案件映射以 main 已实现范围为准；本轮检查与用户试玩边界见 [功能接入记录](docs/actions/2026-10-14-main-business-3d-integration.md)。
+- 当前 3D 复用 main `7f1f6d4` 的 `ordinary-release-v2` / schema 4，共享托盘、记录书、船票、收尾和结局页面源码，仍使用独立内存进度。按首发范围保留案件资料与档案模型，隐藏正式模式下的案件点击和提示，其余七个对象入口保留；开发查看能力保留。本次未运行测试，不将源码合并当作 3D 窗口已验收。
 - 游戏框架为 TapTap Maker / UrhoX / Lua；运行必需的 `urhox-libs` 与本仓库第一方 `tools` 保持版本化，不使用 main 中将它们整体忽略的规则。
 - Blender 导出辅助工具见 [tools/blender](tools/blender/README.md)。所有重导出进入独立暂存目录，不直接覆盖现有资源。
 

@@ -20,8 +20,9 @@ function T.Run()
         model=bundle.model,bind=function(ctx)
             controller.Bind(ctx);host.Bind(ctx.root)
         end,
-        homeFactory=function()
+        homeFactory=function(_,developer,releaseMode)
             return require("v035.lab35.HomeView").New(controller,{
+                hideCase=releaseMode and not developer,
                 ray=function() return {0,0,0},{0,0,1} end,picker={Pick=function() return nil end},
                 project=function() return {x=100,y=100} end,hintOccluded=function() return false end})
         end})
@@ -53,10 +54,14 @@ function T.Run()
         end
         finish()
         local target=route.target
-        check((target=="brew" or target=="seaside") and view.scene==target
-            or view.panel==(target=="paper" and "letters" or target),"wrong 3D route "..id)
+        if target=="case" then
+            check(not view.panel and not view.root:FindById("v035Hint."..id),"release case entry and hint must stay hidden")
+        else
+            check((target=="brew" or target=="seaside") and view.scene==target
+                or view.panel==(target=="paper" and "letters" or target),"wrong 3D route "..id)
+        end
     end
-    check(count==8,"all eight entry callbacks exercised")
+    check(count==8,"eight semantic objects retained: seven entries and one hidden case")
     home();check(U.Equal(before,bundle.session.state.GetSnapshot()),"opening all entries must not mutate progress")
     click("toggleHomeHints");check(controller.HintsVisible(),"hint toggle remains connected")
     click("toggleHomeHints");check(not controller.HintsVisible(),"hints can be hidden")

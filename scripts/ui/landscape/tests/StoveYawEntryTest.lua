@@ -97,7 +97,7 @@ function T.Run()
             tap(sx,sy)
             check(view.scene=="home" and nav==previous and view.zoom.active,"stove starts delayed real-room navigation")
             check(creates==0 and not view.yawProbe and view.home.blocked,"no geometric scene; room input blocked")
-            local profile=view.zoom.profile
+            local profile=view.zoom.profile --[[@as table]]
             local bounds=view.home.root:GetAbsoluteLayout();local fit=view.home.Fit()
             local room,tree=view.home.art,view.root:GetNumChildren()
             local previousScale=1 --[[@as number]]

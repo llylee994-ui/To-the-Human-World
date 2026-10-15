@@ -12,8 +12,9 @@ function I.New(options)
     local picker=require("v035.lab35.Picking").New(imported.prepared,options.occluded)
     local view=require("v035.lab35.AppView").New(bundle.session,bundle.content,nil,{
         model=bundle.model,bind=controller.Bind,
-        homeFactory=function()
+        homeFactory=function(_,developer,releaseMode)
             return require("v035.lab35.HomeView").New(controller,{
+                hideCase=releaseMode and not developer,
                 picker=picker,hintOccluded=options.hintOccluded,
                 ray=function(x,y)
                     local ray=options.camera:GetScreenRay(x,y)

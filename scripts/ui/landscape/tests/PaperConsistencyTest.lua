@@ -34,11 +34,25 @@ function T.Run()
     check(view.panelNoticeArea.props.visible==false,"cut feedback must not insert a row above the reading viewport")
     check(view.root:FindById("playScroll")==scroll,"cut retains the same scroll node")
     view.Open("journal");view.Update()
-    check(not view.root:FindById("journalDetailTitle"),"story directory must not mix with the selected story detail")
+    check(not view.root:FindById("bookEntryBody"),"story directory must not mix with the selected branch detail")
     local rows=x.session.queries.GetJournalStories().value
-    assert(view.root:FindById("story_"..rows[1].sourceLetterId)).props.onClick();view.Update()
-    check(view.root:FindById("journalDetailTitle") and view.root:FindById("journalBack"),"detail has its own title and return-to-directory action")
-    for _,kind in ipairs({"letters","words","case","journal","day","result"}) do
+    local first=false --[[@as table|false]]
+    for _,row in ipairs(rows) do if not first and row.received then first=row end end
+    assert(first,"fixture has a received story")
+    local tab=assert(view.root:FindById("bookTab_"..first.sourceLetterId),"story keeps an index tab") --[[@as Button]]
+    check(tab.props.disabled~=true,"received story tab is selectable")
+    local page=x.session.queries.GetJournalPage(first.sourceLetterId).value
+    local collected=false
+    for _,outcome in ipairs(page.outcomes) do if not collected then collected=outcome.branchFragmentId end end
+    if collected then
+        assert(view.root:FindById("bookEntry_"..collected),"collected branch keeps a catalog row")
+        view.root:FindById("bookEntry_"..collected).props.onClick();view.Update()
+        check(view.root:FindById("bookEntryBody") and view.root:FindById("bookEntryBack"),"branch detail has its own body and return-to-catalog action")
+        check(view.root:FindById("bookEntryText"):GetText()~="","stored follow-up text renders inside the page")
+    end
+    check(#page.branches>=#page.outcomes,"catalog keeps every branch, including uncollected ones")
+    -- 词条栏与记录书改走布料面板（WordTrayDrawer / JournalBook），不再共用纸面框架，故不在此列。
+    for _,kind in ipairs({"letters","case","day","result"}) do
         view.Open(kind);view.Update()
         local p=view.root:FindById("activePanel").props
         check(p.paddingLeft>=32 and p.paddingTop>=32,kind.." uses the same safe paper frame")

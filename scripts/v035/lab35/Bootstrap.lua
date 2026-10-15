@@ -1,5 +1,5 @@
 -- Shared main business; only the storage and native presentation belong to the 3D host.
-local B={mainSha="41cdaf3ff0fdd083d7411373a3cc9b70e26fb2e6"}
+local B={mainSha="7f1f6d44b6d9d56166ced231afedac17d217eb3f"}
 function B.New()
     local content=require "data.content"
     local ok,errors=content.Load();assert(ok,table.concat(errors or {},"\n"))

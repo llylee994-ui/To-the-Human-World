@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-14",
+  "generator": "built-in image_gen",
+  "path": "assets/image/界面_干花束_透明_v01.png",
+  "source_basename": "exec-7a4e4542-0e16-4a37-9401-a7fdd58f1b1f.png",
+  "sha256": "31e5d80394a43fcb000e146068ef7a1df0b884bcf383d78d20e5afebed2581e6",
+  "size": [
+    1024,
+    1536
+  ],
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "prompt_summary": "正俯视淡紫干薰衣草三至五枝，细茎、灰绿叶、麻绳小结，花端朝左上、茎端朝右下，真透明外缘；独立装饰、无文字，无背景柔光",
+  "placement": "left gutter and wooden rim of WordTrayHolder; pointerEvents=none; no changes to scrolling or saves"
+}

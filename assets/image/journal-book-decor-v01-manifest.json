@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-15",
+  "generator": "built-in image_gen",
+  "status": "new assets; no previous flower reused; not yet integrated",
+  "assets": [
+    {
+      "path": "assets/image/界面_记录书_大朵干花_透明_v01.png",
+      "source_basename": "exec-cdd8496c-214e-44b6-889f-906e9157b58c.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "transparent_pixel_count": 667436,
+      "sha256": "296998ffa11e8102aa00a314b5ca7da72ff921c78f7fb480598b7079c9771ca8",
+      "prompt_summary": "三朵大花头：旧玫瑰粉玫瑰、奶油杏色大丽花、淡紫褐玫瑰；纸质卷边，干叶短茎，麻线小结。"
+    },
+    {
+      "path": "assets/image/界面_记录书_麦穗干草_透明_v01.png",
+      "source_basename": "exec-182f4caf-687b-4dc1-8fd8-003fd897c9e0.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_extrema": [
+        0,
+        253
+      ],
+      "transparent_pixel_count": 863578,
+      "sha256": "2c597ddb41bf87da25d8bd36b1a16ce0b2121a9d0bc160f5327cf79407e299bf",
+      "prompt_summary": "独立舒展干草束：麦穗、垂落燕麦、细草穗与灰绿干叶，浅金褐色，麻线结。"
+    },
+    {
+      "path": "assets/image/界面_记录书_索引纸签_透明_v01.png",
+      "source_basename": "exec-d1f6071c-49b5-4a7a-b04c-5f227de51db6.png",
+      "size": [
+        2172,
+        724
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixel_count": 535417,
+      "sha256": "02094f8062759b01d4884e6945af73086f6caa16b2ae8546c1292ac7f70fbe1b",
+      "prompt_summary": "单张横向空白奶油纸签，左端柔圆边，右侧藏入书页的折痕，无字。"
+    }
+  ]
+}

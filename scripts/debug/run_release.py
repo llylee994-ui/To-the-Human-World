@@ -8,7 +8,7 @@ from content_test_runtime import run
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--suite', choices=('schedule', 'startup', 'ingredients', 'economy', 'purchases', 'saves', 'flows'), default='schedule')
+    parser.add_argument('--suite', choices=('schedule', 'startup', 'ingredients', 'economy', 'purchases', 'saves', 'flows', 'endings', 'ending-saves', 'closing', 'ui'), default='schedule')
     args = parser.parse_args()
     if args.suite == 'startup':
         import run_b1
@@ -17,6 +17,12 @@ def main():
         return run('debug.ReleasePurchaseTest' if args.suite == 'purchases' else 'debug.ReleaseSaveTest')
     if args.suite == 'flows':
         return run('debug.ReleaseFlowTest')
+    if args.suite in ('endings', 'ending-saves'):
+        return run('debug.ReleaseEndingTest' if args.suite == 'endings' else 'debug.ReleaseEndingSaveTest')
+    if args.suite == 'closing':
+        return run('debug.ReleaseClosingIntegrationTest')
+    if args.suite == 'ui':
+        return run('debug.ReleaseUITest')
     if args.suite in ('ingredients', 'economy'):
         from pathlib import Path
         def report(raw):

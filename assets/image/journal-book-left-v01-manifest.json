@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-15",
+  "generator": "built-in image_gen",
+  "path": "assets/image/界面_记录书_左半厚书_透明_v01.png",
+  "source_basename": "exec-beab883b-29eb-477d-8d0a-b156c012e3dc.png",
+  "sha256": "4c48d5f1a1ce837610ef23619b5c21cf0accfb84aa15b142a49f3e6e62499577",
+  "size": [
+    1024,
+    1536
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "transparent_pixel_count": 220193,
+  "prompt_summary": "摊开厚硬皮记录书左半部，右侧书脊与装订沟，左缘及下缘露出多层纸页和厚皮封面，近俯视暖色绘本质感，大面积空白奶油纸面，透明背景，无字无标签无道具。",
+  "status": "generated asset; not integrated into JournalBook.lua"
+}

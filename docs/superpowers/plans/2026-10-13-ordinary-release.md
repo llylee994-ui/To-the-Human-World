@@ -1,7 +1,7 @@
 # 普通剧情首发版 Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
-> 本项目默认在当前会话按 `executing-plans` 顺序实施。Task 1～3已完成；Task 4～6未完成，未远端构建或提交游戏。前端按阶段接入：Task 2更新说明与药效，Task 3接购买，Task 4～5接终局。
+> 本项目默认在当前会话按 `executing-plans` 顺序实施。Task 1～4业务已完成；Task 5代码与正文已接入，原生页面视觉／手机验收尚未完成；Task 6未完成。未远端构建或提交游戏。前端按阶段接入：Task 2更新说明与药效，Task 3接购买，Task 4～5接终局。
 
 **Goal:** 完成首单＋10 封普通剧情的日程、收入、辅料与三结局闭环，目标完整周目 60～90 分钟。
 
@@ -169,6 +169,8 @@ assert(U.Equal(before,session.state.GetSnapshot()))
 - Modify: `scripts/core/GameState.lua`、`GameSession.lua`、`SaveSchema.lua`、`scripts/systems/PlayQueries.lua`、`OrderAudit.lua`。
 - Create: `scripts/data/release_endings.lua`；正文由 Task 5 审写接入，业务测试此阶段使用显式测试正文，不能对玩家显示占位文本。
 
+**阶段记录：** `docs/验证/普通剧情首发_Task4验收_2026-10-14.md`。增加ReleaseChapterAudit、ReleaseEndingSaveTest、ReleaseEndingFixtures及ReleaseClosingIntegrationTest；沿用Task 3永久采购重放，不重复改写OrderAudit。按用户要求无子代理。正式正文登记留空，业务验收只注入隔离测试正文。
+
 **Interfaces:**
 - `ReleaseEndings.New(content).GetProgress(data)` → Result<{completedCount,threeStarCount,requiredCount,requiredThreeStarCount,homeItemIds,canClose,canApprentice}>。
 - `GetWishSamples(data)` → Result<{sourceTokenId,wordId,text,sourceLetterInstanceId,sourceSpanId}[]>；包含可用/已消耗真实来源，来源去重。
@@ -177,14 +179,14 @@ assert(U.Equal(before,session.state.GetSnapshot()))
 - `state.BeginClosing({expectedRevision})`、`state.BeginWish({expectedRevision})`、`state.UpdateWishDraft({sourceTokenIds,expectedRevision})`、`state.ConfirmEnding({kind,expectedRevision})`、`state.RestoreEndingCheckpoint({expectedRevision})`、`state.StartNewPlaythrough({expectedRevision})` 均走统一候选提交。新周目必须在前端明确确认后调用，只用已校验初态替换首发槽，不删除旧槽；保存失败保留原结局。
 - `queries.GetReleaseProgress()`、`GetTravelTicketView()`、`GetWishView()`、`GetEndingView()` 分别读真实业务状态；GetTravelTicketView 返回现有 TravelTicketQuote 所需字段。
 
-- [ ] 先写边界测试：7/8/11 单三星，10/11 单完成，缺一件家居，资格成立仍选 wish；试做三星不计、跨档/历史记录不计。
-- [ ] 船票 D10/11、665/666、打开确认后跨天/改 revision、取消、重复请求；结束后禁止 Shop/Receive/Cut/Accept/Preview/Confirm/NextDay 等经营写入（重读与结束前恢复除外）。
-- [ ] 拼贴已耗实例可引用但 available 保持 false；未获得来源/重复来源拒绝；至少一词、顺序保留；草稿退出恢复；无剪词收尾进入补读准备，正常剪取一词后进入选择。
-- [ ] 实现纯资格与样本查询：完成统计按 11 个 letterId 去重，读取 confirmedById 的正式 rating；从 wordTokens 联查 letters 的 cutSpans 校验来源。
-- [ ] NextDay 在 D14 改调用收尾候选，不加天；pending/非空草稿先拒绝。空接单原样保留 currentOrder、acceptedById、序号和永久试做记录，但不计作完成；终局阶段拦截经营写入，结束前恢复后可续做。买票沿用相同空草稿边界，不隐式撤销接单。
-- [ ] checkpoint 与扣款/结局在同一次 Save 内持久化；checkpoint 移除其自身 checkpoint，完整验证才能恢复。终局正文和原句冻结保存，重读不重新生成。幂等重试先识别已完成同种终局，再检查 stale revision，不能二次扣钱或投瓶。
-- [ ] 明确保存故障测试至少覆盖购票、BeginClosing、UpdateWishDraft、ConfirmEnding、RestoreEndingCheckpoint、StartNewPlaythrough 六处；不确定保存必须锁定同槽重读。
-- [ ] 运行 endings suite 和 purchases suite；真实隔离完成离开、学徒、wish 三条路线，记录 D 阶段证据。
+- [x] 先写边界测试：7/8/11 单三星，10/11 单完成，缺一件家居，资格成立仍选 wish；试做三星不计、跨档/历史记录不计。
+- [x] 船票 D10/11、665/666、打开确认后跨天/改 revision、取消、重复请求；结束后禁止 Shop/Receive/Cut/Accept/Preview/Confirm/NextDay 等经营写入（重读与结束前恢复除外）。
+- [x] 拼贴已耗实例可引用但 available 保持 false；未获得来源/重复来源拒绝；至少一词、顺序保留；草稿退出恢复；无剪词收尾进入补读准备，正常剪取一词后进入选择。
+- [x] 实现纯资格与样本查询：完成统计按 11 个 letterId 去重，读取 confirmedById 的正式 rating；从 wordTokens 联查 letters 的 cutSpans 校验来源。
+- [x] NextDay 在 D14 改调用收尾候选，不加天；pending/非空草稿先拒绝。空接单原样保留 currentOrder、acceptedById、序号和永久试做记录，但不计作完成；终局阶段拦截经营写入，结束前恢复后可续做。买票沿用相同空草稿边界，不隐式撤销接单。
+- [x] checkpoint 与扣款/结局在同一次 Save 内持久化；checkpoint 移除其自身 checkpoint，完整验证才能恢复。终局正文和原句冻结保存，重读不重新生成。幂等重试先识别已完成同种终局，再检查 stale revision，不能二次扣钱或投瓶。
+- [x] 明确保存故障测试至少覆盖购票、BeginClosing、UpdateWishDraft、ConfirmEnding、RestoreEndingCheckpoint、StartNewPlaythrough 六处；不确定保存必须锁定同槽重读。
+- [x] 运行 endings suite 和 purchases suite；真实隔离完成离开、学徒、wish 三条路线，记录 D 阶段证据。
 
 ## Task 5: 家居、收尾、拼贴界面与终局正文
 
@@ -199,14 +201,16 @@ assert(U.Equal(before,session.state.GetSnapshot()))
 - Shop 家居卡与原料卡分 kind；原料仍走 model.Buy，家居走 PurchaseHomeItem，船票走专门启程事务。
 - 恢复加载后以 GetEndingView 决定展示已保存结局；不依赖 ticketEnding 等仅在内存的布尔值。
 
-- [ ] 建立真实隔离业务＋HeadlessUI 的失败用例：买椅子必须走家居命令，不买错原料；取消不扣；按钮无穿透；返回商店保留场景/草稿；已买家居不能再买。
-- [ ] 收尾页显示订单完成数、三星数和家居清单，学徒不足给具体原因；满足时“留下”与“寄出自己的愿望”并存。不提前在剧情正文解释门槛。
-- [ ] WishView 使用点选、移除、前后移动完成拼贴，不以新拖拽系统为首发前提；显示真实词和来源。至少一词可预览，取消回编辑；保存失败保留原草稿及明确提示。
-- [ ] 终局页面展示真实 title/text/wishText，提供“返回结束前”及显式新周目确认。新周目须明确覆盖首发槽并确认；不清理旧试用/旧验收槽。
-- [ ] 三结局正文沿用旧旅人/学徒/无名者方向，移除案件/土地和缺少身份依据的句子，保留玩家原句与可选全三星认可短句。正文与来源文档同步，避免 UI 写死剧情。
-- [ ] 隐藏案件热区/菜单的玩家入口，留开发查看能力与源文件；不保留“此版本尚未开放主线”的常驻占位面板。
-- [ ] 查 API 文档后按现有纸/木材主题完成自适应；44 逻辑像素以上触摸目标，长文独立滚动，横屏安全区/Tap 胶囊保持。无新图需求不主动生成资产。
+- [x] 建立真实隔离业务＋HeadlessUI 的失败用例：买椅子必须走家居命令，不买错原料；取消不扣；按钮无穿透；返回商店保留场景/草稿；已买家居不能再买。
+- [x] 收尾页显示订单完成数、三星数和家居清单，学徒不足给具体原因；满足时“留下”与“寄出自己的愿望”并存。不提前在剧情正文解释门槛。
+- [x] WishView 使用点选、移除、前后移动完成拼贴，不以新拖拽系统为首发前提；显示真实词和来源。至少一词可预览，取消回编辑；保存失败保留原草稿及明确提示。
+- [x] 终局页面展示真实 title/text/wishText，提供“返回结束前”及显式新周目确认。新周目须明确覆盖首发槽并确认；不清理旧试用/旧验收槽。
+- [x] 三结局正文沿用旧旅人/学徒/无名者方向，移除案件/土地和缺少身份依据的句子，保留玩家原句与可选全三星认可短句。正文与来源文档同步，避免 UI 写死剧情。
+- [x] 隐藏案件热区/菜单的玩家入口，留开发查看能力与源文件；不保留“此版本尚未开放主线”的常驻占位面板。
+- [x] 查 API 文档后按现有纸/木材主题完成自适应；44 逻辑像素以上触摸目标，长文独立滚动，横屏安全区/Tap 胶囊保持。无新图需求不主动生成资产。
 - [ ] 运行 ui suite、TravelTicketTest/ShopViewTest/HomeEntryTest/MobileSafeAreaTest 相关既有检查（通过现有 runner 模块装配，不另造假命令）；查看实际图再作视觉判断。记录 E 阶段证据。
+
+**Task 5阶段记录：** `docs/验证/普通剧情首发_Task5接入与验收_2026-10-14.md`。已增加ReleaseFrame共享纸面，保存结果不确定的页内重读，以及拼贴按钮／封瓶预览的显示revision校验。正文为首发接入新稿，未标记用户逐句定稿。ui、船票、商店、安全区及保存专项已跑；旧HomeEntry仍被并行词条栏改版移除的投料入口阻断，不能宣称全部回归通过。运行中的本地预览按规则刷新、取logs/check；既有资源／DLL错误与缺少页面截图限制原生视觉结论。未使用子代理。
 
 ## Task 6: 完整周目与交付收口
 

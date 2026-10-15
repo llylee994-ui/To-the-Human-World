@@ -78,7 +78,7 @@ function Narrative.New(content)
                     seen[id]=true
                     local f=G.Known(content,"fragments",id,"template.fragmentIds")
                     G.Pure(f,"fragments." .. id,"CONFIG_INVALID")
-                    G.Keys(f,{id=true,templateId=true,kind=true,priority=true,desc=true,requiresFacts=true,excludesFacts=true,coversFacts=true,overrides=true,exclusiveGroup=true,text=true,bindings=true},"fragments." .. id,"CONFIG_INVALID")
+                    G.Keys(f,{id=true,templateId=true,kind=true,priority=true,desc=true,requiresFacts=true,excludesFacts=true,coversFacts=true,overrides=true,exclusiveGroup=true,text=true,bindings=true,shortName=true},"fragments." .. id,"CONFIG_INVALID")
                     G.Need(f.templateId==template.id and KIND[f.kind]~=nil,"CONFIG_INVALID","fragments." .. id,"片段类型或模板引用不符")
                     G.Required(f.priority,G.Finite,"fragments.priority")
                     if f.exclusiveGroup~=nil then G.Required(f.exclusiveGroup,U.String,"fragments.exclusiveGroup") end

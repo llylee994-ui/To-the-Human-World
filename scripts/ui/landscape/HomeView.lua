@@ -6,7 +6,10 @@ local Harbor=require "ui.landscape.HarborStyle"
 local Backdrop=require "ui.landscape.SceneBackdrop"
 local SeaArt=require "ui.landscape.SeaArt"
 local H={}
-function H.New(onOpen,developer)
+---@param onOpen fun(target:string,id:string)
+---@param developer boolean
+---@param ordinaryRelease? boolean
+function H.New(onOpen,developer,ordinaryRelease)
     local root=UI.Panel {id="homeView",position="absolute",left=0,top=0,width="100%",height="100%",pointerEvents="box-none"}
     -- Same outer camera for backdrop and all room layers; labels remain UI siblings.
     local panZoom=false --[[@as table|false]]
@@ -63,7 +66,8 @@ function H.New(onOpen,developer)
             local left=math.max(fit.x,math.min(fit.x+fit.w-w,x-w/2))-bounds.x
             local top=math.max(bounds.y+56,math.min(bounds.y+bounds.h-48,y+region.h*layer.height*fit.scale*.5+4))-bounds.y
             local tag=tags[obj.id]
-            if tag.SetStyle then tag:SetStyle({left=left,top=top,width=w}) else tag.props.left=left;tag.props.top=top;tag.props.width=w end
+            if tag and tag.SetStyle then tag:SetStyle({left=left,top=top,width=w})
+            elseif tag then tag.props.left=left;tag.props.top=top;tag.props.width=w end
             if obj.id==api.feedbackId then
                 feedback:SetText(obj.label)
                 if feedback.SetStyle then feedback:SetStyle({left=left,top=top,width=w}) end
@@ -125,6 +129,7 @@ function H.New(onOpen,developer)
         nvgRestore(vg)
     end
     for _,object in ipairs(Manifest.objects) do
+        if not (ordinaryRelease and object.developerOnly and not developer) then
         local hot=UI.Panel {id=object.id,position="absolute",left=0,top=0,width="100%",height="100%",
             onPointerDown=function(event) if not api.blocked and event.button==MOUSEB_LEFT then api.pressed=object.id;api.SetFeedback(object.id) end end,
             onPointerUp=function() api.pressed=false end,onPointerCancel=function() api.pressed=false end,
@@ -138,6 +143,7 @@ function H.New(onOpen,developer)
         root:AddChild(hot)
         local tag=Harbor.Tag {id="hint_"..object.id,text=object.label,position="absolute"}
         tags[object.id]=tag;hintLayer:AddChild(tag)
+        end
     end
     root:AddChild(hintLayer);root:AddChild(intro);root:AddChild(feedback)
     api.Update(0)

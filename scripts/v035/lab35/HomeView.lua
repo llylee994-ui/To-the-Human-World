@@ -4,6 +4,7 @@ function H.New(controller,options)
     local UI=require "urhox-libs/UI"
     local Harbor=require "ui.landscape.HarborStyle"
     assert(options and options.ray and options.picker and options.project and options.hintOccluded,"explicit scene pick/projection dependencies required")
+    local function entryVisible(id) return not (options.hideCase and id=="home.caseFile") end
     local root=UI.Panel {id="v035Home",position="absolute",left=0,top=0,width="100%",height="100%",pointerEvents="box-none"}
     local surface=UI.Panel {id="v035PickSurface",position="absolute",left=0,top=0,width="100%",height="100%",
         onClick=function(_,event)
@@ -16,13 +17,15 @@ function H.New(controller,options)
             local origin,direction=options.ray((x-rect.x)/rect.w,(y-rect.y)/rect.h)
             local id=options.picker.Pick(origin,direction)
             local gesture=event.timestamp and (tostring(event.pointerId or 0)..":"..tostring(event.timestamp)) or event
-            if id then controller.Activate(id,gesture,event._defaultPrevented==true) end
+            if id and entryVisible(id) then controller.Activate(id,gesture,event._defaultPrevented==true) end
         end}
     root:AddChild(surface)
     local hints={}
     for id,definition in pairs(require "v035.lab35.Ids") do
-        local hint=Harbor.Tag {id="v035Hint."..id,text=definition.label,position="absolute",visible=false}
-        root:AddChild(hint);hints[id]=hint
+        if entryVisible(id) then
+            local hint=Harbor.Tag {id="v035Hint."..id,text=definition.label,position="absolute",visible=false}
+            root:AddChild(hint);hints[id]=hint
+        end
     end
     local api={root=root,inspect=false,lastHit="",zoom=1}
     function api.Fit() local r=root:GetAbsoluteLayout();return {x=r.x,y=r.y,w=r.w,h=r.h,scale=r.w/1920} end
@@ -40,8 +43,10 @@ function H.New(controller,options)
         for _,row in ipairs(rows) do
             local hint=hints[row.id]
             -- Labels don't intercept scene/UI input and remain within the visible Home.
-            hint:SetStyle({left=math.max(0,math.min(r.w-140,row.x-r.x-70)),top=math.max(0,row.y-r.y-46),width=140})
-            hint:SetVisible(true)
+            if hint then
+                hint:SetStyle({left=math.max(0,math.min(r.w-140,row.x-r.x-70)),top=math.max(0,row.y-r.y-46),width=140})
+                hint:SetVisible(true)
+            end
         end
     end
     return api

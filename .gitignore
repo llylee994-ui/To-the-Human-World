@@ -35,6 +35,7 @@ Thumbs.db
 # main local tooling/build/editor state; project-owned tools and UI libraries remain tracked
 .maker-mcp/
 .tmp/
+scripts/layout-editor/.local/
 .build/
 dist/
 CLAUDE.md
