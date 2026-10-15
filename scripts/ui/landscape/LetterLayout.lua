@@ -4,27 +4,28 @@ function L.Layout(segments,width,lineHeight,measure)
     width=math.max(1,width)
     local runs={};local x,y=0,0
     local function newline() x=0;y=y+lineHeight end
-    local function place(text,span)
-        local w=measure(text)+(span and 6 or 0)
+    local function place(text,span,weight)
+        local w=measure(text,weight)+(span and 6 or 0)
         if x>0 and x+w>width then newline() end
         local last=runs[#runs]
-        if not span and last and not last.spanId and last.y==y then
+        if not span and last and not last.spanId and last.y==y and last.fontWeight==weight then
             last.text=last.text..text;last.w=last.w+w
         else
             runs[#runs+1]={text=text,x=x,y=y,w=w,h=lineHeight,
-                spanId=span and span.spanId or false,cut=span and span.cut or false}
+                spanId=span and span.spanId or false,cut=span and span.cut or false,fontWeight=weight}
         end
         x=x+w
     end
     for _,segment in ipairs(segments or {}) do
         local span=segment.kind=="word" and segment or nil
+        local weight=segment.fontWeight or "normal"
         local text=segment.text or ""
-        if span and measure(text)+6<=width and not text:find("\n",1,true) then place(text,span)
+        if span and measure(text,weight)+6<=width and not text:find("\n",1,true) then place(text,span,weight)
         else
             for _,code in utf8.codes(text) do
                 local char=utf8.char(code)
                 if char=="\n" then newline()
-                elseif char~="\r" then place(char,span) end
+                elseif char~="\r" then place(char,span,weight) end
             end
         end
     end

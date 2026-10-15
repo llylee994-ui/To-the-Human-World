@@ -21,3 +21,11 @@ New text outside this coverage requires regenerating the subset or using the
 full original font under its original name. The game registers this font as
 `story`; `sans` continues to point to the engine's MiSans font. Regular and bold
 both use this Regular file for consistent readable handwriting.
+
+Harbor Hand Medium (2026-10-15) is a separate subset of upstream
+LXGWWenKai-Medium.ttf, used only as `story-strong` for approved wish sentences.
+It has the same 6,945 Unicode mappings as the existing Regular subset and retains
+the upstream Medium outlines, with no synthetic multi-pass text drawing. Internal
+names are renamed to Harbor Hand Medium; the same SIL OFL 1.1 license applies.
+Source URL, source/subset SHA-256 and coverage are in
+`HarborHand-Medium-source.json`. Existing `story` and other UI weights are unchanged.

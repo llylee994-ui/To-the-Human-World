@@ -5,7 +5,11 @@ local UI=require "urhox-libs/UI"
 local Widget=require "urhox-libs/UI/Core/Widget"
 local Theme=require "urhox-libs/UI/Core/Theme"
 local L=require "ui.landscape.LetterLayout"
+local Emphasis=require "ui.landscape.LetterEmphasis"
 local P={}
+local function fontFace(weight)
+    return Theme.FontFace(weight=="bold" and "story-strong" or "story","normal")
+end
 local function halo(vg,x,y,w,h,time,enabled)
     local cx,cy,rx,ry=x+w/2,y+h/2-2,w/2+3,h/2-2
     local alpha=enabled and 1 or .35
@@ -49,8 +53,8 @@ function P.New(view,onCut)
         local version=UI.GetFontVersion()
         if width~=api.lastWidth or version~=api.lastFont then
             local size=Theme.FontSize(18)
-            api.layout=L.Layout(api.view.segments,width,size*1.55,function(text)
-                return UI.MeasureTextWidth(text,size,Theme.FontFace("story","normal"))
+            api.layout=L.Layout(Emphasis.Segments(api.view),width,size*1.55,function(text,weight)
+                return UI.MeasureTextWidth(text,size,fontFace(weight))
             end)
             api.lastWidth=width;api.lastFont=version
             Widget.SetStyle(root,{height=api.layout.height+8})
@@ -102,6 +106,7 @@ function P.New(view,onCut)
                 nvgBeginPath(vg);nvgMoveTo(vg,x+1,y+3);nvgLineTo(vg,x+r.w-1,y+3)
                 nvgStrokeColor(vg,nvgRGBA(38,25,17,125));nvgStrokeWidth(vg,2);nvgStroke(vg)
             else
+                nvgFontFace(vg,fontFace(r.fontWeight))
                 if r.spanId then
                     halo(vg,x,y,r.w,r.h,api.time,api.enabled)
                 end
