@@ -20,8 +20,13 @@ function E.Request(x,extra)
     for k,v in pairs(extra or {}) do request[k]=v end
     return request
 end
-function E.Day14(x)
-    while x.state.GetSnapshot().live.gameFlow.day<14 do E.Must(x.state.NextDay()) end
+function E.SmallComplete(cash)
+    -- 仅缩小事务/UI专项的必需订单集合；11 单边界由 ReleaseDayGateTest 的真实路线覆盖。
+    local x=E.New(cash)
+    x.content.release.requiredOrderIds={x.content.release.requiredOrderIds[1]}
+    x.content.release.minThreeStarOrders=1
+    R.Ship(x,1)
+    return x
 end
 function E.CutOne(x)
     local id=x.content.release.requiredOrderIds[1]
@@ -31,12 +36,33 @@ function E.CutOne(x)
     return E.Must(x.state.CutWord({letterInstanceId=instance,spanId=span.spanId})).tokenId
 end
 function E.WishSeed()
-    local x=E.New();local token=E.CutOne(x);E.Day14(x)
-    E.Must(x.state.BeginClosing(E.Request(x)));E.Must(x.state.BeginWish(E.Request(x)))
+    local x=E.SmallComplete()
+    local token=E.Must(x.session.queries.GetWishView()).samples[1].sourceTokenId
+    E.Must(x.state.BeginClosing(E.Request(x)));E.OpenWish(x)
     E.Must(x.state.UpdateWishDraft(E.Request(x,{sourceTokenIds={token}})))
     return x,token
 end
-function E.Route(stars,orders)
+function E.OpenWish(x)
+    E.Must(x.state.AdvanceEpilogue(E.Request(x,{expectedStep="dawn"})))
+    E.Must(x.state.AdvanceEpilogue(E.Request(x,{expectedStep="shore"})))
+    E.Must(x.state.BeginWish(E.Request(x)))
+end
+function E.LegacyClosing(phase)
+    local x=E.New();local token=phase~="closing_prepare" and E.CutOne(x) or false
+    R.LegacyDay(x,14)
+    local checkpoint=x.state.GetSnapshot();local data=U.Copy(checkpoint)
+    data.revision=data.revision+1;data.chapter.checkpoint=checkpoint;data.chapter.phase=phase
+    if phase=="wish" or phase=="ended" then data.chapter.wishDraftSourceIds={token} end
+    if phase=="ended" then
+        local text=E.Must(require("systems.ReleaseEndings").New(x.content).WishText(data,{token},false))
+        data.chapter.ending={kind="wish",title=x.content.releaseEndings.wish.title,
+            text=x.content.releaseEndings.wish.text.."\n\n"..text,wishText=text,sourceTokenIds={token},allThreeStar=false}
+        data.chapter.endingTransactionId="ending:wish:"..data.revision
+    end
+    assert(x.save.Save("b5_flow",data,4));assert(x.Reload())
+    return x
+end
+function E.Route(stars,orders,observe)
     local x=E.New();orders=orders or 11
     local low=stars==11 and {} or {[1]="e01_result_song_faded",[2]="n01_result_stayed_for_promise",[3]="n02_candidate_care"}
     if stars==7 then low[4]="n03_candidate_hide" end
@@ -51,6 +77,7 @@ function E.Route(stars,orders)
         end
         local pending=R.Preview(x,request)
         E.Must(x.order.Confirm({orderId=request.orderId,transactionId=pending.transactionId}))
+        if observe then observe(index,x) end
     end
     return x
 end

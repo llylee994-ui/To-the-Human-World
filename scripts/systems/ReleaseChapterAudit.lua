@@ -2,33 +2,51 @@
 local U=require "core.StateUtil"
 local G=require "systems.CalculationGuard"
 local L=require "systems.ReleaseLedger"
+local Collage=require "systems.WishCollage"
+local Records=require "systems.JourneyRecord"
 local A={}
 local function same(a,b,path) G.Need(U.Equal(a,b),"STATE_INVALID",path,"收尾状态与结束前快照不一致") end
+local function baseChapter(chapter)
+    local c=U.Copy(chapter);c.epilogue=nil;c.wishLayout=nil;c.memories=nil;c.started=nil;return c
+end
 function A.Validate(data,content)
-    return G.Run(function()
+    local checkpointCoversBusiness=false
+    local result=G.Run(function()
         G.Need(content and content.release,"CONFIG_MISSING","release","缺少首发配置")
         local e=require("systems.ReleaseEndings").New(content);local c=data.chapter
         local phases={operating=true,closing_prepare=true,closing=true,wish=true,ended=true}
-        G.Need(phases[c.phase] and data.live.gameFlow.day<=content.release.finalDay,"STATE_INVALID","chapter.phase","阶段或最终日期不合法")
+        G.Need(phases[c.phase],"STATE_INVALID","chapter.phase","阶段不合法")
         G.Array(c.wishDraftSourceIds,"wishDraftSourceIds","STATE_INVALID")
+        G.Need(c.started==nil or type(c.started)=="boolean","STATE_INVALID","chapter.started","开局标记不合法")
+        G.Value(Records.Validate(data));G.Value(require("systems.ReleaseEpilogue").Validate(data,content))
+        if c.wishLayout~=nil then
+            local known={};for _,row in ipairs(G.Value(e.GetWishSamples(data))) do known[row.sourceTokenId]=true end
+            G.Value(Collage.Validate(c.wishLayout,known))
+            same(Collage.Order(c.wishLayout),c.wishDraftSourceIds,"wishLayout.sources")
+        end
         local tickets=0
         for _,row in ipairs(data.live.economy.itemPurchases) do if row.itemId==content.release.ticket.id then tickets=tickets+1 end end
         if c.phase=="operating" then
-            same(c,L.EmptyChapter(),"chapter");G.Need(tickets==0,"STATE_INVALID","itemPurchases","船票必须随终局提交")
+            same(baseChapter(c),L.EmptyChapter(),"chapter");G.Need(c.epilogue==nil and c.wishLayout==nil,"STATE_INVALID","chapter","经营中不能带尾声或拼贴")
+            G.Need(tickets==0,"STATE_INVALID","itemPurchases","船票必须随终局提交")
             return true
         end
         local cp=c.checkpoint
         G.Need(type(cp)=="table" and type(cp.chapter)=="table" and cp.chapter.checkpoint==false,"STATE_INVALID","checkpoint","快照不可缺失或嵌套")
-        same(cp.chapter,L.EmptyChapter(),"checkpoint.chapter")
+        same(baseChapter(cp.chapter),L.EmptyChapter(),"checkpoint.chapter")
         G.Need(cp.contentVersion==data.contentVersion and U.Integer(cp.revision) and cp.revision<data.revision,"STATE_INVALID","checkpoint.revision","结束前快照版本不符")
         -- 完整业务审计一次；子快照chapter为经营态，不再递归包含快照。
-        G.Value(require("systems.OrderTrial").Wrap(require("systems.Order").New(content,{schema4Projection=true}),content,
-            (content.gameplay or require("data.gameplay")).salvageDailyLimit,4).ValidateEnvelope(cp))
+        G.Value(require("systems.OrderTrial").ValidateCheckpoint(cp,content,
+            (content.gameplay or require("data.gameplay")).salvageDailyLimit))
         G.Value(e.RequireClear(cp));G.Value(e.RequireClear(data))
         same(data.currentOrder,cp.currentOrder,"currentOrder");same(data.nextOrderSerial,cp.nextOrderSerial,"nextOrderSerial");same(data.journal,cp.journal,"journal")
         for _,key in ipairs({"world","narrative","orders"}) do same(data.live[key],cp.live[key],"live."..key) end
         local departure=c.phase=="ended" and type(c.ending)=="table" and c.ending.kind=="departure"
-        if not departure then G.Need(G.Value(e.GetProgress(cp)).canClose,"STATE_INVALID","checkpoint.day","快照尚未达到收尾条件") end
+        if not departure then
+            -- finalDay 仅用于读取旧 D14 冻结档；新命令必须完成全部委托。
+            local legacyClosing=cp.live.gameFlow.day==content.release.finalDay
+            G.Need(G.Value(e.GetProgress(cp)).canClose or legacyClosing,"STATE_INVALID","checkpoint.day","快照尚未达到收尾条件")
+        end
         local beforeSamples=G.Value(e.GetWishSamples(cp));local samples=G.Value(e.GetWishSamples(data))
         if #beforeSamples>0 or departure then
             same(data.live.gameFlow,cp.live.gameFlow,"gameFlow");same(data.live.letters,cp.live.letters,"letters");same(data.live.wordTokens,cp.live.wordTokens,"wordTokens")
@@ -70,10 +88,11 @@ function A.Validate(data,content)
             if c.phase=="closing_prepare" then G.Need(#samples==0 and #beforeSamples==0 and #c.wishDraftSourceIds==0,"STATE_INVALID","samples","准备阶段尚不能拼贴")
             elseif c.phase=="closing" then G.Need(#samples>0 and #c.wishDraftSourceIds==0,"STATE_INVALID","samples","选择阶段须有样本且无愿望草稿")
             else G.Need(#samples>0,"STATE_INVALID","samples","拼贴须有真实样本") end
+            checkpointCoversBusiness=#beforeSamples>0
             return true
         end
         local ending=c.ending
-        G.Keys(ending,{kind=true,title=true,text=true,wishText=true,sourceTokenIds=true,allThreeStar=true},"ending","STATE_INVALID")
+        G.Keys(ending,{kind=true,title=true,text=true,wishText=true,sourceTokenIds=true,allThreeStar=true,collage=true},"ending","STATE_INVALID")
         G.Need(({departure=true,apprentice=true,wish=true})[ending.kind] and U.String(ending.title) and U.String(ending.text)
             and utf8.len(ending.title) and utf8.len(ending.text),"STATE_INVALID","ending.text","缺少冻结终局正文")
         G.Need(c.endingTransactionId=="ending:"..ending.kind..":"..data.revision,"STATE_INVALID","endingTransactionId","终局事务不符")
@@ -83,11 +102,21 @@ function A.Validate(data,content)
             same(ending.sourceTokenIds,c.wishDraftSourceIds,"ending.sources")
             local text=G.Value(e.WishText(data,c.wishDraftSourceIds,false))
             G.Need(ending.wishText==text and ending.text:sub(-#text)==text,"STATE_INVALID","wishText","愿望原句与真实来源不符")
+            if ending.collage then
+                G.Value(Collage.ValidateFrozen(ending.collage,ending.sourceTokenIds,ending.wishText))
+                same(ending.collage,Collage.Freeze(data,samples),"ending.collage")
+            end
         else
+            G.Need(ending.collage==nil,"STATE_INVALID","ending.collage","非愿望结局不能带拼贴")
             G.Need(ending.wishText==false and U.Equal(ending.sourceTokenIds,{}) and #c.wishDraftSourceIds==0,"STATE_INVALID","wishText","该结局不能带拼贴草稿")
             if ending.kind=="apprentice" then G.Need(progress.canApprentice,"STATE_INVALID","progress","学徒资格不成立") end
         end
+        checkpointCoversBusiness=not departure and #beforeSamples>0
         return true
     end)
+    -- This proof is produced only after the checkpoint's full audit and exact
+    -- equality of every business block. It is never accepted from save data.
+    if result.ok then result.checkpointCoversBusiness=checkpointCoversBusiness end
+    return result
 end
 return A

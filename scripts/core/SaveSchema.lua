@@ -49,9 +49,11 @@ function Schema.ValidateLetterTokens(letters,tokens,options)
     local sources = {}
     for id, token in pairs(tokens.byId) do
         local item = letters.byId[token.sourceLetterInstanceId]
-        local source = options.letters.ResolveSource(letters,token.sourceLetterInstanceId,token.sourceSpanId)
-        if not source.ok then return source end
-        if not item.cutSpans[token.sourceSpanId] or source.value.wordId ~= token.wordId or source.value.sourceNpcId ~= token.sourceNpcId then
+        -- WordToken.ValidateSnapshot already verifies definition/span/word/NPC.
+        -- Letter.ValidateSnapshot already verifies every received letter and cut.
+        -- Join those validated sets once; ResolveSource would revalidate the
+        -- entire letter archive for every token, inside every historical replay.
+        if not item or not item.read or not item.cutSpans[token.sourceSpanId] or item.senderId ~= token.sourceNpcId then
             return U.Fail("SOURCE_INVALID","wordTokens.byId." .. id,"词实例与信件缺口不一致")
         end
         local key = #token.sourceLetterInstanceId .. ":" .. token.sourceLetterInstanceId .. token.sourceSpanId
@@ -243,9 +245,10 @@ function Schema.ValidateV3(data,options)
 end
 function Schema.ValidateV4(data,options)
     local pure=U.Validate(data);if not pure.ok then return pure end
+    local checkpointCoversBusiness=false
     local ok,err=pcall(function()
         object(data,"contentVersion revision nextOrderSerial live currentOrder journal chapter","data")
-        object(data.chapter,"phase wishDraftSourceIds ending endingTransactionId checkpoint","chapter")
+        object(data.chapter,"phase wishDraftSourceIds ending endingTransactionId checkpoint","chapter","epilogue wishLayout memories started")
         local function ledger(l)
             need(U.Array(l.economy.itemPurchases) and l.economy.furniturePurchases==nil and l.economy.ownedFurnitureIds==nil,"itemPurchases")
         end
@@ -256,8 +259,10 @@ function Schema.ValidateV4(data,options)
         local r=Schema.ValidateV3(projected,projectionOptions);if not r.ok then error(r.error,0) end
         local chapter=require("systems.ReleaseChapterAudit").Validate(data,options.content)
         if not chapter.ok then error(chapter.error,0) end
+        checkpointCoversBusiness=chapter.checkpointCoversBusiness==true
     end)
     if not ok then return {ok=false,error=type(err)=="table" and err or U.Error("STATE_INVALID","data",tostring(err))} end
-    return U.Ok(U.Copy(data))
+    local result=U.Ok(U.Copy(data));result.checkpointCoversBusiness=checkpointCoversBusiness
+    return result
 end
 return Schema

@@ -189,6 +189,9 @@ function Q.New(session,content)
         G.Need(data.chapter~=nil,"NOT_IMPLEMENTED","release","此存档尚未接入首发终局")
         return G.Value(require("systems.ReleaseCoordinator").New(content).GetEndingView(data))
     end)
+    api.GetEpilogueView=query(function(data)
+        return G.Value(require("systems.ReleaseCoordinator").New(content).GetEpilogueView(data))
+    end)
     end
     return api
 end

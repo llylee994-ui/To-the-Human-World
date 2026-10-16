@@ -6,9 +6,25 @@ local D=require "systems.RecipeDraft"
 local J=require "systems.BrewJournal"
 local P=require "core.SchemaProjection"
 local T={}
+local checkpointProofs=setmetatable({},{__mode="k"})
+local function checkpointMemo(content,limit)
+    local memo=checkpointProofs[content]
+    if not memo or memo.limit~=limit then
+        memo=require("core.ValidationMemo").New(content);memo.limit=limit;checkpointProofs[content]=memo
+    end
+    return memo
+end
+-- Called only for a checkpoint. A previously fully audited operating snapshot
+-- is reusable by exact value; anything changed goes through the complete audit.
+function T.ValidateCheckpoint(data,content,limit)
+    return checkpointMemo(content,limit).Run(data,function()
+        return T.Wrap(require("systems.Order").New(content,{schema4Projection=true}),content,limit,4).ValidateEnvelope(data)
+    end)
+end
 function T.Wrap(legacy,content,limit,schema)
     schema=schema or 3
     local api={}
+    local validation=require("core.ValidationMemo").New(content)
     for key,value in pairs(legacy) do api[key]=value end
     local current=false
     ---@type table|nil
@@ -28,10 +44,11 @@ function T.Wrap(legacy,content,limit,schema)
     function api.CurrentOrder.Restore(value) local r=api.CurrentOrder.ValidateSnapshot(value); if r.ok then current=r.value end; return r end
     function api.CurrentOrder.GetSnapshot() return U.Copy(current) end
     function api.ValidateEnvelope(data)
-        return G.Run(function()
+        local result=validation.Run(data,function() return G.Run(function()
             local validate=schema==4 and require("core.SaveSchema").ValidateV4 or require("core.SaveSchema").ValidateV3
-            G.Value(validate(data,{content=content,contentVersion=content.contentVersion,synthesisVersion=content.synthesis.version,
-                economy=require("systems.Economy").New(content),letters=require("systems.Letter").New(content),wordTokens=require("systems.WordToken").New(content),salvageDailyLimit=limit}))
+            local checked=validate(data,{content=content,contentVersion=content.contentVersion,synthesisVersion=content.synthesis.version,
+                economy=require("systems.Economy").New(content),letters=require("systems.Letter").New(content),wordTokens=require("systems.WordToken").New(content),salvageDailyLimit=limit})
+            G.Value(checked)
             G.Value(api.CurrentOrder.ValidateSnapshot(data.currentOrder))
             G.Value(J.Validate(data,content))
             if data.currentOrder then
@@ -39,9 +56,15 @@ function T.Wrap(legacy,content,limit,schema)
                 G.Value(D.Validate(order.draft,data.live,content))
                 if order.pending then G.Need(U.Equal(order.draft,D.Project(order.recipe)),"STATE_INVALID","draft","待处理配方与草稿不一致") end
             end
-            G.Value(legacy.ValidateEnvelope(P.V2(data)))
+            if not (schema==4 and checked.checkpointCoversBusiness) then
+                G.Value(legacy.ValidateEnvelope(P.V2(data)))
+            end
             return U.Copy(data)
-        end)
+        end) end)
+        if result.ok and schema==4 and data.chapter.phase=="operating" then
+            checkpointMemo(content,limit).Run(data,function() return result end)
+        end
+        return result
     end
     local function plan(data,value,events,changed) return {data=data,value=value,events=events or {},changed=changed~=false} end
     function api.PlanCommand(kind,data,request)

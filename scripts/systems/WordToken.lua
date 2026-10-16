@@ -9,7 +9,7 @@ function WordToken.New(content)
     local state
     local api = {}
     local parser = require("systems.Letter").New(content)
-    local function sourceValid(source)
+    local function sourceValid(source,parsedLetters)
         local keys = U.Keys(source,{wordId=true,sourceLetterInstanceId=true,sourceSpanId=true,sourceNpcId=true},"source")
         if not keys.ok then return keys end
         for _, key in ipairs({"wordId","sourceLetterInstanceId","sourceSpanId","sourceNpcId"}) do
@@ -23,8 +23,11 @@ function WordToken.New(content)
         if not letter or letter.kind ~= "order" or letter.senderId ~= source.sourceNpcId or not content.GetNpc(source.sourceNpcId) then
             return U.Fail("SOURCE_INVALID","source","来源信或寄信人不相符")
         end
-        local parsed = parser.ParseDefinition(letterId)
+        -- Per-validation cache only: definitions are parsed once per source
+        -- letter, without trusting a previous save or a mutable content table.
+        local parsed = parsedLetters and parsedLetters[letterId] or parser.ParseDefinition(letterId)
         if not parsed.ok then return parsed end
+        if parsedLetters then parsedLetters[letterId]=parsed end
         for _, span in ipairs(parsed.value.spans) do
             if span.spanId == source.sourceSpanId and span.wordId == source.wordId then return U.Ok(U.Copy(source)) end
         end
@@ -40,11 +43,12 @@ function WordToken.New(content)
         valid = U.Keys(s,{byId=true},"wordTokens")
         if not valid.ok then return valid end
         if type(s.byId) ~= "table" then return U.Fail("STATE_INVALID","wordTokens.byId","缺少词条实例对象") end
+        local parsedLetters={}
         for id, item in pairs(s.byId) do
             valid = U.Keys(item,{wordId=true,sourceLetterInstanceId=true,sourceSpanId=true,sourceNpcId=true,available=true,consumedByOrderId=true},"wordTokens.byId." .. tostring(id))
             if not valid.ok then return valid end
             local source = {wordId=item.wordId,sourceLetterInstanceId=item.sourceLetterInstanceId,sourceSpanId=item.sourceSpanId,sourceNpcId=item.sourceNpcId}
-            valid = sourceValid(source)
+            valid = sourceValid(source,parsedLetters)
             if not valid.ok then return valid end
             if id ~= tokenId(item.sourceLetterInstanceId,item.sourceSpanId) or type(item.available) ~= "boolean"
                 or (item.available and item.consumedByOrderId ~= false)

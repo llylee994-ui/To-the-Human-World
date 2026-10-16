@@ -8,9 +8,16 @@ local function must(r) assert(r.ok,cjson.encode(r.error));return r.value end
 local function advance(x,day)
     while x.state.GetSnapshot().live.gameFlow.day<day do must(x.state.NextDay()) end
 end
-local function collect(x,id,only)
-    advance(x,Data.GetLetter(id).appearCondition.dayMin)
-    if x.state.GetSnapshot().journal and not x.state.GetSnapshot().live.gameFlow.canSalvage then must(x.state.NextDay()) end
+local function collect(x,id,only,legacy)
+    if legacy then
+        -- 独立配方见证包含未发货前收集多封来源的旧档；不把它当作新周目跨天路线。
+        local flow=x.state.GetSnapshot().live.gameFlow
+        local day=math.max(Data.GetLetter(id).appearCondition.dayMin,flow.day+(flow.canSalvage and 0 or 1))
+        if day>flow.day then require("debug.fixtures.ReleaseFixtures").LegacyDay(x,day) end
+    else
+        advance(x,Data.GetLetter(id).appearCondition.dayMin)
+        if x.state.GetSnapshot().journal and not x.state.GetSnapshot().live.gameFlow.canSalvage then must(x.state.NextDay()) end
+    end
     local instance=must(x.state.ReceiveLetter({letterId=id})).letterInstanceId
     must(x.state.ReadLetter({letterInstanceId=instance}))
     x.tokens=x.tokens or {}
@@ -95,7 +102,7 @@ function T.RunSchema(schema)
         local ids={};for id in pairs(letters) do ids[#ids+1]=id end
         table.sort(ids,function(a,b)return Data.GetLetter(a).appearCondition.dayMin<Data.GetLetter(b).appearCondition.dayMin end)
         local target
-        for _,id in ipairs(ids) do local instance=collect(x,id,only);if id==case.letterId then target=instance end end
+        for _,id in ipairs(ids) do local instance=collect(x,id,only,schema==4);if id==case.letterId then target=instance end end
         attempt(x,case,assert(target),true)
         count=count+1
         print("[NumericV02Flow] PASS "..case.id.." → "..case.expect.facts[1])

@@ -9,19 +9,23 @@ function E.New(content)
         G.Need(type(data)=="table" and data.contentVersion==content.contentVersion,"CONTENT_VERSION_MISMATCH","contentVersion","结局只能使用当前内容存档")
         G.Need(type(content.release)=="table" and data.live,"CONFIG_MISSING","release","首发内容未接入")
     end
+    local function completion(data)
+        known(data)
+        local required={};for _,id in ipairs(content.release.requiredOrderIds) do required[id]=true end
+        local completed,three,seen=0,0,{}
+        for _,oid in ipairs(G.Sorted(data.live.orders.confirmedById)) do
+            local record=data.live.orders.confirmedById[oid];local accepted=data.live.orders.acceptedById[oid]
+            G.Need(accepted and record.contentVersion==data.contentVersion,"STATE_INVALID","orders","确认来源或版本不符")
+            if required[accepted.letterId] and not seen[accepted.letterId] then
+                seen[accepted.letterId]=true;completed=completed+1
+                if record.rating.stars==3 then three=three+1 end
+            end
+        end
+        return seen,completed,three
+    end
     function api.GetProgress(data)
         return G.Run(function()
-            known(data)
-            local required={};for _,id in ipairs(content.release.requiredOrderIds) do required[id]=true end
-            local completed,three,seen=0,0,{}
-            for _,oid in ipairs(G.Sorted(data.live.orders.confirmedById)) do
-                local record=data.live.orders.confirmedById[oid];local accepted=data.live.orders.acceptedById[oid]
-                G.Need(accepted and record.contentVersion==data.contentVersion,"STATE_INVALID","orders","确认来源或版本不符")
-                if required[accepted.letterId] and not seen[accepted.letterId] then
-                    seen[accepted.letterId]=true;completed=completed+1
-                    if record.rating.stars==3 then three=three+1 end
-                end
-            end
+            local _,completed,three=completion(data)
             local owned=G.Value(L.New(content).Validate(data.live.economy.itemPurchases))
             local homes,missing={},{}
             for _,item in ipairs(content.release.homeItems) do
@@ -29,7 +33,7 @@ function E.New(content)
             end
             local count=#content.release.requiredOrderIds
             return {completedCount=completed,threeStarCount=three,requiredCount=count,requiredThreeStarCount=content.release.minThreeStarOrders,
-                homeItemIds=homes,missingHomeItemIds=missing,canClose=completed==count or data.live.gameFlow.day>=content.release.finalDay,
+                homeItemIds=homes,missingHomeItemIds=missing,canClose=completed==count,
                 canApprentice=completed==count and three>=content.release.minThreeStarOrders and #missing==0}
         end)
     end
@@ -85,6 +89,25 @@ function E.New(content)
             return true
         end)
     end
+    -- 只读正式发货事实。旧漏日档仍按每日额度补信，不要求一天打捞全部积压。
+    function api.RequireDayComplete(data)
+        return G.Run(function()
+            known(data);G.Value(api.RequireClear(data))
+            local completed=completion(data)
+            local received={}
+            for _,letter in pairs(data.live.letters.byId) do received[letter.letterId]=true end
+            for _,id in ipairs(content.release.requiredOrderIds) do
+                local definition=G.Known(content,"letters",id,"letterId")
+                G.Need(not received[id] or completed[id],"DAY_ORDER_UNFINISHED","letterId",
+                    "请先完成《"..(definition.title or id).."》的发货，再结束今天。")
+            end
+            if data.live.gameFlow.canSalvage then
+                local available=G.Value(require("systems.Narrative").New(content).FindAvailable(data.live))
+                G.Need(#available==0,"DAY_LETTER_UNRECEIVED","letters","今天还有来信，请先打捞并完成发货，再结束今天。")
+            end
+            return true
+        end)
+    end
     function api.PlanEnding(data,request)
         return G.Run(function()
             known(data);G.Keys(request,{kind=true,expectedRevision=true,sourceTokenIds=true},"ending.request")
@@ -105,15 +128,25 @@ function E.New(content)
                 "INVALID_CHAPTER_STATE","phase","请先进入对应收尾步骤")
             local progress=G.Value(api.GetProgress(data))
             if not departure then G.Need(progress.canClose,"CLOSING_NOT_READY","progress","尚未达到收尾条件") end
+            if not departure then
+                local ep=require("systems.ReleaseEpilogue").Get(data,content)
+                G.Need(ep.route==request.kind,"ENDING_ROUTE_LOCKED","kind","请继续当前的尾声。")
+                G.Need(request.kind=="wish" and ep.step=="compose" or request.kind=="apprentice" and ep.step=="letter",
+                    "EPILOGUE_STEP_REQUIRED","phase","请先完成当前的尾声步骤。")
+            end
             if request.kind=="apprentice" then G.Need(progress.canApprentice,"APPRENTICE_NOT_ELIGIBLE","progress","订单、三星数或家居尚不满足留下条件") end
             G.Need(api.TextReady(request.kind),"ENDING_TEXT_UNAVAILABLE","ending.text","这个选择暂时还无法确认。")
             local ids=request.kind=="wish" and (request.sourceTokenIds or data.chapter.wishDraftSourceIds) or {}
+            if request.kind=="wish" then
+                G.Need(U.Equal(ids,data.chapter.wishDraftSourceIds),"STALE_WISH_DRAFT","sourceTokenIds","请先保存当前拼贴，再封好瓶子。")
+            end
             local wishText=request.kind=="wish" and G.Value(api.WishText(data,ids,false)) or false
             local def=content.releaseEndings[request.kind];local all=progress.completedCount==progress.requiredCount and progress.threeStarCount==progress.requiredCount
             local text=def.text
             if wishText then text=text.."\n\n"..wishText end
             if request.kind=="apprentice" and all and U.String(def.allThreeStarText) then text=text.."\n\n"..def.allThreeStarText end
             local ending={kind=request.kind,title=def.title,text=text,wishText=wishText,sourceTokenIds=U.Copy(ids),allThreeStar=all}
+            if request.kind=="wish" then ending.collage=require("systems.WishCollage").Freeze(data,G.Value(api.GetWishSamples(data))) end
             local candidate=U.Copy(data)
             if departure then
                 candidate.chapter.checkpoint=U.Copy(data);candidate.chapter.checkpoint.chapter.checkpoint=false
@@ -127,6 +160,8 @@ function E.New(content)
             candidate.revision=data.revision+1;candidate.chapter.phase="ended";candidate.chapter.ending=ending
             candidate.chapter.endingTransactionId="ending:"..request.kind..":"..candidate.revision
             candidate.chapter.wishDraftSourceIds=U.Copy(ids)
+            if not departure then candidate.chapter.epilogue={route=request.kind,step="ended"} end
+            candidate.chapter.memories=require("systems.JourneyRecord").Remember(candidate)
             return {data=candidate,ending=ending,alreadyEnded=false}
         end)
     end

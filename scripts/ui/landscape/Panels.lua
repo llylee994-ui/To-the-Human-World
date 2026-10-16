@@ -202,22 +202,6 @@ function P.Result(ctx,body)
         if ctx.model.Resolve(false).ok then ctx.Navigate("brew") end
     end,summary.actions.Reset.enabled,summary.actions.Reset.message)
 end
-function P.Day(ctx,body)
-    local data=ctx.model.Refresh(); local action=gate(ctx,"NextDay")
-    local accepted=false
-    P.Text(body,"结束第 "..data.live.gameFlow.day.." 天？",22)
-    local final=ctx.content.release and data.chapter and data.live.gameFlow.day>=ctx.content.release.finalDay
-    P.Text(body,final and "确认后进入旅程收尾。请先处理试做结果，或清空正在准备的投料。" or "确认后进入下一天。请先处理试做结果，或清空正在准备的投料。",16)
-    P.Button(body,"confirmNextDay","确认结束当天",function()
-        if accepted or not action.enabled or ctx.panel~="day" then return end
-        if ctx.model.NextDay().ok then
-            accepted=true
-            if ctx.PlayObjectSound then ctx.PlayObjectSound("ui_confirm") end
-            ctx.Close(true)
-        end
-    end,action.enabled,action.message)
-    P.Button(body,"cancelNextDay","继续今天",ctx.Close)
-end
 P.Renderers={reader=P.Reader,shop=P.Shop,case=P.Case,
-    attempt=P.Attempt,seaside=P.Seaside,brew=P.Brew,result=P.Result,day=P.Day}
+    attempt=P.Attempt,seaside=P.Seaside,brew=P.Brew,result=P.Result}
 return P

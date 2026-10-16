@@ -4,10 +4,10 @@ local Json = {}
 local function stringEnd(raw, start)
     local i=start+1
     while i<=#raw do
-        local char=raw:sub(i,i)
-        if char=='\\' then i=i+2
-        elseif char=='"' then return i
-        else i=i+1 end
+        -- Skip ordinary UTF-8 prose in C instead of visiting each byte in Lua.
+        local at=raw:find('[\\"]',i)
+        if not at then break end
+        if raw:byte(at)==92 then i=at+2 else return at end
     end
     error("unterminated JSON string")
 end
