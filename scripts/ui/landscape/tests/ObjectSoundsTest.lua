@@ -13,7 +13,7 @@ function T.Run()
     local function check(ok,why) count=count+1;assert(ok,why) end
     local events,voices,nodes={},{},{}
     local durations={bottle_lift=.94,drawer_open=.62,drawer_close=.49,letter_pick=.32,
-        tray_open=.22,tray_close=.20,recipe_book_open=.49,recipe_book_close=.36}
+        tray_open=.22,tray_close=.20,recipe_book_open=.49,recipe_book_close=.36,ui_click_01=.14,ui_confirm=.43}
     local musicPlays,musicStops=0,0
     local missing=false
     local view
@@ -23,7 +23,7 @@ function T.Run()
     cache={GetResource=function(_,kind,path)
         check(kind=="Sound","load typed sound")
         if path==missing then return nil end
-        local id=path:match("audio/sfx/objects/(.+)%.wav$")
+        local id=path:match("audio/sfx/objects/(.+)%.wav$") or path:match("audio/sfx/ui/(.+)%.wav$")
         check(id and durations[id] or path:match("^audio/bgm/"),"project resource path only")
         return {id=id,path=path,SetLooped=function(self,value) self.looped=value end}
     end}

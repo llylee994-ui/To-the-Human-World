@@ -9,6 +9,12 @@ local function label(parent,text,id,size)
     parent:AddChild(control);return control
 end
 function V.Confirm(ctx,overlay)
+    local accepted=false
+    local function cancel()
+        if not ctx.ticketConfirm then return end
+        ctx.ticketConfirm=false;ctx.ticketQuote=false;ctx.model.dirty=true
+        if ctx.PlayObjectSound then ctx.PlayObjectSound("ui_click_01") end
+    end
     overlay:AddChild(UI.Panel {id="ticketConfirmBlocker",position="absolute",left=0,top=0,width="100%",height="100%",
         backgroundColor={20,16,12,205},onClick=function() end})
     local panel=Harbor.Paper {id="ticketConfirmPanel",position="absolute",left="18%",top="8%",width="64%",height="84%",
@@ -17,7 +23,7 @@ function V.Confirm(ctx,overlay)
     local header=UI.Panel {id="panelHeader",width="100%",flexDirection="row",alignItems="center",gap=8,minHeight=44,pointerEvents="box-none"}
     ctx.panelHeader=header;panel:AddChild(header)
     header:AddChild(UI.Label {text="购买并启程",fontSize=21,fontFamily=Harbor.fontFamily,flexGrow=1,fontColor={65,46,28,255},pointerEvents="none"})
-    header:AddChild(Harbor.Button {id="closeTicketConfirm",text="返回",minHeight=44,width=72,onClick=function() ctx.ticketConfirm=false;ctx.ticketQuote=false;ctx.model.dirty=true end})
+    header:AddChild(Harbor.Button {id="closeTicketConfirm",text="返回",minHeight=44,width=72,onClick=cancel})
     local messageArea=UI.ScrollView {width="100%",height=48,flexShrink=0,scrollY=true,visible=false}
     ctx.panelNotice=label(messageArea,ctx.model.message,"panelMessage",14);ctx.panelNoticeArea=messageArea;panel:AddChild(messageArea)
     local scroll=UI.ScrollView {id="ticketConfirmScroll",width="100%",flexGrow=1,flexShrink=1,flexBasis=0,minHeight=0,scrollY=true,showScrollbar=true}
@@ -39,15 +45,18 @@ function V.Confirm(ctx,overlay)
     local footer=UI.Panel {width="100%",flexShrink=0,flexDirection="row",gap=10,pointerEvents="box-none"}
     panel:AddChild(footer)
     footer:AddChild(Harbor.Button {id="cancelTravelTicket",text="再想想",flexGrow=1,flexShrink=1,flexBasis=0,minWidth=0,minHeight=48,
-        onClick=function() ctx.ticketConfirm=false;ctx.ticketQuote=false;ctx.model.dirty=true end})
+        onClick=cancel})
     footer:AddChild(Harbor.Button {id="confirmTravelTicket",text="购买并启程",flexGrow=1,flexShrink=1,flexBasis=0,minWidth=0,minHeight=48,
         disabled=not canConfirm,onClick=function()
+            if accepted or not ctx.ticketConfirm or not canConfirm then return end
             local result=Ticket.Purchase(ctx)
             ctx.model.Notify(result)
             if result.ok then
                 local value=result.value
                 if value and value.departed==true and type(value.ending)=="table" and U.String(value.ending.title) and U.String(value.ending.text) then
+                    accepted=true
                     ctx.ticketConfirm=false
+                    if ctx.PlayObjectSound then ctx.PlayObjectSound("ui_confirm") end
                     if rawget(ctx.session.queries,"GetEndingView") then ctx.Open("ending")
                     else ctx.ticketEnding=U.Copy(value.ending);ctx.Open("ticketEnding") end
                 else ctx.model.Notify(U.Fail("TICKET_RESULT_INVALID","ticket","启程结果需要核对，请重新读取进度。")) end

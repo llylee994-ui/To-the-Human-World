@@ -28,6 +28,7 @@ local MusicSettingsView=require "ui.landscape.MusicSettingsView"
 local A={}
 local side={words="left",journal="right"}
 local titles={letters="来信抽屉",reader="阅读信件",words="词条栏",journal="故事记录",attempt="试做记录",shop="商队商店",case="案件板",day="结束当天",result="试做结果"}
+local clickPanels={day=true,shop=true,result=true,attempt=true,case=true}
 local function clock()
     local get=rawget(_G,"GetTime")
     if not get then return 0,0 end
@@ -303,8 +304,9 @@ function A.New(session,content,enabled)
         WordTray.Reset(ctx);JournalBook.Reset(ctx);LetterDrawer.Reset(ctx)
         ctx.stack[#ctx.stack+1]=ctx.panel or false; ctx.panel=kind; ctx.readerCache=false; model.dirty=true
     end
-    function ctx.Close()
+    function ctx.Close(confirmed)
         if ctx.destroyed or ctx.zoom.active or ctx.salvage.active or ctx.ticketEnding or ctx.yawProbe then return end
+        local previous=ctx.panel
         objectOpen=false
         if ctx.releasePhase and ctx.releasePhase~="operating" then
             ctx.panel=ctx.releasePhase=="wish" and "wish" or "closing";ctx.stack={};model.dirty=true;return
@@ -315,6 +317,7 @@ function A.New(session,content,enabled)
         if ctx.panel=="journal" then ctx.storyId=false end
         ctx.panel=table.remove(ctx.stack) or false; ctx.readerCache=false
         model.Navigate(ctx.panel=="reader" and "letter" or ctx.scene)
+        if confirmed~=true and clickPanels[previous] and previous~=ctx.panel then ctx.PlayObjectSound("ui_click_01") end
     end
     function ctx.Read(id,userInitiated)
         if ctx.destroyed or ctx.zoom.active or ctx.salvage.active or ctx.yawProbe then return end
@@ -360,7 +363,9 @@ function A.New(session,content,enabled)
     end
     function ctx.OpenSettings()
         if ctx.destroyed or ctx.portrait or ctx.zoom.active or ctx.salvage.active or ctx.yawProbe then return end
+        if settings.IsOpen() then return end
         settings.Open()
+        ctx.PlayObjectSound("ui_click_01")
     end
     local back=Harbor.Button {id="returnHome",text="返回主页",width=106,minHeight=44,visible=false,onClick=function() ctx.Navigate("home") end}
     hud:AddChild(back)
@@ -368,7 +373,11 @@ function A.New(session,content,enabled)
     hud:AddChild(pending)
     hud:AddChild(Harbor.Button {id="openSettings",text="设置",width=72,minHeight=44,onClick=ctx.OpenSettings})
     hud:AddChild(Harbor.Button {id="toggleHomeHints",text="提示",width=72,minHeight=44,onClick=function()
-        if ctx.scene=="home" and not ctx.zoom.active and not ctx.salvage.active then home.ShowHints(not home.HintsVisible()) end
+        if not ctx.destroyed and not ctx.portrait and not ctx.panel and not settings.IsOpen()
+            and ctx.scene=="home" and not ctx.zoom.active and not ctx.salvage.active then
+            local before=home.HintsVisible();home.ShowHints(not before)
+            if home.HintsVisible()~=before then ctx.PlayObjectSound("ui_click_01") end
+        end
     end})
     hud:AddChild(Harbor.Button {id="nextDay",text="结束当天",width=108,minHeight=44,fontSize=15,onClick=function() ctx.Open("day") end})
     hud:AddChild(Harbor.Button {id="finishJourney",text="旅程收尾",width=108,minHeight=44,fontSize=15,visible=false,
@@ -395,8 +404,9 @@ function A.New(session,content,enabled)
             if kind=="letters" then blocker.props.onClick=function() LetterDrawer.RequestClose(ctx) end end
             overlay:AddChild(blocker)
         end
-        if kind=="shop" then Shop.Render(ctx,overlay);return end
         local audible=objectOpen==kind;objectOpen=false
+        if audible and clickPanels[kind] then ctx.PlayObjectSound("ui_click_01") end
+        if kind=="shop" then Shop.Render(ctx,overlay);return end
         if kind=="words" then WordTray.Open(ctx,audible);WordTray.Render(ctx,overlay);return end
         if kind=="journal" then JournalBook.Open(ctx,audible);JournalBook.Render(ctx,overlay);return end
         if kind=="letters" then LetterDrawer.Open(ctx,audible);LetterDrawer.Render(ctx,overlay);return end

@@ -9,6 +9,8 @@ local paths={
     tray_close="audio/sfx/objects/tray_close.wav",
     recipe_book_open="audio/sfx/objects/recipe_book_open.wav",
     recipe_book_close="audio/sfx/objects/recipe_book_close.wav",
+    ui_click_01="audio/sfx/ui/ui_click_01.wav",
+    ui_confirm="audio/sfx/ui/ui_confirm.wav",
 }
 
 function S.New()
@@ -38,7 +40,7 @@ function S.New()
         if reported[id] then return end
         reported[id]=true;print("[ObjectSounds] "..paths[id]..": "..tostring(err))
     end
-    -- Warm the eight tiny resources without playing on initialization/restoration.
+    -- Warm the small resources without playing on initialization/restoration.
     -- A transient load failure may retry on the next real action, never later replay it.
     if Node and cache and SOUND_EFFECT then
         for id in pairs(paths) do local ok,err=pcall(load,id);if not ok then report(id,err) end end
