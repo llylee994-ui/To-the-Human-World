@@ -115,6 +115,7 @@ end
 local function strip(ctx,state,card,compact,layout,index)
     local width=layout.slipWidth
     local height=math.max(38,layout.slipHeight)
+    if ctx.brewDrag then height=math.max(44,height) end
     local col=(index-1)%2
     local wrapper=UI.Panel {id="wordTrayCard_"..card.tokenId,position="absolute",
         left=col*(layout.cards.w-width),top=math.floor((index-1)/2)*math.max(height+12,layout.rowStep),
@@ -137,6 +138,7 @@ local function strip(ctx,state,card,compact,layout,index)
             backgroundColor={93,71,46,215},borderRadius=4,fontFamily=Harbor.fontFamily,fontSize=11,
             fontColor={255,244,218,255},padding={2,6},pointerEvents="none"})
     end
+    if ctx.brewDrag then ctx.brewDrag(wrapper,card) end
     return wrapper
 end
 local function tab(ctx,state,parent,category,selected,compact,layout,index)
@@ -175,12 +177,14 @@ function D.Render(ctx,overlay)
     state.panel=panel
     local layout=Art.Fit(width,panel.props.height)
     PanelArt.Image(panel,"wordTrayCloth",layout.cloth)
-    local header=UI.Panel {id="wordTrayHeader",position="absolute",left=8,right=8,top=8,zIndex=10,height=44,flexShrink=0,flexDirection="row",
+    local header=UI.Panel {id="wordTrayHeader",position="absolute",left=8,right=8,top=8,zIndex=10,height=ctx.brewDrag and 48 or 44,flexShrink=0,flexDirection="row",
         alignItems="center",gap=8,pointerEvents="box-none"}
     panel:AddChild(header)
-    -- 布面是浅色又有绣花，标题和页脚都用深色小底板压住，免得读不清。
-    local title=Harbor.Tag {id="wordTrayTitle",text="词条栏",fontSize=15}
-    header:AddChild(title)
+    -- 标题在木托盘内上沿，避开顶部金币栏，并与首排词卡留出间距。
+    local title=Harbor.Tag {id="wordTrayTitle",text="词条栏",fontSize=15,
+        position="absolute",left=layout.title.x,top=layout.title.y,width=layout.title.w,height=layout.title.h,zIndex=10,
+        backgroundColor={246,230,194,245},fontColor=ink,borderRadius=3}
+    panel:AddChild(title)
     header:AddChild(UI.Panel {flexGrow=1,pointerEvents="none"})
     header:AddChild(Harbor.Button {id="closePanel",text="×",width=44,minHeight=44,fontSize=22,onClick=function() D.RequestClose(ctx) end})
     -- 转瞬消息沿用通用面板的字段，交给 UpdateChrome 每帧刷新。
@@ -239,7 +243,7 @@ function D.Render(ctx,overlay)
         text(row,"尚未收集词卡。阅读来信并剪下标记词后，会按来源收在这里。",16,"wordTrayEmpty",light)
     end
     local footer=UI.Panel {id="wordTrayFooter",position="absolute",left=12,right=12,bottom=8,
-        height=56,gap=2,overflow="hidden",pointerEvents="box-none"}
+        height=ctx.brewDrag and 86 or 56,gap=2,overflow="hidden",pointerEvents="box-none"}
     panel:AddChild(footer)
     ---@type table|false
     local active=false
@@ -249,6 +253,14 @@ function D.Render(ctx,overlay)
             alignSelf="flex-start"})
         if not compact then
             footer:AddChild(Harbor.Tag {id="wordTrayStatus",text=D.StatusText(picked),fontSize=12,alignSelf="flex-start"})
+        end
+        if ctx.brewDrag then
+            local action=ctx.model.Action("UpdateDraft")
+            footer:AddChild(Harbor.Button {id="brewSelectWord",text=picked.selectedRole and "取出词卡" or "投入词卡",
+                minHeight=44,fontSize=13,disabled=not action.enabled or not picked.available,onClick=function()
+                    if picked.selectedRole then ctx.model.TakeOut("word",picked.tokenId)
+                    else ctx.model.Drop("word",picked.tokenId) end
+                end})
         end
     else
         if active then

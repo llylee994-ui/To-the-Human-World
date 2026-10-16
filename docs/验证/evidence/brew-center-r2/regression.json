@@ -1,0 +1,24 @@
+[
+  {
+    "name": "brew_workbench",
+    "exit_code": 0,
+    "results": [
+      "[BrewWorkbench] PASS assertions=74; real business/File-widget-clock adapters; native and phone separate"
+    ]
+  },
+  {
+    "name": "word_tray",
+    "exit_code": 0,
+    "results": [
+      "[WordTrayTest] PASS assertions=64; real query/session, view-state browsing, drawer animation cancel; native evidence separate"
+    ]
+  },
+  {
+    "name": "home_zoom",
+    "exit_code": 0,
+    "results": [
+      "[HomeZoomTest] PASS simulated timeline start/middle/end/seaside/return at 4 aspect ratios; same UI tree; unchanged business",
+      "[HomeZoomTest] PASS assertions=383; repeat/HUD/modal/blank/ship/late-release; resize/focus/minimize/gap/destroy; OS and native rendering NOT tested"
+    ]
+  }
+]

@@ -1,0 +1,206 @@
+{
+  "session_id": "1ae6bc5b-d8b1-4eac-888c-6545796f0a4b",
+  "reload_id": 0,
+  "errors": [
+    "[2026-10-16 01_01_55_233][0] ERROR: Could not find resource Cube/Day/DaySpecularHDR.dds\r",
+    "[2026-10-16 01_01_55_295][0] ERROR: Can not load themis_x64.dll.\r"
+  ],
+  "logs": [
+    {
+      "cursor": 461,
+      "text": "[2026-10-16 01_02_04_837][1058] INFO: Loaded Lua script ui/landscape/tests/BrewNativeProbe.lua\r"
+    },
+    {
+      "cursor": 464,
+      "text": "[2026-10-16 01_02_04_849][1058][Script] === 寄往人间 启动完成（第 1 天）===\r"
+    },
+    {
+      "cursor": 467,
+      "text": "[lua] [2026-10-16 01_02_04_849][1058][Script] === 寄往人间 启动完成（第 1 天）===\n"
+    },
+    {
+      "cursor": 499,
+      "text": "[lua] [2026-10-16 01_02_07_148][1237][Script] [BrewNative] CAPTURE empty\n"
+    },
+    {
+      "cursor": 500,
+      "text": "[lua] [2026-10-16 01_02_07_148][1237][Script] [BrewNative] GEOMETRY {\"source\":{\"w\":117,\"h\":44,\"y\":143,\"x\":164},\"drop\":{\"w\":336.6904621435595,\"h\":251.29999999999999,\"landingX\":725,\"landingY\":275.6,\"y\":146.36,\"x\":556.6547689282203},\"viewport\":{\"w\":1450,\"h\":815}}\n"
+    },
+    {
+      "cursor": 501,
+      "text": "[lua] [2026-10-16 01_02_07_275][1253][Script] [BrewNative] RELEASE {\"focused\":true,\"dt\":0.007983500137925148,\"drag\":{\"target\":{\"w\":336.6904621435595,\"h\":251.29999999999999,\"landingX\":725,\"landingY\":275.6,\"y\":146.36,\"x\":556.6547689282203},\"id\":\"token=<redacted>\n"
+    },
+    {
+      "cursor": 502,
+      "text": "[lua] [2026-10-16 01_02_07_533][1253][Script] [BrewNative] CAPTURE drag\n"
+    },
+    {
+      "cursor": 503,
+      "text": "[lua] [2026-10-16 01_02_07_810][1254][Script] [BrewNative] CAPTURE landing\n"
+    },
+    {
+      "cursor": 504,
+      "text": "[lua] [2026-10-16 01_02_08_102][1282][Script] [BrewNative] INGREDIENT_SLOT_DROP sea salt / one portion / real saved draft\n"
+    },
+    {
+      "cursor": 505,
+      "text": "[lua] [2026-10-16 01_02_08_954][1348][Script] [BrewNative] CAPTURE prepared\n"
+    },
+    {
+      "cursor": 506,
+      "text": "[lua] [2026-10-16 01_02_09_319][1349][Script] [BrewNative] CAPTURE smoke\n"
+    },
+    {
+      "cursor": 507,
+      "text": "[lua] [2026-10-16 01_02_11_078][1532][Script] [BrewNative] RESULT {\"actions\":{\"w\":1354,\"h\":60,\"y\":711,\"x\":48},\"text\":\"★★★ · 3 星\",\"stars\":{\"w\":190,\"h\":44,\"y\":46,\"x\":1156},\"scroll\":{\"w\":1354,\"h\":575,\"y\":136,\"x\":48}}\n"
+    },
+    {
+      "cursor": 508,
+      "text": "[lua] [2026-10-16 01_02_11_325][1532][Script] [BrewNative] CAPTURE result\n"
+    },
+    {
+      "cursor": 509,
+      "text": "[lua] [2026-10-16 01_02_12_105][1611][Script] [BrewNative] PASS native Yoga/source touch-pointer drag/saved trial/smoke/fixed stars/close; memory-only fixture; NOT phone evidence\n"
+    },
+    {
+      "cursor": 520,
+      "text": "[2026-10-16 01_02_07_148][1237][Script] [BrewNative] CAPTURE empty\r"
+    },
+    {
+      "cursor": 521,
+      "text": "[2026-10-16 01_02_07_148][1237][Script] [BrewNative] GEOMETRY {\"source\":{\"w\":117,\"h\":44,\"y\":143,\"x\":164},\"drop\":{\"w\":336.6904621435595,\"h\":251.29999999999999,\"landingX\":725,\"landingY\":275.6,\"y\":146.36,\"x\":556.6547689282203},\"viewport\":{\"w\":1450,\"h\":815}}\r"
+    },
+    {
+      "cursor": 522,
+      "text": "[2026-10-16 01_02_07_275][1253][Script] [BrewNative] RELEASE {\"focused\":true,\"dt\":0.007983500137925148,\"drag\":{\"target\":{\"w\":336.6904621435595,\"h\":251.29999999999999,\"landingX\":725,\"landingY\":275.6,\"y\":146.36,\"x\":556.6547689282203},\"id\":\"token=<redacted>\r"
+    },
+    {
+      "cursor": 523,
+      "text": "[2026-10-16 01_02_07_533][1253][Script] [BrewNative] CAPTURE drag\r"
+    },
+    {
+      "cursor": 524,
+      "text": "[2026-10-16 01_02_07_810][1254][Script] [BrewNative] CAPTURE landing\r"
+    },
+    {
+      "cursor": 525,
+      "text": "[2026-10-16 01_02_08_102][1282][Script] [BrewNative] INGREDIENT_SLOT_DROP sea salt / one portion / real saved draft\r"
+    },
+    {
+      "cursor": 526,
+      "text": "[2026-10-16 01_02_08_954][1348][Script] [BrewNative] CAPTURE prepared\r"
+    },
+    {
+      "cursor": 527,
+      "text": "[2026-10-16 01_02_09_319][1349][Script] [BrewNative] CAPTURE smoke\r"
+    },
+    {
+      "cursor": 528,
+      "text": "[2026-10-16 01_02_11_078][1532][Script] [BrewNative] RESULT {\"actions\":{\"w\":1354,\"h\":60,\"y\":711,\"x\":48},\"text\":\"★★★ · 3 星\",\"stars\":{\"w\":190,\"h\":44,\"y\":46,\"x\":1156},\"scroll\":{\"w\":1354,\"h\":575,\"y\":136,\"x\":48}}\r"
+    },
+    {
+      "cursor": 529,
+      "text": "[2026-10-16 01_02_11_325][1532][Script] [BrewNative] CAPTURE result\r"
+    },
+    {
+      "cursor": 530,
+      "text": "[2026-10-16 01_02_12_105][1611][Script] [BrewNative] PASS native Yoga/source touch-pointer drag/saved trial/smoke/fixed stars/close; memory-only fixture; NOT phone evidence\r"
+    }
+  ],
+  "check": {
+    "protocol_version": 1,
+    "project_realpath": "D:\\To the Human World",
+    "session_id": "1ae6bc5b-d8b1-4eac-888c-6545796f0a4b",
+    "reload_id": 0,
+    "state": "running",
+    "process_alive": true,
+    "runtime_pid": 32320,
+    "supervisor_id": "876f2c62-7f08-4815-b5eb-f53d2ab47881",
+    "supervisor_pid": 32912,
+    "supervisor_log_path": "C:\\Users\\liliy\\.taptap-maker\\preview\\4c866160c5610b23bee27ecf9a752b2059dab8bbe3b573315bb2bb3f197e5cfe\\supervisor.log",
+    "started_at": "2026-10-15T17:01:10.345Z",
+    "executable": "C:\\Users\\liliy\\.taptap-maker\\runtime\\runtime-f69c58d5-e10c-4b7b-86be-5d2237b925f4\\UrhoXRuntime.exe",
+    "runtime_version": "unknown",
+    "capabilities": [],
+    "launch_mode": "loopback_manifest",
+    "preparation": {
+      "ok": true,
+      "source_directory": "C:\\Users\\liliy\\.taptap-maker\\preview\\4c866160c5610b23bee27ecf9a752b2059dab8bbe3b573315bb2bb3f197e5cfe\\sessions\\1ae6bc5b-d8b1-4eac-888c-6545796f0a4b\\0\\source",
+      "log_path": "C:\\Users\\liliy\\.taptap-maker\\preview\\4c866160c5610b23bee27ecf9a752b2059dab8bbe3b573315bb2bb3f197e5cfe\\sessions\\1ae6bc5b-d8b1-4eac-888c-6545796f0a4b\\0\\prepare.log",
+      "warnings": [
+        "[WARN]   增强引用: 50 个路径未匹配到资源（已截断，上限 50）\r",
+        "[WARN]     HomeZoomTest.lua: home.net\r",
+        "[WARN]     HomeZoomTest.lua: home.drawer\r",
+        "[WARN]     journal-book-decor-v01-manifest.json: exec-cdd8496c-214e-44b6-889f-906e9157b58c.png\r",
+        "[WARN]     journal-book-decor-v01-manifest.json: exec-182f4caf-687b-4dc1-8fd8-003fd897c9e0.png\r",
+        "[WARN]     journal-book-decor-v01-manifest.json: exec-d1f6071c-49b5-4a7a-b04c-5f227de51db6.png\r",
+        "[WARN]     B6UncertainStorage.lua: %.commit$\r",
+        "[WARN]     B6UncertainStorage.lua: _[ab]%.json$\r",
+        "[WARN]     B6UncertainStorage.lua: _[ab]%.commit$\r",
+        "[WARN]     ReleaseLedger.lua: itemPurchases.day\r",
+        "[WARN]     ReleaseLedger.lua: purchase.request\r",
+        "[WARN]     ReleaseLedger.lua: purchase.context\r",
+        "[WARN]     NarrativeTest.lua: world.npcs\r",
+        "[WARN]     NarrativeTest.lua: _b.commit\r",
+        "[WARN]     NarrativeTest.lua: _b.json\r",
+        "[WARN]     NarrativeTest.lua: npc_passerby_a.memories.mem_mother.missing\r",
+        "[WARN]     NarrativeTest.lua: _a.commit\r",
+        "[WARN]     NarrativeTest.lua: _a.json\r",
+        "[WARN]     word-tray-dried-flowers-manifest.json: exec-7a4e4542-0e16-4a37-9401-a7fdd58f1b1f.png\r",
+        "[WARN]     PotionTest.lua: _b.commit\r",
+        "[WARN]     PotionTest.lua: _b.json\r",
+        "[WARN]     PotionTest.lua: _a.commit\r",
+        "[WARN]     PotionTest.lua: _a.json\r",
+        "[WARN]     LetterDrawerNativeProbe.lua: letter_drawer_layout_top.png\r",
+        "[WARN]     LetterDrawerNativeProbe.lua: letter_drawer_layout_bottom.png\r",
+        "[WARN]     LetterDrawerNativeProbe.lua: letter_drawer_layout_inspect.png\r",
+        "[WARN]     LetterDrawerNativeProbe.lua: letter_drawer_layout_final.png\r",
+        "[WARN]     StoryRules.lua: potion.effects\r",
+        "[WARN]     StoryRules.lua: world.npcs\r",
+        "[WARN]     StoryRules.lua: binding.path\r"
+      ],
+      "entry": "main.lua",
+      "manifest_path": "C:\\Users\\liliy\\.taptap-maker\\preview\\4c866160c5610b23bee27ecf9a752b2059dab8bbe3b573315bb2bb3f197e5cfe\\sessions\\1ae6bc5b-d8b1-4eac-888c-6545796f0a4b\\0\\source\\dist\\1.0.16\\manifest-e8270d85.json",
+      "project_files": 557,
+      "public_sources": [
+        "engine-res",
+        "official-res"
+      ],
+      "builder_commit": "a6a4145ac8be26d9385f3a318032cc79009f8a79"
+    },
+    "ready": false,
+    "screenshots_supported": false,
+    "message": "Process status only; game loading, visuals and cloud/server features are not verified.",
+    "install_state": "ready",
+    "ok": true,
+    "errors": [
+      "[2026-10-16 01_01_55_233][0] ERROR: Could not find resource Cube/Day/DaySpecularHDR.dds\r",
+      "[2026-10-16 01_01_55_295][0] ERROR: Can not load themis_x64.dll.\r"
+    ],
+    "artifacts": [],
+    "preflight": {
+      "entry": "main.lua",
+      "window": {
+        "orientation": "landscape",
+        "width": 1920,
+        "height": 1080,
+        "defaulted": false
+      },
+      "source_mode": false,
+      "kind": "single_player",
+      "network_required": false,
+      "preparation_required": true,
+      "preparation_reason": "resource_manifest",
+      "dependencies_verified": false,
+      "warning": "Local client preview only. Cloud/server features and resource completeness are not verified."
+    },
+    "result": "FAIL",
+    "scope": "readiness_and_evidence_only",
+    "evidence_available": false,
+    "expectation": null,
+    "assertions": [],
+    "reason": "Runtime reported a failure.",
+    "scripts_supported": false
+  },
+  "scope": "native desktop 1450x815, memory fixture, not phone evidence"
+}

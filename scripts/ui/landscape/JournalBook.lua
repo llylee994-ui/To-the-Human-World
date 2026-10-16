@@ -134,9 +134,17 @@ function B.Select(ctx,storyId,title)
 end
 function B.OpenEntry(ctx,fragmentId)
     local state=B.State(ctx)
-    if not fragmentId or state.entry==fragmentId then return end
-    state.entry=fragmentId
-    ctx.model.dirty=true
+    if not fragmentId or not state.story then return end
+    local page=ctx.session.queries.GetJournalPage(state.story)
+    if not page.ok then ctx.model.Notify(page);return end
+    for _,entry in ipairs(B.Entries(page.value)) do
+        if entry.fragmentId==fragmentId and entry.collected and entry.transactionId then
+            ctx.model.selectedAttempt=entry.transactionId
+            local open=ctx.Push or ctx.Open
+            open("attempt")
+            return
+        end
+    end
 end
 function B.CloseEntry(ctx)
     local state=B.State(ctx)
@@ -155,7 +163,7 @@ function B.Entries(page)
         if latest then
             local slot=byBranch[outcome.branchFragmentId]
             if not slot or (latest.day or 0)>=(slot.day or 0) then
-                byBranch[outcome.branchFragmentId]={day=latest.day,stars=latest.stars,text=latest.text,
+                byBranch[outcome.branchFragmentId]={transactionId=latest.transactionId,day=latest.day,stars=latest.stars,text=latest.text,
                     recipeSummary=latest.recipeSummary,count=0}
             end
             byBranch[outcome.branchFragmentId].count=byBranch[outcome.branchFragmentId].count+#attempts
@@ -165,7 +173,7 @@ function B.Entries(page)
     for _,branch in ipairs(page and page.branches or {}) do
         local hit=byBranch[branch.fragmentId]
         rows[#rows+1]={fragmentId=branch.fragmentId,shortName=branch.shortName or false,collected=hit~=nil,
-            day=hit and hit.day or false,stars=hit and hit.stars or false,text=hit and hit.text or false,
+            transactionId=hit and hit.transactionId or false,day=hit and hit.day or false,stars=hit and hit.stars or false,text=hit and hit.text or false,
             attemptCount=hit and hit.count or 0,recipeSummary=hit and hit.recipeSummary or false}
     end
     return rows

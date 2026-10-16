@@ -47,8 +47,8 @@ function T.Run()
     if collected then
         assert(view.root:FindById("bookEntry_"..collected),"collected branch keeps a catalog row")
         view.root:FindById("bookEntry_"..collected).props.onClick();view.Update()
-        check(view.root:FindById("bookEntryBody") and view.root:FindById("bookEntryBack"),"branch detail has its own body and return-to-catalog action")
-        check(view.root:FindById("bookEntryText"):GetText()~="","stored follow-up text renders inside the page")
+        check(view.panel=="attempt" and view.root:FindById("resultScroll") and view.root:FindById("closePanel"),"branch opens large paper with return-to-catalog close")
+        check(view.root:FindById("historyBody"):GetText()~="","stored follow-up text renders on large paper")
     end
     check(#page.branches>=#page.outcomes,"catalog keeps every branch, including uncollected ones")
     -- 词条栏、记录书与来信抽屉都改走各自的素材面板（WordTrayDrawer / JournalBook /

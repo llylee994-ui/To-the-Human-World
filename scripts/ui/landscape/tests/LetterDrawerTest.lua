@@ -67,7 +67,7 @@ function T.Run()
     check(Drawer.Progress(view)==1 and Drawer.Settled(view),"the drawer slides fully down and settles")
     check(panel.props.top==safe.top,"the pulled out drawer meets the top safe edge")
     local card=assert(find("read_"..first.letterInstanceId),"each letter gets a drawer card")
-    local row=false
+    local row=false --[[@as table|false]]
     for _,entry in ipairs(rows) do if entry.letterInstanceId==first.letterInstanceId then row=entry end end
     check(row~=nil,"the received letter is listed in the drawer query")
     check(text("letterDrawerCardTitle_"..first.letterInstanceId)==row.title,"the card shows the real title")

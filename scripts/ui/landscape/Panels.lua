@@ -4,6 +4,7 @@ local Widget=require "urhox-libs/UI/Core/Widget"
 local IngredientArt=require "ui.landscape.IngredientArt"
 local Harbor=require "ui.landscape.HarborStyle"
 local LetterPresentation=require "ui.landscape.LetterPresentation"
+local ReaderOrder=require "ui.landscape.ReaderOrder"
 local P={}
 function P.Text(parent,value,size,id)
     local label=UI.Label {id=id,text=tostring(value or ""),alignSelf="stretch",fontSize=size or 16,fontFamily=Harbor.fontFamily,
@@ -42,6 +43,7 @@ function P.PaperText(view)
     return table.concat(parts)
 end
 function P.Reader(ctx,body)
+    body.props.id="readerBody"
     local result=ctx.session.modules.letters.GetView(ctx.model.selectedLetter)
     if not result.ok then P.Text(body,result.error.message); return end
     local view=result.value; local definition=ctx.content.GetLetter(view.letterId)
@@ -54,21 +56,18 @@ function P.Reader(ctx,body)
     local presentation=LetterPresentation.New(ctx,body,view)
     local cache={id=ctx.model.selectedLetter,label=presentation.paper.root,presentation=presentation}
     ctx.readerCache=cache
-    P.Text(body,"寄往："..(view.address or ""),16,"readerAddress")
-    if definition.requirement then P.Text(body,"委托要求："..definition.requirement.desc,17,"readerRequirement") end
-    if definition.reward then P.Text(body,"报酬："..definition.reward.currency.." 金币",16,"readerReward") end
-    if #(view.spans or {})>0 then P.Text(body,"点信中发光的词语剪下收取。",13) end
+    ReaderOrder.Summary(body,view,definition)
     presentation.Refresh(view)
     local data=ctx.model.Refresh(); local existing=false
     for id,entry in pairs(data.live.orders.acceptedById) do if entry.letterInstanceId==ctx.model.selectedLetter then existing=id; break end end
     if existing then
         local confirmed=data.live.orders.confirmedById[existing]
-        P.Button(body,"openOrder",confirmed and "查看已完成委托的记录" or "查看当前委托",function()
+        ReaderOrder.Action(body,"openOrder",confirmed and "查看已完成委托的记录" or "查看当前委托",function()
             if confirmed then ctx.storyId=definition.id; ctx.Open("journal") else ctx.Navigate("brew") end
         end)
     elseif definition.requirement then
         local action=gate(ctx,"Accept")
-        P.Button(body,"acceptOrder","接下这份委托",function()
+        ReaderOrder.Action(body,"acceptOrder","接下这份委托",function()
             if ctx.model.Accept().ok then ctx.Navigate("brew") end
         end,action.enabled,action.message)
     end

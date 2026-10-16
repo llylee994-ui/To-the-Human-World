@@ -16,6 +16,9 @@ local Shop=require "ui.landscape.ShopView"
 local TicketView=require "ui.landscape.TravelTicketView"
 local WordTray=require "ui.landscape.WordTrayDrawer"
 local JournalBook=require "ui.landscape.JournalBook"
+local Brew=require "ui.landscape.BrewView"
+local ResultView=require "ui.landscape.ResultView"
+local BrewFeedback=require "ui.landscape.BrewFeedback"
 local LetterDrawer=require "ui.landscape.LetterDrawer"
 local Closing=require "ui.landscape.ReleaseClosingView"
 local Wish=require "ui.landscape.WishView"
@@ -49,6 +52,8 @@ function A.New(session,content,enabled)
     local yawAuto=yawEnabled and require("ui.landscape.DevChecks").yawProbeAuto and require("ui.landscape.tests.YawNativeProbe").New() or nil
     local stoveAuto=require("ui.landscape.DevChecks").stoveYawAuto and require("ui.landscape.tests.StoveYawNativeProbe").New() or nil
     local panZoomAuto=require("ui.landscape.DevChecks").stovePanZoomAuto and require("ui.landscape.tests.StovePanZoomNativeProbe").New() or nil
+    local brewProbe=require("ui.landscape.DevChecks").brewWorkbenchProbe and require("ui.landscape.tests.BrewNativeProbe").New() or nil
+    local readingProbe=require("ui.landscape.DevChecks").readingProbe and require("ui.landscape.tests.ReadingNativeProbe").New() or nil
     local developer=(require("debug.DeveloperMode") or require("ui.landscape.DevChecks").hotspots) --[[@as boolean]]
     -- The stage fills the viewport; each control group applies its own safe area.
     -- UpdateChrome extends this surface through main's SafeAreaView insets.
@@ -74,6 +79,7 @@ function A.New(session,content,enabled)
         releasePhase=false --[[@as string|false]],newPlaythroughConfirm=false --[[@as boolean]],
         panelNotice=false --[[@as Label|false]],panelNoticeArea=false --[[@as ScrollView|false]],
         panelHeader=false --[[@as Widget|false]],
+        resultMotion=false --[[@as table|false]],
         zoom=Zoom.New(),salvage=Salvage.New(),destroyed=false --[[@as boolean]],portrait=false --[[@as boolean]],
         yawProbe=false --[[@as table|false]],
         messages=Messages.New(session.state.GetStatus().migrationNotice),importantMessage=false --[[@as string|false]]}
@@ -93,7 +99,9 @@ function A.New(session,content,enabled)
     local scene=Harbor.Paper {id="functionalScene",position="absolute",left=0,top=0,width="100%",height="100%",padding=0,paddingTop=64,visible=false}
     stage:AddChild(scene)
     local seaside=Seaside.New(ctx);stage:AddChild(seaside.root);ctx.seaside=seaside
+    ctx.brew=Brew.New(ctx);stage:AddChild(ctx.brew.root)
     root:AddChild(hud)
+    ctx.feedback=BrewFeedback.New(ctx,ledger)
     -- Explicit order: equal-z siblings are not stably sorted by the UI library.
     local overlay=UI.Panel {id="overlayHost",position="absolute",left=0,top=0,width="100%",height="100%",zIndex=100,pointerEvents="box-none"}
     root:AddChild(overlay)
@@ -187,16 +195,19 @@ function A.New(session,content,enabled)
         local portrait=vw<vh
         if ctx.portrait~=portrait then
             ctx.portrait=portrait;rotateGuard:SetVisible(portrait)
-            if portrait then ctx.CancelHomeZoom("portrait");ctx.CancelSalvage("portrait") end
+            if portrait then ctx.CancelHomeZoom("portrait");ctx.CancelSalvage("portrait");ctx.brew.Cancel() end
         end
         local now=clock()
         ctx.messages:Observe(model.message,now,ctx.importantMessage==model.message)
         local current=ctx.messages:Current(now)
-        notice:SetText(current.text);noticeArea:SetVisible(current.visible and not ctx.panel and not ctx.salvage.active)
+        notice:SetText(current.text);noticeArea:SetVisible(current.visible and not ctx.panel and not ctx.salvage.active and ctx.scene~="brew")
         local bottom=ctx.scene=="seaside" and 86 or 12
         setStyle(noticeArea,{left=14+safe.left,bottom=bottom+safe.bottom})
         if ctx.panelNotice then ctx.panelNotice:SetText(current.text) end
-        if ctx.panelNoticeArea then ctx.panelNoticeArea:SetVisible(current.visible and ctx.panel~="reader") end
+        if ctx.panelNoticeArea then
+            local story=ctx.panel=="result" or ctx.panel=="attempt"
+            ctx.panelNoticeArea:SetVisible(current.visible and ctx.panel~="reader" and (not story or current.persistent))
+        end
     end
     function ctx.CancelSalvage(reason)
         local active=ctx.salvage.active
@@ -251,6 +262,7 @@ function A.New(session,content,enabled)
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
         WordTray.Reset(ctx);JournalBook.Reset(ctx);LetterDrawer.Reset(ctx)
         ctx.destroyed=true
+        ctx.brew.Leave()
         if ctx.yawProbe then ctx.yawProbe.Close() end
         ctx.CancelHomeZoom("destroyed");ctx.CancelSalvage("destroyed");destroyRoot(self)
     end
@@ -262,6 +274,9 @@ function A.New(session,content,enabled)
     function ctx.Navigate(target)
         if ctx.destroyed or ctx.salvage.active or ctx.ticketEnding then return end
         if ctx.releasePhase and ctx.releasePhase~="operating" then return end
+        ctx.resultMotion=false
+        ctx.feedback.Cancel()
+        if target~="brew" then ctx.brew.Leave() else ctx.brew.Cancel();ctx.brew.Enter() end
         if ctx.yawProbe then ctx.yawProbe.Close("navigate") end
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
         WordTray.Reset(ctx);JournalBook.Reset(ctx);LetterDrawer.Reset(ctx)
@@ -272,12 +287,15 @@ function A.New(session,content,enabled)
     end
     function ctx.Push(kind)
         if ctx.destroyed or ctx.portrait or ctx.zoom.active or ctx.salvage.active or ctx.yawProbe then return end
+        if ctx.brew.interaction.active then return end
+        ctx.brew.interaction.CancelDrag()
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
         WordTray.Reset(ctx);JournalBook.Reset(ctx);LetterDrawer.Reset(ctx)
         ctx.stack[#ctx.stack+1]=ctx.panel or false; ctx.panel=kind; ctx.readerCache=false; model.dirty=true
     end
     function ctx.Close()
         if ctx.destroyed or ctx.zoom.active or ctx.salvage.active or ctx.ticketEnding or ctx.yawProbe then return end
+        ctx.resultMotion=false
         if ctx.releasePhase and ctx.releasePhase~="operating" then
             ctx.panel=ctx.releasePhase=="wish" and "wish" or "closing";ctx.stack={};model.dirty=true;return
         end
@@ -309,6 +327,8 @@ function A.New(session,content,enabled)
     end
     function ctx.Open(kind)
         if ctx.destroyed or ctx.portrait or ctx.zoom.active or ctx.salvage.active or ctx.yawProbe then return end
+        if ctx.brew.interaction.active then return end
+        ctx.brew.interaction.CancelDrag()
         if kind=="case" and content.release and not developer then return end
         if ctx.releasePhase and ctx.releasePhase~="operating" then
             if ctx.releasePhase=="ended" and kind~="ending" then return end
@@ -322,6 +342,12 @@ function A.New(session,content,enabled)
         ctx.ticketConfirm=false;ctx.ticketQuote=false
         if kind=="paper" then ctx.OpenPaper(); return end
         if kind=="home" or kind=="brew" or kind=="seaside" then ctx.Navigate(kind); return end
+        if kind=="journal" and ctx.scene=="brew" then
+            -- The workbench already owns this drawer. Reuse it after shipping.
+            ctx.brew.OpenJournal(ctx.storyId)
+            ctx.panel=false;ctx.stack={};ctx.readerCache=false;ctx.resultMotion=false;ctx.choosingLetter=false
+            model.dirty=true;return
+        end
         ctx.panel=kind; ctx.stack={}; ctx.readerCache=false; ctx.choosingLetter=false; model.dirty=true
     end
     local back=Harbor.Button {id="returnHome",text="返回主页",width=106,minHeight=44,visible=false,onClick=function() ctx.Navigate("home") end}
@@ -360,6 +386,7 @@ function A.New(session,content,enabled)
         if kind=="words" then WordTray.Open(ctx);WordTray.Render(ctx,overlay);return end
         if kind=="journal" then JournalBook.Open(ctx);JournalBook.Render(ctx,overlay);return end
         if kind=="letters" then LetterDrawer.Open(ctx);LetterDrawer.Render(ctx,overlay);return end
+        if kind=="result" or kind=="attempt" then ResultView.Render(ctx,overlay,kind=="attempt");return end
         if kind=="ticketEnding" then TicketView.Ending(ctx,overlay);return end
         if kind=="closing" or kind=="wish" or kind=="wishPreview" or kind=="ending" then
             local module=kind=="closing" and Closing or kind=="ending" and Ending or Wish
@@ -412,7 +439,7 @@ function A.New(session,content,enabled)
             ctx.releasePhase=phase
             if changed then
                 if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
-                WordTray.Reset(ctx);JournalBook.Reset(ctx);LetterDrawer.Reset(ctx);ctx.CancelHomeZoom("releasePhase");ctx.CancelSalvage("releasePhase")
+                WordTray.Reset(ctx);JournalBook.Reset(ctx);LetterDrawer.Reset(ctx);ctx.brew.Leave();ctx.CancelHomeZoom("releasePhase");ctx.CancelSalvage("releasePhase")
                 ctx.stack={};ctx.readerCache=false;ctx.ticketEnding=false;ctx.ticketConfirm=false;ctx.ticketQuote=false
                 ctx.newPlaythroughConfirm=false;ctx.scene="home"
                 ctx.panel=phase=="ended" and "ending" or phase=="wish" and "wish" or phase~="operating" and "closing" or false
@@ -437,8 +464,13 @@ function A.New(session,content,enabled)
         if yawAuto then yawAuto(ctx) end
         if stoveAuto then stoveAuto(ctx) end
         if panZoomAuto then panZoomAuto(ctx) end
+        if brewProbe then brewProbe(ctx) end
+        if readingProbe then readingProbe(ctx) end
         local now,dt=clock();home.Update(dt)
         ctx.UpdateChrome()
+        if ctx.scene=="brew" then ctx.brew.Update(dt,input:HasFocus() and not input:IsMinimized()) end
+        if ctx.resultMotion then ResultView.Update(ctx,dt,input:HasFocus() and not input:IsMinimized()) end
+        ctx.feedback.Update(dt)
         if ctx.readerCache and ctx.readerCache.presentation then
             ctx.readerCache.presentation.Update(dt,input:HasFocus() and not input:IsMinimized())
         end
@@ -470,8 +502,10 @@ function A.New(session,content,enabled)
         ctx.messages:Observe(model.message,now,ctx.importantMessage==model.message)
         if not data then return end
         syncSavedTicketEnding()
-        ledger:SetText(string.format("金币 %d   ·   第 %d 天",data.live.economy.currency,data.live.gameFlow.day))
-        pending:SetVisible(not ctx.ticketEnding and not not (data.currentOrder and data.currentOrder.pending))
+        ledger:SetText(string.format("金币 %d   ·   第 %d 天",ctx.feedback.Currency(data.live.economy.currency,data.live.gameFlow.day),data.live.gameFlow.day))
+        pending:SetVisible(ctx.scene~="brew" and not ctx.ticketEnding and not not (data.currentOrder and data.currentOrder.pending))
+        local hints=hud:FindById("toggleHomeHints")
+        if hints then hints:SetVisible(ctx.scene=="home") end
         back:SetVisible(not ctx.ticketEnding and ctx.scene~="home")
         local dayButton=hud:FindById("nextDay")
         if dayButton then dayButton:SetVisible(not ctx.ticketEnding) end
@@ -485,10 +519,12 @@ function A.New(session,content,enabled)
         if model.letterEdited and ctx.panel=="reader" and Panels.RefreshReader(ctx) then model.letterEdited=false; return end
         model.letterEdited=false
         home.root:SetVisible(ctx.scene=="home");seaside.root:SetVisible(ctx.scene=="seaside")
-        scene:SetVisible(ctx.scene~="home" and ctx.scene~="seaside")
+        ctx.brew.root:SetVisible(ctx.scene=="brew")
+        scene:SetVisible(ctx.scene~="home" and ctx.scene~="seaside" and ctx.scene~="brew")
         seaside.Refresh()
         clear(scene)
-        if ctx.scene~="home" and ctx.scene~="seaside" then local body=bodyIn(scene,"sceneScroll"); assert(Panels.Renderers[ctx.scene])(ctx,body) end
+        if ctx.scene=="brew" then ctx.brew.Refresh()
+        elseif ctx.scene~="home" and ctx.scene~="seaside" then local body=bodyIn(scene,"sceneScroll"); assert(Panels.Renderers[ctx.scene])(ctx,body) end
         renderPanel()
         ctx.UpdateChrome()
     end

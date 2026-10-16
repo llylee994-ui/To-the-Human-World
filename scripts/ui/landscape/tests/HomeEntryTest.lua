@@ -21,8 +21,24 @@ function T.Run()
     testUI.MeasureTextWidth=testUI.MeasureTextWidth or function(value,size) return utf8.len(value)*size end
     local x=F.New(Data,{targetSchema=3})
     local view=View.New(x.session,Data)
-    local function control(id) return assert(view.root:FindById(id),"control missing: "..id) end
+    local function control(id)
+        local overlay=view.root:FindById("overlayHost")
+        return assert((view.panel and overlay and overlay:FindById(id)) or view.root:FindById(id),"control missing: "..id)
+    end
     local function click(id,force)
+        for _=1,30 do
+            if not view.brew.interaction.flight then break end
+            zoomHost.Step(view,1/60)
+        end
+        -- Brew now owns independent persistent drawers. Keep the same business
+        -- assertions below while using its explicit drawer/ingredient controls.
+        if id=="brewWords" and view.scene=="brew" and view.brew.wordsOpen then
+            check(view.root:FindById("brewWordPanel"),"brew already exposes source cards");return
+        end
+        if id=="closePanel" and not view.panel and view.scene=="brew" then id="brewWordsClose" end
+        if id:match("^add_") and not view.root:FindById(id) then
+            control("brewIngredient_"..id:sub(5)).props.onClick();view.Update()
+        end
         -- The reader now unfolds before accepting cuts and collects one strip
         -- at a time. Advance only its simulated display clock, keeping every
         -- original business assertion below intact.
@@ -39,6 +55,9 @@ function T.Run()
         local b=control(id); check(force or not b:GetProps().disabled,"button disabled: "..id)
         if id=="home.net" or id=="home.stove" then zoomHost.Bind(view.root) end
         b:GetProps().onClick(); view.Update()
+        if id=="previewOrder" then
+            for _=1,70 do if view.brew.interaction.active then zoomHost.Step(view,1/60) end end
+        end
         if id=="startSalvage" then
             for _=1,150 do if view.salvage.active then zoomHost.Step(view,1/60) end end
         elseif id=="home.net" or id=="home.stove" then

@@ -23,7 +23,7 @@ function H.New(onOpen,developer,ordinaryRelease)
     local art=UI.Panel {id="homeArt",position="absolute",left=0,top=0,width="100%",height="100%",pointerEvents="none"}
     root:AddChild(art)
     local api={root=root,art=art,background=background,inspect=false --[[@as boolean]],lastHit="" --[[@as string]],
-        pressed=false --[[@as string|false]],manifest=Manifest,zoom=1 --[[@as number]],blocked=false --[[@as boolean]],
+        pressed=false --[[@as string|false]],manifest=Manifest,hiddenLayers={},zoom=1 --[[@as number]],blocked=false --[[@as boolean]],
         hintTime=3 --[[@as number]],hintsOpen=false --[[@as boolean]],panelOpen=false --[[@as boolean]],feedbackId=false --[[@as string|false]],feedbackTime=0 --[[@as number]]}
     function api.Fit()
         local bounds=root:GetAbsoluteLayout()
@@ -111,7 +111,7 @@ function H.New(onOpen,developer,ordinaryRelease)
         end
         local sea=SeaArt.homeSea
         Backdrop.Draw(vg,SeaArt.background,fit.x+sea.x*fit.scale,fit.y+sea.y*fit.scale,sea.w*fit.scale,sea.h*fit.scale)
-        for _,layer in ipairs(Manifest.layers) do if layer.visible then
+        for _,layer in ipairs(Manifest.layers) do if layer.visible and not api.hiddenLayers[layer.key] then
             local handle=math.floor(cache.Get(layer.path))
             if handle>0 then
                 nvgSave(vg)

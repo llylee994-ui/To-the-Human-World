@@ -95,15 +95,15 @@ function N.New()
                 assert(node("bookDriedFlowers").props.pointerEvents=="none","flower steals input")
                 capture("journal_catalog");tap("bookEntry_"..assert(branch));view.Update()
             elseif phase==6 then
-                assert(node("bookEntryText"):GetText()==storedText,"detail differs from saved follow-up")
+                assert(node("historyBody"):GetText()==storedText,"detail differs from saved follow-up")
                 capture("journal_detail")
-                local scroll=node("bookEntryBody") --[[@as ScrollView]]
+                local scroll=node("resultScroll") --[[@as ScrollView]]
                 scroll:OnWheel(0,-3)
                 selected=tostring(scroll.state.scrollY)
             elseif phase==7 then
-                local scroll=node("bookEntryBody") --[[@as ScrollView]]
+                local scroll=node("resultScroll") --[[@as ScrollView]]
                 assert(scroll.state.scrollY>0,"follow-up did not scroll")
-                capture("journal_scrolled");tap("bookEntryBack");view.Update()
+                capture("journal_scrolled");tap("closePanel");view.Update()
             elseif phase==8 then
                 assert(node("bookEntryList"),"back did not restore catalog")
                 tap("closePanel")

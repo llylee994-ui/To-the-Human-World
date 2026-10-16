@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-15",
+  "base": "e3da8e223d70071f180e31b4414f0a58d748cc91",
+  "tests": {
+    "BrewWorkbenchTest": {
+      "status": "PASS",
+      "assertions": 45,
+      "schema": [
+        3,
+        4
+      ]
+    },
+    "WordTrayTest": {
+      "status": "PASS",
+      "assertions": 64
+    },
+    "JournalBookTest": {
+      "status": "PASS",
+      "assertions": 69
+    },
+    "HomeZoomTest": {
+      "status": "PASS",
+      "assertions": 383
+    },
+    "ReleaseFlowTest": {
+      "status": "PASS",
+      "recipes": 58,
+      "orderChain": 11
+    },
+    "ReleaseUITest": {
+      "initial": "8 PASS / 1 FAIL",
+      "failedCaseAfterFix": "1 PASS / 0 FAIL",
+      "completeSuiteRerun": false
+    },
+    "HomeEntryTest": {
+      "business": "PASS",
+      "geometry": "FAIL; same 74 overlaps at HEAD baseline"
+    },
+    "LandscapeFlowTest": {
+      "status": "FAIL; real reward once also fails at HEAD baseline"
+    }
+  },
+  "native": {
+    "session": "0330f2fb-efaf-4151-93d4-027c4c7fc52f",
+    "verifiedReload": 29,
+    "mode": "actual Yoga and touch pointer dispatch; memory-only saves",
+    "playerStateUnchanged": true,
+    "phoneVerified": false,
+    "screenshots": "reload29; final ripple addition/release-only hidden-case correction are later"
+  },
+  "diagnostics": {
+    "newErrors": 0,
+    "existingErrors": [
+      "LetterDrawerTest.lua title",
+      "LetterDrawerTest.lua senderName"
+    ],
+    "engineCheck": "FAIL: existing DDS and themis DLL errors"
+  },
+  "sourceSha256": {
+    "scripts/ui/landscape/AppView.lua": "040fdd8d577ed11b5038be9b0ab576d3c7b176ff11cc709252e9a502027b4b3d",
+    "scripts/ui/landscape/DevChecks.lua": "8d8e348bba7817c760f60bef5324241a86ad5bcb67670c3b7360dc9eb2533931",
+    "scripts/ui/landscape/WordTrayDrawer.lua": "0bb851565fabe0cd5295dc01212a73e53c6c2e1241f6138ba335c5669d7d3a10",
+    "scripts/ui/landscape/BrewInteraction.lua": "d907af0dc00f503be3072acb069aca2e06287d11e558f0f9380c2356043cdac2",
+    "scripts/ui/landscape/BrewLayout.lua": "c4099284d7a1d1575c4a8d462cbdef4e5ea101f3ae1f7e7737bba1b4bb77f925",
+    "scripts/ui/landscape/BrewView.lua": "cbfae3f8411fe730b7cccefcfe28c24aa55a2460e23fe887f00bd0bad4241f18",
+    "scripts/ui/landscape/ResultView.lua": "ebb28cdf5465b205ef789b6211a328b53e700c5f4c92bcddb9f5751a15a22ef0",
+    "scripts/ui/landscape/tests/BrewWorkbenchTest.lua": "016d31333bdb8340396f0e8c551ee342bdf81e71d1cdc442f8f76c734050f349",
+    "scripts/ui/landscape/tests/BrewNativeProbe.lua": "91afa87050fe20ab7eadf1aa6b7ac58fa3f3959c47f1d9cbb3d3b9e03b4e80aa",
+    "scripts/ui/landscape/tests/run_brew_workbench.py": "eb0e6bef538c0f888905a0d915520333b71a63793b733bf913033ff60a96e088",
+    "scripts/ui/landscape/tests/HomeEntryTest.lua": "7928b0ccf7aa130de4267003f8ea146bae16b4bb8eb9d776623aee1678557456"
+  }
+}

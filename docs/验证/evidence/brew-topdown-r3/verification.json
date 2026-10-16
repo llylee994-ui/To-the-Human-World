@@ -1,0 +1,79 @@
+{
+  "date": "2026-10-16",
+  "tests": [
+    {
+      "name": "brew_workbench",
+      "exit_code": 0,
+      "results": [
+        "[BrewWorkbench] PASS assertions=98; real business/File-widget-clock adapters; native and phone separate"
+      ]
+    },
+    {
+      "name": "word_tray",
+      "exit_code": 0,
+      "results": [
+        "[WordTrayTest] PASS assertions=64; real query/session, view-state browsing, drawer animation cancel; native evidence separate"
+      ]
+    },
+    {
+      "name": "home_zoom",
+      "exit_code": 0,
+      "results": [
+        "[HomeZoomTest] PASS simulated timeline start/middle/end/seaside/return at 4 aspect ratios; same UI tree; unchanged business",
+        "[HomeZoomTest] PASS assertions=383; repeat/HUD/modal/blank/ship/late-release; resize/focus/minimize/gap/destroy; OS and native rendering NOT tested"
+      ]
+    },
+    {
+      "name": "home_entry",
+      "exit_code": 1,
+      "results": [
+        "[HomeEntry] eight object callbacks navigate without writes or consumption",
+        "[HomeEntry] letter binding/read/cut/faults, source cards, draft/pending preservation, shop, history, reset, day and shipping callbacks passed",
+        "lupa.lua54.LuaError: ...Human World/scripts/ui\\landscape\\tests\\HomeEntryTest.lua:11: neighbor regions overlap at 1920: 74"
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "path": "assets/image/brew-topdown/cauldron-v01.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_gt16_bounds": [
+        97,
+        37,
+        1352,
+        1054
+      ]
+    },
+    {
+      "path": "assets/image/brew-topdown/four-cell-tray-v01.png",
+      "size": [
+        2087,
+        753
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_gt16_bounds": [
+        27,
+        122,
+        2061,
+        605
+      ]
+    }
+  ],
+  "native_preview": "PASS desktop 1450x815: user subsequently authorized local preview restart; memory-only fixture and native UI pointer path; screenshots/logs in native-preview/",
+  "native_probe_enabled": false,
+  "native_limitations": [
+    "Not phone evidence",
+    "Official check remains FAIL for existing DDS/themis errors",
+    "Static landing capture is an early release frame; full timing also checked by live native state and integration tests"
+  ]
+}

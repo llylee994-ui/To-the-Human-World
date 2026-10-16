@@ -42,6 +42,12 @@ function T.Run()
                 {outcomeKey="k2",branchFragmentId=branchB,shortName="梦里的母亲",displayTitle="埃利亚斯·沃德的回信",
                     attempts={{transactionId="t2",status="reset",stars=2,day=5,text="第二支的后续正文（重置过）。"}}}}})
     end)
+    rawset(x.session.queries,"GetAttempt",function(id)
+        local a=id=="t1"
+        return U.Ok({transactionId=id,sourceLetterId=received,attemptDay=a and 3 or 5,status=a and "shipped" or "reset",
+            followup={letterId="letter_pa_02",renderedText=a and "第一支的后续正文。" or "第二支的后续正文（重置过）。"},
+            rating={stars=a and 3 or 2,feedback="已保存的药效回响"},recipeDisplay={main={text="安稳"}}})
+    end)
 
     local before,writes=x.state.GetSnapshot(),x.writes
     v.Open("journal");v.Update()
@@ -78,17 +84,18 @@ function T.Run()
 
     -- 详情：存档原文回看，重置过的记录同样可读。
     click("bookEntry_"..branchA)
-    check(assert(widget("bookEntryBody")),"branch detail opens inside the page")
-    check(widget("bookEntryText"):GetText()=="第一支的后续正文。","stored follow-up text is readable")
-    check(widget("bookEntryText").props.fontFamily=="story" and widget("bookEntryText").props.fontSize>=16,"WenKai-based body remains readable")
-    check(widget("bookEntryText").props.lineHeight>=1.55,"long follow-up uses generous leading")
-    check(widget("bookEntryMeta"):GetText():find("第 3 天",1,true)~=nil,"detail keeps the attempt day")
-    check(widget("bookEntryMeta"):GetText():find("3 星",1,true)~=nil,"detail keeps the star rating")
-    click("bookEntryBack")
+    check(v.panel=="attempt" and v.model.selectedAttempt=="t1","branch opens its stored attempt in the large paper")
+    check(not widget("bookEntryBody") and widget("resultScroll"),"branch is not squeezed into the small book")
+    check(widget("historyBody"):GetText()=="第一支的后续正文。","stored follow-up text is readable")
+    check(widget("historyBody").props.fontFamily=="story" and widget("historyBody").props.fontSize>=16,"WenKai-based body remains readable")
+    check(widget("resultStars"):GetText():find("3 星",1,true)~=nil,"large paper keeps the stored star rating")
+    check(not widget("confirmOrder") and not widget("resetOrder"),"history paper has no settlement actions")
+    click("closePanel")
     check(assert(widget("bookEntry_"..branchA)),"return-to-catalog restores the list")
     click("bookEntry_"..branchB)
-    check(widget("bookEntryText"):GetText()=="第二支的后续正文（重置过）。","reset history stays readable")
-    click("bookEntryBack")
+    check(widget("historyBody"):GetText()=="第二支的后续正文（重置过）。","reset history stays readable")
+    click("closePanel")
+    for _=1,40 do host.Step(v,.05) end
 
     -- 锁住的标签点了也不动：不变故事、不翻页。
     lockedTab.props.onClick();v.Update()

@@ -1,0 +1,30 @@
+[
+  {
+    "suite": "BrewWorkbenchTest",
+    "exitCode": 0
+  },
+  {
+    "suite": "WordTrayTest",
+    "exitCode": 0
+  },
+  {
+    "suite": "JournalBookTest",
+    "exitCode": 0
+  },
+  {
+    "suite": "HomeZoomTest",
+    "exitCode": 0
+  },
+  {
+    "suite": "ReleaseUITest",
+    "exitCode": 1
+  },
+  {
+    "suite": "ReleaseFlowTest",
+    "exitCode": 0
+  },
+  {
+    "suite": "LandscapeFlowTest",
+    "exitCode": 1
+  }
+]
