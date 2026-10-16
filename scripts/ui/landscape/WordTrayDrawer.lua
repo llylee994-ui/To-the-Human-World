@@ -46,7 +46,7 @@ local function panelWidth(ctx)
 end
 local function panelLeft(ctx,state)
     local edge=ctx.workbench and 0 or insets(ctx).left
-    return math.floor(edge-(1-ease(state.open))*(panelWidth(ctx)+8))
+    return math.floor(edge-(1-ease(state.open))*(panelWidth(ctx)+32))
 end
 ---@param ctx table
 ---@return WordTrayState
@@ -176,26 +176,30 @@ function D.Render(ctx,overlay)
     local compact=viewportHeight(ctx)<540
     local panel=UI.Panel {id="activePanel",position="absolute",left=panelLeft(ctx,state),top=safe.top+12,
         width=width,height=viewportHeight(ctx)-(safe.top+12)-(safe.bottom+12),padding=0,
-        overflow="hidden",pointerEvents="auto",onClick=function() end}
+        overflow="visible",pointerEvents="auto",onClick=function() end}
     overlay:AddChild(panel)
     state.panel=panel
+    -- Only the pull tab crosses the cloth edge; keep the designer art cropped.
+    local content=UI.Panel {id="wordTrayContents",position="absolute",left=0,top=0,width="100%",height="100%",
+        overflow="hidden",pointerEvents="box-none"}
+    panel:AddChild(content)
     local layout=Art.Fit(width,panel.props.height)
-    PanelArt.Image(panel,"wordTrayCloth",layout.cloth)
+    PanelArt.Image(content,"wordTrayCloth",layout.cloth)
     -- 标题在木托盘内上沿，避开顶部金币栏，并与首排词卡留出间距。
     local title=Harbor.Tag {id="wordTrayTitle",text="词条栏",fontSize=15,
         position="absolute",left=layout.title.x,top=layout.title.y,width=layout.title.w,height=layout.title.h,zIndex=10,
         backgroundColor={246,230,194,245},fontColor=ink,borderRadius=3}
-    panel:AddChild(title)
-    panel:AddChild(Arrow.New {id="closePanel",arrowDirection="left",position="absolute",right=24,bottom=8,
+    content:AddChild(title)
+    Arrow.Attach(panel,{id="closePanel",arrowDirection="left",position="absolute",right=-20,bottom=0,
         onClick=function() D.RequestClose(ctx) end})
     -- 转瞬消息沿用通用面板的字段，交给 UpdateChrome 每帧刷新。
     local noticeArea=UI.ScrollView {id="wordTrayMessageArea",position="absolute",left=8,right=8,top=58,zIndex=11,height=40,flexShrink=0,scrollY=true,
         visible=false,paddingLeft=8,paddingRight=8,pointerEvents="box-none"}
     ctx.panelNotice=text(noticeArea,ctx.model.message,13,"panelMessage");ctx.panelNoticeArea=noticeArea
-    panel:AddChild(noticeArea)
+    content:AddChild(noticeArea)
     local result=ctx.session.queries.GetWordTray()
     if not result.ok then
-        text(panel,result.error.message,16,"wordTrayQueryError");return
+        text(content,result.error.message,16,"wordTrayQueryError");return
     end
     local view=result.value
     local collected={}
@@ -212,7 +216,7 @@ function D.Render(ctx,overlay)
     if #collected>0 then
         local tabs=UI.ScrollView {id="wordTrayTabs",position="absolute",left=0,top=layout.tabs.y,width=width,
             height=layout.tabs.h,scrollY=true,showScrollbar=false,pointerEvents="box-none"}
-        panel:AddChild(tabs)
+        content:AddChild(tabs)
         local stack=UI.Panel {width="100%",height=math.max(layout.tabs.h,(#collected*80+20)*layout.scale),pointerEvents="box-none"}
         tabs:AddChild(stack)
         for i,category in ipairs(collected) do tab(ctx,state,stack,category,category.id==selected,compact,layout,i) end
@@ -223,7 +227,7 @@ function D.Render(ctx,overlay)
     if not picked then state.selected=false end
     local holder=UI.Panel {id="wordTrayHolder",position="absolute",left=0,top=0,width="100%",height="100%",
         pointerEvents="box-none"}
-    panel:AddChild(holder)
+    content:AddChild(holder)
     PanelArt.Image(holder,"wordTrayFrame",layout.tray)
     local scrollProps=PanelArt.Style(layout.cards)
     scrollProps.id="wordTrayStrips";scrollProps.scrollY=true;scrollProps.showScrollbar=true;scrollProps.pointerEvents="box-none"
@@ -245,7 +249,7 @@ function D.Render(ctx,overlay)
     end
     local footer=UI.Panel {id="wordTrayFooter",position="absolute",left=12,right=100,bottom=8,
         height=ctx.brewDrag and 86 or 56,gap=2,overflow="hidden",pointerEvents="box-none"}
-    panel:AddChild(footer)
+    content:AddChild(footer)
     ---@type table|false
     local active=false
     for _,category in ipairs(collected) do if category.id==selected then active=category end end

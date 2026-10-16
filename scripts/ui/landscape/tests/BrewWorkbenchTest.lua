@@ -283,8 +283,28 @@ function T.Run()
     check(leftClose.props.bottom~=nil and leftClose.props.right~=nil and leftClose.props.arrowDirection=="left","tray closes with a left stitched arrow at its inner bottom edge")
     check(rightClose.props.bottom~=nil and rightClose.props.left~=nil and rightClose.props.arrowDirection=="right","book closes with the same arrow mirrored at its inner bottom edge")
     local arrow=require "ui.landscape.EmbroideredArrow"
-    local a,b=arrow.Points("left"),arrow.Points("right")
-    for index,p in ipairs(a) do check(p.x==-b[index].x and p.y==b[index].y,"both directions share mirrored stitch geometry") end
+    check(arrow.image=="image/ui-controls/embroidered-arrow-left-v01.png","both arrows use the approved embroidered PNG")
+    check(leftClose.props.width>=108 and leftClose.props.height>=72 and rightClose.props.width>=108,"larger patch retains a generous phone touch target")
+    check(leftClose.props.right<0 and rightClose.props.left<0,"pull tabs extend beyond each inner cloth edge")
+    -- Exercise the engine library's actual hit traversal outside an absolute parent.
+    -- Only rectangles are supplied by the headless adapter; this is not Yoga evidence.
+    MOUSEB_LEFT,MOUSEB_MIDDLE,MOUSEB_RIGHT=0,1,2 -- Existing headless enum adapters.
+    local NativeUI=require "urhox-libs/UI/Core/UI"
+    local testUI=require "urhox-libs/UI"
+    local hitRoot=testUI.Panel {}
+    local hitPanel=testUI.Panel {position="absolute",overflow="visible"}
+    hitRoot:AddChild(hitPanel)
+    local pull=arrow.Attach(hitPanel,{arrowDirection="left"})
+    host.Bind(hitRoot)
+    hitPanel.GetAbsoluteLayout=function() return {x=100,y=50,w=200,h=300} end
+    pull.GetAbsoluteLayout=function() return {x=212,y=278,w=108,h=72} end
+    hitPanel.GetAbsoluteLayoutForHitTest=hitPanel.GetAbsoluteLayout
+    pull.GetAbsoluteLayoutForHitTest=pull.GetAbsoluteLayout
+    NativeUI.SetRoot(hitRoot)
+    check(NativeUI.FindWidgetAt(310,310)==pull,"the protruding arrow routes taps beyond its absolute parent")
+    check(NativeUI.FindWidgetAt(310,100)~=hitPanel,"nearby space is not swallowed by an enlarged parent strip")
+    NativeUI.SetRoot(view.root)
+    hitRoot:Destroy()
     local resultView=require "ui.landscape.ResultView"
     local paper=resultView.Layout({w=1200,h=540},{left=48,right=0,top=0,bottom=0},{left=.88,right=.99,top=.02,bottom=.14})
     check(paper.top<30 and paper.height>=480,"centered story paper stays tall when it does not intersect the host capsule")

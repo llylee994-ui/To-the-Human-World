@@ -46,7 +46,7 @@ end
 -- 关闭态整个面板推到屏外，把右安全区一起算进去，边界上也不露一条。
 local function panelRight(ctx,state)
     local safe=insets(ctx)
-    return math.floor(safe.right-(1-ease(state.open))*(panelWidth(ctx)+safe.right+8))
+    return math.floor(safe.right-(1-ease(state.open))*(panelWidth(ctx)+safe.right+32))
 end
 
 ---@return JournalBookState
@@ -287,17 +287,17 @@ function B.Render(ctx,overlay)
     local width=panelWidth(ctx)
     local panel=UI.Panel {id="activePanel",position="absolute",right=panelRight(ctx,state),top=safe.top+12,
         width=width,height=viewportHeight(ctx)-(safe.top+12)-(safe.bottom+12),padding=0,
-        overflow="hidden",pointerEvents="auto",onClick=function() end}
+        overflow="visible",pointerEvents="auto",onClick=function() end}
     overlay:AddChild(panel)
     state.panel=panel
-    local close=Arrow.New {id="closePanel",arrowDirection="right",position="absolute",left=24,bottom=8,
+    local closeProps={id="closePanel",arrowDirection="right",position="absolute",left=-20,bottom=0,
         onClick=function() B.RequestClose(ctx) end}
     local noticeArea=UI.ScrollView {id="journalBookMessageArea",width="100%",height=40,flexShrink=0,scrollY=true,
         visible=false,paddingLeft=8,paddingRight=8,pointerEvents="box-none"}
     ctx.panelNotice=text(noticeArea,ctx.model.message,13,"panelMessage",inkFaint);ctx.panelNoticeArea=noticeArea
 
     local body=UI.Panel {id="journalBookBody",position="absolute",left=0,top=0,width="100%",height="100%",
-        pointerEvents="box-none"}
+        overflow="hidden",pointerEvents="box-none"}
     panel:AddChild(body)
     local layout=Art.Fit(width,panel.props.height)
     local function box(r) return {position="absolute",left=r.x,top=r.y,width=r.w,height=r.h} end
@@ -321,7 +321,7 @@ function B.Render(ctx,overlay)
         lastW=width,lastH=panel.props.height}
     state.page=page
     -- Chrome is above all art, without shrinking the designer canvas below it.
-    panel:AddChild(close)
+    Arrow.Attach(panel,closeProps)
     Widget.SetStyle(noticeArea,{position="absolute",left=8,right=8,top=58})
     panel:AddChild(noticeArea)
     local stories=ctx.session.queries.GetJournalStories()
