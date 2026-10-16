@@ -1,0 +1,187 @@
+{
+  "import": "byte-identical, no normalization or gain processing",
+  "sample_rate": 44100,
+  "channels": 1,
+  "encoding": "PCM16 WAV",
+  "sounds": [
+    {
+      "id": "bottle_lift",
+      "title": "捞起玻璃瓶",
+      "group": "bottle",
+      "category": "玻璃瓶",
+      "description": "先有一团水离开水面，再落下两颗分开的水滴。",
+      "trigger": "lifting 开始时播放一次；当前演出约开始后 0.8 秒进入此阶段。",
+      "file": "bottle_lift.wav",
+      "duration": 0.94,
+      "peak_dbfs": -11.501,
+      "rms_dbfs": -31.499,
+      "sha256": "a21718c078b7a7261a2ed6fc46a0413882df7b6bddc287d43fdca86f6b97d5d3",
+      "source_files": [
+        "bsb_small_splash.ogg"
+      ],
+      "edit_recipe": "BSB 1534: body 0.023-0.205s, falling water 0.275-0.590s; short recorded details at 0.178-0.212s and 0.265-0.313s are placed as isolated drips at 0.57/0.75s. No glass collision or synthesized noise.",
+      "resource": "audio/sfx/objects/bottle_lift.wav",
+      "source_package": "2026-10-15-object-feedback-v2",
+      "source_file": "2026-10-15-object-feedback-v2/wav/bottle_lift.wav",
+      "gain": 1.0,
+      "loop": false
+    },
+    {
+      "id": "drawer_open",
+      "title": "拉开抽屉",
+      "group": "drawer",
+      "category": "抽屉",
+      "description": "真实木抽屉的滑动与止挡，留住木腔的厚度。",
+      "trigger": "来信抽屉打开时触发。",
+      "file": "drawer_open.wav",
+      "duration": 0.62,
+      "peak_dbfs": -12.0,
+      "rms_dbfs": -28.63,
+      "sha256": "66c2f7b46aca91152cd6396c47c4ce1210982020c59602634ed6ce07e7bd6e0f",
+      "source_files": [
+        "bsb_drawer_open.ogg",
+        "kenney_impact-sounds/impactWood_medium_002.ogg"
+      ],
+      "edit_recipe": "BSB 1499: splice 0.143-0.400s and 0.580-0.895s with 14ms crossfade, preserve end-stop; Kenney wood medium 002 at -16dB relative as initial handle contact.",
+      "resource": "audio/sfx/objects/drawer_open.wav",
+      "source_package": "2026-10-15-object-feedback-v2",
+      "source_file": "2026-10-15-object-feedback-v2/wav/drawer_open.wav",
+      "gain": 1.0,
+      "loop": false
+    },
+    {
+      "id": "drawer_close",
+      "title": "收起抽屉",
+      "group": "drawer",
+      "category": "抽屉",
+      "description": "滑回以后，一声木头落稳的笃。",
+      "trigger": "来信抽屉收起时触发。",
+      "file": "drawer_close.wav",
+      "duration": 0.49,
+      "peak_dbfs": -12.0,
+      "rms_dbfs": -26.829,
+      "sha256": "076c44daee2579875387ad10b6bc1411eb2b5577ad122544e4b577a6f8eda6e2",
+      "source_files": [
+        "bsb_drawer_close.ogg"
+      ],
+      "edit_recipe": "BSB 1500: splice 0.330-0.500s and 0.820-1.100s with 14ms crossfade, preserving the real wooden close impact.",
+      "resource": "audio/sfx/objects/drawer_close.wav",
+      "source_package": "2026-10-15-object-feedback-v2",
+      "source_file": "2026-10-15-object-feedback-v2/wav/drawer_close.wav",
+      "gain": 1.0,
+      "loop": false
+    },
+    {
+      "id": "tray_open",
+      "title": "展开托盘",
+      "group": "tray",
+      "category": "托盘",
+      "description": "两次短而清楚的薄木轻碰。",
+      "trigger": "词条托盘开始展开时触发，当前动画约 0.22 秒。",
+      "file": "tray_open.wav",
+      "duration": 0.22,
+      "peak_dbfs": -14.0,
+      "rms_dbfs": -29.47,
+      "sha256": "09987e9af84be8ff4378713d5493af379d8b8d6a9d2e6ee7d3e4550bbee2ba16",
+      "source_files": [
+        "kenney_impact-sounds/impactWood_light_000.ogg",
+        "kenney_impact-sounds/impactWood_light_003.ogg"
+      ],
+      "edit_recipe": "Kenney wood light 000/003, isolated short impacts, speed 1.30/1.13, 220Hz high-pass; two dry contacts at 0/0.072s; no scrape bed.",
+      "resource": "audio/sfx/objects/tray_open.wav",
+      "source_package": "2026-10-15-object-feedback-v2",
+      "source_file": "2026-10-15-object-feedback-v2/wav/tray_open.wav",
+      "gain": 1.0,
+      "loop": false
+    },
+    {
+      "id": "tray_close",
+      "title": "收起托盘",
+      "group": "tray",
+      "category": "托盘",
+      "description": "轻巧的落点与小回弹，没有连续摩擦。",
+      "trigger": "词条托盘开始收起时触发。",
+      "file": "tray_close.wav",
+      "duration": 0.2,
+      "peak_dbfs": -14.5,
+      "rms_dbfs": -30.847,
+      "sha256": "f99b7e7df89d6f787248b2192b6440f9733ab8805373abf2ce3716534e30c2f4",
+      "source_files": [
+        "kenney_impact-sounds/impactWood_light_000.ogg",
+        "kenney_impact-sounds/impactWood_light_003.ogg"
+      ],
+      "edit_recipe": "Kenney wood light 000/003, isolated short impacts, speed 1.30/1.13, 220Hz high-pass; two dry contacts at 0/0.038s; no scrape bed.",
+      "resource": "audio/sfx/objects/tray_close.wav",
+      "source_package": "2026-10-15-object-feedback-v2",
+      "source_file": "2026-10-15-object-feedback-v2/wav/tray_close.wav",
+      "gain": 1.0,
+      "loop": false
+    },
+    {
+      "id": "letter_pick",
+      "title": "拿起信件",
+      "group": "letter",
+      "description": "偏厚、柔软的旧信纸，轻轻拿起的一小段纸声。",
+      "trigger": "用户点击信件并进入阅读时触发一次。",
+      "file": "letter_pick.wav",
+      "duration": 0.32,
+      "peak_dbfs": -22.999,
+      "rms_dbfs": -39.65,
+      "sha256": "485b5254e63e059e0d2ff0dddfb52306647c62f9e7e62fb8a8c1b8d35d5801f0",
+      "source_files": [
+        "bookFlip2.ogg"
+      ],
+      "edit_recipe": "Single bookFlip2 segment 0.046-0.257s, speed 0.82, HP 130Hz / 8-pole LP 2000Hz, 16ms soft attack and 55ms release. One gentle paper movement; no edge snap, extra impacts or synthesized noise.",
+      "resource": "audio/sfx/objects/letter_pick.wav",
+      "source_package": "2026-10-15-paper-book-soft",
+      "source_file": "2026-10-15-paper-book-soft/wav/letter_pick.wav",
+      "gain": 1.0,
+      "loop": false
+    },
+    {
+      "id": "recipe_book_open",
+      "title": "翻开配方书",
+      "group": "book",
+      "description": "托住厚书封，整叠纸页轻轻分开，落稳。",
+      "trigger": "配方书开始展开时触发；当前相关展示代码名为 JournalBook，接入时核对映射。",
+      "file": "recipe_book_open.wav",
+      "duration": 0.49,
+      "peak_dbfs": -19.999,
+      "rms_dbfs": -36.973,
+      "sha256": "39d91bf8defaebe0f5de8738d8993404dce32769790166cfe8ca986149a06337",
+      "source_files": [
+        "bookFlip1.ogg",
+        "bookOpen.ogg",
+        "bookPlace2.ogg"
+      ],
+      "edit_recipe": "Cover dominates: bookOpen 0.014-0.143s at speed 0.72, HP75/LP1500; subtle bookFlip1 0.310-0.610s at speed0.84, HP130/LP1900 starts0.065s at0.22; low bookPlace2 0.034-0.175s at speed0.82, HP65/LP650 starts0.19s at0.16. Supported cover, restrained page block and soft settling body.",
+      "resource": "audio/sfx/objects/recipe_book_open.wav",
+      "source_package": "2026-10-15-paper-book-soft",
+      "source_file": "2026-10-15-paper-book-soft/wav/recipe_book_open.wav",
+      "gain": 1.0,
+      "loop": false
+    },
+    {
+      "id": "recipe_book_close",
+      "title": "合上配方书",
+      "group": "book",
+      "description": "纸页收拢，留一个低而柔软的扑声，比打开稍重。",
+      "trigger": "配方书开始收起时触发。",
+      "file": "recipe_book_close.wav",
+      "duration": 0.36,
+      "peak_dbfs": -18.501,
+      "rms_dbfs": -35.244,
+      "sha256": "cdbcf0e508c6aacf8027f289eab5521258c35c138d3a845d1e1c11ff3cd98d4c",
+      "source_files": [
+        "bookClose.ogg",
+        "bookFlip2.ogg"
+      ],
+      "edit_recipe": "Subtle bookFlip2 0.046-0.154s at speed0.83 HP140/LP1700, gain0.10, followed at0.07s by bookClose 0.060-0.225s at speed0.78 HP65/LP1250 with14ms attack/60ms release. Soft low cover closure, slightly heavier than opening; no extra hit.",
+      "resource": "audio/sfx/objects/recipe_book_close.wav",
+      "source_package": "2026-10-15-paper-book-soft",
+      "source_file": "2026-10-15-paper-book-soft/wav/recipe_book_close.wav",
+      "gain": 1.0,
+      "loop": false
+    }
+  ]
+}

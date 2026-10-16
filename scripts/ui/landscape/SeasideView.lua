@@ -88,7 +88,7 @@ function S.New(ctx)
     local capture=Harbor.Button {id="startSalvage",text="开始捕捞",width=240,minHeight=48,fontSize=16,
         backgroundColor={188,147,77,255},textColor={35,36,29,255},borderRadius=8,onClick=function() ctx.StartSalvage() end}
     local read=Harbor.Button {id="readCapturedLetter",text="阅读捞到的信",width=240,minHeight=48,fontSize=16,visible=false,
-        backgroundColor={188,147,77,255},textColor={35,36,29,255},borderRadius=8,onClick=function() ctx.OpenCapturedLetter() end}
+        backgroundColor={188,147,77,255},textColor={35,36,29,255},borderRadius=8,onClick=function() ctx.OpenCapturedLetter(true) end}
     local shop=Harbor.Button {id="seasideShop",text="商队商店",width=122,minHeight=48,fontSize=15,onClick=function() ctx.Open("shop") end}
     bar:AddChild(capture);bar:AddChild(read);bar:AddChild(shop)
     function api.Update(dt) api.time=api.time+math.max(0,math.min(dt,.1)) end

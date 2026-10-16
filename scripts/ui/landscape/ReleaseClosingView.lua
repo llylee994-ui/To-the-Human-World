@@ -30,7 +30,7 @@ function V.New(ctx)
                 local r=ctx.model.Receive(prep.letterId);if not r.ok then return end
                 id=r.value.letterInstanceId
             end
-            ctx.Read(id)
+            ctx.Read(id,true)
         end)
         F.Button(view.body,"chooseApprentice","留下做学徒",function() end,false)
     else

@@ -1,0 +1,55 @@
+{
+  "assets": [
+    {
+      "file": "source/raw/bookClose.ogg",
+      "author": "Kenney",
+      "title": "RPG Audio",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "81e976532565f4372abd14e83d2684195fa548d0a28d345de221e56052454f32"
+    },
+    {
+      "file": "source/raw/bookFlip1.ogg",
+      "author": "Kenney",
+      "title": "RPG Audio",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "fa81ac2fedc8c641661b87e349630a36c9800e795e0c800e029214efdbe26a7d"
+    },
+    {
+      "file": "source/raw/bookFlip2.ogg",
+      "author": "Kenney",
+      "title": "RPG Audio",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "3409042acbfaebc24c1a6327dc073e36f9250841712e96c5040da566a97df73c"
+    },
+    {
+      "file": "source/raw/bookOpen.ogg",
+      "author": "Kenney",
+      "title": "RPG Audio",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "953390534377222bee89ac8cd9e60a58fdc037c71a4d7c18c43cd647c7f34ba8"
+    },
+    {
+      "file": "source/raw/bookPlace2.ogg",
+      "author": "Kenney",
+      "title": "RPG Audio",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "831874e8fd142d4d0a03ff009f1f83966338a7878c0f6f38c613ae5b80dd731e"
+    }
+  ],
+  "processing": {
+    "letter_pick": "Single bookFlip2 segment 0.046-0.257s, speed 0.82, HP 130Hz / 8-pole LP 2000Hz, 16ms soft attack and 55ms release. One gentle paper movement; no edge snap, extra impacts or synthesized noise.",
+    "recipe_book_open": "Cover dominates: bookOpen 0.014-0.143s at speed 0.72, HP75/LP1500; subtle bookFlip1 0.310-0.610s at speed0.84, HP130/LP1900 starts0.065s at0.22; low bookPlace2 0.034-0.175s at speed0.82, HP65/LP650 starts0.19s at0.16. Supported cover, restrained page block and soft settling body.",
+    "recipe_book_close": "Subtle bookFlip2 0.046-0.154s at speed0.83 HP140/LP1700, gain0.10, followed at0.07s by bookClose 0.060-0.225s at speed0.78 HP65/LP1250 with14ms attack/60ms release. Soft low cover closure, slightly heavier than opening; no extra hit."
+  },
+  "common_processing": "Mono downmix, polyphase speed change, 2-pole high-pass, 4-pole low-pass (letter:8-pole), 4ms local-peak detector with 1ms smoothed gain (threshold0.10, reduction exponent0.65), soft edges; conservative full-event RMS targets with peak ceilings. No synthetic noise, reverb, tonal chimes or automatic playback normalization."
+}

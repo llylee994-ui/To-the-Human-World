@@ -1,0 +1,79 @@
+{
+  "name": "旧信纸与厚字典 · 柔和试听版",
+  "sample_rate": 44100,
+  "channels": 1,
+  "encoding": "PCM16 WAV",
+  "loop": false,
+  "scope": "Only letter_pick, recipe_book_open, recipe_book_close. No other SFX or BGM modified.",
+  "authorship": "Re-edited and layered existing Kenney RPG Audio CC0 material. Not original recordings or a literal old-paper/dictionary recording.",
+  "sounds": [
+    {
+      "id": "letter_pick",
+      "title": "拿起信件",
+      "group": "letter",
+      "description": "偏厚、柔软的旧信纸，轻轻拿起的一小段纸声。",
+      "trigger": "用户点击信件并进入阅读时触发一次。",
+      "file": "wav/letter_pick.wav",
+      "absolute_path": "D:\\taptap\\audio-studies\\2026-10-15-paper-book-soft\\wav\\letter_pick.wav",
+      "duration": 0.32,
+      "peak_dbfs": -22.999,
+      "rms_dbfs": -39.65,
+      "sha256": "485b5254e63e059e0d2ff0dddfb52306647c62f9e7e62fb8a8c1b8d35d5801f0",
+      "source_files": [
+        "bookFlip2.ogg"
+      ],
+      "edit_recipe": "Single bookFlip2 segment 0.046-0.257s, speed 0.82, HP 130Hz / 8-pole LP 2000Hz, 16ms soft attack and 55ms release. One gentle paper movement; no edge snap, extra impacts or synthesized noise."
+    },
+    {
+      "id": "recipe_book_open",
+      "title": "翻开配方书",
+      "group": "book",
+      "description": "托住厚书封，整叠纸页轻轻分开，落稳。",
+      "trigger": "配方书开始展开时触发；当前相关展示代码名为 JournalBook，接入时核对映射。",
+      "file": "wav/recipe_book_open.wav",
+      "absolute_path": "D:\\taptap\\audio-studies\\2026-10-15-paper-book-soft\\wav\\recipe_book_open.wav",
+      "duration": 0.49,
+      "peak_dbfs": -19.999,
+      "rms_dbfs": -36.973,
+      "sha256": "39d91bf8defaebe0f5de8738d8993404dce32769790166cfe8ca986149a06337",
+      "source_files": [
+        "bookFlip1.ogg",
+        "bookOpen.ogg",
+        "bookPlace2.ogg"
+      ],
+      "edit_recipe": "Cover dominates: bookOpen 0.014-0.143s at speed 0.72, HP75/LP1500; subtle bookFlip1 0.310-0.610s at speed0.84, HP130/LP1900 starts0.065s at0.22; low bookPlace2 0.034-0.175s at speed0.82, HP65/LP650 starts0.19s at0.16. Supported cover, restrained page block and soft settling body."
+    },
+    {
+      "id": "recipe_book_close",
+      "title": "合上配方书",
+      "group": "book",
+      "description": "纸页收拢，留一个低而柔软的扑声，比打开稍重。",
+      "trigger": "配方书开始收起时触发。",
+      "file": "wav/recipe_book_close.wav",
+      "absolute_path": "D:\\taptap\\audio-studies\\2026-10-15-paper-book-soft\\wav\\recipe_book_close.wav",
+      "duration": 0.36,
+      "peak_dbfs": -18.501,
+      "rms_dbfs": -35.244,
+      "sha256": "cdbcf0e508c6aacf8027f289eab5521258c35c138d3a845d1e1c11ff3cd98d4c",
+      "source_files": [
+        "bookClose.ogg",
+        "bookFlip2.ogg"
+      ],
+      "edit_recipe": "Subtle bookFlip2 0.046-0.154s at speed0.83 HP140/LP1700, gain0.10, followed at0.07s by bookClose 0.060-0.225s at speed0.78 HP65/LP1250 with14ms attack/60ms release. Soft low cover closure, slightly heavier than opening; no extra hit."
+    }
+  ],
+  "preview_order": [
+    {
+      "id": "letter_pick",
+      "start_seconds": 0.35
+    },
+    {
+      "id": "recipe_book_open",
+      "start_seconds": 1.52
+    },
+    {
+      "id": "recipe_book_close",
+      "start_seconds": 2.86
+    }
+  ]
+}

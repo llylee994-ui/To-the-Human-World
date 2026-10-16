@@ -5,6 +5,7 @@ local Harbor=require "ui.landscape.HarborStyle"
 local Art=require "ui.landscape.IngredientArt"
 local Merchandise=require "ui.landscape.MerchandiseArt"
 local Ticket=require "ui.landscape.TravelTicket"
+---@type {Confirm: fun(ctx: table, overlay: Widget)}
 local TicketView=require "ui.landscape.TravelTicketView"
 local S={}
 local ink,light={65,47,32,255},{249,236,205,255}
@@ -33,7 +34,11 @@ local function tab(parent,ctx,id,title,selected)
         variantBackgroundGradient={},variantHoverBackgroundGradient={},variantPressedBackgroundGradient={},
         borderWidth=0,hoverBorderWidth=0,pressedBorderWidth=0,borderRadius=0,boxShadow=false,glowShadow={},
         textColor=selected and ink or {116,89,63,255},padding={5,12},pressedPadding={5,12},
-        onClick=function() ctx.shopCategory=id;ctx.shopPage=1;ctx.shopSelectedId=false;ctx.ticketConfirm=false;ctx.model.dirty=true end}
+        onClick=function()
+            local changed=ctx.shopCategory~=id or ctx.shopPage~=1
+            ctx.shopCategory=id;ctx.shopPage=1;ctx.shopSelectedId=false;ctx.ticketConfirm=false;ctx.model.dirty=true
+            if changed and ctx.PlayObjectSound then ctx.PlayObjectSound("ui_click_01") end
+        end}
     if selected then button:AddChild(UI.Panel {position="absolute",left=16,right=16,bottom=4,height=2,
         backgroundColor={155,107,57,210},pointerEvents="none"}) end
     parent:AddChild(button)
@@ -58,6 +63,7 @@ function S.Render(ctx,overlay)
     header:AddChild(UI.Panel {flexGrow=1,pointerEvents="none"})
     local wallet=text(header,"",17,"shopBalance",light)
     Widget.SetStyle(wallet,{width=128,whiteSpace="nowrap",alignSelf="center"})
+    header:AddChild(Harbor.Button {id="shopSettings",text="设置",minHeight=48,width=72,onClick=ctx.OpenSettings})
     header:AddChild(Harbor.Button {id="closePanel",text="关闭",minHeight=48,width=84,onClick=ctx.Close})
     local noticeArea=UI.ScrollView {id="shopMessageArea",width="100%",height=44,flexShrink=0,scrollY=true,
         visible=false,paddingLeft=pad+safe.left,paddingRight=pad+safe.right,pointerEvents="box-none"}
@@ -131,7 +137,11 @@ function S.Render(ctx,overlay)
         local card=UI.Panel {id="shop_select_"..item.ingredientId,flexGrow=1,flexShrink=1,flexBasis=0,minWidth=0,
             minHeight=0,padding=10,gap=3,alignItems="center",borderRadius=6,borderWidth=0,
             backgroundColor=chosen and {111,79,48,155} or {34,24,17,95},
-            onClick=function() ctx.shopSelectedId=item.ingredientId;ctx.model.dirty=true end}
+            onClick=function()
+                local changed=ctx.shopSelectedId~=item.ingredientId
+                ctx.shopSelectedId=item.ingredientId;ctx.model.dirty=true
+                if changed and ctx.PlayObjectSound then ctx.PlayObjectSound("ui_click_01") end
+            end}
         gallery:AddChild(card)
         card:AddChild(Merchandise.Panel(item.ingredientId,{id="shopArt_"..item.ingredientId,width="100%",
             flexGrow=1,flexShrink=1,flexBasis=0,minHeight=0}))
@@ -145,8 +155,11 @@ function S.Render(ctx,overlay)
         alignItems="center",justifyContent="center",pointerEvents="box-none"}
     goods:AddChild(pager)
     local function turn(delta)
-        ctx.shopPage=math.max(1,math.min(pageCount,page+delta));ctx.shopSelectedId=false
+        local target=math.max(1,math.min(pageCount,page+delta))
+        local changed=ctx.shopPage~=target
+        ctx.shopPage=target;ctx.shopSelectedId=false
         ctx.ticketConfirm=false;ctx.model.dirty=true
+        if changed and ctx.PlayObjectSound then ctx.PlayObjectSound("ui_click_01") end
     end
     pager:AddChild(Harbor.Button {id="shopPreviousPage",text="上一页",width=96,minHeight=44,disabled=page==1,onClick=function() turn(-1) end})
     local pageNumber=text(pager,page.." / "..pageCount,14,"shopPageNumber",light)
@@ -176,13 +189,25 @@ function S.Render(ctx,overlay)
         or (selected.kind=="ticket" and "购买船票 · " or "购买一份 · ")..selected.price.." 金币"
     footer:AddChild(Harbor.Button {id="buy_"..selected.ingredientId,text=title,width="100%",minHeight=48,fontSize=15,
         disabled=blocked~="",onClick=function()
+            if blocked~="" or ctx.panel~="shop" or ctx.ticketConfirm then return end
             if selected.kind=="ticket" then
                 local current=Ticket.Get(ctx)
                 if not current.ok then ctx.model.Notify(current)
                 elseif not current.value.enabled then ctx.model.Notify({ok=false,error={code=current.value.reasonCode,message=current.value.message}})
-                else ctx.ticketConfirm=true;ctx.model.dirty=true end
-            elseif selected.kind=="furniture" then ctx.model.BuyFurniture(selected.furnitureId,selected.quote)
-            else ctx.model.Buy(selected.ingredientId) end
+                else
+                    ctx.ticketConfirm=true;ctx.model.dirty=true
+                    if ctx.PlayObjectSound then ctx.PlayObjectSound("ui_click_01") end
+                end
+            else
+                ---@type table
+                local result
+                if selected.kind=="furniture" then result=ctx.model.BuyFurniture(selected.furnitureId,selected.quote)
+                else result=ctx.model.Buy(selected.ingredientId) end
+                -- A replayed furniture quote may return ok with alreadyPurchased.
+                if result.ok and not (result.value and result.value.alreadyPurchased) and ctx.PlayObjectSound then
+                    ctx.PlayObjectSound("ui_confirm")
+                end
+            end
         end})
     if ctx.ticketConfirm then TicketView.Confirm(ctx,overlay) end
 end

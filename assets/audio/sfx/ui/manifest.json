@@ -1,0 +1,25 @@
+{
+  "source_package": "2026-10-15-click-feedback",
+  "authorship": "Original deterministic procedural synthesis; no third-party audio samples. See CREDITS.txt.",
+  "sample_rate": 44100,
+  "channels": 1,
+  "encoding": "PCM16 WAV",
+  "loop": false,
+  "file_gain": 1.0,
+  "sounds": [
+    {
+      "id": "ui_click_01",
+      "source_file": "wav/ui_click_01.wav",
+      "resource": "audio/sfx/ui/ui_click_01.wav",
+      "duration": 0.14,
+      "sha256": "bf50dccea53cf03b848ab300d6d00bc702ba3f5b84d03856ab038702a3f85555"
+    },
+    {
+      "id": "ui_confirm",
+      "source_file": "wav/ui_confirm.wav",
+      "resource": "audio/sfx/ui/ui_confirm.wav",
+      "duration": 0.43,
+      "sha256": "0386dddde451cae2e55b27831c0e1787936414bef7937847d72fc151ccfcae7c"
+    }
+  ]
+}
