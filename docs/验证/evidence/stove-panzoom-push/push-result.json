@@ -1,0 +1,14 @@
+{
+  "commit": "ff463d874d0fb5ff7aacdb93af6309b30369d1e5",
+  "parent": "b205ea1ffe9943b6f00441856237bb78991308b1",
+  "before": {
+    "exit": 0,
+    "stdout": "b205ea1ffe9943b6f00441856237bb78991308b1\trefs/heads/fengyycon\n1cd0cdbec06487a5c60f109d5fd477198cfc8846\trefs/heads/main\n",
+    "stderr": ""
+  },
+  "push": {
+    "exit": 0,
+    "stdout": "To https://github.com/llylee994-ui/To-the-Human-World.git\n \tHEAD:refs/heads/fengyycon\tb205ea1..ff463d8\nDone\n",
+    "stderr": ""
+  }
+}

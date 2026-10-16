@@ -122,7 +122,7 @@ def compile_pack():
         title = titles['ordinaryLetters'][oid]
         description = rules[oid]['requirement']['desc'].replace('（候选）', '').replace('（候选要求）', '').replace(oid + ' ', '')
         requirement = {**rules[oid]['requirement'], 'desc': description}
-        assert requirement['conditions'] == [] and requirement['forbiddenEffects'] == []
+        # release.primaryEffectsOnly将额外检查保留为记录，普通剧情只用必要药效作门槛。
         day = index + 1
         reward = registry['shop']['rewardByOrder'].get(oid, registry['shop']['laterRewardForConservativeCheck'])
         assert reward == release.orderReward, (oid, '报酬来源与首发配置不一致')
@@ -230,6 +230,7 @@ def make_samples(pack, rules, content_version):
     c=lt(dict(words=pack['words'],effects=py(require('data.effects')),synthesis=py(require('data.synthesis')),
               equipment=py(require('data.equipment')),ingredients=py(require('data.ingredients')),attributeProfiles=py(stage.attributeProfiles),stage1=py(stage),contentVersion=content_version))
     pmod=require('systems.Potion')
+    order=require('systems.Order').New(c)
     byword={w['id']:w for w in pack['words']}
     equipment=py(c.equipment[1]);ingredients={v.id:py(v) for _,v in c.ingredients.items()}
     recipes=[x['recipe'] for x in pack['recipes'] if x['letterId']=='letter_pa_01']
@@ -244,6 +245,9 @@ def make_samples(pack, rules, content_version):
         calculated=pmod.Calculate(lt(resolved),c)
         assert calculated.ok,py(calculated.error)
         potion=calculated.value
+        gate=order.Evaluate(lt(rules['E01']['requirement']),potion)
+        assert gate.ok,py(gate.error)
+        assert gate.value.canShip,py(gate.value.failures)
         rows=[r for r in rules['E01']['exclusiveBranches'] if matches(r,py(potion.effects))]
         assert len(rows)==1
         row=rows[0];branch=row['branch']

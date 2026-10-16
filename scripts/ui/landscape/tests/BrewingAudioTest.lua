@@ -142,12 +142,22 @@ function T.Run()
         check(not view.zoom.active and view.scene=="home" and #events==before,"cancelled accepted entry never replays")
 
         -- Real workbench draft, failed save, pending result and recipe inspection.
-        local x=fresh();local request=R.Accept(x,1);view.Refresh();update()
+        local x=fresh();local request=R.Accept(x,1)
+        for _,ingredient in ipairs(request.ingredients) do
+            local shortage=ingredient.quantity-(x.state.GetSnapshot().live.economy.ingredients[ingredient.ingredientId] or 0)
+            if shortage>0 then R.Must(x.state.Shop({ingredientId=ingredient.ingredientId,quantity=shortage})) end
+        end
+        view.Refresh();update()
         tap("home.stove");finishZoom("brew");local source=music(brew);local mp=plays
         local result=view.brew.Throw("word",request.mainTokenId);check(result and result.ok,"real main-word drop");step(30)
         for _,id in ipairs(request.auxTokenIds) do check(view.brew.Throw("word",id).ok,"real auxiliary drop");step(30) end
+        for _,ingredient in ipairs(request.ingredients) do
+            for _=1,ingredient.quantity do
+                check(view.brew.Throw("ingredient",ingredient.ingredientId).ok,"real recipe ingredient drop");step(30)
+            end
+        end
         x.fault="write";result=view.brew.Start();x.fault=false;update()
-        check(result and not result.ok and plays==mp,"failed brew save does not restart")
+        check(result and not result.ok and result.error.code=="SAVE_WRITE_FAILED" and plays==mp,"failed brew save does not restart")
         result=view.brew.Start();check(result and result.ok and view.brew.interaction.active,"real successful brew accepted")
         step(150);view.Open("journal");update();view.Refresh();update()
         check(music(brew)==source and plays==mp,"ingredients, result, book and refresh retain music")

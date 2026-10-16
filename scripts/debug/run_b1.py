@@ -88,6 +88,7 @@ def main(argv=None, entrypoint=None):
             (storage / 'save_slot1.json').write_text('old progress canary', encoding='utf-8')
             (storage / 'save_numeric_v02_trial.json').write_text('old trial canary', encoding='utf-8')
             (storage / 'save_ordinary_release_v1.json').write_text('task1 progress canary', encoding='utf-8')
+            (storage / 'save_ordinary_release_v2_1.commit').write_text('v2 progress canary', encoding='utf-8')
         lua.execute('''
             package.preload["urhox-libs/UI"] = function() return require "debug.fixtures.HeadlessUI" end
             graphics = {}
@@ -137,7 +138,8 @@ def main(argv=None, entrypoint=None):
             assert not list(storage.glob('save_numeric_v02_trial_*.json'))
             assert (storage / 'save_ordinary_release_v1.json').read_text(encoding='utf-8') == 'task1 progress canary'
             assert not list(storage.glob('save_ordinary_release_v1_*.json'))
-            assert list(storage.glob('save_ordinary_release_v2_*.commit'))
+            assert (storage / 'save_ordinary_release_v2_1.commit').read_text(encoding='utf-8') == 'v2 progress canary'
+            assert list(storage.glob('save_ordinary_release_v3_*.commit'))
             print('[Release startup] PASS real main default slot + save/reload; old slot1, trial and Task1 unchanged; File/UI adapters')
             return 0
         if args.b6_acceptance:

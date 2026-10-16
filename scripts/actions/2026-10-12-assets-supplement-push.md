@@ -2,7 +2,7 @@
 
 ## 状态与现场
 
-- 状态：执行中。
+- 状态：Completed（GitHub 素材补推完成；Maker 不属于本轮执行范围）。
 - 用户在确认队友缺少本地素材后要求“补提交推送”，承接本窗口提出的 GitHub `fengyycon` 素材补推方案。
 - 范围：`scripts/素材/` 中尚未提交的图片及同目录配套说明、清单、字体授权和制作记录；仅补充已有文件，不生成或修改美术，不判定历史稿为正式采用稿。
 - 原工作区：`D:/taptap/To-the-Human-World`，分支 `fengyycon`，HEAD `c59c59044218e6be626edb86f66dc950f6943bd2`；存在其他窗口未提交修改，保留原工作区与暂存区。
@@ -30,6 +30,7 @@ scripts/
 docs/验证/evidence/assets-supplement-push/
   manifest.json                             新增素材路径、大小、SHA256；本地核验依据
   receipt.json                              提交、远端分支与逐文件验证回执；本地证据
+  whitespace-check.txt                      原始配套文本的空白检查输出；本地证据
 ```
 
 ## 自检方法
@@ -50,6 +51,18 @@ docs/验证/evidence/assets-supplement-push/
 - 未检测到待提交素材的 Git 属性过滤器；暂存时关闭自动换行转换以保持素材附属文本与源文件字节一致。
 - 已验证显式暂存仅 133 个新增路径（132 个素材/附件及本文），零删除、零运行代码改动；132 个暂存 blob 的 SHA256 均与源文件完全一致。
 - `git diff --cached --check` 返回 2：现有原始配套说明尾部空行、字体许可证行尾空格，以及原始 JSON/脚本的 CRLF 被当前 Git 规则报空白问题。本次保留原始文件字节，不为同步任务改写许可证和制作记录；不将此检查宣称为通过。
-- 待完成：单父提交、GitHub 推送及远端回执。
+- 已创建提交 `978a738c7c8b46b2f05e00a0a1dfc8903ff0f392`，标题 `chore(assets): sync missing source art and companion files`，唯一父提交为 `0f6c248c9f4b51797df5626867ecfd0fcb318fec`，没有合并。
+- 提交树核对：132 个新增素材/附件原始字节完全一致；本地 176 个现存文件均在提交树中。远端原有 112 个素材/附件的 blob 全部保持不变，提交后目录共 244 个文件。
+- 首次全目录验证把已有 `.meta` 文件的 Windows 工作树 CRLF 与 Git 存储的 LF 当作字节差异，因此断言失败；核对确认仅 5 个旧 `.meta` 是换行转换，无本轮改写。随后对新增文件执行严格字节匹配，对已有文件同时验证旧 blob 不变及仅换行差异，检查通过。这是验证方法修正，不是素材故障。
+- 源文件自清点后哈希未变，交付提交后工作树干净。`git push github HEAD:refs/heads/fengyycon` 返回 0，远端接受 `0f6c248..978a738`。
+- 推送后再次执行 `git ls-remote`：`fengyycon` 为 `978a738c7c8b46b2f05e00a0a1dfc8903ff0f392`；`main` 仍为 `27aaa971e7dc0377e67cea1e3dc8dd2a8ff35ca7`，本轮没有改变它。
+- 原工作区分支仍是 `fengyycon`、HEAD 仍是 `c59c59044218e6be626edb86f66dc950f6943bd2`、暂存区仍为空；没有重置或纳入其他窗口的未提交修改。
 - 本文随提交的是推送前行动记录快照；最终 SHA 和推送结果更新在原工作区同路径及本地 `receipt.json`，不为补写自身提交号反复提交。
 - 未执行游戏/手机/美术质量验收，本轮只验证文件同步完整性。
+
+## 交接
+
+- 对象：用户及其队友，由用户转达。
+- 队友保持在 `fengyycon`，拉取最新提交，确认包含 `978a738` 后查看 `scripts/素材/`。仅切换分支而未拉取不足以获得新增内容。
+- [GitHub 提交](https://github.com/llylee994-ui/To-the-Human-World/commit/978a738c7c8b46b2f05e00a0a1dfc8903ff0f392)。新增 PNG 113 张、配套文件 19 份；全部本地现存素材均已覆盖。
+- 必须修改项：无。GitHub 补推待用户决定事项：无。Maker 分支问题仍按上一轮处理，本轮未提交或构建 Maker。

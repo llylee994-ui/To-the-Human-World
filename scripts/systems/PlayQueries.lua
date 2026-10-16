@@ -154,6 +154,7 @@ function Q.New(session,content)
         local accepted=data.live.orders.acceptedById[order.orderId]; local d=definition(accepted.letterId)
         result.orderId=order.orderId; result.phase=order.phase=="brewing" and "accepted" or order.phase
         result.sourceLetterId=d.id; result.title=title(d); result.requirementDesc=d.requirement.desc or d.requirementDesc or ""
+        result.requirement=U.Copy(d.requirement)
         result.draft=order.draft or (order.recipe and D.Project(order.recipe)) or D.Empty(content.stage1.initialEquipmentId)
         if order.pending then result.pending={transactionId=order.pending.transactionId,followup=order.pending.followup,rating=order.pending.rating} end
         if result.draft.mainTokenId and not order.pending then

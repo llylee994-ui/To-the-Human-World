@@ -35,10 +35,27 @@ function R.Accept(x,index)
     local recipe
     for _,case in ipairs(x.content.recipes) do if case.letterId==id then recipe=case.recipe;break end end
     assert(recipe)
+    recipe=require("core.StateUtil").Copy(recipe)
+    local function available(wid)
+        local token=x.tokens[wid]
+        return token and x.state.GetSnapshot().live.wordTokens.byId[token].available
+    end
+    -- 低星经营也消耗词卡；后面的成功见证不能重复使用已发货的来源。
+    if index==6 and not available(recipe.auxWordIds[1]) then recipe.auxWordIds={"word_candidate_elias_happy"} end
+    if index==9 and not available(recipe.auxWordIds[1]) then recipe.auxWordIds={"word_candidate_elias_trust"} end
+    if index==11 and not available(recipe.auxWordIds[1]) then
+        recipe.mainWordId="word_candidate_n01_curiosity"
+        recipe.auxWordIds={"word_candidate_n10_recall"}
+        recipe.ingredients={{ingredientId="ing_night_dew",quantity=1}}
+    end
     local aux={};for _,wid in ipairs(recipe.auxWordIds) do aux[#aux+1]=assert(x.tokens[wid]) end
-    return {orderId=oid,equipmentId=recipe.equipmentId,mainTokenId=assert(x.tokens[recipe.mainWordId]),auxTokenIds=aux,ingredients={},specialItemIds={}}
+    return {orderId=oid,equipmentId=recipe.equipmentId,mainTokenId=assert(x.tokens[recipe.mainWordId]),auxTokenIds=aux,ingredients=recipe.ingredients,specialItemIds={}}
 end
 function R.Preview(x,request)
+    for _,i in ipairs(request.ingredients) do
+        local shortage=i.quantity-(x.state.GetSnapshot().live.economy.ingredients[i.ingredientId] or 0)
+        if shortage>0 then R.Must(x.state.Shop({ingredientId=i.ingredientId,quantity=shortage})) end
+    end
     R.Must(x.order.UpdateDraft({orderId=request.orderId,draft=require("systems.RecipeDraft").Project(request)}))
     return R.Must(x.order.Preview(request))
 end

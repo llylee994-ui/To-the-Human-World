@@ -14,7 +14,12 @@ return {
         ["recipe"] = {
             ["auxWordIds"] = {},
             ["equipmentId"] = "kit_old_cauldron",
-            ["ingredients"] = {},
+            ["ingredients"] = {
+                {
+                    ["ingredientId"] = "ing_night_dew",
+                    ["quantity"] = 1,
+                },
+            },
             ["mainWordId"] = "word_candidate_elias_sleep",
             ["specialItemIds"] = {},
         },
@@ -77,7 +82,12 @@ return {
                 "word_candidate_elias_forget",
             },
             ["equipmentId"] = "kit_old_cauldron",
-            ["ingredients"] = {},
+            ["ingredients"] = {
+                {
+                    ["ingredientId"] = "ing_night_dew",
+                    ["quantity"] = 1,
+                },
+            },
             ["mainWordId"] = "word_candidate_elias_sleep",
             ["specialItemIds"] = {},
         },
@@ -298,9 +308,16 @@ return {
         ["letterId"] = "letter_n01",
         ["name"] = "谈妥",
         ["recipe"] = {
-            ["auxWordIds"] = {},
+            ["auxWordIds"] = {
+                "word_candidate_n01_recall",
+            },
             ["equipmentId"] = "kit_old_cauldron",
-            ["ingredients"] = {},
+            ["ingredients"] = {
+                {
+                    ["ingredientId"] = "ing_night_dew",
+                    ["quantity"] = 1,
+                },
+            },
             ["mainWordId"] = "word_candidate_n01_brave",
             ["specialItemIds"] = {},
         },
@@ -310,6 +327,11 @@ return {
                 ["letterId"] = "letter_n01",
                 ["positionId"] = "N01-B1",
                 ["wordId"] = "word_candidate_n01_brave",
+            },
+            {
+                ["letterId"] = "letter_n01",
+                ["positionId"] = "N01-R1",
+                ["wordId"] = "word_candidate_n01_recall",
             },
         },
     },
@@ -326,15 +348,21 @@ return {
         ["name"] = "冲突",
         ["recipe"] = {
             ["auxWordIds"] = {
+                "word_candidate_n01_brave",
                 "word_candidate_n01_anger",
             },
             ["equipmentId"] = "kit_old_cauldron",
             ["ingredients"] = {},
-            ["mainWordId"] = "word_candidate_n01_brave",
+            ["mainWordId"] = "word_candidate_elias_reason",
             ["specialItemIds"] = {},
         },
         ["requiresFutureSources"] = false,
         ["sources"] = {
+            {
+                ["letterId"] = "letter_pa_01",
+                ["positionId"] = "E01-Q1",
+                ["wordId"] = "word_candidate_elias_reason",
+            },
             {
                 ["letterId"] = "letter_n01",
                 ["positionId"] = "N01-B1",
@@ -361,6 +389,7 @@ return {
         ["recipe"] = {
             ["auxWordIds"] = {
                 "word_candidate_n01_trust",
+                "word_candidate_elias_reason",
             },
             ["equipmentId"] = "kit_old_cauldron",
             ["ingredients"] = {},
@@ -378,6 +407,11 @@ return {
                 ["letterId"] = "letter_n01",
                 ["positionId"] = "N01-T1",
                 ["wordId"] = "word_candidate_n01_trust",
+            },
+            {
+                ["letterId"] = "letter_pa_01",
+                ["positionId"] = "E01-Q1",
+                ["wordId"] = "word_candidate_elias_reason",
             },
         },
     },
@@ -397,7 +431,12 @@ return {
                 "word_candidate_n01_fear",
             },
             ["equipmentId"] = "kit_old_cauldron",
-            ["ingredients"] = {},
+            ["ingredients"] = {
+                {
+                    ["ingredientId"] = "ing_night_dew",
+                    ["quantity"] = 1,
+                },
+            },
             ["mainWordId"] = "word_candidate_n01_brave",
             ["specialItemIds"] = {},
         },
@@ -431,7 +470,12 @@ return {
                 "word_candidate_n01_curiosity",
             },
             ["equipmentId"] = "kit_old_cauldron",
-            ["ingredients"] = {},
+            ["ingredients"] = {
+                {
+                    ["ingredientId"] = "ing_night_dew",
+                    ["quantity"] = 1,
+                },
+            },
             ["mainWordId"] = "word_candidate_n01_brave",
             ["specialItemIds"] = {},
         },
@@ -463,7 +507,12 @@ return {
         ["recipe"] = {
             ["auxWordIds"] = {},
             ["equipmentId"] = "kit_old_cauldron",
-            ["ingredients"] = {},
+            ["ingredients"] = {
+                {
+                    ["ingredientId"] = "ing_ashen_herb",
+                    ["quantity"] = 1,
+                },
+            },
             ["mainWordId"] = "word_candidate_n02_happy",
             ["specialItemIds"] = {},
         },
@@ -492,7 +541,12 @@ return {
                 "word_candidate_n02_fear",
             },
             ["equipmentId"] = "kit_old_cauldron",
-            ["ingredients"] = {},
+            ["ingredients"] = {
+                {
+                    ["ingredientId"] = "ing_ashen_herb",
+                    ["quantity"] = 1,
+                },
+            },
             ["mainWordId"] = "word_candidate_n02_happy",
             ["specialItemIds"] = {},
         },
@@ -527,7 +581,12 @@ return {
                 "word_candidate_n02_sadness",
             },
             ["equipmentId"] = "kit_old_cauldron",
-            ["ingredients"] = {},
+            ["ingredients"] = {
+                {
+                    ["ingredientId"] = "ing_ashen_herb",
+                    ["quantity"] = 1,
+                },
+            },
             ["mainWordId"] = "word_candidate_n02_happy",
             ["specialItemIds"] = {},
         },
@@ -600,7 +659,12 @@ return {
                 "word_candidate_n02_suspicion",
             },
             ["equipmentId"] = "kit_old_cauldron",
-            ["ingredients"] = {},
+            ["ingredients"] = {
+                {
+                    ["ingredientId"] = "ing_ashen_herb",
+                    ["quantity"] = 1,
+                },
+            },
             ["mainWordId"] = "word_candidate_n02_happy",
             ["specialItemIds"] = {},
         },
@@ -632,7 +696,12 @@ return {
         ["recipe"] = {
             ["auxWordIds"] = {},
             ["equipmentId"] = "kit_old_cauldron",
-            ["ingredients"] = {},
+            ["ingredients"] = {
+                {
+                    ["ingredientId"] = "ing_night_dew",
+                    ["quantity"] = 1,
+                },
+            },
             ["mainWordId"] = "word_candidate_n03_k1",
             ["specialItemIds"] = {},
         },
@@ -661,7 +730,12 @@ return {
                 "word_candidate_n03_fear",
             },
             ["equipmentId"] = "kit_old_cauldron",
-            ["ingredients"] = {},
+            ["ingredients"] = {
+                {
+                    ["ingredientId"] = "ing_night_dew",
+                    ["quantity"] = 1,
+                },
+            },
             ["mainWordId"] = "word_candidate_n03_k1",
             ["specialItemIds"] = {},
         },
@@ -696,7 +770,12 @@ return {
                 "word_candidate_e01_c1",
             },
             ["equipmentId"] = "kit_old_cauldron",
-            ["ingredients"] = {},
+            ["ingredients"] = {
+                {
+                    ["ingredientId"] = "ing_night_dew",
+                    ["quantity"] = 1,
+                },
+            },
             ["mainWordId"] = "word_candidate_n03_k1",
             ["specialItemIds"] = {},
         },
@@ -735,7 +814,12 @@ return {
                 "word_candidate_n03_c1",
             },
             ["equipmentId"] = "kit_old_cauldron",
-            ["ingredients"] = {},
+            ["ingredients"] = {
+                {
+                    ["ingredientId"] = "ing_night_dew",
+                    ["quantity"] = 1,
+                },
+            },
             ["mainWordId"] = "word_candidate_n03_k1",
             ["specialItemIds"] = {},
         },
@@ -769,7 +853,12 @@ return {
                 "word_candidate_n01_s2",
             },
             ["equipmentId"] = "kit_old_cauldron",
-            ["ingredients"] = {},
+            ["ingredients"] = {
+                {
+                    ["ingredientId"] = "ing_night_dew",
+                    ["quantity"] = 1,
+                },
+            },
             ["mainWordId"] = "word_candidate_n03_k1",
             ["specialItemIds"] = {},
         },
@@ -801,7 +890,12 @@ return {
         ["recipe"] = {
             ["auxWordIds"] = {},
             ["equipmentId"] = "kit_old_cauldron",
-            ["ingredients"] = {},
+            ["ingredients"] = {
+                {
+                    ["ingredientId"] = "ing_ashen_herb",
+                    ["quantity"] = 1,
+                },
+            },
             ["mainWordId"] = "word_candidate_n04_h1",
             ["specialItemIds"] = {},
         },
@@ -830,7 +924,12 @@ return {
                 "word_candidate_n04_e1",
             },
             ["equipmentId"] = "kit_old_cauldron",
-            ["ingredients"] = {},
+            ["ingredients"] = {
+                {
+                    ["ingredientId"] = "ing_ashen_herb",
+                    ["quantity"] = 1,
+                },
+            },
             ["mainWordId"] = "word_candidate_n04_h1",
             ["specialItemIds"] = {},
         },
@@ -865,7 +964,12 @@ return {
                 "word_candidate_n01_a2",
             },
             ["equipmentId"] = "kit_old_cauldron",
-            ["ingredients"] = {},
+            ["ingredients"] = {
+                {
+                    ["ingredientId"] = "ing_ashen_herb",
+                    ["quantity"] = 1,
+                },
+            },
             ["mainWordId"] = "word_candidate_n04_h1",
             ["specialItemIds"] = {},
         },
@@ -939,7 +1043,12 @@ return {
                 "word_candidate_n04_s1",
             },
             ["equipmentId"] = "kit_old_cauldron",
-            ["ingredients"] = {},
+            ["ingredients"] = {
+                {
+                    ["ingredientId"] = "ing_ashen_herb",
+                    ["quantity"] = 1,
+                },
+            },
             ["mainWordId"] = "word_candidate_n04_h1",
             ["specialItemIds"] = {},
         },
@@ -974,7 +1083,9 @@ return {
         ["letterId"] = "letter_n05",
         ["name"] = "吃完了",
         ["recipe"] = {
-            ["auxWordIds"] = {},
+            ["auxWordIds"] = {
+                "word_candidate_n02_h2",
+            },
             ["equipmentId"] = "kit_old_cauldron",
             ["ingredients"] = {},
             ["mainWordId"] = "word_candidate_n05_a1",
@@ -986,6 +1097,11 @@ return {
                 ["letterId"] = "letter_n05",
                 ["positionId"] = "N05-A1",
                 ["wordId"] = "word_candidate_n05_a1",
+            },
+            {
+                ["letterId"] = "letter_n02",
+                ["positionId"] = "N02-H2",
+                ["wordId"] = "word_candidate_n02_h2",
             },
         },
     },
@@ -1003,6 +1119,7 @@ return {
         ["recipe"] = {
             ["auxWordIds"] = {
                 "word_candidate_n05_q1",
+                "word_candidate_elias_happy",
             },
             ["equipmentId"] = "kit_old_cauldron",
             ["ingredients"] = {},
@@ -1021,6 +1138,11 @@ return {
                 ["positionId"] = "N05-Q1",
                 ["wordId"] = "word_candidate_n05_q1",
             },
+            {
+                ["letterId"] = "letter_pa_01",
+                ["positionId"] = "E01-H1",
+                ["wordId"] = "word_candidate_elias_happy",
+            },
         },
     },
     {
@@ -1037,6 +1159,7 @@ return {
         ["recipe"] = {
             ["auxWordIds"] = {
                 "word_candidate_n05_s1",
+                "word_candidate_elias_happy",
             },
             ["equipmentId"] = "kit_old_cauldron",
             ["ingredients"] = {},
@@ -1055,6 +1178,11 @@ return {
                 ["positionId"] = "N05-S1",
                 ["wordId"] = "word_candidate_n05_s1",
             },
+            {
+                ["letterId"] = "letter_pa_01",
+                ["positionId"] = "E01-H1",
+                ["wordId"] = "word_candidate_elias_happy",
+            },
         },
     },
     {
@@ -1071,6 +1199,7 @@ return {
         ["recipe"] = {
             ["auxWordIds"] = {
                 "word_candidate_n05_t1",
+                "word_candidate_elias_happy",
             },
             ["equipmentId"] = "kit_old_cauldron",
             ["ingredients"] = {},
@@ -1089,6 +1218,11 @@ return {
                 ["positionId"] = "N05-T1",
                 ["wordId"] = "word_candidate_n05_t1",
             },
+            {
+                ["letterId"] = "letter_pa_01",
+                ["positionId"] = "E01-H1",
+                ["wordId"] = "word_candidate_elias_happy",
+            },
         },
     },
     {
@@ -1105,6 +1239,7 @@ return {
         ["recipe"] = {
             ["auxWordIds"] = {
                 "word_candidate_n01_suspicion",
+                "word_candidate_elias_happy",
             },
             ["equipmentId"] = "kit_old_cauldron",
             ["ingredients"] = {},
@@ -1123,6 +1258,11 @@ return {
                 ["positionId"] = "N01-S1",
                 ["wordId"] = "word_candidate_n01_suspicion",
             },
+            {
+                ["letterId"] = "letter_pa_01",
+                ["positionId"] = "E01-H1",
+                ["wordId"] = "word_candidate_elias_happy",
+            },
         },
     },
     {
@@ -1139,7 +1279,12 @@ return {
         ["recipe"] = {
             ["auxWordIds"] = {},
             ["equipmentId"] = "kit_old_cauldron",
-            ["ingredients"] = {},
+            ["ingredients"] = {
+                {
+                    ["ingredientId"] = "ing_night_dew",
+                    ["quantity"] = 1,
+                },
+            },
             ["mainWordId"] = "word_candidate_n06_m1",
             ["specialItemIds"] = {},
         },
@@ -1168,7 +1313,12 @@ return {
                 "word_candidate_n06_p1",
             },
             ["equipmentId"] = "kit_old_cauldron",
-            ["ingredients"] = {},
+            ["ingredients"] = {
+                {
+                    ["ingredientId"] = "ing_night_dew",
+                    ["quantity"] = 1,
+                },
+            },
             ["mainWordId"] = "word_candidate_n06_m1",
             ["specialItemIds"] = {},
         },
@@ -1203,7 +1353,12 @@ return {
                 "word_candidate_elias_fear",
             },
             ["equipmentId"] = "kit_old_cauldron",
-            ["ingredients"] = {},
+            ["ingredients"] = {
+                {
+                    ["ingredientId"] = "ing_night_dew",
+                    ["quantity"] = 1,
+                },
+            },
             ["mainWordId"] = "word_candidate_n06_m1",
             ["specialItemIds"] = {},
         },
@@ -1242,7 +1397,12 @@ return {
                 "word_candidate_elias_sleep_alt",
             },
             ["equipmentId"] = "kit_old_cauldron",
-            ["ingredients"] = {},
+            ["ingredients"] = {
+                {
+                    ["ingredientId"] = "ing_night_dew",
+                    ["quantity"] = 1,
+                },
+            },
             ["mainWordId"] = "word_candidate_n06_m1",
             ["specialItemIds"] = {},
         },
@@ -1276,7 +1436,12 @@ return {
                 "word_candidate_n06_a1",
             },
             ["equipmentId"] = "kit_old_cauldron",
-            ["ingredients"] = {},
+            ["ingredients"] = {
+                {
+                    ["ingredientId"] = "ing_night_dew",
+                    ["quantity"] = 1,
+                },
+            },
             ["mainWordId"] = "word_candidate_n06_m1",
             ["specialItemIds"] = {},
         },
@@ -1306,7 +1471,9 @@ return {
         ["letterId"] = "letter_n07",
         ["name"] = "要回部分",
         ["recipe"] = {
-            ["auxWordIds"] = {},
+            ["auxWordIds"] = {
+                "word_candidate_n05_q1",
+            },
             ["equipmentId"] = "kit_old_cauldron",
             ["ingredients"] = {},
             ["mainWordId"] = "word_candidate_n07_a1",
@@ -1318,6 +1485,11 @@ return {
                 ["letterId"] = "letter_n07",
                 ["positionId"] = "N07-A1",
                 ["wordId"] = "word_candidate_n07_a1",
+            },
+            {
+                ["letterId"] = "letter_n05",
+                ["positionId"] = "N05-Q1",
+                ["wordId"] = "word_candidate_n05_q1",
             },
         },
     },
@@ -1335,6 +1507,7 @@ return {
         ["recipe"] = {
             ["auxWordIds"] = {
                 "word_candidate_n07_s1",
+                "word_candidate_elias_reason",
             },
             ["equipmentId"] = "kit_old_cauldron",
             ["ingredients"] = {},
@@ -1352,6 +1525,11 @@ return {
                 ["letterId"] = "letter_n07",
                 ["positionId"] = "N07-S1",
                 ["wordId"] = "word_candidate_n07_s1",
+            },
+            {
+                ["letterId"] = "letter_pa_01",
+                ["positionId"] = "E01-Q1",
+                ["wordId"] = "word_candidate_elias_reason",
             },
         },
     },
@@ -1368,25 +1546,30 @@ return {
         ["name"] = "泛酸没要成",
         ["recipe"] = {
             ["auxWordIds"] = {
-                "word_candidate_n07_s1",
+                "word_candidate_n07_a1",
                 "word_candidate_n03_e1",
             },
             ["equipmentId"] = "kit_old_cauldron",
-            ["ingredients"] = {},
-            ["mainWordId"] = "word_candidate_n07_a1",
+            ["ingredients"] = {
+                {
+                    ["ingredientId"] = "ing_ashen_herb",
+                    ["quantity"] = 1,
+                },
+            },
+            ["mainWordId"] = "word_candidate_n02_fear",
             ["specialItemIds"] = {},
         },
         ["requiresFutureSources"] = false,
         ["sources"] = {
             {
-                ["letterId"] = "letter_n07",
-                ["positionId"] = "N07-A1",
-                ["wordId"] = "word_candidate_n07_a1",
+                ["letterId"] = "letter_n02",
+                ["positionId"] = "N02-F1",
+                ["wordId"] = "word_candidate_n02_fear",
             },
             {
                 ["letterId"] = "letter_n07",
-                ["positionId"] = "N07-S1",
-                ["wordId"] = "word_candidate_n07_s1",
+                ["positionId"] = "N07-A1",
+                ["wordId"] = "word_candidate_n07_a1",
             },
             {
                 ["letterId"] = "letter_n03",
@@ -1409,6 +1592,7 @@ return {
         ["recipe"] = {
             ["auxWordIds"] = {
                 "word_candidate_n07_f1",
+                "word_candidate_elias_reason",
             },
             ["equipmentId"] = "kit_old_cauldron",
             ["ingredients"] = {},
@@ -1427,6 +1611,11 @@ return {
                 ["positionId"] = "N07-F1",
                 ["wordId"] = "word_candidate_n07_f1",
             },
+            {
+                ["letterId"] = "letter_pa_01",
+                ["positionId"] = "E01-Q1",
+                ["wordId"] = "word_candidate_elias_reason",
+            },
         },
     },
     {
@@ -1443,6 +1632,7 @@ return {
         ["recipe"] = {
             ["auxWordIds"] = {
                 "word_candidate_n07_a2",
+                "word_candidate_elias_reason",
             },
             ["equipmentId"] = "kit_old_cauldron",
             ["ingredients"] = {},
@@ -1461,6 +1651,11 @@ return {
                 ["positionId"] = "N07-A2",
                 ["wordId"] = "word_candidate_n07_a2",
             },
+            {
+                ["letterId"] = "letter_pa_01",
+                ["positionId"] = "E01-Q1",
+                ["wordId"] = "word_candidate_elias_reason",
+            },
         },
     },
     {
@@ -1475,9 +1670,16 @@ return {
         ["letterId"] = "letter_n08",
         ["name"] = "休日过成",
         ["recipe"] = {
-            ["auxWordIds"] = {},
+            ["auxWordIds"] = {
+                "word_candidate_n01_trust",
+            },
             ["equipmentId"] = "kit_old_cauldron",
-            ["ingredients"] = {},
+            ["ingredients"] = {
+                {
+                    ["ingredientId"] = "ing_night_dew",
+                    ["quantity"] = 1,
+                },
+            },
             ["mainWordId"] = "word_candidate_n08_r1",
             ["specialItemIds"] = {},
         },
@@ -1487,6 +1689,11 @@ return {
                 ["letterId"] = "letter_n08",
                 ["positionId"] = "N08-R1",
                 ["wordId"] = "word_candidate_n08_r1",
+            },
+            {
+                ["letterId"] = "letter_n01",
+                ["positionId"] = "N01-T1",
+                ["wordId"] = "word_candidate_n01_trust",
             },
         },
     },
@@ -1503,15 +1710,21 @@ return {
         ["name"] = "慢半拍",
         ["recipe"] = {
             ["auxWordIds"] = {
+                "word_candidate_n08_r1",
                 "word_candidate_n08_c1",
             },
             ["equipmentId"] = "kit_old_cauldron",
             ["ingredients"] = {},
-            ["mainWordId"] = "word_candidate_n08_r1",
+            ["mainWordId"] = "word_candidate_n03_k1",
             ["specialItemIds"] = {},
         },
         ["requiresFutureSources"] = false,
         ["sources"] = {
+            {
+                ["letterId"] = "letter_n03",
+                ["positionId"] = "N03-K1",
+                ["wordId"] = "word_candidate_n03_k1",
+            },
             {
                 ["letterId"] = "letter_n08",
                 ["positionId"] = "N08-R1",
@@ -1541,7 +1754,12 @@ return {
                 "word_candidate_n08_c2",
             },
             ["equipmentId"] = "kit_old_cauldron",
-            ["ingredients"] = {},
+            ["ingredients"] = {
+                {
+                    ["ingredientId"] = "ing_night_dew",
+                    ["quantity"] = 1,
+                },
+            },
             ["mainWordId"] = "word_candidate_n08_c1",
             ["specialItemIds"] = {},
         },
@@ -1578,6 +1796,7 @@ return {
         ["recipe"] = {
             ["auxWordIds"] = {
                 "word_candidate_n08_h1",
+                "word_candidate_n03_k1",
             },
             ["equipmentId"] = "kit_old_cauldron",
             ["ingredients"] = {},
@@ -1596,6 +1815,11 @@ return {
                 ["positionId"] = "N08-H1",
                 ["wordId"] = "word_candidate_n08_h1",
             },
+            {
+                ["letterId"] = "letter_n03",
+                ["positionId"] = "N03-K1",
+                ["wordId"] = "word_candidate_n03_k1",
+            },
         },
     },
     {
@@ -1612,6 +1836,7 @@ return {
         ["recipe"] = {
             ["auxWordIds"] = {
                 "word_candidate_n08_a1",
+                "word_candidate_n03_k1",
             },
             ["equipmentId"] = "kit_old_cauldron",
             ["ingredients"] = {},
@@ -1630,6 +1855,11 @@ return {
                 ["positionId"] = "N08-A1",
                 ["wordId"] = "word_candidate_n08_a1",
             },
+            {
+                ["letterId"] = "letter_n03",
+                ["positionId"] = "N03-K1",
+                ["wordId"] = "word_candidate_n03_k1",
+            },
         },
     },
     {
@@ -1644,7 +1874,9 @@ return {
         ["letterId"] = "letter_n09",
         ["name"] = "对上了",
         ["recipe"] = {
-            ["auxWordIds"] = {},
+            ["auxWordIds"] = {
+                "word_candidate_n04_r1",
+            },
             ["equipmentId"] = "kit_old_cauldron",
             ["ingredients"] = {},
             ["mainWordId"] = "word_candidate_n09_q1",
@@ -1656,6 +1888,11 @@ return {
                 ["letterId"] = "letter_n09",
                 ["positionId"] = "N09-Q1",
                 ["wordId"] = "word_candidate_n09_q1",
+            },
+            {
+                ["letterId"] = "letter_n04",
+                ["positionId"] = "N04-R1",
+                ["wordId"] = "word_candidate_n04_r1",
             },
         },
     },
@@ -1672,15 +1909,21 @@ return {
         ["name"] = "盘问失礼",
         ["recipe"] = {
             ["auxWordIds"] = {
+                "word_candidate_n09_q1",
                 "word_candidate_n09_suspicion",
             },
             ["equipmentId"] = "kit_old_cauldron",
             ["ingredients"] = {},
-            ["mainWordId"] = "word_candidate_n09_q1",
+            ["mainWordId"] = "word_candidate_n01_recall",
             ["specialItemIds"] = {},
         },
         ["requiresFutureSources"] = false,
         ["sources"] = {
+            {
+                ["letterId"] = "letter_n01",
+                ["positionId"] = "N01-R1",
+                ["wordId"] = "word_candidate_n01_recall",
+            },
             {
                 ["letterId"] = "letter_n09",
                 ["positionId"] = "N09-Q1",
@@ -1706,16 +1949,26 @@ return {
         ["name"] = "数落花篱",
         ["recipe"] = {
             ["auxWordIds"] = {
+                "word_candidate_n09_q1",
                 "word_candidate_n09_suspicion",
-                "word_candidate_n09_a1",
             },
             ["equipmentId"] = "kit_old_cauldron",
-            ["ingredients"] = {},
-            ["mainWordId"] = "word_candidate_n09_q1",
+            ["ingredients"] = {
+                {
+                    ["ingredientId"] = "ing_night_dew",
+                    ["quantity"] = 1,
+                },
+            },
+            ["mainWordId"] = "word_candidate_n09_a1",
             ["specialItemIds"] = {},
         },
         ["requiresFutureSources"] = false,
         ["sources"] = {
+            {
+                ["letterId"] = "letter_n09",
+                ["positionId"] = "N09-A1",
+                ["wordId"] = "word_candidate_n09_a1",
+            },
             {
                 ["letterId"] = "letter_n09",
                 ["positionId"] = "N09-Q1",
@@ -1725,11 +1978,6 @@ return {
                 ["letterId"] = "letter_n09",
                 ["positionId"] = "N09-S1",
                 ["wordId"] = "word_candidate_n09_suspicion",
-            },
-            {
-                ["letterId"] = "letter_n09",
-                ["positionId"] = "N09-A1",
-                ["wordId"] = "word_candidate_n09_a1",
             },
         },
     },
@@ -1746,15 +1994,21 @@ return {
         ["name"] = "改作恩典",
         ["recipe"] = {
             ["auxWordIds"] = {
+                "word_candidate_n09_q1",
                 "word_candidate_n09_f1",
             },
             ["equipmentId"] = "kit_old_cauldron",
             ["ingredients"] = {},
-            ["mainWordId"] = "word_candidate_n09_q1",
+            ["mainWordId"] = "word_candidate_n01_recall",
             ["specialItemIds"] = {},
         },
         ["requiresFutureSources"] = false,
         ["sources"] = {
+            {
+                ["letterId"] = "letter_n01",
+                ["positionId"] = "N01-R1",
+                ["wordId"] = "word_candidate_n01_recall",
+            },
             {
                 ["letterId"] = "letter_n09",
                 ["positionId"] = "N09-Q1",
@@ -1780,16 +2034,26 @@ return {
         ["name"] = "先收粮",
         ["recipe"] = {
             ["auxWordIds"] = {
+                "word_candidate_n09_q1",
                 "word_candidate_n09_t1",
-                "word_candidate_n09_t2",
             },
             ["equipmentId"] = "kit_old_cauldron",
-            ["ingredients"] = {},
-            ["mainWordId"] = "word_candidate_n09_q1",
+            ["ingredients"] = {
+                {
+                    ["ingredientId"] = "ing_night_dew",
+                    ["quantity"] = 1,
+                },
+            },
+            ["mainWordId"] = "word_candidate_n01_recall",
             ["specialItemIds"] = {},
         },
         ["requiresFutureSources"] = false,
         ["sources"] = {
+            {
+                ["letterId"] = "letter_n01",
+                ["positionId"] = "N01-R1",
+                ["wordId"] = "word_candidate_n01_recall",
+            },
             {
                 ["letterId"] = "letter_n09",
                 ["positionId"] = "N09-Q1",
@@ -1799,11 +2063,6 @@ return {
                 ["letterId"] = "letter_n09",
                 ["positionId"] = "N09-T1",
                 ["wordId"] = "word_candidate_n09_t1",
-            },
-            {
-                ["letterId"] = "letter_n09",
-                ["positionId"] = "N09-T2",
-                ["wordId"] = "word_candidate_n09_t2",
             },
         },
     },
@@ -1819,7 +2078,9 @@ return {
         ["letterId"] = "letter_n10",
         ["name"] = "三星",
         ["recipe"] = {
-            ["auxWordIds"] = {},
+            ["auxWordIds"] = {
+                "word_candidate_elias_reason",
+            },
             ["equipmentId"] = "kit_old_cauldron",
             ["ingredients"] = {},
             ["mainWordId"] = "word_candidate_n10_recall",
@@ -1831,6 +2092,11 @@ return {
                 ["letterId"] = "letter_n10",
                 ["positionId"] = "N10-W1",
                 ["wordId"] = "word_candidate_n10_recall",
+            },
+            {
+                ["letterId"] = "letter_pa_01",
+                ["positionId"] = "E01-Q1",
+                ["wordId"] = "word_candidate_elias_reason",
             },
         },
     },
@@ -1847,15 +2113,21 @@ return {
         ["name"] = "顶嘴",
         ["recipe"] = {
             ["auxWordIds"] = {
+                "word_candidate_n10_recall",
                 "word_candidate_n10_anger",
             },
             ["equipmentId"] = "kit_old_cauldron",
             ["ingredients"] = {},
-            ["mainWordId"] = "word_candidate_n10_recall",
+            ["mainWordId"] = "word_candidate_elias_reason",
             ["specialItemIds"] = {},
         },
         ["requiresFutureSources"] = false,
         ["sources"] = {
+            {
+                ["letterId"] = "letter_pa_01",
+                ["positionId"] = "E01-Q1",
+                ["wordId"] = "word_candidate_elias_reason",
+            },
             {
                 ["letterId"] = "letter_n10",
                 ["positionId"] = "N10-W1",
@@ -1881,15 +2153,21 @@ return {
         ["name"] = "答早",
         ["recipe"] = {
             ["auxWordIds"] = {
+                "word_candidate_n10_recall",
                 "word_candidate_n10_fear",
             },
             ["equipmentId"] = "kit_old_cauldron",
             ["ingredients"] = {},
-            ["mainWordId"] = "word_candidate_n10_recall",
+            ["mainWordId"] = "word_candidate_elias_reason",
             ["specialItemIds"] = {},
         },
         ["requiresFutureSources"] = false,
         ["sources"] = {
+            {
+                ["letterId"] = "letter_pa_01",
+                ["positionId"] = "E01-Q1",
+                ["wordId"] = "word_candidate_elias_reason",
+            },
             {
                 ["letterId"] = "letter_n10",
                 ["positionId"] = "N10-W1",
@@ -1918,7 +2196,12 @@ return {
                 "word_candidate_n09_p2",
             },
             ["equipmentId"] = "kit_old_cauldron",
-            ["ingredients"] = {},
+            ["ingredients"] = {
+                {
+                    ["ingredientId"] = "ing_night_dew",
+                    ["quantity"] = 1,
+                },
+            },
             ["mainWordId"] = "word_candidate_n10_recall",
             ["specialItemIds"] = {},
         },
@@ -1949,25 +2232,30 @@ return {
         ["name"] = "再伤",
         ["recipe"] = {
             ["auxWordIds"] = {
-                "word_candidate_n10_trust",
+                "word_candidate_n10_recall",
                 "word_candidate_elias_trust",
             },
             ["equipmentId"] = "kit_old_cauldron",
-            ["ingredients"] = {},
-            ["mainWordId"] = "word_candidate_n10_recall",
+            ["ingredients"] = {
+                {
+                    ["ingredientId"] = "ing_night_dew",
+                    ["quantity"] = 1,
+                },
+            },
+            ["mainWordId"] = "word_candidate_elias_reason",
             ["specialItemIds"] = {},
         },
         ["requiresFutureSources"] = false,
         ["sources"] = {
             {
-                ["letterId"] = "letter_n10",
-                ["positionId"] = "N10-W1",
-                ["wordId"] = "word_candidate_n10_recall",
+                ["letterId"] = "letter_pa_01",
+                ["positionId"] = "E01-Q1",
+                ["wordId"] = "word_candidate_elias_reason",
             },
             {
                 ["letterId"] = "letter_n10",
-                ["positionId"] = "N10-W4",
-                ["wordId"] = "word_candidate_n10_trust",
+                ["positionId"] = "N10-W1",
+                ["wordId"] = "word_candidate_n10_recall",
             },
             {
                 ["letterId"] = "letter_pa_01",

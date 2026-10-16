@@ -30,6 +30,9 @@ function V.Render(ctx,b,center,summary,draft)
     scroll:AddChild(requirement)
     text(requirement,nil,"委托需要",11,{118,132,106,255})
     text(requirement,"brewRequirement",p.requirement,13)
+    for i,gap in ipairs(p.gaps) do
+        text(requirement,"brewRequirementGap_"..i,b.notesNumbers and p.gapDetails[i] or gap,12,{143,108,68,255})
+    end
     if p.primary then
         if b.notesNumbers then
             local detail=UI.Panel {id="brewEffectNumbers",width="100%",gap=6,paddingTop=8,flexShrink=0,pointerEvents="none"}

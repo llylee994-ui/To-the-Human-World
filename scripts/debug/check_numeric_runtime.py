@@ -107,6 +107,6 @@ assert '布' in n10
 report={'status':'passed','ruleSamples':checks,'orders':counts,'realCutPositions':sum(map(len,source_rows.values())),
         'highestIntervals':'unbounded raw guard checks; runtime potion tiers retain existing maximum99',
         'scope':'numeric conditions and source mapping; not full mixed-effect prose/engine UI acceptance'}
-out=ROOT/'docs/验证/词值v02_运行接入区间验算_2026-10-09.json'
+out=ROOT/'docs/验证/普通剧情搭配平衡_区间验算_2026-10-16.json'
 out.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print(json.dumps(report,ensure_ascii=False))

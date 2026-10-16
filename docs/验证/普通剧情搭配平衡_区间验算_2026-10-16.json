@@ -1,0 +1,53 @@
+{
+  "status": "passed",
+  "ruleSamples": 9325,
+  "orders": {
+    "E01": {
+      "samples": 1000,
+      "branches": 8
+    },
+    "N01": {
+      "samples": 625,
+      "branches": 5
+    },
+    "N02": {
+      "samples": 625,
+      "branches": 5
+    },
+    "N03": {
+      "samples": 625,
+      "branches": 5
+    },
+    "N04": {
+      "samples": 3125,
+      "branches": 5
+    },
+    "N05": {
+      "samples": 625,
+      "branches": 5
+    },
+    "N06": {
+      "samples": 625,
+      "branches": 5
+    },
+    "N07": {
+      "samples": 625,
+      "branches": 5
+    },
+    "N08": {
+      "samples": 200,
+      "branches": 5
+    },
+    "N09": {
+      "samples": 625,
+      "branches": 5
+    },
+    "N10": {
+      "samples": 625,
+      "branches": 5
+    }
+  },
+  "realCutPositions": 61,
+  "highestIntervals": "unbounded raw guard checks; runtime potion tiers retain existing maximum99",
+  "scope": "numeric conditions and source mapping; not full mixed-effect prose/engine UI acceptance"
+}
