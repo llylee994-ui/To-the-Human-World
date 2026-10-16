@@ -1,0 +1,4 @@
+scripts/ui/landscape/tests/StoveYawEntryTest.lua:119: trailing whitespace.
++return T
+scripts/ui/landscape/tests/StoveYawNativeProbe.lua:69: trailing whitespace.
++return N

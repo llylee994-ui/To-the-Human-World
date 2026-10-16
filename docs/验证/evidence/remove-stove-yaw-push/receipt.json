@@ -1,0 +1,22 @@
+{
+  "verified_at": "2026-10-12T23:42:17.646707+08:00",
+  "commit": "b205ea1ffe9943b6f00441856237bb78991308b1",
+  "parent": "978a738c7c8b46b2f05e00a0a1dfc8903ff0f392",
+  "target": "github/refs/heads/fengyycon",
+  "refs": {
+    "refs/heads/fengyycon": "b205ea1ffe9943b6f00441856237bb78991308b1",
+    "refs/heads/main": "27aaa971e7dc0377e67cea1e3dc8dd2a8ff35ca7"
+  },
+  "github_main_same_as_preflight": true,
+  "push_exit": 0,
+  "maker": "NOT_PUSHED; main-only policy conflicts with existing current-branch-only authorization; origin read probe HTTP502",
+  "merge_created": false,
+  "force_used": false,
+  "source_branch": "fengyycon",
+  "source_head": "c59c59044218e6be626edb86f66dc950f6943bd2",
+  "source_index_empty": true,
+  "committed_blob_hashes_match": 59,
+  "source_delivery_content_unchanged": true,
+  "source_git_status_unchanged": true,
+  "delivery_worktree_clean": true
+}

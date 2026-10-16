@@ -1,0 +1,1136 @@
+{
+  "created_at": "2026-10-12T12:24:27.881193+00:00",
+  "source_root": "D:\\taptap\\To-the-Human-World",
+  "delivery_root": "D:\\taptap\\To-the-Human-World-yaw-push",
+  "target": "github/refs/heads/fengyycon",
+  "base": "0f6c248c9f4b51797df5626867ecfd0fcb318fec",
+  "files": [
+    {
+      "path": "scripts/素材/BG03_工作台_局部清理_透明窗景_v01.png",
+      "size": 2291395,
+      "sha256": "8f21a8ebe99f3970a3f3cf065fb94014671c80f4345b88639460b7aa67244bdf",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/BG03_工作台_透明窗景_无捞网_v03.png",
+      "size": 2080906,
+      "sha256": "d175d761dbc5ff504e73ba146ebdc27b93085c31c033a2f5dcd5fc31c36806fb",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/BG03_工作台_透明窗景_无日历提灯_v02.png",
+      "size": 2168487,
+      "sha256": "5693f0f03c88aeb1e0e403e69f676a06d57fba66228ec654ac9bde2af985907c",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/BG04_工作台融合海景_无船_v01.png",
+      "size": 2153922,
+      "sha256": "633637bd2998cbe61b99207037d1ce3da76b16829980378f9322735c426442af",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/BG04_工作台融合海景_有船_v01.png",
+      "size": 2210144,
+      "sha256": "ba284bcbdd035cf668f57c461e876b94dbcd6e2fe3e29d3bc009aca5730bca59",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/BG05_工作台_草药配方层架_无船_v01.png",
+      "size": 3694924,
+      "sha256": "0da66503f3ad15a1708d3c4dcdaf2be2bedf9f684e7d7cb4a4ee0193b4fdacf2",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/BG06_横屏主页_清理背景_v01.png",
+      "size": 2754335,
+      "sha256": "1de5de32c77e4e897c97a790c1add0b1b688d390562be464d6932fef12216055",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/exec-00eede05-dc30-42d9-8238-850331b85d9c.png",
+      "size": 2306010,
+      "sha256": "fa981ed2fea03e55f21cebf838ba66dd85c26893ff3c4d57f8404276c2941504",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/H04_工作台_v01.png",
+      "size": 2091812,
+      "sha256": "b5fa85572095668017bf18135b4eacc722e6fa25f72ce8a17bd914014f4ea01f",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/H06_捞网_透明_v01.png",
+      "size": 1712929,
+      "sha256": "e02f6297303fb3fa204da764c01bfb422c50ddef025da00890925705337ec576",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/H06_捞网_透明_自动提取_v02.png",
+      "size": 1433453,
+      "sha256": "88e554c6abbe273e065b7c7f5c6944c0a73d08e4c4655185770ecececfa036f7",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/H09_炼药炉_纤巧草药熬制_透明_v05.png",
+      "size": 958008,
+      "sha256": "a09c379fe6ac0946076c2e0284afad32a57f60831a425560b2259830d0292898",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/H09_炼药炉_草药熬制_透明_v04.png",
+      "size": 2275825,
+      "sha256": "48333244635da5447aa32ae13ddf5d150fb6ba9f7fa1ad45f77bde33d96ec9b9",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/H09_炼药炉_透明_v02.png",
+      "size": 2056596,
+      "sha256": "c70f06ab2b662b8aaa947b98eb730e16d4d073216480792f222cf20fe24a038a",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/H09_药炉_蒸汽阴影_透明_v03.png",
+      "size": 1253348,
+      "sha256": "d4f0909a654eb478da8ec7298afd1e651009c5e464ae1ef2987cbd747078bfb9",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/H10_木托盘_零散词条内阴影_透明_v03.png",
+      "size": 2156727,
+      "sha256": "d2e059be1e610592930ead91cf5efc6d760609e732357ba30b500e2d5432b091",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/H10_词条托盘组合_透明_自动提取_v04.png",
+      "size": 1528181,
+      "sha256": "e9d0c21d5315de6083ee83c04311334d939166a20ad59f9d635cd33090f01600",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/H10_零散词条托盘_透明_v02.png",
+      "size": 2437092,
+      "sha256": "4eff32f447d8d05b63ef87f6cb80f235f841fa422e5df465cee04b0f2f326b50",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/H11_黄铜剪刀_透明_v02.png",
+      "size": 688058,
+      "sha256": "d3ff66193f75b10fe28b8eef790bf867ccc734a9ae077dc2d12472069c65e718",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/H12_厚皮书_透明_v02.png",
+      "size": 2048648,
+      "sha256": "438043770023b46bce3ce8a17faa3e7a2fd96ae56698395da160173715978f23",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/H14_小台历_含阴影_透明_v03.png",
+      "size": 1178894,
+      "sha256": "5ad14211e0ff8c959364d76ecddbfcebe189bc242876645afcbf45031ea2996b",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/H14_日历底座_透明_自动提取_v04.png",
+      "size": 1792438,
+      "sha256": "0a6092a6ccc89a34610a993d343c3377e6b9043ff6d62bf40ea418bf30530226",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/H14_月历_圈日_透明_v02.png",
+      "size": 2285197,
+      "sha256": "3c9255bc7d3713a18515f55ec5b9742211236da7ebe19954f62f7976194a9fae",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/H17_黄色档案袋_透明_自动提取_v08.png",
+      "size": 2066553,
+      "sha256": "462e30fb4b932e8e181c559024206a19a35ebe11ba37a89e19d8b78246fa4aeb",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/H18_商船组合层_透明_自动提取_v03.png",
+      "size": 1043213,
+      "sha256": "bc261c32e3839fb72d365ae394963c0417dced57f48b1f1dd0381df2561f16be",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/H20_中央信纸_手写字迹_透明_v01.png",
+      "size": 2396796,
+      "sha256": "c2e0a86826119e9967acda65e4c466577e357212941674186638bcf412a0ea08",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/H25_花瓶花枝_v01.png",
+      "size": 2606772,
+      "sha256": "8d9a6d49da7e2e748ec006a97ace529b72d3953329a87ff0639b6e83bd30c245",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/H26_提灯.png",
+      "size": 2062568,
+      "sha256": "28529cd0c5c84bbbe0e854d35c77cf521673aa3af64ac8247b35029bd96901e0",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/H26_桌面小油灯_透明_v02.png",
+      "size": 1695419,
+      "sha256": "1815c4552782c5b0bb8dcf907a7238816be9e552a9b5710c851d3cf78602f3cb",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/H27_植物画框.png",
+      "size": 2115131,
+      "sha256": "03d43c13cc7dfcdfb02476663bb4143090c31bbce2eaeddad80b6ce3213b33d2",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/H28_玻璃瓶干药材_透明_v02.png",
+      "size": 1850779,
+      "sha256": "2790313f49b588609ace365632bf8c2aeb7214638de4db8057162809f4961f6a",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/H28_玻璃瓶装饰_透明_v01.png",
+      "size": 1898458,
+      "sha256": "69d141d0e010657d522daa1b573a908d3b90e5898a94236865bfa20243a5ed13",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/H29_铃兰花束_透明_v01.png",
+      "size": 1813489,
+      "sha256": "e8d41f52268b84ce5871d5fcbfcecbe5650e91c95c7e62fffc2ddb809cd0af67",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/H29_铃兰花瓶_透明_v02.png",
+      "size": 1206424,
+      "sha256": "726655e971433a392fc243f3163deb3b2cd9aff1cf7064ceed5b176ecb9899c2",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/H30_琥珀药草罐_透明_v01.png",
+      "size": 2051079,
+      "sha256": "928fc9dc1ca1ce88d8ff94c2dc28feaaa9dc47f2d0dd14736c4ac651b67f9608",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/H30_草药半圆盆_透明_v01.png",
+      "size": 1703554,
+      "sha256": "0b36b4878e2431e737af7b22cecc5d2d0b65053bb0020d6a20cedc50e40a66ff",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/H31_蓝色书本_透明_v01.png",
+      "size": 1694805,
+      "sha256": "58e04871bce27625d05a7b93b957731e91b669aa2de199c7b412e1aeab30a780",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/H31_陶瓶干花_透明_v01.png",
+      "size": 1451931,
+      "sha256": "106a7cb001ec455e2c122060d4ad8a74dffc23fdfa1dc5350d0fd1f95b7b78fd",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/H32_干草药束_透明_v01.png",
+      "size": 1841117,
+      "sha256": "57aa547c82b2b98990e191ff27e301936818feb86207af245c10243bc1a69a8b",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/H33_植物标本卡_透明_v01.png",
+      "size": 2010732,
+      "sha256": "907645080e6cce4baa022782a2163161bd88ddb2537a3550dea88d69ba0d88e4",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/H34_干花书签_桌面透视_透明_v01.png",
+      "size": 1334275,
+      "sha256": "c110b3d249215f6c094d8f0334df706d81b31c23aa1325faf4ab335a01029dd2",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/H34_干花书签_桌面透视_透明_v02.png",
+      "size": 1262880,
+      "sha256": "44801de17d91eb9c13a3c8af046802a464eb4d67dbe3301137ea34ea6048ef87",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/三页场景_物件与接口摆放说明_v01.md",
+      "size": 11557,
+      "sha256": "8140dc0332586dbdfa9a1542ae498066be44dae58b575852131fc64b70648764",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/主页分层_细修版_v01/BG_主页干净背景_v01.png",
+      "size": 2754335,
+      "sha256": "1de5de32c77e4e897c97a790c1add0b1b688d390562be464d6932fef12216055",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/主页分层_细修版_v01/源图_主页细修_v01.png",
+      "size": 3201665,
+      "sha256": "dd86b3af3ef96cd6c54ac8e4b916379959d970fb68d63cd6da6fdb878509d3bf",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/主页分层_细修版_v01/素材清单_v01.json",
+      "size": 3064,
+      "sha256": "f6ef97be8ccef47e8f453032d8ec441044aa8bd53bb28245d5f086d2c8d61da6",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/主页分层_细修版_v01/过程稿/H06_捞网_自动提取_不采用.png",
+      "size": 1433453,
+      "sha256": "88e554c6abbe273e065b7c7f5c6944c0a73d08e4c4655185770ecececfa036f7",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/主页分层_细修版_v01/过程稿/H09_炼药炉_含蒸汽_自动提取_不采用.png",
+      "size": 1638818,
+      "sha256": "e8f66287d36eddab54a7238a054c14c5af03879a31ecda430b7d3262e2bd81db",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/主页分层_细修版_v01/过程稿/H09_炼药炉_无蒸汽_自动提取_不采用.png",
+      "size": 2226088,
+      "sha256": "dbefe23ebd16c04cc4d881d66dcb41e03456138e5dc78f5c39c303741abfdf24",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/主页分层_细修版_v01/过程稿/H10_托盘组合_自动提取_不采用.png",
+      "size": 1528181,
+      "sha256": "e9d0c21d5315de6083ee83c04311334d939166a20ad59f9d635cd33090f01600",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/主页分层_细修版_v01/过程稿/H14_日历底座_自动提取_不采用.png",
+      "size": 1792438,
+      "sha256": "0a6092a6ccc89a34610a993d343c3377e6b9043ff6d62bf40ea418bf30530226",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/主页分层_细修版_v01/过程稿/H17_黄色档案袋_自动提取_不采用.png",
+      "size": 2066553,
+      "sha256": "462e30fb4b932e8e181c559024206a19a35ebe11ba37a89e19d8b78246fa4aeb",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/主页分层_细修版_v01/过程稿/H18_商船_自动提取_不采用.png",
+      "size": 1043213,
+      "sha256": "bc261c32e3839fb72d365ae394963c0417dced57f48b1f1dd0381df2561f16be",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/主页效果_双瓶桌面摆放_v01.png",
+      "size": 2662530,
+      "sha256": "f85131229ab66eb0b4af82a52cb468df5a493fb0b676ada04804c7054e38f871",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/主页效果_双瓶桌面摆放_v02.png",
+      "size": 2644238,
+      "sha256": "6cf586d8a9e11dc2ade6f527e8fcfe87ca4a71171add1f2e5a7720466364dbf3",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/主页效果_双瓶桌面摆放_v03.png",
+      "size": 2681809,
+      "sha256": "c9d65c1cc0675715b10cc245479eb91513a18d97676242de96756ea094147b79",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/主页效果_双瓶桌面摆放_v04.png",
+      "size": 4743922,
+      "sha256": "768387f7d4c4e92841b4670b22b75a50d58c44895daea6d612e09a1761d8638e",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/主页最新.png",
+      "size": 2610396,
+      "sha256": "1179f44d928c03fbddddfad91a54accbb0c515c5f29f85077784ecf5248a3d1d",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/信纸.png",
+      "size": 2035492,
+      "sha256": "9c0096340142d3ffc9825db281a8f1f09c1e1f66844037be88ae3a400ac35fed",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/参考_三页场景_主页基准_v01.png",
+      "size": 4798755,
+      "sha256": "b8c69c911d305074816dccdc5a99000f59901936461022e7bdb047a434766252",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/参考_待融合海景_v01.png",
+      "size": 3104388,
+      "sha256": "fc70e8985c25f9c4775395e54e0e483901c63217c0baaefbc54c5770f1319a5d",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/参考_横屏主页细修_原图_v01.png",
+      "size": 3201665,
+      "sha256": "dd86b3af3ef96cd6c54ac8e4b916379959d970fb68d63cd6da6fdb878509d3bf",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/参考_欧洲商船_01.jpg",
+      "size": 163811,
+      "sha256": "f9675fc8a046183f7312b21dda383b6f1ca798ce27825ec43842e896964164fb",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/参考_欧洲商船_02.jpg",
+      "size": 138222,
+      "sha256": "035eb847839701b5d91d8325c343c6129bb330593718496f73f49a85851c0838",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v01/fonts/Itim-OFL.txt",
+      "size": 4436,
+      "sha256": "1f00d1f970b4ea469b6936e599b599bb217edaab792e586658ef2e71cf438685",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v01/fonts/Itim-Regular.ttf",
+      "size": 371384,
+      "sha256": "9164d7eb92ca717b53b07193e3445c96782222d24215151b8d2851b576b17645",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v01/fonts/Mali-OFL.txt",
+      "size": 4381,
+      "sha256": "bc1175730d609233043cde47e48f69831f012e85537c5ec1a2cf4836757c1540",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v01/fonts/Mali-SemiBold.ttf",
+      "size": 112924,
+      "sha256": "0ba6d92b46369ec5040d119f87a17586be96364fac743fbf510b54a3ead1adcc",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v01/日期瓶_DAY_透明_v01.png",
+      "size": 2512407,
+      "sha256": "f584b4002ee44201d4fc940e16930dd2e225f0a9b4ab827fe1a0473100fc4989",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v01/检查结果_v01.json",
+      "size": 8945,
+      "sha256": "8115178bc64ed287610a7b20f65bdfb3b69aef8817aa0de0b15e232d3a176c70",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v01/素材清单_v01.md",
+      "size": 6322,
+      "sha256": "7696a55066d588f828be8932b01c97f8c941f8c4a4edfbf99748d4dc1f4f91e2",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v01/过程稿/原始_减光日期罐_DAY.png",
+      "size": 1852492,
+      "sha256": "a4e7dcba82af77ce27f7970b5d209a6b5a7e12601ec26e93df7226b4ae5f8d1e",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v01/过程稿/原始_减光金钱罐_金币.png",
+      "size": 1637153,
+      "sha256": "a84b976195999b418f10c809134898502c712ea3657fe3e6e6f6b4c5e14a8454",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v01/过程稿/原始_罐口向右_DAY.png",
+      "size": 2022705,
+      "sha256": "cb4db941ecb8988db39627c42231ceeb944be0b596fa8cee189d3a4aff431c5f",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v01/过程稿/参考_最新主页_r2.png",
+      "size": 4012545,
+      "sha256": "a3a87b70ee2d7cecfd2279188d8a906f4d7a86f4916d8c651d82b8633252ef14",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v01/过程稿/弃用_瓶口向左_DAY.png",
+      "size": 1568411,
+      "sha256": "7fc714cf2a5c8ca3b3fcdbf7408ec95921091fd00feac967582e9a059bc2b7d0",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v01/过程稿/弃用_竖口扁瓶_DAY.png",
+      "size": 1657588,
+      "sha256": "38ea95dff1ef24daa18ff08921ad47385e379170e19c6f6788b3091976da601c",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v01/过程稿/弃用_竖口扁瓶_金钱.png",
+      "size": 1741170,
+      "sha256": "a1bd43e3a526bdf48f3967a2a6618ab451d165e8db53d1a5ef20853dc512cd4a",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v01/过程稿/弃用_高光较强_钱罐￥.png",
+      "size": 1848482,
+      "sha256": "4efcf3e063a9b5241c971baab071d3de4cddd5500b2c7658c93bcec26a90b195",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v01/过程稿/未紧裁_日期瓶_DAY_透明_v01.png",
+      "size": 2549701,
+      "sha256": "8db59c4c1ad98e29acada1b08287f8309614199e50a846d46c5a4ea196bf082a",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v01/过程稿/未紧裁_金钱瓶_金币_透明_v01.png",
+      "size": 2281151,
+      "sha256": "bd9f35b2243268c30cbdc659320f5ab693062f2f9aa81ade02b94eeb34f8be38",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v01/过程稿/检查_日期罐_深底.png",
+      "size": 509145,
+      "sha256": "d572e6024d96186674b720a2781a3ade0600e2b67a68f876a0eb7f2742ab51a2",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v01/过程稿/预览_双瓶标签_Itim_v01.png",
+      "size": 6128599,
+      "sha256": "4f605e8fa823795a00308eacf726c1de457f0aafc55e61b6b17236f6bf00de8a",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v01/过程稿/预览_双瓶标签_Mali_v01.png",
+      "size": 6127927,
+      "sha256": "809f5aa58bd6dc026673f792318b3863daf3a8ff53a6138683889fee4ee4f973",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v01/过程稿/预览_双瓶标签_手机检查_v01.png",
+      "size": 2099630,
+      "sha256": "8d89c78e7ebbe3bf49447589c5dadd06b5054746641b27d2ed3053f259710adf",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v01/过程稿/预览_双瓶标签_数字适配检查_v01.png",
+      "size": 1383025,
+      "sha256": "05ca547f684eb60db17fce36ed634e9dfae9e572e0a4f6a1914140c3547c9920",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v01/过程稿/预览_双瓶标签_透明检查_v01.png",
+      "size": 1247964,
+      "sha256": "576c77c93f049a0f304ee0d20e713ac19096bd174b77219bfacbcc9fafb0e4c1",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v01/金钱瓶_金币_透明_v01.png",
+      "size": 2247904,
+      "sha256": "ecbdfbc6ce67179d0d5466a8252f8adffac9ac10d761fe3dd51816937f5248a9",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v01/预览_双瓶标签_Itim_v01.png",
+      "size": 6136912,
+      "sha256": "d3c387e1879f6d1fe3b7413234c330e2ac31e4fc658363416485d4a15d664432",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v01/预览_双瓶标签_Mali_v01.png",
+      "size": 6136238,
+      "sha256": "4c279386892031a71047c37cc895efb70828347c2eb571b748784e2af236028c",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v01/预览_双瓶标签_手机检查_v01.png",
+      "size": 2103019,
+      "sha256": "f456834220b6716b9b66b63e531025e3b93633cd62440255f095a84e62804d07",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v01/预览_双瓶标签_数字手机缩略检查_v01.png",
+      "size": 528419,
+      "sha256": "e79c3c8149297dd3b8e212fc0df09ac10ffe749d0b7705a55d728cf146b64d81",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v01/预览_双瓶标签_数字适配检查_v01.png",
+      "size": 1572552,
+      "sha256": "702ddd4b1b294c858a0224a407d41899aeba0b88d5e327d8e06e00740e1806fd",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v01/预览_双瓶标签_透明检查_v01.png",
+      "size": 1448630,
+      "sha256": "344c16043ee6b8248a9b374413452792f8b86d237acd9679860d3988313da629",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v02/日期瓶_DAY_透明_v02.png",
+      "size": 1858399,
+      "sha256": "b817967292f846436442e96f789767a41fb0705a2aa888382bc2311622f81fbf",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v02/过程稿/原始_日期罐_轻量化_v02.png",
+      "size": 1605164,
+      "sha256": "2bf8da432f0e267cb25b7ad17cf1a1448c71118751e5c6eaa85a3db684fff6b4",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v02/过程稿/原始_金币罐_轻量化_v02.png",
+      "size": 1913288,
+      "sha256": "a21e2dc4cfd5718fafea466f245baf8c99c848edfd27bde4bf8b4d5a69f014cd",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v02/过程稿/预览_试稿一_主页.png",
+      "size": 5671255,
+      "sha256": "84e40c40c2b6ed2829fa4c02c15ec4dab8e61b4fa0b5bef2170f669739178ef7",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v02/金钱瓶_金币_透明_v02.png",
+      "size": 2091061,
+      "sha256": "2b8d817214b7b2dec963ef12eae31325ed79af65c877e32276f092a5722afc50",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v02/预览_修改前_Mali_v01.png",
+      "size": 6136225,
+      "sha256": "1b4b6fdec0f49aa41ba8c16bcb1ae958882acb4a8225aacb8f57e332b5174732",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v02/预览_修改后_Itim_v02.png",
+      "size": 6125888,
+      "sha256": "f2e0ed669fb82ba9adee699e5cd7bb48fc171de42cd5bf260c8c7ecf74021742",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v02/预览_修改后_Mali_v02.png",
+      "size": 6125121,
+      "sha256": "b0edd96594d2676dedfdc3e1a52dab1d9c7fdd86b13a51d499c1a3f9d69f92a8",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v02/预览_双瓶标签_前后对照_v02.png",
+      "size": 3026091,
+      "sha256": "f4ca158614c7e6326306224068256270b0f64ecba982dd9742c90644d09f2787",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v02/预览_双瓶标签_手机前后检查_v02.png",
+      "size": 1297102,
+      "sha256": "a5550d2a1da941a471e99504c9b5f47cbb3ac57c04aea02ccc904d59b5602677",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_v02/预览_双瓶标签_透明检查_v02.png",
+      "size": 799390,
+      "sha256": "1af130eda6c455291118e306cdafcf1b8a287c91681d43f554485a67a90617db",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_选定版提取_v01/检查_金钱瓶_浅深底_v01.png",
+      "size": 724369,
+      "sha256": "0aa46505e4d35738d263a191200071b3f690781cc812fea1757b206af80139a6",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json",
+      "size": 10587,
+      "sha256": "3e931d9159e4be3613241b7853694cb9653266772171ba9dc46f38490d5c7507",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_选定版提取_v01/素材清单_v01.md",
+      "size": 6302,
+      "sha256": "810e828675bd2ad436046d737da9de220341436c116598318009b4e8fbe7fd75",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_选定版提取_v01/过程记录/参考_日期瓶_原像素.png",
+      "size": 41116,
+      "sha256": "0e478a24671054abbbaa019458953d69899eeb6cfc264def5972b5205ed8f7a5",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_选定版提取_v01/过程记录/参考_金钱瓶_原像素.png",
+      "size": 39699,
+      "sha256": "3e17c70b6a0919efec850e7afd338ddee9c0eb58e7efb486facc6adff5662d87",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_选定版提取_v01/过程记录/底图_未加标签主页.png",
+      "size": 4012545,
+      "sha256": "a3a87b70ee2d7cecfd2279188d8a906f4d7a86f4916d8c651d82b8633252ef14",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_选定版提取_v01/过程记录/日期瓶_生成原稿_待验.png",
+      "size": 1304543,
+      "sha256": "124bcb5111cf07b8134b68550b2b13bb33ced9b98e8d0db4183a65aad9ce0ad7",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_选定版提取_v01/过程记录/日期瓶_紧裁_问题稿.png",
+      "size": 1840197,
+      "sha256": "3d92f652e50a1e9da991393ad50f465ae5dbf638410808d10aece5c3aa3d8c9b",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_选定版提取_v01/过程记录/日期瓶_透明重建提示词.txt",
+      "size": 2704,
+      "sha256": "18852108322ebd91f6fdd8d209a660e48721f2242ee352d4cd31032a3acbfba1",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_选定版提取_v01/过程记录/检查日期瓶.ps1",
+      "size": 9744,
+      "sha256": "a152bc53b4f1e11e388be061ee287afa5f9125d92434c7540b23c756b2842fa3",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_选定版提取_v01/过程记录/检查金钱瓶.ps1",
+      "size": 10409,
+      "sha256": "3627348b9e7a7a21064951bffe059b37b34c806549ee7c5a2d24f311e4609dc0",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_选定版提取_v01/过程记录/源图_选定双瓶主页.png",
+      "size": 3077020,
+      "sha256": "9616cf98db0bfbc2a64e5f31db3150d6ea31123c863c4ad81c93accf1b414a97",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_选定版提取_v01/过程记录/金钱瓶_生成原稿_v01.png",
+      "size": 1281492,
+      "sha256": "de8fde51a2623433c720d0fb02a9f6791e0147d98b7869617d01942d60213398",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_选定版提取_v01/过程记录/金钱瓶_透明重建提示词.txt",
+      "size": 2939,
+      "sha256": "23f39743aa7f0a159ebdc1e93619c7a9d284d18c015ee17127c869aa9c44756e",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json",
+      "size": 11720,
+      "sha256": "7a8f9ad57996c5d37dad697f354eacfe9f7b33d628160f5884c6ef63571b1b4b",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_钱币_透明_v01.png",
+      "size": 1786431,
+      "sha256": "442be524bd983829ac3bede3d85cc9abd07768aaea21ed53405d3371ab4aa907",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_选定版提取_v01/问题预览_日期瓶_无标签主页_v01.png",
+      "size": 6106254,
+      "sha256": "98d14699aa25252a93faf99ace75c63a238bce26132ae9aec58f4c8fb38d1867",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_选定版提取_v01/问题预览_日期瓶_浅深底_v01.png",
+      "size": 631757,
+      "sha256": "cb7ec11c57557909e2b36eeb09ebe7164f4468b6bb79ffd5a251f6be6784de9b",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_选定版提取_v01/预览_日期问题稿与金钱候选_无标签主页_v01.png",
+      "size": 6114608,
+      "sha256": "648f1d1509d3cc1c217249aeb428e1a0bc268ac6a36947bd77015e9921bf26e6",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/双瓶标签_选定版提取_v01/预览_金钱瓶_无标签主页_v01.png",
+      "size": 6109712,
+      "sha256": "82f5ab5989e81a947e90e8e5445feacc690218acd92a2c5a5f56b86e7e900c37",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/桌面双瓶_原像素提取_v01/对照_原图_透明边缘_无瓶底图_1比1_v01.png",
+      "size": 336574,
+      "sha256": "ba87027026df620a9fda4b5e780ad05713c74868b1a80e2a267d84255fd24a6c",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/桌面双瓶_原像素提取_v01/对照_原图与实底提取结果_同尺寸_v01.png",
+      "size": 9451954,
+      "sha256": "e0c873526684ae837c8cf74e4dcf48fad48e2c0e41c90f09ae80c185e6a8bc83",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/桌面双瓶_原像素提取_v01/日期瓶_DAY_原像素_透明_v01.png",
+      "size": 47954,
+      "sha256": "3fca979e06704c34bfc576467eaeebff25df8f6e5ef65c70339fd527e777f18d",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json",
+      "size": 4534,
+      "sha256": "cdeb3f11f9afaff359271d309e9375be2db5b422ee91583779ba552800d633e6",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/桌面双瓶_原像素提取_v01/检查记录/date_蒙版.png",
+      "size": 3098,
+      "sha256": "cf9e94b46a007ea08d8971a3eb21825f5bef77001a31f79a9f605bbc5f11d263",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/桌面双瓶_原像素提取_v01/检查记录/money_蒙版.png",
+      "size": 3132,
+      "sha256": "6755d8b2fe0885ccdc3a73820dad3533b07fee049fed4530712e17514b00619b",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/桌面双瓶_原像素提取_v01/检查记录/原像素局部_x1180_y345_200x240.png",
+      "size": 151217,
+      "sha256": "5e4131e4fc29781834c3749183fd8f6a9f2225e3550a2c78817605fce9773719",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/桌面双瓶_原像素提取_v01/检查记录/原图尺寸选区复位_仅检查.png",
+      "size": 80871,
+      "sha256": "2148dc94b5f78e78db995cc7c3d584f20d5b7661de11b0b63e5258ae05685b92",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/桌面双瓶_原像素提取_v01/检查记录/无双瓶底图_仅预览映射1672x941.png",
+      "size": 4728569,
+      "sha256": "34f6bfa0de75b7a97a043c6f6adc82080b4d9c888751b1b053c1c9c116aff831",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/桌面双瓶_原像素提取_v01/检查记录/选区观察_4倍最近邻_非素材.png",
+      "size": 185418,
+      "sha256": "2969909fdbe0b8ad04ac7576372e52bc141ac166e32dbac68803298360e4f29d",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/桌面双瓶_原像素提取_v01/源图_桌面双瓶主页_v01.png",
+      "size": 3096000,
+      "sha256": "699595d332129fa1b964aea984680c27ca163e10f0dff08ab7296c1beecdfaea",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/桌面双瓶_原像素提取_v01/素材清单_v01.md",
+      "size": 5011,
+      "sha256": "f33cf17d58c7313c5e729892dc25baacfe85a12a175a98c82bfb845a6c4d40a9",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/桌面双瓶_原像素提取_v01/金币瓶_原像素_透明_v01.png",
+      "size": 48945,
+      "sha256": "1aeef8e5711f8d45e4552e1a6a53d059c943be1e342c770b766d5752e704a6e8",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/桌面双瓶_原像素提取_v01/预览_叠回无双瓶底图_1672x941_v01.png",
+      "size": 4732291,
+      "sha256": "18cccd2026ffffa70c48f7d13866accf1a2f73f2bd7c8a080fb6708099e03668",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/桌面双瓶_去背景修复_v02/对照_原尺度_浅深底与实底_v02.png",
+      "size": 359052,
+      "sha256": "a39b8d80687e72b7988871c4f24d77e3fc53d37c09af65097061050891fc44a6",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/桌面双瓶_去背景修复_v02/对照_同主页修复前后_同尺寸_v02.png",
+      "size": 4937050,
+      "sha256": "f5c88df14a001ead4e99c89af9e1e689460e8721e71a1513d0c7948259a743cd",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/桌面双瓶_去背景修复_v02/日期瓶_DAY_局部修复_透明_v02.png",
+      "size": 21539,
+      "sha256": "6d7852130450cab26166e41bcfa8f21ca809fbed8602a364e3781bf10844f90d",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json",
+      "size": 3481,
+      "sha256": "f8edd4d552ce59ff6af4c78b2cd0d9d30b24ef2749d023a477a925ebc301fbdb",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/桌面双瓶_去背景修复_v02/检查记录/DAY观察_8倍_非素材.png",
+      "size": 15527,
+      "sha256": "495cd3fc0ccea1cb6aec73d334c92b8cbf91c982a7b0416e8981086d0b3a9753",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/桌面双瓶_去背景修复_v02/检查记录/保护区_0.png",
+      "size": 2713,
+      "sha256": "60bddb36b97e6921e9f2ae7a0ea10384a94620d55af0828e7c394356577f0b8c",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/桌面双瓶_去背景修复_v02/检查记录/保护区_1.png",
+      "size": 2354,
+      "sha256": "26804e84e99eca63677acb9317c923545c6aafc742138c1e6ba1df9eb16cf910",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/桌面双瓶_去背景修复_v02/检查记录/局部修复_约3倍观察_非素材.png",
+      "size": 198591,
+      "sha256": "2fc8380a3cb8fe10e7d1947baba22b0dd62f17726e54a87ed99a97ec434b2606",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/桌面双瓶_去背景修复_v02/检查记录/移至海面_仅透底检查非布局.png",
+      "size": 4732930,
+      "sha256": "ac6f5cbe4b1b94306da5fb31cfa572b69120b4041b546edb054186b9e0a9b6e7",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/桌面双瓶_去背景修复_v02/检查记录/金币石子观察_6倍_非素材.png",
+      "size": 44108,
+      "sha256": "84cff5469892bb4b7bb7a9a508e37102427abc32ec155751fcd2bb515523ba64",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/桌面双瓶_去背景修复_v02/检查记录/首轮修复对照_未采用.png",
+      "size": 359178,
+      "sha256": "f96f3a2155611cb50f3e37cb5c041278653cccd3bd8784f25165e7aa0fc95b7f",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/桌面双瓶_去背景修复_v02/检查记录/首轮日期_未采用.png",
+      "size": 21723,
+      "sha256": "988456d2040aa1b9686bf04d2deccdd250b12a155a9f08738e4b71977bd48651",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/桌面双瓶_去背景修复_v02/检查记录/首轮金币_未采用.png",
+      "size": 21677,
+      "sha256": "afdadf41b3c438406e934e4ecec4c367994e5bc15649f59a6cea04d4339a413d",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/桌面双瓶_去背景修复_v02/素材清单_v02.md",
+      "size": 5115,
+      "sha256": "d5ff1b2921d1d38cb2de8996d746eabe506e9e15641db03945863f68e98ed070",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/桌面双瓶_去背景修复_v02/金币瓶_局部修复_透明_v02.png",
+      "size": 21671,
+      "sha256": "99b71789b84481996dc78bc0418b25cbf6763bd25fe6225027e541b842774772",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/桌面双瓶_去背景修复_v02/预览_无双瓶底图_局部修复_v02.png",
+      "size": 4730953,
+      "sha256": "e727cbd63c5de7491e2917f4662ee2db7398c7914c025ca00cfc51ae9367cb85",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/账签_空白_透明_v01.png",
+      "size": 2345754,
+      "sha256": "5114a99c80d2675203de4a5dc446839cff8875aabd9007f73edf7d20cd8646cb",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/过程稿/BG05_右侧层架_AI编辑_v01.png",
+      "size": 2144183,
+      "sha256": "622dfccf55d207ee9d1e964145191e0c8811d2151d1bf218feb450260abd36e0",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/过程稿/BG05_右侧层架_AI编辑_v01.png.meta",
+      "size": 42,
+      "sha256": "0b1307cad77dae2f52aade7ca01e6ec97b02b93ab976ab9314ef3d1c720dd6d5",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/过程稿/H18_商船组合层_AI提取_v03.png",
+      "size": 166375,
+      "sha256": "0e88473264b9d0b8b2a81e4e17d4da4da8ee9a1c48c0a0d13b0a3f233c49e18f",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/过程稿/H18_商船组合层_AI提取_v03.png.meta",
+      "size": 42,
+      "sha256": "434ccc1d9c3af47d43a40a20cec829c8a9436ee9f0c43a3dda62b5c6994b6bf8",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/过程稿/H18_欧洲商船_AI生成_v02.png",
+      "size": 2080351,
+      "sha256": "2887f2617bc75b723f5e06370a4e37e946a4a5cc8aa50afe205e6c13b0bde781",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/过程稿/H18_欧洲商船_AI生成_v02.png.meta",
+      "size": 42,
+      "sha256": "a7fdbfc3c17c0b80fc1daab70971ca4c3d3c1e4aeca77132e308b2762ff1ff1c",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/过程稿/三页场景_r1/页面效果_来信抽屉_正视打开_横屏_v01.png",
+      "size": 2534628,
+      "sha256": "ecb6767f824eaba5418dd1d503a3b3c2891d445d4c1ea2d27c8226b806fb5bf2",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/过程稿/三页场景_r1/页面效果_海边捕捞_横屏_v01.png",
+      "size": 2587279,
+      "sha256": "089518d731953f07ab070551ab394e8ad33f5712a9aa59301701d1f75f043279",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/过程稿/三页场景_r1/页面效果_炼药近景_双侧栏_横屏_v01.png",
+      "size": 2779926,
+      "sha256": "dc173b41f926ff0d694a6d0fbed6ae7ab1789fb64558adafbc4a9142c2f6b684",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/过程稿/桌上瓶信_信纸留白修正版.png",
+      "size": 2258361,
+      "sha256": "763507db818f206483a241792c6e20e4fc00222db45acb46bb281997a5f1fd90",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/过程稿/桌上瓶信_整体比例修正版.png",
+      "size": 2272105,
+      "sha256": "7d6ead8383993e99415c9aa8ffdd6e079cf35a499ca01169760c0d3a411c5701",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/过程稿/检查_BG04_原船局部.png",
+      "size": 261862,
+      "sha256": "8f74a3a1cd12b87b851deb59977cd4f0a367c72a19d5ccc5b8c88d277faebe9e",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/过程稿/检查_BG04_原船局部.png.meta",
+      "size": 42,
+      "sha256": "f06015db99dbeefffd95e531690456e053e13a659ce88eb319953881867c187a",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/过程稿/检查_H18_生成局部.png",
+      "size": 123762,
+      "sha256": "7e6d1d959dbbe4983a4b180698459a4f5669a277403f37cb27b0b678cf4484c1",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/过程稿/检查_H18_生成局部.png.meta",
+      "size": 42,
+      "sha256": "70d040e9b736fd13c48bc1f9f65303d56e63d2f56b524c21a61f738414afe65a",
+      "change": "unchanged"
+    },
+    {
+      "path": "scripts/素材/页面效果_来信抽屉_正视打开_横屏_v02.png",
+      "size": 2283066,
+      "sha256": "d7949605d0fb3496de7fe961dd4336f247e1655f71a69144cd2e03aca0b5479e",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/页面效果_海边捕捞_横屏_v02.png",
+      "size": 2463056,
+      "sha256": "e3342edaad1bfe7fa9b3c7b46bb6908abb6b62c8f5150fde7fb901b74be0cf19",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/页面效果_炼药近景_双侧栏_横屏_v02.png",
+      "size": 2596639,
+      "sha256": "e46434a8a9bad0baf2bdf6cd716eb2a6eb568b5bcea8dcb8acbb8fb711477347",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/预览_账签_主页左上角_v01.png",
+      "size": 6078738,
+      "sha256": "51c3de8b218405595b593cbdf45dfca7e19b9ffd3e228325b726d0e82630a820",
+      "change": "added"
+    },
+    {
+      "path": "scripts/素材/预览_账签_手机横屏与透明检查_v01.png",
+      "size": 2511972,
+      "sha256": "7a8ba2f384cd896489c315e8affa4b649ee36d5cbba1277a9c90e5843737fe20",
+      "change": "added"
+    }
+  ],
+  "remote_only_preserved": [
+    "scripts/素材/BG03_工作台_局部清理_透明窗景_v01.png.meta",
+    "scripts/素材/BG03_工作台_透明窗景_无捞网_v03.png.meta",
+    "scripts/素材/BG03_工作台_透明窗景_无日历提灯_v02.png.meta",
+    "scripts/素材/BG04_工作台融合海景_无船_v01.png.meta",
+    "scripts/素材/BG04_工作台融合海景_有船_v01.png.meta",
+    "scripts/素材/BG05_工作台_草药配方层架_无船_v01.png.meta",
+    "scripts/素材/H04_工作台_v01.png.meta",
+    "scripts/素材/H06_捞网_透明_v01.png.meta",
+    "scripts/素材/H09_炼药炉_透明_v02.png.meta",
+    "scripts/素材/H09_药炉_蒸汽阴影_透明_v03.png.meta",
+    "scripts/素材/H10_木托盘_零散词条内阴影_透明_v03.png.meta",
+    "scripts/素材/H10_零散词条托盘_透明_v02.png.meta",
+    "scripts/素材/H11_黄铜剪刀_透明_v02.png.meta",
+    "scripts/素材/H12_厚皮书_透明_v02.png.meta",
+    "scripts/素材/H14_小台历_含阴影_透明_v03.png.meta",
+    "scripts/素材/H14_月历_圈日_透明_v02.png.meta",
+    "scripts/素材/H15_钱袋.png",
+    "scripts/素材/H15_钱袋.png.meta",
+    "scripts/素材/H15_钱袋_透明_v02.png",
+    "scripts/素材/H15_钱袋_透明_v02.png.meta",
+    "scripts/素材/H17_墙挂档案袋组_透明_v01.png",
+    "scripts/素材/H17_墙挂档案袋组_透明_v01.png.meta",
+    "scripts/素材/H18_商船组合层_原位_941x1672_v01.png",
+    "scripts/素材/H18_商船组合层_原位_941x1672_v01.png.meta",
+    "scripts/素材/H18_欧洲商船组合层_原位_941x1672_v02.png",
+    "scripts/素材/H18_欧洲商船组合层_原位_941x1672_v02.png.meta",
+    "scripts/素材/H25_花瓶花枝_v01.png.meta",
+    "scripts/素材/H26_提灯.png.meta",
+    "scripts/素材/H26_桌面小油灯_透明_v02.png.meta",
+    "scripts/素材/H27_植物画框.png.meta",
+    "scripts/素材/H28_玻璃瓶干药材_透明_v02.png.meta",
+    "scripts/素材/H28_玻璃瓶装饰_透明_v01.png.meta",
+    "scripts/素材/H29_铃兰花束_透明_v01.png.meta",
+    "scripts/素材/H29_铃兰花瓶_透明_v02.png.meta",
+    "scripts/素材/H30_琥珀药草罐_透明_v01.png.meta",
+    "scripts/素材/H30_草药半圆盆_透明_v01.png.meta",
+    "scripts/素材/H31_蓝色书本_透明_v01.png.meta",
+    "scripts/素材/H31_陶瓶干花_透明_v01.png.meta",
+    "scripts/素材/H32_干草药束_透明_v01.png.meta",
+    "scripts/素材/H33_植物标本卡_透明_v01.png.meta",
+    "scripts/素材/exec-00eede05-dc30-42d9-8238-850331b85d9c.png.meta",
+    "scripts/素材/主页原型_v03_商船朝向码头_v02.png",
+    "scripts/素材/主页原型_v03_商船朝向码头_v02.png.meta",
+    "scripts/素材/参考_七件器物提取原图_v01.png",
+    "scripts/素材/参考_七件器物提取原图_v01.png.meta",
+    "scripts/素材/参考_右侧层架修改前_v01.png",
+    "scripts/素材/参考_右侧层架修改前_v01.png.meta",
+    "scripts/素材/参考_待融合海景_v01.png.meta",
+    "scripts/素材/参考_新工作台原图_v01.png",
+    "scripts/素材/参考_新工作台原图_v01.png.meta",
+    "scripts/素材/参考_欧洲商船_01.jpg.meta",
+    "scripts/素材/参考_欧洲商船_02.jpg.meta",
+    "scripts/素材/船.png",
+    "scripts/素材/船.png.meta",
+    "scripts/素材/预览_BG04_商船组合层_原位叠加_v01.png",
+    "scripts/素材/预览_BG04_商船组合层_原位叠加_v01.png.meta",
+    "scripts/素材/预览_BG04_商船组合层_接缝放大_v01.png",
+    "scripts/素材/预览_BG04_商船组合层_接缝放大_v01.png.meta",
+    "scripts/素材/预览_BG04_欧洲商船_原位叠加_v02.png",
+    "scripts/素材/预览_BG04_欧洲商船_原位叠加_v02.png.meta",
+    "scripts/素材/预览_BG04_欧洲商船_接缝放大_v02.png",
+    "scripts/素材/预览_BG04_欧洲商船_接缝放大_v02.png.meta",
+    "scripts/素材/预览_BG05_右侧层架_局部_v01.png",
+    "scripts/素材/预览_BG05_右侧层架_局部_v01.png.meta",
+    "scripts/素材/预览_BG05_草药配方层架_欧洲商船_v01.png",
+    "scripts/素材/预览_BG05_草药配方层架_欧洲商船_v01.png.meta",
+    "scripts/素材/预览_七件器物透明素材_v01.png",
+    "scripts/素材/预览_七件器物透明素材_v01.png.meta"
+  ],
+  "scope": "additions only; no image changes or deletion"
+}

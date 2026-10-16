@@ -1,4 +1,16 @@
 @charset "UTF-8";
+/* Page presets stay reachable alongside the layer tools on narrow desktops. */
+#page-size{max-width:100%;border:1px solid var(--line);border-radius:6px;background:#fff;color:inherit;padding:6px 8px;font-size:11px}
+#page-size:disabled{opacity:.55;cursor:default}
+.workspace .canvas-bar{height:auto;min-height:57px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+.workspace .page-heading{flex-wrap:wrap;gap:7px}
+.workspace .page-heading>button{max-width:170px}
+.workspace .edit-actions{margin-left:auto}
+#preview-dialog .preview-header{height:auto;min-height:64px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
+#preview-dialog[open]{display:flex;flex-direction:column}
+#preview-dialog .preview-header>div{flex-wrap:wrap}
+#preview-dialog #preview-stage{flex:1;min-height:0;height:auto}
+#preview-stage svg{flex-shrink:0}
 /* Keep asset tools fixed; only the thumbnail grid scrolls. */
 .assets-section>.section-heading,.assets-section>input,.library-note{flex-shrink:0}
 .asset-grid:empty{display:none}
