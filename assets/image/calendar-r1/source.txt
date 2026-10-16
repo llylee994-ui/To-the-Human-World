@@ -1,0 +1,8 @@
+Generated with the built-in image_gen edit tool, 2026-10-16.
+Edit target: approved 日历_透明_v01.png; original retained in the conversation's calendar-v01 artifact folder.
+Generated source: exec-542e426f-0094-43ba-a155-85b50901376f.png
+Consumer: scripts/ui/landscape/CalendarArt.lua and CalendarView.lua.
+Dynamic date, postal stamp and button copy are real UI controls.
+
+Final prompt:
+Use case: precise-object-edit. Asset type: transparent game UI calendar sprite. Edit target: the supplied approved cutout calendar. Make a blank reusable version by removing ONLY all writing: the large brown 第 5 天, the entire red postal stamp and wavy cancellation lines, the brown 再待一会 on the small lower-left paper tab, and the brown 结束今天 and underline on the lower-right curled page. Reconstruct natural matching blank ivory paper texture in those exact areas. Keep the small lower-left blank paper tab itself. Preserve precisely the same calendar silhouette, size, perspective, crop, wooden frame and stand, brass clip, layered paper edges, perforation line, blue lighthouse and wave illustration, lower-right paper curl, warm illustrated painted material and lighting. No replacement text, no numbers, no new objects. Keep actual transparent alpha outside the object, no room or backdrop, no checkerboard painted in. The paper, wood and brass must be opaque; only edge antialiasing and empty background may be transparent. Return a square PNG cutout.

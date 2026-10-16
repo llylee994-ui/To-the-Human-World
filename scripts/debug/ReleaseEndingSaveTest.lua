@@ -7,11 +7,11 @@ function T.Run()
     local check,done=R.Checks("ReleaseEndingSave")
     local base,token=E.WishSeed();local wish=E.Clone(base)
     must(wish.state.ConfirmEnding(E.Request(wish,{kind="wish"})))
-    local opening=E.New();E.Day14(opening);assert(opening.state.Save("b5_flow"))
+    local opening=E.SmallComplete();assert(opening.state.Save("b5_flow"))
     local ticket=E.New(666);assert(ticket.state.Save("b5_flow"))
     local cases={
         {name="PurchaseTravelTicket",seed=ticket,call=function(x)return x.state.PurchaseTravelTicket(R.Quote(x,"travel_ticket",666))end,phase="ended"},
-        {name="BeginClosing",seed=opening,call=function(x)return x.state.BeginClosing(E.Request(x))end,phase="closing_prepare"},
+        {name="BeginClosing",seed=opening,call=function(x)return x.state.BeginClosing(E.Request(x))end,phase="closing"},
         {name="UpdateWishDraft",seed=base,call=function(x)return x.state.UpdateWishDraft(E.Request(x,{sourceTokenIds={}}))end,phase="wish"},
         {name="ConfirmEnding",seed=base,call=function(x)return x.state.ConfirmEnding(E.Request(x,{kind="wish"}))end,phase="ended"},
         {name="RestoreEndingCheckpoint",seed=wish,call=function(x)return x.state.RestoreEndingCheckpoint(E.Request(x))end,phase="operating"},

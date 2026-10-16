@@ -50,7 +50,11 @@ function GameState.New(options)
     local function prepare(data, schema)
         if schema == 1 then return validateV1(data) end
         local valid
-        if schema==4 then valid=Schema.ValidateV4(data,schemaOptions)
+        -- The assembled order audit includes schema validation. Running both
+        -- entry points repeats every historical order and closing checkpoint.
+        local wholeOrderAudit=options.order and (schema==3 or schema==4)
+        if wholeOrderAudit then valid=options.order.ValidateEnvelope(data)
+        elseif schema==4 then valid=Schema.ValidateV4(data,schemaOptions)
         elseif schema==3 then valid=Schema.ValidateV3(data,schemaOptions)
         elseif schema==2 then valid=Schema.ValidateV2(data,schemaOptions)
         else return U.Fail("SAVE_UNSUPPORTED","schema","不支持的结构版本") end
@@ -66,7 +70,7 @@ function GameState.New(options)
             if not called or type(checked) ~= "table" then return U.Fail("VALIDATOR_FAILED", key, "模块校验器异常") end
             if not checked.ok then return checked end
         end
-        if options.order then
+        if options.order and not wholeOrderAudit then
             local audited=options.order.ValidateEnvelope(data)
             if not audited.ok then return audited end
         end
@@ -299,7 +303,11 @@ function GameState.New(options)
         if (targetSchema==3 or targetSchema==4) and envelope and envelope.currentOrder and not require("systems.RecipeDraft").IsEmpty(envelope.currentOrder.draft) then
             return U.Fail("DRAFT_NOT_EMPTY","draft","请先清空投料再跨天")
         end
-        if targetSchema==4 and envelope.live.gameFlow.day>=options.content.release.finalDay then return api.BeginClosing({expectedRevision=envelope.revision}) end
+        if targetSchema==4 then
+            local progress=require("systems.ReleaseEndings").New(options.content).GetProgress(envelope)
+            if not progress.ok then return progress end
+            if progress.value.canClose then return api.BeginClosing({expectedRevision=envelope.revision}) end
+        end
         if targetSchema>=2 then
             busy=true
             local called,result=pcall(function()
@@ -504,7 +512,7 @@ function GameState.New(options)
         return result
     end
     if targetSchema==4 then
-        for _,name in ipairs({"PurchaseTravelTicket","BeginClosing","BeginWish","UpdateWishDraft","ConfirmEnding","RestoreEndingCheckpoint","StartNewPlaythrough"}) do
+        for _,name in ipairs({"StartJourney","PurchaseTravelTicket","BeginClosing","AdvanceEpilogue","BeginWish","UpdateWishDraft","UpdateWishLayout","ConfirmEnding","RestoreEndingCheckpoint","StartNewPlaythrough"}) do
             api[name]=function(request)return api.ReleaseCommand(name,request)end
         end
     end

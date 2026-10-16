@@ -57,7 +57,7 @@ function V.Confirm(ctx,overlay)
                     accepted=true
                     ctx.ticketConfirm=false
                     if ctx.PlayObjectSound then ctx.PlayObjectSound("ui_confirm") end
-                    if rawget(ctx.session.queries,"GetEndingView") then ctx.Open("ending")
+                    if rawget(ctx.session.queries,"GetEndingView") then ctx.endingEntrance="departure";ctx.Open("ending")
                     else ctx.ticketEnding=U.Copy(value.ending);ctx.Open("ticketEnding") end
                 else ctx.model.Notify(U.Fail("TICKET_RESULT_INVALID","ticket","启程结果需要核对，请重新读取进度。")) end
             end

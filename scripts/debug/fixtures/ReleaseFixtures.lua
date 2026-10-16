@@ -11,6 +11,16 @@ function R.Quote(x,id,price)
     local d=x.state.GetSnapshot()
     return {itemId=id,expectedPrice=price,expectedDay=d.live.gameFlow.day,expectedRevision=d.revision}
 end
+-- 旧版允许未发货直接跨天；只构造这种历史经营快照，并走真实保存/完整审计。
+-- 日期边界测试使用此入口，正常新周目必须调用 NextDay，不能绕过新门禁。
+function R.LegacyDay(x,day)
+    local data=x.state.GetSnapshot()
+    assert(data.chapter.phase=="operating" and (not data.currentOrder or not data.currentOrder.pending))
+    assert(day>data.live.gameFlow.day and day<=x.content.release.finalDay)
+    data.live.gameFlow.day=day;data.live.gameFlow.salvageUsedToday=0;data.live.gameFlow.canSalvage=true
+    data.revision=data.revision+1
+    assert(x.save.Save("b5_flow",data,4));assert(x.state.ReloadCurrent())
+end
 function R.Accept(x,index)
     local id=x.content.release.requiredOrderIds[index]
     while x.state.GetSnapshot().live.gameFlow.day<index do R.Must(x.state.NextDay()) end

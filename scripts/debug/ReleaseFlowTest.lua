@@ -1,4 +1,4 @@
--- 复用实际58锅、试做/重置/确认/重读及完整11单，对新结构运行同样的业务断言。
+-- 58 锅独立见证可用旧漏日夹具；另跑真实新周目 11 单，必须逐单发货后跨天。
 local T={}
 function T.Run() return require("debug.NumericV02FlowTest").RunSchema(4) end
 return T

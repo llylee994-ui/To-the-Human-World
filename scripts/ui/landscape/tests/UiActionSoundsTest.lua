@@ -7,6 +7,7 @@ function T.Run()
     local host=require("ui.landscape.tests.ZoomTestHost").New()
     local U=require "core.StateUtil"
     local F=require "debug.fixtures.B5Fixtures"
+    local R=require "debug.fixtures.ReleaseFixtures"
     local Data=require "data.content"
     local App=require "ui.landscape.AppView"
     local count=0
@@ -83,6 +84,7 @@ function T.Run()
         view.zoom.active=true
         expect(nil,0,function() view.OpenSettings();rawClick("toggleHomeHints");rawClick("nextDay") end)
         view.zoom.active=false
+        R.Ship(x,1);view.Refresh();refresh()
         local before=x.state.GetSnapshot();local writes=x.writes
         click("nextDay","ui_click_01",1,5)
         expect(nil,0,function() view.Refresh();view.Open("day") end)
@@ -95,6 +97,8 @@ function T.Run()
         check(U.Equal(before,x.state.GetSnapshot()) and view.panel=="day","failed day commit stays in dialog")
         click("confirmNextDay","ui_confirm",1,5)
         check(x.state.GetSnapshot().live.gameFlow.day==before.live.gameFlow.day+1,"rapid confirm advances exactly once")
+        check(view.calendar.motion.active,"successful save retains tear animation")
+        expect(nil,0,function() host.Step(view,2) end)
         -- A disabled day button never runs a command, even if its callback is invoked directly.
         click("nextDay","ui_click_01")
         local originalAction=view.model.Action
@@ -102,11 +106,14 @@ function T.Run()
         view.Refresh();refresh();check(control("confirmNextDay").props.disabled,"day gate visible")
         expect(nil,0,function() control("confirmNextDay").props.onClick() end)
         view.model.Action=originalAction;view.Close();refresh()
-        -- The final day uses the existing closing coordinator, still exactly one confirmation.
-        while x.state.GetSnapshot().live.gameFlow.day<Data.release.finalDay do F.Must(x.state.NextDay()) end
+        -- Reduce the required set only for this transaction/audio check; full 11-letter
+        -- completion is covered by ReleaseDayGateTest.RunFull.
+        fresh();x.content.release.requiredOrderIds={x.content.release.requiredOrderIds[1]}
+        R.Ship(x,1)
         view.Refresh();refresh();click("nextDay","ui_click_01")
         click("confirmNextDay","ui_confirm",1,5)
-        check(x.state.GetSnapshot().chapter.phase~="operating","final day enters closing")
+        check(x.state.GetSnapshot().chapter.phase~="operating","completed letters enter closing")
+        expect(nil,0,function() host.Step(view,2) end)
 
         fresh(1000)
         expect("ui_click_01",1,function() view.Open("shop");view.Open("shop") end,true)
@@ -149,7 +156,7 @@ function T.Run()
         x.fault="write";click("confirmTravelTicket",nil,0);x.fault=false
         check(U.Equal(before,x.state.GetSnapshot()),"ticket save failure silent")
         -- An out-of-date confirmation revalidates, refreshes, then accepts a new quote.
-        F.Must(x.state.NextDay());click("confirmTravelTicket",nil,0)
+        R.LegacyDay(x,2);click("confirmTravelTicket",nil,0)
         click("confirmTravelTicket","ui_confirm",1,5,true) -- shop -> ending retains existing scene music policy
         check(x.state.GetSnapshot().chapter.phase=="ended","real ticket transaction entered ending")
         check(x.state.GetSnapshot().live.economy.currency==334,"real ticket debited once")
@@ -163,8 +170,10 @@ function T.Run()
         click("openSettings","ui_click_01")
         control("soundEnabled"):SetValue(false);click("closeMusicSettings",nil,0)
         click("toggleHomeHints",nil,0)
+        R.Ship(x,1);view.Refresh();refresh()
         click("nextDay",nil,0);click("confirmNextDay",nil,0)
         check(x.state.GetSnapshot().live.gameFlow.day==2,"muting never blocks valid actions")
+        expect(nil,0,function() host.Step(view,2) end)
         click("openSettings",nil,0)
         control("soundEnabled"):SetValue(true);control("soundVolume"):SetValue(100)
         click("closeMusicSettings",nil,0)

@@ -227,6 +227,7 @@ function CreateUI()
 
     playView_=PlayView.New(session_,Data,function() return gameState_==session_.state end)
     assert(root:FindById("mainPanel")):AddChild(playView_.root)
+    if not developerMode_ and Data.release and playView_.ShowTitle then playView_.ShowTitle() end
     -- 正式错误提示由入口拥有；关闭仅收起提示，协调器保持锁定，可同槽重试。
     if not developerMode_ then
         local panel=assert(root:FindById("mainPanel"))

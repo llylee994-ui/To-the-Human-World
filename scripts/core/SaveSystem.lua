@@ -5,7 +5,14 @@ local Json = require "core.SaveJson"
 local SaveSystem = {}
 local function digest(s)
     local n = 0
-    for i = 1, #s do n = (n * 31 + s:byte(i)) % 4294967291 end
+    -- Same B1 polynomial, four bytes at a time. The largest intermediate is
+    -- below 2^53, so both Lua integer and double hosts preserve the exact hash.
+    local stop=#s-#s%4
+    for i=1,stop,4 do
+        local a,b,c,d=s:byte(i,i+3)
+        n=(n*923521+a*29791+b*961+c*31+d)%4294967291
+    end
+    for i=stop+1,#s do n=(n*31+s:byte(i))%4294967291 end
     return string.format("%.0f", n)
 end
 local function paths(slot)

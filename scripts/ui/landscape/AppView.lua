@@ -28,6 +28,8 @@ local ObjectSounds=require "ui.landscape.ObjectSounds"
 local MusicSettings=require "core.MusicSettings"
 local SoundSettings=require "core.SoundSettings"
 local MusicSettingsView=require "ui.landscape.MusicSettingsView"
+local Calendar=require "ui.landscape.CalendarView"
+local Title=require "ui.landscape.TitleView"
 local A={}
 local side={words="left",journal="right"}
 local titles={letters="来信抽屉",reader="阅读信件",words="词条栏",journal="故事记录",attempt="试做记录",shop="商队商店",case="案件板",day="结束当天",result="试做结果"}
@@ -94,9 +96,13 @@ function A.New(session,content,enabled)
         wordTray=false --[[@as table|false]],
         ticketConfirm=false --[[@as boolean]],ticketQuote=false --[[@as table|false]],ticketEnding=false --[[@as table|false]],
         releasePhase=false --[[@as string|false]],newPlaythroughConfirm=false --[[@as boolean]],
+        atTitle=false --[[@as boolean]],journeyView=false --[[@as table|false]],
+        endingEntrance=false --[[@as string|false]],endingShowCollage=false --[[@as boolean]],
+        reviewEnding=false --[[@as table|false]],wishSelected=false --[[@as string|false]],wishUndo={},
         panelNotice=false --[[@as Label|false]],panelNoticeArea=false --[[@as ScrollView|false]],
         panelHeader=false --[[@as Widget|false]],
         resultMotion=false --[[@as table|false]],
+        calendar=false --[[@as table|false]],
         zoom=Zoom.New(),salvage=Salvage.New(),destroyed=false --[[@as boolean]],portrait=false --[[@as boolean]],
         yawProbe=false --[[@as table|false]],
         messages=Messages.New(session.state.GetStatus().migrationNotice),importantMessage=false --[[@as string|false]]}
@@ -229,7 +235,7 @@ function A.New(session,content,enabled)
         if ctx.panelNotice then ctx.panelNotice:SetText(current.text) end
         if ctx.panelNoticeArea then
             local story=ctx.panel=="result" or ctx.panel=="attempt"
-            ctx.panelNoticeArea:SetVisible(current.visible and ctx.panel~="reader" and (not story or current.persistent))
+            ctx.panelNoticeArea:SetVisible(current.visible and ctx.panel~="reader" and (not story or current.persistent) and (not ctx.journeyView or ctx.importantMessage~=false))
         end
     end
     function ctx.CancelSalvage(reason)
@@ -286,6 +292,7 @@ function A.New(session,content,enabled)
         if settings.IsOpen() then settings.Save() end
         music.Destroy()
         objectSounds.Destroy()
+        if ctx.journeyView then ctx.journeyView.Destroy() end
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
         WordTray.Reset(ctx);JournalBook.Reset(ctx);LetterDrawer.Reset(ctx)
         ctx.destroyed=true
@@ -299,6 +306,8 @@ function A.New(session,content,enabled)
         return true
     end
     function ctx.Navigate(target)
+        if ctx.atTitle or (ctx.journeyView and ctx.journeyView.busy) then return end
+        if ctx.calendar and ctx.calendar.motion.active then return end
         if ctx.destroyed or ctx.salvage.active or ctx.ticketEnding then return end
         if ctx.releasePhase and ctx.releasePhase~="operating" then return end
         ctx.resultMotion=false
@@ -314,6 +323,8 @@ function A.New(session,content,enabled)
         model.dirty=true
     end
     function ctx.Push(kind)
+        if ctx.atTitle or (ctx.journeyView and ctx.journeyView.busy) then return end
+        if ctx.calendar and ctx.calendar.motion.active then return end
         if ctx.destroyed or ctx.portrait or ctx.zoom.active or ctx.salvage.active or ctx.yawProbe then return end
         if ctx.brew.interaction.active then return end
         ctx.brew.interaction.CancelDrag()
@@ -323,6 +334,8 @@ function A.New(session,content,enabled)
         ctx.stack[#ctx.stack+1]=ctx.panel or false; ctx.panel=kind; ctx.readerCache=false; model.dirty=true
     end
     function ctx.Close(confirmed)
+        if ctx.atTitle or (ctx.journeyView and ctx.journeyView.busy) then return end
+        if ctx.calendar and ctx.calendar.motion.active then return end
         if ctx.destroyed or ctx.zoom.active or ctx.salvage.active or ctx.ticketEnding or ctx.yawProbe then return end
         ctx.resultMotion=false
         local previous=ctx.panel
@@ -339,6 +352,8 @@ function A.New(session,content,enabled)
         if confirmed~=true and clickPanels[previous] and previous~=ctx.panel then ctx.PlayObjectSound("ui_click_01") end
     end
     function ctx.Read(id,userInitiated)
+        if ctx.atTitle or (ctx.journeyView and ctx.journeyView.busy) then return end
+        if ctx.calendar and ctx.calendar.motion.active then return end
         if ctx.destroyed or ctx.zoom.active or ctx.salvage.active or ctx.yawProbe then return end
         local entering=ctx.panel~="reader" or model.selectedLetter~=id
         local result=model.Read(id)
@@ -350,6 +365,8 @@ function A.New(session,content,enabled)
         return result
     end
     function ctx.OpenPaper()
+        if ctx.atTitle or (ctx.journeyView and ctx.journeyView.busy) then return end
+        if ctx.calendar and ctx.calendar.motion.active then return end
         local result=session.queries.GetLetters()
         if not result.ok then model.Notify(result); return end
         local known={}; for _,row in ipairs(result.value) do known[row.letterInstanceId]=true end
@@ -363,6 +380,8 @@ function A.New(session,content,enabled)
         end
     end
     function ctx.Open(kind)
+        if ctx.atTitle or (ctx.journeyView and ctx.journeyView.busy) then return end
+        if ctx.calendar and ctx.calendar.motion.active then return end
         if ctx.destroyed or ctx.portrait or ctx.zoom.active or ctx.salvage.active or ctx.yawProbe then return end
         if ctx.brew.interaction.active then return end
         ctx.brew.interaction.CancelDrag()
@@ -386,13 +405,46 @@ function A.New(session,content,enabled)
             ctx.panel=false;ctx.stack={};ctx.readerCache=false;ctx.resultMotion=false;ctx.choosingLetter=false
             model.dirty=true;return
         end
+        if ctx.journeyView then ctx.journeyView.Destroy();ctx.journeyView=false end
         ctx.panel=kind; ctx.stack={}; ctx.readerCache=false; ctx.choosingLetter=false; model.dirty=true
     end
     function ctx.OpenSettings()
+        if ctx.atTitle or (ctx.journeyView and ctx.journeyView.busy) then return end
+        if ctx.calendar and ctx.calendar.motion.active then return end
         if ctx.destroyed or ctx.portrait or ctx.zoom.active or ctx.salvage.active or ctx.yawProbe then return end
         if settings.IsOpen() then return end
         settings.Open()
         ctx.PlayObjectSound("ui_click_01")
+    end
+    local function leaveJourneyView()
+        if ctx.journeyView then ctx.journeyView.Destroy();ctx.journeyView=false end
+        if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
+        WordTray.Reset(ctx);JournalBook.Reset(ctx);LetterDrawer.Reset(ctx)
+        ctx.brew.Leave();ctx.resultMotion=false;ctx.feedback.Cancel();objectOpen=false
+        ctx.CancelHomeZoom("title");ctx.CancelSalvage("title")
+        ctx.stack={};ctx.readerCache=false;ctx.ticketConfirm=false;ctx.ticketQuote=false
+    end
+    function ctx.ShowTitle()
+        if ctx.destroyed or (ctx.calendar and ctx.calendar.motion.active) or (ctx.journeyView and ctx.journeyView.busy) then return false end
+        if not rawget(session.queries,"GetEndingView") then return false end
+        leaveJourneyView();ctx.atTitle=true;ctx.scene="home";ctx.panel="title"
+        ctx.newPlaythroughConfirm=false;ctx.endingShowCollage=false;ctx.reviewEnding=false;model.dirty=true
+        return true
+    end
+    function ctx.ContinueJourney()
+        if ctx.destroyed then return false end
+        local saved=session.queries.GetEndingView()
+        if not saved.ok then model.Notify(saved);return false end
+        if not saved.value.hasProgress and not model.StartJourney().ok then return false end
+        leaveJourneyView();ctx.atTitle=false;ctx.scene="home";ctx.endingShowCollage=false
+        local phase=saved.value.phase
+        ctx.panel=phase=="ended" and "ending" or phase=="wish" and "wish" or phase~="operating" and "closing" or false
+        model.dirty=true;return true
+    end
+    function ctx.ShowMemory(ending)
+        if ctx.destroyed or not ctx.atTitle then return false end
+        leaveJourneyView();ctx.reviewEnding=require("core.StateUtil").Copy(ending);ctx.endingShowCollage=false
+        ctx.panel="memoryReview";model.dirty=true;return true
     end
     local back=Harbor.Button {id="returnHome",text="返回主页",width=106,minHeight=44,visible=false,onClick=function() ctx.Navigate("home") end}
     hud:AddChild(back)
@@ -407,8 +459,7 @@ function A.New(session,content,enabled)
         end
     end})
     hud:AddChild(Harbor.Button {id="nextDay",text="结束当天",width=108,minHeight=44,fontSize=15,onClick=function() ctx.Open("day") end})
-    hud:AddChild(Harbor.Button {id="finishJourney",text="旅程收尾",width=108,minHeight=44,fontSize=15,visible=false,
-        onClick=function() model.BeginClosing() end})
+    hud:AddChild(Harbor.Button {id="titleHome",text="首页",width=72,minHeight=44,fontSize=15,onClick=ctx.ShowTitle})
     if yawEnabled then
         hud:AddChild(Harbor.Button {id="openHomeYawProbe",text="转头验证",width=106,minHeight=44,onClick=ctx.OpenYawProbe})
     end
@@ -419,6 +470,7 @@ function A.New(session,content,enabled)
         end})
     end
     local function renderPanel()
+        if ctx.journeyView then ctx.journeyView.Destroy();ctx.journeyView=false end
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
         clear(overlay); ctx.readerCache=false; ctx.panelNotice=false;ctx.panelNoticeArea=false;ctx.panelHeader=false
         if not ctx.panel then return end
@@ -426,23 +478,24 @@ function A.New(session,content,enabled)
         if not location then
             -- Keep the blocker through pointer-up; only rebuild on Update.
             local blocker=UI.Panel {id="modalBlocker",position="absolute",left=0,top=0,width="100%",height="100%",
-                backgroundColor={18,24,20,190},onClick=function() end}
+                backgroundColor=kind=="day" and {24,22,18,105} or {18,24,20,190},onClick=function() end}
             -- 抽屉跟侧栏一样先滑回去再关；其它面板保持吞掉点击。
             if kind=="letters" then blocker.props.onClick=function() LetterDrawer.RequestClose(ctx) end end
             overlay:AddChild(blocker)
         end
         local audible=objectOpen==kind;objectOpen=false
         if audible and clickPanels[kind] then ctx.PlayObjectSound("ui_click_01") end
+        if kind=="day" then overlay:AddChild(Calendar.New(ctx).root);return end
         if kind=="shop" then Shop.Render(ctx,overlay);return end
         if kind=="words" then WordTray.Open(ctx,audible);WordTray.Render(ctx,overlay);return end
         if kind=="journal" then JournalBook.Open(ctx,audible);JournalBook.Render(ctx,overlay);return end
         if kind=="letters" then LetterDrawer.Open(ctx,audible);LetterDrawer.Render(ctx,overlay);return end
         if kind=="result" or kind=="attempt" then ResultView.Render(ctx,overlay,kind=="attempt");return end
         if kind=="ticketEnding" then TicketView.Ending(ctx,overlay);return end
-        if kind=="closing" or kind=="wish" or kind=="wishPreview" or kind=="ending" then
-            local module=kind=="closing" and Closing or kind=="ending" and Ending or Wish
-            local view=module.New(ctx) --[[@as ReleasePage]]
-            overlay:AddChild(view.root);return
+        if kind=="closing" or kind=="wish" or kind=="wishPreview" or kind=="ending" or kind=="title" or kind=="memories" or kind=="memoryReview" then
+            local module=(kind=="title" or kind=="memories") and Title or kind=="closing" and Closing or (kind=="ending" or kind=="memoryReview") and Ending or Wish
+            local view=module.New(ctx)
+            ctx.journeyView=view;overlay:AddChild(view.root);return
         end
         local safe=ctx.safeInsets or {left=0,top=0,right=0,bottom=0}
         local viewport=ctx.viewport
@@ -488,6 +541,7 @@ function A.New(session,content,enabled)
             local phase=saved.value.phase
             local changed=phase~=ctx.releasePhase
             ctx.releasePhase=phase
+            if ctx.atTitle then return end
             if changed then
                 if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
                 WordTray.Reset(ctx);JournalBook.Reset(ctx);LetterDrawer.Reset(ctx);ctx.brew.Leave();ctx.CancelHomeZoom("releasePhase");ctx.CancelSalvage("releasePhase")
@@ -524,6 +578,17 @@ function A.New(session,content,enabled)
         if ctx.scene=="brew" then ctx.brew.Update(dt,input:HasFocus() and not input:IsMinimized()) end
         if ctx.resultMotion then ResultView.Update(ctx,dt,input:HasFocus() and not input:IsMinimized()) end
         ctx.feedback.Update(dt)
+        if ctx.journeyView and ctx.journeyView.Update then
+            ctx.journeyView.Update(dt,not ctx.portrait and input:HasFocus() and not input:IsMinimized())
+            if ctx.journeyView.busy then return end
+        end
+        -- Retain the old sheet after the save. Defer phase routing and dirty-tree
+        -- rebuilds until its visual transition ends; Update never calls NextDay.
+        if ctx.calendar and ctx.calendar.motion.active then
+            local done=ctx.calendar.Update(dt,not ctx.portrait and input:HasFocus() and not input:IsMinimized())
+            if not done then return end
+            ctx.panel=false;ctx.stack={};model.dirty=true
+        end
         if ctx.readerCache and ctx.readerCache.presentation then
             ctx.readerCache.presentation.Update(dt,input:HasFocus() and not input:IsMinimized())
         end

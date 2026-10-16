@@ -119,9 +119,16 @@ function M.New(session,content,enabled)
         return api.Notify(session.state[name](request),message)
     end
     function api.BeginClosing() return releaseCommand("BeginClosing",nil,"已进入收尾。") end
+    function api.StartJourney() return releaseCommand("StartJourney") end
+    function api.AdvanceEpilogue(step,expectedRevision)
+        return releaseCommand("AdvanceEpilogue",{expectedStep=step,expectedRevision=expectedRevision})
+    end
     function api.BeginWish() return releaseCommand("BeginWish",nil,"把自己的愿望放到纸上。") end
     function api.UpdateWishDraft(ids,expectedRevision)
         return releaseCommand("UpdateWishDraft",{sourceTokenIds=U.Copy(ids),expectedRevision=expectedRevision},"愿望草稿已保存。")
+    end
+    function api.UpdateWishLayout(placements,expectedRevision)
+        return releaseCommand("UpdateWishLayout",{placements=U.Copy(placements),expectedRevision=expectedRevision},"已收好这张愿望。")
     end
     function api.ConfirmEnding(kind,expectedRevision)
         return releaseCommand("ConfirmEnding",{kind=kind,expectedRevision=expectedRevision},"这段旅程已保存。")
@@ -137,7 +144,7 @@ function M.New(session,content,enabled)
         return result
     end
     function api.StartNewPlaythrough(confirmed)
-        if confirmed~=true then return api.Notify(fail("CONFIRMATION_REQUIRED","请先确认覆盖本次旅程，开始新周目。")) end
+        if confirmed~=true then return api.Notify(fail("CONFIRMATION_REQUIRED","请先确认开始新旅程。已完成的结局留念会保留。")) end
         local result=releaseCommand("StartNewPlaythrough",nil,"新旅程已开始。")
         if result.ok then clearNavigation() end
         return result
