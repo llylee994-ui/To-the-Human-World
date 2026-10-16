@@ -54,6 +54,7 @@ function A.New(session,content,enabled)
     local panZoomAuto=require("ui.landscape.DevChecks").stovePanZoomAuto and require("ui.landscape.tests.StovePanZoomNativeProbe").New() or nil
     local brewProbe=require("ui.landscape.DevChecks").brewWorkbenchProbe and require("ui.landscape.tests.BrewNativeProbe").New() or nil
     local readingProbe=require("ui.landscape.DevChecks").readingProbe and require("ui.landscape.tests.ReadingNativeProbe").New() or nil
+    local mobileBrewProbe=require("ui.landscape.DevChecks").mobileBrewProbe and require("ui.landscape.tests.MobileBrewNativeProbe").New() or nil
     local developer=(require("debug.DeveloperMode") or require("ui.landscape.DevChecks").hotspots) --[[@as boolean]]
     -- The stage fills the viewport; each control group applies its own safe area.
     -- UpdateChrome extends this surface through main's SafeAreaView insets.
@@ -466,6 +467,7 @@ function A.New(session,content,enabled)
         if panZoomAuto then panZoomAuto(ctx) end
         if brewProbe then brewProbe(ctx) end
         if readingProbe then readingProbe(ctx) end
+        if mobileBrewProbe then mobileBrewProbe(ctx) end
         local now,dt=clock();home.Update(dt)
         ctx.UpdateChrome()
         if ctx.scene=="brew" then ctx.brew.Update(dt,input:HasFocus() and not input:IsMinimized()) end

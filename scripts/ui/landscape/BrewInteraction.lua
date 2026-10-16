@@ -17,23 +17,23 @@ function I.New(model,onResult)
         if s.drag then s.suppressClick=true end
         s.drag=false
     end
-    function s.Begin(item,event,vertical)
+    function s.Begin(item,event)
         if s.active or s.drag or (s.flight and s.flight.accepted) or
             (event.pointerType~="touch" and event.button~=MOUSEB_LEFT) then return false end
         if not model.Action("UpdateDraft").enabled then return false end
         s.suppressClick=false;s.flight=false
         s.drag={kind=item.kind,id=item.id,text=item.text,path=item.path,pointerId=event.pointerId,
-            startX=event.x,startY=event.y,x=event.x,y=event.y,vertical=vertical,
-            touch=event.pointerType=="touch",active=false,scroll=false,over=false,target=false}
+            startX=event.x,startY=event.y,x=event.x,y=event.y,
+            touch=event.pointerType=="touch",active=false,over=false,target=false}
         return true
     end
-    function s.Move(event,drop)
+    function s.Move(event,drop,recognizedPan)
         local d=s.drag;if not d or d.pointerId~=event.pointerId then return false end
         local dx,dy=event.x-d.startX,event.y-d.startY
-        if not d.active and not d.scroll and (dx*dx+dy*dy)>100 then
-            if d.touch and ((d.vertical==true and math.abs(dy)>=math.abs(dx)) or
-                (d.vertical=="horizontal" and math.abs(dx)>=math.abs(dy))) then d.scroll=true;s.suppressClick=true
-            else d.active=true;s.suppressClick=true end
+        -- The host recognizes a pan in screen pixels, before our base-pixel
+        -- slop at high DPI. Claim that first event before ScrollView cancels it.
+        if not d.active and (recognizedPan or (dx*dx+dy*dy)>100) then
+            d.active=true;s.suppressClick=true
         end
         d.x=event.x;d.y=event.y;d.target=d.active and target(drop,d,event.x,event.y) or false;d.over=not not d.target
         return d.active

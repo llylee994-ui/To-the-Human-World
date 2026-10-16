@@ -43,7 +43,10 @@ local function panelWidth(ctx)
     local safe=insets(ctx)
     return math.floor(math.max(0,viewportWidth(ctx)-safe.left-safe.right)*D.WidthRatio)
 end
-local function panelLeft(ctx,state) return math.floor(insets(ctx).left-(1-ease(state.open))*panelWidth(ctx)) end
+local function panelLeft(ctx,state)
+    local edge=ctx.workbench and 0 or insets(ctx).left
+    return math.floor(edge-(1-ease(state.open))*(panelWidth(ctx)+8))
+end
 ---@param ctx table
 ---@return WordTrayState
 function D.State(ctx)

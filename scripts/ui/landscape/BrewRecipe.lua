@@ -53,8 +53,8 @@ function R.Render(ctx,b,center,summary,data,editable)
                 b.selected=row.value and {kind=row.kind,id=row.value,title=value or row.title} or "recipe";ctx.model.dirty=true
             end}
         paper:AddChild(slot)
-        local title=label(slot,nil,row.title,l.compact and 11 or 12);Widget.SetStyle(title,{textAlign="center"})
-        local name=label(slot,nil,value or "＋",l.compact and 12 or 14);Widget.SetStyle(name,{whiteSpace="nowrap",textAlign="center"})
+        local title=label(slot,nil,row.title,l.compact and 10 or 12);Widget.SetStyle(title,{textAlign="center",lineHeight=l.compact and 1 or 1.3})
+        local name=label(slot,nil,value or "＋",l.compact and 11 or 14);Widget.SetStyle(name,{whiteSpace="nowrap",textAlign="center",lineHeight=l.compact and 1.1 or 1.3})
         -- Empty outlines use short strokes; UI still owns all labels and input.
         function slot:Render(vg)
             self:RenderFullBackground(vg)

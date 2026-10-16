@@ -1,4 +1,4 @@
--- 记录书：布料底衬、索引贴、两级页内与翻页。查询用夹具桩，验证不写玩家状态。
+-- 记录书：布料底衬、索引贴、两级阅读。切换立即显示，不画翻页。
 local Data=require "data.content"
 local F=require "debug.fixtures.B5Fixtures"
 local View=require "ui.PlayView"
@@ -99,52 +99,18 @@ function T.Run()
 
     -- 锁住的标签点了也不动：不变故事、不翻页。
     lockedTab.props.onClick();v.Update()
-    check(v.journalBook.story==received and v.journalBook.flip==0,"locked tab cannot switch stories")
+    check(v.journalBook.story==received,"locked tab cannot switch stories")
 
-    -- 切故事：翻页；全空的故事给出空目录而不是报错。
+    -- 切故事立即显示；全空的故事给出空目录而不是报错。
     click("bookTab_"..other)
-    check(v.journalBook.flip>0,"switching story starts a page turn")
+    check(not v.journalBook.flip,"switching story has no page-turn animation state")
     check(widget("bookStoryTitle"):GetText()=="面包坊与抄写铺","page follows the selected story")
+    check(widget("bookStoryTitle").props.whiteSpace=="nowrap" and widget("bookStoryTitle").props.lineHeight<=1.3,"long story heading occupies one compact line")
     check(widget("bookProgress"):GetText():find("0 / 2",1,true)~=nil,"all-empty story keeps its empty slots")
     check(assert(widget("bookEntry_frag_n01_result_departure_agreed")),"empty story still lists its branches")
-    for _=1,40 do host.Step(v,.05) end
-    check(v.journalBook.flip==0,"page turn finishes")
-
-    -- 自绘冒烟：书脊与翻页在 nvg 适配器上真的走一遍（显式适配器，不是原生画面证据）。
-    local calls={}
-    local names={"nvgSave","nvgRestore","nvgIntersectScissor","nvgBeginPath","nvgRect","nvgFill","nvgFillPaint",
-        "nvgFillColor","nvgLinearGradient","nvgFontFace","nvgFontSize","nvgTextAlign","nvgText"}
-    local saved={}
-    for _,name in ipairs(names) do
-        saved[name]=rawget(_G,name)
-        _G[name]=function(_,...) calls[#calls+1]={name=name,args={...}} end
-    end
-    local rgba=rawget(_G,"nvgRGBA")
-    rawset(_G,"nvgRGBA",function(...) return {...} end)
-    -- 无头环境没有引擎注入的 NVG_ALIGN_*，显式给值（同 LetterRenderTest）。
-    local aligns={NVG_ALIGN_LEFT,NVG_ALIGN_TOP,NVG_ALIGN_CENTER,NVG_ALIGN_MIDDLE,NVG_ALIGN_RIGHT}
-    NVG_ALIGN_LEFT=1;NVG_ALIGN_TOP=8;NVG_ALIGN_CENTER=2;NVG_ALIGN_MIDDLE=16;NVG_ALIGN_RIGHT=4
-    local page=v.journalBook.page
-    page.GetAbsoluteLayout=function() return {x=700,y=60,w=520,h=600} end
-    calls={};v.journalBook.flip=0;page:RenderOverlays(1)
-    local spine=0
-    for _,call in ipairs(calls) do if call.name=="nvgFill" then spine=spine+1 end end
-    check(spine==0,"physical book image owns the resting spine instead of another fake flat border")
-    calls={};v.journalBook.flip=0.17;v.journalBook.flipTitle="铁锚巷的一夜";page:RenderOverlays(1)
-    local gradients,texts=0,0
-    for _,call in ipairs(calls) do
-        if call.name=="nvgLinearGradient" then gradients=gradients+1 end
-        if call.name=="nvgText" then
-            texts=texts+1
-            check(call.args[3]=="铁锚巷的一夜","turning sheet carries the outgoing story title")
-        end
-    end
-    check(gradients>=3,"sheet, fold shadow and cast shadow all use gradients")
-    check(texts==1,"exactly one title is painted on the turning sheet")
-    v.journalBook.flip=0
-    for _,name in ipairs(names) do rawset(_G,name,saved[name]) end
-    rawset(_G,"nvgRGBA",rgba)
-    NVG_ALIGN_LEFT,NVG_ALIGN_TOP,NVG_ALIGN_CENTER,NVG_ALIGN_MIDDLE,NVG_ALIGN_RIGHT=table.unpack(aligns)
+    check(not v.journalBook.page.RenderOverlays,"catalog has no folding sheet renderer")
+    local font=widget("bookStoryTitle").props.fontSize
+    check(font<=18 and font*utf8.len("面包坊与抄写铺")<=widget("bookPage").props.width,"full title fits the narrow page without growing its height")
 
     -- 关闭：先滑出，再真正关面板。
     click("closePanel")
@@ -172,7 +138,7 @@ function T.Run()
         check(c.y+c.h<=layout.decorationTop,"reading scroll stops above bottom flowers and grass")
         check(c.w>70 and c.h>90,"small screen keeps a useful reading viewport")
     end
-    print("[JournalBookTest] PASS assertions="..n.."; cloth mat, locked index tabs, two-level stored text, page turn; NOT native evidence")
+    print("[JournalBookTest] PASS assertions="..n.."; cloth mat, locked index tabs, two-level stored text, compact title and instant story switch; NOT native evidence")
     return true
 end
 return T

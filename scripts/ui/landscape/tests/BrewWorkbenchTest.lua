@@ -85,9 +85,13 @@ function T.Run()
     local drop={x=500,y=260,w=160,h=100}
     local function e(x,y,id,touch) return {x=x,y=y,pointerId=id or 0,pointerType=touch and "touch" or "mouse",button=MOUSEB_LEFT} end
     local function begin(kind,id,event,vertical) return i.Begin({kind=kind,id=id,text="来源卡"},event,vertical) end
+    begin("word",main,e(100,200,5,true),true)
+    i.Move(e(102,203,5,true),drop,true)
+    check(i.drag and i.drag.active,"a recognized high-DPI touch pan owns the card before the parent scroll can cancel it")
+    i.CancelDrag()
     local before,writes=x.state.GetSnapshot(),x.writes
     begin("ingredient","ing_sea_salt",e(500,600,5,true),"horizontal");i.Move(e(540,603,5,true),drop)
-    check(i.drag and i.drag.scroll and not i.drag.active,"ingredient horizontal touch remains shelf scrolling")
+    check(i.drag and i.drag.active,"horizontal touch on an ingredient starts a drag; shelf background keeps scrolling")
     i.CancelDrag()
     begin("word",main,e(100,200),true);i.Move(e(540,290),drop)
     check(i.drag and i.drag.active,"crossing threshold picks up a ghost")
@@ -97,7 +101,9 @@ function T.Run()
     check(i.flight and not i.flight.accepted,"invalid drop returns without saving")
     begin("word",main,e(100,200,5,true),true);i.Move(e(100,235,5,true),drop)
     i.Move(e(540,290,5,true),drop);i.Release(e(540,290,5,true),drop)
-    check(U.Equal(before,x.state.GetSnapshot()),"vertical intent remains scrolling even after horizontal movement")
+    check(view.model.GetDraft().mainTokenId==main,"a touch that starts vertically can curve toward the pot in one gesture")
+    i.Update(.4,true);must(view.model.TakeOut("word",main))
+    before=x.state.GetSnapshot()
     begin("word",main,e(100,200,5,true),true);i.Move(e(540,290,5,true),drop)
     i.Release(e(540,290,6,true),drop)
     check(U.Equal(before,x.state.GetSnapshot()) and i.drag,"second finger cannot finish another finger's drag")
@@ -186,7 +192,7 @@ function T.Run()
     view.brew.words.wordTray.category=mainCard.categoryId;view.Refresh();view.Update()
     local source=control("wordTrayCard_"..main)
     source.props.onPointerDown(e(90,180,7,true))
-    check(not source:OnPanStart(e(90,215,7,true)),"vertical source gesture bubbles to scroll")
+    check(source:OnPanStart(e(92,183,7,true)),"the first small native touch pan is captured on a card")
     source.props.onPointerCancel(e(90,215,7,true))
     source.props.onPointerDown(e(90,180,7,true))
     local r=view.brew.layout.drop
@@ -251,6 +257,17 @@ function T.Run()
         check(l.drop.x>=l.center.x and l.drop.x+l.drop.w<=l.center.x+l.center.w,"pot remains between the drawers")
         check(l.controls.y+l.controls.h<=size[2]-12,"fixed action stays inside bottom safe area")
     end
+    local mobile=layout.Compute(1200,540,{left=48,right=0,top=0,bottom=0})
+    check(mobile.pot.h>=180,"short phone screen gives the cauldron useful height instead of a miniature")
+    local sub=view.brew.words;sub.safeInsets={left=48,right=0,top=0,bottom=0}
+    require("ui.landscape.WordTrayDrawer").State(sub).open=1
+    require("ui.landscape.WordTrayDrawer").Render(sub,require("urhox-libs/UI").Panel {})
+    check(sub.wordTray.panel.props.left==0,"workbench word tray bleeds to the left screen edge even with a notch inset")
+    check(view.brew.journal.journalBook.panel:FindById("journalBookHeader").props.top>=56,"embedded book close sits below the HUD buttons")
+    local resultView=require "ui.landscape.ResultView"
+    local paper=resultView.Layout({w=1200,h=540},{left=48,right=0,top=0,bottom=0},{left=.88,right=.99,top=.02,bottom=.14})
+    check(paper.top<30 and paper.height>=480,"centered story paper stays tall when it does not intersect the host capsule")
+    check(paper.height-paper.headerHeight-paper.paddingTop-paper.paddingBottom-paper.actionsHeight>=260,"compact story leaves a useful scrolling body after fixed header and actions")
     view.root:Destroy()
     -- Production uses schema 4; exercise the same view against its real coordinator.
     local releaseData=require "data.content"

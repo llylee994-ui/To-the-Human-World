@@ -57,11 +57,11 @@ function B.New(ctx)
     end)
     local function dropTarget(item,x,y) return L.Target(b.layout,item,x,y) end
     local function canEdit() return ctx.model.Action("UpdateDraft").enabled and not ctx.panel and not b.interaction.active and not (b.interaction.flight and b.interaction.flight.accepted) end
-    local function bindSource(widget,item,vertical)
+    local function bindSource(widget,item)
         local oldClick=widget.props.onClick
         widget.props.onPointerDown=function(event)
             if not b.interaction.drag then b.interaction.suppressClick=false end
-            if canEdit() then b.interaction.Begin(item,event,vertical) end
+            if canEdit() then b.interaction.Begin(item,event) end
         end
         widget.props.onPointerMove=function(event) b.interaction.Move(event,dropTarget) end
         widget.props.onPointerUp=function(event) b.interaction.Release(event,dropTarget) end
@@ -76,12 +76,13 @@ function B.New(ctx)
             if not b.interaction.ClickAllowed() then return end
             if oldClick then oldClick(self,event) end
         end
-        -- Gesture arbitration: vertical pans bubble to the real ScrollView.
+        -- A drag beginning on a card owns the gesture in every direction.
+        -- Pans beginning on the unoccupied tray/shelf still reach ScrollView.
         local originalPanStart=widget.OnPanStart
         function widget:OnPanStart(event)
             local d=b.interaction.drag
-            if d and d.pointerId==event.pointerId and not d.scroll then
-                b.interaction.Move(event,dropTarget)
+            if d and d.pointerId==event.pointerId then
+                b.interaction.Move(event,dropTarget,true)
                 if d.active then self.state=self.state or {};self.state.dragging=true;return true end
             end
             return originalPanStart and originalPanStart(self,event) or false
@@ -94,7 +95,7 @@ function B.New(ctx)
     end
     ---@return table
     local function child()
-        return {model=ctx.model,session=ctx.session,content=ctx.content,viewport=ctx.viewport,safeInsets=ctx.safeInsets,
+        return {model=ctx.model,session=ctx.session,content=ctx.content,viewport=ctx.viewport,safeInsets=ctx.safeInsets,workbench=true,
             storyId=false,wordTray=false,journalBook=false,Open=function(kind) b.interaction.CancelDrag();ctx.Open(kind) end,
             Push=function(kind) b.interaction.CancelDrag();ctx.Push(kind) end}
     end
@@ -124,7 +125,7 @@ function B.New(ctx)
         Book.Open(b.journal);ctx.model.dirty=true
     end
     b.words.brewDrag=function(widget,card)
-        if card.available and not card.selectedRole then bindSource(widget,{kind="word",id=card.tokenId,text=card.text},true) end
+        if card.available and not card.selectedRole then bindSource(widget,{kind="word",id=card.tokenId,text=card.text}) end
     end
     function b.Enter()
         if b.entered then return end
@@ -212,8 +213,14 @@ function B.New(ctx)
                 end}
             shelfRow:AddChild(card)
             card:AddChild(Art.Panel(item.id,{width="100%",height=l.shelf.h-36,padding=4,imageTint=remaining==0 and {145,145,145,255} or nil}))
-            card:AddChild(H.Tag {text=item.name.." · "..remaining,position="absolute",left="15%",width="70%",bottom=0,height=24,minHeight=24,padding=0,backgroundColor={0,0,0,0},fontColor=ink,fontSize=l.compact and 11 or 12})
-            if remaining>0 and editable then bindSource(card,{kind="ingredient",id=item.id,text=item.name,path=Art.Get(item.id)},"horizontal") end
+            -- The painted plaques scale with the whole shelf. Position names on
+            -- that shared canvas, rather than a fixed bottom inset in each card.
+            local cell=(rowWidth-16)/4
+            shelfRow:AddChild(UI.Label {id="brewIngredientName_"..item.id,text=item.name.." · "..remaining,position="absolute",
+                left=8+(index-1)*cell+cell*.15,top=l.shelf.h*.885-10,width=cell*.70,height=20,
+                padding=0,lineHeight=1,textAlign="center",verticalAlign="middle",whiteSpace="nowrap",zIndex=2,pointerEvents="none",
+                fontFamily=H.fontFamily,fontColor=ink,fontSize=l.compact and 10 or 12})
+            if remaining>0 and editable then bindSource(card,{kind="ingredient",id=item.id,text=item.name,path=Art.Get(item.id)}) end
         end
         local drop=UI.Panel(box(l.drop,"brewPotDrop"));center:AddChild(drop)
         if summary.pending then

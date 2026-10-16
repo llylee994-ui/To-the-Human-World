@@ -30,26 +30,27 @@ local function star(vg,x,y,r,filled)
     if filled then nvgFillColor(vg,nvgRGBA(153,94,42,225));nvgFill(vg) end
     nvgStrokeWidth(vg,1.2);nvgStrokeColor(vg,nvgRGBA(153,94,42,200));nvgStroke(vg)
 end
-function S.Seal(stars)
+function S.Seal(stars,scale)
     stars=math.max(0,math.min(3,stars))
-    local p=UI.Panel {id="resultSeal",position="absolute",right=0,top=8,width=166,height=114,pointerEvents="none"}
+    local k=scale or 1
+    local p=UI.Panel {id="resultSeal",position="absolute",right=0,top=4,width=166*k,height=114*k,pointerEvents="none"}
     function p:Render(vg)
-        local r=self:GetAbsoluteLayout();local x,y=r.x+r.w/2,r.y+48
+        local r=self:GetAbsoluteLayout();local x,y=r.x+r.w/2,r.y+48*k
         for _,radius in ipairs({46,41}) do
-            nvgBeginPath(vg);nvgCircle(vg,x,y,radius)
+            nvgBeginPath(vg);nvgCircle(vg,x,y,radius*k)
             nvgStrokeWidth(vg,1);nvgStrokeColor(vg,nvgRGBA(151,94,44,155));nvgStroke(vg)
         end
         for i=1,28 do
             local a=i*math.pi/14
-            nvgBeginPath(vg);nvgCircle(vg,x+math.cos(a)*44,y+math.sin(a)*44,.8)
+            nvgBeginPath(vg);nvgCircle(vg,x+math.cos(a)*44*k,y+math.sin(a)*44*k,.8*k)
             nvgFillColor(vg,nvgRGBA(151,94,44,170));nvgFill(vg)
         end
-        for i=1,3 do star(vg,x+(i-2)*29,y+3,i==2 and 16 or 12,i<=stars) end
+        for i=1,3 do star(vg,x+(i-2)*29*k,y+3*k,(i==2 and 16 or 12)*k,i<=stars) end
     end
-    p:AddChild(UI.Label {text="药效评级",position="absolute",left=0,top=14,width=166,height=22,
-        fontFamily=H.fontFamily,fontSize=11,textAlign="center",fontColor={138,91,46,255},pointerEvents="none"})
-    p:AddChild(UI.Label {id="resultStars",text=tostring(stars).." 星",position="absolute",left=0,top=74,width=166,height=40,
-        fontFamily=H.fontFamily,fontSize=14,textAlign="center",fontColor={138,91,46,255},pointerEvents="none"})
+    p:AddChild(UI.Label {text="药效评级",position="absolute",left=0,top=14*k,width=166*k,height=22*k,
+        fontFamily=H.fontFamily,fontSize=math.max(9,11*k),textAlign="center",fontColor={138,91,46,255},pointerEvents="none"})
+    p:AddChild(UI.Label {id="resultStars",text=tostring(stars).." 星",position="absolute",left=0,top=74*k,width=166*k,height=40*k,
+        fontFamily=H.fontFamily,fontSize=math.max(11,14*k),textAlign="center",fontColor={138,91,46,255},pointerEvents="none"})
     return p
 end
 function S.Decor(parent)

@@ -1,0 +1,22 @@
+[
+  {
+    "suite": "brew_workbench",
+    "exit_code": 0
+  },
+  {
+    "suite": "journal_book",
+    "exit_code": 0
+  },
+  {
+    "suite": "word_tray",
+    "exit_code": 0
+  },
+  {
+    "suite": "reader_bounds",
+    "exit_code": 0
+  },
+  {
+    "suite": "home_hud",
+    "exit_code": 0
+  }
+]

@@ -7,6 +7,23 @@ local Widget=require "urhox-libs/UI/Core/Widget"
 local Style=require "ui.landscape.StoryStyle"
 local R={}
 local ink={72,55,38,255}
+function R.Layout(viewport,safe,menu)
+    local width=math.min(820,viewport.w-safe.left-safe.right-48)
+    local left=safe.left+(viewport.w-safe.left-safe.right-width)/2
+    local top=safe.top+12
+    -- Only the actual close button needs capsule clearance. A centered paper
+    -- that ends left of the capsule can use the full short-screen height.
+    if menu then
+        local r={x=left+width-54,y=top+8,w=44,h=44}
+        local offsets=Hud.Compute(r,viewport,menu,44)
+        top=top+offsets.top
+    end
+    local height=viewport.h-safe.bottom-12-top
+    local compact=height<620
+    return {left=left,top=top,width=width,height=height,compact=compact,
+        paddingX=compact and 32 or 56,paddingTop=compact and 20 or 30,paddingBottom=compact and 18 or 28,
+        headerHeight=compact and 92 or 136,actionsHeight=compact and 54 or 66}
+end
 local function text(parent,value,size,id,props)
     local p={id=id,text=tostring(value or ""),fontFamily=H.fontFamily,fontSize=size or 16,
         whiteSpace="normal",lineHeight=1.7,flexShrink=0,fontColor=ink,pointerEvents="none"}
@@ -21,29 +38,29 @@ function R.Render(ctx,overlay,history)
     local record=result and result.ok and result.value
     local safe=ctx.safeInsets or {left=0,right=0,top=0,bottom=0}
     local viewport=ctx.viewport or {w=1280,h=720}
-    local top=math.max(safe.top+10,Hud.SidePanelTop(viewport,safe,ctx.menuRect))
-    local width=math.min(820,viewport.w-safe.left-safe.right-48)
-    local compact=viewport.h-safe.top-safe.bottom<620
-    local panel=H.Paper {id="activePanel",position="absolute",left=safe.left+(viewport.w-safe.left-safe.right-width)/2,
-        width=width,top=top,bottom=safe.bottom+12,paddingLeft=56,paddingRight=56,paddingTop=30,paddingBottom=28,
+    local layout=R.Layout(viewport,safe,ctx.menuRect)
+    local compact=layout.compact
+    local panel=H.Paper {id="activePanel",position="absolute",left=layout.left,
+        width=layout.width,top=layout.top,height=layout.height,compact=compact,
+        paddingLeft=layout.paddingX,paddingRight=layout.paddingX,paddingTop=layout.paddingTop,paddingBottom=layout.paddingBottom,
         pointerEvents="auto",onClick=function() end}
     overlay:AddChild(panel);Style.Decor(panel)
     local motion=ctx.resultMotion
     if not motion or motion.id~=id then motion={id=id,motion=Motion.New(),panel=panel};ctx.resultMotion=motion
     else motion.panel=panel end
     panel:AddChild(H.Button {id="closePanel",text="×",position="absolute",top=8,right=10,width=44,height=44,minHeight=44,fontSize=22,onClick=ctx.Close})
-    local header=UI.Panel {id="resultHeader",width="100%",height=compact and 122 or 136,flexShrink=0,pointerEvents="box-none"}
+    local header=UI.Panel {id="resultHeader",width="100%",height=layout.headerHeight,flexShrink=0,pointerEvents="box-none"}
     panel:AddChild(header)
     local source=record and ctx.content.GetLetter(record.sourceLetterId)
     local followup=record and ctx.content.GetLetter(record.followup.letterId)
     local npc=source and ctx.content.GetNpc(source.senderId)
-    local heading=UI.Panel {width="100%",height="100%",paddingRight=180,pointerEvents="box-none"}
+    local heading=UI.Panel {width="100%",height="100%",paddingRight=compact and 126 or 180,pointerEvents="box-none"}
     header:AddChild(heading)
-    text(heading,history and "试做记录 · 后续故事" or "后续故事",13,"resultSection",{fontColor={143,101,54,255},height=26})
+    text(heading,history and "试做记录 · 后续故事" or "后续故事",compact and 12 or 13,"resultSection",{fontColor={143,101,54,255},height=compact and 20 or 26})
     text(heading,followup and followup.title or source and source.title or "这锅药带来的回响",compact and 23 or 27,"resultTitle",{lineHeight=1.3,paddingTop=3,paddingBottom=6})
     local main=record and record.recipeDisplay and record.recipeDisplay.main
     text(heading,(npc and npc.name or "寄信人")..(main and "  ·  主词「"..main.text.."」" or ""),13,"resultSender",{fontColor={126,108,82,255},lineHeight=1.5})
-    if record then header:AddChild(Style.Seal(record.rating.stars)) end
+    if record then header:AddChild(Style.Seal(record.rating.stars,compact and .75 or 1)) end
     local message=UI.Label {id="panelMessage",text="",fontFamily=H.fontFamily,fontSize=13,
         fontColor={128,55,31,255},whiteSpace="normal",flexShrink=0,pointerEvents="none"}
     local notice=UI.ScrollView {width="100%",height=44,flexShrink=0,scrollY=true,visible=false,children={message}}
@@ -52,7 +69,7 @@ function R.Render(ctx,overlay,history)
         showScrollbar=true,scrollbarInteractive=true,paddingRight=12,pointerEvents="auto"}
     panel:AddChild(scroll)
     if not record then text(scroll,result and result.error.message or "当前没有待处理的试做结果。",17);return end
-    local echo=UI.Panel {id="resultEcho",width="100%",flexShrink=0,padding={12,20},marginBottom=18,pointerEvents="none"}
+    local echo=UI.Panel {id="resultEcho",width="100%",flexShrink=0,padding=compact and {8,16} or {12,20},marginBottom=compact and 12 or 18,pointerEvents="none"}
     function echo:Render(vg)
         local r=self:GetAbsoluteLayout()
         nvgBeginPath(vg);nvgMoveTo(vg,r.x+3,r.y+2);nvgLineTo(vg,r.x+r.w-3,r.y)
@@ -75,14 +92,14 @@ function R.Render(ctx,overlay,history)
         end
         return
     end
-    local actions=UI.Panel {id="resultActions",width="100%",flexShrink=0,paddingTop=14,height=66,
+    local actions=UI.Panel {id="resultActions",width="100%",flexShrink=0,paddingTop=compact and 10 or 14,height=layout.actionsHeight,
         flexDirection="row",gap=12,justifyContent="center",pointerEvents="box-none"}
     panel:AddChild(actions)
-    actions:AddChild(Style.Button({id="resetOrder",text="重新调配",width="38%",minWidth=0,height=52,minHeight=52,fontSize=16,
+    actions:AddChild(Style.Button({id="resetOrder",text="重新调配",width="38%",minWidth=0,height=compact and 44 or 52,minHeight=44,fontSize=16,
         disabled=not summary.value.actions.Reset.enabled,onClick=function()
             if ctx.model.Resolve(false).ok then ctx.Navigate("brew") end
         end},"secondary"))
-    actions:AddChild(Style.Button({id="confirmOrder",text="确认发货",width="56%",minWidth=0,height=52,minHeight=52,fontSize=18,
+    actions:AddChild(Style.Button({id="confirmOrder",text="确认发货",width="56%",minWidth=0,height=compact and 44 or 52,minHeight=44,fontSize=18,
         disabled=not summary.value.actions.Confirm.enabled,onClick=function()
             if ctx.model.Resolve(true).ok then ctx.storyId=record.sourceLetterId;ctx.Open("journal") end
         end}))
