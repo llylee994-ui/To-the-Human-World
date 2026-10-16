@@ -1,0 +1,3063 @@
+scripts/素材/三页场景_物件与接口摆放说明_v01.md:110: new blank line at EOF.
+scripts/素材/双瓶标签_v01/fonts/Itim-OFL.txt:21: trailing whitespace.
++fonts, including any derivative works, can be bundled, embedded, 
+scripts/素材/双瓶标签_v01/fonts/Mali-OFL.txt:21: trailing whitespace.
++fonts, including any derivative works, can be bundled, embedded, 
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:1: trailing whitespace.
++{
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:2: trailing whitespace.
++  "task": "B-HOME-LEDGER-EXTRACT-20261011 r1",
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:3: trailing whitespace.
++  "status": "date_gate_failed_problem_preview_only",
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:4: trailing whitespace.
++  "source": {
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:5: trailing whitespace.
++    "path": "D:\\taptap\\To-the-Human-World\\scripts\\素材\\双瓶标签_选定版提取_v01\\过程记录\\源图_选定双瓶主页.png",
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:6: trailing whitespace.
++    "width": 1672,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:7: trailing whitespace.
++    "height": 941,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:8: trailing whitespace.
++    "format": "RGB",
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:9: trailing whitespace.
++    "date_crop": [
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:10: trailing whitespace.
++      26,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:11: trailing whitespace.
++      20,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:12: trailing whitespace.
++      80,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:13: trailing whitespace.
++      170
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:14: trailing whitespace.
++    ],
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:15: trailing whitespace.
++    "date_silhouette_approx": [
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:16: trailing whitespace.
++      33,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:17: trailing whitespace.
++      27,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:18: trailing whitespace.
++      67,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:19: trailing whitespace.
++      156
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:20: trailing whitespace.
++    ],
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:21: trailing whitespace.
++    "money_crop": [
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:22: trailing whitespace.
++      109,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:23: trailing whitespace.
++      20,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:24: trailing whitespace.
++      78,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:25: trailing whitespace.
++      170
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:26: trailing whitespace.
++    ],
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:27: trailing whitespace.
++    "money_silhouette_approx": [
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:28: trailing whitespace.
++      115,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:29: trailing whitespace.
++      27,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:30: trailing whitespace.
++      65,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:31: trailing whitespace.
++      156
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:32: trailing whitespace.
++    ]
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:33: trailing whitespace.
++  },
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:34: trailing whitespace.
++  "raw_date": {
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:35: trailing whitespace.
++    "width": 860,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:36: trailing whitespace.
++    "height": 1828,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:37: trailing whitespace.
++    "pixel_format": "Format32bppArgb",
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:38: trailing whitespace.
++    "alpha_histogram": [
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:39: trailing whitespace.
++      903344,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:40: trailing whitespace.
++      65966,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:41: trailing whitespace.
++      15979,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:42: trailing whitespace.
++      10011,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:43: trailing whitespace.
++      7555,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:44: trailing whitespace.
++      5671,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:45: trailing whitespace.
++      4752,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:46: trailing whitespace.
++      4182,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:47: trailing whitespace.
++      3729,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:48: trailing whitespace.
++      3611,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:49: trailing whitespace.
++      3282,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:50: trailing whitespace.
++      3173,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:51: trailing whitespace.
++      2986,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:52: trailing whitespace.
++      2980,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:53: trailing whitespace.
++      2904,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:54: trailing whitespace.
++      2752,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:55: trailing whitespace.
++      2564,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:56: trailing whitespace.
++      2550,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:57: trailing whitespace.
++      2329,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:58: trailing whitespace.
++      2293,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:59: trailing whitespace.
++      2132,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:60: trailing whitespace.
++      2187,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:61: trailing whitespace.
++      2009,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:62: trailing whitespace.
++      1994,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:63: trailing whitespace.
++      1907,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:64: trailing whitespace.
++      1868,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:65: trailing whitespace.
++      1920,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:66: trailing whitespace.
++      1770,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:67: trailing whitespace.
++      1864,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:68: trailing whitespace.
++      1736,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:69: trailing whitespace.
++      1676,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:70: trailing whitespace.
++      1747,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:71: trailing whitespace.
++      1692,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:72: trailing whitespace.
++      1663,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:73: trailing whitespace.
++      1502,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:74: trailing whitespace.
++      1543,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:75: trailing whitespace.
++      1455,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:76: trailing whitespace.
++      1346,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:77: trailing whitespace.
++      1268,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:78: trailing whitespace.
++      1315,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:79: trailing whitespace.
++      1242,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:80: trailing whitespace.
++      1163,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:81: trailing whitespace.
++      1164,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:82: trailing whitespace.
++      1181,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:83: trailing whitespace.
++      1101,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:84: trailing whitespace.
++      1004,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:85: trailing whitespace.
++      1017,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:86: trailing whitespace.
++      1000,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:87: trailing whitespace.
++      929,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:88: trailing whitespace.
++      940,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:89: trailing whitespace.
++      853,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:90: trailing whitespace.
++      799,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:91: trailing whitespace.
++      796,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:92: trailing whitespace.
++      816,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:93: trailing whitespace.
++      752,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:94: trailing whitespace.
++      730,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:95: trailing whitespace.
++      699,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:96: trailing whitespace.
++      667,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:97: trailing whitespace.
++      611,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:98: trailing whitespace.
++      632,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:99: trailing whitespace.
++      590,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:100: trailing whitespace.
++      596,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:101: trailing whitespace.
++      570,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:102: trailing whitespace.
++      590,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:103: trailing whitespace.
++      548,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:104: trailing whitespace.
++      520,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:105: trailing whitespace.
++      523,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:106: trailing whitespace.
++      506,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:107: trailing whitespace.
++      468,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:108: trailing whitespace.
++      463,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:109: trailing whitespace.
++      503,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:110: trailing whitespace.
++      493,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:111: trailing whitespace.
++      480,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:112: trailing whitespace.
++      418,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:113: trailing whitespace.
++      446,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:114: trailing whitespace.
++      418,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:115: trailing whitespace.
++      426,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:116: trailing whitespace.
++      449,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:117: trailing whitespace.
++      414,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:118: trailing whitespace.
++      464,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:119: trailing whitespace.
++      386,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:120: trailing whitespace.
++      394,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:121: trailing whitespace.
++      384,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:122: trailing whitespace.
++      387,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:123: trailing whitespace.
++      392,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:124: trailing whitespace.
++      342,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:125: trailing whitespace.
++      354,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:126: trailing whitespace.
++      339,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:127: trailing whitespace.
++      345,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:128: trailing whitespace.
++      367,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:129: trailing whitespace.
++      327,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:130: trailing whitespace.
++      340,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:131: trailing whitespace.
++      361,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:132: trailing whitespace.
++      273,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:133: trailing whitespace.
++      307,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:134: trailing whitespace.
++      325,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:135: trailing whitespace.
++      306,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:136: trailing whitespace.
++      349,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:137: trailing whitespace.
++      336,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:138: trailing whitespace.
++      310,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:139: trailing whitespace.
++      349,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:140: trailing whitespace.
++      316,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:141: trailing whitespace.
++      329,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:142: trailing whitespace.
++      287,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:143: trailing whitespace.
++      303,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:144: trailing whitespace.
++      286,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:145: trailing whitespace.
++      296,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:146: trailing whitespace.
++      304,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:147: trailing whitespace.
++      267,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:148: trailing whitespace.
++      287,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:149: trailing whitespace.
++      255,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:150: trailing whitespace.
++      268,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:151: trailing whitespace.
++      247,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:152: trailing whitespace.
++      231,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:153: trailing whitespace.
++      291,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:154: trailing whitespace.
++      280,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:155: trailing whitespace.
++      260,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:156: trailing whitespace.
++      260,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:157: trailing whitespace.
++      266,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:158: trailing whitespace.
++      225,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:159: trailing whitespace.
++      287,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:160: trailing whitespace.
++      292,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:161: trailing whitespace.
++      278,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:162: trailing whitespace.
++      249,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:163: trailing whitespace.
++      259,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:164: trailing whitespace.
++      243,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:165: trailing whitespace.
++      258,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:166: trailing whitespace.
++      252,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:167: trailing whitespace.
++      272,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:168: trailing whitespace.
++      234,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:169: trailing whitespace.
++      247,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:170: trailing whitespace.
++      273,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:171: trailing whitespace.
++      302,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:172: trailing whitespace.
++      270,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:173: trailing whitespace.
++      233,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:174: trailing whitespace.
++      253,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:175: trailing whitespace.
++      254,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:176: trailing whitespace.
++      242,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:177: trailing whitespace.
++      249,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:178: trailing whitespace.
++      226,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:179: trailing whitespace.
++      264,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:180: trailing whitespace.
++      241,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:181: trailing whitespace.
++      289,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:182: trailing whitespace.
++      257,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:183: trailing whitespace.
++      280,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:184: trailing whitespace.
++      258,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:185: trailing whitespace.
++      284,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:186: trailing whitespace.
++      292,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:187: trailing whitespace.
++      310,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:188: trailing whitespace.
++      252,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:189: trailing whitespace.
++      253,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:190: trailing whitespace.
++      270,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:191: trailing whitespace.
++      248,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:192: trailing whitespace.
++      284,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:193: trailing whitespace.
++      247,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:194: trailing whitespace.
++      307,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:195: trailing whitespace.
++      297,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:196: trailing whitespace.
++      294,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:197: trailing whitespace.
++      240,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:198: trailing whitespace.
++      252,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:199: trailing whitespace.
++      251,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:200: trailing whitespace.
++      266,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:201: trailing whitespace.
++      289,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:202: trailing whitespace.
++      287,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:203: trailing whitespace.
++      278,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:204: trailing whitespace.
++      281,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:205: trailing whitespace.
++      289,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:206: trailing whitespace.
++      247,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:207: trailing whitespace.
++      286,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:208: trailing whitespace.
++      270,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:209: trailing whitespace.
++      271,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:210: trailing whitespace.
++      293,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:211: trailing whitespace.
++      294,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:212: trailing whitespace.
++      281,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:213: trailing whitespace.
++      294,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:214: trailing whitespace.
++      284,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:215: trailing whitespace.
++      290,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:216: trailing whitespace.
++      281,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:217: trailing whitespace.
++      271,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:218: trailing whitespace.
++      271,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:219: trailing whitespace.
++      283,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:220: trailing whitespace.
++      275,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:221: trailing whitespace.
++      246,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:222: trailing whitespace.
++      263,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:223: trailing whitespace.
++      288,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:224: trailing whitespace.
++      283,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:225: trailing whitespace.
++      291,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:226: trailing whitespace.
++      296,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:227: trailing whitespace.
++      292,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:228: trailing whitespace.
++      302,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:229: trailing whitespace.
++      337,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:230: trailing whitespace.
++      269,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:231: trailing whitespace.
++      289,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:232: trailing whitespace.
++      284,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:233: trailing whitespace.
++      247,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:234: trailing whitespace.
++      298,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:235: trailing whitespace.
++      271,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:236: trailing whitespace.
++      340,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:237: trailing whitespace.
++      297,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:238: trailing whitespace.
++      316,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:239: trailing whitespace.
++      336,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:240: trailing whitespace.
++      311,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:241: trailing whitespace.
++      328,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:242: trailing whitespace.
++      315,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:243: trailing whitespace.
++      334,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:244: trailing whitespace.
++      343,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:245: trailing whitespace.
++      303,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:246: trailing whitespace.
++      362,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:247: trailing whitespace.
++      386,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:248: trailing whitespace.
++      369,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:249: trailing whitespace.
++      371,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:250: trailing whitespace.
++      343,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:251: trailing whitespace.
++      381,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:252: trailing whitespace.
++      389,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:253: trailing whitespace.
++      378,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:254: trailing whitespace.
++      362,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:255: trailing whitespace.
++      390,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:256: trailing whitespace.
++      399,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:257: trailing whitespace.
++      431,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:258: trailing whitespace.
++      388,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:259: trailing whitespace.
++      403,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:260: trailing whitespace.
++      459,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:261: trailing whitespace.
++      446,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:262: trailing whitespace.
++      459,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:263: trailing whitespace.
++      473,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:264: trailing whitespace.
++      473,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:265: trailing whitespace.
++      525,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:266: trailing whitespace.
++      523,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:267: trailing whitespace.
++      494,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:268: trailing whitespace.
++      499,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:269: trailing whitespace.
++      531,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:270: trailing whitespace.
++      537,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:271: trailing whitespace.
++      572,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:272: trailing whitespace.
++      604,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:273: trailing whitespace.
++      713,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:274: trailing whitespace.
++      661,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:275: trailing whitespace.
++      719,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:276: trailing whitespace.
++      743,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:277: trailing whitespace.
++      881,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:278: trailing whitespace.
++      999,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:279: trailing whitespace.
++      1038,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:280: trailing whitespace.
++      1167,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:281: trailing whitespace.
++      1537,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:282: trailing whitespace.
++      2077,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:283: trailing whitespace.
++      2736,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:284: trailing whitespace.
++      3391,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:285: trailing whitespace.
++      4072,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:286: trailing whitespace.
++      5076,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:287: trailing whitespace.
++      7617,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:288: trailing whitespace.
++      12818,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:289: trailing whitespace.
++      21256,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:290: trailing whitespace.
++      40901,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:291: trailing whitespace.
++      150152,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:292: trailing whitespace.
++      148891,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:293: trailing whitespace.
++      681,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:294: trailing whitespace.
++      85
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:295: trailing whitespace.
++    ],
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:296: trailing whitespace.
++    "alpha_zero_pixels": 903344,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:297: trailing whitespace.
++    "alpha_partial_pixels": 668651,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:298: trailing whitespace.
++    "alpha_255_pixels": 85,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:299: trailing whitespace.
++    "alpha_levels_used": 256,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:300: trailing whitespace.
++    "bounds_alpha_gt_0": [
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:301: trailing whitespace.
++      0,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:302: trailing whitespace.
++      19,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:303: trailing whitespace.
++      850,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:304: trailing whitespace.
++      1809
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:305: trailing whitespace.
++    ],
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:306: trailing whitespace.
++    "bounds_alpha_ge_8": [
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:307: trailing whitespace.
++      116,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:308: trailing whitespace.
++      81,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:309: trailing whitespace.
++      626,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:310: trailing whitespace.
++      1665
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:311: trailing whitespace.
++    ],
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:312: trailing whitespace.
++    "empty_center_roi": [
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:313: trailing whitespace.
++      335,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:314: trailing whitespace.
++      913,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:315: trailing whitespace.
++      187,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:316: trailing whitespace.
++      466
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:317: trailing whitespace.
++    ],
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:318: trailing whitespace.
++    "empty_center_alpha_min": 0,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:319: trailing whitespace.
++    "empty_center_alpha_max": 1,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:320: trailing whitespace.
++    "empty_center_alpha_mean": 0.0589,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:321: trailing whitespace.
++    "empty_center_zero_percent": 94.1119,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:322: trailing whitespace.
++    "corner_alpha": [
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:323: trailing whitespace.
++      0,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:324: trailing whitespace.
++      0,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:325: trailing whitespace.
++      0,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:326: trailing whitespace.
++      0
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:327: trailing whitespace.
++    ]
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:328: trailing whitespace.
++  },
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:329: trailing whitespace.
++  "trimmed_date": {
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:330: trailing whitespace.
++    "width": 642,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:331: trailing whitespace.
++    "height": 1681,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:332: trailing whitespace.
++    "pixel_format": "Format32bppArgb",
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:333: trailing whitespace.
++    "alpha_histogram": [
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:334: trailing whitespace.
++      412380,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:335: trailing whitespace.
++      64052,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:336: trailing whitespace.
++      15979,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:337: trailing whitespace.
++      10011,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:338: trailing whitespace.
++      7555,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:339: trailing whitespace.
++      5671,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:340: trailing whitespace.
++      4752,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:341: trailing whitespace.
++      4182,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:342: trailing whitespace.
++      3729,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:343: trailing whitespace.
++      3611,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:344: trailing whitespace.
++      3282,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:345: trailing whitespace.
++      3173,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:346: trailing whitespace.
++      2986,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:347: trailing whitespace.
++      2980,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:348: trailing whitespace.
++      2904,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:349: trailing whitespace.
++      2752,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:350: trailing whitespace.
++      2564,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:351: trailing whitespace.
++      2550,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:352: trailing whitespace.
++      2329,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:353: trailing whitespace.
++      2293,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:354: trailing whitespace.
++      2132,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:355: trailing whitespace.
++      2187,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:356: trailing whitespace.
++      2009,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:357: trailing whitespace.
++      1994,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:358: trailing whitespace.
++      1907,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:359: trailing whitespace.
++      1868,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:360: trailing whitespace.
++      1920,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:361: trailing whitespace.
++      1770,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:362: trailing whitespace.
++      1864,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:363: trailing whitespace.
++      1736,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:364: trailing whitespace.
++      1676,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:365: trailing whitespace.
++      1747,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:366: trailing whitespace.
++      1692,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:367: trailing whitespace.
++      1663,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:368: trailing whitespace.
++      1502,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:369: trailing whitespace.
++      1543,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:370: trailing whitespace.
++      1455,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:371: trailing whitespace.
++      1346,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:372: trailing whitespace.
++      1268,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:373: trailing whitespace.
++      1315,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:374: trailing whitespace.
++      1242,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:375: trailing whitespace.
++      1163,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:376: trailing whitespace.
++      1164,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:377: trailing whitespace.
++      1181,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:378: trailing whitespace.
++      1101,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:379: trailing whitespace.
++      1004,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:380: trailing whitespace.
++      1017,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:381: trailing whitespace.
++      1000,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:382: trailing whitespace.
++      929,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:383: trailing whitespace.
++      940,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:384: trailing whitespace.
++      853,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:385: trailing whitespace.
++      799,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:386: trailing whitespace.
++      796,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:387: trailing whitespace.
++      816,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:388: trailing whitespace.
++      752,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:389: trailing whitespace.
++      730,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:390: trailing whitespace.
++      699,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:391: trailing whitespace.
++      667,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:392: trailing whitespace.
++      611,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:393: trailing whitespace.
++      632,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:394: trailing whitespace.
++      590,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:395: trailing whitespace.
++      596,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:396: trailing whitespace.
++      570,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:397: trailing whitespace.
++      590,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:398: trailing whitespace.
++      548,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:399: trailing whitespace.
++      520,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:400: trailing whitespace.
++      523,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:401: trailing whitespace.
++      506,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:402: trailing whitespace.
++      468,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:403: trailing whitespace.
++      463,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:404: trailing whitespace.
++      503,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:405: trailing whitespace.
++      493,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:406: trailing whitespace.
++      480,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:407: trailing whitespace.
++      418,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:408: trailing whitespace.
++      446,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:409: trailing whitespace.
++      418,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:410: trailing whitespace.
++      426,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:411: trailing whitespace.
++      449,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:412: trailing whitespace.
++      414,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:413: trailing whitespace.
++      464,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:414: trailing whitespace.
++      386,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:415: trailing whitespace.
++      394,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:416: trailing whitespace.
++      384,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:417: trailing whitespace.
++      387,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:418: trailing whitespace.
++      392,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:419: trailing whitespace.
++      342,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:420: trailing whitespace.
++      354,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:421: trailing whitespace.
++      339,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:422: trailing whitespace.
++      345,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:423: trailing whitespace.
++      367,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:424: trailing whitespace.
++      327,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:425: trailing whitespace.
++      340,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:426: trailing whitespace.
++      361,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:427: trailing whitespace.
++      273,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:428: trailing whitespace.
++      307,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:429: trailing whitespace.
++      325,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:430: trailing whitespace.
++      306,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:431: trailing whitespace.
++      349,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:432: trailing whitespace.
++      336,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:433: trailing whitespace.
++      310,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:434: trailing whitespace.
++      349,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:435: trailing whitespace.
++      316,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:436: trailing whitespace.
++      329,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:437: trailing whitespace.
++      287,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:438: trailing whitespace.
++      303,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:439: trailing whitespace.
++      286,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:440: trailing whitespace.
++      296,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:441: trailing whitespace.
++      304,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:442: trailing whitespace.
++      267,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:443: trailing whitespace.
++      287,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:444: trailing whitespace.
++      255,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:445: trailing whitespace.
++      268,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:446: trailing whitespace.
++      247,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:447: trailing whitespace.
++      231,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:448: trailing whitespace.
++      291,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:449: trailing whitespace.
++      280,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:450: trailing whitespace.
++      260,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:451: trailing whitespace.
++      260,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:452: trailing whitespace.
++      266,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:453: trailing whitespace.
++      225,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:454: trailing whitespace.
++      287,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:455: trailing whitespace.
++      292,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:456: trailing whitespace.
++      278,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:457: trailing whitespace.
++      249,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:458: trailing whitespace.
++      259,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:459: trailing whitespace.
++      243,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:460: trailing whitespace.
++      258,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:461: trailing whitespace.
++      252,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:462: trailing whitespace.
++      272,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:463: trailing whitespace.
++      234,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:464: trailing whitespace.
++      247,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:465: trailing whitespace.
++      273,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:466: trailing whitespace.
++      302,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:467: trailing whitespace.
++      270,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:468: trailing whitespace.
++      233,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:469: trailing whitespace.
++      253,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:470: trailing whitespace.
++      254,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:471: trailing whitespace.
++      242,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:472: trailing whitespace.
++      249,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:473: trailing whitespace.
++      226,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:474: trailing whitespace.
++      264,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:475: trailing whitespace.
++      241,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:476: trailing whitespace.
++      289,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:477: trailing whitespace.
++      257,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:478: trailing whitespace.
++      280,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:479: trailing whitespace.
++      258,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:480: trailing whitespace.
++      284,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:481: trailing whitespace.
++      292,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:482: trailing whitespace.
++      310,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:483: trailing whitespace.
++      252,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:484: trailing whitespace.
++      253,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:485: trailing whitespace.
++      270,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:486: trailing whitespace.
++      248,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:487: trailing whitespace.
++      284,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:488: trailing whitespace.
++      247,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:489: trailing whitespace.
++      307,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:490: trailing whitespace.
++      297,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:491: trailing whitespace.
++      294,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:492: trailing whitespace.
++      240,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:493: trailing whitespace.
++      252,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:494: trailing whitespace.
++      251,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:495: trailing whitespace.
++      266,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:496: trailing whitespace.
++      289,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:497: trailing whitespace.
++      287,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:498: trailing whitespace.
++      278,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:499: trailing whitespace.
++      281,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:500: trailing whitespace.
++      289,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:501: trailing whitespace.
++      247,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:502: trailing whitespace.
++      286,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:503: trailing whitespace.
++      270,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:504: trailing whitespace.
++      271,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:505: trailing whitespace.
++      293,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:506: trailing whitespace.
++      294,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:507: trailing whitespace.
++      281,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:508: trailing whitespace.
++      294,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:509: trailing whitespace.
++      284,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:510: trailing whitespace.
++      290,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:511: trailing whitespace.
++      281,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:512: trailing whitespace.
++      271,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:513: trailing whitespace.
++      271,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:514: trailing whitespace.
++      283,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:515: trailing whitespace.
++      275,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:516: trailing whitespace.
++      246,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:517: trailing whitespace.
++      263,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:518: trailing whitespace.
++      288,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:519: trailing whitespace.
++      283,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:520: trailing whitespace.
++      291,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:521: trailing whitespace.
++      296,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:522: trailing whitespace.
++      292,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:523: trailing whitespace.
++      302,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:524: trailing whitespace.
++      337,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:525: trailing whitespace.
++      269,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:526: trailing whitespace.
++      289,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:527: trailing whitespace.
++      284,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:528: trailing whitespace.
++      247,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:529: trailing whitespace.
++      298,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:530: trailing whitespace.
++      271,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:531: trailing whitespace.
++      340,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:532: trailing whitespace.
++      297,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:533: trailing whitespace.
++      316,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:534: trailing whitespace.
++      336,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:535: trailing whitespace.
++      311,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:536: trailing whitespace.
++      328,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:537: trailing whitespace.
++      315,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:538: trailing whitespace.
++      334,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:539: trailing whitespace.
++      343,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:540: trailing whitespace.
++      303,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:541: trailing whitespace.
++      362,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:542: trailing whitespace.
++      386,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:543: trailing whitespace.
++      369,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:544: trailing whitespace.
++      371,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:545: trailing whitespace.
++      343,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:546: trailing whitespace.
++      381,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:547: trailing whitespace.
++      389,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:548: trailing whitespace.
++      378,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:549: trailing whitespace.
++      362,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:550: trailing whitespace.
++      390,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:551: trailing whitespace.
++      399,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:552: trailing whitespace.
++      431,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:553: trailing whitespace.
++      388,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:554: trailing whitespace.
++      403,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:555: trailing whitespace.
++      459,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:556: trailing whitespace.
++      446,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:557: trailing whitespace.
++      459,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:558: trailing whitespace.
++      473,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:559: trailing whitespace.
++      473,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:560: trailing whitespace.
++      525,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:561: trailing whitespace.
++      523,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:562: trailing whitespace.
++      494,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:563: trailing whitespace.
++      499,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:564: trailing whitespace.
++      531,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:565: trailing whitespace.
++      537,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:566: trailing whitespace.
++      572,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:567: trailing whitespace.
++      604,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:568: trailing whitespace.
++      713,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:569: trailing whitespace.
++      661,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:570: trailing whitespace.
++      719,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:571: trailing whitespace.
++      743,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:572: trailing whitespace.
++      881,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:573: trailing whitespace.
++      999,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:574: trailing whitespace.
++      1038,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:575: trailing whitespace.
++      1167,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:576: trailing whitespace.
++      1537,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:577: trailing whitespace.
++      2077,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:578: trailing whitespace.
++      2736,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:579: trailing whitespace.
++      3391,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:580: trailing whitespace.
++      4072,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:581: trailing whitespace.
++      5076,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:582: trailing whitespace.
++      7617,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:583: trailing whitespace.
++      12818,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:584: trailing whitespace.
++      21256,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:585: trailing whitespace.
++      40901,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:586: trailing whitespace.
++      150152,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:587: trailing whitespace.
++      148891,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:588: trailing whitespace.
++      681,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:589: trailing whitespace.
++      85
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:590: trailing whitespace.
++    ],
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:591: trailing whitespace.
++    "alpha_zero_pixels": 412380,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:592: trailing whitespace.
++    "alpha_partial_pixels": 666737,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:593: trailing whitespace.
++    "alpha_255_pixels": 85,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:594: trailing whitespace.
++    "alpha_levels_used": 256,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:595: trailing whitespace.
++    "bounds_alpha_gt_0": [
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:596: trailing whitespace.
++      1,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:597: trailing whitespace.
++      0,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:598: trailing whitespace.
++      641,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:599: trailing whitespace.
++      1681
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:600: trailing whitespace.
++    ],
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:601: trailing whitespace.
++    "bounds_alpha_ge_8": [
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:602: trailing whitespace.
++      8,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:603: trailing whitespace.
++      8,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:604: trailing whitespace.
++      626,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:605: trailing whitespace.
++      1665
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:606: trailing whitespace.
++    ],
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:607: trailing whitespace.
++    "empty_center_roi": [
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:608: trailing whitespace.
++      227,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:609: trailing whitespace.
++      840,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:610: trailing whitespace.
++      187,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:611: trailing whitespace.
++      466
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:612: trailing whitespace.
++    ],
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:613: trailing whitespace.
++    "empty_center_alpha_min": 0,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:614: trailing whitespace.
++    "empty_center_alpha_max": 1,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:615: trailing whitespace.
++    "empty_center_alpha_mean": 0.0589,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:616: trailing whitespace.
++    "empty_center_zero_percent": 94.1119,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:617: trailing whitespace.
++    "corner_alpha": [
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:618: trailing whitespace.
++      0,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:619: trailing whitespace.
++      0,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:620: trailing whitespace.
++      0,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:621: trailing whitespace.
++      0
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:622: trailing whitespace.
++    ]
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:623: trailing whitespace.
++  },
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:624: trailing whitespace.
++  "trim": {
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:625: trailing whitespace.
++    "from_raw": [
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:626: trailing whitespace.
++      108,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:627: trailing whitespace.
++      73,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:628: trailing whitespace.
++      642,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:629: trailing whitespace.
++      1681
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:630: trailing whitespace.
++    ],
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:631: trailing whitespace.
++    "bounds_threshold": 8,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:632: trailing whitespace.
++    "padding": 8,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:633: trailing whitespace.
++    "retained_alpha_values_modified": false,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:634: trailing whitespace.
++    "discarded_external_noise_max_alpha": 7,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:635: trailing whitespace.
++    "path": "D:\\taptap\\To-the-Human-World\\scripts\\素材\\双瓶标签_选定版提取_v01\\过程记录\\日期瓶_紧裁_问题稿.png",
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:636: trailing whitespace.
++    "status": "problem_draft_not_final"
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:637: trailing whitespace.
++  },
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:638: trailing whitespace.
++  "source_date_aspect_approx": 0.42949,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:639: trailing whitespace.
++  "generated_visible_aspect": 0.37598,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:640: trailing whitespace.
++  "base": {
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:641: trailing whitespace.
++    "path": "D:\\taptap\\To-the-Human-World\\scripts\\素材\\双瓶标签_选定版提取_v01\\过程记录\\底图_未加标签主页.png",
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:642: trailing whitespace.
++    "width": 1920,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:643: trailing whitespace.
++    "height": 1080,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:644: trailing whitespace.
++    "contains_ui_bottles": false,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:645: trailing whitespace.
++    "mapping": "uniform center-fit",
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:646: trailing whitespace.
++    "scale": 1.1477151965993624,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:647: trailing whitespace.
++    "offset": [
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:648: trailing whitespace.
++      0.5100956429330381,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:649: trailing whitespace.
++      0.0
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:650: trailing whitespace.
++    ]
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:651: trailing whitespace.
++  },
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:652: trailing whitespace.
++  "date_preview_placement": [
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:653: trailing whitespace.
++    38,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:654: trailing whitespace.
++    30,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:655: trailing whitespace.
++    69,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:656: trailing whitespace.
++    181
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:657: trailing whitespace.
++  ],
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:658: trailing whitespace.
++  "pixels_changed_outside_date_placement": 0,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:659: trailing whitespace.
++  "preview_files": [
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:660: trailing whitespace.
++    "D:\\taptap\\To-the-Human-World\\scripts\\素材\\双瓶标签_选定版提取_v01\\问题预览_日期瓶_浅深底_v01.png",
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:661: trailing whitespace.
++    "D:\\taptap\\To-the-Human-World\\scripts\\素材\\双瓶标签_选定版提取_v01\\问题预览_日期瓶_无标签主页_v01.png"
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:662: trailing whitespace.
++  ],
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:663: trailing whitespace.
++  "source_hash": "9616CF98DB0BFBC2A64E5F31DB3150D6EA31123C863C4AD81C93ACCF1B414A97",
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:664: trailing whitespace.
++  "base_hash": "A3A87B70EE2D7CECFD2279188D8A906F4D7A86F4916D8C651D82B8633252EF14",
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:665: trailing whitespace.
++  "raw_hash": "124BCB5111CF07B8134B68550B2B13BB33CED9B98E8D0DB4183A65AAD9CE0AD7",
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:666: trailing whitespace.
++  "money_processed": false,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:667: trailing whitespace.
++  "formal_assets_delivered": false,
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:668: trailing whitespace.
++  "findings": [
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:669: trailing whitespace.
++    "Real RGBA, but center ROI alpha only 0-1 and 94.1119 percent exactly zero.",
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:670: trailing whitespace.
++    "Visible width/height ratio is about 12.46 percent narrower than approximate selected-source silhouette.",
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:671: trailing whitespace.
++    "Shoulder highlight and green-gold rim are stronger than source. No obvious baked wood/plants in inspected light/dark composites.",
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:672: trailing whitespace.
++    "Alpha 1-7 scattered noise outside meaningful bounds prevented a strict all-nonzero tight crop.",
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:673: trailing whitespace.
++    "User requested stop at date problem preview when date is visibly distorted; money processing was not started."
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:674: trailing whitespace.
++  ]
+scripts/素材/双瓶标签_选定版提取_v01/检查结果_v01.json:675: trailing whitespace.
++}
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:1: trailing whitespace.
++{
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:2: trailing whitespace.
++  "task": "B-HOME-LEDGER-EXTRACT-20261011 r1, money continuation",
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:3: trailing whitespace.
++  "authorization": "User explicitly requested money extraction after the date problem preview.",
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:4: trailing whitespace.
++  "status": "money_rgba_candidate_delivered_pending_user_A_approval",
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:5: trailing whitespace.
++  "source": {
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:6: trailing whitespace.
++    "full_image": "D:\\taptap\\To-the-Human-World\\scripts\\素材\\双瓶标签_选定版提取_v01\\过程记录\\源图_选定双瓶主页.png",
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:7: trailing whitespace.
++    "width": 1672,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:8: trailing whitespace.
++    "height": 941,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:9: trailing whitespace.
++    "crop": [
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:10: trailing whitespace.
++      109,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:11: trailing whitespace.
++      20,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:12: trailing whitespace.
++      78,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:13: trailing whitespace.
++      170
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:14: trailing whitespace.
++    ],
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:15: trailing whitespace.
++    "silhouette_approx": [
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:16: trailing whitespace.
++      115,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:17: trailing whitespace.
++      27,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:18: trailing whitespace.
++      65,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:19: trailing whitespace.
++      156
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:20: trailing whitespace.
++    ],
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:21: trailing whitespace.
++    "native_details_approx": [
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:22: trailing whitespace.
++      65,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:23: trailing whitespace.
++      156
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:24: trailing whitespace.
++    ]
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:25: trailing whitespace.
++  },
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:26: trailing whitespace.
++  "raw_money": {
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:27: trailing whitespace.
++    "width": 1016,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:28: trailing whitespace.
++    "height": 1548,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:29: trailing whitespace.
++    "pixel_format": "Format32bppArgb",
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:30: trailing whitespace.
++    "alpha_histogram": [
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:31: trailing whitespace.
++      852181,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:32: trailing whitespace.
++      48734,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:33: trailing whitespace.
++      2567,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:34: trailing whitespace.
++      1099,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:35: trailing whitespace.
++      515,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:36: trailing whitespace.
++      272,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:37: trailing whitespace.
++      94,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:38: trailing whitespace.
++      80,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:39: trailing whitespace.
++      63,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:40: trailing whitespace.
++      112,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:41: trailing whitespace.
++      117,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:42: trailing whitespace.
++      134,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:43: trailing whitespace.
++      179,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:44: trailing whitespace.
++      151,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:45: trailing whitespace.
++      154,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:46: trailing whitespace.
++      125,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:47: trailing whitespace.
++      132,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:48: trailing whitespace.
++      125,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:49: trailing whitespace.
++      136,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:50: trailing whitespace.
++      75,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:51: trailing whitespace.
++      65,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:52: trailing whitespace.
++      53,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:53: trailing whitespace.
++      53,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:54: trailing whitespace.
++      45,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:55: trailing whitespace.
++      43,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:56: trailing whitespace.
++      50,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:57: trailing whitespace.
++      48,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:58: trailing whitespace.
++      32,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:59: trailing whitespace.
++      28,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:60: trailing whitespace.
++      42,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:61: trailing whitespace.
++      46,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:62: trailing whitespace.
++      49,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:63: trailing whitespace.
++      55,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:64: trailing whitespace.
++      60,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:65: trailing whitespace.
++      54,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:66: trailing whitespace.
++      58,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:67: trailing whitespace.
++      54,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:68: trailing whitespace.
++      70,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:69: trailing whitespace.
++      70,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:70: trailing whitespace.
++      56,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:71: trailing whitespace.
++      50,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:72: trailing whitespace.
++      54,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:73: trailing whitespace.
++      58,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:74: trailing whitespace.
++      51,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:75: trailing whitespace.
++      179,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:76: trailing whitespace.
++      606,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:77: trailing whitespace.
++      1059,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:78: trailing whitespace.
++      2051,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:79: trailing whitespace.
++      3590,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:80: trailing whitespace.
++      4201,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:81: trailing whitespace.
++      4198,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:82: trailing whitespace.
++      3983,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:83: trailing whitespace.
++      4173,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:84: trailing whitespace.
++      4392,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:85: trailing whitespace.
++      4220,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:86: trailing whitespace.
++      3981,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:87: trailing whitespace.
++      4256,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:88: trailing whitespace.
++      4748,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:89: trailing whitespace.
++      5380,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:90: trailing whitespace.
++      5778,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:91: trailing whitespace.
++      5600,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:92: trailing whitespace.
++      4437,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:93: trailing whitespace.
++      4137,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:94: trailing whitespace.
++      4297,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:95: trailing whitespace.
++      3866,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:96: trailing whitespace.
++      3692,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:97: trailing whitespace.
++      4113,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:98: trailing whitespace.
++      4365,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:99: trailing whitespace.
++      3927,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:100: trailing whitespace.
++      3364,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:101: trailing whitespace.
++      2975,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:102: trailing whitespace.
++      2756,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:103: trailing whitespace.
++      2880,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:104: trailing whitespace.
++      2712,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:105: trailing whitespace.
++      2884,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:106: trailing whitespace.
++      2682,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:107: trailing whitespace.
++      2437,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:108: trailing whitespace.
++      2567,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:109: trailing whitespace.
++      2845,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:110: trailing whitespace.
++      2785,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:111: trailing whitespace.
++      2659,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:112: trailing whitespace.
++      2556,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:113: trailing whitespace.
++      2430,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:114: trailing whitespace.
++      2488,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:115: trailing whitespace.
++      2638,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:116: trailing whitespace.
++      2507,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:117: trailing whitespace.
++      2423,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:118: trailing whitespace.
++      2482,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:119: trailing whitespace.
++      2446,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:120: trailing whitespace.
++      2414,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:121: trailing whitespace.
++      2433,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:122: trailing whitespace.
++      2471,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:123: trailing whitespace.
++      2376,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:124: trailing whitespace.
++      2258,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:125: trailing whitespace.
++      2215,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:126: trailing whitespace.
++      2182,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:127: trailing whitespace.
++      1931,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:128: trailing whitespace.
++      1904,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:129: trailing whitespace.
++      1764,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:130: trailing whitespace.
++      1720,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:131: trailing whitespace.
++      1684,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:132: trailing whitespace.
++      1636,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:133: trailing whitespace.
++      1604,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:134: trailing whitespace.
++      1577,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:135: trailing whitespace.
++      1621,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:136: trailing whitespace.
++      1575,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:137: trailing whitespace.
++      1590,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:138: trailing whitespace.
++      1525,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:139: trailing whitespace.
++      1592,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:140: trailing whitespace.
++      1553,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:141: trailing whitespace.
++      1418,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:142: trailing whitespace.
++      1422,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:143: trailing whitespace.
++      1387,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:144: trailing whitespace.
++      1429,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:145: trailing whitespace.
++      1365,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:146: trailing whitespace.
++      1418,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:147: trailing whitespace.
++      1401,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:148: trailing whitespace.
++      1308,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:149: trailing whitespace.
++      1297,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:150: trailing whitespace.
++      1352,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:151: trailing whitespace.
++      1337,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:152: trailing whitespace.
++      1238,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:153: trailing whitespace.
++      1256,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:154: trailing whitespace.
++      1247,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:155: trailing whitespace.
++      1203,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:156: trailing whitespace.
++      1188,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:157: trailing whitespace.
++      1190,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:158: trailing whitespace.
++      1100,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:159: trailing whitespace.
++      1145,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:160: trailing whitespace.
++      1046,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:161: trailing whitespace.
++      1026,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:162: trailing whitespace.
++      1026,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:163: trailing whitespace.
++      1105,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:164: trailing whitespace.
++      987,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:165: trailing whitespace.
++      1026,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:166: trailing whitespace.
++      974,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:167: trailing whitespace.
++      907,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:168: trailing whitespace.
++      976,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:169: trailing whitespace.
++      941,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:170: trailing whitespace.
++      903,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:171: trailing whitespace.
++      922,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:172: trailing whitespace.
++      906,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:173: trailing whitespace.
++      941,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:174: trailing whitespace.
++      943,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:175: trailing whitespace.
++      927,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:176: trailing whitespace.
++      889,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:177: trailing whitespace.
++      924,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:178: trailing whitespace.
++      921,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:179: trailing whitespace.
++      786,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:180: trailing whitespace.
++      846,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:181: trailing whitespace.
++      831,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:182: trailing whitespace.
++      810,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:183: trailing whitespace.
++      864,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:184: trailing whitespace.
++      797,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:185: trailing whitespace.
++      752,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:186: trailing whitespace.
++      742,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:187: trailing whitespace.
++      733,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:188: trailing whitespace.
++      738,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:189: trailing whitespace.
++      719,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:190: trailing whitespace.
++      719,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:191: trailing whitespace.
++      690,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:192: trailing whitespace.
++      692,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:193: trailing whitespace.
++      700,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:194: trailing whitespace.
++      699,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:195: trailing whitespace.
++      620,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:196: trailing whitespace.
++      660,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:197: trailing whitespace.
++      623,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:198: trailing whitespace.
++      634,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:199: trailing whitespace.
++      651,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:200: trailing whitespace.
++      617,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:201: trailing whitespace.
++      626,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:202: trailing whitespace.
++      619,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:203: trailing whitespace.
++      546,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:204: trailing whitespace.
++      603,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:205: trailing whitespace.
++      547,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:206: trailing whitespace.
++      521,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:207: trailing whitespace.
++      519,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:208: trailing whitespace.
++      515,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:209: trailing whitespace.
++      484,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:210: trailing whitespace.
++      502,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:211: trailing whitespace.
++      509,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:212: trailing whitespace.
++      469,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:213: trailing whitespace.
++      470,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:214: trailing whitespace.
++      494,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:215: trailing whitespace.
++      434,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:216: trailing whitespace.
++      461,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:217: trailing whitespace.
++      476,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:218: trailing whitespace.
++      418,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:219: trailing whitespace.
++      474,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:220: trailing whitespace.
++      414,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:221: trailing whitespace.
++      496,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:222: trailing whitespace.
++      488,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:223: trailing whitespace.
++      490,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:224: trailing whitespace.
++      432,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:225: trailing whitespace.
++      398,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:226: trailing whitespace.
++      400,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:227: trailing whitespace.
++      408,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:228: trailing whitespace.
++      409,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:229: trailing whitespace.
++      398,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:230: trailing whitespace.
++      383,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:231: trailing whitespace.
++      385,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:232: trailing whitespace.
++      368,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:233: trailing whitespace.
++      399,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:234: trailing whitespace.
++      361,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:235: trailing whitespace.
++      353,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:236: trailing whitespace.
++      347,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:237: trailing whitespace.
++      315,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:238: trailing whitespace.
++      298,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:239: trailing whitespace.
++      345,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:240: trailing whitespace.
++      350,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:241: trailing whitespace.
++      315,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:242: trailing whitespace.
++      305,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:243: trailing whitespace.
++      332,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:244: trailing whitespace.
++      334,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:245: trailing whitespace.
++      319,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:246: trailing whitespace.
++      298,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:247: trailing whitespace.
++      309,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:248: trailing whitespace.
++      346,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:249: trailing whitespace.
++      320,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:250: trailing whitespace.
++      367,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:251: trailing whitespace.
++      306,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:252: trailing whitespace.
++      349,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:253: trailing whitespace.
++      365,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:254: trailing whitespace.
++      368,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:255: trailing whitespace.
++      416,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:256: trailing whitespace.
++      411,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:257: trailing whitespace.
++      370,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:258: trailing whitespace.
++      390,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:259: trailing whitespace.
++      397,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:260: trailing whitespace.
++      439,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:261: trailing whitespace.
++      458,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:262: trailing whitespace.
++      448,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:263: trailing whitespace.
++      532,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:264: trailing whitespace.
++      584,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:265: trailing whitespace.
++      569,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:266: trailing whitespace.
++      538,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:267: trailing whitespace.
++      655,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:268: trailing whitespace.
++      725,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:269: trailing whitespace.
++      749,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:270: trailing whitespace.
++      935,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:271: trailing whitespace.
++      1038,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:272: trailing whitespace.
++      1155,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:273: trailing whitespace.
++      1360,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:274: trailing whitespace.
++      1596,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:275: trailing whitespace.
++      1907,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:276: trailing whitespace.
++      2629,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:277: trailing whitespace.
++      3155,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:278: trailing whitespace.
++      3990,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:279: trailing whitespace.
++      5209,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:280: trailing whitespace.
++      7818,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:281: trailing whitespace.
++      14034,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:282: trailing whitespace.
++      50570,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:283: trailing whitespace.
++      238457,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:284: trailing whitespace.
++      53021,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:285: trailing whitespace.
++      55,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:286: trailing whitespace.
++      28
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:287: trailing whitespace.
++    ],
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:288: trailing whitespace.
++    "alpha_zero_pixels": 852181,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:289: trailing whitespace.
++    "alpha_partial_pixels": 720559,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:290: trailing whitespace.
++    "alpha_255_pixels": 28,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:291: trailing whitespace.
++    "alpha_levels_used": 256,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:292: trailing whitespace.
++    "bounds_alpha_gt_0": [
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:293: trailing whitespace.
++      0,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:294: trailing whitespace.
++      0,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:295: trailing whitespace.
++      1015,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:296: trailing whitespace.
++      1548
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:297: trailing whitespace.
++    ],
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:298: trailing whitespace.
++    "bounds_alpha_ge_8": [
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:299: trailing whitespace.
++      239,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:300: trailing whitespace.
++      96,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:301: trailing whitespace.
++      539,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:302: trailing whitespace.
++      1364
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:303: trailing whitespace.
++    ],
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:304: trailing whitespace.
++    "empty_center_roi": [
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:305: trailing whitespace.
++      422,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:306: trailing whitespace.
++      873,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:307: trailing whitespace.
++      172,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:308: trailing whitespace.
++      341
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:309: trailing whitespace.
++    ],
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:310: trailing whitespace.
++    "empty_center_alpha_min": 44,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:311: trailing whitespace.
++    "empty_center_alpha_max": 74,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:312: trailing whitespace.
++    "empty_center_alpha_mean": 56.8175,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:313: trailing whitespace.
++    "empty_center_zero_percent": 0.0,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:314: trailing whitespace.
++    "corner_alpha": [
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:315: trailing whitespace.
++      0,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:316: trailing whitespace.
++      0,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:317: trailing whitespace.
++      0,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:318: trailing whitespace.
++      0
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:319: trailing whitespace.
++    ],
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:320: trailing whitespace.
++    "generic_center_roi_includes_coin_edge": [
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:321: trailing whitespace.
++      427,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:322: trailing whitespace.
++      778,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:323: trailing whitespace.
++      161,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:324: trailing whitespace.
++      381
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:325: trailing whitespace.
++    ],
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:326: trailing whitespace.
++    "generic_center_alpha_max": 252
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:327: trailing whitespace.
++  },
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:328: trailing whitespace.
++  "trimmed_money": {
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:329: trailing whitespace.
++    "width": 555,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:330: trailing whitespace.
++    "height": 1380,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:331: trailing whitespace.
++    "pixel_format": "Format32bppArgb",
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:332: trailing whitespace.
++    "alpha_histogram": [
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:333: trailing whitespace.
++      84055,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:334: trailing whitespace.
++      10004,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:335: trailing whitespace.
++      2555,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:336: trailing whitespace.
++      1099,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:337: trailing whitespace.
++      515,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:338: trailing whitespace.
++      272,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:339: trailing whitespace.
++      94,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:340: trailing whitespace.
++      80,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:341: trailing whitespace.
++      63,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:342: trailing whitespace.
++      112,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:343: trailing whitespace.
++      117,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:344: trailing whitespace.
++      134,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:345: trailing whitespace.
++      179,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:346: trailing whitespace.
++      151,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:347: trailing whitespace.
++      154,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:348: trailing whitespace.
++      125,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:349: trailing whitespace.
++      132,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:350: trailing whitespace.
++      125,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:351: trailing whitespace.
++      136,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:352: trailing whitespace.
++      75,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:353: trailing whitespace.
++      65,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:354: trailing whitespace.
++      53,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:355: trailing whitespace.
++      53,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:356: trailing whitespace.
++      45,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:357: trailing whitespace.
++      43,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:358: trailing whitespace.
++      50,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:359: trailing whitespace.
++      48,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:360: trailing whitespace.
++      32,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:361: trailing whitespace.
++      28,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:362: trailing whitespace.
++      42,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:363: trailing whitespace.
++      46,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:364: trailing whitespace.
++      49,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:365: trailing whitespace.
++      55,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:366: trailing whitespace.
++      60,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:367: trailing whitespace.
++      54,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:368: trailing whitespace.
++      58,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:369: trailing whitespace.
++      54,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:370: trailing whitespace.
++      70,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:371: trailing whitespace.
++      70,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:372: trailing whitespace.
++      56,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:373: trailing whitespace.
++      50,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:374: trailing whitespace.
++      54,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:375: trailing whitespace.
++      58,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:376: trailing whitespace.
++      51,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:377: trailing whitespace.
++      179,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:378: trailing whitespace.
++      606,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:379: trailing whitespace.
++      1059,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:380: trailing whitespace.
++      2051,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:381: trailing whitespace.
++      3590,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:382: trailing whitespace.
++      4201,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:383: trailing whitespace.
++      4198,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:384: trailing whitespace.
++      3983,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:385: trailing whitespace.
++      4173,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:386: trailing whitespace.
++      4392,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:387: trailing whitespace.
++      4220,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:388: trailing whitespace.
++      3981,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:389: trailing whitespace.
++      4256,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:390: trailing whitespace.
++      4748,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:391: trailing whitespace.
++      5380,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:392: trailing whitespace.
++      5778,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:393: trailing whitespace.
++      5600,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:394: trailing whitespace.
++      4437,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:395: trailing whitespace.
++      4137,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:396: trailing whitespace.
++      4297,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:397: trailing whitespace.
++      3866,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:398: trailing whitespace.
++      3692,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:399: trailing whitespace.
++      4113,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:400: trailing whitespace.
++      4365,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:401: trailing whitespace.
++      3927,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:402: trailing whitespace.
++      3364,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:403: trailing whitespace.
++      2975,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:404: trailing whitespace.
++      2756,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:405: trailing whitespace.
++      2880,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:406: trailing whitespace.
++      2712,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:407: trailing whitespace.
++      2884,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:408: trailing whitespace.
++      2682,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:409: trailing whitespace.
++      2437,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:410: trailing whitespace.
++      2567,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:411: trailing whitespace.
++      2845,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:412: trailing whitespace.
++      2785,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:413: trailing whitespace.
++      2659,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:414: trailing whitespace.
++      2556,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:415: trailing whitespace.
++      2430,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:416: trailing whitespace.
++      2488,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:417: trailing whitespace.
++      2638,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:418: trailing whitespace.
++      2507,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:419: trailing whitespace.
++      2423,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:420: trailing whitespace.
++      2482,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:421: trailing whitespace.
++      2446,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:422: trailing whitespace.
++      2414,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:423: trailing whitespace.
++      2433,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:424: trailing whitespace.
++      2471,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:425: trailing whitespace.
++      2376,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:426: trailing whitespace.
++      2258,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:427: trailing whitespace.
++      2215,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:428: trailing whitespace.
++      2182,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:429: trailing whitespace.
++      1931,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:430: trailing whitespace.
++      1904,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:431: trailing whitespace.
++      1764,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:432: trailing whitespace.
++      1720,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:433: trailing whitespace.
++      1684,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:434: trailing whitespace.
++      1636,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:435: trailing whitespace.
++      1604,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:436: trailing whitespace.
++      1577,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:437: trailing whitespace.
++      1621,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:438: trailing whitespace.
++      1575,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:439: trailing whitespace.
++      1590,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:440: trailing whitespace.
++      1525,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:441: trailing whitespace.
++      1592,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:442: trailing whitespace.
++      1553,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:443: trailing whitespace.
++      1418,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:444: trailing whitespace.
++      1422,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:445: trailing whitespace.
++      1387,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:446: trailing whitespace.
++      1429,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:447: trailing whitespace.
++      1365,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:448: trailing whitespace.
++      1418,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:449: trailing whitespace.
++      1401,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:450: trailing whitespace.
++      1308,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:451: trailing whitespace.
++      1297,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:452: trailing whitespace.
++      1352,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:453: trailing whitespace.
++      1337,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:454: trailing whitespace.
++      1238,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:455: trailing whitespace.
++      1256,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:456: trailing whitespace.
++      1247,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:457: trailing whitespace.
++      1203,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:458: trailing whitespace.
++      1188,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:459: trailing whitespace.
++      1190,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:460: trailing whitespace.
++      1100,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:461: trailing whitespace.
++      1145,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:462: trailing whitespace.
++      1046,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:463: trailing whitespace.
++      1026,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:464: trailing whitespace.
++      1026,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:465: trailing whitespace.
++      1105,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:466: trailing whitespace.
++      987,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:467: trailing whitespace.
++      1026,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:468: trailing whitespace.
++      974,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:469: trailing whitespace.
++      907,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:470: trailing whitespace.
++      976,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:471: trailing whitespace.
++      941,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:472: trailing whitespace.
++      903,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:473: trailing whitespace.
++      922,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:474: trailing whitespace.
++      906,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:475: trailing whitespace.
++      941,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:476: trailing whitespace.
++      943,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:477: trailing whitespace.
++      927,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:478: trailing whitespace.
++      889,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:479: trailing whitespace.
++      924,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:480: trailing whitespace.
++      921,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:481: trailing whitespace.
++      786,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:482: trailing whitespace.
++      846,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:483: trailing whitespace.
++      831,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:484: trailing whitespace.
++      810,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:485: trailing whitespace.
++      864,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:486: trailing whitespace.
++      797,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:487: trailing whitespace.
++      752,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:488: trailing whitespace.
++      742,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:489: trailing whitespace.
++      733,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:490: trailing whitespace.
++      738,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:491: trailing whitespace.
++      719,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:492: trailing whitespace.
++      719,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:493: trailing whitespace.
++      690,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:494: trailing whitespace.
++      692,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:495: trailing whitespace.
++      700,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:496: trailing whitespace.
++      699,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:497: trailing whitespace.
++      620,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:498: trailing whitespace.
++      660,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:499: trailing whitespace.
++      623,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:500: trailing whitespace.
++      634,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:501: trailing whitespace.
++      651,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:502: trailing whitespace.
++      617,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:503: trailing whitespace.
++      626,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:504: trailing whitespace.
++      619,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:505: trailing whitespace.
++      546,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:506: trailing whitespace.
++      603,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:507: trailing whitespace.
++      547,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:508: trailing whitespace.
++      521,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:509: trailing whitespace.
++      519,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:510: trailing whitespace.
++      515,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:511: trailing whitespace.
++      484,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:512: trailing whitespace.
++      502,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:513: trailing whitespace.
++      509,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:514: trailing whitespace.
++      469,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:515: trailing whitespace.
++      470,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:516: trailing whitespace.
++      494,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:517: trailing whitespace.
++      434,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:518: trailing whitespace.
++      461,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:519: trailing whitespace.
++      476,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:520: trailing whitespace.
++      418,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:521: trailing whitespace.
++      474,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:522: trailing whitespace.
++      414,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:523: trailing whitespace.
++      496,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:524: trailing whitespace.
++      488,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:525: trailing whitespace.
++      490,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:526: trailing whitespace.
++      432,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:527: trailing whitespace.
++      398,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:528: trailing whitespace.
++      400,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:529: trailing whitespace.
++      408,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:530: trailing whitespace.
++      409,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:531: trailing whitespace.
++      398,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:532: trailing whitespace.
++      383,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:533: trailing whitespace.
++      385,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:534: trailing whitespace.
++      368,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:535: trailing whitespace.
++      399,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:536: trailing whitespace.
++      361,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:537: trailing whitespace.
++      353,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:538: trailing whitespace.
++      347,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:539: trailing whitespace.
++      315,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:540: trailing whitespace.
++      298,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:541: trailing whitespace.
++      345,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:542: trailing whitespace.
++      350,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:543: trailing whitespace.
++      315,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:544: trailing whitespace.
++      305,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:545: trailing whitespace.
++      332,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:546: trailing whitespace.
++      334,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:547: trailing whitespace.
++      319,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:548: trailing whitespace.
++      298,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:549: trailing whitespace.
++      309,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:550: trailing whitespace.
++      346,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:551: trailing whitespace.
++      320,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:552: trailing whitespace.
++      367,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:553: trailing whitespace.
++      306,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:554: trailing whitespace.
++      349,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:555: trailing whitespace.
++      365,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:556: trailing whitespace.
++      368,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:557: trailing whitespace.
++      416,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:558: trailing whitespace.
++      411,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:559: trailing whitespace.
++      370,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:560: trailing whitespace.
++      390,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:561: trailing whitespace.
++      397,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:562: trailing whitespace.
++      439,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:563: trailing whitespace.
++      458,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:564: trailing whitespace.
++      448,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:565: trailing whitespace.
++      532,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:566: trailing whitespace.
++      584,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:567: trailing whitespace.
++      569,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:568: trailing whitespace.
++      538,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:569: trailing whitespace.
++      655,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:570: trailing whitespace.
++      725,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:571: trailing whitespace.
++      749,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:572: trailing whitespace.
++      935,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:573: trailing whitespace.
++      1038,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:574: trailing whitespace.
++      1155,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:575: trailing whitespace.
++      1360,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:576: trailing whitespace.
++      1596,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:577: trailing whitespace.
++      1907,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:578: trailing whitespace.
++      2629,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:579: trailing whitespace.
++      3155,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:580: trailing whitespace.
++      3990,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:581: trailing whitespace.
++      5209,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:582: trailing whitespace.
++      7818,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:583: trailing whitespace.
++      14034,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:584: trailing whitespace.
++      50570,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:585: trailing whitespace.
++      238457,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:586: trailing whitespace.
++      53021,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:587: trailing whitespace.
++      55,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:588: trailing whitespace.
++      28
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:589: trailing whitespace.
++    ],
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:590: trailing whitespace.
++    "alpha_zero_pixels": 84055,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:591: trailing whitespace.
++    "alpha_partial_pixels": 681817,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:592: trailing whitespace.
++    "alpha_255_pixels": 28,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:593: trailing whitespace.
++    "alpha_levels_used": 256,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:594: trailing whitespace.
++    "bounds_alpha_gt_0": [
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:595: trailing whitespace.
++      0,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:596: trailing whitespace.
++      0,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:597: trailing whitespace.
++      555,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:598: trailing whitespace.
++      1380
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:599: trailing whitespace.
++    ],
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:600: trailing whitespace.
++    "bounds_alpha_ge_8": [
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:601: trailing whitespace.
++      8,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:602: trailing whitespace.
++      8,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:603: trailing whitespace.
++      539,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:604: trailing whitespace.
++      1364
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:605: trailing whitespace.
++    ],
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:606: trailing whitespace.
++    "empty_center_roi": [
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:607: trailing whitespace.
++      196,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:608: trailing whitespace.
++      690,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:609: trailing whitespace.
++      161,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:610: trailing whitespace.
++      381
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:611: trailing whitespace.
++    ],
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:612: trailing whitespace.
++    "empty_center_alpha_min": 44,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:613: trailing whitespace.
++    "empty_center_alpha_max": 252,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:614: trailing whitespace.
++    "empty_center_alpha_mean": 65.6221,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:615: trailing whitespace.
++    "empty_center_zero_percent": 0.0,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:616: trailing whitespace.
++    "corner_alpha": [
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:617: trailing whitespace.
++      0,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:618: trailing whitespace.
++      1,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:619: trailing whitespace.
++      0,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:620: trailing whitespace.
++      0
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:621: trailing whitespace.
++    ]
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:622: trailing whitespace.
++  },
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:623: trailing whitespace.
++  "asset": {
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:624: trailing whitespace.
++    "path": "D:\\taptap\\To-the-Human-World\\scripts\\素材\\双瓶标签_选定版提取_v01\\金钱瓶_钱币_透明_v01.png",
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:625: trailing whitespace.
++    "width": 555,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:626: trailing whitespace.
++    "height": 1380,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:627: trailing whitespace.
++    "crop_rect": [
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:628: trailing whitespace.
++      231,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:629: trailing whitespace.
++      88,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:630: trailing whitespace.
++      555,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:631: trailing whitespace.
++      1380
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:632: trailing whitespace.
++    ],
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:633: trailing whitespace.
++    "bounds_threshold": 8,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:634: trailing whitespace.
++    "padding": 8,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:635: trailing whitespace.
++    "retained_rgba_modified": false,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:636: trailing whitespace.
++    "edge_max_alpha": 2,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:637: trailing whitespace.
++    "edge_nonzero_pixels": 671
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:638: trailing whitespace.
++  },
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:639: trailing whitespace.
++  "source_visible_aspect_approx": 0.4166666666666667,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:640: trailing whitespace.
++  "generated_visible_aspect": 0.3951612903225806,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:641: trailing whitespace.
++  "approximate_aspect_width_change_percent": -5.161,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:642: trailing whitespace.
++  "base": {
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:643: trailing whitespace.
++    "path": "D:\\taptap\\To-the-Human-World\\scripts\\素材\\双瓶标签_选定版提取_v01\\过程记录\\底图_未加标签主页.png",
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:644: trailing whitespace.
++    "size": [
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:645: trailing whitespace.
++      1920,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:646: trailing whitespace.
++      1080
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:647: trailing whitespace.
++    ],
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:648: trailing whitespace.
++    "contains_ui_bottles": false,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:649: trailing whitespace.
++    "mapping": "uniform center-fit",
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:650: trailing whitespace.
++    "scale": 1.1477151965993624,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:651: trailing whitespace.
++    "offset": [
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:652: trailing whitespace.
++      0.5100956429330381,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:653: trailing whitespace.
++      0.0
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:654: trailing whitespace.
++    ]
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:655: trailing whitespace.
++  },
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:656: trailing whitespace.
++  "placement_on_base": [
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:657: trailing whitespace.
++    131,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:658: trailing whitespace.
++    30,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:659: trailing whitespace.
++    73,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:660: trailing whitespace.
++    181
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:661: trailing whitespace.
++  ],
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:662: trailing whitespace.
++  "outside_money_placement_changes": 0,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:663: trailing whitespace.
++  "outside_pair_bounding_rectangle_changes": 0,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:664: trailing whitespace.
++  "paired_preview": {
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:665: trailing whitespace.
++    "path": "D:\\taptap\\To-the-Human-World\\scripts\\素材\\双瓶标签_选定版提取_v01\\预览_日期问题稿与金钱候选_无标签主页_v01.png",
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:666: trailing whitespace.
++    "date_status": "previous_problem_draft_not_approved",
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:667: trailing whitespace.
++    "date_pixels_unmodified": true
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:668: trailing whitespace.
++  },
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:669: trailing whitespace.
++  "files": [
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:670: trailing whitespace.
++    "D:\\taptap\\To-the-Human-World\\scripts\\素材\\双瓶标签_选定版提取_v01\\金钱瓶_钱币_透明_v01.png",
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:671: trailing whitespace.
++    "D:\\taptap\\To-the-Human-World\\scripts\\素材\\双瓶标签_选定版提取_v01\\检查_金钱瓶_浅深底_v01.png",
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:672: trailing whitespace.
++    "D:\\taptap\\To-the-Human-World\\scripts\\素材\\双瓶标签_选定版提取_v01\\预览_金钱瓶_无标签主页_v01.png",
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:673: trailing whitespace.
++    "D:\\taptap\\To-the-Human-World\\scripts\\素材\\双瓶标签_选定版提取_v01\\预览_日期问题稿与金钱候选_无标签主页_v01.png"
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:674: trailing whitespace.
++  ],
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:675: trailing whitespace.
++  "source_sha256": "9616CF98DB0BFBC2A64E5F31DB3150D6EA31123C863C4AD81C93ACCF1B414A97",
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:676: trailing whitespace.
++  "base_sha256": "A3A87B70EE2D7CECFD2279188D8A906F4D7A86F4916D8C651D82B8633252EF14",
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:677: trailing whitespace.
++  "raw_sha256": "DE8FDE51A2623433C720D0FB02A9F6791E0147D98B7869617D01942D60213398",
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:678: trailing whitespace.
++  "asset_sha256": "442BE524BD983829AC3BEDE3D85CC9ABD07768AAEA21ED53405D3371AB4AA907",
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:679: trailing whitespace.
++  "tool": "built-in imagegen; prompt saved in 过程记录/金钱瓶_透明重建提示词.txt",
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:680: trailing whitespace.
++  "reconstruction": "Glass transparency, highlights, cork, coins and pebbles were generatively repainted; no exact original alpha or source detail recovery claim.",
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:681: trailing whitespace.
++  "visual_review": {
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:682: trailing whitespace.
++    "light_dark_opened": true,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:683: trailing whitespace.
++    "unlabelled_home_opened": true,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:684: trailing whitespace.
++    "obvious_baked_wood_or_plants": false,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:685: trailing whitespace.
++    "number_placeholder_or_extra_currency_prefix": false,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:686: trailing whitespace.
++    "coin_and_three_pebbles_present": true,
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:687: trailing whitespace.
++    "notes": "A continuous semitransparent film is present. Shape is approximately 5 percent narrower, highlights stronger and coins more detailed than the low-resolution source. Pale glass haze remains visible on dark background. Extreme edge has alpha up to 2; exterior is not certified all-zero."
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:688: trailing whitespace.
++  },
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:689: trailing whitespace.
++  "runtime_or_device_tested": false
+scripts/素材/双瓶标签_选定版提取_v01/金钱瓶_检查结果_v01.json:690: trailing whitespace.
++}
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:1: trailing whitespace.
++{
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:2: trailing whitespace.
++  "method": "Original-source RGB + manually traced Alpha masks and tight crop. No generation, painting, RGB editing, asset resampling or sharpening.",
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:3: trailing whitespace.
++  "sourcePath": "D:\\taptap\\To-the-Human-World\\scripts\\素材\\桌面双瓶_原像素提取_v01\\源图_桌面双瓶主页_v01.png",
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:4: trailing whitespace.
++  "sourceWidth": 1672,
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:5: trailing whitespace.
++  "sourceHeight": 941,
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:6: trailing whitespace.
++  "sourceSha256": "699595D332129FA1B964AEA984680C27CA163E10F0DFF08AB7296C1BEECDFAEA",
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:7: trailing whitespace.
++  "basePath": "D:\\taptap\\To-the-Human-World\\scripts\\素材\\双瓶标签_选定版提取_v01\\过程记录\\底图_未加标签主页.png",
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:8: trailing whitespace.
++  "baseWidth": 1920,
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:9: trailing whitespace.
++  "baseHeight": 1080,
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:10: trailing whitespace.
++  "baseSha256": "A3A87B70EE2D7CECFD2279188D8A906F4D7A86F4916D8C651D82B8633252EF14",
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:11: trailing whitespace.
++  "baseEvidence": "Recorded unlabelled home source in docs/actions/2026-10-11-b-home-ledger-table-r1.md; NOT the runtime layout acceptance.",
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:12: trailing whitespace.
++  "previewBaseResampleOnly": [
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:13: trailing whitespace.
++    1672,
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:14: trailing whitespace.
++    941
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:15: trailing whitespace.
++  ],
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:16: trailing whitespace.
++  "assetScale": 1,
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:17: trailing whitespace.
++  "assets": [
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:18: trailing whitespace.
++    {
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:19: trailing whitespace.
++      "name": "日期瓶_DAY_原像素_透明_v01.png",
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:20: trailing whitespace.
++      "path": "D:\\taptap\\To-the-Human-World\\scripts\\素材\\桌面双瓶_原像素提取_v01\\日期瓶_DAY_原像素_透明_v01.png",
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:21: trailing whitespace.
++      "x": 1208,
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:22: trailing whitespace.
++      "y": 366,
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:23: trailing whitespace.
++      "width": 74,
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:24: trailing whitespace.
++      "height": 194,
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:25: trailing whitespace.
++      "alphaZero": 4369,
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:26: trailing whitespace.
++      "alphaPartial": 567,
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:27: trailing whitespace.
++      "alphaOpaque": 9420,
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:28: trailing whitespace.
++      "visibleRgbDifferencesFromSource": 0,
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:29: trailing whitespace.
++      "borderNonzeroAlpha": 0,
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:30: trailing whitespace.
++      "alphaBounds": [
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:31: trailing whitespace.
++        2,
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:32: trailing whitespace.
++        2,
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:33: trailing whitespace.
++        72,
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:34: trailing whitespace.
++        192
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:35: trailing whitespace.
++      ],
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:36: trailing whitespace.
++      "pixelFormat": "Format32bppArgb",
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:37: trailing whitespace.
++      "sha256": "3FCA979E06704C34BFC576467EAEEBFF25DF8F6E5EF65C70339FD527E777F18D",
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:38: trailing whitespace.
++      "bodySelection": "49.0,26.0 50.7,24.5 54,23.5 67,23.5 77.8,24.5 81.3,26.4 80.5,31.0 79.2,37.7 78.5,39.8 82.6,40.8 86,42.7 86.5,46.5 85.8,49.1 82.5,52.6 80,54.0 79,61.9 80.2,66.2 84.5,72.9 89,80.5 92.4,88.3 94.7,98 95.3,115 95.0,189 94.2,196.3 91,200.5 84.8,203.5 77,205.4 65,206.3 53,205.7 44.2,203.3 38.8,199.7 35.7,194.7 34.8,187 35.1,106 35.8,93.7 38,84.4 42.8,76 48.1,69.5 51.5,64 51.8,54 47.9,52.5 45.4,49 44.8,44.3 45.5,41.3 51,40.5 50.5,34.8",
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:39: trailing whitespace.
++      "shadowSelection": "35,195 93,196 98,201 100,206 94,210 83,212 63,213 45,210 34,207 30,203",
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:40: trailing whitespace.
++      "selectionOffset": [
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:41: trailing whitespace.
++        1180,
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:42: trailing whitespace.
++        345
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:43: trailing whitespace.
++      ],
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:44: trailing whitespace.
++      "interiorAlpha": "255; original transmitted background preserved, NOT recovered transparent glass"
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:45: trailing whitespace.
++    },
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:46: trailing whitespace.
++    {
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:47: trailing whitespace.
++      "name": "金币瓶_原像素_透明_v01.png",
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:48: trailing whitespace.
++      "path": "D:\\taptap\\To-the-Human-World\\scripts\\素材\\桌面双瓶_原像素提取_v01\\金币瓶_原像素_透明_v01.png",
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:49: trailing whitespace.
++      "x": 1280,
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:50: trailing whitespace.
++      "y": 373,
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:51: trailing whitespace.
++      "width": 72,
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:52: trailing whitespace.
++      "height": 201,
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:53: trailing whitespace.
++      "alphaZero": 4080,
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:54: trailing whitespace.
++      "alphaPartial": 576,
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:55: trailing whitespace.
++      "alphaOpaque": 9816,
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:56: trailing whitespace.
++      "visibleRgbDifferencesFromSource": 0,
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:57: trailing whitespace.
++      "borderNonzeroAlpha": 0,
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:58: trailing whitespace.
++      "alphaBounds": [
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:59: trailing whitespace.
++        2,
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:60: trailing whitespace.
++        2,
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:61: trailing whitespace.
++        70,
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:62: trailing whitespace.
++        199
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:63: trailing whitespace.
++      ],
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:64: trailing whitespace.
++      "pixelFormat": "Format32bppArgb",
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:65: trailing whitespace.
++      "sha256": "1AEEF8E5711F8D45E4552E1A6A53D059C943BE1E342C770B766D5752E704A6E8",
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:66: trailing whitespace.
++      "bodySelection": "122.0,31.8 126,30.7 139,30.5 149.8,32 153.1,34 152.5,39 150.7,46 154.8,46.7 157.6,49.1 158.1,52.4 155.8,55.3 153.4,57.5 152.2,64.8 153.5,70.6 158.2,79.1 162.1,87.2 164.8,96.7 165.5,109 165.2,201 164.1,208 160.1,213 153.5,215.9 145.8,218 134,218.5 122,217.5 114,214.8 108.7,210.6 106.2,205.3 105.6,198.3 106.4,105.4 107.6,94.1 110.5,85.4 115.6,78.2 120.1,72.9 122.2,67 122.4,58.3 118.2,55.5 117,52.7 116.4,49.5 117.6,47.3 123.3,45.8 122,39",
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:67: trailing whitespace.
++      "shadowSelection": "107,209 163,210 170,217 170,222 157,226 137,227 116,224 105,221 102,217",
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:68: trailing whitespace.
++      "selectionOffset": [
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:69: trailing whitespace.
++        1180,
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:70: trailing whitespace.
++        345
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:71: trailing whitespace.
++      ],
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:72: trailing whitespace.
++      "interiorAlpha": "255; original transmitted background preserved, NOT recovered transparent glass"
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:73: trailing whitespace.
++    }
+scripts/素材/桌面双瓶_原像素提取_v01/检查结果_v01.json:74: trailing whitespace.
++  ],
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:1: trailing whitespace.
++{
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:2: trailing whitespace.
++  "version": "v02 local background decontamination",
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:3: trailing whitespace.
++  "source": "D:\\taptap\\To-the-Human-World\\scripts\\素材\\桌面双瓶_原像素提取_v01\\源图_桌面双瓶主页_v01.png",
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:4: trailing whitespace.
++  "sourceSha256": "699595D332129FA1B964AEA984680C27CA163E10F0DFF08AB7296C1BEECDFAEA",
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:5: trailing whitespace.
++  "method": "Manual protected masks; non-generative local RGB/Alpha reconstruction of contaminated glass; original-position contact-shadow neutralization. No asset resize. Physical glass alpha is estimated, not recovered.",
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:6: trailing whitespace.
++  "basePath": "D:\\taptap\\To-the-Human-World\\scripts\\素材\\双瓶标签_选定版提取_v01\\过程记录\\底图_未加标签主页.png",
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:7: trailing whitespace.
++  "previewBaseSize": [
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:8: trailing whitespace.
++    1672,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:9: trailing whitespace.
++    941
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:10: trailing whitespace.
++  ],
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:11: trailing whitespace.
++  "assets": [
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:12: trailing whitespace.
++    {
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:13: trailing whitespace.
++      "name": "日期瓶_DAY_局部修复_透明_v02.png",
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:14: trailing whitespace.
++      "path": "D:\\taptap\\To-the-Human-World\\scripts\\素材\\桌面双瓶_去背景修复_v02\\日期瓶_DAY_局部修复_透明_v02.png",
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:15: trailing whitespace.
++      "x": 1208,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:16: trailing whitespace.
++      "y": 366,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:17: trailing whitespace.
++      "width": 74,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:18: trailing whitespace.
++      "height": 194,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:19: trailing whitespace.
++      "protectedCorePixels": 1887,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:20: trailing whitespace.
++      "protectedCoreRgbaDifferences": 0,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:21: trailing whitespace.
++      "repairedPixels": 8098,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:22: trailing whitespace.
++      "newPixelsOutsideOldAlpha": 0,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:23: trailing whitespace.
++      "alphaZero": 4616,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:24: trailing whitespace.
++      "alphaPartial": 7853,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:25: trailing whitespace.
++      "alphaOpaque": 1887,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:26: trailing whitespace.
++      "borderNonzeroAlpha": 0,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:27: trailing whitespace.
++      "sha256": "6D7852130450CAB26166E41BCFA8F21CA809FBED8602A364E3781BF10844F90D",
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:28: trailing whitespace.
++      "previousAssetUnchanged": true,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:29: trailing whitespace.
++      "alphaBounds": [
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:30: trailing whitespace.
++        6.0,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:31: trailing whitespace.
++        2.0,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:32: trailing whitespace.
++        72.0,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:33: trailing whitespace.
++        190.0
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:34: trailing whitespace.
++      ],
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:35: trailing whitespace.
++      "clearGlassProbe": {
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:36: trailing whitespace.
++        "localX": 22,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:37: trailing whitespace.
++        "localY": 100,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:38: trailing whitespace.
++        "width": 26,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:39: trailing whitespace.
++        "height": 38,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:40: trailing whitespace.
++        "alphaMin": 17.0,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:41: trailing whitespace.
++        "alphaMax": 17.0,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:42: trailing whitespace.
++        "alphaMean": 17.0,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:43: trailing whitespace.
++        "meanBackgroundTransmission": 0.9333333333333333
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:44: trailing whitespace.
++      },
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:45: trailing whitespace.
++      "pngColorType": 6
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:46: trailing whitespace.
++    },
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:47: trailing whitespace.
++    {
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:48: trailing whitespace.
++      "name": "金币瓶_局部修复_透明_v02.png",
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:49: trailing whitespace.
++      "path": "D:\\taptap\\To-the-Human-World\\scripts\\素材\\桌面双瓶_去背景修复_v02\\金币瓶_局部修复_透明_v02.png",
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:50: trailing whitespace.
++      "x": 1280,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:51: trailing whitespace.
++      "y": 373,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:52: trailing whitespace.
++      "width": 72,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:53: trailing whitespace.
++      "height": 201,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:54: trailing whitespace.
++      "protectedCorePixels": 2169,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:55: trailing whitespace.
++      "protectedCoreRgbaDifferences": 0,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:56: trailing whitespace.
++      "repairedPixels": 8221,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:57: trailing whitespace.
++      "newPixelsOutsideOldAlpha": 0,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:58: trailing whitespace.
++      "alphaZero": 4575,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:59: trailing whitespace.
++      "alphaPartial": 7727,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:60: trailing whitespace.
++      "alphaOpaque": 2170,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:61: trailing whitespace.
++      "borderNonzeroAlpha": 0,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:62: trailing whitespace.
++      "sha256": "99B71789B84481996DC78BC0418B25CBF6763BD25FE6225027E541B842774772",
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:63: trailing whitespace.
++      "previousAssetUnchanged": true,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:64: trailing whitespace.
++      "alphaBounds": [
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:65: trailing whitespace.
++        5.0,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:66: trailing whitespace.
++        2.0,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:67: trailing whitespace.
++        70.0,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:68: trailing whitespace.
++        194.0
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:69: trailing whitespace.
++      ],
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:70: trailing whitespace.
++      "clearGlassProbe": {
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:71: trailing whitespace.
++        "localX": 16,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:72: trailing whitespace.
++        "localY": 88,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:73: trailing whitespace.
++        "width": 36,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:74: trailing whitespace.
++        "height": 40,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:75: trailing whitespace.
++        "alphaMin": 17.0,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:76: trailing whitespace.
++        "alphaMax": 19.0,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:77: trailing whitespace.
++        "alphaMean": 17.072916666666668,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:78: trailing whitespace.
++        "meanBackgroundTransmission": 0.933047385620915
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:79: trailing whitespace.
++      },
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:80: trailing whitespace.
++      "pngColorType": 6
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:81: trailing whitespace.
++    }
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:82: trailing whitespace.
++  ],
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:83: trailing whitespace.
++  "visualStatus": "Inspected native and magnified light/dark mattes, original-location bottle-free home and relocated sea background: no recognisable old herb-jar/mortar/table texture carried in clear interior; broad tabletop patch removed. Glass is more transparent; subtle original warm glass edging remains. Candidate awaits user visual approval. Exact physical refraction is not recovered.",
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:84: trailing whitespace.
++  "runtimeAndDevice": "Not run",
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:85: trailing whitespace.
++  "sceneCheck": {
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:86: trailing whitespace.
++    "changedPixels": 19623,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:87: trailing whitespace.
++    "changedOutsideAssetRectangles": 0,
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:88: trailing whitespace.
++    "baseWasAlreadyBottleFree": true
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:89: trailing whitespace.
++  },
+scripts/素材/桌面双瓶_去背景修复_v02/检查结果_v02.json:90: trailing whitespace.
++  "userAcceptance": "Pending; prior v01 remains rejected"

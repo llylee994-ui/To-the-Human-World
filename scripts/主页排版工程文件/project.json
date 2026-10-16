@@ -1,0 +1,564 @@
+{
+  "format": "to-human-world-layout",
+  "schemaVersion": 1,
+  "appVersion": "0.1.0",
+  "id": "55df31e6-db96-42cc-97bc-4e6fb10d6d0b",
+  "epoch": "548e1025-b3f3-409f-8689-6a93d5564637",
+  "name": "寄往人间 · 页面排版",
+  "revision": 201,
+  "pages": [
+    {
+      "id": "2a197837-6693-4a4b-b8fb-140c5019c7d2",
+      "name": "主页",
+      "width": 1920,
+      "height": 1080,
+      "background": "#f5f0e7",
+      "revision": 189,
+      "layers": [
+        {
+          "id": "840c676b-bc62-40f0-8153-117123dfa3fe",
+          "assetId": "04aafbb3-5e8f-4372-ad91-640a9db10e56",
+          "name": "BG06_横屏主页_清理背景_v01.png",
+          "x": 960.8184920675325,
+          "y": 537.779105777511,
+          "width": 1918.7545694015616,
+          "height": 1079.8732355304244,
+          "rotation": 0,
+          "visible": true,
+          "locked": false,
+          "groupId": null
+        },
+        {
+          "id": "1cab15b8-150f-4cb1-a598-92b066b15596",
+          "assetId": "d96801af-c2fb-4ae5-83ff-b5c528a3fb04",
+          "name": "H10_词条托盘组合_透明_自动提取_v04.png",
+          "x": 1074.2737115527548,
+          "y": 650.9998814607056,
+          "width": 323.22271497343996,
+          "height": 215.97345687599477,
+          "rotation": 6.86785997285358,
+          "visible": true,
+          "locked": false,
+          "groupId": null
+        },
+        {
+          "id": "e9903282-81b4-42c1-b821-b21e88285a50",
+          "assetId": "10e6277e-7ba0-4ff5-8451-d915eaf2898b",
+          "name": "H06_捞网_透明_自动提取_v02.png",
+          "x": 138.50476312212902,
+          "y": 646.7145713933239,
+          "width": 345.5031375038329,
+          "height": 518.2547062557493,
+          "rotation": 9.455392604917392,
+          "visible": true,
+          "locked": false,
+          "groupId": null
+        },
+        {
+          "id": "50888032-4b76-4922-9031-f48d5f8beebc",
+          "assetId": "6aa74f5c-6654-4596-9c51-1b4d33799e4f",
+          "name": "H17_黄色档案袋_透明_自动提取_v08.png",
+          "x": 1735.4095359260396,
+          "y": 952.4293769316946,
+          "width": 386.7344996701599,
+          "height": 257.82299978010656,
+          "rotation": 0.7900324244935746,
+          "visible": true,
+          "locked": false,
+          "groupId": null
+        },
+        {
+          "id": "e9d3a968-9083-4e05-a38a-30ed70f9f597",
+          "assetId": "0035d23c-eb18-42a2-a3b3-b1e48f530440",
+          "name": "H18_商船组合层_透明_自动提取_v03.png",
+          "x": 525.007477472717,
+          "y": 343.6879927742784,
+          "width": 219.1996383999011,
+          "height": 198.093987090737,
+          "rotation": 0,
+          "visible": true,
+          "locked": false,
+          "groupId": null
+        },
+        {
+          "id": "610751d0-87ba-4f40-b613-02092de4f75c",
+          "assetId": "d219e269-41f1-4380-8d1f-07921f691fee",
+          "name": "信纸.png",
+          "x": 1329.0960205360923,
+          "y": 747.0765473355743,
+          "width": 287.8415826680563,
+          "height": 191.89438844537082,
+          "rotation": 9.75960961564624,
+          "visible": true,
+          "locked": false,
+          "groupId": null
+        },
+        {
+          "id": "1a702c90-6af6-43d2-9b94-c8a5548bccc4",
+          "assetId": "d4a25a1a-f921-4689-9798-145228fd8476",
+          "name": "H29_铃兰花瓶_透明_v02.png",
+          "x": 1716.2335051493967,
+          "y": 585.7240439656973,
+          "width": 155.64629720672252,
+          "height": 166.29645604279673,
+          "rotation": 355.7122066777552,
+          "visible": true,
+          "locked": false,
+          "groupId": null
+        },
+        {
+          "id": "85132c39-bfd0-4266-92d5-dfc803b2b8af",
+          "assetId": "df996388-14df-486b-838f-7856de311058",
+          "name": "H30_琥珀药草罐_透明_v01.png",
+          "x": 1351.546856015587,
+          "y": 533.2893243412757,
+          "width": 116.5373096376559,
+          "height": 125.60561022204301,
+          "rotation": 0,
+          "visible": true,
+          "locked": false,
+          "groupId": null
+        },
+        {
+          "id": "2919afb8-252e-425b-86bc-38f50b4e352a",
+          "assetId": "0cd3caed-6dd9-42da-99a0-96ed9830381f",
+          "name": "H28_玻璃瓶干药材_透明_v02.png",
+          "x": 1407.3669072988148,
+          "y": 548.5721899197977,
+          "width": 137.90790465434006,
+          "height": 126.23149167445312,
+          "rotation": 0,
+          "visible": true,
+          "locked": false,
+          "groupId": null
+        },
+        {
+          "id": "30ba25d6-75d0-49fa-b018-2a5c49a38ac5",
+          "assetId": "2c00d909-2804-4aa0-ab29-9ded402bb37a",
+          "name": "H28_玻璃瓶装饰_透明_v01.png",
+          "x": 1175.2286882760686,
+          "y": 510.8755067993079,
+          "width": 117.08825346545562,
+          "height": 175.6323801981834,
+          "rotation": 0,
+          "visible": true,
+          "locked": false,
+          "groupId": null
+        },
+        {
+          "id": "a70d6969-1cd9-4eae-8d1d-d06615cc4019",
+          "assetId": "a5679f60-64ae-4e50-991b-4452376adf5d",
+          "name": "H09_炼药炉_纤巧草药熬制_透明_v05.png",
+          "x": 1265.541024332558,
+          "y": 498.87606291714553,
+          "width": 361.23379416037034,
+          "height": 329.59488606559296,
+          "rotation": 0,
+          "visible": true,
+          "locked": false,
+          "groupId": null
+        }
+      ]
+    }
+  ],
+  "coordinateSystem": {
+    "origin": "top-left",
+    "position": "center",
+    "unit": "design-pixel",
+    "rotation": "clockwise-degrees",
+    "layerOrder": "bottom-to-top",
+    "groups": "contiguous rigid blocks; member transforms in page coordinates"
+  },
+  "assets": [
+    {
+      "id": "92a2fc19-0fc6-449f-8c0c-2fb8a300bc7f",
+      "name": "H27_植物画框.png",
+      "sha256": "03d43c13cc7dfcdfb02476663bb4143090c31bbce2eaeddad80b6ce3213b33d2",
+      "width": 1024,
+      "height": 1536,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/92a2fc19-0fc6-449f-8c0c-2fb8a300bc7f.png"
+    },
+    {
+      "id": "ee768154-50fa-488a-8d66-112efffc2752",
+      "name": "H26_提灯.png",
+      "sha256": "28529cd0c5c84bbbe0e854d35c77cf521673aa3af64ac8247b35029bd96901e0",
+      "width": 1024,
+      "height": 1536,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/ee768154-50fa-488a-8d66-112efffc2752.png"
+    },
+    {
+      "id": "1d53821c-4c67-46ff-879b-ca1311ad15bf",
+      "name": "H15_钱袋.png",
+      "sha256": "8659ac677ae9ca867a237e3b3802c9ca90d8d155fb16e47cb2d3f805ce18a1aa",
+      "width": 1187,
+      "height": 1326,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/1d53821c-4c67-46ff-879b-ca1311ad15bf.png"
+    },
+    {
+      "id": "94dcd9c4-f52b-4a8e-9bcb-b29f5acf9c6e",
+      "name": "H04_工作台_v01.png",
+      "sha256": "b5fa85572095668017bf18135b4eacc722e6fa25f72ce8a17bd914014f4ea01f",
+      "width": 1536,
+      "height": 1024,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/94dcd9c4-f52b-4a8e-9bcb-b29f5acf9c6e.png"
+    },
+    {
+      "id": "e4f63444-234f-4805-bf68-4da47b14818a",
+      "name": "BG04_工作台融合海景_无船_v01.png",
+      "sha256": "633637bd2998cbe61b99207037d1ce3da76b16829980378f9322735c426442af",
+      "width": 941,
+      "height": 1672,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/e4f63444-234f-4805-bf68-4da47b14818a.png"
+    },
+    {
+      "id": "48f4cfb4-e2b2-4c20-be34-460991252859",
+      "name": "H06_捞网_透明_v01.png",
+      "sha256": "e02f6297303fb3fa204da764c01bfb422c50ddef025da00890925705337ec576",
+      "width": 1024,
+      "height": 1536,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/48f4cfb4-e2b2-4c20-be34-460991252859.png"
+    },
+    {
+      "id": "66c83f30-6b94-4875-8aae-9c055990542e",
+      "name": "H09_炼药炉_透明_v02.png",
+      "sha256": "ef10e312785bc554bcc427fb63ed0bf7864045716a3f99a7a643af29c041a472",
+      "width": 1145,
+      "height": 1374,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/66c83f30-6b94-4875-8aae-9c055990542e.png"
+    },
+    {
+      "id": "86663148-b477-4d4b-8bfb-e32f85d975fe",
+      "name": "H15_钱袋_透明_v02.png",
+      "sha256": "d4a03118cd56262fd5e206d901a5723d1ab9f1aa619efe30c034f88b9861c2b4",
+      "width": 1378,
+      "height": 1141,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/86663148-b477-4d4b-8bfb-e32f85d975fe.png"
+    },
+    {
+      "id": "51cd0c4c-d9e7-46d1-a46b-03a2721f12f4",
+      "name": "H10_零散词条托盘_透明_v02.png",
+      "sha256": "2d518bb26ebaa33a5105250fdb7c4b5bf3929ec43b25272a4385fa995a17af0a",
+      "width": 1536,
+      "height": 1024,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/51cd0c4c-d9e7-46d1-a46b-03a2721f12f4.png"
+    },
+    {
+      "id": "6cbbfb36-3b3c-4ee4-8376-92d8037c5a71",
+      "name": "H25_花瓶花枝_v01.png",
+      "sha256": "8d9a6d49da7e2e748ec006a97ace529b72d3953329a87ff0639b6e83bd30c245",
+      "width": 1024,
+      "height": 1536,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/6cbbfb36-3b3c-4ee4-8376-92d8037c5a71.png"
+    },
+    {
+      "id": "ee69cd7c-4c72-4b96-918b-cad918be9258",
+      "name": "H29_铃兰花束_透明_v01.png",
+      "sha256": "b045e49665e82a4d1d9b910f5081743bf57a4a14f9295e2939a3846e3c4231a8",
+      "width": 1024,
+      "height": 1536,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/ee69cd7c-4c72-4b96-918b-cad918be9258.png"
+    },
+    {
+      "id": "12abfd9c-e7c7-4748-9722-528924587ec0",
+      "name": "H12_厚皮书_透明_v02.png",
+      "sha256": "afcefda9bfd2f497016bd646dcb1b061d9515213f963c3945507c8f65eae562d",
+      "width": 1536,
+      "height": 1024,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/12abfd9c-e7c7-4748-9722-528924587ec0.png"
+    },
+    {
+      "id": "53e9535d-b94f-47f2-a164-bbe6930dac8f",
+      "name": "H11_黄铜剪刀_透明_v02.png",
+      "sha256": "24fd98fec8a53b5524f3bafb890285e13ce4cfd0c306ddb5668cbfccb7a33cc2",
+      "width": 1536,
+      "height": 1024,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/53e9535d-b94f-47f2-a164-bbe6930dac8f.png"
+    },
+    {
+      "id": "16f8f3bd-8802-4050-9749-3f059d0e2533",
+      "name": "H18_欧洲商船组合层_原位_941x1672_v02.png",
+      "sha256": "1540713d01e01bb8babb5599b4a2c17bb3363abef40e33e5d5611c465aea1a07",
+      "width": 941,
+      "height": 1672,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/16f8f3bd-8802-4050-9749-3f059d0e2533.png"
+    },
+    {
+      "id": "65faaf53-2794-49df-bd42-416298daf4c7",
+      "name": "H14_月历_圈日_透明_v02.png",
+      "sha256": "766a59fdd109f6ddb181e80b986df548c2ac6cf066cb1465363f82c318419547",
+      "width": 1312,
+      "height": 1199,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/65faaf53-2794-49df-bd42-416298daf4c7.png"
+    },
+    {
+      "id": "0eb1836b-3fbb-4a64-aecd-2940a2231039",
+      "name": "BG05_工作台_草药配方层架_无船_v01.png",
+      "sha256": "0da66503f3ad15a1708d3c4dcdaf2be2bedf9f684e7d7cb4a4ee0193b4fdacf2",
+      "width": 941,
+      "height": 1672,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/0eb1836b-3fbb-4a64-aecd-2940a2231039.png"
+    },
+    {
+      "id": "e5621b1e-ac84-4cd8-b899-52c0ee2c9de8",
+      "name": "H12_厚皮书_透明_v02.png",
+      "sha256": "438043770023b46bce3ce8a17faa3e7a2fd96ae56698395da160173715978f23",
+      "width": 1536,
+      "height": 1024,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/e5621b1e-ac84-4cd8-b899-52c0ee2c9de8.png"
+    },
+    {
+      "id": "6f58ca46-056d-4555-bd0a-6b1fbb44bb15",
+      "name": "H30_草药半圆盆_透明_v01.png",
+      "sha256": "0b36b4878e2431e737af7b22cecc5d2d0b65053bb0020d6a20cedc50e40a66ff",
+      "width": 1536,
+      "height": 1024,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/6f58ca46-056d-4555-bd0a-6b1fbb44bb15.png"
+    },
+    {
+      "id": "8333d5dc-19d3-4b75-ae23-40a39861ee23",
+      "name": "H31_蓝色书本_透明_v01.png",
+      "sha256": "58e04871bce27625d05a7b93b957731e91b669aa2de199c7b412e1aeab30a780",
+      "width": 1536,
+      "height": 1024,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/8333d5dc-19d3-4b75-ae23-40a39861ee23.png"
+    },
+    {
+      "id": "ea0339f3-c654-48e9-81c7-a36ad0087039",
+      "name": "H17_墙挂档案袋组_透明_v01.png",
+      "sha256": "1b724e5be5e9936ccac2a9d943c56b3941dde1c5eb472b5a0ea1e7482d8362f6",
+      "width": 1098,
+      "height": 1432,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/ea0339f3-c654-48e9-81c7-a36ad0087039.png"
+    },
+    {
+      "id": "0c2e1862-5404-4521-8ffb-bed2886aac94",
+      "name": "H26_桌面小油灯_透明_v02.png",
+      "sha256": "1815c4552782c5b0bb8dcf907a7238816be9e552a9b5710c851d3cf78602f3cb",
+      "width": 1024,
+      "height": 1536,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/0c2e1862-5404-4521-8ffb-bed2886aac94.png"
+    },
+    {
+      "id": "ed26b4dc-bfab-48dd-bf88-770d9c6ae8b7",
+      "name": "H10_木托盘_零散词条内阴影_透明_v03.png",
+      "sha256": "d2e059be1e610592930ead91cf5efc6d760609e732357ba30b500e2d5432b091",
+      "width": 1536,
+      "height": 1024,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/ed26b4dc-bfab-48dd-bf88-770d9c6ae8b7.png"
+    },
+    {
+      "id": "9f7129ea-6337-4d9e-a740-993120849897",
+      "name": "H33_植物标本卡_透明_v01.png",
+      "sha256": "907645080e6cce4baa022782a2163161bd88ddb2537a3550dea88d69ba0d88e4",
+      "width": 1247,
+      "height": 1261,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/9f7129ea-6337-4d9e-a740-993120849897.png"
+    },
+    {
+      "id": "0cd3caed-6dd9-42da-99a0-96ed9830381f",
+      "name": "H28_玻璃瓶干药材_透明_v02.png",
+      "sha256": "2790313f49b588609ace365632bf8c2aeb7214638de4db8057162809f4961f6a",
+      "width": 1311,
+      "height": 1200,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/0cd3caed-6dd9-42da-99a0-96ed9830381f.png"
+    },
+    {
+      "id": "df996388-14df-486b-838f-7856de311058",
+      "name": "H30_琥珀药草罐_透明_v01.png",
+      "sha256": "928fc9dc1ca1ce88d8ff94c2dc28feaaa9dc47f2d0dd14736c4ac651b67f9608",
+      "width": 1208,
+      "height": 1302,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/df996388-14df-486b-838f-7856de311058.png"
+    },
+    {
+      "id": "fb544210-4d6d-4aff-8ee7-18313be633c3",
+      "name": "H32_干草药束_透明_v01.png",
+      "sha256": "57aa547c82b2b98990e191ff27e301936818feb86207af245c10243bc1a69a8b",
+      "width": 1536,
+      "height": 1024,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/fb544210-4d6d-4aff-8ee7-18313be633c3.png"
+    },
+    {
+      "id": "02df022e-4dd1-4cac-93e4-08adbab1f3c8",
+      "name": "H14_小台历_含阴影_透明_v03.png",
+      "sha256": "5ad14211e0ff8c959364d76ecddbfcebe189bc242876645afcbf45031ea2996b",
+      "width": 1402,
+      "height": 1122,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/02df022e-4dd1-4cac-93e4-08adbab1f3c8.png"
+    },
+    {
+      "id": "601eca6c-6afa-4dc6-89cb-8278179952cc",
+      "name": "H34_干花书签_桌面透视_透明_v02.png",
+      "sha256": "3687bae77d0980731e1ae498e98aca642d688b533f221f8a1b5d0d412c689701",
+      "width": 1178,
+      "height": 1335,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/601eca6c-6afa-4dc6-89cb-8278179952cc.png"
+    },
+    {
+      "id": "1e7589cd-a44a-4325-8e6f-66c58c4e1ef5",
+      "name": "H17_桌面调查档案袋_透明_v04.png",
+      "sha256": "b6afa487bc5bc4e76a3ceb18c6135d582bd79c1a75a612a5c1356b5d9177763a",
+      "width": 1536,
+      "height": 1024,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/1e7589cd-a44a-4325-8e6f-66c58c4e1ef5.png"
+    },
+    {
+      "id": "04aafbb3-5e8f-4372-ad91-640a9db10e56",
+      "name": "BG06_横屏主页_清理背景_v01.png",
+      "sha256": "1de5de32c77e4e897c97a790c1add0b1b688d390562be464d6932fef12216055",
+      "width": 1672,
+      "height": 941,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/04aafbb3-5e8f-4372-ad91-640a9db10e56.png"
+    },
+    {
+      "id": "d96801af-c2fb-4ae5-83ff-b5c528a3fb04",
+      "name": "H10_词条托盘组合_透明_自动提取_v04.png",
+      "sha256": "e9d0c21d5315de6083ee83c04311334d939166a20ad59f9d635cd33090f01600",
+      "width": 1534,
+      "height": 1025,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/d96801af-c2fb-4ae5-83ff-b5c528a3fb04.png"
+    },
+    {
+      "id": "10e6277e-7ba0-4ff5-8451-d915eaf2898b",
+      "name": "H06_捞网_透明_自动提取_v02.png",
+      "sha256": "88e554c6abbe273e065b7c7f5c6944c0a73d08e4c4655185770ecececfa036f7",
+      "width": 1024,
+      "height": 1536,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/10e6277e-7ba0-4ff5-8451-d915eaf2898b.png"
+    },
+    {
+      "id": "6aa74f5c-6654-4596-9c51-1b4d33799e4f",
+      "name": "H17_黄色档案袋_透明_自动提取_v08.png",
+      "sha256": "462e30fb4b932e8e181c559024206a19a35ebe11ba37a89e19d8b78246fa4aeb",
+      "width": 1536,
+      "height": 1024,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/6aa74f5c-6654-4596-9c51-1b4d33799e4f.png"
+    },
+    {
+      "id": "7f5c0009-a257-4d00-95af-470c4064f2ee",
+      "name": "H14_日历底座_透明_自动提取_v04.png",
+      "sha256": "0a6092a6ccc89a34610a993d343c3377e6b9043ff6d62bf40ea418bf30530226",
+      "width": 1396,
+      "height": 1127,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/7f5c0009-a257-4d00-95af-470c4064f2ee.png"
+    },
+    {
+      "id": "0035d23c-eb18-42a2-a3b3-b1e48f530440",
+      "name": "H18_商船组合层_透明_自动提取_v03.png",
+      "sha256": "bc261c32e3839fb72d365ae394963c0417dced57f48b1f1dd0381df2561f16be",
+      "width": 1319,
+      "height": 1192,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/0035d23c-eb18-42a2-a3b3-b1e48f530440.png"
+    },
+    {
+      "id": "d219e269-41f1-4380-8d1f-07921f691fee",
+      "name": "信纸.png",
+      "sha256": "9c0096340142d3ffc9825db281a8f1f09c1e1f66844037be88ae3a400ac35fed",
+      "width": 1536,
+      "height": 1024,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/d219e269-41f1-4380-8d1f-07921f691fee.png"
+    },
+    {
+      "id": "d4a25a1a-f921-4689-9798-145228fd8476",
+      "name": "H29_铃兰花瓶_透明_v02.png",
+      "sha256": "726655e971433a392fc243f3163deb3b2cd9aff1cf7064ceed5b176ecb9899c2",
+      "width": 1213,
+      "height": 1296,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/d4a25a1a-f921-4689-9798-145228fd8476.png"
+    },
+    {
+      "id": "a5679f60-64ae-4e50-991b-4452376adf5d",
+      "name": "H09_炼药炉_纤巧草药熬制_透明_v05.png",
+      "sha256": "a09c379fe6ac0946076c2e0284afad32a57f60831a425560b2259830d0292898",
+      "width": 1313,
+      "height": 1198,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/a5679f60-64ae-4e50-991b-4452376adf5d.png"
+    },
+    {
+      "id": "2c00d909-2804-4aa0-ab29-9ded402bb37a",
+      "name": "H28_玻璃瓶装饰_透明_v01.png",
+      "sha256": "69d141d0e010657d522daa1b573a908d3b90e5898a94236865bfa20243a5ed13",
+      "width": 1024,
+      "height": 1536,
+      "mime": "image/png",
+      "ext": "png",
+      "file": "assets/2c00d909-2804-4aa0-ab29-9ded402bb37a.png"
+    }
+  ]
+}

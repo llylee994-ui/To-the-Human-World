@@ -1,0 +1,824 @@
+{
+  "source_commit": "54eff6e2b4716031f1944465fe287f053cb34f0e",
+  "target_base": "b205ea1ffe9943b6f00441856237bb78991308b1",
+  "files": [
+    {
+      "path": ".gitignore",
+      "source_blob": "6a250008c14408635cc72bdbdba79ea870dcb357",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "1d6bc61776aa005f79bd958b8f521d409616d7f1b271bb9582c79652030ca703",
+      "bytes": 1302
+    },
+    {
+      "path": "assets/image/misty-harbor-r1/dock-foreground.png",
+      "source_blob": "605e620350cc5fb61c23ef116ead1fd41aa4497d",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "a43cb9d75d69416be570e4f176f86a22977f1d929203251247440e71f613dea4",
+      "bytes": 548911
+    },
+    {
+      "path": "assets/image/misty-harbor-r1/dock-foreground.png.meta",
+      "source_blob": "64e5322135e030e625a6414a5e6dec71d60a8ec4",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "feff8961b950381ccebf15e16c0af8bf16e393a330b1eb55ca3ea737d370ebc0",
+      "bytes": 39
+    },
+    {
+      "path": "assets/image/misty-harbor-r1/home-foreground.png",
+      "source_blob": "f90ce97cf70b6b637b4cbc6dab5621dbdad39bbf",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "52d529c420633852842eb77b5bb6b608aa3e5e6faf5ef63625a1c69b089b539a",
+      "bytes": 2918216
+    },
+    {
+      "path": "assets/image/misty-harbor-r1/home-foreground.png.meta",
+      "source_blob": "1d6eee8359b8ac1d7c7b049fe467006c520e63d6",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "f174959074863340d094739c3b5d29830d994749016a124cc082f1fc8070b9c0",
+      "bytes": 39
+    },
+    {
+      "path": "assets/image/misty-harbor-r1/merchant-ship-muted.png",
+      "source_blob": "c4b012efd9399c24d641d182f1c715b35027f34d",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "13220a898ea397b9381194d39573bc61f49e9b72929e01f6e20b56b4fba0d493",
+      "bytes": 1035489
+    },
+    {
+      "path": "assets/image/misty-harbor-r1/merchant-ship-muted.png.meta",
+      "source_blob": "d22c9f3491840045c5772f7f3ad287324e4222aa",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "b7eb856386bb7aedf4287eeaff323c3e0b8f4dd9b3eb4258d7359dcc29c4d869",
+      "bytes": 39
+    },
+    {
+      "path": "assets/image/misty-harbor-r1/sea-calm.png",
+      "source_blob": "c9c4d8d2179b188e6c88f38f2ed7ea0d9d6fba8b",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "3b83aa68c34c5d00d3c85dfaf15259482f4c5930098687e4a7e4816c55ce7b18",
+      "bytes": 2383298
+    },
+    {
+      "path": "assets/image/misty-harbor-r1/sea-calm.png.meta",
+      "source_blob": "25cea237b0f017032d1b3ea27d22748f750e644b",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "1eb2ebb8a90edc839b3c782498955bb55fdcc6013c44096f43a914127e3cb168",
+      "bytes": 39
+    },
+    {
+      "path": "assets/image/seaside-r1/bottle.png",
+      "source_blob": "eb67dde7020f88ed6a2bdefe8469a785ae3c9d13",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "c1a651c0644c967f3032467cce7d3776f9cfb0d480cf14ef1b2632aa33d95fa7",
+      "bytes": 1310448
+    },
+    {
+      "path": "assets/image/seaside-r1/bottle.png.meta",
+      "source_blob": "b349c4737fd7851300b276fcf809f716adb8b662",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "5e54a5075aef23f5ffb7535cfa9a1858b47e9e5c27ae972dc7e6e7c5a6d62015",
+      "bytes": 38
+    },
+    {
+      "path": "assets/image/seaside-r1/generation-records.json",
+      "source_blob": "0ef673a08dcecade27f263cdf9792cf47b2d68b1",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "4a512d4270bab59175cc89b85a179c687c5e98b0dd27fe429bc41be92c19196f",
+      "bytes": 4450
+    },
+    {
+      "path": "assets/image/seaside-r1/generation-records.json.meta",
+      "source_blob": "8a3b4c8b79ff3030e16057819963784c70a37232",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "0138960a154c8700c3df026407fa61958749e63e91308a2c597692634eb6e872",
+      "bytes": 38
+    },
+    {
+      "path": "assets/image/seaside-r1/net.png",
+      "source_blob": "b9f89a92e072de52c3304645e9c2a64cca15b179",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "9eba8ff0ab25f9b1d71ddd02c8a434a2161fcc84182d3e0ea0ac24bf3c648e31",
+      "bytes": 784956
+    },
+    {
+      "path": "assets/image/seaside-r1/net.png.meta",
+      "source_blob": "9e28be3199bab6050488aadbb8fd11818446ffa1",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "75126eae2e35ffc71ae31c6f1a83c87d4c8e0bc36658d65f9757101a8d204504",
+      "bytes": 38
+    },
+    {
+      "path": "assets/image/seaside-r1/source-manifest.json",
+      "source_blob": "42139e685f73c64a86ecdd642961b44bed89292c",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "4f5bf2087af41f275aa79196bc185786885340ca3e1d5af7ca354ee1ca616923",
+      "bytes": 1614
+    },
+    {
+      "path": "assets/image/seaside-r1/source-manifest.json.meta",
+      "source_blob": "dfb0e012e8165a4f5bbefeaf3fe76d6954cb47a8",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "fc8fa74ebaf981b0d8967ecd2cfd7714efe642e21e1c35a4009a21cc5e840652",
+      "bytes": 38
+    },
+    {
+      "path": "docs/验证/evidence/stove-panzoom-r1/README.md",
+      "source_blob": "0659f93fed450ddc5d53479a675886e7740bec82",
+      "reason": "accepted stove delivery",
+      "sha256": "76885cfff62570f5d19241aa2280350c47a925ee51c7dbf5f81b2ae12d9765b3",
+      "bytes": 2127
+    },
+    {
+      "path": "docs/验证/evidence/stove-panzoom-r1/baseline.json",
+      "source_blob": "c6bca476eb271e4a70fe26d84799f9a74fc47da5",
+      "reason": "accepted stove delivery",
+      "sha256": "2530911d484e0bb0fbd9567cc942f635f00b7cdc092dcb6cae0aa7f908955866",
+      "bytes": 888
+    },
+    {
+      "path": "docs/验证/evidence/stove-panzoom-r1/capture-native.ps1",
+      "source_blob": "69cdf18f6c5186ad3ddfcc296e4389ffd2409325",
+      "reason": "accepted stove delivery",
+      "sha256": "7ee3376fb4d2bd6e78ea44056a8265930895ceefb71a1d6a47454fb4e0a37b90",
+      "bytes": 2477
+    },
+    {
+      "path": "docs/验证/evidence/stove-panzoom-r1/capture-r7.csv",
+      "source_blob": "454caf45bdd62edab74d579782df2cbe2b692761",
+      "reason": "accepted stove delivery",
+      "sha256": "65f9b81a9be4c0340d662daeb0f6723033f9b375e4635ee9c7bb1fdd7177d26a",
+      "bytes": 34286
+    },
+    {
+      "path": "docs/验证/evidence/stove-panzoom-r1/delivery.json",
+      "source_blob": "19ac4a265df8982a834c921a6822a5995e434718",
+      "reason": "accepted stove delivery",
+      "sha256": "7fe6764a7646c54b50d3350b4c5320dc4fa5dc0a7a4a2dccd1e28aa1be77a316",
+      "bytes": 12383
+    },
+    {
+      "path": "docs/验证/evidence/stove-panzoom-r1/native-check-r7.json",
+      "source_blob": "99e6b0013dc28b2390aa28a94032aadfd0502b36",
+      "reason": "accepted stove delivery",
+      "sha256": "bd93ed6255c8689424d9538114b242bf45829224ab8857699ad131084b3a54eb",
+      "bytes": 3809
+    },
+    {
+      "path": "docs/验证/evidence/stove-panzoom-r1/native-home-r7.jpg",
+      "source_blob": "a8c66faeb2cd7e27a6edf3ec466c2d0c8ac070a2",
+      "reason": "accepted stove delivery",
+      "sha256": "4af929ab820bf10b99a3cefb82bffb8bfaf5ffcb80bb129312962868bdb3eea5",
+      "bytes": 354232
+    },
+    {
+      "path": "docs/验证/evidence/stove-panzoom-r1/native-logs-r7.json",
+      "source_blob": "5dda4d72064ed17793fa0a118cc140c53b15578a",
+      "reason": "accepted stove delivery",
+      "sha256": "be3ccb9930c5679b23d3c1252404c53c2ea6b7770dbf6af23601eb91e2449ebe",
+      "bytes": 17045
+    },
+    {
+      "path": "docs/验证/evidence/stove-panzoom-r1/player-check-r8.json",
+      "source_blob": "efd7ee323cabffaccdbe13eb0fc93937ff1ab836",
+      "reason": "accepted stove delivery",
+      "sha256": "f78f2e59d09b17463d270334ff472dfd7506990c90a16c76617db55c2cdd0202",
+      "bytes": 3872
+    },
+    {
+      "path": "docs/验证/evidence/stove-panzoom-r1/player-check-r9.json",
+      "source_blob": "44c31178b12936cca6518d8d9d189ac8b983182e",
+      "reason": "accepted stove delivery",
+      "sha256": "169b9262bc1ac3d124ced1cdcd8efdc9315dbf450bd92097cb0c9e8b252ad391",
+      "bytes": 3910
+    },
+    {
+      "path": "docs/验证/evidence/stove-panzoom-r1/player-final-check.json",
+      "source_blob": "7a98a233838fe698c731f6bf90191b209804cf69",
+      "reason": "accepted stove delivery",
+      "sha256": "18b56e8aeb6714ee6e9976e43c32ac6188f3234212abf416d51895a4d691d31b",
+      "bytes": 3786
+    },
+    {
+      "path": "docs/验证/evidence/stove-panzoom-r1/player-final-logs.json",
+      "source_blob": "2c8758d3b1454b4e19c4eb174168c4b4a35d7dd1",
+      "reason": "accepted stove delivery",
+      "sha256": "f40c5c5d0c445a55e96dfcb206cf74bbe396d4cbf59cd419f7dc800c70357b03",
+      "bytes": 17027
+    },
+    {
+      "path": "docs/验证/evidence/stove-panzoom-r1/player-logs-r8.json",
+      "source_blob": "c4b46b942ec0e1594eafdf4cdac13d3faeda8978",
+      "reason": "accepted stove delivery",
+      "sha256": "b9da1183884f80854f6746dae8dffd7d67159d55c4deea7606c0f98183390220",
+      "bytes": 17112
+    },
+    {
+      "path": "docs/验证/evidence/stove-panzoom-r1/preview-before.json",
+      "source_blob": "9d57f941eaec0f48e25f0d42972e26c933c82fb5",
+      "reason": "accepted stove delivery",
+      "sha256": "ac5ce0e76170ffb691f7048393f62109e954138b12e88eaecdecd5e738dce6f2",
+      "bytes": 3994
+    },
+    {
+      "path": "docs/验证/evidence/stove-panzoom-r1/preview-delivery.json",
+      "source_blob": "6613ceee5449032a8331b943488d75d5a5a7ac66",
+      "reason": "accepted stove delivery",
+      "sha256": "a4e9497a887663d4325316e76c42e87d7f051e7fec700b210e31ed6bf7ce6bfe",
+      "bytes": 3791
+    },
+    {
+      "path": "docs/验证/evidence/stove-panzoom-r1/preview-final.json",
+      "source_blob": "2cc16fbeb149ec776319e9e63e3083de203ec0f9",
+      "reason": "accepted stove delivery",
+      "sha256": "2d06f9e1a8bbf00b39d0dd1511ac9e0e37546ecf9bf93241afa9c5fd00689bc3",
+      "bytes": 3667
+    },
+    {
+      "path": "docs/验证/evidence/stove-panzoom-r1/preview-native.json",
+      "source_blob": "9d6b1a147edce62b4984f0d85604e89fed7206f8",
+      "reason": "accepted stove delivery",
+      "sha256": "4ede72982beb8db100973f2bcb63d272528a36e83252b223f1dda5587302f73b",
+      "bytes": 3690
+    },
+    {
+      "path": "docs/验证/evidence/stove-panzoom-r1/preview-player.json",
+      "source_blob": "22e125368dd7c18cba503c5bb3deed30f1949166",
+      "reason": "accepted stove delivery",
+      "sha256": "dce7df1cf7e995b134f1c12a72ef5b9c22b75d6ce330ab174ec4a0c204c319aa",
+      "bytes": 3593
+    },
+    {
+      "path": "docs/验证/evidence/stove-panzoom-r1/preview-pre-delivery.json",
+      "source_blob": "f6ed13726797e385af3548fcd66709d462540a00",
+      "reason": "accepted stove delivery",
+      "sha256": "08984c68b9a06b27e32a96062e0ed2ae6fed8718b53566f522c09f162377764d",
+      "bytes": 3949
+    },
+    {
+      "path": "docs/验证/evidence/stove-panzoom-r1/preview-pre-final-types.json",
+      "source_blob": "6cd6f97e9f26430b6e2fed02312a47fd4c570608",
+      "reason": "accepted stove delivery",
+      "sha256": "71202d9cc62a32b44fa70c812ac318bbc6443c739b96b1e95af973f1e21b73d6",
+      "bytes": 3987
+    },
+    {
+      "path": "docs/验证/evidence/stove-panzoom-r1/preview-pre-final.json",
+      "source_blob": "803069203c84adc51787719216201e634c3c36a5",
+      "reason": "accepted stove delivery",
+      "sha256": "c5eefde2937d136fcab44efd7dcff67175bc2a3ae17d497f59980a56cc8e9db9",
+      "bytes": 3886
+    },
+    {
+      "path": "docs/验证/evidence/stove-panzoom-r1/preview-pre-refresh.json",
+      "source_blob": "9d57f941eaec0f48e25f0d42972e26c933c82fb5",
+      "reason": "accepted stove delivery",
+      "sha256": "ac5ce0e76170ffb691f7048393f62109e954138b12e88eaecdecd5e738dce6f2",
+      "bytes": 3994
+    },
+    {
+      "path": "docs/验证/evidence/stove-panzoom-r1/worktree-before.txt",
+      "source_blob": "4bf49e85adc4d9741ad3a5b2f232feacb8135837",
+      "reason": "accepted stove delivery",
+      "sha256": "8d894c1314a1ddd70bf1927f44b93551911c27f4e0f6fd39e3e0b0819729b152",
+      "bytes": 23165
+    },
+    {
+      "path": "scripts/actions/2026-10-12-remove-stove-yaw.md",
+      "source_blob": "1cc5ed7e8eda26269726be184b15cdb07a53e061",
+      "reason": "accepted stove delivery",
+      "sha256": "2377a702e0ee0a0b5fb8bfd3fc904250a33f2aa7f5157938547f1a48450f5c7c",
+      "bytes": 10860
+    },
+    {
+      "path": "scripts/actions/2026-10-12-stove-panzoom-r1.md",
+      "source_blob": "9f6b448b943460c11ae56f252ed4c6caf5dae0a1",
+      "reason": "accepted stove delivery",
+      "sha256": "90e1394f89f26c38890be65efeb006e0373abee030773363729dbd917aa4633f",
+      "bytes": 13131
+    },
+    {
+      "path": "scripts/actions/2026-10-13-stove-panzoom-push.md",
+      "source_blob": "5467380225be972e7cf3596f8ab50506f1430382",
+      "reason": "accepted stove delivery",
+      "sha256": "70e1e1f4b0580327ef6cf397cb278bb26f0bcf8834c47f900dd247906bbf0648",
+      "bytes": 3977
+    },
+    {
+      "path": "scripts/main.lua",
+      "source_blob": "bb66005e37894340e740a239db3d9021fe4d821f",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "8e6b9430067b90d8a970577aba60328c520734cd5a05f58c761495ee2e1da67e",
+      "bytes": 18309
+    },
+    {
+      "path": "scripts/ui/landscape/AppView.lua",
+      "source_blob": "b8c5cf2d3c11cf9b1ad16050c8210d07e5de41ec",
+      "reason": "accepted stove delivery",
+      "sha256": "6cc33d264b82c49f2cb813b50666f31216a9ea91c5295e8c8b732a08192107c4",
+      "bytes": 22153
+    },
+    {
+      "path": "scripts/ui/landscape/DevChecks.lua",
+      "source_blob": "d39c46a12173b3b6dc8f00d6d84c53a4a460f548",
+      "reason": "accepted stove delivery",
+      "sha256": "589b69411d78997b2076da16e3e0bfb7082f95ad1bb99cc889da9b1dcd088710",
+      "bytes": 261
+    },
+    {
+      "path": "scripts/ui/landscape/HarborStyle.lua",
+      "source_blob": "d9b53fb722b81b13d7d9ce26423217efd0868662",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "72f72b9292913c0298ae8f0ee792ae02ac35d1499d68f145a31ab97cb20a5320",
+      "bytes": 2302
+    },
+    {
+      "path": "scripts/ui/landscape/HarborStyle.lua.meta",
+      "source_blob": "2ae77d5af9d963e29767e0eefb831701dea37217",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "2bc722eb89495a8235ed89bf873a741944cfa856f350efa6c0bd86ca6d3f7e11",
+      "bytes": 39
+    },
+    {
+      "path": "scripts/ui/landscape/HomeView.lua",
+      "source_blob": "0014796a5229e0eb80c338d7530a49c62f00233b",
+      "reason": "accepted stove delivery",
+      "sha256": "e712b06bf29ce1b82b7c15e46fcf2cc1ed463934a2ed6c8db577048c9f70203a",
+      "bytes": 8324
+    },
+    {
+      "path": "scripts/ui/landscape/HomeYawMotion.lua.meta",
+      "source_blob": "4920f879ac3107190f25e8f14b576d53fd8b9460",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "1e03698057e0e84bb3849dd02e6dc6d692fc80f9cde053ea445221b6852f6809",
+      "bytes": 40
+    },
+    {
+      "path": "scripts/ui/landscape/HomeYawProbe.lua.meta",
+      "source_blob": "a2d53c0c9de64a30235187756e6a30b0f4511194",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "03e348fdf54063a2927650f10159783a655422040b1089696fb23cdcdb03f00c",
+      "bytes": 40
+    },
+    {
+      "path": "scripts/ui/landscape/HomeYawScene.lua.meta",
+      "source_blob": "2d03ce111a02be42fcb1049af75ab7777b7047ec",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "d3cfc5adb58925b8249c981ccc7597a2de3a7306d90fd59763f88532102c9a7b",
+      "bytes": 40
+    },
+    {
+      "path": "scripts/ui/landscape/HomeZoom.lua",
+      "source_blob": "0414f7e0b6974e043c6b947c1cc79e9dd9762d6d",
+      "reason": "accepted stove delivery",
+      "sha256": "779508351e2ef1d16026caf6d2f026d1da95a1bdc8e366091b5668cf56ea70a5",
+      "bytes": 2626
+    },
+    {
+      "path": "scripts/ui/landscape/HudLayout.lua",
+      "source_blob": "b2279583cff9d4d2d8d30b96adfc3980d5795467",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "f7ebfb32eb1d872408a97dd2660bbfbfabf11a953842f5ae302b07e22f5e26d4",
+      "bytes": 1508
+    },
+    {
+      "path": "scripts/ui/landscape/HudLayout.lua.meta",
+      "source_blob": "7c3b8cfc6b993296358cfe15f179ab71241801c7",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "b8c7629e8d1c2c1ada6e234bb625ba1be1a01a375fad092f33571e5bd40cf120",
+      "bytes": 49
+    },
+    {
+      "path": "scripts/ui/landscape/LayoutGeometry.lua",
+      "source_blob": "f08101b6c648f707684ff8e3dfce94f4b14de086",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "89d54e4410ec1e8452261a0cc88e05181bf8a8f363c588668914033fa6b76e78",
+      "bytes": 3995
+    },
+    {
+      "path": "scripts/ui/landscape/LayoutManifest.lua",
+      "source_blob": "c7d928c2327006166e2ff11fbb116c5ee366f5e7",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "3be71bed85902b61d133e3c28b3c0c9226477218c286511da9726c45c4d6e492",
+      "bytes": 13499
+    },
+    {
+      "path": "scripts/ui/landscape/MessagePresenter.lua",
+      "source_blob": "41d32fd61288774e24cdc55a885fb04df3f88a44",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "5943ed58fc84e32fb668ddd7b299e205fe5f0d1987e76a591570b53a627d9142",
+      "bytes": 1747
+    },
+    {
+      "path": "scripts/ui/landscape/MessagePresenter.lua.meta",
+      "source_blob": "c4e7d85478ec423e84fef99f18f8d929d5325dc1",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "e584178b80fe97cfbcb4d41c24686dd1c73ba88d6aa9e9a80d9f5ab19ff4ba0a",
+      "bytes": 49
+    },
+    {
+      "path": "scripts/ui/landscape/Panels.lua",
+      "source_blob": "bba75c0674383fbd816f5e2dade7be7da8a5d1ff",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "3a5ea116be893e8534497426217047e72907cc93e016ae9f4c2d9220572b6b6c",
+      "bytes": 16230
+    },
+    {
+      "path": "scripts/ui/landscape/SalvageController.lua",
+      "source_blob": "74e32d2c13c4e718cc319ddea0d3c2c0f4865e8b",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "f059e4e24e37acc33df43e3d15929f827157233a2c8d1799eaa30e25f102475a",
+      "bytes": 3942
+    },
+    {
+      "path": "scripts/ui/landscape/SalvageController.lua.meta",
+      "source_blob": "dc3594ad1c765920b61aa33805d32651cf607182",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "e301fb538f4dc07c22681066b12c7d06cd0e1caec6a113ee723addff7d98c046",
+      "bytes": 41
+    },
+    {
+      "path": "scripts/ui/landscape/SceneBackdrop.lua",
+      "source_blob": "c0705e9e63cc707d61a42d635b54af29dcb346fe",
+      "reason": "accepted stove delivery",
+      "sha256": "9dc2662072355fbfb6845325a2e7abec693be9c91fff4dc1c99e446a0a9c19ef",
+      "bytes": 1374
+    },
+    {
+      "path": "scripts/ui/landscape/SceneBackdrop.lua.meta",
+      "source_blob": "6c39a61b222031445c5a9dc8de4039f8b03a24a4",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "890776f5968ea8259edeacf20807b1c6aa8c738114437db7701cd0555abcb5b9",
+      "bytes": 38
+    },
+    {
+      "path": "scripts/ui/landscape/SeaArt.lua",
+      "source_blob": "da9771a8fcba445b98780749b09379eb6aaab4a6",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "aafe6c68bd98af7a9c6ee2067b20f16db91e3be5dc5d275dcc71aaa1f1816032",
+      "bytes": 341
+    },
+    {
+      "path": "scripts/ui/landscape/SeaArt.lua.meta",
+      "source_blob": "5436eff20e4dd61a7e7a32f3da67ee9df467a243",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "3cce315b9658b45c8030a225632c4bee29cde5a4e04f1b5182fbcaf12476d684",
+      "bytes": 39
+    },
+    {
+      "path": "scripts/ui/landscape/SeasideManifest.lua",
+      "source_blob": "0991120ec685cb7d1022c2c71f5ace2e649d08a9",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "82667eab9bfb4d6e49ab674929d0c70c25a2d188d50a284c69bdf25de974c55a",
+      "bytes": 643
+    },
+    {
+      "path": "scripts/ui/landscape/SeasideManifest.lua.meta",
+      "source_blob": "c20c94a0069e5f69c6aaa85106699f07d51cc7fb",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "039d28781d8fb30d5e9d2894c9b9f4788af286f459fcaad884e0bd59e1dacb59",
+      "bytes": 38
+    },
+    {
+      "path": "scripts/ui/landscape/SeasideView.lua",
+      "source_blob": "4c2e28c575408d39066c8f284b0cc496d0c36397",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "1e4ac2f77c00beee6463737932f186b821b492ae4482246acfdc79b6c463f341",
+      "bytes": 6564
+    },
+    {
+      "path": "scripts/ui/landscape/SeasideView.lua.meta",
+      "source_blob": "e470bf12f21433835b416cc354610561fde44861",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "b0c05bab1b3345b0481b5f2867ed4b6980c0a6a2407452faf70d1c7b852293d8",
+      "bytes": 38
+    },
+    {
+      "path": "scripts/ui/landscape/StovePanZoom.lua",
+      "source_blob": "fdacc61c441f4321973f6802bc9120b1dca4eb72",
+      "reason": "accepted stove delivery",
+      "sha256": "10ba514a609158f584a5d39fe36103f90c1e9905d61e967a71db6c079ac1f027",
+      "bytes": 2097
+    },
+    {
+      "path": "scripts/ui/landscape/tests/FullscreenMotionProbe.lua",
+      "source_blob": "c13bdfb3d482fd6517b3e9a7c4a3c007db6a0095",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "ed3002e11568bfc449bd7d8147ccadb506d6922135c29daf679e0ea85ead2608",
+      "bytes": 3720
+    },
+    {
+      "path": "scripts/ui/landscape/tests/FullscreenMotionProbe.lua.meta",
+      "source_blob": "1f5ea04776089096a63d9c50351db17f3d764259",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "ad2ec30131e474e1dea31eaee8634221060ca178c969de700780193d2e1df8a7",
+      "bytes": 38
+    },
+    {
+      "path": "scripts/ui/landscape/tests/HomeEntryTest.lua",
+      "source_blob": "b0e6fb27b649a1c7fb8496880d1e37957ff197cd",
+      "reason": "accepted stove delivery",
+      "sha256": "c26c3285adaef3e3bee50c4e106c451296f64baa163bfb9f10750bea852d15b4",
+      "bytes": 14865
+    },
+    {
+      "path": "scripts/ui/landscape/tests/HomeHudNativeProbe.lua",
+      "source_blob": "a2f042491ea4666e6c75dec2e8f3e5e06e90bc93",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "2f0e5618acf5152ff091bdfeb4a0fc65641db9d7c69486fc24d7b5bacdf07441",
+      "bytes": 5035
+    },
+    {
+      "path": "scripts/ui/landscape/tests/HomeHudNativeProbe.lua.meta",
+      "source_blob": "dd7d0938ace8e1af71f76741fd50745d60194048",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "3cda6add01ff4807990faeabcc6f3478f98bbe9739b12200a8ee740db0c72d19",
+      "bytes": 39
+    },
+    {
+      "path": "scripts/ui/landscape/tests/HomeHudTest.lua",
+      "source_blob": "acc5c442c3a6c6e45a56818a31f0ce82c5b223eb",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "2378c626eaf65127e55098eeef4ac24c589a89bba532c152101c2be0a290ca7a",
+      "bytes": 5983
+    },
+    {
+      "path": "scripts/ui/landscape/tests/HomeHudTest.lua.meta",
+      "source_blob": "843af4a6d0c904f965ee0f758fe5418c9d4a2bbf",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "302fb2445db1b80c7c6b88cebed382cd0271a1bccea7536142739aecc95be1e1",
+      "bytes": 39
+    },
+    {
+      "path": "scripts/ui/landscape/tests/HomePresentationTest.lua",
+      "source_blob": "7cfd6411e1b33ef84e128c1408dc847757f85dc8",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "3bcdba8f7334eccb0abbf2358fe4a99d719b52663a46560c603d36b62e03822f",
+      "bytes": 4490
+    },
+    {
+      "path": "scripts/ui/landscape/tests/HomePresentationTest.lua.meta",
+      "source_blob": "327cb81d4931d1d8442ebfd6f895f98bb2cc655e",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "2d0c8cb25fb4b9e2182769eb3d1ad9a086c52aa78f3d2a91c0c7baf9b72023f8",
+      "bytes": 49
+    },
+    {
+      "path": "scripts/ui/landscape/tests/HomeYawTest.lua.meta",
+      "source_blob": "26d626d5acec1a4d0ec87f67285bec34fcdcbbaa",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "a16a845b7b6697303c6a19570edbf3acde9006fbf6802199f5e68b120d191c9b",
+      "bytes": 40
+    },
+    {
+      "path": "scripts/ui/landscape/tests/NativeProbe.lua",
+      "source_blob": "cd707736359c0094923c538010f2b86c47af70a8",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "a1b6306724b1351bf66d914073edbb10ce6d93eb4f779b33c0776f2a902bf23a",
+      "bytes": 3699
+    },
+    {
+      "path": "scripts/ui/landscape/tests/SalvageControllerTest.lua",
+      "source_blob": "148aefad2a53f8bb0f06dc992bab3593cb3d3d64",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "36a4f568f058d19d3291879472925ff9c53ca4ceb4fb648dbd36790440215626",
+      "bytes": 3174
+    },
+    {
+      "path": "scripts/ui/landscape/tests/SalvageControllerTest.lua.meta",
+      "source_blob": "c1941ad8878b385d33d3805ba8f2ced7d7aa06f6",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "844537b68d74437c6a32316918847017995a91a91b7a005cf8890a41363bb037",
+      "bytes": 41
+    },
+    {
+      "path": "scripts/ui/landscape/tests/SceneProjectionTest.lua",
+      "source_blob": "690230ff951005bb1bad5e566bde76d7093e0b2f",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "11fdca2fde603368af118abc9ffb7537169dc25a48973afc75941f658f6b1767",
+      "bytes": 1318
+    },
+    {
+      "path": "scripts/ui/landscape/tests/SceneProjectionTest.lua.meta",
+      "source_blob": "a43bbbf542e031ff77878261f0838e7a5ea03e12",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "c00167492a3fcd5294aebff70dfd237aaf977a26b9f318527ea581094478146a",
+      "bytes": 38
+    },
+    {
+      "path": "scripts/ui/landscape/tests/SeasideEvidenceHost.lua",
+      "source_blob": "0685698fe4ab9fa13670aef709b5a8efde980d8e",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "3b6baa2ea0715a95fe862925e9b232897d91550f21b9124ee50ef9f367bd0f37",
+      "bytes": 1596
+    },
+    {
+      "path": "scripts/ui/landscape/tests/SeasideEvidenceHost.lua.meta",
+      "source_blob": "d77be9101be6dd2d0beb84c527cba7a056cd4f2d",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "53aea71239f494d3f03110a62f63bec090905dd02ef4140359d75855489bb7df",
+      "bytes": 38
+    },
+    {
+      "path": "scripts/ui/landscape/tests/SeasideFlowTest.lua",
+      "source_blob": "42108085b88ced74675e72ff1a07bcb70afb000e",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "04c234c69cb69d92eec04479648d0933d1b9a26ee6feb6552968a3e5a9bdc8d2",
+      "bytes": 9410
+    },
+    {
+      "path": "scripts/ui/landscape/tests/SeasideFlowTest.lua.meta",
+      "source_blob": "fa02056f2872ec1d6dc8df7d8df1fab04081122b",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "b3d6a1d60d16d6ce48078a72371fa3fe721e179bd1451f0139bd9e8c4a7d47d9",
+      "bytes": 38
+    },
+    {
+      "path": "scripts/ui/landscape/tests/SeasideNativeProbe.lua",
+      "source_blob": "0c1351be4610a7d26f28594becd26791f9f511bc",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "7476f85e46a070ea0f79b8fb4313579f4d2aa18c0bfdb243df5b5744311672c3",
+      "bytes": 3291
+    },
+    {
+      "path": "scripts/ui/landscape/tests/SeasideNativeProbe.lua.meta",
+      "source_blob": "63ca62aac0179a8af72aab4a548eceaf862c3b5c",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "b39150dc5a10517cd1ac83689e0cfddaec43eb74c3b697ab5f4575a68dce2ebf",
+      "bytes": 38
+    },
+    {
+      "path": "scripts/ui/landscape/tests/StovePanZoomNativeProbe.lua",
+      "source_blob": "fc0edc2e244f5b04b983bbb9b9f0a159599ba0f2",
+      "reason": "accepted stove delivery",
+      "sha256": "80c59df5f489b37900dc8be247b8e5ba944c19c67457597373bf79d34a169d96",
+      "bytes": 5093
+    },
+    {
+      "path": "scripts/ui/landscape/tests/StovePanZoomRenderTest.lua",
+      "source_blob": "2192035153038a795f850632ed91bd31839856c2",
+      "reason": "accepted stove delivery",
+      "sha256": "fe5804a23e4ae9b2eed0b22de3a720007d83d556080c124ff1566088ffc65c0b",
+      "bytes": 4285
+    },
+    {
+      "path": "scripts/ui/landscape/tests/StoveYawEntryTest.lua",
+      "source_blob": "89c4a27ae6c0735ec62e7226abcf52034076e593",
+      "reason": "accepted stove delivery",
+      "sha256": "2605ee06493520c0071a6e8a2c8c9cfa4544dfde2139f1d4ef0b615ec8d18228",
+      "bytes": 11610
+    },
+    {
+      "path": "scripts/ui/landscape/tests/StoveYawNativeProbe.lua",
+      "source_blob": "d738cfee4552589f2b615b533f540d16e916a04e",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "af1b549d1085aa96c46f3b7f205f36e977540805a8037e2c10f4c27f8feb3e89",
+      "bytes": 4055
+    },
+    {
+      "path": "scripts/ui/landscape/tests/YawNativeProbe.lua.meta",
+      "source_blob": "ffea888df3f437c806d6f6afbf0e841580957f02",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "b6be62174c49a19fa4c46b385b3bfa33ea87d6598dc058332387f51123d8e04c",
+      "bytes": 40
+    },
+    {
+      "path": "scripts/ui/landscape/tests/ZoomTestHost.lua",
+      "source_blob": "f5361f13e356313aab8ffbd47cb5dc8d115bb19b",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "96e319f0138f9f950ee5fd5fdeb52938dd93e65c86bc9f534d0323942cf72e64",
+      "bytes": 3332
+    },
+    {
+      "path": "scripts/ui/landscape/tests/export_seaside_evidence.py",
+      "source_blob": "2c210307e8538c1f84ae908aed0e485c6e09fc71",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "356a6f132c66c69f9c02a94b29005f4d05c669e6fbd08ea47164be9511d2165d",
+      "bytes": 8232
+    },
+    {
+      "path": "scripts/ui/landscape/tests/export_seaside_evidence.py.meta",
+      "source_blob": "51daab70427a3f5d0e472c00adcce589b054eb50",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "9362b9c666eaabb61c1226d95c71cd9c14ebca65421e78be3997339f808e1ad3",
+      "bytes": 38
+    },
+    {
+      "path": "scripts/ui/landscape/tests/prepare_seaside_manifest.py",
+      "source_blob": "447b8025ea9ad22fd82d810fdc3b5d1db2396e42",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "b13d85f4c5653be1dfc1e70d183d9531b251a82d76c0dde0d1603ee154421af0",
+      "bytes": 2425
+    },
+    {
+      "path": "scripts/ui/landscape/tests/prepare_seaside_manifest.py.meta",
+      "source_blob": "2d3c58692528524df93ce2191862598ebcebdb2a",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "0f380ce81fb03787db68833fec7f42e7bd004cd0abf51a3f079d68bf2c1b24a9",
+      "bytes": 38
+    },
+    {
+      "path": "scripts/ui/landscape/tests/run_home_hud.py",
+      "source_blob": "0c63e1476c98c3890cb51b23a127856c08da3f82",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "f6d9df495202f4134aed12107b1621c6d13406f980bd6e9f8bbaa9fca23aeefa",
+      "bytes": 669
+    },
+    {
+      "path": "scripts/ui/landscape/tests/run_home_hud.py.meta",
+      "source_blob": "749a33ed3f3b3530216dbe43ad878cf362b97a5f",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "351a61d43cf41b10dfe4f10121bb5c305e5bd834f42303d3f212984ee962ef38",
+      "bytes": 39
+    },
+    {
+      "path": "scripts/ui/landscape/tests/run_home_presentation.py",
+      "source_blob": "19a3fbe4b930e6a78601f2e6746e555220e38dc8",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "0e567da8d97aafd7707bccd123cab7d1d1059316ad30862b75f4e30b0c559bd7",
+      "bytes": 356
+    },
+    {
+      "path": "scripts/ui/landscape/tests/run_home_presentation.py.meta",
+      "source_blob": "7b871e86e5345e7b33121ec2033ea52cce6cc6ea",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "1b3359ac753792750984eea7cbcdc7dce9e6454c5da345526ad0e4115eeb4454",
+      "bytes": 49
+    },
+    {
+      "path": "scripts/ui/landscape/tests/run_home_yaw.py.meta",
+      "source_blob": "37ae4e66b5c994d190cd37b154e821d003352bdc",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "90c71e814245c9e3bad6f8ed678286c0ccaf0a925a951e6d2f2743d372c497ad",
+      "bytes": 40
+    },
+    {
+      "path": "scripts/ui/landscape/tests/run_salvage_controller.py",
+      "source_blob": "b31db51f509571bd487157707e01aa1ea14388da",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "be97d21937c8f669ff0fc9b53cfebb55a8f4ae7d346a6d01f1412bdefb201041",
+      "bytes": 348
+    },
+    {
+      "path": "scripts/ui/landscape/tests/run_salvage_controller.py.meta",
+      "source_blob": "24a6defed01f694d67fc51cbc1223bdd078037e1",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "9ff7c8a4f5b46ed98d91c7cc8f06d4ef190333dcbf0affabbe05349b037e9636",
+      "bytes": 41
+    },
+    {
+      "path": "scripts/ui/landscape/tests/run_scene_projection.py",
+      "source_blob": "4ecac2e74dee8530740ca0e6ef5544eb63a293ef",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "35341d5d399616e08cd666484bb16505d62b336a5e49e557bda5d049c8d2dd5f",
+      "bytes": 642
+    },
+    {
+      "path": "scripts/ui/landscape/tests/run_scene_projection.py.meta",
+      "source_blob": "20ec5866d58b04c01f9abae06a88dffcd1781546",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "2b94fc569f0b9e13f0019f2dd5a09353314e2040b1948109242465a76452a79d",
+      "bytes": 38
+    },
+    {
+      "path": "scripts/ui/landscape/tests/run_seaside_flow.py",
+      "source_blob": "c414bde25d6631762db473ed3235f1207453c48b",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "c57b6c1f1cb083514859ad80114c72271112e7ef0f08cb729db342ab7a94c2dd",
+      "bytes": 692
+    },
+    {
+      "path": "scripts/ui/landscape/tests/run_seaside_flow.py.meta",
+      "source_blob": "461a1a8d6562a8df9e9db686d36b9e7a4ecdf052",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "063b32a35c64871be42607ecd1736c2c73735e2641aa2ad20e9ef5b21bafadcc",
+      "bytes": 38
+    },
+    {
+      "path": "scripts/ui/landscape/tests/run_stove_yaw.py",
+      "source_blob": "d8e7a44d6c2a0103a15dd041022f38d4832c1ae1",
+      "reason": "accepted stove delivery",
+      "sha256": "cd650c3e2edbe7047e8ecebb0fc71f4d3134a802e1e864ecc7dd14c0dd1c7ffc",
+      "bytes": 875
+    },
+    {
+      "path": "scripts/ui/landscape/tests/summarize_home_yaw.py.meta",
+      "source_blob": "13ed26bcfd70c5106142559b174443aae10c26c1",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "e3fc1abb817f27727db84dd351e480425af41d2bbf36b661317c4532db9c587d",
+      "bytes": 40
+    },
+    {
+      "path": "scripts/ui/landscape/人工验收.md",
+      "source_blob": "db0c6b596b50250f800a20a2afaf1fe050db390c",
+      "reason": "existing reviewed runtime dependency",
+      "sha256": "83fa86ede9781d311bb9184a199c9a584a510420a861e31dca3395029c9969cb",
+      "bytes": 7384
+    }
+  ],
+  "missing_modules": [],
+  "target_only_files_preserved": true,
+  "staged_blob_match": true,
+  "credential_pattern_hits": [],
+  "staged_file_count": 116,
+  "no_deletions": true
+}
