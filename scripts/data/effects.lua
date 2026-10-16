@@ -57,7 +57,7 @@ return {
         category = "身体类",
         desc = "影响饥饿感与进食欲望",
     },
-    { id = "steady", name = "稳手", category = "身体类", desc = "减少手部发抖，不自动壮胆、镇静或治好旧伤" },
+    { id = "steady", name = "稳定", category = "身体类", desc = "减少手部发抖，不自动壮胆、镇静或治好旧伤" },
     { id = "anger", name = "愤怒", category = "情绪类", desc = "增强对眼前不满的表达，不自动攻击别人或等同勇气" },
     { id = "sadness", name = "悲伤", category = "情绪类", desc = "让失落被感知和表达，不自动困倦或遗忘" },
     { id = "confusion", name = "茫然", category = "情绪类", desc = "暂时难以组织思路与选择行动，已有记忆仍可完整" },
