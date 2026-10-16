@@ -239,7 +239,7 @@ function B.New(ctx)
         controls:AddChild(StoryStyle.Button {id="previewOrder",text=summary.pending and "查看这锅后续" or "开始熬制",onClick=b.Start,
             disabled=not (summary.pending or (summary.actions.Preview.enabled and draft.mainTokenId and summary.requirementHint.canShip)),
             width=math.min(300,l.center.w-70),minWidth=0,height=48,minHeight=48,fontSize=20})
-        button(controls,"clearDraft","清空",function() ctx.model.Edit("clear") end,editable)
+        button(controls,"clearDraft","清空",function() if canEdit() then ctx.model.Edit("clear") end end,editable)
         smoke:SetVisible(b.interaction.active or b.revealTail>0)
     end
     function b.Update(dt,focused)

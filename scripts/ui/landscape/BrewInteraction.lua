@@ -64,9 +64,12 @@ function I.New(model,onResult)
     function s.SampleFlight()
         local f=s.flight;if not f then return false end
         local t=math.min(1,f.elapsed/f.duration);local p=1-(1-t)^3
+        -- A 20px upward arc cancelled the 24px drop from the finger lift near
+        -- the pot center, making the first half look stationary. Accepted items
+        -- home straight in and shrink from the first frame; returns keep an arc.
         return {kind=f.kind,id=f.id,text=f.text,path=f.path,
-            x=f.fromX+(f.toX-f.fromX)*p,y=f.fromY+(f.toY-f.fromY)*p-math.sin(t*math.pi)*(f.accepted and 20 or 8),
-            scale=f.accepted and (1-.85*t*t) or 1,alpha=f.accepted and (1-t^3) or (1-t*.2)}
+            x=f.fromX+(f.toX-f.fromX)*p,y=f.fromY+(f.toY-f.fromY)*p-(f.accepted and 0 or math.sin(t*math.pi)*8),
+            scale=f.accepted and (1-.85*t) or 1,alpha=f.accepted and (1-t^3) or (1-t*.2)}
     end
     function s.ClickAllowed() return not s.active and not s.drag and not s.suppressClick end
     function s.Start()

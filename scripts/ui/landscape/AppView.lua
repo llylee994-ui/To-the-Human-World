@@ -499,6 +499,10 @@ function A.New(session,content,enabled)
         end
         if nativeProbe then nativeProbe(ctx) end
         if not model.dirty then return end
+        -- The draft is already persisted. Keep the landing's first frames free
+        -- of rebuilding both drawers and the recipe; consume dirty after landing.
+        local flight=ctx.brew.interaction.flight
+        if ctx.scene=="brew" and not ctx.panel and flight and flight.accepted then return end
         model.dirty=false
         local data=model.Refresh()
         ctx.messages:Observe(model.message,now,ctx.importantMessage==model.message)

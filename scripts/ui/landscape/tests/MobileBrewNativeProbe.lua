@@ -15,6 +15,7 @@ function N.New()
     local main=false --[[@as string|false]]
     local recipe=false --[[@as table|false]]
     local tokens={}
+    local landingCaptured=false
     local readHost=Hud.ReadHost
     local function cleanup(ctx)
         Hud.ReadHost=readHost
@@ -49,10 +50,19 @@ function N.New()
         pan("PanStart",source,x+dx,y+dy,pointerId,dx,dy)
         assert(view.brew.interaction.drag and view.brew.interaction.drag.active,"first small touch pan captured "..id)
         pan("PanMove",source,target.x,target.y,pointerId,target.x-x,target.y-y)
+        local dropStarted=(os.clock()*1000)
         pan("PanEnd",source,target.x,target.y,pointerId,target.x-x,target.y-y)
+        local dropMS=(os.clock()*1000)-dropStarted
         local saved,writes=fixture.state.GetSnapshot(),fixture.writes
         point("PointerUp",target.x,target.y,pointerId)
         assert(U.Equal(saved,fixture.state.GetSnapshot()) and writes==fixture.writes,"pan-end/up never double-drops")
+        local refresh=view.brew.Refresh;local refreshMS=0
+        view.brew.Refresh=function()
+            local start=(os.clock()*1000);refresh();refreshMS=(os.clock()*1000)-start
+        end
+        local updateStarted=(os.clock()*1000);view.Update()
+        print("[DropProfile] "..id.." drop_ms="..dropMS.." update_ms="..((os.clock()*1000)-updateStarted).." brew_refresh_ms="..refreshMS)
+        view.brew.Refresh=refresh
     end
     local function tap(id,pointerId)
         local target=node(id);local r=target:GetAbsoluteLayout();local x,y=r.x+r.w/2,r.y+r.h/2
@@ -62,6 +72,11 @@ function N.New()
     return function(ctx)
         if done or not ctx.root.parent then return end
         if view then view.Update() end
+        local flight=view and view.brew.interaction.flight
+        if phase==2 and flight and flight.accepted and flight.elapsed>.08 and not landingCaptured then
+            local captured,reason=pcall(capture,"landing");landingCaptured=true
+            if not captured then print("[MobileBrewNative] FAIL landing capture "..tostring(reason));cleanup(ctx);return end
+        end
         local now=GetTime():GetElapsedTime();if now<deadline then return end
         local ok,err=pcall(function()
             if phase==0 then
@@ -71,6 +86,8 @@ function N.New()
                 fixture=F.New(data,{targetSchema=3})
                 local checks=require "ui.landscape.DevChecks";checks.mobileBrewProbe=false
                 view=require("ui.landscape.AppView").New(fixture.session,data);checks.mobileBrewProbe=true
+                local brewUpdate=view.brew.Update
+                view.brew.Update=function(dt) brewUpdate(dt,true) end -- focused touch-host adapter, not OS focus evidence
                 ctx.root:SetVisible(false);ctx.root.parent:AddChild(view.root)
                 local letter=F.Must(view.model.Receive("letter_pa_01"));F.Must(view.model.Read(letter.letterInstanceId))
                 for _,span in ipairs(F.Must(fixture.modules.letters.GetView(letter.letterInstanceId)).spans) do
@@ -85,13 +102,15 @@ function N.New()
                 view.root:AddChild(UI.Panel {id="mobileCapsuleReference",position="absolute",left=1056,top=11,width=132,height=65,
                     zIndex=2200,borderRadius=30,backgroundColor={70,67,62,220},pointerEvents="none",
                     children={UI.Label {text="系统胶囊占位",fontSize=11,fontColor={255,255,255,255},padding=12,pointerEvents="none"}}})
-                print("[MobileBrewNative] START 1200x540 safe-left48 host adapter; focus="..tostring(input:HasFocus()))
+                print("[MobileBrewNative] START 1200x540 safe-left48 host and focused-touch adapters; OS focus="..tostring(input:HasFocus()))
                 deadline=now+2
             elseif phase==1 then
                 assert(node("brewWordPanel"):GetAbsoluteLayout().x==0,"tray flush left")
                 assert(node("brewPotArt"):GetAbsoluteLayout().h>=180,"cauldron enlarged on short screen")
                 local close=node("brewJournalClose"):GetAbsoluteLayout()
-                assert(close.y>=56 and UI.FindWidgetAt(close.x+close.w/2,close.y+close.h/2)==node("brewJournalClose"),"book close clears HUD and capsule")
+                assert(close.y>460 and UI.FindWidgetAt(close.x+close.w/2,close.y+close.h/2)==node("brewJournalClose"),"bottom book arrow clears HUD and capsule")
+                local leftClose=node("brewWordsClose"):GetAbsoluteLayout()
+                assert(leftClose.y>460 and UI.FindWidgetAt(leftClose.x+leftClose.w/2,leftClose.y+leftClose.h/2)==node("brewWordsClose"),"bottom tray arrow has a clear touch target")
                 local label=node("brewIngredientName_ing_sea_salt")
                 print("[MobileBrewNative] ingredient-label "..cjson.encode({label=label:GetAbsoluteLayout(),shelf=node("brewShelf"):GetAbsoluteLayout(),
                     text=label:GetText(),paddingTop=label.props.paddingTop,paddingBottom=label.props.paddingBottom,fontSize=label.props.fontSize,
@@ -137,9 +156,10 @@ function N.New()
                 print("[MobileBrewNative] heading "..node("bookStoryTitle"):GetText().." "..cjson.encode(title))
                 assert(node("bookStoryTitle"):GetText()=="面包坊与抄写铺" and title.h<=34 and node("bookStoryTitle").props.whiteSpace=="nowrap","full second title uses a compact line")
                 assert(not view.brew.journal.journalBook.flip and not view.brew.journal.journalBook.page.RenderOverlays,"no page turn exists")
-                tap("brewJournalClose",75);view.Update();deadline=now+.5
+                tap("brewWordsClose",76);tap("brewJournalClose",75);view.Update();deadline=now+.5
             elseif phase==6 then
                 assert(not view.brew.journalOpen and not view.root:FindById("bookArtFrame"),"one touch closes the only book")
+                assert(not view.brew.wordsOpen and not view.root:FindById("wordTrayFrame"),"one touch closes the tray with its bottom arrow")
                 assert(U.Equal(before,ctx.session.state.GetSnapshot()),"original player progress unchanged")
                 cleanup(ctx)
                 print("[MobileBrewNative] PASS first small touch pan / word and ingredient one drop / tray edge / larger pot / close hit / tall story and touch scroll / compact full title / no flip / original player unchanged; NOT physical-phone evidence")

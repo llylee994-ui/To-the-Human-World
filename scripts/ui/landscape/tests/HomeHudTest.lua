@@ -52,9 +52,11 @@ function T.Run()
     v.Update()
     check(widget("homeHud").props.paddingRight>100,"live host capsule adds local HUD clearance")
     v.Open("journal");v.Update()
+    check(widget("closePanel").props.bottom~=nil and widget("closePanel").props.arrowDirection=="right" and not v.panelHeader,"book uses a bottom arrow outside the capsule row")
+    v.Close();v.Open("day");v.Update()
     v.panelHeader.GetAbsoluteLayout=function() return {x=794,y=0,w=486,h=50} end
     v.Update()
-    check(v.panelHeader.props.paddingRight>100,"drawer close button also receives host capsule clearance")
+    check(v.panelHeader.props.paddingRight>100,"top modal headers still receive host capsule clearance")
     v.panelHeader.GetAbsoluteLayout=function() return {x=1070,y=v.panelHeader.props.marginTop or 0,w=206,h=50} end
     v.Update();local raised=v.panelHeader.props.marginTop
     check(raised>0,"narrow drawer header moves below capsule")

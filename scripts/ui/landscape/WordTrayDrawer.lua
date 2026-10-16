@@ -5,6 +5,7 @@ local Widget=require "urhox-libs/UI/Core/Widget"
 local Harbor=require "ui.landscape.HarborStyle"
 local Art=require "ui.landscape.WordTrayArt"
 local PanelArt=require "ui.landscape.PanelArt"
+local Arrow=require "ui.landscape.EmbroideredArrow"
 local D={}
 local ink,light={65,47,32,255},{255,244,218,255}
 -- 原纸条纹理整图显示；词卡按参考布局的两列排布。
@@ -180,16 +181,13 @@ function D.Render(ctx,overlay)
     state.panel=panel
     local layout=Art.Fit(width,panel.props.height)
     PanelArt.Image(panel,"wordTrayCloth",layout.cloth)
-    local header=UI.Panel {id="wordTrayHeader",position="absolute",left=8,right=8,top=8,zIndex=10,height=ctx.brewDrag and 48 or 44,flexShrink=0,flexDirection="row",
-        alignItems="center",gap=8,pointerEvents="box-none"}
-    panel:AddChild(header)
     -- 标题在木托盘内上沿，避开顶部金币栏，并与首排词卡留出间距。
     local title=Harbor.Tag {id="wordTrayTitle",text="词条栏",fontSize=15,
         position="absolute",left=layout.title.x,top=layout.title.y,width=layout.title.w,height=layout.title.h,zIndex=10,
         backgroundColor={246,230,194,245},fontColor=ink,borderRadius=3}
     panel:AddChild(title)
-    header:AddChild(UI.Panel {flexGrow=1,pointerEvents="none"})
-    header:AddChild(Harbor.Button {id="closePanel",text="×",width=44,minHeight=44,fontSize=22,onClick=function() D.RequestClose(ctx) end})
+    panel:AddChild(Arrow.New {id="closePanel",arrowDirection="left",position="absolute",right=24,bottom=8,
+        onClick=function() D.RequestClose(ctx) end})
     -- 转瞬消息沿用通用面板的字段，交给 UpdateChrome 每帧刷新。
     local noticeArea=UI.ScrollView {id="wordTrayMessageArea",position="absolute",left=8,right=8,top=58,zIndex=11,height=40,flexShrink=0,scrollY=true,
         visible=false,paddingLeft=8,paddingRight=8,pointerEvents="box-none"}
@@ -245,7 +243,7 @@ function D.Render(ctx,overlay)
     if #collected==0 then
         text(row,"尚未收集词卡。阅读来信并剪下标记词后，会按来源收在这里。",16,"wordTrayEmpty",light)
     end
-    local footer=UI.Panel {id="wordTrayFooter",position="absolute",left=12,right=12,bottom=8,
+    local footer=UI.Panel {id="wordTrayFooter",position="absolute",left=12,right=100,bottom=8,
         height=ctx.brewDrag and 86 or 56,gap=2,overflow="hidden",pointerEvents="box-none"}
     panel:AddChild(footer)
     ---@type table|false

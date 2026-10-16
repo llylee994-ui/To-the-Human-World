@@ -7,6 +7,7 @@ local Theme=require "urhox-libs/UI/Core/Theme"
 local Harbor=require "ui.landscape.HarborStyle"
 local Art=require "ui.landscape.JournalBookArt"
 local PanelArt=require "ui.landscape.PanelArt"
+local Arrow=require "ui.landscape.EmbroideredArrow"
 local B={}
 local ink,inkFaint={72,52,36,255},{128,106,78,255}
 
@@ -289,12 +290,8 @@ function B.Render(ctx,overlay)
         overflow="hidden",pointerEvents="auto",onClick=function() end}
     overlay:AddChild(panel)
     state.panel=panel
-    local header=UI.Panel {id="journalBookHeader",position="absolute",left=8,top=ctx.workbench and 58 or 8,width=56,height=48,flexShrink=0,flexDirection="row",
-        alignItems="center",gap=8,pointerEvents="box-none"}
-    -- 交给 UpdateChrome 按主机胶囊与安全区加内边距（和其它右栏面板同一路径）。
-    ctx.panelHeader=header
-    header:AddChild(Harbor.Button {id="closePanel",text="×",width=44,height=48,minHeight=44,fontSize=22,
-        onClick=function() B.RequestClose(ctx) end})
+    local close=Arrow.New {id="closePanel",arrowDirection="right",position="absolute",left=24,bottom=8,
+        onClick=function() B.RequestClose(ctx) end}
     local noticeArea=UI.ScrollView {id="journalBookMessageArea",width="100%",height=40,flexShrink=0,scrollY=true,
         visible=false,paddingLeft=8,paddingRight=8,pointerEvents="box-none"}
     ctx.panelNotice=text(noticeArea,ctx.model.message,13,"panelMessage",inkFaint);ctx.panelNoticeArea=noticeArea
@@ -324,7 +321,7 @@ function B.Render(ctx,overlay)
         lastW=width,lastH=panel.props.height}
     state.page=page
     -- Chrome is above all art, without shrinking the designer canvas below it.
-    panel:AddChild(header)
+    panel:AddChild(close)
     Widget.SetStyle(noticeArea,{position="absolute",left=8,right=8,top=58})
     panel:AddChild(noticeArea)
     local stories=ctx.session.queries.GetJournalStories()

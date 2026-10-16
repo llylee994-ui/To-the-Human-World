@@ -82,7 +82,7 @@ function T.Run()
     local I=require "ui.landscape.BrewInteraction"
     local shown=0
     local i=I.New(view.model,function() shown=shown+1 end)
-    local drop={x=500,y=260,w=160,h=100}
+    local drop={x=500,y=260,w=160,h=100,landingX=540,landingY=290}
     local function e(x,y,id,touch) return {x=x,y=y,pointerId=id or 0,pointerType=touch and "touch" or "mouse",button=MOUSEB_LEFT} end
     local function begin(kind,id,event,vertical) return i.Begin({kind=kind,id=id,text="来源卡"},event,vertical) end
     begin("word",main,e(100,200,5,true),true)
@@ -114,7 +114,10 @@ function T.Run()
     check(i.SampleFlight().y==290-24,"release transition begins at the last displayed drag position")
     local landed=x.state.GetSnapshot();local landedWrites=x.writes
     check(not i.Start() and not i.active,"cannot brew before the item lands")
-    i.Update(.16,true)
+    i.Update(.038,true)
+    local early=i.SampleFlight()
+    check(early and early.y>290-24+3 and early.scale<.95,"release exactly above the pot immediately descends and shrinks instead of hovering")
+    i.Update(.122,true)
     local frame=i.SampleFlight()
     check(frame and frame.scale<1 and frame.scale>0,"landing visibly shrinks instead of instantly disappearing")
     i.Release(e(540,290,5,true),drop);i.Update(.24,true)
@@ -202,7 +205,17 @@ function T.Run()
     check(view.brew.interaction.drag,"secondary pointer cancellation cannot cancel the owning drag")
     source:OnPanEnd(release);source.props.onPointerUp(release)
     check(view.model.GetDraft().mainTokenId==main,"real source binding drops once with native-style pan/up sequence")
+    local rebuilds=0;local rebuild=view.brew.Refresh
+    view.brew.Refresh=function() rebuilds=rebuilds+1;rebuild() end
+    view.Update()
+    check(rebuilds==0 and view.model.dirty,"saved landing gets its first animation frame before rebuilding the side drawers")
+    local flyingState,flyingWrites=x.state.GetSnapshot(),x.writes
+    control("clearDraft").props.onClick()
+    check(U.Equal(flyingState,x.state.GetSnapshot()) and flyingWrites==x.writes,"the unreplaced clear button cannot edit a saved landing in progress")
     view.brew.interaction.Update(.4,true)
+    view.Update()
+    check(rebuilds==1 and not view.model.dirty,"deferred draft refresh runs once after landing")
+    view.brew.Refresh=rebuild
     local after=x.state.GetSnapshot();source.props.onClick()
     check(U.Equal(after,x.state.GetSnapshot()),"drag release does not trigger the source click")
     view.Refresh();view.Update()
@@ -214,6 +227,8 @@ function T.Run()
     check(view.model.GetDraft().ingredients[1].ingredientId=="ing_sea_salt","ingredient slot and pot share one real draft")
     local savedDrop=x.state.GetSnapshot();view.brew.Cancel()
     check(not view.brew.interaction.flight and U.Equal(savedDrop,x.state.GetSnapshot()),"cancelling visual flight keeps the saved ingredient")
+    view.Update()
+    check(not view.model.dirty and view.root:FindById("slot_ingredient_1"),"cancelled landing immediately flushes the deferred UI refresh")
     must(view.model.TakeOut("ingredient","ing_sea_salt"));view.Refresh();view.Update()
     ingredientSource=control("brewIngredient_ing_sea_salt")
     local wordSlot=view.brew.layout.slots[2] --[[@as BrewDropRect]]
@@ -263,7 +278,13 @@ function T.Run()
     require("ui.landscape.WordTrayDrawer").State(sub).open=1
     require("ui.landscape.WordTrayDrawer").Render(sub,require("urhox-libs/UI").Panel {})
     check(sub.wordTray.panel.props.left==0,"workbench word tray bleeds to the left screen edge even with a notch inset")
-    check(view.brew.journal.journalBook.panel:FindById("journalBookHeader").props.top>=56,"embedded book close sits below the HUD buttons")
+    local leftClose=view.brew.words.wordTray.panel:FindById("closePanel")
+    local rightClose=view.brew.journal.journalBook.panel:FindById("brewJournalClose")
+    check(leftClose.props.bottom~=nil and leftClose.props.right~=nil and leftClose.props.arrowDirection=="left","tray closes with a left stitched arrow at its inner bottom edge")
+    check(rightClose.props.bottom~=nil and rightClose.props.left~=nil and rightClose.props.arrowDirection=="right","book closes with the same arrow mirrored at its inner bottom edge")
+    local arrow=require "ui.landscape.EmbroideredArrow"
+    local a,b=arrow.Points("left"),arrow.Points("right")
+    for index,p in ipairs(a) do check(p.x==-b[index].x and p.y==b[index].y,"both directions share mirrored stitch geometry") end
     local resultView=require "ui.landscape.ResultView"
     local paper=resultView.Layout({w=1200,h=540},{left=48,right=0,top=0,bottom=0},{left=.88,right=.99,top=.02,bottom=.14})
     check(paper.top<30 and paper.height>=480,"centered story paper stays tall when it does not intersect the host capsule")
