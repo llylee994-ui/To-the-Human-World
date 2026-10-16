@@ -118,8 +118,11 @@ function A.New(session,content,enabled)
         return r
     end
     local home=Home.New(function(target,id)
-        if id=="home.net" then ctx.BeginHomeZoom()
-        elseif id=="home.stove" then ctx.BeginHomeZoom("stove")
+        if id=="home.net" or id=="home.stove" then
+            local stove=id=="home.stove"
+            if ctx.BeginHomeZoom(stove and "stove" or nil) then
+                ctx.PlayObjectSound(stove and "stove_touch" or "net_pick")
+            end
         else ctx.Open(target) end
     end,developer,content.release~=nil); stage:AddChild(home.root); ctx.home=home
     home.SetInspect(require("ui.landscape.DevChecks").hotspots)
@@ -276,7 +279,11 @@ function A.New(session,content,enabled)
         ctx.zoom.Reset(reason);home.SetZoom(1);home.SetPanZoom(false);home.SetBlocked(false);zoomBlocker:SetVisible(false)
     end
     function ctx.BeginHomeZoom(kind)
+        if ctx.atTitle or (ctx.journeyView and ctx.journeyView.busy) or settings.IsOpen() then return false end
+        if ctx.salvage.active or (ctx.calendar and ctx.calendar.motion.active) then return false end
         if ctx.destroyed or ctx.yawProbe or ctx.portrait or ctx.scene~="home" or (ctx.panel and not side[ctx.panel]) then return false end
+        local hotspot=home.root:FindById(kind=="stove" and "home.stove" or "home.net")
+        if hotspot and hotspot.props.disabled then return false end
         local fit=home.Fit()
         if fit.scale<=0 then return false end
         local profile=kind=="stove" and StovePanZoom.Plan(home.manifest,fit,home.root:GetAbsoluteLayout()) or nil

@@ -1,6 +1,8 @@
 -- One-shot object foley. Never changes the Music channel or its sources.
 local S={}
 local paths={
+    net_pick="audio/sfx/objects/net_pick.wav",
+    stove_touch="audio/sfx/objects/stove_touch.wav",
     bottle_lift="audio/sfx/objects/bottle_lift.wav",
     drawer_open="audio/sfx/objects/drawer_open.wav",
     drawer_close="audio/sfx/objects/drawer_close.wav",

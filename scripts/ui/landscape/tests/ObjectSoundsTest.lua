@@ -13,7 +13,8 @@ function T.Run()
     local function check(ok,why) count=count+1;assert(ok,why) end
     local events,voices,nodes={},{},{}
     local durations={bottle_lift=.94,drawer_open=.62,drawer_close=.49,letter_pick=.32,
-        tray_open=.22,tray_close=.20,recipe_book_open=.49,recipe_book_close=.36,ui_click_01=.14,ui_confirm=.43}
+        tray_open=.22,tray_close=.20,recipe_book_open=.49,recipe_book_close=.36,ui_click_01=.14,ui_confirm=.43,
+        net_pick=.40,stove_touch=.52}
     local musicPlays,musicStops=0,0
     local missing=false
     ---@type table
