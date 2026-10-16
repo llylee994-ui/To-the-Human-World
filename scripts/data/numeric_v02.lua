@@ -52,7 +52,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "sleep",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.15,
                 },
             },
         },
@@ -101,7 +101,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "sleep",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.15,
                 },
                 {
                     ["op"] = "gte",
@@ -156,7 +156,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "sleep",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.15,
                 },
                 {
                     ["op"] = "gte",
@@ -205,7 +205,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "sleep",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.15,
                 },
                 {
                     ["op"] = "gte",
@@ -266,7 +266,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "sleep",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.15,
                 },
                 {
                     ["op"] = "gte",
@@ -315,7 +315,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "sleep",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.15,
                 },
                 {
                     ["op"] = "gte",
@@ -370,7 +370,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "sleep",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.15,
                 },
                 {
                     ["op"] = "gte",
@@ -419,7 +419,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "sleep",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.15,
                 },
                 {
                     ["op"] = "gte",
@@ -492,7 +492,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "sleep",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.15,
                 },
                 {
                     ["op"] = "gte",
@@ -547,7 +547,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "sleep",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.15,
                 },
                 {
                     ["op"] = "gte",
@@ -608,7 +608,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "sleep",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.15,
                 },
                 {
                     ["op"] = "gte",
@@ -663,7 +663,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "sleep",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.15,
                 },
                 {
                     ["op"] = "gte",
@@ -730,7 +730,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "sleep",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.15,
                 },
                 {
                     ["op"] = "gte",
@@ -785,7 +785,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "sleep",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.15,
                 },
                 {
                     ["op"] = "gte",
@@ -846,7 +846,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "sleep",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.15,
                 },
                 {
                     ["op"] = "gte",
@@ -901,7 +901,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "sleep",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.15,
                 },
                 {
                     ["op"] = "gte",
@@ -974,7 +974,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "sleep",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.15,
                 },
                 {
                     ["op"] = "gte",
@@ -1023,7 +1023,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "sleep",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.15,
                 },
                 {
                     ["op"] = "gte",
@@ -1078,7 +1078,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "sleep",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.15,
                 },
                 {
                     ["op"] = "gte",
@@ -1127,7 +1127,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "sleep",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.15,
                 },
                 {
                     ["op"] = "gte",
@@ -1188,7 +1188,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "sleep",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.15,
                 },
                 {
                     ["op"] = "gte",
@@ -1237,7 +1237,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "sleep",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.15,
                 },
                 {
                     ["op"] = "gte",
@@ -1292,7 +1292,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "sleep",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.15,
                 },
                 {
                     ["op"] = "gte",
@@ -1340,7 +1340,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "sleep",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.15,
                 },
                 {
                     ["op"] = "gte",
@@ -1421,6 +1421,12 @@ return {
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
                 },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
             },
         },
         {
@@ -1469,6 +1475,12 @@ return {
                     ["path"] = "brave",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -1527,6 +1539,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "fear",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -1573,6 +1591,12 @@ return {
                     ["path"] = "brave",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -1637,6 +1661,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "curiosity",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -1683,6 +1713,12 @@ return {
                     ["path"] = "brave",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -1741,6 +1777,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "curiosity",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -1787,6 +1829,12 @@ return {
                     ["path"] = "brave",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -1857,6 +1905,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "anger",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -1903,6 +1957,12 @@ return {
                     ["path"] = "brave",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -1961,6 +2021,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "anger",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -2007,6 +2073,12 @@ return {
                     ["path"] = "brave",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -2071,6 +2143,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "anger",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -2117,6 +2195,12 @@ return {
                     ["path"] = "brave",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -2175,6 +2259,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "anger",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -2220,6 +2310,12 @@ return {
                     ["path"] = "brave",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -2298,7 +2394,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.35,
                 },
             },
         },
@@ -2347,7 +2443,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.35,
                 },
                 {
                     ["op"] = "gte",
@@ -2402,7 +2498,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.35,
                 },
                 {
                     ["op"] = "gte",
@@ -2451,7 +2547,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.35,
                 },
                 {
                     ["op"] = "gte",
@@ -2512,7 +2608,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.35,
                 },
                 {
                     ["op"] = "gte",
@@ -2561,7 +2657,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.35,
                 },
                 {
                     ["op"] = "gte",
@@ -2616,7 +2712,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.35,
                 },
                 {
                     ["op"] = "gte",
@@ -2665,7 +2761,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.35,
                 },
                 {
                     ["op"] = "gte",
@@ -2732,7 +2828,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.35,
                 },
                 {
                     ["op"] = "gte",
@@ -2781,7 +2877,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.35,
                 },
                 {
                     ["op"] = "gte",
@@ -2836,7 +2932,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.35,
                 },
                 {
                     ["op"] = "gte",
@@ -2885,7 +2981,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.35,
                 },
                 {
                     ["op"] = "gte",
@@ -2946,7 +3042,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.35,
                 },
                 {
                     ["op"] = "gte",
@@ -2995,7 +3091,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.35,
                 },
                 {
                     ["op"] = "gte",
@@ -3050,7 +3146,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.35,
                 },
                 {
                     ["op"] = "gte",
@@ -3098,7 +3194,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.35,
                 },
                 {
                     ["op"] = "gte",
@@ -3177,7 +3273,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "safety",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.1,
                 },
             },
         },
@@ -3226,7 +3322,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "safety",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.1,
                 },
                 {
                     ["op"] = "gte",
@@ -3281,7 +3377,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "safety",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.1,
                 },
                 {
                     ["op"] = "gte",
@@ -3330,7 +3426,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "safety",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.1,
                 },
                 {
                     ["op"] = "gte",
@@ -3391,7 +3487,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "safety",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.1,
                 },
                 {
                     ["op"] = "gte",
@@ -3440,7 +3536,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "safety",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.1,
                 },
                 {
                     ["op"] = "gte",
@@ -3495,7 +3591,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "safety",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.1,
                 },
                 {
                     ["op"] = "gte",
@@ -3544,7 +3640,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "safety",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.1,
                 },
                 {
                     ["op"] = "gte",
@@ -3611,7 +3707,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "safety",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.1,
                 },
                 {
                     ["op"] = "gte",
@@ -3660,7 +3756,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "safety",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.1,
                 },
                 {
                     ["op"] = "gte",
@@ -3715,7 +3811,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "safety",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.1,
                 },
                 {
                     ["op"] = "gte",
@@ -3764,7 +3860,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "safety",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.1,
                 },
                 {
                     ["op"] = "gte",
@@ -3825,7 +3921,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "safety",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.1,
                 },
                 {
                     ["op"] = "gte",
@@ -3874,7 +3970,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "safety",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.1,
                 },
                 {
                     ["op"] = "gte",
@@ -3929,7 +4025,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "safety",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.1,
                 },
                 {
                     ["op"] = "gte",
@@ -3977,7 +4073,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "safety",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.1,
                 },
                 {
                     ["op"] = "gte",
@@ -4062,7 +4158,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.4,
                 },
             },
         },
@@ -4117,7 +4213,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.4,
                 },
                 {
                     ["op"] = "gte",
@@ -4178,7 +4274,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.4,
                 },
                 {
                     ["op"] = "gte",
@@ -4233,7 +4329,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.4,
                 },
                 {
                     ["op"] = "gte",
@@ -4300,7 +4396,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.4,
                 },
                 {
                     ["op"] = "gte",
@@ -4355,7 +4451,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.4,
                 },
                 {
                     ["op"] = "gte",
@@ -4416,7 +4512,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.4,
                 },
                 {
                     ["op"] = "gte",
@@ -4471,7 +4567,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.4,
                 },
                 {
                     ["op"] = "gte",
@@ -4544,7 +4640,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.4,
                 },
                 {
                     ["op"] = "gte",
@@ -4599,7 +4695,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.4,
                 },
                 {
                     ["op"] = "gte",
@@ -4660,7 +4756,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.4,
                 },
                 {
                     ["op"] = "gte",
@@ -4715,7 +4811,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.4,
                 },
                 {
                     ["op"] = "gte",
@@ -4782,7 +4878,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.4,
                 },
                 {
                     ["op"] = "gte",
@@ -4837,7 +4933,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.4,
                 },
                 {
                     ["op"] = "gte",
@@ -4898,7 +4994,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.4,
                 },
                 {
                     ["op"] = "gte",
@@ -4953,7 +5049,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.4,
                 },
                 {
                     ["op"] = "gte",
@@ -5032,7 +5128,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.4,
                 },
                 {
                     ["op"] = "gte",
@@ -5087,7 +5183,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.4,
                 },
                 {
                     ["op"] = "gte",
@@ -5148,7 +5244,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.4,
                 },
                 {
                     ["op"] = "gte",
@@ -5203,7 +5299,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.4,
                 },
                 {
                     ["op"] = "gte",
@@ -5270,7 +5366,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.4,
                 },
                 {
                     ["op"] = "gte",
@@ -5325,7 +5421,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.4,
                 },
                 {
                     ["op"] = "gte",
@@ -5386,7 +5482,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.4,
                 },
                 {
                     ["op"] = "gte",
@@ -5441,7 +5537,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.4,
                 },
                 {
                     ["op"] = "gte",
@@ -5514,7 +5610,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.4,
                 },
                 {
                     ["op"] = "gte",
@@ -5569,7 +5665,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.4,
                 },
                 {
                     ["op"] = "gte",
@@ -5630,7 +5726,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.4,
                 },
                 {
                     ["op"] = "gte",
@@ -5685,7 +5781,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.4,
                 },
                 {
                     ["op"] = "gte",
@@ -5752,7 +5848,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.4,
                 },
                 {
                     ["op"] = "gte",
@@ -5807,7 +5903,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.4,
                 },
                 {
                     ["op"] = "gte",
@@ -5868,7 +5964,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.4,
                 },
                 {
                     ["op"] = "gte",
@@ -5922,7 +6018,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "happy",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.4,
                 },
                 {
                     ["op"] = "gte",
@@ -6009,6 +6105,12 @@ return {
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
                 },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "happy",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
             },
         },
         {
@@ -6057,6 +6159,12 @@ return {
                     ["path"] = "appetite",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "happy",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -6115,6 +6223,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "happy",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "suspicion",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -6161,6 +6275,12 @@ return {
                     ["path"] = "appetite",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "happy",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -6225,6 +6345,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "happy",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "sadness",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -6271,6 +6397,12 @@ return {
                     ["path"] = "appetite",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "happy",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -6329,6 +6461,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "happy",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "sadness",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -6375,6 +6513,12 @@ return {
                     ["path"] = "appetite",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "happy",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -6445,6 +6589,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "happy",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "reason",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -6491,6 +6641,12 @@ return {
                     ["path"] = "appetite",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "happy",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -6549,6 +6705,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "happy",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "reason",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -6595,6 +6757,12 @@ return {
                     ["path"] = "appetite",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "happy",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -6659,6 +6827,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "happy",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "reason",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -6705,6 +6879,12 @@ return {
                     ["path"] = "appetite",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "happy",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -6763,6 +6943,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "happy",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "reason",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -6808,6 +6994,12 @@ return {
                     ["path"] = "appetite",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "happy",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -6886,7 +7078,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "steady",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.1,
                 },
             },
         },
@@ -6935,7 +7127,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "steady",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.1,
                 },
                 {
                     ["op"] = "gte",
@@ -6990,7 +7182,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "steady",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.1,
                 },
                 {
                     ["op"] = "gte",
@@ -7039,7 +7231,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "steady",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.1,
                 },
                 {
                     ["op"] = "gte",
@@ -7100,7 +7292,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "steady",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.1,
                 },
                 {
                     ["op"] = "gte",
@@ -7149,7 +7341,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "steady",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.1,
                 },
                 {
                     ["op"] = "gte",
@@ -7204,7 +7396,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "steady",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.1,
                 },
                 {
                     ["op"] = "gte",
@@ -7253,7 +7445,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "steady",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.1,
                 },
                 {
                     ["op"] = "gte",
@@ -7320,7 +7512,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "steady",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.1,
                 },
                 {
                     ["op"] = "gte",
@@ -7369,7 +7561,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "steady",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.1,
                 },
                 {
                     ["op"] = "gte",
@@ -7424,7 +7616,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "steady",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.1,
                 },
                 {
                     ["op"] = "gte",
@@ -7473,7 +7665,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "steady",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.1,
                 },
                 {
                     ["op"] = "gte",
@@ -7534,7 +7726,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "steady",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.1,
                 },
                 {
                     ["op"] = "gte",
@@ -7583,7 +7775,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "steady",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.1,
                 },
                 {
                     ["op"] = "gte",
@@ -7638,7 +7830,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "steady",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.1,
                 },
                 {
                     ["op"] = "gte",
@@ -7686,7 +7878,7 @@ return {
                     ["op"] = "gte",
                     ["path"] = "steady",
                     ["source"] = "potion.effects",
-                    ["value"] = 0.8,
+                    ["value"] = 1.1,
                 },
                 {
                     ["op"] = "gte",
@@ -7767,6 +7959,12 @@ return {
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
                 },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
             },
         },
         {
@@ -7815,6 +8013,12 @@ return {
                     ["path"] = "anger",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -7873,6 +8077,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "fear",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -7919,6 +8129,12 @@ return {
                     ["path"] = "anger",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -7983,6 +8199,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "envy",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -8029,6 +8251,12 @@ return {
                     ["path"] = "anger",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -8087,6 +8315,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "envy",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -8133,6 +8367,12 @@ return {
                     ["path"] = "anger",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -8203,6 +8443,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "anger",
                     ["source"] = "potion.effects",
                     ["value"] = 1.8,
@@ -8249,6 +8495,12 @@ return {
                     ["path"] = "anger",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -8307,6 +8559,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "anger",
                     ["source"] = "potion.effects",
                     ["value"] = 1.8,
@@ -8353,6 +8611,12 @@ return {
                     ["path"] = "anger",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -8417,6 +8681,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "anger",
                     ["source"] = "potion.effects",
                     ["value"] = 1.8,
@@ -8463,6 +8733,12 @@ return {
                     ["path"] = "anger",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -8521,6 +8797,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "anger",
                     ["source"] = "potion.effects",
                     ["value"] = 1.8,
@@ -8566,6 +8848,12 @@ return {
                     ["path"] = "anger",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -8640,6 +8928,12 @@ return {
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
                 },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "safety",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
             },
         },
         {
@@ -8682,6 +8976,12 @@ return {
                     ["path"] = "relax",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "safety",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -8740,6 +9040,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "safety",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "calm",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -8786,6 +9092,12 @@ return {
                     ["path"] = "relax",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "safety",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -8844,6 +9156,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "safety",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "calm",
                     ["source"] = "potion.effects",
                     ["value"] = 2.2,
@@ -8884,6 +9202,12 @@ return {
                     ["path"] = "relax",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "safety",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -8942,6 +9266,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "safety",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "anger",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -8982,6 +9312,12 @@ return {
                     ["path"] = "relax",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "safety",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -9040,6 +9376,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "safety",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "anger",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -9086,6 +9428,12 @@ return {
                     ["path"] = "relax",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "safety",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -9144,6 +9492,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "safety",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "anger",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -9183,6 +9537,12 @@ return {
                     ["path"] = "relax",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "safety",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -9257,6 +9617,12 @@ return {
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
                 },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "recall",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.6,
+                },
             },
         },
         {
@@ -9305,6 +9671,12 @@ return {
                     ["path"] = "reason",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "recall",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.6,
                 },
                 {
                     ["op"] = "gte",
@@ -9363,6 +9735,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "recall",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.6,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "suspicion",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -9409,6 +9787,12 @@ return {
                     ["path"] = "reason",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "recall",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.6,
                 },
                 {
                     ["op"] = "gte",
@@ -9473,6 +9857,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "recall",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.6,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "fear",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -9519,6 +9909,12 @@ return {
                     ["path"] = "reason",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "recall",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.6,
                 },
                 {
                     ["op"] = "gte",
@@ -9577,6 +9973,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "recall",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.6,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "fear",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -9623,6 +10025,12 @@ return {
                     ["path"] = "reason",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "recall",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.6,
                 },
                 {
                     ["op"] = "gte",
@@ -9693,6 +10101,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "recall",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.6,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "anger",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -9739,6 +10153,12 @@ return {
                     ["path"] = "reason",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "recall",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.6,
                 },
                 {
                     ["op"] = "gte",
@@ -9797,6 +10217,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "recall",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.6,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "anger",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -9843,6 +10269,12 @@ return {
                     ["path"] = "reason",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "recall",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.6,
                 },
                 {
                     ["op"] = "gte",
@@ -9907,6 +10339,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "recall",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.6,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "anger",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -9953,6 +10391,12 @@ return {
                     ["path"] = "reason",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "recall",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.6,
                 },
                 {
                     ["op"] = "gte",
@@ -10011,6 +10455,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "recall",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.6,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "anger",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -10056,6 +10506,12 @@ return {
                     ["path"] = "reason",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "recall",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.6,
                 },
                 {
                     ["op"] = "gte",
@@ -10136,6 +10592,12 @@ return {
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
                 },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
             },
         },
         {
@@ -10184,6 +10646,12 @@ return {
                     ["path"] = "recall",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -10242,6 +10710,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "suspicion",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -10288,6 +10762,12 @@ return {
                     ["path"] = "recall",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -10352,6 +10832,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "fear",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -10398,6 +10884,12 @@ return {
                     ["path"] = "recall",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -10456,6 +10948,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "fear",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -10502,6 +11000,12 @@ return {
                     ["path"] = "recall",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -10572,6 +11076,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "anger",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -10618,6 +11128,12 @@ return {
                     ["path"] = "recall",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -10676,6 +11192,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "anger",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -10722,6 +11244,12 @@ return {
                     ["path"] = "recall",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -10786,6 +11314,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "anger",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -10832,6 +11366,12 @@ return {
                     ["path"] = "recall",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -10890,6 +11430,12 @@ return {
                 },
                 {
                     ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
+                },
+                {
+                    ["op"] = "gte",
                     ["path"] = "anger",
                     ["source"] = "potion.effects",
                     ["value"] = 0.6,
@@ -10935,6 +11481,12 @@ return {
                     ["path"] = "recall",
                     ["source"] = "potion.effects",
                     ["value"] = 0.8,
+                },
+                {
+                    ["op"] = "gte",
+                    ["path"] = "reason",
+                    ["source"] = "potion.effects",
+                    ["value"] = 0.55,
                 },
                 {
                     ["op"] = "gte",
@@ -13514,11 +14066,35 @@ return {
             ["kind"] = "order",
             ["ratingSetId"] = "rating_pa_01",
             ["requirement"] = {
-                ["conditions"] = {},
-                ["desc"] = "埃利亚斯睡好一晚，次晨能工作",
+                ["conditions"] = {
+                    {
+                        ["id"] = "sleep_duration",
+                        ["kind"] = "duration",
+                        ["maxHours"] = 8,
+                        ["minHours"] = 6,
+                    },
+                    {
+                        ["id"] = "morning_ready",
+                        ["kind"] = "workReady",
+                        ["workAfterDoseHours"] = 11,
+                    },
+                    {
+                        ["effectId"] = "confusion",
+                        ["id"] = "avoid_confusion",
+                        ["kind"] = "forbiddenEffect",
+                        ["maxWeight"] = 0.35,
+                    },
+                    {
+                        ["effectId"] = "fear",
+                        ["id"] = "rest_without_fear",
+                        ["kind"] = "forbiddenEffect",
+                        ["maxWeight"] = 0.35,
+                    },
+                },
+                ["desc"] = "补足睡眠药效，帮他睡上一觉",
                 ["forbiddenEffects"] = {},
                 ["tags"] = {
-                    ["sleep"] = 0.8,
+                    ["sleep"] = 1.15,
                 },
             },
             ["reward"] = {
@@ -13598,11 +14174,25 @@ return {
             ["kind"] = "order",
             ["ratingSetId"] = "rating_n01",
             ["requirement"] = {
-                ["conditions"] = {},
-                ["desc"] = "勇气帮助说清离职决定",
+                ["conditions"] = {
+                    {
+                        ["effectId"] = "sleep",
+                        ["id"] = "stay_awake",
+                        ["kind"] = "forbiddenEffect",
+                        ["maxWeight"] = 0.35,
+                    },
+                    {
+                        ["effectId"] = "confusion",
+                        ["id"] = "stay_clear",
+                        ["kind"] = "forbiddenEffect",
+                        ["maxWeight"] = 0.35,
+                    },
+                },
+                ["desc"] = "鼓起勇气，同时保持理性，把离职决定说清楚",
                 ["forbiddenEffects"] = {},
                 ["tags"] = {
                     ["brave"] = 0.8,
+                    ["reason"] = 0.55,
                 },
             },
             ["reward"] = {
@@ -13670,11 +14260,24 @@ return {
             ["kind"] = "order",
             ["ratingSetId"] = "rating_n02",
             ["requirement"] = {
-                ["conditions"] = {},
-                ["desc"] = "这顿饭吃成了",
+                ["conditions"] = {
+                    {
+                        ["effectId"] = "sleep",
+                        ["id"] = "stay_awake",
+                        ["kind"] = "forbiddenEffect",
+                        ["maxWeight"] = 0.35,
+                    },
+                    {
+                        ["effectId"] = "confusion",
+                        ["id"] = "stay_clear",
+                        ["kind"] = "forbiddenEffect",
+                        ["maxWeight"] = 0.35,
+                    },
+                },
+                ["desc"] = "有足够的好心情吃这顿饭，保持清醒",
                 ["forbiddenEffects"] = {},
                 ["tags"] = {
-                    ["happy"] = 0.8,
+                    ["happy"] = 1.35,
                 },
             },
             ["reward"] = {
@@ -13731,11 +14334,18 @@ return {
             ["kind"] = "order",
             ["ratingSetId"] = "rating_n03",
             ["requirement"] = {
-                ["conditions"] = {},
-                ["desc"] = "顺利卖完",
+                ["conditions"] = {
+                    {
+                        ["effectId"] = "sleep",
+                        ["id"] = "stay_awake",
+                        ["kind"] = "forbiddenEffect",
+                        ["maxWeight"] = 0.35,
+                    },
+                },
+                ["desc"] = "有足够的安心独自去集市，保持清醒",
                 ["forbiddenEffects"] = {},
                 ["tags"] = {
-                    ["safety"] = 0.8,
+                    ["safety"] = 1.1,
                 },
             },
             ["reward"] = {
@@ -13795,11 +14405,24 @@ return {
             ["kind"] = "order",
             ["ratingSetId"] = "rating_n04",
             ["requirement"] = {
-                ["conditions"] = {},
-                ["desc"] = "高兴回来了",
+                ["conditions"] = {
+                    {
+                        ["effectId"] = "sleep",
+                        ["id"] = "stay_awake",
+                        ["kind"] = "forbiddenEffect",
+                        ["maxWeight"] = 0.35,
+                    },
+                    {
+                        ["effectId"] = "confusion",
+                        ["id"] = "stay_clear",
+                        ["kind"] = "forbiddenEffect",
+                        ["maxWeight"] = 0.35,
+                    },
+                },
+                ["desc"] = "带着足够的高兴上钟楼，保持清醒",
                 ["forbiddenEffects"] = {},
                 ["tags"] = {
-                    ["happy"] = 0.8,
+                    ["happy"] = 1.4,
                 },
             },
             ["reward"] = {
@@ -13858,11 +14481,25 @@ return {
             ["kind"] = "order",
             ["ratingSetId"] = "rating_n05",
             ["requirement"] = {
-                ["conditions"] = {},
-                ["desc"] = "吃完了",
+                ["conditions"] = {
+                    {
+                        ["effectId"] = "sleep",
+                        ["id"] = "stay_awake",
+                        ["kind"] = "forbiddenEffect",
+                        ["maxWeight"] = 0.35,
+                    },
+                    {
+                        ["effectId"] = "confusion",
+                        ["id"] = "stay_clear",
+                        ["kind"] = "forbiddenEffect",
+                        ["maxWeight"] = 0.35,
+                    },
+                },
+                ["desc"] = "有食欲，也能带着好心情吃这顿饭，保持清醒",
                 ["forbiddenEffects"] = {},
                 ["tags"] = {
                     ["appetite"] = 0.8,
+                    ["happy"] = 0.55,
                 },
             },
             ["reward"] = {
@@ -13917,11 +14554,18 @@ return {
             ["kind"] = "order",
             ["ratingSetId"] = "rating_n06",
             ["requirement"] = {
-                ["conditions"] = {},
-                ["desc"] = "做完了",
+                ["conditions"] = {
+                    {
+                        ["effectId"] = "confusion",
+                        ["id"] = "stay_clear",
+                        ["kind"] = "forbiddenEffect",
+                        ["maxWeight"] = 0.35,
+                    },
+                },
+                ["desc"] = "有足够的稳手作用完成木工活",
                 ["forbiddenEffects"] = {},
                 ["tags"] = {
-                    ["steady"] = 0.8,
+                    ["steady"] = 1.1,
                 },
             },
             ["reward"] = {
@@ -13980,11 +14624,25 @@ return {
             ["kind"] = "order",
             ["ratingSetId"] = "rating_n07",
             ["requirement"] = {
-                ["conditions"] = {},
-                ["desc"] = "要回来了（一部分）",
+                ["conditions"] = {
+                    {
+                        ["effectId"] = "sleep",
+                        ["id"] = "stay_awake",
+                        ["kind"] = "forbiddenEffect",
+                        ["maxWeight"] = 0.35,
+                    },
+                    {
+                        ["effectId"] = "confusion",
+                        ["id"] = "stay_clear",
+                        ["kind"] = "forbiddenEffect",
+                        ["maxWeight"] = 0.35,
+                    },
+                },
+                ["desc"] = "有讨账的火气，同时保持理性",
                 ["forbiddenEffects"] = {},
                 ["tags"] = {
                     ["anger"] = 0.8,
+                    ["reason"] = 0.55,
                 },
             },
             ["reward"] = {
@@ -14042,11 +14700,25 @@ return {
             ["kind"] = "order",
             ["ratingSetId"] = "rating_n08",
             ["requirement"] = {
-                ["conditions"] = {},
-                ["desc"] = "休日过成了",
+                ["conditions"] = {
+                    {
+                        ["effectId"] = "sleep",
+                        ["id"] = "stay_awake",
+                        ["kind"] = "forbiddenEffect",
+                        ["maxWeight"] = 0.35,
+                    },
+                    {
+                        ["effectId"] = "confusion",
+                        ["id"] = "stay_clear",
+                        ["kind"] = "forbiddenEffect",
+                        ["maxWeight"] = 0.35,
+                    },
+                },
+                ["desc"] = "放松下来，同时保有安心，过好这个休日",
                 ["forbiddenEffects"] = {},
                 ["tags"] = {
                     ["relax"] = 0.8,
+                    ["safety"] = 0.55,
                 },
             },
             ["reward"] = {
@@ -14124,11 +14796,31 @@ return {
             ["kind"] = "order",
             ["ratingSetId"] = "rating_n09",
             ["requirement"] = {
-                ["conditions"] = {},
-                ["desc"] = "对得上了",
+                ["conditions"] = {
+                    {
+                        ["effectId"] = "sleep",
+                        ["id"] = "stay_awake",
+                        ["kind"] = "forbiddenEffect",
+                        ["maxWeight"] = 0.35,
+                    },
+                    {
+                        ["effectId"] = "confusion",
+                        ["id"] = "stay_clear",
+                        ["kind"] = "forbiddenEffect",
+                        ["maxWeight"] = 0.35,
+                    },
+                    {
+                        ["effectId"] = "forget",
+                        ["id"] = "keep_memory",
+                        ["kind"] = "forbiddenEffect",
+                        ["maxWeight"] = 0.35,
+                    },
+                },
+                ["desc"] = "理性核对账目，同时记得查找旧约",
                 ["forbiddenEffects"] = {},
                 ["tags"] = {
                     ["reason"] = 0.8,
+                    ["recall"] = 0.6,
                 },
             },
             ["reward"] = {
@@ -14210,10 +14902,30 @@ return {
             ["kind"] = "order",
             ["ratingSetId"] = "rating_n10",
             ["requirement"] = {
-                ["conditions"] = {},
-                ["desc"] = "忆起承诺与安排",
+                ["conditions"] = {
+                    {
+                        ["effectId"] = "sleep",
+                        ["id"] = "stay_awake",
+                        ["kind"] = "forbiddenEffect",
+                        ["maxWeight"] = 0.35,
+                    },
+                    {
+                        ["effectId"] = "confusion",
+                        ["id"] = "stay_clear",
+                        ["kind"] = "forbiddenEffect",
+                        ["maxWeight"] = 0.35,
+                    },
+                    {
+                        ["effectId"] = "forget",
+                        ["id"] = "keep_memory",
+                        ["kind"] = "forbiddenEffect",
+                        ["maxWeight"] = 0.35,
+                    },
+                },
+                ["desc"] = "忆起承诺，同时理清养伤与交货安排",
                 ["forbiddenEffects"] = {},
                 ["tags"] = {
+                    ["reason"] = 0.55,
                     ["recall"] = 0.8,
                 },
             },
@@ -15182,7 +15894,12 @@ return {
             ["recipe"] = {
                 ["auxWordIds"] = {},
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {},
+                ["ingredients"] = {
+                    {
+                        ["ingredientId"] = "ing_night_dew",
+                        ["quantity"] = 1,
+                    },
+                },
                 ["mainWordId"] = "word_candidate_elias_sleep",
                 ["specialItemIds"] = {},
             },
@@ -15226,7 +15943,12 @@ return {
                     "word_candidate_elias_forget",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {},
+                ["ingredients"] = {
+                    {
+                        ["ingredientId"] = "ing_night_dew",
+                        ["quantity"] = 1,
+                    },
+                },
                 ["mainWordId"] = "word_candidate_elias_sleep",
                 ["specialItemIds"] = {},
             },
@@ -15365,9 +16087,16 @@ return {
             ["letterId"] = "letter_n01",
             ["name"] = "谈妥",
             ["recipe"] = {
-                ["auxWordIds"] = {},
+                ["auxWordIds"] = {
+                    "word_candidate_n01_recall",
+                },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {},
+                ["ingredients"] = {
+                    {
+                        ["ingredientId"] = "ing_night_dew",
+                        ["quantity"] = 1,
+                    },
+                },
                 ["mainWordId"] = "word_candidate_n01_brave",
                 ["specialItemIds"] = {},
             },
@@ -15386,11 +16115,12 @@ return {
             ["name"] = "冲突",
             ["recipe"] = {
                 ["auxWordIds"] = {
+                    "word_candidate_n01_brave",
                     "word_candidate_n01_anger",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
                 ["ingredients"] = {},
-                ["mainWordId"] = "word_candidate_n01_brave",
+                ["mainWordId"] = "word_candidate_elias_reason",
                 ["specialItemIds"] = {},
             },
             ["requiresFutureSources"] = false,
@@ -15409,6 +16139,7 @@ return {
             ["recipe"] = {
                 ["auxWordIds"] = {
                     "word_candidate_n01_trust",
+                    "word_candidate_elias_reason",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
                 ["ingredients"] = {},
@@ -15433,7 +16164,12 @@ return {
                     "word_candidate_n01_fear",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {},
+                ["ingredients"] = {
+                    {
+                        ["ingredientId"] = "ing_night_dew",
+                        ["quantity"] = 1,
+                    },
+                },
                 ["mainWordId"] = "word_candidate_n01_brave",
                 ["specialItemIds"] = {},
             },
@@ -15455,7 +16191,12 @@ return {
                     "word_candidate_n01_curiosity",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {},
+                ["ingredients"] = {
+                    {
+                        ["ingredientId"] = "ing_night_dew",
+                        ["quantity"] = 1,
+                    },
+                },
                 ["mainWordId"] = "word_candidate_n01_brave",
                 ["specialItemIds"] = {},
             },
@@ -15475,7 +16216,12 @@ return {
             ["recipe"] = {
                 ["auxWordIds"] = {},
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {},
+                ["ingredients"] = {
+                    {
+                        ["ingredientId"] = "ing_ashen_herb",
+                        ["quantity"] = 1,
+                    },
+                },
                 ["mainWordId"] = "word_candidate_n02_happy",
                 ["specialItemIds"] = {},
             },
@@ -15497,7 +16243,12 @@ return {
                     "word_candidate_n02_fear",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {},
+                ["ingredients"] = {
+                    {
+                        ["ingredientId"] = "ing_ashen_herb",
+                        ["quantity"] = 1,
+                    },
+                },
                 ["mainWordId"] = "word_candidate_n02_happy",
                 ["specialItemIds"] = {},
             },
@@ -15520,7 +16271,12 @@ return {
                     "word_candidate_n02_sadness",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {},
+                ["ingredients"] = {
+                    {
+                        ["ingredientId"] = "ing_ashen_herb",
+                        ["quantity"] = 1,
+                    },
+                },
                 ["mainWordId"] = "word_candidate_n02_happy",
                 ["specialItemIds"] = {},
             },
@@ -15564,7 +16320,12 @@ return {
                     "word_candidate_n02_suspicion",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {},
+                ["ingredients"] = {
+                    {
+                        ["ingredientId"] = "ing_ashen_herb",
+                        ["quantity"] = 1,
+                    },
+                },
                 ["mainWordId"] = "word_candidate_n02_happy",
                 ["specialItemIds"] = {},
             },
@@ -15584,7 +16345,12 @@ return {
             ["recipe"] = {
                 ["auxWordIds"] = {},
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {},
+                ["ingredients"] = {
+                    {
+                        ["ingredientId"] = "ing_night_dew",
+                        ["quantity"] = 1,
+                    },
+                },
                 ["mainWordId"] = "word_candidate_n03_k1",
                 ["specialItemIds"] = {},
             },
@@ -15606,7 +16372,12 @@ return {
                     "word_candidate_n03_fear",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {},
+                ["ingredients"] = {
+                    {
+                        ["ingredientId"] = "ing_night_dew",
+                        ["quantity"] = 1,
+                    },
+                },
                 ["mainWordId"] = "word_candidate_n03_k1",
                 ["specialItemIds"] = {},
             },
@@ -15629,7 +16400,12 @@ return {
                     "word_candidate_e01_c1",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {},
+                ["ingredients"] = {
+                    {
+                        ["ingredientId"] = "ing_night_dew",
+                        ["quantity"] = 1,
+                    },
+                },
                 ["mainWordId"] = "word_candidate_n03_k1",
                 ["specialItemIds"] = {},
             },
@@ -15651,7 +16427,12 @@ return {
                     "word_candidate_n03_c1",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {},
+                ["ingredients"] = {
+                    {
+                        ["ingredientId"] = "ing_night_dew",
+                        ["quantity"] = 1,
+                    },
+                },
                 ["mainWordId"] = "word_candidate_n03_k1",
                 ["specialItemIds"] = {},
             },
@@ -15673,7 +16454,12 @@ return {
                     "word_candidate_n01_s2",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {},
+                ["ingredients"] = {
+                    {
+                        ["ingredientId"] = "ing_night_dew",
+                        ["quantity"] = 1,
+                    },
+                },
                 ["mainWordId"] = "word_candidate_n03_k1",
                 ["specialItemIds"] = {},
             },
@@ -15693,7 +16479,12 @@ return {
             ["recipe"] = {
                 ["auxWordIds"] = {},
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {},
+                ["ingredients"] = {
+                    {
+                        ["ingredientId"] = "ing_ashen_herb",
+                        ["quantity"] = 1,
+                    },
+                },
                 ["mainWordId"] = "word_candidate_n04_h1",
                 ["specialItemIds"] = {},
             },
@@ -15715,7 +16506,12 @@ return {
                     "word_candidate_n04_e1",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {},
+                ["ingredients"] = {
+                    {
+                        ["ingredientId"] = "ing_ashen_herb",
+                        ["quantity"] = 1,
+                    },
+                },
                 ["mainWordId"] = "word_candidate_n04_h1",
                 ["specialItemIds"] = {},
             },
@@ -15738,7 +16534,12 @@ return {
                     "word_candidate_n01_a2",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {},
+                ["ingredients"] = {
+                    {
+                        ["ingredientId"] = "ing_ashen_herb",
+                        ["quantity"] = 1,
+                    },
+                },
                 ["mainWordId"] = "word_candidate_n04_h1",
                 ["specialItemIds"] = {},
             },
@@ -15783,7 +16584,12 @@ return {
                     "word_candidate_n04_s1",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {},
+                ["ingredients"] = {
+                    {
+                        ["ingredientId"] = "ing_ashen_herb",
+                        ["quantity"] = 1,
+                    },
+                },
                 ["mainWordId"] = "word_candidate_n04_h1",
                 ["specialItemIds"] = {},
             },
@@ -15801,7 +16607,9 @@ return {
             ["letterId"] = "letter_n05",
             ["name"] = "吃完了",
             ["recipe"] = {
-                ["auxWordIds"] = {},
+                ["auxWordIds"] = {
+                    "word_candidate_n02_h2",
+                },
                 ["equipmentId"] = "kit_old_cauldron",
                 ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n05_a1",
@@ -15823,6 +16631,7 @@ return {
             ["recipe"] = {
                 ["auxWordIds"] = {
                     "word_candidate_n05_q1",
+                    "word_candidate_elias_happy",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
                 ["ingredients"] = {},
@@ -15845,6 +16654,7 @@ return {
             ["recipe"] = {
                 ["auxWordIds"] = {
                     "word_candidate_n05_s1",
+                    "word_candidate_elias_happy",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
                 ["ingredients"] = {},
@@ -15867,6 +16677,7 @@ return {
             ["recipe"] = {
                 ["auxWordIds"] = {
                     "word_candidate_n05_t1",
+                    "word_candidate_elias_happy",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
                 ["ingredients"] = {},
@@ -15889,6 +16700,7 @@ return {
             ["recipe"] = {
                 ["auxWordIds"] = {
                     "word_candidate_n01_suspicion",
+                    "word_candidate_elias_happy",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
                 ["ingredients"] = {},
@@ -15911,7 +16723,12 @@ return {
             ["recipe"] = {
                 ["auxWordIds"] = {},
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {},
+                ["ingredients"] = {
+                    {
+                        ["ingredientId"] = "ing_night_dew",
+                        ["quantity"] = 1,
+                    },
+                },
                 ["mainWordId"] = "word_candidate_n06_m1",
                 ["specialItemIds"] = {},
             },
@@ -15933,7 +16750,12 @@ return {
                     "word_candidate_n06_p1",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {},
+                ["ingredients"] = {
+                    {
+                        ["ingredientId"] = "ing_night_dew",
+                        ["quantity"] = 1,
+                    },
+                },
                 ["mainWordId"] = "word_candidate_n06_m1",
                 ["specialItemIds"] = {},
             },
@@ -15956,7 +16778,12 @@ return {
                     "word_candidate_elias_fear",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {},
+                ["ingredients"] = {
+                    {
+                        ["ingredientId"] = "ing_night_dew",
+                        ["quantity"] = 1,
+                    },
+                },
                 ["mainWordId"] = "word_candidate_n06_m1",
                 ["specialItemIds"] = {},
             },
@@ -15978,7 +16805,12 @@ return {
                     "word_candidate_elias_sleep_alt",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {},
+                ["ingredients"] = {
+                    {
+                        ["ingredientId"] = "ing_night_dew",
+                        ["quantity"] = 1,
+                    },
+                },
                 ["mainWordId"] = "word_candidate_n06_m1",
                 ["specialItemIds"] = {},
             },
@@ -16000,7 +16832,12 @@ return {
                     "word_candidate_n06_a1",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {},
+                ["ingredients"] = {
+                    {
+                        ["ingredientId"] = "ing_night_dew",
+                        ["quantity"] = 1,
+                    },
+                },
                 ["mainWordId"] = "word_candidate_n06_m1",
                 ["specialItemIds"] = {},
             },
@@ -16018,7 +16855,9 @@ return {
             ["letterId"] = "letter_n07",
             ["name"] = "要回部分",
             ["recipe"] = {
-                ["auxWordIds"] = {},
+                ["auxWordIds"] = {
+                    "word_candidate_n05_q1",
+                },
                 ["equipmentId"] = "kit_old_cauldron",
                 ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n07_a1",
@@ -16040,6 +16879,7 @@ return {
             ["recipe"] = {
                 ["auxWordIds"] = {
                     "word_candidate_n07_s1",
+                    "word_candidate_elias_reason",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
                 ["ingredients"] = {},
@@ -16061,12 +16901,17 @@ return {
             ["name"] = "泛酸没要成",
             ["recipe"] = {
                 ["auxWordIds"] = {
-                    "word_candidate_n07_s1",
+                    "word_candidate_n07_a1",
                     "word_candidate_n03_e1",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {},
-                ["mainWordId"] = "word_candidate_n07_a1",
+                ["ingredients"] = {
+                    {
+                        ["ingredientId"] = "ing_ashen_herb",
+                        ["quantity"] = 1,
+                    },
+                },
+                ["mainWordId"] = "word_candidate_n02_fear",
                 ["specialItemIds"] = {},
             },
             ["requiresFutureSources"] = false,
@@ -16085,6 +16930,7 @@ return {
             ["recipe"] = {
                 ["auxWordIds"] = {
                     "word_candidate_n07_f1",
+                    "word_candidate_elias_reason",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
                 ["ingredients"] = {},
@@ -16107,6 +16953,7 @@ return {
             ["recipe"] = {
                 ["auxWordIds"] = {
                     "word_candidate_n07_a2",
+                    "word_candidate_elias_reason",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
                 ["ingredients"] = {},
@@ -16127,9 +16974,16 @@ return {
             ["letterId"] = "letter_n08",
             ["name"] = "休日过成",
             ["recipe"] = {
-                ["auxWordIds"] = {},
+                ["auxWordIds"] = {
+                    "word_candidate_n01_trust",
+                },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {},
+                ["ingredients"] = {
+                    {
+                        ["ingredientId"] = "ing_night_dew",
+                        ["quantity"] = 1,
+                    },
+                },
                 ["mainWordId"] = "word_candidate_n08_r1",
                 ["specialItemIds"] = {},
             },
@@ -16148,11 +17002,12 @@ return {
             ["name"] = "慢半拍",
             ["recipe"] = {
                 ["auxWordIds"] = {
+                    "word_candidate_n08_r1",
                     "word_candidate_n08_c1",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
                 ["ingredients"] = {},
-                ["mainWordId"] = "word_candidate_n08_r1",
+                ["mainWordId"] = "word_candidate_n03_k1",
                 ["specialItemIds"] = {},
             },
             ["requiresFutureSources"] = false,
@@ -16174,7 +17029,12 @@ return {
                     "word_candidate_n08_c2",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {},
+                ["ingredients"] = {
+                    {
+                        ["ingredientId"] = "ing_night_dew",
+                        ["quantity"] = 1,
+                    },
+                },
                 ["mainWordId"] = "word_candidate_n08_c1",
                 ["specialItemIds"] = {},
             },
@@ -16194,6 +17054,7 @@ return {
             ["recipe"] = {
                 ["auxWordIds"] = {
                     "word_candidate_n08_h1",
+                    "word_candidate_n03_k1",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
                 ["ingredients"] = {},
@@ -16216,6 +17077,7 @@ return {
             ["recipe"] = {
                 ["auxWordIds"] = {
                     "word_candidate_n08_a1",
+                    "word_candidate_n03_k1",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
                 ["ingredients"] = {},
@@ -16236,7 +17098,9 @@ return {
             ["letterId"] = "letter_n09",
             ["name"] = "对上了",
             ["recipe"] = {
-                ["auxWordIds"] = {},
+                ["auxWordIds"] = {
+                    "word_candidate_n04_r1",
+                },
                 ["equipmentId"] = "kit_old_cauldron",
                 ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n09_q1",
@@ -16257,11 +17121,12 @@ return {
             ["name"] = "盘问失礼",
             ["recipe"] = {
                 ["auxWordIds"] = {
+                    "word_candidate_n09_q1",
                     "word_candidate_n09_suspicion",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
                 ["ingredients"] = {},
-                ["mainWordId"] = "word_candidate_n09_q1",
+                ["mainWordId"] = "word_candidate_n01_recall",
                 ["specialItemIds"] = {},
             },
             ["requiresFutureSources"] = false,
@@ -16279,12 +17144,17 @@ return {
             ["name"] = "数落花篱",
             ["recipe"] = {
                 ["auxWordIds"] = {
+                    "word_candidate_n09_q1",
                     "word_candidate_n09_suspicion",
-                    "word_candidate_n09_a1",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {},
-                ["mainWordId"] = "word_candidate_n09_q1",
+                ["ingredients"] = {
+                    {
+                        ["ingredientId"] = "ing_night_dew",
+                        ["quantity"] = 1,
+                    },
+                },
+                ["mainWordId"] = "word_candidate_n09_a1",
                 ["specialItemIds"] = {},
             },
             ["requiresFutureSources"] = false,
@@ -16302,11 +17172,12 @@ return {
             ["name"] = "改作恩典",
             ["recipe"] = {
                 ["auxWordIds"] = {
+                    "word_candidate_n09_q1",
                     "word_candidate_n09_f1",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
                 ["ingredients"] = {},
-                ["mainWordId"] = "word_candidate_n09_q1",
+                ["mainWordId"] = "word_candidate_n01_recall",
                 ["specialItemIds"] = {},
             },
             ["requiresFutureSources"] = false,
@@ -16324,12 +17195,17 @@ return {
             ["name"] = "先收粮",
             ["recipe"] = {
                 ["auxWordIds"] = {
+                    "word_candidate_n09_q1",
                     "word_candidate_n09_t1",
-                    "word_candidate_n09_t2",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {},
-                ["mainWordId"] = "word_candidate_n09_q1",
+                ["ingredients"] = {
+                    {
+                        ["ingredientId"] = "ing_night_dew",
+                        ["quantity"] = 1,
+                    },
+                },
+                ["mainWordId"] = "word_candidate_n01_recall",
                 ["specialItemIds"] = {},
             },
             ["requiresFutureSources"] = false,
@@ -16346,7 +17222,9 @@ return {
             ["letterId"] = "letter_n10",
             ["name"] = "三星",
             ["recipe"] = {
-                ["auxWordIds"] = {},
+                ["auxWordIds"] = {
+                    "word_candidate_elias_reason",
+                },
                 ["equipmentId"] = "kit_old_cauldron",
                 ["ingredients"] = {},
                 ["mainWordId"] = "word_candidate_n10_recall",
@@ -16367,11 +17245,12 @@ return {
             ["name"] = "顶嘴",
             ["recipe"] = {
                 ["auxWordIds"] = {
+                    "word_candidate_n10_recall",
                     "word_candidate_n10_anger",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
                 ["ingredients"] = {},
-                ["mainWordId"] = "word_candidate_n10_recall",
+                ["mainWordId"] = "word_candidate_elias_reason",
                 ["specialItemIds"] = {},
             },
             ["requiresFutureSources"] = false,
@@ -16389,11 +17268,12 @@ return {
             ["name"] = "答早",
             ["recipe"] = {
                 ["auxWordIds"] = {
+                    "word_candidate_n10_recall",
                     "word_candidate_n10_fear",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
                 ["ingredients"] = {},
-                ["mainWordId"] = "word_candidate_n10_recall",
+                ["mainWordId"] = "word_candidate_elias_reason",
                 ["specialItemIds"] = {},
             },
             ["requiresFutureSources"] = false,
@@ -16414,7 +17294,12 @@ return {
                     "word_candidate_n09_p2",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {},
+                ["ingredients"] = {
+                    {
+                        ["ingredientId"] = "ing_night_dew",
+                        ["quantity"] = 1,
+                    },
+                },
                 ["mainWordId"] = "word_candidate_n10_recall",
                 ["specialItemIds"] = {},
             },
@@ -16433,12 +17318,17 @@ return {
             ["name"] = "再伤",
             ["recipe"] = {
                 ["auxWordIds"] = {
-                    "word_candidate_n10_trust",
+                    "word_candidate_n10_recall",
                     "word_candidate_elias_trust",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {},
-                ["mainWordId"] = "word_candidate_n10_recall",
+                ["ingredients"] = {
+                    {
+                        ["ingredientId"] = "ing_night_dew",
+                        ["quantity"] = 1,
+                    },
+                },
+                ["mainWordId"] = "word_candidate_elias_reason",
                 ["specialItemIds"] = {},
             },
             ["requiresFutureSources"] = false,
@@ -16451,9 +17341,9 @@ return {
                 ["canShip"] = true,
                 ["durationHours"] = 8,
                 ["effects"] = {
-                    ["calm"] = 0.05,
-                    ["dream"] = 0.1,
-                    ["sleep"] = 1.0,
+                    ["calm"] = 0.0625,
+                    ["dream"] = 0.125,
+                    ["sleep"] = 1.25,
                 },
                 ["facts"] = {
                     "e01_result_rested",
@@ -16472,7 +17362,7 @@ return {
                 ["tiers"] = {
                     ["calm"] = "微弱",
                     ["dream"] = "微弱",
-                    ["sleep"] = "明显",
+                    ["sleep"] = "强烈",
                 },
                 ["unstable"] = false,
             },
@@ -16481,7 +17371,12 @@ return {
             ["recipe"] = {
                 ["auxWordIds"] = {},
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {},
+                ["ingredients"] = {
+                    {
+                        ["ingredientId"] = "ing_night_dew",
+                        ["quantity"] = 1,
+                    },
+                },
                 ["mainWordId"] = "word_candidate_elias_sleep",
                 ["specialItemIds"] = {},
             },
@@ -16535,12 +17430,12 @@ return {
                 ["canShip"] = true,
                 ["durationHours"] = 8,
                 ["effects"] = {
-                    ["calm"] = 0.05,
-                    ["dream"] = 0.1,
-                    ["forget"] = 0.6,
-                    ["relax"] = 0.03,
-                    ["sadness"] = 0.06,
-                    ["sleep"] = 1.0,
+                    ["calm"] = 0.0625,
+                    ["dream"] = 0.125,
+                    ["forget"] = 0.75,
+                    ["relax"] = 0.0375,
+                    ["sadness"] = 0.075,
+                    ["sleep"] = 1.25,
                 },
                 ["facts"] = {
                     "e01_result_song_faded",
@@ -16559,10 +17454,10 @@ return {
                 ["tiers"] = {
                     ["calm"] = "微弱",
                     ["dream"] = "微弱",
-                    ["forget"] = "微弱",
+                    ["forget"] = "明显",
                     ["relax"] = "微弱",
                     ["sadness"] = "微弱",
-                    ["sleep"] = "明显",
+                    ["sleep"] = "强烈",
                 },
                 ["unstable"] = false,
             },
@@ -16573,7 +17468,12 @@ return {
                     "word_candidate_elias_forget",
                 },
                 ["equipmentId"] = "kit_old_cauldron",
-                ["ingredients"] = {},
+                ["ingredients"] = {
+                    {
+                        ["ingredientId"] = "ing_night_dew",
+                        ["quantity"] = 1,
+                    },
+                },
                 ["mainWordId"] = "word_candidate_elias_sleep",
                 ["specialItemIds"] = {},
             },
@@ -16938,8 +17838,8 @@ return {
         },
     },
     ["sourceHashes"] = {
-        ["docs/文案/供给验算表_v02.md"] = "8c170d5a045b91a4db643869ac9fb829c39c73d9280990abe09b45cfb7432baf",
-        ["docs/文案/分支条件表_v02.md"] = "f832076207f49555f593eaaeaf29ce1a65d3474b4b13555c46f4a628cf6ca765",
+        ["docs/文案/供给验算表_v02.md"] = "16e9df293571397c82276c965cf55bfb726f8d0903914a59d0a0b9366734215a",
+        ["docs/文案/分支条件表_v02.md"] = "9973ea4c9eccd641367e9cec00287af3857353e0dd7a7dbed442875f9942c509",
         ["docs/文案/开场与首封来信_定稿_v01.md"] = "c85b88751b6bf89d516e14e5a365401869b7583ca6a98e69b09898e9d9e9eb41",
         ["docs/文案/故事标题表_v01.json"] = "b149f5f50f4909bb0adb8cda2daf2884fa807ac6ab4e99bfc3e3a907af925406",
         ["docs/文案/普通订单/N01_去做抄写员学徒_后续定稿_v01.md"] = "1d0a26dffc028ff0020189edc48572c7b20cb1c3a2652ead57bbe26f0dc02c04",
@@ -16961,7 +17861,7 @@ return {
         ["docs/文案/词条数值表_v02.md"] = "a7790f178dfc24aa806fd59336a27eb18074120b3ca9394843069c363146d2ad",
         ["scripts/data/furniture.lua"] = "1a5bdc9993e3d98e06b91738f9bbb7c1444fe87f8f7f281a67cffb2bd585aa01",
         ["scripts/data/ingredients.lua"] = "4b72d3e8d33e8dd045fdfe1aec318355bb42e85e2869b16dfd4afa3616d90cab",
-        ["scripts/data/release.lua"] = "a78c6574f8413823f308f232feb09616f654604f1845ccf5e007418bea5228b8",
+        ["scripts/data/release.lua"] = "c949322323b1c5d78bc9033cfa83271f74a56112d02370d7336bf2a4fc792e20",
         ["scripts/data/stage1.lua"] = "70c396a2a6a40d29ad39a6a547f60567d222ab0a4febdee14554d97a33033132",
         ["scripts/data/synthesis.lua"] = "185172cd8a5c5b782a96b78015d145b09787929bea8baa8889fc9e67dd05a68a",
     },

@@ -27,7 +27,7 @@ def main():
         from pathlib import Path
         def report(raw):
             name = '辅料' if args.suite == 'ingredients' else '经济'
-            path = Path(__file__).resolve().parents[2] / f'docs/验证/普通剧情首发_{name}验算_2026-10-13.json'
+            path = Path(__file__).resolve().parents[2] / f'docs/验证/普通剧情搭配平衡_{name}验算_2026-10-16.json'
             path.write_text(raw + '\n', encoding='utf-8')
         module = 'debug.ReleaseIngredientTest' if args.suite == 'ingredients' else 'debug.ReleaseEconomyTest'
         flag = 'RELEASE_INGREDIENT_REPORT' if args.suite == 'ingredients' else 'RELEASE_ECONOMY_REPORT'

@@ -74,19 +74,19 @@ function T.Run()
         local mixed=calculate(x,main,{},{SALT,DEW});near(mixed.potion.effects.sleep,1.15)
         local herbPetal=calculate(x,main,{},{HERB,PETAL});near(herbPetal.potion.effects.calm,0.6);near(herbPetal.potion.effects.dream,0.4)
         assert(not herbPetal.potion.unstable and herbPetal.potion.onsetDelayHours==2)
-        assert(calculate(x,main,{},{SALT,SALT}).canShip,"exact main threshold 0.8 must ship")
+        assert(not calculate(x,main,{},{SALT,SALT}).canShip,"v3不能把削弱后的不足药效发货")
     end)
     scenario("four ingredients each alter a real outcome using already obtained sources",function()
         local seeds={
-            {name="海盐",index=7,main="word_candidate_n06_m1",aux={"word_candidate_n06_p1"},ingredients={SALT},before="n06_candidate_pain",after="n06_candidate_good"},
-            {name="夜露",index=9,main="word_candidate_n08_r1",aux={"word_candidate_n08_c1","word_candidate_n08_c2"},ingredients={DEW},before="n08_candidate_slow",after="n08_candidate_wait"},
-            {name="灰烬草",index=1,main="word_candidate_elias_sleep_alt",aux={},ingredients={HERB},before="e01_result_rested",after="e01_result_fragmented_dream"},
-            {name="干花瓣",index=9,main="word_candidate_n08_r1",aux={},ingredients={PETAL,PETAL},before="n08_candidate_good",after="n08_candidate_slow"},
+            {name="海盐",index=7,main="word_candidate_n06_m1",aux={"word_candidate_n06_p1","word_candidate_n06_w1"},beforeIngredients={},ingredients={SALT},before="n06_candidate_pain",after="n06_candidate_good"},
+            {name="夜露",index=9,main="word_candidate_n08_r1",aux={"word_candidate_n01_trust"},beforeIngredients={},ingredients={DEW},before=false,after="n08_candidate_good"},
+            {name="灰烬草",index=1,main="word_candidate_elias_sleep",aux={},beforeIngredients={DEW},ingredients={DEW,HERB},before="e01_result_rested",after="e01_result_fragmented_dream"},
+            {name="干花瓣",index=9,main="word_candidate_n08_r1",aux={"word_candidate_n03_k1"},beforeIngredients={},ingredients={PETAL,PETAL},before="n08_candidate_good",after="n08_candidate_slow"},
         }
         for _,seed in ipairs(seeds) do
-            local x=session(seed.index);local before=calculate(x,seed.main,seed.aux,{})
+            local x=session(seed.index);local before=calculate(x,seed.main,seed.aux,seed.beforeIngredients)
             local after=calculate(x,seed.main,seed.aux,seed.ingredients)
-            assert(before.canShip and after.canShip)
+            assert(before.canShip==(seed.before~=false) and after.canShip)
             assert(outcome(before)==seed.before and outcome(after)==seed.after,seed.name.." outcome witness")
             report.witnesses[#report.witnesses+1]={name=seed.name,day=seed.index,sourceLetterId=x.letterId,
                 before={effects=before.potion.effects,fact=outcome(before),stars=before.stars},
@@ -109,7 +109,7 @@ function T.Run()
                 cost=registered.cost,stars=registered.stars,fact=outcome(registered),recipe=registered.recipe,effects=registered.potion.effects}
             for _,combo in ipairs(combinations) do
                 local result=calculate(x,recipe.mainWordId,recipe.auxWordIds,combo)
-                assert(result.canShip,"main-axis registration must remain shippable "..case.id)
+                if result.canShip then assert(#result.facts==1 and result.stars>=1 and result.stars<=3) else assert(#result.facts==0 and result.stars==false) end
                 report.combinationChecks=report.combinationChecks+1
             end
         end
@@ -126,9 +126,12 @@ function T.Run()
         summary=must(x.session.queries.GetOrderSummary())
         near(summary.potionPreview.effects.sleep,0.9)
         view.Navigate("brew");view.Update()
-        assert(view.root:FindById("brewDesc_"..SALT),"ingredient purpose must be visible")
-        local effect=assert(view.root:FindById("brewEffect_sleep"),"actual effect preview must be visible") --[[@as Label]]
-        assert(effect:GetText():find("0.90",1,true))
+        view.brew.selected=SALT;view.Refresh();view.Update()
+        assert(view.root:FindById("brewIngredientDescription"):GetText():find("10%",1,true),"ingredient purpose must be visible on demand")
+        view.brew.selected="recipe";view.Refresh();view.Update()
+        view.root:FindById("brewToggleNumbers").props.onClick();view.Update()
+        local effect=assert(view.root:FindById("brewEffectNumber_sleep"),"actual effect preview must be visible") --[[@as Label]]
+        near(tonumber(effect:GetText()),0.9)
         view.Open("shop");view.Update()
         local desc=assert(view.root:FindById("shopItemDescription")):GetText()
         assert(desc:find("10%",1,true),"shop must explain actual attenuation")

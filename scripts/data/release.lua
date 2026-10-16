@@ -1,7 +1,9 @@
--- 普通剧情首发配置。Task 2 辅料改变计算，用新版本/槽保留 Task 1 进度。
+-- 普通剧情搭配平衡v3。使用独立内容版本与槽，保留此前v1/v2进度。
 return {
-    contentVersion = "ordinary-release-v2",
-    saveSlotId = "ordinary_release_v2",
+    contentVersion = "ordinary-release-v3",
+    saveSlotId = "ordinary_release_v3",
+    -- 主药效达标即可熬制；其余检查留在记录中，兼容已保存的v3试做。
+    primaryEffectsOnly = true,
     finalDay = 14,
     minThreeStarOrders = 8,
     orderReward = 100,

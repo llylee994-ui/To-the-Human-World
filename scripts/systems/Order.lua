@@ -81,7 +81,8 @@ function Order.New(content,options)
     end
 
     -- 字面失败是 ok=true/canShip=false；无法求值的配置错误是 ok=false。
-    -- tags 依 ID 排序，conditions 保留配置顺序，forbiddenEffects 为禁止标签 ID 数组。
+    -- tags 依 ID 排序，其余检查保留配置顺序。普通剧情只用主药效作门槛；
+    -- 额外检查仍如实记录，以保留药性信息并兼容此前已保存的成功试做。
     function api.Evaluate(requirement,potion)
         return G.Run(function()
             G.Pure(requirement,"requirement","CONFIG_INVALID")
@@ -92,12 +93,13 @@ function Order.New(content,options)
             G.Required(requirement.forbiddenEffects,U.Array,"requirement.forbiddenEffects")
             G.Value(Potion.ValidateResult(potion,content))
             local checks,failures,ids={},{},{}
+            local primaryOnly=content.release and content.release.primaryEffectsOnly==true
             local function add(id,kind,passed,expected,actual,unit,message)
                 G.Need(U.String(id) and not ids[id],"CONFIG_INVALID","requirement.id","判定 ID 缺失或重复",{id=id})
                 ids[id]=true
                 local check={id=id,kind=kind,passed=passed,expected=expected,actual=actual,unit=unit,message=message}
                 checks[#checks+1]=check
-                if not passed then failures[#failures+1]=U.Copy(check) end
+                if not passed and (not primaryOnly or kind=="tag") then failures[#failures+1]=U.Copy(check) end
             end
             for id, minimum in pairs(requirement.tags) do
                 G.Known(content,"effects",id,"requirement.tags." .. tostring(id))

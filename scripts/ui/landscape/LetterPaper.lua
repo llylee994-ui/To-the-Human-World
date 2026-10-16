@@ -10,22 +10,62 @@ local P={}
 local function fontFace(weight)
     return Theme.FontFace(weight=="bold" and "story-strong" or "story","normal")
 end
-local function halo(vg,x,y,w,h,time,enabled)
-    local cx,cy,rx,ry=x+w/2,y+h/2-2,w/2+3,h/2-2
+local function wordTrail(vg,x,y,w,h,time,enabled)
+    local left,top,bw,bh=x,y+1,math.max(1,w),math.max(1,h-6)
+    local perimeter=2*(bw+bh)
     local alpha=enabled and 1 or .35
-    local function arc(start,length,inset,thickness,a)
-        nvgBeginPath(vg)
-        for i=0,28 do
-            local angle=start+length*i/28
-            local px,py=cx+(rx+inset)*math.cos(angle),cy+(ry+inset)*math.sin(angle)
-            if i==0 then nvgMoveTo(vg,px,py) else nvgLineTo(vg,px,py) end
-        end
-        nvgStrokeColor(vg,nvgRGBA(211,145,45,math.floor(a*alpha)));nvgStrokeWidth(vg,thickness);nvgStroke(vg)
+    local widthScale=2
+    local function color(opacity)
+        return nvgRGBA(255,255,255,math.floor(opacity*alpha))
     end
-    arc(0,math.pi*2,0,1,95)
-    arc(time*2.2,math.pi*1.4,0,6,42)
-    arc(time*2.2,math.pi*1.4,0,2,235)
-    arc(-time*1.6+math.pi,math.pi*.85,-3,1.3,190)
+    local function point(distance)
+        local d=distance%perimeter
+        if d<bw then return left+d,top,0,-1
+        elseif d<bw+bh then return left+bw,top+d-bw,1,0
+        elseif d<2*bw+bh then return left+2*bw+bh-d,top+bh,0,1
+        else return left,top+perimeter-d,-1,0 end
+    end
+    local corners={bw,bw+bh,2*bw+bh,perimeter}
+    local function stroke(start,finish,width,opacity)
+        local px,py=point(start)
+        nvgBeginPath(vg);nvgMoveTo(vg,px,py)
+        -- Include every crossed corner so even the fading tail stays rectangular.
+        local cycle=math.floor(start/perimeter)
+        for turn=cycle,cycle+1 do for _,corner in ipairs(corners) do
+            local distance=turn*perimeter+corner
+            if distance>start and distance<finish then
+                px,py=point(distance);nvgLineTo(vg,px,py)
+            end
+        end end
+        px,py=point(finish);nvgLineTo(vg,px,py)
+        nvgStrokeWidth(vg,width*widthScale);nvgStrokeColor(vg,color(opacity));nvgStroke(vg)
+    end
+    local head=(time/math.pi)*perimeter
+    local tail=perimeter*.94
+    -- A luminous thread with a fading tail, rather than a permanent box outline.
+    stroke(head-tail,head,4,24)
+    stroke(head-tail*.85,head,2,40)
+    for i=1,20 do
+        local strength=i/20
+        local fade=math.min(1,strength/.12)
+        stroke(head-tail+tail*(i-1)/20,head-tail+tail*strength,.45+.65*strength,255*fade)
+    end
+    -- Fixed seeds avoid flicker: motes drift and fade before respawning at the tip.
+    for i=1,32 do
+        local age=(i/32+time*.24)%1
+        local px,py,nx,ny=point(head-age*tail)
+        local scatter=math.sin(i*2.399)*(.5+age*3)
+        px=px+nx*scatter;py=py+ny*scatter
+        local radius=(.4+.6*(.5+.5*math.sin(i*4.71)))*(1-age*.3)*math.sqrt(widthScale)
+        nvgBeginPath(vg);nvgCircle(vg,px,py,radius)
+        local fade=math.min(1,(1-age)/.12)
+        nvgFillColor(vg,color(220*fade));nvgFill(vg)
+    end
+    local hx,hy=point(head)
+    nvgBeginPath(vg);nvgCircle(vg,hx,hy,3*widthScale)
+    nvgFillColor(vg,color(30));nvgFill(vg)
+    nvgBeginPath(vg);nvgCircle(vg,hx,hy,1.25*widthScale)
+    nvgFillColor(vg,color(240));nvgFill(vg)
 end
 ---@class LetterPaperWidget: Panel
 ---@field GetText fun(self: LetterPaperWidget): string
@@ -108,7 +148,8 @@ function P.New(view,onCut)
             else
                 nvgFontFace(vg,fontFace(r.fontWeight))
                 if r.spanId then
-                    halo(vg,x,y,r.w,r.h,api.time,api.enabled)
+                    local time=api.time+(r.x+r.y)*.015+math.pi/2
+                    wordTrail(vg,x,y,r.w,r.h,time,api.enabled)
                 end
                 nvgFillColor(vg,nvgRGBA(62,49,36,255));nvgText(vg,x+(r.spanId and 3 or 0),y,r.text,nil)
             end

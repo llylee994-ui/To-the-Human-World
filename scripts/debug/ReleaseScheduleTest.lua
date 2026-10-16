@@ -106,8 +106,8 @@ function T.Run()
         end
     end)
     scenario("formal release content rejects prior content without overwriting it",function()
-        assert(Data.contentVersion=="ordinary-release-v2")
-        assert(Data.saveSlotId=="ordinary_release_v2")
+        assert(Data.contentVersion=="ordinary-release-v3")
+        assert(Data.saveSlotId=="ordinary_release_v3")
         local x=fresh()
         local old=x.state.GetSnapshot();old.contentVersion="story-numeric-v02-r1"
         assert(x.save.Save("b5_flow",old,3))

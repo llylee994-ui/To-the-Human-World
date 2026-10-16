@@ -12,7 +12,7 @@ function T.Run()
     UI.GetFontVersion=function() return 1 end
     Cache.Get=function() return 1 end
     local saved={}
-    local names={"nvgSave","nvgRestore","nvgIntersectScissor","nvgFontFace","nvgFontSize","nvgTextAlign","nvgFillColor","nvgText","nvgBeginPath","nvgRect","nvgStrokeColor","nvgStrokeWidth","nvgStroke","nvgMoveTo","nvgLineTo","nvgClosePath","nvgFill","nvgFillPaint","nvgTranslate","nvgScale","nvgRotate","nvgPathWinding"}
+    local names={"nvgSave","nvgRestore","nvgIntersectScissor","nvgFontFace","nvgFontSize","nvgTextAlign","nvgFillColor","nvgText","nvgBeginPath","nvgRect","nvgCircle","nvgStrokeColor","nvgStrokeWidth","nvgStroke","nvgMoveTo","nvgLineTo","nvgClosePath","nvgFill","nvgFillPaint","nvgTranslate","nvgScale","nvgRotate","nvgPathWinding"}
     for _,name in ipairs(names) do
         saved[name]=rawget(_G,name)
         _G[name]=function(_,...) calls[#calls+1]={name=name,args={...}} end
@@ -59,6 +59,28 @@ function T.Run()
     paper.enabled=true;calls={};paper.root:Render(vg)
     local first=cjson.encode(calls);paper.Update(.2,true);calls={};paper.root:Render(vg)
     check(cjson.encode(calls)~=first,"uncut words have animated rotating halo geometry")
+    local lightHeads=0;for _,c in ipairs(calls) do if c.name=="nvgCircle" then lightHeads=lightHeads+1 end end
+    check(lightHeads>0,"remaining uncut word has a visible moving light head, not just a faint outline")
+    spans[2].cut=true;paper.SetView(view);calls={};paper.root:Render(vg)
+    local cutHeads=0;for _,c in ipairs(calls) do if c.name=="nvgCircle" then cutHeads=cutHeads+1 end end
+    check(cutHeads==0,"collected words have no magical marker left on their holes")
+    spans[2].cut=false;paper.SetView(view)
+    local marker=Paper.New({spans={},segments={{kind="word",text="忘记",spanId="forgot",cut=false}}},function() end)
+    marker.root.GetAbsoluteLayout=function() return {x=0,y=0,w=180,h=marker.root.props.height} end
+    calls={};marker.root:Render(vg)
+    local particles,last=0,false --[[@as table|false]]
+    for _,c in ipairs(calls) do
+        if c.name=="nvgCircle" then particles=particles+1
+        elseif c.name=="nvgMoveTo" then last=c.args
+        elseif c.name=="nvgLineTo" then
+            check(not last or math.abs(c.args[1]-last[1])<1e-8 or math.abs(c.args[2]-last[2])<1e-8,"word trail follows square corners instead of an ellipse")
+            last=c.args
+        elseif c.name=="nvgStrokeColor" then
+            local rgb=c.args[1]
+            check(rgb[1]==255 and rgb[2]==255 and rgb[3]==255,"only the white trail remains")
+        end
+    end
+    check(particles>10,"word marker contains scattered particles behind the moving tip")
     local wish=require("ui.landscape.LetterEmphasis").Phrases.letter_pa_01
     local emphasized=Paper.New({letterId="letter_pa_01",spans={},segments={{kind="text",text="正文\n"..wish.."\n落款"}}},function() end)
     emphasized.root.GetAbsoluteLayout=function() return {x=0,y=0,w=280,h=emphasized.root.props.height} end

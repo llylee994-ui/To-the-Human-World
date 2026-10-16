@@ -52,13 +52,16 @@ function T.Run()
         ctx.world=simulated.world;ctx.potion=potion
         assert(#must(narrative.ResolveDirect(simulated.facts,ctx)).fragmentIds==1)
     end
-    outcome({happy=1,fear=0.6,sadness=0.6},"n02_candidate_escaped",1)
-    outcome({happy=1,fear=0.6,sadness=0.6-1e-9},"n02_candidate_swallowed",2)
+    outcome({happy=1.35,fear=0.6,sadness=0.6},"n02_candidate_escaped",1)
+    outcome({happy=1.35,fear=0.6,sadness=0.6-1e-9},"n02_candidate_swallowed",2)
     outcome({happy=1.8,fear=0.6-1e-9},"n02_candidate_care",2)
     outcome({happy=5,fear=5,sadness=5,suspicion=0.6},"n02_candidate_doubted",1)
     local p=numericPotion({happy=0.8,sleep=50});p.durationHours=99;p.onsetDelayHours=2
     local gate=must(rating.Evaluate(Data.GetLetter("letter_n02").requirement,p))
-    assert(gate.canShip,"主轴达标，睡眠和时长不额外拒绝发货")
+    assert(not gate.canShip,"主药效不足仍不能熬制")
+    p.effects.happy=1.35;p.intensityByEffect.happy="强烈"
+    gate=must(rating.Evaluate(Data.GetLetter("letter_n02").requirement,p))
+    assert(gate.canShip,"主药效达标后不能被白天睡眠或时长拦截")
     assert(Data.ValidateStage1())
     local old=require("debug.fixtures.B5Fixtures").New(Data)
     local incompatible=old.state.GetSnapshot();incompatible.contentVersion="story-v0.4-r1"
