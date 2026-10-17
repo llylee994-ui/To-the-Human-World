@@ -166,6 +166,60 @@ function T.Run()
         view.root:Destroy();view.root:Destroy();view.Update()
         check(active==nil and removed==1,"destroy stops/releases once and cannot restart")
 
+        local release=require("debug.fixtures.ReleaseFixtures").New(700)
+        local fixtures=require "debug.fixtures.ReleaseFixtures"
+        fixtures.Must(release.state.PurchaseTravelTicket(fixtures.Quote(release,"travel_ticket",666)))
+        local endingView=require("ui.PlayView").New(release.session,release.content)
+        local function step(seconds) for _=1,math.ceil(seconds/.02) do host.Step(endingView,.02) end end
+        local function finishDeparture()
+            step(1.2)
+            local tap=assert(endingView.root:FindById("departureAdvance"))
+            for i=1,5 do
+                tap.props.onPointerDown();tap.props.onClick(tap)
+                step(i==5 and 3 or .8)
+            end
+        end
+        check(active==seaside,"purchased departure uses seaside music")
+        finishDeparture();check(actualGain==0,"departure ending fades to silence")
+        endingView.root:FindById("endGame").props.onClick();endingView.Update()
+        check(active==hearth and actualGain==1,"return home restores hearth and user volume")
+        endingView.root:FindById("openMemories").props.onClick();endingView.Update()
+        endingView.root:FindById("memory_1").props.onClick();endingView.Update()
+        check(active==seaside,"departure review starts seaside track")
+        finishDeparture();check(actualGain==0,"departure review fades to silence")
+        endingView.root:FindById("backToMemories").props.onClick();endingView.Update()
+        step(2)
+        check(endingView.panel=="memories" and active==hearth and actualGain==1,"return to memories restores destination music immediately")
+        endingView.root:Destroy()
+
+        local E=require "debug.fixtures.ReleaseEndingFixtures"
+        local apprentice=E.SmallComplete(10000)
+        apprentice.content.releaseEndings=require("core.StateUtil").Copy(require "data.release_endings")
+        E.Homes(apprentice);fixtures.Must(apprentice.state.NextDay())
+        local apprenticeView=require("ui.PlayView").New(apprentice.session,apprentice.content)
+        local function apStep(seconds) for _=1,math.ceil(seconds/.02) do host.Step(apprenticeView,.02) end end
+        local function apTap(id)
+            local control=assert(apprenticeView.root:FindById(id),id)
+            if control.props.onPointerDown then control.props.onPointerDown() end
+            control.props.onClick(control);apprenticeView.Update()
+        end
+        local hearthPlays=plays
+        check(active==hearth and actualGain==1,"apprentice delivery uses indoor music")
+        apStep(1.2);apTap("continueEpilogue");apStep(1)
+        apTap("finishMerchantLetter");apStep(.6);apStep(1.2)
+        check(active==hearth and actualGain==1 and plays==hearthPlays,"letter and closing narration keep indoor track position")
+        apTap("departureAdvance");apStep(.8);apTap("departureAdvance");apStep(3)
+        check(active==hearth and actualGain==0,"apprentice lights-out fades indoor music")
+        apTap("endGame")
+        check(active==hearth and actualGain==1,"apprentice homepage restores gain")
+        apTap("openMemories");apTap("memory_1");apStep(1.2)
+        apTap("continueEpilogue");apStep(1);apTap("finishMerchantLetter");apStep(.6);apStep(1.2)
+        apTap("departureAdvance");apStep(.8);apTap("departureAdvance");apStep(3)
+        check(actualGain==0,"apprentice memory also fades music")
+        apTap("backToMemories")
+        check(apprenticeView.panel=="memories" and active==hearth and actualGain==1 and plays==hearthPlays,"memory exit restores indoor music without restart")
+        apprenticeView.root:Destroy()
+
         local player=require("ui.landscape.SceneMusic").New()
         player.SetOptions(false,45);player.Sync("home",false)
         check(actualGain==0 and active==hearth,"muted startup has no audible first frame")
@@ -174,6 +228,14 @@ function T.Run()
         local mutedPlays=plays
         player.SetOptions(true,45)
         check(actualGain==.45 and plays==mutedPlays,"unmute current scene without restart")
+        player.SetPresentationGain(.5)
+        check(actualGain==.225,"ending fade multiplies user volume")
+        player.SetOptions(false,45)
+        check(actualGain==0,"ending fade cannot override mute")
+        player.SetPresentationGain(1)
+        check(actualGain==0,"restoring scene gain keeps mute")
+        player.SetOptions(true,45);player.Sync("home","departure")
+        check(active==seaside and actualGain==.45,"departure uses quiet seaside track")
         player.SetOptions(true,100)
         player.Sync("home",false);missing=seaside
         local attempts=loads[seaside]

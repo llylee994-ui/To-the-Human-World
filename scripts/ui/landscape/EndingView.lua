@@ -7,6 +7,21 @@ function V.New(ctx)
     local query=ctx.session.queries.GetEndingView()
     local ending=ctx.panel=="memoryReview" and ctx.reviewEnding or query.ok and query.value.ending
     local kind=ending and ending.kind
+    if kind=="departure" then
+        ctx.endingEntrance=false
+        return require("ui.landscape.DepartureView").New(ctx,ending,ctx.panel=="memoryReview")
+    end
+    if kind=="apprentice" then
+        local fresh=ctx.endingEntrance=="apprentice" and ctx.panel~="memoryReview"
+        ctx.endingEntrance=false
+        local Apprentice=require "ui.landscape.ApprenticeView"
+        if fresh then return Apprentice.Narration(ctx,ending,false) end
+        return Apprentice.New(ctx,{ending=ending,review=ctx.panel=="memoryReview"})
+    end
+    if kind=="wish" then
+        ctx.endingEntrance=false
+        return require("ui.landscape.WishEnding").New(ctx,ending,ctx.panel=="memoryReview")
+    end
     local view=A.New(ctx,"endingView",kind~="apprentice" and "sea" or false);local r=view.rect
     if not ending then if not query.ok then ctx.model.Notify(query) end;return view end
     local review=ctx.panel=="memoryReview"
@@ -44,9 +59,7 @@ function V.New(ctx)
         view.root:AddChild(film)
         function film:Render(vg)
             local b=self:GetAbsoluteLayout();local t=math.min(1,time/2.7)
-            if kind=="departure" then
-                A.Sprite(vg,M.ship.path,b.x+b.w*(.46+.28*t),b.y+b.h*(.57-.10*t),b.w*.30*(1-.43*t),b.w*.27*(1-.43*t),math.sin(t*8)*2,1-t*.7)
-            elseif kind=="wish" then
+            if kind=="wish" then
                 A.Sprite(vg,M.bottle.path,b.x+b.w*(.51+.10*t),b.y+b.h*(.69-.23*t),b.w*.22*(1-.78*t),b.w*.22*(1-.78*t),-12+math.sin(t*9)*6,1-t*.65)
             else
                 nvgBeginPath(vg);nvgRect(vg,b.x,b.y,b.w,b.h);nvgFillColor(vg,nvgRGBA(235,217,171,math.floor((1-t)*65)));nvgFill(vg)

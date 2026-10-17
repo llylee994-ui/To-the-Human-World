@@ -14,6 +14,7 @@ local BrewArt=require "ui.landscape.BrewArt"
 local Recipe=require "ui.landscape.BrewRecipe"
 local Smoke=require "ui.landscape.BrewSmoke"
 local StoryStyle=require "ui.landscape.StoryStyle"
+local Slip=require "ui.landscape.WordSlip"
 local B={}
 local ink={65,47,32,255}
 local function clear(parent)
@@ -110,7 +111,7 @@ function B.New(ctx)
             local tray=ctx.session.queries.GetWordTray()
             if tray.ok then for _,card in ipairs(tray.value.cards) do if card.tokenId==id then label=card.text;break end end end
         end
-        local result=b.interaction.Commit({kind=kind,id=id,text=label},bounds.x+bounds.w/2,bounds.y+bounds.h/2,b.layout.drop)
+        local result=b.interaction.Commit({kind=kind,id=id,text=label,wordSlip=source and source.wordSlip},bounds.x+bounds.w/2,bounds.y+bounds.h/2,b.layout.drop)
         if result and result.ok then b.selected=false end
         return result
     end
@@ -125,7 +126,7 @@ function B.New(ctx)
         Book.Open(b.journal);ctx.model.dirty=true
     end
     b.words.brewDrag=function(widget,card)
-        if card.available and not card.selectedRole then bindSource(widget,{kind="word",id=card.tokenId,text=card.text}) end
+        if card.available and not card.selectedRole then bindSource(widget,{kind="word",id=card.tokenId,text=card.text,wordSlip=widget.wordSlip}) end
     end
     function b.Enter()
         if b.entered then return end
@@ -270,19 +271,15 @@ function B.New(ctx)
         room.Update(0)
     end
     -- No drop-zone drawing and no pointer-following item-name labels.
-    local cardFace=UI.Label {id="brewDragCardFace",position="absolute",visible=false,width=110,height=30,
-        textAlign="center",fontFamily=H.fontFamily,fontSize=16,fontColor=ink,pointerEvents="none"}
-    fx:AddChild(cardFace)
+    local cardPaper=Slip.Surface {id="brewDragPaper",position="absolute",visible=false,pointerEvents="none"}
+    local cardFace=Slip.Label(cardPaper,Slip.Metrics("",{maxWidth=240}),"brewDragCardFace",ink)
+    fx:AddChild(cardPaper)
     function fx:Render(vg)
         local d=b.interaction.drag
         local sample=d and d.active and {kind=d.kind,id=d.id,text=d.text,x=d.x,y=d.y-Interaction.Lift,scale=1,alpha=.9} or b.interaction.SampleFlight()
         if sample then
             if sample.kind=="ingredient" then
                 BrewArt.DrawIngredient(vg,sample.id,sample.x,sample.y,78*sample.scale,sample.alpha)
-            else
-                local w,h=116*sample.scale,38*sample.scale
-                nvgBeginPath(vg);nvgRoundedRect(vg,sample.x-w/2,sample.y-h/2,w,h,3)
-                nvgFillColor(vg,nvgRGBA(246,230,195,math.floor(235*sample.alpha)));nvgFill(vg)
             end
         end
         local pulse=b.interaction.pulse
@@ -298,12 +295,16 @@ function B.New(ctx)
     function b.Update(dt,focused)
         update(dt,focused)
         local d=b.interaction.drag
-        local sample=d and d.active and {kind=d.kind,text=d.text,x=d.x,y=d.y-Interaction.Lift,scale=1,alpha=1} or b.interaction.SampleFlight()
-        cardFace:SetVisible(sample and sample.kind=="word" or false)
+        local sample=d and d.active and {kind=d.kind,text=d.text,wordSlip=d.wordSlip,x=d.x,y=d.y-Interaction.Lift,scale=1,alpha=1} or b.interaction.SampleFlight()
+        local visible=sample and sample.kind=="word" or false
+        cardPaper:SetVisible(visible);cardFace:SetVisible(visible)
         if sample and sample.kind=="word" then
-            cardFace:SetText(sample.text or "")
-            Widget.SetStyle(cardFace,{left=sample.x-55*sample.scale,top=sample.y-15*sample.scale,
-                width=110*sample.scale,height=30*sample.scale,fontSize=16*sample.scale,opacity=sample.alpha})
+            local metrics=sample.wordSlip or Slip.Metrics(sample.text or "",{maxWidth=240,fontSize=b.layout.compact and 16 or 18})
+            cardFace:SetText(metrics.text)
+            Widget.SetStyle(cardPaper,{left=sample.x-metrics.width/2,top=sample.y-metrics.height/2,
+                width=metrics.width,height=metrics.height,scale=sample.scale,opacity=sample.alpha})
+            Widget.SetStyle(cardFace,{left=metrics.paddingX,top=(metrics.height-metrics.textHeight+metrics.reserveTop)/2,
+                width=metrics.width-2*metrics.paddingX,height=metrics.textHeight,fontSize=metrics.fontSize})
         end
     end
     function smoke:Render(vg)

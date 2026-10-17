@@ -1,0 +1,19 @@
+{
+  "tool": "built-in image_gen",
+  "mode": "edit",
+  "request": "信纸边角颜色淡一点形状小一点，木桌局部铺参考图中的绣花布料",
+  "prompts": {
+    "paper": "Use case: precise-object-edit. Edit target: Image 1, the current landscape letter-paper game asset. Make ONLY the four sepia scrollwork corner ornaments visibly smaller and lighter. Reduce each ornament to approximately 55% of its current linear size, anchored near its original paper corner with a comfortable inset. Replace the strong dark brown ink with a soft pale warm taupe / light muted sepia, approximately #B6A08A, low contrast but still legible. Preserve the same elegant scrolling leaf, curl and dot shapes, four mirrored L-shaped corner flourishes, NOT flowers. Keep the warm ivory fine-fiber paper body, flat straight overhead view, landscape 4:3 canvas, sheet proportions, all four corners visible, deckled edge and huge blank center. Keep the paper itself opaque; the paler ink is printed on it. Genuine transparent alpha outside the sheet; clean transparent margins without floating flecks or speckles. No text, writing, title, lines, smiley, address, props, table, cloth, logos or watermark. Output one independent reusable paper asset, not a composition.",
+    "table": "Use case: compositing. Image 1 is the EDIT TARGET: existing hand-painted warm wood desk background. Image 2 is a STYLE / MATERIAL REFERENCE only: soft ivory linen with sparse small peach-pink flowers and muted olive-green leafy embroidery. Modify the desk by laying ONE modest rectangular piece of this ivory embroidered linen on part of the tabletop, occupying roughly the right 55-60% of the composition and leaving the left 35-40% wood exposed for the existing word tray UI. The linen begins around x=38%, y=14%, lies almost straight with a very slight natural skew, and extends toward the bottom and right edges. It must NOT cover the whole desk; retain exposed wooden board grain on the left and across the top. Use soft natural off-white woven linen, a neat stitched hem, subtle shallow creases and a narrow embroidered floral sprig band close to the LOWER hem, like the reference. Keep embroidery sparse and small, with one delicate central peach blossom sprig and thin green branch extensions near the hem; the middle of the cloth remains plain for a separately placed letter-paper UI. Cloth should be visibly fabric, not another paper sheet, no lace or busy full-surface pattern. Preserve the existing full 16:9 overhead composition, warm hand-painted gouache/watercolor storybook style, chestnut wood, soft upper-left daylight, edge ink bottle and twine. Match lighting and cast a very gentle thin contact shadow beneath the cloth. No paper sheet, word slips, tray, hands, people, buttons, text, labels, watermark or logo. This is the reusable full background, not a UI mockup."
+  },
+  "reference": "User supplied embroidered ivory fabric image; codex-clipboard-431a3ab7-bdea-4e8d-bb24-d9340ddf8296.jpg",
+  "sources": {
+    "paper": "exec-448ab5b6-8bd1-42bf-9cac-c67286d509a8.png",
+    "table": "exec-4cecf044-ce6b-498e-be08-6032383c308c.png"
+  },
+  "outputs": {
+    "paper": "assets/image/wish-collage-r1/soft-scrollwork-letter-paper.png",
+    "table": "assets/image/wish-collage-r1/table-cloth-background.png"
+  },
+  "integrationStatus": "assets only; game UI unchanged; original user-selected botanicals preserved"
+}

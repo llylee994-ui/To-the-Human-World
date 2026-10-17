@@ -1,0 +1,67 @@
+{
+  "sessionId": "ec4e2dd7-a1ea-4afd-adb5-d2c176ac15ca",
+  "reloadId": 0,
+  "mode": "native engine screenshot; memory-only 11-letter fixture; no OS input",
+  "files": [
+    {
+      "name": "wish_native_01-bottle-intro.png",
+      "width": 1450,
+      "height": 815,
+      "sha256": "1a7c750dfcdf5eb4f82fa4c1cd7562d6ff8e0a5162369f4b024136359b16587f"
+    },
+    {
+      "name": "wish_native_02-letter-narration.png",
+      "width": 1450,
+      "height": 815,
+      "sha256": "2646e191206beaac78a567b3527e3222742b7aa9624d8ce50d58b6a73f4df95d"
+    },
+    {
+      "name": "wish_native_03-empty-editor.png",
+      "width": 1450,
+      "height": 815,
+      "sha256": "a71aaf8f4915672ecb22436028a7029259fe985f88b6f632530158de9c082edb"
+    },
+    {
+      "name": "wish_native_04-word-tray.png",
+      "width": 1450,
+      "height": 815,
+      "sha256": "a6c940e41165352b8a09306d6837fe44661964628872bd650b4239c315a6b05c"
+    },
+    {
+      "name": "wish_native_05-decor-tray.png",
+      "width": 1450,
+      "height": 815,
+      "sha256": "7d8f01c9892a7bccaf77c76d175b3fb866475de5e66f82362126112a49783f63"
+    },
+    {
+      "name": "wish_native_06-blank-paper-tray.png",
+      "width": 1450,
+      "height": 815,
+      "sha256": "e540cd271ba98e3a94ce22d0d4919bd9a0df88872afc2105f4a8baad6f8c5cbc"
+    },
+    {
+      "name": "wish_native_07-preview.png",
+      "width": 1450,
+      "height": 815,
+      "sha256": "38df8ae5e859d504b9cba3ca70cc48543fcaf25f4f592cea0013bf3be65fd23b"
+    },
+    {
+      "name": "wish_native_08-sending-narration.png",
+      "width": 1450,
+      "height": 815,
+      "sha256": "a33be6c058a6928d88179f8fc1645a12b2c5c6486565c93ddf917c5e29fbfe7b"
+    },
+    {
+      "name": "wish_native_09-ending.png",
+      "width": 1450,
+      "height": 815,
+      "sha256": "509e64d46819a49f677758a667a4960895f6f2b216af1fe6948186abd4736cb0"
+    },
+    {
+      "name": "wish_native_10-frozen-collage.png",
+      "width": 1450,
+      "height": 815,
+      "sha256": "f97c1a54dd1b3fff85158a45879d8ad1a6f792f5b578d43b311c03b00ec9b1ff"
+    }
+  ]
+}

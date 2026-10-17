@@ -1,0 +1,38 @@
+{
+  "tool": "built-in image_gen",
+  "mode": "edit",
+  "request": "桌布扩展到用户标框范围并改厚实平整面料；追加短、中、长空白词条素材",
+  "prompts": [
+    {
+      "key": "table",
+      "prompt": "Use case: precise-object-edit. Image 1 is the edit target, the current warm wooden desk with rough linen. Image 2 is the user's annotated version showing the EXACT desired cloth footprint with a red rectangle. The red rectangle is an editing guide ONLY and must not appear in the result. Expand and reposition the cloth to cover that WHOLE large rectangular footprint: from approximately 2.5% to 98.5% of image width, and from 18.3% to 94.5% of image height. This means the cloth now extends almost all the way to the LEFT edge too, underneath the future tray, rather than remaining only on the right. Keep a substantial exposed WOOD BAND across the top (roughly the top 18%) and narrow visible wood margins at left, right, bottom. Cloth edges should be straight, nearly axis aligned, all its corners visible, a very slight natural deviation is fine. Replace the coarse wrinkled linen with thick, substantial, smooth, finely woven cream cotton tablecloth, neatly pressed flat. Soft matte cotton face, dense weave barely visible, gentle fabric body and clean folded stitched hems. NO coarse open weave, burlap, sackcloth, gauze, rough fibers, crumpling, hills or large wrinkles. A very subtle shallow crease is okay, but the work surface should look calm and flat for arranging small paper scraps. Retain the restrained peach flower and muted olive leaf embroidery running close to the lower hem, adapting it naturally to the wider cloth; use a small central flower sprig and slim horizontal embroidered branch extensions. The huge central and upper cloth area is plain cream with no pattern. Preserve the existing chestnut wood grain outside the footprint, overhead 16:9 composition, warm hand-painted storybook game style, upper-left daylight and leaf shadow, ink bottle/twine at top-right and foliage at top edges. Thin soft contact shadow under cloth, no shiny satin. NO red rectangle or annotations, no paper, word slips, tray, text, UI or watermark. Output one full reusable game background.",
+      "transparent_background": false
+    },
+    {
+      "key": "slip-short",
+      "prompt": "Use case: precise-object-edit. The reference is the current game's blank word-slip paper. Create ONE independent blank paper scrap asset for a hand-painted seaside letter-collage game, consistent with that paper but cleaner and slightly less yellow. Warm light ivory/beige opaque cotton paper, fine subtle fiber texture, small irregular torn edges with a delicate warm darker rim, faint crease near each short end, entire central writing area completely blank and quiet. Direct flat overhead view, straight horizontal axis, all corners visible, no perspective, no curled corners or dramatic shadow. Keep long edges almost straight, naturally hand-cut/torn, not ornate. Genuine transparent alpha outside the paper, no backdrop, clean margins, no floating flecks or colored fringe. No writing, letters, symbols, ruled lines, floral decoration, tape, pins, other paper scraps, logos, watermark or UI. Preserve the tactile illustrated style of the reference. SHAPE: compact short rectangular word slip, paper width exactly about twice its height (2:1), useful for one or two Chinese characters rendered later. Whole scrap centered with tight transparent margin. One asset only.",
+      "transparent_background": true
+    },
+    {
+      "key": "slip-medium",
+      "prompt": "Use case: precise-object-edit. The reference is the current game's blank word-slip paper. Create ONE independent blank paper scrap asset for a hand-painted seaside letter-collage game, consistent with that paper but cleaner and slightly less yellow. Warm light ivory/beige opaque cotton paper, fine subtle fiber texture, small irregular torn edges with a delicate warm darker rim, faint crease near each short end, entire central writing area completely blank and quiet. Direct flat overhead view, straight horizontal axis, all corners visible, no perspective, no curled corners or dramatic shadow. Keep long edges almost straight, naturally hand-cut/torn, not ornate. Genuine transparent alpha outside the paper, no backdrop, clean margins, no floating flecks or colored fringe. No writing, letters, symbols, ruled lines, floral decoration, tape, pins, other paper scraps, logos, watermark or UI. Preserve the tactile illustrated style of the reference. SHAPE: medium horizontal word slip, paper width about 3.5 times its height (3.5:1), useful for three to five Chinese characters rendered later. Whole scrap centered with tight transparent margin. One asset only.",
+      "transparent_background": true
+    },
+    {
+      "key": "slip-long",
+      "prompt": "Use case: precise-object-edit. The reference is the current game's blank word-slip paper. Create ONE independent blank paper scrap asset for a hand-painted seaside letter-collage game, consistent with that paper but cleaner and slightly less yellow. Warm light ivory/beige opaque cotton paper, fine subtle fiber texture, small irregular torn edges with a delicate warm darker rim, faint crease near each short end, entire central writing area completely blank and quiet. Direct flat overhead view, straight horizontal axis, all corners visible, no perspective, no curled corners or dramatic shadow. Keep long edges almost straight, naturally hand-cut/torn, not ornate. Genuine transparent alpha outside the paper, no backdrop, clean margins, no floating flecks or colored fringe. No writing, letters, symbols, ruled lines, floral decoration, tape, pins, other paper scraps, logos, watermark or UI. Preserve the tactile illustrated style of the reference. SHAPE: very long narrow horizontal phrase strip, actual PAPER SILHOUETTE width about 6 times its height (6:1), useful for longer phrases rendered later. Use a wide landscape canvas with transparent space above and below if necessary so the paper itself really is long and narrow. Large uninterrupted blank center and short torn endcaps. One asset only.",
+      "transparent_background": true
+    }
+  ],
+  "shortRefinement": "Edit this blank paper scrap. Change its silhouette substantially: make it a SHORT compact rectangular scrap whose width is TWO TIMES its height (2:1), NOT a long strip. Keep the paper's current height and material, but bring its left and right torn ends inward until the opaque paper is only about 1000 pixels wide by 500 pixels tall, centered on the existing 1774x887 transparent canvas. Large EMPTY TRANSPARENT margins at left and right are expected. Do not fill the canvas width. Preserve the warm pale ivory fiber texture, fine torn rim, faint end creases, flat overhead orientation and completely empty center. Actual opaque rectangle aspect 2:1 is the key correction. Only one short blank scrap, no extra objects, text, logo or backing. Genuine transparent alpha outside the reduced short paper.",
+  "selectedSources": {
+    "table": "exec-b7cfb47b-e4cb-4da3-b123-245044edc648.png",
+    "slip-short": "exec-bce7d01f-53dd-4583-8d42-da0b0df107a3.png",
+    "slip-medium": "exec-79be2a03-a086-45c3-8dab-55fcb8ea45f7.png",
+    "slip-long": "exec-154ad7c3-3319-4070-b5cd-a47399ddf044.png"
+  },
+  "discardedShortDraft": "exec-0fe1f01f-67ce-4369-b6a4-b9ff9b1b6066.png",
+  "paperSelection": "soft-scrollwork-letter-paper.png approved; unchanged",
+  "integrationStatus": "assets only; game UI unchanged",
+  "clarifiedAssetRole": "User clarified: these three blank papers are standalone unlettered collage decorations, not word-token backing. Keep original word tokens unchanged. Place blank papers in Decorations with botanicals."
+}

@@ -30,15 +30,27 @@ function T.Run()
         local p=card:GetAbsoluteLayout();local x,y=p.x+p.w/2,p.y+p.h/2
         card.props.onPointerDown(event(card,x,y,id));return x,y
     end
+    local function finishDeparture(v,host)
+        local event={IsPrimaryAction=function() return true end,StopPropagation=function() end}
+        local function step(seconds) for _=1,math.ceil(seconds/.02) do host.Step(v,.02) end end
+        step(1.2)
+        for _=1,#v.journeyView.pages do
+            local node=assert(v.root:FindById("departureAdvance"))
+            node.props.onPointerDown(event);node.props.onClick(node,event);step(.8)
+        end
+        step(3);assert(v.journeyView.sequence.done)
+    end
     check("title start/continue is persistent; completed journey has review instead of business continue",function()
-        local x=R.New(700);local v,w,tap=open(x);assert(v.ShowTitle());v.Update()
+        local x=R.New(700);local v,w,tap,host=open(x);assert(v.ShowTitle());v.Update()
         assert(w("startJourney") and not v.root:FindById("continueJourney"))
         tap("startJourney");assert(not v.atTitle and x.state.GetSnapshot().chapter.started)
         v.ShowTitle();v.Update();tap("continueJourney");assert(v.panel==false)
         R.Must(x.state.PurchaseTravelTicket(R.Quote(x,"travel_ticket",666)));v.Refresh();v.Update()
+        finishDeparture(v,host)
         tap("endGame");assert(v.atTitle and w("reviewCurrentEnding") and not v.root:FindById("continueJourney"))
         local writes=x.writes;tap("openMemories");tap("memory_1")
         assert(w("releaseEndingText") and x.writes==writes)
+        finishDeparture(v,host)
         tap("backToMemories");tap("backToTitle");tap("startNewPlaythrough")
         local old=w("confirmNewPlaythrough").props.onClick
         tap("cancelNewPlaythrough");old();assert(x.writes==writes)
@@ -79,23 +91,31 @@ function T.Run()
     end)
     check("apprentice view exposes only letter flow; no conditions or route choice",function()
         local x=E.SmallComplete(10000);E.Homes(x);R.Must(x.state.NextDay())
-        local v,w,tap=open(x)
+        local v,w,tap,host=open(x)
         for _,id in ipairs({"chooseApprentice","chooseWish","releaseProgress","apprenticeMissing"}) do assert(not v.root:FindById(id),id) end
-        tap("continueEpilogue");assert(w("merchantLetterText"))
-        v.ShowTitle();v.Update();tap("continueJourney");assert(w("merchantLetterText"))
-        tap("finishMerchantLetter");assert(v.journeyView.busy)
-        tap("skipEndingTransition");tap("endGame");assert(v.atTitle)
+        local function step(t) for _=1,math.ceil(t/.02) do host.Step(v,.02) end end
+        step(1.2)
+        local intro=w("continueEpilogue");intro.props.onPointerDown();tap("continueEpilogue");step(1)
+        assert(w("merchantLetterText"))
+        v.ShowTitle();v.Update();tap("continueJourney");step(1);assert(w("merchantLetterText"))
+        w("finishMerchantLetter").props.onPointerDown();tap("finishMerchantLetter");assert(v.journeyView.busy)
+        step(.6);finishDeparture(v,host);tap("endGame");assert(v.atTitle)
     end)
     check("special bottle commit precedes animation and survives interruption",function()
         local x=E.SmallComplete();R.Must(x.state.NextDay());local v,w,tap,host=open(x)
-        tap("continueEpilogue")
+        for _=1,50 do host.Step(v,.02) end
+        w("continueEpilogue").props.onPointerDown();tap("continueEpilogue")
         v.journeyView.root.GetAbsoluteLayout=function() return {x=0,y=0,w=1280,h=720} end
         local before=x.state.GetSnapshot().live.gameFlow;tap("catchEpilogueBottle")
         assert(v.journeyView.busy and R.Must(x.session.queries.GetEpilogueView()).step=="bottle")
         local writes=x.writes;v.ShowTitle();assert(not v.atTitle)
         host.focused=false;host.Step(v,.02);host.focused=true
         assert(w("openEpilogueBottle") and x.writes==writes)
-        tap("openEpilogueBottle");assert(v.panel=="wish")
+        for _=1,4 do
+            for _=1,45 do host.Step(v,.02) end
+            w("openEpilogueBottle").props.onPointerDown();tap("openEpilogueBottle")
+        end
+        assert(v.panel=="wish")
         assert(U.Equal(before,x.state.GetSnapshot().live.gameFlow))
     end)
     return done()

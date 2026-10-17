@@ -22,7 +22,7 @@ function I.New(model,onResult)
             (event.pointerType~="touch" and event.button~=MOUSEB_LEFT) then return false end
         if not model.Action("UpdateDraft").enabled then return false end
         s.suppressClick=false;s.flight=false
-        s.drag={kind=item.kind,id=item.id,text=item.text,path=item.path,pointerId=event.pointerId,
+        s.drag={kind=item.kind,id=item.id,text=item.text,path=item.path,wordSlip=item.wordSlip,pointerId=event.pointerId,
             startX=event.x,startY=event.y,x=event.x,y=event.y,
             touch=event.pointerType=="touch",active=false,over=false,target=false}
         return true
@@ -46,7 +46,7 @@ function I.New(model,onResult)
         if valid then
             return s.Commit(d,event.x,event.y-I.Lift,valid)
         elseif d.active then
-            s.flight={kind=d.kind,id=d.id,text=d.text,path=d.path,fromX=event.x,fromY=event.y-I.Lift,
+            s.flight={kind=d.kind,id=d.id,text=d.text,path=d.path,wordSlip=d.wordSlip,fromX=event.x,fromY=event.y-I.Lift,
                 toX=d.startX,toY=d.startY,accepted=false,elapsed=0,duration=.18}
         end
     end
@@ -55,7 +55,7 @@ function I.New(model,onResult)
         local r=model.Drop(item.kind,item.id)
         if r.ok then
             s.feedback=.35
-            s.flight={kind=item.kind,id=item.id,text=item.text,path=item.path,fromX=x,fromY=y,
+            s.flight={kind=item.kind,id=item.id,text=item.text,path=item.path,wordSlip=item.wordSlip,fromX=x,fromY=y,
                 toX=destination.landingX or destination.x+destination.w/2,toY=destination.landingY or destination.y+destination.h/2,
                 accepted=true,elapsed=0,duration=.38,pot=destination.landingX~=nil}
         end
@@ -67,7 +67,7 @@ function I.New(model,onResult)
         -- A 20px upward arc cancelled the 24px drop from the finger lift near
         -- the pot center, making the first half look stationary. Accepted items
         -- home straight in and shrink from the first frame; returns keep an arc.
-        return {kind=f.kind,id=f.id,text=f.text,path=f.path,
+        return {kind=f.kind,id=f.id,text=f.text,path=f.path,wordSlip=f.wordSlip,
             x=f.fromX+(f.toX-f.fromX)*p,y=f.fromY+(f.toY-f.fromY)*p-(f.accepted and 0 or math.sin(t*math.pi)*8),
             scale=f.accepted and (1-.85*t) or 1,alpha=f.accepted and (1-t^3) or (1-t*.2)}
     end

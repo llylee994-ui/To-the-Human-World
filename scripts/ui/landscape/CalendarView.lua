@@ -44,6 +44,7 @@ function C.New(ctx)
     local day,revision=data.live.gameFlow.day,data.revision
     local progress=data.chapter and ctx.session.queries.GetReleaseProgress()
     local final=progress and progress.ok and progress.value.canClose or false
+    local apprentice=final and progress.value.canApprentice
     local action=ctx.model.Action("NextDay")
     local fit=Art.Layout(ctx.viewport,ctx.safeInsets);local size=fit.w
     local root=UI.Panel {id="calendarOverlay",position="absolute",left=0,top=0,width="100%",height="100%",pointerEvents="box-none",zIndex=1}
@@ -74,7 +75,7 @@ function C.New(ctx)
     local errorText=ctx.importantMessage and ctx.model.message or false
     local function hint()
         return errorText or (not action.enabled and action.message) or
-            (final and "所有来信都已寄出。收好日历，为这段旅程写下结尾。" or "今天的信已寄出，明天也会有新的来信。")
+            (final and "今天的信已寄出，明天再开门。" or "今天的信已寄出，明天也会有新的来信。")
     end
     notice:SetText(hint())
     local function current()
@@ -98,13 +99,13 @@ function C.New(ctx)
         nextSheet:SetVisible(not closing)
         -- Commit once, freeze the old date, then keep this widget tree through the animation.
         confirm:SetDisabled(true);cancel:SetDisabled(true);reload:SetVisible(false)
-        notice:SetText(closing and "把这些日子，好好收起来。" or "晚安。明天见。")
+        notice:SetText(closing and not apprentice and "把这些日子，好好收起来。" or "晚安。明天见。")
         return result
     end
     cancel=button(leaf,"cancelNextDay","再待一会",math.max(12,size*.0255),size*.281,size*.778,size*.22,size*.09,function()
         if current() then ctx.Close() end
     end)
-    confirm=button(leaf,"confirmNextDay",final and "收好日历" or "结束今天",math.max(12,size*.0255),size*.749,size*.784,size*.18,size*.09,confirmDay)
+    confirm=button(leaf,"confirmNextDay","结束今天",math.max(12,size*.0255),size*.749,size*.784,size*.18,size*.09,confirmDay)
     confirm:SetDisabled(not action.enabled)
     reload=button(root,"reloadCalendarSave","重新读取进度",16,fit.x+size*.30,fit.y+size*.88,size*.40,44,function()
         if current() then ctx.model.Reload() end

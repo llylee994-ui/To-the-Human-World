@@ -6,10 +6,9 @@ local Harbor=require "ui.landscape.HarborStyle"
 local Art=require "ui.landscape.WordTrayArt"
 local PanelArt=require "ui.landscape.PanelArt"
 local Arrow=require "ui.landscape.EmbroideredArrow"
+local Slip=require "ui.landscape.WordSlip"
 local D={}
 local ink,light={65,47,32,255},{255,244,218,255}
--- 原纸条纹理整图显示；词卡按参考布局的两列排布。
-local SLIP_IMAGE="image/界面_纸条_折痕_透明_v01.png"
 
 ---@class WordTrayState
 ---@field open number
@@ -117,28 +116,25 @@ function D.MarkText(card)
     if not card.available then return "已用" end
     return false
 end
--- 纸条：底面用生成图整体拉伸（切片在短纸条上会重叠），词由代码渲染。
-local function strip(ctx,state,card,compact,layout,index)
-    local width=layout.slipWidth
-    local height=math.max(38,layout.slipHeight)
-    if ctx.brewDrag then height=math.max(44,height) end
-    local col=(index-1)%2
-    local wrapper=UI.Panel {id="wordTrayCard_"..card.tokenId,position="absolute",
-        left=col*(layout.cards.w-width),top=math.floor((index-1)/2)*math.max(height+12,layout.rowStep),
-        width=width,height=height,flexShrink=0,
+local function strip(ctx,state,card,metrics,x,y,options)
+    options=options or {}
+    local wrapper=Slip.Surface {id=(options.cardPrefix or "wordTrayCard_")..card.tokenId,position="absolute",
+        left=x,top=y,width=metrics.width,height=metrics.height,flexShrink=0,
         alignItems="center",justifyContent="center",
-        backgroundImage=SLIP_IMAGE,backgroundFit="fill",
-        backgroundImageOpacity=card.available and 1 or .55,
-        onClick=function() state.selected=card.tokenId;ctx.model.dirty=true end}
-    local label=text(wrapper,card.text,compact and 16 or 18,"wordTrayText_"..card.tokenId,
+        backgroundImageOpacity=card.available and 1 or .55,disabled=options.onPick and not card.available or nil,
+        onClick=function()
+            if options.onPick and not card.available then return end
+            state.selected=card.tokenId;ctx.model.dirty=true
+            if options.onPick then options.onPick(card) end
+        end}
+    Slip.Label(wrapper,metrics,"wordTrayText_"..card.tokenId,
         card.available and ink or {65,47,32,150})
-    label.props.textAlign="center"
-    label.props.whiteSpace="nowrap"
+    wrapper.wordSlip=metrics
     if state.selected==card.tokenId then
         wrapper:AddChild(UI.Panel {position="absolute",left=0,top=0,right=0,bottom=0,
             borderWidth=2,borderColor={214,178,110,235},borderRadius=4,pointerEvents="none"})
     end
-    local mark=D.MarkText(card)
+    local mark=(options.markText or D.MarkText)(card)
     if mark then
         wrapper:AddChild(UI.Label {id="wordTrayMark_"..card.tokenId,text=mark,position="absolute",right=0,top=0,
             backgroundColor={93,71,46,215},borderRadius=4,fontFamily=Harbor.fontFamily,fontSize=11,
@@ -171,7 +167,8 @@ local function tab(ctx,state,parent,category,selected,compact,layout,index)
 end
 ---@param ctx table
 ---@param overlay Widget
-function D.Render(ctx,overlay)
+function D.Render(ctx,overlay,options)
+    options=options or {}
     local state=D.State(ctx)
     local safe=insets(ctx)
     local width=panelWidth(ctx)
@@ -199,7 +196,7 @@ function D.Render(ctx,overlay)
         visible=false,paddingLeft=8,paddingRight=8,pointerEvents="box-none"}
     ctx.panelNotice=text(noticeArea,ctx.model.message,13,"panelMessage");ctx.panelNoticeArea=noticeArea
     content:AddChild(noticeArea)
-    local result=ctx.session.queries.GetWordTray()
+    local result=options.view and {ok=true,value=options.view} or ctx.session.queries.GetWordTray()
     if not result.ok then
         text(content,result.error.message,16,"wordTrayQueryError");return
     end
@@ -210,6 +207,7 @@ function D.Render(ctx,overlay)
         for _,card in ipairs(view.cards) do if card.categoryId==category.id then count=count+1 end end
         if count>0 then collected[#collected+1]=category end
     end
+    for _,category in ipairs(options.extraCategories or {}) do collected[#collected+1]=category end
     local selected=state.category
     local known=false
     for _,category in ipairs(collected) do if category.id==selected then known=true end end
@@ -239,13 +237,30 @@ function D.Render(ctx,overlay)
     PanelArt.Image(holder,"wordTrayLavender",layout.lavender)
     PanelArt.Image(holder,"wordTrayDriedFlowers",layout.flowers)
     local mounted=0
-    for _,card in ipairs(view.cards) do
+    local gap=10
+    local available=math.max(1,layout.cards.w-8) -- keep the scrollbar off the paper
+    local half=(available-gap)/2
+    local cursorX,cursorY,rowHeight=0,0,0
+    local extraCategory=false
+    for _,category in ipairs(options.extraCategories or {}) do if selected==category.id then extraCategory=true end end
+    if extraCategory and options.renderExtra then
+        mounted,cursorY=options.renderExtra(row,available,layout.cards.h,compact)
+    else for _,card in ipairs(view.cards) do
         if card.categoryId==selected then
             mounted=mounted+1
-            row:AddChild(strip(ctx,state,card,compact,layout,mounted))
+            local slipOptions={fontSize=compact and 16 or 18,maxWidth=available,
+                minWidth=math.min(half,72),minHeight=44,reserveTop=(options.markText or D.MarkText)(card) and 18 or 0}
+            local metrics=Slip.Metrics(card.text,slipOptions)
+            slipOptions.minWidth=metrics.width<=half and half or available
+            metrics=Slip.Metrics(card.text,slipOptions)
+            if cursorX>0 and cursorX+metrics.width>available+.01 then
+                cursorY=cursorY+rowHeight+gap;cursorX=0;rowHeight=0
+            end
+            row:AddChild(strip(ctx,state,card,metrics,cursorX,cursorY,options))
+            cursorX=cursorX+metrics.width+gap;rowHeight=math.max(rowHeight,metrics.height)
         end
-    end
-    Widget.SetStyle(row,{height=math.max(layout.cards.h,math.ceil(mounted/2)*math.max(50,layout.rowStep))})
+    end end
+    Widget.SetStyle(row,{height=math.max(layout.cards.h,cursorY+rowHeight+gap)})
     if #collected==0 then
         text(row,"尚未收集词卡。阅读来信并剪下标记词后，会按来源收在这里。",16,"wordTrayEmpty",light)
     end
@@ -259,7 +274,7 @@ function D.Render(ctx,overlay)
         footer:AddChild(Harbor.Tag {id="wordTraySource",text="来源："..picked.sourceTitle,fontSize=compact and 12 or 13,
             alignSelf="flex-start"})
         if not compact then
-            footer:AddChild(Harbor.Tag {id="wordTrayStatus",text=D.StatusText(picked),fontSize=12,alignSelf="flex-start"})
+            footer:AddChild(Harbor.Tag {id="wordTrayStatus",text=(options.statusText or D.StatusText)(picked),fontSize=12,alignSelf="flex-start"})
         end
         if ctx.brewDrag then
             local action=ctx.model.Action("UpdateDraft")
@@ -271,12 +286,13 @@ function D.Render(ctx,overlay)
         end
     else
         if active then
-            footer:AddChild(Harbor.Tag {id="wordTraySource",text=active.title.." · 可用 "..active.availableCount,
+            footer:AddChild(Harbor.Tag {id="wordTraySource",text=options.footerText and options.footerText(active) or active.title.." · 可用 "..active.availableCount,
                 fontSize=compact and 12 or 13,alignSelf="flex-start"})
         end
         if mounted>0 then
-            footer:AddChild(Harbor.Tag {id="wordTrayHint",text="点纸条查看来源",fontSize=12,alignSelf="flex-start"})
+            footer:AddChild(Harbor.Tag {id="wordTrayHint",text=options.hint or "点纸条查看来源",fontSize=12,alignSelf="flex-start"})
         end
     end
+    return panel
 end
 return D

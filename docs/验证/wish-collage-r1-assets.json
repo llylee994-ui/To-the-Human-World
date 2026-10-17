@@ -1,0 +1,233 @@
+{
+  "version": 1,
+  "coordinateSystem": "top-left pixel coordinates",
+  "background": {
+    "path": "image/wish-collage-r1/table-background.png",
+    "width": 1672,
+    "height": 941,
+    "description": "Original exposed wood tabletop without cloth, explicitly selected by user",
+    "supersedes": "image/wish-collage-r1/table-cotton-background.png",
+    "userApproved": true
+  },
+  "paper": {
+    "path": "image/wish-collage-r1/soft-scrollwork-letter-paper.png",
+    "width": 1448,
+    "height": 1086,
+    "contentSafeAreaNormalized": {
+      "x": 0.16,
+      "y": 0.16,
+      "w": 0.68,
+      "h": 0.68
+    },
+    "textBakedIn": false,
+    "ornament": "Four smaller pale warm taupe scrollwork corner ornaments; blank ivory center",
+    "supersedes": "image/wish-collage-r1/scrollwork-letter-paper.png",
+    "userApproved": true
+  },
+  "botanicals": {
+    "path": "image/wish-collage-r1/botanical-atlas.png",
+    "width": 1774,
+    "height": 887,
+    "frames": [
+      {
+        "id": "daisy",
+        "label": "雏菊",
+        "cell": {
+          "x": 0,
+          "y": 0,
+          "w": 444,
+          "h": 444
+        },
+        "visibleBounds": {
+          "x": 122,
+          "y": 79,
+          "w": 232,
+          "h": 353
+        }
+      },
+      {
+        "id": "forget-me-not",
+        "label": "勿忘我",
+        "cell": {
+          "x": 444,
+          "y": 0,
+          "w": 443,
+          "h": 444
+        },
+        "visibleBounds": {
+          "x": 544,
+          "y": 35,
+          "w": 288,
+          "h": 409
+        }
+      },
+      {
+        "id": "lavender",
+        "label": "薰衣草",
+        "cell": {
+          "x": 887,
+          "y": 0,
+          "w": 443,
+          "h": 444
+        },
+        "visibleBounds": {
+          "x": 1009,
+          "y": 23,
+          "w": 180,
+          "h": 417
+        }
+      },
+      {
+        "id": "sage",
+        "label": "鼠尾草叶",
+        "cell": {
+          "x": 1330,
+          "y": 0,
+          "w": 444,
+          "h": 444
+        },
+        "visibleBounds": {
+          "x": 1372,
+          "y": 26,
+          "w": 329,
+          "h": 405
+        }
+      },
+      {
+        "id": "fern",
+        "label": "蕨叶",
+        "cell": {
+          "x": 0,
+          "y": 444,
+          "w": 444,
+          "h": 443
+        },
+        "visibleBounds": {
+          "x": 84,
+          "y": 451,
+          "w": 298,
+          "h": 404
+        }
+      },
+      {
+        "id": "wheat",
+        "label": "麦穗",
+        "cell": {
+          "x": 444,
+          "y": 444,
+          "w": 443,
+          "h": 443
+        },
+        "visibleBounds": {
+          "x": 569,
+          "y": 444,
+          "w": 276,
+          "h": 412
+        }
+      },
+      {
+        "id": "buttercup",
+        "label": "毛茛小黄花",
+        "cell": {
+          "x": 887,
+          "y": 444,
+          "w": 443,
+          "h": 443
+        },
+        "visibleBounds": {
+          "x": 966,
+          "y": 466,
+          "w": 302,
+          "h": 388
+        }
+      },
+      {
+        "id": "pink-wildflower",
+        "label": "粉色野花",
+        "cell": {
+          "x": 1330,
+          "y": 444,
+          "w": 444,
+          "h": 443
+        },
+        "visibleBounds": {
+          "x": 1422,
+          "y": 456,
+          "w": 261,
+          "h": 399
+        }
+      }
+    ],
+    "selection": "User-selected original atlas, without pixel changes"
+  },
+  "integrationStatus": "Integrated: WishView/WishPaper/WishPrelude/WishEnding; native screenshots verified; probe disabled; preview stopped",
+  "latestGenerationRecord": "docs/验证/wish-collage-r3-generation.json",
+  "blankPaperDecorations": {
+    "assets": [
+      {
+        "id": "short",
+        "path": "image/wish-collage-r1/blank-slip-short.png",
+        "width": 1650,
+        "height": 953,
+        "mode": "RGBA",
+        "sha256": "be608a642ea837e5d62bb5329084c4773d5d7426a1e2cfe6cf80b72585c5540e",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "opaqueBounds": {
+          "x": 289,
+          "y": 239,
+          "w": 1076,
+          "h": 456
+        },
+        "paperAspectRatio": 2.36
+      },
+      {
+        "id": "medium",
+        "path": "image/wish-collage-r1/blank-slip-medium.png",
+        "width": 2172,
+        "height": 724,
+        "mode": "RGBA",
+        "sha256": "f4afcd958029016db78f599a36ae9424197760f5fa1a6e103f0d5ac901c24b6a",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "opaqueBounds": {
+          "x": 16,
+          "y": 90,
+          "w": 2144,
+          "h": 548
+        },
+        "paperAspectRatio": 3.91
+      },
+      {
+        "id": "long",
+        "path": "image/wish-collage-r1/blank-slip-long.png",
+        "width": 2172,
+        "height": 724,
+        "mode": "RGBA",
+        "sha256": "3cff80e2ce2b79da4df9efbb87d25c93a429c1d8a94a525824c9451a95bb187d",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "opaqueBounds": {
+          "x": 15,
+          "y": 169,
+          "w": 2140,
+          "h": 386
+        },
+        "paperAspectRatio": 5.54
+      }
+    ],
+    "textBakedIn": false,
+    "usage": "Independent blank unlettered decorations in tray. Texture frames exclude transparent padding; can drag, rotate, uniformly scale, overlap, change layer, lock/unlock, return or undo. Original word-token backing unchanged.",
+    "role": "Independent blank paper decorations. Remain blank, with no text added. Existing collected word tokens and their backing remain unchanged.",
+    "trayPlacement": "Decorations tab alongside botanical decorations; separate from collected word-token tab"
+  },
+  "existingWordTokens": "Keep existing collected word tokens and current backing; new blank paper decorations do not replace word-token backgrounds.",
+  "nativeEvidence": "docs/验证/evidence/wish-collage-r2/captures.json",
+  "trayImplementation": "Directly reuse ui.landscape.WordTrayDrawer through WishTray adapter; preserve original cloth, flowers, category tabs, scroll region and arrow. Add same-style decoration category."
+}

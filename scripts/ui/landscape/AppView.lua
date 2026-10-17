@@ -72,6 +72,8 @@ function A.New(session,content,enabled)
     local panZoomAuto=require("ui.landscape.DevChecks").stovePanZoomAuto and require("ui.landscape.tests.StovePanZoomNativeProbe").New() or nil
     local brewProbe=require("ui.landscape.DevChecks").brewWorkbenchProbe and require("ui.landscape.tests.BrewNativeProbe").New() or nil
     local readingProbe=require("ui.landscape.DevChecks").readingProbe and require("ui.landscape.tests.ReadingNativeProbe").New() or nil
+    local apprenticeProbe=require("ui.landscape.DevChecks").apprenticeProbe and require("ui.landscape.tests.ApprenticeNativeProbe").New() or nil
+    local wishProbe=require("ui.landscape.DevChecks").wishProbe and require("ui.landscape.tests.WishNativeProbe").New() or nil
     local mobileBrewProbe=require("ui.landscape.DevChecks").mobileBrewProbe and require("ui.landscape.tests.MobileBrewNativeProbe").New() or nil
     local developer=(require("debug.DeveloperMode") or require("ui.landscape.DevChecks").hotspots) --[[@as boolean]]
     -- The stage fills the viewport; each control group applies its own safe area.
@@ -106,6 +108,16 @@ function A.New(session,content,enabled)
         zoom=Zoom.New(),salvage=Salvage.New(),destroyed=false --[[@as boolean]],portrait=false --[[@as boolean]],
         yawProbe=false --[[@as table|false]],
         messages=Messages.New(session.state.GetStatus().migrationNotice),importantMessage=false --[[@as string|false]]}
+    local departureMusic=false --[[@as boolean]]
+    function ctx.SetDepartureMusic(value)
+        departureMusic=value~=nil
+        music.Sync(ctx.scene,departureMusic and "departure" or ctx.panel)
+        music.SetPresentationGain(value or 1)
+    end
+    function ctx.SetApprenticeMusic(value)
+        music.Sync(value~=nil and "home" or ctx.scene,value==nil and ctx.panel or false)
+        music.SetPresentationGain(value or 1)
+    end
     function ctx.PlayObjectSound(id)
         if not ctx.destroyed then return objectSounds.Play(id) end
         return false
@@ -495,6 +507,10 @@ function A.New(session,content,enabled)
         if kind=="closing" or kind=="wish" or kind=="wishPreview" or kind=="ending" or kind=="title" or kind=="memories" or kind=="memoryReview" then
             local module=(kind=="title" or kind=="memories") and Title or kind=="closing" and Closing or (kind=="ending" or kind=="memoryReview") and Ending or Wish
             local view=module.New(ctx)
+            if view.room then
+                local blocker=overlay:FindById("modalBlocker")
+                if blocker then blocker.props.backgroundColor={0,0,0,0} end
+            end
             ctx.journeyView=view;overlay:AddChild(view.root);return
         end
         local safe=ctx.safeInsets or {left=0,top=0,right=0,bottom=0}
@@ -572,6 +588,8 @@ function A.New(session,content,enabled)
         if panZoomAuto then panZoomAuto(ctx) end
         if brewProbe then brewProbe(ctx) end
         if readingProbe then readingProbe(ctx) end
+        if apprenticeProbe then apprenticeProbe(ctx) end
+        if wishProbe then wishProbe(ctx) end
         if mobileBrewProbe then mobileBrewProbe(ctx) end
         local now,dt=clock();home.Update(dt)
         ctx.UpdateChrome()
@@ -628,7 +646,7 @@ function A.New(session,content,enabled)
         ctx.messages:Observe(model.message,now,ctx.importantMessage==model.message)
         if not data then return end
         syncSavedTicketEnding()
-        music.Sync(ctx.scene,ctx.panel)
+        music.Sync(ctx.scene,departureMusic and "departure" or ctx.panel)
         ledger:SetText(string.format("金币 %d   ·   第 %d 天",ctx.feedback.Currency(data.live.economy.currency,data.live.gameFlow.day),data.live.gameFlow.day))
         pending:SetVisible(ctx.scene~="brew" and not ctx.ticketEnding and not not (data.currentOrder and data.currentOrder.pending))
         local hints=hud:FindById("toggleHomeHints")

@@ -7,6 +7,12 @@ local V={}
 function V.New(ctx)
     local result=ctx.session.queries.GetEpilogueView()
     local ep=result.ok and result.value or {step="prepare",route=false}
+    if result.ok and ep.route=="apprentice" and (ep.step=="dawn" or ep.step=="letter") then
+        return require("ui.landscape.ApprenticeView").New(ctx,{step=ep.step})
+    end
+    if result.ok and not ep.needsStoryCompletion and ep.route=="wish" and ep.step~="prepare" then
+        return require("ui.landscape.WishPrelude").New(ctx,ep)
+    end
     local seaside=ep.route=="wish" and ep.step~="dawn" and ep.step~="prepare"
     local view=A.New(ctx,"epilogueView",seaside and "dock" or false);local r=view.rect
     local revision=ctx.model.Refresh().revision
@@ -38,18 +44,6 @@ function V.New(ctx)
         A.Label(p,ep.route=="apprentice" and "一封捎来的信" or "一只空白的瓶子","epilogueTitle",32,{textAlign="center"})
         A.Label(p,ep.route=="apprentice" and "商人带来了一封信。" or "海边，又有一只瓶子靠了岸。",nil,17,{textAlign="center"})
         A.Button(footer,"continueEpilogue",ep.route=="apprentice" and "拆开来信" or "去海边",click(function() ctx.model.AdvanceEpilogue("dawn",revision) end),true,{minWidth=200})
-    elseif ep.step=="letter" then
-        local p=A.Paper(view.root,{position="absolute",left=r.x+r.w*.17,top=r.y+6,width=r.w*.66,height=r.h-76,padding=40,gap=16})
-        A.Label(p,"商人捎来的信","merchantLetterTitle",25)
-        local scroll=UI.ScrollView {id="merchantLetterScroll",width="100%",flexGrow=1,flexShrink=1,flexBasis=0,scrollY=true,showScrollbar=true}
-        local body=UI.Panel {width="100%",gap=18,flexShrink=0,paddingRight=12,pointerEvents="box-none"};scroll:AddChild(body);p:AddChild(scroll)
-        local definition=ctx.content.releaseEndings.apprentice;local quotes={}
-        for quote in definition.text:gmatch("“(.-)”") do quotes[#quotes+1]=quote end
-        A.Label(body,#quotes>0 and table.concat(quotes,"\n\n") or definition.text,"merchantLetterText",20,{lineHeight=1.9})
-        A.Label(body,"—— 店主",nil,17,{textAlign="right",fontColor=A.muted})
-        A.Button(footer,"finishMerchantLetter","收好这封信",click(function()
-            if ctx.model.ConfirmEnding("apprentice",revision).ok then ctx.endingEntrance="apprentice" end
-        end),true,{minWidth=200})
     else
         local anim=Salvage.New();local time=0
         if ep.step=="bottle" then anim.letterInstanceId="epilogue-bottle" end

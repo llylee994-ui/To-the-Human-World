@@ -14,16 +14,26 @@ function Music.New()
     local failed={}
     local destroyed=false
     local gain=1 --[[@as number]]
+    local presentationGain=1 --[[@as number]]
 
     function player.SetOptions(enabled,volume)
         if destroyed then return end
         gain=enabled and math.max(0,math.min(100,volume))/100 or 0
-        if source then source:SetGain(gain) end
+        if source then source:SetGain(gain*presentationGain) end
+    end
+
+    -- Temporary ending fade, independent from persisted volume/mute preferences.
+    function player.SetPresentationGain(value)
+        if destroyed then return end
+        local nextGain=math.max(0,math.min(1,value))
+        if presentationGain==nextGain then return end
+        presentationGain=nextGain
+        if source then source:SetGain(gain*presentationGain) end
     end
 
     function player.Sync(scene,panel)
         if destroyed then return end
-        local path=(scene=="seaside" or panel=="shop") and seaside or hearth
+        local path=(scene=="seaside" or panel=="shop" or panel=="departure") and seaside or hearth
         if current==path then return end
         -- Native cache is a global getter; rawget would incorrectly skip playback.
         -- Isolated business/UI tests have neither of these native bindings.
@@ -39,7 +49,7 @@ function Music.New()
                 source:SetSoundType(SOUND_MUSIC)
             end
             -- Use each file's sample rate and preserve its approved mix/gain.
-            source:Play(sound,0,gain)
+            source:Play(sound,0,gain*presentationGain)
             current=path
         end)
         if not ok then

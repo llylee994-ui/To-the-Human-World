@@ -60,7 +60,7 @@ function T.Run()
         local good={sourceTokenId=token,x=.5,y=.3,angle=0}
         local bads={{good,good},{{sourceTokenId="invented",x=.5,y=.3,angle=0}},
             {{sourceTokenId=token,x=0/0,y=.3,angle=0}},{{sourceTokenId=token,x=2,y=.3,angle=0}},
-            {{sourceTokenId=token,x=.5,y=.3,angle=90}}}
+            {{sourceTokenId=token,x=.5,y=.3,angle=361}}}
         for _,rows in ipairs(bads) do assert(not x.state.UpdateWishLayout(E.Request(x,{placements=rows})).ok) end
         assert(not x.state.UpdateWishLayout({placements={good},expectedRevision=0}).ok)
         assert(U.Equal(before,x.state.GetSnapshot()))

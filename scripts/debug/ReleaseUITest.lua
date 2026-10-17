@@ -7,6 +7,16 @@ local T={}
 function T.Run()
     package.loaded["debug.DeveloperMode"]=false
     local host=require("ui.landscape.tests.ZoomTestHost").New()
+    local function finishDeparture(v)
+        local event={IsPrimaryAction=function() return true end,StopPropagation=function() end}
+        local function step(seconds) for _=1,math.ceil(seconds/.02) do host.Step(v,.02) end end
+        step(1.2)
+        for _=1,#v.journeyView.pages do
+            local node=assert(v.root:FindById("departureAdvance"))
+            node.props.onPointerDown(event);node.props.onClick(node,event);step(.8)
+        end
+        step(3);assert(v.journeyView.sequence.done)
+    end
     local record,finish=R.Checks("ReleaseUI")
     local function check(name,fn)
         local filter=rawget(_G,"RELEASE_UI_FILTER")
@@ -15,7 +25,18 @@ function T.Run()
     local function open(x)
         x.content.releaseEndings=U.Copy(require "data.release_endings")
         local v=View.New(x.session,x.content)
-        local function widget(id) return assert(v.root:FindById(id),"missing "..id) end
+        local function widget(id)
+            local node=v.root:FindById(id)
+            -- The reused drawer mounts only the currently selected category.
+            if not node and id:match("^wish_add_") then
+                local token=id:sub(#"wish_add_"+1)
+                for _,card in ipairs(R.Must(x.session.queries.GetWordTray()).cards) do if card.tokenId==token then
+                    local tab=assert(v.root:FindById("wordTrayTab_"..card.categoryId))
+                    tab.props.onClick();v.Update();node=v.root:FindById(id);break
+                end end
+            end
+            return assert(node,"missing "..id)
+        end
         local function click(id)
             local w=widget(id);assert(not w.props.disabled,"disabled "..id)
             w.props.onClick();v.Update()
@@ -61,7 +82,7 @@ function T.Run()
     check("completed story day confirmation enters closing without incrementing day",function()
         local x=E.SmallComplete();local day=x.state.GetSnapshot().live.gameFlow.day
         local v,w,click=open(x);v.Open("day");v.Update()
-        assert(w("confirmNextDay").props.text=="收好日历" and not w("confirmNextDay").props.disabled)
+        assert(w("confirmNextDay").props.text=="结束今天" and not w("confirmNextDay").props.disabled)
         click("confirmNextDay")
         assert(x.state.GetSnapshot().live.gameFlow.day==day and x.state.GetSnapshot().chapter.phase=="closing")
         assert(v.panel=="day" and v.calendar.motion.active)
@@ -90,7 +111,7 @@ function T.Run()
         assert(x.state.ReloadCurrent());v.Refresh();v.Update()
         assert(v.panel=="wish" and w("wish_piece_"..b.sourceTokenId) and R.Must(x.session.queries.GetWishView()).draftText=="我想"..b.text)
         click("previewWish");click("confirmWish")
-        assert(v.panel=="ending" and w("releaseEndingText"):GetText():find("我想"..b.text,1,true))
+        assert(v.panel=="ending" and table.concat(v.journeyView.pages,"\n\n")==x.content.releaseEndings.wish.text)
         assert(x.state.GetSnapshot().chapter.ending.wishText=="我想"..b.text)
     end)
     check("ticket cancel, departure reload, restoration and explicit new-game confirmation",function()
@@ -101,10 +122,11 @@ function T.Run()
         click("buy_travel_ticket");click("confirmTravelTicket")
         assert(v.panel=="ending" and x.state.GetSnapshot().live.economy.currency==334)
         local reloaded=E.Clone(x);v,w,click=open(reloaded)
-        assert(v.panel=="ending" and w("releaseEndingText"):GetText()==reloaded.state.GetSnapshot().chapter.ending.text)
+        assert(v.panel=="ending" and table.concat(v.journeyView.pages,"\n\n")==reloaded.state.GetSnapshot().chapter.ending.text)
+        finishDeparture(v)
         click("endGame");click("restoreBeforeEnding");assert(reloaded.state.GetSnapshot().live.economy.currency==1000 and v.panel==false)
         v.Open("shop");v.Update();click("shopTab_tickets");click("shop_select_travel_ticket");click("buy_travel_ticket");click("confirmTravelTicket")
-        click("skipEndingTransition");click("endGame");before,writes=reloaded.state.GetSnapshot(),reloaded.writes
+        finishDeparture(v);click("endGame");before,writes=reloaded.state.GetSnapshot(),reloaded.writes
         click("startNewPlaythrough");assert(U.Equal(before,reloaded.state.GetSnapshot()) and writes==reloaded.writes)
         click("cancelNewPlaythrough");assert(U.Equal(before,reloaded.state.GetSnapshot()) and writes==reloaded.writes)
         click("startNewPlaythrough");reloaded.fault="write";click("confirmNewPlaythrough");reloaded.fault=false
@@ -115,9 +137,15 @@ function T.Run()
         local x=E.SmallComplete(1000);E.Homes(x);local v,w,click=open(x)
         R.Must(x.state.NextDay());v.Refresh();v.Update()
         assert(not v.root:FindById("chooseApprentice") and not v.root:FindById("chooseWish"))
-        click("continueEpilogue");click("finishMerchantLetter")
+        local function step(t) for _=1,math.ceil(t/.02) do host.Step(v,.02) end end
+        step(1.2)
+        local intro=w("continueEpilogue");intro.props.onPointerDown();click("continueEpilogue");step(1)
+        local allThree=require("data.release_endings").apprentice.allThreeStarText:match("“(.-)”")
+        assert(w("merchantLetterText"):GetText():find(allThree,1,true))
+        w("finishMerchantLetter").props.onPointerDown();click("finishMerchantLetter");step(.6)
         assert(x.state.GetSnapshot().chapter.ending.kind=="apprentice" and v.panel=="ending")
-        assert(w("releaseEndingText"):GetText():find(require("data.release_endings").apprentice.allThreeStarText,1,true))
+        assert(not w("releaseEndingText"):GetText():find(allThree,1,true))
+        assert(x.state.GetSnapshot().chapter.ending.text:find(require("data.release_endings").apprentice.allThreeStarText,1,true))
     end)
     check("release player has no case entry; ended route cannot leak back to operations",function()
         local x=R.New(1000);local v,w,click=open(x)
@@ -126,7 +154,7 @@ function T.Run()
         v.Open("shop");v.Update();click("shopTab_tickets");click("shop_select_travel_ticket");click("buy_travel_ticket");click("confirmTravelTicket")
         v.Navigate("brew");v.Open("shop");v.Close();v.Update()
         assert(v.panel=="ending" and not w("homeHud").props.visible)
-        assert(w("endingTextScroll").props.scrollY and w("endGame").props.minHeight>=44)
+        assert(w("departureNarrationScroll").props.scrollY and w("endGame").props.minHeight>=44)
     end)
     check("uncertain wish save offers same-slot recovery and rebuilds the committed draft",function()
         local x=E.WishSeed();local v,w,click=open(x)
@@ -162,7 +190,13 @@ function T.Run()
     check("old wish buttons cannot overwrite a newer draft or seal an unseen sentence",function()
         local x=E.SmallComplete();R.Must(x.state.BeginClosing(E.Request(x)))
         E.OpenWish(x);local v,w,click=open(x)
-        local samples=R.Must(x.session.queries.GetWishView()).samples
+        local samples,groups={},{}
+        for _,card in ipairs(R.Must(x.session.queries.GetWordTray()).cards) do
+            local group=groups[card.categoryId] or {};groups[card.categoryId]=group
+            group[#group+1]={sourceTokenId=card.tokenId}
+            if #group>=2 then samples=group;break end
+        end
+        assert(#samples>=2,"need two sources in one drawer category")
         local first=w("wish_add_"..samples[1].sourceTokenId).props.onClick
         local second=w("wish_add_"..samples[2].sourceTokenId).props.onClick
         first();local writes=x.writes;second()

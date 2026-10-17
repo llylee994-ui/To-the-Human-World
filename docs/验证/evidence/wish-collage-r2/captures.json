@@ -1,0 +1,57 @@
+{
+  "sessionId": "be98f723-1ff9-4896-a15d-f0895e988b42",
+  "reloadId": 0,
+  "mode": "Native engine screenshot; real memory-only eleven-letter fixture; no OS input",
+  "files": [
+    {
+      "name": "wish_native_01-bottle-intro.png",
+      "width": 1450,
+      "height": 815,
+      "sha256": "1a7c750dfcdf5eb4f82fa4c1cd7562d6ff8e0a5162369f4b024136359b16587f"
+    },
+    {
+      "name": "wish_native_02-letter-narration.png",
+      "width": 1450,
+      "height": 815,
+      "sha256": "2646e191206beaac78a567b3527e3222742b7aa9624d8ce50d58b6a73f4df95d"
+    },
+    {
+      "name": "wish_native_03-empty-editor.png",
+      "width": 1450,
+      "height": 815,
+      "sha256": "8fa1b460a5218ca646f65848e1af49c5caaf7a742b05bc82cb1cf18d42abbfb4"
+    },
+    {
+      "name": "wish_native_04-word-tray.png",
+      "width": 1450,
+      "height": 815,
+      "sha256": "97f056bb3b314cac84a45c4ada497cfb4f5b2c6874969c05d88ad4e0ede2383f"
+    },
+    {
+      "name": "wish_native_05-decor-tray.png",
+      "width": 1450,
+      "height": 815,
+      "sha256": "2a823d3600684ada7b36af4bc0ca3ebf2a34166d4dffe09da4260d2f9ce16eb8"
+    },
+    {
+      "name": "wish_native_06-blank-paper-tray.png",
+      "width": 1450,
+      "height": 815,
+      "sha256": "d064e44e48977e26ed14ac30f52a5c912a651e834baa08807d50df7e9159bdcc"
+    },
+    {
+      "name": "wish_native_07-preview.png",
+      "width": 1450,
+      "height": 815,
+      "sha256": "aba669189cf11631a676d3acd1c1080ae93cecdc8098e7247fe3c7cd2385ba1e"
+    },
+    {
+      "name": "wish_native_08-sending-narration.png",
+      "width": 1450,
+      "height": 815,
+      "sha256": "644ea5efd20d89167205bb99c16824aa23e1bbee14faf79fc76ffe2462acc2f8"
+    }
+  ],
+  "nativeResult": "PASS through return to title; player state unchanged",
+  "notes": "Screenshots include actual reused WordTrayDrawer. Decoration label color was subsequently adjusted from dark to cream; screenshots 05/06 precede that cosmetic adjustment. No later screenshot claimed for that label color."
+}

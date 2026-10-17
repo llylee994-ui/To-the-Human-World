@@ -3,8 +3,11 @@ local U=require "core.StateUtil"
 local G=require "systems.CalculationGuard"
 local C={}
 local function finite(n) return type(n)=="number" and n==n and n~=math.huge and n~=-math.huge end
+function C.Id(row) return row.sourceTokenId or row.instanceId end
+function C.Depth(row,index) return row.z or index or 1 end
 function C.Order(placements)
-    local rows=U.Copy(placements)
+    local rows={}
+    for _,row in ipairs(placements) do if row.sourceTokenId then rows[#rows+1]=U.Copy(row) end end
     -- Soft rows make tiny decorative offsets independent of reading order.
     table.sort(rows,function(a,b)
         local ay,by=math.floor(a.y*100+.5),math.floor(b.y*100+.5)
@@ -28,12 +31,23 @@ function C.Validate(placements,known)
         G.Array(placements,"placements");local seen={}
         G.Need(#placements<=128,"COLLAGE_FULL","placements","纸上的词条已放满。")
         for _,row in ipairs(placements) do
-            G.Keys(row,{sourceTokenId=true,x=true,y=true,angle=true},"placement")
-            G.Need(U.String(row.sourceTokenId) and known[row.sourceTokenId] and not seen[row.sourceTokenId],"SOURCE_INVALID","placement.sourceTokenId","只能使用已获得且不重复的词条。")
+            G.Keys(row,{sourceTokenId=true,decorationId=true,instanceId=true,x=true,y=true,angle=true,scale=true,z=true,locked=true},"placement")
+            if row.sourceTokenId~=nil then
+                G.Need(U.String(row.sourceTokenId) and known[row.sourceTokenId] and row.decorationId==nil and row.instanceId==nil,
+                    "SOURCE_INVALID","placement.sourceTokenId","只能使用已获得的词条。")
+            else
+                G.Need(U.String(row.decorationId) and require("data.wish_decorations").byId[row.decorationId]
+                    and U.String(row.instanceId) and row.instanceId:match("^decor:%d+$"),"SOURCE_INVALID","placement.decorationId","请选择托盘中的装饰。")
+            end
+            local id=C.Id(row)
+            G.Need(not seen[id],"SOURCE_INVALID","placement","同一张词条或装饰实例不能重复。")
             G.Need(finite(row.x) and finite(row.y) and row.x>=.03 and row.x<=.97 and row.y>=.18 and row.y<=.94,
                 "COLLAGE_BOUNDS","placement","请把词条放在信纸内。")
-            G.Need(finite(row.angle) and row.angle>=-15 and row.angle<=15,"COLLAGE_ANGLE","placement.angle","纸条旋转角度超出范围。")
-            seen[row.sourceTokenId]=true
+            G.Need(finite(row.angle) and math.abs(row.angle)<=360,"COLLAGE_ANGLE","placement.angle","纸条旋转角度超出范围。")
+            G.Need(row.scale==nil or finite(row.scale) and row.scale>=.25 and row.scale<=3,"COLLAGE_SCALE","placement.scale","缩放大小超出范围。")
+            G.Need(row.z==nil or finite(row.z) and math.abs(row.z)<=1000000,"COLLAGE_LAYER","placement.z","层级超出范围。")
+            G.Need(row.locked==nil or type(row.locked)=="boolean","COLLAGE_LOCK","placement.locked","锁定状态无效。")
+            seen[id]=true
         end
         return U.Copy(placements)
     end)
@@ -45,7 +59,7 @@ function C.Freeze(data,samples)
     local words={}
     for _,sample in ipairs(samples) do words[sample.sourceTokenId]=sample.text end
     local placements=C.Get(data);local selected={}
-    for _,row in ipairs(placements) do selected[row.sourceTokenId]=words[row.sourceTokenId] end
+    for _,row in ipairs(placements) do if row.sourceTokenId then selected[row.sourceTokenId]=words[row.sourceTokenId] end end
     return {placements=placements,words=selected}
 end
 function C.ValidateFrozen(collage,ids,text)
@@ -58,7 +72,7 @@ function C.ValidateFrozen(collage,ids,text)
             count=count+1
         end
         local rows=G.Value(C.Validate(collage.placements,collage.words));local ordered=C.Order(rows)
-        G.Need(count==#rows and U.Equal(ordered,ids),"STATE_INVALID","collage","纸面与原句来源不符")
+        G.Need(count==#ordered and U.Equal(ordered,ids),"STATE_INVALID","collage","纸面与原句来源不符")
         local pieces={};for _,id in ipairs(ids) do pieces[#pieces+1]=collage.words[id] end
         G.Need(text=="我想"..table.concat(pieces),"STATE_INVALID","collage.text","纸面与原句不符")
         return true
