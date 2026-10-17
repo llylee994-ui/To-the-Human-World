@@ -1,9 +1,11 @@
 -- One-shot object foley. Never changes the Music channel or its sources.
 local S={}
 local paths={
+    word_cut="audio/sfx/objects/water-and-scissors-v2/word_cut.wav",
+    word_select="audio/sfx/objects/word_select.wav",
     ingredient_select="audio/sfx/objects/ingredient_select.wav",
-    ingredient_add="audio/sfx/objects/ingredient_add.wav",
-    ingredient_remove="audio/sfx/objects/ingredient_remove.wav",
+    ingredient_add="audio/sfx/objects/water-and-scissors-v2/ingredient_add.wav",
+    ingredient_remove="audio/sfx/objects/water-and-scissors-v2/ingredient_remove.wav",
     word_add="audio/sfx/objects/word_add.wav",
     word_remove="audio/sfx/objects/word_remove.wav",
     word_withdraw="audio/sfx/objects/word_withdraw.wav",

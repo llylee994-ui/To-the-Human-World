@@ -1,0 +1,13 @@
+剪词与轻柔炼药 · 四项试听
+
+这些音效由本地已有的免费 CC0 录音剪辑、调速、滤波、叠合而成，原料进出声另含自行合成的低频水体共鸣。剪词声是刀刃、金属机构与纸张录音的组合模拟，并非新录制的真实剪刀声；不是四段全新原创实录。没有使用付费生成服务。
+
+Kenney / RPG Audio / CC0 1.0
+https://kenney.nl/assets/rpg-audio
+Kenney / Impact Sounds / CC0 1.0
+https://kenney.nl/assets/impact-sounds
+Joseph SARDIN / BigSoundBank / Splash, small #6 / CC0 1.0
+https://bigsoundbank.com/splash-small-6-s1534.html
+https://creativecommons.org/publicdomain/zero/1.0/
+
+源录音、原有授权记录、SHA256与处理参数见 source。旧版原料进出声未调音、未归一化；与新版使用相同播放器音量。BGM 为已认可《夜色里的配方》的原样副本，其旋律与合成音色为此前本项目编写。

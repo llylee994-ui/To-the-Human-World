@@ -9,7 +9,13 @@ function T.Run()
     local App=require "ui.landscape.AppView"
     local host=require("ui.landscape.tests.ZoomTestHost").New()
     local events,voices,nodes={},{},{}
+    local revised={word_cut="audio/sfx/objects/water-and-scissors-v2/word_cut.wav",
+        ingredient_add="audio/sfx/objects/water-and-scissors-v2/ingredient_add.wav",
+        ingredient_remove="audio/sfx/objects/water-and-scissors-v2/ingredient_remove.wav",
+        word_select="audio/sfx/objects/word_select.wav"}
+    local durations={word_cut=1.04,ingredient_add=.68,ingredient_remove=.72,word_select=.18}
     local n,plays,stops=0,0,0
+    ---@type table, table, table
     local view,x,request
     local function check(ok,why) n=n+1;assert(ok,why) end
     local function must(result) check(result and result.ok,"accepted fixture/UI command");return result.value end
@@ -30,13 +36,16 @@ function T.Run()
             function voice:Stop() if self.kind==SOUND_MUSIC then stops=stops+1 end;self.playing=false end
             function voice:Play(sound,frequency,gain)
                 check(frequency==0 and gain>=0 and gain<=1,"authored rate and shared volume")
-                self.playing=true;self.path=sound.path;self.gain=gain;self.finish=host.now+.05
+                local id=sound.path:match("/([^/]+)%.wav$")
+                self.playing=true;self.path=sound.path;self.gain=gain;self.finish=host.now+(durations[id] or .05)
                 if self.kind==SOUND_MUSIC then
                     plays=plays+1;check(sound.looped,"music loop preserved")
                 else
                     check(self.kind==SOUND_EFFECT and sound.looped==false,"single non-looped effect")
-                    events[#events+1]={id=sound.path:match("/([^/]+)%.wav$"),path=sound.path,gain=gain,
-                        flight=view and view.brew.interaction.flight}
+                    if revised[id] then check(sound.path==revised[id],"exact selected version for "..id) end
+                    local reader=view and view.readerCache and view.readerCache.presentation
+                    events[#events+1]={id=id,path=sound.path,gain=gain,flight=view and view.brew.interaction.flight,
+                        cutTime=reader and reader.motion.flight and reader.motion.flight.time}
                 end
             end
             return voice
@@ -83,6 +92,13 @@ function T.Run()
         host.Bind(view.root);view.Navigate("brew");update();step(0)
         check(#events==before,"initialization and navigation silent")
     end
+    local function freshReader()
+        if view then view.root:Destroy() end
+        x=R.New(1000);view=App.New(x.session,x.content);host.Bind(view.root)
+        local letter=must(view.model.Receive(x.content.release.requiredOrderIds[1])).letterInstanceId
+        must(view.Read(letter));update();advance(.45)
+        return view.readerCache.presentation,must(x.modules.letters.GetView(letter)).spans
+    end
     local function land(id)
         local flight=assert(view.brew.interaction.flight,"accepted flight")
         expect(false,function() advance(math.max(0,flight.duration-flight.elapsed-.01)) end)
@@ -104,7 +120,77 @@ function T.Run()
         update()
     end
     local ok,err=xpcall(function()
+        -- Successful saved cuts play once at animation start, never three calls or a longer animation.
+        local paper,spans=freshReader()
+        check(#spans>=3,"reader fixture has at least three real spans")
+        expect(false,function() check(not paper.Cut("missing-span").ok,"invalid cut rejected") end)
+        local action=view.model.Action;view.model.Action=function() return {enabled=false} end
+        expect(false,function() check(not paper.Cut(spans[1].spanId).ok,"disabled cut rejected") end)
+        view.model.Action=action;x.fault="write"
+        expect(false,function() check(not paper.Cut(spans[1].spanId).ok,"failed cut write rejected") end);x.fault=false
+        check(not paper.motion.flight,"failure starts no animation")
+        expect("word_cut",function() must(paper.Cut(spans[1].spanId));paper.Cut(spans[1].spanId) end)
+        check(events[#events].cutTime==0,"sound at the actual animation start")
+        expect(false,function() update();advance(1.01);paper.Cut(spans[1].spanId) end)
+        check(not paper.motion.flight and require("ui.landscape.LetterMotion").cutDuration==1,"original one-second animation")
+        local stillPlaying=false
+        for _,voice in ipairs(voices) do if voice.path==revised.word_cut and voice:IsPlaying() then stillPlaying=true end end
+        check(stillPlaying,"1.04s sound may finish after animation without blocking the next cut")
+        expect("word_cut",function() must(paper.Cut(spans[2].spanId)) end)
+        expect(false,function() update();advance(1.1) end)
+        -- Real duplicate model command with a stale presentation must not pretend to change state.
+        must(view.model.Cut(spans[3].spanId))
+        expect(false,function() local result=paper.Cut(spans[3].spanId);check(result.ok and not result.value.changed,"unchanged model result");update() end)
+        check(not paper.motion.flight,"unchanged cut starts no animation")
+        local letter=view.model.selectedLetter
+        expect(false,function() view.Close();update();paper.Cut(spans[1].spanId);view.Read(letter);update();advance(.45) end)
+        check(not view.readerCache.presentation.motion.flight,"restoring the reader does not replay cuts")
+
+        paper,spans=freshReader()
+        click("openSettings");control("soundVolume"):SetValue(23)
+        expect(false,function() check(not paper.Cut(spans[1].spanId).ok,"covered cut rejected") end)
+        click("closeMusicSettings")
+        expect("word_cut",function() must(paper.Cut(spans[1].spanId)) end)
+        check(events[#events].gain==.23,"cut uses shared volume");advance(1.1)
+        click("openSettings");control("soundEnabled"):SetValue(false);click("closeMusicSettings")
+        expect(false,function() must(paper.Cut(spans[2].spanId));update();advance(1.1) end)
+        click("openSettings");control("soundEnabled"):SetValue(true);control("soundVolume"):SetValue(0);click("closeMusicSettings")
+        expect(false,function() must(paper.Cut(spans[3].spanId));update();advance(1.1) end)
+        click("openSettings");control("soundVolume"):SetValue(100);click("closeMusicSettings")
         fresh()
+        expect(false,function() paper.Cut(spans[1].spanId) end)
+        showWord(request.mainTokenId)
+        expect("word_select",function() click("wordTrayCard_"..request.mainTokenId) end)
+        expect(false,function() click("wordTrayCard_"..request.mainTokenId);view.Refresh();update() end)
+        -- A query adapter adds a second instance of the identical word for view-only selection.
+        local query=x.session.queries.GetWordTray
+        local twin=request.mainTokenId.."-selection-fixture"
+        x.session.queries.GetWordTray=function()
+            local result=query()
+            for _,card in ipairs(result.value.cards) do if card.tokenId==request.mainTokenId then
+                local other=U.Copy(card);other.tokenId=twin;table.insert(result.value.cards,other);break
+            end end
+            return result
+        end
+        view.Refresh();update()
+        local before=x.state.GetSnapshot();local writes=x.writes
+        expect("word_select",function() click("wordTrayCard_"..twin) end)
+        expect(false,function() click("wordTrayCard_"..twin) end)
+        expect("word_select",function() click("wordTrayCard_"..request.mainTokenId) end)
+        check(U.Equal(before,x.state.GetSnapshot()) and x.writes==writes,"selection uses token identity and never changes saved gameplay")
+        x.session.queries.GetWordTray=query;view.Refresh();update()
+        expect(false,function() showWord(request.mainTokenId) end)
+        local card=control("wordTrayCard_"..request.mainTokenId)
+        card.props.disabled=true
+        expect(false,function() card.props.onClick(card) end);card.props.disabled=false
+        expect(false,function() card.props.onPointerMove(e(120,100)) end)
+        click("openSettings")
+        expect(false,function() card.props.onClick(card) end);click("closeMusicSettings")
+        expect(false,function() drag("wordTrayCard_"..request.mainTokenId,false);advance(.5) end)
+        expect("word_select",function() click("wordTrayCard_"..request.mainTokenId) end)
+        view.Navigate("home");update();view.Open("words");update();advance(.3);showWord(request.mainTokenId)
+        expect(false,function() click("wordTrayCard_"..request.mainTokenId);view.Refresh();update() end)
+        view.Navigate("brew");update();step(0)
         expect("ingredient_select",function() click("brewIngredient_ing_sea_salt") end)
         expect(false,function() view.Refresh();update();click("brewIngredient_ing_sea_salt") end)
         expect("ingredient_select",function() click("brewIngredient_ing_sea_salt") end)
@@ -193,15 +279,20 @@ function T.Run()
         click("openSettings");control("soundVolume"):SetValue(23);click("closeMusicSettings")
         expect("ingredient_select",function() click("brewIngredient_ing_sea_salt") end)
         check(events[#events].gain==.23,"shared sound volume")
+        showWord(request.mainTokenId)
+        expect("word_select",function() click("wordTrayCard_"..request.mainTokenId) end)
+        check(events[#events].gain==.23,"word selection uses shared volume")
         add("word",request.mainTokenId);check(events[#events].gain==.23,"landing uses sound volume")
         expect("draft_clear",function() click("clearDraft") end)
         click("openSettings");control("soundEnabled"):SetValue(false);click("closeMusicSettings")
+        showWord(request.mainTokenId)
+        expect(false,function() click("wordTrayCard_"..request.mainTokenId) end)
         expect(false,function() view.brew.Throw("ingredient","ing_sea_salt");advance(.5);click("clearDraft") end)
         click("openSettings");control("soundEnabled"):SetValue(true);control("soundVolume"):SetValue(0);click("closeMusicSettings")
         expect(false,function() view.brew.Throw("word",request.mainTokenId);advance(.5);click("clearDraft") end)
         click("openSettings");control("soundVolume"):SetValue(100);control("musicEnabled"):SetValue(false);click("closeMusicSettings")
         add("ingredient","ing_sea_salt")
-        for _,voice in ipairs(voices) do if voice.kind==SOUND_MUSIC then check(voice.gain==0,"music remains independently muted") end end
+        for _,voice in ipairs(voices) do if voice.kind==SOUND_MUSIC and voice:IsPlaying() then check(voice.gain==0,"music remains independently muted") end end
         expect("draft_clear",function() click("clearDraft") end)
         expect(false,function() view.brew.Throw("word",request.mainTokenId) end)
         local before=#events;view.root:Destroy();view.Update()
@@ -213,7 +304,7 @@ function T.Run()
     if view then view.root:Destroy() end
     Node=saved.Node;cache=saved.cache;SOUND_EFFECT=saved.effect;SOUND_MUSIC=saved.music;audio=saved.audio
     assert(ok,err)
-    print("[BrewActionSoundsTest] PASS assertions="..n.."; seven real UI/draft/arrival paths, isolated audio/storage; NOT native or listening evidence")
+    print("[BrewActionSoundsTest] PASS assertions="..n.."; cut/selection and brewing UI/draft/arrival paths, isolated audio/storage; NOT native or listening evidence")
     return n
 end
 return T

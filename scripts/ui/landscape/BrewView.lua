@@ -138,6 +138,17 @@ function B.New(ctx)
         Book.Open(b.journal);ctx.model.dirty=true
     end
     b.words.brewDrag=function(widget,card)
+        -- Selection feedback belongs to this workbench, not to the shared home tray.
+        local select=widget.props.onClick
+        widget.props.onPointerDown=function() if not b.interaction.drag then b.interaction.suppressClick=false end end
+        widget.props.onClick=function(self,event)
+            if not interactive() or not b.wordsOpen or not b.interaction.ClickAllowed() or widget.props.disabled then return end
+            local previous=Tray.State(b.words).selected
+            if select then select(self,event) end
+            if previous~=card.tokenId and Tray.State(b.words).selected==card.tokenId and ctx.PlayObjectSound then
+                ctx.PlayObjectSound("word_select")
+            end
+        end
         if card.available and not card.selectedRole then bindSource(widget,{kind="word",id=card.tokenId,text=card.text}) end
     end
     function b.Enter()

@@ -1,0 +1,103 @@
+{
+  "sounds": [
+    {
+      "id": "word_cut",
+      "resource": "audio/sfx/objects/water-and-scissors-v2/word_cut.wav",
+      "source_package": "2026-10-17-water-and-scissors-v2",
+      "source_file": "wav/word_cut.wav",
+      "sha256": "0965522c956fe195e8a5c4657b85ffded0d4c9beeff7e907fa4d7839245bfb3e",
+      "source_sha256": "0965522c956fe195e8a5c4657b85ffded0d4c9beeff7e907fa4d7839245bfb3e",
+      "duration": 1.04,
+      "sample_rate": 44100,
+      "channels": 1,
+      "sample_width": 2,
+      "gain": 1.0,
+      "loop": false
+    },
+    {
+      "id": "ingredient_add",
+      "resource": "audio/sfx/objects/water-and-scissors-v2/ingredient_add.wav",
+      "source_package": "2026-10-17-water-and-scissors-v2",
+      "source_file": "wav/ingredient_add.wav",
+      "sha256": "e17f3a4f9ac1228bd7930a54069a843c1907cd818beba359ad450b0bce2e8dce",
+      "source_sha256": "e17f3a4f9ac1228bd7930a54069a843c1907cd818beba359ad450b0bce2e8dce",
+      "duration": 0.68,
+      "sample_rate": 44100,
+      "channels": 1,
+      "sample_width": 2,
+      "gain": 1.0,
+      "loop": false
+    },
+    {
+      "id": "ingredient_remove",
+      "resource": "audio/sfx/objects/water-and-scissors-v2/ingredient_remove.wav",
+      "source_package": "2026-10-17-water-and-scissors-v2",
+      "source_file": "wav/ingredient_remove.wav",
+      "sha256": "ff0a7d726c21cad8c4f6547a9e5ee83a120dd2100a6498e4f7158ee1412763fd",
+      "source_sha256": "ff0a7d726c21cad8c4f6547a9e5ee83a120dd2100a6498e4f7158ee1412763fd",
+      "duration": 0.72,
+      "sample_rate": 44100,
+      "channels": 1,
+      "sample_width": 2,
+      "gain": 1.0,
+      "loop": false
+    },
+    {
+      "id": "word_select",
+      "resource": "audio/sfx/objects/word_select.wav",
+      "source_package": "2026-10-17-paper-cut-and-soft-brewing",
+      "source_file": "wav/word_select.wav",
+      "sha256": "a35117dfb00b2b76469b27160f7591925e45985c3a8b1cd80d176ad754cdc5eb",
+      "source_sha256": "a35117dfb00b2b76469b27160f7591925e45985c3a8b1cd80d176ad754cdc5eb",
+      "duration": 0.18,
+      "sample_rate": 44100,
+      "channels": 1,
+      "sample_width": 2,
+      "gain": 1.0,
+      "loop": false
+    }
+  ],
+  "provenance": [
+    {
+      "package": "2026-10-17-water-and-scissors-v2",
+      "file": "CREDITS.txt",
+      "sha256": "a0dd687a56c5aa91f5b603f12ed5bf783e82b64d5de829f4070c367a92f8eea2"
+    },
+    {
+      "package": "2026-10-17-water-and-scissors-v2",
+      "file": "source/sources.json",
+      "sha256": "0e8935deaa93c939e231ccbf3c0ff4a548ced9b79455610cbd60483f558b0161"
+    },
+    {
+      "package": "2026-10-17-water-and-scissors-v2",
+      "file": "source/retrieval.json",
+      "sha256": "f22064f4efdfbdec5fbabddb3a8957abc95ff547492814a7cc19d86f492ebb88"
+    },
+    {
+      "package": "2026-10-17-water-and-scissors-v2",
+      "file": "source/licenses/scissors-cutting-paper-4-routenote.html",
+      "sha256": "1a6d7ad559df874d8523df207cf8ce51c5b6e482a754fc802ccc3d469193c803"
+    },
+    {
+      "package": "2026-10-17-water-and-scissors-v2",
+      "file": "source/licenses/small-splash.html",
+      "sha256": "e9631576e12fb4f57b36f425ca03145dd889499f3ed4a549bea12d870414cd57"
+    },
+    {
+      "package": "2026-10-17-paper-cut-and-soft-brewing",
+      "file": "CREDITS.txt",
+      "sha256": "696e3c17bdea8efe8bb33428615f0fbd6cd35899590093d648209c50478e3679"
+    },
+    {
+      "package": "2026-10-17-paper-cut-and-soft-brewing",
+      "file": "source/sources.json",
+      "sha256": "eb249709043830cd0d4ac2a34ab1ea88be9095dcb9894d24cb9808082cefe055"
+    },
+    {
+      "package": "2026-10-17-paper-cut-and-soft-brewing",
+      "file": "source/licenses/kenney_rpg-audio-LICENSE.txt",
+      "sha256": "5735dfd72cb64cbbceda4ebc00c380c41ca680edb82ff153aa7c9ab97614c539"
+    }
+  ],
+  "note": "Current mappings override the earlier ingredient add/remove sounds; previous WAVs and manifests remain unchanged. No preview or reference audio imported."
+}

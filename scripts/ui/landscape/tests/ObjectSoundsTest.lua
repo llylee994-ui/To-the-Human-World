@@ -14,10 +14,10 @@ function T.Run()
     local events,voices,nodes={},{},{}
     local durations={bottle_lift=.94,drawer_open=.62,drawer_close=.49,letter_pick=.32,
         tray_open=.22,tray_close=.20,recipe_book_open=.49,recipe_book_close=.36,ui_click_01=.14,ui_confirm=.43,
-        net_pick=.40,stove_touch=.52,ingredient_select=.18,ingredient_add=.40,ingredient_remove=.44,
-        word_add=.36,word_remove=.32,word_withdraw=.27,draft_clear=.62}
+        net_pick=.40,stove_touch=.52,ingredient_select=.18,ingredient_add=.68,ingredient_remove=.72,
+        word_add=.36,word_remove=.32,word_withdraw=.27,draft_clear=.62,word_cut=1.04,word_select=.18}
     local musicPlays,musicStops=0,0
-    local missing=false
+    local missing=false --[[@as string|false]]
     ---@type table
     local view
     SOUND_EFFECT="Effect";SOUND_MUSIC="Music"
@@ -26,7 +26,7 @@ function T.Run()
     cache={GetResource=function(_,kind,path)
         check(kind=="Sound","load typed sound")
         if path==missing then return nil end
-        local id=path:match("audio/sfx/objects/(.+)%.wav$") or path:match("audio/sfx/ui/(.+)%.wav$")
+        local id=path:match("^audio/sfx/") and path:match("/([^/]+)%.wav$")
         check(id and durations[id] or path:match("^audio/bgm/"),"project resource path only")
         return {id=id,path=path,SetLooped=function(self,value) self.looped=value end}
     end}
