@@ -44,8 +44,7 @@ local function tab(parent,ctx,id,title,selected)
     parent:AddChild(button)
 end
 function S.Render(ctx,overlay)
-    local height=720 --[[@as number]]
-    if UI.GetViewportSize then local _,h=UI.GetViewportSize();height=h end
+    local height=ctx.viewport and ctx.viewport.h or 720 --[[@as number]]
     local safe=ctx.safeInsets or {left=0,top=0,right=0,bottom=0}
     height=height-safe.top-safe.bottom
     local compact=height<540
@@ -65,8 +64,9 @@ function S.Render(ctx,overlay)
     Widget.SetStyle(wallet,{width=128,whiteSpace="nowrap",alignSelf="center"})
     header:AddChild(Harbor.Button {id="shopSettings",text="设置",minHeight=48,width=72,onClick=ctx.OpenSettings})
     header:AddChild(Harbor.Button {id="closePanel",text="关闭",minHeight=48,width=84,onClick=ctx.Close})
-    local noticeArea=UI.ScrollView {id="shopMessageArea",width="100%",height=44,flexShrink=0,scrollY=true,
-        visible=false,paddingLeft=pad+safe.left,paddingRight=pad+safe.right,pointerEvents="box-none"}
+    local noticeArea=UI.Panel {id="shopMessageArea",position="absolute",left="30%",right="30%",top=safe.top+70,
+        minHeight=44,padding={8,14},zIndex=20,backgroundColor={37,29,21,235},borderRadius=8,
+        visible=false,pointerEvents="none"}
     ctx.panelNotice=text(noticeArea,ctx.model.message,14,"panelMessage",light);ctx.panelNoticeArea=noticeArea
     panel:AddChild(noticeArea)
     local result=ctx.session.queries.GetShopView()
@@ -181,13 +181,14 @@ function S.Render(ctx,overlay)
         text(body,"可购买至第 "..selected.ticket.lastPurchaseDay.." 天结束",13,"ticketLastDay")
     elseif selected.kind=="furniture" then text(body,selected.owned and "已拥有" or "尚未拥有",15,"shopItemOwned")
     else text(body,"已有 "..selected.ownedQuantity.." 份",14,"shopItemOwned");text(body,"今日余量 "..selected.remainingToday.." 份",14,"shopItemStock") end
-    local footer=UI.Panel {width="100%",flexShrink=0,paddingTop=12,gap=6,pointerEvents="box-none"}
+    local footer=UI.Panel {id="shopDetailFooter",width="100%",height=118,flexShrink=0,paddingTop=12,gap=6,pointerEvents="box-none"}
     detail:AddChild(footer)
     local blocked=selected.kind=="ticket" and selected.ticket.message or reason(view,selected)
-    local explanation=text(footer,blocked,13,"shopItemReason",{115,60,31,255});explanation:SetVisible(blocked~="")
+    local explanation=text(footer,blocked,13,"shopItemReason",{115,60,31,255})
+    Widget.SetStyle(explanation,{height=52,minHeight=52,overflow="hidden"})
     local title=selected.kind=="furniture" and (selected.owned and "已拥有" or "购入 · "..selected.price.." 金币")
         or (selected.kind=="ticket" and "购买船票 · " or "购买一份 · ")..selected.price.." 金币"
-    footer:AddChild(Harbor.Button {id="buy_"..selected.ingredientId,text=title,width="100%",minHeight=48,fontSize=15,
+    footer:AddChild(Harbor.Button {id="buy_"..selected.ingredientId,text=title,width="100%",height=48,minHeight=48,fontSize=15,
         disabled=blocked~="",onClick=function()
             if blocked~="" or ctx.panel~="shop" or ctx.ticketConfirm then return end
             if selected.kind=="ticket" then

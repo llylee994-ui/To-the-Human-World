@@ -1,0 +1,112 @@
+{
+  "evidence": "Actual project font measured with Pillow and production Lua geometry; NOT native screenshot or phone evidence",
+  "frames": [
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "wordCount": 61,
+      "checkedSamples": 67,
+      "examples": [
+        {
+          "text": "合上眼",
+          "paperWidth": 80,
+          "paperHeight": 32,
+          "textAdvance": 72.0
+        },
+        {
+          "text": "困",
+          "paperWidth": 32,
+          "paperHeight": 32,
+          "textAdvance": 24.0
+        },
+        {
+          "text": "梦见",
+          "paperWidth": 56,
+          "paperHeight": 32,
+          "textAdvance": 48.0
+        },
+        {
+          "text": "安安稳稳",
+          "paperWidth": 104,
+          "paperHeight": 32,
+          "textAdvance": 96.0
+        }
+      ]
+    },
+    {
+      "viewport": [
+        800,
+        360
+      ],
+      "wordCount": 61,
+      "checkedSamples": 67,
+      "examples": [
+        {
+          "text": "合上眼",
+          "paperWidth": 72,
+          "paperHeight": 29,
+          "textAdvance": 63.75
+        },
+        {
+          "text": "困",
+          "paperWidth": 30,
+          "paperHeight": 29,
+          "textAdvance": 21.25
+        },
+        {
+          "text": "梦见",
+          "paperWidth": 51,
+          "paperHeight": 29,
+          "textAdvance": 42.5
+        },
+        {
+          "text": "安安稳稳",
+          "paperWidth": 93,
+          "paperHeight": 29,
+          "textAdvance": 85.0
+        }
+      ]
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "wordCount": 61,
+      "checkedSamples": 67,
+      "examples": [
+        {
+          "text": "合上眼",
+          "paperWidth": 80,
+          "paperHeight": 32,
+          "textAdvance": 72.0
+        },
+        {
+          "text": "困",
+          "paperWidth": 32,
+          "paperHeight": 32,
+          "textAdvance": 24.0
+        },
+        {
+          "text": "梦见",
+          "paperWidth": 56,
+          "paperHeight": 32,
+          "textAdvance": 48.0
+        },
+        {
+          "text": "安安稳稳",
+          "paperWidth": 104,
+          "paperHeight": 32,
+          "textAdvance": 96.0
+        }
+      ]
+    }
+  ],
+  "sha256": {
+    "scripts/ui/landscape/WordSlip.lua": "a5a867e47c6e891e20a0f007c1f0302af35f9ca8b23fb6273aa47a21e7afd333",
+    "scripts/ui/landscape/WordTrayDrawer.lua": "ca9eb58df1d825872b4ddea1e209cff5357496df6d0b889d65088663d68f510b",
+    "scripts/ui/landscape/BrewView.lua": "1d9e0a871c6a5d6add294e7382bfa08a08d5a8eeeb25f9a2147aac1dae81fbce"
+  }
+}

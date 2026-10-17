@@ -7,6 +7,12 @@ local function primary(event)
     if event.IsPrimaryAction then return event:IsPrimaryAction() end
     return event.button==nil or event.button==MOUSEB_LEFT
 end
+-- The app root already spans the full screen; safe insets must not move its center axis.
+function V.Layout(vp,safe)
+    local width=math.min(260,math.max(44,vp.w-2*math.max(safe.left,safe.right)-24))
+    return {heading={x=0,y=vp.h*.40,w=vp.w,h=64},subtitle={x=0,y=vp.h*.50,w=vp.w,h=44},
+        button={x=(vp.w-width)/2,y=math.max(safe.top,math.min(vp.h*.68,vp.h-safe.bottom-64)),w=width,h=64}}
+end
 function V.New(ctx,ending,review,presentation)
     presentation=presentation or {}
     local view=A.New(ctx,"endingView",false)
@@ -14,6 +20,7 @@ function V.New(ctx,ending,review,presentation)
     local music=presentation.music or ctx.SetDepartureMusic
     local vp=ctx.viewport or {w=1280,h=720}
     local safe=ctx.safeInsets or {left=0,top=0,right=0,bottom=0}
+    local layout=V.Layout(vp,safe)
     local sw=math.max(1,vp.w-safe.left-safe.right)
     local sh=math.max(1,vp.h-safe.top-safe.bottom)
     local pages=presentation.pages or Sequence.Pages(ending.text)
@@ -82,14 +89,14 @@ function V.New(ctx,ending,review,presentation)
         {width="100%",lineHeight=1.55,fontColor={244,238,227,0}})
     local cue=A.Label(tap,"轻点继续","departureContinueHint",12,{position="absolute",right=safe.right+sw*.065,
         bottom=safe.bottom+12,height=24,fontColor={211,188,150,0},whiteSpace="nowrap"})
-    local heading=A.Label(view.root,presentation.heading or "旅人","releaseEndingTitle",32,{position="absolute",left=safe.left,top=safe.top+sh*.40,
-        width=sw,height=64,textAlign="center",lineHeight=1.2,fontColor={246,233,208,0},zIndex=12})
+    local heading=A.Label(view.root,presentation.heading or "旅人","releaseEndingTitle",32,{position="absolute",left=layout.heading.x,top=layout.heading.y,
+        width=layout.heading.w,height=64,textAlign="center",lineHeight=1.2,fontColor={246,233,208,0},zIndex=12})
     local subtitle=A.Label(view.root,presentation.subtitle or ending.title:gsub("^.-｜",""),"departureSubtitle",20,{position="absolute",
-        left=safe.left,top=safe.top+sh*.50,width=sw,height=44,textAlign="center",lineHeight=1.2,fontColor={246,233,208,0},zIndex=12})
+        left=layout.subtitle.x,top=layout.subtitle.y,width=layout.subtitle.w,height=44,textAlign="center",lineHeight=1.2,fontColor={246,233,208,0},zIndex=12})
     local button=A.Button(view.root,review and "backToMemories" or "endGame",review and "返回留念" or "返回首页",function()
         if not view.Live() or not seq.done then return end
         if review then ctx.panel="memories";ctx.model.dirty=true else ctx.ShowTitle() end
-    end,false,{position="absolute",left=safe.left+(sw-260)/2,top=safe.top+sh*.68,width=260,height=64,
+    end,false,{position="absolute",left=layout.button.x,top=layout.button.y,width=layout.button.w,height=layout.button.h,
         fontSize=22,minHeight=48,padding=0,pressedPadding=0,visible=false,zIndex=13,
         backgroundColor={0,0,0,0},hoverBackgroundColor={232,200,143,15},pressedBackgroundColor={232,200,143,30},
         textColor={246,233,208,255},borderWidth=0,borderRadius=0})
@@ -97,7 +104,7 @@ function V.New(ctx,ending,review,presentation)
         local props={position="absolute",top=32,width=44,height=1,backgroundColor={193,146,75,230},pointerEvents="none"}
         props[edge]=0;button:AddChild(UI.Panel(props))
     end
-    button:AddChild(UI.Panel {position="absolute",left=125,top=-6,width=10,height=10,rotate=45,
+    button:AddChild(UI.Panel {position="absolute",left=layout.button.w/2-5,top=-6,width=10,height=10,rotate=45,
         borderWidth=1,borderColor={211,165,89,255},backgroundColor={0,0,0,0},pointerEvents="none"})
     local shownIndex=1
     local function sync()

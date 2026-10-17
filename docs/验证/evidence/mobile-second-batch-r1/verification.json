@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-17",
+  "checks": {
+    "second-batch": "assertions=97",
+    "wish": "9 passed; 0 failed",
+    "departure": "5 passed; 0 failed",
+    "apprentice": "6 passed; 0 failed",
+    "endings": "7 passed; 0 failed",
+    "ending-saves": "24 passed; 0 failed",
+    "release-ui": "11 passed; 0 failed",
+    "closing": "PASS actual model",
+    "first-batch": "assertions=966",
+    "word-slip": "assertions=300",
+    "word-tray": "assertions=64",
+    "ui-sounds": "assertions=412"
+  },
+  "native": "PASS real eleven-letter route; drag/scale/rotate/pan/lock/undo/send; player unchanged",
+  "native_center_cases": 9,
+  "physical_phone_verified": false,
+  "remote_build": false,
+  "default_probes_enabled": false
+}

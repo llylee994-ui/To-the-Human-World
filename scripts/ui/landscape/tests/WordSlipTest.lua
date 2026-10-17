@@ -14,7 +14,7 @@ function T.Run()
     local function check(ok,message) assert(ok,message);count=count+1 end
     local Drawer=require "ui.landscape.WordTrayDrawer"
     local Art=require "ui.landscape.WordTrayArt"
-    local samples={"温柔","明天","好好睡一觉","把工钱从下次里洗出来","WWWWWW","iiiiii","椅子不该跪着迎客","远行"}
+    local samples={"困","梦见","合上眼","把工钱从下次里洗出来","WWWWWW","iiiiii","椅子不该跪着迎客","远行"}
     for _,vp in ipairs({{w=1280,h=720},{w=800,h=360},{w=1920,h=1080}}) do
         local cards={}
         for i,value in ipairs(samples) do cards[i]={text=value,tokenId="source:"..i,categoryId="one",available=true,sourceTitle="来源"} end
@@ -23,28 +23,58 @@ function T.Run()
             session={queries={GetWordTray=function() return {ok=true,value={cards=cards,categories={{id="one",title="情绪类",availableCount=7}}}} end}},Close=function() end}
         local parent=UI.Panel {};Drawer.Open(ctx);Drawer.Render(ctx,parent)
         local area=Art.Fit(math.floor(vp.w*Drawer.WidthRatio),vp.h-24).cards
+        local seen={}
+        repeat
         ---@type table[]
         local mounted={}
         for _,card in ipairs(cards) do
-            local node=assert(parent:FindById("wordTrayCard_"..card.tokenId))
+            local node=parent:FindById("wordTrayCard_"..card.tokenId)
+            if node then
+            check(not seen[card.tokenId],"a source appears on only one page");seen[card.tokenId]=true
             local label=assert(parent:FindById("wordTrayText_"..card.tokenId))
             local p=label.props
-            local pad=14
+            local pad=node.wordSlip.paddingX
+            local longest=0
             for line in (p.text.."\n"):gmatch("(.-)\n") do
-                check(UI.MeasureTextWidth(line,Theme.FontSize(p.fontSize))<=node.props.width-2*pad+.01,"long word must fit within real paper padding: "..card.text)
+                local measured=UI.MeasureTextWidth(line,Theme.FontSize(p.fontSize))
+                longest=math.max(longest,measured)
+                check(measured<=node.props.width-2*pad+.01,"long word must fit within real paper padding: "..card.text)
             end
+            check(node.props.width-longest<=9,"paper must hug actual text, including wrapped final width: "..card.text)
+            check(node.wordSlip.reserveTop==0,"role/status cannot add a blank row")
+            check(not parent:FindById("wordTrayMark_"..card.tokenId),"role/status chips must not cover tight word cards")
             check(p.text:gsub("\n","")==card.text,"line wrapping preserves full source text")
             check(node.props.left>=0 and node.props.left+node.props.width<=area.w,"slip stays in tray without hitting category tabs")
             mounted[#mounted+1]=node
+            end
         end
         for i,a in ipairs(mounted) do for j=i+1,#mounted do
             local b=mounted[j];local x,y=a.props,b.props
             check(x.left+x.width<=y.left or y.left+y.width<=x.left or x.top+x.height<=y.top or y.top+y.height<=x.top,"variable-height rows never overlap")
         end end
-        local last=mounted[#mounted].props --[[@as table]]
-        check(parent:FindById("wordTrayStrips").children[1].props.height>=last.top+last.height,"scroll content includes the final full strip")
+        for _,node in ipairs(mounted) do
+            check(node.props.top+node.props.height<=area.h,"every full strip fits current page vertically")
+        end
+        local nextPage=parent:FindById("wordTrayNext")
+        if nextPage.props.disabled then break end
+        nextPage.props.onClick();parent=UI.Panel{};Drawer.Render(ctx,parent)
+        until false
+        for _,card in ipairs(cards) do check(seen[card.tokenId],"all source cards reached by arrow pagination") end
     end
     local Slip=require "ui.landscape.WordSlip"
+    local single=Slip.Metrics("困",{fontSize=18,maxWidth=320})
+    local triple=Slip.Metrics("合上眼",{fontSize=18,maxWidth=320})
+    check(single.width<40 and triple.width>single.width*2,"one-character scraps must not inherit grid/minimum widths")
+    check(single.height<=Theme.FontSize(18)+8,"single-line scraps have no tall empty header/footer")
+    local selected=Slip.Metrics("困",{fontSize=18,maxWidth=320,reserveTop=18})
+    check(single.width==selected.width and single.height==selected.height,"role metadata never changes visual geometry")
+    local wrapped=Slip.Metrics("WWWWWWiiiiii",{fontSize=18,maxWidth=87})
+    local longest=0
+    for line in (wrapped.text.."\n"):gmatch("(.-)\n") do longest=math.max(longest,UI.MeasureTextWidth(line,Theme.FontSize(18))) end
+    check(wrapped.width-longest<=9,"wrapped scraps also shrink to their longest rendered line")
+    local almost=UI.MeasureTextWidth("梦见",Theme.FontSize(18))+7
+    check(Slip.Metrics("梦见",{fontSize=18,maxWidth=almost}).width<=almost,
+        "rounding allowance cannot push a paper past its wrapping limit")
     local wide=Slip.Metrics("WWWWWW",{maxWidth=300})
     local narrow=Slip.Metrics("iiiiii",{maxWidth=300})
     check(wide.width>narrow.width,"same character count respects actual proportional glyph widths")

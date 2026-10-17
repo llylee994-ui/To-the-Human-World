@@ -1,0 +1,70 @@
+{
+  "status": "design review; NOT implemented; NOT native screenshots",
+  "tool": "built-in image_gen",
+  "files": [
+    {
+      "file": "01-collage-floating-tools.png",
+      "width": 1875,
+      "height": 839,
+      "sha256": "39e03fc3cd5efafe7e9d0bbf327413147436f9e2a0a7c1137481690918d72166",
+      "source": "C:\\Users\\liliy\\.codex\\generated_images\\01a144f7-c0e7-7bd2-809b-b2391ceb0994\\exec-2e7f901f-53d9-450c-9445-4418bee9a58a.png"
+    },
+    {
+      "file": "02-tray-and-bottom-sheet.png",
+      "width": 1874,
+      "height": 839,
+      "sha256": "1f0b216c26cfe04c1c342c6c4e5ce3180d3b2f6a5d343dadb3cd8a7c22fdf6f0",
+      "source": "C:\\Users\\liliy\\.codex\\generated_images\\01a144f7-c0e7-7bd2-809b-b2391ceb0994\\exec-93b4fe2b-ed34-4a60-bff6-5e713ac99e66.png"
+    },
+    {
+      "file": "03-reply-reading.png",
+      "width": 1874,
+      "height": 839,
+      "sha256": "690b4063bca94e5fb752aa15187c83fd1612477ba140dfc75d9edfca1e9703c1",
+      "source": "C:\\Users\\liliy\\.codex\\generated_images\\01a144f7-c0e7-7bd2-809b-b2391ceb0994\\exec-c6a84e5a-52b0-4ba5-811a-ba984ca88174.png"
+    },
+    {
+      "file": "04-title-and-rewind.png",
+      "width": 1874,
+      "height": 839,
+      "sha256": "71b349d0c814ed905cd020cf646c1288230cd0f2b1c1a4008b0fb2512f304fe1",
+      "source": "C:\\Users\\liliy\\.codex\\generated_images\\01a144f7-c0e7-7bd2-809b-b2391ceb0994\\exec-9bb20f1c-5a1d-4ddb-bc68-d933eb3edd58.png"
+    },
+    {
+      "file": "05-stable-shop.png",
+      "width": 1874,
+      "height": 839,
+      "sha256": "fff13f228cd02502f44e5ae41e89abe7ef6da030a6184a757329eccdd0efec92",
+      "source": "C:\\Users\\liliy\\.codex\\generated_images\\01a144f7-c0e7-7bd2-809b-b2391ceb0994\\exec-815c1873-bfc1-4432-9c79-d15e631e2e4e.png"
+    },
+    {
+      "file": "06-three-endings-centered.png",
+      "width": 1083,
+      "height": 1453,
+      "sha256": "a582583c1c6306cffd1d133539bdd0894f4752857503263d4a71e4c3775b00d7",
+      "source": "C:\\Users\\liliy\\.codex\\generated_images\\01a144f7-c0e7-7bd2-809b-b2391ceb0994\\exec-6935e926-5965-437b-952f-7db98a3b9262.png"
+    },
+    {
+      "file": "02-tray-and-bottom-sheet-r2.png",
+      "width": 1875,
+      "height": 839,
+      "sha256": "36886fedb6409177a313e9728951f9d085d7d4f03d2871e49bb19f0afd321c28",
+      "source": "C:\\Users\\liliy\\.codex\\generated_images\\01a144f7-c0e7-7bd2-809b-b2391ceb0994\\exec-822364a8-de5d-4634-821f-86bb3e938c0f.png",
+      "revision": "user review r2, supersedes unversioned reference"
+    },
+    {
+      "file": "04-title-and-rewind-r2.png",
+      "width": 1875,
+      "height": 839,
+      "sha256": "102f2fc055276665ccf636e4661e01faf28722c6b699039f12dc97afef61d8b8",
+      "source": "C:\\Users\\liliy\\.codex\\generated_images\\01a144f7-c0e7-7bd2-809b-b2391ceb0994\\exec-09ddef38-cc72-4ae1-b132-3a0a48a9ad40.png",
+      "revision": "user review r2, supersedes unversioned reference"
+    }
+  ],
+  "latestCorrections": [
+    "No possible-effect prediction section",
+    "Text-only day timeline; no avatars or new day artwork",
+    "Word paper hugs actual visible text; unimplemented, native geometry/alpha check required",
+    "Desktop endings already centered; repair and verify phone-specific offsets while preserving desktop"
+  ]
+}

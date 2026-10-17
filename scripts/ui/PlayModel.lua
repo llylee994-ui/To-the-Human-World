@@ -130,8 +130,8 @@ function M.New(session,content,enabled)
     function api.UpdateWishLayout(placements,expectedRevision)
         return releaseCommand("UpdateWishLayout",{placements=U.Copy(placements),expectedRevision=expectedRevision},"已收好这张愿望。")
     end
-    function api.ConfirmEnding(kind,expectedRevision)
-        return releaseCommand("ConfirmEnding",{kind=kind,expectedRevision=expectedRevision},"这段旅程已保存。")
+    function api.ConfirmEnding(kind,expectedRevision,placements)
+        return releaseCommand("ConfirmEnding",{kind=kind,expectedRevision=expectedRevision,placements=placements and U.Copy(placements) or nil},"这段旅程已保存。")
     end
     local function clearNavigation()
         draftOrder=false;api.selectedLetter=false;api.selectedResult=false;api.selectedAttempt=false

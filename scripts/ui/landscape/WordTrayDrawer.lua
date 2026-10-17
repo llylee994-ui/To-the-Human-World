@@ -7,6 +7,7 @@ local Art=require "ui.landscape.WordTrayArt"
 local PanelArt=require "ui.landscape.PanelArt"
 local Arrow=require "ui.landscape.EmbroideredArrow"
 local Slip=require "ui.landscape.WordSlip"
+local Pages=require "ui.landscape.WordTrayPages"
 local D={}
 local ink,light={65,47,32,255},{255,244,218,255}
 
@@ -18,6 +19,9 @@ local ink,light={65,47,32,255},{255,244,218,255}
 ---@field selected string|false
 ---@field category string|false
 ---@field closing boolean
+---@field pages table<string,number>
+---@field pageCount number
+---@field categoryGroup number
 
 D.AnimationSeconds=.22
 D.WidthRatio=.26
@@ -44,8 +48,7 @@ local function panelWidth(ctx)
     return math.floor(math.max(0,viewportWidth(ctx)-safe.left-safe.right)*D.WidthRatio)
 end
 local function panelLeft(ctx,state)
-    local edge=ctx.workbench and 0 or insets(ctx).left
-    return math.floor(edge-(1-ease(state.open))*(panelWidth(ctx)+32))
+    return math.floor(-(1-ease(state.open))*(panelWidth(ctx)+32))
 end
 ---@param ctx table
 ---@return WordTrayState
@@ -55,6 +58,7 @@ function D.State(ctx)
         state={open=0,target=0,settled=true,panel=false,selected=false,category=false,closing=false}
         ctx.wordTray=state
     end
+    state.pages=state.pages or {};state.pageCount=state.pageCount or 1;state.categoryGroup=state.categoryGroup or 1
     return state --[[@as WordTrayState]]
 end
 function D.Progress(ctx)
@@ -134,25 +138,21 @@ local function strip(ctx,state,card,metrics,x,y,options)
         wrapper:AddChild(UI.Panel {position="absolute",left=0,top=0,right=0,bottom=0,
             borderWidth=2,borderColor={214,178,110,235},borderRadius=4,pointerEvents="none"})
     end
-    local mark=(options.markText or D.MarkText)(card)
-    if mark then
-        wrapper:AddChild(UI.Label {id="wordTrayMark_"..card.tokenId,text=mark,position="absolute",right=0,top=0,
-            backgroundColor={93,71,46,215},borderRadius=4,fontFamily=Harbor.fontFamily,fontSize=11,
-            fontColor={255,244,218,255},padding={2,6},pointerEvents="none"})
-    end
     if ctx.brewDrag then ctx.brewDrag(wrapper,card) end
+    if options.bindSource then options.bindSource(wrapper,card) end
     return wrapper
 end
-local function tab(ctx,state,parent,category,selected,compact,layout,index)
+local function tab(ctx,state,parent,category,selected,layout,index,step)
     local template=layout.categories[math.min(index,#layout.categories)]
-    local extra=math.max(0,index-#layout.categories)*80*layout.scale
-    local paper={x=template.x,y=template.y-layout.tabs.y+extra,w=template.w,h=template.h,
+    local paperHeight=math.min(step,template.h)
+    local paper={x=template.x,y=(index-1)*step+(step-paperHeight)/2,w=template.w,h=paperHeight,
         path=template.path,rotate=template.rotate}
     local image=PanelArt.Image(parent,"wordTrayCategoryPaper_"..category.id,paper)
     image.props.backgroundImageOpacity=selected and 1 or .8
+    local touchHeight=math.min(44,step)
     local button=UI.Button {id="wordTrayTab_"..category.id,text=D.ShortTitle(category.title),
-        position="absolute",left=layout.tabs.x,top=paper.y+(paper.h-44)/2,
-        height=44,width=layout.tabs.w,fontFamily=Harbor.fontFamily,
+        position="absolute",left=layout.tabs.x,top=(index-1)*step+(step-touchHeight)/2,
+        height=touchHeight,width=math.max(44,layout.tabs.w),fontFamily=Harbor.fontFamily,
         fontSize=15,fontWeight="normal",
         backgroundColor={0,0,0,0},hoverBackgroundColor={0,0,0,0},pressedBackgroundColor={0,0,0,0},
         variantBackgroundGradient={},variantHoverBackgroundGradient={},variantPressedBackgroundGradient={},
@@ -185,7 +185,7 @@ function D.Render(ctx,overlay,options)
     local layout=Art.Fit(width,panel.props.height)
     PanelArt.Image(content,"wordTrayCloth",layout.cloth)
     -- 标题在木托盘内上沿，避开顶部金币栏，并与首排词卡留出间距。
-    local title=Harbor.Tag {id="wordTrayTitle",text="词条栏",fontSize=15,
+    local title=Harbor.Tag {id="wordTrayTitle",text="词条栏",fontSize=11,padding=0,minHeight=20,
         position="absolute",left=layout.title.x,top=layout.title.y,width=layout.title.w,height=layout.title.h,zIndex=10,
         backgroundColor={246,230,194,245},fontColor=ink,borderRadius=3}
     content:AddChild(title)
@@ -214,12 +214,26 @@ function D.Render(ctx,overlay,options)
     if not known then selected=collected[1] and collected[1].id or false end
     state.category=selected
     if #collected>0 then
-        local tabs=UI.ScrollView {id="wordTrayTabs",position="absolute",left=0,top=layout.tabs.y,width=width,
-            height=layout.tabs.h,scrollY=true,showScrollbar=false,pointerEvents="box-none"}
+        if options.allCategories then layout.tabs.h=math.max(layout.tabs.h,panel.props.height-layout.tabs.y-80) end
+        local capacity=options.allCategories and #collected or math.max(1,math.floor((layout.tabs.h-44)/44))
+        local groups=math.ceil(#collected/capacity)
+        state.categoryGroup=math.max(1,math.min(groups,state.categoryGroup))
+        local tabs=UI.Panel {id="wordTrayTabs",position="absolute",left=0,top=layout.tabs.y,width=width,
+            height=layout.tabs.h,pointerEvents="box-none"}
         content:AddChild(tabs)
-        local stack=UI.Panel {width="100%",height=math.max(layout.tabs.h,(#collected*80+20)*layout.scale),pointerEvents="box-none"}
-        tabs:AddChild(stack)
-        for i,category in ipairs(collected) do tab(ctx,state,stack,category,category.id==selected,compact,layout,i) end
+        local first=(state.categoryGroup-1)*capacity+1
+        local last=math.min(#collected,first+capacity-1)
+        local step=options.allCategories and math.min(64,layout.tabs.h/#collected)
+            or math.min(72,math.max(44,(layout.tabs.h-(groups>1 and 44 or 0))/(last-first+1)))
+        for i=first,last do tab(ctx,state,tabs,collected[i],collected[i].id==selected,layout,i-first+1,step) end
+        if groups>1 then
+            tabs:AddChild(Harbor.Button {id="wordTrayCategoryNext",text="›",
+                position="absolute",left=layout.tabs.x,bottom=0,width=math.max(44,layout.tabs.w),height=44,minHeight=44,
+                fontSize=12,padding=0,onClick=function()
+                    state.categoryGroup=state.categoryGroup%groups+1;ctx.model.dirty=true
+                    if ctx.PlayObjectSound then ctx.PlayObjectSound("ui_click_01") end
+                end})
+        end
     end
     ---@type table|false
     local picked=false
@@ -229,38 +243,45 @@ function D.Render(ctx,overlay,options)
         pointerEvents="box-none"}
     content:AddChild(holder)
     PanelArt.Image(holder,"wordTrayFrame",layout.tray)
-    local scrollProps=PanelArt.Style(layout.cards)
-    scrollProps.id="wordTrayStrips";scrollProps.scrollY=true;scrollProps.showScrollbar=true;scrollProps.pointerEvents="box-none"
-    local strips=UI.ScrollView(scrollProps)
-    local row=UI.Panel {width="100%",height=layout.cards.h,pointerEvents="box-none"}
-    strips:AddChild(row);holder:AddChild(strips)
+    local regionProps=PanelArt.Style(layout.cards)
+    regionProps.id="wordTrayStrips";regionProps.pointerEvents="box-none"
+    local row=UI.Panel(regionProps);holder:AddChild(row)
     PanelArt.Image(holder,"wordTrayLavender",layout.lavender)
     PanelArt.Image(holder,"wordTrayDriedFlowers",layout.flowers)
-    local mounted=0
-    local gap=10
-    local available=math.max(1,layout.cards.w-8) -- keep the scrollbar off the paper
-    local half=(available-gap)/2
-    local cursorX,cursorY,rowHeight=0,0,0
+    local available=math.max(1,layout.cards.w)
     local extraCategory=false
     for _,category in ipairs(options.extraCategories or {}) do if selected==category.id then extraCategory=true end end
-    if extraCategory and options.renderExtra then
-        mounted,cursorY=options.renderExtra(row,available,layout.cards.h,compact)
-    else for _,card in ipairs(view.cards) do
-        if card.categoryId==selected then
-            mounted=mounted+1
-            local slipOptions={fontSize=compact and 16 or 18,maxWidth=available,
-                minWidth=math.min(half,72),minHeight=44,reserveTop=(options.markText or D.MarkText)(card) and 18 or 0}
-            local metrics=Slip.Metrics(card.text,slipOptions)
-            slipOptions.minWidth=metrics.width<=half and half or available
-            metrics=Slip.Metrics(card.text,slipOptions)
-            if cursorX>0 and cursorX+metrics.width>available+.01 then
-                cursorY=cursorY+rowHeight+gap;cursorX=0;rowHeight=0
-            end
-            row:AddChild(strip(ctx,state,card,metrics,cursorX,cursorY,options))
-            cursorX=cursorX+metrics.width+gap;rowHeight=math.max(rowHeight,metrics.height)
-        end
-    end end
-    Widget.SetStyle(row,{height=math.max(layout.cards.h,cursorY+rowHeight+gap)})
+    local items={}
+    if extraCategory then items=options.extraItems or {}
+    else for _,card in ipairs(view.cards) do if card.categoryId==selected then items[#items+1]=card end end end
+    local packed=Pages.Build(items,available,layout.cards.h,function(card)
+        if extraCategory then return options.measureExtra(card,available,layout.cards.h,compact) end
+        return Slip.Metrics(card.text,{fontSize=compact and 16 or 18,maxWidth=available})
+    end)
+    local key=selected or "empty"
+    local page=math.max(1,math.min(packed.pageCount,state.pages[key] or 1))
+    state.pages[key]=page;state.pageCount=packed.pageCount
+    for _,entry in ipairs(packed.pages[page]) do
+        if extraCategory then options.renderExtra(row,entry.card,entry.metrics,entry.x,entry.y)
+        else row:AddChild(strip(ctx,state,entry.card,entry.metrics,entry.x,entry.y,options)) end
+    end
+    local mounted=#items
+    local pager=UI.Panel {id="wordTrayPager",position="absolute",left=layout.pager.x,top=layout.pager.y,
+        width=layout.pager.w,height=44,flexDirection="row",alignItems="center",justifyContent="space-between",
+        pointerEvents="box-none",zIndex=5}
+    holder:AddChild(pager)
+    local function turn(delta)
+        local target=math.max(1,math.min(packed.pageCount,page+delta))
+        if target==(state.pages[key] or page) then return end
+        state.pages[key]=target;state.selected=false;ctx.model.dirty=true
+        if ctx.PlayObjectSound then ctx.PlayObjectSound("ui_click_01") end
+    end
+    pager:AddChild(Harbor.Button {id="wordTrayPrev",text="‹",width=44,height=44,minHeight=44,fontSize=24,padding=0,
+        disabled=page==1,onClick=function() turn(-1) end})
+    local pageLabel=text(pager,page.." / "..packed.pageCount,12,"wordTrayPage",light)
+    Widget.SetStyle(pageLabel,{width=60,height=44,textAlign="center",verticalAlign="middle",whiteSpace="nowrap",alignSelf="center"})
+    pager:AddChild(Harbor.Button {id="wordTrayNext",text="›",width=44,height=44,minHeight=44,fontSize=24,padding=0,
+        disabled=page==packed.pageCount,onClick=function() turn(1) end})
     if #collected==0 then
         text(row,"尚未收集词卡。阅读来信并剪下标记词后，会按来源收在这里。",16,"wordTrayEmpty",light)
     end

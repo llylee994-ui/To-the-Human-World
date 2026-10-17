@@ -110,14 +110,16 @@ function E.New(content)
     end
     function api.PlanEnding(data,request)
         return G.Run(function()
-            known(data);G.Keys(request,{kind=true,expectedRevision=true,sourceTokenIds=true},"ending.request")
+            known(data);G.Keys(request,{kind=true,expectedRevision=true,sourceTokenIds=true,placements=true},"ending.request")
             G.Need(({departure=true,apprentice=true,wish=true})[request.kind] and U.Integer(request.expectedRevision),"INVALID_REQUEST","ending.request","请选择有效结局")
             if request.sourceTokenIds~=nil then
                 G.Need(request.kind=="wish","INVALID_REQUEST","sourceTokenIds","只有拼贴结局可指定词来源")
                 G.Value(api.WishText(data,request.sourceTokenIds,false))
                 if data.chapter.phase=="ended" then G.Need(U.Equal(request.sourceTokenIds,data.chapter.ending.sourceTokenIds),"ALREADY_ENDED","sourceTokenIds","已保存的愿望不可作为重试改写") end
             end
+            if request.placements~=nil then G.Need(request.kind=="wish","INVALID_REQUEST","placements","只有拼贴结局可保存信纸版式。") end
             if data.chapter.phase=="ended" then
+                if request.placements~=nil then G.Need(data.chapter.ending.collage and U.Equal(request.placements,data.chapter.ending.collage.placements),"ALREADY_ENDED","placements","已寄出的信纸不能改写。") end
                 G.Need(data.chapter.ending.kind==request.kind,"ALREADY_ENDED","kind","当前旅程已选择另一结局")
                 return {data=U.Copy(data),ending=U.Copy(data.chapter.ending),alreadyEnded=true}
             end
@@ -140,14 +142,30 @@ function E.New(content)
             if request.kind=="wish" then
                 G.Need(U.Equal(ids,data.chapter.wishDraftSourceIds),"STALE_WISH_DRAFT","sourceTokenIds","请先保存当前拼贴，再封好瓶子。")
             end
+            local visibleLayout
+            if request.placements~=nil then
+                local Collage=require "systems.WishCollage"
+                local known={};for _,sample in ipairs(G.Value(api.GetWishSamples(data))) do known[sample.sourceTokenId]=true end
+                visibleLayout=G.Value(Collage.Validate(request.placements,known))
+                local order=Collage.Order(visibleLayout);local selected={}
+                for _,id in ipairs(ids) do selected[id]=true end
+                G.Need(#order==#ids,"STALE_WISH_DRAFT","placements","请先保存词条取用，再寄出信纸。")
+                for _,id in ipairs(order) do G.Need(selected[id],"STALE_WISH_DRAFT","placements","预览中出现了未保存的词条。") end
+                ids=order
+            end
             local wishText=request.kind=="wish" and G.Value(api.WishText(data,ids,false)) or false
             local def=content.releaseEndings[request.kind];local all=progress.completedCount==progress.requiredCount and progress.threeStarCount==progress.requiredCount
             local text=def.text
             if wishText then text=text.."\n\n"..wishText end
             if request.kind=="apprentice" and all and U.String(def.allThreeStarText) then text=text.."\n\n"..def.allThreeStarText end
             local ending={kind=request.kind,title=def.title,text=text,wishText=wishText,sourceTokenIds=U.Copy(ids),allThreeStar=all}
-            if request.kind=="wish" then ending.collage=require("systems.WishCollage").Freeze(data,G.Value(api.GetWishSamples(data))) end
             local candidate=U.Copy(data)
+            if request.kind=="wish" then
+                local Collage=require "systems.WishCollage"
+                local samples=G.Value(api.GetWishSamples(data))
+                if visibleLayout then candidate.chapter.wishLayout=visibleLayout end
+                ending.collage=Collage.Freeze(candidate,samples)
+            end
             if departure then
                 candidate.chapter.checkpoint=U.Copy(data);candidate.chapter.checkpoint.chapter.checkpoint=false
                 local ticket=content.release.ticket

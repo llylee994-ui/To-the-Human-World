@@ -5,6 +5,21 @@ local C={}
 local function finite(n) return type(n)=="number" and n==n and n~=math.huge and n~=-math.huge end
 function C.Id(row) return row.sourceTokenId or row.instanceId end
 function C.Depth(row,index) return row.z or index or 1 end
+function C.Aspect(rows) return rows[1] and rows[1].canvasAspect==2 and 2 or 4/3 end
+-- An editor projection only. Legacy frozen rows remain untouched until an explicit edit/seal.
+function C.ForCanvas(rows,aspect)
+    local result=U.Copy(rows)
+    local old=C.Aspect(rows)
+    if old==aspect then return result end
+    local factor=math.min(1,old/aspect)
+    for _,row in ipairs(result) do
+        row.x=.5+(row.x-.5)*factor
+        row.y=.5+(row.y-.5)*factor*aspect/old
+        row.scale=math.max(.25,(row.scale or 1)*factor)
+        row.canvasAspect=aspect
+    end
+    return result
+end
 function C.Order(placements)
     local rows={}
     for _,row in ipairs(placements) do if row.sourceTokenId then rows[#rows+1]=U.Copy(row) end end
@@ -28,10 +43,14 @@ function C.FromIds(ids)
 end
 function C.Validate(placements,known)
     return G.Run(function()
-        G.Array(placements,"placements");local seen={}
+        G.Array(placements,"placements");local seen={};local aspect
         G.Need(#placements<=128,"COLLAGE_FULL","placements","纸上的词条已放满。")
         for _,row in ipairs(placements) do
-            G.Keys(row,{sourceTokenId=true,decorationId=true,instanceId=true,x=true,y=true,angle=true,scale=true,z=true,locked=true},"placement")
+            G.Keys(row,{sourceTokenId=true,decorationId=true,instanceId=true,x=true,y=true,angle=true,scale=true,z=true,locked=true,canvasAspect=true},"placement")
+            G.Need(row.canvasAspect==nil or row.canvasAspect==2,"COLLAGE_CANVAS","placement.canvasAspect","信纸版式无效。")
+            local current=row.canvasAspect or 4/3
+            G.Need(aspect==nil or aspect==current,"COLLAGE_CANVAS","placements","同一张信纸不能混用版式。")
+            aspect=current
             if row.sourceTokenId~=nil then
                 G.Need(U.String(row.sourceTokenId) and known[row.sourceTokenId] and row.decorationId==nil and row.instanceId==nil,
                     "SOURCE_INVALID","placement.sourceTokenId","只能使用已获得的词条。")

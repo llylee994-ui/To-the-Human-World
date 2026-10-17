@@ -98,7 +98,8 @@ def main(argv=None, entrypoint=None):
             -- 原生窗口探针依赖真实Yoga/PointerEvent；隔离UI介质不运行它们。
             -- 只覆盖本Lua进程的配置表，保留工作区及正在运行的原生探针设置。
             local headlessChecks = require "ui.landscape.DevChecks"
-            headlessChecks.nativeProbe, headlessChecks.yawProbe, headlessChecks.yawProbeAuto = false, false, false
+            headlessChecks.nativeProbe, headlessChecks.yawProbe, headlessChecks.yawProbeAuto, headlessChecks.firstBatchProbe = false, false, false, false
+            headlessChecks.wishProbe, headlessChecks.apprenticeProbe = false, false
             if B6_ACCEPTANCE_CHECK then
                 package.loaded["debug.B6RunRequest"] = "b6_acceptance_test"
             end

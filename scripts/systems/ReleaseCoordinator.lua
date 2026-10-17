@@ -92,7 +92,7 @@ function C.New(content)
             G.Pure(request,"request");G.Need(U.Integer(request.expectedRevision),"INVALID_REQUEST","expectedRevision","缺少确认时的存档版本")
             local keys={expectedRevision=true}
             if kind=="PurchaseTravelTicket" then keys={itemId=true,expectedDay=true,expectedPrice=true,expectedRevision=true}
-            elseif kind=="ConfirmEnding" then keys.kind=true
+            elseif kind=="ConfirmEnding" then keys.kind=true;keys.placements=true
             elseif kind=="UpdateWishDraft" then keys.sourceTokenIds=true
             elseif kind=="UpdateWishLayout" then keys.placements=true
             elseif kind=="AdvanceEpilogue" then keys.expectedStep=true end

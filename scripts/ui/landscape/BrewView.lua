@@ -15,6 +15,7 @@ local Recipe=require "ui.landscape.BrewRecipe"
 local Smoke=require "ui.landscape.BrewSmoke"
 local StoryStyle=require "ui.landscape.StoryStyle"
 local Slip=require "ui.landscape.WordSlip"
+local NotesView=require "ui.landscape.PotionNotesView"
 local B={}
 local ink={65,47,32,255}
 local function clear(parent)
@@ -46,6 +47,8 @@ function B.New(ctx)
     local fx=UI.Panel {id="brewEffects",position="absolute",left=0,top=0,width="100%",height="100%",zIndex=8,pointerEvents="none"}
     local smoke=UI.Panel {id="brewSmokeBlocker",position="absolute",left=0,top=0,width="100%",height="100%",zIndex=1500,visible=false,onClick=function() end}
     root:AddChild(center);root:AddChild(wordsHost);root:AddChild(journalHost);root:AddChild(fx)
+    local notesHost=UI.Panel {id="brewNotesHost",position="absolute",left=0,top=0,width="100%",height="100%",zIndex=20,pointerEvents="box-none"}
+    root:AddChild(notesHost)
     ctx.root:AddChild(smoke)
     local b={root=root,wordsOpen=true --[[@as boolean]],journalOpen=true --[[@as boolean]],
         selected=false --[[@as string|table|false]],entered=false --[[@as boolean]],layout=L.Compute(1280,720),
@@ -57,7 +60,7 @@ function B.New(ctx)
         end
     end)
     local function dropTarget(item,x,y) return L.Target(b.layout,item,x,y) end
-    local function canEdit() return ctx.model.Action("UpdateDraft").enabled and not ctx.panel and not b.interaction.active and not (b.interaction.flight and b.interaction.flight.accepted) end
+    local function canEdit() return ctx.model.Action("UpdateDraft").enabled and not ctx.panel and b.selected~="recipe" and not b.interaction.active and not (b.interaction.flight and b.interaction.flight.accepted) end
     local function bindSource(widget,item)
         local oldClick=widget.props.onClick
         widget.props.onPointerDown=function(event)
@@ -78,7 +81,7 @@ function B.New(ctx)
             if oldClick then oldClick(self,event) end
         end
         -- A drag beginning on a card owns the gesture in every direction.
-        -- Pans beginning on the unoccupied tray/shelf still reach ScrollView.
+        -- The tray is paged; only the ingredient shelf retains scrolling.
         local originalPanStart=widget.OnPanStart
         function widget:OnPanStart(event)
             local d=b.interaction.drag
@@ -136,7 +139,7 @@ function B.New(ctx)
     function b.Cancel() b.interaction.Cancel();b.revealTail=0;smoke:SetVisible(false) end
     function b.Leave()
         b.Cancel();b.entered=false;Tray.Reset(b.words);Book.Reset(b.journal)
-        clear(center);clear(wordsHost);clear(journalHost)
+        clear(center);clear(wordsHost);clear(journalHost);clear(notesHost)
     end
     function b.Start()
         if b.revealTail>0 then return false end
@@ -157,7 +160,7 @@ function B.New(ctx)
             if b.journal.journalBook then b.journal.journalBook.story=b.journal.storyId;b.journal.journalBook.entry=false end
         end
         for _,sub in ipairs({b.words,b.journal}) do sub.viewport=ctx.viewport;sub.safeInsets=ctx.safeInsets end
-        clear(center);clear(wordsHost);clear(journalHost)
+        clear(center);clear(wordsHost);clear(journalHost);clear(notesHost)
         if b.wordsOpen then
             Tray.Open(b.words);Tray.Render(b.words,wordsHost)
             local p=wordsHost:FindById("activePanel");if p then p.id="brewWordPanel";p.props.id="brewWordPanel" end
@@ -234,6 +237,7 @@ function B.New(ctx)
             hint:SetVisible(not draft.mainTokenId and not b.interaction.active)
         end
         Recipe.Render(ctx,b,center,summary,data,editable)
+        NotesView.Render(ctx,b,notesHost,summary,draft)
         local controlsProps=box(l.controls,"brewControls");controlsProps.flexDirection="row";controlsProps.gap=8;controlsProps.justifyContent="center"
         local controls=UI.Panel(controlsProps)
         center:AddChild(controls)
@@ -260,7 +264,7 @@ function B.New(ctx)
             if b.interaction.flight or b.interaction.pulse then b.interaction.flight=false;b.interaction.pulse=false;ctx.model.dirty=true end
         end
         smoke:SetVisible(b.interaction.active or b.revealTail>0);skip:SetVisible(b.interaction.active)
-        Tray.Update(b.words,dt);Book.Update(b.journal,dt)
+        Tray.Update(b.words,dt);Book.Update(b.journal,dt);NotesView.Update(b,dt,focused)
         if room.root.GetAbsoluteLayout then
             local fit=room.Fit()
             if fit.scale>0 then
@@ -304,7 +308,8 @@ function B.New(ctx)
             Widget.SetStyle(cardPaper,{left=sample.x-metrics.width/2,top=sample.y-metrics.height/2,
                 width=metrics.width,height=metrics.height,scale=sample.scale,opacity=sample.alpha})
             Widget.SetStyle(cardFace,{left=metrics.paddingX,top=(metrics.height-metrics.textHeight+metrics.reserveTop)/2,
-                width=metrics.width-2*metrics.paddingX,height=metrics.textHeight,fontSize=metrics.fontSize})
+                width=metrics.width-2*metrics.paddingX,height=metrics.textHeight,fontSize=metrics.fontSize,
+                whiteSpace=metrics.lineCount==1 and "nowrap" or "normal",lineHeight=metrics.lineHeight})
         end
     end
     function smoke:Render(vg)

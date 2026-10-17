@@ -32,6 +32,12 @@ function P.Clamp(row,text,width,height)
     row.y=math.max(math.max(.22,.18+ey/height),math.min(.94-ey/height,row.y))
     return row
 end
+function P.Bounds(row,text,rect)
+    local w,h=P.Size(row,text,rect.w);local a=math.rad(row.angle or 0)
+    local bw=math.abs(math.cos(a))*w+math.abs(math.sin(a))*h
+    local bh=math.abs(math.sin(a))*w+math.abs(math.cos(a))*h
+    return {x=rect.x+row.x*rect.w-bw/2,y=rect.y+row.y*rect.h-bh/2,w=bw,h=bh}
+end
 function P.Frame(frame,props)
     local panel=UI.Panel(props)
     function panel:Render(vg) Art.Draw(vg,frame,self:GetAbsoluteLayout(),self.props.opacity or 1) end
@@ -40,22 +46,22 @@ end
 function P.New(parent,rect,collage,options)
     options=options or {}
     local paper=UI.Panel {id=options.id or "wishPaper",position="absolute",left=rect.x,top=rect.y,width=rect.w,height=rect.h,
-        backgroundImage=P.image,backgroundFit="fill",pointerEvents="box-none"}
+        backgroundImage=not options.ghost and P.image or nil,backgroundFit="fill",pointerEvents=options.editable and "auto" or "none",overflow="visible"}
     parent:AddChild(paper)
-    A.Label(paper,"我想……","wishPaperPrefix",28*rect.w/900,{position="absolute",left="15%",top="9%",width="70%",height="9%",
-        textAlign="center",lineHeight=1.1,fontColor={105,91,73,255}})
+    if not options.ghost then A.Label(paper,"我想……","wishPaperPrefix",28*rect.w/900,{position="absolute",left="15%",top="9%",width="70%",height="9%",
+        textAlign="center",lineHeight=1.1,fontColor={105,91,73,255}}) end
     local cards={}
     for i,row in ipairs(collage.placements) do
         local id=C.Id(row);local text=row.sourceTokenId and collage.words[row.sourceTokenId] or ""
-        local display=P.Clamp(U.Copy(row),text,rect.w,rect.h)
+        local display=options.ghost and U.Copy(row) or P.Clamp(U.Copy(row),text,rect.w,rect.h)
         local w,h=P.Size(display,text,rect.w)
         local card=UI.Panel {id="wish_piece_"..id,position="absolute",left=display.x*rect.w-w/2,top=display.y*rect.h-h/2,
             width=w,height=h,pointerEvents=options.editable and "auto" or "none",zIndex=C.Depth(row,i)+i*.00001}
         local visual
         if row.decorationId then
-            visual=P.Frame(Decor.byId[row.decorationId],{id="wish_visual_"..id,width="100%",height="100%",rotate=row.angle,pointerEvents="none"})
+            visual=P.Frame(Decor.byId[row.decorationId],{id="wish_visual_"..id,width="100%",height="100%",rotate=display.angle,pointerEvents="none"})
         else
-            visual=Slip.Surface {id="wish_visual_"..id,width="100%",height="100%",rotate=row.angle,pointerEvents="none"}
+            visual=Slip.Surface {id="wish_visual_"..id,width="100%",height="100%",rotate=display.angle,pointerEvents="none"}
             local _,_,_,metrics=P.Metrics(text,rect.w*(display.scale or 1))
             local label=Slip.Label(visual,metrics,"wish_text_"..id)
             -- Canonical line breaks scale with the paper; do not rewrap a short word at fractional sizes.
@@ -63,13 +69,31 @@ function P.New(parent,rect,collage,options)
         end
         function card:HitTest(x,y)
             local b=self:GetAbsoluteLayoutForHitTest();local dx,dy=x-b.x-b.w/2,y-b.y-b.h/2
-            local a=math.rad(-row.angle);local xx,yy=dx*math.cos(a)-dy*math.sin(a),dx*math.sin(a)+dy*math.cos(a)
+            local current=cards[id] and cards[id].display or display
+            local a=math.rad(-current.angle);local xx,yy=dx*math.cos(a)-dy*math.sin(a),dx*math.sin(a)+dy*math.cos(a)
             return math.abs(xx)<=b.w/2 and math.abs(yy)<=b.h/2
         end
         card:AddChild(visual --[[@as Widget]]);paper:AddChild(card)
         cards[id]={root=card,visual=visual,width=w,height=h,display=display}
     end
     local result={root=paper,cards=cards,rect=rect}
+    function result.Preview(id,row)
+        local card=cards[id];if not card then return end
+        local text=collage.words[row.sourceTokenId] or ""
+        local w,h=P.Size(row,text,rect.w)
+        card.width=w;card.height=h;card.display=U.Copy(row)
+        Widget.SetStyle(card.root,{left=row.x*rect.w-w/2,top=row.y*rect.h-h/2,width=w,height=h})
+        Widget.SetStyle(card.visual,{rotate=row.angle,scale=1})
+        if row.sourceTokenId then
+            local _,_,_,m=P.Metrics(text,rect.w*(row.scale or 1))
+            local label=card.visual:FindById("wish_text_"..id) --[[@as Label?]]
+            if label then
+                label:SetText(m.text)
+                Widget.SetStyle(label,{left=m.paddingX,top=(m.height-m.textHeight)/2,width=m.width-2*m.paddingX,
+                    height=m.textHeight,fontSize=m.fontSize,lineHeight=m.lineHeight,whiteSpace=m.lineCount==1 and "nowrap" or "normal"})
+            end
+        end
+    end
     function result.Select(id)
         for key,card in pairs(cards) do
             Widget.SetStyle(card.visual,{borderWidth=key==id and 1 or 0,borderColor={153,113,59,210},borderRadius=1})

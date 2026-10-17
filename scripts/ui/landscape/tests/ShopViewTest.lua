@@ -59,8 +59,14 @@ function T.Run()
     for _,item in ipairs(sample.ingredients) do for _=1,item.quantity do must(view.model.Drop("ingredient",item.ingredientId)) end end
     local draft=U.Copy(view.model.GetDraft());view.Navigate("brew");view.Update()
     local art=require "ui.landscape.IngredientArt"
+    local merchandise=require "ui.landscape.MerchandiseArt"
     for _,item in ipairs(content.ingredients) do
-        check(control("brewArt_"..item.id).props.backgroundImage==art.Get(item.id),"brewing shares same ingredient texture")
+        local imageProps ---@type table|nil
+        for _,child in ipairs(control("brewIngredient_"..item.id).children) do
+            if child.props.sourceFrame then imageProps=child.props;break end
+        end
+        check(imageProps and imageProps.backgroundImage==art.Get(item.id),"brewing shares same ingredient texture")
+        check(U.Equal(imageProps and imageProps.sourceFrame,merchandise.Frame(item.id)),"brewing preserves ingredient crop metadata")
     end
     view.Open("shop");view.Update();click("shop_select_ing_dried_petal");click("closePanel")
     check(U.Equal(draft,view.model.GetDraft()) and view.scene=="brew","shop selection preserves saved draft/source")

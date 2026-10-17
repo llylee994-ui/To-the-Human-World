@@ -71,6 +71,7 @@ function A.New(session,content,enabled)
     local stoveAuto=require("ui.landscape.DevChecks").stoveYawAuto and require("ui.landscape.tests.StoveYawNativeProbe").New() or nil
     local panZoomAuto=require("ui.landscape.DevChecks").stovePanZoomAuto and require("ui.landscape.tests.StovePanZoomNativeProbe").New() or nil
     local brewProbe=require("ui.landscape.DevChecks").brewWorkbenchProbe and require("ui.landscape.tests.BrewNativeProbe").New() or nil
+    local firstBatchProbe=require("ui.landscape.DevChecks").firstBatchProbe and require("ui.landscape.tests.FirstBatchNativeProbe").New() or nil
     local readingProbe=require("ui.landscape.DevChecks").readingProbe and require("ui.landscape.tests.ReadingNativeProbe").New() or nil
     local apprenticeProbe=require("ui.landscape.DevChecks").apprenticeProbe and require("ui.landscape.tests.ApprenticeNativeProbe").New() or nil
     local wishProbe=require("ui.landscape.DevChecks").wishProbe and require("ui.landscape.tests.WishNativeProbe").New() or nil
@@ -587,6 +588,7 @@ function A.New(session,content,enabled)
         if stoveAuto then stoveAuto(ctx) end
         if panZoomAuto then panZoomAuto(ctx) end
         if brewProbe then brewProbe(ctx) end
+        if firstBatchProbe then firstBatchProbe(ctx) end
         if readingProbe then readingProbe(ctx) end
         if apprenticeProbe then apprenticeProbe(ctx) end
         if wishProbe then wishProbe(ctx) end

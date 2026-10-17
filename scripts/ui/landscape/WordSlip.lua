@@ -8,7 +8,7 @@ function S.Metrics(value,options)
     options=options or {}
     local size=options.fontSize or 18
     local pixels=Theme.FontSize(size)
-    local px,py=14,8
+    local px,py=3,3
     local maxWidth=math.max(px*2+pixels,options.maxWidth or 320)
     local function measure(text)
         local width=UI.MeasureTextWidth and UI.MeasureTextWidth(text,pixels,Theme.FontFace("story","normal")) or 0
@@ -18,21 +18,26 @@ function S.Metrics(value,options)
     end
     local natural=0
     for line in (value.."\n"):gmatch("(.-)\n") do natural=math.max(natural,measure(line)) end
-    local width=math.min(maxWidth,math.max(options.minWidth or 72,math.ceil(natural)+px*2+2))
-    local inner=width-px*2
+    local width=math.min(maxWidth,math.ceil(natural)+px*2+2)
+    local inner=math.max(1,math.floor(width-px*2-2))
     local lines={};local line=""
     for _,cp in utf8.codes(value) do
         local char=utf8.char(cp)
         if char=="\n" then lines[#lines+1]=line;line=""
-        elseif line~="" and measure(line..char)>inner-1 then lines[#lines+1]=line;line=char
+        elseif line~="" and measure(line..char)>inner then lines[#lines+1]=line;line=char
         else line=line..char end
     end
     lines[#lines+1]=line
-    local reserve=options.reserveTop or 0
-    local textHeight=math.ceil(#lines*pixels*1.35+2)
-    return {width=width,height=math.max(options.minHeight or 44,textHeight+py*2+reserve),
-        text=table.concat(lines,"\n"),fontSize=size,paddingX=px,paddingY=py,reserveTop=reserve,
-        textHeight=textHeight,lineCount=#lines}
+    -- Wrapped rows need the same fit as short words: size to the longest real row,
+    -- not the original width limit or a tray grid cell. Metadata never reserves space.
+    local longest=0
+    for _,row in ipairs(lines) do longest=math.max(longest,measure(row)) end
+    width=math.ceil(longest)+px*2+2
+    local lineHeight=1.05
+    local textHeight=math.ceil(#lines*pixels*lineHeight)
+    return {width=width,height=textHeight+py*2,
+        text=table.concat(lines,"\n"),fontSize=size,paddingX=px,paddingY=py,reserveTop=0,
+        textHeight=textHeight,lineCount=#lines,lineHeight=lineHeight}
 end
 
 -- Preserve each torn end at the image's vertical scale. Only the middle stretches.
@@ -64,7 +69,7 @@ function S.Label(parent,metrics,id,color)
         fontColor=color or {65,47,32,255},position="absolute",left=metrics.paddingX,
         top=(metrics.height-metrics.textHeight+metrics.reserveTop)/2,
         width=metrics.width-2*metrics.paddingX,height=metrics.textHeight,
-        textAlign="center",verticalAlign="middle",whiteSpace="normal",lineHeight=1.35,
+        textAlign="center",verticalAlign="middle",whiteSpace=metrics.lineCount==1 and "nowrap" or "normal",lineHeight=metrics.lineHeight,
         padding=0,flexShrink=0,pointerEvents="none"}
     parent:AddChild(label)
     return label

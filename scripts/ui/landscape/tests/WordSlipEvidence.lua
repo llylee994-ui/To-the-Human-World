@@ -21,17 +21,24 @@ function T.Run()
             session={queries={GetWordTray=function() return {ok=true,value={cards=cards,categories={{id="one",title="词语",availableCount=#cards}}}} end}}}
         local root=UI.Panel {};Drawer.Open(ctx);Drawer.Render(ctx,root)
         local outputs={}
+        repeat
         for _,card in ipairs(cards) do
-            local node=assert(root:FindById("wordTrayCard_"..card.tokenId))
+            local node=root:FindById("wordTrayCard_"..card.tokenId)
+            if node then
             local label=assert(root:FindById("wordTrayText_"..card.tokenId))
             local metrics=node.wordSlip
             for line in (metrics.text.."\n"):gmatch("(.-)\n") do
-                assert(UI.MeasureTextWidth(line,Theme.FontSize(metrics.fontSize),"story")<=metrics.width-28,"real-font overflow: "..card.text)
+                assert(UI.MeasureTextWidth(line,Theme.FontSize(metrics.fontSize),"story")<=metrics.width-2*metrics.paddingX,"real-font overflow: "..card.text)
                 checked=checked+1
             end
             outputs[#outputs+1]={original=card.text,x=node.props.left,y=node.props.top,metrics=metrics,
-                fontPixels=Theme.FontSize(metrics.fontSize),label=label.props}
+                fontPixels=Theme.FontSize(metrics.fontSize),label=label.props,page=ctx.wordTray.pages.one}
+            end
         end
+        local nextPage=root:FindById("wordTrayNext")
+        if nextPage.props.disabled then break end
+        nextPage.props.onClick();root=UI.Panel{};Drawer.Render(ctx,root)
+        until false
         export(size[1],size[2],Art.Fit(math.floor(size[1]*Drawer.WidthRatio),size[2]-24).cards,outputs)
     end
     print("[WordSlipEvidence] real font lines fit="..checked.."; offline geometry only")

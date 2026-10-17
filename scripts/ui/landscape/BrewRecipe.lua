@@ -2,7 +2,6 @@
 local UI=require "urhox-libs/UI"
 local H=require "ui.landscape.HarborStyle"
 local Widget=require "urhox-libs/UI/Core/Widget"
-local NotesView=require "ui.landscape.PotionNotesView"
 local Petal=require "ui.landscape.PetalButton"
 local R={}
 local ink={65,47,32,255}
@@ -21,8 +20,8 @@ function R.Render(ctx,b,center,summary,data,editable)
     center:AddChild(paper)
     local heading=label(paper,"brewSlotsTitle","配方与药槽",14)
     Widget.SetStyle(heading,{position="absolute",left=16,top=3,width=150,height=24})
-    paper:AddChild(UI.Button {id="brewRecipeDetails",text="条件与药效 ›",position="absolute",right=10,top=0,
-        width=112,height=26,minHeight=26,fontSize=12,fontFamily=H.fontFamily,padding=0,
+    paper:AddChild(UI.Button {id="brewRecipeDetails",text="条件与药效 ›",position="absolute",right=10,top=-12,
+        width=144,height=44,minHeight=44,fontSize=14,fontFamily=H.fontFamily,padding=0,
         backgroundColor={0,0,0,0},textColor=ink,borderWidth=0,
         onClick=function() b.selected=b.selected=="recipe" and false or "recipe";b.notesNumbers=false;ctx.model.dirty=true end})
     local words=ctx.session.queries.GetWordTray();local cards={}
@@ -80,7 +79,7 @@ function R.Render(ctx,b,center,summary,data,editable)
     local capacity=label(paper,"brewCapacity","原料 "..total.."/"..(kit and kit.slots.ingredient or 2).." · "..state,12)
     Widget.SetStyle(capacity,{position="absolute",left=16,right=12,bottom=6,whiteSpace="nowrap"})
     if not b.selected then return end
-    if b.selected=="recipe" then NotesView.Render(ctx,b,center,summary,draft);return end
+    if b.selected=="recipe" then return end
     local detail=H.Paper {id="brewDetail",position="absolute",left=l.center.x,top=math.max(l.wish.y+l.wish.h+4,l.summary.y-170),
         width=l.center.w,height=164,compact=true,padding=12,zIndex=7,onClick=function() end}
     center:AddChild(detail)

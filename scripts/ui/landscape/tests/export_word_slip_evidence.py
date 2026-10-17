@@ -74,7 +74,7 @@ if __name__ == '__main__':
         ox, oy, scale = 30+sum(widths[:index]), 125, 1.6
         draw.text((ox, 78), f"{frame['width']} × {frame['height']}", font=font(23), fill='#efe5ce')
         area = frame['area']
-        visible = frame['rows'][:6]
+        visible = [row for row in frame['rows'] if row.get('page', 1) == 1][:6]
         end = max(row['y']+row['metrics']['height'] for row in visible)
         draw.rounded_rectangle((ox-10, oy-10, ox+area['w']*scale+10, oy+end*scale+16), 12, fill='#62472e')
         for row in visible:

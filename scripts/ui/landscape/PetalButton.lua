@@ -12,6 +12,9 @@ function P.New(props)
     local button=UI.Button(p)
     function button:RenderFullBackground(vg)
         local r=self:GetAbsoluteLayout();local x,y,w,h=r.x+2,r.y+4,r.w-4,r.h-8
+        local visualScale=self.props.visualScale or 1
+        local scaledHeight=h*visualScale
+        y=y+(h-scaledHeight)/2;h=scaledHeight
         local pressed=self.state and self.state.pressed
         local hovered=self.state and self.state.hovered
         local alpha=self.props.disabled and 110 or 235

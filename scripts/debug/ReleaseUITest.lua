@@ -4,6 +4,7 @@ local R=require "debug.fixtures.ReleaseFixtures"
 local E=require "debug.fixtures.ReleaseEndingFixtures"
 local View=require "ui.PlayView"
 local T={}
+local Input=require "ui.landscape.tests.WishTestInput"
 function T.Run()
     package.loaded["debug.DeveloperMode"]=false
     local host=require("ui.landscape.tests.ZoomTestHost").New()
@@ -39,7 +40,8 @@ function T.Run()
         end
         local function click(id)
             local w=widget(id);assert(not w.props.disabled,"disabled "..id)
-            w.props.onClick();v.Update()
+            if id:match("^wish_add_") then Input.Source(v,w) else w.props.onClick() end
+            v.Update()
         end
         return v,widget,click
     end
@@ -99,9 +101,10 @@ function T.Run()
         assert(a,"shipping must leave a consumed source for the wish")
         local b;for _,sample in ipairs(samples) do if sample.sourceTokenId~=a.sourceTokenId then b=sample;break end end
         local available=x.state.GetSnapshot().live.wordTokens.byId[a.sourceTokenId].available
-        click("wish_add_"..a.sourceTokenId);click("wish_add_"..b.sourceTokenId);click("wishRotateLeft")
+        click("wish_add_"..a.sourceTokenId);click("wish_add_"..b.sourceTokenId)
+        Input.Transform(v,b.sourceTokenId,"rotate",-45);v.Update()
         local draft=R.Must(x.session.queries.GetWishView())
-        assert(#draft.draftSourceIds==2 and draft.placements[2].angle==-3)
+        assert(#draft.draftSourceIds==2 and math.abs(draft.placements[2].angle+45)<.001)
         assert(x.state.GetSnapshot().live.wordTokens.byId[a.sourceTokenId].available==available)
         v.wishSelected=a.sourceTokenId;v.Refresh();v.Update();click("wishRemove")
         local before=x.state.GetSnapshot();x.fault="write";click("wish_add_"..a.sourceTokenId);x.fault=false
@@ -182,8 +185,9 @@ function T.Run()
         local platform=rawget(_G,"GetPlatform");GetPlatform=function() return "iOS" end
         v.Update();host.Bind(v.root);v.Update()
         local rect=v.journeyView.paper.rect
-        assert(rect.x>=44 and rect.y>=80 and rect.y+rect.h<=v.viewport.h-76)
-        assert(w("wishFooter").props.bottom>=36)
+        assert(rect.x>=44 and rect.y>=80 and rect.y+rect.h<=v.viewport.h-16)
+        local actions=w("wishHeaderActions").props
+        assert(actions.top+actions.height<=rect.y and not v.root:FindById("wishFooter"))
         UI.GetViewportSize,UI.GetSafeAreaInsets=oldSize,oldInsets;GetPlatform=platform
         assert(U.Equal(before,x.state.GetSnapshot()) and writes==x.writes)
     end)
@@ -197,9 +201,9 @@ function T.Run()
             if #group>=2 then samples=group;break end
         end
         assert(#samples>=2,"need two sources in one drawer category")
-        local first=w("wish_add_"..samples[1].sourceTokenId).props.onClick
-        local second=w("wish_add_"..samples[2].sourceTokenId).props.onClick
-        first();local writes=x.writes;second()
+        local first=w("wish_add_"..samples[1].sourceTokenId)
+        local second=w("wish_add_"..samples[2].sourceTokenId)
+        Input.Source(v,first);local writes=x.writes;Input.Source(v,second)
         local draft=R.Must(x.session.queries.GetWishView()).draftSourceIds
         assert(#draft==1 and draft[1]==samples[1].sourceTokenId and x.writes==writes,"stale button must reject instead of dropping the first word")
         v.Update();click("previewWish")

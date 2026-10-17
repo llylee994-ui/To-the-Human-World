@@ -1,0 +1,258 @@
+{
+  "date": "2026-10-17",
+  "severity": 1,
+  "results": [
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "systems/ReleaseEndings.lua",
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"ok\": true, \"result\": {\"kind\": \"full\", \"items\": []}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "systems/ReleaseCoordinator.lua",
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"ok\": true, \"result\": {\"kind\": \"full\", \"items\": []}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "systems/WishCollage.lua",
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"ok\": true, \"result\": {\"kind\": \"full\", \"items\": []}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "ui/PlayModel.lua",
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"ok\": true, \"result\": {\"kind\": \"full\", \"items\": []}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "ui/landscape/DepartureView.lua",
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"ok\": true, \"result\": {\"kind\": \"full\", \"items\": []}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "ui/landscape/WishEnding.lua",
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"ok\": true, \"result\": {\"kind\": \"full\", \"items\": []}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "ui/landscape/WishPaper.lua",
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"ok\": true, \"result\": {\"kind\": \"full\", \"items\": []}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "ui/landscape/WishView.lua",
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"ok\": true, \"result\": {\"kind\": \"full\", \"items\": []}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "ui/landscape/WishTray.lua",
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"ok\": true, \"result\": {\"kind\": \"full\", \"items\": []}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "ui/landscape/WishGestures.lua",
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"ok\": true, \"result\": {\"kind\": \"full\", \"items\": []}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "ui/landscape/WishLayout.lua",
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"ok\": true, \"result\": {\"kind\": \"full\", \"items\": []}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "ui/landscape/WordTrayDrawer.lua",
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"ok\": true, \"result\": {\"kind\": \"full\", \"items\": []}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "ui/landscape/tests/SecondBatchTest.lua",
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"ok\": true, \"result\": {\"kind\": \"full\", \"items\": []}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "ui/landscape/tests/WishNativeProbe.lua",
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"ok\": true, \"result\": {\"kind\": \"full\", \"items\": []}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "ui/landscape/tests/WishTestInput.lua",
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"ok\": true, \"result\": {\"kind\": \"full\", \"items\": []}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "ui/landscape/tests/WishCollageTest.lua",
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"ok\": true, \"result\": {\"kind\": \"full\", \"items\": []}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "debug/ReleaseUITest.lua",
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"ok\": true, \"result\": {\"kind\": \"full\", \"items\": []}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "path": "debug/ReleaseEndingTest.lua",
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"ok\": true, \"result\": {\"kind\": \"full\", \"items\": []}}"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

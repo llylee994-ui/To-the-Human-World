@@ -3,6 +3,7 @@ local U=require "core.StateUtil"
 local E=require "debug.fixtures.ReleaseEndingFixtures"
 local R=require "debug.fixtures.ReleaseFixtures"
 local T={}
+local Input=require "ui.landscape.tests.WishTestInput"
 function T.Run()
     local check,done=R.Checks("WishCollage")
     check("mixed pieces retain free rotation, scale, locked depth and frozen memories after reload",function()
@@ -41,8 +42,21 @@ function T.Run()
     local function open()
         local host=require("ui.landscape.tests.ZoomTestHost").New()
         local x,id=E.WishSeed();local v=require("ui.PlayView").New(x.session,x.content)
-        local function node(key) return assert(v.root:FindById(key),key) end
-        local function tap(key) local n=node(key);assert(not n.props.disabled,key);n.props.onClick();v.Update() end
+        local function node(key)
+            if key:match("^wish_decor_") then
+                while not v.root:FindById(key) do
+                    local nextPage=v.root:FindById("wordTrayNext")
+                    assert(nextPage and not nextPage.props.disabled,"decoration unreachable: "..key)
+                    nextPage.props.onClick();v.Update()
+                end
+            end
+            return assert(v.root:FindById(key),key)
+        end
+        local function tap(key)
+            local n=node(key);assert(not n.props.disabled,key)
+            if key:match("^wish_decor_") then Input.Source(v,n) else n.props.onClick() end
+            v.Update()
+        end
         return x,id,v,node,tap,host
     end
     check("wish mounts the existing drawer with its original art, category papers and close arrow",function()
@@ -78,11 +92,12 @@ function T.Run()
     end)
     check("scale rotation layers and lock persist; selection does not change stacking",function()
         local x,id,v,node,tap=open()
-        tap("wishGrow");tap("wishRotateRight");tap("wishLayerUp")
+        Input.Transform(v,id,"scale",2);v.Update()
+        Input.Transform(v,id,"rotate",45);v.Update();tap("wishLayerUp")
         local row=E.Must(x.session.queries.GetWishView()).placements[1]
         assert(row.scale>1 and row.angle>0 and row.z>1)
         tap("wishLock");local locked=E.Must(x.session.queries.GetWishView()).placements[1]
-        assert(locked.locked and node("wishGrow").props.disabled and node("wishRemove").props.disabled)
+        assert(locked.locked and not node("wishHandle_scale").props.visible and node("wishRemove").props.disabled)
         local card=node("wish_piece_"..id)
         local event={x=0,y=0,pointerId=1,IsPrimaryAction=function() return true end,StopPropagation=function() end}
         local writes=x.writes;card.props.onPointerDown(event);card.props.onPointerUp(event)
@@ -121,21 +136,23 @@ function T.Run()
     end)
     check("free scale handle writes once, rejects second pointer and undoes the whole gesture",function()
         local x,id,v,node,tap=open()
+        Input.Select(v,id)
         local paper=v.journeyView.paper;local card=paper.cards[id]
         card.root.GetAbsoluteLayout=function(self) return {x=paper.rect.x+self.props.left,y=paper.rect.y+self.props.top,w=card.width,h=card.height} end
         local b=card.root:GetAbsoluteLayout();local cx,cy=b.x+b.w/2,b.y+b.h/2
         local handle=node("wishHandle_scale")
         handle.GetAbsoluteLayout=function() return {x=cx+40,y=cy+40,w=38,h=38} end
-        local function event(x,y,pointer) return {x=x-cx-40,y=y-cy-40,pointerId=pointer or 1,
+        local function event(x,y,pointer) return {x=x,y=y,pointerId=pointer or 1,
             IsPrimaryAction=function() return true end,StopPropagation=function() end} end
         local before=x.state.GetSnapshot();local writes=x.writes
+        local originalScale=card.display.scale or 1
         handle.props.onPointerDown(event(cx+50,cy+50))
         handle.props.onPointerMove(event(cx+100,cy+100,2));handle.props.onPointerUp(event(cx+100,cy+100,2))
         assert(x.writes==writes and v.journeyView.busy)
         handle.props.onPointerMove(event(cx+100,cy+100));assert(x.writes==writes)
         handle.props.onPointerUp(event(cx+100,cy+100));assert(x.state.GetSnapshot().revision==before.revision+1)
         local committedWrites=x.writes;assert(committedWrites>writes)
-        assert(E.Must(x.session.queries.GetWishView()).placements[1].scale>1.8)
+        assert(E.Must(x.session.queries.GetWishView()).placements[1].scale>originalScale*1.8)
         handle.props.onPointerUp(event(cx+100,cy+100));assert(x.writes==committedWrites)
         v.Update();tap("wishUndo");assert(U.Equal(before.chapter.wishLayout,x.state.GetSnapshot().chapter.wishLayout))
     end)

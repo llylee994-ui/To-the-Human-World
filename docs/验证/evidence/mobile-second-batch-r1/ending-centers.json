@@ -1,0 +1,416 @@
+[
+  {
+    "root": {
+      "y": 0,
+      "x": 0,
+      "w": 1206,
+      "h": 540
+    },
+    "host": "left",
+    "kind": "departure",
+    "parent": {
+      "y": 0,
+      "x": 0,
+      "w": 1206,
+      "h": 540
+    },
+    "safe": {
+      "right": 0,
+      "bottom": 12,
+      "top": 0,
+      "left": 48
+    },
+    "controls": {
+      "releaseEndingTitle": {
+        "y": 216,
+        "x": 0,
+        "w": 1206,
+        "h": 64
+      },
+      "departureSubtitle": {
+        "y": 270,
+        "x": 0,
+        "w": 1206,
+        "h": 44
+      },
+      "endGame": {
+        "y": 367,
+        "x": 473,
+        "w": 260,
+        "h": 64
+      }
+    },
+    "viewport": {
+      "w": 1206,
+      "h": 540
+    }
+  },
+  {
+    "root": {
+      "y": 0,
+      "x": 0,
+      "w": 1206,
+      "h": 540
+    },
+    "host": "left",
+    "kind": "apprentice",
+    "parent": {
+      "y": 0,
+      "x": 0,
+      "w": 1206,
+      "h": 540
+    },
+    "safe": {
+      "right": 0,
+      "bottom": 12,
+      "top": 0,
+      "left": 48
+    },
+    "controls": {
+      "releaseEndingTitle": {
+        "y": 216,
+        "x": 0,
+        "w": 1206,
+        "h": 64
+      },
+      "departureSubtitle": {
+        "y": 270,
+        "x": 0,
+        "w": 1206,
+        "h": 44
+      },
+      "endGame": {
+        "y": 367,
+        "x": 473,
+        "w": 260,
+        "h": 64
+      }
+    },
+    "viewport": {
+      "w": 1206,
+      "h": 540
+    }
+  },
+  {
+    "root": {
+      "y": 0,
+      "x": 0,
+      "w": 1206,
+      "h": 540
+    },
+    "host": "left",
+    "kind": "wish",
+    "parent": {
+      "y": 0,
+      "x": 0,
+      "w": 1206,
+      "h": 540
+    },
+    "safe": {
+      "right": 0,
+      "bottom": 12,
+      "top": 0,
+      "left": 48
+    },
+    "controls": {
+      "releaseEndingTitle": {
+        "y": 216,
+        "x": 0,
+        "w": 1206,
+        "h": 64
+      },
+      "departureSubtitle": {
+        "y": 270,
+        "x": 0,
+        "w": 1206,
+        "h": 44
+      },
+      "endGame": {
+        "y": 367,
+        "x": 473,
+        "w": 260,
+        "h": 64
+      }
+    },
+    "viewport": {
+      "w": 1206,
+      "h": 540
+    }
+  },
+  {
+    "root": {
+      "y": 0,
+      "x": 0,
+      "w": 1206,
+      "h": 540
+    },
+    "host": "right",
+    "kind": "departure",
+    "parent": {
+      "y": 0,
+      "x": 0,
+      "w": 1206,
+      "h": 540
+    },
+    "safe": {
+      "right": 48,
+      "bottom": 12,
+      "top": 0,
+      "left": 0
+    },
+    "controls": {
+      "releaseEndingTitle": {
+        "y": 216,
+        "x": 0,
+        "w": 1206,
+        "h": 64
+      },
+      "departureSubtitle": {
+        "y": 270,
+        "x": 0,
+        "w": 1206,
+        "h": 44
+      },
+      "endGame": {
+        "y": 367,
+        "x": 473,
+        "w": 260,
+        "h": 64
+      }
+    },
+    "viewport": {
+      "w": 1206,
+      "h": 540
+    }
+  },
+  {
+    "root": {
+      "y": 0,
+      "x": 0,
+      "w": 1206,
+      "h": 540
+    },
+    "host": "right",
+    "kind": "apprentice",
+    "parent": {
+      "y": 0,
+      "x": 0,
+      "w": 1206,
+      "h": 540
+    },
+    "safe": {
+      "right": 48,
+      "bottom": 12,
+      "top": 0,
+      "left": 0
+    },
+    "controls": {
+      "releaseEndingTitle": {
+        "y": 216,
+        "x": 0,
+        "w": 1206,
+        "h": 64
+      },
+      "departureSubtitle": {
+        "y": 270,
+        "x": 0,
+        "w": 1206,
+        "h": 44
+      },
+      "endGame": {
+        "y": 367,
+        "x": 473,
+        "w": 260,
+        "h": 64
+      }
+    },
+    "viewport": {
+      "w": 1206,
+      "h": 540
+    }
+  },
+  {
+    "root": {
+      "y": 0,
+      "x": 0,
+      "w": 1206,
+      "h": 540
+    },
+    "host": "right",
+    "kind": "wish",
+    "parent": {
+      "y": 0,
+      "x": 0,
+      "w": 1206,
+      "h": 540
+    },
+    "safe": {
+      "right": 48,
+      "bottom": 12,
+      "top": 0,
+      "left": 0
+    },
+    "controls": {
+      "releaseEndingTitle": {
+        "y": 216,
+        "x": 0,
+        "w": 1206,
+        "h": 64
+      },
+      "departureSubtitle": {
+        "y": 270,
+        "x": 0,
+        "w": 1206,
+        "h": 44
+      },
+      "endGame": {
+        "y": 367,
+        "x": 473,
+        "w": 260,
+        "h": 64
+      }
+    },
+    "viewport": {
+      "w": 1206,
+      "h": 540
+    }
+  },
+  {
+    "root": {
+      "y": 0,
+      "x": 0,
+      "w": 1450,
+      "h": 815
+    },
+    "host": "desktop",
+    "kind": "departure",
+    "parent": {
+      "y": 0,
+      "x": 0,
+      "w": 1450,
+      "h": 815
+    },
+    "safe": {
+      "right": 0,
+      "bottom": 0,
+      "top": 0,
+      "left": 0
+    },
+    "controls": {
+      "releaseEndingTitle": {
+        "y": 326,
+        "x": 0,
+        "w": 1450,
+        "h": 64
+      },
+      "departureSubtitle": {
+        "y": 408,
+        "x": 0,
+        "w": 1450,
+        "h": 44
+      },
+      "endGame": {
+        "y": 554,
+        "x": 595,
+        "w": 260,
+        "h": 64
+      }
+    },
+    "viewport": {
+      "w": 1450,
+      "h": 815
+    }
+  },
+  {
+    "root": {
+      "y": 0,
+      "x": 0,
+      "w": 1450,
+      "h": 815
+    },
+    "host": "desktop",
+    "kind": "apprentice",
+    "parent": {
+      "y": 0,
+      "x": 0,
+      "w": 1450,
+      "h": 815
+    },
+    "safe": {
+      "right": 0,
+      "bottom": 0,
+      "top": 0,
+      "left": 0
+    },
+    "controls": {
+      "releaseEndingTitle": {
+        "y": 326,
+        "x": 0,
+        "w": 1450,
+        "h": 64
+      },
+      "departureSubtitle": {
+        "y": 408,
+        "x": 0,
+        "w": 1450,
+        "h": 44
+      },
+      "endGame": {
+        "y": 554,
+        "x": 595,
+        "w": 260,
+        "h": 64
+      }
+    },
+    "viewport": {
+      "w": 1450,
+      "h": 815
+    }
+  },
+  {
+    "root": {
+      "y": 0,
+      "x": 0,
+      "w": 1450,
+      "h": 815
+    },
+    "host": "desktop",
+    "kind": "wish",
+    "parent": {
+      "y": 0,
+      "x": 0,
+      "w": 1450,
+      "h": 815
+    },
+    "safe": {
+      "right": 0,
+      "bottom": 0,
+      "top": 0,
+      "left": 0
+    },
+    "controls": {
+      "releaseEndingTitle": {
+        "y": 326,
+        "x": 0,
+        "w": 1450,
+        "h": 64
+      },
+      "departureSubtitle": {
+        "y": 408,
+        "x": 0,
+        "w": 1450,
+        "h": 44
+      },
+      "endGame": {
+        "y": 554,
+        "x": 595,
+        "w": 260,
+        "h": 64
+      }
+    },
+    "viewport": {
+      "w": 1450,
+      "h": 815
+    }
+  }
+]
