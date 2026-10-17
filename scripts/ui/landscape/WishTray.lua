@@ -54,7 +54,7 @@ function T.New(ctx,view,rows,index,bindSource)
                     textAlign="center",lineHeight=1.2,fontColor={250,238,211,255}})
                 bindSource(cell,function()
                     local n=1;while index("decor:"..n) do n=n+1 end
-                    return {decorationId=frame.id,instanceId="decor:"..n,x=.5,y=.5,angle=0,scale=1,canvasAspect=2}
+                    return {decorationId=frame.id,instanceId="decor:"..n,x=.5,y=.5,angle=0,scale=1,canvasAspect=2,freePlacement=true}
                 end)
                 parent:AddChild(cell)
             end})

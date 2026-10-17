@@ -3,7 +3,6 @@ local A=require "ui.landscape.JourneyArt"
 local Paper=require "ui.landscape.WishPaper"
 local Sea=require "ui.landscape.SeaArt"
 local Story=require "ui.landscape.StoryStyle"
-local Layout=require "ui.landscape.WishLayout"
 local C=require "systems.WishCollage"
 local V={}
 function V.New(ctx,ending,review)
@@ -25,7 +24,8 @@ function V.New(ctx,ending,review)
     local overlay=UI.Panel {id="wishFrozenOverlay",position="absolute",left=0,top=0,width="100%",height="100%",visible=false,zIndex=30,onClick=function() end}
     A.Image(overlay,"image/wish-collage-r1/table-background.png",{left=0,top=0,width="100%",height="100%",backgroundFit="cover",zIndex=1})
     local symmetric=math.max(safe.left,safe.right)
-    local rect=Layout.Fit({x=symmetric+12,y=safe.top+12,w=vp.w-2*symmetric-24,h=sh-90},C.Aspect(ending.collage.placements))
+    local rect=Paper.FitComposition({x=symmetric+12,y=safe.top+12,w=vp.w-2*symmetric-24,h=sh-90},
+        ending.collage.placements,ending.collage.words,C.Aspect(ending.collage.placements))
     local frozen=Paper.New(overlay,rect,ending.collage,{id="wishFrozenPaper"})
     frozen.root.props.zIndex=2
     local close=Story.Button {id="closeFrozenWish",text="收好信纸",position="absolute",left=(vp.w-200)/2,

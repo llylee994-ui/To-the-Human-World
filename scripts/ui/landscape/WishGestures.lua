@@ -13,7 +13,7 @@ function G.Bind(view,ctx,paper,rows,words,select,commit)
     local drag=false --[[@as table|false]]
     local focused=true --[[@as boolean]]
     local ghost=false --[[@as table|false]]
-    local rect=paper.rect;local handles={}
+    local rect=paper.rect;local workspace=view.interactionRect or rect;local handles={}
     local updateHandles
     local function index(id) for i,row in ipairs(rows) do if C.Id(row)==id then return i end end end
     local function live() return focused and view.Live() and not view.committed end
@@ -78,7 +78,8 @@ function G.Bind(view,ctx,paper,rows,words,select,commit)
         if not live() then cancel();return end
         move(node,e)
         local row=U.Copy(d.row);local moved=d.moved;local source=d.mode=="source"
-        local inside=e.x>=rect.x and e.x<=rect.x+rect.w and e.y>=rect.y and e.y<=rect.y+rect.h
+        local area=d.row.freePlacement and workspace or rect
+        local inside=e.x>=area.x and e.x<=area.x+area.w and e.y>=area.y and e.y<=area.y+area.h
         local i=d.index;cancel()
         if not moved or source and not inside then return end
         local nextRows=U.Copy(rows)
@@ -131,7 +132,7 @@ function G.Bind(view,ctx,paper,rows,words,select,commit)
             h:SetVisible(i~=nil and not rows[i].locked)
             if card then
                 local b=P.Bounds(card.display,words[id],rect)
-                local r=Layout.Handle(b,rect,mode,G.HandleSize)
+                local r=Layout.Handle(b,workspace,mode,G.HandleSize)
                 Widget.SetStyle(h,{left=r.x-rect.x,top=r.y-rect.y});bind(h,id,mode)
             end
         end

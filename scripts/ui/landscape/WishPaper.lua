@@ -22,6 +22,11 @@ function P.Size(row,text,width)
     return w*(row.scale or 1),h*(row.scale or 1)
 end
 function P.Clamp(row,text,width,height)
+    if row.freePlacement then
+        -- Keep the chosen decoration size and paper-edge overhang intact.
+        row.x=math.max(-1,math.min(2,row.x));row.y=math.max(-1,math.min(2,row.y))
+        return row
+    end
     local w,h=P.Size(row,text,width)
     local a=math.rad(row.angle or 0)
     local ex=(math.abs(math.cos(a))*w+math.abs(math.sin(a))*h)/2
@@ -37,6 +42,22 @@ function P.Bounds(row,text,rect)
     local bw=math.abs(math.cos(a))*w+math.abs(math.sin(a))*h
     local bh=math.abs(math.sin(a))*w+math.abs(math.cos(a))*h
     return {x=rect.x+row.x*rect.w-bw/2,y=rect.y+row.y*rect.h-bh/2,w=bw,h=bh}
+end
+-- Fit the union of the paper and rotated pieces; placements remain in paper coordinates.
+function P.FitComposition(area,rows,words,aspect)
+    local base={x=0,y=0,w=900,h=900/aspect}
+    local left,top,right,bottom=0,0,base.w,base.h
+    for _,row in ipairs(rows) do
+        local text=words[row.sourceTokenId] or ""
+        local b=P.Bounds(P.Clamp(U.Copy(row),text,base.w,base.h),text,base)
+        left=math.min(left,b.x);top=math.min(top,b.y)
+        right=math.max(right,b.x+b.w);bottom=math.max(bottom,b.y+b.h)
+    end
+    local margin=(left<0 or top<0 or right>base.w or bottom>base.h) and 8 or 0
+    local width,height=right-left,bottom-top
+    local scale=math.min((area.w-2*margin)/width,(area.h-2*margin)/height)
+    return {x=area.x+(area.w-width*scale)/2-left*scale,
+        y=area.y+(area.h-height*scale)/2-top*scale,w=base.w*scale,h=base.h*scale}
 end
 function P.Frame(frame,props)
     local panel=UI.Panel(props)
@@ -77,6 +98,14 @@ function P.New(parent,rect,collage,options)
         cards[id]={root=card,visual=visual,width=w,height=h,display=display}
     end
     local result={root=paper,cards=cards,rect=rect}
+    if options.editable and options.hitArea then
+        local area=options.hitArea
+        -- UI skips absolute subtrees outside their HitTest: include the worktable so
+        -- paper-edge decorations and their handles remain selectable there.
+        function paper:HitTest(x,y)
+            return x>=area.x and x<=area.x+area.w and y>=area.y and y<=area.y+area.h
+        end
+    end
     function result.Preview(id,row)
         local card=cards[id];if not card then return end
         local text=collage.words[row.sourceTokenId] or ""

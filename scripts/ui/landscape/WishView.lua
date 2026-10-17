@@ -21,11 +21,21 @@ function V.New(ctx)
     for _,sample in ipairs(wish.samples) do words[sample.sourceTokenId]=sample.text end
     ctx.wishUndo=ctx.wishUndo or {}
     local l=Layout.Compute(vp,safe,preview,2,ctx.menuRect);local rect=l.paper
-    for _,row in ipairs(rows) do Paper.Clamp(row,words[row.sourceTokenId],rect.w,rect.h) end
+    for _,row in ipairs(rows) do
+        Paper.Clamp(row,words[row.sourceTokenId],rect.w,rect.h)
+        -- Migrate only the editable projection; old frozen keepsakes retain their rules.
+        if row.decorationId then row.freePlacement=true end
+    end
+    if preview then rect=Paper.FitComposition(l.area,rows,words,2) end
+    view.interactionRect=U.Copy(l.workspace)
+    if ctx.wishDrawerVisible==false then
+        view.interactionRect.x=safe.left+12
+        view.interactionRect.w=vp.w-safe.right-12-view.interactionRect.x
+    end
     local pw,ph=rect.w,rect.h
     A.Label(view.root,preview and "把愿望交给大海" or "把愿望寄往人间","wishEditorTitle",16,
         {position="absolute",left=l.title.x,top=l.title.y,width=l.title.w,height=l.title.h,lineHeight=1.2,textAlign="center",fontColor={250,238,211,255},zIndex=20})
-    local paper=Paper.New(view.root,rect,{placements=rows,words=words},{editable=not preview})
+    local paper=Paper.New(view.root,rect,{placements=rows,words=words},{editable=not preview,hitArea={x=0,y=0,w=vp.w,h=vp.h}})
     paper.root.props.zIndex=5;view.paper=paper
     local function index(id) for i,row in ipairs(rows) do if C.Id(row)==id then return i end end end
     local function click(fn) return function() if view.Live() and not view.busy and not view.committed then fn() end end end
@@ -99,7 +109,7 @@ function V.New(ctx)
         inspector:SetVisible(row~=nil and row~=false)
         if row then
             local b=Paper.Bounds(row,words[id],rect)
-            local r=Layout.Tools(b,rect,368,48)
+            local r=Layout.Tools(b,view.interactionRect,368,48)
             Widget.SetStyle(inspector,{left=r.x,top=r.y,width=r.w})
         end
         for key,b in pairs(controls) do b:SetDisabled(not row or (row.locked and key~="wishLock") or false) end

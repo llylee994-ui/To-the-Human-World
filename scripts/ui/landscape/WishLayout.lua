@@ -14,7 +14,9 @@ function L.Compute(vp,safe,preview,aspect,menu)
     local actionsWidth=math.min(450,actionsRight-left)
     local actions={x=left+(actionsRight-left-actionsWidth)/2,y=top+25,w=actionsWidth,h=44}
     local area={x=left,y=actions.y+actions.h+8,w=right-left,h=vp.h-safe.bottom-10-(actions.y+actions.h+8)}
-    return {paper=L.Fit(area,aspect or 2),actions=actions,title={x=left,y=top,w=right-left,h=22},trayWidth=tray}
+    return {paper=L.Fit(area,aspect or 2),area=area,
+        workspace={x=left,y=top,w=right-left,h=vp.h-safe.bottom-10-top},
+        actions=actions,title={x=left,y=top,w=right-left,h=22},trayWidth=tray}
 end
 function L.Handle(bounds,rect,mode,size)
     size=size or 52

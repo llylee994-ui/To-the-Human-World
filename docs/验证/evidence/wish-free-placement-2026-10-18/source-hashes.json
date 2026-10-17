@@ -1,0 +1,9 @@
+{
+  "scripts/systems/WishCollage.lua": "4abcb87613bb72a58af70ee52adb9c1969f7f127d8cee4517d7c208299c0d8ac",
+  "scripts/ui/landscape/WishPaper.lua": "ce8908f57b4a280cf2e3e34ae39de94ab7623e38ca803ba430c6cab5751aa3cf",
+  "scripts/ui/landscape/WishLayout.lua": "46d45bb31e74d1ef4a572f5af0f2fee7b5e2f09f6cd01d1bfaa16a4785851fc4",
+  "scripts/ui/landscape/WishView.lua": "8ad0815ba89ef12a3630ec9bff83cd3aa1d0ec9fcf5eb832a83d9a9bef660554",
+  "scripts/ui/landscape/WishGestures.lua": "9ad3c3953706d8ea0b697c67bd74f13d6d0436aeba235ab92ab89ba921e61ca7",
+  "scripts/ui/landscape/WishTray.lua": "8fdba31996704a3adf95b0a5d6b216bdbe7adb1c90b4ae1efe8b9c10bbc6a67d",
+  "scripts/ui/landscape/WishEnding.lua": "ad477e718b81e282bf81cafc439485bbf616e761706aecab222836e0d81874f3"
+}

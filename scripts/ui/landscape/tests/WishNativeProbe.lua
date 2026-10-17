@@ -99,14 +99,25 @@ function P.New()
             {"安安稳稳",.44,.58,-2,1.25},{"合上眼",.65,.58,4,1.25}}
         for _,s in ipairs(specs) do
             local id=assert(byText[s[1]],s[1]);selected=id
-            rows[#rows+1]={sourceTokenId=id,x=s[2],y=s[3],angle=s[4],scale=s[5],z=10+#rows}
+            rows[#rows+1]={sourceTokenId=id,x=s[2],y=s[3],angle=s[4],scale=s[5],z=10+#rows,canvasAspect=2}
         end
         local decor={{"paper-long",.52,.37,-2,1.9,1},{"paper-medium",.54,.58,2,2.4,2},
-            {"daisy",.23,.36,-18,1.05,5},{"forget-me-not",.76,.40,18,.95,6},
-            {"fern",.22,.72,-28,1.2,7},{"wheat",.80,.72,30,1.05,8},{"pink-wildflower",.54,.79,67,.85,9}}
-        for i,s in ipairs(decor) do rows[#rows+1]={decorationId=s[1],instanceId="decor:"..i,x=s[2],y=s[3],angle=s[4],scale=s[5],z=s[6]} end
+            {"daisy",.23,0,-18,1.05,5},{"forget-me-not",.98,.40,18,.95,6},
+            {"fern",.02,.72,-28,1.2,7},{"wheat",.80,1.01,30,1.05,8},{"pink-wildflower",.54,.79,67,.85,9}}
+        for i,s in ipairs(decor) do rows[#rows+1]={decorationId=s[1],instanceId="decor:"..i,x=s[2],y=s[3],angle=s[4],scale=s[5],z=s[6],canvasAspect=2,freePlacement=true} end
         E.Must(fixture.state.UpdateWishLayout(E.Request(fixture,{placements=rows})))
         view.wishSelected=selected;view.Refresh();view.Update()
+    end
+    local function fits(paper,area)
+        local rect=paper.root:GetAbsoluteLayout()
+        assert(rect.x>=area.x-2 and rect.y>=area.y-2 and rect.x+rect.w<=area.x+area.w+2 and rect.y+rect.h<=area.y+area.h+2,"whole letter fits")
+        for _,card in pairs(paper.cards) do
+            local r=card.root:GetAbsoluteLayout();local a=math.rad(card.display.angle)
+            local w=math.abs(math.cos(a))*r.w+math.abs(math.sin(a))*r.h
+            local h=math.abs(math.sin(a))*r.w+math.abs(math.cos(a))*r.h
+            local x,y=r.x+r.w/2-w/2,r.y+r.h/2-h/2
+            assert(x>=area.x-2 and y>=area.y-2 and x+w<=area.x+area.w+2 and y+h<=area.y+area.h+2,"all rotated overflow artwork fits")
+        end
     end
     return function(ctx)
         if done or not ctx.root.parent then return end
@@ -155,6 +166,11 @@ function P.New()
                 local paper=node("wishPaper"):GetAbsoluteLayout();assert(paper.w>800 and paper.h>390,"large fitted paper")
                 capture("03-empty-editor");arrange();deadline=now+1
             elseif stage==9 then
+                UI.Layout()
+                local edge=node("wish_piece_decor:6");local b=edge:GetAbsoluteLayout()
+                assert(b.y+b.h/2>view.journeyView.paper.rect.y+view.journeyView.paper.rect.h,"flower center is outside paper")
+                assert(UI.FindWidgetAt(b.x+b.w/2,b.y+b.h/2)==edge,"outside flower remains selectable")
+                tap("wish_piece_decor:6")
                 capture("04-word-tray")
                 if not view.root:FindById("wordTrayTab_wish_decor") then tap("wordTrayCategoryNext");deadline=now+.3;return end
                 deadline=now+.6
@@ -185,7 +201,10 @@ function P.New()
                 if not nextPage.props.disabled then tap("wordTrayNext");deadline=now+.2;return end
                 deadline=now+.7
             elseif stage==18 then capture("06-blank-paper-tray");tap("previewWish");deadline=now+.8
-            elseif stage==19 then capture("07-preview");tap("confirmWish");deadline=now+1.4
+            elseif stage==19 then
+                local Layout=require "ui.landscape.WishLayout"
+                fits(view.journeyView.paper,Layout.Compute(view.viewport,view.safeInsets,true,2,view.menuRect).area)
+                capture("07-preview");tap("confirmWish");deadline=now+1.4
             elseif stage==20 then
                 if not view.journeyView.sequence.CanAdvance() then return end
                 assert(view.panel=="ending");capture("08-sending-narration");tap("departureAdvance");deadline=now+.9
@@ -202,6 +221,12 @@ function P.New()
                 print("[WishNative] CENTER "..cjson.encode(evidence))
                 assert(node("endGame").props.visible);capture("09-ending");tap("viewEndingCollage");deadline=now+.7
             elseif stage==24 then
+                local overlay=node("wishFrozenPaper")
+                local ending=E.Must(fixture.session.queries.GetEndingView()).ending
+                assert(ending.collage.placements[10].freePlacement and ending.collage.placements[10].y==1.01,"frozen flower keeps its outside coordinate")
+                local cards={}
+                for _,row in ipairs(ending.collage.placements) do cards[require("systems.WishCollage").Id(row)]={root=node("wish_piece_"..require("systems.WishCollage").Id(row)),display=row} end
+                fits({root=overlay,cards=cards},{x=0,y=0,w=view.viewport.w,h=view.viewport.h-72})
                 capture("10-frozen-collage");tap("closeFrozenWish");deadline=now+.5
             elseif stage==25 then tap("endGame");deadline=now+.7
             elseif stage==26 then

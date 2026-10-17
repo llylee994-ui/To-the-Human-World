@@ -46,7 +46,7 @@ function C.Validate(placements,known)
         G.Array(placements,"placements");local seen={};local aspect
         G.Need(#placements<=128,"COLLAGE_FULL","placements","纸上的词条已放满。")
         for _,row in ipairs(placements) do
-            G.Keys(row,{sourceTokenId=true,decorationId=true,instanceId=true,x=true,y=true,angle=true,scale=true,z=true,locked=true,canvasAspect=true},"placement")
+            G.Keys(row,{sourceTokenId=true,decorationId=true,instanceId=true,x=true,y=true,angle=true,scale=true,z=true,locked=true,canvasAspect=true,freePlacement=true},"placement")
             G.Need(row.canvasAspect==nil or row.canvasAspect==2,"COLLAGE_CANVAS","placement.canvasAspect","信纸版式无效。")
             local current=row.canvasAspect or 4/3
             G.Need(aspect==nil or aspect==current,"COLLAGE_CANVAS","placements","同一张信纸不能混用版式。")
@@ -60,8 +60,12 @@ function C.Validate(placements,known)
             end
             local id=C.Id(row)
             G.Need(not seen[id],"SOURCE_INVALID","placement","同一张词条或装饰实例不能重复。")
-            G.Need(finite(row.x) and finite(row.y) and row.x>=.03 and row.x<=.97 and row.y>=.18 and row.y<=.94,
-                "COLLAGE_BOUNDS","placement","请把词条放在信纸内。")
+            G.Need(row.freePlacement==nil or row.freePlacement==true and row.decorationId~=nil,
+                "COLLAGE_BOUNDS","placement.freePlacement","请选择有效的装饰摆放方式。")
+            local lowX,highX,lowY,highY=.03,.97,.18,.94
+            if row.freePlacement then lowX,highX,lowY,highY=-1,2,-1,2 end
+            G.Need(finite(row.x) and finite(row.y) and row.x>=lowX and row.x<=highX and row.y>=lowY and row.y<=highY,
+                "COLLAGE_BOUNDS","placement","素材位置超出工作区。")
             G.Need(finite(row.angle) and math.abs(row.angle)<=360,"COLLAGE_ANGLE","placement.angle","纸条旋转角度超出范围。")
             G.Need(row.scale==nil or finite(row.scale) and row.scale>=.25 and row.scale<=3,"COLLAGE_SCALE","placement.scale","缩放大小超出范围。")
             G.Need(row.z==nil or finite(row.z) and math.abs(row.z)<=1000000,"COLLAGE_LAYER","placement.z","层级超出范围。")
