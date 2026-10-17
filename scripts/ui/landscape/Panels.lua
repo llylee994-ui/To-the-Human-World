@@ -126,6 +126,8 @@ function P.Seaside(ctx,body)
     P.Button(body,"seasideShop","查看商队商店",function() ctx.Open("shop") end)
 end
 function P.Brew(ctx,body)
+    local actions=ctx.brew and ctx.brew.actions or require("ui.landscape.BrewActionSounds").New(ctx.model,ctx.PlayObjectSound,
+        function() return not ctx.destroyed and ctx.model.Action("UpdateDraft").enabled end)
     if ctx.session.state.GetStatus().migrationNotice then
         P.Text(body,"进度已更新。继续炼药前，请重新选择词与材料。",14,"migrationRecipeHint")
     end
@@ -148,9 +150,9 @@ function P.Brew(ctx,body)
     local action=summary.actions.UpdateDraft
     P.Text(body,"已保存投料",18)
     P.Button(body,"slot_main",draft.mainTokenId and "主词 · "..(names[draft.mainTokenId] or "来源词卡").." · 取出" or "主词未选择",function()
-        ctx.model.TakeOut("word",draft.mainTokenId)
+        actions.TakeOut("word",draft.mainTokenId,"slot")
     end,action.enabled and not not draft.mainTokenId)
-    for i,id in ipairs(draft.auxTokenIds) do P.Button(body,"slot_aux_"..i,"辅词 · "..(names[id] or "来源词卡").." · 取出",function() ctx.model.TakeOut("word",id) end,action.enabled) end
+    for i,id in ipairs(draft.auxTokenIds) do P.Button(body,"slot_aux_"..i,"辅词 · "..(names[id] or "来源词卡").." · 取出",function() actions.TakeOut("word",id,"slot") end,action.enabled) end
     P.Button(body,"brewWords","选择来源词卡",function() ctx.Open("words") end)
     local data=ctx.model.Refresh()
     for _,item in ipairs(ctx.content.ingredients) do
@@ -163,8 +165,8 @@ function P.Brew(ctx,body)
         P.Text(ingredientInfo,item.name.." · 库存 "..owned.." · 已放 "..selected,15)
         P.Text(ingredientInfo,item.desc,13,"brewDesc_"..item.id)
         body:AddChild(ingredientRow)
-        P.Button(body,"add_"..item.id,"放入一份",function() ctx.model.Drop("ingredient",item.id) end,action.enabled and owned>selected)
-        if selected>0 then P.Button(body,"minus_"..item.id,"取出一份",function() ctx.model.TakeOut("ingredient",item.id) end,action.enabled) end
+        P.Button(body,"add_"..item.id,"放入一份",function() actions.Drop("ingredient",item.id) end,action.enabled and owned>selected)
+        if selected>0 then P.Button(body,"minus_"..item.id,"取出一份",function() actions.TakeOut("ingredient",item.id) end,action.enabled) end
     end
     if summary.requirementHint.evaluated then
         if summary.potionPreview then
@@ -179,7 +181,7 @@ function P.Brew(ctx,body)
         P.Text(body,summary.requirementHint.canShip and "当前投料满足字面要求。" or "当前投料尚未满足字面要求。",15)
         for _,failure in ipairs(summary.requirementHint.failures or {}) do P.Text(body,failure.message,14) end
     end
-    P.Button(body,"clearDraft","移出全部投料",function() ctx.model.Edit("clear") end,action.enabled,action.message)
+    P.Button(body,"clearDraft","移出全部投料",actions.Clear,action.enabled,action.message)
     local preview=summary.actions.Preview
     P.Button(body,"previewOrder","开始试做 · 保存后续结果",function()
         local r=ctx.model.Preview()

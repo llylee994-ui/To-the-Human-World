@@ -1,0 +1,17 @@
+捞网与铜锅里的微光 · 来源及制作说明
+
+音乐：旋律、和声、节奏及配器由助手为本次请求重新编写。没有使用现成歌曲、音乐库成曲或旧版 BGM 片段。
+钢琴音色：Salamander Grand Piano，Yamaha C5 单音录音，作者 Alexander Holm，CC BY 3.0。
+https://tonejs.github.io/audio/salamander/
+https://github.com/Tonejs/audio/tree/master/salamander
+https://creativecommons.org/licenses/by/3.0/
+处理：单音移调、柔化、包络、声像及混响；发布含这些采样的成品时保留此署名。source/samples/UPSTREAM_README.txt 保留作者原说明。
+
+其他乐器和锅边环境：本地振荡器、包络与滤波噪声合成，不是实录。气泡及微弱炉火底声是独立 ambience-loop.wav。完整混音已经包含它，接入完整混音时勿再叠加一次。
+
+捞网点击：采用 Kenney Impact Sounds / RPG Audio 的 CC0 木头、衣带和皮革素材，经剪辑、变速、滤波和组合表现木柄与网绳。不是对图中捞网的实录，也不是纯原创录音。
+https://kenney.nl/assets/impact-sounds
+https://kenney.nl/assets/rpg-audio
+https://creativecommons.org/publicdomain/zero/1.0/
+
+source/sources.json 保存原素材哈希及处理方式。没有调用收费生成服务或购买音频库。

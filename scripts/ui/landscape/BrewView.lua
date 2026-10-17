@@ -9,6 +9,7 @@ local Book=require "ui.landscape.JournalBook"
 local Art=require "ui.landscape.IngredientArt"
 local L=require "ui.landscape.BrewLayout"
 local Interaction=require "ui.landscape.BrewInteraction"
+local ActionSounds=require "ui.landscape.BrewActionSounds"
 local Banner=require "ui.landscape.BrewBanner"
 local BrewArt=require "ui.landscape.BrewArt"
 local Recipe=require "ui.landscape.BrewRecipe"
@@ -49,14 +50,25 @@ function B.New(ctx)
     local b={root=root,wordsOpen=true --[[@as boolean]],journalOpen=true --[[@as boolean]],
         selected=false --[[@as string|table|false]],entered=false --[[@as boolean]],layout=L.Compute(1280,720),
         entryTime=0,revealTail=0,signature="",orderId=false --[[@as string|false]],room=room}
-    b.interaction=Interaction.New(ctx.model,function()
+    local function interactive()
+        local settings=ctx.root:FindById("musicSettingsOverlay")
+        return b.entered and ctx.scene=="brew" and not ctx.destroyed and not ctx.portrait and not ctx.atTitle and not ctx.panel
+            and not (settings and settings.props.visible)
+    end
+    local function canEdit()
+        return interactive() and ctx.model.Action("UpdateDraft").enabled and not b.interaction.active
+            and not (b.interaction.flight and b.interaction.flight.accepted)
+    end
+    b.actions=ActionSounds.New(ctx.model,ctx.PlayObjectSound,canEdit)
+    local interactionModel=setmetatable({Drop=function(kind,id) return b.actions.Drop(kind,id,true) end},
+        {__index=ctx.model,__newindex=function(_,key,value) ctx.model[key]=value end})
+    b.interaction=Interaction.New(interactionModel,function()
         if ctx.scene=="brew" and not ctx.destroyed then
             if b.interaction.elapsed>=b.interaction.duration then b.revealTail=Smoke.revealDuration end
             ctx.Open("result")
         end
     end)
     local function dropTarget(item,x,y) return L.Target(b.layout,item,x,y) end
-    local function canEdit() return ctx.model.Action("UpdateDraft").enabled and not ctx.panel and not b.interaction.active and not (b.interaction.flight and b.interaction.flight.accepted) end
     local function bindSource(widget,item)
         local oldClick=widget.props.onClick
         widget.props.onPointerDown=function(event)
@@ -114,8 +126,9 @@ function B.New(ctx)
         if result and result.ok then b.selected=false end
         return result
     end
-    -- Only the click-to-add command is adapted; all state and dirty writes still forward to the shared model.
-    b.words.model=setmetatable({Drop=b.Throw},{__index=ctx.model,__newindex=function(_,key,value) ctx.model[key]=value end})
+    -- The tray owns its removal sound; the slot detail uses a different entry.
+    b.words.model=setmetatable({Drop=b.Throw,TakeOut=function(kind,id) return b.actions.TakeOut(kind,id,"tray") end},
+        {__index=ctx.model,__newindex=function(_,key,value) ctx.model[key]=value end})
     b.words.Close=function() b.wordsOpen=false;ctx.model.dirty=true end
     b.journal.Close=function() b.journalOpen=false;ctx.model.dirty=true end
     function b.OpenJournal(storyId)
@@ -125,6 +138,17 @@ function B.New(ctx)
         Book.Open(b.journal);ctx.model.dirty=true
     end
     b.words.brewDrag=function(widget,card)
+        -- Selection feedback belongs to this workbench, not to the shared home tray.
+        local select=widget.props.onClick
+        widget.props.onPointerDown=function() if not b.interaction.drag then b.interaction.suppressClick=false end end
+        widget.props.onClick=function(self,event)
+            if not interactive() or not b.wordsOpen or not b.interaction.ClickAllowed() or widget.props.disabled then return end
+            local previous=Tray.State(b.words).selected
+            if select then select(self,event) end
+            if previous~=card.tokenId and Tray.State(b.words).selected==card.tokenId and ctx.PlayObjectSound then
+                ctx.PlayObjectSound("word_select")
+            end
+        end
         if card.available and not card.selectedRole then bindSource(widget,{kind="word",id=card.tokenId,text=card.text}) end
     end
     function b.Enter()
@@ -207,8 +231,13 @@ function B.New(ctx)
             local chosen=0;for _,row in ipairs(draft.ingredients) do if row.ingredientId==item.id then chosen=row.quantity end end
             local remaining=math.max(0,(data.live.economy.ingredients[item.id] or 0)-chosen)
             local card=UI.Panel {id="brewIngredient_"..item.id,position="absolute",left=8+(index-1)*(rowWidth-16)/4,top=5,
-                width=(rowWidth-16)/4,height=l.shelf.h-10,onClick=function()
-                    if b.selected==item.id then b.selected=false else b.selected=item.id end
+                width=(rowWidth-16)/4,height=l.shelf.h-10,
+                onPointerDown=function() if not b.interaction.drag then b.interaction.suppressClick=false end end,
+                onClick=function(self)
+                    if not interactive() or not b.interaction.ClickAllowed() or (b.interaction.flight and b.interaction.flight.accepted)
+                        or (self and self.props.disabled) then return end
+                    if b.selected==item.id then b.selected=false
+                    else b.selected=item.id;if ctx.PlayObjectSound then ctx.PlayObjectSound("ingredient_select") end end
                     ctx.model.dirty=true
                 end}
             shelfRow:AddChild(card)
@@ -239,7 +268,7 @@ function B.New(ctx)
         controls:AddChild(StoryStyle.Button {id="previewOrder",text=summary.pending and "查看这锅后续" or "开始熬制",onClick=b.Start,
             disabled=not (summary.pending or (summary.actions.Preview.enabled and draft.mainTokenId and summary.requirementHint.canShip)),
             width=math.min(300,l.center.w-70),minWidth=0,height=48,minHeight=48,fontSize=20})
-        button(controls,"clearDraft","清空",function() if canEdit() then ctx.model.Edit("clear") end end,editable)
+        button(controls,"clearDraft","清空",b.actions.Clear,editable)
         smoke:SetVisible(b.interaction.active or b.revealTail>0)
     end
     function b.Update(dt,focused)
@@ -253,11 +282,11 @@ function B.New(ctx)
         b.entryTime=math.min(.42,b.entryTime+math.max(0,dt))
         if not focused or ctx.portrait or dt<0 or dt>.5 then b.revealTail=0
         else b.revealTail=math.max(0,b.revealTail-dt) end
-        b.interaction.Update(dt,focused and not ctx.portrait)
         if ctx.panel then
             b.interaction.CancelDrag()
             if b.interaction.flight or b.interaction.pulse then b.interaction.flight=false;b.interaction.pulse=false;ctx.model.dirty=true end
         end
+        b.interaction.Update(dt,focused and not ctx.portrait)
         smoke:SetVisible(b.interaction.active or b.revealTail>0);skip:SetVisible(b.interaction.active)
         Tray.Update(b.words,dt);Book.Update(b.journal,dt)
         if room.root.GetAbsoluteLayout then

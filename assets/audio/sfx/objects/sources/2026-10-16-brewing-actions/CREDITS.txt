@@ -1,0 +1,14 @@
+炼药选料与投料 · 七个音效
+
+本次制作是对已有免费录音的重新剪辑、调速、滤波、组合，并叠加本地合成的低沉共鸣。不是七段原创实录，也没有使用付费生成服务。
+
+Kenney / Impact Sounds / CC0 1.0
+https://kenney.nl/assets/impact-sounds
+Kenney / RPG Audio / CC0 1.0
+https://kenney.nl/assets/rpg-audio
+Joseph SARDIN / BigSoundBank / Splash, small #6 / CC0 1.0
+https://bigsoundbank.com/splash-small-6-s1534.html
+https://creativecommons.org/publicdomain/zero/1.0/
+
+原素材、现有授权记录、SHA256和逐条处理说明见source目录。
+背景音乐是已确认的《夜色里的配方》原文件副本，只供试听对照，未修改混音。其旋律与合成音色为此前本项目编写。

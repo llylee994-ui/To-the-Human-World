@@ -46,12 +46,13 @@ function T.Run()
     badView.root:Destroy();fault=false
     local hearth="audio/bgm/hearth-warmth-loop.wav"
     local seaside="audio/bgm/seaside-path-loop.wav"
+    local brewing="audio/bgm/brewing-mystery-loop.wav"
     local plays,nodes,removed,loads=0,0,0,{}
     local active,missing,actualGain
     SOUND_MUSIC="Music"
     cache={GetResource=function(_,kind,path)
         check(kind=="Sound","loads an audio resource")
-        check(path==hearth or path==seaside,"uses packaged BGM paths")
+        check(path==hearth or path==seaside or path==brewing,"uses packaged BGM paths")
         loads[path]=(loads[path] or 0)+1
         if path==missing then return nil end
         return {path=path,SetLooped=function(self,value) self.looped=value end}
@@ -159,9 +160,9 @@ function T.Run()
         click("closePanel");view.Navigate("home");view.Update()
         check(active==hearth and plays==5,"return home restores hearth")
         view.Navigate("brew");view.Update()
-        check(active==hearth and plays==5,"brewing in the house keeps hearth")
+        check(active==brewing and plays==6,"workbench switches to approved brewing music")
         view.Open("shop");view.Update();click("closePanel")
-        check(view.scene=="brew" and active==hearth,"shop restores underlying brewing music")
+        check(view.scene=="brew" and active==brewing,"shop restores underlying brewing music")
         check(nodes==1,"one audio node across all scene transitions")
         view.root:Destroy();view.root:Destroy();view.Update()
         check(active==nil and removed==1,"destroy stops/releases once and cannot restart")

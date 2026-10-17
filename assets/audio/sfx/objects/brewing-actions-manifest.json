@@ -1,0 +1,97 @@
+{
+  "source_package": "2026-10-16-brewing-actions",
+  "processing": "Byte-identical copies; no extra gain, normalization or speed changes. External originals retained.",
+  "assets": [
+    {
+      "id": "ingredient_select",
+      "resource": "audio/sfx/objects/ingredient_select.wav",
+      "source_file": "wav/ingredient_select.wav",
+      "sha256": "0255620369a826ab4354b9f88cdc9cabead15bcae036bcb1ee96c95d5bd84198",
+      "source_sha256": "0255620369a826ab4354b9f88cdc9cabead15bcae036bcb1ee96c95d5bd84198",
+      "duration": 0.18,
+      "sample_rate": 44100,
+      "channels": 1,
+      "sample_width": 2,
+      "gain": 1.0,
+      "loop": false
+    },
+    {
+      "id": "ingredient_add",
+      "resource": "audio/sfx/objects/ingredient_add.wav",
+      "source_file": "wav/ingredient_add.wav",
+      "sha256": "659ea7b618f19f977914cc14d1cecfb95b9d5f960068e2504fd3cf669c1f2d45",
+      "source_sha256": "659ea7b618f19f977914cc14d1cecfb95b9d5f960068e2504fd3cf669c1f2d45",
+      "duration": 0.4,
+      "sample_rate": 44100,
+      "channels": 1,
+      "sample_width": 2,
+      "gain": 1.0,
+      "loop": false
+    },
+    {
+      "id": "ingredient_remove",
+      "resource": "audio/sfx/objects/ingredient_remove.wav",
+      "source_file": "wav/ingredient_remove.wav",
+      "sha256": "b2e72a81085af1578ad8b4ae86d370f16cf86439b7b9e4275c27755e3e5eaf46",
+      "source_sha256": "b2e72a81085af1578ad8b4ae86d370f16cf86439b7b9e4275c27755e3e5eaf46",
+      "duration": 0.44,
+      "sample_rate": 44100,
+      "channels": 1,
+      "sample_width": 2,
+      "gain": 1.0,
+      "loop": false
+    },
+    {
+      "id": "word_add",
+      "resource": "audio/sfx/objects/word_add.wav",
+      "source_file": "wav/word_add.wav",
+      "sha256": "4491c701973aad37bb1170a31afeaca150419976e1027b96c4e769da16d86ef5",
+      "source_sha256": "4491c701973aad37bb1170a31afeaca150419976e1027b96c4e769da16d86ef5",
+      "duration": 0.36,
+      "sample_rate": 44100,
+      "channels": 1,
+      "sample_width": 2,
+      "gain": 1.0,
+      "loop": false
+    },
+    {
+      "id": "word_remove",
+      "resource": "audio/sfx/objects/word_remove.wav",
+      "source_file": "wav/word_remove.wav",
+      "sha256": "d06dff49df77e50a04e6f82c6b9069c07e75d429d24c68ef10636fca67979535",
+      "source_sha256": "d06dff49df77e50a04e6f82c6b9069c07e75d429d24c68ef10636fca67979535",
+      "duration": 0.32,
+      "sample_rate": 44100,
+      "channels": 1,
+      "sample_width": 2,
+      "gain": 1.0,
+      "loop": false
+    },
+    {
+      "id": "word_withdraw",
+      "resource": "audio/sfx/objects/word_withdraw.wav",
+      "source_file": "wav/word_withdraw.wav",
+      "sha256": "000389e403cbd37552917cf3c8b1df518bf1dac34b7782ab6eaa546919abc83c",
+      "source_sha256": "000389e403cbd37552917cf3c8b1df518bf1dac34b7782ab6eaa546919abc83c",
+      "duration": 0.27,
+      "sample_rate": 44100,
+      "channels": 1,
+      "sample_width": 2,
+      "gain": 1.0,
+      "loop": false
+    },
+    {
+      "id": "draft_clear",
+      "resource": "audio/sfx/objects/draft_clear.wav",
+      "source_file": "wav/draft_clear.wav",
+      "sha256": "15e2fea8facbc174b7352ed7f4ace781d47b4b74f7b7fcc01e2e01651231720f",
+      "source_sha256": "15e2fea8facbc174b7352ed7f4ace781d47b4b74f7b7fcc01e2e01651231720f",
+      "duration": 0.62,
+      "sample_rate": 44100,
+      "channels": 1,
+      "sample_width": 2,
+      "gain": 1.0,
+      "loop": false
+    }
+  ]
+}

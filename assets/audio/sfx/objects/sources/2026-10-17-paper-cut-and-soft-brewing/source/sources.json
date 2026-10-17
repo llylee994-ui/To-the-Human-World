@@ -1,0 +1,62 @@
+{
+  "assets": [
+    {
+      "file": "source/raw/bookFlip2.ogg",
+      "sha256": "3409042acbfaebc24c1a6327dc073e36f9250841712e96c5040da566a97df73c",
+      "author": "Kenney",
+      "title": "RPG Audio",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0 1.0"
+    },
+    {
+      "file": "source/raw/bookPlace2.ogg",
+      "sha256": "831874e8fd142d4d0a03ff009f1f83966338a7878c0f6f38c613ae5b80dd731e",
+      "author": "Kenney",
+      "title": "RPG Audio",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0 1.0"
+    },
+    {
+      "file": "source/raw/impactWood_light_003.ogg",
+      "sha256": "cdfbe8af2fe7ff9ee28f337a0a989deee0f327620da456c8413644880e9d0004",
+      "author": "Kenney",
+      "title": "Impact Sounds",
+      "source_url": "https://kenney.nl/assets/impact-sounds",
+      "license": "CC0 1.0"
+    },
+    {
+      "file": "source/raw/bsb_small_splash.ogg",
+      "title": "Splash, small #6",
+      "author": "Joseph SARDIN / BigSoundBank",
+      "source_url": "https://bigsoundbank.com/splash-small-6-s1534.html",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "b52f14e8650eecb1c0446e38bf1dc12c7dc79da51a88daa2870d5bfc0b25af10"
+    },
+    {
+      "file": "source/raw/knifeSlice.ogg",
+      "sha256": "4cd96dc630bed9840c15f1dd2306da2cc56a4da26a5d3f1a03c5a7265ac5e54f",
+      "author": "Kenney",
+      "title": "RPG Audio",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0 1.0"
+    },
+    {
+      "file": "source/raw/metalClick.ogg",
+      "sha256": "9851a69d0c613e13bceef08060ecc4148f098ef487927cbebe270d642398a3b3",
+      "author": "Kenney",
+      "title": "RPG Audio",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0 1.0"
+    }
+  ],
+  "processing": {
+    "word_cut": "Designed scissors composite: short blade shear at0, old-paper fibers at.018s, damped mechanism closure at.062s, quiet paper slip at.126s. All recorded layers HP/LP filtered, no ringing tone or white-noise bed. Not a scissors field recording.",
+    "word_select": "One short supported paper touch, with a very small fiber flex at.026s; smooth tanh peak rounding. No metal, water, sustained slide, pitched chime or magic tail; shorter and quieter than cutting or inserting a card.",
+    "ingredient_add": "Soft revision: same downward water gesture and .40s duration; splash LP reduced2700->1500Hz, onset6->18ms and tail45->60ms, dry contact reduced, body changed to quiet pure sine240->175Hz, separate late droplet removed. Final whole-event RMS target-40.5dBFS, peak ceiling-22.5dBFS; reference is untouched.",
+    "ingredient_remove": "Soft revision: same lift then return gesture and .44s duration; splash LP2400->1450Hz, slower27ms onset, two obvious droplets replaced by one low quiet300->235Hz drop, tray contact reduced. Final RMS target-40dBFS, peak ceiling-23dBFS; reference is untouched."
+  },
+  "synthesis": "Only ingredient revisions use low, pure sine liquid-body gestures. Scissors and card selection are edited CC0 recording composites, without synthetic noise.",
+  "common_processing": "Mono downmix, resample/speed change, 2-pole HP and6-pole LP, smoothed transient attenuation, soft attack/release, restrained event RMS and peak levels.",
+  "dependencies": "Python, numpy, scipy, soundfile. Existing local soundfile fallback; no new installation."
+}
