@@ -1,0 +1,15 @@
+夜色里的配方 · 炼药 BGM 第二版
+
+新版：旋律、和声、配器与音色由助手为这次修改重新编写。柔和玻璃共鸣、空心低管、缓慢弓弦感持续音、低音及上升回响均用本地振荡器、包络、滤波和混响合成。环境层为合成气泡和低炉火。没有钢琴采样、成曲片段、收费生成服务或人声。
+音乐84秒，3/4拍，60BPM，28小节。MIDI的GM音色只能近似表现自定义合成器，最终音色以WAV为准。
+
+对照片段：reference/brewing-v1.wav 和 reference/home.wav 分别取此前炼药第一版和主页炉边BGM的前21秒，按-24dBFS平均电平做近似匹配。仅作为试听对照，没有改动原文件。原始路径、哈希和调整增益见manifest.json。
+这两份旧版对照含Salamander Grand Piano单音采样，作者Alexander Holm，CC BY3.0。
+https://tonejs.github.io/audio/salamander/
+https://github.com/Tonejs/audio/tree/master/salamander
+https://creativecommons.org/licenses/by/3.0/
+其他旧版乐器、环境音为原试听工程本地合成。旧版旋律和配器也是此前为本项目编写，没有使用音乐库成曲。
+
+已认可的net_pick捞网音效保持原文件原哈希，不包含在本次替换包中。
+
+药炉点击音效：使用Kenney Impact Sounds的impactMetal_medium_000录音（CC0），经变速、滤波和柔化，叠加本地合成的低沉炉体共鸣与两点短炉火声。不是对图中铜炉的实录，也不是完全原创录音。来源：https://kenney.nl/assets/impact-sounds；授权：https://creativecommons.org/publicdomain/zero/1.0/。原素材和授权保存在source/raw与source/licenses。

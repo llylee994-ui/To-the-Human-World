@@ -1,0 +1,22 @@
+[
+  {
+    "file": "source/licenses/scissors-cutting-paper-4-routenote.html",
+    "url": "https://licensing.routenote.com/sound-effect/scissors-cutting-paper-4",
+    "bytes": 20974,
+    "sha256": "1a6d7ad559df874d8523df207cf8ce51c5b6e482a754fc802ccc3d469193c803"
+  },
+  {
+    "file": "source/licenses/scissors-cutting-paper-4-bigsoundbank.html",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "file": "source/raw/bsb_scissors_paper_4.ogg",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "file": "source/raw/bsb_scissors_paper_4.mp3",
+    "url": "https://storage.googleapis.com/routenote-licensing-storage/public/sound_effects/3504/2226.mp3",
+    "bytes": 23781,
+    "sha256": "9be8ffcc226f940f2bf8d4dd13f7817c9c5f6b3973f813971eefe9e1a1d0974d"
+  }
+]

@@ -1,0 +1,73 @@
+{
+  "assets": [
+    {
+      "file": "source/raw/impactWood_light_000.ogg",
+      "sha256": "eb45e35b4bed784d3f120de4afec4b0d6ac09d9e143cce8cfcb7d739e1b1f3c3",
+      "author": "Kenney",
+      "title": "Impact Sounds",
+      "source_url": "https://kenney.nl/assets/impact-sounds",
+      "license": "CC0 1.0"
+    },
+    {
+      "file": "source/raw/impactWood_light_003.ogg",
+      "sha256": "cdfbe8af2fe7ff9ee28f337a0a989deee0f327620da456c8413644880e9d0004",
+      "author": "Kenney",
+      "title": "Impact Sounds",
+      "source_url": "https://kenney.nl/assets/impact-sounds",
+      "license": "CC0 1.0"
+    },
+    {
+      "file": "source/raw/impactGlass_light_001.ogg",
+      "sha256": "05e513fbd42829060eb37855f8c3866722ec5c39a8937c9bfde518cc609effa2",
+      "author": "Kenney",
+      "title": "Impact Sounds",
+      "source_url": "https://kenney.nl/assets/impact-sounds",
+      "license": "CC0 1.0"
+    },
+    {
+      "file": "source/raw/bookFlip1.ogg",
+      "sha256": "fa81ac2fedc8c641661b87e349630a36c9800e795e0c800e029214efdbe26a7d",
+      "author": "Kenney",
+      "title": "RPG Audio",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0 1.0"
+    },
+    {
+      "file": "source/raw/bookFlip2.ogg",
+      "sha256": "3409042acbfaebc24c1a6327dc073e36f9250841712e96c5040da566a97df73c",
+      "author": "Kenney",
+      "title": "RPG Audio",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0 1.0"
+    },
+    {
+      "file": "source/raw/bookPlace2.ogg",
+      "sha256": "831874e8fd142d4d0a03ff009f1f83966338a7878c0f6f38c613ae5b80dd731e",
+      "author": "Kenney",
+      "title": "RPG Audio",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0 1.0"
+    },
+    {
+      "file": "source/raw/bsb_small_splash.ogg",
+      "title": "Splash, small #6",
+      "author": "Joseph SARDIN / BigSoundBank",
+      "source_url": "https://bigsoundbank.com/splash-small-6-s1534.html",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "b52f14e8650eecb1c0446e38bf1dc12c7dc79da51a88daa2870d5bfc0b25af10"
+    }
+  ],
+  "processing": {
+    "ingredient_select": "One short dry wood contact (0-.095s, speed1.08, HP140/LP1800) and damped glass body (0-.105s, speed.83, HP150/LP1350) at0.02s/gain.22. No paper, water or chime.",
+    "ingredient_add": "Dry entry touch, rounded recorded splash (0.023-.205s at.94 speed), falling 270->155Hz liquid-body tone and one low secondary droplet at.245s. Drop motion, not a bottle collision.",
+    "ingredient_remove": "Light recorded water lift (0.275-.435s at1.05 speed), small rising 190->330Hz body, two separated synthetic low droplets at.17/.25s, soft return-to-tray contact at.315s. Different event order from insertion.",
+    "word_add": "Soft single paper fold (bookFlip2 .046-.200s, speed.94, HP140/LP1900), quiet falling 420->270Hz resonance at.11s, small supported paper landing at.205s. No bright metallic edge.",
+    "word_remove": "One smooth paper extraction (bookFlip1 .310-.505s, speed1.08, HP170/LP2200) and restrained rising 250->390Hz resonance. Longer open-ended gesture than the short withdrawal return.",
+    "word_withdraw": "Short dry slip followed by supported paper return (bookPlace2 .034-.144s) at.065s, with a quiet low settling touch at.13s. No watery sound, rising resonance or rejection beep. Alternative word-removal entry, never stack with word_remove.",
+    "draft_clear": "One combined gathering gesture: muted paper at0, a quiet reversed water lift at.08s, a descending 250->125Hz body at.18s, and one supported settle at.36s. Not a pileup of all individual removal sounds; all-item clear plays once."
+  },
+  "synthesis": "Deterministic low sine/inharmonic-body tones with short envelopes and frequency gestures. No generated noise beds or finished library SFX used as-is.",
+  "common_processing": "Selected recordings, mono downmix, polyphase speed change, 2-pole HP and6-pole LP, smoothed local peak suppression, soft edge fades; conservative per-event RMS target and peak ceiling.",
+  "dependencies": "Python, numpy, scipy, soundfile. Existing local soundfile path is a fallback; no installation performed."
+}

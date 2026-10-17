@@ -1,0 +1,10 @@
+{
+  "source": {
+    "file": "source/raw/impactMetal_medium_000.ogg",
+    "sha256": "a96f879fec0864a8938e0c745b6996a6c5679c16a234ce31a01cc995e8401003",
+    "author": "Kenney",
+    "license": "CC0 1.0",
+    "source_url": "https://kenney.nl/assets/impact-sounds"
+  },
+  "recipe": "First0.245s, speed0.78, HP100Hz/LP2100Hz, smoothed local peak reduction,5ms attack/40ms source release; synthesized204/463/817/1251Hz damped body at0.18 gain; two low ember transients at0.145/0.270s; overall80ms release and conservative level. Foley interpretation, not recording of the pictured stove."
+}

@@ -57,17 +57,22 @@ function P.New(ctx,body,view)
         api.paper.enabled=action.enabled and not busy
     end
     function api.Cut(id)
+        local settings=ctx.root:FindById("musicSettingsOverlay")
+        if ctx.destroyed or ctx.panel~="reader" or ctx.portrait or ctx.atTitle or (settings and settings.props.visible)
+            or not ctx.model.Action("CutWord").enabled then return fail("当前无法剪取词条。") end
         if api.motion.opening or api.motion.flight then return fail("请稍候，纸条正在收好。") end
         local source
         for _,s in ipairs(api.view.spans) do if s.spanId==id then source=s;break end end
         if not source or source.cut or not source.canCut then return fail("这处词条已经收取。") end
         local result=ctx.model.Cut(id)
-        if result.ok then
+        if result.ok and result.value.changed then
             local bounds=api.paper.Bounds(id)
             local r=panel.GetAbsoluteLayout and panel:GetAbsoluteLayout() or {x=0,y=0,w=800,h=400}
             bounds=bounds or {x=r.x+50,y=r.y+80,w=72,h=34}
             bounds.text=source.text;bounds.spanId=id
-            api.motion.Start(bounds,{x=r.x+r.w-150,y=r.y+r.h-57})
+            if api.motion.Start(bounds,{x=r.x+r.w-150,y=r.y+r.h-57}) and ctx.PlayObjectSound then
+                ctx.PlayObjectSound("word_cut")
+            end
             api.collected=api.collected+1
             api.Refresh(assert(ctx.session.modules.letters.GetView(ctx.model.selectedLetter)).value)
         end

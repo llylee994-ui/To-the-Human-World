@@ -2,6 +2,7 @@
 local Music={}
 local hearth="audio/bgm/hearth-warmth-loop.wav"
 local seaside="audio/bgm/seaside-path-loop.wav"
+local brewing="audio/bgm/brewing-mystery-loop.wav"
 
 function Music.New()
     local player={}
@@ -33,7 +34,7 @@ function Music.New()
 
     function player.Sync(scene,panel)
         if destroyed then return end
-        local path=(scene=="seaside" or panel=="shop" or panel=="departure") and seaside or hearth
+        local path=(scene=="seaside" or panel=="shop" or panel=="departure") and seaside or (scene=="brew" and brewing or hearth)
         if current==path then return end
         -- Native cache is a global getter; rawget would incorrectly skip playback.
         -- Isolated business/UI tests have neither of these native bindings.

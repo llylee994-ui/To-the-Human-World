@@ -52,12 +52,12 @@ function I.New(model,onResult)
     end
     function s.Commit(item,x,y,destination)
         if s.active or (s.flight and s.flight.accepted) then return false end
-        local r=model.Drop(item.kind,item.id)
-        if r.ok then
+        local r,arrived=model.Drop(item.kind,item.id)
+        if r and r.ok then
             s.feedback=.35
             s.flight={kind=item.kind,id=item.id,text=item.text,path=item.path,wordSlip=item.wordSlip,fromX=x,fromY=y,
                 toX=destination.landingX or destination.x+destination.w/2,toY=destination.landingY or destination.y+destination.h/2,
-                accepted=true,elapsed=0,duration=.38,pot=destination.landingX~=nil}
+                accepted=true,elapsed=0,duration=.38,pot=destination.landingX~=nil,arrived=arrived}
         end
         return r
     end
@@ -95,6 +95,7 @@ function I.New(model,onResult)
             if f.elapsed>=f.duration then
                 if f.accepted and f.pot then s.pulse={x=f.toX,y=f.toY,elapsed=0} end
                 s.flight=false;model.dirty=true
+                if f.accepted and f.arrived then f.arrived() end
             end
         end
         if s.active then

@@ -1,0 +1,52 @@
+{
+  "import": "Brewing BGM byte-identical; net/stove amplitude x1.6 per subsequent user request; all runtime base gains 1.0",
+  "assets": [
+    {
+      "id": "net_pick",
+      "resource": "audio/sfx/objects/net_pick.wav",
+      "source_package": "2026-10-16-net-and-brewing",
+      "source_file": "sfx/net_pick.wav",
+      "sha256": "2838a3a10232f90cc49f2411e14afa5457e584cc91964a9dc3c2e10fef64ca61",
+      "duration": 0.4,
+      "channels": 1,
+      "sample_rate": 44100,
+      "encoding": "PCM16 WAV",
+      "gain": 1.0,
+      "loop": false,
+      "source_sha256": "38ede0d3a72341d5f5c8d40fa6be5f66ac5fc1bc023cb606255a58d58c15e10b",
+      "asset_gain": 1.6,
+      "asset_gain_db": 4.0824,
+      "processing": "2026-10-16 user requested louder net/stove: uniform PCM amplitude x1.6; no normalization, compression, clipping or resampling; original audition unchanged"
+    },
+    {
+      "id": "stove_touch",
+      "resource": "audio/sfx/objects/stove_touch.wav",
+      "source_package": "2026-10-16-brewing-mystery-v2",
+      "source_file": "sfx/stove_touch.wav",
+      "sha256": "606b4e516d6847aa4632eeef174c7e41aea77a7a1a53a3376549c7982a4f7955",
+      "duration": 0.52,
+      "channels": 1,
+      "sample_rate": 44100,
+      "encoding": "PCM16 WAV",
+      "gain": 1.0,
+      "loop": false,
+      "source_sha256": "047dab7c953dcd9524880d45b041c42d5c849ef190dfb629a87886344c7b7291",
+      "asset_gain": 1.6,
+      "asset_gain_db": 4.0824,
+      "processing": "2026-10-16 user requested louder net/stove: uniform PCM amplitude x1.6; no normalization, compression, clipping or resampling; original audition unchanged"
+    },
+    {
+      "id": "brewing",
+      "resource": "audio/bgm/brewing-mystery-loop.wav",
+      "source_package": "2026-10-16-brewing-mystery-v2",
+      "source_file": "bgm/brewing-mystery-loop.wav",
+      "sha256": "9ae11b35f34bada9958579343239425e5ea642023329989cd0151b27ac8babe6",
+      "duration": 84,
+      "channels": 2,
+      "sample_rate": 44100,
+      "encoding": "PCM16 WAV",
+      "gain": 1.0,
+      "loop": true
+    }
+  ]
+}

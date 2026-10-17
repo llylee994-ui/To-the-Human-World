@@ -97,7 +97,7 @@ function R.Render(ctx,b,center,summary,data,editable)
             action(controls,"add_"..id,"投入一份",function() b.Throw("ingredient",id) end,
                 editable and (data.live.economy.ingredients[id] or 0)>used)
             if used>0 then remove={kind="ingredient",id=id} end
-            if remove then action(controls,"minus_"..id,"取出一份",function() ctx.model.TakeOut("ingredient",id) end,editable) end
+            if remove then action(controls,"minus_"..id,"取出一份",function() b.actions.TakeOut("ingredient",id) end,editable) end
             action(controls,"dismissIngredient","收起",function() b.selected=false;ctx.model.dirty=true end)
             return
         elseif type(selected)=="table" then
@@ -107,7 +107,7 @@ function R.Render(ctx,b,center,summary,data,editable)
         end
     end
     local controls=UI.Panel {flexDirection="row",gap=6,pointerEvents="box-none"};detail:AddChild(controls)
-    if remove then action(controls,"brewRemoveSlot","撤回词卡",function() ctx.model.TakeOut(remove.kind,remove.id);b.selected=false end,editable) end
+    if remove then action(controls,"brewRemoveSlot","撤回词卡",function() b.actions.TakeOut(remove.kind,remove.id,"slot");b.selected=false end,editable) end
     action(controls,"dismissIngredient","收起",function() b.selected=false;ctx.model.dirty=true end)
 end
 return R

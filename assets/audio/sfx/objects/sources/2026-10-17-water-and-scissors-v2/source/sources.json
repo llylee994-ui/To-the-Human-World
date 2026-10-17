@@ -1,0 +1,107 @@
+{
+  "assets": [
+    {
+      "file": "source/raw/bsb_small_splash.ogg",
+      "title": "Splash, small #6",
+      "author": "Joseph SARDIN / BigSoundBank",
+      "source_url": "https://bigsoundbank.com/splash-small-6-s1534.html",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "b52f14e8650eecb1c0446e38bf1dc12c7dc79da51a88daa2870d5bfc0b25af10"
+    },
+    {
+      "file": "source/raw/bookFlip2.ogg",
+      "sha256": "3409042acbfaebc24c1a6327dc073e36f9250841712e96c5040da566a97df73c",
+      "author": "Kenney",
+      "title": "RPG Audio",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0 1.0"
+    },
+    {
+      "file": "source/raw/bookPlace2.ogg",
+      "sha256": "831874e8fd142d4d0a03ff009f1f83966338a7878c0f6f38c613ae5b80dd731e",
+      "author": "Kenney",
+      "title": "RPG Audio",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0 1.0"
+    },
+    {
+      "file": "source/raw/bsb_scissors_paper_4.mp3",
+      "title": "Scissors Cutting Paper 4",
+      "author": "Joseph Sardin / BigSoundBank",
+      "source_url": "https://licensing.routenote.com/sound-effect/scissors-cutting-paper-4",
+      "download_url": "https://storage.googleapis.com/routenote-licensing-storage/public/sound_effects/3504/2226.mp3",
+      "license": "CC0",
+      "license_evidence": "source/licenses/scissors-cutting-paper-4-routenote.html",
+      "sha256": "9be8ffcc226f940f2bf8d4dd13f7817c9c5f6b3973f813971eefe9e1a1d0974d"
+    }
+  ],
+  "processing": {
+    "word_cut": {
+      "description": "Three different real paper-cutting strokes from Joseph Sardin Scissors Cutting Paper4, joined by the recorded reopening and paper feed. No knife/metal-click substitute or generated noise.",
+      "cut_start_seconds": [
+        0,
+        0.315,
+        0.625
+      ],
+      "source_segments_seconds": [
+        [
+          0.107,
+          0.45
+        ],
+        [
+          0.827,
+          1.12
+        ],
+        [
+          1.478,
+          1.826
+        ]
+      ],
+      "reopening_at_seconds": [
+        0.205,
+        0.515
+      ],
+      "processing": "HP120/160Hz; LP2400-3300Hz; separate9ms soft cut attacks, quiet reopening, smooth peak rounding, final LP3300Hz;1.04s total."
+    },
+    "ingredient_add": {
+      "description": "Entire main natural splash and settling ripples from a real small-stone water recording. Water is the sole sound source; no wood impact, synthesized tone, or added electronic bubble.",
+      "source_segments_seconds": [
+        [
+          0.018,
+          0.64
+        ]
+      ],
+      "processing": "Speed1.03, HP90Hz/LP3600Hz,12ms onset/95ms release; smoothed10ms water envelope compression(max quiet-body gain3.5), smooth peak rounding and final LP3600Hz;0.68s total."
+    },
+    "ingredient_remove": {
+      "description": "Water-only lifting gesture: reversed splash tail rises, short natural runoff, then two separate real water fragments at.325/.495s. Designed composite, not a literal recording of lifting ingredients. No wooden tray contact or synthesized body tone.",
+      "source_segments_seconds": [
+        [
+          0.275,
+          0.445
+        ],
+        [
+          0.085,
+          0.205
+        ],
+        [
+          0.445,
+          0.555
+        ],
+        [
+          0.26,
+          0.35
+        ]
+      ],
+      "drips_at_seconds": [
+        0.325,
+        0.495
+      ],
+      "processing": "HP110-140Hz/LP3200-3500Hz; soft envelopes, smoothed10ms water envelope compression(max quiet-body gain3.5), smooth peak rounding, final LP3500Hz;0.72s total."
+    },
+    "word_select": "One short supported paper touch, with a very small fiber flex at.026s; smooth tanh peak rounding. No metal, water, sustained slide, pitched chime or magic tail; shorter and quieter than cutting or inserting a card."
+  },
+  "synthesis": "No new tones or synthetic noise in this revision. All three revised sounds use recorded scissors/paper or water. The unchanged card selection is a byte copy of its prior processed CC0 paper composite.",
+  "dependencies": "Python, numpy, scipy, soundfile with MP3 support; no new installation."
+}
