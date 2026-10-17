@@ -124,6 +124,7 @@ function GameState.New(options)
         local data, status = save.Load(slot)
         if status.status ~= "loaded" and status.status ~= "new" then return fail(status.status, status.error) end
         local schema, migrated = status.schema, false
+        if schema>=2 and options.content then data=require("core.ShortWordRevision").Normalize(data,options.content) end
         if status.status == "new" then
             if targetSchema == 1 then data = {gameFlow=flow.ValidateSnapshot(nil).value}
             elseif options.initialState then data = U.Copy(options.initialState); schema = targetSchema

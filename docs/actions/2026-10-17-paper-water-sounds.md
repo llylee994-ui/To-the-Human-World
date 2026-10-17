@@ -82,3 +82,11 @@ Completed（接入、自动检查及用户游戏内验收）。用户已确认�
 按明确路径提交本组代码、四份资源、来源说明、测试及本记录。此前降低默认 BGM 音量的四份未提交文件不纳入提交，保持原样；`.tmp` 截图、日志及辅助脚本不提交。提交前再次执行资源/保护清单核对，全部 PASS；沿用已通过的回归与用户验收，不重复无代码变化的整组测试。
 
 本次仅向已核对的 GitHub remote `github` 推送 `feat/brewing-bgm`；不向 Maker 的 `origin` 推送或构建。已获取最新 GitHub main，接下来在保护未提交改动的前提下进行合并预检和必要回归。合并结果另行记录，不更新 main 分支。
+
+### GitHub 推送与 main 合并结果
+
+- 四项音效本地提交为 `c6b5388ff94a008294adc9b21959d402121c9518`，20 个明确路径与提交清单一致。已推送 GitHub `feat/brewing-bgm`，`git ls-remote` 核对远端 SHA 一致；此前本分支的本地祖先提交随分支一起推送。
+- 本次获取并合入 GitHub main `b972242a931ad028cf2296d45d07c08761e3036a`。`git merge-tree --write-tree` 预检成功，实际 `git merge --no-ff --no-commit` 也无冲突。main 带入 14 个文件，内容为短词文案、稳定属性显示名及旧词名存档兼容；没有改动本组音效或 BGM 文件。
+- 合并后 ShortWordTest 通过：61 个真实剪词位置及 12 个旧存档 pending/shipped/reset 案例，含严格拒绝伪造旧词名与药效。BrewActionSounds 634、BrewWorkbench 188、ObjectSounds 804、SceneMusic 149、LetterPresentation 8080、LetterReader 14、LetterRender 129 断言均通过。合并涉及的八个 Lua 文件 LSP 为 0 Error；完整诊断在 `.tmp/paper-water-merge-lsp/diagnostics.json`。
+- 合并后资源/保护清单再次 PASS：97 个路径保持字节一致，包括此前未提交的默认 BGM 音量改动。`git diff --cached --check` 通过。预览仍为 stopped，没有启动或执行合并后的游戏内试听；用户本轮认可的是合并前四项音效。
+- 按本轮先推送音效、后合入 main 的顺序，后续合并提交保留在本地分支，GitHub 分支当前停在上述音效提交；没有合并回 main。本地 main `20feb459d1c34ced8dc2a9dd3b45f53130312ccd` 未更新。
