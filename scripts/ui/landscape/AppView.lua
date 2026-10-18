@@ -54,7 +54,11 @@ local function bodyIn(parent,id)
     scroll:AddChild(body); parent:AddChild(scroll); return body,scroll
 end
 ---@return table Session-bound view with navigation, scene controllers and lifecycle methods.
-function A.New(session,content,enabled)
+function A.New(session,content,enabled,options)
+    options=options or {}
+    local preloader=options.preloader
+    local loadingView=options.loadingView
+    local musicStarted=options.deferMusic~=true
     local model=Model.New(session,content,enabled)
     local music=SceneMusic.New()
     local objectSounds=ObjectSounds.New()
@@ -113,14 +117,57 @@ function A.New(session,content,enabled)
         yawProbe=false --[[@as table|false]],
         messages=Messages.New(session.state.GetStatus().migrationNotice),importantMessage=false --[[@as string|false]]}
     local departureMusic=false --[[@as boolean]]
+    ctx.preloader=preloader
+    ctx.loadingView=loadingView
+    function ctx.StartMusic()
+        if musicStarted then return end
+        musicStarted=true
+        music.Sync(ctx.scene,departureMusic and "departure" or ctx.panel)
+    end
     function ctx.SetDepartureMusic(value)
         departureMusic=value~=nil
-        music.Sync(ctx.scene,departureMusic and "departure" or ctx.panel)
+        if musicStarted then music.Sync(ctx.scene,departureMusic and "departure" or ctx.panel) end
         music.SetPresentationGain(value or 1)
     end
     function ctx.SetApprenticeMusic(value)
-        music.Sync(value~=nil and "home" or ctx.scene,value==nil and ctx.panel or false)
+        if musicStarted then music.Sync(value~=nil and "home" or ctx.scene,value==nil and ctx.panel or false) end
         music.SetPresentationGain(value or 1)
+    end
+    local pendingGate=nil
+    local gateBypass=false
+    local function groupFor(kind)
+        if kind=="seaside" or kind=="shop" then return "seaside" end
+        if kind=="brew" then return "brew" end
+        if kind=="ending" or kind=="closing" or kind=="wish" or kind=="wishPreview" or kind=="ticketEnding" or kind=="memoryReview" then return "endings" end
+        return nil
+    end
+    function ctx.RequestGroup(group,action,target)
+        if gateBypass or not preloader or not loadingView or preloader.IsReady(group) then return false end
+        if pendingGate and pendingGate.group==group and pendingGate.action==action and pendingGate.target==target
+            and loadingView.IsActive and loadingView:IsActive() then return true end
+        pendingGate={group=group,action=action,target=target}
+        loadingView:Show(group,function()
+            local gate=pendingGate
+            if ctx.destroyed or not gate or gate.group~=group then return end
+            pendingGate=nil
+            gateBypass=true
+            if gate.action=="navigate" then ctx.Navigate(gate.target)
+            elseif gate.action=="open" then ctx.Open(gate.target)
+            elseif gate.action=="release" then
+                ctx.EnterReleasePanel(gate.target);model.dirty=true
+            end
+            gateBypass=false
+        end)
+        return true
+    end
+    function ctx.CancelGate()
+        pendingGate=nil
+        if loadingView and loadingView.IsActive and loadingView:IsActive() then loadingView:Hide() end
+    end
+    function ctx.EnterReleasePanel(kind)
+        if ctx.panel==kind then return true end
+        if ctx.RequestGroup("endings","release",kind) then return false end
+        ctx.panel=kind;return true
     end
     function ctx.PlayObjectSound(id)
         if not ctx.destroyed then return objectSounds.Play(id) end
@@ -136,6 +183,8 @@ function A.New(session,content,enabled)
     local home=Home.New(function(target,id)
         if id=="home.net" or id=="home.stove" then
             local stove=id=="home.stove"
+            local destination=stove and "brew" or "seaside"
+            if ctx.RequestGroup(groupFor(destination),"navigate",destination) then return end
             if ctx.BeginHomeZoom(stove and "stove" or nil) then
                 ctx.PlayObjectSound(stove and "stove_touch" or "net_pick")
             end
@@ -319,6 +368,7 @@ function A.New(session,content,enabled)
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
         WordTray.Reset(ctx);JournalBook.Reset(ctx);LetterDrawer.Reset(ctx)
         ctx.destroyed=true
+        ctx.CancelGate()
         ctx.brew.Leave()
         if ctx.yawProbe then ctx.yawProbe.Close() end
         ctx.CancelHomeZoom("destroyed");ctx.CancelSalvage("destroyed");destroyRoot(self)
@@ -333,6 +383,10 @@ function A.New(session,content,enabled)
         if ctx.calendar and ctx.calendar.motion.active then return end
         if ctx.destroyed or ctx.salvage.active or ctx.ticketEnding then return end
         if ctx.releasePhase and ctx.releasePhase~="operating" then return end
+        if not gateBypass then
+            local group=groupFor(target)
+            if group and ctx.RequestGroup(group,"navigate",target) then return end
+        end
         ctx.resultMotion=false
         ctx.feedback.Cancel()
         if target~="brew" then ctx.brew.Leave() else ctx.brew.Cancel();ctx.brew.Enter() end
@@ -416,6 +470,10 @@ function A.New(session,content,enabled)
             if ctx.releasePhase=="wish" and kind~="wish" and kind~="wishPreview" and kind~="closing" then return end
         end
         if ctx.ticketEnding and kind~="ticketEnding" then return end
+        if not gateBypass then
+            local group=groupFor(kind)
+            if group and ctx.RequestGroup(group,"open",kind) then return end
+        end
         if ctx.panel~=kind then objectOpen=kind end
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
         WordTray.Reset(ctx);JournalBook.Reset(ctx);LetterDrawer.Reset(ctx)
@@ -462,13 +520,19 @@ function A.New(session,content,enabled)
         if not saved.value.hasProgress and not model.StartJourney().ok then return false end
         leaveJourneyView();ctx.atTitle=false;ctx.scene="home";ctx.endingShowCollage=false
         local phase=saved.value.phase
-        ctx.panel=phase=="ended" and "ending" or phase=="wish" and "wish" or phase~="operating" and "closing" or false
+        local target=phase=="ended" and "ending" or phase=="wish" and "wish" or phase~="operating" and "closing" or false
+        if target then
+            if not ctx.EnterReleasePanel(target) then return true end
+        else
+            ctx.panel=false
+        end
         model.dirty=true;return true
     end
     function ctx.ShowMemory(ending)
         if ctx.destroyed or not ctx.atTitle then return false end
         leaveJourneyView();ctx.reviewEnding=require("core.StateUtil").Copy(ending);ctx.endingShowCollage=false
-        ctx.panel="memoryReview";model.dirty=true;return true
+        if not ctx.EnterReleasePanel("memoryReview") then return true end
+        model.dirty=true;return true
     end
     local back=Harbor.Button {id="returnHome",text="返回主页",width=106,minHeight=44,visible=false,onClick=function() ctx.Navigate("home") end}
     hud:AddChild(back)
@@ -577,13 +641,14 @@ function A.New(session,content,enabled)
                 if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
                 WordTray.Reset(ctx);JournalBook.Reset(ctx);LetterDrawer.Reset(ctx);ctx.brew.Leave();ctx.CancelHomeZoom("releasePhase");ctx.CancelSalvage("releasePhase")
                 ctx.stack={};ctx.readerCache=false;ctx.ticketEnding=false;ctx.ticketConfirm=false;ctx.ticketQuote=false
-                ctx.newPlaythroughConfirm=false;ctx.scene="home"
-                ctx.panel=phase=="ended" and "ending" or phase=="wish" and "wish" or phase~="operating" and "closing" or false
+                ctx.newPlaythroughConfirm=false;ctx.scene="home";ctx.panel=false
             end
-            if phase=="ended" then ctx.panel="ending"
-            elseif phase=="closing_prepare" and ctx.panel~="reader" then ctx.panel="closing"
-            elseif phase=="closing" and ctx.panel~="closing" then ctx.panel="closing"
-            elseif phase=="wish" and ctx.panel~="wish" and ctx.panel~="wishPreview" and ctx.panel~="closing" then ctx.panel="wish" end
+            local target=false
+            if phase=="ended" then target="ending"
+            elseif phase=="closing_prepare" and ctx.panel~="reader" then target="closing"
+            elseif phase=="closing" and ctx.panel~="closing" then target="closing"
+            elseif phase=="wish" and ctx.panel~="wish" and ctx.panel~="wishPreview" and ctx.panel~="closing" then target="wish" end
+            if target then ctx.EnterReleasePanel(target) end
             return
         end
         local query=rawget(session.queries,"GetTravelTicketView")
@@ -591,7 +656,8 @@ function A.New(session,content,enabled)
         local saved=query()
         local value=saved.ok and saved.value
         if value and value.departed==true and type(value.ending)=="table" and type(value.ending.title)=="string" and type(value.ending.text)=="string" then
-            ctx.ticketEnding=value.ending;ctx.panel="ticketEnding";ctx.stack={};ctx.ticketConfirm=false;ctx.ticketQuote=false
+            ctx.ticketEnding=value.ending;ctx.stack={};ctx.ticketConfirm=false;ctx.ticketQuote=false
+            ctx.EnterReleasePanel("ticketEnding")
         end
     end
     function ctx.Update()
@@ -663,7 +729,7 @@ function A.New(session,content,enabled)
         ctx.messages:Observe(model.message,now,ctx.importantMessage==model.message)
         if not data then return end
         syncSavedTicketEnding()
-        music.Sync(ctx.scene,departureMusic and "departure" or ctx.panel)
+        if musicStarted then music.Sync(ctx.scene,departureMusic and "departure" or ctx.panel) end
         ledger:SetText(string.format("金币 %d   ·   第 %d 天",ctx.feedback.Currency(data.live.economy.currency,data.live.gameFlow.day),data.live.gameFlow.day))
         pending:SetVisible(ctx.scene~="brew" and not ctx.ticketEnding and not not (data.currentOrder and data.currentOrder.pending))
         local hints=hud:FindById("toggleHomeHints")

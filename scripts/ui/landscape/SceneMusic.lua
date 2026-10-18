@@ -1,8 +1,9 @@
 -- One non-positional music source for the scene and its overlay panels.
+local Audio=require "ui.landscape.AudioCatalog"
 local Music={}
-local hearth="audio/bgm/hearth-warmth-loop.wav"
-local seaside="audio/bgm/seaside-path-loop.wav"
-local brewing="audio/bgm/brewing-mystery-loop.wav"
+local hearth=assert(Audio.BgmPath("hearth"),"missing hearth BGM")
+local seaside=assert(Audio.BgmPath("seaside"),"missing seaside BGM")
+local brewing=assert(Audio.BgmPath("brewing"),"missing brewing BGM")
 
 function Music.New()
     local player={}

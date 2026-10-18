@@ -1,28 +1,6 @@
 -- One-shot object foley. Never changes the Music channel or its sources.
 local S={}
-local paths={
-    word_cut="audio/sfx/objects/water-and-scissors-v2/word_cut.wav",
-    word_select="audio/sfx/objects/word_select.wav",
-    ingredient_select="audio/sfx/objects/ingredient_select.wav",
-    ingredient_add="audio/sfx/objects/water-and-scissors-v2/ingredient_add.wav",
-    ingredient_remove="audio/sfx/objects/water-and-scissors-v2/ingredient_remove.wav",
-    word_add="audio/sfx/objects/word_add.wav",
-    word_remove="audio/sfx/objects/word_remove.wav",
-    word_withdraw="audio/sfx/objects/word_withdraw.wav",
-    draft_clear="audio/sfx/objects/draft_clear.wav",
-    net_pick="audio/sfx/objects/net_pick.wav",
-    stove_touch="audio/sfx/objects/stove_touch.wav",
-    bottle_lift="audio/sfx/objects/bottle_lift.wav",
-    drawer_open="audio/sfx/objects/drawer_open.wav",
-    drawer_close="audio/sfx/objects/drawer_close.wav",
-    letter_pick="audio/sfx/objects/letter_pick.wav",
-    tray_open="audio/sfx/objects/tray_open.wav",
-    tray_close="audio/sfx/objects/tray_close.wav",
-    recipe_book_open="audio/sfx/objects/recipe_book_open.wav",
-    recipe_book_close="audio/sfx/objects/recipe_book_close.wav",
-    ui_click_01="audio/sfx/ui/ui_click_01.wav",
-    ui_confirm="audio/sfx/ui/ui_confirm.wav",
-}
+local paths=require("ui.landscape.AudioCatalog").EffectPaths()
 
 function S.New()
     local player={}

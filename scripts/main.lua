@@ -19,10 +19,20 @@ local StateUtil = require "core.StateUtil"
 local DebugPanel = require "debug.DebugPanel"
 local SelfTest = require "debug.SelfTest"
 local PlayView = require "ui.PlayView"
+local AssetPreloader = require "ui.landscape.AssetPreloader"
+local PreloadManifest = require "ui.landscape.PreloadManifest"
+local LoadingView = require "ui.landscape.LoadingView"
 ---@type table|nil
 local playView_
 ---@type integer|nil
 local playListener_
+---@type table|nil
+local shell_
+---@type table|nil
+local loader_
+---@type table|nil
+local loadingView_
+local gameStarted_ = false
 
 local TITLE = "寄往人间"
 
@@ -56,9 +66,33 @@ local developerMode_ = require "debug.DeveloperMode"
 -- ============================================================================
 
 function Start()
+    if shell_ then return end
     graphics.windowTitle = TITLE
 
     InitUI()
+    -- 无引擎下载介质的隔离测试直接进入正式装配；生产入口才经过资源门禁。
+    -- 原生 cache 通过全局 getter 提供，rawget(_G,"cache") 在引擎里会误判为空。
+    if not cache or type(cache.DownloadResources) ~= "function" then
+        StartGameOnce()
+        return
+    end
+    loader_ = AssetPreloader.New(PreloadManifest, AssetPreloader.ProductionPorts(),
+        {maxLoads=4,imagesPerFrame=2,frameBudgetMs=4})
+    loadingView_ = LoadingView.New(loader_, function()
+        if playView_ and playView_.StartMusic then playView_:StartMusic() end
+    end)
+    shell_ = UI.Panel {id="appShell",position="absolute",left=0,top=0,width="100%",height="100%",pointerEvents="box-none"}
+    shell_:AddChild(loadingView_.root)
+    UI.SetRoot(shell_)
+    SubscribeToEvent("Update", "HandleUpdate")
+    if developerMode_ then SubscribeToEvent("KeyDown", "HandleKeyDown") end
+    loadingView_:Show("core", StartGameOnce)
+end
+
+-- 正式装配只执行一次；加载遮罩保留到目标完成布局与渲染。
+function StartGameOnce()
+    if gameStarted_ then return end
+    gameStarted_ = true
 
     -- 内容配置校验：配置写错时在这里一次性列出来，不让错误流到运行时
     local dataReady, dataErrors = Data.Load()
@@ -101,6 +135,11 @@ function Start()
     SubscribeToEvents()
     DebugPanel.Log(startupStatus_)
     if developerMode_ and status.status ~= "loaded" and status.status ~= "new" then DebugPanel.SetVisible(true) end
+    if loader_ then
+        loader_.Prefetch("seaside")
+        loader_.Prefetch("brew")
+        loader_.Prefetch("endings")
+    end
 
     print(string.format("=== %s 启动完成（第 %d 天）===", TITLE, session_.modules.gameFlow.GetDay()))
 end
@@ -115,10 +154,21 @@ end
 -- B6 通过公共协调器/订单接口操作；不暴露任何模块的私有状态。
 function GetGameSession() return session_ end
 
+-- 启动门禁的只读状态，供无头入口测试确认正式视图尚未提前装配。
+function GetStartupState()
+    return {gameStarted=gameStarted_,hasLoader=loader_~=nil,hasLoading=loadingView_~=nil}
+end
+
 function Stop()
     if playListener_ then EventBus.Off("",playListener_); playListener_=nil end
     if playView_ then playView_.root:Destroy() end
     playView_=nil
+    if loadingView_ then loadingView_:Destroy() end
+    loadingView_=nil
+    if loader_ then loader_:Destroy() end
+    loader_=nil
+    shell_=nil
+    gameStarted_=false
     UI.Shutdown()
     print("=== " .. TITLE .. " 已退出 ===")
 end
@@ -225,7 +275,8 @@ function CreateUI()
         },
     }
 
-    playView_=PlayView.New(session_,Data,function() return gameState_==session_.state end)
+    playView_=PlayView.New(session_,Data,function() return gameState_==session_.state end,
+        {deferMusic=loadingView_~=nil,preloader=loader_,loadingView=loadingView_})
     assert(root:FindById("mainPanel")):AddChild(playView_.root)
     if not developerMode_ and Data.release and playView_.ShowTitle then playView_.ShowTitle() end
     -- 正式错误提示由入口拥有；关闭仅收起提示，协调器保持锁定，可同槽重试。
@@ -268,7 +319,7 @@ function CreateUI()
     uiRoot_ = root
     dayLabel_ = root:FindById("dayLabel") --[[@as Label?]]
 
-    UI.SetRoot(root)
+    if shell_ then shell_:AddChild(root) else UI.SetRoot(root) end
     RefreshHeader()
 end
 
@@ -303,8 +354,6 @@ end
 -- ============================================================================
 
 function SubscribeToEvents()
-    SubscribeToEvent("Update", "HandleUpdate")
-    if developerMode_ then SubscribeToEvent("KeyDown", "HandleKeyDown") end
     playListener_=EventBus.OnAny(function()
         RefreshHeader()
     end,"B6/play")
@@ -349,10 +398,12 @@ end
 ---@param _eventType string
 ---@param eventData UpdateEventData
 function HandleUpdate(_eventType, eventData)
-    if not developerMode_ and observedPlayerStatus_~=gameState_.GetStatus().status then RefreshHeader() end
     local timeStep = eventData["TimeStep"]:GetFloat()
+    if loadingView_ then loadingView_:Update(timeStep) end
+    if not gameStarted_ or not playView_ then return end
+    if not developerMode_ and observedPlayerStatus_~=gameState_.GetStatus().status then RefreshHeader() end
     DebugPanel.Update(timeStep)
-    if playView_ then playView_.Update() end
+    playView_.Update()
 
     -- 首帧布局完成后做一次界面自检（B1），只跑一次
     if developerMode_ and not uiLayoutChecked_ then

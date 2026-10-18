@@ -2,12 +2,17 @@
   "$schema": "../schemas/resources.schema.json",
 
   "preload_groups": [
-
+    "bootstrap"
   ],
 
   "groups": {
     "default": [
       "**"
+    ],
+    "bootstrap": [
+      "image/loading-r1/harbor-small-v01.jpg",
+      "fonts/HarborHand-Regular.ttf",
+      "fonts/HarborHand-Medium.ttf"
     ]
   }
 }
