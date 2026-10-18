@@ -122,17 +122,18 @@ function D.MarkText(card)
 end
 local function strip(ctx,state,card,metrics,x,y,options)
     options=options or {}
+    local dimmed=not card.available or card.selectedRole
     local wrapper=Slip.Surface {id=(options.cardPrefix or "wordTrayCard_")..card.tokenId,position="absolute",
         left=x,top=y,width=metrics.width,height=metrics.height,flexShrink=0,
         alignItems="center",justifyContent="center",
-        backgroundImageOpacity=card.available and 1 or .55,disabled=options.onPick and not card.available or nil,
+        backgroundImageOpacity=dimmed and .55 or 1,disabled=options.onPick and not card.available or nil,
         onClick=function()
             if options.onPick and not card.available then return end
             state.selected=card.tokenId;ctx.model.dirty=true
             if options.onPick then options.onPick(card) end
         end}
     Slip.Label(wrapper,metrics,"wordTrayText_"..card.tokenId,
-        card.available and ink or {65,47,32,150})
+        dimmed and {65,47,32,150} or ink)
     wrapper.wordSlip=metrics
     if state.selected==card.tokenId then
         wrapper:AddChild(UI.Panel {position="absolute",left=0,top=0,right=0,bottom=0,

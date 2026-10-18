@@ -18,7 +18,7 @@ function T.Run()
     for _,vp in ipairs({{w=1280,h=720},{w=800,h=360},{w=1920,h=1080}}) do
         local cards={}
         for i,value in ipairs(samples) do cards[i]={text=value,tokenId="source:"..i,categoryId="one",available=true,sourceTitle="来源"} end
-        cards[4].available=false;cards[7].selectedRole="main"
+        cards[4].available=false;cards[7].selectedRole="main";cards[8].selectedRole="aux"
         local ctx={viewport=vp,safeInsets={left=0,top=0,right=0,bottom=0},model={message="",Action=function() return {enabled=true} end},
             session={queries={GetWordTray=function() return {ok=true,value={cards=cards,categories={{id="one",title="情绪类",availableCount=7}}}} end}},Close=function() end}
         local parent=UI.Panel {};Drawer.Open(ctx);Drawer.Render(ctx,parent)
@@ -43,6 +43,9 @@ function T.Run()
             check(node.props.width-longest<=9,"paper must hug actual text, including wrapped final width: "..card.text)
             check(node.wordSlip.reserveTop==0,"role/status cannot add a blank row")
             check(not parent:FindById("wordTrayMark_"..card.tokenId),"role/status chips must not cover tight word cards")
+            local inactive=not card.available or card.selectedRole
+            check(node.props.backgroundImageOpacity==(inactive and .55 or 1),"slotted cards use the existing shipped dark appearance without changing geometry")
+            check(p.fontColor[4]==(inactive and 150 or 255),"slotted text follows the existing shipped appearance")
             check(p.text:gsub("\n","")==card.text,"line wrapping preserves full source text")
             check(node.props.left>=0 and node.props.left+node.props.width<=area.w,"slip stays in tray without hitting category tabs")
             mounted[#mounted+1]=node
