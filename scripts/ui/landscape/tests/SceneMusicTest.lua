@@ -47,12 +47,13 @@ function T.Run()
     local hearth="audio/bgm/hearth-warmth-loop.wav"
     local seaside="audio/bgm/seaside-path-loop.wav"
     local brewing="audio/bgm/brewing-mystery-loop.wav"
+    local traveler="audio/bgm/traveler-ending-sea-melancholy-v2-loop.wav"
     local plays,nodes,removed,loads=0,0,0,{}
     local active,missing,actualGain
     SOUND_MUSIC="Music"
     cache={GetResource=function(_,kind,path)
         check(kind=="Sound","loads an audio resource")
-        check(path==hearth or path==seaside or path==brewing,"uses packaged BGM paths")
+        check(path==hearth or path==seaside or path==brewing or path==traveler,"uses packaged BGM paths")
         loads[path]=(loads[path] or 0)+1
         if path==missing then return nil end
         return {path=path,SetLooped=function(self,value) self.looped=value end}
@@ -180,13 +181,13 @@ function T.Run()
                 step(i==5 and 3 or .8)
             end
         end
-        check(active==seaside,"purchased departure uses seaside music")
+        check(active==traveler,"purchased departure uses approved traveler v2 music")
         finishDeparture();check(actualGain==0,"departure ending fades to silence")
         endingView.root:FindById("endGame").props.onClick();endingView.Update()
         check(active==hearth and actualGain==1,"return home restores hearth and user volume")
         endingView.root:FindById("openMemories").props.onClick();endingView.Update()
         endingView.root:FindById("memory_1").props.onClick();endingView.Update()
-        check(active==seaside,"departure review starts seaside track")
+        check(active==traveler,"departure review starts traveler v2 track")
         finishDeparture();check(actualGain==0,"departure review fades to silence")
         endingView.root:FindById("backToMemories").props.onClick();endingView.Update()
         step(2)
@@ -236,7 +237,7 @@ function T.Run()
         player.SetPresentationGain(1)
         check(actualGain==0,"restoring scene gain keeps mute")
         player.SetOptions(true,45);player.Sync("home","departure")
-        check(active==seaside and actualGain==.45,"departure uses quiet seaside track")
+        check(active==traveler and actualGain==.45,"departure uses traveler track at user volume")
         player.SetOptions(true,100)
         player.Sync("home",false);missing=seaside
         local attempts=loads[seaside]

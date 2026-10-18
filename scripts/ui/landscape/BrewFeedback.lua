@@ -87,8 +87,10 @@ function F.New(ctx,ledger)
         if confirm and result.ok and pending then
             local after=ctx.model.Refresh()
             f.actual=after.live.economy.currency;f.day=after.live.gameFlow.day
-            motion.Reward(pending.transactionId,before.live.economy.currency,f.actual,source,
-                point(ctx,"ledgerCard",{x=100,y=30}))
+            if motion.Reward(pending.transactionId,before.live.economy.currency,f.actual,source,
+                point(ctx,"ledgerCard",{x=100,y=30})) and ctx.PlayObjectSound then
+                ctx.PlayObjectSound("reward_coins")
+            end
         end
         return result
     end

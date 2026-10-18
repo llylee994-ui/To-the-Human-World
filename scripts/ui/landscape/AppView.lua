@@ -116,17 +116,21 @@ function A.New(session,content,enabled,options)
         zoom=Zoom.New(),salvage=Salvage.New(),destroyed=false --[[@as boolean]],portrait=false --[[@as boolean]],
         yawProbe=false --[[@as table|false]],
         messages=Messages.New(session.state.GetStatus().migrationNotice),importantMessage=false --[[@as string|false]]}
-    local departureMusic=false --[[@as boolean]]
+    local endingMusicKind=false --[[@as string|false]]
     ctx.preloader=preloader
     ctx.loadingView=loadingView
+    local function syncMusic()
+        local kind=ctx.panel=="memoryReview" and ctx.reviewEnding and ctx.reviewEnding.kind or endingMusicKind
+        if musicStarted then music.Sync(ctx.scene,ctx.panel,kind) end
+    end
     function ctx.StartMusic()
         if musicStarted then return end
         musicStarted=true
-        music.Sync(ctx.scene,departureMusic and "departure" or ctx.panel)
+        syncMusic()
     end
     function ctx.SetDepartureMusic(value)
-        departureMusic=value~=nil
-        if musicStarted then music.Sync(ctx.scene,departureMusic and "departure" or ctx.panel) end
+        -- The panel/ending owns the track; destroying a refreshed view only resets its fade.
+        syncMusic()
         music.SetPresentationGain(value or 1)
     end
     function ctx.SetApprenticeMusic(value)
@@ -173,6 +177,11 @@ function A.New(session,content,enabled,options)
         if not ctx.destroyed then return objectSounds.Play(id) end
         return false
     end
+    function ctx.PlayScopedSound(id)
+        if not ctx.destroyed then return objectSounds.PlayScoped(id) end
+        return false
+    end
+    function ctx.StopScopedSound(handle) objectSounds.Stop(handle,.05) end
     local notify=model.Notify
     function model.Notify(result,message)
         local r=notify(result,message)
@@ -456,7 +465,7 @@ function A.New(session,content,enabled,options)
             ctx.panel="letters"; ctx.stack={}; ctx.choosingLetter=true; model.dirty=true
         end
     end
-    function ctx.Open(kind)
+    function ctx.Open(kind,quiet)
         if ctx.atTitle or (ctx.journeyView and ctx.journeyView.busy) then return end
         if ctx.calendar and ctx.calendar.motion.active then return end
         if ctx.destroyed or ctx.portrait or ctx.zoom.active or ctx.salvage.active or ctx.yawProbe then return end
@@ -474,7 +483,8 @@ function A.New(session,content,enabled,options)
             local group=groupFor(kind)
             if group and ctx.RequestGroup(group,"open",kind) then return end
         end
-        if ctx.panel~=kind then objectOpen=kind end
+        -- Automatic completion of a voiced brew is not another button click.
+        if ctx.panel~=kind then objectOpen=not quiet and kind or false end
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
         WordTray.Reset(ctx);JournalBook.Reset(ctx);LetterDrawer.Reset(ctx)
         ctx.ticketConfirm=false;ctx.ticketQuote=false
@@ -634,6 +644,7 @@ function A.New(session,content,enabled,options)
             local saved=endingQuery()
             if not saved.ok then model.Notify(saved);return end
             local phase=saved.value.phase
+            endingMusicKind=saved.value.ending and saved.value.ending.kind or false
             local changed=phase~=ctx.releasePhase
             ctx.releasePhase=phase
             if ctx.atTitle then return end
@@ -674,7 +685,7 @@ function A.New(session,content,enabled,options)
         if wishProbe then wishProbe(ctx) end
         if mobileBrewProbe then mobileBrewProbe(ctx) end
         if rewindProbe then rewindProbe(ctx) end
-        local now,dt=clock();home.Update(dt)
+        local now,dt=clock();home.Update(dt);objectSounds.Update(dt)
         ctx.UpdateChrome()
         if ctx.scene=="brew" then ctx.brew.Update(dt,input:HasFocus() and not input:IsMinimized()) end
         if ctx.resultMotion then ResultView.Update(ctx,dt,input:HasFocus() and not input:IsMinimized()) end
@@ -729,7 +740,7 @@ function A.New(session,content,enabled,options)
         ctx.messages:Observe(model.message,now,ctx.importantMessage==model.message)
         if not data then return end
         syncSavedTicketEnding()
-        if musicStarted then music.Sync(ctx.scene,departureMusic and "departure" or ctx.panel) end
+        syncMusic()
         ledger:SetText(string.format("金币 %d   ·   第 %d 天",ctx.feedback.Currency(data.live.economy.currency,data.live.gameFlow.day),data.live.gameFlow.day))
         pending:SetVisible(ctx.scene~="brew" and not ctx.ticketEnding and not not (data.currentOrder and data.currentOrder.pending))
         local hints=hud:FindById("toggleHomeHints")

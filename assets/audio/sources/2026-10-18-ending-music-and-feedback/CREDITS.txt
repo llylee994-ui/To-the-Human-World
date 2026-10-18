@@ -1,0 +1,28 @@
+潮水把故事带走 · 结局音乐与动作音效试听
+
+两首音乐《向人间去》《把心愿交给潮汐》的旋律、和声、节奏与编配，均由助手为本次请求新写，不是音乐库成曲。海浪伤感修订版重新编写了小调和声与下行乐句：旅人 E 小调，6/8 拍、四分音符 64 BPM、90 秒；愿望 D 小调，4/4 拍、56 BPM、约 85.714 秒。两首无人声，可循环，默认 WAV 已含海浪。bgm/traveler 与 bgm/wish 中原来的大调 80 秒版仅作对照；新版在 traveler-v2 与 wish-v2 中。
+
+海浪：Joseph Sardin / BigSoundBank.com，Sea Lapping on Shore，CC0 1.0。
+https://licensing.routenote.com/sound-effect/sea-lapping-on-shore
+https://creativecommons.org/publicdomain/zero/1.0/
+公开页面标明 CC0，并提供录音预览；本次保存该公开 MP3。处理：48kHz 转为 44.1kHz、去除低频隆隆与较尖高频、截取不同段落、3 秒等功率循环交叠、音量配比。保留录音本身的海浪涨落，没有将白噪声冒充实录。来源网页已保存在 source/licenses/sea-lapping-routenote.html，下载地址、哈希与处理说明在 source/ending-v2-sources.json。
+music-loop.wav 和 ocean-loop.wav 为对应分轨；相加得到默认混音（16 位量化舍入差异不超过 1 个采样单位）。正式使用完整混音时不要再叠加同一海浪分轨。
+
+旅人钢琴音色：Alexander Holm / Salamander Grand Piano，Yamaha C5 单音录音，CC BY 3.0。
+https://tonejs.github.io/audio/salamander/
+https://github.com/Tonejs/audio/tree/master/salamander
+https://creativecommons.org/licenses/by/3.0/
+处理：单音截取、移调、柔化、包络、声像、混响。发行含这些采样的成品时保留此署名；原作者说明保存在 source/licenses/Salamander_UPSTREAM_README.txt。
+其他乐器是本地振荡器、滤波、包络与混响合成，不是实录乐队。愿望曲全部音色本地合成。MIDI 的 GM 音色只是近似，WAV 是最终试听音色。
+
+熬制音效：Joseph SARDIN / BigSoundBank / Splash, small #6 / CC0 1.0。
+https://bigsoundbank.com/splash-small-6-s1534.html
+从本地已保存的真实水声取小段、变速、滤波、重排，并加入较轻的合成液体共鸣；并非真实锅中沸腾的现场录音。
+
+钱币、皮革和玻璃/木头原料：Kenney / RPG Audio / Impact Sounds / CC0 1.0。
+https://kenney.nl/assets/rpg-audio
+https://kenney.nl/assets/impact-sounds
+报酬第二版使用钱币处理素材重新截取、重排，保留清晰金属起音与短尾响；近原速，增强 2.1–6.9kHz、9kHz 低通，使用局部尖峰控制，没有加入旋律提示音。旧版轻碰仍作为试听对照保留。封瓶由皮革摩擦、轻木接触、玻璃接触及低压入声组合，模拟柔软瓶塞与瓶身，并非实录开香槟或实际封瓶。
+两个素材包自带的 License.txt 已保存在 source/licenses；每个输入和原包哈希在 source/inputs.json。
+
+本轮新下载了上述免费 CC0 海浪，其余使用已有素材与脚本；没有付费服务、音乐生成模型调用或软件安装。Python / numpy / scipy / soundfile 使用已有环境。MIDI/MusicXML 不含环境录音。
