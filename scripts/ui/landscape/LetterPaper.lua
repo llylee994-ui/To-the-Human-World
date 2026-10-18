@@ -108,6 +108,24 @@ function P.New(view,onCut)
             return {x=rect.x+4+r.x,y=rect.y+4+r.y,w=r.w,h=r.h,text=r.text,spanId=spanId}
         end end
     end
+    function api.FirstAvailableBounds(clip)
+        if not clip or clip.w<=0 or clip.h<=0 or not api.enabled then return nil end
+        local rect=root:GetAbsoluteLayoutForHitTest()
+        if rect.w<=8 then return nil end
+        api.EnsureLayout()
+        local available={}
+        for _,span in ipairs(api.view.spans or {}) do
+            if span.canCut and not span.cut then available[span.spanId]=true end
+        end
+        for _,run in ipairs(api.layout.runs) do
+            if available[run.spanId] and not run.cut then
+                local bounds={x=rect.x+4+run.x,y=rect.y+4+run.y,w=run.w,h=run.h}
+                local visible=L.Intersection(bounds,clip)
+                if visible and visible.h>=run.h*.75 then return visible end
+            end
+        end
+        return nil
+    end
     function api.Holes()
         local holes={}
         if not api.layout or not root.GetAbsoluteLayoutForHitTest then return holes end

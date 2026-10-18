@@ -1,3 +1,5 @@
+> 2026-10-18 r4 覆盖说明：本文件中旧的炼药强制操作、结果页说明和发货后完成步骤已废止。以 [最新设计 v02](../superpowers/specs/2026-10-18-onboarding-design.md) 和 [r4 修复验收](2026-10-18-onboarding-review-r4.md) 为准。手机复核：便签正文完整、引导按钮木板样式；剪词光区随可剪词滚动；接单按钮靠下覆盖纸面；炼药五步均点知道了且不影响自由操作，最后介绍开始熬制即结束；短提示无固定大块空白。
+
 # 新手引导人工验收记录
 
 验收对象：[新手引导设计 v01](../superpowers/specs/2026-10-18-onboarding-design.md) 的代码实现；隔离测试结果见[实现记录](../actions/2026-10-18-onboarding-implementation.md)。

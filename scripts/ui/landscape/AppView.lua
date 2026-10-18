@@ -629,7 +629,9 @@ function A.New(session,content,enabled,options)
             -- Inset the entire header/scroll frame, not just the scroll content:
             -- inner padding alone would still clip scrolling text at the paper edge.
             panelProps.padding=32
-            panelProps.paddingBottom=68
+            -- Reader actions float over the lower paper edge, without reserving
+            -- footer/padding space in the scrolling prose layout.
+            panelProps.paddingBottom=32
             panelProps.backgroundSlice={32,32,32,32}
         end
         local panel=Harbor.Paper(panelProps)

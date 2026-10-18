@@ -54,4 +54,11 @@ function UI.Init(_) end
 function UI.Shutdown() end
 function UI.SetRoot(root) UI.root = root end
 function UI.GetRoot() return UI.root end
+-- Deterministic test font advances; these are not native glyph/render evidence.
+function UI.GetFontVersion() return 0 end
+function UI.MeasureTextWidth(text,size)
+    local width=0
+    for _,code in utf8.codes(text) do width=width+size*(code<128 and .55 or 1) end
+    return width
+end
 return UI

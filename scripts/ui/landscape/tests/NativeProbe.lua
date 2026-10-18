@@ -6,6 +6,9 @@ local Geometry=require "ui.landscape.LayoutGeometry"
 local U=require "core.StateUtil"
 local N={}
 function N.New()
+    if require("ui.landscape.DevChecks").onboardingProbe then
+        return require("ui.landscape.tests.OnboardingNativeProbe").New()
+    end
     if require("ui.landscape.DevChecks").letterDrawerProbe then
         return require("ui.landscape.tests.LetterDrawerNativeProbe").New()
     end

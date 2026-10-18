@@ -3,6 +3,17 @@ local U=require "core.StateUtil"
 local T={}
 local function must(r) assert(r.ok,cjson.encode(r.error));return r.value end
 function T.Run()
+    local Sizing=require "ui.landscape.OnboardingLayout"
+    local short=Sizing.Tooltip("先去海边看看。",1200,false)
+    assert(short.width<220 and short.height<70,"short hint hugs its text without a fixed empty box")
+    local long="剪下的词条收在左边。调配时，可以把词条拖进锅里。"
+    assert(Sizing.Tooltip(long,180,true).height>Sizing.Tooltip(long,340,true).height,
+        "narrow hints grow vertically with real wrapping")
+    local fontUI=require("urhox-libs/UI") --[[@as table]]
+    local oldFit=fontUI.MeasureTextFit
+    fontUI.MeasureTextFit=function() return {height=100} end
+    assert(Sizing.Text("字",100,15,1.45).height>=100,"actual glyph bounds override nominal line height")
+    fontUI.MeasureTextFit=oldFit
     local Data=require "data.content"
     local F=require "debug.fixtures.B5Fixtures"
     local View=require "ui.PlayView"
@@ -68,7 +79,6 @@ function T.Run()
     assert(flowChecks(Data,F,View,Session,Host))
     pauseChecks(Data,F,View,Session,Host)
     readingChecks(Data,F,View,Session,Host)
-    flightChecks(Data,F,View,Session,Host)
     return true
 end
 
@@ -97,43 +107,43 @@ function flowChecks(Data,F,View,Session,Host)
     local orderId=must(session.order.Accept({letterInstanceId=instance})).orderId
     view.Update();view.Update()
     assert(session.state.GetSnapshot().onboarding.step=="brew.word","real accept advances to the workbench")
-    local D=require "systems.RecipeDraft"
-    local draft=D.Project({orderId=orderId,equipmentId=Data.stage1.initialEquipmentId,mainTokenId=token,auxTokenIds={},ingredients={},specialItemIds={}})
-    must(session.order.UpdateDraft({orderId=orderId,draft=draft}))
+    -- 炼药讲解只靠“知道了”，不写配方、不要求打开详情或开始熬制。
+    view.Navigate("brew");view.Update()
+    local before=session.state.GetSnapshot()
+    local steps={"brew.word","brew.book","brew.ingredient","brew.conditions","brew.ready"}
+    for i,name in ipairs(steps) do
+        view.Update();view.Update()
+        assert(session.state.GetSnapshot().onboarding.step==name,"acknowledgement visits "..name)
+        local know=assert(view.root:FindById("onboardingKnow"))
+        assert(know.props.visible and not know.props.disabled,"every brewing explanation has an enabled acknowledgement")
+        for _,side in ipairs({"top","bottom","left","right"}) do
+            local blocker=view.root:FindById("onboardingBlocker_"..side)
+            assert(blocker.props.width==0 or blocker.props.height==0,"brewing never blocks player input")
+        end
+        if i==1 then
+            view.Navigate("home");for _=1,80 do host.Step(view,.02) end
+            assert(view.scene=="home","tutorial never forces a return to the workbench")
+            assert(not view.root:FindById("onboardingRoot").props.visible,"workbench tips hide outside the workbench")
+            view.Navigate("brew");view.Update()
+        end
+        know.props.onClick()
+    end
     view.Update();view.Update()
-    assert(session.state.GetSnapshot().onboarding.step=="brew.book","real draft word advances to the book")
-    view.root:FindById("onboardingKnow").props.onClick()
-    view.Update();view.Update()
-    assert(session.state.GetSnapshot().onboarding.step=="brew.ingredient","book acknowledgement advances")
-    local withIngredient=U.Copy(draft);withIngredient.ingredients={{ingredientId="ing_night_dew",quantity=1}}
-    must(session.order.UpdateDraft({orderId=orderId,draft=withIngredient}))
-    view.Update();view.Update()
-    assert(session.state.GetSnapshot().onboarding.step=="brew.conditions","real ingredient advances to conditions")
-    view.brew.selected="recipe";view.Update()
-    view.brew.selected=false;view.Update();view.Update()
-    assert(session.state.GetSnapshot().onboarding.step=="brew.ready","closing the notes advances to ready")
-    local pending=must(session.order.Preview({orderId=orderId,equipmentId=Data.stage1.initialEquipmentId,
-        mainTokenId=token,auxTokenIds={},ingredients={{ingredientId="ing_night_dew",quantity=1}},specialItemIds={}}))
-    assert(pending.phase=="pending","tutorial trial reaches a real pending result")
-    view.Update();view.Update()
-    assert(session.state.GetSnapshot().onboarding.step=="result.explain","real preview advances to result explanation")
-    for _=1,30 do host.Step(view,0.02) end
-    local know=assert(view.root:FindById("onboardingKnow"))
-    assert(know.props.disabled~=true,"knowledge button waits for the result panel to settle")
-    know.props.onClick()
-    view.Update();view.Update()
-    assert(session.state.GetSnapshot().onboarding.step=="complete","result explanation advances to completion")
-    view.Update()
-    assert(view.root:FindById("onboardingBlocker_top").props.width==0
-        or view.root:FindById("onboardingBlocker_top").props.height==0,"complete step leaves retry/scroll unblocked")
-    assert(view.root:FindById("onboardingSkip").props.visible==true,"complete step still offers skip")
-    must(session.order.Confirm({orderId=orderId,transactionId=pending.transactionId}))
-    view.Update();view.Update()
-    assert(session.state.GetSnapshot().onboarding.completed==true,"confirmed delivery completes the tutorial")
+    local after=session.state.GetSnapshot()
+    assert(after.onboarding.completed,"last acknowledgement ends the tutorial immediately")
+    assert(not view.root:FindById("onboardingRoot").props.visible,"no completion/shipping popup remains")
+    assert(U.Equal(before.currentOrder.draft,after.currentOrder.draft),"tour leaves the recipe unchanged")
+    assert(after.live.gameFlow.deliveredOrders==0 and not after.currentOrder.pending,"no brew or shipment is required")
+    for _,legacy in ipairs({"result.explain","complete"}) do
+        assert(session.state.SetOnboarding({version=1,step=legacy,completed=false,skipped=false,noteRead=true}).ok)
+        view.Update();view.Update()
+        assert(session.state.GetSnapshot().onboarding.completed,"legacy post-brew tutorials close quietly")
+    end
     view.root:Destroy()
-    print("[Onboarding] PASS real cut/accept/draft/ingredient/conditions events advance one step each; delivery completes")
+    print("[Onboarding] PASS passive workbench tour, free navigation, ends at brewing button, legacy migration")
     return true
 end
+
 function pauseChecks(Data,F,View,Session,Host)
     local x=F.New(Data,{targetSchema=4});x.files={}
     local session=Session.New(Data,{saveSystem=x.save,eventBus=x.bus,targetSchema=4,onboarding=true})
@@ -215,46 +225,6 @@ function readingChecks(Data,F,View,Session,Host)
     assert(live.state.GetSnapshot().onboarding.step=="letter.cut","sea reading advances after the opening motion")
     liveView.root:Destroy()
     print("[Onboarding] PASS no auto-read; drawer/read-button entrances are manual")
-end
-
-function flightChecks(Data,F,View,Session,Host)
-    local x=F.New(Data,{targetSchema=4});x.files={}
-    local session=Session.New(Data,{saveSystem=x.save,eventBus=x.bus,targetSchema=4,onboarding=true})
-    assert(session.state.Load("onboarding_flight"))
-    local letterId=Data.release.requiredOrderIds[1]
-    local instance=must(session.state.ReceiveLetter({letterId=letterId})).letterInstanceId
-    must(session.state.ReadLetter({letterInstanceId=instance}))
-    local span=must(session.modules.letters.ParseDefinition(letterId)).spans[1]
-    local token=must(session.state.CutWord({letterInstanceId=instance,spanId=span.spanId})).tokenId
-    local orderId=must(session.order.Accept({letterInstanceId=instance})).orderId
-    assert(session.state.SetOnboarding({version=1,step="brew.word",completed=false,skipped=false,noteRead=false}).ok)
-    local host=Host.New()
-    local view=View.New(session,Data)
-    host.Bind(view.root);view.Update()
-    local D=require "systems.RecipeDraft"
-    local draft=D.Project({orderId=orderId,equipmentId=Data.stage1.initialEquipmentId,mainTokenId=token,auxTokenIds={},ingredients={},specialItemIds={}})
-    must(session.order.UpdateDraft({orderId=orderId,draft=draft}))
-    assert(session.state.GetSnapshot().onboarding.step=="brew.word","DraftChanged alone cannot skip the drop motion")
-    view.brew.interaction.flight={kind="word",id=token,text="词",fromX=0,fromY=0,toX=0,toY=0,accepted=true,elapsed=0,duration=.38}
-    view.Update()
-    assert(session.state.GetSnapshot().onboarding.step=="brew.word","word step waits for the flight to finish")
-    view.brew.interaction.flight=nil
-    view.Update();view.Update()
-    assert(session.state.GetSnapshot().onboarding.step=="brew.book","word step advances after the flight ends")
-
-    assert(session.state.SetOnboarding({version=1,step="brew.ingredient",completed=false,skipped=false,noteRead=false}).ok)
-    view.Update()
-    local withIngredient=U.Copy(draft);withIngredient.ingredients={{ingredientId="ing_night_dew",quantity=1}}
-    must(session.order.UpdateDraft({orderId=orderId,draft=withIngredient}))
-    assert(session.state.GetSnapshot().onboarding.step=="brew.ingredient","ingredient draft alone cannot skip the drop motion")
-    view.brew.interaction.flight={kind="ingredient",id="ing_night_dew",fromX=0,fromY=0,toX=0,toY=0,accepted=true,elapsed=0,duration=.38}
-    view.Update()
-    assert(session.state.GetSnapshot().onboarding.step=="brew.ingredient","ingredient step waits for the flight to finish")
-    view.brew.interaction.flight=nil
-    view.Update();view.Update()
-    assert(session.state.GetSnapshot().onboarding.step=="brew.conditions","ingredient step advances after the flight ends")
-    view.root:Destroy()
-    print("[Onboarding] PASS word/ingredient advance only after the drop flight")
 end
 
 return T

@@ -5,15 +5,13 @@ local EventBus=require "core.EventBus"
 local Geometry=require "ui.landscape.LayoutGeometry"
 local U=require "core.StateUtil"
 local Harbor=require "ui.landscape.HarborStyle"
+local Sizing=require "ui.landscape.OnboardingLayout"
 local O={}
 
 local NOTE={
     "这里是一间在人间之外的魔药铺。",
-    "",
     "你因一个尚未完成的愿望来到这里。",
-    "",
     "海上漂来的瓶子，装着人间某个人的心事。把它们捞起来，读过信，剪下能用的词语，配上原料熬成魔药，再照着地址寄回人间。",
-    "",
     "网兜挂在门边。先去看看吧。",
 }
 local STEPS={
@@ -24,13 +22,13 @@ local STEPS={
     ["sea.read"]={target="readCapturedLetter",text="看看瓶子里写了什么。"},
     ["letter.cut"]={target="letterPaper",text="点亮起的词语，把它剪下来。"},
     ["letter.accept"]={target="acceptOrder",text="准备好了，就接下这份委托。"},
-    ["brew.word"]={target="brewWordPanel",fallback="brewWordsHost",text="从信里剪下的词，都收在这里。选一张，拖进锅里。"},
-    ["brew.book"]={target="brewBookPanel",fallback="brewJournalHost",text="这里记着人物的来信和已经发生的后续。需要时可以翻看。",know=true,next="brew.ingredient"},
-    ["brew.ingredient"]={target="brewShelf",text="原料会改变这一锅的药性。选一种，拖进锅里。"},
-    ["brew.conditions"]={target="brewRecipeDetails",text="看看委托需要什么，以及这一锅的药性。"},
-    ["brew.ready"]={target="previewOrder",text="条件满足时，就可以开始熬制。"},
-    ["result.explain"]={target="resultActions",text="可以确认寄出，或返回调整后再试。",know=true,next="complete"},
-    ["complete"]={target="confirmOrder",text="确认寄出第一份魔药。"},
+    ["brew.word"]={target="brewWordPanel",fallback="brewWordsHost",text="剪下的词条收在左边。调配时，可以把词条拖进锅里。",know=true,next="brew.book"},
+    ["brew.book"]={target="brewBookPanel",fallback="brewJournalHost",text="右边的记录书记着来信与后续故事，可以随时翻看。",know=true,next="brew.ingredient"},
+    ["brew.ingredient"]={target="brewShelf",text="中间是原料。不同原料会改变这一锅的药性。",know=true,next="brew.conditions"},
+    ["brew.conditions"]={target="brewRecipeDetails",text="“查看药性与条件”会列出委托要求和当前配方的药性。",know=true,next="brew.ready"},
+    ["brew.ready"]={target="previewOrder",text="配方满足条件后，点“开始熬制”查看结果。接下来由你自由调配。",know=true,last=true},
+    -- Keep old step names readable so saves from the earlier tutorial can finish quietly.
+    ["result.explain"]={},["complete"]={},
 }
 
 local function snapshot(session)
@@ -38,18 +36,6 @@ local function snapshot(session)
 end
 local function currentOrder(data)
     return data and data.currentOrder or false
-end
-local function draftOf(data)
-    local order=currentOrder(data)
-    return order and order.draft or nil
-end
-local function hasMain(data)
-    local draft=draftOf(data)
-    return draft and draft.mainTokenId~=false and draft.mainTokenId~=nil
-end
-local function hasIngredient(data)
-    local draft=draftOf(data)
-    return draft and type(draft.ingredients)=="table" and #draft.ingredients>0
 end
 local function hasCut(data,letterId)
     if not data or not data.live then return false end
@@ -66,9 +52,6 @@ local function receivedLetter(data,letterId)
     for id in pairs(data.live.letters.byId) do return id end
     return nil
 end
-local function deliveredCount(data)
-    return data and data.live and data.live.gameFlow.deliveredOrders or 0
-end
 
 function O.New(ctx)
     local api={}
@@ -76,11 +59,10 @@ function O.New(ctx)
     local state=nil
     local active=false
     local step=nil
-    local root,shade,tooltip,tooltipLabel,knowButton,skipButton,noteLayer,noteButton,completeLayer
+    local root,shade,tooltip,tooltipLabel,knowButton,skipButton,noteLayer,noteButton,note,noteScroll,noteTitle,noteBody
     local blockers={}
     local interceptor
     local targetRect=nil
-    local conditionsOpened=false
     local noteOnly=false
     local noteWasRead=false
     local hintsBefore=false
@@ -88,12 +70,13 @@ function O.New(ctx)
     local retryAt=0
     local syncedStep=nil
     local syncAt=0
-    local completionUntil=0
     local listeners={}
     local destroyed=false
     local lastRect={}
-    local deliveredDuringStep=false
     local paused=false
+    local noteLabels={}
+    local noteLayoutKey=nil
+    local tooltipLayoutKey,tooltipBox
     local persist,tryPending,requestAdvance,finish,skip
 
     local function now()
@@ -119,11 +102,6 @@ function O.New(ctx)
         if ctx.settings and ctx.settings.IsOpen and ctx.settings:IsOpen() then return true end
         if ctx.IsInputActive and not ctx.IsInputActive() then return true end
         return false
-    end
-    local function flightBusy()
-        local brew=ctx.brew
-        local flight=brew and brew.interaction and brew.interaction.flight
-        return flight and flight.accepted==true
     end
     local function safe()
         return ctx.safeInsets or {left=0,top=0,right=0,bottom=0}
@@ -171,39 +149,43 @@ function O.New(ctx)
         interceptor=UI.Panel {id="onboardingTarget",position="absolute",left=0,top=0,width=0,height=0,zIndex=2,
             pointerEvents="box-only",visible=false,onClick=function() requestAdvance("intro.note") end}
         root:AddChild(interceptor)
-        tooltip=UI.Panel {id="onboardingTooltip",position="absolute",left=0,top=0,width=320,zIndex=10,
+        tooltip=UI.Panel {id="onboardingTooltip",position="absolute",left=0,top=0,width=1,zIndex=10,
             backgroundColor={246,236,207,248},borderWidth=1,borderColor={174,140,86,220},borderRadius=6,
-            padding=14,gap=8,boxShadow={x=0,y=3,blur=8,color={0,0,0,90}},pointerEvents="box-only",onClick=function() end}
+            padding=12,gap=8,boxShadow={x=0,y=3,blur=8,color={0,0,0,90}},pointerEvents="box-only",onClick=function() end}
         tooltipLabel=UI.Label {id="onboardingText",text="",fontFamily="story",fontSize=15,lineHeight=1.45,
-            whiteSpace="normal",fontColor={55,43,30,255},width="100%",pointerEvents="none"}
+            whiteSpace="normal",fontColor={55,43,30,255},width="100%",flexShrink=0,verticalAlign="top",pointerEvents="none"}
         tooltip:AddChild(tooltipLabel)
-        knowButton=UI.Button {id="onboardingKnow",text="知道了",minHeight=40,height=40,fontSize=14,
-            fontFamily="story",backgroundColor={174,129,65,255},textColor={32,26,18,255},borderRadius=5,
-            visible=false,onClick=function() if pendingAdvance==nil and step and STEPS[step] and STEPS[step].next then
-                requestAdvance(STEPS[step].next) end end}
+        knowButton=Harbor.Button {id="onboardingKnow",text="知道了",width=104,alignSelf="flex-end",
+            minHeight=40,height=40,fontSize=14,visible=false,onClick=function()
+                local def=step and STEPS[step]
+                if pendingAdvance==nil and def and def.know then
+                    if def.last then finish() elseif def.next then requestAdvance(def.next) end
+                end
+            end}
         tooltip:AddChild(knowButton)
         root:AddChild(tooltip)
-        skipButton=UI.Button {id="onboardingSkip",text="跳过引导",position="absolute",right=12,top=12,width=104,
-            height=40,minHeight=40,fontSize=13,fontFamily="story",backgroundColor={33,26,19,190},
-            textColor={235,220,190,255},borderColor={174,140,86,180},borderWidth=1,borderRadius=5,zIndex=50,
-            onClick=function() skip() end}
+        skipButton=Harbor.Button {id="onboardingSkip",text="跳过引导",position="absolute",right=12,top=12,width=104,
+            height=40,minHeight=40,fontSize=13,zIndex=50,onClick=function() skip() end}
         root:AddChild(skipButton)
         noteLayer=UI.Panel {id="onboardingNoteLayer",position="absolute",left=0,top=0,width="100%",height="100%",
             backgroundColor={8,6,4,190},pointerEvents="box-only",visible=false,onClick=function() end,zIndex=20}
-        local note=Harbor.Paper {id="onboardingNote",position="absolute",left="18%",right="18%",top="12%",bottom="12%",
-            padding=30,gap=12,pointerEvents="box-only"}
-        note:AddChild(UI.Label {text="一张没有署名的便签",fontFamily="story-strong",fontSize=20,
-            fontColor={62,48,33,255},textAlign="center",lineHeight=1.3,pointerEvents="none"})
-        local scroll=UI.ScrollView {id="onboardingNoteScroll",width="100%",flexGrow=1,flexShrink=1,flexBasis=0,
+        note=Harbor.Paper {id="onboardingNote",position="absolute",left=0,top=0,width=1,height=1,
+            padding=32,gap=12,pointerEvents="box-only"}
+        noteTitle=UI.Label {text="一张没有署名的便签",fontFamily="story-strong",fontSize=20,
+            width="100%",flexShrink=0,fontColor={62,48,33,255},textAlign="center",lineHeight=1.3,pointerEvents="none"}
+        note:AddChild(noteTitle)
+        noteScroll=UI.ScrollView {id="onboardingNoteScroll",width="100%",height=1,flexShrink=0,
             scrollY=true,showScrollbar=true,paddingRight=12}
-        local body=UI.Panel {width="100%",flexShrink=0,gap=8,pointerEvents="box-none"}
-        for _,line in ipairs(NOTE) do
-            body:AddChild(UI.Label {text=line,fontFamily="story",fontSize=16,lineHeight=1.7,whiteSpace="normal",
-                width="100%",fontColor={62,48,33,255},pointerEvents="none"})
+        noteBody=UI.Panel {width="100%",flexShrink=0,gap=14,pointerEvents="box-none"}
+        for i,line in ipairs(NOTE) do
+            local label=UI.Label {id="onboardingNoteParagraph"..i,text=line,fontFamily="story",fontSize=16,
+                lineHeight=1.7,whiteSpace="normal",flexShrink=0,verticalAlign="top",
+                width="100%",fontColor={62,48,33,255},pointerEvents="none"}
+            noteLabels[i]=label;noteBody:AddChild(label)
         end
-        scroll:AddChild(body);note:AddChild(scroll)
-        noteButton=UI.Button {id="onboardingNoteDone",text="收好便签",minHeight=46,height=46,fontSize=16,
-            fontFamily="story",backgroundColor={174,129,65,255},textColor={32,26,18,255},borderRadius=6,
+        noteScroll:AddChild(noteBody);note:AddChild(noteScroll)
+        noteButton=Harbor.Button {id="onboardingNoteDone",text="收好便签",width=150,alignSelf="center",
+            minHeight=46,height=46,fontSize=16,
             onClick=function()
                 if noteOnly then
                     noteOnly=false
@@ -218,16 +200,29 @@ function O.New(ctx)
             end}
         note:AddChild(noteButton)
         noteLayer:AddChild(note);root:AddChild(noteLayer)
-        completeLayer=UI.Panel {id="onboardingComplete",position="absolute",left=0,top=0,width="100%",height="100%",
-            backgroundColor={8,6,4,120},alignItems="center",justifyContent="center",visible=false,
-            pointerEvents="box-only",zIndex=30,onClick=function() end}
-        local done=Harbor.Paper {width="62%",maxWidth=560,padding=26,alignItems="center",gap=12}
-        done:AddChild(UI.Label {text="第一份魔药已经寄出。",fontFamily="story-strong",fontSize=22,
-            fontColor={62,48,33,255},textAlign="center",lineHeight=1.3,pointerEvents="none"})
-        done:AddChild(UI.Label {text="药铺交给你了。",fontFamily="story",fontSize=17,fontColor={62,48,33,255},
-            textAlign="center",lineHeight=1.5,pointerEvents="none"})
-        completeLayer:AddChild(done);root:AddChild(completeLayer)
         ctx.root:AddChild(root)
+    end
+    local function layoutNote()
+        if not note then return end
+        local vp=viewport();local inset=safe()
+        local version=UI.GetFontVersion()
+        local key=table.concat({vp.w,vp.h,inset.left,inset.right,inset.top,inset.bottom,version},":")
+        if key==noteLayoutKey then return end
+        noteLayoutKey=key
+        local width=math.max(180,math.min(700,vp.w-inset.left-inset.right-48))
+        local title=Sizing.Text("一张没有署名的便签",width-64,20,1.3,"story-strong")
+        noteTitle:SetText(title.text);Widget.SetStyle(noteTitle,{height=title.height})
+        local total=0
+        for i,line in ipairs(NOTE) do
+            local block=Sizing.Text(line,width-64-12,16,1.7)
+            noteLabels[i]:SetText(block.text);Widget.SetStyle(noteLabels[i],{height=block.height})
+            total=total+block.height+(i>1 and 14 or 0)
+        end
+        local height=math.min(vp.h-inset.top-inset.bottom-48,64+title.height+24+46+total)
+        setRect(note,inset.left+(vp.w-inset.left-inset.right-width)/2,
+            inset.top+(vp.h-inset.top-inset.bottom-height)/2,width,height)
+        Widget.SetStyle(noteScroll,{height=math.max(1,height-64-title.height-24-46)})
+        Widget.SetStyle(noteBody,{height=total})
     end
     local function readState()
         local data=snapshot(session)
@@ -236,7 +231,6 @@ function O.New(ctx)
     local function finishLocal()
         setVisible(false)
         if noteLayer then noteLayer:SetVisible(false) end
-        if completeLayer then completeLayer:SetVisible(false) end
         if ctx.home and ctx.home.ShowHints then ctx.home.ShowHints(hintsBefore) end
     end
     persist=function(nextState)
@@ -269,17 +263,7 @@ function O.New(ctx)
         nextState.completed=true;nextState.step="complete";nextState.noteRead=true
         if persist(nextState) then
             pendingAdvance=nil
-            active=false
-            if shade then shade:SetVisible(false) end
-            for _,blocker in pairs(blockers) do blocker:SetVisible(false) end
-            if interceptor then interceptor:SetVisible(false) end
-            if tooltip then tooltip:SetVisible(false) end
-            if skipButton then skipButton:SetVisible(false) end
-            if noteLayer then noteLayer:SetVisible(false) end
-            if completeLayer then completeLayer:SetVisible(true) end
-            if root then root:SetVisible(true) end
-            completionUntil=now()+3.2
-            if ctx.home and ctx.home.ShowHints then ctx.home.ShowHints(hintsBefore) end
+            finishLocal()
         end
     end
     skip=function()
@@ -333,6 +317,12 @@ function O.New(ctx)
             end
             return visibleWidget("readCapturedLetter")
         end
+        if step=="letter.cut" then
+            local presentation=ctx.readerCache and ctx.readerCache.presentation
+            local scroll=ctx.scroll
+            local clip=scroll and scroll.GetAbsoluteLayoutForHitTest and scroll:GetAbsoluteLayoutForHitTest()
+            return presentation and presentation.paper.FirstAvailableBounds(clip) or nil
+        end
         local def=STEPS[step]
         if not def then return nil end
         local rect=targetWidget(def.target)
@@ -342,7 +332,6 @@ function O.New(ctx)
     local function applyStep(nextStep)
         step=nextStep
         if noteLayer then noteLayer:SetVisible(step=="intro.note") end
-        if completeLayer then completeLayer:SetVisible(false) end
         if skipButton then skipButton:SetVisible(true) end
         if interceptor then interceptor:SetVisible(step=="intro.paper") end
         if tooltip then
@@ -355,8 +344,6 @@ function O.New(ctx)
                 tooltip:SetVisible(false)
             end
         end
-        conditionsOpened=false
-        deliveredDuringStep=false
         syncedStep=nil
         targetRect=nil
     end
@@ -390,10 +377,7 @@ function O.New(ctx)
                 end
                 if id then ctx.Read(id,true) end
             end
-        elseif step=="brew.word" or step=="brew.book" or step=="brew.ingredient" or step=="brew.conditions" or step=="brew.ready" then
-            if ctx.scene~="brew" and not ctx.panel then ctx.Navigate("brew") end
-        elseif step=="result.explain" or step=="complete" then
-            if currentOrder(data) and ctx.panel~="result" and ctx.panel~="attempt" then ctx.Open("result") end
+
         end
     end
     local function syncProgress()
@@ -413,23 +397,7 @@ function O.New(ctx)
             if hasCut(data) and not busy then requestAdvance("letter.accept") end
         elseif step=="letter.accept" then
             if currentOrder(data) then requestAdvance("brew.word") end
-        elseif step=="brew.word" then
-            if hasMain(data) and not flightBusy() then requestAdvance("brew.book") end
-        elseif step=="brew.ingredient" then
-            if hasIngredient(data) and not flightBusy() then requestAdvance("brew.conditions") end
-        elseif step=="brew.conditions" then
-            local open=ctx.brew and ctx.brew.selected=="recipe"
-            if open then conditionsOpened=true
-            elseif conditionsOpened then requestAdvance("brew.ready") end
-        elseif step=="brew.ready" then
-            local order=currentOrder(data)
-            if order and order.pending then requestAdvance("result.explain") end
-        elseif step=="result.explain" then
-            local order=currentOrder(data)
-            if (not order or not order.pending) and ctx.panel~="result" then requestAdvance("brew.ready") end
-        elseif step=="complete" then
-            if deliveredDuringStep or (not currentOrder(data) and deliveredCount(data)>0) then finish()
-            elseif currentOrder(data) and not currentOrder(data).pending then requestAdvance("brew.ready") end
+
         end
     end
     local function refreshState()
@@ -441,6 +409,7 @@ function O.New(ctx)
             if active then finishLocal() end
             return
         end
+        if state.step=="result.explain" or state.step=="complete" then finish();return end
         if ctx.atTitle then
             if active then setVisible(false) end
             return
@@ -451,8 +420,7 @@ function O.New(ctx)
             for _,blocker in pairs(blockers) do blocker:SetVisible(true);lastRect[blocker]=nil end
             if tooltip then tooltip:SetVisible(true) end
             if skipButton then skipButton:SetVisible(true) end
-            if completeLayer then completeLayer:SetVisible(false) end
-            hintsBefore=ctx.home and ctx.home.HintsVisible and ctx.home.HintsVisible() or false
+                hintsBefore=ctx.home and ctx.home.HintsVisible and ctx.home.HintsVisible() or false
             if ctx.home and ctx.home.ShowHints then ctx.home.ShowHints(false) end
             setVisible(true)
         end
@@ -466,28 +434,19 @@ function O.New(ctx)
     listener("OrderAccepted",function()
         if step=="letter.accept" then requestAdvance("brew.word") end
     end)
-    listener("DeliveryPreviewReady",function()
-        if step=="brew.ready" then requestAdvance("result.explain") end
-    end)
-    listener("PotionDelivered",function()
-        if step=="complete" or step=="result.explain" then deliveredDuringStep=true end
-    end)
     function api.Update()
         if destroyed then return end
         local t=now()
+        layoutNote()
         if noteOnly then
             if not noteLayer or noteLayer.props.visible==false then noteOnly=false;setVisible(false) end
             return
         end
         refreshState()
-        if not active then
-            if completeLayer and completionUntil>0 and t>=completionUntil then
-                completionUntil=0;completeLayer:SetVisible(false)
-                if root then root:SetVisible(false) end
-            end
-            return
-        end
-        local shouldPause=presentationPaused()
+        if not active then return end
+        layoutNote()
+        local brewing=step and step:sub(1,5)=="brew."
+        local shouldPause=presentationPaused() or (brewing and (ctx.scene~="brew" or ctx.panel~=false and ctx.panel~=nil))
         if shouldPause~=paused then
             paused=shouldPause
             if paused then
@@ -501,10 +460,6 @@ function O.New(ctx)
         end
         if paused then return end
         if pendingAdvance and t>=retryAt then tryPending();retryAt=t+0.6 end
-        if deliveredDuringStep and (step=="complete" or step=="result.explain") then
-            if t>=retryAt then finish();retryAt=t+0.8 end
-            return
-        end
         if not pendingAdvance then syncScene() end
         syncProgress()
         if pendingAdvance then return end
@@ -515,8 +470,6 @@ function O.New(ctx)
             if rect then targetRect=rect end
         elseif step=="intro.note" then
             targetRect=nil
-        elseif step=="brew.conditions" and ctx.brew and ctx.brew.selected=="recipe" then
-            targetRect=targetWidget("brewNotesClose") or targetWidget("brewNotesHost")
         else
             targetRect=currentTarget()
         end
@@ -524,12 +477,7 @@ function O.New(ctx)
         local hole=targetRect
         local b=root and root.GetAbsoluteLayout and root:GetAbsoluteLayout() or nil
         if not b then return end
-        local preview=ctx.root and ctx.root:FindById("previewOrder")
-        local notesOpen=ctx.brew and ctx.brew.selected=="recipe"
-        local allowWorkbench=step=="brew.word" or step=="brew.ingredient"
-            or step=="letter.accept" or step=="result.explain" or step=="complete"
-            or (step=="brew.ready" and preview and preview.props.disabled==true)
-            or (step=="brew.conditions" and notesOpen)
+        local allowWorkbench=brewing or step=="letter.accept" or step=="letter.cut"
         if allowWorkbench then
             setRect(blockers.top,b.x,b.y,0,0)
             setRect(blockers.bottom,b.x,b.y,0,0)
@@ -558,19 +506,18 @@ function O.New(ctx)
             tooltip:SetVisible(true)
             local def=STEPS[step]
             local text=def and def.text or ""
-            if step=="brew.conditions" and notesOpen then text="看完后，点手札上的关闭按钮收起。"
-            elseif step=="brew.ready" and preview and preview.props.disabled==true then
-                text="条件还没满足。先调整词条或原料，满足后就能开始熬制。"
-            end
-            tooltipLabel:SetText(text)
-            local resultMotion=ctx.resultMotion
-            local resultReady=ctx.panel=="result" and not (resultMotion and resultMotion.motion and resultMotion.motion.opening)
             local showKnow=def and def.know==true or false
-            local knowEnabled=showKnow and (step~="result.explain" or resultReady)
             knowButton:SetVisible(showKnow)
-            knowButton:SetDisabled(not knowEnabled)
-            local width=math.min(340,math.max(220,vp.w*.26))
-            local height=showKnow and 132 or 92
+            knowButton:SetDisabled(false)
+            local key=table.concat({text,vp.w,s.left,s.right,tostring(showKnow),UI.GetFontVersion()},":")
+            if key~=tooltipLayoutKey then
+                tooltipLayoutKey=key
+                tooltipBox=Sizing.Tooltip(text,vp.w-s.left-s.right-24,showKnow)
+                tooltipLabel:SetText(tooltipBox.content.text)
+                Widget.SetStyle(tooltipLabel,{height=tooltipBox.content.height})
+            end
+            local box=tooltipBox
+            local width,height=box.width,box.height
             local x,y
             if hole then
                 x=hole.x+hole.w/2-width/2
@@ -594,7 +541,7 @@ function O.New(ctx)
         for _,row in ipairs(listeners) do EventBus.Off(row.name,row.id) end
         listeners={}
         if root then root:Destroy() end
-        root=nil;shade=nil;tooltip=nil;noteLayer=nil;completeLayer=nil
+        root=nil;shade=nil;tooltip=nil;noteLayer=nil
     end
     function api.ShowNote()
         ensureRoot()
@@ -604,7 +551,6 @@ function O.New(ctx)
         if interceptor then interceptor:SetVisible(false) end
         if tooltip then tooltip:SetVisible(false) end
         if skipButton then skipButton:SetVisible(false) end
-        if completeLayer then completeLayer:SetVisible(false) end
         if noteLayer then noteLayer:SetVisible(true) end
         if root then root:SetVisible(true) end
     end

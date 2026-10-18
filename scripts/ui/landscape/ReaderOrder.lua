@@ -25,7 +25,8 @@ function R.Summary(body,view,definition)
     if #(view.spans or {})>0 then label(slip,"点信中发光的词语剪下收取。",13,"readerCutHint",{126,111,87,255}) end
 end
 function R.Action(body,id,title,callback,allowed,reason)
-    local footer=UI.Panel {id="readerActions",width="100%",flexShrink=0,minHeight=72,paddingTop=12,gap=6,alignItems="center",pointerEvents="box-none"}
+    local footer=UI.Panel {id="readerActions",position="absolute",left=0,right=0,bottom=12,
+        zIndex=30,gap=6,alignItems="center",pointerEvents="box-none"}
     body.parent.parent:AddChild(footer)
     if allowed==false and reason and reason~="" then label(footer,reason,12,"readerActionReason") end
     footer:AddChild(Style.Button {id=id,text=title,width=340,maxWidth="88%",minWidth=0,height=52,minHeight=52,

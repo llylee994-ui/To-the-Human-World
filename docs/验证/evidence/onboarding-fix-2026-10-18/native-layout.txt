@@ -1,0 +1,10 @@
+[2026-10-18 19_30_34_728][0] ERROR: Could not find resource Cube/Day/DaySpecularHDR.dds
+[2026-10-18 19_30_35_538][0] ERROR: Can not load themis_x64.dll.
+[lua] [2026-10-18 19_30_46_012][534][Script] === 寄往人间 启动完成（第 1 天）===
+
+[lua] [2026-10-18 19_30_48_198][652][Script] [OnboardingNative] PASS 1280x720 note/paragraph font bounds, compact five hints, floating action
+
+[lua] [2026-10-18 19_30_48_410][652][Script] [OnboardingNative] PASS 936x432 note/paragraph font bounds, compact five hints, floating action
+
+[lua] [2026-10-18 19_30_48_614][652][Script] [OnboardingNative] PASS 740x360 note/paragraph font bounds, compact five hints, floating action
+
