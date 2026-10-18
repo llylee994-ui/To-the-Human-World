@@ -1,0 +1,30 @@
+{
+  "product": "寄往人间",
+  "platform": "windows-x64",
+  "status": "local-tested-candidate",
+  "filename": "ToTheHumanWorld-Windows-x64-e4621ef-dependencyfix-candidate.zip",
+  "bytes": 328180438,
+  "sha256": "a992df7d6c88c00c229da706362389c5b863b451f231e0ea60187838964521bd",
+  "files": 448,
+  "sourceCommit": "e4621efe2f22f1d8023d07854503167245a6b25d",
+  "includedLocalChange": "scripts/core/MusicSettings.lua: default volume 60",
+  "runtimeVersion": "20260923-1717-bf3316f",
+  "environmentTexture": {
+    "source": "official Runtime Autoload/Res.pak:Cube/Day/DaySpecularHDR_QualityLow.dds",
+    "target": "runtime/Res/Cube/Day/DaySpecularHDR.dds",
+    "quality": "64x64 six-face low-quality fallback",
+    "sha256": "98256975277e225fc0dd42865f45bcd9dcf257f06d63928c4540fbccd2b6ee31"
+  },
+  "themis": {
+    "source": "https://github.com/taptap/TapThemis-Unity/blob/3.2.3-3/themis/x86_64/themis_x64.dll",
+    "tag": "3.2.3-3",
+    "sha256": "a7d726c1758fbf72af9fb777964f17313fef4652894782b36e51bf0fec969177",
+    "authenticode": "Valid: X.D. Network Inc."
+  },
+  "savePath": "ToTheHumanWorld/temp/savedata/unknown/0/",
+  "verified": ["zip-crc-and-file-hashes", "native-startup", "six-phase-save-recovery", "duplicate-confirm-idempotence", "final-exe-unpack", "previous-candidate-save-recovery"],
+  "notVerified": ["other-computer", "manual-visual-audio-full-interaction", "crash-reporting-service", "store-upload"],
+  "containsPlayerSaves": false,
+  "containsTestProbe": false,
+  "officialMakerExport": false
+}
