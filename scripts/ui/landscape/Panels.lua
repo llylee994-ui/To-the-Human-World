@@ -198,10 +198,10 @@ function P.Result(ctx,body)
     P.Text(body,record.rating.stars.." 星 · "..record.rating.feedback,17)
     P.Text(body,"关闭或返回主页都会保留结果。只有点击发货并保存成功才会消耗投料、结算报酬。",14)
     P.Button(body,"confirmOrder","确认发货",function()
-        if ctx.model.Resolve(true).ok then ctx.storyId=record.sourceLetterId; ctx.Open("journal") end
+        if ctx.model.Resolve(true,summary.pending.transactionId).ok then ctx.storyId=record.sourceLetterId; ctx.Open("journal") end
     end,summary.actions.Confirm.enabled,summary.actions.Confirm.message)
     P.Button(body,"resetOrder","重置本次试做",function()
-        if ctx.model.Resolve(false).ok then ctx.Navigate("brew") end
+        if ctx.model.Resolve(false,summary.pending.transactionId).ok then ctx.Navigate("brew") end
     end,summary.actions.Reset.enabled,summary.actions.Reset.message)
 end
 P.Renderers={reader=P.Reader,shop=P.Shop,case=P.Case,

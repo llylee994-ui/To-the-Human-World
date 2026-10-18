@@ -71,6 +71,16 @@ function V.New(ctx)
         if saved.phase=="ended" then label(saved.ending.title,"titleStatus",15) end
         button(saved.phase=="ended" and "reviewCurrentEnding" or saved.hasProgress and "continueJourney" or "startJourney",
             saved.phase=="ended" and "回顾这次结局" or saved.hasProgress and "继续游戏" or "开始游戏",ctx.ContinueJourney,true)
+        if saved.hasProgress and saved.phase=="operating" then
+            local query=rawget(ctx.session.queries,"GetRewindView")
+            local rewind=query and query()
+            if rewind and rewind.ok and rewind.value.canOpen then
+                button("openRewind","进度回溯",function()
+                    ctx.rewindSelected=false;ctx.rewindPage=1
+                    ctx.panel="rewind";ctx.model.dirty=true
+                end,false)
+            end
+        end
         if saved.canRestore then
             button("restoreBeforeEnding","回到结局前",function()
                 if ctx.model.RestoreEndingCheckpoint().ok then ctx.wishUndo={};ctx.wishSelected=false;ctx.ContinueJourney() end

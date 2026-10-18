@@ -21,6 +21,7 @@ local ResultView=require "ui.landscape.ResultView"
 local BrewFeedback=require "ui.landscape.BrewFeedback"
 local LetterDrawer=require "ui.landscape.LetterDrawer"
 local Closing=require "ui.landscape.ReleaseClosingView"
+local Rewind=require "ui.landscape.RewindView"
 local Wish=require "ui.landscape.WishView"
 local Ending=require "ui.landscape.EndingView"
 local SceneMusic=require "ui.landscape.SceneMusic"
@@ -76,6 +77,7 @@ function A.New(session,content,enabled)
     local apprenticeProbe=require("ui.landscape.DevChecks").apprenticeProbe and require("ui.landscape.tests.ApprenticeNativeProbe").New() or nil
     local wishProbe=require("ui.landscape.DevChecks").wishProbe and require("ui.landscape.tests.WishNativeProbe").New() or nil
     local mobileBrewProbe=require("ui.landscape.DevChecks").mobileBrewProbe and require("ui.landscape.tests.MobileBrewNativeProbe").New() or nil
+    local rewindProbe=require("ui.landscape.DevChecks").rewindProbe and require("ui.landscape.tests.RewindNativeProbe").New() or nil
     local developer=(require("debug.DeveloperMode") or require("ui.landscape.DevChecks").hotspots) --[[@as boolean]]
     -- The stage fills the viewport; each control group applies its own safe area.
     -- UpdateChrome extends this surface through main's SafeAreaView insets.
@@ -100,6 +102,7 @@ function A.New(session,content,enabled)
         ticketConfirm=false --[[@as boolean]],ticketQuote=false --[[@as table|false]],ticketEnding=false --[[@as table|false]],
         releasePhase=false --[[@as string|false]],newPlaythroughConfirm=false --[[@as boolean]],
         atTitle=false --[[@as boolean]],journeyView=false --[[@as table|false]],
+        rewindSelected=false --[[@as string|false]],rewindPage=1,
         endingEntrance=false --[[@as string|false]],endingShowCollage=false --[[@as boolean]],
         reviewEnding=false --[[@as table|false]],wishSelected=false --[[@as string|false]],wishUndo={},
         panelNotice=false --[[@as Label|false]],panelNoticeArea=false --[[@as ScrollView|false]],
@@ -443,6 +446,7 @@ function A.New(session,content,enabled)
         ctx.brew.Leave();ctx.resultMotion=false;ctx.feedback.Cancel();objectOpen=false
         ctx.CancelHomeZoom("title");ctx.CancelSalvage("title")
         ctx.stack={};ctx.readerCache=false;ctx.ticketConfirm=false;ctx.ticketQuote=false
+        ctx.rewindSelected=false;ctx.rewindPage=1
     end
     function ctx.ShowTitle()
         if ctx.destroyed or (ctx.calendar and ctx.calendar.motion.active) or (ctx.journeyView and ctx.journeyView.busy) then return false end
@@ -512,8 +516,11 @@ function A.New(session,content,enabled)
         if kind=="letters" then LetterDrawer.Open(ctx,audible);LetterDrawer.Render(ctx,overlay);return end
         if kind=="result" or kind=="attempt" then ResultView.Render(ctx,overlay,kind=="attempt");return end
         if kind=="ticketEnding" then TicketView.Ending(ctx,overlay);return end
-        if kind=="closing" or kind=="wish" or kind=="wishPreview" or kind=="ending" or kind=="title" or kind=="memories" or kind=="memoryReview" then
-            local module=(kind=="title" or kind=="memories") and Title or kind=="closing" and Closing or (kind=="ending" or kind=="memoryReview") and Ending or Wish
+        if kind=="closing" or kind=="wish" or kind=="wishPreview" or kind=="ending" or kind=="title" or kind=="memories" or kind=="memoryReview" or kind=="rewind" then
+            local module=(kind=="title" or kind=="memories") and Title
+                or kind=="rewind" and Rewind
+                or kind=="closing" and Closing
+                or (kind=="ending" or kind=="memoryReview") and Ending or Wish
             local view=module.New(ctx)
             if view.room then
                 local blocker=overlay:FindById("modalBlocker")
@@ -600,6 +607,7 @@ function A.New(session,content,enabled)
         if apprenticeProbe then apprenticeProbe(ctx) end
         if wishProbe then wishProbe(ctx) end
         if mobileBrewProbe then mobileBrewProbe(ctx) end
+        if rewindProbe then rewindProbe(ctx) end
         local now,dt=clock();home.Update(dt)
         ctx.UpdateChrome()
         if ctx.scene=="brew" then ctx.brew.Update(dt,input:HasFocus() and not input:IsMinimized()) end

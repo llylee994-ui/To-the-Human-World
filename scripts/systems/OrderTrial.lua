@@ -6,6 +6,16 @@ local D=require "systems.RecipeDraft"
 local J=require "systems.BrewJournal"
 local P=require "core.SchemaProjection"
 local T={}
+-- 回溯/新周目产生新分支时，把分支世代编码进试做序号，旧分支的确认/重置请求自然过期。
+local function attemptBase(data)
+    local history=data.chapter and data.chapter.rewind
+    local run=history and history.run or 1
+    local branch=history and history.branch or 0
+    if not U.Integer(run,1) or not U.Integer(branch) then return 0 end
+    -- 分支号独立于轮次，避免多次回溯后与新轮次共用同一个事务命名空间。
+    run=math.min(run,9000);branch=math.min(branch,999999)
+    return ((run-1)*1000000+branch)*1000000
+end
 local checkpointProofs=setmetatable({},{__mode="k"})
 local function checkpointMemo(content,limit)
     local memo=checkpointProofs[content]
@@ -106,12 +116,14 @@ function T.Wrap(legacy,content,limit,schema)
                 if order.pending then return plan(candidate,{orderId=order.orderId,phase="pending",transactionId=order.pending.transactionId,potion=order.pending.potion},{},false) end
                 G.Value(D.Validate(selected,data.live,content))
                 G.Need(selected.mainTokenId~=false,"INVALID_REQUEST","mainTokenId","请先放入主词")
+                local attempt=math.max(order.nextAttemptSerial,attemptBase(data)+1)
                 local projected=P.V2(data)
+                projected.currentOrder.nextAttemptSerial=attempt
                 local begun=G.Value(legacy.PlanCommand("BeginBrew",projected,{orderId=order.orderId})).data
                 local recipe=U.Copy(selected); recipe.orderId=order.orderId; recipe.baselineId=order.orderId..":baseline"
                 local result=G.Value(legacy.PlanCommand("Preview",begun,recipe))
                 if not result.changed then result.value.phase="accepted"; return plan(candidate,result.value,{},false) end
-                local baselineId=order.orderId..":baseline:"..order.nextAttemptSerial
+                local baselineId=order.orderId..":baseline:"..attempt
                 nextOrder.phase="pending"; nextOrder.recipe=U.Copy(recipe); nextOrder.recipe.baselineId=baselineId
                 nextOrder.baseline={id=baselineId,revision=data.revision,contentVersion=data.contentVersion,live=U.Copy(data.live)}
                 nextOrder.pending=result.data.currentOrder.pending
@@ -120,7 +132,7 @@ function T.Wrap(legacy,content,limit,schema)
                 -- 恢复之前已确认记录的真实基准；仅本次新记录使用新按次 ID。
                 for oid,record in pairs(data.live.orders.confirmedById) do nextOrder.pending.candidateLive.orders.confirmedById[oid]=U.Copy(record) end
                 nextOrder.pending.candidateLive.orders.confirmedById[order.orderId].recipe=U.Copy(nextOrder.recipe)
-                nextOrder.nextAttemptSerial=order.nextAttemptSerial+1
+                nextOrder.nextAttemptSerial=attempt+1
                 J.Insert(candidate.journal,J.Record(candidate,order.orderId,nextOrder.pending,nextOrder.recipe,"pending",schema,content))
                 return plan(candidate,result.value,{"DeliveryPreviewReady"})
             elseif kind=="Reset" then

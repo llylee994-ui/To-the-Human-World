@@ -149,6 +149,31 @@ function M.New(session,content,enabled)
         if result.ok then clearNavigation() end
         return result
     end
+    local function rewindCommand(name,extra,message)
+        if not active() then return api.Notify(fail("STATE_LOCKED","当前为隔离调试模式")) end
+        local data=api.Refresh()
+        if not data or not data.chapter then return api.Notify(fail("STATE_LOCKED","请先读取本次旅程的进度。")) end
+        local command=session.state[name]
+        if type(command)~="function" then return api.Notify(fail("NOT_IMPLEMENTED","当前存档尚未接入进度回溯")) end
+        local request={expectedRevision=data.revision}
+        for k,v in pairs(extra or {}) do request[k]=v end
+        local result=api.Notify(command(request),message)
+        if result.ok then
+            -- 回溯替换的是整份业务状态，旧选料、结果和阅读缓存都不能留到新分支。
+            draftOrder=false
+            draft={equipmentId=false,mainTokenId=false,auxTokenIds={},ingredients={},specialItemIds={}}
+            api.selectedLetter=false;api.selectedResult=false;api.selectedAttempt=false
+            api.failure=nil;api.trialPotion=nil;api.letterEdited=false
+            api.page="home";api.Refresh()
+        end
+        return result
+    end
+    function api.RestoreDay(pointId)
+        return rewindCommand("RestoreDay",{pointId=pointId},"已回到这一天的开头。")
+    end
+    function api.RestoreBeforeRewind()
+        return rewindCommand("RestoreBeforeRewind",nil,"已恢复回溯前的进度。")
+    end
     function api.Reload()
         if not active() then return api.Notify(fail("STATE_LOCKED","当前为隔离调试模式")) end
         local data,status=session.state.ReloadCurrent()
@@ -271,9 +296,12 @@ function M.New(session,content,enabled)
         api.failure=nil
         return api.Notify(result,result.ok and "后续已保存，等待确认或重置。" or nil)
     end
-    function api.Resolve(confirm)
+    function api.Resolve(confirm,expectedTransactionId)
         local data=api.Refresh(); local order=data and data.currentOrder
         if not active() or not order or not order.pending then return api.Notify(fail("INVALID_ORDER_STATE","没有待确认结果")) end
+        if expectedTransactionId~=nil and expectedTransactionId~=order.pending.transactionId then
+            return api.Notify(fail("STALE_TRANSACTION","这次试做结果已过期，请重新查看当前结果。"))
+        end
         local request={orderId=order.orderId,transactionId=order.pending.transactionId}
         if not confirm then request.baselineId=order.baseline.id end
         local result=confirm and session.order.Confirm(request) or session.order.Reset(request)

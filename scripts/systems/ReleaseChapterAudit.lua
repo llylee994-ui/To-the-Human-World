@@ -4,15 +4,17 @@ local G=require "systems.CalculationGuard"
 local L=require "systems.ReleaseLedger"
 local Collage=require "systems.WishCollage"
 local Records=require "systems.JourneyRecord"
+local Rewind=require "systems.RewindHistory"
 local A={}
 local function same(a,b,path) G.Need(U.Equal(a,b),"STATE_INVALID",path,"收尾状态与结束前快照不一致") end
 local function baseChapter(chapter)
-    local c=U.Copy(chapter);c.epilogue=nil;c.wishLayout=nil;c.memories=nil;c.started=nil;return c
+    local c=U.Copy(chapter);c.epilogue=nil;c.wishLayout=nil;c.memories=nil;c.started=nil;c.rewind=nil;return c
 end
 function A.Validate(data,content)
     local checkpointCoversBusiness=false
     local result=G.Run(function()
         G.Need(content and content.release,"CONFIG_MISSING","release","缺少首发配置")
+        G.Value(Rewind.ValidateStructure(data))
         local e=require("systems.ReleaseEndings").New(content);local c=data.chapter
         local phases={operating=true,closing_prepare=true,closing=true,wish=true,ended=true}
         G.Need(phases[c.phase],"STATE_INVALID","chapter.phase","阶段不合法")

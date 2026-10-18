@@ -78,12 +78,12 @@ function F.New(ctx,ledger)
         return result
     end
     local resolve=ctx.model.Resolve
-    function ctx.model.Resolve(confirm)
+    function ctx.model.Resolve(confirm,expectedTransactionId)
         local before=ctx.model.Refresh()
         local pending=before and before.currentOrder and before.currentOrder.pending
         local viewport=ctx.viewport or {w=1280,h=720}
         local source=point(ctx,"confirmOrder",{x=viewport.w*.6,y=viewport.h*.8})
-        local result=resolve(confirm)
+        local result=resolve(confirm,expectedTransactionId)
         if confirm and result.ok and pending then
             local after=ctx.model.Refresh()
             f.actual=after.live.economy.currency;f.day=after.live.gameFlow.day

@@ -97,11 +97,11 @@ function R.Render(ctx,overlay,history)
     panel:AddChild(actions)
     actions:AddChild(Style.Button({id="resetOrder",text="重新调配",width="38%",minWidth=0,height=compact and 44 or 52,minHeight=44,fontSize=16,
         disabled=not summary.value.actions.Reset.enabled,onClick=function()
-            if ctx.model.Resolve(false).ok then ctx.Navigate("brew") end
+            if ctx.model.Resolve(false,pending.transactionId).ok then ctx.Navigate("brew") end
         end},"secondary"))
     actions:AddChild(Style.Button({id="confirmOrder",text="确认发货",width="56%",minWidth=0,height=compact and 44 or 52,minHeight=44,fontSize=18,
         disabled=not summary.value.actions.Confirm.enabled,onClick=function()
-            if ctx.model.Resolve(true).ok then ctx.storyId=record.sourceLetterId;ctx.Open("journal") end
+            if ctx.model.Resolve(true,pending.transactionId).ok then ctx.storyId=record.sourceLetterId;ctx.Open("journal") end
         end}))
 end
 function R.Update(ctx,dt,focused)

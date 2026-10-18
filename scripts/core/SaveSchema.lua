@@ -248,7 +248,7 @@ function Schema.ValidateV4(data,options)
     local checkpointCoversBusiness=false
     local ok,err=pcall(function()
         object(data,"contentVersion revision nextOrderSerial live currentOrder journal chapter","data")
-        object(data.chapter,"phase wishDraftSourceIds ending endingTransactionId checkpoint","chapter","epilogue wishLayout memories started")
+        object(data.chapter,"phase wishDraftSourceIds ending endingTransactionId checkpoint","chapter","epilogue wishLayout memories started rewind")
         local function ledger(l)
             need(U.Array(l.economy.itemPurchases) and l.economy.furniturePurchases==nil and l.economy.ownedFurnitureIds==nil,"itemPurchases")
         end

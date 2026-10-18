@@ -170,6 +170,8 @@ function GameState.New(options)
         if not installed then return fail(migrated and "recovery_required" or "corrupt", U.Error("RESTORE_FAILED", "data", tostring(applied))) end
         if not applied.ok then return fail(migrated and "recovery_required" or "corrupt", applied.error) end
         envelope = U.Copy(checked.value)
+        -- 旧存档首次启用回溯时只补一个“此刻”的恢复点，不伪造更早的日开头。
+        if targetSchema==4 then require("systems.RewindHistory").EnsureCurrent(envelope) end
         activeSlot = slot
         locked = false
         last = {status=migrated and "migrated" or status.status,schema=schema}
@@ -179,7 +181,7 @@ function GameState.New(options)
         local notified,problem=pcall(options.eventBus.Emit,"SaveLoaded",U.Copy(last))
         busy=false
         if not notified then last.notificationError=U.Error("EVENT_FAILED","SaveLoaded",tostring(problem)) end
-        return U.Copy(checked.value), U.Copy(last)
+        return U.Copy(envelope), U.Copy(last)
     end
     -- 恢复按钮必须对账当前槽，不能把省略参数的 Load（默认 slot1）当作重载。
     function api.ReloadCurrent() return api.Load(activeSlot) end
@@ -317,6 +319,8 @@ function GameState.New(options)
                 candidate.live.gameFlow.day=before+1; candidate.live.gameFlow.phase="day"; candidate.live.gameFlow.canSalvage=true
                 if (targetSchema==3 or targetSchema==4) then candidate.live.gameFlow.salvageUsedToday=0 end
                 candidate.revision=candidate.revision+1
+                -- 日开头快照必须和跨天后的主状态在同一次提交里落盘。
+                if targetSchema==4 then require("systems.RewindHistory").Advance(candidate) end
                 return commit(candidate,{day=before+1},{{name="DayEnded",payload={day=before}},{name="DayStarted",payload={day=before+1}}})
             end)
             busy=false
@@ -506,6 +510,27 @@ function GameState.New(options)
             local planned=require("systems.ReleaseCoordinator").New(options.content).Plan(kind,current,request,options.initialState)
             if not planned.ok then return planned end
             if not planned.value.changed then return U.Ok(planned.value.value) end
+            local rewind=require("systems.RewindHistory")
+            if kind=="StartJourney" then rewind.Start(planned.value.data)
+            elseif kind=="StartNewPlaythrough" then
+                local old=current.chapter and current.chapter.rewind
+                if not old and current.chapter and type(current.chapter.checkpoint)=="table" then
+                    -- 旧结局档顶层没有身份时，从结局前快照读取真实轮次。
+                    local checkpoint=current.chapter.checkpoint
+                    old=checkpoint.chapter and checkpoint.chapter.rewind
+                end
+                rewind.NewRun(planned.value.data,old and old.run or 1)
+            elseif kind=="BeginClosing" then
+                -- 收尾会重建 chapter；只保留本轮身份，完整历史仍随结局前快照保存。
+                local old=current.chapter and current.chapter.rewind
+                planned.value.data.chapter.rewind=rewind.Identity(old)
+            elseif kind=="RestoreEndingCheckpoint" then
+                -- 回到结局前同样开启新分支，旧确认/重置请求不能落到恢复后的订单上。
+                local history=planned.value.data.chapter.rewind
+                if not history then history=rewind.Identity(nil) end
+                history.branch=(history.branch or 0)+1
+                planned.value.data.chapter.rewind=history
+            end
             return commit(planned.value.data,planned.value.value,planned.value.events)
         end)
         busy=false
@@ -516,6 +541,28 @@ function GameState.New(options)
         for _,name in ipairs({"StartJourney","PurchaseTravelTicket","BeginClosing","AdvanceEpilogue","BeginWish","UpdateWishDraft","UpdateWishLayout","ConfirmEnding","RestoreEndingCheckpoint","StartNewPlaythrough"}) do
             api[name]=function(request)return api.ReleaseCommand(name,request)end
         end
+        local function rewindCommand(name,request)
+            if busy then return U.Fail("COMMAND_BUSY","GameState","候选提交期间禁止嵌套命令") end
+            if not api.CanMutate() then return U.Fail("STATE_LOCKED","GameState","请先读取原槽核对进度") end
+            busy=true
+            local called,result=pcall(function()
+                local current=api.GetSnapshot();local valid=prepare(current,targetSchema)
+                if not valid.ok then return valid end
+                local rewind=require("systems.RewindHistory")
+                -- CalculationGuard.Run 始终返回 Result；在通用 table 返回值的边界收窄类型。
+                local planned=((name=="RestoreDay")
+                    and rewind.PlanRestoreDay(current,request,options.content,options.salvageDailyLimit)
+                    or rewind.PlanRestoreBackup(current,request,options.content,options.salvageDailyLimit)) --[[@as {ok:boolean, value:any, error:any}]]
+                if not planned.ok then return planned end
+                if not planned.value.changed then return U.Ok(planned.value.value) end
+                return commit(planned.value.data,planned.value.value,planned.value.events)
+            end)
+            busy=false
+            if not called then return U.Fail("COMMAND_FAILED","rewind",type(result)=="table" and result.message or tostring(result)) end
+            return result
+        end
+        api.RestoreDay=function(request)return rewindCommand("RestoreDay",request)end
+        api.RestoreBeforeRewind=function(request)return rewindCommand("RestoreBeforeRewind",request)end
     end
     -- 仅调试专项使用：连同协调器的锁定/状态一起恢复，不能让测试解锁真实坏档。
     function api.WithPreservedState(callback)
