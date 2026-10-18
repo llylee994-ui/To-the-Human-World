@@ -1,5 +1,6 @@
 -- All pixel inputs use the UI's base coordinate system; SDK menu is normalized.
 local M = {}
+local HostViewport=require "ui.landscape.HostViewport"
 local function finite(n)
     return type(n)=="number" and n==n and n~=math.huge and n~=-math.huge
 end
@@ -15,7 +16,8 @@ function M.ReadHost(ui,bounds)
     local w,h=bounds.w,bounds.h
     if ui.GetViewportSize then w,h=ui.GetViewportSize() end
     local safe={left=0,top=0,right=0,bottom=0}
-    local reported=ui.GetSafeAreaInsets and ui.GetSafeAreaInsets()
+    local hostViewport=HostViewport.Read({w=w,h=h})
+    local reported=hostViewport or (ui.GetSafeAreaInsets and ui.GetSafeAreaInsets())
     for key in pairs(safe) do
         local n=reported and reported[key]
         if finite(n) then safe[key]=math.max(0,n) end
@@ -33,7 +35,7 @@ function M.ReadHost(ui,bounds)
     end
     if not validMenu(menu) then
         menu=nil
-        if mobile and w>0 and h>0 then
+        if mobile and not hostViewport and w>0 and h>0 then
             local right=math.max(0,w-safe.right)
             menu={left=math.max(0,right-144)/w,right=right/w,
                 top=math.min(h-1,safe.top+8)/h,bottom=math.min(h,safe.top+80)/h}

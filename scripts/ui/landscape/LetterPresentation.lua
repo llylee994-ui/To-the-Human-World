@@ -104,7 +104,11 @@ function P.New(ctx,body,view)
         nvgFontFace(vg,"story");nvgFontSize(vg,Theme.FontSize(13));nvgTextAlign(vg,math.floor(NVG_ALIGN_RIGHT+NVG_ALIGN_TOP))
         local message=ctx.messages and ctx.messages:Current(0)
         local failure=ctx.importantMessage and message and message.text
-        nvgFillColor(vg,nvgRGBA(93,71,46,210));nvgText(vg,r.x+r.w-38,r.y+r.h-52,failure or ("词条托盘"..(api.collected>0 and " · +"..api.collected or "")),nil)
+        local hasAction=panel:FindById("readerActions")~=nil
+        if not panel:FindById("readerActionReason") then
+            nvgFillColor(vg,nvgRGBA(93,71,46,210))
+            nvgText(vg,r.x+r.w-38,r.y+r.h-(hasAction and 88 or 52),failure or ("词条托盘"..(api.collected>0 and " · +"..api.collected or "")),nil)
+        end
         local pose=api.motion.Pose();if not pose then return end
         nvgSave(vg);nvgTranslate(vg,pose.x,pose.y);nvgScale(vg,pose.scale,pose.scale);nvgRotate(vg,pose.angle)
         P.DrawStrip(vg,pose.text,0,0,pose.w,pose.h,pose.opacity)

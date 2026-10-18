@@ -20,7 +20,7 @@ function T.Run()
         end,
     }
     local preferences=Preferences.New(storage)
-    check(preferences.Get().enabled and preferences.Get().volume==100,"missing preferences default to approved volume")
+    check(preferences.Get().enabled and preferences.Get().volume==60,"missing preferences default to quieter music")
     preferences.SetEnabled(false);preferences.SetVolume(37);check(preferences.Save(),"save preferences")
     local restored=Preferences.New(storage).Get()
     check(not restored.enabled and restored.volume==37,"new instance restores mute and volume")
@@ -34,10 +34,11 @@ function T.Run()
     preferences.SetVolume(50);fault="truncate";check(not preferences.Save(),"readback catches truncated write")
     fault=false
     restored=Preferences.New(storage).Get()
-    check(restored.enabled and restored.volume==100,"corrupt settings do not stop startup")
+    check(restored.enabled and restored.volume==60,"corrupt settings use the quieter default without stopping startup")
     files["music_settings.json"]=Json.Encode({version=1,enabled=false,volume=250})
     check(Preferences.New(storage).Get().volume==100,"invalid stored volume is bounded")
-    fault="read";check(Preferences.New(storage).Get().enabled,"read failure falls back safely");fault=false
+    fault="read";restored=Preferences.New(storage).Get()
+    check(restored.enabled and restored.volume==60,"read failure falls back to quieter music");fault=false
     local badView=require("ui.landscape.MusicSettingsView").New(Preferences.New(storage),function() end)
     fault="write"
     local badToggle=assert(badView.root:FindById("musicEnabled"))
@@ -107,7 +108,7 @@ function T.Run()
             control.props.onClick();view.Update();host.Bind(view.root)
         end
         check(active==hearth and plays==1,"initial homepage plays hearth")
-        check(actualGain==1,"initial gain keeps approved mix")
+        check(actualGain==.6,"initial gain applies quieter default before playback")
         local before=x.state.GetSnapshot();local writes=x.writes
         click("openSettings")
         local settingsOverlay=view.root:FindById("musicSettingsOverlay")

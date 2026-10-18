@@ -9,6 +9,7 @@ local Salvage=require "ui.landscape.SalvageController"
 local Harbor=require "ui.landscape.HarborStyle"
 local Messages=require "ui.landscape.MessagePresenter"
 local HudLayout=require "ui.landscape.HudLayout"
+local Responsive=require "ui.landscape.Responsive"
 local Widget=require "urhox-libs/UI/Core/Widget"
 local Theme=require "urhox-libs/UI/Core/Theme"
 local SeaArt=require "ui.landscape.SeaArt"
@@ -249,10 +250,12 @@ function A.New(session,content,enabled,options)
             for _,key in ipairs({"left","top","right","bottom"}) do if oldMenu[key]~=menu[key] then changed=true end end
         end
         ctx.safeInsets=safe;ctx.viewport=viewport
+        ctx.responsive=Responsive.Metrics(viewport,safe)
         ctx.menuRect=menu and {left=menu.left,top=menu.top,right=menu.right,bottom=menu.bottom} or nil
         home.SetPanelOpen(ctx.panel~=false or settings.IsOpen())
         settings.SetInsets(safe,viewport,menu)
-        hud:SetVisible(not ctx.panel and (not ctx.releasePhase or ctx.releasePhase=="operating"))
+        hud:SetVisible(not ctx.panel and not (ctx.scene=="brew" and ctx.responsive.compact)
+            and (not ctx.releasePhase or ctx.releasePhase=="operating"))
         local label=ledger:GetText()
         local measured=UI.MeasureTextWidth and UI.MeasureTextWidth(label,Theme.FontSize(13),Harbor.fontFamily) or (utf8.len(label) or 0)*10
         local ledgerWidth=math.max(144,measured+36)
@@ -277,9 +280,22 @@ function A.New(session,content,enabled,options)
                 if viewportRoot.props.backgroundImage~=background then viewportRoot:SetBackgroundImage(background) end
             end
         end
-        local required=ledgerWidth+12+108+72+80+24+(ctx.scene~="home" and 114 or 0)+(pending and pending.props.visible and 122 or 0)
-        local finish=hud:FindById("finishJourney")
-        if finish and finish.props.visible then required=required+116 end
+        local compact=ctx.responsive.compact
+        for _,id in ipairs({"openSettings","toggleHomeHints","titleHome"}) do
+            local control=hud:FindById(id)
+            if control then control:SetVisible(not compact and (id~="toggleHomeHints" or ctx.scene=="home")) end
+        end
+        local more=hud:FindById("openQuickMenu");if more then more:SetVisible(compact) end
+        local narrow=ctx.responsive.w<720
+        local day=hud:FindById("nextDay");if day then day:SetVisible(not narrow and not ctx.ticketEnding) end
+        local homeButton=hud:FindById("returnHome");if homeButton then homeButton:SetVisible(not narrow and not ctx.ticketEnding and ctx.scene~="home") end
+        if pending then pending:SetVisible(not compact and ctx.scene~="brew" and ctx.quickPending==true) end
+        local finish=hud:FindById("finishJourney");if finish then finish:SetVisible(not compact and ctx.quickFinish==true) end
+        local required=ledgerWidth+24
+        for i=3,hud:GetNumChildren() do
+            local child=hud:GetChildAt(i)
+            if child and child.props.visible~=false then required=required+(tonumber(child.props.width) or 76)+8 end
+        end
         local safeWidth=math.max(0,vw-safe.left-safe.right)
         local offsets=HudLayout.Compute({x=safe.left,y=safe.top+8,w=safeWidth,h=48},viewport,menu,required)
         local p=hud.props
@@ -592,6 +608,8 @@ function A.New(session,content,enabled,options)
     end})
     hud:AddChild(Harbor.Button {id="nextDay",text="结束当天",width=108,minHeight=44,fontSize=15,onClick=function() ctx.Open("day") end})
     hud:AddChild(Harbor.Button {id="titleHome",text="首页",width=72,minHeight=44,fontSize=15,onClick=ctx.ShowTitle})
+    hud:AddChild(Harbor.Button {id="openQuickMenu",text="菜单",width=76,minHeight=44,visible=false,
+        onClick=function() ctx.Open("quickMenu") end})
     if yawEnabled then
         hud:AddChild(Harbor.Button {id="openHomeYawProbe",text="转头验证",width=106,minHeight=44,onClick=ctx.OpenYawProbe})
     end
@@ -601,7 +619,10 @@ function A.New(session,content,enabled,options)
             home.SetInspect(not home.inspect); model.dirty=true
         end})
     end
-    local function renderPanel()
+    local renderedPanelKey=false --[[@as string|false]]
+    local restoreScroll=false --[[@as table|false]]
+    local restoreFrames=0
+    local function renderPanelContent()
         if ctx.journeyView then ctx.journeyView.Destroy();ctx.journeyView=false end
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
         clear(overlay); ctx.readerCache=false; ctx.panelNotice=false;ctx.panelNoticeArea=false;ctx.panelHeader=false
@@ -659,11 +680,17 @@ function A.New(session,content,enabled,options)
             panelProps.paddingBottom=32
             panelProps.backgroundSlice={32,32,32,32}
         end
+        local metrics=Responsive.Metrics(viewport,safe)
+        if metrics.short then
+            panelProps.top=safe.top+8;panelProps.bottom=safe.bottom+8
+            panelProps.left=safe.left+8;panelProps.width=metrics.w-16
+            if kind~="reader" then panelProps.padding=16;panelProps.paddingBottom=16;panelProps.paperInset=16 end
+        end
         local panel=Harbor.Paper(panelProps)
         overlay:AddChild(panel)
         local bar=UI.Panel {id="panelHeader",width="100%",height=50,flexShrink=0,flexDirection="row",alignItems="center",paddingLeft=16,paddingRight=12,gap=8,pointerEvents="box-none"}
         ctx.panelHeader=bar
-        bar:AddChild(UI.Label {text=titles[kind] or "",fontSize=16,fontFamily=Harbor.fontFamily,flexGrow=1,minWidth=0,fontColor={55,48,36,255}})
+        bar:AddChild(UI.Label {text=kind=="quickMenu" and "游戏菜单" or titles[kind] or "",fontSize=16,fontFamily=Harbor.fontFamily,flexGrow=1,minWidth=0,fontColor={55,48,36,255}})
         bar:AddChild(Harbor.Button {id="closePanel",text=#ctx.stack>0 and "返回" or "关闭",width=76,minHeight=44,onClick=ctx.Close})
         panel:AddChild(bar)
         local current=ctx.messages:Current(clock())
@@ -672,7 +699,26 @@ function A.New(session,content,enabled,options)
         panel:AddChild(panelNoticeArea);ctx.panelNoticeArea=panelNoticeArea
         ctx.panelNotice=panelNotice
         local body,scroll=bodyIn(panel,"playScroll"); ctx.scroll=scroll
+        if metrics.short then setStyle(body,{padding=8,paddingRight=12}) end
+        if kind=="quickMenu" then
+            for _,id in ipairs({"returnHome","resumePending","nextDay","finishJourney","openSettings","toggleHomeHints","titleHome"}) do
+                local source=hud:FindById(id)
+                if source and (id~="returnHome" or ctx.scene~="home")
+                    and (id~="resumePending" or ctx.quickPending) and (id~="finishJourney" or ctx.quickFinish)
+                    and (id~="toggleHomeHints" or ctx.scene=="home") then
+                    local callback=source.props.onClick
+                    Panels.Button(body,"quick_"..id,source.props.text,function() ctx.Close();callback() end)
+                end
+            end
+            return
+        end
         assert(Panels.Renderers[kind])(ctx,body)
+    end
+    local function renderPanel()
+        local key=ctx.panel and table.concat({ctx.panel,tostring(model.selectedLetter),tostring(model.selectedAttempt)},":") or false
+        local saved=key and key==renderedPanelKey and Responsive.CaptureScroll(overlay) or false
+        renderPanelContent()
+        renderedPanelKey=key;restoreScroll=saved;restoreFrames=saved and 2 or 0
     end
     local function syncSavedTicketEnding()
         local endingQuery=rawget(session.queries,"GetEndingView")
@@ -709,6 +755,10 @@ function A.New(session,content,enabled,options)
     end
     function ctx.Update()
         if ctx.destroyed then return end
+        if restoreFrames>0 and restoreScroll then
+            Responsive.RestoreScroll(overlay,restoreScroll);restoreFrames=restoreFrames-1
+            if restoreFrames==0 then restoreScroll=false end
+        end
         if ctx.arrival and ctx.arrival.IsActive() then
             local _,delta=clock()
             local focused=not ctx.portrait and ctx.IsInputActive() and not settings.IsOpen()
@@ -796,7 +846,8 @@ function A.New(session,content,enabled,options)
         syncSavedTicketEnding()
         syncMusic()
         ledger:SetText(string.format("金币 %d   ·   第 %d 天",ctx.feedback.Currency(data.live.economy.currency,data.live.gameFlow.day),data.live.gameFlow.day))
-        pending:SetVisible(ctx.scene~="brew" and not ctx.ticketEnding and not not (data.currentOrder and data.currentOrder.pending))
+        ctx.quickPending=not ctx.ticketEnding and not not (data.currentOrder and data.currentOrder.pending)
+        pending:SetVisible(ctx.scene~="brew" and ctx.quickPending)
         local hints=hud:FindById("toggleHomeHints")
         if hints then hints:SetVisible(ctx.scene=="home") end
         back:SetVisible(not ctx.ticketEnding and ctx.scene~="home")
@@ -806,7 +857,8 @@ function A.New(session,content,enabled,options)
         if finishButton then
             local query=rawget(session.queries,"GetReleaseProgress")
             local progress=query and query()
-            finishButton:SetVisible(progress and progress.ok and progress.value.canClose and ctx.releasePhase=="operating" or false)
+            ctx.quickFinish=progress and progress.ok and progress.value.canClose and ctx.releasePhase=="operating" or false
+            finishButton:SetVisible(ctx.quickFinish)
         end
         if developer and home.inspect then notice:SetText("热区检查 · "..(home.lastHit~="" and home.lastHit or "点击主体查看命中")) end
         if model.letterEdited and ctx.panel=="reader" and Panels.RefreshReader(ctx) then model.letterEdited=false; return end

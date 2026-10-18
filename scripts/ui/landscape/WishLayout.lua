@@ -1,16 +1,17 @@
 -- One fitted canvas for editing, preview and frozen keepsakes.
 local L={}
+local Responsive=require "ui.landscape.Responsive"
 function L.Fit(area,aspect)
     local w=math.min(area.w,area.h*aspect);local h=w/aspect
     return {x=area.x+(area.w-w)/2,y=area.y+(area.h-h)/2,w=w,h=h}
 end
-function L.Compute(vp,safe,preview,aspect,menu)
-    local tray=preview and 0 or math.floor((vp.w-safe.left-safe.right)*.26)
-    local left=preview and safe.left+12 or tray+14
+function L.Compute(vp,safe,preview,aspect,menu,drawerVisible)
+    local tray=(preview or drawerVisible==false) and 0 or Responsive.SideWidth(vp,safe)
+    local left=safe.left+(tray>0 and tray+14 or 12)
     local right=vp.w-safe.right-12
     local top=safe.top+10
     local reserve=menu and menu.left*vp.w-10 or right
-    local actionsRight=math.max(left+300,math.min(right,reserve))
+    local actionsRight=math.min(right,math.max(math.min(right,left+240),reserve))
     local actionsWidth=math.min(450,actionsRight-left)
     local actions={x=left+(actionsRight-left-actionsWidth)/2,y=top+25,w=actionsWidth,h=44}
     local area={x=left,y=actions.y+actions.h+8,w=right-left,h=vp.h-safe.bottom-10-(actions.y+actions.h+8)}

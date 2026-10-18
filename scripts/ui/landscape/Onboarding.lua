@@ -168,7 +168,7 @@ function O.New(ctx)
             whiteSpace="normal",fontColor={55,43,30,255},width="100%",flexShrink=0,verticalAlign="top",pointerEvents="none"}
         tooltip:AddChild(tooltipLabel)
         knowButton=Harbor.Button {id="onboardingKnow",text="知道了",width=104,alignSelf="flex-end",
-            minHeight=40,height=40,fontSize=14,visible=false,onClick=function()
+            minHeight=44,height=44,fontSize=14,visible=false,onClick=function()
                 local def=step and STEPS[step]
                 if pendingAdvance==nil and def and def.know then
                     if def.last then finish() elseif def.next then requestAdvance(def.next) end
@@ -177,7 +177,7 @@ function O.New(ctx)
         tooltip:AddChild(knowButton)
         root:AddChild(tooltip)
         skipButton=Harbor.Button {id="onboardingSkip",text="跳过引导",position="absolute",right=12,top=12,width=104,
-            height=40,minHeight=40,fontSize=13,zIndex=50,onClick=function() skip() end}
+            height=44,minHeight=44,fontSize=13,zIndex=50,onClick=function() skip() end}
         root:AddChild(skipButton)
         noteLayer=UI.Panel {id="onboardingNoteLayer",position="absolute",left=0,top=0,width="100%",height="100%",
             backgroundColor={8,6,4,190},pointerEvents="box-only",visible=false,onClick=function() end,zIndex=20}
@@ -482,7 +482,7 @@ function O.New(ctx)
             targetRect=currentTarget()
         end
         local vp=viewport();local s=safe()
-        if skipButton then setRect(skipButton,vp.w-s.right-116,s.top+12,104,40) end
+        if skipButton then setRect(skipButton,vp.w-s.right-116,s.top+12,104,44) end
         if narration and step=="intro.paper" then
             local width=math.min(700,vp.w-s.left-s.right-48)
             local key=tostring(width)..":"..UI.GetFontVersion()

@@ -199,9 +199,8 @@ function InitUI()
                 normal = "fonts/HarborHand-Medium.ttf",
             } },
         },
-        -- DPR + 小屏密度自适应：1 基准像素 ≈ 1 CSS 像素，
-        -- 尺寸按 Web/CSS 常识写（按钮 40-48px、正文 14-16px、间距 8/16/24px）
-        scale = UI.Scale.DEFAULT,
+        -- 手机保持 CSS 等效尺寸；空间不足由 Responsive 重排，不再额外缩小按钮和正文。
+        scale = UI.Scale.DPR,
     })
 end
 

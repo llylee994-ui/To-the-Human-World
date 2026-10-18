@@ -9,6 +9,7 @@ local Arrow=require "ui.landscape.EmbroideredArrow"
 local Slip=require "ui.landscape.WordSlip"
 local Pages=require "ui.landscape.WordTrayPages"
 local D={}
+local Responsive=require "ui.landscape.Responsive"
 local ink,light={65,47,32,255},{255,244,218,255}
 
 ---@class WordTrayState
@@ -45,10 +46,12 @@ end
 local function insets(ctx) return ctx.safeInsets or {left=0,top=0,right=0,bottom=0} end
 local function panelWidth(ctx)
     local safe=insets(ctx)
-    return math.floor(math.max(0,viewportWidth(ctx)-safe.left-safe.right)*D.WidthRatio)
+    return Responsive.SideWidth({w=viewportWidth(ctx),h=viewportHeight(ctx)},safe,ctx.workbench)
 end
 local function panelLeft(ctx,state)
-    return math.floor(-(1-ease(state.open))*(panelWidth(ctx)+32))
+    local compact=Responsive.Metrics({w=viewportWidth(ctx),h=viewportHeight(ctx)},insets(ctx)).compact
+    local edge=compact and insets(ctx).left or 0
+    return math.floor(edge-(1-ease(state.open))*(panelWidth(ctx)+edge+32))
 end
 ---@param ctx table
 ---@return WordTrayState
@@ -183,7 +186,7 @@ function D.Render(ctx,overlay,options)
     local content=UI.Panel {id="wordTrayContents",position="absolute",left=0,top=0,width="100%",height="100%",
         overflow="hidden",pointerEvents="box-none"}
     panel:AddChild(content)
-    local layout=Art.Fit(width,panel.props.height)
+    local layout=Art.Fit(width,panel.props.height,Responsive.Metrics({w=viewportWidth(ctx),h=viewportHeight(ctx)},safe).short)
     PanelArt.Image(content,"wordTrayCloth",layout.cloth)
     -- 标题在木托盘内上沿，避开顶部金币栏，并与首排词卡留出间距。
     local title=Harbor.Tag {id="wordTrayTitle",text="词条栏",fontSize=11,padding=0,minHeight=20,
@@ -215,8 +218,9 @@ function D.Render(ctx,overlay,options)
     if not known then selected=collected[1] and collected[1].id or false end
     state.category=selected
     if #collected>0 then
-        if options.allCategories then layout.tabs.h=math.max(layout.tabs.h,panel.props.height-layout.tabs.y-80) end
-        local capacity=options.allCategories and #collected or math.max(1,math.floor((layout.tabs.h-44)/44))
+        local allCategories=options.allCategories and not layout.responsive
+        if allCategories then layout.tabs.h=math.max(layout.tabs.h,panel.props.height-layout.tabs.y-80) end
+        local capacity=allCategories and #collected or math.max(1,math.floor((layout.tabs.h-44)/44))
         local groups=math.ceil(#collected/capacity)
         state.categoryGroup=math.max(1,math.min(groups,state.categoryGroup))
         local tabs=UI.Panel {id="wordTrayTabs",position="absolute",left=0,top=layout.tabs.y,width=width,
@@ -224,7 +228,7 @@ function D.Render(ctx,overlay,options)
         content:AddChild(tabs)
         local first=(state.categoryGroup-1)*capacity+1
         local last=math.min(#collected,first+capacity-1)
-        local step=options.allCategories and math.min(64,layout.tabs.h/#collected)
+        local step=allCategories and math.min(64,layout.tabs.h/#collected)
             or math.min(72,math.max(44,(layout.tabs.h-(groups>1 and 44 or 0))/(last-first+1)))
         for i=first,last do tab(ctx,state,tabs,collected[i],collected[i].id==selected,layout,i-first+1,step) end
         if groups>1 then
@@ -284,7 +288,7 @@ function D.Render(ctx,overlay,options)
     pager:AddChild(Harbor.Button {id="wordTrayNext",text="›",width=44,height=44,minHeight=44,fontSize=24,padding=0,
         disabled=page==packed.pageCount,onClick=function() turn(1) end})
     if #collected==0 then
-        text(row,"尚未收集词卡。阅读来信并剪下标记词后，会按来源收在这里。",16,"wordTrayEmpty",light)
+        text(row,"尚未收集词卡。阅读来信并剪下标记词后，会按来源收在这里。",layout.responsive and 14 or 16,"wordTrayEmpty",light)
     end
     local footer=UI.Panel {id="wordTrayFooter",position="absolute",left=12,right=100,bottom=8,
         height=ctx.brewDrag and 86 or 56,gap=2,overflow="hidden",pointerEvents="box-none"}

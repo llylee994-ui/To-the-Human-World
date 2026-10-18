@@ -2,6 +2,7 @@ local UI=require "urhox-libs/UI"
 local Harbor=require "ui.landscape.HarborStyle"
 local Ticket=require "ui.landscape.TravelTicket"
 local U=require "core.StateUtil"
+local Responsive=require "ui.landscape.Responsive"
 local V={}
 local function label(parent,text,id,size)
     local control=UI.Label {id=id,text=text,fontSize=size or 17,fontFamily=Harbor.fontFamily,fontColor={65,46,28,255},whiteSpace="normal",
@@ -17,8 +18,10 @@ function V.Confirm(ctx,overlay)
     end
     overlay:AddChild(UI.Panel {id="ticketConfirmBlocker",position="absolute",left=0,top=0,width="100%",height="100%",
         backgroundColor={20,16,12,205},onClick=function() end})
-    local panel=Harbor.Paper {id="ticketConfirmPanel",position="absolute",left="18%",top="8%",width="64%",height="84%",
-        padding=12,gap=8,overflow="hidden",onClick=function() end}
+    local m=Responsive.Metrics(ctx.viewport,ctx.safeInsets)
+    local panel=Harbor.Paper {id="ticketConfirmPanel",position="absolute",left=m.x+m.w*(m.compact and .02 or .18),
+        top=m.y+8,width=m.w*(m.compact and .96 or .64),height=m.h-16,
+        padding=m.short and 16 or 32,paperInset=m.short and 16 or 32,gap=8,overflow="hidden",onClick=function() end}
     overlay:AddChild(panel)
     local header=UI.Panel {id="panelHeader",width="100%",flexDirection="row",alignItems="center",gap=8,minHeight=44,pointerEvents="box-none"}
     ctx.panelHeader=header;panel:AddChild(header)

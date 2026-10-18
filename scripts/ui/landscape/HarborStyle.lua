@@ -12,7 +12,7 @@ local function with(base,props)
     return out
 end
 function H.Button(props)
-    local p=with({minHeight=44,fontSize=15,fontFamily=H.fontFamily,fontWeight="normal",padding={8,14},flexShrink=0},props)
+    local p=with({minHeight=44,fontSize=16,fontFamily=H.fontFamily,fontWeight="normal",padding={8,14},flexShrink=0},props)
     -- Cover crops transparent source padding instead of squeezing the wood grain.
     p.backgroundImage=H.woodImage;p.backgroundFit="cover"
     p.backgroundColor={0,0,0,0};p.hoverBackgroundColor={0,0,0,0}
@@ -46,6 +46,10 @@ function H.PaperProps(props)
     -- One policy for every paper surface, including callers with legacy padding=0.
     -- Short HUD/sea strips scale the source vertically and need smaller top insets.
     local compact=p.compact==true or (type(p.height)=="number" and p.height<=96) or (type(p.maxHeight)=="number" and p.maxHeight<=96)
+    local paperInset=p.paperInset or 32
+    -- A compact paper uses an opaque backing where the source's torn alpha edge
+    -- would otherwise put readable text directly over the scene.
+    if paperInset<32 then p.backgroundColor={246,230,194,255} end
     if compact and (not props or props.padding==nil) then p.padding={6,16} end
     local function edge(name,index)
         local value=p["padding"..name] --[[@as number?]]
@@ -56,12 +60,12 @@ function H.PaperProps(props)
                 value=pad[name:lower()] or (#pad==2 and pad[(index==2 or index==4) and 2 or 1] or pad[index])
             end
         end
-        local minimum=compact and ((index==1 or index==3) and 6 or 16) or 32
+        local minimum=compact and ((index==1 or index==3) and 6 or 16) or paperInset
         return math.max(minimum,type(value)=="number" and value or minimum)
     end
     p.paddingTop=edge("Top",1);p.paddingRight=edge("Right",2)
     p.paddingBottom=edge("Bottom",3);p.paddingLeft=edge("Left",4)
-    p.compact=nil
+    p.compact=nil;p.paperInset=nil
     return p
 end
 function H.Paper(props) return UI.Panel(H.PaperProps(props)) end

@@ -20,7 +20,7 @@ function M.Text(text,width,size,lineHeight,family)
     return {text=wrapped,width=math.ceil(measured),height=math.ceil(height+pixels*.22)}
 end
 function M.Tooltip(text,availableWidth,know)
-    local padding,gap,button=12,8,40
+    local padding,gap,button=12,8,44
     local cap=math.max(1,math.min(320,availableWidth)-padding*2)
     local one=M.Text(text,10000,15,1.45)
     local contentWidth=math.min(cap,math.max(know and 104 or 1,one.width+4))

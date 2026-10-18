@@ -15,7 +15,7 @@ function V.New(ctx)
     if not result.ok then ctx.model.Notify(result);return view end
     local saved=result.value
     local compact=sh<540
-    local columnWidth=math.min(440,sw*.34)
+    local columnWidth=math.min(sw*.70,math.max(compact and 230 or 0,math.min(440,sw*.34)))
     local top=safe.top+sh*(compact and .12 or .17)
     local left=UI.Panel {id="titleComposition",position="absolute",left=safe.left+sw*.085,top=top,
         width=columnWidth,height=vp.h-safe.bottom-top-24,gap=compact and 10 or 18,pointerEvents="box-none"}

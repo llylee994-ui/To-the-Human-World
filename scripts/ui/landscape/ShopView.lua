@@ -54,14 +54,14 @@ function S.Render(ctx,overlay)
     overlay:AddChild(panel)
     panel:AddChild(UI.Panel {position="absolute",left=0,top=0,width="100%",height="100%",backgroundColor={26,20,14,70},pointerEvents="none"})
     local header=UI.Panel {id="panelHeader",width="100%",minHeight=64+safe.top,flexShrink=0,
-        paddingTop=8+safe.top,paddingBottom=8,paddingLeft=pad+safe.left,paddingRight=pad+safe.right,gap=12,
+        paddingTop=8+safe.top,paddingBottom=8,paddingLeft=pad+safe.left,paddingRight=pad+safe.right,gap=compact and 6 or 12,
         flexDirection="row",alignItems="center",pointerEvents="box-none"}
     ctx.panelHeader=header;panel:AddChild(header)
     local title=text(header,"商队商店",compact and 23 or 27,"shopTitle",light)
-    Widget.SetStyle(title,{width=compact and 150 or 180,whiteSpace="nowrap",alignSelf="center"})
+    Widget.SetStyle(title,{width=compact and 120 or 180,whiteSpace="nowrap",alignSelf="center",fontSize=compact and 20 or 27})
     header:AddChild(UI.Panel {flexGrow=1,pointerEvents="none"})
     local wallet=text(header,"",17,"shopBalance",light)
-    Widget.SetStyle(wallet,{width=128,whiteSpace="nowrap",alignSelf="center"})
+    Widget.SetStyle(wallet,{width=compact and 96 or 128,whiteSpace="nowrap",alignSelf="center"})
     header:AddChild(Harbor.Button {id="shopSettings",text="设置",minHeight=48,width=72,onClick=ctx.OpenSettings})
     header:AddChild(Harbor.Button {id="closePanel",text="关闭",minHeight=48,width=84,onClick=ctx.Close})
     local noticeArea=UI.Panel {id="shopMessageArea",position="absolute",left="30%",right="30%",top=safe.top+70,
@@ -112,12 +112,18 @@ function S.Render(ctx,overlay)
     if #items==0 then
         local body=Harbor.Paper {margin=pad,padding=20};panel:AddChild(body);text(body,"目前没有可出售的商品。",18,"shopEmpty");return
     end
-    local pageCount=math.ceil(#items/2)
+    local availableWidth=(ctx.viewport and ctx.viewport.w or 1280)-safe.left-safe.right
+    local perPage=availableWidth<900 and 1 or 2
+    if ctx.shopPerPage and ctx.shopPerPage~=perPage then
+        for i,item in ipairs(items) do if item.ingredientId==ctx.shopSelectedId then ctx.shopPage=math.ceil(i/perPage) end end
+    end
+    ctx.shopPerPage=perPage
+    local pageCount=math.ceil(#items/perPage)
     local page=math.max(1,math.min(pageCount,math.floor(ctx.shopPage or 1)))
     ctx.shopPage=page
-    local first=(page-1)*2+1
+    local first=(page-1)*perPage+1
     local selected=items[first]
-    for index=first,math.min(first+1,#items) do
+    for index=first,math.min(first+perPage-1,#items) do
         local item=items[index];if item.ingredientId==ctx.shopSelectedId then selected=item;break end
     end
     ctx.shopSelectedId=selected.ingredientId
@@ -131,11 +137,12 @@ function S.Render(ctx,overlay)
     local gallery=UI.Panel {id="shopGoodsPage",width="100%",flexGrow=1,flexShrink=1,flexBasis=0,minHeight=0,
         flexDirection="row",gap=12,pointerEvents="box-none"}
     goods:AddChild(gallery)
-    for index=first,math.min(first+1,#items) do
+    for index=first,math.min(first+perPage-1,#items) do
         local item=items[index]
         local chosen=item.ingredientId==selected.ingredientId
         local card=UI.Panel {id="shop_select_"..item.ingredientId,flexGrow=1,flexShrink=1,flexBasis=0,minWidth=0,
-            minHeight=0,padding=10,gap=3,alignItems="center",borderRadius=6,borderWidth=0,
+            minHeight=0,padding=height<400 and 4 or 10,gap=3,alignItems="center",borderRadius=6,borderWidth=0,
+            flexDirection=height<400 and "row" or "column",
             backgroundColor=chosen and {111,79,48,155} or {34,24,17,95},
             onClick=function()
                 local changed=ctx.shopSelectedId~=item.ingredientId
@@ -143,13 +150,18 @@ function S.Render(ctx,overlay)
                 if changed and ctx.PlayObjectSound then ctx.PlayObjectSound("ui_click_01") end
             end}
         gallery:AddChild(card)
-        card:AddChild(Merchandise.Panel(item.ingredientId,{id="shopArt_"..item.ingredientId,width="100%",
-            flexGrow=1,flexShrink=1,flexBasis=0,minHeight=0}))
-        local name=text(card,item.name,16,"shopName_"..item.ingredientId,light);name.props.textAlign="center"
-        local price=text(card,item.price.." 金币",13,"shopPrice_"..item.ingredientId,{227,204,155,255});price.props.textAlign="center"
+        card:AddChild(Merchandise.Panel(item.ingredientId,height<400 and {id="shopArt_"..item.ingredientId,width=52,height=52,flexShrink=0}
+            or {id="shopArt_"..item.ingredientId,width="100%",flexGrow=1,flexShrink=1,flexBasis=0,minHeight=0}))
+        local info=card
+        if height<400 then
+            local area=UI.ScrollView {id="shopCardScroll_"..item.ingredientId,flexGrow=1,flexShrink=1,flexBasis=0,minWidth=0,height="100%",scrollY=true}
+            info=UI.Panel {width="100%",gap=2,flexShrink=0,pointerEvents="box-none"};area:AddChild(info);card:AddChild(area)
+        end
+        local name=text(info,item.name,16,"shopName_"..item.ingredientId,light);name.props.textAlign="center"
+        local price=text(info,item.price.." 金币",13,"shopPrice_"..item.ingredientId,{227,204,155,255});price.props.textAlign="center"
         local status=item.kind=="ticket" and Ticket.Expiry(item.ticket) or item.kind=="furniture" and (item.owned and "已拥有" or "可购入")
             or (item.remainingToday>0 and "余 "..item.remainingToday.." 份" or "今日售完")
-        local caption=text(card,status,11,"shopStatus_"..item.ingredientId,{222,207,179,255});caption.props.textAlign="center"
+        local caption=text(info,status,11,"shopStatus_"..item.ingredientId,{222,207,179,255});caption.props.textAlign="center"
     end
     local pager=UI.Panel {id="shopPager",width="100%",height=48,flexShrink=0,flexDirection="row",gap=12,
         alignItems="center",justifyContent="center",pointerEvents="box-none"}
@@ -161,11 +173,11 @@ function S.Render(ctx,overlay)
         ctx.ticketConfirm=false;ctx.model.dirty=true
         if changed and ctx.PlayObjectSound then ctx.PlayObjectSound("ui_click_01") end
     end
-    pager:AddChild(Harbor.Button {id="shopPreviousPage",text="上一页",width=96,minHeight=44,disabled=page==1,onClick=function() turn(-1) end})
+    pager:AddChild(Harbor.Button {id="shopPreviousPage",text=perPage==1 and "‹" or "上一页",width=perPage==1 and 48 or 96,minHeight=44,disabled=page==1,onClick=function() turn(-1) end})
     local pageNumber=text(pager,page.." / "..pageCount,14,"shopPageNumber",light)
     Widget.SetStyle(pageNumber,{width=64,textAlign="center",whiteSpace="nowrap",alignSelf="center"})
-    pager:AddChild(Harbor.Button {id="shopNextPage",text="下一页",width=96,minHeight=44,disabled=page==pageCount,onClick=function() turn(1) end})
-    local detail=Harbor.Paper {id="shopDetail",flexGrow=2,flexShrink=1,flexBasis=0,minWidth=0,padding=16,overflow="hidden"}
+    pager:AddChild(Harbor.Button {id="shopNextPage",text=perPage==1 and "›" or "下一页",width=perPage==1 and 48 or 96,minHeight=44,disabled=page==pageCount,onClick=function() turn(1) end})
+    local detail=Harbor.Paper {id="shopDetail",flexGrow=2,flexShrink=1,flexBasis=0,minWidth=0,padding=16,paperInset=compact and 16 or 32,overflow="hidden"}
     content:AddChild(detail)
     local body=scroll(detail,"shopDetailScroll")
     body:AddChild(Merchandise.Panel(selected.ingredientId,{id="shopSelectedArt",width="100%",height=compact and 122 or 212}))
@@ -181,13 +193,16 @@ function S.Render(ctx,overlay)
         text(body,"可购买至第 "..selected.ticket.lastPurchaseDay.." 天结束",13,"ticketLastDay")
     elseif selected.kind=="furniture" then text(body,selected.owned and "已拥有" or "尚未拥有",15,"shopItemOwned")
     else text(body,"已有 "..selected.ownedQuantity.." 份",14,"shopItemOwned");text(body,"今日余量 "..selected.remainingToday.." 份",14,"shopItemStock") end
-    local footer=UI.Panel {id="shopDetailFooter",width="100%",height=118,flexShrink=0,paddingTop=12,gap=6,pointerEvents="box-none"}
+    local footer=UI.Panel {id="shopDetailFooter",width="100%",height=compact and 52 or 118,flexShrink=0,paddingTop=compact and 4 or 12,gap=6,pointerEvents="box-none"}
     detail:AddChild(footer)
     local blocked=selected.kind=="ticket" and selected.ticket.message or reason(view,selected)
-    local explanation=text(footer,blocked,13,"shopItemReason",{115,60,31,255})
-    Widget.SetStyle(explanation,{height=52,minHeight=52,overflow="hidden"})
+    local explanation=text(compact and body or footer,blocked,14,"shopItemReason",{115,60,31,255})
+    if compact then explanation:SetVisible(blocked~="")
+    else Widget.SetStyle(explanation,{height=52,minHeight=52,overflow="hidden"}) end
     local title=selected.kind=="furniture" and (selected.owned and "已拥有" or "购入 · "..selected.price.." 金币")
         or (selected.kind=="ticket" and "购买船票 · " or "购买一份 · ")..selected.price.." 金币"
+    if compact then title=selected.kind=="furniture" and (selected.owned and "已拥有" or "购入家具")
+        or (selected.kind=="ticket" and "购买船票" or "购买一份") end
     footer:AddChild(Harbor.Button {id="buy_"..selected.ingredientId,text=title,width="100%",height=48,minHeight=48,fontSize=15,
         disabled=blocked~="",onClick=function()
             if blocked~="" or ctx.panel~="shop" or ctx.ticketConfirm then return end

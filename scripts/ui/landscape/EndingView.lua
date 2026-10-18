@@ -35,9 +35,11 @@ function V.New(ctx)
         local ph=math.min(r.h-80,r.w/1.45);local pw=ph*1.45
         Paper.New(sheet,{x=r.x+(r.w-pw)/2,y=r.y+(r.h-80-ph)/2,w=pw,h=ph},ending.collage)
     else
-        local paper=A.Paper(sheet,{id="endingPaper",position="absolute",left=r.x+r.w*.15,top=r.y+4,width=r.w*.70,height=r.h-76,padding=40,gap=14})
+        local compact=r.h<520
+        local paper=A.Paper(sheet,{id="endingPaper",position="absolute",left=r.x+r.w*(compact and .04 or .15),top=r.y+4,
+            width=r.w*(compact and .92 or .70),height=r.h-76,padding=compact and 16 or 40,gap=compact and 6 or 14})
         A.Label(paper,"旅  程  留  念",nil,13,{fontColor=A.muted,textAlign="center"})
-        A.Label(paper,ending.title,"releaseEndingTitle",30,{textAlign="center"})
+        A.Label(paper,ending.title,"releaseEndingTitle",compact and 24 or 30,{textAlign="center"})
         local scroll=UI.ScrollView {id="endingTextScroll",width="100%",flexGrow=1,flexShrink=1,flexBasis=0,scrollY=true,showScrollbar=true}
         local body=UI.Panel {width="100%",paddingRight=18,flexShrink=0,pointerEvents="box-none"};scroll:AddChild(body);paper:AddChild(scroll)
         A.Label(body,ending.text,"releaseEndingText",19,{lineHeight=1.85})

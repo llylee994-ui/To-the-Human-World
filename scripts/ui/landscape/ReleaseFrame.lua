@@ -2,6 +2,7 @@
 local UI=require "urhox-libs/UI"
 local H=require "ui.landscape.HarborStyle"
 local Hud=require "ui.landscape.HudLayout"
+local Responsive=require "ui.landscape.Responsive"
 ---@alias ReleasePage {root:Panel,body:Panel,footer:Panel,Refresh:fun(),Destroy:fun()}
 local F={}
 function F.Text(parent,text,id,size)
@@ -21,8 +22,10 @@ function F.New(ctx,title)
     local safe=ctx.safeInsets or {left=0,top=0,right=0,bottom=0}
     local viewport=ctx.viewport or {w=1280,h=720}
     local top=Hud.SidePanelTop(viewport,safe,ctx.menuRect)
+    local metrics=Responsive.Metrics(viewport,safe)
     local root=H.Paper {id="activePanel",position="absolute",left=safe.left+12,right=safe.right+12,
-        top=top,bottom=safe.bottom+12,padding=32,gap=8,overflow="hidden",onClick=function() end}
+        top=top,bottom=safe.bottom+12,padding=metrics.short and 16 or 32,paperInset=metrics.short and 16 or 32,
+        gap=8,overflow="hidden",onClick=function() end}
     F.Text(root,title,"releasePageTitle",23)
     local notice=UI.ScrollView {height=44,width="100%",flexShrink=0,scrollY=true,visible=false}
     ctx.panelNotice=F.Text(notice,ctx.model.message,"panelMessage",14);ctx.panelNoticeArea=notice;root:AddChild(notice)

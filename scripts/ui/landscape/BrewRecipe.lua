@@ -18,7 +18,7 @@ function R.Render(ctx,b,center,summary,data,editable)
     local paper=H.Paper {id="brewRecipePaper",position="absolute",left=l.summary.x,top=l.summary.y,
         width=l.summary.w,height=l.summary.h,compact=true,padding=0}
     center:AddChild(paper)
-    local heading=label(paper,"brewSlotsTitle","配方与药槽",14)
+    local heading=label(paper,"brewSlotsTitle",l.short and "药槽" or "配方与药槽",14)
     Widget.SetStyle(heading,{position="absolute",left=16,top=3,width=150,height=24})
     paper:AddChild(UI.Button {id="brewRecipeDetails",text="条件与药效 ›",position="absolute",right=10,top=-12,
         width=144,height=44,minHeight=44,fontSize=14,fontFamily=H.fontFamily,padding=0,
@@ -52,8 +52,10 @@ function R.Render(ctx,b,center,summary,data,editable)
                 b.selected=row.value and {kind=row.kind,id=row.value,title=value or row.title} or "recipe";ctx.model.dirty=true
             end}
         paper:AddChild(slot)
-        local title=label(slot,nil,row.title,l.compact and 10 or 12);Widget.SetStyle(title,{textAlign="center",lineHeight=l.compact and 1 or 1.3})
-        local name=label(slot,nil,value or "＋",l.compact and 11 or 14);Widget.SetStyle(name,{whiteSpace="nowrap",textAlign="center",lineHeight=l.compact and 1.1 or 1.3})
+        local title=label(slot,nil,row.title,12);Widget.SetStyle(title,{textAlign="center",lineHeight=1})
+        if l.short and value then title:SetVisible(false) end
+        local name=label(slot,nil,value or "＋",14)
+        Widget.SetStyle(name,{whiteSpace=l.short and "normal" or "nowrap",width="100%",maxLines=l.short and 2 or 1,textAlign="center",lineHeight=1.1})
         -- Empty outlines use short strokes; UI still owns all labels and input.
         function slot:Render(vg)
             self:RenderFullBackground(vg)
@@ -77,6 +79,7 @@ function R.Render(ctx,b,center,summary,data,editable)
     if summary.pending then state="结果已保存 · 待处理" end
     if ctx.importantMessage and ctx.importantMessage==ctx.model.message then state=ctx.model.message end
     local capacity=label(paper,"brewCapacity","原料 "..total.."/"..(kit and kit.slots.ingredient or 2).." · "..state,12)
+    capacity:SetVisible(not l.short)
     Widget.SetStyle(capacity,{position="absolute",left=16,right=12,bottom=6,whiteSpace="nowrap"})
     if not b.selected then return end
     if b.selected=="recipe" then return end

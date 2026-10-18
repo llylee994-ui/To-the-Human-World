@@ -17,6 +17,7 @@ local Smoke=require "ui.landscape.BrewSmoke"
 local StoryStyle=require "ui.landscape.StoryStyle"
 local Slip=require "ui.landscape.WordSlip"
 local NotesView=require "ui.landscape.PotionNotesView"
+local Responsive=require "ui.landscape.Responsive"
 local B={}
 local ink={65,47,32,255}
 local function clear(parent)
@@ -144,6 +145,7 @@ function B.New(ctx)
     b.journal.Close=function() b.journalOpen=false;ctx.model.dirty=true end
     function b.OpenJournal(storyId)
         b.interaction.CancelDrag();b.journalOpen=true
+        if b.layout.drawersOverlay then b.wordsOpen=false end
         if b.journal.journalBook and b.journal.journalBook.closing then Book.Reset(b.journal) end
         if storyId then b.journal.storyId=storyId;Book.Select(b.journal,storyId) end
         Book.Open(b.journal);ctx.model.dirty=true
@@ -165,6 +167,7 @@ function B.New(ctx)
     function b.Enter()
         if b.entered then return end
         b.entered=true;b.wordsOpen=true;b.journalOpen=true;b.orderId=false;b.selected=false;b.entryTime=0
+        if Responsive.Metrics(ctx.viewport,ctx.safeInsets).compact then b.wordsOpen=false;b.journalOpen=false end
         Tray.Reset(b.words);Book.Reset(b.journal);ctx.model.dirty=true
     end
     function b.Cancel() b.interaction.Cancel();b.revealTail=0;smoke:SetVisible(false) end
@@ -191,6 +194,7 @@ function B.New(ctx)
             if b.journal.journalBook then b.journal.journalBook.story=b.journal.storyId;b.journal.journalBook.entry=false end
         end
         for _,sub in ipairs({b.words,b.journal}) do sub.viewport=ctx.viewport;sub.safeInsets=ctx.safeInsets end
+        b.scrollRestore={words=Responsive.CaptureScroll(wordsHost),journal=Responsive.CaptureScroll(journalHost)}
         clear(center);clear(wordsHost);clear(journalHost);clear(notesHost)
         if b.wordsOpen then
             Tray.Open(b.words);Tray.Render(b.words,wordsHost)
@@ -204,19 +208,24 @@ function B.New(ctx)
         end
         local l=b.layout
         local safe=ctx.safeInsets or {left=0,right=0,top=0,bottom=0}
-        local reopen=UI.Panel {position="absolute",left=l.center.x,top=safe.top+12,width=l.center.w,height=44,
+        local reopen=UI.Panel {position="absolute",left=l.center.x,top=safe.top+8,width=l.center.w,height=44,
             flexDirection="row",gap=8,justifyContent="flex-start",pointerEvents="box-none"}
         center:AddChild(reopen)
         button(reopen,"brewWords",b.wordsOpen and "收起词条" or "展开词条",function()
             b.interaction.CancelDrag();b.wordsOpen=not b.wordsOpen
+            if b.wordsOpen and b.layout.drawersOverlay then b.journalOpen=false end
             if b.wordsOpen then Tray.Reset(b.words) end
             ctx.model.dirty=true
         end)
         button(reopen,"brewJournal",b.journalOpen and "收起记录" or "展开记录",function()
             b.interaction.CancelDrag();b.journalOpen=not b.journalOpen
+            if b.journalOpen and b.layout.drawersOverlay then b.wordsOpen=false end
             if b.journalOpen then Book.Reset(b.journal);b.journal.storyId=summary.sourceLetterId end
             ctx.model.dirty=true
         end)
+        if l.drawersOverlay then
+            button(reopen,"brewMenu","菜单",function() ctx.Open("quickMenu") end)
+        end
         local data=ctx.model.Refresh()
         local draft=summary.draft or ctx.model.GetDraft()
         local kit=false --[[@as table|false]]
@@ -233,7 +242,8 @@ function B.New(ctx)
         end
         local shelfProps=box(l.shelf,"brewShelf");shelfProps.scrollX=true;shelfProps.scrollY=false;shelfProps.showScrollbar=false
         local shelf=UI.ScrollView(shelfProps);center:AddChild(shelf)
-        local rowWidth=math.max(l.shelf.w,4*112)
+        local ingredientCount=math.max(1,#ctx.content.ingredients)
+        local rowWidth=math.max(l.shelf.w,ingredientCount*112)
         local shelfRow=UI.Panel {width=rowWidth,height=l.shelf.h,pointerEvents="box-none"};shelf:AddChild(shelfRow)
         local wood=BrewArt.Panel(BrewArt.tray,{id="brewMaterialTray",position="absolute",left=0,top=0,width=rowWidth,height=l.shelf.h,pointerEvents="none"})
         shelfRow:AddChild(wood)
@@ -241,8 +251,8 @@ function B.New(ctx)
         for index,item in ipairs(ctx.content.ingredients) do
             local chosen=0;for _,row in ipairs(draft.ingredients) do if row.ingredientId==item.id then chosen=row.quantity end end
             local remaining=math.max(0,(data.live.economy.ingredients[item.id] or 0)-chosen)
-            local card=UI.Panel {id="brewIngredient_"..item.id,position="absolute",left=8+(index-1)*(rowWidth-16)/4,top=5,
-                width=(rowWidth-16)/4,height=l.shelf.h-10,
+            local card=UI.Panel {id="brewIngredient_"..item.id,position="absolute",left=8+(index-1)*(rowWidth-16)/ingredientCount,top=2,
+                width=(rowWidth-16)/ingredientCount,height=math.max(44,l.shelf.h-4),
                 onPointerDown=function() if not b.interaction.drag then b.interaction.suppressClick=false end end,
                 onClick=function(self)
                     if not interactive() or not b.interaction.ClickAllowed() or (b.interaction.flight and b.interaction.flight.accepted)
@@ -253,13 +263,19 @@ function B.New(ctx)
                 end}
             shelfRow:AddChild(card)
             card:AddChild(Art.Panel(item.id,{width="100%",height=l.shelf.h-36,padding=4,imageTint=remaining==0 and {145,145,145,255} or nil}))
+            if l.short then
+                card:AddChild(UI.Label {id="brewIngredientCount_"..item.id,text="×"..remaining,
+                    position="absolute",right=6,top=4,width=42,height=24,padding=0,
+                    textAlign="center",verticalAlign="middle",fontSize=14,fontFamily=H.fontFamily,
+                    fontColor=ink,backgroundColor={245,230,194,245},borderRadius=4,pointerEvents="none"})
+            end
             -- The painted plaques scale with the whole shelf. Position names on
             -- that shared canvas, rather than a fixed bottom inset in each card.
-            local cell=(rowWidth-16)/4
-            shelfRow:AddChild(UI.Label {id="brewIngredientName_"..item.id,text=item.name.." · "..remaining,position="absolute",
-                left=8+(index-1)*cell+cell*.15,top=l.shelf.h*.885-10,width=cell*.70,height=20,
+            local cell=(rowWidth-16)/ingredientCount
+            shelfRow:AddChild(UI.Label {id="brewIngredientName_"..item.id,text=l.short and item.name or item.name.." · "..remaining,position="absolute",
+                left=8+(index-1)*cell+4,top=l.shelf.h-24,width=cell-8,height=24,
                 padding=0,lineHeight=1,textAlign="center",verticalAlign="middle",whiteSpace="nowrap",zIndex=2,pointerEvents="none",
-                fontFamily=H.fontFamily,fontColor=ink,fontSize=l.compact and 10 or 12})
+                fontFamily=H.fontFamily,fontColor=ink,fontSize=14})
             if remaining>0 and editable then bindSource(card,{kind="ingredient",id=item.id,text=item.name,path=Art.Get(item.id)}) end
         end
         local drop=UI.Panel(box(l.drop,"brewPotDrop"));center:AddChild(drop)
@@ -270,7 +286,7 @@ function B.New(ctx)
             local hint=text(center,"拖入词条与原料",12,"brewPotHint")
             Widget.SetStyle(hint,{position="absolute",left=l.pot.x+l.pot.w+8,top=l.pot.y+l.pot.h*.45,
                 width=math.max(52,l.center.x+l.center.w-l.pot.x-l.pot.w-12),fontColor={255,241,210,245}})
-            hint:SetVisible(not draft.mainTokenId and not b.interaction.active)
+            hint:SetVisible(not l.short and not draft.mainTokenId and not b.interaction.active)
         end
         Recipe.Render(ctx,b,center,summary,data,editable)
         NotesView.Render(ctx,b,notesHost,summary,draft)
@@ -285,11 +301,17 @@ function B.New(ctx)
     end
     function b.Update(dt,focused)
         if ctx.scene~="brew" then return end
+        if b.scrollRestore then
+            Responsive.RestoreScroll(wordsHost,b.scrollRestore.words)
+            Responsive.RestoreScroll(journalHost,b.scrollRestore.journal)
+            b.scrollRestore=false
+        end
         local viewport=ctx.viewport or {w=1280,h=720}
         local safe=ctx.safeInsets or {left=0,right=0,top=0,bottom=0}
         local signature=table.concat({viewport.w,viewport.h,safe.left,safe.right,safe.top,safe.bottom},":")
         if signature~=b.signature then
-            b.signature=signature;b.Cancel();b.layout=L.Compute(viewport.w,viewport.h,safe);ctx.model.dirty=true
+            b.signature=signature;b.interaction.CancelDrag();b.layout=L.Compute(viewport.w,viewport.h,safe);ctx.model.dirty=true
+            if b.layout.drawersOverlay and b.wordsOpen and b.journalOpen then b.journalOpen=false end
         end
         b.entryTime=math.min(.42,b.entryTime+math.max(0,dt))
         if not focused or ctx.portrait or dt<0 or dt>.5 then b.revealTail=0

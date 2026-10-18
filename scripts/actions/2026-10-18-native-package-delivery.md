@@ -203,3 +203,19 @@ D:/taptap/.sync-backups/20261018-native-package/       本地改动备份及哈�
 - 网页验证一：`evidence/browser-20261018-205859/events.json` 为官方 URL；引擎启动、main.lua 加载、OPFS 挂载成功。网页验证二：`evidence/browser-20261018-210729/events.json`、`evidence/virtual-player-console.txt` 为 APK 同一 HTML 和虚拟 HTTPS origin/隔离响应头，通过 CDP 响应拦截模拟宿主，最终出现 `=== 寄往人间 启动完成（第 1 天）===`。这是桌面 Chrome 后台启动检查；未把它视为 Android WebView 实测、触控验收或完整存档恢复。
 - 两次后台进程均由本轮持有进程句柄管理并已关闭；未开前台窗口、移动鼠标或控制 Maker preview。未改变游戏 Lua、配置、美术、绑定或共享引擎；工作区原有改动保留，HEAD 仍为 e4621ef。`git diff --check` 通过（现有 LF/CRLF 提示保留），未提交、推送或远端构建。
 - 剩余：手机安装及实际 WebView 能力检查；是否进入标题/桌前、触控/长信/安全区、四种进度下退出恢复、重复发货幂等。访客 userId=0，无 TapTap 账号同步。外部浏览器备用测试与 APK 内存档独立，不能混作同一退出恢复结果。
+
+## Android 沉浸式全屏修订（2026-10-18，实现与候选打包 Completed／手机验收待验证）
+
+- 情况与授权：用户提供手机截图，旧测试 APK 已在其手机显示游戏场景，同时顶部宿主工具栏及底部深绿系统导航区域占用画面。用户明确要求沉浸式全屏、隐藏常驻测试栏、触屏菜单内放重试/退出、保留安全区并重新打包。截图只证明该设备已显示游戏场景，不补认退出恢复、结算或完整触控验收。
+- 措施：删除原生常驻状态/按钮/进度横栏；游戏区域使用全屏窗口。API 30+ 采用 WindowInsetsController，低版本采用 immersive-sticky；系统栏可由边缘滑动临时唤回。按系统报告的挖孔/刘海、手势和输入法边距保护内容与菜单按钮，不固定保留整条导航栏高度。提供右侧中部的触屏菜单按钮，菜单内继续、重试、说明、退出，重试/退出再确认，取消不加载或结算游戏。回到前台与关闭弹窗后恢复沉浸式状态。
+- 交付身份：保持原包名、签名、虚拟 HTTPS origin、游戏 URL 和网页存储；VersionCode 提升至 2。同签名覆盖安装所需条件逐项核对，不能用重新安装/清数据绕过升级。首次 APK 与原宿主源码快照保留在隔离目录备份。
+- 影响树：本行动记录；`D:/taptap/android-web-test/src/cn/tothehumanworld/webtest/MainActivity.java` 宿主交互；新增同目录 `ImmersiveWindow.java` 全屏/安全区适配；`AndroidManifest.xml` 版本与启动主题；`res/values/styles.xml` 无栏黑底启动主题；`build.py` 与 `config.json` 加入升级签名保护和真实版本记录；`README.md` 与 download 使用说明；`build/`、`evidence/` 和新 APK。游戏 Lua、UI 组件、内容、美术、Maker 绑定、全局工具不修改，不提交推送。
+- 验证方法：实际 Java/DEX/aapt 编译、签名/zipalign/ZIP 检查；对比新旧包名、VersionCode、签名指纹和内嵌网页/地址一致；检查新旧 API 分支、菜单触屏及返回/取消路径、无主动清档或结算调用。无可用 Android AVD，不能把编译或桌面网页检查当作本轮手机全屏效果验收；新版手机覆盖安装、边缘滑动、菜单触控、旋转和退出恢复待实机。
+- 依据：[Android 沉浸式模式](https://developer.android.com/develop/ui/views/layout/immersive)、[边缘布局与安全区](https://developer.android.com/develop/ui/views/layout/edge-to-edge)。
+- 自检结果：Java/DEX/aapt 编译、APK v2/v3 签名、zipalign、ZIP CRC、交付哈希检查通过；新 APK 包名与 v1 一致，VersionCode 2 / VersionName 0.2-immersive，签名指纹与 v1 相同，权限未变。内嵌配置和 player.html 与 v1 字节一致，新的全屏适配类已进入 DEX。安全区与菜单路径经源码和编译后字节码检查；未运行 Android UI 测试，不能把这些结果当作真机全屏或恢复验收。
+- 产物：`D:/taptap/download/ToTheHumanWorld-online-test-v2-20261018T132836Z.apk`，1,060,074 字节；SHA-256 `9ac8e89ec1471970b0988833be2e498a775fe27743e4a368d20ad6e60ec64590`。配套 `ToTheHumanWorld-online-test-v2-说明.md`。v1 APK 保留；请覆盖安装，不先卸载或清除数据。
+- 证据：`D:/taptap/android-web-test/build/20261018T132836Z/` 中 `build-result.json`、`upgrade-audit.json`、`signature-verification.txt`、`apk-metadata.txt`、`dex-build.txt`、`compiled-ui-inspection.txt`；控制台日志为 `evidence/apk-immersive-build-console.txt`。D8 本次成功且日志为空。升级审核中的 `android_v2_install_and_ui_tested=false` 明确保留。
+- 回退与身份：修改前源码快照位于 `D:/taptap/android-web-test/backups/immersive-before-20261018T132559Z/`，未把密钥复制进快照。构建脚本新增保护：升级版若原密钥缺失或签名指纹不匹配则停止，不自动换签名。保留旧包和源码用于后续回退构建，不要求手机卸载降级。
+- 实际交互：右侧中部 48dp 菜单按钮位于安全内容区域内，错误提示时仍可点；菜单取消/继续、关闭说明、恢复窗口焦点和横屏配置变化均不主动重新加载页面。重试与退出二次确认，系统返回键打开菜单。本轮未加入游戏存档、结算或清除网页数据调用。
+- 并行边界：本轮开始及收尾核对仓库 HEAD 为 9eb6942，已由其他工作更新；未拉取、提交、推送或启动前台窗口，未覆盖现有音乐设置等修改。构建记录沿用的参考 HEAD e4621ef、远端观察版本 1.0.30 和桌面启动结果属于 v1 接入阶段证据，不代表本轮重新同步或验收了远端游戏。
+- 剩余：v2 手机覆盖安装、全屏与临时系统栏行为、菜单触控/遮挡、安全区和横屏翻转，以及同一访客存档的退出恢复与重复结算。手机截图确认的是 v1 游戏画面，未将其替代 v2 或存档验收。

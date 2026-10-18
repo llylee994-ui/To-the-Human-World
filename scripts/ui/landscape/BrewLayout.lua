@@ -1,5 +1,6 @@
 -- UI base pixels; side drawer visibility never changes center geometry.
 local L={}
+local Responsive=require "ui.landscape.Responsive"
 ---@class BrewDropRect
 ---@field x number
 ---@field y number
@@ -10,38 +11,52 @@ local L={}
 function L.Compute(w,h,safe,auxCount,ingredientCount)
     safe=safe or {left=0,right=0,top=0,bottom=0}
     local usable=w-safe.left-safe.right
-    local side=math.floor(usable*.26)
-    local x=side+8
+    local metrics=Responsive.Metrics({w=w,h=h},safe)
+    local side=metrics.compact and 0 or math.floor(usable*.26)
+    local x=safe.left+side+8 --[[@as number]]
     local width=math.max(0,w-safe.right-side-8-x)
     local compact=h-safe.top-safe.bottom<620
     local top=safe.top+(compact and 56 or 64)
     local wishH=compact and 48 or 64
-    local shelfH=compact and 88 or 136
+    local shelfH=compact and 88 or 136 --[[@as number]]
     local recipeH=compact and 88 or 116
     local controlsY=h-safe.bottom-56
     local shelfY=controlsY-6-shelfH
     local summaryY=shelfY-6-recipeH
+    ---@type number,number,number,number
+    local summaryX,summaryW,shelfX,shelfW=x,width,x,width
     local potTop=top+wishH+4
     local potH=math.min(width*.85/(1255/1017),math.max(44,summaryY-potTop-4))
     local potW=potH*(1255/1017)
     local pot={x=x+(width-potW)/2,y=potTop,w=potW,h=potH}
+    if metrics.short then
+        -- A short phone uses two working columns, rather than four stacked rows.
+        top=safe.top+56;wishH=44;potTop=top+wishH+4
+        summaryX=x+math.floor(width*.34)+8;summaryW=x+width-summaryX
+        summaryY=potTop;recipeH=70
+        shelfX=summaryX;shelfW=summaryW;shelfY=summaryY+recipeH+4
+        shelfH=math.max(44,controlsY-4-shelfY)
+        local available=math.max(44,controlsY-8-potTop)
+        potH=math.min(available,(summaryX-x-16)/(1255/1017));potW=potH*(1255/1017)
+        pot={x=x+(summaryX-x-8-potW)/2,y=potTop+(available-potH)/2,w=potW,h=potH}
+    end
     -- Invisible generous mouth bounds; never overlap the letter, slots or drawers.
     local drop={x=pot.x+pot.w*.12,y=pot.y+pot.h*.04,w=pot.w*.76,h=pot.h*.70,
         landingX=pot.x+pot.w*.50,landingY=pot.y+pot.h*.40}
     ---@type BrewDropRect[]
     local slots={}
     local n=1+(auxCount or 2)+(ingredientCount or 2)
-    local gap=6;local slotW=math.max(0,(width-24-(n-1)*gap)/n)
+    local gap=6;local slotW=math.max(0,(summaryW-24-(n-1)*gap)/n)
     for i=1,n do
-        slots[i]={x=x+12+(i-1)*(slotW+gap),y=summaryY+25,w=slotW,h=recipeH-49,
+        slots[i]={x=summaryX+12+(i-1)*(slotW+gap),y=summaryY+25,w=slotW,h=metrics.short and 44 or recipeH-49,
             kind=i<=1+(auxCount or 2) and "word" or "ingredient",available=true}
     end
     return {center={x=x,y=top,w=width,h=controlsY+44-top},
         wish={x=x,y=top,w=width,h=wishH},pot=pot,drop=drop,slots=slots,
         wishText={x=x+16,y=top+(compact and 2 or 8),w=math.max(0,width-164),h=wishH-(compact and 4 or 16)},
         wishButton={x=x+width-132,y=top+(wishH-44)/2,w=116,h=44},
-        summary={x=x,y=summaryY,w=width,h=recipeH},shelf={x=x,y=shelfY,w=width,h=shelfH},
-        controls={x=x,y=controlsY,w=width,h=48},compact=compact}
+        summary={x=summaryX,y=summaryY,w=summaryW,h=recipeH},shelf={x=shelfX,y=shelfY,w=shelfW,h=shelfH},
+        controls={x=x,y=controlsY,w=width,h=48},compact=compact,drawersOverlay=metrics.compact,short=metrics.short}
 end
 function L.Contains(r,x,y) return r and x>=r.x and y>=r.y and x<=r.x+r.w and y<=r.y+r.h end
 function L.Target(layout,item,x,y)

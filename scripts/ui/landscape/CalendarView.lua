@@ -2,6 +2,7 @@ local UI=require "urhox-libs/UI"
 local Widget=require "urhox-libs/UI/Core/Widget"
 local Art=require "ui.landscape.CalendarArt"
 local Motion=require "ui.landscape.CalendarMotion"
+local Responsive=require "ui.landscape.Responsive"
 local C={}
 local ink={74,43,21,255}
 local function rect(id,x,y,w,h)
@@ -46,7 +47,14 @@ function C.New(ctx)
     local final=progress and progress.ok and progress.value.canClose or false
     local apprentice=final and progress.value.canApprentice
     local action=ctx.model.Action("NextDay")
-    local fit=Art.Layout(ctx.viewport,ctx.safeInsets);local size=fit.w
+    local metrics=Responsive.Metrics(ctx.viewport,ctx.safeInsets)
+    local fit=Art.Layout(ctx.viewport,ctx.safeInsets)
+    if metrics.short then
+        local side=math.min(metrics.h-16,metrics.w*.48)
+        fit={x=metrics.x+8,y=metrics.y+8,w=side,h=side,noteX=metrics.x+side+20,noteY=metrics.y+20,
+            noteW=math.max(1,metrics.w-side-32),noteH=math.max(44,metrics.h-180)}
+    end
+    local size=fit.w
     local root=UI.Panel {id="calendarOverlay",position="absolute",left=0,top=0,width="100%",height="100%",pointerEvents="box-none",zIndex=1}
     local canvas=UI.Panel(rect("calendarCanvas",fit.x,fit.y,size,size));canvas.props.pointerEvents="box-none";root:AddChild(canvas)
     local api={root=root,motion=Motion.New(),fromDay=day,toDay=day,disposed=false --[[@as boolean]],fit=fit,final=final}
@@ -102,15 +110,22 @@ function C.New(ctx)
         notice:SetText(closing and not apprentice and "把这些日子，好好收起来。" or "晚安。明天见。")
         return result
     end
-    cancel=button(leaf,"cancelNextDay","再待一会",math.max(12,size*.0255),size*.281,size*.778,size*.22,size*.09,function()
+    local actions=metrics.short and root or leaf
+    cancel=button(actions,"cancelNextDay","再待一会",metrics.short and 18 or math.max(12,size*.0255),size*.281,size*.778,size*.22,size*.09,function()
         if current() then ctx.Close() end
     end)
-    confirm=button(leaf,"confirmNextDay","结束今天",math.max(12,size*.0255),size*.749,size*.784,size*.18,size*.09,confirmDay)
+    confirm=button(actions,"confirmNextDay","结束今天",metrics.short and 18 or math.max(12,size*.0255),size*.749,size*.784,size*.18,size*.09,confirmDay)
     confirm:SetDisabled(not action.enabled)
     reload=button(root,"reloadCalendarSave","重新读取进度",16,fit.x+size*.30,fit.y+size*.88,size*.40,44,function()
         if current() then ctx.model.Reload() end
     end)
     reload.props.backgroundColor={237,221,185,255};reload:SetVisible(not ctx.session.state.CanMutate())
+    if metrics.short then
+        for i,node in ipairs({confirm,cancel,reload}) do
+            Widget.SetStyle(node,{left=fit.noteX,top=metrics.y+metrics.h-156+(i-1)*50,width=fit.noteW,height=44,
+                backgroundColor={237,221,185,255}})
+        end
+    end
     function leaf:Render(vg)
         if api.motion.active and api.motion.kind=="next" then Art.Paper(vg,canvas:GetAbsoluteLayout()) end
     end

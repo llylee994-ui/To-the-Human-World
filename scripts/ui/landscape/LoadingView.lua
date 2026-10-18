@@ -53,6 +53,17 @@ function V.New(loader,onDismissed)
     local targetRendered=0
     local targetUpdated=0
     local view={root=root}
+    local lastShort=nil
+    local function reflow()
+        local height=720
+        if UI.GetViewportSize then local _,h=UI.GetViewportSize();height=h end
+        local short=height<520
+        if short==lastShort then return end
+        lastShort=short
+        header:SetStyle({top=short and "6%" or "13%",gap=short and 4 or 10})
+        header:FindById("loadingTitle"):SetStyle({fontSize=short and 28 or 44})
+        footer:SetStyle({bottom=short and "6%" or "12%",gap=short and 4 or 8})
+    end
 
     local function setAlpha(value)
         alpha=math.max(0,math.min(1,value))
@@ -70,6 +81,7 @@ function V.New(loader,onDismissed)
     end
     function view.IsActive() return active end
     function view:Update(dt)
+        reflow()
         loader.Update(dt)
         if not active then return end
         local s=loader.GetStatus()

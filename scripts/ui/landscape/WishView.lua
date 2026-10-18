@@ -8,6 +8,7 @@ local Tray=require "ui.landscape.WishTray"
 local Story=require "ui.landscape.StoryStyle"
 local C=require "systems.WishCollage"
 local Layout=require "ui.landscape.WishLayout"
+local Responsive=require "ui.landscape.Responsive"
 local V={}
 function V.New(ctx)
     local preview=ctx.panel=="wishPreview"
@@ -20,7 +21,8 @@ function V.New(ctx)
     local savedRows=U.Copy(wish.placements);local rows=C.ForCanvas(savedRows,2);local words={}
     for _,sample in ipairs(wish.samples) do words[sample.sourceTokenId]=sample.text end
     ctx.wishUndo=ctx.wishUndo or {}
-    local l=Layout.Compute(vp,safe,preview,2,ctx.menuRect);local rect=l.paper
+    if ctx.wishDrawerVisible==nil and Responsive.Metrics(vp,safe).compact then ctx.wishDrawerVisible=false end
+    local l=Layout.Compute(vp,safe,preview,2,ctx.menuRect,ctx.wishDrawerVisible);local rect=l.paper
     for _,row in ipairs(rows) do
         Paper.Clamp(row,words[row.sourceTokenId],rect.w,rect.h)
         -- Migrate only the editable projection; old frozen keepsakes retain their rules.

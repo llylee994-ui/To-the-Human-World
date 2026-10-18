@@ -9,6 +9,7 @@ local Art=require "ui.landscape.JournalBookArt"
 local PanelArt=require "ui.landscape.PanelArt"
 local Arrow=require "ui.landscape.EmbroideredArrow"
 local B={}
+local Responsive=require "ui.landscape.Responsive"
 local ink,inkFaint={72,52,36,255},{128,106,78,255}
 
 ---@class JournalBookState
@@ -41,7 +42,7 @@ end
 local function insets(ctx) return ctx.safeInsets or {left=0,top=0,right=0,bottom=0} end
 local function panelWidth(ctx)
     local safe=insets(ctx)
-    return math.floor(math.max(0,viewportWidth(ctx)-safe.left-safe.right)*B.WidthRatio)
+    return Responsive.SideWidth({w=viewportWidth(ctx),h=viewportHeight(ctx)},safe,ctx.workbench)
 end
 -- 关闭态整个面板推到屏外，把右安全区一起算进去，边界上也不露一条。
 local function panelRight(ctx,state)
@@ -100,7 +101,7 @@ function B.Update(ctx,dt)
         local bounds=a.body:GetAbsoluteLayout()
         if bounds.w>0 and bounds.h>0 and (a.lastW~=bounds.w or a.lastH~=bounds.h) then
             a.lastW=bounds.w;a.lastH=bounds.h
-            local layout=Art.Fit(bounds.w,bounds.h)
+            local layout=Art.Fit(bounds.w,bounds.h,a.responsive)
             for _,key in ipairs({"cloth","book","content","title","tabs","flowers","grass","lavender"}) do
                 local r=layout[key]
                 Widget.SetStyle(a[key],{left=r.x,top=r.y,width=r.w,height=r.h})
@@ -236,8 +237,9 @@ local function renderCatalog(ctx,page,host,entries)
     local width=host.props.width or 180
     local measured=UI.MeasureTextWidth and UI.MeasureTextWidth(page.title,Theme.FontSize(18),Harbor.fontFamily) or 0
     if measured<=0 then measured=(utf8.len(page.title) or 0)*18 end
-    text(host,page.title,math.min(18,18*math.max(1,width-4)/math.max(1,measured)),"bookStoryTitle",nil,
-        {whiteSpace="nowrap",lineHeight=1.25,maxLines=1})
+    local compact=Responsive.Metrics(ctx.viewport,ctx.safeInsets).compact
+    text(host,page.title,compact and 18 or math.min(18,18*math.max(1,width-4)/math.max(1,measured)),"bookStoryTitle",nil,
+        {whiteSpace=compact and "normal" or "nowrap",lineHeight=1.25,maxLines=compact and 2 or 1})
     local collected=0
     for _,entry in ipairs(entries) do if entry.collected then collected=collected+1 end end
     text(host,"已收集 "..tostring(collected).." / "..tostring(#entries).." 支",12,"bookProgress",inkFaint)
@@ -260,7 +262,7 @@ end
 
 -- 详情：一条分支的后续全文与当时用料。
 local function renderEntry(ctx,state,page,host,entry)
-    local back=Harbor.Button {id="bookEntryBack",text="返回目录",width="100%",minHeight=40,fontSize=14,
+    local back=Harbor.Button {id="bookEntryBack",text="返回目录",width="100%",minHeight=44,fontSize=14,
         onClick=function() B.CloseEntry(ctx) end}
     host:AddChild(back)
     text(host,branchLabel(entry),19,"bookEntryTitle")
@@ -301,12 +303,13 @@ function B.Render(ctx,overlay)
     local body=UI.Panel {id="journalBookBody",position="absolute",left=0,top=0,width="100%",height="100%",
         overflow="hidden",pointerEvents="box-none"}
     panel:AddChild(body)
-    local layout=Art.Fit(width,panel.props.height)
+    local layout=Art.Fit(width,panel.props.height,Responsive.Metrics(ctx.viewport,safe).short)
     local function box(r) return {position="absolute",left=r.x,top=r.y,width=r.w,height=r.h} end
     local cloth=PanelArt.Image(body,"bookCloth",layout.cloth)
     local frame=PanelArt.Image(body,"bookArtFrame",layout.book)
     local pageProps=box(layout.content)
     pageProps.id="bookPage";pageProps.gap=6;pageProps.overflow="hidden";pageProps.onClick=function() end
+    if layout.responsive then pageProps.backgroundColor={246,230,194,245};pageProps.padding=6 end
     local page=UI.Panel(pageProps)
     body:AddChild(page)
     local grass=PanelArt.Image(body,"bookDriedGrass",layout.grass)
@@ -320,7 +323,7 @@ function B.Render(ctx,overlay)
     tabProps.id="bookTabs";tabProps.scrollY=true;tabProps.gap=5;tabProps.pointerEvents="box-none"
     local tabs=UI.ScrollView(tabProps);body:AddChild(tabs)
     state.art={body=body,cloth=cloth,book=frame,content=page,title=title,tabs=tabs,flowers=flowers,grass=grass,lavender=lavender,
-        lastW=width,lastH=panel.props.height}
+        lastW=width,lastH=panel.props.height,responsive=layout.responsive}
     state.page=page
     -- Chrome is above all art, without shrinking the designer canvas below it.
     Arrow.Attach(panel,closeProps)

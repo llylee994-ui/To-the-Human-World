@@ -3,6 +3,7 @@ local A=require "ui.landscape.JourneyArt"
 local M=require "ui.landscape.SeasideManifest"
 local Geometry=require "ui.landscape.LayoutGeometry"
 local Salvage=require "ui.landscape.SalvageController"
+local Responsive=require "ui.landscape.Responsive"
 local V={}
 function V.New(ctx)
     local result=ctx.session.queries.GetEpilogueView()
@@ -15,6 +16,12 @@ function V.New(ctx)
     end
     local seaside=ep.route=="wish" and ep.step~="dawn" and ep.step~="prepare"
     local view=A.New(ctx,"epilogueView",seaside and "dock" or false);local r=view.rect
+    local m=Responsive.Metrics(ctx.viewport,ctx.safeInsets)
+    local function paperProps()
+        if m.short then return {position="absolute",left=m.x+8,top=m.y+8,width=m.w-16,
+            padding=16,gap=8,backgroundColor=A.cream} end
+        return {position="absolute",left="22%",top="20%",width="56%",padding=40,gap=18}
+    end
     local revision=ctx.model.Refresh().revision
     local function click(fn) return function() if view.Live() and not view.busy then fn() end end end
     local footer=UI.Panel {position="absolute",left=r.x,right=r.x,bottom=20+((ctx.safeInsets or {}).bottom or 0),
@@ -22,13 +29,13 @@ function V.New(ctx)
     view.root:AddChild(footer)
     if not result.ok then ctx.model.Notify(result);return view end
     if ep.needsStoryCompletion then
-        local p=A.Paper(view.root,{position="absolute",left="22%",top="20%",width="56%",padding=40,gap=18})
+        local p=A.Paper(view.root,paperProps())
         A.Label(p,"还有来信，等你寄出。",nil,25)
         A.Button(p,"restoreBeforeClosing","回到旅程中",click(function() ctx.model.RestoreEndingCheckpoint() end),true)
         return view
     end
     if ep.step=="prepare" then
-        local p=A.Paper(view.root,{position="absolute",left="22%",top="20%",width="56%",padding=40,gap=18})
+        local p=A.Paper(view.root,paperProps())
         A.Label(p,"留下一些词语",nil,26)
         A.Label(p,"打开收好的来信，剪下一个词。",nil,18)
         A.Button(p,"prepareWishLetter","打开来信",click(function()
@@ -38,10 +45,12 @@ function V.New(ctx)
             ctx.Read(id,true)
         end),true)
     elseif ep.step=="dawn" then
-        local p=A.Paper(view.root,{position="absolute",left=r.x+r.w*.23,top=r.y+r.h*.23,width=r.w*.54,height=r.h*.44,
+        local p=A.Paper(view.root,m.short and {position="absolute",left=m.x+8,top=m.y+8,width=m.w-16,
+            height=m.h-88,padding=16,justifyContent="center",alignItems="center",gap=6,backgroundColor=A.cream}
+            or {position="absolute",left=r.x+r.w*.23,top=r.y+r.h*.23,width=r.w*.54,height=r.h*.44,
             padding=32,justifyContent="center",alignItems="center",gap=18})
         A.Label(p,"尾  声","epilogueChapter",14,{fontColor=A.muted})
-        A.Label(p,ep.route=="apprentice" and "一封捎来的信" or "一只空白的瓶子","epilogueTitle",32,{textAlign="center"})
+        A.Label(p,ep.route=="apprentice" and "一封捎来的信" or "一只空白的瓶子","epilogueTitle",m.short and 24 or 32,{textAlign="center"})
         A.Label(p,ep.route=="apprentice" and "商人带来了一封信。" or "海边，又有一只瓶子靠了岸。",nil,17,{textAlign="center"})
         A.Button(footer,"continueEpilogue",ep.route=="apprentice" and "拆开来信" or "去海边",click(function() ctx.model.AdvanceEpilogue("dawn",revision) end),true,{minWidth=200})
     else

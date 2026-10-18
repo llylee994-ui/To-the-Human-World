@@ -3,6 +3,7 @@ local UI=require "urhox-libs/UI"
 local Widget=require "urhox-libs/UI/Core/Widget"
 local Harbor=require "ui.landscape.HarborStyle"
 local Art=require "ui.landscape.LetterDrawerArt"
+local Responsive=require "ui.landscape.Responsive"
 local D={AnimationSeconds=.34,HeightRatio=.94}
 
 ---@class LetterDrawerState
@@ -104,10 +105,41 @@ local function card(ctx,row,allowed,layout,index)
         width=paper.w*.28,height=paper.h*.25,textAlign="right",maxLines=1,whiteSpace="nowrap"})
     return node
 end
+-- Short screens use a readable paper list; wide screens retain the original drawer art.
+local function compactDrawer(ctx,overlay,state,metrics)
+    local panel=Harbor.Paper {id="activePanel",position="absolute",left=metrics.x+12,top=panelTop(ctx,state),
+        width=metrics.w-24,height=metrics.h-12,padding=16,paperInset=16,gap=8,overflow="hidden",onClick=function() end}
+    overlay:AddChild(panel);state.panel=panel
+    local header=UI.Panel {width="100%",height=44,flexShrink=0,flexDirection="row",alignItems="center",gap=12}
+    panel:AddChild(header)
+    local title=text(header,"来信抽屉",20,"letterDrawerTitle")
+    Widget.SetStyle(title,{flexGrow=1,alignSelf="center"})
+    header:AddChild(Harbor.Button {id="closePanel",text="关闭",width=84,height=44,onClick=function() D.RequestClose(ctx) end})
+    local scroll=UI.ScrollView {id="letterDrawerCards",width="100%",flexGrow=1,flexShrink=1,flexBasis=0,minHeight=0,scrollY=true,showScrollbar=true,gap=8}
+    panel:AddChild(scroll)
+    local result=ctx.session.queries.GetLetters()
+    if not result.ok then text(scroll,result.error.message,16,"letterDrawerQueryError");return end
+    local action=ctx.model.Action("ReadLetter")
+    if not action.enabled then text(scroll,action.message,16,"letterDrawerHint") end
+    for _,entry in ipairs(result.value) do
+        local allowed=entry.read or action.enabled
+        local item=Harbor.Paper {id="read_"..entry.letterInstanceId,width="100%",minHeight=84,padding=12,paperInset=12,
+            flexShrink=0,gap=4,opacity=allowed and 1 or .6,
+            onClick=allowed and function() ctx.Read(entry.letterInstanceId,true) end or nil}
+        scroll:AddChild(item)
+        text(item,entry.title,18,"letterDrawerCardTitle_"..entry.letterInstanceId)
+        text(item,entry.senderName.." · "..D.StatusText(entry),14,"letterDrawerCardState_"..entry.letterInstanceId)
+    end
+    if #result.value==0 then text(scroll,"还没有收到信件。可点击捞网前往海边捕捞。",18,"lettersEmpty") end
+    local notice=UI.Panel {id="letterDrawerMessageArea",width="100%",flexShrink=0,visible=false}
+    ctx.panelNotice=text(notice,ctx.model.message,14,"panelMessage");ctx.panelNoticeArea=notice;panel:AddChild(notice)
+end
 ---@param overlay Widget
 function D.Render(ctx,overlay)
     local state=D.State(ctx)
     local safe=insets(ctx)
+    local metrics=Responsive.Metrics({w=viewportWidth(ctx),h=viewportHeight(ctx)},safe)
+    if metrics.short then return compactDrawer(ctx,overlay,state,metrics) end
     local size=panelSize(ctx)
     local left=safe.left+(viewportWidth(ctx)-safe.left-safe.right-size)/2
     local panel=UI.Panel {id="activePanel",position="absolute",left=left,top=panelTop(ctx,state),

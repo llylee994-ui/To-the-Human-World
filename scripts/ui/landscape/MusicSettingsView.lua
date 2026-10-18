@@ -147,6 +147,12 @@ function V.New(preferences,onChange,soundPreferences,onSoundChange)
         local top=safe.top+20
         if menu then top=math.max(top,menu.bottom*viewport.h+12) end
         local values={paddingTop=top,paddingLeft=safe.left+20,paddingRight=safe.right+20,paddingBottom=safe.bottom+20}
+        local height=math.max(120,viewport.h-values.paddingTop-values.paddingBottom)
+        if paper.props.height~=math.min(520,height) then
+            Widget.SetStyle(paper,{height=math.min(520,height),padding=height<400 and 16 or 32,
+                paddingTop=height<400 and 12 or 32,paddingBottom=height<400 and 12 or 32,gap=height<400 and 8 or 18})
+            Widget.SetStyle(scroll,{flexGrow=1,flexBasis=0})
+        end
         for key,value in pairs(values) do
             if root.props[key]~=value then Widget.SetStyle(root,values);break end
         end

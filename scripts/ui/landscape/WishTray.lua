@@ -60,7 +60,7 @@ function T.New(ctx,view,rows,index,bindSource)
             end})
         state.panel.props.zIndex=10
     else
-        view.root:AddChild(Arrow.New {id="wishOpenTray",arrowDirection="right",position="absolute",left=0,
+        view.root:AddChild(Arrow.New {id="wishOpenTray",arrowDirection="right",position="absolute",left=((ctx.safeInsets or {}).left or 0),
             bottom=((ctx.safeInsets or {}).bottom or 0)+12,zIndex=12,onClick=function()
                 if not view.Live() or view.busy then return end
                 ctx.wishDrawerVisible=true;state.closing=false;Drawer.Open(adapter,true);ctx.model.dirty=true
