@@ -122,7 +122,7 @@ function T.RunSchema(schema)
     assert(final.live.economy.currency==1106,"v3基础路线补买两份夜露，30+1100-24=1106")
     local used,total=0,0
     for _,v in pairs(final.live.wordTokens.byId) do total=total+1;if not v.available then used=used+1 end end
-    assert(total==61 and used==17)
+    assert(total==77 and used==17)
     local cost=0;for _,p in ipairs(final.live.economy.shopPurchases) do cost=cost+p.unitPrice*p.quantity end
     assert(cost==24)
     -- 基础登记锅无料；单独真实采购再验证采购时间防伪，避免空循环失去覆盖。
@@ -132,7 +132,7 @@ function T.RunSchema(schema)
         if p.afterDeliveredOrders>0 then p.day=1;break end
     end
     assert(not x.order.ValidateEnvelope(forged).ok,"已发货后的采购不能伪造为首日购买")
-    print("[NumericV02Flow] schema="..schema.." PASS "..count.." registration flows; real 11-order chain, 61 cards, consumed17, purchases24, balance1106; separate purchase audit")
+    print("[NumericV02Flow] schema="..schema.." PASS "..count.." registration flows; real 11-order chain, 77 cards, consumed17, purchases24, balance1106; separate purchase audit")
     return true
 end
 function T.Run() return T.RunSchema(2) end

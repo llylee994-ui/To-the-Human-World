@@ -53,7 +53,7 @@ def load_sources():
         assert not any(start < m.end() and start + len(text) > m.start() for m in re.finditer(r'\*\*.*?\*\*', p)), cid
         words[cid] = dict(id=wid.strip('`'), displayText=text, category=category, effects=json.loads(vector.strip('`')), reusable=False, attributeProfileId=profile)
         sources[cid] = dict(path=path, raw=raw, paragraph=int(paragraph)-1, start=start, end=start+len(text))
-    assert len(words) == 61
+    assert len(words) == 77
     rules = {x.get('orderId', 'N10'): x for x in blocks(paths[1])}
     registry = next(x for x in blocks(paths[2]) if 'orders' in x)
     return words, sources, rules, registry, paths

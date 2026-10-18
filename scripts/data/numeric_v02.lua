@@ -14241,7 +14241,7 @@ return {
 
 两只旧粗瓷碗，我方才已经拿布揩得亮堂堂的，齐整整摆在桌角了。
 
-明天的汤多炖一些。他要是推过碗来，还像当年那个毛头小子一样眼巴巴地说想再添一碗，我就立刻{{笑着}}接过来，给他盛得满满当当的。
+明天的汤多炖一些。他要是推过碗来，还像当年那个毛头小子一样眼巴巴地说想再添一碗，我就立刻{{笑着}}接过来，给他盛得{{满满当当}}的。
 
 诺拉
 灰港 铁锚巷14号 一层临街补衣窗口]=],
@@ -14252,6 +14252,7 @@ return {
                 "word_candidate_n02_fear",
                 "word_candidate_n02_suspicion",
                 "word_candidate_n02_h2",
+                "word_candidate_n02_abundance",
             },
             ["cuttable"] = true,
             ["directRuleSetId"] = "rules_n02",
@@ -14457,13 +14458,13 @@ return {
 
 今天午后，表姐家的仆人又送来了烫金请柬，还特意捎了句口信，说席上专程备了庄园送来的{{肥烤鹅}}。我指尖捏着那张泛着甜香的硬卡纸，合上时，鼻尖却只闻到厨房里那锅正咕嘟冒泡的芜菁薄汤。我实在不想去，可这话我只能咽回肚子里。
 
-不知从何时起，坐在旁人那铺着雪白台布的饭桌前，我的喉咙就像被丝带死死勒住了。明明是精巧的珍馐，可我握着刀叉，目光落在那只描金瓷盘上，心里的{{算盘}}就自顾自地拨动起来：这只白瓷盘要多少铜子？那只抹着名贵香料的肥鹅要几枚银币？摆满这长长一桌的精细吃食，折成硬煤，够我们在月桂坡烧上整整一个冬天。算到最后，盘里的菜渐渐凉了，凝结成一片浑浊的白油，而我胃里沉甸甸的，满脑子都是柴火和账目，再也咽不下一丁点东西。
+不知从何时起，坐在旁人那铺着雪白台布的饭桌前，我的喉咙就像被丝带死死勒住了。明明是精巧的珍馐，可我握着刀叉，目光落在那只描金瓷盘上，心里的{{算盘}}就自顾自地拨动起来：这只白瓷盘要多少铜子？那只抹着名贵香料的肥鹅要几枚银币？摆满这长长一桌的精细吃食，折成硬煤，够我们在月桂坡烧上整整一个冬天。算到最后，盘里的菜渐渐凉了，凝结成一片浑浊的白油，而我胃里沉甸甸的，满脑子都是柴火和{{账目}}，再也咽不下一丁点东西。
 
 我希望明晚能像个真正的客人那样，体体面面地把那顿饭吃完。不再去算那些令人难堪的价钱，也不用在仆人端上菜肴时，强撑着得体的微笑推说自己毫无胃口。
 
-窗外已经彻底黑了。姑母从樟木箱底翻出了明天要穿的衣裳——那是条洗得有些发灰的蓝绸裙子。袖口的金线早就磨损起毛了，她正坐在壁炉边，就着昏暗的光线一针一线地细细缝补。
+窗外已经彻底黑了。姑母从樟木箱底翻出了明天要穿的衣裳——那是条洗得有些发灰的蓝绸裙子。袖口的金线早就磨损起毛了，她正坐在壁炉边，就着昏暗的光线{{一针一线}}地细细缝补。
 
-我没有说话，只是走上前去，替她换了一根烧得更亮的新蜡烛。
+我没有说话，只是走上前去，替她换了一根烧得更亮的{{新蜡烛}}。
 
 塞西莉亚
 灰港 月桂坡 6 号 旧宅侧门]=],
@@ -14473,6 +14474,9 @@ return {
                 "word_candidate_n05_s1",
                 "word_candidate_n05_a1",
                 "word_candidate_n05_q1",
+                "word_candidate_n05_reason",
+                "word_candidate_n05_steady",
+                "word_candidate_n05_warmth",
             },
             ["cuttable"] = true,
             ["directRuleSetId"] = "rules_n05",
@@ -14536,7 +14540,7 @@ return {
 
 木料备齐了，榫卯线也拿划针扎得分明。今天我就盼着这双手能争点气，一凿一凿稳到底，把这几个榫口利利索索凿完。手里的老凿子啊，也得再听我一句使唤。
 
-这就开工了。先把老伴的围巾叠好收进抽屉里，省得待会儿一弯腰，它又掉进木屑堆里去。
+这就开工了。先把老伴的围巾{{叠好}}{{收进抽屉}}里，省得待会儿一弯腰，它又掉进木屑堆里去。
 
 莱昂
 灰港 船匠巷 21 号 一层]=],
@@ -14546,6 +14550,8 @@ return {
                 "word_candidate_n06_p1",
                 "word_candidate_n06_m1",
                 "word_candidate_n06_w1",
+                "word_candidate_n06_steady_alt",
+                "word_candidate_n06_safety",
             },
             ["cuttable"] = true,
             ["directRuleSetId"] = "rules_n06",
@@ -14604,9 +14610,9 @@ return {
 
 明天，我不想再听他打哈哈了。我要把这些签了字的收条一张一张拍在他的柜台上，一笔一笔算给他听，把欠我和妹妹的嚼谷全要回来。我绝不再等他嘴里那些虚头巴脑的“下回”。
 
-睡前我又仔细盘了一遍：账上实打实欠着我二十一套的工钱，脚边新担子里的十六套还没算。
+睡前我又仔细{{盘了一遍}}：账上实打实欠着我二十一套的工钱，脚边新担子里的十六套还没算。
 
-吹灯前，身后的窄木床上，妹妹迷迷糊糊翻了个身，呼吸轻悄悄的。我摸黑把明天一早要穿的深色外衣整整齐齐叠好，沉沉地压在了那叠收条上头。
+吹灯前，身后的窄木床上，妹妹迷迷糊糊翻了个身，呼吸{{轻悄悄}}的。我摸黑把明天一早要穿的深色外衣{{整整齐齐}}叠好，沉沉地压在了那叠收条上头。
 
 贝娅
 灰港 漂布巷 9 号 后院二层]=],
@@ -14616,6 +14622,9 @@ return {
                 "word_candidate_n07_a1",
                 "word_candidate_n07_s1",
                 "word_candidate_n07_f1",
+                "word_candidate_n07_recall",
+                "word_candidate_n07_relax",
+                "word_candidate_n07_steady",
             },
             ["cuttable"] = true,
             ["directRuleSetId"] = "rules_n07",
@@ -14773,9 +14782,9 @@ return {
 
 夜已经深透了，外头白桦树叶被风吹得沙沙作响。妹妹推开书房门，见我还在桌前坐着，轻声问了一句：“要不要我陪你，连夜再把当年的账目底稿翻出来{{核一遍}}？”
 
-“用不着了，”我抬起头，冲她笑了笑，“道理已经想明白了，字迹都在纸上，眼前的灯也够亮。”
+“用不着了，”我抬起头，冲她{{笑了笑}}，“{{道理}}已经想明白了，字迹都在纸上，眼前的灯也够亮。”
 
-妹妹看着我的神色，没再多说什么。她走上前来，拿起银剪，替我把油灯里结了焦的灯芯剪掉，屋子里顿时又亮堂了几分。
+妹妹看着我的神色，没再多说什么。她走上前来，拿起银剪，替我把油灯里结了焦的灯芯剪掉，屋子里顿时又{{亮堂}}了几分。
 
 阿涅丝
 灰港 北坡白桦庄园 账房]=],
@@ -14788,6 +14797,9 @@ return {
                 "word_candidate_n09_p2",
                 "word_candidate_n09_a1",
                 "word_candidate_n09_q1",
+                "word_candidate_n09_happy",
+                "word_candidate_n09_reason",
+                "word_candidate_n09_warmth",
             },
             ["cuttable"] = true,
             ["directRuleSetId"] = "rules_n09",
@@ -14877,13 +14889,13 @@ return {
 
 昨晚回到家，我那口子没跟我吵，只是在饭桌上默默摆了三只空碗，看着我说：“一件事放一只碗。把事理顺了、摆开了，晚饭才有地方盛。”
 
-等热乎的肉{{汤}}盛上来，我握着勺子，迟迟{{不敢}}低头喝第一口。我知道，如果还是这么浑浑噩噩，就等于把欠米洛的担当、把欠主顾的信誉，又硬生生咽回肚子里咽了一夜。
+等热乎的肉{{汤}}盛上来，我握着勺子，迟迟{{不敢}}低头喝第一口。我知道，如果还是这么{{浑浑噩噩}}，就等于把欠米洛的担当、把欠主顾的信誉，又硬生生咽回肚子里咽了一夜。
 
-等明天一早，天亮我就把这事给收拾好！
+等明天一早，{{天亮}}我就把这事给{{收拾好}}！
 
 交清医药费，再把米洛赶回家歇足半个月眼不见为净，最后上门给客栈和铺子定好交付的日子，哪怕夜里点着灯赶工也绝不失信。
 
-先把点过头的事一件件做好，剩下的，等办完了再去扛。
+先把点过头的事一件件做好，剩下的，等{{办完}}了再去扛。
 
 雅各布
 灰港 榫木街 4 号 木作坊 后门]=],
@@ -14894,6 +14906,10 @@ return {
                 "word_candidate_n10_trust",
                 "word_candidate_n10_soup",
                 "word_candidate_n10_fear",
+                "word_candidate_n10_confusion",
+                "word_candidate_n10_safety",
+                "word_candidate_n10_brave",
+                "word_candidate_n10_steady",
             },
             ["cuttable"] = true,
             ["directRuleSetId"] = "rules_n10",
@@ -17838,7 +17854,7 @@ return {
         },
     },
     ["sourceHashes"] = {
-        ["docs/文案/供给验算表_v02.md"] = "dbf1ea6e1af0fb64d091d1c2a60ef7c7310bfd95cb660278ae568d26859023b1",
+        ["docs/文案/供给验算表_v02.md"] = "8da8b3e989b9584ab7d4bdd4512608a110922242dd01d5d6c5eb012b686bd41a",
         ["docs/文案/分支条件表_v02.md"] = "6098376246828a1853a7b7131f16da53c48b668f6262223b43b15465a74984db",
         ["docs/文案/开场与首封来信_定稿_v01.md"] = "c85b88751b6bf89d516e14e5a365401869b7583ca6a98e69b09898e9d9e9eb41",
         ["docs/文案/故事标题表_v01.json"] = "b149f5f50f4909bb0adb8cda2daf2884fa807ac6ab4e99bfc3e3a907af925406",
@@ -17858,7 +17874,7 @@ return {
         ["docs/文案/普通订单/N10_汤可以喝_后续定稿_v01.md"] = "77cc83a27527d44084ea64d6fdaaf75a865bd4a2727505bf31351a452bfa5b37",
         ["docs/文案/普通订单/N10_汤可以喝_来信定稿_v01.md"] = "54536ef70c89ae854a0c9d85ce4ac2e828a96afda1da8c103b0169bf1f6a634a",
         ["docs/文案/普通订单/首单_埃利亚斯_后续定稿_v01.md"] = "f75c4bfa57a04cdf6cb85db58b11e30aef8712df81e65f79ae6a728e804dd66b",
-        ["docs/文案/词条数值表_v02.md"] = "0bc3827eda24e40d7d2e074b28328116c949248d7ee4f6cb15f23a52e5a16ffc",
+        ["docs/文案/词条数值表_v02.md"] = "69510246cf2cfb9b71d58f7ca21d40509983d4a5b7adc22cbd576c4dbe025b75",
         ["scripts/data/furniture.lua"] = "1a5bdc9993e3d98e06b91738f9bbb7c1444fe87f8f7f281a67cffb2bd585aa01",
         ["scripts/data/ingredients.lua"] = "4b72d3e8d33e8dd045fdfe1aec318355bb42e85e2869b16dfd4afa3616d90cab",
         ["scripts/data/release.lua"] = "c949322323b1c5d78bc9033cfa83271f74a56112d02370d7336bf2a4fc792e20",
@@ -18568,6 +18584,198 @@ return {
                 ["warmth"] = 0.1,
             },
             ["id"] = "word_candidate_n10_soup",
+            ["reusable"] = false,
+        },
+        {
+            ["attributeProfileId"] = "daytime_basic",
+            ["category"] = "行为类",
+            ["displayText"] = "满满当当",
+            ["effects"] = {
+                ["appetite"] = 1.0,
+                ["happy"] = 0.05,
+                ["warmth"] = 0.1,
+            },
+            ["id"] = "word_candidate_n02_abundance",
+            ["reusable"] = false,
+        },
+        {
+            ["attributeProfileId"] = "daytime_basic",
+            ["category"] = "物件类",
+            ["displayText"] = "账目",
+            ["effects"] = {
+                ["reason"] = 1.0,
+                ["recall"] = 0.05,
+                ["safety"] = 0.05,
+            },
+            ["id"] = "word_candidate_n05_reason",
+            ["reusable"] = false,
+        },
+        {
+            ["attributeProfileId"] = "daytime_basic",
+            ["category"] = "行为类",
+            ["displayText"] = "一针一线",
+            ["effects"] = {
+                ["calm"] = 0.1,
+                ["relax"] = 0.05,
+                ["steady"] = 1.0,
+            },
+            ["id"] = "word_candidate_n05_steady",
+            ["reusable"] = false,
+        },
+        {
+            ["attributeProfileId"] = "warmth_basic",
+            ["category"] = "物件类",
+            ["displayText"] = "新蜡烛",
+            ["effects"] = {
+                ["calm"] = 0.05,
+                ["safety"] = 0.1,
+                ["warmth"] = 1.0,
+            },
+            ["id"] = "word_candidate_n05_warmth",
+            ["reusable"] = false,
+        },
+        {
+            ["attributeProfileId"] = "daytime_basic",
+            ["category"] = "行为类",
+            ["displayText"] = "叠好",
+            ["effects"] = {
+                ["calm"] = 0.1,
+                ["safety"] = 0.05,
+                ["steady"] = 1.0,
+            },
+            ["id"] = "word_candidate_n06_steady_alt",
+            ["reusable"] = false,
+        },
+        {
+            ["attributeProfileId"] = "daytime_basic",
+            ["category"] = "行为类",
+            ["displayText"] = "收进抽屉",
+            ["effects"] = {
+                ["calm"] = 0.05,
+                ["safety"] = 1.0,
+                ["steady"] = 0.1,
+            },
+            ["id"] = "word_candidate_n06_safety",
+            ["reusable"] = false,
+        },
+        {
+            ["attributeProfileId"] = "daytime_basic",
+            ["category"] = "行为类",
+            ["displayText"] = "盘了一遍",
+            ["effects"] = {
+                ["reason"] = 0.1,
+                ["recall"] = 1.0,
+                ["suspicion"] = 0.05,
+            },
+            ["id"] = "word_candidate_n07_recall",
+            ["reusable"] = false,
+        },
+        {
+            ["attributeProfileId"] = "daytime_basic",
+            ["category"] = "情绪类",
+            ["displayText"] = "轻悄悄",
+            ["effects"] = {
+                ["calm"] = 0.1,
+                ["relax"] = 1.0,
+                ["safety"] = 0.05,
+            },
+            ["id"] = "word_candidate_n07_relax",
+            ["reusable"] = false,
+        },
+        {
+            ["attributeProfileId"] = "daytime_basic",
+            ["category"] = "行为类",
+            ["displayText"] = "整整齐齐",
+            ["effects"] = {
+                ["calm"] = 0.1,
+                ["safety"] = 0.05,
+                ["steady"] = 1.0,
+            },
+            ["id"] = "word_candidate_n07_steady",
+            ["reusable"] = false,
+        },
+        {
+            ["attributeProfileId"] = "daytime_basic",
+            ["category"] = "行为类",
+            ["displayText"] = "笑了笑",
+            ["effects"] = {
+                ["happy"] = 1.0,
+                ["relax"] = 0.1,
+                ["trust"] = 0.05,
+            },
+            ["id"] = "word_candidate_n09_happy",
+            ["reusable"] = false,
+        },
+        {
+            ["attributeProfileId"] = "daytime_basic",
+            ["category"] = "关系类",
+            ["displayText"] = "道理",
+            ["effects"] = {
+                ["calm"] = 0.1,
+                ["reason"] = 1.0,
+                ["trust"] = 0.05,
+            },
+            ["id"] = "word_candidate_n09_reason",
+            ["reusable"] = false,
+        },
+        {
+            ["attributeProfileId"] = "warmth_basic",
+            ["category"] = "情绪类",
+            ["displayText"] = "亮堂",
+            ["effects"] = {
+                ["calm"] = 0.05,
+                ["safety"] = 0.1,
+                ["warmth"] = 1.0,
+            },
+            ["id"] = "word_candidate_n09_warmth",
+            ["reusable"] = false,
+        },
+        {
+            ["attributeProfileId"] = "daytime_basic",
+            ["category"] = "情绪类",
+            ["displayText"] = "浑浑噩噩",
+            ["effects"] = {
+                ["confusion"] = 1.0,
+                ["fear"] = 0.05,
+                ["forget"] = 0.1,
+            },
+            ["id"] = "word_candidate_n10_confusion",
+            ["reusable"] = false,
+        },
+        {
+            ["attributeProfileId"] = "daytime_basic",
+            ["category"] = "情绪类",
+            ["displayText"] = "天亮",
+            ["effects"] = {
+                ["brave"] = 0.05,
+                ["happy"] = 0.05,
+                ["safety"] = 1.0,
+            },
+            ["id"] = "word_candidate_n10_safety",
+            ["reusable"] = false,
+        },
+        {
+            ["attributeProfileId"] = "daytime_basic",
+            ["category"] = "行为类",
+            ["displayText"] = "收拾好",
+            ["effects"] = {
+                ["brave"] = 1.0,
+                ["safety"] = 0.05,
+                ["steady"] = 0.1,
+            },
+            ["id"] = "word_candidate_n10_brave",
+            ["reusable"] = false,
+        },
+        {
+            ["attributeProfileId"] = "daytime_basic",
+            ["category"] = "行为类",
+            ["displayText"] = "办完",
+            ["effects"] = {
+                ["calm"] = 0.05,
+                ["steady"] = 1.0,
+                ["trust"] = 0.1,
+            },
+            ["id"] = "word_candidate_n10_steady",
             ["reusable"] = false,
         },
     },

@@ -174,7 +174,7 @@ function N.New()
                 for _,card in ipairs(trayCards) do assert(seen[card.tokenId],"native pagination reaches every word") end
                 assert(not node("wordTrayPrev").props.disabled,"last page can go back")
                 assert(U.Equal(before,ctx.session.state.GetSnapshot()),"original player snapshot unchanged")
-                cleanup(ctx);print("[FirstBatchNative] PASS notes overlay/readable numbers/no reflow; phone wide reply/capsule; real purchases first/continuous/soldout/no money identical Yoga rectangles; actual desktop viewport; 61 real words font/native arrow pages; original player unchanged")
+                cleanup(ctx);print("[FirstBatchNative] PASS notes overlay/readable numbers/no reflow; phone wide reply/capsule; real purchases first/continuous/soldout/no money identical Yoga rectangles; actual desktop viewport; "..#trayCards.." real words font/native arrow pages; original player unchanged")
             end
             phase=phase+1;cooldown=3
         end)
