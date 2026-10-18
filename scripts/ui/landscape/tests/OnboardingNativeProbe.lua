@@ -39,6 +39,18 @@ function N.New()
                 end
                 assert(root:FindById("onboardingNoteDone").props.backgroundImage==require("ui.landscape.HarborStyle").woodImage,"note button lost wood art")
                 root:FindById("onboardingNoteDone").props.onClick()
+                assert(session.state.SetOnboarding({version=1,step="intro.paper",completed=false,skipped=false,noteRead=false}).ok)
+                ctx.arrival=require("ui.landscape.ArrivalTransition").New(ctx)
+                local entered=0
+                ctx.arrival.Begin(function() entered=entered+1 end)
+                for _=1,45 do
+                    ctx.arrival.Update(.05,true,true);guide.Update()
+                    YGNodeCalculateLayout(root.node,vp.w,vp.h,YGDirectionLTR)
+                end
+                assert(entered==1 and not ctx.arrival.IsActive(),"native arrival did not release input")
+                local narration=root:FindById("onboardingNarration");local nr=narration:GetAbsoluteLayout()
+                local nb=UI.MeasureTextFit(narration:GetText(),{fontSize=Theme.FontSize(16),fontFace=Theme.FontFace("story","normal"),lineHeight=1.5,width=nr.w,multiline=true})
+                assert(narration.props.visible and nr.h>=nb.height and nr.y+nr.h<=vp.h,"scene narration clipped")
                 -- All workbench explanations must fit the actual font in compact boxes.
                 ctx.scene="brew"
                 for _,step in ipairs({"brew.word","brew.book","brew.ingredient","brew.conditions","brew.ready"}) do
@@ -65,7 +77,7 @@ function N.New()
                 local action=panel:FindById("readerActions"):GetAbsoluteLayout()
                 assert(readerScroll:GetAbsoluteLayout().h>=vp.h-65,"button still consumes reader flow space")
                 assert(action.y+action.h>=vp.h-14,"reader button was not lowered to paper edge")
-                print(string.format("[OnboardingNative] PASS %dx%d note/paragraph font bounds, compact five hints, floating action",vp.w,vp.h))
+                print(string.format("[OnboardingNative] PASS %dx%d titleless note, arrival, narration bounds, compact five hints, floating action",vp.w,vp.h))
                 guide.Destroy()
             end
         end)

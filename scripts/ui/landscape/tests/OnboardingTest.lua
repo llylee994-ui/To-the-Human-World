@@ -36,7 +36,9 @@ function T.Run()
     view.Update()
     local root=assert(view.root:FindById("onboardingRoot"))
     assert(root.props.visible==true,"note step shows the tutorial overlay")
-    assert(view.root:FindById("onboardingTooltip"):GetProps().visible==true,"intro tooltip is visible")
+    local narration=assert(view.root:FindById("onboardingNarration"),"intro uses a separate scene narration") --[[@as Label]]
+    assert(narration.props.visible and narration:GetText()=="桌上有一张没有署名的便签。","opening narration uses the requested line")
+    assert(not view.root:FindById("onboardingTooltip").props.visible,"narration is not a paper tooltip")
     assert(view.root:FindById("onboardingSkip").props.visible==true,"skip is available")
     assert(view.root:FindById("onboardingTarget").props.visible==true,"desk note is the only intercepted target")
 
@@ -44,6 +46,7 @@ function T.Run()
     view.Update()
     assert(session.state.GetSnapshot().onboarding.step=="intro.note","paper click advances to the note")
     assert(view.root:FindById("onboardingNoteLayer").props.visible==true,"note expands")
+    assert(not narration.props.visible,"opening the note dismisses the scene narration")
     view.root:FindById("onboardingNoteDone").props.onClick()
     view.Update()
     local after=session.state.GetSnapshot().onboarding
@@ -79,6 +82,7 @@ function T.Run()
     assert(flowChecks(Data,F,View,Session,Host))
     pauseChecks(Data,F,View,Session,Host)
     readingChecks(Data,F,View,Session,Host)
+    arrivalChecks(Data,F,View,Session,Host)
     return true
 end
 
@@ -227,4 +231,34 @@ function readingChecks(Data,F,View,Session,Host)
     print("[Onboarding] PASS no auto-read; drawer/read-button entrances are manual")
 end
 
+function arrivalChecks(Data,F,View,Session,Host)
+    local x=F.New(Data,{targetSchema=4});x.files={}
+    local session=Session.New(Data,{saveSystem=x.save,eventBus=x.bus,targetSchema=4,onboarding=true})
+    assert(session.state.Load("arrival_isolated"))
+    local host=Host.New();local view=View.New(session,Data)
+    host.Bind(view.root);view.ShowTitle();view.Update()
+    assert(view.atTitle and view.ContinueJourney(),"fresh journey starts from the title")
+    assert(view.atTitle,"title remains visible during the initial fade to black")
+    local before=session.state.GetSnapshot()
+    assert(not view.ContinueJourney(),"double activation cannot enter a second journey")
+    for _=1,10 do host.Step(view,.02) end
+    assert(view.atTitle and view.arrival.Presentation().blackAlpha>0,"fade precedes scene swap")
+    host.focused=false
+    local alpha=view.arrival.Presentation().blackAlpha
+    for _=1,20 do host.Step(view,.02) end
+    assert(view.arrival.Presentation().blackAlpha==alpha,"unfocused title animation pauses")
+    host.focused=true
+    for _=1,12 do host.Step(view,.02) end
+    assert(not view.atTitle and view.scene=="home","room appears only after reaching black")
+    assert(not view.root:FindById("onboardingNarration").props.visible,"narration waits for the paper")
+    for _=1,110 do host.Step(view,.02) end
+    assert(not view.arrival.IsActive() and not view.root:FindById("arrivalCover").props.visible,"arrival releases input")
+    assert(view.root:FindById("onboardingNarration").props.visible,"narration finishes appearing")
+    assert(U.Equal(before,session.state.GetSnapshot()),"arrival does not read notes or mutate gameplay progress")
+    view.root:FindById("onboardingTarget").props.onClick();view.Update()
+    view.ShowTitle();view.Update();assert(view.ContinueJourney())
+    assert(not view.atTitle and not view.arrival.IsActive(),"resuming past the desk-note entrance skips the arrival")
+    view.root:Destroy()
+    print("[Onboarding] PASS real title arrival, double activation, pause, narration order, unchanged save, resume")
+end
 return T

@@ -32,6 +32,7 @@ local MusicSettingsView=require "ui.landscape.MusicSettingsView"
 local Calendar=require "ui.landscape.CalendarView"
 local Title=require "ui.landscape.TitleView"
 local Onboarding=require "ui.landscape.Onboarding"
+local Arrival=require "ui.landscape.ArrivalTransition"
 local A={}
 local side={words="left",journal="right"}
 local titles={letters="来信抽屉",reader="阅读信件",words="词条栏",journal="故事记录",attempt="试做记录",shop="商队商店",case="案件板",day="结束当天",result="试做结果"}
@@ -114,6 +115,7 @@ function A.New(session,content,enabled,options)
         panelHeader=false --[[@as Widget|false]],
         resultMotion=false --[[@as table|false]],
         calendar=false --[[@as table|false]],
+        arrival=false --[[@as table|false]],
         zoom=Zoom.New(),salvage=Salvage.New(),destroyed=false --[[@as boolean]],portrait=false --[[@as boolean]],
         yawProbe=false --[[@as table|false]],
         messages=Messages.New(session.state.GetStatus().migrationNotice),importantMessage=false --[[@as string|false]]}
@@ -386,6 +388,7 @@ function A.New(session,content,enabled,options)
         if ctx.readerCache and ctx.readerCache.presentation then ctx.readerCache.presentation.Cancel() end
         WordTray.Reset(ctx);JournalBook.Reset(ctx);LetterDrawer.Reset(ctx)
         ctx.destroyed=true
+        if ctx.arrival then ctx.arrival.Cancel() end
         ctx.CancelGate()
         ctx.brew.Leave()
         if ctx.onboarding then ctx.onboarding:Destroy() end
@@ -398,6 +401,7 @@ function A.New(session,content,enabled,options)
         return true
     end
     function ctx.Navigate(target)
+        if ctx.arrival and ctx.arrival.IsActive() then return end
         if ctx.atTitle or (ctx.journeyView and ctx.journeyView.busy) then return end
         if ctx.calendar and ctx.calendar.motion.active then return end
         if ctx.destroyed or ctx.salvage.active or ctx.ticketEnding then return end
@@ -430,6 +434,7 @@ function A.New(session,content,enabled,options)
         ctx.stack[#ctx.stack+1]=ctx.panel or false; ctx.panel=kind; ctx.readerCache=false; model.dirty=true
     end
     function ctx.Close(confirmed)
+        if ctx.arrival and ctx.arrival.IsActive() then return end
         if ctx.atTitle or (ctx.journeyView and ctx.journeyView.busy) then return end
         if ctx.calendar and ctx.calendar.motion.active then return end
         if ctx.destroyed or ctx.zoom.active or ctx.salvage.active or ctx.ticketEnding or ctx.yawProbe then return end
@@ -526,6 +531,7 @@ function A.New(session,content,enabled,options)
         ctx.rewindSelected=false;ctx.rewindPage=1
     end
     function ctx.ShowTitle()
+        if ctx.arrival then ctx.arrival.Cancel() end
         if ctx.destroyed or (ctx.calendar and ctx.calendar.motion.active) or (ctx.journeyView and ctx.journeyView.busy) then return false end
         if not rawget(session.queries,"GetEndingView") then return false end
         leaveJourneyView();ctx.atTitle=true;ctx.scene="home";ctx.panel="title"
@@ -534,18 +540,27 @@ function A.New(session,content,enabled,options)
     end
     function ctx.ContinueJourney()
         if ctx.destroyed then return false end
+        if ctx.arrival and ctx.arrival.IsActive() then return false end
         local saved=session.queries.GetEndingView()
         if not saved.ok then model.Notify(saved);return false end
         if not saved.value.hasProgress and not model.StartJourney().ok then return false end
-        leaveJourneyView();ctx.atTitle=false;ctx.scene="home";ctx.endingShowCollage=false
-        local phase=saved.value.phase
-        local target=phase=="ended" and "ending" or phase=="wish" and "wish" or phase~="operating" and "closing" or false
-        if target then
-            if not ctx.EnterReleasePanel(target) then return true end
-        else
-            ctx.panel=false
+        local function enter()
+            leaveJourneyView();ctx.atTitle=false;ctx.scene="home";ctx.endingShowCollage=false
+            local phase=saved.value.phase
+            local target=phase=="ended" and "ending" or phase=="wish" and "wish" or phase~="operating" and "closing" or false
+            if target then
+                if not ctx.EnterReleasePanel(target) then return true end
+            else
+                ctx.panel=false
+            end
+            model.dirty=true;return true
         end
-        model.dirty=true;return true
+        local onboarding=session.state.GetSnapshot().onboarding
+        if ctx.atTitle and saved.value.phase=="operating" and onboarding and onboarding.step=="intro.paper"
+            and not onboarding.completed and not onboarding.skipped then
+            return ctx.arrival.Begin(enter)
+        end
+        return enter()
     end
     function ctx.ShowMemory(ending)
         if ctx.destroyed or not ctx.atTitle then return false end
@@ -683,6 +698,15 @@ function A.New(session,content,enabled,options)
     end
     function ctx.Update()
         if ctx.destroyed then return end
+        if ctx.arrival and ctx.arrival.IsActive() then
+            local _,delta=clock()
+            local focused=not ctx.portrait and ctx.IsInputActive() and not settings.IsOpen()
+            local fit=ctx.home and ctx.home.Fit()
+            local frame=ctx.home and ctx.home.root and ctx.home.root:GetAbsoluteLayout()
+            local ready=ctx.scene=="home" and not ctx.atTitle and fit and fit.scale>0
+                and frame and frame.w>0 and frame.h>0
+            ctx.arrival.Update(delta,focused,ready)
+        end
         if ctx.onboarding then ctx.onboarding:Update() end
         settings.Update()
         if ctx.yawProbe then ctx.yawProbe.Update() end
@@ -746,6 +770,9 @@ function A.New(session,content,enabled,options)
             elseif result=="cancelled" then ctx.CancelHomeZoom(ctx.zoom.reason) end
         end
         if nativeProbe then nativeProbe(ctx) end
+        -- Preserve the clicked title composition until the opaque scene swap,
+        -- even if starting the journey has already made the model dirty.
+        if ctx.atTitle and ctx.arrival and ctx.arrival.IsActive() then return end
         if not model.dirty then return end
         -- The draft is already persisted. Keep the landing's first frames free
         -- of rebuilding both drawers and the recipe; consume dirty after landing.
@@ -785,6 +812,7 @@ function A.New(session,content,enabled,options)
     end
     function ctx.Refresh() model.dirty=true end
     ctx.onboarding=Onboarding.New(ctx)
+    ctx.arrival=Arrival.New(ctx)
     if settings.SetHelp then
         settings.SetHelp(function() if ctx.onboarding then ctx.onboarding:ShowNote() end end)
     end

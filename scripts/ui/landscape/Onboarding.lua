@@ -15,7 +15,7 @@ local NOTE={
     "网兜挂在门边。先去看看吧。",
 }
 local STEPS={
-    ["intro.paper"]={target="home.letterPaper",text="桌上留着一张便签。"},
+    ["intro.paper"]={target="home.letterPaper",text="桌上有一张没有署名的便签。",narration=true},
     ["intro.note"]={note=true},
     ["home.net"]={target="home.net",text="先去海边看看。"},
     ["sea.salvage"]={target="startSalvage",text="捞起这个漂流瓶。"},
@@ -59,7 +59,7 @@ function O.New(ctx)
     local state=nil
     local active=false
     local step=nil
-    local root,shade,tooltip,tooltipLabel,knowButton,skipButton,noteLayer,noteButton,note,noteScroll,noteTitle,noteBody
+    local root,shade,tooltip,tooltipLabel,narration,knowButton,skipButton,noteLayer,noteButton,note,noteScroll,noteBody
     local blockers={}
     local interceptor
     local targetRect=nil
@@ -77,6 +77,7 @@ function O.New(ctx)
     local noteLabels={}
     local noteLayoutKey=nil
     local tooltipLayoutKey,tooltipBox
+    local narrationLayoutKey,narrationBox
     local persist,tryPending,requestAdvance,finish,skip
 
     local function now()
@@ -121,20 +122,23 @@ function O.New(ctx)
             local b=self:GetAbsoluteLayout()
             if b.w<=0 or b.h<=0 then return end
             local hole=targetRect
+            local arrival=step=="intro.paper" and ctx.arrival and ctx.arrival.Presentation()
+            local paperAlpha=arrival and arrival.paperAlpha or 1
             local color={11,8,5,158}
-            local function rect(x,y,w,h)
+            local function rect(x,y,w,h,alpha)
                 if w<=0 or h<=0 then return end
                 nvgBeginPath(vg);nvgRect(vg,x,y,w,h)
-                nvgFillColor(vg,nvgRGBA(color[1],color[2],color[3],color[4]));nvgFill(vg)
+                nvgFillColor(vg,nvgRGBA(color[1],color[2],color[3],alpha or color[4]));nvgFill(vg)
             end
             if hole then
                 rect(b.x,b.y,b.w,math.max(0,hole.y-b.y))
                 rect(b.x,hole.y+hole.h,b.w,math.max(0,b.y+b.h-hole.y-hole.h))
                 rect(b.x,hole.y,math.max(0,hole.x-b.x),hole.h)
                 rect(hole.x+hole.w,hole.y,math.max(0,b.x+b.w-hole.x-hole.w),hole.h)
+                rect(hole.x,hole.y,hole.w,hole.h,math.floor(color[4]*(1-paperAlpha)))
                 nvgBeginPath(vg)
                 nvgRoundedRect(vg,hole.x-4,hole.y-4,hole.w+8,hole.h+8,8)
-                nvgStrokeColor(vg,nvgRGBA(236,201,133,220));nvgStrokeWidth(vg,2);nvgStroke(vg)
+                nvgStrokeColor(vg,nvgRGBA(236,201,133,math.floor(220*paperAlpha)));nvgStrokeWidth(vg,2);nvgStroke(vg)
             else
                 rect(b.x,b.y,b.w,b.h)
             end
@@ -147,8 +151,16 @@ function O.New(ctx)
             blockers[name]=blocker;root:AddChild(blocker)
         end
         interceptor=UI.Panel {id="onboardingTarget",position="absolute",left=0,top=0,width=0,height=0,zIndex=2,
-            pointerEvents="box-only",visible=false,onClick=function() requestAdvance("intro.note") end}
+            pointerEvents="box-only",visible=false,onClick=function()
+                if ctx.arrival and ctx.arrival.IsActive() then return end
+                requestAdvance("intro.note")
+            end}
         root:AddChild(interceptor)
+        narration=UI.Label {id="onboardingNarration",text=STEPS["intro.paper"].text,position="absolute",
+            left=0,top=0,width=1,height=1,zIndex=10,visible=false,fontFamily="story",fontSize=16,
+            lineHeight=1.5,whiteSpace="normal",textAlign="center",verticalAlign="top",flexShrink=0,
+            fontColor={249,236,207,255},textShadow={offsetX=1,offsetY=2,blur=4,color={8,6,4,230}},pointerEvents="none"}
+        root:AddChild(narration)
         tooltip=UI.Panel {id="onboardingTooltip",position="absolute",left=0,top=0,width=1,zIndex=10,
             backgroundColor={246,236,207,248},borderWidth=1,borderColor={174,140,86,220},borderRadius=6,
             padding=12,gap=8,boxShadow={x=0,y=3,blur=8,color={0,0,0,90}},pointerEvents="box-only",onClick=function() end}
@@ -171,9 +183,6 @@ function O.New(ctx)
             backgroundColor={8,6,4,190},pointerEvents="box-only",visible=false,onClick=function() end,zIndex=20}
         note=Harbor.Paper {id="onboardingNote",position="absolute",left=0,top=0,width=1,height=1,
             padding=32,gap=12,pointerEvents="box-only"}
-        noteTitle=UI.Label {text="一张没有署名的便签",fontFamily="story-strong",fontSize=20,
-            width="100%",flexShrink=0,fontColor={62,48,33,255},textAlign="center",lineHeight=1.3,pointerEvents="none"}
-        note:AddChild(noteTitle)
         noteScroll=UI.ScrollView {id="onboardingNoteScroll",width="100%",height=1,flexShrink=0,
             scrollY=true,showScrollbar=true,paddingRight=12}
         noteBody=UI.Panel {width="100%",flexShrink=0,gap=14,pointerEvents="box-none"}
@@ -210,18 +219,16 @@ function O.New(ctx)
         if key==noteLayoutKey then return end
         noteLayoutKey=key
         local width=math.max(180,math.min(700,vp.w-inset.left-inset.right-48))
-        local title=Sizing.Text("一张没有署名的便签",width-64,20,1.3,"story-strong")
-        noteTitle:SetText(title.text);Widget.SetStyle(noteTitle,{height=title.height})
         local total=0
         for i,line in ipairs(NOTE) do
             local block=Sizing.Text(line,width-64-12,16,1.7)
             noteLabels[i]:SetText(block.text);Widget.SetStyle(noteLabels[i],{height=block.height})
             total=total+block.height+(i>1 and 14 or 0)
         end
-        local height=math.min(vp.h-inset.top-inset.bottom-48,64+title.height+24+46+total)
+        local height=math.min(vp.h-inset.top-inset.bottom-48,64+12+46+total)
         setRect(note,inset.left+(vp.w-inset.left-inset.right-width)/2,
             inset.top+(vp.h-inset.top-inset.bottom-height)/2,width,height)
-        Widget.SetStyle(noteScroll,{height=math.max(1,height-64-title.height-24-46)})
+        Widget.SetStyle(noteScroll,{height=math.max(1,height-64-12-46)})
         Widget.SetStyle(noteBody,{height=total})
     end
     local function readState()
@@ -331,13 +338,14 @@ function O.New(ctx)
     end
     local function applyStep(nextStep)
         step=nextStep
+        if narration then narration:SetVisible(step=="intro.paper") end
         if noteLayer then noteLayer:SetVisible(step=="intro.note") end
         if skipButton then skipButton:SetVisible(true) end
         if interceptor then interceptor:SetVisible(step=="intro.paper") end
         if tooltip then
             local def=STEPS[step]
             if def then
-                tooltip:SetVisible(true)
+                tooltip:SetVisible(def.narration~=true and def.note~=true)
                 tooltipLabel:SetText(def.text or "")
                 knowButton:SetVisible(def.know==true)
             else
@@ -474,6 +482,22 @@ function O.New(ctx)
             targetRect=currentTarget()
         end
         local vp=viewport();local s=safe()
+        if skipButton then setRect(skipButton,vp.w-s.right-116,s.top+12,104,40) end
+        if narration and step=="intro.paper" then
+            local width=math.min(700,vp.w-s.left-s.right-48)
+            local key=tostring(width)..":"..UI.GetFontVersion()
+            if narrationLayoutKey~=key then
+                narrationLayoutKey=key
+                narrationBox=Sizing.Text(STEPS["intro.paper"].text,width,16,1.5)
+                narration:SetText(narrationBox.text)
+            end
+            local content=narrationBox
+            setRect(narration,s.left+(vp.w-s.left-s.right-width)/2,vp.h-s.bottom-content.height-32,width,content.height)
+            local arrival=ctx.arrival and ctx.arrival.Presentation()
+            local alpha=arrival and arrival.narrationAlpha or 1
+            narration.props.fontColor={249,236,207,math.floor(255*alpha)}
+            narration:SetVisible(alpha>0)
+        end
         local hole=targetRect
         local b=root and root.GetAbsoluteLayout and root:GetAbsoluteLayout() or nil
         if not b then return end
@@ -497,12 +521,14 @@ function O.New(ctx)
         if step=="intro.note" then
             if tooltip then tooltip:SetVisible(false) end
             if noteLayer then noteLayer:SetVisible(true) end
-            if skipButton then skipButton:SetVisible(true);setRect(skipButton,vp.w-s.right-116,s.top+12,104,40) end
+            if skipButton then skipButton:SetVisible(true) end
             return
         end
         if noteLayer then noteLayer:SetVisible(false) end
         if interceptor then interceptor:SetVisible(step=="intro.paper") end
-        if tooltip then
+        if tooltip and step=="intro.paper" then
+            tooltip:SetVisible(false)
+        elseif tooltip then
             tooltip:SetVisible(true)
             local def=STEPS[step]
             local text=def and def.text or ""
@@ -529,7 +555,6 @@ function O.New(ctx)
             x=math.max(s.left+12,math.min(vp.w-s.right-width-12,x))
             y=math.max(s.top+60,math.min(vp.h-s.bottom-height-12,y))
             setRect(tooltip,x,y,width,height)
-            if skipButton then setRect(skipButton,vp.w-s.right-116,s.top+12,104,40) end
         end
         if interceptor and step=="intro.paper" and targetRect then
             setRect(interceptor,targetRect.x,targetRect.y,targetRect.w,targetRect.h)
@@ -550,6 +575,7 @@ function O.New(ctx)
         for _,blocker in pairs(blockers) do blocker:SetVisible(false) end
         if interceptor then interceptor:SetVisible(false) end
         if tooltip then tooltip:SetVisible(false) end
+        if narration then narration:SetVisible(false) end
         if skipButton then skipButton:SetVisible(false) end
         if noteLayer then noteLayer:SetVisible(true) end
         if root then root:SetVisible(true) end

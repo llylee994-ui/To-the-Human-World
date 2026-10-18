@@ -8,4 +8,6 @@ sys.path.insert(0, str(ROOT / 'scripts/debug'))
 from content_test_runtime import run
 
 if __name__ == '__main__':
+    if run('ui.landscape.tests.ArrivalSequenceTest'):
+        raise SystemExit(1)
     raise SystemExit(run('ui.landscape.tests.OnboardingTest'))
