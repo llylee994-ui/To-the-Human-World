@@ -66,12 +66,19 @@ function B.New(ctx)
     b.actions=ActionSounds.New(ctx.model,ctx.PlayObjectSound,canEdit)
     local interactionModel=setmetatable({Drop=function(kind,id) return b.actions.Drop(kind,id,true) end},
         {__index=ctx.model,__newindex=function(_,key,value) ctx.model[key]=value end})
-    b.interaction=Interaction.New(interactionModel,function()
+    local simmer=false --[[@as table|false]]
+    b.interaction=Interaction.New(interactionModel,function(presented)
         if ctx.scene=="brew" and not ctx.destroyed then
             if b.interaction.elapsed>=b.interaction.duration then b.revealTail=Smoke.revealDuration end
-            ctx.Open("result")
+            ctx.Open("result",presented==true)
         end
-    end)
+    end,{
+        Started=function() if ctx.PlayScopedSound then simmer=ctx.PlayScopedSound("brew_simmer") end end,
+        Stopped=function()
+            if simmer and ctx.StopScopedSound then ctx.StopScopedSound(simmer) end
+            simmer=false
+        end,
+    })
     local function dropTarget(item,x,y) return L.Target(b.layout,item,x,y) end
     local function bindSource(widget,item)
         local oldClick=widget.props.onClick
@@ -166,7 +173,7 @@ function B.New(ctx)
         clear(center);clear(wordsHost);clear(journalHost);clear(notesHost)
     end
     function b.Start()
-        if b.revealTail>0 then return false end
+        if not interactive() or b.revealTail>0 then return false end
         if not b.interaction.active then b.interaction.elapsed=0 end
         return b.interaction.Start()
     end

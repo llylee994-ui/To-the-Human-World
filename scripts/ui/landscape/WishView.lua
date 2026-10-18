@@ -54,7 +54,11 @@ function V.New(ctx)
     if preview then
         button(actions,"cancelWishPreview","再摆一摆",function() ctx.Open("wish") end,false,{width="48%"})
         button(actions,"confirmWish","封瓶寄出",function()
-            if ctx.model.ConfirmEnding("wish",revision,rows).ok then ctx.endingEntrance="wish" end
+            if not wish.canConfirm then return end
+            if ctx.model.ConfirmEnding("wish",revision,rows).ok then
+                view.committed=true;ctx.endingEntrance="wish"
+                if ctx.PlayObjectSound then ctx.PlayObjectSound("wish_seal") end
+            end
         end,true,{disabled=not wish.canConfirm,width="48%"})
         return view
     end

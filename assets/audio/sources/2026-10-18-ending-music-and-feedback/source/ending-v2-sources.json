@@ -1,0 +1,11 @@
+{
+  "title": "Sea Lapping on Shore",
+  "author": "Joseph Sardin / BigSoundBank.com",
+  "license": "CC0 1.0",
+  "page": "https://licensing.routenote.com/sound-effect/sea-lapping-on-shore",
+  "download": "https://storage.googleapis.com/routenote-licensing-storage/public/sound_effects/3504/1447.mp3",
+  "file": "source/raw/sea-lapping-on-shore.mp3",
+  "sha256": "3c817eb8ea7d4c11c2298a48c1f9358f5f999a8f325db8820e42f8ad0152c96f",
+  "evidence": "source/licenses/sea-lapping-routenote.html",
+  "processing": "Resampled 48kHz to 44.1kHz; 110Hz highpass, 5.4kHz lowpass; different contiguous excerpts, 3-second equal-power circular join, gain only. No noise synthesis."
+}

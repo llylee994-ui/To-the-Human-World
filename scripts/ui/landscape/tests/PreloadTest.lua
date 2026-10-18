@@ -28,7 +28,7 @@ local function catalogChecks()
     assert(not M.HasPath("core","scripts/layout-editor/.local/project.sqlite3"),"editor data must not be listed")
     for _,entry in ipairs(A.EffectEntries()) do assert(M.HasPath("core",entry.path),"effect missing from core: "..entry.path) end
     for _,entry in ipairs(A.BgmEntries()) do
-        local wanted=(entry.id=="hearth" and "core") or (entry.id=="seaside" and "seaside") or "brew"
+        local wanted=({hearth="core",seaside="seaside",brewing="brew",traveler="endings",wish="endings"})[entry.id]
         assert(M.HasPath(wanted,entry.path),entry.id.." BGM missing from "..wanted)
     end
     print("[PreloadCatalog] PASS groups="..#groups.."; unique paths per group; audio catalog covered")

@@ -99,6 +99,8 @@ addImage("endings","image/wish-collage-r1/soft-scrollwork-letter-paper.png")
 addImage("endings",Seaside.bottle.path)
 for _,row in ipairs(Decorations.list) do addImage("endings",row.path) end
 addBgm("endings","seaside")
+addBgm("endings","traveler")
+addBgm("endings","wish")
 
 function M.Groups() return U.Copy(order) end
 function M.Group(name)

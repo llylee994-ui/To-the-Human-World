@@ -12,7 +12,8 @@ function T.Run()
     local count=0
     local function check(ok,why) count=count+1;assert(ok,why) end
     local events,voices,nodes={},{},{}
-    local durations={bottle_lift=.94,drawer_open=.62,drawer_close=.49,letter_pick=.32,
+    local durations={brew_simmer=1.65,reward_coins_crisp_v2=.64,wish_seal=.82,
+        bottle_lift=.94,drawer_open=.62,drawer_close=.49,letter_pick=.32,
         tray_open=.22,tray_close=.20,recipe_book_open=.49,recipe_book_close=.36,ui_click_01=.14,ui_confirm=.43,
         net_pick=.40,stove_touch=.52,ingredient_select=.18,ingredient_add=.68,ingredient_remove=.72,
         word_add=.36,word_remove=.32,word_withdraw=.27,draft_clear=.62,word_cut=1.04,word_select=.18}

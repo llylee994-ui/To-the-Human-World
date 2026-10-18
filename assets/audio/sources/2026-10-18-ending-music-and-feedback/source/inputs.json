@@ -1,0 +1,184 @@
+{
+  "inputs": [
+    {
+      "file": "source/raw/handleCoins.ogg",
+      "sha256": "8a91f969e932df709df80ee124d86a51389eed9b67f22e5e716bc2bbf60d8dab",
+      "author": "Kenney",
+      "title": "RPG Audio",
+      "license": "CC0 1.0",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "archive": "D:\\taptap\\audio-studies\\2026-10-15-object-feedback-v2\\source\\raw\\kenney_rpg-audio.zip",
+      "archive_sha256": "6dbeaf8544da958d8f2adcb4a4a4b76c1ade34a05f8ab9edccd327da7375f38b"
+    },
+    {
+      "file": "source/raw/handleCoins2.ogg",
+      "sha256": "4b857968d64f9ac9336a10ffac6694d7547e1f01566ad6857b30bc8db3ee6c32",
+      "author": "Kenney",
+      "title": "RPG Audio",
+      "license": "CC0 1.0",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "archive": "D:\\taptap\\audio-studies\\2026-10-15-object-feedback-v2\\source\\raw\\kenney_rpg-audio.zip",
+      "archive_sha256": "6dbeaf8544da958d8f2adcb4a4a4b76c1ade34a05f8ab9edccd327da7375f38b"
+    },
+    {
+      "file": "source/raw/handleSmallLeather.ogg",
+      "sha256": "ae3cbf695aa0a8b98b5a80a835be5a3ccbd5446a24db2235cd4c3cd6fc92ed96",
+      "author": "Kenney",
+      "title": "RPG Audio",
+      "license": "CC0 1.0",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "archive": "D:\\taptap\\audio-studies\\2026-10-15-object-feedback-v2\\source\\raw\\kenney_rpg-audio.zip",
+      "archive_sha256": "6dbeaf8544da958d8f2adcb4a4a4b76c1ade34a05f8ab9edccd327da7375f38b"
+    },
+    {
+      "file": "source/raw/impactGlass_light_001.ogg",
+      "sha256": "05e513fbd42829060eb37855f8c3866722ec5c39a8937c9bfde518cc609effa2",
+      "author": "Kenney",
+      "title": "Impact Sounds",
+      "license": "CC0 1.0",
+      "source_url": "https://kenney.nl/assets/impact-sounds",
+      "archive": "D:\\taptap\\audio-studies\\2026-10-15-object-feedback-v2\\source\\raw\\kenney_impact-sounds.zip",
+      "archive_sha256": "029d734af1582474edf3a694d1b0cebc97c1c152f2f39fa34d4c2bafc5de77f8"
+    },
+    {
+      "file": "source/raw/impactWood_light_003.ogg",
+      "sha256": "cdfbe8af2fe7ff9ee28f337a0a989deee0f327620da456c8413644880e9d0004",
+      "author": "Kenney",
+      "title": "Impact Sounds",
+      "license": "CC0 1.0",
+      "source_url": "https://kenney.nl/assets/impact-sounds",
+      "archive": "D:\\taptap\\audio-studies\\2026-10-15-object-feedback-v2\\source\\raw\\kenney_impact-sounds.zip",
+      "archive_sha256": "029d734af1582474edf3a694d1b0cebc97c1c152f2f39fa34d4c2bafc5de77f8"
+    },
+    {
+      "file": "source/raw/bsb_small_splash.ogg",
+      "title": "Splash, small #6",
+      "author": "Joseph SARDIN / BigSoundBank",
+      "source_url": "https://bigsoundbank.com/splash-small-6-s1534.html",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "b52f14e8650eecb1c0446e38bf1dc12c7dc79da51a88daa2870d5bfc0b25af10"
+    },
+    {
+      "file": "source/samples/A2.ogg",
+      "sha256": "0815bcf27821edcaf62dac8841249e3e9a2fdc90f8f53369c167db02b4b0d6d6",
+      "author": "Alexander Holm",
+      "title": "Salamander Grand Piano single-note sample",
+      "license": "CC BY 3.0",
+      "source_url": "https://tonejs.github.io/audio/salamander/A2.ogg"
+    },
+    {
+      "file": "source/samples/A3.ogg",
+      "sha256": "5b35a9b77bd3f192cb6cfc6ade81d6bc8b589b540818fff0ad3223b199d0a76f",
+      "author": "Alexander Holm",
+      "title": "Salamander Grand Piano single-note sample",
+      "license": "CC BY 3.0",
+      "source_url": "https://tonejs.github.io/audio/salamander/A3.ogg"
+    },
+    {
+      "file": "source/samples/A4.ogg",
+      "sha256": "cdcc20a09e671254b36df895d75085881eba1f46e546bb4e0aaa521ca7f3b175",
+      "author": "Alexander Holm",
+      "title": "Salamander Grand Piano single-note sample",
+      "license": "CC BY 3.0",
+      "source_url": "https://tonejs.github.io/audio/salamander/A4.ogg"
+    },
+    {
+      "file": "source/samples/C2.ogg",
+      "sha256": "68fab6a76ca8f38477e21da0cced8f82cb4511352920d9b972026f198e7681d4",
+      "author": "Alexander Holm",
+      "title": "Salamander Grand Piano single-note sample",
+      "license": "CC BY 3.0",
+      "source_url": "https://tonejs.github.io/audio/salamander/C2.ogg"
+    },
+    {
+      "file": "source/samples/C3.ogg",
+      "sha256": "8485c3dc9aac616a4e37f2cbeec9af104be214795742d66c12f6acc013451b38",
+      "author": "Alexander Holm",
+      "title": "Salamander Grand Piano single-note sample",
+      "license": "CC BY 3.0",
+      "source_url": "https://tonejs.github.io/audio/salamander/C3.ogg"
+    },
+    {
+      "file": "source/samples/C4.ogg",
+      "sha256": "2be981a53705511b8d3d6087a5fa360d676c2f406cc5a6f0698a9c6473fa83a3",
+      "author": "Alexander Holm",
+      "title": "Salamander Grand Piano single-note sample",
+      "license": "CC BY 3.0",
+      "source_url": "https://tonejs.github.io/audio/salamander/C4.ogg"
+    },
+    {
+      "file": "source/samples/C5.ogg",
+      "sha256": "9d428f292793d02923912289827527a1bd99ed7d36bf388780519e498d8f3fad",
+      "author": "Alexander Holm",
+      "title": "Salamander Grand Piano single-note sample",
+      "license": "CC BY 3.0",
+      "source_url": "https://tonejs.github.io/audio/salamander/C5.ogg"
+    },
+    {
+      "file": "source/samples/Ds2.ogg",
+      "sha256": "67b2f0226935ce5abffdeafc1bf9192983c14e50c2f6928dd953fc83a8887352",
+      "author": "Alexander Holm",
+      "title": "Salamander Grand Piano single-note sample",
+      "license": "CC BY 3.0",
+      "source_url": "https://tonejs.github.io/audio/salamander/Ds2.ogg"
+    },
+    {
+      "file": "source/samples/Ds3.ogg",
+      "sha256": "d50ede52eadbc11d5ab0459e1005efa01d173114ae11c514605f2e43a7789b27",
+      "author": "Alexander Holm",
+      "title": "Salamander Grand Piano single-note sample",
+      "license": "CC BY 3.0",
+      "source_url": "https://tonejs.github.io/audio/salamander/Ds3.ogg"
+    },
+    {
+      "file": "source/samples/Ds4.ogg",
+      "sha256": "51ef26e11a73aab5ba0b9104f660036a5d6cc23e847c3e18a50cfc334d796062",
+      "author": "Alexander Holm",
+      "title": "Salamander Grand Piano single-note sample",
+      "license": "CC BY 3.0",
+      "source_url": "https://tonejs.github.io/audio/salamander/Ds4.ogg"
+    },
+    {
+      "file": "source/samples/Ds5.ogg",
+      "sha256": "8cf89a06dd01efb3ef4aba33238ddd0ac5d06a3fa995512b98aa2e12b36f800a",
+      "author": "Alexander Holm",
+      "title": "Salamander Grand Piano single-note sample",
+      "license": "CC BY 3.0",
+      "source_url": "https://tonejs.github.io/audio/salamander/Ds5.ogg"
+    },
+    {
+      "file": "source/samples/Fs2.ogg",
+      "sha256": "a61ff7a98f7b81a482052ff6d6cbeb2ed7a882bc9bf2adeb09ca2d711074861a",
+      "author": "Alexander Holm",
+      "title": "Salamander Grand Piano single-note sample",
+      "license": "CC BY 3.0",
+      "source_url": "https://tonejs.github.io/audio/salamander/Fs2.ogg"
+    },
+    {
+      "file": "source/samples/Fs3.ogg",
+      "sha256": "aa77774f7b9bb4d051796fdcfb5a61db6b35c7d9b4e1f0c3df69896dd1b4b015",
+      "author": "Alexander Holm",
+      "title": "Salamander Grand Piano single-note sample",
+      "license": "CC BY 3.0",
+      "source_url": "https://tonejs.github.io/audio/salamander/Fs3.ogg"
+    },
+    {
+      "file": "source/samples/Fs4.ogg",
+      "sha256": "1b75e47f852f215612acfbe3698ede653b01f6cfc5469f4d4c5a8da93d96c34e",
+      "author": "Alexander Holm",
+      "title": "Salamander Grand Piano single-note sample",
+      "license": "CC BY 3.0",
+      "source_url": "https://tonejs.github.io/audio/salamander/Fs4.ogg"
+    },
+    {
+      "file": "source/samples/Fs5.ogg",
+      "sha256": "a23b0e9fab39906a7e6f22b529f93e1e61830540fa18680ad73c8bc353f6cc24",
+      "author": "Alexander Holm",
+      "title": "Salamander Grand Piano single-note sample",
+      "license": "CC BY 3.0",
+      "source_url": "https://tonejs.github.io/audio/salamander/Fs5.ogg"
+    }
+  ],
+  "retrieval": "Only previously downloaded local assets; no new download or paid service."
+}

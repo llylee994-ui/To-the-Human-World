@@ -5,8 +5,13 @@ local bgm={
     {id="hearth",path="audio/bgm/hearth-warmth-loop.wav",type="Sound",loop=true},
     {id="seaside",path="audio/bgm/seaside-path-loop.wav",type="Sound",loop=true},
     {id="brewing",path="audio/bgm/brewing-mystery-loop.wav",type="Sound",loop=true},
+    {id="traveler",path="audio/bgm/traveler-ending-sea-melancholy-v2-loop.wav",type="Sound",loop=true},
+    {id="wish",path="audio/bgm/wish-ending-sea-melancholy-v2-loop.wav",type="Sound",loop=true},
 }
 local effects={
+    {id="brew_simmer",path="audio/sfx/objects/brew_simmer.wav",type="Sound",loop=false},
+    {id="reward_coins",path="audio/sfx/objects/reward_coins_crisp_v2.wav",type="Sound",loop=false},
+    {id="wish_seal",path="audio/sfx/objects/wish_seal.wav",type="Sound",loop=false},
     {id="word_cut",path="audio/sfx/objects/water-and-scissors-v2/word_cut.wav",type="Sound",loop=false},
     {id="word_select",path="audio/sfx/objects/word_select.wav",type="Sound",loop=false},
     {id="ingredient_select",path="audio/sfx/objects/ingredient_select.wav",type="Sound",loop=false},

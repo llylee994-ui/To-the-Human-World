@@ -4,6 +4,8 @@ local Music={}
 local hearth=assert(Audio.BgmPath("hearth"),"missing hearth BGM")
 local seaside=assert(Audio.BgmPath("seaside"),"missing seaside BGM")
 local brewing=assert(Audio.BgmPath("brewing"),"missing brewing BGM")
+local traveler=assert(Audio.BgmPath("traveler"),"missing traveler BGM")
+local wish=assert(Audio.BgmPath("wish"),"missing wish BGM")
 
 function Music.New()
     local player={}
@@ -33,9 +35,14 @@ function Music.New()
         if source then source:SetGain(gain*presentationGain) end
     end
 
-    function player.Sync(scene,panel)
+    function player.Sync(scene,panel,endingKind)
         if destroyed then return end
-        local path=(scene=="seaside" or panel=="shop" or panel=="departure") and seaside or (scene=="brew" and brewing or hearth)
+        local ending=panel=="ending" or panel=="memoryReview"
+        local path
+        if panel=="shop" then path=seaside
+        elseif panel=="wish" or panel=="wishPreview" or (ending and endingKind=="wish") then path=wish
+        elseif panel=="departure" or (ending and endingKind=="departure") then path=traveler
+        else path=scene=="seaside" and seaside or (scene=="brew" and brewing or hearth) end
         if current==path then return end
         -- Native cache is a global getter; rawget would incorrectly skip playback.
         -- Isolated business/UI tests have neither of these native bindings.

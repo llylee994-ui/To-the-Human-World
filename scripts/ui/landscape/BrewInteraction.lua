@@ -7,9 +7,10 @@ local function target(drop,item,x,y)
     return L.Contains(drop,x,y) and drop or false
 end
 ---@param model table
----@param onResult fun()
+---@param onResult fun(presented:boolean?)
 ---@return table
-function I.New(model,onResult)
+function I.New(model,onResult,presentation)
+    presentation=presentation or {}
     local s={drag=false --[[@as table|false]],active=false --[[@as boolean]],elapsed=0,
         feedback=0,suppressClick=false --[[@as boolean]],duration=Smoke.brewDuration,
         flight=false --[[@as table|false]],pulse=false --[[@as table|false]]}
@@ -78,14 +79,23 @@ function I.New(model,onResult)
         local data=model.Refresh()
         if data and data.currentOrder and data.currentOrder.pending then onResult();return false end
         local r=model.Preview()
-        if r.ok and r.value.phase=="pending" then s.active=true;s.elapsed=0 end
+        if r.ok and r.value.phase=="pending" then
+            s.active=true;s.elapsed=0
+            if presentation.Started then presentation.Started() end
+        end
         return r
     end
     function s.Skip()
         if not s.active then return end
-        s.active=false;s.elapsed=s.duration;onResult()
+        s.active=false;s.elapsed=s.duration
+        if presentation.Stopped then presentation.Stopped() end
+        onResult(true)
     end
-    function s.Cancel() s.CancelDrag();s.active=false;s.elapsed=0;s.feedback=0;s.flight=false;s.pulse=false end
+    function s.Cancel()
+        local wasActive=s.active
+        s.CancelDrag();s.active=false;s.elapsed=0;s.feedback=0;s.flight=false;s.pulse=false
+        if wasActive and presentation.Stopped then presentation.Stopped() end
+    end
     function s.Update(dt,focused)
         if not focused or dt<0 or dt>.5 then s.Cancel();return end
         s.feedback=math.max(0,s.feedback-math.max(0,dt or 0))

@@ -1,0 +1,66 @@
+{
+  "source_package": "2026-10-18-ending-music-and-feedback",
+  "processing": "Exact byte copies; no extra gain, normalization, speed changes, or ocean stems.",
+  "resources": [
+    {
+      "id": "traveler",
+      "source": "bgm/traveler-v2/traveler-ending-sea-melancholy-v2-loop.wav",
+      "path": "audio/bgm/traveler-ending-sea-melancholy-v2-loop.wav",
+      "sha256": "3cda51e6f83225ce7df8dd2263bd2843ce6e066c6bd60645d664b4d97a99a0fc",
+      "duration": 90.0,
+      "sample_rate": 44100,
+      "channels": 2,
+      "sample_width": 2,
+      "loop": true,
+      "gain": 1.0
+    },
+    {
+      "id": "wish",
+      "source": "bgm/wish-v2/wish-ending-sea-melancholy-v2-loop.wav",
+      "path": "audio/bgm/wish-ending-sea-melancholy-v2-loop.wav",
+      "sha256": "c96fa65bf7299f8fbc39b991bc83de1870ea96cf2640aba3f9609d1815ad4f81",
+      "duration": 85.71428571428571,
+      "sample_rate": 44100,
+      "channels": 2,
+      "sample_width": 2,
+      "loop": true,
+      "gain": 1.0
+    },
+    {
+      "id": "brew_simmer",
+      "source": "sfx/brew_simmer.wav",
+      "path": "audio/sfx/objects/brew_simmer.wav",
+      "sha256": "cc98295517514fb58d2cfa0d2ab3798a92e8d19df7cc0c89c597a90c92a785e2",
+      "duration": 1.65,
+      "sample_rate": 44100,
+      "channels": 1,
+      "sample_width": 2,
+      "loop": false,
+      "gain": 1.0
+    },
+    {
+      "id": "reward_coins",
+      "source": "sfx/reward_coins_crisp_v2.wav",
+      "path": "audio/sfx/objects/reward_coins_crisp_v2.wav",
+      "sha256": "5eb641fb3be12e3840ee742749d44cdc184418ef3e449cccdde579cd4e6e7931",
+      "duration": 0.64,
+      "sample_rate": 44100,
+      "channels": 1,
+      "sample_width": 2,
+      "loop": false,
+      "gain": 1.0
+    },
+    {
+      "id": "wish_seal",
+      "source": "sfx/wish_seal.wav",
+      "path": "audio/sfx/objects/wish_seal.wav",
+      "sha256": "c62d2a877970616b696736fd4b61808aac0034fbfee2863d21f944ae448390c4",
+      "duration": 0.82,
+      "sample_rate": 44100,
+      "channels": 1,
+      "sample_width": 2,
+      "loop": false,
+      "gain": 1.0
+    }
+  ]
+}
