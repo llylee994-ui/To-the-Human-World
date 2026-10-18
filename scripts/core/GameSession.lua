@@ -22,6 +22,9 @@ function Session.New(content,options)
         if schema==4 then
             data.live.economy.ownedFurnitureIds=nil;data.live.economy.furniturePurchases=nil;data.live.economy.itemPurchases={}
             data.chapter=require("systems.ReleaseLedger").EmptyChapter()
+            if options.onboarding==true then
+                data.onboarding={version=1,step="intro.paper",completed=false,skipped=false,noteRead=false}
+            end
         end
         return G.Value(modules.orders.ValidateEnvelope(data))
     end)

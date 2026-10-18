@@ -243,18 +243,45 @@ function Schema.ValidateV3(data,options)
     if not ok then return {ok=false,error=type(err)=="table" and err or U.Error("STATE_INVALID","data",tostring(err))} end
     return U.Ok(U.Copy(data))
 end
+local ONBOARDING_STEPS={
+    ["intro.paper"]=true,["intro.note"]=true,["home.net"]=true,["sea.salvage"]=true,["sea.read"]=true,
+    ["letter.cut"]=true,["letter.accept"]=true,["brew.word"]=true,["brew.book"]=true,["brew.ingredient"]=true,
+    ["brew.conditions"]=true,["brew.ready"]=true,["result.explain"]=true,["complete"]=true,
+}
+function Schema.ValidateOnboarding(value)
+    local valid=U.Validate(value);if not valid.ok then return valid end
+    valid=U.Keys(value,{version=true,step=true,completed=true,skipped=true,noteRead=true},"onboarding")
+    if not valid.ok then return valid end
+    if not U.Integer(value.version,1) or value.version~=1 then
+        return U.Fail("STATE_INVALID","onboarding.version","不支持的引导版本")
+    end
+    if not ONBOARDING_STEPS[value.step] then
+        return U.Fail("STATE_INVALID","onboarding.step","未知引导步骤")
+    end
+    if type(value.completed)~="boolean" or type(value.skipped)~="boolean" or type(value.noteRead)~="boolean" then
+        return U.Fail("STATE_INVALID","onboarding","引导状态须为布尔值")
+    end
+    if value.completed and value.step~="complete" then
+        return U.Fail("STATE_INVALID","onboarding.step","完成后步骤必须为 complete")
+    end
+    return U.Ok(U.Copy(value))
+end
 function Schema.ValidateV4(data,options)
     local pure=U.Validate(data);if not pure.ok then return pure end
     local checkpointCoversBusiness=false
     local ok,err=pcall(function()
-        object(data,"contentVersion revision nextOrderSerial live currentOrder journal chapter","data")
+        object(data,"contentVersion revision nextOrderSerial live currentOrder journal chapter","data","onboarding")
         object(data.chapter,"phase wishDraftSourceIds ending endingTransactionId checkpoint","chapter","epilogue wishLayout memories started rewind")
+        if data.onboarding~=nil then
+            local onboard=Schema.ValidateOnboarding(data.onboarding)
+            if not onboard.ok then error(onboard.error,0) end
+        end
         local function ledger(l)
             need(U.Array(l.economy.itemPurchases) and l.economy.furniturePurchases==nil and l.economy.ownedFurnitureIds==nil,"itemPurchases")
         end
         ledger(data.live)
         if data.currentOrder and data.currentOrder.pending then ledger(data.currentOrder.baseline.live);ledger(data.currentOrder.pending.candidateLive) end
-        local projected=U.Copy(data);projected.chapter=nil
+        local projected=U.Copy(data);projected.chapter=nil;projected.onboarding=nil
         local projectionOptions=U.Copy(options);projectionOptions.schema4Projection=true
         local r=Schema.ValidateV3(projected,projectionOptions);if not r.ok then error(r.error,0) end
         local chapter=require("systems.ReleaseChapterAudit").Validate(data,options.content)

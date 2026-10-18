@@ -86,9 +86,13 @@ end
 
 local function full(snapshot,path,backup)
     G.Keys(snapshot,{contentVersion=true,revision=true,nextOrderSerial=true,live=true,currentOrder=true,journal=true,
-        chapter=true},path,"STATE_INVALID")
+        chapter=true,onboarding=true},path,"STATE_INVALID")
     G.Need(U.String(snapshot.contentVersion) and U.Integer(snapshot.revision)
         and U.Integer(snapshot.nextOrderSerial,1),"STATE_INVALID",path,"回溯前备份版本或数值不合法")
+    if snapshot.onboarding~=nil then
+        local valid=require("core.SaveSchema").ValidateOnboarding(snapshot.onboarding)
+        G.Need(valid.ok,"STATE_INVALID",path..".onboarding","引导状态不合法")
+    end
     G.Keys(snapshot.chapter,{phase=true,wishDraftSourceIds=true,ending=true,endingTransactionId=true,started=true,
         checkpoint=true},path..".chapter","STATE_INVALID")
     G.Need(snapshot.chapter.phase=="operating" and snapshot.chapter.ending==false
@@ -387,6 +391,7 @@ function R.PlanRestoreDay(data,request,content,limit)
             points=U.Copy(history.points),run=history.run}
         G.Value(require("systems.OrderTrial").ValidateCheckpoint(backup.snapshot,content,limit))
         local candidate=U.Copy(materialized)
+        if data.onboarding~=nil then candidate.onboarding=U.Copy(data.onboarding) end
         candidate.chapter.memories=U.Copy(data.chapter.memories)
         candidate.chapter.started=true
         candidate.chapter.checkpoint=false

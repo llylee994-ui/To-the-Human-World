@@ -120,6 +120,7 @@ function StartGameOnce()
         sessionSave = require("debug.B6UncertainStorage").New(SaveSystem, b6Request_)
     end
     session_ = GameSession.New(Data,{gameFlow=GameFlow,saveSystem=sessionSave,eventBus=EventBus,dataReady=dataReady,dataError=dataError,
+        onboarding=true,
         targetSchema=b6Request_~="off" and 2 or (Data.release and 4 or 3)}) -- 首发schema4，旧内容schema3，显式旧B6为schema2。
     gameState_ = session_.state
 

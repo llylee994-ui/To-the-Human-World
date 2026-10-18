@@ -129,6 +129,13 @@ function V.New(preferences,onChange,soundPreferences,onSoundChange)
     end
     body:AddChild(hint)
 
+    local helpButton=nil
+    function view.SetHelp(callback)
+        if helpButton or type(callback)~="function" then return end
+        helpButton=Harbor.Button {id="openOnboardingNote",text="回顾新手便签",width="100%",minHeight=44,fontSize=16,
+            onClick=callback}
+        body:AddChild(helpButton)
+    end
     function view.Open() closing=false;root:SetVisible(true) end
     function view.IsOpen() return root.props.visible==true end
     function view.Update()

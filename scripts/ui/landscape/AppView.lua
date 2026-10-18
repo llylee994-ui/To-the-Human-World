@@ -31,6 +31,7 @@ local SoundSettings=require "core.SoundSettings"
 local MusicSettingsView=require "ui.landscape.MusicSettingsView"
 local Calendar=require "ui.landscape.CalendarView"
 local Title=require "ui.landscape.TitleView"
+local Onboarding=require "ui.landscape.Onboarding"
 local A={}
 local side={words="left",journal="right"}
 local titles={letters="来信抽屉",reader="阅读信件",words="词条栏",journal="故事记录",attempt="试做记录",shop="商队商店",case="案件板",day="结束当天",result="试做结果"}
@@ -116,6 +117,12 @@ function A.New(session,content,enabled,options)
         zoom=Zoom.New(),salvage=Salvage.New(),destroyed=false --[[@as boolean]],portrait=false --[[@as boolean]],
         yawProbe=false --[[@as table|false]],
         messages=Messages.New(session.state.GetStatus().migrationNotice),importantMessage=false --[[@as string|false]]}
+    ctx.settings=settings
+    function ctx.IsInputActive()
+        if ctx.destroyed then return false end
+        if not input then return true end
+        return input:HasFocus() and not input:IsMinimized()
+    end
     local departureMusic=false --[[@as boolean]]
     ctx.preloader=preloader
     ctx.loadingView=loadingView
@@ -306,6 +313,12 @@ function A.New(session,content,enabled,options)
             ctx.panelNoticeArea:SetVisible(current.visible and ctx.panel~="reader" and (not story or current.persistent) and (not ctx.journeyView or ctx.importantMessage~=false))
         end
     end
+    local function tutorialWaitsForReadClick()
+        local onboarding=ctx.onboarding
+        if not onboarding or not onboarding.GetStep then return false end
+        local step=onboarding:GetStep()
+        return step=="sea.salvage" or step=="sea.read"
+    end
     function ctx.CancelSalvage(reason)
         local active=ctx.salvage.active
         ctx.salvage.Cancel(reason);salvageBlocker:SetVisible(false)
@@ -322,7 +335,12 @@ function A.New(session,content,enabled,options)
     end
     function ctx.SkipSalvage()
         if ctx.destroyed or not ctx.salvage.active then return false end
-        ctx.salvage.Skip();salvageBlocker:SetVisible(false);return ctx.OpenCapturedLetter()
+        ctx.salvage.Skip();salvageBlocker:SetVisible(false)
+        if tutorialWaitsForReadClick() then
+            model.message="信已收好。点“阅读捞到的信”看看。";model.dirty=true
+            return {ok=true}
+        end
+        return ctx.OpenCapturedLetter()
     end
     function ctx.StartSalvage()
         if ctx.destroyed or ctx.portrait or ctx.scene~="seaside" or ctx.panel or ctx.zoom.active or ctx.salvage.active or ctx.salvage.letterInstanceId then return false end
@@ -370,6 +388,7 @@ function A.New(session,content,enabled,options)
         ctx.destroyed=true
         ctx.CancelGate()
         ctx.brew.Leave()
+        if ctx.onboarding then ctx.onboarding:Destroy() end
         if ctx.yawProbe then ctx.yawProbe.Close() end
         ctx.CancelHomeZoom("destroyed");ctx.CancelSalvage("destroyed");destroyRoot(self)
     end
@@ -662,6 +681,7 @@ function A.New(session,content,enabled,options)
     end
     function ctx.Update()
         if ctx.destroyed then return end
+        if ctx.onboarding then ctx.onboarding:Update() end
         settings.Update()
         if ctx.yawProbe then ctx.yawProbe.Update() end
         if yawAuto then yawAuto(ctx) end
@@ -704,7 +724,12 @@ function A.New(session,content,enabled,options)
             end
             if result then
                 salvageBlocker:SetVisible(false);model.dirty=true
-                if result=="complete" then ctx.OpenCapturedLetter()
+                if result=="complete" then
+                    if tutorialWaitsForReadClick() then
+                        model.message="信已收好。点“阅读捞到的信”看看。"
+                    else
+                        ctx.OpenCapturedLetter()
+                    end
                 else model.message="信已收好，可继续阅读，也可从药铺抽屉查看。" end
             end
         end
@@ -757,6 +782,10 @@ function A.New(session,content,enabled,options)
         ctx.UpdateChrome()
     end
     function ctx.Refresh() model.dirty=true end
+    ctx.onboarding=Onboarding.New(ctx)
+    if settings.SetHelp then
+        settings.SetHelp(function() if ctx.onboarding then ctx.onboarding:ShowNote() end end)
+    end
     -- Saved pending results stay accessible in HUD; entering does not consume them.
     model.ReturnHome(); ctx.Update()
     return ctx

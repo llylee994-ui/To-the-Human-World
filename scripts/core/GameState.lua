@@ -237,6 +237,27 @@ function GameState.New(options)
         if #errors>0 then value.notificationErrors=errors end
         return U.Ok(value)
     end
+    -- 新手引导只随整档保存，不改变业务版本或派发经营事件。
+    function api.SetOnboarding(value)
+        if targetSchema~=4 then return U.Fail("NOT_IMPLEMENTED","onboarding","当前存档未接入新手引导") end
+        if not api.CanMutate() then return U.Fail("STATE_LOCKED","onboarding","请先读取存档排除配置或提交错误") end
+        local valid=Schema.ValidateOnboarding(value)
+        if not valid.ok then return valid end
+        if not activeSlot then return U.Fail("STATE_LOCKED","onboarding","请先读取存档") end
+        busy=true
+        local called,result=pcall(function()
+            local current=api.GetSnapshot()
+            if not current then return U.Fail("STATE_LOCKED","onboarding","请先读取存档") end
+            if U.Equal(current.onboarding,valid.value) then
+                return U.Ok({onboarding=U.Copy(valid.value),revision=current.revision})
+            end
+            local candidate=U.Copy(current);candidate.onboarding=U.Copy(valid.value)
+            return commit(candidate,{onboarding=U.Copy(valid.value)},{})
+        end)
+        busy=false
+        if not called then return U.Fail("COMMAND_FAILED","onboarding",tostring(result)) end
+        return result
+    end
     local function releaseGate(data,name)
         if targetSchema~=4 then return U.Ok(true) end
         if not data or not data.chapter then return U.Fail("STATE_NOT_READY","chapter","请先读取首发存档") end
