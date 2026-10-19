@@ -37,7 +37,13 @@ static func project(state: Dictionary, name: String, catalog: ContentCatalog,
 			var result := WordToken.get_inventory(state, catalog)
 			if not result.ok:
 				return result
-			var draft: Dictionary = state.get("draft", {})
+			var draft: Dictionary = {}
+			if int(state.get("payload_version", 1)) >= 2:
+				var order = state.get("currentOrder")
+				if typeof(order) == TYPE_DICTIONARY and typeof(order.get("draft")) == TYPE_DICTIONARY:
+					draft = order["draft"]
+			else:
+				draft = state.get("draft", {})
 			var selected := {}
 			if not DomainResult.is_false(draft.get("mainTokenId", false)):
 				selected[draft["mainTokenId"]] = "main"
@@ -99,6 +105,41 @@ static func project(state: Dictionary, name: String, catalog: ContentCatalog,
 				"potion": calculated.value,
 				"resolved": resolved.value,
 			}}
+		"salvage":
+			if int(state.get("payload_version", 1)) < 2:
+				return DomainResult.fail("NOT_IMPLEMENTED", "salvage", "P2 salvage is not available")
+			return DayFlow.salvage_view(state, catalog)
+		"letters":
+			if int(state.get("payload_version", 1)) < 2:
+				return DomainResult.fail("NOT_IMPLEMENTED", "letters", "P2 letters are not available")
+			var rows: Array = []
+			var by_id = state.get("live", {}).get("letters", {}).get("byId", {})
+			for instance_id in by_id:
+				var item: Dictionary = by_id[instance_id]
+				var view := Letter.view(state, str(instance_id), catalog)
+				if not view.ok:
+					return view
+				var remaining := 0
+				for span in view.value.get("spans", []):
+					if not bool(span.get("cut", false)):
+						remaining += 1
+				rows.append({
+					"letterInstanceId": instance_id,
+					"sourceLetterId": item.get("letterId"),
+					"title": view.value.get("title", ""),
+					"senderName": view.value.get("senderName", ""),
+					"read": bool(item.get("read", false)),
+					"remainingCutCount": remaining,
+					"orderStatus": "unaccepted",
+				})
+			return {"ok": true, "value": rows}
+		"letter":
+			if int(state.get("payload_version", 1)) < 2:
+				return DomainResult.fail("NOT_IMPLEMENTED", "letter", "P2 letters are not available")
+			var instance_id := str(args.get("letterInstanceId", ""))
+			if instance_id.is_empty():
+				return DomainResult.fail("INVALID_REQUEST", "letterInstanceId", "missing letter instance")
+			return Letter.view(state, instance_id, catalog)
 		"content":
 			var counts: Dictionary = {}
 			for collection in ContentCatalog.COLLECTIONS:

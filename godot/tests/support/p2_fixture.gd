@@ -34,6 +34,36 @@ static func resume(name: String) -> Dictionary:
 	return {"ok": true, "session": session, "store": store, "catalog": catalog}
 
 
+static func collect_first(session: SessionService) -> Dictionary:
+	var salvage := session.query("salvage")
+	if not salvage.get("ok", false):
+		return salvage
+	var ids: Array = salvage.value.get("availableLetterIds", [])
+	if ids.is_empty():
+		return DomainResult.fail("LETTER_NOT_AVAILABLE", "salvage", "no letter is available")
+	var letter_id := str(ids[0])
+	var received := session.execute(request(session, "p2-receive", "receive_letter",
+		{"letterId": letter_id}))
+	if not received.get("ok", false):
+		return received
+	var instance_id := str(received.value.get("letterInstanceId", ""))
+	var read := session.execute(request(session, "p2-read", "read_letter",
+		{"letterInstanceId": instance_id}))
+	if not read.get("ok", false):
+		return read
+	var letter := session.query("letter", {"letterInstanceId": instance_id})
+	if not letter.get("ok", false):
+		return letter
+	var tokens: Dictionary = {}
+	for span in letter.value.get("spans", []):
+		var cut := session.execute(request(session, "p2-cut-" + str(span["spanId"]),
+			"cut_word", {"letterInstanceId": instance_id, "spanId": span["spanId"]}))
+		if not cut.get("ok", false):
+			return cut
+		tokens[str(span["wordId"])] = str(cut.value.get("tokenId", ""))
+	return {"ok": true, "letterInstanceId": instance_id, "tokensByWordId": tokens}
+
+
 static func request(session: SessionService, request_id: String, command: String,
 		payload: Dictionary = {}) -> Dictionary:
 	return {

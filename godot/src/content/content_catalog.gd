@@ -183,6 +183,16 @@ func letter_spans(letter_id: String) -> Array:
 	return row["spans"]
 
 
+func letter_segments(letter_id: String) -> Array:
+	var rows = data.get("letterSpans", {})
+	if typeof(rows) != TYPE_DICTIONARY:
+		return []
+	var row = rows.get(letter_id, {})
+	if typeof(row) != TYPE_DICTIONARY or typeof(row.get("segments")) != TYPE_ARRAY:
+		return []
+	return row["segments"]
+
+
 func get_word(identifier: String) -> Dictionary:
 	return entry_ref("words", identifier)
 

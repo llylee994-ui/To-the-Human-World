@@ -40,7 +40,7 @@ def run(command: list[str], label: str) -> tuple[int, str]:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--suite", choices=["content", "potion", "oracle", "commands", "faults", "p2-oracle", "p2-state", "foundation", "layout", "scenes", "drag", "readability", "all"], default="layout")
+    parser.add_argument("--suite", choices=["content", "potion", "oracle", "commands", "faults", "p2-oracle", "p2-state", "p2-letters", "foundation", "layout", "scenes", "drag", "readability", "all"], default="layout")
     parser.add_argument("--godot")
     parser.add_argument("--python-libs", default=str(ROOT / ".tmp" / "b1-python"))
     parser.add_argument("--skip-import", action="store_true")
@@ -103,7 +103,7 @@ def main() -> int:
         if p2_code != 0:
             code = p2_code
     p0_suites = {"layout", "scenes", "drag", "readability"}
-    p2_suites = {"p2-oracle", "p2-state", "all"}
+    p2_suites = {"p2-oracle", "p2-state", "p2-letters", "all"}
     if args.suite in p0_suites:
         evidence_name = "p0-verify.txt"
     elif args.suite in p2_suites:

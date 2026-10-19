@@ -23,6 +23,9 @@ static func validate(state_value, catalog: ContentCatalog) -> Dictionary:
 	var chapter = state.get("chapter", {})
 	if typeof(chapter) != TYPE_DICTIONARY or typeof(chapter.get("started")) != TYPE_BOOL:
 		return DomainResult.fail("STATE_INVALID", "chapter.started", "chapter.started must be boolean")
+	var letters := Letter.validate_snapshot(state.get("live", {}).get("letters", {}), catalog)
+	if not letters.ok:
+		return letters
 	var ledger := CommandLedger.validate(state)
 	if not ledger.ok:
 		return ledger

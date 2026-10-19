@@ -157,7 +157,16 @@ def build_raw(lua) -> dict:
                 "kind": span["kind"],
                 "cut": span["cut"],
             })
-        letter_spans[letter_id] = {"spans": spans}
+        segments = []
+        for segment_index in range(1, len(parsed["value"]["segments"]) + 1):
+            segment = parsed["value"]["segments"][segment_index]
+            row = {"kind": segment["kind"], "text": segment["text"]}
+            if segment["kind"] == "word":
+                row["spanId"] = segment["spanId"]
+                row["wordId"] = segment["wordId"]
+                row["cut"] = segment["cut"]
+            segments.append(row)
+        letter_spans[letter_id] = {"spans": spans, "segments": segments}
     return {
         "contentVersion": data.contentVersion,
         "saveSlotId": data.saveSlotId,

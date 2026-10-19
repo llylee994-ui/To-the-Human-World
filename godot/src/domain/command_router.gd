@@ -24,6 +24,8 @@ static func dispatch(state: Dictionary, command: String, payload: Dictionary,
 			return {"ok": true, "data": candidate, "changed": true,
 				"value": {"started": true, "phase": str(candidate["chapter"].get("phase", ""))},
 				"events": ["JourneyStarted"]}
+		if command in ["receive_letter", "read_letter", "cut_word"]:
+			return Letter.plan(state, command, payload, catalog)
 		return DomainResult.fail("INVALID_REQUEST", "command",
 			"P2 command is not implemented in this task")
 	match command:
