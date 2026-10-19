@@ -1,0 +1,333 @@
+{
+  "case_ids": [
+    "recipe_v02_e01_1",
+    "recipe_v02_e01_2",
+    "recipe_v02_e01_3",
+    "recipe_v02_e01_4",
+    "recipe_v02_e01_5",
+    "recipe_v02_e01_6",
+    "recipe_v02_e01_7",
+    "recipe_v02_e01_8",
+    "empty_main",
+    "main_effect_insufficient",
+    "duplicate_cut",
+    "stale_transaction",
+    "pending_change",
+    "pending_cut"
+  ],
+  "content_version": "ordinary-release-v3",
+  "required_recipes": [
+    "recipe_v02_e01_1",
+    "recipe_v02_e01_2",
+    "recipe_v02_e01_3",
+    "recipe_v02_e01_4",
+    "recipe_v02_e01_5",
+    "recipe_v02_e01_6",
+    "recipe_v02_e01_7",
+    "recipe_v02_e01_8"
+  ],
+  "schema_version": 1,
+  "source_files": [
+    {
+      "bytes": 5671,
+      "path": "scripts/core/EventBus.lua",
+      "sha256": "455cf1717f62a2e7e661be4d90da3f2fc5c759292abdae564ddbe20f852c514f"
+    },
+    {
+      "bytes": 7797,
+      "path": "scripts/core/GameFlow.lua",
+      "sha256": "5eb17d719de096b45e17c0f381e20ba3cc9b6d06a8ff20df6fbd0c163ec5c679"
+    },
+    {
+      "bytes": 3050,
+      "path": "scripts/core/GameSession.lua",
+      "sha256": "07473765eb19197839ed31599607f9441ed8b051e3a559251c7db7a6519a0561"
+    },
+    {
+      "bytes": 40754,
+      "path": "scripts/core/GameState.lua",
+      "sha256": "9784016494139ecf8ff20df7f60c368e1fcc5023819be5b332fddc98c0a3bc9b"
+    },
+    {
+      "bytes": 1802,
+      "path": "scripts/core/MusicSettings.lua",
+      "sha256": "1b9c8d2a46b07db5d1dfd6c7c92bc6bc3fa8e94287e30b8008b2543845a21050"
+    },
+    {
+      "bytes": 3139,
+      "path": "scripts/core/SaveJson.lua",
+      "sha256": "9a40a7abec7cdd0bdfcd2482bc3bb0d9479349f2649d41c894e1054fa887d28c"
+    },
+    {
+      "bytes": 3583,
+      "path": "scripts/core/SaveMigrations.lua",
+      "sha256": "9a9182d131137142b717b98089a25fe744040d8d0166d74f38afcf90e3a45d48"
+    },
+    {
+      "bytes": 21169,
+      "path": "scripts/core/SaveSchema.lua",
+      "sha256": "726789b006ea429ab2fadc755e915903fa38133c1eda7e6511b6d6838d226b22"
+    },
+    {
+      "bytes": 8485,
+      "path": "scripts/core/SaveSystem.lua",
+      "sha256": "c19ebbc7cbcae3e9119076834b0ea4009477a17d606d278fcc008fa21d87c36d"
+    },
+    {
+      "bytes": 1016,
+      "path": "scripts/core/SchemaProjection.lua",
+      "sha256": "d97c1c2b718b77d270ad9e00693d52ab4ccbc156b6c7bb28149c00ad79578a3b"
+    },
+    {
+      "bytes": 1505,
+      "path": "scripts/core/ShortWordRevision.lua",
+      "sha256": "e03d312e93df7fd812b4b088b1540f5fbdc02616d6cfec117b417948b12e6e9d"
+    },
+    {
+      "bytes": 1805,
+      "path": "scripts/core/SoundSettings.lua",
+      "sha256": "6456906c013f8a01bbed4bb3c90cec6dfb392065d5969b2a508d116daca46c66"
+    },
+    {
+      "bytes": 3044,
+      "path": "scripts/core/StateUtil.lua",
+      "sha256": "17d73e257e16199dd6b51f2c33b9ffe684610bf9765c71858b1d238427403257"
+    },
+    {
+      "bytes": 782,
+      "path": "scripts/core/ValidationMemo.lua",
+      "sha256": "dc6dc661e9d3bd92e071e734df4bb270dc2564554ca7d3278917117f475fa5a6"
+    },
+    {
+      "bytes": 9285,
+      "path": "scripts/systems/BrewJournal.lua",
+      "sha256": "dc91ff2994c270296c7945b18f5e8a4c1e744bf7ea75552a0b328c2279631769"
+    },
+    {
+      "bytes": 2513,
+      "path": "scripts/systems/CalculationGuard.lua",
+      "sha256": "5b7cdb8688921f95f720a240f0b3c951a1b4f8824df7f95c6abfee4fa797a358"
+    },
+    {
+      "bytes": 244,
+      "path": "scripts/systems/CaseBoardProjection.lua",
+      "sha256": "179d6451a94d02845e1fef72e484cc9f15de9678d25487daac3085efd4a9fe53"
+    },
+    {
+      "bytes": 17801,
+      "path": "scripts/systems/Economy.lua",
+      "sha256": "d9dc64f0726dfe674814199f962d24cf650c8ba0fd59a842ab3453566f73dbde"
+    },
+    {
+      "bytes": 2511,
+      "path": "scripts/systems/JourneyRecord.lua",
+      "sha256": "e408ed7b4011379e3235bc2aeeb5d2635c1f6f8281635d83f8e4bc4c554a32aa"
+    },
+    {
+      "bytes": 14348,
+      "path": "scripts/systems/Letter.lua",
+      "sha256": "9298ad81a9e8e15b3c4b340eba212d09bf123bce91958a10a1c7f2402aa36b90"
+    },
+    {
+      "bytes": 16251,
+      "path": "scripts/systems/Narrative.lua",
+      "sha256": "5f0313485ec5e843dd0bee3bf8c38bb59351bdb749685d59a8e0326dad45214b"
+    },
+    {
+      "bytes": 15949,
+      "path": "scripts/systems/Order.lua",
+      "sha256": "3663615d9584ce8f6c7b1d6e585df89e833e36ddb7a6da0bfe6bfa666d60a28d"
+    },
+    {
+      "bytes": 21416,
+      "path": "scripts/systems/OrderAudit.lua",
+      "sha256": "54e650affd7e311c206061674b6c204b1a2afbfafe29c2a18a2a231d06b7c7d6"
+    },
+    {
+      "bytes": 17306,
+      "path": "scripts/systems/OrderLifecycle.lua",
+      "sha256": "7eb199b8f96645815fd52a24a32fed91a634ea88cc87ef36540b6b89c397b941"
+    },
+    {
+      "bytes": 13540,
+      "path": "scripts/systems/OrderTrial.lua",
+      "sha256": "0c6cc8c125aefd6741c7064893568128b1f8590ba70171012bb02edc98cce10b"
+    },
+    {
+      "bytes": 13752,
+      "path": "scripts/systems/PlayQueries.lua",
+      "sha256": "bd2d79d6704d317ac3f3c8fccb65e9e8ef305affd4f5c70ba44a207000696a7b"
+    },
+    {
+      "bytes": 21250,
+      "path": "scripts/systems/Potion.lua",
+      "sha256": "fb8681ef36c70d73245ecf181cd2ad3dfe4cfc90ab44059a2ee290d59f788565"
+    },
+    {
+      "bytes": 3330,
+      "path": "scripts/systems/RecipeDraft.lua",
+      "sha256": "30035c51288329c310ca220e4f4af3de521aa673907f4f435f280871956808a3"
+    },
+    {
+      "bytes": 9555,
+      "path": "scripts/systems/ReleaseChapterAudit.lua",
+      "sha256": "a61da5dc506205f767dedb189df83f64cd5a915932cc81fb6790c714478ccb99"
+    },
+    {
+      "bytes": 13895,
+      "path": "scripts/systems/ReleaseCoordinator.lua",
+      "sha256": "f8e055ed9848e68941d1ba1e4fcb123e2cdafe74eb08df82db3898a145774646"
+    },
+    {
+      "bytes": 12898,
+      "path": "scripts/systems/ReleaseEndings.lua",
+      "sha256": "15122ee06a584b9071d79e9c4c7394ac73d521b5d69b84e9abcdf2832c8a143c"
+    },
+    {
+      "bytes": 2185,
+      "path": "scripts/systems/ReleaseEpilogue.lua",
+      "sha256": "f084fd8307c210b9fdb1a527054e62ff9230b3f674e840d30defc13daf0a40be"
+    },
+    {
+      "bytes": 5058,
+      "path": "scripts/systems/ReleaseLedger.lua",
+      "sha256": "7e36e569bbde8ba3e481a438b6161698b71c4f6af4f2d8faaecae0a26050d2be"
+    },
+    {
+      "bytes": 25751,
+      "path": "scripts/systems/RewindHistory.lua",
+      "sha256": "46ef075b03a9563ed97b73968f2aea7408870877cf67a2393fb80e662dddd850"
+    },
+    {
+      "bytes": 8346,
+      "path": "scripts/systems/StoryRules.lua",
+      "sha256": "4472ade3dc481ec4e099f77bcaf492960e8c36b45ad747ab9ef2fa75b04b894c"
+    },
+    {
+      "bytes": 5984,
+      "path": "scripts/systems/WishCollage.lua",
+      "sha256": "4abcb87613bb72a58af70ee52adb9c1969f7f127d8cee4517d7c208299c0d8ac"
+    },
+    {
+      "bytes": 10360,
+      "path": "scripts/systems/WordToken.lua",
+      "sha256": "f6c4f54b7b7c62f2054fd080817aae46d3d26a7baeaa207d7ce4398fe41abd38"
+    },
+    {
+      "bytes": 9841,
+      "path": "scripts/systems/WorldState.lua",
+      "sha256": "a92272aa05041d2cb1826893b668b396e3fcf758df32241552dc775282e4b665"
+    },
+    {
+      "bytes": 75398,
+      "path": "scripts/data/content.lua",
+      "sha256": "126eaeb91885837e7f15b16e8c0ccc0187cfeb53e179e1c8d37a0c4a4c1b145c"
+    },
+    {
+      "bytes": 3741,
+      "path": "scripts/data/effects.lua",
+      "sha256": "911b63d86168b5639c622fd67bbc0d7eb86c224c1d95ad0e566ce4ae8dd10fca"
+    },
+    {
+      "bytes": 1558,
+      "path": "scripts/data/equipment.lua",
+      "sha256": "df657c24642882e08d208ec13e526031dbfe14dee93d14f0646729cb6e4f1357"
+    },
+    {
+      "bytes": 8709,
+      "path": "scripts/data/extension_test.lua",
+      "sha256": "ec68d77744302cf033768aee3ee763227037362f69ac4e11964103fd8f414fee"
+    },
+    {
+      "bytes": 26485,
+      "path": "scripts/data/followup.lua",
+      "sha256": "0ef136381fa636d831b289581d1b477a1c2183f1255dde38a69178bb06b5df78"
+    },
+    {
+      "bytes": 313,
+      "path": "scripts/data/furniture.lua",
+      "sha256": "1a5bdc9993e3d98e06b91738f9bbb7c1444fe87f8f7f281a67cffb2bd585aa01"
+    },
+    {
+      "bytes": 134,
+      "path": "scripts/data/gameplay.lua",
+      "sha256": "1821c473308170c8c11717b57033c3e9794a49f53471c23b8f934bdaa52889f4"
+    },
+    {
+      "bytes": 2111,
+      "path": "scripts/data/ingredients.lua",
+      "sha256": "4b72d3e8d33e8dd045fdfe1aec318355bb42e85e2869b16dfd4afa3616d90cab"
+    },
+    {
+      "bytes": 7586,
+      "path": "scripts/data/letters.lua",
+      "sha256": "2380d34fa282a7bc6455456d6a989c4ec96a470a52ca5ad427da0098fbf24b1d"
+    },
+    {
+      "bytes": 3662,
+      "path": "scripts/data/npcs.lua",
+      "sha256": "10e1cd5556ed7c74c28815e5fed034f038f56bf18c97637d0fb2304a8481278b"
+    },
+    {
+      "bytes": 728183,
+      "path": "scripts/data/numeric_v02.lua",
+      "sha256": "4a65aa055955c4a3914a14718e261fabe99210b89c854b1d0f235e257cca8cb8"
+    },
+    {
+      "bytes": 50480,
+      "path": "scripts/data/ordinary_orders.lua",
+      "sha256": "4d0f57fb7929bdc8ae6342605ea3b3f704476173fa1d0cd1e5aadc752c3d1102"
+    },
+    {
+      "bytes": 19103,
+      "path": "scripts/data/recipes.lua",
+      "sha256": "303718e3d720f24b6a0a2b169bf5ae58650b49974ead1a8e36b06a2947f4b499"
+    },
+    {
+      "bytes": 834,
+      "path": "scripts/data/release.lua",
+      "sha256": "e472561b1d971cc6b177aadf10321da1bd24d2b7a77d37fa6f397e26dccf3ed8"
+    },
+    {
+      "bytes": 2086,
+      "path": "scripts/data/release_endings.lua",
+      "sha256": "2446306b02224b1d99bf7608c109a6d177469024bea892cbd23f620b199ae2ad"
+    },
+    {
+      "bytes": 22593,
+      "path": "scripts/data/stage1.lua",
+      "sha256": "0aeb55db07ed4f3f00686605d82ce337dcbbe58460bd9e2cc7514a7eff4dc770"
+    },
+    {
+      "bytes": 3753,
+      "path": "scripts/data/synthesis.lua",
+      "sha256": "185172cd8a5c5b782a96b78015d145b09787929bea8baa8889fc9e67dd05a68a"
+    },
+    {
+      "bytes": 1896,
+      "path": "scripts/data/wish_decorations.lua",
+      "sha256": "bb2561242521a4fdb249b969a319e2d921f6e3da36d01de885016c58ce23f894"
+    },
+    {
+      "bytes": 3135,
+      "path": "scripts/data/word_profiles.lua",
+      "sha256": "5dfe4de1d01478825afdd75f3e93cfae2e096c58a465d62dba92c9017a19725c"
+    },
+    {
+      "bytes": 9541,
+      "path": "scripts/data/words.lua",
+      "sha256": "f84ad8e6408af4129efbfd3ad75125d5f734a2cf92231cb3f21cdaf52746b873"
+    },
+    {
+      "bytes": 4908,
+      "path": "scripts/debug/fixtures/B5Fixtures.lua",
+      "sha256": "5c1afa0f03f2228ad61100efbf6923a76a2e7c5e1e7c4b97d12ffa8584e8db53"
+    },
+    {
+      "bytes": 68875,
+      "path": "scripts/debug/fixtures/NumericV02Cases.lua",
+      "sha256": "da5b985e6df461c52748f8f5d4e8da7d6c29b9aae8f14540c9f0b437191a36f9"
+    }
+  ],
+  "source_hash": "d24f4bdc5715218f4f3604a04d023e67976321eef15f9e58b3010bc79d11800f"
+}

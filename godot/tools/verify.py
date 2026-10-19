@@ -40,7 +40,7 @@ def run(command: list[str], label: str) -> tuple[int, str]:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--suite", choices=["content", "potion", "oracle", "commands", "faults", "foundation", "layout", "scenes", "drag", "readability", "all"], default="layout")
+    parser.add_argument("--suite", choices=["content", "potion", "oracle", "commands", "faults", "p2-oracle", "foundation", "layout", "scenes", "drag", "readability", "all"], default="layout")
     parser.add_argument("--godot")
     parser.add_argument("--python-libs", default=str(ROOT / ".tmp" / "b1-python"))
     parser.add_argument("--skip-import", action="store_true")
@@ -60,6 +60,19 @@ def main() -> int:
         logs.append(output)
         if code != 0:
             print("content negative checks failed.")
+            return code
+    if args.suite in {"p2-oracle", "all"}:
+        code, output = run([sys.executable, str(PROJECT / "tools" / "export_first_order_oracle.py"),
+                            "--check", "--python-libs", args.python_libs], "first-order:check")
+        logs.append(output)
+        if code != 0:
+            print("first-order oracle is stale.")
+            return code
+        code, output = run([sys.executable, str(PROJECT / "tools" / "test_first_order_oracle.py")],
+                           "first-order:negative")
+        logs.append(output)
+        if code != 0:
+            print("first-order negative checks failed.")
             return code
     if not args.skip_import:
         code, output = run([str(binary), "--headless", "--path", str(PROJECT),
@@ -81,7 +94,14 @@ def main() -> int:
         if restart_code != 0:
             code = restart_code
     p0_suites = {"layout", "scenes", "drag", "readability"}
-    evidence = PROJECT / "docs" / "evidence" / ("p0-verify.txt" if args.suite in p0_suites else "p1-verify.txt")
+    p2_suites = {"p2-oracle", "all"}
+    if args.suite in p0_suites:
+        evidence_name = "p0-verify.txt"
+    elif args.suite in p2_suites:
+        evidence_name = "p2-verify.txt"
+    else:
+        evidence_name = "p1-verify.txt"
+    evidence = PROJECT / "docs" / "evidence" / evidence_name
     evidence.parent.mkdir(parents=True, exist_ok=True)
     evidence.write_text(
         f"generated_at={datetime.now(timezone.utc).isoformat()}\n"

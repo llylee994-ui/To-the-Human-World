@@ -9,6 +9,7 @@ const SUITES := {
 	"oracle": "res://tests/parity/test_oracle.gd",
 	"commands": "res://tests/unit/test_commands.gd",
 	"faults": "res://tests/unit/test_save_faults.gd",
+	"p2-oracle": "res://tests/parity/test_first_order_oracle.gd",
 	"layout": "res://tests/integration/test_layout.gd",
 	"scenes": "res://tests/integration/test_scenes.gd",
 	"drag": "res://tests/integration/test_drag.gd",
