@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "source": "scripts/data/content.lua",
+  "content_version": "ordinary-release-v3",
+  "expected_counts": {
+    "effects": 22,
+    "words": 77,
+    "ingredients": 4,
+    "equipment": 2,
+    "furniture": 4,
+    "npcs": 11,
+    "letters": 22,
+    "attributeProfiles": 6,
+    "followupTemplates": 11,
+    "fragments": 58,
+    "directRules": 196,
+    "orderRatings": 58,
+    "recipes": 58,
+    "wishDecorations": 11,
+    "requiredOrders": 11,
+    "homeItems": 4,
+    "sampleCases": 10
+  },
+  "empty_array_fields": [
+    "directRules[].unless",
+    "followupTemplates[].baseFragmentIds",
+    "followupTemplates[].fallbackFragmentIds",
+    "fragments[].excludesFacts",
+    "fragments[].overrides",
+    "letters[].attachments",
+    "letters[].requirement.forbiddenEffects",
+    "orderRatings[].excludesFacts",
+    "recipes[].recipe.auxWordIds",
+    "recipes[].recipe.ingredients",
+    "recipes[].recipe.specialItemIds",
+    "stage1.initialEconomy.specialItems",
+    "stage1.sampleCases[].expect.failures",
+    "stage1.sampleCases[].expect.sideEffects",
+    "stage1.sampleCases[].recipe.auxWordIds",
+    "stage1.sampleCases[].recipe.ingredients",
+    "stage1.sampleCases[].recipe.specialItemIds"
+  ],
+  "empty_object_fields": [
+    "ingredients[].addTags",
+    "ingredients[].mods"
+  ],
+  "collections": {
+    "effects": {"id_field": "id"},
+    "words": {"id_field": "id"},
+    "ingredients": {"id_field": "id"},
+    "equipment": {"id_field": "id"},
+    "furniture": {"id_field": "id"},
+    "npcs": {"id_field": "id"},
+    "letters": {"id_field": "id"},
+    "attributeProfiles": {"id_field": "id"},
+    "followupTemplates": {"id_field": "id"},
+    "fragments": {"id_field": "id"},
+    "directRules": {"id_field": "id"},
+    "orderRatings": {"id_field": "id"},
+    "recipes": {"id_field": "id"},
+    "wishDecorations": {"id_field": "id"}
+  }
+}

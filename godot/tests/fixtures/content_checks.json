@@ -1,0 +1,83 @@
+{
+  "content_version": "ordinary-release-v3",
+  "counts": {
+    "attributeProfiles": 6,
+    "directRules": 196,
+    "effects": 22,
+    "equipment": 2,
+    "followupTemplates": 11,
+    "fragments": 58,
+    "furniture": 4,
+    "homeItems": 4,
+    "ingredients": 4,
+    "letters": 22,
+    "npcs": 11,
+    "orderRatings": 58,
+    "recipes": 58,
+    "requiredOrders": 11,
+    "sampleCases": 10,
+    "wishDecorations": 11,
+    "words": 77
+  },
+  "schema_version": 1,
+  "source_hash": "e3b557c4d31a772259908bbd2f71731bef4a730e392530ddf9b3961699b412b3",
+  "span_counts": {
+    "letter_n01": 9,
+    "letter_n02": 6,
+    "letter_n03": 4,
+    "letter_n04": 5,
+    "letter_n05": 7,
+    "letter_n06": 6,
+    "letter_n07": 7,
+    "letter_n08": 5,
+    "letter_n09": 10,
+    "letter_n10": 9,
+    "letter_pa_01": 9
+  },
+  "text_hashes": {
+    "letter_n01": {
+      "body_sha256": "75afd1a96f11c17ff05d9988d6d6e4ee703cdcced59a5caa97e7b1b6ffd00df4",
+      "title_sha256": "58e985c9de644eb263cab718cf923ea36d1dd88788248b15d1866281f28cefb3"
+    },
+    "letter_n02": {
+      "body_sha256": "c8892ee99dea12df15695e64573c938e3f47b5d92e66dc38e72027c298609dae",
+      "title_sha256": "d1e7a5fda097c97a7f9545d1ed8cf2571679febcd04e5ea2895709ca55e5c201"
+    },
+    "letter_n03": {
+      "body_sha256": "11648bfd2425c93f02313cffe3c915fa0ba45f5a39c39adbc9e2c00a4277cf9b",
+      "title_sha256": "c07214fdc04457f308a3328be1f246acbab11bdd73b5679d3fe8b7075913d0cc"
+    },
+    "letter_n04": {
+      "body_sha256": "66ab1fdcdf0c14d4c8d8344e541638d07678559e31278d4382cdbb93e4ff5939",
+      "title_sha256": "623155ede6501ed9cf683cd30cb07dcf8a65e31a1881b168e71da99fb3b69a21"
+    },
+    "letter_n05": {
+      "body_sha256": "e80caa0c42a3a4128c4bae8c4d1af28ed7ae6420bd002bd7def60a62b186991f",
+      "title_sha256": "557621c6b80c7962030c586e1f52d99c1d3047a30ca6c3c068b8277e433f548b"
+    },
+    "letter_n06": {
+      "body_sha256": "f8802af5c0ae7120935a3155a87ef285a0abb37216e520e753740471c9d28658",
+      "title_sha256": "fa58645cabe2da3dcaa631685eff9f606317c13ae55923b1613ee7b866a64399"
+    },
+    "letter_n07": {
+      "body_sha256": "5a9651067029cdebaeaad70c9da701f3001d6b03d48963e15118a8a1eb8950a8",
+      "title_sha256": "3f627aa0a2c712bc9e2449859c9a730ca853286d97447c7064fe402737d372a0"
+    },
+    "letter_n08": {
+      "body_sha256": "0c1863d0aaa8337c8a4bc18c36108d2d6d1e15cfb6c9819edf465e639aaa9b22",
+      "title_sha256": "93dfdc762bfe5ee6d9e03c101c0fed9d55e1f471d92bc69d773e64d5fe23bd43"
+    },
+    "letter_n09": {
+      "body_sha256": "5fa4461ad6d533f0fcb3b918fdc17e054b3ee8cb0ffa9a7ad4fe15700085f511",
+      "title_sha256": "21617c9771e3234bc5e511b9091b03b24246e94ad4798dc391fc3e23c753f5f1"
+    },
+    "letter_n10": {
+      "body_sha256": "516d961ef425ee924b9373d3c27d0b54a2978385b75f451bbef773759b6bbc01",
+      "title_sha256": "daa3690d54a3bdccb3bd77e0bceb084b5a9405f068ae3c15b80a3bff3892a6b1"
+    },
+    "letter_pa_01": {
+      "body_sha256": "003faa033aa214dfd85ae2c24b0d6aa2585a3275690ba60a0e8e348383b848ca",
+      "title_sha256": "dc1ad55566ae5071c68c9e11547ac9f2ceba222c9ad135bb457d255d18aa15b0"
+    }
+  }
+}

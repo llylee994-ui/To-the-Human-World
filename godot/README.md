@@ -1,17 +1,16 @@
-# 《寄往人间》Godot 正式工程（P0）
+# 《寄往人间》Godot 正式工程（P1 基础）
 
-本目录是 Godot 迁移的正式工程。当前只完成 **P0：视觉基线与宽屏适配**，不包含正式玩法、订单、内容导出或存档系统。原 Maker 工程 `scripts/`、`assets/`、存档与绑定保持不变，继续作为迁移对照基线。
+本目录是 Godot 迁移的正式工程。P0 视觉基线（`0.1.3-p0fix`）已完成；当前完成 **P1-A 全量内容导出** 与 **P1-B 领域/存档基础**。原 Maker 工程 `scripts/`、`assets/`、存档与绑定保持不变，继续作为迁移与对照基线。
 
 ## 当前范围
 
-- 标题、主页、炼药工作台的静态视觉。
-- 主页物件按 `LayoutManifest` 的目标尺寸绘制，修复验证版 `TextureRect` 被原生纹理尺寸撑大的问题。
-- 1920×1080、2340×1080、2400×1080、2412×1080 的内容/背景/安全区布局计算。
-- 长词条纸条按实测文字宽度与最大宽度换行；`token_id` 与显示文本分离。
-- 主页物件触控热区与点击提示；药炉进入工作台。
+- 标题、主页、炼药工作台的静态视觉与宽屏/安全区布局。
+- 从正式 Lua 内容导出 `content/generated/catalog.json`；加载时校验版本、重复 ID、计数和引用。
+- 词条来源 token、配方草稿、药效八步计算、内容查询与统一命令入口。
+- 独立 `user://godot_save` A/B 快照：写入/读回校验、提交标记、结果不确定锁定、损坏回退。
 - Windows 与 Android debug 包。
 
-尚未接入：正式内容导出、业务命令/查询、本地存档事务、信件/剪词/订单/商店/日历/三结局/回溯/新手引导。界面按钮除导航外只显示“P0 演示”提示，不修改任何业务状态。
+尚未接入：正式信件实例、订单生命周期、商店、日历、三结局、回溯、新手引导和 P1 命令的正式 UI。当前按钮除导航外仍只显示演示提示；P2 再把真实首单接到界面。
 
 ## 目录
 
@@ -19,12 +18,18 @@
 |---|---|
 | `scenes/` | boot、title、home、brew 场景 |
 | `src/app/` | 布局服务与入口 |
+| `src/content/` | 导出 catalog 的加载与只读查询 |
+| `src/domain/` | 药效、草稿、词条、状态校验、命令/查询与会话 |
+| `src/persistence/` | 规范化 JSON、A/B 快照、设置 |
 | `src/presentation/` | 主页图层、纸条、纸面、场景脚本 |
 | `ui/components/` | `paper_panel.tscn`、`word_slip.tscn` |
+| `content/generated/` | 由 Lua 正式内容导出的只读 catalog |
+| `tools/export_content.py` | 导出并校验正式内容与正文哈希 |
+| `tools/export_oracle.py` | 导出 Lua 药效/词条/草稿对照用例 |
 | `tools/prepare_media.py` | 从 `assets/` 复制正式引用资源，导出主页布局与来源哈希 |
-| `tools/verify.py` | Godot 导入与 headless 布局测试 |
+| `tools/verify.py` | 导出检查、Godot 导入与 headless 测试 |
 | `tools/build.py` | Windows / Android debug 导出与交付清单 |
-| `tests/` | P0 布局测试 |
+| `tests/` | P1 内容/领域/存档与 P0 布局测试 |
 | `media/` | 只读资源快照与 `home-layout.json` |
 | `docs/evidence/` | 文本验收记录（大包与截图不进仓库） |
 
@@ -36,9 +41,14 @@
 
 ```powershell
 python godot/tools/prepare_media.py --scope p0
-python godot/tools/verify.py --suite layout
+python godot/tools/export_content.py
+python godot/tools/export_oracle.py
+python godot/tools/verify.py --suite foundation
+python godot/tools/verify.py --suite all
 python godot/tools/build.py --target all --configuration debug --output godot/build/p0
 ```
+
+`verify.py` 的 `content`/`foundation`/`all` 会先执行两个导出工具的 `--check`，内容或 oracle 陈旧时直接失败。P1 证据见 [P1 基础回执](docs/evidence/p1-foundation-2026-10-19.md)。
 
 产物：
 

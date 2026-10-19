@@ -1,6 +1,6 @@
 # 《寄往人间》Godot 完整迁移实施计划
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking. 执行状态（2026-10-19）：P0/Task 1 已执行并产出双端 debug 包；Task 2 至 8 未开始。不自动派发子代理。
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking. 执行状态（2026-10-19）：P0/Task 1、P1-A/Task 2、P1-B/Task 3 已执行；P2/Task 4 及以后未开始。P1 证据见 [P1 基础回执](../../../godot/docs/evidence/p1-foundation-2026-10-19.md)。不自动派发子代理。
 
 **Goal:** 将当前普通发行内容迁移为可独立离线运行的 Android 与 Windows Godot 正式版本。
 
@@ -72,7 +72,7 @@ assert(word_slip.size.y >= measured_text_height + padding_top + padding_bottom)
 ```
 
 - [x] 执行 `python godot/tools/verify.py --suite all`；导出 `python godot/tools/build.py --target all --configuration debug --output godot/build/p0`。
-- [ ] 双端运行截图与基准并排记录，由用户确认物件比例、宽屏和点击。仅自动测试通过不能放行。Windows 16:9/20:9 截图已生成；Android 实机截图与用户确认待完成。
+- [x] 双端运行截图与基准并排记录，由用户确认物件比例、宽屏和点击。仅自动测试通过不能放行。用户已确认 `0.1.3-p0fix` 为视觉基线；Android 真机画面、触控与飞行模式仍未单独复验。
 
 **P0 执行结果（2026-10-19，含验收修复轮）：** `verify.py --suite all` 通过 **255** 项断言（布局、真实场景安全区、旋转热区、鼠标拖拽/落锅/取消）。证据见 [P0 证据](../../../godot/docs/evidence/p0.md)、[修复回执](../../../godot/docs/evidence/p0-fix-2026-10-19.md) 与 [p0-layout.json](../../../godot/docs/evidence/p0-layout.json)。关键尺寸：捞网 345.5×518.3、商船 219.2×198.1、药炉 361.2×329.6，均不再使用原生纹理尺寸。宽屏主页改为原始 1920×1080 房间居中，两侧用室内前景的低细节墙带横向延展并加软化渐变，不再使用深色侧栏或放大裁切；门外海面按 `SeaArt.homeSea` 的设计坐标 `(0, -115, 1920, 1080)` 与室内前景一起缩放。词条纸条按文字自动尺寸，工作台和标题页字体放大，标题按钮改为纯文字样式。修复包：Windows 151,190,776 字节 SHA256 `16b9d26a7f2523266fbb2437117af68522cfff1da3e77b4f2d1d5ce2ebd8a493`；Android 79,396,645 字节 SHA256 `fb0867d9b410436eea965395237c8ac2a9308eab50050b2c5bd0a5232d32162a`。Android 包 arm64、无 INTERNET 权限、v2/v3 调试签名、landscape；未连接真机，画面与触控未验证。
 
@@ -92,10 +92,10 @@ assert(word_slip.size.y >= measured_text_height + padding_top + padding_bottom)
 - `ContentCatalog.get_entry(collection: String, id: String) -> Dictionary`：返回独立投影，不暴露可变原表。
 - 导出文件包含 `content_version`、`source_hash`、`schema_version`、collections；对照夹具包含 `case_id`、`input`、`expected`、`source_hash`。
 
-- [ ] 以真实 Lua 加载结果建立字段 schema，明确空表类型、整数、数组顺序、文本与可剪跨度；不以正则抽取源码。
-- [ ] 添加重复 ID、缺失引用、未知条件枚举和错误空表用例，要求导出/加载失败并指向字段路径。
-- [ ] 完整导出当前内容与规则；记录全部输入文件哈希。可变正文原样保留，不重新润色。
-- [ ] 将源 Lua 计算与事务测试入口封装为只读 oracle；规范化无序字典，不对有序词槽/叙事片段排序。
+- [x] 以真实 Lua 加载结果建立字段 schema，明确空表类型、整数、数组顺序、文本与可剪跨度；不以正则抽取源码。
+- [x] 添加重复 ID、缺失引用、未知条件枚举和错误空表用例，要求导出/加载失败并指向字段路径。
+- [x] 完整导出当前内容与规则；记录全部输入文件哈希。可变正文原样保留，不重新润色。
+- [x] 将源 Lua 计算与事务测试入口封装为只读 oracle；规范化无序字典，不对有序词槽/叙事片段排序。
 
 ```gdscript
 assert(catalog.words.size() == 77)
@@ -105,7 +105,7 @@ assert(catalog.release.requiredOrderIds.size() == 11)
 assert(catalog.directRules.size() == 196)
 ```
 
-- [ ] 执行 `python godot/tools/export_content.py` 与 `python godot/tools/verify.py --suite content`；检查正文 UTF-8、换行及片段引用。
+- [x] 执行 `python godot/tools/export_content.py` 与 `python godot/tools/verify.py --suite content`；检查正文 UTF-8、换行及片段引用。
 
 **交付/门禁：** 全量可加载内容、schema、来源哈希与可执行对照流水线；夹具不使用验证版三个词替代正式内容。
 
@@ -123,10 +123,10 @@ assert(catalog.directRules.size() == 196)
 - `SnapshotStore.commit(envelope: Dictionary) -> Dictionary`：`status` 只能为 `committed`、`failed`、`uncertain`，带 generation；`load_latest() -> Dictionary` 选有效已提交代。
 - `Potion.evaluate(recipe: Dictionary, catalog: Dictionary) -> Dictionary`：纯函数，结果与原 Lua 对照。
 
-- [ ] 先建立原 Lua 用例：相同词、不同来源 token、非法槽位、原料短缺、药效阈值两侧、相同请求重放、过期 revision。
-- [ ] 实现草稿和纯计算，逐字段对照；确定浮点规则后再开放 UI。
-- [ ] 实现 A/B 快照、checksum、提交记录与新封装格式；使用独立测试目录和独立包名，不读取原生产槽。
-- [ ] 注入打开失败、短写、读回错误、提交记录写后读失败、最新代损坏；使用新进程恢复验证。
+- [x] 先建立原 Lua 用例：相同词、不同来源 token、非法槽位、原料短缺、药效阈值两侧、相同请求重放、过期 revision。
+- [x] 实现草稿和纯计算，逐字段对照；确定浮点规则后再开放 UI。
+- [x] 实现 A/B 快照、checksum、提交记录与新封装格式；使用独立测试目录和独立包名，不读取原生产槽。
+- [x] 注入打开失败、短写、读回错误、提交记录写后读失败、最新代损坏；使用新进程恢复验证。
 
 ```gdscript
 var before := session.snapshot().duplicate(true)
@@ -138,8 +138,8 @@ session.execute(command)
 assert(session.is_recovery_locked())
 ```
 
-- [ ] `snapshot() -> Dictionary` 与 `is_recovery_locked() -> bool` 是 SessionService 的独立投影/恢复锁接口；测试 store 实现同任务的故障注入适配器，生产代码不暴露注入开关。
-- [ ] 执行 `python godot/tools/verify.py --suite foundation`；基础计算、明确失败不安装候选、提交不确定锁定与重读恢复全部通过。
+- [x] `snapshot() -> Dictionary` 与 `is_recovery_locked() -> bool` 是 SessionService 的独立投影/恢复锁接口；测试 store 实现同任务的故障注入适配器，生产代码不暴露注入开关。
+- [x] 执行 `python godot/tools/verify.py --suite foundation`；基础计算、明确失败不安装候选、提交不确定锁定与重读恢复全部通过。
 
 **交付/门禁：** 领域 API、可靠存档及对照报告；未达到提交可靠性不能先接正式发货。
 

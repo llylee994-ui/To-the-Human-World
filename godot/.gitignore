@@ -8,3 +8,6 @@ tests/evidence/
 !AGENTS.md
 !tools/
 !tools/**
+
+__pycache__/
+*.pyc
