@@ -95,6 +95,7 @@ def main() -> int:
     potion = export_content.unwrap(lua.eval('require("systems.Potion")'))
     word_token = export_content.unwrap(lua.eval('require("systems.WordToken").New(require("data.content"))'))
     draft_module = export_content.unwrap(lua.eval('require("systems.RecipeDraft")'))
+    state_util = export_content.unwrap(lua.eval('require("core.StateUtil")'))
 
     empty_arrays = {"residuals", "sideEffects", "sideEffects[].addTags", "trace", "trace[].sourceIds"}
     empty_objects = {"effects", "intensityByEffect", "mods", "sideEffects[].addTags"}
@@ -190,6 +191,59 @@ def main() -> int:
         if index + 1 < len(aux_candidates):
             add_potion("aux_%02d_pair_%s" % (index + 1, aux_candidates[index + 1]),
                        resolved(main_word, [aux_word_id, aux_candidates[index + 1]], []))
+
+    residual_recipe = resolved(main_word, [], [])
+    residual_result = potion.Calculate(to_lua(residual_recipe, lua), data)
+    if not bool(residual_result["ok"]):
+        raise SystemExit("residual base potion failed: " + str(result_error(residual_result)))
+    residual_potion = residual_result["value"]
+    sleep_points = [
+        residual_potion["residuals"][index]
+        for index in range(1, len(residual_potion["residuals"]) + 1)
+        if residual_potion["residuals"][index]["effectId"] == "sleep"
+    ]
+    residual_samples: list[dict] = []
+
+    def add_residual_sample(case_id: str, at: float) -> None:
+        sampled = potion.SampleResidual(residual_potion, "sleep", at, data)
+        expected = {"ok": True, "value": sampled["value"]} if bool(sampled["ok"]) else {
+            "ok": False, "error": result_error(sampled)}
+        residual_samples.append({"id": case_id, "at": at, "expected": expected})
+
+    for point_index, point in enumerate(sleep_points):
+        at = float(point["untilAfterDoseHours"])
+        add_residual_sample("point_%d_exact" % (point_index + 1), at)
+        add_residual_sample("point_%d_minus" % (point_index + 1), at - 0.000001)
+        add_residual_sample("point_%d_plus" % (point_index + 1), at + 0.000001)
+    if len(sleep_points) >= 2:
+        add_residual_sample("between_first_second",
+                            (float(sleep_points[0]["untilAfterDoseHours"])
+                             + float(sleep_points[1]["untilAfterDoseHours"])) / 2.0)
+    add_residual_sample("before_first", float(sleep_points[0]["untilAfterDoseHours"]) - 0.5)
+    add_residual_sample("after_last", float(sleep_points[-1]["untilAfterDoseHours"]) + 0.5)
+    modified_potion = state_util.Copy(residual_potion)
+    first_sleep_index = next(
+        index for index in range(1, len(modified_potion["residuals"]) + 1)
+        if modified_potion["residuals"][index]["effectId"] == "sleep"
+    )
+    modified_potion["residuals"][first_sleep_index]["untilAfterDoseHours"] = (
+        float(modified_potion["residuals"][first_sleep_index]["untilAfterDoseHours"]) + 0.000001
+    )
+    modified_result = potion.ValidateResult(modified_potion, data)
+    residual_cases = {
+        "recipe": {
+            "mainWordId": main_word,
+            "auxWordIds": [],
+            "ingredients": [],
+            "equipmentId": initial_equipment,
+        },
+        "effect_id": "sleep",
+        "samples": residual_samples,
+        "modified_expected": {
+            "ok": bool(modified_result["ok"]),
+            "error": result_error(modified_result) if not bool(modified_result["ok"]) else {},
+        },
+    }
 
     token_cases: list[dict] = []
     token_state = export_content.unwrap(lua.eval('{byId = {}}'))
@@ -319,6 +373,7 @@ def main() -> int:
         "content_version": catalog["contentVersion"],
         "source_hash": catalog["source_hash"],
         "potion_cases": potion_cases,
+        "residual_cases": residual_cases,
         "token_cases": token_cases,
         "draft_cases": draft_cases,
         "draft_live": live,
@@ -334,8 +389,8 @@ def main() -> int:
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(text, encoding="utf-8")
     print(f"oracle written: {output.relative_to(ROOT).as_posix()}")
-    print(f"potion_cases={len(potion_cases)} token_cases={len(token_cases)} "
-          f"draft_cases={len(draft_cases)}")
+    print(f"potion_cases={len(potion_cases)} residual_samples={len(residual_samples)} "
+          f"token_cases={len(token_cases)} draft_cases={len(draft_cases)}")
     return 0
 
 

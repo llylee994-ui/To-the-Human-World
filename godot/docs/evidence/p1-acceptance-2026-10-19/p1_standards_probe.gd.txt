@@ -1,0 +1,82 @@
+extends SceneTree
+
+class ProbeIo:
+	var files: Dictionary = {}
+	var truncate_path := ""
+	var fail_marker_once := false
+	var fail_next_read := ""
+	func exists(path: String) -> bool:
+		return files.has(path)
+	func read(path: String) -> Dictionary:
+		if path == fail_next_read:
+			fail_next_read = ""
+			return {"ok": false, "error": "injected marker readback failure"}
+		return {"ok": files.has(path), "value": files.get(path, "")}
+	func write(path: String, text: String) -> Dictionary:
+		if path == truncate_path:
+			files[path] = ""
+			return {"ok": false, "error": "injected short write"}
+		files[path] = text
+		if fail_marker_once and path.ends_with(".commit"):
+			fail_marker_once = false
+			fail_next_read = path
+		return {"ok": true}
+	func remove(path: String) -> bool:
+		files.erase(path)
+		return true
+
+func _initialize() -> void:
+	call_deferred("_run")
+
+func _payload(catalog: ContentCatalog, revision: int) -> Dictionary:
+	var data: Dictionary = StateValidator.initial_state(catalog).value
+	data["revision"] = revision
+	return data
+
+func _compact(result: Dictionary) -> Dictionary:
+	var summary := result.duplicate(true)
+	if summary.has("payload"):
+		summary["payload"] = {"revision": summary["payload"].get("revision")}
+	return summary
+
+func _run() -> void:
+	var catalog := ContentCatalog.new()
+	print("CATALOG ", catalog.load_catalog("res://content/generated/catalog.json").ok)
+	var io1 := ProbeIo.new()
+	var store1 := SnapshotStore.new("fake://probe", io1)
+	store1.commit(_payload(catalog, 1), catalog.content_version(), 1)
+	store1.commit(_payload(catalog, 2), catalog.content_version(), 2)
+	io1.files["fake://probe/state_b.json"] = "{}"
+	print("FALLBACK_BEFORE ", _compact(store1.load_latest()))
+	io1.truncate_path = "fake://probe/state_a.json"
+	print("FALLBACK_SAVE ", store1.commit(_payload(catalog, 2), catalog.content_version(), 2))
+	print("FALLBACK_AFTER ", store1.load_latest())
+	var io2 := ProbeIo.new()
+	var store2 := SnapshotStore.new("fake://future", io2)
+	store2.commit(_payload(catalog, 1), catalog.content_version(), 1)
+	store2.commit(_payload(catalog, 2), catalog.content_version(), 2)
+	var env: Dictionary = JSON.parse_string(io2.files["fake://future/state_b.json"])
+	env["schema_version"] = 2
+	var raw := SaveCodec.encode(env)
+	io2.files["fake://future/state_b.json"] = raw
+	io2.files["fake://future/state_b.commit"] = store2._marker_text(2, "b", raw.length(), SaveCodec.sha256(raw))
+	print("FUTURE_LOAD ", _compact(store2.load_latest()))
+	var future_session := SessionService.new(catalog, store2)
+	print("FUTURE_SESSION_LOAD ", future_session.load_or_new())
+	io2.files["fake://future/state_b.commit"] = "tthw-godot|2|b|"
+	print("TRUNCATED_MARKER ", store2.load_latest())
+	var io3 := ProbeIo.new()
+	var store3 := SnapshotStore.new("fake://uncertain", io3)
+	var session := SessionService.new(catalog, store3)
+	print("SESSION_NEW ", session.load_or_new())
+	var letter: Dictionary = catalog.entry_ref("letters", "letter_pa_01")
+	var span: Dictionary = catalog.letter_spans("letter_pa_01")[0]
+	var request := {"request_id": "uncertain-1", "expected_revision": 0, "command": "cut_word", "payload": {"source": {"wordId": span["wordId"], "sourceLetterInstanceId": "letter:letter_pa_01", "sourceSpanId": span["spanId"], "sourceNpcId": letter["senderId"]}}}
+	io3.fail_marker_once = true
+	print("UNCERTAIN_EXEC ", session.execute(request))
+	print("UNCERTAIN_RELOAD ", session.reload())
+	print("UNCERTAIN_RETRY ", session.execute(request), " locked=", session.is_recovery_locked(), " actual_revision=", session.state["revision"])
+	var restarted := SessionService.new(catalog, store3)
+	print("RESTART_LOAD ", restarted.load_or_new())
+	print("RESTART_RETRY ", restarted.execute(request))
+	quit(0)

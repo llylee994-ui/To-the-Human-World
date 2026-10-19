@@ -5,6 +5,7 @@ extends RefCounted
 ## only content source for the Godot runtime; no Lua parser is embedded.
 
 const SCHEMA_VERSION := 1
+const ContentValidationScript = preload("res://src/content/content_validation.gd")
 const COLLECTIONS := [
 	"effects", "words", "ingredients", "equipment", "furniture", "npcs",
 	"letters", "attributeProfiles", "followupTemplates", "fragments",
@@ -84,6 +85,9 @@ func load_data(parsed: Dictionary) -> Dictionary:
 				return _fail("CONTENT_COUNT_MISMATCH", "counts.%s" % name,
 					"declared %d, loaded %d" % [int(declared_counts[name]), actual])
 	data = parsed.duplicate(true)
+	var structural: Dictionary = ContentValidationScript.validate(data, indexes)
+	if not structural.is_empty():
+		return {"ok": false, "error": structural}
 	return {"ok": true, "value": data}
 
 

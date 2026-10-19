@@ -55,6 +55,12 @@ def main() -> int:
             if code != 0:
                 print(f"{script} check failed; generated content is stale.")
                 return code
+        code, output = run([sys.executable, str(PROJECT / "tools" / "test_export_negative.py")],
+                           "content:negative")
+        logs.append(output)
+        if code != 0:
+            print("content negative checks failed.")
+            return code
     if not args.skip_import:
         code, output = run([str(binary), "--headless", "--path", str(PROJECT),
                             "--editor", "--import", "--quit"], "import")

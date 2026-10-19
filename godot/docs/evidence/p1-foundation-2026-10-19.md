@@ -1,11 +1,14 @@
 # P1-A / P1-B 基础迁移回执（2026-10-19）
 
+> **独立验收更新：P1 暂未放行。** 已有自动套件复跑通过，但边界探针复现 6 项问题；具体影响、复现与下一步见 [P1 独立验收记录](p1-acceptance-2026-10-19.md)。下文保留原批次交付与验证口径，不代表这些新增问题已修复。
+
 状态：**代码与自动检查完成；未进入 P2，未接正式 UI，未做真机验收。** 本回执覆盖实施计划 Task 2（P1-A）与 Task 3（P1-B），不把自动检查当作完整游戏验收。
 
 ## 分批复核
 
 - [P1-A 全量内容对照报告](p1-a-content-report-2026-10-19.md)：数量、正文哈希、引用校验、120 个药效/80 个词条/8 个草稿 oracle 用例与问题清单。
 - [P1-B 业务与存档对照报告](p1-b-foundation-report-2026-10-19.md)：命令语义、A/B 存档、故障注入、双进程恢复与问题清单。
+- [P1 修复回执](p1-fix-2026-10-19.md)：验收 S01～S04、F01～F02 的修复、探针复跑与新增回归。
 
 ## 基线与范围
 
@@ -71,26 +74,26 @@
 
 ```text
 python godot/tools/verify.py --suite foundation
-[GODOT] PASS suite=foundation assertions=2113
+[GODOT] PASS suite=foundation assertions=2235
 
 python godot/tools/verify.py --suite all
-[GODOT] PASS suite=all assertions=2676
+[GODOT] PASS suite=all assertions=2798
 ```
 
 分项：
 
 | 套件 | 断言 | 结果 |
 |---|---:|---|
-| content | 198 | PASS |
-| potion | 1684 | PASS |
+| content | 243 | PASS |
+| potion | 1734 | PASS |
 | oracle | 177 | PASS |
 | commands | 31 | PASS |
-| faults | 23 | PASS |
+| faults | 50 | PASS |
 | P0 layout/scenes/drag/readability | 563（合计） | PASS |
 
 `potion` 套件按字段比较：字符串、布尔、强度分级和结构字段精确比较；药效权重、修正值、时间与残留权重使用每字段 `1e-9` 相对容差。容差只用于已知的 IEEE 浮点运算差异，强度分级仍精确比较，阈值翻转不会被容差掩盖。
 
-`commands` 套件覆盖：切词提交、同一请求 ID 重放不重复保存、重复切同一来源幂等、草稿提交/重放、预览不写入、过期 revision 拒绝、重启后词条与草稿恢复。
+`commands` 套件覆盖：切词提交、同一请求 ID 重放不重复保存、重复切同一来源幂等、草稿提交/重放、预览不写入、过期 revision 拒绝、重启后词条与草稿恢复。`faults` 还覆盖 S01～S04：恢复后写非活动侧、未来版本锁写、单侧 marker 损坏、uncertain 重读对账。
 
 `faults` 套件覆盖：快照写失败不提交、标记写失败为不确定、标记读回失败为不确定、最新快照损坏回退上一代、校验和篡改检测、保存失败不安装候选、不确定提交锁定后续命令。
 

@@ -2,8 +2,8 @@ class_name SnapshotStore
 extends RefCounted
 
 ## A/B committed snapshots. A commit is only reported as committed after the
-## snapshot and marker are both read back; a marker write/read failure is
-## reported as uncertain so the caller can lock and re-read the same slot.
+## snapshot and marker are both read back. Recovery independently inspects both
+## sides so a truncated marker or damaged snapshot cannot hide the other side.
 
 const FORMAT := "tthw-godot"
 
@@ -82,47 +82,156 @@ func _parse_marker(raw: String, expected_side: String) -> Dictionary:
 	return {"generation": generation, "side": expected_side, "length": length, "checksum": parts[4]}
 
 
-func _read_marker(side: String) -> Dictionary:
-	var path := _marker_path(side)
-	if not io.exists(path):
-		return {"ok": true, "marker": null}
-	var loaded: Dictionary = io.read(path)
-	if not loaded.get("ok", false):
-		return {"ok": false, "error": _error("SAVE_READ_FAILED", path, str(loaded.get("error", "")))}
-	var marker := _parse_marker(str(loaded.get("value", "")), side)
+func _inspect_side(side: String) -> Dictionary:
+	var marker_path := _marker_path(side)
+	if not io.exists(marker_path):
+		return {"side": side, "state": "empty"}
+	var marker_read: Dictionary = io.read(marker_path)
+	if not marker_read.get("ok", false):
+		return {"side": side, "state": "marker_read_failed",
+			"error": _error("SAVE_READ_FAILED", marker_path, str(marker_read.get("error", "")))}
+	var marker := _parse_marker(str(marker_read.get("value", "")), side)
 	if marker.is_empty():
-		return {"ok": false, "error": _error("SAVE_CORRUPT", path, "invalid commit marker")}
-	return {"ok": true, "marker": marker}
+		return {"side": side, "state": "corrupt_marker",
+			"error": _error("SAVE_CORRUPT", marker_path, "invalid commit marker")}
+	var snapshot_path := _snapshot_path(side)
+	var snapshot_read: Dictionary = io.read(snapshot_path)
+	if not snapshot_read.get("ok", false):
+		return {"side": side, "state": "snapshot_read_failed", "marker": marker,
+			"error": _error("SAVE_READ_FAILED", snapshot_path, str(snapshot_read.get("error", "")))}
+	var raw := str(snapshot_read.get("value", ""))
+	if raw.length() != int(marker.length) or SaveCodec.sha256(raw) != str(marker.checksum):
+		return {"side": side, "state": "corrupt_snapshot", "marker": marker,
+			"error": _error("SAVE_CORRUPT", snapshot_path, "snapshot hash or length mismatch")}
+	var parsed = JSON.parse_string(raw)
+	if typeof(parsed) != TYPE_DICTIONARY:
+		return {"side": side, "state": "corrupt_snapshot", "marker": marker,
+			"error": _error("SAVE_CORRUPT", snapshot_path, "snapshot is not a JSON object")}
+	if int(parsed.get("generation", -1)) != int(marker.generation):
+		return {"side": side, "state": "corrupt_snapshot", "marker": marker,
+			"error": _error("SAVE_CORRUPT", snapshot_path, "generation does not match marker")}
+	var verified := SaveCodec.verify(parsed)
+	if not verified.ok:
+		var code := str(verified.error.get("code", "SAVE_CORRUPT"))
+		return {
+			"side": side,
+			"state": "unsupported" if code == "SAVE_UNSUPPORTED" else "corrupt_snapshot",
+			"marker": marker,
+			"error": verified.error,
+		}
+	return {
+		"side": side,
+		"state": "valid",
+		"marker": marker,
+		"payload": verified.value,
+		"content_version": str(parsed.get("content_version", "")),
+		"generation": int(marker.generation),
+	}
 
 
-func _current_marker() -> Dictionary:
-	var left: Dictionary = _read_marker("a")
-	if not left.ok:
-		return left
-	var right: Dictionary = _read_marker("b")
-	if not right.ok:
-		return right
-	var marker_a = left.marker
-	var marker_b = right.marker
-	if marker_a == null and marker_b == null:
-		return {"ok": true, "marker": null}
-	if marker_a != null and marker_b != null and int(marker_a.generation) == int(marker_b.generation):
-		return {"ok": false, "error": _error("SAVE_CORRUPT", "commit", "duplicate commit generation")}
-	if marker_b == null or (marker_a != null and int(marker_a.generation) > int(marker_b.generation)):
-		return {"ok": true, "marker": marker_a}
-	return {"ok": true, "marker": marker_b}
+func _inspect_sides() -> Dictionary:
+	return {"a": _inspect_side("a"), "b": _inspect_side("b")}
+
+
+func _max_marker_generation(inspection: Dictionary) -> int:
+	var maximum := 0
+	for side in ["a", "b"]:
+		var row: Dictionary = inspection[side]
+		var marker = row.get("marker")
+		if typeof(marker) == TYPE_DICTIONARY:
+			maximum = maxi(maximum, int(marker.get("generation", 0)))
+	return maximum
+
+
+func _select_valid(inspection: Dictionary) -> Dictionary:
+	var valid: Array = []
+	var unsupported: Array = []
+	var marker_read_failed: Dictionary = {}
+	var corrupt: Dictionary = {}
+	var snapshot_read_failed: Dictionary = {}
+	for side in ["a", "b"]:
+		var row: Dictionary = inspection[side]
+		match str(row.get("state", "")):
+			"valid":
+				valid.append(row)
+			"unsupported":
+				unsupported.append(row)
+			"marker_read_failed":
+				if marker_read_failed.is_empty():
+					marker_read_failed = row
+			"corrupt_marker", "corrupt_snapshot":
+				if corrupt.is_empty():
+					corrupt = row
+			"snapshot_read_failed":
+				if snapshot_read_failed.is_empty():
+					snapshot_read_failed = row
+	if not marker_read_failed.is_empty():
+		# A failed marker read cannot tell us whether that side is newer.
+		return {"status": "read_failed", "error": marker_read_failed.error}
+	if not valid.is_empty():
+		valid.sort_custom(func(left, right): return int(left.generation) > int(right.generation))
+		if valid.size() > 1 and int(valid[0].generation) == int(valid[1].generation):
+			return {"status": "corrupt", "error": _error("SAVE_CORRUPT", "commit",
+				"duplicate committed generation")}
+		var chosen: Dictionary = valid[0]
+		var unsupported_max := 0
+		var unsupported_error: Dictionary = {}
+		for row in unsupported:
+			var generation := int(row.marker.get("generation", 0))
+			if generation >= unsupported_max:
+				unsupported_max = generation
+				unsupported_error = row.error
+		if not unsupported_error.is_empty() and unsupported_max >= int(chosen.generation):
+			return {"status": "unsupported", "error": unsupported_error}
+		var ignored: Array = []
+		for side in ["a", "b"]:
+			var row: Dictionary = inspection[side]
+			if row.state != "valid" and row.state != "empty":
+				ignored.append({"side": side, "state": row.state})
+		return {
+			"status": "loaded",
+			"side": chosen.side,
+			"generation": int(chosen.generation),
+			"payload": chosen.payload,
+			"content_version": chosen.content_version,
+			"ignored": ignored,
+		}
+	if not unsupported.is_empty():
+		unsupported.sort_custom(func(left, right): return int(left.marker.generation) > int(right.marker.generation))
+		return {"status": "unsupported", "error": unsupported[0].error}
+	if not snapshot_read_failed.is_empty():
+		return {"status": "read_failed", "error": snapshot_read_failed.error}
+	if not corrupt.is_empty():
+		return {"status": "corrupt", "error": corrupt.error}
+	return {"status": "new"}
 
 
 func commit(payload: Dictionary, content_version: String, revision: int) -> Dictionary:
 	if not _ensure_directory():
 		return {"status": "failed", "error": _error("SAVE_WRITE_FAILED", base_dir,
 			"cannot create save directory")}
-	var current: Dictionary = _current_marker()
-	if not current.ok:
-		return {"status": "failed", "error": current.error}
-	var marker = current.marker
-	var side := "b" if marker != null and marker.side == "a" else "a"
-	var generation := int(marker.generation) + 1 if marker != null else 1
+	var inspection := _inspect_sides()
+	for side in ["a", "b"]:
+		if str((inspection[side] as Dictionary).get("state", "")) == "unsupported":
+			return {"status": "failed", "error": inspection[side].error}
+	var selection := _select_valid(inspection)
+	match str(selection.get("status", "")):
+		"unsupported":
+			return {"status": "failed", "error": selection.error}
+		"read_failed":
+			return {"status": "failed", "error": selection.error}
+		"corrupt":
+			return {"status": "failed", "error": selection.error}
+		"loaded", "new":
+			pass
+		_:
+			return {"status": "failed", "error": _error("SAVE_CORRUPT", "save", "unknown save state")}
+	var side := "a"
+	if selection.status == "loaded":
+		side = "b" if str(selection.side) == "a" else "a"
+	var generation := _max_marker_generation(inspection) + 1
+	if generation < 1:
+		generation = 1
 	var envelope := SaveCodec.wrap(payload, content_version, revision, generation)
 	var raw := SaveCodec.encode(envelope)
 	var snapshot_path := _snapshot_path(side)
@@ -152,53 +261,18 @@ func commit(payload: Dictionary, content_version: String, revision: int) -> Dict
 	}
 
 
-func _try_load(marker: Dictionary) -> Dictionary:
-	var side := str(marker.side)
-	var path := _snapshot_path(side)
-	var loaded: Dictionary = io.read(path)
-	if not loaded.get("ok", false):
-		return {"ok": false, "error": _error("SAVE_READ_FAILED", path, str(loaded.get("error", "")))}
-	var raw := str(loaded.get("value", ""))
-	if raw.length() != int(marker.length) or SaveCodec.sha256(raw) != str(marker.checksum):
-		return {"ok": false, "error": _error("SAVE_CORRUPT", path, "snapshot hash or length mismatch")}
-	var parsed = JSON.parse_string(raw)
-	if typeof(parsed) != TYPE_DICTIONARY:
-		return {"ok": false, "error": _error("SAVE_CORRUPT", path, "snapshot is not a JSON object")}
-	if int(parsed.get("generation", -1)) != int(marker.generation):
-		return {"ok": false, "error": _error("SAVE_CORRUPT", path, "generation does not match marker")}
-	var verified := SaveCodec.verify(parsed)
-	if not verified.ok:
-		return {"ok": false, "error": verified.error}
-	return {
-		"ok": true,
-		"status": "loaded",
-		"payload": verified.value,
-		"content_version": str(parsed.get("content_version", "")),
-		"generation": int(marker.generation),
-		"side": side,
-	}
-
-
 func load_latest() -> Dictionary:
-	var current: Dictionary = _current_marker()
-	if not current.ok:
-		return {"status": "corrupt", "error": current.error}
-	var marker = current.marker
-	if marker == null:
-		return {"status": "new"}
-	var primary := _try_load(marker)
-	if primary.ok:
-		return primary
-	# The highest marker is authoritative, but if its snapshot is damaged the
-	# other committed side is still a valid fallback.
-	var other_side := "b" if marker.side == "a" else "a"
-	var other: Dictionary = _read_marker(other_side)
-	if other.ok and other.marker != null:
-		var fallback := _try_load(other.marker)
-		if fallback.ok:
-			fallback["recovered_from"] = marker.side
-			return fallback
-	return {"status": "corrupt", "error": primary.error}
+	var selection := _select_valid(_inspect_sides())
+	match str(selection.get("status", "")):
+		"loaded":
+			return selection
+		"unsupported":
+			return {"status": "unsupported", "error": selection.error}
+		"read_failed":
+			return {"status": "read_failed", "error": selection.error}
+		"corrupt":
+			return {"status": "corrupt", "error": selection.error}
+	return {"status": "new"}
 
 
 func slot_exists() -> bool:

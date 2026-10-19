@@ -1,0 +1,12 @@
+import sys,json,copy
+from pathlib import Path
+sys.path.insert(0,str(Path('godot/tools').resolve()))
+import export_content
+raw=json.loads(Path('godot/content/generated/catalog.json').read_text(encoding='utf8'))
+schema=json.loads(Path('godot/content/content_schema.json').read_text(encoding='utf8'))
+for name in ['empty_addtags_array','empty_rule_unless_object','empty_forbidden_object']:
+ c=copy.deepcopy(raw)
+ if name=='empty_addtags_array': c['collections']['ingredients'][0]['addTags']=[]
+ if name=='empty_rule_unless_object': c['collections']['directRules'][0]['unless']={}
+ if name=='empty_forbidden_object': c['collections']['letters'][0]['requirement']['forbiddenEffects']={}
+ print(name,export_content.validate_catalog(c,schema))

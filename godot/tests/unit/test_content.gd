@@ -20,7 +20,8 @@ func _check(failures: Array[String], condition: bool, message: String) -> void:
 func _sha256(text: String) -> String:
 	var context := HashingContext.new()
 	context.start(HashingContext.HASH_SHA256)
-	context.update(text.to_utf8_buffer())
+	if not text.is_empty():
+		context.update(text.to_utf8_buffer())
 	return context.finish().hex_encode()
 
 
@@ -103,8 +104,9 @@ func run(_tree: SceneTree) -> Array[String]:
 			_check(failures, _sha256(str(letter.get("body", ""))) == str(expected.get("body_sha256", "")),
 				"body text unchanged: %s" % letter_id)
 			var spans: Array = catalog.letter_spans(str(letter_id))
-			_check(failures, spans.size() == int(checks.get("span_counts", {}).get(letter_id, -1)),
-				"span count unchanged: %s" % letter_id)
+			if checks.get("span_counts", {}).has(letter_id):
+				_check(failures, spans.size() == int(checks.get("span_counts", {}).get(letter_id, -1)),
+					"span count unchanged: %s" % letter_id)
 			for span in spans:
 				_check(failures, span.get("wordId", "") in (catalog.indexes["words"] as Dictionary),
 					"span word reference exists: %s/%s" % [letter_id, span.get("spanId", "")])
@@ -132,6 +134,53 @@ func run(_tree: SceneTree) -> Array[String]:
 	_check(failures, not count_result.get("ok", true), "count mismatch is rejected")
 	_check(failures, str(count_result.get("error", {}).get("code", "")) == "CONTENT_COUNT_MISMATCH",
 		"count mismatch error code")
+
+	var bad_profile: Dictionary = catalog.data.duplicate(true)
+	bad_profile["collections"]["words"][0]["attributeProfileId"] = "missing_profile"
+	var profile_loader = CatalogScript.new()
+	var profile_result: Dictionary = profile_loader.load_data(bad_profile)
+	_check(failures, not profile_result.get("ok", true), "missing attribute profile is rejected")
+	_check(failures, str(profile_result.get("error", {}).get("code", "")) == "UNKNOWN_REF",
+		"missing profile error code")
+	_check(failures, str(profile_result.get("error", {}).get("path", "")).contains("attributeProfileId"),
+		"missing profile error path")
+
+	var bad_rule: Dictionary = catalog.data.duplicate(true)
+	bad_rule["collections"]["directRules"][0]["when"][0]["op"] = "unknown_operator"
+	var rule_loader = CatalogScript.new()
+	var rule_result: Dictionary = rule_loader.load_data(bad_rule)
+	_check(failures, not rule_result.get("ok", true), "unknown rule operator is rejected")
+	_check(failures, str(rule_result.get("error", {}).get("code", "")) == "CONTENT_INVALID",
+		"unknown rule operator error code")
+	_check(failures, str(rule_result.get("error", {}).get("path", "")).contains(".op"),
+		"unknown rule operator error path")
+
+	var bad_tags: Dictionary = catalog.data.duplicate(true)
+	bad_tags["collections"]["ingredients"][0]["addTags"] = []
+	var tags_loader = CatalogScript.new()
+	var tags_result: Dictionary = tags_loader.load_data(bad_tags)
+	_check(failures, not tags_result.get("ok", true), "array addTags is rejected")
+	_check(failures, str(tags_result.get("error", {}).get("path", "")).contains(".addTags"),
+		"array addTags error path")
+
+	var bad_unless: Dictionary = catalog.data.duplicate(true)
+	bad_unless["collections"]["directRules"][0]["unless"] = {}
+	var unless_loader = CatalogScript.new()
+	var unless_result: Dictionary = unless_loader.load_data(bad_unless)
+	_check(failures, not unless_result.get("ok", true), "object unless is rejected")
+	_check(failures, str(unless_result.get("error", {}).get("path", "")).contains(".unless"),
+		"object unless error path")
+
+	var bad_forbidden: Dictionary = catalog.data.duplicate(true)
+	for letter in bad_forbidden["collections"]["letters"]:
+		if str(letter.get("kind", "")) == "order":
+			letter["requirement"]["forbiddenEffects"] = {}
+			break
+	var forbidden_loader = CatalogScript.new()
+	var forbidden_result: Dictionary = forbidden_loader.load_data(bad_forbidden)
+	_check(failures, not forbidden_result.get("ok", true), "object forbiddenEffects is rejected")
+	_check(failures, str(forbidden_result.get("error", {}).get("path", "")).contains(".forbiddenEffects"),
+		"object forbiddenEffects error path")
 
 	completed = true
 	return failures

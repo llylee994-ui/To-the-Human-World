@@ -1,6 +1,6 @@
 # P1-B 业务与存档基础对照报告（2026-10-19）
 
-状态：**完成（领域模块、统一命令、独立存档、故障注入与双进程恢复）**。本报告只覆盖 P1-B 基础层；真实信件、订单、商店、日历、三结局、回溯和新手引导不在本批范围。
+状态：**完成（领域模块、统一命令、独立存档、故障注入与双进程恢复）；验收 S01～S04/F02 已修复。** 本报告覆盖 P1-B 基础层；真实信件、订单、商店、日历、三结局、回溯和新手引导不在本批范围。修复明细见 [P1 修复回执](p1-fix-2026-10-19.md)。
 
 ## 1. 交付物
 
@@ -21,8 +21,9 @@ P1 的保存格式是新封装：`format=tthw-godot`、`schema_version=1`、`con
 | 对照项 | Lua 输入/规则 | Godot 输入/规则 | 用例 | 结果 |
 |---|---|---|---:|---|
 | 药效八步计算 | `Potion.Calculate` | `Potion.evaluate` | 120 | PASS |
+| 残留时间语义 | `SampleResidual` / `ValidateResult` | `sample_residual` / `validate_result` | 18 | PASS（严格相等） |
 | 药效结果校验 | `Potion.ValidateResult` | `Potion.validate_result` | 命令/预览断言 | PASS |
-| 残留采样 | `Potion.SampleResidual` | `Potion.sample_residual` | 由 oracle 残留点覆盖 | PASS |
+| 残留采样 | `Potion.SampleResidual` | `Potion.sample_residual` | 18 个采样/修改点 | PASS |
 | 配方草稿 | `RecipeDraft.Validate` | `RecipeDraft.validate` | 8（3 成功、5 错误） | PASS |
 | 词条来源 | `WordToken.PlanCut` 来源校验 | `WordToken.validate_source` / `token_id` | 80（77 有效、3 非法） | PASS |
 | 草稿/词条/预览命令 | `GameState` 事务子集 | `SessionService.execute` | 31 | PASS |
@@ -35,9 +36,9 @@ P1 的保存格式是新封装：`format=tthw-godot`、`schema_version=1`、`con
 - 77 个词条的主词单独计算。
 - 4 种原料的 1 份/2 份、两种原料组合、灰烬草两份副作用路径。
 - 12 个辅助词及相邻辅助词组合，覆盖同标签加成和辅助词叠加。
-- 共 120 个用例、1684 项字段断言。
+- 共 120 个用例、1734 项字段断言。
 
-比较字段：`synthesisVersion`、`contentVersion`、`effects`、`intensityByEffect`、`mods`、`durationHours`、`onsetDelayHours`、`recoveryAfterEndHours`、`residuals`、`stability`、`unstable`、`sideEffects`。字符串、布尔、强度分级和结构精确比较；权重、修正、时间和残留权重使用每字段 `1e-9` 相对容差。
+比较字段：`synthesisVersion`、`contentVersion`、`effects`、`intensityByEffect`、`mods`、`durationHours`、`onsetDelayHours`、`recoveryAfterEndHours`、`residuals`、`stability`、`unstable`、`sideEffects`。字符串、布尔、强度分级和结构精确比较；权重、修正、时间和残留权重使用每字段 `1e-9` 相对容差。残留采样 API 另用 18 个严格用例：已声明点、点两侧、未声明区间、首点前、末点后和修改残留点；时间相等不使用近似。
 
 **浮点说明：** Lua 与 Godot 在同样的双精度运算中可能出现末位差异（例如 `0.05 * 1.15` 的路径），但强度分级仍精确比较，阈值翻转不会被容差掩盖。该容差是明确的逐字段规则，不是全局宽容阈值。
 
@@ -73,33 +74,36 @@ P1 的保存格式是新封装：`format=tthw-godot`、`schema_version=1`、`con
 | `uncertain` | 快照已写，提交标记写入/读回失败 | 锁定会话，要求同槽重读 |
 | `loaded` | 最高有效提交代通过长度/哈希/校验和 | 安装并校验内容版本 |
 | `new` | 没有提交标记 | 创建初态，不读取未提交快照 |
+| `unsupported` | 完整未来版本/未知格式 | 返回 `SAVE_UNSUPPORTED`，锁定，不回退旧侧 |
+| `read_failed` | marker 读失败，无法判定该侧代数 | 返回 `SAVE_READ_FAILED`，锁定 |
 | `corrupt` | 标记/快照损坏且另一侧不可用 | 锁定，保留现场 |
 
-最新提交代损坏时回退另一侧；回退结果会记录 `recovered_from`。封装内容版本不匹配时返回 `CONTENT_VERSION_MISMATCH` 并锁定，不覆盖原档。
+最高提交代损坏时回退另一侧，并在 `ignored` 中记录该侧状态；单侧 marker 截断/缺失不影响另一侧有效提交，marker 读失败保持锁定。未来版本返回 `SAVE_UNSUPPORTED` 并锁定，不覆盖原档；内容版本不匹配返回 `CONTENT_VERSION_MISMATCH`。
 
 ## 4. 测试结果
 
 ```text
 python godot/tools/verify.py --suite foundation
-[GODOT] PASS suite=foundation assertions=2113
+[GODOT] PASS suite=foundation assertions=2235
 [Restart] PASS separate Godot processes preserve revision, token and draft
 
 python godot/tools/verify.py --suite all
-[GODOT] PASS suite=all assertions=2676
+[GODOT] PASS suite=all assertions=2798
 ```
 
 分项：
 
 | 套件 | 断言/结果 |
 |---|---:|
-| content | 198 PASS |
-| potion | 1684 PASS |
+| content | 243 PASS |
+| potion | 1734 PASS |
 | oracle（词条+草稿） | 177 PASS |
 | commands | 31 PASS |
-| faults | 23 PASS |
+| faults | 50 PASS（含 S01～S04） |
+| foundation | 2235 PASS |
 | 双进程 restart | PASS |
 | P0 layout/scenes/drag/readability | 563 PASS |
-| all | 2676 PASS |
+| all | 2798 PASS |
 
 双进程检查由 `godot/tools/restart_check.py` 执行：第一个 Godot 进程写入 `user://p1_process_restart`，退出；第二个进程重新启动并验证 `revision=2`、token 和主词草稿。它不是同进程重建对象的替代。
 
@@ -109,13 +113,13 @@ python godot/tools/verify.py --suite all
 
 | ID | 严重度 | 状态 | 问题 | 下一步 |
 |---|---|---|---|---|
-| P1-B-01 | 中 | 已知规则 | 药效权重/时间/残留使用逐字段 `1e-9` 容差；强度分级精确。 | 保留阈值两侧夹具；公式或内容变化后重跑 potion oracle。 |
+| P1-B-01 | 中 | 已修复 F02 | 残留采样曾用近似时间比较；现改为严格相等，18 个采样/修改点覆盖。计算权重/时间仍保留逐字段 `1e-9` 对照容差，强度分级精确。 | 公式或内容变化后重跑 potion oracle。 |
 | P1-B-02 | 高 | P2 必做 | 草稿暂存顶层 `draft`，Lua 正式状态在 `currentOrder.draft`。 | P2 接订单时迁移字段并定义保存升级路径，不能静默丢草稿。 |
 | P1-B-03 | 高 | P2 必做 | `currentOrder` 只支持 `false`；信件实例、订单、商店、日历、结局、回溯、新手引导未实现。 | 按 P2/P4 任务扩展状态与命令；新手引导已在实施计划 Task 4 中明确。 |
 | P1-B-04 | 中 | P2 必做 | `StateValidator` 只做 P1 子集校验，未深验证非空 `letters`、`orders`、`world.flags`、叙事事件。 | P2 在接受真实首单状态前补齐逐字段校验。 |
 | P1-B-05 | 中 | 开放 | P1 命令未接入 UI；没有 P1 双端包，P0 包仍是 `0.1.3-p0fix`。 | P2 接 UI 后重建双端 debug 包；P6 再冻结正式签名。 |
-| P1-B-06 | 中 | 开放 | 故障注入使用测试 IO 适配器；未覆盖真实磁盘断电/短写和写入中的进程崩溃。 | P2/P5 增加真实文件故障与崩溃恢复证据；保留“不承诺抵抗所有物理磁盘故障”的边界。 |
-| P1-B-07 | 低 | 开放 | `SessionService` 的请求 ID 结果缓存无上限。 | 长会话或 P5 加容量上限/淘汰策略。 |
+| P1-B-06 | 中 | 部分修复 | S01/S03 已用测试 IO 复现并修复；真实磁盘断电/短写和写入中的进程崩溃仍未覆盖。 | P2/P5 增加真实文件故障与崩溃恢复证据；保留“不承诺抵抗所有物理磁盘故障”的边界。 |
+| P1-B-07 | 低 | 部分修复 | S04 已修复 uncertain 结果的永久缓存；请求 ID 缓存本身仍无上限。 | 长会话或 P5 加容量上限/淘汰策略。 |
 | P1-B-08 | 低 | 开放 | `test_layout.gd` 在 `--suite all` 时重写 `p0-layout.json`，造成 P0 证据文件漂移。 | 让证据写入只在 P0 套件执行，或在验收后恢复；当前提交前已手动恢复。 |
 | P1-B-09 | 低 | 待确认 | 快照标记的长度使用字符数而非字节数；内部读写一致，不影响校验。 | 若有外部工具解析标记，改为字节长度并版本化。 |
 | P1-B-10 | 中 | 未验证 | 没有真实 Windows/Android 上的 `user://godot_save` 目录、重启和损坏提示验收。 | P2/T7 在真机记录目录、重启、保存失败提示和恢复流程。 |

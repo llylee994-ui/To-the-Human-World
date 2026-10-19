@@ -1,6 +1,6 @@
 # P1-A 全量内容迁移对照报告（2026-10-19）
 
-状态：**完成（代码、导出、自动对照）**。本报告只覆盖 P1-A 内容层；正式信件实例、订单和 UI 不在本批范围。
+状态：**完成（代码、导出、自动对照）；F01 修复已补入。** 本报告覆盖 P1-A 内容层；正式信件实例、订单和 UI 不在本批范围。修复明细见 [P1 修复回执](p1-fix-2026-10-19.md)。
 
 ## 1. 基线与交付物
 
@@ -41,7 +41,7 @@
 ## 3. 正文与引用对照
 
 - 22 封信全部导出；11 封正式订单信保留 `body`、`requirement`、`cutWordIds`、`reward`、`ratingSetId`、`directRuleSetId`、`followupTemplateId`。
-- 22 封信的 `title` 和 `body` 在导出时计算 SHA-256，运行时 `test_content.gd` 重算并逐封比对；正文没有被改写或重新润色。
+- 22 封信的 `title` 和 `body` 在导出时计算 SHA-256，运行时 `test_content.gd` 重算并逐封比对；其中 11 封订单信有正文和剪词跨度，11 封后续回信正文为空但标题参与哈希；正文没有被改写或重新润色。
 - 11 封订单信的可剪跨度由 Lua `Letter.ParseDefinition` 解析后导出；每个 `cutWordIds` 词定义都必须出现在该信的 span 中，缺失会使导出失败。
 - 11 个必需订单均引用 `kind="order"` 的信件；`release.homeItems` 全部引用家具集合。
 - 三结局 `departure`、`apprentice`、`wish` 的标题和正文均非空。
@@ -65,7 +65,7 @@ python godot/tools/verify.py --suite content
 | 检查 | 结果 |
 |---|---|
 | 导出可重复性 `--check` | PASS |
-| 内容加载/计数/正文哈希/引用 | PASS，198 项断言 |
+| 内容加载/计数/正文哈希/引用 | PASS，243 项断言（含 5 个类型/引用负例） |
 | 全量 Godot 套件中的 content 部分 | PASS，198 项 |
 | 旧 Lua 数据加载与 `ValidateStage1` | PASS |
 
@@ -76,7 +76,7 @@ python godot/tools/verify.py --suite content
 | ID | 严重度 | 状态 | 问题 | 下一步 |
 |---|---|---|---|---|
 | P1-A-01 | 中 | 开放 | `godot/media` 尚未包含 catalog 引用的 4 个愿望装饰资源；P0 媒体快照为 37 个文件。 | P4 拼贴 UI 前运行/扩展 `prepare_media.py --scope all`，并校验内容引用与 Godot 媒体清单一致。 |
-| P1-A-02 | 低 | 已知设计 | 空 Lua 表必须由 `content_schema.json` 显式声明为数组或对象；新字段若在所有数据中为空，导出会失败。 | 保持失败保护；新增空字段时同步更新 schema 并重跑 `--check`。 |
+| P1-A-02 | 低 | 已修复 F01 | 空容器类型与引用/枚举负例曾未闭环；现由导出器显式类型检查、`ContentValidation` 和 5+5 个负例覆盖。 | 新增空字段时同步更新 schema 并重跑 `--check`。 |
 | P1-A-03 | 低 | 已知流程 | 内容仍以 Lua 为权威，修改内容后必须重新导出；目前没有 Git hook 或 CI 强制。 | 构建/提交前统一运行 `verify.py`，其 content/foundation/all 已包含 `--check`。 |
 | P1-A-04 | 低 | 已知边界 | 剪词跨度直接使用 Lua 解析结果，GDScript 没有独立解析器。 | 这是刻意的对照策略；Lua 解析器变化时必须重新导出并重跑内容测试。 |
 | P1-A-05 | 中 | 开放 | 旧 Lua 完整信件表现回归仍有已知失败 `PaperConsistencyTest.lua:58`（旧 `activePanel` 断言）。 | 使用定向内容/信件套件作为 oracle；在 P2 前修复或归档该测试，避免把整包旧回归当作通过。 |

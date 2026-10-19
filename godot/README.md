@@ -48,7 +48,7 @@ python godot/tools/verify.py --suite all
 python godot/tools/build.py --target all --configuration debug --output godot/build/p0
 ```
 
-`verify.py` 的 `content`/`foundation`/`all` 会先执行两个导出工具的 `--check`，内容或 oracle 陈旧时直接失败；`commands`/`foundation`/`all` 还会运行独立的双进程存档恢复检查。P1 总回执见 [P1 基础回执](docs/evidence/p1-foundation-2026-10-19.md)，分批报告见 [P1-A 内容对照](docs/evidence/p1-a-content-report-2026-10-19.md) 与 [P1-B 业务/存档对照](docs/evidence/p1-b-foundation-report-2026-10-19.md)。
+`verify.py` 的 `content`/`foundation`/`all` 会先执行两个导出工具的 `--check`，内容或 oracle 陈旧时直接失败；`commands`/`foundation`/`all` 还会运行独立的双进程存档恢复检查。P1 总回执见 [P1 基础回执](docs/evidence/p1-foundation-2026-10-19.md)，分批报告见 [P1-A 内容对照](docs/evidence/p1-a-content-report-2026-10-19.md)、[P1-B 业务/存档对照](docs/evidence/p1-b-foundation-report-2026-10-19.md) 与 [P1 修复回执](docs/evidence/p1-fix-2026-10-19.md)。
 
 产物：
 

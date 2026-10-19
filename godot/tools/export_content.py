@@ -205,6 +205,30 @@ def as_dict(value, code: str, path: str, errors: list[dict]) -> dict:
     return value
 
 
+def required_dict(container: dict, key: str, path: str, errors: list[dict]) -> dict:
+    value = container.get(key)
+    if not isinstance(value, dict):
+        errors.append({"code": "CONTENT_INVALID", "path": f"{path}.{key}",
+                       "message": "must be an object"})
+        return {}
+    return value
+
+
+def required_list(container: dict, key: str, path: str, errors: list[dict]) -> list:
+    value = container.get(key)
+    if not isinstance(value, list):
+        errors.append({"code": "CONTENT_INVALID", "path": f"{path}.{key}",
+                       "message": "must be an array"})
+        return []
+    return value
+
+
+def optional_list(container: dict, key: str, path: str, errors: list[dict]) -> list:
+    if key not in container:
+        return []
+    return required_list(container, key, path, errors)
+
+
 def is_int(value) -> bool:
     return isinstance(value, int) and not isinstance(value, bool) or (
         isinstance(value, float) and value.is_integer()
@@ -244,9 +268,9 @@ def recipe_refs(recipe: dict, path: str, words: set, ingredients: set, equipment
     if "mainWordId" in recipe:
         require(recipe["mainWordId"] in words, "UNKNOWN_REF", f"{path}.mainWordId",
                 f"unknown word {recipe.get('mainWordId')}", errors)
-    for index, word_id in enumerate(recipe.get("auxWordIds") or []):
+    for index, word_id in enumerate(required_list(recipe, "auxWordIds", path, errors)):
         require(word_id in words, "UNKNOWN_REF", f"{path}.auxWordIds[{index}]", f"unknown word {word_id}", errors)
-    for index, row in enumerate(recipe.get("ingredients") or []):
+    for index, row in enumerate(required_list(recipe, "ingredients", path, errors)):
         if not isinstance(row, dict):
             errors.append({"code": "CONTENT_INVALID", "path": f"{path}.ingredients[{index}]",
                            "message": "ingredient row must be an object"})
@@ -255,6 +279,7 @@ def recipe_refs(recipe: dict, path: str, words: set, ingredients: set, equipment
                 f"unknown ingredient {row.get('ingredientId')}", errors)
         require(is_int(row.get("quantity")) and int(row["quantity"]) > 0, "CONTENT_INVALID",
                 f"{path}.ingredients[{index}].quantity", "quantity must be a positive integer", errors)
+    required_list(recipe, "specialItemIds", path, errors)
     require(recipe.get("equipmentId") in equipment, "UNKNOWN_REF", f"{path}.equipmentId",
             f"unknown equipment {recipe.get('equipmentId')}", errors)
     if letter_ids is not None and "letterId" in recipe:
@@ -313,7 +338,7 @@ def validate_catalog(catalog: dict, schema: dict) -> list[dict]:
                 f"{path}.category", "category must be a non-empty string", errors)
         require(isinstance(word.get("reusable"), bool), "CONTENT_INVALID", f"{path}.reusable",
                 "reusable must be boolean", errors)
-        for effect_id in (word.get("effects") or {}):
+        for effect_id in required_dict(word, "effects", path, errors):
             require(effect_id in effects, "UNKNOWN_REF", f"{path}.effects.{effect_id}",
                     f"unknown effect {effect_id}", errors)
         if word.get("attributeProfileId") is not None:
@@ -322,10 +347,10 @@ def validate_catalog(catalog: dict, schema: dict) -> list[dict]:
 
     for index, ingredient in enumerate(collections.get("ingredients", [])):
         path = f"ingredients[{index}]"
-        for effect_id in (ingredient.get("addTags") or {}):
+        for effect_id in required_dict(ingredient, "addTags", path, errors):
             require(effect_id in effects, "UNKNOWN_REF", f"{path}.addTags.{effect_id}",
                     f"unknown effect {effect_id}", errors)
-        for mod in (ingredient.get("mods") or {}):
+        for mod in required_dict(ingredient, "mods", path, errors):
             require(mod in {"intensity", "duration", "speed", "stability", "sideEffect"}, "CONTENT_INVALID",
                     f"{path}.mods.{mod}", "unknown mod key", errors)
         require(is_int(ingredient.get("price")), "CONTENT_INVALID", f"{path}.price",
@@ -357,7 +382,10 @@ def validate_catalog(catalog: dict, schema: dict) -> list[dict]:
             require(isinstance(letter.get("body"), str) and letter["body"], "CONTENT_INVALID", f"{path}.body",
                     "order letter body must be a non-empty string", errors)
             as_dict(letter.get("requirement"), "CONTENT_INVALID", f"{path}.requirement", errors)
-        for cut_index, word_id in enumerate(letter.get("cutWordIds") or []):
+        cut_word_ids = (required_list(letter, "cutWordIds", path, errors)
+                        if letter.get("kind") == "order"
+                        else optional_list(letter, "cutWordIds", path, errors))
+        for cut_index, word_id in enumerate(cut_word_ids):
             require(word_id in words, "UNKNOWN_REF", f"{path}.cutWordIds[{cut_index}]",
                     f"unknown word {word_id}", errors)
         if letter.get("directRuleSetId"):
@@ -369,24 +397,28 @@ def validate_catalog(catalog: dict, schema: dict) -> list[dict]:
         if letter.get("followupTemplateId"):
             require(letter["followupTemplateId"] in template_ids, "UNKNOWN_REF", f"{path}.followupTemplateId",
                     f"unknown template {letter['followupTemplateId']}", errors)
-        requirement = letter.get("requirement") if letter.get("kind") == "order" else {}
-        if not isinstance(requirement, dict):
-            requirement = {}
-        for effect_id in (requirement.get("tags") or {}):
-            require(effect_id in effects, "UNKNOWN_REF", f"{path}.requirement.tags.{effect_id}",
-                    f"unknown effect {effect_id}", errors)
-        for cond_index, cond in enumerate(requirement.get("conditions") or []):
-            cond_path = f"{path}.requirement.conditions[{cond_index}]"
-            require(isinstance(cond, dict), "CONTENT_INVALID", cond_path, "condition must be an object", errors)
-            require(cond.get("kind") in {"duration", "onset", "workReady", "residualAt", "forbiddenEffect"},
-                    "CONTENT_INVALID", f"{cond_path}.kind", "unknown condition kind", errors)
+        requirement = (as_dict(letter.get("requirement"), "CONTENT_INVALID",
+                               f"{path}.requirement", errors)
+                       if letter.get("kind") == "order" else {})
+        if letter.get("kind") == "order":
+            required_list(requirement, "forbiddenEffects", f"{path}.requirement", errors)
+            for effect_id in required_dict(requirement, "tags", f"{path}.requirement", errors):
+                require(effect_id in effects, "UNKNOWN_REF", f"{path}.requirement.tags.{effect_id}",
+                        f"unknown effect {effect_id}", errors)
+            for cond_index, cond in enumerate(required_list(requirement, "conditions",
+                                                            f"{path}.requirement", errors)):
+                cond_path = f"{path}.requirement.conditions[{cond_index}]"
+                require(isinstance(cond, dict), "CONTENT_INVALID", cond_path,
+                        "condition must be an object", errors)
+                require(cond.get("kind") in {"duration", "onset", "workReady", "residualAt", "forbiddenEffect"},
+                        "CONTENT_INVALID", f"{cond_path}.kind", "unknown condition kind", errors)
 
     for index, template in enumerate(collections.get("followupTemplates", [])):
         path = f"followupTemplates[{index}]"
         require(template.get("letterId") in letters, "UNKNOWN_REF", f"{path}.letterId",
                 f"unknown letter {template.get('letterId')}", errors)
         for field in ("fragmentIds", "baseFragmentIds", "fallbackFragmentIds"):
-            for ref_index, fragment_id in enumerate(template.get(field) or []):
+            for ref_index, fragment_id in enumerate(required_list(template, field, path, errors)):
                 require(fragment_id in fragments, "UNKNOWN_REF", f"{path}.{field}[{ref_index}]",
                         f"unknown fragment {fragment_id}", errors)
 
@@ -395,7 +427,7 @@ def validate_catalog(catalog: dict, schema: dict) -> list[dict]:
         require(fragment.get("templateId") in template_ids, "UNKNOWN_REF", f"{path}.templateId",
                 f"unknown template {fragment.get('templateId')}", errors)
         for field in ("coversFacts", "requiresFacts", "excludesFacts", "overrides"):
-            for ref_index, value in enumerate(fragment.get(field) or []):
+            for ref_index, value in enumerate(required_list(fragment, field, path, errors)):
                 require(isinstance(value, str) and value, "CONTENT_INVALID", f"{path}.{field}[{ref_index}]",
                         "id must be a non-empty string", errors)
         require(isinstance(fragment.get("text"), str) and fragment["text"], "CONTENT_INVALID",
@@ -406,21 +438,21 @@ def validate_catalog(catalog: dict, schema: dict) -> list[dict]:
         require(isinstance(rule.get("ruleSetId"), str) and rule["ruleSetId"], "CONTENT_INVALID",
                 f"{path}.ruleSetId", "ruleSetId must be non-empty", errors)
         for field in ("when", "unless"):
-            for cond_index, cond in enumerate(rule.get(field) or []):
+            for cond_index, cond in enumerate(required_list(rule, field, path, errors)):
                 cond_path = f"{path}.{field}[{cond_index}]"
                 require(isinstance(cond, dict), "CONTENT_INVALID", cond_path, "condition must be an object", errors)
                 require(cond.get("op") in {"eq", "ne", "gte", "lte"}, "CONTENT_INVALID", f"{cond_path}.op",
                         "unknown operator", errors)
                 require(isinstance(cond.get("path"), str) and cond["path"], "CONTENT_INVALID",
                         f"{cond_path}.path", "path must be non-empty", errors)
-        for change_index, change in enumerate(rule.get("changes") or []):
+        for change_index, change in enumerate(required_list(rule, "changes", path, errors)):
             change_path = f"{path}.changes[{change_index}]"
             require(isinstance(change, dict), "CONTENT_INVALID", change_path, "change must be an object", errors)
             require(change.get("op") in {"set", "add"}, "CONTENT_INVALID", f"{change_path}.op",
                     "unknown change operator", errors)
             require(isinstance(change.get("path"), str) and change["path"], "CONTENT_INVALID",
                     f"{change_path}.path", "path must be non-empty", errors)
-        for fact_index, fact in enumerate(rule.get("facts") or []):
+        for fact_index, fact in enumerate(required_list(rule, "facts", path, errors)):
             fact_path = f"{path}.facts[{fact_index}]"
             require(isinstance(fact, dict), "CONTENT_INVALID", fact_path, "fact must be an object", errors)
             require(isinstance(fact.get("id"), str) and fact["id"], "CONTENT_INVALID", f"{fact_path}.id",
@@ -435,7 +467,7 @@ def validate_catalog(catalog: dict, schema: dict) -> list[dict]:
         require(isinstance(rating.get("feedback"), str) and rating["feedback"], "CONTENT_INVALID",
                 f"{path}.feedback", "feedback must be non-empty", errors)
         for field in ("requiresFacts", "excludesFacts"):
-            for ref_index, value in enumerate(rating.get(field) or []):
+            for ref_index, value in enumerate(required_list(rating, field, path, errors)):
                 require(isinstance(value, str) and value, "CONTENT_INVALID", f"{path}.{field}[{ref_index}]",
                         "fact id must be non-empty", errors)
 
@@ -444,10 +476,10 @@ def validate_catalog(catalog: dict, schema: dict) -> list[dict]:
         for field in ("baseDurationHours", "durationHoursPerPoint", "recoveryAfterEndHours"):
             require(isinstance(profile.get(field), (int, float)), "CONTENT_INVALID", f"{path}.{field}",
                     "must be a finite number", errors)
-        for ref_index, row in enumerate(profile.get("speedToDelayHours") or []):
+        for ref_index, row in enumerate(required_list(profile, "speedToDelayHours", path, errors)):
             require(isinstance(row, dict), "CONTENT_INVALID", f"{path}.speedToDelayHours[{ref_index}]",
                     "must be an object", errors)
-        for rule_index, rule in enumerate(profile.get("residualRules") or []):
+        for rule_index, rule in enumerate(required_list(profile, "residualRules", path, errors)):
             rule_path = f"{path}.residualRules[{rule_index}]"
             require(rule.get("effectId") in effects, "UNKNOWN_REF", f"{rule_path}.effectId",
                     f"unknown effect {rule.get('effectId')}", errors)
@@ -458,7 +490,7 @@ def validate_catalog(catalog: dict, schema: dict) -> list[dict]:
     economy = as_dict(stage1.get("initialEconomy"), "CONTENT_INVALID", "stage1.initialEconomy", errors)
     require(is_int(economy.get("currency")) and int(economy["currency"]) >= 0, "CONTENT_INVALID",
             "stage1.initialEconomy.currency", "currency must be a non-negative integer", errors)
-    for ingredient_id in (economy.get("ingredients") or {}):
+    for ingredient_id in required_dict(economy, "ingredients", "stage1.initialEconomy", errors):
         require(ingredient_id in ingredients, "UNKNOWN_REF", f"stage1.initialEconomy.ingredients.{ingredient_id}",
                 f"unknown ingredient {ingredient_id}", errors)
     require(stage1.get("initialEquipmentId") in equipment, "UNKNOWN_REF", "stage1.initialEquipmentId",
@@ -531,7 +563,7 @@ def validate_catalog(catalog: dict, schema: dict) -> list[dict]:
                                          "synthesis.sideEffectRules", errors)):
         require(isinstance(rule, dict), "CONTENT_INVALID", f"synthesis.sideEffectRules[{index}]",
                 "rule must be an object", errors)
-        for effect_id in (rule.get("addTags") or {}):
+        for effect_id in required_dict(rule, "addTags", f"synthesis.sideEffectRules[{index}]", errors):
             require(effect_id in effects, "UNKNOWN_REF", f"synthesis.sideEffectRules[{index}].addTags.{effect_id}",
                     f"unknown effect {effect_id}", errors)
 
@@ -562,7 +594,7 @@ def validate_catalog(catalog: dict, schema: dict) -> list[dict]:
                                             if isinstance(span_map.get(letter_id), dict) else [])
             if isinstance(span, dict)
         }
-        for index, word_id in enumerate(letter.get("cutWordIds") or []):
+        for index, word_id in enumerate(optional_list(letter, "cutWordIds", f"letters.{letter_id}", errors)):
             require(word_id in span_words, "SPAN_MISSING", f"letterSpans.{letter_id}.spans",
                     f"cut word {word_id} is not present in parsed spans", errors)
     for letter_id, parsed in span_map.items():
@@ -626,14 +658,13 @@ def main() -> int:
     text_hashes = {}
     span_counts = {}
     for letter in converted["collections"]["letters"]:
-        if letter.get("kind") != "order":
-            continue
         letter_id = letter["id"]
         text_hashes[letter_id] = {
             "title_sha256": sha256_bytes(str(letter.get("title", "")).encode("utf-8")),
             "body_sha256": sha256_bytes(str(letter.get("body", "")).encode("utf-8")),
         }
-        span_counts[letter_id] = len(converted["letterSpans"].get(letter_id, {}).get("spans", []))
+        if letter.get("kind") == "order":
+            span_counts[letter_id] = len(converted["letterSpans"].get(letter_id, {}).get("spans", []))
     fixture = {
         "schema_version": 1,
         "content_version": converted["contentVersion"],

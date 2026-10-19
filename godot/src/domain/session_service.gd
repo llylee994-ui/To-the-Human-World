@@ -11,6 +11,7 @@ var recovery_locked := false
 var last_error: Dictionary = {}
 var status := "new"
 var results: Dictionary = {}
+var uncertain_requests: Dictionary = {}
 
 
 func _init(content: ContentCatalog, snapshot_store: SnapshotStore = null) -> void:
@@ -29,6 +30,44 @@ func _lock(code: String, path: String, message: String) -> Dictionary:
 	return _fail(code, path, message)
 
 
+func _reconcile_uncertain() -> void:
+	if uncertain_requests.is_empty() or state.is_empty():
+		return
+	var unresolved := false
+	for request_id in uncertain_requests.keys():
+		var meta: Dictionary = uncertain_requests[request_id]
+		var expected := int(meta.get("expected_revision", -1))
+		var actual := int(state.get("revision", 0))
+		if actual == expected:
+			# The save was not committed. Allow the caller to retry the same id.
+			uncertain_requests.erase(request_id)
+			results.erase(request_id)
+			continue
+		if actual < expected:
+			unresolved = true
+			continue
+		var dispatched := CommandRouter.dispatch(state, str(meta.get("command", "")),
+			meta.get("payload", {}), catalog)
+		if dispatched.get("ok", false) and not dispatched.get("changed", false):
+			var success := {
+				"ok": true,
+				"revision": actual,
+				"changed": true,
+				"value": (dispatched.get("value", {}) as Dictionary).duplicate(true),
+				"events": [],
+			}
+			results[request_id] = success
+			uncertain_requests.erase(request_id)
+		else:
+			var failure := DomainResult.fail("RECONCILIATION_REQUIRED", "request_id",
+				"reloaded state does not match the uncertain request")
+			results[request_id] = {"ok": false, "error": failure.error}
+			unresolved = true
+	if not unresolved:
+		recovery_locked = false
+		status = "loaded"
+
+
 func load_or_new() -> Dictionary:
 	var loaded := store.load_latest()
 	match str(loaded.get("status", "")):
@@ -39,7 +78,9 @@ func load_or_new() -> Dictionary:
 			state = initial.value
 			recovery_locked = false
 			status = "new"
-			return {"ok": true, "status": "new", "revision": 0}
+			_reconcile_uncertain()
+			return {"ok": true, "status": "new", "revision": 0,
+				"recovery_locked": recovery_locked}
 		"loaded":
 			if str(loaded.get("content_version", "")) != catalog.content_version():
 				return _lock("CONTENT_VERSION_MISMATCH", "contentVersion",
@@ -51,13 +92,23 @@ func load_or_new() -> Dictionary:
 			state = validated.value
 			recovery_locked = false
 			status = "loaded"
+			_reconcile_uncertain()
 			return {
 				"ok": true,
 				"status": "loaded",
 				"revision": int(state.get("revision", 0)),
 				"generation": int(loaded.get("generation", 0)),
 				"recovered_from": str(loaded.get("recovered_from", "")),
+				"recovery_locked": recovery_locked,
 			}
+		"unsupported":
+			var unsupported: Dictionary = loaded.get("error", {})
+			return _lock("SAVE_UNSUPPORTED", str(unsupported.get("path", "save")),
+				str(unsupported.get("message", "save version is unsupported")))
+		"read_failed":
+			var read_error: Dictionary = loaded.get("error", {})
+			return _lock("SAVE_READ_FAILED", str(read_error.get("path", "save")),
+				str(read_error.get("message", "save could not be read")))
 		"corrupt":
 			var error: Dictionary = loaded.get("error", {})
 			return _lock(str(error.get("code", "SAVE_CORRUPT")), str(error.get("path", "save")),
@@ -131,14 +182,27 @@ func execute(request) -> Dictionary:
 				"value": (dispatched.get("value", {}) as Dictionary).duplicate(true),
 				"events": (dispatched.get("events", []) as Array).duplicate(true),
 			}
+			uncertain_requests.erase(request_id)
 			results[request_id] = success
 			return success.duplicate(true)
 		"uncertain":
+			uncertain_requests[request_id] = {
+				"expected_revision": int(request["expected_revision"]),
+				"command": str(request["command"]),
+				"payload": (request.get("payload", {}) as Dictionary).duplicate(true),
+			}
 			var uncertain := _lock("SAVE_COMMIT_UNCERTAIN", "save",
 				"save result is uncertain; re-read the same slot")
 			results[request_id] = uncertain
 			return uncertain.duplicate(true)
-	var failed := {"ok": false, "error": (committed.get("error", {}) as Dictionary).duplicate(true)}
+	var commit_error: Dictionary = committed.get("error", {})
+	var code := str(commit_error.get("code", "SAVE_WRITE_FAILED"))
+	if code in ["SAVE_UNSUPPORTED", "SAVE_READ_FAILED", "SAVE_CORRUPT", "SAVE_CHECKSUM_MISMATCH"]:
+		var fatal := _lock(code, str(commit_error.get("path", "save")),
+			str(commit_error.get("message", "save cannot be used")))
+		results[request_id] = fatal
+		return fatal.duplicate(true)
+	var failed := {"ok": false, "error": commit_error.duplicate(true)}
 	results[request_id] = failed
 	return failed.duplicate(true)
 

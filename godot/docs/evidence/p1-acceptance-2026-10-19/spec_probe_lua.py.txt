@@ -1,0 +1,15 @@
+import sys,json
+from pathlib import Path
+sys.path.insert(0,str(Path('godot/tools').resolve()))
+import export_content,export_oracle
+lua=export_content.load_lua(Path('.tmp/b1-python').resolve())
+data=export_content.unwrap(lua.eval('require("data.content")'))
+data.Load()
+potion=export_content.unwrap(lua.eval('require("systems.Potion")'))
+raw=json.loads(Path('godot/content/generated/catalog.json').read_text(encoding='utf8'))
+c={k:{r['id']:r for r in v} for k,v in raw['collections'].items()}
+r={'orderId':'oracle','baselineId':'oracle:baseline','contentVersion':raw['contentVersion'],'equipment':c['equipment'][raw['stage1']['initialEquipmentId']],'main':{'tokenId':'main','definition':c['words']['word_candidate_elias_sleep'],'source':{'wordId':'word_candidate_elias_sleep','sourceLetterInstanceId':'letter:letter_pa_01','sourceSpanId':'fixture:main','sourceNpcId':'npc_elias'}},'aux':[],'ingredients':[],'specialItems':[]}
+v=potion.Calculate(export_oracle.to_lua(r,lua),data)['value']
+print('lua sample 10.000001:',export_oracle.result_error(potion.SampleResidual(v,'sleep',10.000001,data)))
+v['residuals'][1]['untilAfterDoseHours']=10.000001
+print('lua mutated validate:',export_oracle.result_error(potion.ValidateResult(v,data)))

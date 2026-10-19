@@ -520,7 +520,7 @@ static func _residual_points(potion: Dictionary, effect_id: String) -> Dictionar
 	for index in points.size():
 		var point: Dictionary = points[index]
 		if float(point["weight"]) < 0.0 or float(point["weight"]) > previous \
-				or not is_equal_approx(float(point["untilAfterDoseHours"]), ending + float(index)):
+				or float(point["untilAfterDoseHours"]) != ending + float(index):
 			return _fail("INVALID_REQUEST", "potion.residuals",
 				"residual points are not continuous or non-increasing")
 		previous = float(point["weight"])
@@ -648,7 +648,7 @@ static func sample_residual(potion: Dictionary, effect_id: String, at_after_dose
 	if at_after_dose_hours > float(points[points.size() - 1]["untilAfterDoseHours"]):
 		return {"ok": true, "value": 0.0}
 	for point in points:
-		if is_equal_approx(at_after_dose_hours, float(point["untilAfterDoseHours"])):
+		if at_after_dose_hours == float(point["untilAfterDoseHours"]):
 			return {"ok": true, "value": float(point["weight"])}
 	return _fail("CONFIG_MISSING", "residuals.%s" % effect_id,
 		"sample time is not a declared point", {"atAfterDoseHours": at_after_dose_hours})

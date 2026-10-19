@@ -1,0 +1,21 @@
+extends SceneTree
+func _initialize():
+ var raw: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://content/generated/catalog.json"))
+ for label in ["bad_ref", "bad_enum", "bad_empty_type"]:
+  var bad: Dictionary = raw.duplicate(true)
+  if label == "bad_ref": bad["collections"]["words"][0]["attributeProfileId"] = "missing_profile"
+  if label == "bad_enum": bad["collections"]["directRules"][0]["when"][0]["op"] = "unknown_operator"
+  if label == "bad_empty_type": bad["collections"]["ingredients"][0]["addTags"] = []
+  var cc := ContentCatalog.new()
+  print(label, " ", cc.load_data(bad).get("ok"))
+ var catalog := ContentCatalog.new()
+ catalog.load_data(raw)
+ var maker = load("res://tests/parity/test_potion.gd").new()
+ var resolved: Dictionary = maker._build_resolved({"mainWordId":"word_candidate_elias_sleep","auxWordIds":[],"ingredients":[],"equipmentId":catalog.stage1()["initialEquipmentId"]}, catalog)
+ var potion: Dictionary = Potion.evaluate(resolved, catalog)["value"]
+ var first: Dictionary = potion["residuals"][0]
+ var time: float = first["untilAfterDoseHours"]
+ print("residual_near ", JSON.stringify({"at":time+0.000001,"point":first,"actual":Potion.sample_residual(potion, first["effectId"], time+0.000001,catalog)}))
+ potion["residuals"][0]["untilAfterDoseHours"] = time + 0.000001
+ print("altered_residual_valid ", JSON.stringify(Potion.validate_result(potion,catalog).get("ok")))
+ quit()

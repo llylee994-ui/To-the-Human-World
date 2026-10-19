@@ -151,5 +151,48 @@ func run(_tree: SceneTree) -> Array[String]:
 					_number_text(actual.get(key)), _number_text(wanted.get(key))])
 		_check(failures, (actual.get("trace", []) as Array).size() == 8,
 			"potion trace has eight steps: %s" % case_id)
+
+	var residual_cases = oracle.get("residual_cases", {})
+	_check(failures, typeof(residual_cases) == TYPE_DICTIONARY, "residual oracle exists")
+	if typeof(residual_cases) == TYPE_DICTIONARY:
+		var residual_resolved := _build_resolved(residual_cases["recipe"], catalog)
+		var residual_result := Potion.evaluate(residual_resolved, catalog)
+		_check(failures, residual_result.get("ok", false), "residual base potion evaluates")
+		if residual_result.get("ok", false):
+			var residual_potion: Dictionary = residual_result["value"]
+			var effect_id := str(residual_cases.get("effect_id", "sleep"))
+			for sample in residual_cases.get("samples", []):
+				var sample_id := str(sample.get("id", ""))
+				var expected: Dictionary = sample["expected"]
+				var sampled := Potion.sample_residual(residual_potion, effect_id,
+					float(sample.get("at", 0.0)), catalog)
+				_check(failures, bool(sampled.get("ok", false)) == bool(expected.get("ok", false)),
+					"residual sample ok mismatch: %s" % sample_id)
+				if expected.get("ok", false):
+					if sampled.get("ok", false):
+						_check(failures, _approx_equal(sampled.get("value"), expected.get("value")),
+							"residual sample value mismatch: %s" % sample_id)
+				elif not sampled.get("ok", false):
+					_check(failures, str(sampled["error"].get("code", "")) == str(expected["error"].get("code", "")),
+						"residual sample error mismatch: %s" % sample_id)
+					_check(failures, str(sampled["error"].get("path", "")) == str(expected["error"].get("path", "")),
+						"residual sample path mismatch: %s" % sample_id)
+			var modified: Dictionary = residual_potion.duplicate(true)
+			var residuals: Array = modified["residuals"]
+			for index in residuals.size():
+				if str(residuals[index].get("effectId", "")) == effect_id:
+					residuals[index]["untilAfterDoseHours"] = float(residuals[index]["untilAfterDoseHours"]) + 0.000001
+					break
+			var modified_result := Potion.validate_result(modified, catalog)
+			var modified_expected: Dictionary = residual_cases.get("modified_expected", {})
+			_check(failures, bool(modified_result.get("ok", false)) == bool(modified_expected.get("ok", false)),
+				"modified residual point is rejected")
+			if not modified_expected.get("ok", false) and not modified_result.get("ok", false):
+				_check(failures, str(modified_result["error"].get("code", ""))
+					== str(modified_expected["error"].get("code", "")),
+					"modified residual error code")
+				_check(failures, str(modified_result["error"].get("path", ""))
+					== str(modified_expected["error"].get("path", "")),
+					"modified residual error path")
 	completed = true
 	return failures
