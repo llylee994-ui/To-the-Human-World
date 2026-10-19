@@ -1,6 +1,6 @@
 # 《寄往人间》Godot 完整迁移实施计划
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking. 执行状态（2026-10-19）：P0/Task 1、P1-A/Task 2、P1-B/Task 3 已执行；P2/Task 4 及以后未开始。P1 证据见 [P1 基础回执](../../../godot/docs/evidence/p1-foundation-2026-10-19.md)。不自动派发子代理。
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking. 执行状态（2026-10-19）：P0/Task 1、P1-A/Task 2、P1-B/Task 3 已执行；P2/Task 4 及以后未开始。P1 证据见 [P1 基础回执](../../../godot/docs/evidence/p1-foundation-2026-10-19.md)、[P1-A 对照报告](../../../godot/docs/evidence/p1-a-content-report-2026-10-19.md) 与 [P1-B 对照报告](../../../godot/docs/evidence/p1-b-foundation-report-2026-10-19.md)。用户已确认新手引导纳入 P2 Task 4。不自动派发子代理。
 
 **Goal:** 将当前普通发行内容迁移为可独立离线运行的 Android 与 Windows Godot 正式版本。
 

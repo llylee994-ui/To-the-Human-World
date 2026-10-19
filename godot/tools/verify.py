@@ -66,6 +66,14 @@ def main() -> int:
                         "--script", "res://tests/run_tests.gd", "--", f"--suite={args.suite}"],
                        f"tests:{args.suite}")
     logs.append(output)
+    if code == 0 and args.suite in {"commands", "foundation", "all"}:
+        restart_code, restart_output = run(
+            [sys.executable, str(PROJECT / "tools" / "restart_check.py"), "--godot", str(binary)],
+            "restart:separate-process",
+        )
+        logs.append(restart_output)
+        if restart_code != 0:
+            code = restart_code
     p0_suites = {"layout", "scenes", "drag", "readability"}
     evidence = PROJECT / "docs" / "evidence" / ("p0-verify.txt" if args.suite in p0_suites else "p1-verify.txt")
     evidence.parent.mkdir(parents=True, exist_ok=True)
