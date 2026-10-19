@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/presentation/word_slip.gd" id="1_slip"]
+
+[node name="WordSlip" type="Control"]
+custom_minimum_size = Vector2(120, 34)
+offset_right = 240.0
+offset_bottom = 36.0
+script = ExtResource("1_slip")

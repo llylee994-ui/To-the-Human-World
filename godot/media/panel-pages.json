@@ -1,0 +1,310 @@
+{
+  "sourceSha256": "ee8c6537eedb03436d5fc885ebfce620d6c8535710f2c1a44a73c6aa28121eea",
+  "pages": {
+    "panel-journal": {
+      "layers": [
+        {
+          "path": "image/界面_桌布_透明_v01.png",
+          "height": 1075.6338820145297,
+          "rotation": 0,
+          "id": "0ee98499-00a2-40cb-9a65-f15f211a784a",
+          "y": 523.0291604654573,
+          "width": 806.7254115108972,
+          "assetId": "panel-asset-cloth",
+          "x": 387.28090996950186
+        },
+        {
+          "path": "image/界面_记录书_左半厚书_透明_v01.png",
+          "height": 891.2016510160707,
+          "rotation": 0,
+          "id": "journal-book",
+          "y": 553.171864000594,
+          "width": 594.1344340107138,
+          "assetId": "panel-asset-book",
+          "x": 319.4183956488213
+        },
+        {
+          "path": "image/界面_记录书_索引纸签_透明_v01.png",
+          "height": 44.09963512504287,
+          "rotation": 0,
+          "id": "journal-tab-0",
+          "y": 204.45893403898273,
+          "width": 105.34912835426908,
+          "assetId": "panel-asset-tab",
+          "x": 58.19404932398815
+        },
+        {
+          "path": "image/界面_记录书_索引纸签_透明_v01.png",
+          "height": 42.46224380109539,
+          "rotation": 0,
+          "id": "journal-tab-1",
+          "y": 252.0846685770041,
+          "width": 101.43758241372788,
+          "assetId": "panel-asset-tab",
+          "x": 55.939296103952714
+        },
+        {
+          "path": "image/界面_记录书_索引纸签_透明_v01.png",
+          "height": 41.24187996341399,
+          "rotation": 0,
+          "id": "journal-tab-2",
+          "y": 304.74376933530664,
+          "width": 98.52226880148899,
+          "assetId": "panel-asset-tab",
+          "x": 58.691130454901455
+        },
+        {
+          "path": "image/界面_记录书_索引纸签_透明_v01.png",
+          "height": 40.243081806504804,
+          "rotation": 0,
+          "id": "journal-tab-3",
+          "y": 358.0689741992533,
+          "width": 96.13625098220592,
+          "assetId": "panel-asset-tab",
+          "x": 57.54200260891926
+        },
+        {
+          "path": "image/界面_记录书_索引纸签_透明_v01.png",
+          "height": 40.30733910617176,
+          "rotation": 0,
+          "id": "journal-tab-4",
+          "y": 409.1185394203784,
+          "width": 96.28975453141031,
+          "assetId": "panel-asset-tab",
+          "x": 54.85566081866418
+        },
+        {
+          "path": "image/界面_记录书_索引纸签_透明_v01.png",
+          "height": 40.31121324808977,
+          "rotation": 0,
+          "id": "journal-tab-5",
+          "y": 466.08759449277545,
+          "width": 96.29900942599224,
+          "assetId": "panel-asset-tab",
+          "x": 56.06073547939759
+        },
+        {
+          "path": "image/界面_记录书_索引纸签_透明_v01.png",
+          "height": 41.70523045995682,
+          "rotation": 0,
+          "id": "journal-tab-6",
+          "y": 523.736146162347,
+          "width": 99.6291616543413,
+          "assetId": "panel-asset-tab",
+          "x": 50.99879176522917
+        },
+        {
+          "path": "image/界面_记录书_索引纸签_透明_v01.png",
+          "height": 41.80541404414877,
+          "rotation": 0,
+          "id": "journal-tab-7",
+          "y": 576.7640659290824,
+          "width": 99.86848910546651,
+          "assetId": "panel-asset-tab",
+          "x": 53.926136842149134
+        },
+        {
+          "path": "image/界面_记录书_索引纸签_透明_v01.png",
+          "height": 42.11840531414319,
+          "rotation": 0,
+          "id": "journal-tab-8",
+          "y": 637.4496108077776,
+          "width": 100.6161904726754,
+          "assetId": "panel-asset-tab",
+          "x": 48.68565278353431
+        },
+        {
+          "path": "image/界面_记录书_索引纸签_透明_v01.png",
+          "height": 42.964760120540426,
+          "rotation": 0,
+          "id": "journal-tab-9",
+          "y": 700.6755770418509,
+          "width": 102.63803806573544,
+          "assetId": "panel-asset-tab",
+          "x": 48.24907970708459
+        },
+        {
+          "path": "image/界面_记录书_索引纸签_透明_v01.png",
+          "height": 39.929198623421314,
+          "rotation": 0,
+          "id": "journal-tab-10",
+          "y": 771.4566434273088,
+          "width": 95.38641893372869,
+          "assetId": "panel-asset-tab",
+          "x": 47.43037326465992
+        },
+        {
+          "path": "image/界面_记录书_麦穗干草_透明_v01.png",
+          "height": 424.07898784273345,
+          "rotation": 319.8463623842007,
+          "id": "journal-grass",
+          "y": 936.4320031650758,
+          "width": 282.71932522848897,
+          "assetId": "panel-asset-grass",
+          "x": 402.85937641795476
+        },
+        {
+          "path": "image/界面_记录书_大朵干花_透明_v01.png",
+          "height": 277.7045833994763,
+          "rotation": 338.9684613734289,
+          "id": "journal-flowers",
+          "y": 887.4627077920512,
+          "width": 185.1363889329842,
+          "assetId": "panel-asset-flowers",
+          "x": 464.35470402212934
+        },
+        {
+          "path": "image/界面_干花束_透明_v01.png",
+          "height": 400.90287874347985,
+          "rotation": 334.277956238923,
+          "id": "c70e1f7b-d33e-4287-8473-ad0ab16957a1",
+          "y": 176.88672106953595,
+          "width": 267.2685858289866,
+          "assetId": "panel-asset-tray-flowers",
+          "x": 473.17095098102004
+        }
+      ],
+      "height": 1040,
+      "revision": 132,
+      "width": 520
+    },
+    "panel-tray": {
+      "layers": [
+        {
+          "path": "image/界面_桌布_透明_v01.png",
+          "height": 1048.8981140771552,
+          "rotation": 0,
+          "id": "9575e618-4ce8-427d-b406-2067bc6b7609",
+          "y": 516.6950124765284,
+          "width": 786.6735855578664,
+          "assetId": "panel-asset-cloth",
+          "x": 128.38019215598172
+        },
+        {
+          "path": "image/界面_纸条_折痕_透明_v01.png",
+          "height": 42,
+          "rotation": 180.08981043191284,
+          "id": "tray-category-0",
+          "y": 177.280754331955,
+          "width": 126,
+          "assetId": "panel-asset-slip",
+          "x": 448.34254473368117
+        },
+        {
+          "path": "image/界面_纸条_折痕_透明_v01.png",
+          "height": 42,
+          "rotation": 179.93619162027107,
+          "id": "tray-category-1",
+          "y": 330.2630881259337,
+          "width": 126,
+          "assetId": "panel-asset-slip",
+          "x": 446.9736786382765
+        },
+        {
+          "path": "image/界面_纸条_折痕_透明_v01.png",
+          "height": 42,
+          "rotation": 179.01752255248834,
+          "id": "tray-category-2",
+          "y": 255.8772325097458,
+          "width": 126,
+          "assetId": "panel-asset-slip",
+          "x": 449.9910557304089
+        },
+        {
+          "path": "image/界面_木托盘_透明_v01.png",
+          "height": 910.0749411124523,
+          "rotation": 0,
+          "id": "tray-frame",
+          "y": 533.5991469915211,
+          "width": 682.5562058343393,
+          "assetId": "panel-asset-tray",
+          "x": 114.58553525052423
+        },
+        {
+          "path": "image/界面_纸条_折痕_透明_v01.png",
+          "height": 54,
+          "rotation": 0,
+          "id": "tray-slip-0",
+          "y": 185.78954282559653,
+          "width": 162,
+          "assetId": "panel-asset-slip",
+          "x": 299.93887108432875
+        },
+        {
+          "path": "image/界面_纸条_折痕_透明_v01.png",
+          "height": 54,
+          "rotation": 0,
+          "id": "tray-slip-1",
+          "y": 181.5789523877594,
+          "width": 162,
+          "assetId": "panel-asset-slip",
+          "x": 91.4213815158821
+        },
+        {
+          "path": "image/界面_纸条_折痕_透明_v01.png",
+          "height": 54,
+          "rotation": 0,
+          "id": "tray-slip-2",
+          "y": 269.1578357596163,
+          "width": 162,
+          "assetId": "panel-asset-slip",
+          "x": 298.44749314768944
+        },
+        {
+          "path": "image/界面_纸条_折痕_透明_v01.png",
+          "height": 54,
+          "rotation": 0,
+          "id": "tray-slip-3",
+          "y": 350.56138493722005,
+          "width": 162,
+          "assetId": "panel-asset-slip",
+          "x": 88.48244245873241
+        },
+        {
+          "path": "image/界面_纸条_折痕_透明_v01.png",
+          "height": 54,
+          "rotation": 0,
+          "id": "tray-slip-4",
+          "y": 271.12277225862545,
+          "width": 162,
+          "assetId": "panel-asset-slip",
+          "x": 92.30749106745577
+        },
+        {
+          "path": "image/界面_纸条_折痕_透明_v01.png",
+          "height": 54,
+          "rotation": 0,
+          "id": "tray-slip-5",
+          "y": 358.1403349407939,
+          "width": 162,
+          "assetId": "panel-asset-slip",
+          "x": 304.6666786660227
+        },
+        {
+          "path": "image/界面_干花束_透明_v01.png",
+          "height": 398.6612223168012,
+          "rotation": 97.09276986345475,
+          "id": "tray-botanical",
+          "y": 854.1727825513411,
+          "width": 265.7741482112008,
+          "assetId": "panel-asset-tray-flowers",
+          "x": 294.5892319444141
+        },
+        {
+          "path": "image/界面_记录书_大朵干花_透明_v01.png",
+          "height": 272.4899614847434,
+          "rotation": 88.8526663935283,
+          "id": "816ec71e-1b65-4153-b1c6-d81dff6ceeac",
+          "y": 901.786835716585,
+          "width": 181.6599743231623,
+          "assetId": "panel-asset-flowers",
+          "x": 126.78364565763854
+        }
+      ],
+      "height": 1040,
+      "revision": 160,
+      "width": 520
+    }
+  },
+  "sourceRevision": 292
+}

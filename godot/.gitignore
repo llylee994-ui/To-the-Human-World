@@ -1,0 +1,10 @@
+.godot/
+build/
+tests/evidence/
+*.tmp
+
+# The repository root ignores Maker dev-kit helpers by name. Re-include the
+# Godot project's own agent notes and tools.
+!AGENTS.md
+!tools/
+!tools/**

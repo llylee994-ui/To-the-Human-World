@@ -1,0 +1,155 @@
+{
+  "files": [
+    {
+      "source": "assets/audio/bgm/hearth-warmth-loop.wav",
+      "target": "media/audio/bgm/hearth-warmth-loop.wav",
+      "bytes": 14112044,
+      "sha256": "29814323594388cbb660e34c4a02c26f719cf5daf1788459ff9559ebf51614d9"
+    },
+    {
+      "source": "assets/fonts/HarborHand-Medium.ttf",
+      "target": "media/fonts/HarborHand-Medium.ttf",
+      "bytes": 3439144,
+      "sha256": "d7d61f959be776439bdb6a2d63b2834f21e7a4f72054ac404e3e741bdcd324a0"
+    },
+    {
+      "source": "assets/fonts/HarborHand-Regular.ttf",
+      "target": "media/fonts/HarborHand-Regular.ttf",
+      "bytes": 3433320,
+      "sha256": "a714df1d6540239ae8be455ef9da854157000e19e27919074118ae5e053c6e01"
+    },
+    {
+      "source": "assets/image/brew-topdown/cauldron-v01.png",
+      "target": "media/image/brew-topdown/cauldron-v01.png",
+      "bytes": 1930477,
+      "sha256": "c3b18cea2eaa1f61ad6c8c02b32785e46c468e6093d444a965ef1c8466ee584b"
+    },
+    {
+      "source": "assets/image/brew-topdown/four-cell-tray-v01.png",
+      "target": "media/image/brew-topdown/four-cell-tray-v01.png",
+      "bytes": 1850335,
+      "sha256": "5f4590c962b7b016cb1f2db26cf923714c327375c45f84f0eee332cb16c73ffa"
+    },
+    {
+      "source": "assets/image/home-entry-r3/amber-jar.png",
+      "target": "media/image/home-entry-r3/amber-jar.png",
+      "bytes": 2051079,
+      "sha256": "928fc9dc1ca1ce88d8ff94c2dc28feaaa9dc47f2d0dd14736c4ac651b67f9608"
+    },
+    {
+      "source": "assets/image/home-entry-r3/case-file.png",
+      "target": "media/image/home-entry-r3/case-file.png",
+      "bytes": 2066553,
+      "sha256": "462e30fb4b932e8e181c559024206a19a35ebe11ba37a89e19d8b78246fa4aeb"
+    },
+    {
+      "source": "assets/image/home-entry-r3/glass-bottle.png",
+      "target": "media/image/home-entry-r3/glass-bottle.png",
+      "bytes": 1898458,
+      "sha256": "69d141d0e010657d522daa1b573a908d3b90e5898a94236865bfa20243a5ed13"
+    },
+    {
+      "source": "assets/image/home-entry-r3/herb-jar.png",
+      "target": "media/image/home-entry-r3/herb-jar.png",
+      "bytes": 1850779,
+      "sha256": "2790313f49b588609ace365632bf8c2aeb7214638de4db8057162809f4961f6a"
+    },
+    {
+      "source": "assets/image/home-entry-r3/letter-paper.png",
+      "target": "media/image/home-entry-r3/letter-paper.png",
+      "bytes": 2035492,
+      "sha256": "9c0096340142d3ffc9825db281a8f1f09c1e1f66844037be88ae3a400ac35fed"
+    },
+    {
+      "source": "assets/image/home-entry-r3/lily-vase.png",
+      "target": "media/image/home-entry-r3/lily-vase.png",
+      "bytes": 1206424,
+      "sha256": "726655e971433a392fc243f3163deb3b2cd9aff1cf7064ceed5b176ecb9899c2"
+    },
+    {
+      "source": "assets/image/home-entry-r3/net.png",
+      "target": "media/image/home-entry-r3/net.png",
+      "bytes": 1433453,
+      "sha256": "88e554c6abbe273e065b7c7f5c6944c0a73d08e4c4655185770ecececfa036f7"
+    },
+    {
+      "source": "assets/image/home-entry-r3/stove.png",
+      "target": "media/image/home-entry-r3/stove.png",
+      "bytes": 958008,
+      "sha256": "a09c379fe6ac0946076c2e0284afad32a57f60831a425560b2259830d0292898"
+    },
+    {
+      "source": "assets/image/home-entry-r3/tray.png",
+      "target": "media/image/home-entry-r3/tray.png",
+      "bytes": 1528181,
+      "sha256": "e9d0c21d5315de6083ee83c04311334d939166a20ad59f9d635cd33090f01600"
+    },
+    {
+      "source": "assets/image/misty-harbor-r1/dock-foreground.png",
+      "target": "media/image/misty-harbor-r1/dock-foreground.png",
+      "bytes": 548911,
+      "sha256": "a43cb9d75d69416be570e4f176f86a22977f1d929203251247440e71f613dea4"
+    },
+    {
+      "source": "assets/image/misty-harbor-r1/home-foreground.png",
+      "target": "media/image/misty-harbor-r1/home-foreground.png",
+      "bytes": 2918216,
+      "sha256": "52d529c420633852842eb77b5bb6b608aa3e5e6faf5ef63625a1c69b089b539a"
+    },
+    {
+      "source": "assets/image/misty-harbor-r1/merchant-ship-muted.png",
+      "target": "media/image/misty-harbor-r1/merchant-ship-muted.png",
+      "bytes": 1035489,
+      "sha256": "13220a898ea397b9381194d39573bc61f49e9b72929e01f6e20b56b4fba0d493"
+    },
+    {
+      "source": "assets/image/misty-harbor-r1/sea-calm.png",
+      "target": "media/image/misty-harbor-r1/sea-calm.png",
+      "bytes": 2383298,
+      "sha256": "3b83aa68c34c5d00d3c85dfaf15259482f4c5930098687e4a7e4816c55ce7b18"
+    },
+    {
+      "source": "assets/image/title-screen-r1/shop-doorway-soft.png",
+      "target": "media/image/title-screen-r1/shop-doorway-soft.png",
+      "bytes": 1921794,
+      "sha256": "c3f31a2b93307bef651e67370c0609ef0409eb67e6fb2dc62f8493307ac156fa"
+    },
+    {
+      "source": "assets/image/wish-collage-r1/soft-scrollwork-letter-paper.png",
+      "target": "media/image/wish-collage-r1/soft-scrollwork-letter-paper.png",
+      "bytes": 2003299,
+      "sha256": "309facaa5692436fce9b80df09f639a68035b1d7fc7019d48383939cb9497e35"
+    },
+    {
+      "source": "assets/image/原料_夜露_透明_v01_20261013032602.png",
+      "target": "media/image/原料_夜露_透明_v01_20261013032602.png",
+      "bytes": 1368148,
+      "sha256": "c4f57b62f3cce8adce730a1da62af3b508349aac74b75565d3db70441527a719"
+    },
+    {
+      "source": "assets/image/原料_干花瓣_透明_v01_20261013032602.png",
+      "target": "media/image/原料_干花瓣_透明_v01_20261013032602.png",
+      "bytes": 1880321,
+      "sha256": "f8243e592df7de22c966d38910bf3062047133c24fe2648fe051cd2ba498cced"
+    },
+    {
+      "source": "assets/image/原料_海盐_透明_v01_20261013032602.png",
+      "target": "media/image/原料_海盐_透明_v01_20261013032602.png",
+      "bytes": 1542756,
+      "sha256": "3973b84256881cf83fbd7400e5cd0678fc050f83f473d3ab3ad9f2dae1241a33"
+    },
+    {
+      "source": "assets/image/原料_灰烬草_透明_v01_20261013032602.png",
+      "target": "media/image/原料_灰烬草_透明_v01_20261013032602.png",
+      "bytes": 1479476,
+      "sha256": "26ed3fe6e2524e429ca63680a7c43ff6f555d50abf048d86f3e5148a58d4020f"
+    },
+    {
+      "source": "docs/宣传素材/2026-10-18/11-游戏图标-柔金浅青-v02.png",
+      "target": "media/icon.png",
+      "bytes": 2678575,
+      "sha256": "82d586cfe61716e3f028870268a60d9038e24512d0bc6bc8e532b910a4175c92"
+    }
+  ],
+  "bgm": "media/audio/bgm/hearth-warmth-loop.wav"
+}

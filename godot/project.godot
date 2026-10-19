@@ -1,0 +1,35 @@
+; Engine configuration file.
+; P0 visual baseline for the Godot migration.
+; Keep this file free of machine-specific paths; export presets hold tool paths.
+
+config_version=5
+
+[application]
+
+config/name="寄往人间 · P0 视觉基线"
+run/main_scene="res://scenes/boot.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="ToTheHumanWorld-Godot-P0"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+config/icon="res://media/icon.png"
+
+[autoload]
+
+P0Capture="*res://src/app/p0_capture.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=0
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.18, 0.12, 0.09, 1)

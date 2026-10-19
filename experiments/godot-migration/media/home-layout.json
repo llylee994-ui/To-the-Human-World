@@ -1,0 +1,374 @@
+{
+  "projectRevision": 201,
+  "width": 1920,
+  "height": 1080,
+  "version": "C-HOME-MISTY-HARBOR-20261012-r1",
+  "sourcePageId": "2a197837-6693-4a4b-b8fb-140c5019c7d2",
+  "layers": [
+    {
+      "name": "雾港主页_透明前景_v01.png",
+      "id": "840c676b-bc62-40f0-8153-117123dfa3fe",
+      "visible": true,
+      "rotation": 0,
+      "height": 1079.8732355304244,
+      "x": 960.8184920675325,
+      "y": 537.779105777511,
+      "path": "image/misty-harbor-r1/home-foreground.png",
+      "assetId": "04aafbb3-5e8f-4372-ad91-640a9db10e56",
+      "key": "background",
+      "sha256": "52d529c420633852842eb77b5bb6b608aa3e5e6faf5ef63625a1c69b089b539a",
+      "width": 1918.7545694015616
+    },
+    {
+      "name": "H10_词条托盘组合_透明_自动提取_v04.png",
+      "id": "1cab15b8-150f-4cb1-a598-92b066b15596",
+      "visible": true,
+      "rotation": 6.86785997285358,
+      "height": 215.97345687599477,
+      "x": 1074.2737115527548,
+      "y": 650.9998814607056,
+      "path": "image/home-entry-r3/tray.png",
+      "assetId": "d96801af-c2fb-4ae5-83ff-b5c528a3fb04",
+      "key": "tray",
+      "sha256": "e9d0c21d5315de6083ee83c04311334d939166a20ad59f9d635cd33090f01600",
+      "width": 323.22271497343996
+    },
+    {
+      "name": "H06_捞网_透明_自动提取_v02.png",
+      "id": "e9903282-81b4-42c1-b821-b21e88285a50",
+      "visible": true,
+      "rotation": 9.455392604917392,
+      "height": 518.2547062557493,
+      "x": 138.50476312212902,
+      "y": 646.7145713933239,
+      "path": "image/home-entry-r3/net.png",
+      "assetId": "10e6277e-7ba0-4ff5-8451-d915eaf2898b",
+      "key": "net",
+      "sha256": "88e554c6abbe273e065b7c7f5c6944c0a73d08e4c4655185770ecececfa036f7",
+      "width": 345.5031375038329
+    },
+    {
+      "name": "H17_黄色档案袋_透明_自动提取_v08.png",
+      "id": "50888032-4b76-4922-9031-f48d5f8beebc",
+      "visible": true,
+      "rotation": 0.7900324244935746,
+      "height": 257.82299978010656,
+      "x": 1735.4095359260396,
+      "y": 952.4293769316946,
+      "path": "image/home-entry-r3/case-file.png",
+      "assetId": "6aa74f5c-6654-4596-9c51-1b4d33799e4f",
+      "key": "case-file",
+      "sha256": "462e30fb4b932e8e181c559024206a19a35ebe11ba37a89e19d8b78246fa4aeb",
+      "width": 386.7344996701599
+    },
+    {
+      "name": "雾港商船_柔和倒影_v01.png",
+      "id": "e9d3a968-9083-4e05-a38a-30ed70f9f597",
+      "visible": true,
+      "rotation": 0,
+      "height": 198.093987090737,
+      "x": 525.007477472717,
+      "y": 343.6879927742784,
+      "path": "image/misty-harbor-r1/merchant-ship-muted.png",
+      "assetId": "0035d23c-eb18-42a2-a3b3-b1e48f530440",
+      "key": "merchant-ship",
+      "sha256": "13220a898ea397b9381194d39573bc61f49e9b72929e01f6e20b56b4fba0d493",
+      "width": 219.1996383999011
+    },
+    {
+      "name": "信纸.png",
+      "id": "610751d0-87ba-4f40-b613-02092de4f75c",
+      "visible": true,
+      "rotation": 9.75960961564624,
+      "height": 191.89438844537082,
+      "x": 1329.0960205360923,
+      "y": 747.0765473355743,
+      "path": "image/home-entry-r3/letter-paper.png",
+      "assetId": "d219e269-41f1-4380-8d1f-07921f691fee",
+      "key": "letter-paper",
+      "sha256": "9c0096340142d3ffc9825db281a8f1f09c1e1f66844037be88ae3a400ac35fed",
+      "width": 287.8415826680563
+    },
+    {
+      "name": "H29_铃兰花瓶_透明_v02.png",
+      "id": "1a702c90-6af6-43d2-9b94-c8a5548bccc4",
+      "visible": true,
+      "rotation": 355.7122066777552,
+      "height": 166.29645604279673,
+      "x": 1716.2335051493967,
+      "y": 585.7240439656973,
+      "path": "image/home-entry-r3/lily-vase.png",
+      "assetId": "d4a25a1a-f921-4689-9798-145228fd8476",
+      "key": "lily-vase",
+      "sha256": "726655e971433a392fc243f3163deb3b2cd9aff1cf7064ceed5b176ecb9899c2",
+      "width": 155.64629720672252
+    },
+    {
+      "name": "H30_琥珀药草罐_透明_v01.png",
+      "id": "85132c39-bfd0-4266-92d5-dfc803b2b8af",
+      "visible": true,
+      "rotation": 0,
+      "height": 125.60561022204301,
+      "x": 1351.546856015587,
+      "y": 533.2893243412757,
+      "path": "image/home-entry-r3/amber-jar.png",
+      "assetId": "df996388-14df-486b-838f-7856de311058",
+      "key": "amber-jar",
+      "sha256": "928fc9dc1ca1ce88d8ff94c2dc28feaaa9dc47f2d0dd14736c4ac651b67f9608",
+      "width": 116.5373096376559
+    },
+    {
+      "name": "H28_玻璃瓶干药材_透明_v02.png",
+      "id": "2919afb8-252e-425b-86bc-38f50b4e352a",
+      "visible": true,
+      "rotation": 0,
+      "height": 126.23149167445312,
+      "x": 1407.3669072988148,
+      "y": 548.5721899197977,
+      "path": "image/home-entry-r3/herb-jar.png",
+      "assetId": "0cd3caed-6dd9-42da-99a0-96ed9830381f",
+      "key": "herb-jar",
+      "sha256": "2790313f49b588609ace365632bf8c2aeb7214638de4db8057162809f4961f6a",
+      "width": 137.90790465434006
+    },
+    {
+      "name": "H28_玻璃瓶装饰_透明_v01.png",
+      "id": "30ba25d6-75d0-49fa-b018-2a5c49a38ac5",
+      "visible": true,
+      "rotation": 0,
+      "height": 175.6323801981834,
+      "x": 1175.2286882760686,
+      "y": 510.8755067993079,
+      "path": "image/home-entry-r3/glass-bottle.png",
+      "assetId": "2c00d909-2804-4aa0-ab29-9ded402bb37a",
+      "key": "glass-bottle",
+      "sha256": "69d141d0e010657d522daa1b573a908d3b90e5898a94236865bfa20243a5ed13",
+      "width": 117.08825346545562
+    },
+    {
+      "name": "H09_炼药炉_纤巧草药熬制_透明_v05.png",
+      "id": "a70d6969-1cd9-4eae-8d1d-d06615cc4019",
+      "visible": true,
+      "rotation": 0,
+      "height": 329.59488606559296,
+      "x": 1265.541024332558,
+      "y": 498.87606291714553,
+      "path": "image/home-entry-r3/stove.png",
+      "assetId": "a5679f60-64ae-4e50-991b-4452376adf5d",
+      "key": "stove",
+      "sha256": "a09c379fe6ac0946076c2e0284afad32a57f60831a425560b2259830d0292898",
+      "width": 361.23379416037034
+    }
+  ],
+  "pageRevision": 189,
+  "background": "#f5f0e7",
+  "objects": [
+    {
+      "label": "来信抽屉",
+      "id": "home.drawer",
+      "target": "letters",
+      "regions": [
+        {
+          "cy": 0.84,
+          "h": 0.06,
+          "cx": 0.581,
+          "kind": "ellipse",
+          "minTouch": 55,
+          "w": 0.05,
+          "rotation": 0,
+          "keepInsideCanvas": true
+        },
+        {
+          "cy": 0.944,
+          "h": 0.06625,
+          "cx": 0.684,
+          "kind": "ellipse",
+          "minTouch": 55,
+          "w": 0.05625,
+          "rotation": 0,
+          "keepInsideCanvas": true
+        }
+      ],
+      "minTouch": 44,
+      "layer": 1
+    },
+    {
+      "label": "故事记录",
+      "id": "home.journal",
+      "target": "journal",
+      "regions": [
+        {
+          "cy": 0.782,
+          "h": 0.125,
+          "kind": "ellipse",
+          "w": 0.147,
+          "rotation": -12,
+          "cx": 0.809
+        }
+      ],
+      "minTouch": 44,
+      "layer": 1
+    },
+    {
+      "label": "分类词条",
+      "id": "home.tray",
+      "target": "words",
+      "regions": [
+        {
+          "cy": 0.582,
+          "h": 0.32,
+          "kind": "ellipse",
+          "w": 0.6,
+          "rotation": 0,
+          "cx": 0.414
+        }
+      ],
+      "minTouch": 40,
+      "layer": 2
+    },
+    {
+      "label": "拉开词条托盘",
+      "id": "home.trayHandle",
+      "target": "words",
+      "regions": [
+        {
+          "cy": 0.5,
+          "h": 0.42,
+          "kind": "ellipse",
+          "w": 0.24,
+          "rotation": 0,
+          "cx": 0.13
+        }
+      ],
+      "minTouch": 40,
+      "layer": 2
+    },
+    {
+      "label": "海边捕捞",
+      "id": "home.net",
+      "target": "seaside",
+      "regions": [
+        {
+          "cy": 0.126,
+          "h": 0.239,
+          "kind": "ellipse",
+          "w": 0.372,
+          "rotation": 0,
+          "cx": 0.378
+        },
+        {
+          "cy": 0.268,
+          "h": 0.26,
+          "kind": "ellipse",
+          "w": 0.225,
+          "rotation": 0,
+          "cx": 0.424
+        },
+        {
+          "cy": 0.696,
+          "h": 0.59,
+          "kind": "rect",
+          "w": 0.085,
+          "rotation": -18,
+          "cx": 0.598
+        }
+      ],
+      "minTouch": 44,
+      "layer": 3
+    },
+    {
+      "developerOnly": true,
+      "id": "home.caseFile",
+      "target": "case",
+      "minTouch": 40,
+      "regions": [
+        {
+          "cy": 0.5,
+          "h": 0.59,
+          "kind": "ellipse",
+          "w": 0.76,
+          "rotation": -16,
+          "cx": 0.54
+        }
+      ],
+      "layer": 4,
+      "label": "案件板"
+    },
+    {
+      "label": "商队商店",
+      "id": "home.merchantShip",
+      "target": "shop",
+      "regions": [
+        {
+          "cy": 0.458,
+          "h": 0.47,
+          "kind": "ellipse",
+          "w": 0.4,
+          "rotation": 0,
+          "cx": 0.48
+        },
+        {
+          "cy": 0.687,
+          "h": 0.14,
+          "kind": "ellipse",
+          "w": 0.5,
+          "rotation": 0,
+          "cx": 0.478
+        },
+        {
+          "cy": 0.123,
+          "h": 0.205,
+          "kind": "rect",
+          "w": 0.052,
+          "rotation": 0,
+          "cx": 0.489
+        }
+      ],
+      "minTouch": 44,
+      "layer": 5
+    },
+    {
+      "label": "阅读信件",
+      "id": "home.letterPaper",
+      "target": "paper",
+      "regions": [
+        {
+          "cy": 0.5,
+          "h": 0.6,
+          "kind": "ellipse",
+          "w": 0.72,
+          "rotation": -12,
+          "cx": 0.52
+        }
+      ],
+      "minTouch": 44,
+      "layer": 6
+    },
+    {
+      "label": "炼药工作区",
+      "id": "home.stove",
+      "target": "brew",
+      "regions": [
+        {
+          "cy": 0.478,
+          "h": 0.423,
+          "kind": "ellipse",
+          "w": 0.56,
+          "rotation": 0,
+          "cx": 0.5
+        },
+        {
+          "cy": 0.744,
+          "h": 0.16,
+          "kind": "rect",
+          "w": 0.17,
+          "rotation": 0,
+          "cx": 0.5
+        }
+      ],
+      "minTouch": 44,
+      "layer": 11
+    }
+  ],
+  "sourceSha256": "e4ccb82e4c8b64c0abb8a3c1a005d04b82aa7b0123ec89eec58c1996a50c8ce6"
+}
