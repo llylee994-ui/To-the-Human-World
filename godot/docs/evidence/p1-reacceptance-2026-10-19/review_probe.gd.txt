@@ -1,0 +1,74 @@
+extends SceneTree
+
+class ReviewIo:
+	var files: Dictionary = {}
+	var read_fail := ""
+	var partial_write := ""
+	func exists(path: String) -> bool:
+		return files.has(path)
+	func read(path: String) -> Dictionary:
+		if path == read_fail:
+			return {"ok":false,"error":"temporary snapshot read failure"}
+		return {"ok":files.has(path),"value":files.get(path, "")}
+	func write(path: String, value: String) -> Dictionary:
+		if path == partial_write:
+			files[path] = value.substr(0, 8)
+			return {"ok":false,"error":"partial write"}
+		files[path] = value
+		return {"ok":true}
+	func remove(path: String) -> bool:
+		files.erase(path)
+		return true
+
+func _initialize() -> void:
+	call_deferred("_run")
+
+func _request(catalog: ContentCatalog, index: int, revision: int) -> Dictionary:
+	var span: Dictionary = catalog.letter_spans("letter_pa_01")[index]
+	return {"request_id":"review-cut-%d"%index,"expected_revision":revision,"command":"cut_word",
+		"payload":{"source":{"wordId":span.wordId,"sourceLetterInstanceId":"letter:letter_pa_01",
+		"sourceSpanId":span.spanId,"sourceNpcId":catalog.get_letter("letter_pa_01").senderId}}}
+
+func _run() -> void:
+	var catalog := ContentCatalog.new()
+	assert(catalog.load_catalog("res://content/generated/catalog.json").ok)
+	for active in ["a","b"]:
+		var io := ReviewIo.new()
+		var store := SnapshotStore.new("fake://symmetric",io)
+		assert(store.commit({"revision":1},catalog.content_version(),1).status=="committed")
+		assert(store.commit({"revision":2},catalog.content_version(),2).status=="committed")
+		if active=="b":
+			assert(store.commit({"revision":3},catalog.content_version(),3).status=="committed")
+		var broken := "b" if active=="a" else "a"
+		io.files["fake://symmetric/state_%s.json"%broken]="broken"
+		var before: String = io.files["fake://symmetric/state_%s.json"%active]
+		io.partial_write="fake://symmetric/state_%s.json"%broken
+		var saved := store.commit({"revision":4},catalog.content_version(),4)
+		var reloaded := store.load_latest()
+		print("S01_SYMMETRIC ",JSON.stringify({"active":active,"failed":saved.status=="failed",
+			"old_bytes_preserved":io.files["fake://symmetric/state_%s.json"%active]==before,
+			"reload_status":reloaded.status,"reload_side":reloaded.get("side","")}))
+	var io := ReviewIo.new()
+	var store := SnapshotStore.new("fake://read-unavailable",io)
+	var session := SessionService.new(catalog,store)
+	assert(session.load_or_new().ok)
+	var first := session.execute(_request(catalog,0,0))
+	var second := session.execute(_request(catalog,1,1))
+	assert(first.ok and second.ok)
+	var token2: String = second.value.tokenId
+	io.read_fail="fake://read-unavailable/state_b.json"
+	var reopened := SessionService.new(catalog,store)
+	var reload_result := reopened.load_or_new()
+	print("NEWEST_SNAPSHOT_READ_FAILED ",JSON.stringify({"open":reload_result,"locked":reopened.is_recovery_locked(),
+		"second_token_present":reopened.snapshot().get("live",{}).get("wordTokens",{}).get("byId",{}).has(token2)}))
+	io.read_fail=""
+	var readable_again := store.load_latest()
+	print("LATEST_SNAPSHOT_READABLE_AGAIN ",JSON.stringify({"generation":readable_again.generation,
+		"revision":readable_again.payload.revision,"second_token_present":readable_again.payload.live.wordTokens.byId.has(token2)}))
+	var third := reopened.execute(_request(catalog,2,1))
+	var final_store := SnapshotStore.new("fake://read-unavailable",io)
+	var final := SessionService.new(catalog,final_store)
+	var final_load := final.load_or_new()
+	print("AFTER_READ_RECOVERS_AND_NEW_COMMAND ",JSON.stringify({"third_command":third.ok,"load":final_load,
+		"second_committed_token_preserved":final.snapshot().get("live",{}).get("wordTokens",{}).get("byId",{}).has(token2)}))
+	quit(0)

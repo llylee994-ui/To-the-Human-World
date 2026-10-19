@@ -148,7 +148,7 @@ func _select_valid(inspection: Dictionary) -> Dictionary:
 	var unsupported: Array = []
 	var marker_read_failed: Dictionary = {}
 	var corrupt: Dictionary = {}
-	var snapshot_read_failed: Dictionary = {}
+	var snapshot_read_failures: Array = []
 	for side in ["a", "b"]:
 		var row: Dictionary = inspection[side]
 		match str(row.get("state", "")):
@@ -163,8 +163,7 @@ func _select_valid(inspection: Dictionary) -> Dictionary:
 				if corrupt.is_empty():
 					corrupt = row
 			"snapshot_read_failed":
-				if snapshot_read_failed.is_empty():
-					snapshot_read_failed = row
+				snapshot_read_failures.append(row)
 	if not marker_read_failed.is_empty():
 		# A failed marker read cannot tell us whether that side is newer.
 		return {"status": "read_failed", "error": marker_read_failed.error}
@@ -183,6 +182,17 @@ func _select_valid(inspection: Dictionary) -> Dictionary:
 				unsupported_error = row.error
 		if not unsupported_error.is_empty() and unsupported_max >= int(chosen.generation):
 			return {"status": "unsupported", "error": unsupported_error}
+		var failed_generation := 0
+		var failed_error: Dictionary = {}
+		for row in snapshot_read_failures:
+			var generation := int(row.marker.get("generation", 0))
+			if generation >= failed_generation:
+				failed_generation = generation
+				failed_error = row.error
+		if not failed_error.is_empty() and failed_generation >= int(chosen.generation):
+			# A newer committed marker whose snapshot is temporarily unreadable
+			# cannot be silently replaced by an older readable generation.
+			return {"status": "read_failed", "error": failed_error}
 		var ignored: Array = []
 		for side in ["a", "b"]:
 			var row: Dictionary = inspection[side]
@@ -199,8 +209,15 @@ func _select_valid(inspection: Dictionary) -> Dictionary:
 	if not unsupported.is_empty():
 		unsupported.sort_custom(func(left, right): return int(left.marker.generation) > int(right.marker.generation))
 		return {"status": "unsupported", "error": unsupported[0].error}
-	if not snapshot_read_failed.is_empty():
-		return {"status": "read_failed", "error": snapshot_read_failed.error}
+	if not snapshot_read_failures.is_empty():
+		var highest_error: Dictionary = snapshot_read_failures[0].error
+		var highest_generation := int(snapshot_read_failures[0].marker.get("generation", 0))
+		for row in snapshot_read_failures:
+			var generation := int(row.marker.get("generation", 0))
+			if generation > highest_generation:
+				highest_generation = generation
+				highest_error = row.error
+		return {"status": "read_failed", "error": highest_error}
 	if not corrupt.is_empty():
 		return {"status": "corrupt", "error": corrupt.error}
 	return {"status": "new"}

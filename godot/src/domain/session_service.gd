@@ -98,7 +98,7 @@ func load_or_new() -> Dictionary:
 				"status": "loaded",
 				"revision": int(state.get("revision", 0)),
 				"generation": int(loaded.get("generation", 0)),
-				"recovered_from": str(loaded.get("recovered_from", "")),
+				"ignored": (loaded.get("ignored", []) as Array).duplicate(true),
 				"recovery_locked": recovery_locked,
 			}
 		"unsupported":

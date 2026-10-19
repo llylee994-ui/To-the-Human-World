@@ -1,6 +1,6 @@
 # P1-B 业务与存档基础对照报告（2026-10-19）
 
-状态：**完成（领域模块、统一命令、独立存档、故障注入与双进程恢复）；验收 S01～S04/F02 已修复。** 本报告覆盖 P1-B 基础层；真实信件、订单、商店、日历、三结局、回溯和新手引导不在本批范围。修复明细见 [P1 修复回执](p1-fix-2026-10-19.md)。
+状态：**完成（领域模块、统一命令、独立存档、故障注入与双进程恢复）；S01～S04、F02、R01 已修复。** 本报告覆盖 P1-B 基础层；真实信件、订单、商店、日历、三结局、回溯和新手引导不在本批范围。修复明细见 [P1 修复回执](p1-fix-2026-10-19.md)。
 
 ## 1. 交付物
 
@@ -84,11 +84,11 @@ P1 的保存格式是新封装：`format=tthw-godot`、`schema_version=1`、`con
 
 ```text
 python godot/tools/verify.py --suite foundation
-[GODOT] PASS suite=foundation assertions=2235
+[GODOT] PASS suite=foundation assertions=2251
 [Restart] PASS separate Godot processes preserve revision, token and draft
 
 python godot/tools/verify.py --suite all
-[GODOT] PASS suite=all assertions=2798
+[GODOT] PASS suite=all assertions=2814
 ```
 
 分项：
@@ -99,11 +99,11 @@ python godot/tools/verify.py --suite all
 | potion | 1734 PASS |
 | oracle（词条+草稿） | 177 PASS |
 | commands | 31 PASS |
-| faults | 50 PASS（含 S01～S04） |
-| foundation | 2235 PASS |
+| faults | 66 PASS（含 S01～S04、R01） |
+| foundation | 2251 PASS |
 | 双进程 restart | PASS |
 | P0 layout/scenes/drag/readability | 563 PASS |
-| all | 2798 PASS |
+| all | 2814 PASS |
 
 双进程检查由 `godot/tools/restart_check.py` 执行：第一个 Godot 进程写入 `user://p1_process_restart`，退出；第二个进程重新启动并验证 `revision=2`、token 和主词草稿。它不是同进程重建对象的替代。
 
@@ -118,7 +118,7 @@ python godot/tools/verify.py --suite all
 | P1-B-03 | 高 | P2 必做 | `currentOrder` 只支持 `false`；信件实例、订单、商店、日历、结局、回溯、新手引导未实现。 | 按 P2/P4 任务扩展状态与命令；新手引导已在实施计划 Task 4 中明确。 |
 | P1-B-04 | 中 | P2 必做 | `StateValidator` 只做 P1 子集校验，未深验证非空 `letters`、`orders`、`world.flags`、叙事事件。 | P2 在接受真实首单状态前补齐逐字段校验。 |
 | P1-B-05 | 中 | 开放 | P1 命令未接入 UI；没有 P1 双端包，P0 包仍是 `0.1.3-p0fix`。 | P2 接 UI 后重建双端 debug 包；P6 再冻结正式签名。 |
-| P1-B-06 | 中 | 部分修复 | S01/S03 已用测试 IO 复现并修复；真实磁盘断电/短写和写入中的进程崩溃仍未覆盖。 | P2/P5 增加真实文件故障与崩溃恢复证据；保留“不承诺抵抗所有物理磁盘故障”的边界。 |
+| P1-B-06 | 中 | 部分修复 | S01/S03、R01 已用测试 IO 复现并修复；真实磁盘断电/短写和写入中的进程崩溃仍未覆盖。 | P2/P5 增加真实文件故障与崩溃恢复证据；保留“不承诺抵抗所有物理磁盘故障”的边界。 |
 | P1-B-07 | 低 | 部分修复 | S04 已修复 uncertain 结果的永久缓存；请求 ID 缓存本身仍无上限。 | 长会话或 P5 加容量上限/淘汰策略。 |
 | P1-B-08 | 低 | 开放 | `test_layout.gd` 在 `--suite all` 时重写 `p0-layout.json`，造成 P0 证据文件漂移。 | 让证据写入只在 P0 套件执行，或在验收后恢复；当前提交前已手动恢复。 |
 | P1-B-09 | 低 | 待确认 | 快照标记的长度使用字符数而非字节数；内部读写一致，不影响校验。 | 若有外部工具解析标记，改为字节长度并版本化。 |

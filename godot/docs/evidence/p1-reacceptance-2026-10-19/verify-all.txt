@@ -1,0 +1,48 @@
+generated_at=2026-10-19T11:02:32.309555+08:00
+exit=0
+--- export_content.py --check (exit 0) ---
+[Data] 校验通过：效果 22 / 词条 77 / 原料 4 / 设备 2 / 人物 11 / 信件 22 / 时间属性 6 / 规则 196 / 片段 58 / 评分 58
+[Data] 首单包校验通过：C1 开局账本 / C2 首单数值 / C3 事实与回信；contentVersion = ordinary-release-v3
+catalog check passed: godot/content/generated/catalog.json
+--- export_oracle.py --check (exit 0) ---
+[Data] 校验通过：效果 22 / 词条 77 / 原料 4 / 设备 2 / 人物 11 / 信件 22 / 时间属性 6 / 规则 196 / 片段 58 / 评分 58
+oracle check passed: godot/tests/fixtures/oracle_cases.json
+--- content:negative (exit 0) ---
+[ContentNegative] PASS missing attributeProfileId
+[ContentNegative] PASS unknown rule operator
+[ContentNegative] PASS addTags object becomes array
+[ContentNegative] PASS unless array becomes object
+[ContentNegative] PASS forbiddenEffects array becomes object
+[ContentNegative] PASS 5 negative cases
+--- import (exit 0) ---
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[   0% ] first_scan_filesystem | Started 项目初始化 (5 steps)
+[   0% ] first_scan_filesystem | 正在扫描文件结构……
+[  16% ] first_scan_filesystem | 正在加载全局类名……
+[  33% ] first_scan_filesystem | 正在校验 GDExtension……
+[  50% ] first_scan_filesystem | 正在创建自动加载脚本……
+[  66% ] first_scan_filesystem | 正在初始化插件……
+[  83% ] first_scan_filesystem | 正在启动文件扫描……
+[ DONE ] first_scan_filesystem
+
+[   0% ] loading_editor_layout | Started 正在加载编辑器 (5 steps)
+[   0% ] loading_editor_layout | 正在加载编辑器布局……
+[  16% ] loading_editor_layout | 正在加载停靠面板……
+[ DONE ] loading_editor_layout
+
+--- tests:all (exit 0) ---
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[GODOT] PASS suite=all assertions=2798
+--- restart:separate-process (exit 0) ---
+--- restart_seed.gd (exit 0) ---
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[RestartSeed] PASS revision=2 token=token:19:letter:letter_pa_01:6:body:1
+--- restart_verify.gd (exit 0) ---
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[RestartVerify] PASS separate-process revision=2 token=token:19:letter:letter_pa_01:6:body:1
+[Restart] PASS separate Godot processes preserve revision, token and draft
+evidence: godot/docs/evidence/p1-verify.txt

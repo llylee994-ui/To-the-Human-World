@@ -295,8 +295,91 @@ func run(_tree: SceneTree) -> Array[String]:
 	_check(failures, str(locked.get("error", {}).get("code", "")) == "RECOVERY_LOCKED",
 		"locked session rejects further commands")
 
+	# R01: a temporarily unreadable newer snapshot must lock, not install older progress.
+	var r01_fake := FakeIo.new()
+	var r01_store := SnapshotStore.new(BASE_DIR, r01_fake)
+	var r01_session := SessionService.new(catalog, r01_store)
+	check_open(failures, r01_session)
+	var source1 := _source_at(catalog, 0)
+	var source2 := _source_at(catalog, 1)
+	var source3 := _source_at(catalog, 2)
+	var token1 := WordToken.token_id(str(source1["sourceLetterInstanceId"]), str(source1["sourceSpanId"]))
+	var token2 := WordToken.token_id(str(source2["sourceLetterInstanceId"]), str(source2["sourceSpanId"]))
+	var token3 := WordToken.token_id(str(source3["sourceLetterInstanceId"]), str(source3["sourceSpanId"]))
+	var cut1 := r01_session.execute({"request_id": "r01-cut1", "expected_revision": 0,
+		"command": "cut_word", "payload": {"source": source1}})
+	var cut2 := r01_session.execute({"request_id": "r01-cut2", "expected_revision": 1,
+		"command": "cut_word", "payload": {"source": source2}})
+	_check(failures, cut1.get("ok", false) and cut2.get("ok", false), "R01 two commits succeed")
+	var latest_r01 := r01_store.load_latest()
+	_check(failures, latest_r01.get("status", "") == "loaded" and int(latest_r01.get("generation", 0)) == 2,
+		"R01 newest generation is readable before fault")
+	var bytes_b := str(r01_fake.files["fake://p1/state_b.json"])
+	r01_fake.fail_reads["fake://p1/state_b.json"] = true
+	_check(failures, str(r01_store.load_latest().get("status", "")) == "read_failed",
+		"R01 unreadable newer snapshot returns read_failed")
+	var locked_session := SessionService.new(catalog, r01_store)
+	var locked_open := locked_session.load_or_new()
+	_check(failures, not locked_open.get("ok", true)
+		and str(locked_open.get("error", {}).get("code", "")) == "SAVE_READ_FAILED",
+		"R01 session refuses the older generation")
+	_check(failures, locked_session.is_recovery_locked(), "R01 session is locked during read failure")
+	var blocked_cut := locked_session.execute({"request_id": "r01-blocked", "expected_revision": 0,
+		"command": "cut_word", "payload": {"source": source3}})
+	_check(failures, str(blocked_cut.get("error", {}).get("code", "")) == "RECOVERY_LOCKED",
+		"R01 command is rejected during read failure")
+	_check(failures, str(r01_fake.files["fake://p1/state_b.json"]) == bytes_b,
+		"R01 source bytes are unchanged during read failure")
+	r01_fake.fail_reads.clear()
+	var r01_reload := locked_session.reload()
+	_check(failures, r01_reload.get("ok", false) and int(r01_reload.get("revision", -1)) == 2,
+		"R01 reload restores the latest revision")
+	var restored_r01: Dictionary = locked_session.snapshot()
+	_check(failures, (restored_r01["live"]["wordTokens"]["byId"] as Dictionary).has(token1)
+		and (restored_r01["live"]["wordTokens"]["byId"] as Dictionary).has(token2),
+		"R01 reload keeps both committed tokens")
+	var cut3 := locked_session.execute({"request_id": "r01-cut3", "expected_revision": 2,
+		"command": "cut_word", "payload": {"source": source3}})
+	_check(failures, cut3.get("ok", false) and int(cut3.get("revision", -1)) == 3,
+		"R01 third commit appends after recovery")
+	var final_session := SessionService.new(catalog, SnapshotStore.new(BASE_DIR, r01_fake))
+	var final_open := final_session.load_or_new()
+	_check(failures, final_open.get("ok", false) and int(final_open.get("revision", -1)) == 3,
+		"R01 final save has revision 3")
+	var final_state: Dictionary = final_session.snapshot()
+	var final_tokens: Dictionary = final_state["live"]["wordTokens"]["byId"]
+	_check(failures, final_tokens.has(token1) and final_tokens.has(token2) and final_tokens.has(token3),
+		"R01 final save contains all three committed tokens")
+
+	# A lower-generation side may be unreadable without hiding a readable newer side.
+	var lower_fake := FakeIo.new()
+	var lower_store := SnapshotStore.new(BASE_DIR, lower_fake)
+	lower_store.commit(_payload(1, "one"), catalog.content_version(), 1)
+	lower_store.commit(_payload(2, "two"), catalog.content_version(), 2)
+	var lower_bytes := str(lower_fake.files["fake://p1/state_a.json"])
+	lower_fake.fail_reads["fake://p1/state_a.json"] = true
+	var lower_load := lower_store.load_latest()
+	_check(failures, lower_load.get("status", "") == "loaded"
+		and int(lower_load.get("generation", 0)) == 2,
+		"R01 lower unreadable side does not block newer valid side")
+	_check(failures, (lower_load.get("ignored", []) as Array).any(func(row): return row.get("side") == "a"),
+		"R01 lower unreadable side is recorded in ignored")
+	_check(failures, str(lower_fake.files["fake://p1/state_a.json"]) == lower_bytes,
+		"R01 lower side bytes are unchanged")
+
 	completed = true
 	return failures
+
+
+func _source_at(catalog: ContentCatalog, index: int) -> Dictionary:
+	var letter: Dictionary = catalog.entry_ref("letters", "letter_pa_01")
+	var span: Dictionary = catalog.letter_spans("letter_pa_01")[index]
+	return {
+		"wordId": span["wordId"],
+		"sourceLetterInstanceId": "letter:letter_pa_01",
+		"sourceSpanId": span["spanId"],
+		"sourceNpcId": letter["senderId"],
+	}
 
 
 func _source(catalog: ContentCatalog) -> Dictionary:

@@ -1,0 +1,51 @@
+HEAD=2800a6db21b3b627f413ff2ea63119cc6680bc52
+generated_at=2026-10-19T11:03:59.482140+08:00
+
+--- p1_standards_probe.gd exit=0 ---
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CATALOG true
+FALLBACK_BEFORE { "status": "loaded", "side": "a", "generation": 1, "payload": { "revision": 1.0 }, "content_version": "ordinary-release-v3", "ignored": [{ "side": "b", "state": "corrupt_snapshot" }] }
+FALLBACK_SAVE { "status": "committed", "generation": 3, "side": "b", "envelope": { "format": "tthw-godot", "schema_version": 1, "content_version": "ordinary-release-v3", "revision": 2, "generation": 3, "checksum": "8e97c99a1c55fae2714a2a619e87463f5eda081396fc7bd75455799256f0d512", "payload": { "contentVersion": "ordinary-release-v3", "revision": 2, "nextOrderSerial": 1, "live": { "gameFlow": { "day": 1, "phase": "day", "canSalvage": true, "mainStoryStage": "prologue", "deliveredOrders": 0, "salvageUsedToday": 0 }, "letters": { "byId": {  }, "bottleQueue": [], "directArchive": {  } }, "wordTokens": { "byId": {  } }, "economy": { "currency": 30.0, "ingredients": { "ing_ashen_herb": 3.0, "ing_dried_petal": 3.0, "ing_night_dew": 3.0, "ing_sea_salt": 3.0 }, "specialItems": [], "ownedEquipmentIds": { "kit_old_cauldron": true }, "shopPurchases": [], "itemPurchases": [] }, "world": { "npcs": { "npc_passerby_a": { "lastResult": "none" }, "npc_luca": { "lastResult": "none" }, "npc_nora": { "lastResult": "none" }, "npc_ellie": { "lastResult": "none" }, "npc_otto": { "lastResult": "none" }, "npc_cecilia": { "lastResult": "none" }, "npc_leon": { "lastResult": "none" }, "npc_bea": { "lastResult": "none" }, "npc_martin": { "lastResult": "none" }, "npc_agnes": { "lastResult": "none" }, "npc_jacob": { "lastResult": "none" } }, "flags": {  } }, "narrative": { "unlockedLetterIds": {  }, "delayedQueue": [], "resolvedEventIds": {  } }, "orders": { "acceptedById": {  }, "confirmedById": {  } } }, "currentOrder": false, "journal": { "byAttemptId": {  }, "attemptIds": [] }, "chapter": { "phase": "operating", "wishDraftSourceIds": [], "ending": false, "endingTransactionId": false, "checkpoint": false }, "draft": { "equipmentId": "kit_old_cauldron", "mainTokenId": false, "auxTokenIds": [], "ingredients": [], "specialItemIds": [] } } } }
+FALLBACK_AFTER { "status": "loaded", "side": "b", "generation": 3, "payload": { "chapter": { "checkpoint": false, "ending": false, "endingTransactionId": false, "phase": "operating", "wishDraftSourceIds": [] }, "contentVersion": "ordinary-release-v3", "currentOrder": false, "draft": { "auxTokenIds": [], "equipmentId": "kit_old_cauldron", "ingredients": [], "mainTokenId": false, "specialItemIds": [] }, "journal": { "attemptIds": [], "byAttemptId": {  } }, "live": { "economy": { "currency": 30.0, "ingredients": { "ing_ashen_herb": 3.0, "ing_dried_petal": 3.0, "ing_night_dew": 3.0, "ing_sea_salt": 3.0 }, "itemPurchases": [], "ownedEquipmentIds": { "kit_old_cauldron": true }, "shopPurchases": [], "specialItems": [] }, "gameFlow": { "canSalvage": true, "day": 1.0, "deliveredOrders": 0.0, "mainStoryStage": "prologue", "phase": "day", "salvageUsedToday": 0.0 }, "letters": { "bottleQueue": [], "byId": {  }, "directArchive": {  } }, "narrative": { "delayedQueue": [], "resolvedEventIds": {  }, "unlockedLetterIds": {  } }, "orders": { "acceptedById": {  }, "confirmedById": {  } }, "wordTokens": { "byId": {  } }, "world": { "flags": {  }, "npcs": { "npc_agnes": { "lastResult": "none" }, "npc_bea": { "lastResult": "none" }, "npc_cecilia": { "lastResult": "none" }, "npc_ellie": { "lastResult": "none" }, "npc_jacob": { "lastResult": "none" }, "npc_leon": { "lastResult": "none" }, "npc_luca": { "lastResult": "none" }, "npc_martin": { "lastResult": "none" }, "npc_nora": { "lastResult": "none" }, "npc_otto": { "lastResult": "none" }, "npc_passerby_a": { "lastResult": "none" } } } }, "nextOrderSerial": 1.0, "revision": 2.0 }, "content_version": "ordinary-release-v3", "ignored": [] }
+FUTURE_LOAD { "status": "unsupported", "error": { "code": "SAVE_UNSUPPORTED", "path": "schema_version", "message": "unsupported save schema", "details": {  } } }
+FUTURE_SESSION_LOAD { "ok": false, "error": { "code": "SAVE_UNSUPPORTED", "path": "schema_version", "message": "unsupported save schema" } }
+TRUNCATED_MARKER { "status": "loaded", "side": "a", "generation": 1, "payload": { "chapter": { "checkpoint": false, "ending": false, "endingTransactionId": false, "phase": "operating", "wishDraftSourceIds": [] }, "contentVersion": "ordinary-release-v3", "currentOrder": false, "draft": { "auxTokenIds": [], "equipmentId": "kit_old_cauldron", "ingredients": [], "mainTokenId": false, "specialItemIds": [] }, "journal": { "attemptIds": [], "byAttemptId": {  } }, "live": { "economy": { "currency": 30.0, "ingredients": { "ing_ashen_herb": 3.0, "ing_dried_petal": 3.0, "ing_night_dew": 3.0, "ing_sea_salt": 3.0 }, "itemPurchases": [], "ownedEquipmentIds": { "kit_old_cauldron": true }, "shopPurchases": [], "specialItems": [] }, "gameFlow": { "canSalvage": true, "day": 1.0, "deliveredOrders": 0.0, "mainStoryStage": "prologue", "phase": "day", "salvageUsedToday": 0.0 }, "letters": { "bottleQueue": [], "byId": {  }, "directArchive": {  } }, "narrative": { "delayedQueue": [], "resolvedEventIds": {  }, "unlockedLetterIds": {  } }, "orders": { "acceptedById": {  }, "confirmedById": {  } }, "wordTokens": { "byId": {  } }, "world": { "flags": {  }, "npcs": { "npc_agnes": { "lastResult": "none" }, "npc_bea": { "lastResult": "none" }, "npc_cecilia": { "lastResult": "none" }, "npc_ellie": { "lastResult": "none" }, "npc_jacob": { "lastResult": "none" }, "npc_leon": { "lastResult": "none" }, "npc_luca": { "lastResult": "none" }, "npc_martin": { "lastResult": "none" }, "npc_nora": { "lastResult": "none" }, "npc_otto": { "lastResult": "none" }, "npc_passerby_a": { "lastResult": "none" } } } }, "nextOrderSerial": 1.0, "revision": 1.0 }, "content_version": "ordinary-release-v3", "ignored": [{ "side": "b", "state": "corrupt_marker" }] }
+SESSION_NEW { "ok": true, "status": "new", "revision": 0, "recovery_locked": false }
+UNCERTAIN_EXEC { "ok": false, "error": { "code": "SAVE_COMMIT_UNCERTAIN", "path": "save", "message": "save result is uncertain; re-read the same slot" } }
+UNCERTAIN_RELOAD { "ok": true, "status": "loaded", "revision": 1, "generation": 1, "recovered_from": "", "recovery_locked": false }
+UNCERTAIN_RETRY { "ok": true, "revision": 1, "changed": true, "value": { "tokenId": "token:19:letter:letter_pa_01:6:body:1", "changed": false }, "events": [] } locked=false actual_revision=1.0
+RESTART_LOAD { "ok": true, "status": "loaded", "revision": 1, "generation": 1, "recovered_from": "", "recovery_locked": false }
+RESTART_RETRY { "ok": false, "error": { "code": "STALE_REVISION", "path": "expected_revision", "message": "the session changed; refresh the view" } }
+
+
+--- spec_probe.gd exit=0 ---
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+bad_ref false
+bad_enum false
+bad_empty_type false
+residual_near {"actual":{"error":{"code":"CONFIG_MISSING","details":{"atAfterDoseHours":10.000001},"message":"sample time is not a declared point","path":"residuals.sleep"},"ok":false},"at":10.000001,"point":{"effectId":"sleep","untilAfterDoseHours":10.0,"weight":0.6}}
+altered_residual_valid false
+
+
+--- spec_probe_lua.py exit=0 ---
+[Data] 校验通过：效果 22 / 词条 77 / 原料 4 / 设备 2 / 人物 11 / 信件 22 / 时间属性 6 / 规则 196 / 片段 58 / 评分 58
+lua sample 10.000001: {'code': 'CONFIG_MISSING', 'path': 'residuals.sleep', 'message': '采样时间不在已声明点上'}
+lua mutated validate: {'code': 'INVALID_REQUEST', 'path': 'potion.residuals', 'message': '残留点不连续、为负或递增'}
+
+
+--- spec_probe_schema.py exit=0 ---
+empty_addtags_array [{'code': 'CONTENT_INVALID', 'path': 'ingredients[0].addTags', 'message': 'must be an object'}]
+empty_rule_unless_object [{'code': 'CONTENT_INVALID', 'path': 'directRules[0].unless', 'message': 'must be an array'}]
+empty_forbidden_object [{'code': 'CONTENT_INVALID', 'path': 'letters[0].requirement.forbiddenEffects', 'message': 'must be an array'}]
+
+
+--- review_probe.gd exit=0 ---
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+S01_SYMMETRIC {"active":"a","failed":true,"old_bytes_preserved":true,"reload_side":"a","reload_status":"loaded"}
+S01_SYMMETRIC {"active":"b","failed":true,"old_bytes_preserved":true,"reload_side":"b","reload_status":"loaded"}
+NEWEST_SNAPSHOT_READ_FAILED {"locked":false,"open":{"generation":1,"ok":true,"recovered_from":"","recovery_locked":false,"revision":1,"status":"loaded"},"second_token_present":false}
+LATEST_SNAPSHOT_READABLE_AGAIN {"generation":2,"revision":2.0,"second_token_present":true}
+AFTER_READ_RECOVERS_AND_NEW_COMMAND {"load":{"generation":3,"ok":true,"recovered_from":"","recovery_locked":false,"revision":2,"status":"loaded"},"second_committed_token_preserved":false,"third_command":true}
