@@ -27,7 +27,7 @@ P1 的保存格式是新封装：`format=tthw-godot`、`schema_version=1`、`con
 | 配方草稿 | `RecipeDraft.Validate` | `RecipeDraft.validate` | 8（3 成功、5 错误） | PASS |
 | 词条来源 | `WordToken.PlanCut` 来源校验 | `WordToken.validate_source` / `token_id` | 80（77 有效、3 非法） | PASS |
 | 草稿/词条/预览命令 | `GameState` 事务子集 | `SessionService.execute` | 31 | PASS |
-| A/B 存档与故障 | `SaveSystem` 双快照/提交记录 | `SnapshotStore` | 23 | PASS |
+| A/B 存档与故障 | `SaveSystem` 双快照/提交记录 | `SnapshotStore` | 50 | PASS |
 | 进程重启恢复 | `GameState.Load` | `SessionService.load_or_new` | 真实双进程 | PASS |
 
 ### 2.1 药效用例构成

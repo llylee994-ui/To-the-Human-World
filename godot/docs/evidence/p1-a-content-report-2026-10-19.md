@@ -59,14 +59,14 @@ python godot/tools/export_content.py --check
 catalog check passed: godot/content/generated/catalog.json
 
 python godot/tools/verify.py --suite content
-[GODOT] PASS suite=content assertions=198
+[GODOT] PASS suite=content assertions=243
 ```
 
 | 检查 | 结果 |
 |---|---|
 | 导出可重复性 `--check` | PASS |
 | 内容加载/计数/正文哈希/引用 | PASS，243 项断言（含 5 个类型/引用负例） |
-| 全量 Godot 套件中的 content 部分 | PASS，198 项 |
+| 全量 Godot 套件中的 content 部分 | PASS，243 项 |
 | 旧 Lua 数据加载与 `ValidateStage1` | PASS |
 
 完整输出见 [p1-verify.txt](p1-verify.txt)；运行时间与机器信息以该文件为准。

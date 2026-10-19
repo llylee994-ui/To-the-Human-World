@@ -48,7 +48,7 @@
 
 `godot/tools/export_oracle.py` 生成 `godot/tests/fixtures/oracle_cases.json`：120 个药效用例、80 个词条来源用例、8 个草稿校验用例，均由原 Lua 计算。`export_content.py --check` 与 `export_oracle.py --check` 已接入 `verify.py` 的 `content`/`foundation`/`all` 套件，内容或 oracle 陈旧会阻止测试。
 
-`godot/tests/unit/test_content.gd` 检查数量、版本、来源哈希、22 封正式信件的标题/正文哈希、每封信的剪词跨度数量、必需订单、三结局正文、未知 ID、重复 ID 和计数不一致，共 198 项断言。
+`godot/tests/unit/test_content.gd` 检查数量、版本、来源哈希、22 封正式信件的标题/正文哈希、每封信的剪词跨度数量、必需订单、三结局正文、未知 ID、重复 ID 和计数不一致，共 243 项断言（22 封信标题/正文哈希与 5 个类型/引用负例）。
 
 ## P1-B：业务与存档
 
