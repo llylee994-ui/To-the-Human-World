@@ -1,4 +1,4 @@
-generated_at=2026-10-19T03:37:28.501739+00:00
+generated_at=2026-10-19T03:42:12.227003+00:00
 suite=all
 
 [Data] 校验通过：效果 22 / 词条 77 / 原料 4 / 设备 2 / 人物 11 / 信件 22 / 时间属性 6 / 规则 196 / 片段 58 / 评分 58
@@ -45,7 +45,7 @@ Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 
 Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 
-[GODOT] PASS suite=all assertions=4326
+[GODOT] PASS suite=all assertions=4364
 
 --- restart_seed.gd (exit 0) ---
 Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
@@ -56,3 +56,13 @@ Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 
 [RestartVerify] PASS separate-process revision=2 token=token:19:letter:letter_pa_01:6:body:1
 [Restart] PASS separate Godot processes preserve revision, token and draft
+
+--- replay_seed.gd (exit 0) ---
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[P2ReplaySeed] PASS revision=1 request=process-start
+--- replay_verify.gd (exit 0) ---
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[P2ReplayVerify] PASS cross-process replay revision=1 without a new generation
+[Restart] PASS P2 cross-process committed request replay

@@ -8,6 +8,7 @@ extends RefCounted
 
 const FORMAT := "tthw-godot"
 const SCHEMA_VERSION := 1
+const MAX_SCHEMA_VERSION := 2
 
 
 static func canonical(value):
@@ -39,10 +40,11 @@ static func sha256(text: String) -> String:
 	return context.finish().hex_encode()
 
 
-static func wrap(payload: Dictionary, content_version: String, revision: int, generation: int) -> Dictionary:
+static func wrap(payload: Dictionary, content_version: String, revision: int, generation: int,
+		schema_version: int = SCHEMA_VERSION) -> Dictionary:
 	return {
 		"format": FORMAT,
-		"schema_version": SCHEMA_VERSION,
+		"schema_version": schema_version,
 		"content_version": content_version,
 		"revision": revision,
 		"generation": generation,
@@ -51,7 +53,7 @@ static func wrap(payload: Dictionary, content_version: String, revision: int, ge
 	}
 
 
-static func verify(envelope_value) -> Dictionary:
+static func verify(envelope_value, max_schema_version: int = SCHEMA_VERSION) -> Dictionary:
 	if typeof(envelope_value) != TYPE_DICTIONARY:
 		return DomainResult.fail("SAVE_CORRUPT", "envelope", "save envelope must be an object")
 	var envelope: Dictionary = envelope_value
@@ -63,7 +65,8 @@ static func verify(envelope_value) -> Dictionary:
 	if envelope.get("format") != FORMAT:
 		return DomainResult.fail("SAVE_UNSUPPORTED", "format", "unexpected save format")
 	if not DomainResult.is_int(envelope.get("schema_version")) \
-			or int(envelope["schema_version"]) != SCHEMA_VERSION:
+			or int(envelope["schema_version"]) < 1 \
+			or int(envelope["schema_version"]) > max_schema_version:
 		return DomainResult.fail("SAVE_UNSUPPORTED", "schema_version", "unsupported save schema")
 	if typeof(envelope.get("content_version")) != TYPE_STRING or envelope["content_version"].is_empty():
 		return DomainResult.fail("SAVE_CORRUPT", "content_version", "content version is missing")
@@ -80,4 +83,5 @@ static func verify(envelope_value) -> Dictionary:
 		return DomainResult.fail("SAVE_CHECKSUM_MISMATCH", "checksum", "payload checksum does not match")
 	if int(envelope["payload"].get("revision", -1)) != int(envelope["revision"]):
 		return DomainResult.fail("SAVE_CORRUPT", "revision", "payload revision does not match envelope")
-	return {"ok": true, "value": (envelope["payload"] as Dictionary).duplicate(true)}
+	return {"ok": true, "value": (envelope["payload"] as Dictionary).duplicate(true),
+		"schema_version": int(envelope["schema_version"])}

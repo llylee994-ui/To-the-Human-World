@@ -7,6 +7,25 @@ extends RefCounted
 
 static func dispatch(state: Dictionary, command: String, payload: Dictionary,
 		catalog: ContentCatalog) -> Dictionary:
+	if int(state.get("payload_version", 1)) >= 2:
+		if command == "start_journey":
+			var keys := DomainResult.keys(payload, [], "payload")
+			if not keys.is_empty():
+				return {"ok": false, "error": keys}
+			if typeof(state.get("chapter")) != TYPE_DICTIONARY:
+				return DomainResult.fail("STATE_INVALID", "chapter", "chapter is missing")
+			if state["chapter"].get("started") == true:
+				return {"ok": true, "data": state, "changed": false,
+					"value": {"started": true, "phase": str(state["chapter"].get("phase", ""))},
+					"events": []}
+			var candidate: Dictionary = state.duplicate(true)
+			candidate["chapter"]["started"] = true
+			candidate["revision"] = int(candidate.get("revision", 0)) + 1
+			return {"ok": true, "data": candidate, "changed": true,
+				"value": {"started": true, "phase": str(candidate["chapter"].get("phase", ""))},
+				"events": ["JourneyStarted"]}
+		return DomainResult.fail("INVALID_REQUEST", "command",
+			"P2 command is not implemented in this task")
 	match command:
 		"cut_word":
 			var keys := DomainResult.keys(payload, ["source"], "payload")

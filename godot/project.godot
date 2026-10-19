@@ -9,7 +9,7 @@ config_version=5
 config/name="寄往人间 · P0 视觉基线"
 run/main_scene="res://scenes/boot.tscn"
 config/use_custom_user_dir=true
-config/custom_user_dir_name="ToTheHumanWorld-Godot-P0"
+config/custom_user_dir_name="ToTheHumanWorld-Godot-P2"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://media/icon.png"
 

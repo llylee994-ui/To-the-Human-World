@@ -12,11 +12,23 @@ var last_error: Dictionary = {}
 var status := "new"
 var results: Dictionary = {}
 var uncertain_requests: Dictionary = {}
+var schema_version: int = 1
+var payload_version: int = 1
+var onboarding: bool = false
 
 
-func _init(content: ContentCatalog, snapshot_store: SnapshotStore = null) -> void:
+func _init(content: ContentCatalog, snapshot_store: SnapshotStore = null,
+		options: Dictionary = {}) -> void:
 	catalog = content
-	store = snapshot_store if snapshot_store != null else SnapshotStore.new()
+	schema_version = int(options.get("schema_version", 1))
+	payload_version = int(options.get("payload_version", 1))
+	onboarding = options.get("onboarding", false) == true
+	store = snapshot_store if snapshot_store != null else SnapshotStore.new(
+		"user://godot_save", null, schema_version)
+
+
+func _is_p2() -> bool:
+	return schema_version >= 2 or payload_version >= 2
 
 
 func _fail(code: String, path: String, message: String) -> Dictionary:
@@ -30,24 +42,68 @@ func _lock(code: String, path: String, message: String) -> Dictionary:
 	return _fail(code, path, message)
 
 
+func _initial_state() -> Dictionary:
+	if _is_p2():
+		return P2State.initial(catalog, onboarding)
+	return StateValidator.initial_state(catalog)
+
+
+func _validate_state(value: Dictionary) -> Dictionary:
+	if _is_p2():
+		return StateAudit.validate(value, catalog)
+	return StateValidator.validate(value, catalog)
+
+
+func _request_meta(request_id: String) -> Dictionary:
+	var meta: Dictionary = uncertain_requests.get(request_id, {})
+	return {
+		"request_id": request_id,
+		"expected_revision": int(meta.get("expected_revision", -1)),
+		"command": str(meta.get("command", "")),
+		"payload": meta.get("payload", {}),
+	}
+
+
 func _reconcile_uncertain() -> void:
 	if uncertain_requests.is_empty() or state.is_empty():
 		return
 	var unresolved := false
 	for request_id in uncertain_requests.keys():
-		var meta: Dictionary = uncertain_requests[request_id]
-		var expected := int(meta.get("expected_revision", -1))
+		var request := _request_meta(request_id)
+		var expected := int(request.get("expected_revision", -1))
 		var actual := int(state.get("revision", 0))
+		if _is_p2():
+			var ledger := CommandLedger.lookup(state, request)
+			if ledger.status == "matched":
+				results[request_id] = (ledger.response as Dictionary).duplicate(true)
+				uncertain_requests.erase(request_id)
+				continue
+			if ledger.status == "conflict":
+				var conflict := {"ok": false, "error": (ledger.error as Dictionary).duplicate(true)}
+				results[request_id] = conflict
+				unresolved = true
+				continue
+			if actual == expected:
+				uncertain_requests.erase(request_id)
+				results.erase(request_id)
+				continue
+			if actual > expected:
+				var failure := DomainResult.fail("RECONCILIATION_REQUIRED", "request_id",
+					"reloaded state has no ledger record for the uncertain request")
+				results[request_id] = {"ok": false, "error": failure.error}
+				unresolved = true
+				continue
+			unresolved = true
+			continue
 		if actual == expected:
-			# The save was not committed. Allow the caller to retry the same id.
 			uncertain_requests.erase(request_id)
 			results.erase(request_id)
 			continue
 		if actual < expected:
 			unresolved = true
 			continue
-		var dispatched := CommandRouter.dispatch(state, str(meta.get("command", "")),
-			meta.get("payload", {}), catalog)
+		var dispatched := CommandRouter.dispatch(state, str(request.get("command", "")),
+			request.get("payload", {}), catalog)
 		if dispatched.get("ok", false) and not dispatched.get("changed", false):
 			var success := {
 				"ok": true,
@@ -72,20 +128,20 @@ func load_or_new() -> Dictionary:
 	var loaded := store.load_latest()
 	match str(loaded.get("status", "")):
 		"new":
-			var initial := StateValidator.initial_state(catalog)
+			var initial := _initial_state()
 			if not initial.ok:
 				return _lock("STATE_INVALID", "initial", "cannot build initial state")
 			state = initial.value
 			recovery_locked = false
 			status = "new"
 			_reconcile_uncertain()
-			return {"ok": true, "status": "new", "revision": 0,
+			return {"ok": true, "status": "new", "revision": int(state.get("revision", 0)),
 				"recovery_locked": recovery_locked}
 		"loaded":
 			if str(loaded.get("content_version", "")) != catalog.content_version():
 				return _lock("CONTENT_VERSION_MISMATCH", "contentVersion",
 					"save content version does not match catalog")
-			var validated := StateValidator.validate(loaded.get("payload", {}), catalog)
+			var validated := _validate_state(loaded.get("payload", {}))
 			if not validated.ok:
 				return _lock(str(validated.error.get("code", "SAVE_CORRUPT")),
 					str(validated.error.get("path", "data")), "saved state is invalid")
@@ -134,17 +190,69 @@ func _validate_request(request) -> Dictionary:
 	return {"ok": true, "value": request}
 
 
+func _commit_candidate(candidate: Dictionary, request: Dictionary, response: Dictionary) -> Dictionary:
+	var validated := _validate_state(candidate)
+	if not validated.ok:
+		return {"ok": false, "error": (validated["error"] as Dictionary).duplicate(true)}
+	candidate = validated.value
+	if _is_p2():
+		var installed := CommandLedger.install(candidate, request, response)
+		if not installed.ok:
+			return {"ok": false, "error": (installed["error"] as Dictionary).duplicate(true)}
+		candidate = installed.value
+		validated = _validate_state(candidate)
+		if not validated.ok:
+			return {"ok": false, "error": (validated["error"] as Dictionary).duplicate(true)}
+		candidate = validated.value
+	var committed := store.commit(candidate, catalog.content_version(), int(candidate["revision"]))
+	match str(committed.get("status", "")):
+		"committed":
+			state = candidate
+			status = "loaded"
+			recovery_locked = false
+			uncertain_requests.erase(str(request.get("request_id", "")))
+			results[str(request.get("request_id", ""))] = response.duplicate(true)
+			return response.duplicate(true)
+		"uncertain":
+			uncertain_requests[str(request.get("request_id", ""))] = {
+				"expected_revision": int(request["expected_revision"]),
+				"command": str(request["command"]),
+				"payload": (request.get("payload", {}) as Dictionary).duplicate(true),
+			}
+			var uncertain := _lock("SAVE_COMMIT_UNCERTAIN", "save",
+				"save result is uncertain; re-read the same slot")
+			results[str(request.get("request_id", ""))] = uncertain
+			return uncertain.duplicate(true)
+	var commit_error: Dictionary = committed.get("error", {})
+	var code := str(commit_error.get("code", "SAVE_WRITE_FAILED"))
+	if code in ["SAVE_UNSUPPORTED", "SAVE_READ_FAILED", "SAVE_CORRUPT", "SAVE_CHECKSUM_MISMATCH"]:
+		var fatal := _lock(code, str(commit_error.get("path", "save")),
+			str(commit_error.get("message", "save cannot be used")))
+		results[str(request.get("request_id", ""))] = fatal
+		return fatal.duplicate(true)
+	var failed := {"ok": false, "error": commit_error.duplicate(true)}
+	if not (_is_p2() and code in ["SAVE_WRITE_FAILED", "SAVE_VERIFY_FAILED"]):
+		results[str(request.get("request_id", ""))] = failed
+	return failed.duplicate(true)
+
+
 func execute(request) -> Dictionary:
 	var checked := _validate_request(request)
 	if not checked.ok:
 		return checked
 	var request_id := str(request["request_id"])
-	if results.has(request_id):
-		return (results[request_id] as Dictionary).duplicate(true)
 	if recovery_locked:
 		return _fail("RECOVERY_LOCKED", "save", "re-read the same slot before continuing")
 	if state.is_empty():
 		return _fail("STATE_NOT_READY", "session", "load a session before executing commands")
+	if _is_p2():
+		var ledger := CommandLedger.lookup(state, request)
+		if ledger.status == "matched":
+			return (ledger.response as Dictionary).duplicate(true)
+		if ledger.status == "conflict":
+			return {"ok": false, "error": (ledger.error as Dictionary).duplicate(true)}
+	if results.has(request_id):
+		return (results[request_id] as Dictionary).duplicate(true)
 	if int(request["expected_revision"]) != int(state.get("revision", 0)):
 		return _fail("STALE_REVISION", "expected_revision", "the session changed; refresh the view")
 	var dispatched := CommandRouter.dispatch(state, str(request["command"]),
@@ -159,52 +267,22 @@ func execute(request) -> Dictionary:
 			"revision": int(state.get("revision", 0)),
 			"changed": false,
 			"value": (dispatched.get("value", {}) as Dictionary).duplicate(true),
+			"events": [],
 		}
+		if _is_p2():
+			var candidate: Dictionary = state.duplicate(true)
+			return _commit_candidate(candidate, request, unchanged)
 		results[request_id] = unchanged
 		return unchanged.duplicate(true)
 	var candidate: Dictionary = dispatched.data
-	var validated := StateValidator.validate(candidate, catalog)
-	if not validated.ok:
-		var invalid := {"ok": false, "error": (validated["error"] as Dictionary).duplicate(true)}
-		results[request_id] = invalid
-		return invalid.duplicate(true)
-	candidate = validated.value
-	var committed := store.commit(candidate, catalog.content_version(), int(candidate["revision"]))
-	match str(committed.get("status", "")):
-		"committed":
-			state = candidate
-			status = "loaded"
-			recovery_locked = false
-			var success := {
-				"ok": true,
-				"revision": int(state["revision"]),
-				"changed": true,
-				"value": (dispatched.get("value", {}) as Dictionary).duplicate(true),
-				"events": (dispatched.get("events", []) as Array).duplicate(true),
-			}
-			uncertain_requests.erase(request_id)
-			results[request_id] = success
-			return success.duplicate(true)
-		"uncertain":
-			uncertain_requests[request_id] = {
-				"expected_revision": int(request["expected_revision"]),
-				"command": str(request["command"]),
-				"payload": (request.get("payload", {}) as Dictionary).duplicate(true),
-			}
-			var uncertain := _lock("SAVE_COMMIT_UNCERTAIN", "save",
-				"save result is uncertain; re-read the same slot")
-			results[request_id] = uncertain
-			return uncertain.duplicate(true)
-	var commit_error: Dictionary = committed.get("error", {})
-	var code := str(commit_error.get("code", "SAVE_WRITE_FAILED"))
-	if code in ["SAVE_UNSUPPORTED", "SAVE_READ_FAILED", "SAVE_CORRUPT", "SAVE_CHECKSUM_MISMATCH"]:
-		var fatal := _lock(code, str(commit_error.get("path", "save")),
-			str(commit_error.get("message", "save cannot be used")))
-		results[request_id] = fatal
-		return fatal.duplicate(true)
-	var failed := {"ok": false, "error": commit_error.duplicate(true)}
-	results[request_id] = failed
-	return failed.duplicate(true)
+	var response := {
+		"ok": true,
+		"revision": int(candidate.get("revision", 0)),
+		"changed": true,
+		"value": (dispatched.get("value", {}) as Dictionary).duplicate(true),
+		"events": (dispatched.get("events", []) as Array).duplicate(true),
+	}
+	return _commit_candidate(candidate, request, response)
 
 
 func snapshot() -> Dictionary:

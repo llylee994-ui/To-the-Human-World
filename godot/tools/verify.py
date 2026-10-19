@@ -40,7 +40,7 @@ def run(command: list[str], label: str) -> tuple[int, str]:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--suite", choices=["content", "potion", "oracle", "commands", "faults", "p2-oracle", "foundation", "layout", "scenes", "drag", "readability", "all"], default="layout")
+    parser.add_argument("--suite", choices=["content", "potion", "oracle", "commands", "faults", "p2-oracle", "p2-state", "foundation", "layout", "scenes", "drag", "readability", "all"], default="layout")
     parser.add_argument("--godot")
     parser.add_argument("--python-libs", default=str(ROOT / ".tmp" / "b1-python"))
     parser.add_argument("--skip-import", action="store_true")
@@ -93,8 +93,17 @@ def main() -> int:
         logs.append(restart_output)
         if restart_code != 0:
             code = restart_code
+    if code == 0 and args.suite in {"p2-state", "all"}:
+        p2_code, p2_output = run(
+            [sys.executable, str(PROJECT / "tools" / "restart_check.py"), "--p2",
+             "--godot", str(binary)],
+            "restart:p2-replay",
+        )
+        logs.append(p2_output)
+        if p2_code != 0:
+            code = p2_code
     p0_suites = {"layout", "scenes", "drag", "readability"}
-    p2_suites = {"p2-oracle", "all"}
+    p2_suites = {"p2-oracle", "p2-state", "all"}
     if args.suite in p0_suites:
         evidence_name = "p0-verify.txt"
     elif args.suite in p2_suites:

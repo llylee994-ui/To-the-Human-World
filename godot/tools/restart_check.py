@@ -24,12 +24,15 @@ DEFAULT_GODOT = Path(os.environ.get(
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--godot")
+    parser.add_argument("--p2", action="store_true", help="run the P2 request replay pair")
     args = parser.parse_args()
     binary = Path(args.godot) if args.godot else Path(os.environ.get("GODOT_BIN", DEFAULT_GODOT))
     if not binary.exists():
         print(f"Godot console binary not found: {binary}", file=sys.stderr)
         return 2
-    for script in ("restart_seed.gd", "restart_verify.gd"):
+    scripts = (("replay_seed.gd", "replay_verify.gd") if args.p2
+               else ("restart_seed.gd", "restart_verify.gd"))
+    for script in scripts:
         result = subprocess.run(
             [str(binary), "--headless", "--path", str(PROJECT), "--script",
              "res://tests/integration/" + script],
@@ -40,7 +43,10 @@ def main() -> int:
         print(output.strip())
         if result.returncode != 0:
             return result.returncode
-    print("[Restart] PASS separate Godot processes preserve revision, token and draft")
+    if args.p2:
+        print("[Restart] PASS P2 cross-process committed request replay")
+    else:
+        print("[Restart] PASS separate Godot processes preserve revision, token and draft")
     return 0
 
 

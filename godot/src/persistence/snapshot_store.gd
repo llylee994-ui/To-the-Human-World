@@ -37,11 +37,13 @@ class FileIo:
 var base_dir: String
 var io
 var last_error: Dictionary = {}
+var schema_version: int = 1
 
 
-func _init(directory: String = "user://godot_save", adapter = null) -> void:
+func _init(directory: String = "user://godot_save", adapter = null, save_schema: int = 1) -> void:
 	base_dir = directory
 	io = adapter if adapter != null else FileIo.new()
+	schema_version = save_schema
 
 
 func _error(code: String, path: String, message: String) -> Dictionary:
@@ -110,7 +112,7 @@ func _inspect_side(side: String) -> Dictionary:
 	if int(parsed.get("generation", -1)) != int(marker.generation):
 		return {"side": side, "state": "corrupt_snapshot", "marker": marker,
 			"error": _error("SAVE_CORRUPT", snapshot_path, "generation does not match marker")}
-	var verified := SaveCodec.verify(parsed)
+	var verified := SaveCodec.verify(parsed, schema_version)
 	if not verified.ok:
 		var code := str(verified.error.get("code", "SAVE_CORRUPT"))
 		return {
@@ -249,7 +251,7 @@ func commit(payload: Dictionary, content_version: String, revision: int) -> Dict
 	var generation := _max_marker_generation(inspection) + 1
 	if generation < 1:
 		generation = 1
-	var envelope := SaveCodec.wrap(payload, content_version, revision, generation)
+	var envelope := SaveCodec.wrap(payload, content_version, revision, generation, schema_version)
 	var raw := SaveCodec.encode(envelope)
 	var snapshot_path := _snapshot_path(side)
 	var written: Dictionary = io.write(snapshot_path, raw)
